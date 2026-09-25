@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marsport - the solution · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Marsport - the solution</h1><p class="facts">1 posts, 1995-10-28 – 1995-10-28</p><div class="post" id="p12904"><div class="ph"><a class="d" href="#p12904">1995-10-28 16:53:07</a> <span>Chris Owen</span>  <a class="badge" href="game-3040.html">ZXDB: Marsport</a></div><pre> [from Crash, June 1986]
+
+
+                        MARSPORT - The solution
+                        -----------------------
+
+1) Get the Gun permit from sector g level E.
+
+2) Put the Gun permit in the key locker in sector d level D
+
+3) Get the Gun from the locker.
+
+4) Collect the Baking Tin, Water and the Flour from sectors a, d and c of 
+level D. Put them in a Factor unit to make a Cake.
+
+5) Put the Cake in the Bakery Key slot in sector f level D.
+
+6) Get the Dough from the Bakery.
+
+7) Take the Up tube from sector f level D to Level A.
+
+8) Get the first key to m-central from the Director room.
+
+9) In able to go south from sector c level E you must put the dust
+bomb in the refuse chute.
+
+10) Get the Gauze from sector h level J and the Charcoal from sector
+g level D.
+
+11) Combine these two items in a Factor unit to make a Gas mask.
+
+12) Go West from sector c level 1. Leave the Gas mask in the locker once the 
+dust bomb has exploded.
+
+13) Get the Cornet and the Ice pack from the Ice cream room in sector a level
+I.
+
+14) Put the Cornet in the Keyslot of the Music room in sector a level F.
+
+15) Get the Earth map from the Map room in sector g level 1.
+
+16) Put the Earth map in the Key slot to the Soil depot on sector e level G.
+
+17) Put the Ice pack in the key slot of the Hot room on sector c level G.
+
+18) Get the Geranium from the Hot room.
+
+19) Put the Geranium in the Key slot to the Plant room on sector h
+level J.
+
+20) Collect the Sun chart from the Map room in sector g level I, the Glass 
+from sector h and the frame from sector e. Combine them in a Factor unit to 
+make the Eyeshields.
+
+21) Take the Up tube from sector a level G to Level A.
+
+22) Now that you have the Eyeshields it is safe to enter the Astronomy in 
+sector b level A.
+
+23) After the Nova bomb has detonated put the Eyeshields in the locker.
+
+24) Take the Down tube from sector i Level A to Level R.
+
+25) Put the Dough from the Bakery into the keyslot by the Bankers on sector e
+level b.
+
+26) Once inside the Bank take the second key to m-central.
+
+27) Get the Dais from the Oratory on sector i level 0 and the Lute from the 
+previously opened Music room.
+
+28) Combine the Lute and the Dais to make the Lead suit.
+
+29) Go East from sector a level B and after the Radiation bomb has gone off 
+put the Lead suit in the locker.
+
+30) Take the down tube from sector c level B to level J.
+
+31) Get the Boots and the Earmuffs from Safety room on sector c level J.
+
+32) Put the Boots in the Key slot to the Chemists which is situated on 
+sector i level D.
+
+33) Get the Machine from sector e level B.
+
+34) Go West from sector a level G through the Danger room.
+
+35) To deactivate the bomb and open the locked door just put the bomb into 
+the Keyslot.
+
+36) Go North from sector b level G but only if you have the Earmuffs.
+
+37) After the Sonic bomb has exploded put the Earmuffs in the locker.
+
+38) Take the Up tube from sector f level G to Level C.
+
+39) Get the Steps from sector b level C.
+
+40) Combine Empty tank, from sector a level A, and the Oxygen from the 
+Chemists to make an Air tank.
+
+41) Go East from sector a level C.
+
+42) After the Air runs out put the Tank in the locker.
+
+43) Take the Down tube from sector g level C to level F.
+
+44) Enter the Games room in sector g Level F
+
+45) Combine the Steps and the Calculator to make the Snakes and Ladders games.
+
+46) Put the Game in the Key slot.
+
+47) Take the Down tube from sector c level F to level H.
+
+48) Take all three keys to m-central (the first is in the Director room, the 
+second is in the Bankers&#x27; room and the third is in sector g level F).
+
+49) Put key one in the key slot inside the control the room on sector a
+level H.
+
+50) Put key two in the left hand key position outside m-central on
+sector h level H.
+
+51) Put key three in the right hand key slot and enter m-central.
+
+Stage 1 is now complete and all restricted doors are now open.
+
+
+ Stage 2
+ -------
+
+1) Go to the sanctum to get the clue I&#x27;m the sentry; 5 pairs for entry city 
+through, 5 screens each two.
+
+2) Get the Mars map and put it in the key slot of the Bar (Marsbar,
+see).
+
+3) Get the tea from the Bar.
+
+4) Go to sector d level G and get the insect.
+
+5) Get the syringe from the Chemist (open it with a pair of boots) on 
+sector c level D.
+
+6) Get the point from the Oratory sector i, level B.
+
+7) Combine the above four items to make the antidote.
+
+8) With the antidote go east from sector e level c and enter the danger room.
+When until the countdown has finished and then put the antidote in the locker
+for future use.
+
+9) Get the clue from the vidtex unit on sector h level C. &#x27;One monkey says why
+the other two can&#x27;t&#x27;.
+
+10) Make another eyeshield and get another pair of earmuffs.
+
+11) Combine the earmuffs and the eyeshield to make the Y token.
+
+l2) Get the valium from the chemist and go north from sector b level B.
+
+13) Enter the danger room and wait until the nerve bomb has done off. Put the
+valium in the locker for future use.
+
+14) Get the topee from sector f level B
+
+15) Get the kettle from sector f level F.
+
+16) Put the kettle in the key slot of the boiler room on sector i, level J.
+
+17) Get the helmet from the boiler room
+
+18) Combine the helmet and the topee to make the power booster.
+
+19) Combine the power booster and your gun to make a hypergun. You can now 
+kill the Sept Warlords.
+
+20) Get the clue from the Vidtex unit on sector f level B. One is holy with 
+skill after church.
+
+21) Get the strainer from the bar on sector c level F.
+
+Z2) Get the sunchart from the map room.
+
+23) Combine the sunchart and the strainer to make the N token
+
+24) Go west from sector d level E and kill the Warlord.
+
+25) Now go and get the clue from the Vidtex unit on sector f level E.
+&#x27;One says nothing, the other says it all&#x27;.
+
+26) Get the mute from the music room.
+
+27) Get the manifesto from the oratory.
+
+28) Combine the mute and the manifesto to make the E token.
+
+29) Go to sector i level D and get the clue from the Vidtex unit. &#x27;One draws 
+near and throws away&#x27;.
+
+30) Get the charcoal from sector g level D.
+
+31) Get the projector from the oratory.
+
+32) Combine the charcoal and the projector to make the r token.
+
+33) Go west from sector q level I and kill the Warlord.
+
+34) Get the clue from the Vidtex unit on sector d level 1. &#x27;One is easy and 
+full of aplomb&#x27;.
+
+35) Make another cake and another lead suit.
+
+36) Combine the cake and the lead suit to make the R token.
+
+37) Combine the E, N, T, R, Y tokens to make the key.
+
+38) Put the key in the key slot in the sanctum sector e level H.
+
+39) Go west out of the sanctum.
+
+
+ Stage 3
+ -------
+
+ Do not collect the plans straight away because you will not have enough time 
+to escape if you do, but instead follow these tips.
+
+1) Get the clue from the Vidtex on sector d level j. &#x27;7 from 10 makes you a 
+bighead&#x27;.
+
+2) Collect the E codex from sector i level J
+
+3) Get codex D from sector d level I.
+
+4) Get the G codex from sector i level H.
+
+5) Get codex B from sector g level G.
+
+6) Get the T codex from sector e level F.
+
+7) Get the U codex from sertor f level E.
+
+8) Get the W codex from sector e level D.
+
+9) Get the I codex from sector h level C.
+
+10) Get the H codex from sector g level M
+
+11) Get the N codex from sector I level A.
+
+12) Now get the codices from levels B,I,G,H,E,A,D and put them in a factor 
+unit.
+
+13) You will now get a message HD6 GUNW.
+
+14) Go to the map reference HD6.
+
+15) Face west (make sure your gun is fully charged) and fire your gun at the 
+wall.
+
+16) The screen will flash.
+
+17) Now go to the main few and you will see an Up tube.
+
+18) Get the plans.
+
+19) Go Up the tube and escape from Marsport through the Spacefield door. 
+That&#x27;s it!
+
+-- 
+<span class="qt">|        Chris Owen       |  New Mansion House, Lancaster Gate, London SE1  | </span>
+<span class="qt">|----------------------------------------------------------------------------</span>
+<span class="qt">|      SINCLAIR PAGES HAVE MOVED TO: <a href="http://www.nvg.unit.no/spectrum/" rel="noreferrer">http://www.nvg.unit.no/spectrum/</a>       |</span>
+<span class="qt">|     Howling in the wires - Canter &amp; Siegel, criminal Armenians at law     |</span>
+
+</pre></div></main></body></html>

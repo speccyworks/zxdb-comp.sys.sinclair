@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pyracurse (Hewson) · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Pyracurse (Hewson)</h1><p class="facts">2 posts, 2000-07-24 – 2000-07-25</p><div class="post" id="p67908"><div class="ph"><a class="d" href="#p67908">2000-07-24</a> <span>john williams</span> </div><pre>Hi folks,
+
+Did anybody out there ever manage to complete Pyracurse?  I liked that
+game (still have the tape floating around somewhere), but never really
+made any progress.  I eventually resorted to hacking it, looking for an
+infinite lives cheat, but never managed to find one of those either...
+
+Also, has anyone ever found a .SNA (or .Z80 or whatever) of it that
+actually works?  I grabbed one from WoS a year or so ago but it was a
+dud...
+
+Cheers,
+
+John W.
+
+
+</pre></div><div class="post" id="p68005"><div class="ph"><a class="d" href="#p68005">2000-07-25 17:29:00</a> <span class="small">address hidden</span> <span>Re: Pyracurse (Hewson)</span> <a class="badge" href="game-3952.html">ZXDB: Pyracurse</a></div><pre>On Mon, 24 Jul 2000 15:44:38 +1000, John Williams 
+wrote:
+
+<span class="qt">&gt;Did anybody out there ever manage to complete Pyracurse?  I liked that</span>
+<span class="qt">&gt;game (still have the tape floating around somewhere), but never really</span>
+<span class="qt">&gt;made any progress.  I eventually resorted to hacking it, looking for an</span>
+<span class="qt">&gt;infinite lives cheat, but never managed to find one of those either...</span>
+
+The solution was printed in Crash issues 31-33 (Aug-Oct.1986), so someone
+obviously finished it.
+
+I never played the game myself - Avalon was enough for me, and Dragontorc,
+Astroclone and Pyracurse were basically more of the same (although
+Pyracurse wasn&#x27;t by Steve Turner), but harder, so I couldn&#x27;t be bothered
+with them. (Pyracurse was still rather ahead of its time, in fact, as the
+gameplay is much more like Where Time Stood Still than the Turner games,
+and WTSS came out two years after Pyracurse). If you get the TAP off WoS,
+you can try one of these pokes:
+
+[from Crash 32 (Sep.1986) - infinite lives]
+10 CLEAR 24799
+30 LOAD &quot;&quot; CODE 23296
+40 POKE 23325,201: RANDOMIZE USR 23299
+50 POKE 33446,201: RANDOMIZE USR 29600
+
+[from Your Sinclair 12 (Dec.1986) - infinite energy]
+10 CLEAR 24799: LOAD &quot;&quot; CODE 23296
+20 POKE 23325,201: RANDOMIZE USR 23299
+30 POKE 33450,201: RANDOMIZE USR 29600
+
+
+<span class="qt">&gt;Also, has anyone ever found a .SNA (or .Z80 or whatever) of it that</span>
+<span class="qt">&gt;actually works?  I grabbed one from WoS a year or so ago but it was a</span>
+<span class="qt">&gt;dud...</span>
+
+The TAP on the WoS CD works. The joystick control&#x27;s a bit annoying,
+though. With games using isometric movement I always think of joystick
+up/forward as being top left diagonal, joystick right as being top right
+diagonal, and so on around the clock; but Pyracurse has these all offset
+by 90 degrees, which throws me right off.
+
+
+--
+Another Fine Product from:
+Jim Grimwood (…@…), Weardale, England
+--
+
+
+</pre></div></main></body></html>

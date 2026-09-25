@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DunDarach for Spectrum 128/+2 ? · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>DunDarach for Spectrum 128/+2 ?</h1><p class="facts">7 posts, 2000-10-04 – 2000-10-05</p><div class="post" id="p73103"><div class="ph"><a class="d" href="#p73103">2000-10-04</a> <span>nino pesic</span> </div><pre>I have searched for a DunDarach (Gargoyle) map recently and have
+&#x27;discovered&#x27; the inlay
+<a href="ftp://ftp.nvg.ntnu.no/pub/sinclair/pics/inlays/dun_darach.jpg" rel="noreferrer">ftp://ftp.nvg.ntnu.no/pub/sinclair/pics/inlays/dun_darach.jpg</a>
+which suggests there could be a 128 version of this game.
+
+Does anyone know where the *.tap or *.tzx file of this version could be
+found if it exists at all (not available from WoS) and what are the
+differences over the &#x27;regular&#x27; 48 version of DunDarach?
+
+NP
+
+
+
+
+</pre></div><div class="post" id="p73107"><div class="ph"><a class="d" href="#p73107">2000-10-04</a> <span class="small">address hidden</span> <span>Re: DunDarach for Spectrum 128/+2 ?</span></div><pre>On Wed, 04 Oct 2000 08:30:07 +0100, Nino Pesic 
+wrote:
+
+<span class="qt">&gt;I have searched for a DunDarach (Gargoyle) map recently and have</span>
+<span class="qt">&gt;&#x27;discovered&#x27; the inlay</span>
+<span class="qt">&gt;<a href="ftp://ftp.nvg.ntnu.no/pub/sinclair/pics/inlays/dun_darach.jpg" rel="noreferrer">ftp://ftp.nvg.ntnu.no/pub/sinclair/pics/inlays/dun_darach.jpg</a></span>
+<span class="qt">&gt;which suggests there could be a 128 version of this game.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Does anyone know where the *.tap or *.tzx file of this version could be</span>
+<span class="qt">&gt;found if it exists at all (not available from WoS) and what are the</span>
+<span class="qt">&gt;differences over the &#x27;regular&#x27; 48 version of DunDarach?</span>
+
+What you&#x27;re looking at there is not the original inlay, but a budget
+re-issue inlay. These were frequently labelled &quot;Spectrum/128/128+2&quot; or
+similar, regardless of which models the game would actually run on or was
+written for. The original Dun Darach had no inlay, as it was in &quot;black
+box&quot; packaging; ie. a plain black cardboard box, about A5 size, with no
+external illustrations or labelling at all.
+
+Dun Darach was released around seven months before the Spectrum+128k was
+available in the UK, so there&#x27;ll be no 128 version.
+
+As regards the map, you should have been able to find the 2-page painted
+one from Crash - on WoS or NVG, probably - as it&#x27;s available on some of
+the Spectrum CDs, which are derived from the websites. There used to be a
+Gargoyle Games archive at <a href="http://ds.dial.pipex.com/town/park/xhi26/" rel="noreferrer">http://ds.dial.pipex.com/town/park/xhi26/</a> as
+well, although I haven&#x27;t checked if it&#x27;s still around.
+
+As regards the brothel area which someone mentioned, an interview in
+Sinclair User does say that this was locked out, leaving a central blank
+area in the town&#x27;s map, but doesn&#x27;t make it clear if the code for those
+locations was left in the game or not. Gargoyle found they were going to
+have problems getting some retailers to stock the game if they left it in.
+
+
+--
+Another Fine Product from:
+Jim Grimwood (…@…), Weardale, England
+--
+
+
+</pre></div><div class="post" id="p73120"><div class="ph"><a class="d" href="#p73120">2000-10-04</a> <span>joseph john mackay</span> <span>Re: DunDarach for Spectrum 128/+2 ?</span></div><pre>Equin0x  wrote:
+
+: Is it true that Dun Darach (or one of the Gargoyle trudge-&#x27;em-ups)
+
+That&#x27;s the best description of those games I&#x27;ve ever heard :-)
+
+: had a
+: secret set of streets including a brothel? I read something about this in
+: The ZX Files. They had to remove the brothel, and the easiest way to do it
+: was to lock away the street in question.
+
+I believe so...
+
+: Anyone hacked it about and seen this?
+
+Not me, but I&#x27;m sure I&#x27;ve managed to get into the door in question (Lady 
+Q&#x27;s). I think it was just an empty room (coloured red - ooer) with the
+message &quot;forbidden&quot; or something. It&#x27;s been a long time.
+
+-- 
+Joe Mackay - Department of Computer Science, QMW
+…@…
+
+&quot;She jabbed me in the cummerbund which made me say &#x27;gwhadi&#x27;&quot;
+
+
+</pre></div><div class="post" id="p73127"><div class="ph"><a class="d" href="#p73127">2000-10-04</a> <span class="small">address hidden</span> <span>Re: DunDarach for Spectrum 128/+2 ?</span></div><pre>…@… (Nino Pesic), in message 
+&lt;…@…&gt;, wrote
+
+<span class="qt">&gt;I have searched for a DunDarach (Gargoyle) map recently and have</span>
+<span class="qt">&gt;&#x27;discovered&#x27; the inlay</span>
+<span class="qt">&gt;<a href="ftp://ftp.nvg.ntnu.no/pub/sinclair/pics/inlays/dun_darach.jpg" rel="noreferrer">ftp://ftp.nvg.ntnu.no/pub/sinclair/pics/inlays/dun_darach.jpg</a></span>
+<span class="qt">&gt;which suggests there could be a 128 version of this game.</span>
+
+Dunno, but I remember making a map myself for this game.  I had
+all the streets mapped out.  Still didn&#x27;t help me complete the blimmin&#x27;
+thing though.
+-- 
+* Derek Jolly  (…@…)  (Remove the &#x27;x&#x27; for e-mail)  *
+* For 50/60Hz PSX Action Replay switch codes and some Speccy stuff   *
+* check out my homepage on <a href="http://www.redrival.com/rivet/" rel="noreferrer">http://www.redrival.com/rivet/</a>            *
+* Now playing: Star Trek Voyager: Elite Force (PC)                   *
+
+
+</pre></div><div class="post" id="p73129"><div class="ph"><a class="d" href="#p73129">2000-10-04</a> <span class="small">address hidden</span> <span>Re: DunDarach for Spectrum 128/+2 ?</span></div><pre>…@… (Equin0x), in message
+, wrote 
+
+<span class="qt">&gt;On Wed, 4 Oct 2000, Derek Jolly wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Dunno, but I remember making a map myself for this game.  I had</span>
+<span class="qt">&gt;&gt; all the streets mapped out.  Still didn&#x27;t help me complete the</span>
+<span class="qt">&gt;&gt; blimmin&#x27; thing though.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Is it true that Dun Darach (or one of the Gargoyle trudge-&#x27;em-ups) had a</span>
+<span class="qt">&gt;secret set of streets including a brothel? I read something about this</span>
+<span class="qt">&gt;in The ZX Files. They had to remove the brothel, and the easiest way to</span>
+<span class="qt">&gt;do it was to lock away the street in question.</span>
+
+Apparently so.  I certainly found the door in question, but you couldn&#x27;t
+get into it.
+-- 
+* Derek Jolly  (…@…)  (Remove the &#x27;x&#x27; for e-mail)  *
+* For 50/60Hz PSX Action Replay switch codes and some Speccy stuff   *
+* check out my homepage on <a href="http://www.redrival.com/rivet/" rel="noreferrer">http://www.redrival.com/rivet/</a>            *
+* Now playing: Star Trek Voyager: Elite Force (PC)                   *
+
+
+</pre></div><div class="post" id="p73171"><div class="ph"><a class="d" href="#p73171">2000-10-05</a> <span>nino pesic</span> <span>Dun Darach for Spectrum - Maps</span> <a class="badge" href="game-1538.html">ZXDB: Dun Darach</a></div><pre>Jim Grimwood wrote:
+
+<span class="qt">&gt; As regards the brothel area which someone mentioned, an interview in</span>
+<span class="qt">&gt; Sinclair User does say that this was locked out, leaving a central blank</span>
+<span class="qt">&gt; area in the town&#x27;s map, but doesn&#x27;t make it clear if the code for those</span>
+<span class="qt">&gt; locations was left in the game or not. Gargoyle found they were going to</span>
+<span class="qt">&gt; have problems getting some retailers to stock the game if they left it in.</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; Another Fine Product from:</span>
+<span class="qt">&gt; Jim Grimwood (…@…), Weardale, England</span>
+<span class="qt">&gt; --</span>
+
+Thanks for very detailed reply, Jim.
+Now, when the mistery of 128 Dun Darach inlay is resolved it seems there is
+another one arising:
+is it possible to have finished this adventure given the central area in the
+town&#x27;s map is cleared with the code (possibly?) remaining and affecting the
+solution?
+At the time, I have never managed to enter the castle using one of the
+portals... any advice?
+
+Btw, two complete maps are here:
+<a href="ftp://ftp.void.jump.org/pub/sinclair/games-maps/d/DunDarach_1.jpg" rel="noreferrer">ftp://ftp.void.jump.org/pub/sinclair/games-maps/d/DunDarach_1.jpg</a>
+<a href="ftp://ftp.void.jump.org/pub/sinclair/games-maps/d/DunDarach_2.jpg" rel="noreferrer">ftp://ftp.void.jump.org/pub/sinclair/games-maps/d/DunDarach_2.jpg</a>
+
+..and a poster:
+<a href="ftp://ftp.void.jump.org/pub/sinclair/games-maps/d/DunDarach_3.jpg" rel="noreferrer">ftp://ftp.void.jump.org/pub/sinclair/games-maps/d/DunDarach_3.jpg</a>
+
+Nino
+
+*****  Justice for All and All for Justice  *****
+*****          Justice Must Be Done         *****
+
+
+
+
+</pre></div><div class="post" id="p73179"><div class="ph"><a class="d" href="#p73179">2000-10-05</a> <span class="small">address hidden</span> <span>Re: Dun Darach for Spectrum - Maps</span> <a class="badge" href="game-1538.html">ZXDB: Dun Darach</a></div><pre>On Thu, 05 Oct 2000 08:51:59 +0100, Nino Pesic 
+wrote:
+
+<span class="qt">&gt;[...]</span>
+<span class="qt">&gt;is it possible to have finished this adventure given the central area in the</span>
+<span class="qt">&gt;town&#x27;s map is cleared with the code (possibly?) remaining and affecting the</span>
+<span class="qt">&gt;solution?</span>
+<span class="qt">&gt;At the time, I have never managed to enter the castle using one of the</span>
+<span class="qt">&gt;portals... any advice?</span>
+
+This might help ...
+
+DUN DARACH
+by Gargoyle Games
+
+solution from Crash Playing Tips Special (Apr.1986)
+
+
+Once again you play the mythical Celtic hero Cuchulainn in
+Dun Darach by Gargoyle Games. It is full of the
+Follis/Carter puzzles and puns we&#x27;ve come to expect from
+this pair. For the few who do not know it, you&#x27;re out to
+rescue your friend, the charioteer Loeg, from the clutches
+of the beautiful and evil sorceress, Skar. The action takes
+place in the city of Dun Darach.
+
+
+To find Teth you must first go to the Old Quarter and buy or
+steal a statue. Now take this to the Soke or Ratha de and
+follow the rat that wanders the streets. In Claw Lane the
+rat will disappear - for a few seconds stand on the spot
+where it disappeared and press Enter; you will now be in
+Darach Down. Inside Darach Down is Teth. Give Teth the
+statue and in return he will give you the d-key; this
+unlocks the door in the castle.
+
+Dainn can be found behind an invisible door in Park Lane.
+Give Dainn a lyre and in return he will give you the shield
+Midir. Take this to the room Hail Midir and place it on the
+table in there and you should receive the m-key. The m-key
+opens an invisible door on Cross Street.
+
+Buy a mole skin from the Skinner and give this to Bren in
+return for a Map. Now earn enough money to buy the Platinum
+and give this to Bren for another map and the message
+&quot;Galacia is far&quot;. Give this map to Ryde in return for the
+shield Belinus. Take this to the Hail Belinus room and drop
+it on the table in there to receive a clue.
+
+Open the invisible door in Cross Street, which is opposite
+room 55, with the m-key. Inside is the Telestone, take this.
+Now go and buy a spell from the Magick Store. Deposit your
+key on the counter and offer the Telestone, this will reveal
+the location of Skar. Now go and find Skar (keep using the
+Telestone so that you can easily track her down) and offer
+her the spell when she is near, this will make her visible.
+If you have a thieves&#x27; licence, go and steal the Pearl from
+the Strongroom; if you don&#x27;t have a thieves&#x27; licence then
+get some money and buy one, either by honest means or by
+using the methods detailed later below. Take the Pearl and
+give it to Skar, who in return will give you a Scroll. Go to
+the Castle with the Scroll, any other object and the d-key.
+
+Open the first locked door with the d-key and go through
+into a room with 3 revolving wheels (a combination lock). On
+one of the tables is a script with the clue 3ks 4keys, WITH
+LOVE. This is a clue to the combination of the lock. If you
+give the 3 thieves a Philtre each you get scripts with
+messages on them, take the first letter of each of these
+messages and you end up with DPE, this is the combination to
+the locked door.
+
+Keeping the Scroll (the one from Skar), drop your other
+objects on the tables so as to stop the wheels at DPE. Now,
+with the Scroll, go through the door. You will now be in a
+room with a message 8 ROWS AND BAR FOR KEY FIND SKAR and 8
+other doors. Only one of the doors will lead to another row
+(row B) the rest take you outside of that room. To decide
+which door to go through you must solve the clue 2**25,
+which - means 2 to the power of 25. This gives you the
+answer 33554432. Counting from the left, go through the
+third door into the next row and then through the third door
+from the left again and soon until you have been through all
+8 rows. Now use the Scroll to unlock the locked door. Go
+through this and you will be in another room with a
+combination lock. Drop objects on the tables to stop the
+combination at OAK. Now go through the locked door with the
+i-key which is lying just outside the locked door and offer
+Loeg the i-key. He will be freed and will give you another
+I-key in exchange. To finish the game go to Claw Lane and
+open the locked door which leads from Dun Darach and you
+will see the marvellous end effect - well an end effect
+anyway!
+
+
+Some of the clues given in Dun Darach are a bit obscure but
+if you are still mystified as to their meaning then read on.
+
+
+ART IN ORDER - Go round all the deposit rooms writing down
+their numbers and the letter on the wall inside the
+building. Once you have done this, write down the numbers
+with their corresponding letters and a message will evolve,
+BY ALCHEMIST COUNTER PT IS KEY. This refers to an invisible
+door that is by the Alchemist&#x27;s counter; it can be unlocked
+with Platinum. Inside is the shield Parthol.
+
+RATS ARE VAIN - this refers to the statue of the rat needed
+to free Teth. In the original version of Dun Darach (there
+are two) there was a mirror but this was changed to a pearl
+to avoid confusion.
+
+SKARS A PEARL - this is referring to the fact that the pearl
+can be traded with Skar.
+
+GODS SEE ALL - this refers to the Telestone.
+
+
+To gain as much money as you wish go to the gambling houses
+in Iomain. Now drop all your money on table B and press 6 to
+return to the menu. Save the game then return back to where
+you were. Keep gambling and saving the game when you win and
+reloading a saved game when you lose. This way you can
+easily build up enough money to purchase anything you want.
+
+To speed up the interest rate, bank some of your money and
+then carry out some of the other tips while it is day
+(signified by the torches being out) - press 6 and then 1.
+This will take you to the menu and then back into the game.
+When you re-enter the game the torches flicker on and you
+will collect interest for the whole day. Using this method
+it is possible to get your 1% interest twice a day.
+
+
+The solutions to the galleries are as follows:
+
+The gallery on the northern part of Herne Hill should have
+these items dropped in it: an arrow (from the Fletcher in
+King Street); an adze (from the Carpenter in Oak Road); a
+hoe (from the Farmer in the Parade) and a needle (from the
+Draper in Long Lane).
+
+The gallery on the southern part of Herne Hill should have
+these items dropped in it: lead (from the Alchemist in Cross
+Street); a last (from the Cobblers in Long Lane); a sting
+(from the Apothecary in Heath Road) and hemlock (from the
+Apothecary in Market Street).
+
+The gallery in Stone Road should have those items dropped in
+it: a hammer (from the Carpenter in Bird Street); a barrel
+(from the Cooper in Long Lane); dry salt (from the Salter in
+Oak Road) and a broad axe (from the Armoury in Long Lane).
+
+The last gallery in Marsh Street should have these objects
+dropped in it: a rue (from the Herbalist in Bird Street); a
+pile (from the Herald in Amber Way); a razor (from the
+Barber in New Street) and a foil (from the Sword smith in
+Oak Road).
+
+Remember Pita likes jewellery!
+
+
+--
+Another Fine Product from:
+Jim Grimwood (…@…), Weardale, England
+--
+
+
+</pre></div></main></body></html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANN: Tipshop updated Wednesday, 01 April 2009 · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANN: Tipshop updated Wednesday, 01 April 2009</h1><p class="facts">2 posts, 2009-04-01 – 2009-04-02</p><div class="post" id="p219841"><div class="ph"><a class="d" href="#p219841">2009-04-01 20:24:56</a> <span>Gerard Sweeney</span> </div><pre>Tuesday 31 March 2009
+Phew! Another ton of tips, piles of POKEs, stacks of solutions, and (we
+get the idea! Ed)..
+
+* The enigmatic Dave confirmed that the POKEs for Street Fighter II
+work. Hurrah! He also pointed out a correction, which led me to
+discover that the hyperlinks to the final issue of YS don&#x27;t work
+because the pages of the last issue are numbered backwards - so I&#x27;ll
+need to fix that later - boo!
+
+* Federico ï¿½lvarez sent in POKEs for Corona Encantada, La. Thanks to
+Juan Pablo Lopez Grao for passing these onto us.
+
+* Mike_Myers sent in the map for the second part of Abracadabra, and
+updated POKEs for Game Over, Saboteur II. And that&#x27;s as well as POKEs
+for 11-a-Side Soccer , 1994 - Ten Years After , Alien 8 ,
+Emilio Butragueno Futbol , Emlyn Hughes International Soccer , 
+Everyone&#x27;s A Wally , Fairlight , Fernando Martin Basket Master , 
+Frost Byte , Galivan - Cosmo Police , Gary Lineker&#x27;s Hot-Shot! , 
+Gary Lineker&#x27;s Super Star Soccer , Herbert&#x27;s Dummy Run , 
+Manic Miner 6: The Buddha of Suburbia , Manic Miner , 
+Manic Miner: Manic Scribbler , Pyjamarama , Riddler&#x27;s Den and 
+Three Weeks In Paradise. It appears Mike has found pretty much anything
+that can be POKEd in Everyone&#x27;s A Wally, Herbert&#x27;s Dummy Run and
+Pyjamarama!
+On top of the lorry-load of POKEs, he also sent in tips for Everyone&#x27;s
+A Wally and Manic Miner: Manic Scribbler. Mike also sent me his guide
+to using POKE Finder Wizard, which I haven&#x27;t had time to host yet -
+rest assured, it&#x27;s a goodie!
+
+* Josep Coletas Caubet sent in his solution to Extraordinarios Casos
+del Dr. Van Halen Volumen 2 Relato III: El Hijo del Crepusculo, Los. I
+get the feeling the solution should be accurate, since he wrote the
+game in the first place!
+
+* LaSole sent in POKEs for 1994 - Ten Years After , 1999 , Combat Lynx
+, Dragontorc and
+Rider.
+
+* Marco A.G.Pinto sent in POKEs for Mushroom Man and Nanako Descends to
+Hell.
+
+* Jose Roberto sent in POKEs for Teenage Mutant Hero Turtles - The
+Coin-Op.
+
+* Pavel Plï¿½va sent in POKEs for Myth II: Return to Hell, Nanako
+Descends to Hell and Phantomas Tales #1: Marsport.
+
+* CASA has been updated, so we now have solutions for Boyd File, The ,
+Dracula&#x27;s Castle , Island of Death ,
+Lone Brave , Magic Sword, The , Magnetic Moon , 
+Marie Celeste , Meltdown , Moonshards of Sacrimore , 
+Murder Hunt II , Revenge of Chaos and Wizard, What Wizard?; and tips
+for Boyd File, The , Lone Brave , Magnetic Moon ,
+Marie Celeste Adventure , Marie Celeste , Meltdown , 
+Moonshards of Sacrimore and Wizard, What Wizard?.
+* Added maps for Cliff Hanger , Feud , Justin , Myth II: Return to Hell
+,
+Nanako Descends to Hell , Phantomas Tales #1: Marsport , 
+Popeye 3 and Space Gun. Thanks - as ever - to the authors of these
+(Alastair, Doreen Bardon, Juan Duc and Terri Sheehan), and to Jacob
+Gunness for allowing us to reproduce these articles.
+
+* Added RZX Archive links for Christmas Cracker , Fire Gear , Haunted
+House , Myth II: Return to Hell , Nanako Descends to Hell , Phantomas
+Tales #1: Marsport , War Game and Wizard Warz.
+DATABASE SIZE: 15259 ENTRIES FOR 4020 GAMES
+
+
+-- 
+
+
+
+
+</pre></div><div class="post" id="p219847"><div class="ph"><a class="d" href="#p219847">2009-04-02 07:09:12</a> <span>Chris Young</span> <span>Re: ANN: Tipshop updated Wednesday, 01 April 2009</span></div><pre>On Wed, 01 Apr 2009 20:24:56 GMT da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Gerard Sweeney:
+
+<span class="qt">&gt; * LaSole sent in POKEs for 1994 - Ten Years After , 1999 </span>
+
+Erm...
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div></main></body></html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knight-Tyme 48k on the +3 · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Knight-Tyme 48k on the +3</h1><p class="facts">2 posts, 1994-11-18 – 1994-11-21</p><div class="post" id="p4074"><div class="ph"><a class="d" href="#p4074">1994-11-18 00:05:00</a> <span>John Elliott</span>  <a class="badge" href="game-2722.html">ZXDB: Knight Tyme</a></div><pre>  This probably counts as following up to my own post, but since said post
+was at about the time this group was created, I think I can risk it...
+
+  The 48k version of Knight-Tyme won&#x27;t work because it points I at an area of
+ROM which it expects to contain FFh bytes, whereas on the +3 it contains 
+zeroes. The first step is therefore to obtain a genuine Spectrum ROM 
+(SPECTRUM.ROM in JPP.ZIP is ideal).
+  Unfortunately, the interrupt vector pointing at FFFFh means that the 
+byte at address 0 is also important. This byte is corrupted by the 
+&#x27;overwriting ROM&#x27; bug (or one of them), so before using the ROM file do the
+equivalent of POKE 13308,170:POKE 13309,4 (these values from memory).
+  Only then will Knight-Tyme work, with the ROM file loaded into Bank 4, and
+the game in nos. 5, 6 and 3. However the &#x27;save position to tape&#x27; option won&#x27;t
+work, and the Multiface won&#x27;t be usable.1
+
+--
+
+John Elliott
+…@…
+----------------------------------------------------
+ BLOODNOK: &quot;But why have you got such a long face?&quot;
+ SEAGOON: &quot;Heavy dentures, Sir!&quot; 
+                                   - The Goon Show 
+:--------------------------------------------------)
+
+</pre></div><div class="post" id="p4117"><div class="ph"><a class="d" href="#p4117">1994-11-21 10:00:48</a> <span>Chris Wild</span> <span>Re: Knight-Tyme 48k on the +3</span></div><pre>In article &lt;…@…&gt;
+           …@… &quot;John Elliott&quot; writes:
+
+<span class="qt">&gt;   This probably counts as following up to my own post, but since said post</span>
+<span class="qt">&gt; was at about the time this group was created, I think I can risk it...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;   The 48k version of Knight-Tyme won&#x27;t work because it points I at an area of</span>
+<span class="qt">&gt; ROM which it expects to contain FFh bytes, whereas on the +3 it contains </span>
+<span class="qt">&gt; zeroes. The first step is therefore to obtain a genuine Spectrum ROM </span>
+<span class="qt">&gt; (SPECTRUM.ROM in JPP.ZIP is ideal).</span>
+<span class="qt">&gt;   Unfortunately, the interrupt vector pointing at FFFFh means that the </span>
+<span class="qt">&gt; byte at address 0 is also important. This byte is corrupted by the </span>
+<span class="qt">&gt; &#x27;overwriting ROM&#x27; bug (or one of them), so before using the ROM file do the</span>
+<span class="qt">&gt; equivalent of POKE 13308,170:POKE 13309,4 (these values from memory).</span>
+<span class="qt">&gt;   Only then will Knight-Tyme work, with the ROM file loaded into Bank 4, and</span>
+<span class="qt">&gt; the game in nos. 5, 6 and 3. However the &#x27;save position to tape&#x27; option won&#x27;t</span>
+<span class="qt">&gt; work, and the Multiface won&#x27;t be usable.1</span>
+<span class="qt">&gt; </span>
+
+Why not just get hold of Knight Tyme 128k - it was much nicer after all.
+
+
+----------------------------------------------------------------------------
+ Chris &quot;Hairy Dog&quot; Wild                               …@…
+ 
+ DISCLAIMER: Grammar, spelling and views are *as is* It is unlikely that you
+ will lose  any sleep  over them.  They will not have any profound affect on
+ your life.  Nor will they  induce a premature death. So please,  NO flames!
+
+</pre></div></main></body></html>

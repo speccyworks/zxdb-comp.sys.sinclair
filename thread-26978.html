@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Help: Adventure 200. Walkthrough. Can you help us complete it? · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Help: Adventure 200. Walkthrough. Can you help us complete it?</h1><p class="facts">1 posts, 2003-01-20 – 2003-01-20</p><div class="post" id="p153663"><div class="ph"><a class="d" href="#p153663">2003-01-20 14:49:56</a> <span>Patrick</span>  <a class="badge" href="game-5911.html">ZXDB: Adventure 200</a></div><pre>Hello All,
+
+As requested. A walkthrough of ADVENTURE 200 for
+ZX-81 16k and ZX-Spectrum. Released in 1982 by
+Foilkade Software / written by C.J.Coombs.
+
+We desperately need help completing the final bit,
+getting the MACE (a treasure item) past the troll.
+
+The game is best played using the spectrum emulator.
+We use the zx32 emulator - our saved games are for
+that emulator :-)
+
+You can download the game from World of Spectrum:-
+
+<a href="http://www.worldofspectrum.org/infoseek.cgi?regexp=^Adventure+200$&pub=^C%2eJ%2e+Coombs$" rel="noreferrer">http://www.worldofspectrum.org/infoseek.cgi?regexp=^Adventure+200$&amp;pub=^C%2eJ%2e+Coombs$</a>
+
+We have (hand written) maps and saved games at certain
+points (see walkthrough below). Anyone the posts a request
+here can request them. I don&#x27;t want to &quot;pollute&quot; a text
+only group with .jpgs and binaries :-)
+
+Please try and help us complete this game! We&#x27;ve tried
+on-and-off since 1983 !!!
+
+Patrick/
+
+
+       ADVENTURE 200 for ZX-81 &amp; ZX-SPECTRUM
++--------------------------------------------------+
+<span class="qt">| Walkthrough by: Patrick Beilby &amp; Derek Parkinson.|</span>
++--------------------------------------------------+
+Version 1.0: 20th Jan. 2003.
+
+
+Objective: Get all the treasures and get back to
+the Palace.
+
+Command set.
+============
+DE[scribe] &lt;item&gt;
+DI[g]
+DRI[nk]
+DR[op &lt;item&gt;
+LI[ght] &lt;item&gt;
+LO[ck]
+I[nventory]
+Q[uit]
+TA[ke] &lt;item&gt;
+TH[row] &lt;item&gt;
+UN[lock]
+V[iew]
+
+Movement commands:-
+N,S,E,W,NE,SE,SW,NW,U[P] and D[OWN].
+
+
+Phase 1
+=======
+S S D E E TAKE_FISH N TAKE_LAMP
+S W W UP N N E LIGHT_LAMP W S S
+S D E E N N NE E S W E N N
+TAKE_JUG S S E W S E NW SW E
+DRINK TAKE_COIN TAKE_WATER W N UP W
+N N E N TAKE_AXE S S E E THROW_COIN
+E E E N NE NW W TAKE_KEYS
+E E S E E S E E D E E SE E
+D E E D D NE UP TAKE_WRENCH
+D W UP UP W W UP W W S S S S
+W S E E UNLOCK TAKE_DIAMONDS LOCK
+S N W W N E N N N N W W S UP
+N THROW_WATER UP N TAKE_GRAIN S
+E UNLOCK W D S E E D W S TAKE_WATER
+N E UP W W N UP E N
+TAKE_SPADE S W D THROW_WATER S
+D N E E N SE E D D D SE E UP UP
+E N DRINK TAKE_WATER
+-- 
+should be at EAST SIDE OF RIVER FORD
+with:-
+DIAMONDS,LAMP,AXE,FISH,SPADE
+JUG,WATER,KEYS,WRENCH,GRAIN
+
+End of phase 1. We have a saved game
+at this point. Post a request for it.
+
+Please note: We haven&#x27;t used the
+GRAIN with the CAGE to get the BIRD.
+The BIRD is used to navigate the firedamp
+mine - the bird stops singing when you
+are 1 move from death. The bird enables
+you to find the machine with the WRENCH
+in it. TAKE WRENCH and the machine goes
+from &quot;not running&quot; to &quot;running&quot;. Now
+you can goto all areas of the mine. Later
+on we need to THROW WRENCH to stop the
+machine and escape the mace guard...
+-- 
+
+Phase 2
+=======
+N E E E E E E DRINK N DIG DRINK
+TAKE_WATER S S D S UP NE UP Y
+A B D G K N N W W N W S E S NE
+UP TAKE_SEAL D E N E N S N S N[O]
+D SW D N
+UP DRINK N N DIG DRINK TAKE_WATER
+S W W DRINK W W W S S W D
+D W UP UP UP UP W W W W UP W W
+NE N E S TAKE_FLOWER DIG TAKE_GARLIC
+S W S W S E E D E E S W W THROW_GARLIC
+-- 
+the snake swallows everthing you throw at
+it except garlic...he&#x27;ll go away now.
+You can go north here, but it seems there
+is only a 1 room maze. i.e. drop something
+and try to go N E or W. You are at the
+same place. Go S get back to the high chamber.
+We need to get some more garlic for the
+next section, Castle Desmodus - to ward of
+the vampire!
+-- 
+E E N W W UP W W NE N E S DIG TAKE_GARLIC
+S W S W S E E D E E SE E D D
+D SE E UP UP E N N N N UNLOCK
+N UP E N NW W NW D S D TAKE_RING
+UP N UP E E E S W D S S S S W NW
+-- 
+to avoid the castle dogs we need to dodge
+into a maze and emerge back at the pothole
+-- 
+W W E E D D W UP UP UP UP W W S
+
+-- 
+should now be at 4 PASSAGES with:-
+DIAMONDS LAMP AXE FISH FLOWER GARLIC
+SPADE SEAL JUG RING KEYS WRENCH GRAIN
+
+End of Phase 2. We have a saved game at
+this point. Post a request for it.
+-- 
+
+Phase 3
+=======
+W W S UP E E D E N TAKE_BRANDY
+S W UP W W D N E E N SE S S
+E UP LOCK UP E THROW_BRANDY
+E N E W D W TAKE_GOLD E LOCK
+SW S N NW D D N N E D
+D D SE E UP E E S S E S SE S NE
+NE TAKE_MACE
+-- 
+All hell is going to break loose now.
+We need to leg it back to the firedamp
+mine and put the wrench back to stop
+the machine and cause an explosion that
+kills the mace guard...
+
+
+-- 
+
+N N S E W N W W W W D W UP UP UP
+E E D D NE UP THROW_WRENCH D W UP
+UP W W UP
+
+-- 
+huge explosion, the mine is blocked by
+rubble now and impassable - but the mace
+guard troubles us no more.
+The next part is getting the mace out of
+the underground section. Another maze dodge
+is required to get us out and avoid the
+guard in the tower from killing us....
+-- 
+
+W W E N N E E S UP W N W W THROW_LAMP
+W W
+
+-- 
+more hassle as the guards follow us outside.
+throwing the lamp on the wooden bridge
+&quot;the bridge burns&quot;, and we&#x27;re safe.
+
+unfortunately this is as far as we can go
+If you go one more move WEST, the troll
+kills you. Drop MACE and you can approach
+the troll. To get past the troll you
+must DROP JUG. It breaks and you can pick
+up CRYSTALS. THROW CRYSTALS and the troll
+runs away. But how do you get the MACE
+past him?
+
+
+Saved game at this (final) point.
+Post a request for it :-)
+
++--------------------------------------------------+
+<span class="qt">| Walkthrough by: Patrick Beilby &amp; Derek Parkinson.|</span>
++--------------------------------------------------+
+
+
+
+
+</pre></div></main></body></html>

@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CGC2006 - THE WINNER!!! · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>CGC2006 - THE WINNER!!!</h1><p class="facts">18 posts, 2007-03-07 – 2007-03-13</p><div class="post" id="p210040"><div class="ph"><a class="d" href="#p210040">2007-03-07 09:21:00</a> <span>Matt Rudge</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2060">CSSCGC Crap Games Contest 2006</a> <a class="badge" href="game-30938.html">ZXDB: Celebrity Arses</a></div><pre>The CGC2006 is now officially over - and we have a winner.
+
+Hundreds of votes were cast, and my ZX80 nearly overheated twice while
+tabulating them all (it&#x27;s not all bad, I burnt out three C64s trying to
+do the same thing).
+
+Anyway, without further ado, the winner of the comp.sys.sinclair Crap
+Games Compo 2006 is.........
+
+Celebrity Arses by Crapman!!
+
+The game scored a whopping 31.6 out of 40 for total and absolute
+crapness.  Well done Mr C, you have lived up to your name.
+
+Full results can be seen at the games page here:
+
+<a href="http://www.mattrudge.net/cgc2006/games.html" rel="noreferrer">http://www.mattrudge.net/cgc2006/games.html</a>
+
+-- 
+Matt
+www.mattrudge.net
+
+
+
+</pre></div><div class="post" id="p210047"><div class="ph"><a class="d" href="#p210047">2007-03-07 11:34:22</a> <span>Paul E Collins</span> <span>Re: CGC2006 - THE WINNER!!!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2060">CSSCGC Crap Games Contest 2006</a></div><pre>&quot;Matt Rudge&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Anyway, without further ado, the winner of the comp.sys.sinclair</span>
+<span class="qt">&gt; Crap Games Compo 2006 is.........</span>
+<span class="qt">&gt; Celebrity Arses by Crapman!!</span>
+
+Congratulations on this spiritual successor to Top Shelf Challenge!
+
+I&#x27;m a bit suspicious about &quot;Z2A&quot; doing so well. You got all your mates 
+to vote, didn&#x27;t you?
+
+Eq.
+
+
+
+
+
+</pre></div><div class="post" id="p210048"><div class="ph"><a class="d" href="#p210048">2007-03-07 11:40:13</a> <span>Matt Rudge</span> <span>Re: CGC2006 - THE WINNER!!!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2060">CSSCGC Crap Games Contest 2006</a></div><pre>Paul E Collins wibbled:
+
+<span class="qt">&gt; &quot;Matt Rudge&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; Anyway, without further ado, the winner of the comp.sys.sinclair</span>
+<span class="qt">&gt; &gt; Crap Games Compo 2006 is.........</span>
+<span class="qt">&gt; &gt; Celebrity Arses by Crapman!!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Congratulations on this spiritual successor to Top Shelf Challenge!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;m a bit suspicious about &quot;Z2A&quot; doing so well. You got all your</span>
+<span class="qt">&gt; mates to vote, didn&#x27;t you?</span>
+<span class="qt">&gt; </span>
+
+I can appreciate why many suspicious minds might think that.  So I&#x27;ve
+already initiated a detailed cash-for-honours inquiry.  Naturally
+there&#x27;s also an injunction against reporting on the inquiry, so the
+results will be confidential, but I&#x27;m confident that the impartiality
+of the competition will be upheld.
+
+-- 
+Matt
+www.mattrudge.net
+
+
+
+</pre></div><div class="post" id="p210050"><div class="ph"><a class="d" href="#p210050">2007-03-07 12:08:17</a> <span>DanSolo</span> <span>Re: CGC2006 - THE WINNER!!!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2060">CSSCGC Crap Games Contest 2006</a></div><pre>On Mar 7, 11:40 am, &quot;Matt Rudge&quot; &lt;…@…&gt; wrote:
+<span class="qt">&gt; I can appreciate why many suspicious minds might think that.  So I&#x27;ve</span>
+<span class="qt">&gt; already initiated a detailed cash-for-honours inquiry.  Naturally</span>
+<span class="qt">&gt; there&#x27;s also an injunction against reporting on the inquiry, so the</span>
+<span class="qt">&gt; results will be confidential, but I&#x27;m confident that the impartiality</span>
+<span class="qt">&gt; of the competition will be upheld.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; Mattwww.mattrudge.net</span>
+
+History will judge YOU on that! Terrible games, great competition. I&#x27;m
+still working my way through them... 1 minute to play, 1 hour to
+recover, then on to the next one.
+
+
+
+
+</pre></div><div class="post" id="p210053"><div class="ph"><a class="d" href="#p210053">2007-03-07 13:23:26</a> <span>Matt Rudge</span> <span>Re: CGC2006 - THE WINNER!!!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2060">CSSCGC Crap Games Contest 2006</a></div><pre>DanSolo wibbled:
+
+<span class="qt">&gt; On Mar 7, 11:40 am, &quot;Matt Rudge&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt; I can appreciate why many suspicious minds might think that.  So</span>
+<span class="qt">&gt; &gt; I&#x27;ve already initiated a detailed cash-for-honours inquiry.</span>
+<span class="qt">&gt; &gt; Naturally there&#x27;s also an injunction against reporting on the</span>
+<span class="qt">&gt; &gt; inquiry, so the results will be confidential, but I&#x27;m confident</span>
+<span class="qt">&gt; &gt; that the impartiality of the competition will be upheld.</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; --</span>
+<span class="qt">&gt; &gt; Mattwww.mattrudge.net</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; History will judge YOU on that! Terrible games, great competition. I&#x27;m</span>
+<span class="qt">&gt; still working my way through them... 1 minute to play, 1 hour to</span>
+<span class="qt">&gt; recover, then on to the next one.</span>
+
+1 minute on each one??  You&#x27;re a real hardcore gamer!  Just enough time
+to record the animated gif was how long I spent.
+
+:)
+
+-- 
+Matt
+www.mattrudge.net
+
+
+
+</pre></div><div class="post" id="p210059"><div class="ph"><a class="d" href="#p210059">2007-03-07 14:33:07</a> <span>Duncan Snowden</span> <span>Re: CGC2006 - THE WINNER!!!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2060">CSSCGC Crap Games Contest 2006</a></div><pre>Matt Rudge wrote:
+
+<span class="qt">&gt; Paul E Collins wibbled:</span>
+<span class="qt"> &gt;</span>
+<span class="qt">&gt;&gt; I&#x27;m a bit suspicious about &quot;Z2A&quot; doing so well. You got all your</span>
+<span class="qt">&gt;&gt; mates to vote, didn&#x27;t you?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I can appreciate why many suspicious minds might think that.  So I&#x27;ve</span>
+<span class="qt">&gt; already initiated a detailed cash-for-honours inquiry.  Naturally</span>
+<span class="qt">&gt; there&#x27;s also an injunction against reporting on the inquiry, so the</span>
+<span class="qt">&gt; results will be confidential, but I&#x27;m confident that the impartiality</span>
+<span class="qt">&gt; of the competition will be upheld.</span>
+
+Of course, you will be shutting down all the sites on the Interweb 
+involving voting until the investigation is complete? The public must 
+have complete confidence.
+
+-- 
+Duncan Snowden.
+
+
+
+</pre></div><div class="post" id="p210072"><div class="ph"><a class="d" href="#p210072">2007-03-07 17:58:08</a> <span>Chris Young</span> <span>Re: CGC2006 - THE WINNER!!!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2060">CSSCGC Crap Games Contest 2006</a></div><pre>On Wed, 7 Mar 2007 10:21:00 +0100 (CET) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Matt Rudge:
+
+<span class="qt">&gt; Celebrity Arses by Crapman!!</span>
+
+A well deserved 75p and a packet of Rolos, it was certainly one of my
+favourites (due to the absurdity of it all, not the, erm, visual
+content, you understand).  I suspect it will be made into a TV show
+later in the year, in fact Crapman is probably already on the phone to
+ITV (they&#x27;ll commission anything).
+
+Do I get a prize for making a game so crap that it managed to come
+last?
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p210085"><div class="ph"><a class="d" href="#p210085">2007-03-07 22:10:52</a> <span>Andy Rea</span> <span>Re: CGC2006 - THE WINNER!!!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2060">CSSCGC Crap Games Contest 2006</a></div><pre>
+<span class="qt">&gt; Anyway, without further ado, the winner of the comp.sys.sinclair Crap</span>
+<span class="qt">&gt; Games Compo 2006 is.........</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Celebrity Arses by Crapman!!</span>
+<span class="qt">&gt;</span>
+Congratulations Crapman.
+
+regards andy 
+
+
+
+
+
+</pre></div><div class="post" id="p210086"><div class="ph"><a class="d" href="#p210086">2007-03-07 22:14:58</a> <span>Daren</span> <span>Re: CGC2006 - THE WINNER!!!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2060">CSSCGC Crap Games Contest 2006</a></div><pre>Matt Rudge wrote:
+<span class="qt">&gt; The CGC2006 is now officially over - and we have a winner.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Hundreds of votes were cast, and my ZX80 nearly overheated twice while</span>
+<span class="qt">&gt; tabulating them all (it&#x27;s not all bad, I burnt out three C64s trying to</span>
+<span class="qt">&gt; do the same thing).</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Anyway, without further ado, the winner of the comp.sys.sinclair Crap</span>
+<span class="qt">&gt; Games Compo 2006 is.........</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Celebrity Arses by Crapman!!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+
+Congrats Crapman.  Thirteenth is by far my best placing.  Well, it&#x27;s my 
+only placing.
+
+Daren
+
+
+
+</pre></div><div class="post" id="p210087"><div class="ph"><a class="d" href="#p210087">2007-03-07 22:44:47</a> <span class="small">address hidden</span> <span>Re: CGC2006 - THE WINNER!!!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2060">CSSCGC Crap Games Contest 2006</a></div><pre>Daren &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; Matt Rudge wrote:</span>
+<span class="qt">&gt;&gt; The CGC2006 is now officially over - and we have a winner.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Hundreds of votes were cast, and my ZX80 nearly overheated twice while</span>
+<span class="qt">&gt;&gt; tabulating them all (it&#x27;s not all bad, I burnt out three C64s trying to</span>
+<span class="qt">&gt;&gt; do the same thing).</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Anyway, without further ado, the winner of the comp.sys.sinclair Crap</span>
+<span class="qt">&gt;&gt; Games Compo 2006 is.........</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Celebrity Arses by Crapman!!</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; </span>
+
+<span class="qt">&gt; Congrats Crapman.  Thirteenth is by far my best placing.  Well, it&#x27;s my </span>
+<span class="qt">&gt; only placing.</span>
+
+23rd place!?
+Pa-the-ticly good. 
+
+:)
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   | &quot;I&#x27;m alive!!! I can touch! I can taste!         |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|  I can SMELL!!!  KRYTEN!!! Unpack Rachel and    |</span>
+<span class="qt">|            in            |  get out the puncture repair kit!&quot;              |</span>
+<span class="qt">|     Computer Science     |     Arnold Judas Rimmer- Red Dwarf              |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p210088"><div class="ph"><a class="d" href="#p210088">2007-03-07 22:51:32</a> <span>fuzzix</span> <span>Re: CGC2006 - THE WINNER!!!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2060">CSSCGC Crap Games Contest 2006</a></div><pre>Daren wrote:
+<span class="qt">&gt; Congrats Crapman.  Thirteenth is by far my best placing.  Well, it&#x27;s </span>
+<span class="qt">&gt; my only placing.</span>
+
+Must actually make an effort this year...
+
+I don&#x27;t think I&#x27;ve ever entered anything that took more than about a
+half hour. That includes thinking up a bad idea and making a cuppa.
+
+
+
+</pre></div><div class="post" id="p210093"><div class="ph"><a class="d" href="#p210093">2007-03-08 09:42:38</a> <span>Matt Rudge</span> <span>Re: CGC2006 - THE WINNER!!!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2060">CSSCGC Crap Games Contest 2006</a></div><pre>Duncan Snowden wibbled:
+
+<span class="qt">&gt; Matt Rudge wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; Paul E Collins wibbled:</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; &gt; I&#x27;m a bit suspicious about &quot;Z2A&quot; doing so well. You got all your</span>
+<span class="qt">&gt; &gt; &gt; mates to vote, didn&#x27;t you?</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; I can appreciate why many suspicious minds might think that.  So</span>
+<span class="qt">&gt; &gt; I&#x27;ve already initiated a detailed cash-for-honours inquiry.</span>
+<span class="qt">&gt; &gt; Naturally there&#x27;s also an injunction against reporting on the</span>
+<span class="qt">&gt; &gt; inquiry, so the results will be confidential, but I&#x27;m confident</span>
+<span class="qt">&gt; &gt; that the impartiality of the competition will be upheld.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Of course, you will be shutting down all the sites on the Interweb</span>
+<span class="qt">&gt; involving voting until the investigation is complete? The public must</span>
+<span class="qt">&gt; have complete confidence.</span>
+
+Absolutely!  We even plan to temporarily remove the words &quot;vote&quot;,
+&quot;voted&quot; and &quot;voting&quot; from the English language until the issue is
+resolved.
+
+In unrelated news, the newly-created Lord Crapman was unavailable for
+comment.
+
+-- 
+Matt
+www.mattrudge.net
+
+
+
+</pre></div><div class="post" id="p210094"><div class="ph"><a class="d" href="#p210094">2007-03-08 10:40:30</a> <span>Matt Rudge</span> <span>Re: CGC2006 - THE WINNER!!!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2060">CSSCGC Crap Games Contest 2006</a></div><pre>Chris Young wibbled:
+
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Do I get a prize for making a game so crap that it managed to come</span>
+<span class="qt">&gt; last?</span>
+<span class="qt">&gt; </span>
+
+Hmmmmm..... an interesting dichotomy.
+
+On the one hand, it could mean that your game is actually so good that
+it can&#x27;t be judged as crap[1].  In which case it loses.
+
+Alternatively, it could be so crap that people had lost the will to
+live after playing it, and therefore couldn&#x27;t be bothered voting - in
+which case it should have won!
+
+On a related note - do I have to do anything to submit the 2006 entries
+to your Crap Games Finder (apart from pay the plug tax, of course)?
+
+[1] I played ABBHOSS and this is not actually the case
+
+Cheers
+
+-- 
+Matt
+www.mattrudge.net
+
+
+
+</pre></div><div class="post" id="p210103"><div class="ph"><a class="d" href="#p210103">2007-03-08 18:24:14</a> <span>Chris Young</span> <span>Re: CGC2006 - THE WINNER!!!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2060">CSSCGC Crap Games Contest 2006</a></div><pre>On Thu, 8 Mar 2007 11:40:30 +0100 (CET), Matt Rudge wibbled on for an age:
+
+[a coffee-splurting post - thanks for ruining another perfectly good
+keyboard]
+
+<span class="qt">&gt; On a related note - do I have to do anything to submit the 2006</span>
+<span class="qt">&gt; entries to your Crap Games Finder (apart from pay the plug tax, of</span>
+<span class="qt">&gt; course)?</span>
+
+No, I&#x27;ll do that once I get round to it[1] - just make sure the
+archive is on WoS.
+
+Chris
+
+[1] This footnote was so boring that I replaced it with this one. 
+Those with hearts of stone, nerves of steel and nothing better to do
+may proceed to footnote [2], which is the footnote formally known as
+footnote 1.
+
+[2] This is likely to be after some web host shuffling, as my ultra
+cheap web-hosting is out of space, so I&#x27;m planning to get hosting
+elsewhere and move ysac (which is with a crappy free host) into the
+vacated space.  It&#x27;s less complicated than it sounds (although tbh, it
+doesn&#x27;t sound very complicated, so it&#x27;ll probably be more complicated
+than it ought to be)
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p210104"><div class="ph"><a class="d" href="#p210104">2007-03-08 18:28:10</a> <span>Chris Young</span> <span>Re: CGC2006 - THE WINNER!!!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2060">CSSCGC Crap Games Contest 2006</a></div><pre>On Thu, 8 Mar 2007 11:40:30 +0100 (CET) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Matt Rudge:
+
+<span class="qt">&gt; Alternatively, it could be so crap that people had lost the will to</span>
+<span class="qt">&gt; live after playing it, and therefore couldn&#x27;t be bothered voting</span>
+
+Or, maybe they thought that they would be voting ABBHOSS *out* of the
+Big Br.. erm, competition, not letting it stay in the Big.. erm,
+CSSCGC?
+
+I hope your investigation investigates this important aspect of the
+competition!
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p210111"><div class="ph"><a class="d" href="#p210111">2007-03-09 10:36:22</a> <span>Matt Rudge</span> <span>Re: CGC2006 - THE WINNER!!!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2060">CSSCGC Crap Games Contest 2006</a></div><pre>Chris Young wibbled:
+
+<span class="qt">&gt; On Thu, 8 Mar 2007 11:40:30 +0100 (CET) da kidz on comp.sys.sinclair</span>
+<span class="qt">&gt; were rappin&#x27; to MC Matt Rudge:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; Alternatively, it could be so crap that people had lost the will to</span>
+<span class="qt">&gt; &gt; live after playing it, and therefore couldn&#x27;t be bothered voting</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Or, maybe they thought that they would be voting ABBHOSS out of the</span>
+<span class="qt">&gt; Big Br.. erm, competition, not letting it stay in the Big.. erm,</span>
+<span class="qt">&gt; CSSCGC?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I hope your investigation investigates this important aspect of the</span>
+<span class="qt">&gt; competition!</span>
+<span class="qt">&gt; </span>
+
+The investigation has indeed looked into that, as well has the alleged
+&quot;match fixing&quot;.  You will be happy to know that the inquiry has now
+concluded.
+
+However, its findings are deemed to be &quot;not in the public interest&quot;,
+and so won&#x27;t be released.  However, rest assured that everything is
+fine.  Unfortunately, the investigation required a lot of overseas
+travel (on your behalf), and so the plug tax will have to be hiked
+considerably in order to pay for it.
+
+Now move along, there&#x27;s nothing more to see here....
+
+-- 
+Matt
+www.mattrudge.net
+
+
+
+</pre></div><div class="post" id="p210117"><div class="ph"><a class="d" href="#p210117">2007-03-09 14:43:26</a> <span>Duncan Snowden</span> <span>Re: CGC2006 - THE WINNER!!!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2060">CSSCGC Crap Games Contest 2006</a></div><pre>Matt Rudge wrote:
+
+<span class="qt">&gt; The investigation has indeed looked into that, as well has the alleged</span>
+<span class="qt">&gt; &quot;match fixing&quot;.  You will be happy to know that the inquiry has now</span>
+<span class="qt">&gt; concluded.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; However, its findings are deemed to be &quot;not in the public interest&quot;,</span>
+<span class="qt">&gt; and so won&#x27;t be released.  However, rest assured that everything is</span>
+<span class="qt">&gt; fine.  Unfortunately, the investigation required a lot of overseas</span>
+<span class="qt">&gt; travel (on your behalf), and so the plug tax will have to be hiked</span>
+<span class="qt">&gt; considerably in order to pay for it.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Now move along, there&#x27;s nothing more to see here....</span>
+
+Resign!
+
+-- 
+Duncan Snowden.
+
+
+
+</pre></div><div class="post" id="p210179"><div class="ph"><a class="d" href="#p210179">2007-03-13 11:35:43</a> <span>Matt Rudge</span> <span>Re: CGC2006 - THE WINNER!!!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2060">CSSCGC Crap Games Contest 2006</a></div><pre>Duncan Snowden wibbled:
+
+<span class="qt">&gt; Matt Rudge wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; The investigation has indeed looked into that, as well has the</span>
+<span class="qt">&gt; &gt; alleged &quot;match fixing&quot;.  You will be happy to know that the inquiry</span>
+<span class="qt">&gt; &gt; has now concluded.</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; However, its findings are deemed to be &quot;not in the public interest&quot;,</span>
+<span class="qt">&gt; &gt; and so won&#x27;t be released.  However, rest assured that everything is</span>
+<span class="qt">&gt; &gt; fine.  Unfortunately, the investigation required a lot of overseas</span>
+<span class="qt">&gt; &gt; travel (on your behalf), and so the plug tax will have to be hiked</span>
+<span class="qt">&gt; &gt; considerably in order to pay for it.</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Now move along, there&#x27;s nothing more to see here....</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Resign!</span>
+
+But I already did!!
+
+I&#x27;m waiting for someone to announce the start of the CGC 2007 now.
+
+:)
+
+-- 
+Matt
+www.mattrudge.net
+
+
+
+</pre></div></main></body></html>

@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where Time Stood Still Map · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Where Time Stood Still Map</h1><p class="facts">17 posts, 2003-12-08 – 2003-12-14</p><div class="post" id="p171961"><div class="ph"><a class="d" href="#p171961">2003-12-08 17:15:13</a> <span>Dunny</span>  <a class="badge" href="game-5671.html">ZXDB: Where Time Stood Still</a></div><pre>Hi all,
+    De-lurking (and actually reading) from CSS to watch the Lister debacle, I
+thought I might mention that there is now a new map of Where Time Stood Still,
+in the same style as my Knightlore/SabreWulf/FindersKeepers maps.
+
+    That&#x27;s a hell of a lot of screenshots, and a rather large download too.
+
+    <a href="http://homepage.ntlworld.com/paul.dunn4/WTSS.png" rel="noreferrer">http://homepage.ntlworld.com/paul.dunn4/WTSS.png</a>
+
+    Back to lurking.
+
+    D.
+
+
+
+
+
+
+</pre></div><div class="post" id="p171992"><div class="ph"><a class="d" href="#p171992">2003-12-09 00:04:28</a> <span>Jim</span> <span>Re: Where Time Stood Still Map</span> <a class="badge" href="game-5671.html">ZXDB: Where Time Stood Still</a></div><pre>&quot;Dunny&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Hi all,</span>
+<span class="qt">&gt;     De-lurking (and actually reading) from CSS to watch the Lister debacle, I</span>
+<span class="qt">&gt; thought I might mention that there is now a new map of Where Time Stood Still,</span>
+<span class="qt">&gt; in the same style as my Knightlore/SabreWulf/FindersKeepers maps.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;     That&#x27;s a hell of a lot of screenshots, and a rather large download too.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;     <a href="http://homepage.ntlworld.com/paul.dunn4/WTSS.png" rel="noreferrer">http://homepage.ntlworld.com/paul.dunn4/WTSS.png</a></span>
+
+This is the perfect opportunity for me to plug my new (relatively useless)
+maps!
+
+<a href="http://8bitorbust.info/speccyspoilers/gifs/crazycastles_map.png" rel="noreferrer">http://8bitorbust.info/speccyspoilers/gifs/crazycastles_map.png</a>
+<a href="http://8bitorbust.info/speccyspoilers/gifs/creepydungeons_map.png" rel="noreferrer">http://8bitorbust.info/speccyspoilers/gifs/creepydungeons_map.png</a>
+<a href="http://8bitorbust.info/speccyspoilers/gifs/mutantmonty_map.png" rel="noreferrer">http://8bitorbust.info/speccyspoilers/gifs/mutantmonty_map.png</a>
+<a href="http://8bitorbust.info/speccyspoilers/gifs/pimevalman_map.png" rel="noreferrer">http://8bitorbust.info/speccyspoilers/gifs/pimevalman_map.png</a>
+<a href="http://8bitorbust.info/speccyspoilers/gifs/pithere_map.png" rel="noreferrer">http://8bitorbust.info/speccyspoilers/gifs/pithere_map.png</a>
+
+(swap &quot;.png&quot; for &quot;.gif&quot; if you prefer gifs for whatever reason, cos they are
+there too)
+
+Maps of The Egg, Flunky, Krakout, Grumpy Gumphrey coming very soon - almost
+complete...  :)
+
+Jim
+
+
+
+</pre></div><div class="post" id="p171997"><div class="ph"><a class="d" href="#p171997">2003-12-09 00:31:10</a> <span>Gerard Sweeney</span> <span>Re: Where Time Stood Still Map</span> <a class="badge" href="game-5671.html">ZXDB: Where Time Stood Still</a></div><pre>Deactivating his cloaking device, Dunny wrote:
+
+<span class="qt">&gt; thought I might mention that there is now a new map of Where Time Stood Still,</span>
+
+Huzzah!
+
+
+<span class="qt">&gt;     That&#x27;s a hell of a lot of screenshots, and a rather large download too.</span>
+
+BLIM! It&#x27;s massive! My congrats, sirrah - verily a work of art, and a
+testament to your patience.... Now, any chance of Batman 1 or Head Over
+Heels in a similar stylee? Hello?
+
+Toodle-pip!
+Gerard
+
+
+-- 
+Gerard Sweeney
+Hackers Anonymous/Team Amiga
+<a href="http://fly.to/ha3" rel="noreferrer">http://fly.to/ha3</a> and <a href="http://www.the-tipshop.co.uk" rel="noreferrer">http://www.the-tipshop.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p171998"><div class="ph"><a class="d" href="#p171998">2003-12-09 00:34:02</a> <span>Philip Kendall</span> <span>Re: Where Time Stood Still Map</span> <a class="badge" href="game-5671.html">ZXDB: Where Time Stood Still</a></div><pre>In article &lt;hk8Bb.1793$…@…&gt;,
+Jim &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;This is the perfect opportunity for me to plug my new (relatively useless)</span>
+<span class="qt">&gt;maps!</span>
+
+I think the ultimate in useless maps should be won by the map of Xeno
+recently uploaded to WoS :-)
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p172011"><div class="ph"><a class="d" href="#p172011">2003-12-09 01:21:57</a> <span>Jim</span> <span>Re: Where Time Stood Still Map</span> <a class="badge" href="game-5671.html">ZXDB: Where Time Stood Still</a></div><pre>(Philip Kendall) wrote:
+
+<span class="qt">&gt; Jim &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;This is the perfect opportunity for me to plug my new (relatively useless)</span>
+<span class="qt">&gt;&gt;maps!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I think the ultimate in useless maps should be won by the map of Xeno</span>
+<span class="qt">&gt; recently uploaded to WoS :-)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Phil</span>
+
+I&#x27;m very tempted to do maps of Match Day, Chaos, Ping Pong... or slightly
+more seriously, Fighting Warrior. Some maps are indeed pointless, yet I feel
+they&#x27;d just LOOK nice  :)
+
+Hmmmm there&#x27;s an idea - how about a CSS Crap Map Competition?
+
+Jim
+
+
+
+</pre></div><div class="post" id="p172022"><div class="ph"><a class="d" href="#p172022">2003-12-09 10:15:17</a> <span>David Jamie Mann</span> <span>Re: Where Time Stood Still Map</span> <a class="badge" href="game-5671.html">ZXDB: Where Time Stood Still</a></div><pre>In article &lt;br2bj0$27b6l0$…@…&gt;, &quot;Dunny&quot; &lt;…@…&gt; wrote:
+<span class="qt">&gt;Hi all,</span>
+<span class="qt">&gt;    De-lurking (and actually reading) from CSS to watch the Lister debacle, I</span>
+<span class="qt">&gt;thought I might mention that there is now a new map of Where Time Stood Still,</span>
+<span class="qt">&gt;in the same style as my Knightlore/SabreWulf/FindersKeepers maps.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;    That&#x27;s a hell of a lot of screenshots, and a rather large download too.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;    <a href="http://homepage.ntlworld.com/paul.dunn4/WTSS.png" rel="noreferrer">http://homepage.ntlworld.com/paul.dunn4/WTSS.png</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;    Back to lurking.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;    D.</span>
+
+Bloody hell!
+
+Huge amounts of respect to:
+        a) You, for mapping it all
+        b) Them (Denton Designs), for making WTSS
+
+Makes you realise just how much could be crammed into 128k...
+        juice
+
+
+
+
+</pre></div><div class="post" id="p172023"><div class="ph"><a class="d" href="#p172023">2003-12-09 10:19:09</a> <span>The Starglider</span> <span>Re: Where Time Stood Still Map</span> <a class="badge" href="game-5671.html">ZXDB: Where Time Stood Still</a></div><pre>On Tue, 9 Dec 2003 10:15:17 +0000 (UTC), …@… (David Jamie Mann) wrote:
+
+<span class="qt">&gt;In article &lt;br2bj0$27b6l0$…@…&gt;, &quot;Dunny&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;Hi all,</span>
+<span class="qt">&gt;&gt;    De-lurking (and actually reading) from CSS to watch the Lister debacle, I</span>
+<span class="qt">&gt;&gt;thought I might mention that there is now a new map of Where Time Stood Still,</span>
+<span class="qt">&gt;&gt;in the same style as my Knightlore/SabreWulf/FindersKeepers maps.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;    That&#x27;s a hell of a lot of screenshots, and a rather large download too.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;    <a href="http://homepage.ntlworld.com/paul.dunn4/WTSS.png" rel="noreferrer">http://homepage.ntlworld.com/paul.dunn4/WTSS.png</a></span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;    Back to lurking.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;    D.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Bloody hell!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Huge amounts of respect to:</span>
+<span class="qt">&gt;        a) You, for mapping it all</span>
+<span class="qt">&gt;        b) Them (Denton Designs), for making WTSS</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Makes you realise just how much could be crammed into 128k...</span>
+<span class="qt">&gt;        juice</span>
+
+Although a spiffing game, it was possible to cram it into 48k - they were about
+to release it on the 48k, but folded before they had a chance to.
+
+Carrier Command I feel shows what could be done with a 128k.
+-- 
+        **************The Starglider***************  Public E-Mail. 
+        *    Web site:   Under Construction       * Ask for private
+        *                                         *    address.
+        * E-Mail:…@…  *     _WW_
+        *     CHANGE WIBBLE TO YAHOO TO REPLY     *    /_  _\
+        *******************************************   | O  O |
+_____________________________________________________oOO_\/_OOo_____
+
+
+
+</pre></div><div class="post" id="p172040"><div class="ph"><a class="d" href="#p172040">2003-12-09 15:49:04</a> <span>Dunny</span> <span>Re: Where Time Stood Still Map</span> <a class="badge" href="game-5671.html">ZXDB: Where Time Stood Still</a></div><pre>Gerard Sweeney wrote:
+
+<span class="qt">&gt; BLIM! It&#x27;s massive! My congrats, sirrah - verily a work of art, and a</span>
+<span class="qt">&gt; testament to your patience.... Now, any chance of Batman 1 or Head</span>
+<span class="qt">&gt; Over</span>
+<span class="qt">&gt; Heels in a similar stylee? Hello?</span>
+
+HoH is in the pipeline, but it&#x27;s gonna be a while, and I can guarantee that
+you&#x27;ll be surprised.
+
+Watch this space.
+
+D.
+
+
+
+
+
+
+</pre></div><div class="post" id="p172052"><div class="ph"><a class="d" href="#p172052">2003-12-09 17:44:24</a> <span>crackfiend</span> <span>Re: Where Time Stood Still Map</span> <a class="badge" href="game-5671.html">ZXDB: Where Time Stood Still</a></div><pre>
+&quot;Jim&quot; &lt;…@…&gt; wrote in message
+news:Ws9Bb.1809$…@…...
+<span class="qt">&gt; (Philip Kendall) wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Jim &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt;&gt;</span>
+<span class="qt">&gt; &gt;&gt;This is the perfect opportunity for me to plug my new (relatively</span>
+useless)
+<span class="qt">&gt; &gt;&gt;maps!</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; I think the ultimate in useless maps should be won by the map of Xeno</span>
+<span class="qt">&gt; &gt; recently uploaded to WoS :-)</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Phil</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;m very tempted to do maps of Match Day, Chaos, Ping Pong... or slightly</span>
+<span class="qt">&gt; more seriously, Fighting Warrior. Some maps are indeed pointless, yet I</span>
+feel
+<span class="qt">&gt; they&#x27;d just LOOK nice  :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Hmmmm there&#x27;s an idea - how about a CSS Crap Map Competition?</span>
+<span class="qt">&gt;</span>
+
+I&#x27;ll map football manager!
+
+Crack.....
+
+
+
+
+
+</pre></div><div class="post" id="p172053"><div class="ph"><a class="d" href="#p172053">2003-12-09 17:46:20</a> <span>crackfiend</span> <span>Re: Where Time Stood Still Map</span> <a class="badge" href="game-5671.html">ZXDB: Where Time Stood Still</a></div><pre>
+&quot;The Starglider&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; On Tue, 9 Dec 2003 10:15:17 +0000 (UTC), …@… (David Jamie Mann)</span>
+wrote:
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Huge amounts of respect to:</span>
+<span class="qt">&gt; &gt;        a) You, for mapping it all</span>
+<span class="qt">&gt; &gt;        b) Them (Denton Designs), for making WTSS</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Makes you realise just how much could be crammed into 128k...</span>
+<span class="qt">&gt; &gt;        juice</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Although a spiffing game, it was possible to cram it into 48k - they were</span>
+about
+<span class="qt">&gt; to release it on the 48k, but folded before they had a chance to.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Carrier Command I feel shows what could be done with a 128k.</span>
+
+Aye, but I feel (maybe somewhat hertically) that the Amiga version was the
+best of the bunch for Carrier Command. Speccy version was impressive but
+didn&#x27;t play as well.
+
+
+Crack.....
+
+
+
+
+
+</pre></div><div class="post" id="p172062"><div class="ph"><a class="d" href="#p172062">2003-12-09 18:05:58</a> <span>The Starglider</span> <span>Re: Where Time Stood Still Map</span> <a class="badge" href="game-5671.html">ZXDB: Where Time Stood Still</a></div><pre>On Tue, 9 Dec 2003 17:46:20 +0000 (UTC), &quot;crackfiend&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&quot;The Starglider&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt;news:…@…...</span>
+
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Carrier Command I feel shows what could be done with a 128k.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Aye, but I feel (maybe somewhat hertically) that the Amiga version was the</span>
+<span class="qt">&gt;best of the bunch for Carrier Command. Speccy version was impressive but</span>
+<span class="qt">&gt;didn&#x27;t play as well.</span>
+<span class="qt">&gt;</span>
+Well, that&#x27;s hardly surprising now, is it? A 4096 colour 512K 16-bit system
+against a 128K, 16 colour 8-bit system? No chance.
+
+Mind you, I feel that Starglider 128k way performed better than the original
+Atari ST version.
+
+-- 
+        **************The Starglider***************  Public E-Mail. 
+        *    Web site:   Under Construction       * Ask for private
+        *                                         *    address.
+        * E-Mail:…@…  *     _WW_
+        *     CHANGE WIBBLE TO YAHOO TO REPLY     *    /_  _\
+        *******************************************   | O  O |
+_____________________________________________________oOO_\/_OOo_____
+
+
+
+</pre></div><div class="post" id="p172105"><div class="ph"><a class="d" href="#p172105">2003-12-10 17:50:29</a> <span>Kendy</span> <span>Re: Where Time Stood Still Map</span> <a class="badge" href="game-5671.html">ZXDB: Where Time Stood Still</a></div><pre>
+&quot;crackfiend&quot; &lt;…@…&gt; wrote in message
+<span class="qt">&gt; Aye, but I feel (maybe somewhat hertically) that the Amiga version was the</span>
+<span class="qt">&gt; best of the bunch for Carrier Command. Speccy version was impressive but</span>
+<span class="qt">&gt; didn&#x27;t play as well.</span>
+
+Well not much difference between the Amiga and ST versions..a bit better
+sound on the Amiga a bit faster graphics on the ST..
+
+
+Rob.
+
+
+---
+Outgoing mail is certified Virus Free.
+Checked by AVG anti-virus system (<a href="http://www.grisoft.com" rel="noreferrer">http://www.grisoft.com</a>).
+Version: 6.0.548 / Virus Database: 341 - Release Date: 05/12/2003
+
+
+
+
+
+</pre></div><div class="post" id="p172227"><div class="ph"><a class="d" href="#p172227">2003-12-12 17:55:10</a> <span>Duncan Snowden</span> <span>Re: Where Time Stood Still Map</span> <a class="badge" href="game-5671.html">ZXDB: Where Time Stood Still</a></div><pre>Program: Jim
+
+Bytes: Tuesday
+
+<span class="qt">&gt; Hmmmm there&#x27;s an idea - how about a CSS Crap Map Competition?</span>
+
+Okay. Here&#x27;s my entry:
+
+<span class="qt">|    |</span>
+<span class="qt">|    |</span>
+<span class="qt">|    |</span>
+<span class="qt">|    |</span>
+------
+
+.. |
+    v
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tetris. Thank you. Just send cash.
+
+-- 
+Duncan Snowden. 
+
+P FN without DEF, 1560:4 
+
+
+
+</pre></div><div class="post" id="p172235"><div class="ph"><a class="d" href="#p172235">2003-12-12 18:53:54</a> <span>Jim</span> <span>Re: Where Time Stood Still Map</span> <a class="badge" href="game-5671.html">ZXDB: Where Time Stood Still</a></div><pre><span class="qt">&gt;&gt; Hmmmm there&#x27;s an idea - how about a CSS Crap Map Competition?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Okay. Here&#x27;s my entry:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; |    |</span>
+<span class="qt">&gt; |    |</span>
+<span class="qt">&gt; |    |</span>
+<span class="qt">&gt; |    |</span>
+<span class="qt">&gt; ------</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; .. |</span>
+<span class="qt">&gt;     v</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Tetris. Thank you. Just send cash.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; Duncan Snowden.</span>
+
+Sorry, ASCII submissions are not allowed. GIF or PNG only - although I will
+allow JPG if you are particularly crap  ;)
+
+I&#x27;m pondering setting up a webpage for the Crap Map Compo very shortly, stay
+tuned....
+
+(Yes, I&#x27;m serious)
+
+Jim
+
+
+
+</pre></div><div class="post" id="p172250"><div class="ph"><a class="d" href="#p172250">2003-12-12 22:36:45</a> <span>Chris Young</span> <span>Re: Where Time Stood Still Map</span> <a class="badge" href="game-5671.html">ZXDB: Where Time Stood Still</a></div><pre>On Fri, 12 Dec 2003 18:53:54 +0000 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Jim:
+
+<span class="qt">&gt; I&#x27;m pondering setting up a webpage for the Crap Map Compo very shortly, stay</span>
+<span class="qt">&gt; tuned....</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; (Yes, I&#x27;m serious)</span>
+
+I&#x27;d better see if I can find my Crap Map of Pixy The Microdot (2?).  Only
+problem is, I think I probably threw it out years ago after a more
+accurate[1], but dare I say not as pretty, map appeared in YS shortly
+afterwards.
+
+I get the feeling I scanned it in at one point, I might have to dig
+through some old backups.
+
+Chris
+[1] This is the only reason why I would class my attempt as a Crap Map,
+some of the screens were &quot;obviously&quot; in the wrong place.
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.tk" rel="noreferrer">http://www.yoursinclair.tk</a> --------------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p172270"><div class="ph"><a class="d" href="#p172270">2003-12-13 01:12:12</a> <span>Duncan Snowden</span> <span>Re: Where Time Stood Still Map</span> <a class="badge" href="game-5671.html">ZXDB: Where Time Stood Still</a></div><pre>Jim. Friday. comp.sys.sinclair. Tch, eh?
+
+<span class="qt">&gt; Sorry, ASCII submissions are not allowed. GIF or PNG only - although I</span>
+<span class="qt">&gt; will allow JPG if you are particularly crap ;)</span>
+
+Oh. Okay then.
+
+<a href="http://web.ukonline.co.uk/dss/tetris.png" rel="noreferrer">http://web.ukonline.co.uk/dss/tetris.png</a>
+<a href="http://web.ukonline.co.uk/dss/batty.png" rel="noreferrer">http://web.ukonline.co.uk/dss/batty.png</a>
+
+<span class="qt">&gt; I&#x27;m pondering setting up a webpage for the Crap Map Compo very shortly,</span>
+<span class="qt">&gt; stay tuned....</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; (Yes, I&#x27;m serious)</span>
+
+Heheheheheheheh...
+
+-- 
+Duncan Snowden. 
+
+N Statement lost, 390:3 
+
+
+
+</pre></div><div class="post" id="p172385"><div class="ph"><a class="d" href="#p172385">2003-12-14 02:35:17</a> <span>Jim</span> <span>Re: Where Time Stood Still Map</span> <a class="badge" href="game-5671.html">ZXDB: Where Time Stood Still</a></div><pre><span class="qt">&gt;&gt; Sorry, ASCII submissions are not allowed. GIF or PNG only - although I</span>
+<span class="qt">&gt;&gt; will allow JPG if you are particularly crap ;)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Oh. Okay then.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; <a href="http://web.ukonline.co.uk/dss/tetris.png" rel="noreferrer">http://web.ukonline.co.uk/dss/tetris.png</a></span>
+<span class="qt">&gt; <a href="http://web.ukonline.co.uk/dss/batty.png" rel="noreferrer">http://web.ukonline.co.uk/dss/batty.png</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; I&#x27;m pondering setting up a webpage for the Crap Map Compo very shortly,</span>
+<span class="qt">&gt;&gt; stay tuned....</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; (Yes, I&#x27;m serious)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Heheheheheheheh...</span>
+
+Nooooooooooooooooooooooooooooooooooooooooooo!!!!
+
+Oh dear, I think I&#x27;m going to have to lay down some ground rules...
+
+(Strangely enough, I&#x27;ve actually been creating a proper (i.e. not crap)
+Batty map over the last couple of days...)
+
+Jim
+
+
+
+</pre></div></main></body></html>

@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Re: Manic Miner infinite lives poke ? · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Re: Manic Miner infinite lives poke ?</h1><p class="facts">6 posts, 1998-05-27 – 1998-05-28</p><div class="post" id="p37468"><div class="ph"><a class="d" href="#p37468">1998-05-27</a> <span>gerard sweeney</span> </div><pre>
+Chubblies
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;ve been trying to work it out for days.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I found all the occurences of LD A, 3</span>
+<span class="qt">&gt; narrowed it down to the LD A, 3; LD(NN), A - part of the code and from</span>
+there
+<span class="qt">&gt; tried to find a LD A, (NN); followed by DEC A which I managed but</span>
+removing the
+<span class="qt">&gt; DEC A statement didn&#x27;t do anything significant..What am I doing wrong ?</span>
+
+Hiya...
+
+First of all, make sure that the value you are changing is for lives.. Do
+this by starting the game so you have 3 lives, look at the value of the LD
+(NN),a. Return to the game, and die once. Look at the value again. If it
+has changed to the correct number, then huzzah!
+
+What you should then look for is something like
+
+LD a,(NN) - 58,n,n
+LD hl,(NN) - 42,n,n
+LD hl,nn - 33,n,n
+
+Those are the most commonly used ones...
+
+Any other hacks out there who have something better than my half-cocked
+(fnurk! Ed) approach?
+
+Pip pip!
+Gerard
+-- 
+Gerard Sweeney - Hackers Anonymous/Team Amiga
+Visit The Hackers Anonymous Speccy Playground for Hack Attack 3
+where you&#x27;re always likely to get a good POKE (fnar!).
+Or look for speccy games using the NVG catalogue. All at:
+<a href="http://www.geocities.com/SiliconValley/Lakes/4871" rel="noreferrer">http://www.geocities.com/SiliconValley/Lakes/4871</a>
+
+
+</pre></div><div class="post" id="p37476"><div class="ph"><a class="d" href="#p37476">1998-05-27</a> <span class="small">address hidden</span> <span>Manic Miner infinite lives poke ?</span></div><pre>
+Anyone tell me what this is please !
+
+I&#x27;ve been trying to work it out for days.
+
+I found all the occurences of LD A, 3
+narrowed it down to the LD A, 3; LD(NN), A - part of the code and from there
+tried to find a LD A, (NN); followed by DEC A which I managed but removing the
+DEC A statement didn&#x27;t do anything significant..What am I doing wrong ?
+
+Also, I now have a taper and Dos4GW *8) can anyone explain how I use it ??  The
+instructions are a bit hard to follow.
+
+I have some games that I&#x27;ve unzipped, now I want to play the sound file through
+the sound card onto tape and then load it onto my Speccy.
+
+Thanks for your patience.
+
+Chad.
+
+
+</pre></div><div class="post" id="p37483"><div class="ph"><a class="d" href="#p37483">1998-05-27</a> <span>vit hotarek</span> </div><pre>
+Chubblies wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I found all the occurences of LD A, 3</span>
+<span class="qt">&gt; narrowed it down to the LD A, 3; LD(NN), A - part of the code and from there</span>
+<span class="qt">&gt; tried to find a LD A, (NN); followed by DEC A which I managed but removing the</span>
+<span class="qt">&gt; DEC A statement didn&#x27;t do anything significant..What am I doing wrong ?</span>
+
+HI !
+So,i can tell you:1)Visit Gerard Sweeney&#x27;s Site !! :)
+                  2)You have to be sure that your DEC A is
+                    the right..
+                    When I am searching POke, i do it the same way 
+                     as you
+                    You can try e.g.this:Search dec(hl),where hl is
+                     address where was 3 loaded at.Sometimes sub 255
+                     is used as DEC A,there are various ways of coding
+                      it,but on WOS,there are included pokes in
+gamespacks,so you can download it from there...
+
+  I hope you will be sucessfull.
+ 
+ x-agon of naughty crew
+
+
+</pre></div><div class="post" id="p37501"><div class="ph"><a class="d" href="#p37501">1998-05-27</a> <span class="small">address hidden</span>  <a class="badge" href="game-3012.html">ZXDB: Manic Miner</a></div><pre>
+On 27 May 1998 12:32:14 GMT, …@… (Chubblies) wrote:
+
+<span class="qt">&gt;Anyone tell me what this is please !</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I&#x27;ve been trying to work it out for days.</span>
+
+Sources too numerous to mention give 35136,0 as the infinite lives poke
+for the original Bug-Byte version of Manic Miner. For the later Software
+Projects version, Your Spectrum 14 (May.1985) gives 35142,0 instead.
+
+Poke 36160,0 gives not so many meanies and 36106,0 gives immunity,
+according to Sinclair User 53 (Aug.1986) and Your Sinclair 35 (Nov.1988),
+but neither states which version they relate to.
+
+Your Spectrum 18 (Sep.1985) also gives an infinite air poke for both
+versions:
+Bug-Byte
+34795,195: 34796,241: 34797,135: 36233,195: 36234,149: 36235,141
+Software Projects
+34801,195: 34802,247: 34803,135: 36244,195: 36245,160: 36246,141
+
+plus, according to Your Sinclair 1 (Jan.1986) the Bug-Byte version also
+needs: 34798,0: 34799,0: 34800,0 for the infinite air poke to work;
+although it doesn&#x27;t say whether a similar modification is needed for the
+Software Projects version - add 6 to those three addresses and check what
+would be NOPped out, I guess, if you&#x27;ve got the SP one.
+
+Oh, look, here&#x27;s another one (SU.24, Mar.1984); apparently POKE 34269,N
+will give N lives in the Bug-Byte version.
+
+That&#x27;s your lot.
+
+
+PS.
+I&#x27;ve no idea on your Taper question, but it looks like you&#x27;ve got several
+other answers on that, anyway.
+
+
+--
+Another Fine Product from: Jim Grimwood (…@…)
+Dead Dog Farm, Hatfield, England
+Home of the SPOT Database (Spectrum Oracle on Trumpton)
+C/MA/SU/YR/YS indexed: 240(66%); Topics: 4,586; Entries: 19,285.
+and the Your Spectrum Unofficial Archive (YRUA?)
+at <a href="http://www.users.globalnet.co.uk/~jimg" rel="noreferrer">http://www.users.globalnet.co.uk/~jimg</a>
+--
+
+
+</pre></div><div class="post" id="p37516"><div class="ph"><a class="d" href="#p37516">1998-05-27</a> <span class="small">address hidden</span> </div><pre>
+Vit Hotarek  writes:
+
+<span class="qt">&gt;&gt; I found all the occurences of LD A, 3</span>
+<span class="qt">&gt;&gt; narrowed it down to the LD A, 3; LD(NN), A - part of the code and from there</span>
+<span class="qt">&gt;&gt; tried to find a LD A, (NN); followed by DEC A which I managed but removing the</span>
+<span class="qt">&gt;&gt; DEC A statement didn&#x27;t do anything significant..What am I doing wrong ?</span>
+
+<span class="qt">&gt;HI !</span>
+<span class="qt">&gt;So,i can tell you:1)Visit Gerard Sweeney&#x27;s Site !! :)</span>
+<span class="qt">&gt;                  2)You have to be sure that your DEC A is</span>
+<span class="qt">&gt;                    the right..</span>
+<span class="qt">&gt;                    When I am searching POke, i do it the same way </span>
+<span class="qt">&gt;                     as you</span>
+<span class="qt">&gt;                    You can try e.g.this:Search dec(hl),where hl is</span>
+<span class="qt">&gt;                     address where was 3 loaded at.Sometimes sub 255</span>
+<span class="qt">&gt;                     is used as DEC A,there are various ways of coding</span>
+<span class="qt">&gt;                      it,but on WOS,there are included pokes in</span>
+<span class="qt">&gt;gamespacks,so you can download it from there...</span>
+
+<span class="qt">&gt;  I hope you will be sucessfull.</span>
+
+IIRC, you want to NOP the first DEC (HL) that you find (at least in the
+software projects version).
+
+	Andy
+
+
+p.s. Do not change it to INC (HL) - Mr Z80, He say many lives are Bad Juju!
+
+--
+email harvesting robots, I am not …@… 	| No more witty
+and so I suggest that you don&#x27;t send mail there!		| sig. thanks
+Valid email address is: username AT hostname.domain where	| to the bulk
+AT=@	username=ajmy	hostname=holyrood	domain=ed.ac.uk	| emailers...
+
+
+</pre></div><div class="post" id="p37579"><div class="ph"><a class="d" href="#p37579">1998-05-28 09:10:39</a> <span class="small">address hidden</span>  <a class="badge" href="game-3012.html">ZXDB: Manic Miner</a></div><pre>
+In article &lt;01bd896e$648cd140$5560...@STUDENT_PC.ARTS.GLA.AC.UK&gt;,
+  &quot;Gerard Sweeney&quot;  wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Any other hacks out there who have something better than my half-cocked</span>
+<span class="qt">&gt; (fnurk! Ed) approach?</span>
+
+Well, personally for all my Speccy POKE needs I visit
+<a href="http://www.geocities.com/SiliconValley/Lakes/6142/" rel="noreferrer">http://www.geocities.com/SiliconValley/Lakes/6142/</a>
+
+or alternatively the equally fabby
+<a href="http://www.geocities.com/SiliconValley/Lakes/4871" rel="noreferrer">http://www.geocities.com/SiliconValley/Lakes/4871</a>
+
+
+Look familiar Gerard? ;-)
+
+Manic Miner&#x27;s easy though - POKE 35136,0. It&#x27;s etched into my brain!
+
+
+
+Blood.
+
+-----== Posted via Deja News, The Leader in Internet Discussion ==-----
+<a href="http://www.dejanews.com/" rel="noreferrer">http://www.dejanews.com/</a>   Now offering spam-free web-based newsreading
+
+
+</pre></div></main></body></html>

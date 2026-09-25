@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>On the CSSCGC rules · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>On the CSSCGC rules</h1><p class="facts">6 posts, 2001-07-26 – 2001-08-01</p><div class="post" id="p109437"><div class="ph"><a class="d" href="#p109437">2001-07-26 12:22:31</a> <span>Ole Martin Halck</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a> <a class="badge" href="game-30739.html">ZXDB: Wild West Head Hunter</a></div><pre>Having decided to consider taking part in this year&#x27;s edition of the CSSCGC,
+I webbed my way to <a href="http://www.foxbox.org/adam/code/csscgc2001/index.html" rel="noreferrer">http://www.foxbox.org/adam/code/csscgc2001/index.html</a> to
+see exactly what &quot;crap&quot; was supposed to mean. The &quot;Defining Crapness&quot;
+section gave me the answer -- but also a niggling feeling that a couple of
+aspects of crapness are missing, aspects that may be able to 1) lower the
+otherwise already appalling standards even further, 2) single out the truly
+crap from the poseurs, and 3) increase my chance of a high placing.
+
+Firstly, in the same way that e.g. a game with bad or over-simplified
+graphics can still be a triumph when it comes to game-play (think Tetris,
+good text adventures, etc), a game where real care is taken to make some
+parts good (whether it be graphics, AI or whatever) can still easily be (as
+the homepage puts it) &quot;undefinably crap&quot;. Surely, a complete failure made up
+of some excellent (or at least conscientiously built) parts is even less
+impressive than common, run-of-the-mill uselessness? In short, what I&#x27;m
+talking about is *painstaking attention to the wrong details* or *attaining
+a simple, unattractive effect by lots of work*.
+
+An example: Imagine if Tomaz Cedilnik&#x27;s &quot;Wild West Head Hunter&quot; (admittedly
+terrible even now) had actually included code *for the remaining eight
+levels as well*! Wouldn&#x27;t it then have broken new barriers in crapness?
+Another example: My eagerly-awaited &quot;CCCC&quot;[1] -- out soon -- stretches the
+memory and processing power of the poor 48K Speccy to its utmost due to
+concepts, algorithms and techniques *never before attempted on the
+machine* -- and I daresay it won&#x27;t be good. Oh no.
+
+Secondly, on a somewhat related note: Our fond memories of bona-fide
+crapness from the eighties are partly due to the aspect of crapness I shall
+dub &quot;completely failing to live up to expectations&quot;. This aspect induces --
+besides the normal frustration, irritation and incredulity -- a
+*disappointment* which may, in extreme cases, lead to severe depression. The
+reason for this reaction is, of course, *hype* -- a facet I feel should be
+reflected in the competition (see previous paragraph and earlier post).
+Would &quot;Terror-Daktil 4D&quot; have been as crap if it had been titled
+&quot;Terror-Daktil sort-of-3D&quot;? I think not. Would the crapness of &lt;insert any
+delayed game here&gt; have shone so brightly if it had been released on time,
+rather than being promised &quot;out soon&quot; in full-colour, full-page magazines
+month after month[2]? Hardly. Isn&#x27;t the hidden Excel 97 flight simulator
+actually rather good, if only since you don&#x27;t expect it do exist at all?
+
+There -- that&#x27;s off my chest. I fully expect the judge to completely ignore
+all of this, though. Cos he&#x27;s probably crap.
+
+[1] No, none of the C&#x27;s stands for &quot;crap&quot;.
+[2] Actually, I estimate the probability of my game ever being completed at
+about 30 %.
+
+--
+Regards,
+
+Ole Martin Halck
+
+
+
+
+
+</pre></div><div class="post" id="p109458"><div class="ph"><a class="d" href="#p109458">2001-07-26 14:35:03</a> <span>Adam D. Moss</span> <span>Re: On the CSSCGC rules</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>Ole Martin Halck wrote:
+<span class="qt">&gt; Firstly, in the same way that e.g. a game with bad or over-simplified</span>
+<span class="qt">&gt; graphics can still be a triumph when it comes to game-play (think Tetris,</span>
+<span class="qt">&gt; good text adventures, etc), a game where real care is taken to make some</span>
+<span class="qt">&gt; parts good (whether it be graphics, AI or whatever) can still easily be (as</span>
+<span class="qt">&gt; the homepage puts it) &quot;undefinably crap&quot;. Surely, a complete failure made up</span>
+<span class="qt">&gt; of some excellent (or at least conscientiously built) parts is even less</span>
+<span class="qt">&gt; impressive than common, run-of-the-mill uselessness? In short, what I&#x27;m</span>
+<span class="qt">&gt; talking about is *painstaking attention to the wrong details* or *attaining</span>
+<span class="qt">&gt; a simple, unattractive effect by lots of work*.</span>
+
+It&#x27;s a fine point, and I have to admit that anyone who obviously
+went about originating crapness by dint of great effort fallen on
+its face thanks to the author&#x27;s inherent crapness will score bonus
+points due my inherent sympathy for crap people.
+
+<span class="qt">&gt; An example: Imagine if Tomaz Cedilnik&#x27;s &quot;Wild West Head Hunter&quot; (admittedly</span>
+<span class="qt">&gt; terrible even now)</span>
+
+Yes, I have a soft spot for this entry.  It&#x27;s in the flower beds,
+three feet east of the cat&#x27;s remains.
+
+<span class="qt">&gt; had actually included code *for the remaining eight</span>
+<span class="qt">&gt; levels as well*! Wouldn&#x27;t it then have broken new barriers in crapness?</span>
+
+It would have caused me greater frustration in that I&#x27;d have
+seen the code in my habitual LIST and hence wasted a further
+hour trying to get past level 1, and admittedly that would have
+been crap, but also a cruel trick to play on an honest judge
+which would not have worked in its favour.
+
+<span class="qt">&gt; Another example: My eagerly-awaited &quot;CCCC&quot;[1] -- out soon -- stretches the</span>
+<span class="qt">&gt; memory and processing power of the poor 48K Speccy to its utmost due to</span>
+<span class="qt">&gt; concepts, algorithms and techniques *never before attempted on the</span>
+<span class="qt">&gt; machine* -- and I daresay it won&#x27;t be good. Oh no.</span>
+...
+<span class="qt">&gt; The</span>
+<span class="qt">&gt; reason for this reaction is, of course, *hype* -- a facet I feel should be</span>
+<span class="qt">&gt; reflected in the competition</span>
+
+I&#x27;m seeing through your little game, ol&#x27; Ole m&#x27;lad.
+
+<span class="qt">&gt; There -- that&#x27;s off my chest. I fully expect the judge to completely ignore</span>
+<span class="qt">&gt; all of this, though. Cos he&#x27;s probably crap.</span>
+
+I am at peace with my crapness, so will not hold this post
+against you.
+
+Let us not speak of it again.
+
+
+
+</pre></div><div class="post" id="p109498"><div class="ph"><a class="d" href="#p109498">2001-07-26 20:08:59</a> <span>Chris Young</span> <span>Re: On the CSSCGC rules</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>On Thu, 26 Jul 2001 14:22:31 +0200, Ole Martin Halck (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; Having decided to consider taking part in this year&#x27;s edition of the CSSCGC,</span>
+<span class="qt">&gt; I webbed my way to <a href="http://www.foxbox.org/adam/code/csscgc2001/index.html" rel="noreferrer">http://www.foxbox.org/adam/code/csscgc2001/index.html</a> to</span>
+<span class="qt">&gt; see exactly what &quot;crap&quot; was supposed to mean.</span>
+
+For more top tips on writing crap games, get yerself along to
+<a href="http://www.unsatisfactory.freeserve.co.uk/crap.html" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk/crap.html</a>
+
+Chris
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p109552"><div class="ph"><a class="d" href="#p109552">2001-07-27 10:16:25</a> <span>Adam D. Moss</span> <span>Re: On the CSSCGC rules</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>Chris Young wrote:
+<span class="qt">&gt; For more top tips on writing crap games, get yerself along to</span>
+<span class="qt">&gt; <a href="http://www.unsatisfactory.freeserve.co.uk/crap.html" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk/crap.html</a></span>
+
+Ahh, take heed of Chris, he is a godlike crap game maker.  Despite
+apparently boycotting the CSSCGC2001.
+
+
+
+</pre></div><div class="post" id="p109616"><div class="ph"><a class="d" href="#p109616">2001-07-27 18:52:25</a> <span>Chris Young</span> <span>Re: On the CSSCGC rules</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>On Fri, 27 Jul 2001 10:16:25 +0000, Adam D. Moss (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; Chris Young wrote:</span>
+<span class="qt">&gt; &gt; For more top tips on writing crap games, get yerself along to</span>
+<span class="qt">&gt; &gt; <a href="http://www.unsatisfactory.freeserve.co.uk/crap.html" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk/crap.html</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Ahh, take heed of Chris, he is a godlike crap game maker.  Despite</span>
+<span class="qt">&gt; apparently boycotting the CSSCGC2001.</span>
+
+Hey, I haven&#x27;t boycotted it!  I have two more games on my HD, but they
+are awaiting some finishing touches (crap loading screens, mostly)
+that I haven&#x27;t quite got around to doing yet.  Watch this space*
+
+Chris
+* not literally
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p110065"><div class="ph"><a class="d" href="#p110065">2001-08-01 10:43:17</a> <span>Tomaz Cedilnik</span> <span>Re: On the CSSCGC rules</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>&quot;Adam D. Moss&quot; wrote:
+
+<span class="qt">&gt; &gt; An example: Imagine if Tomaz Cedilnik&#x27;s &quot;Wild West Head Hunter&quot; (admittedly</span>
+<span class="qt">&gt; &gt; terrible even now)</span>
+
+Thank you.
+
+<span class="qt">&gt; Yes, I have a soft spot for this entry.  It&#x27;s in the flower beds,</span>
+<span class="qt">&gt; three feet east of the cat&#x27;s remains.</span>
+
+???
+
+<span class="qt">&gt; &gt; had actually included code *for the remaining eight</span>
+<span class="qt">&gt; &gt; levels as well*! Wouldn&#x27;t it then have broken new barriers in crapness?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; It would have caused me greater frustration in that I&#x27;d have</span>
+<span class="qt">&gt; seen the code in my habitual LIST and hence wasted a further</span>
+<span class="qt">&gt; hour trying to get past level 1, and admittedly that would have</span>
+<span class="qt">&gt; been crap, but also a cruel trick to play on an honest judge</span>
+<span class="qt">&gt; which would not have worked in its favour.</span>
+
+Yea, I should&#x27;ve done that. ;-)
+
+However, keep in mind that I&#x27;ve written this game in one morning,
+including making sure that the bugs would be as annoying as possible.
+
+Those levels are also too complicated to code. However, with loads of
+rubbish code with text like &quot;Level n&quot;, level names, texts like
+&quot;Congratulations, you&#x27;ve won all duels&quot;, ... - it would do the trick.
+
+-- 
+ _______
+/__  __/___ __ __
+  / / __ \ `_ `_ \
+ / / /_/ / // // /
+/_/\____/_//_//_/
+
+
+
+</pre></div></main></body></html>

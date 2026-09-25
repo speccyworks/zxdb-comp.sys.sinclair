@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chuckie egg 2 · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Chuckie egg 2</h1><p class="facts">7 posts, 1997-11-18 – 1997-12-09</p><div class="post" id="p31559"><div class="ph"><a class="d" href="#p31559">1997-11-18</a> <span>richard larsson</span> </div><pre>
+Hi!
+Anyone seen any cheats for this beautiful adventure?
+Eternal life perhaps?
+
+Richard
+
+
+
+
+</pre></div><div class="post" id="p31565"><div class="ph"><a class="d" href="#p31565">1997-11-19</a> <span>graham goring</span> <span>Re: Chuckie egg 2</span></div><pre>
+Quoth the Raven in article &lt;879875218.523611@mn8&gt;, Richard Larsson
+ writes
+<span class="qt">&gt;Hi!</span>
+<span class="qt">&gt;Anyone seen any cheats for this beautiful adventure?</span>
+<span class="qt">&gt;Eternal life perhaps?</span>
+
+Eternal Life? I seem to remember something about the Christian Faith but
+not much else... :)
+
+But anyway &quot;35453,0&quot; should give you infy lives, and that should do...
+Graham
+
+--
+
+/====================================================¥  +--------------+
+<span class="qt">|              My proverb for this week:             |  |This Space For|</span>
+<span class="qt">|      &quot;The less bits, the less can go wrong...      |  | Hire - Ideal |</span>
+<span class="qt">| Unless you wobble something important at the back&quot; |  |For Weddings &amp;|</span>
+¥==Graham Goring - …@…==/  |  Bahmitzvas  |
+    My Website, coming to a server near you - SOON      +--------------+
+
+
+</pre></div><div class="post" id="p31583"><div class="ph"><a class="d" href="#p31583">1997-11-19</a> <span class="small">address hidden</span> <span>Re: Chuckie egg 2</span> <a class="badge" href="game-959.html">ZXDB: Chuckie Egg 2</a></div><pre>
+On Tue, 18 Nov 1997 18:48:30 +0100, &quot;Richard Larsson&quot;
+ wrote:
+
+<span class="qt">&gt;Hi!</span>
+<span class="qt">&gt;Anyone seen any cheats for this beautiful adventure?</span>
+<span class="qt">&gt;Eternal life perhaps?</span>
+
+According to Crash (Jun.1987 &amp; Dec.1988) and the Your Sinclair Smash Tips
+supplement (Aug.1988):
+	POKE 35453,0	(8A7D)
+will give you infinite lives.
+
+In the unlikely event that you&#x27;re playing from an original tape, then
+according to Dave Leander in Your Spectrum (Sep.1985), enter and run:
+	10 FOR A = 23296 TO 23309: READ Z: POKE A,Z: NEXT A
+	20 DATA 55,62,255,221,33,0,64,17,0,192,205,86,5,201
+Position the tape past the loader, and past the header on the main section,
+then enter:
+	RAND USR 23296
+and play the tape. When it has loaded type:
+	POKE 35453,0: RANDOMIZE USR 24770
+and that should give you infinite lives as well.
+
+
+--
+Jim Grimwood, Dead Dog Farm, Hatfield, England.
+Home of the SPOT Database (Spectrum Oracle on Trumpton)
+C/SU/YS indexed: 184(53%); Subjects: 3,912; References: 15,250.
+--
+
+
+</pre></div><div class="post" id="p31646"><div class="ph"><a class="d" href="#p31646">1997-11-21</a> <span>darren salt</span> <span>Re: Chuckie egg 2</span></div><pre>
+In message &lt;879875218.523611@mn8&gt;
+          &quot;Richard Larsson&quot;  wrote:
+
+<span class="qt">&gt; Anyone seen any cheats for this beautiful adventure? Eternal life perhaps?</span>
+
+Infinite lives			35453,0
+Keep object when killed		35423,24
+Speed up			30874,205,253,253
+
+Immunity			&amp;8389,0,0,0; &amp;83C9,0,0,0; &amp;83EF,0,0,0;
+				&amp;8476,0,0,0; &amp;8483,0,0,0; &amp;8583,0,0,0;
+				&amp;85A9,0,0,0; &amp;8779,0,0,0; &amp;9450,0,0,0;
+				&amp;94E9,0,0,0; &amp;869B,&amp;C3 &amp;86BB,&amp;C3 &amp;86CC,&amp;C3
+
+Will that do? :-)
+
+-- 
+<span class="qt">| Darren Salt     anti-UCE | 01268 515441    | Toon Army     | Acorn Risc PC,</span>
+<span class="qt">| arcsalt@spuddy,mew,co,uk | free mail, news | Season ticket | A3010, Spec+3,</span>
+<span class="qt">| darren,salt@unn,ac,uk    | nr Ashington, Northumberland    | BBC Master</span>
+<span class="qt">|   MAGPIES... IN THE CHAMPIONS&#x27; LEAGUE</span>
+
+Locutus of Borg: &quot;Do you have any Earl Grey Tea?&quot;
+
+
+</pre></div><div class="post" id="p31770"><div class="ph"><a class="d" href="#p31770">1997-11-26</a> <span>gerard sweeney</span> <span>Re: Chuckie egg 2</span></div><pre>
+Richard Larsson asked
+<span class="qt">&gt; Hi!</span>
+<span class="qt">&gt; Anyone seen any cheats for this beautiful adventure?</span>
+<span class="qt">&gt; Eternal life perhaps?</span>
+<span class="qt">&gt; </span>
+
+Well, from my Hack Attack III WWW page, try...
+Infinite Lives      35453,0
+
+(should work, as I remember testing it)
+
+Cheers,
+Gerard
+-- 
+Gerard Sweeney
+Hackers Anonymous
+Team Amiga
+Visit the official Hack Attack III WWW page at:-
+<a href="http://www.geocities.com/SiliconValley/Lakes/4871" rel="noreferrer">http://www.geocities.com/SiliconValley/Lakes/4871</a>
+Where you&#x27;re always likely to get a good POKE (fnar!)
+
+
+</pre></div><div class="post" id="p31932"><div class="ph"><a class="d" href="#p31932">1997-12-02</a> <span>richard larsson</span> <span>Re: Chuckie egg 2</span></div><pre>
+Eat this boys!
+
+I just asked for the poke for eternal life. The one you gave me didnï¿½t work
+on my emulator... So impress me and give me another one or tell me some
+other way to poke my memory.
+
+A thing on the discussion that followed:
+-Perhaps you guys should get a life?
+
+Richard
+
+- On a clear day, you can see my ...
+
+
+
+
+</pre></div><div class="post" id="p32105"><div class="ph"><a class="d" href="#p32105">1997-12-09</a> <span>gerard sweeney</span> <span>Re: Chuckie egg 2</span></div><pre>
+Richard Larsson wrote
+<span class="qt">&gt; Eat this boys!</span>
+
+Charmed, I&#x27;m sure...
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I just asked for the poke for eternal life. The one you gave me didnï¿½t</span>
+work
+<span class="qt">&gt; on my emulator... So impress me and give me another one or tell me some</span>
+<span class="qt">&gt; other way to poke my memory.</span>
+
+Hmm, there seems to be a word missing here. .Can&#x27;t think what it is
+though... Something you&#x27;re supposed to say when asking for something? If
+memory serves, it starts with &quot;PL&quot;, and ends in &quot;EASE&quot;...
+
+I&#x27;m afraid I can&#x27;t impress you with another POKE, as there is only one
+available (to my knowledge)..
+
+And the magic number is..             35453,0
+
+This should work, as it is from my Hack Attack III WWW page, and was
+personally tested by myself...
+
+I&#x27;m sorry to hear you are having problems putting the POKE into your
+snapshot. Which emulator do you use? You can use ZXAM and/or Speculator (or
+Speccylator?) on the Amiga or if you have a PC, you can use X128 which I
+definitely know allows you to enter POKEs. Don&#x27;t know about Z80 (which is
+ironic, as I have the registered version sitting on my desk waiting to be
+installed)...
+
+If you don&#x27;t like those emulators (and I can&#x27;t think why not, as they&#x27;re
+bloomin&#x27; good), then you can always just load the game in, POKE it and save
+it off again and play it on your favourite emulator (whatever that may be).
+
+If you use an emulator on the Mac (which I don&#x27;t think has a POKE ability,
+but I could be horribly wrong as I haven&#x27;t used it in ages), then you could
+always use a hex editor. However, to do that you would need to know which
+series of bytes to look for - which you would need to ask someone here for.
+You would then search for the bytes, and change the appropriate number to
+whatever new number, save it off and then load it back to your emulator...
+
+<span class="qt">&gt; -Perhaps you guys should get a life?</span>
+
+Is this a dig at all the people on this newsgroup, or did someone post
+something nasty about you? I didn&#x27;t see the followups. If it was the
+latter, then sorry to hear that. If it was the former, then I take it very
+personally indeed as I am proud to be a part of the speccy community, and
+am a (reasonably) regular poster here.
+
+Sorry if I have picked up the wrong end of the stick here, but your posting
+sounded like you were pretty pissed off, and were having a go at the folk
+here. If not, then please accept my apologies, and I hope that the info I
+supplied here is of some help?
+
+Cheers,
+Gerard
+-- 
+Gerard Sweeney
+Hackers Anonymous
+Team Amiga
+Go visit the official Hack Attack III WWW page at
+<a href="http://www.geocities.com/SiliconValley/Lakes/4871" rel="noreferrer">http://www.geocities.com/SiliconValley/Lakes/4871</a>
+where you&#x27;re always likely to get a good POKE (fnar!)
+
+
+</pre></div></main></body></html>

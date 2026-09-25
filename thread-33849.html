@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Line 0 poke · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Line 0 poke</h1><p class="facts">13 posts, 2008-03-01 – 2023-10-02</p><div class="post" id="p216018"><div class="ph"><a class="d" href="#p216018">2008-03-01 20:09:14</a> <span>Graham Prout</span> </div><pre>What is the poke to turn the first line in a program to like 0 and back?
+
+graham
+
+
+
+</pre></div><div class="post" id="p216020"><div class="ph"><a class="d" href="#p216020">2008-03-01 20:35:38</a> <span>david lightman</span> <span>Re: Line 0 poke</span></div><pre>a man named ANTHONY T. ORESTEEN discribed it like that:
+
+POKE 16510,0
+
+this makes first lane number 0, canï¿½t be edited. use for copyright 
+notice. to hide LISTing use the following: - ENTER III REM ad&quot; than POKE 
+16514,118 and POKE 16515,118; LISTing is gone
+
+
+greetings
+jens
+
+
+
+</pre></div><div class="post" id="p216025"><div class="ph"><a class="d" href="#p216025">2008-03-01 22:13:35</a> <span>Woodster</span> <span>Re: Line 0 poke</span></div><pre>On Sat, 01 Mar 2008 20:09:14 GMT, &quot;Graham Prout&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;What is the poke to turn the first line in a program to like 0 and back?</span>
+
+Depends on what Sinclair computer :)
+
+For the Speccy it&#x27;s POKE 23756,0 assuming you have no IF 1 attached.
+No prizes for guessing what POKE turns it back again :)
+
+
+
+</pre></div><div class="post" id="p216034"><div class="ph"><a class="d" href="#p216034">2008-03-02 07:11:53</a> <span>david lightman</span> <span>Re: Line 0 poke</span></div><pre><span class="qt">  &gt; Depends on what Sinclair computer :)</span>
+
+
+sorry - i mean the ZX81
+
+
+
+</pre></div><div class="post" id="p216038"><div class="ph"><a class="d" href="#p216038">2008-03-02 09:52:57</a> <span>Brian Gaff</span> <span>Re: Line 0 poke</span></div><pre>Oh, well, in that case ignore my last message.
+
+We used to shove loads of dummy chars in that line and then overwrite them 
+with machine code routines as well of course, but  you really did then have 
+to make the number uneditable or accidental editing udid all your work.
+
+Brian
+
+-- 
+Brian Gaff....Note, this account does not accept Bcc: email.
+ graphics are great, but the blind can&#x27;t hear them
+Email: …@…
+______________________________________________________________________________________________________________
+
+
+&quot;david lightman&quot; &lt;…@…&gt; wrote in message 
+news:fqdk1f$emn$01$…@…...
+<span class="qt">&gt;  &gt; Depends on what Sinclair computer :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; sorry - i mean the ZX81 </span>
+
+
+
+
+
+</pre></div><div class="post" id="p216039"><div class="ph"><a class="d" href="#p216039">2008-03-02 12:32:14</a> <span>David Robinson</span> <span>Re: Line 0 poke</span></div><pre>Ultimate games always used to use this to prevent you changing the loader. 
+Ratbags. And it was all one long line as well, which you had to re-poke and 
+then shift-8 all the way through just to add POKE 44786,0 right at the 
+bloody end.
+
+Dave 
+
+
+
+
+
+</pre></div><div class="post" id="p216040"><div class="ph"><a class="d" href="#p216040">2008-03-02 14:24:50</a> <span>Graham Prout</span> <span>Re: Line 0 poke</span></div><pre>Well its actualy for the P.A.W.S. program so i can alter the loader to load 
+from the plus d and not from tape.
+No interface 1 is used.
+
+
+Graham
+
+
+&quot;David Robinson&quot; &lt;…@…&gt; wrote in message 
+news:47ca9e08$…@…...
+<span class="qt">&gt; Ultimate games always used to use this to prevent you changing the loader. </span>
+<span class="qt">&gt; Ratbags. And it was all one long line as well, which you had to re-poke </span>
+<span class="qt">&gt; and then shift-8 all the way through just to add POKE 44786,0 right at the </span>
+<span class="qt">&gt; bloody end.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Dave</span>
+<span class="qt">&gt; </span>
+
+
+
+
+</pre></div><div class="post" id="p216118"><div class="ph"><a class="d" href="#p216118">2008-03-10 19:33:19</a> <span>Paul E Collins</span> <span>Re: Line 0 poke</span></div><pre>&quot;Woodster&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; &gt; What is the poke to turn the first line in a program to like 0 and </span>
+<span class="qt">&gt; &gt; back?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; For the Speccy it&#x27;s POKE 23756,0 assuming you have no IF 1 attached.</span>
+
+...and that the first line is numbered lower than 256.
+
+Eq.
+
+
+
+
+
+</pre></div><div class="post" id="p216567"><div class="ph"><a class="d" href="#p216567">2008-04-20 17:54:27</a> <span>Cameraman</span> <span>Re: Line 0 poke</span></div><pre>Graham Prout:
+<span class="qt">&gt; What is the poke to turn the first line in a program to like 0 and</span>
+back?
+<span class="qt">&gt; </span>
+<span class="qt">&gt; graham</span>
+Poke 23756,0
+and to turn it back 23756,1
+
+Frans
+
+
+
+</pre></div><div class="post" id="p216600"><div class="ph"><a class="d" href="#p216600">2008-04-21 19:55:04</a> <span>GzavSnap</span> <span>Re: Line 0 poke</span></div><pre>
+&quot;Cameraman&quot; &lt;…@…&gt; a ï¿½crit dans le message de
+news:…@…...
+<span class="qt">&gt; Graham Prout:</span>
+<span class="qt">&gt; &gt; What is the poke to turn the first line in a program to like 0 and</span>
+<span class="qt">&gt; back?</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; graham</span>
+<span class="qt">&gt; Poke 23756,0</span>
+<span class="qt">&gt; and to turn it back 23756,1</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Frans</span>
+... on Zx Spectrum computers ...
+
+
+
+
+
+
+</pre></div><div class="post" id="p216611"><div class="ph"><a class="d" href="#p216611">2008-04-22 15:17:52</a> <span>GzavSnap</span> <span>Re: Line 0 poke</span></div><pre><span class="qt">&gt; &gt; Graham Prout:</span>
+<span class="qt">&gt; &gt; &gt; What is the poke to turn the first line in a program to like 0 and</span>
+<span class="qt">&gt; &gt; back?</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; graham</span>
+<span class="qt">&gt; &gt; Poke 23756,0</span>
+<span class="qt">&gt; &gt; and to turn it back 23756,1</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Frans</span>
+<span class="qt">&gt; ... on Zx Spectrum computers ...</span>
+And :
+
+POKE 16424,0 &#x27; H byte
+POKE 16425,10 &#x27; Low byte
+or POKE 16425,0 to change the first line to &quot;0&quot;
+
+On the ZX80.
+
+
+
+
+
+
+</pre></div><div class="post" id="p217088"><div class="ph"><a class="d" href="#p217088">2008-06-02 01:21:20</a> <span>Robert Provins</span> <span>Re: Line 0 poke</span></div><pre>
+&quot;GzavSnap&quot; &lt;zx81.pas2spams.ordi5 chez free en france&gt; wrote in message
+news:480f6ea6$0$1992$…@…...
+<span class="qt">&gt; &gt; &gt; Graham Prout:</span>
+<span class="qt">&gt; &gt; &gt; &gt; What is the poke to turn the first line in a program to like 0 and</span>
+<span class="qt">&gt; &gt; &gt; back?</span>
+<span class="qt">&gt; &gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; &gt; graham</span>
+<span class="qt">&gt; &gt; &gt; Poke 23756,0</span>
+<span class="qt">&gt; &gt; &gt; and to turn it back 23756,1</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; Frans</span>
+<span class="qt">&gt; &gt; ... on Zx Spectrum computers ...</span>
+<span class="qt">&gt; And :</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; POKE 16424,0 &#x27; H byte</span>
+<span class="qt">&gt; POKE 16425,10 &#x27; Low byte</span>
+<span class="qt">&gt; or POKE 16425,0 to change the first line to &quot;0&quot;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; On the ZX80.</span>
+POKE 16510,0
+
+
+
+
+
+
+</pre></div><div class="post" id="p229152"><div class="ph"><a class="d" href="#p229152">2023-10-02 06:32:36</a> <span>David Beneš</span> <span>Re: Line 0 poke</span> <a class="badge" href="game-34339.html">ZXDB: Line</a></div><pre>Dne sobota 1. března 2008 v 23:13:35 UTC+1 uživatel Woodster napsal:
+<span class="qt">&gt; On Sat, 01 Mar 2008 20:09:14 GMT, &quot;Graham Prout&quot;</span>
+<span class="qt">&gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt;What is the poke to turn the first line in a program to like 0 and back?</span>
+<span class="qt">&gt; Depends on what Sinclair computer :)</span>
+<span class="qt">&gt; For the Speccy it&#x27;s POKE 23756,0 assuming you have no IF 1 attached.</span>
+<span class="qt">&gt; No prizes for guessing what POKE turns it back again :)</span>
+
+Wow, that is quite old discussion here.
+I remember finding out this poke 23756,0 by myself by running poke in for cycle and rebooting (frequently) when system was corrupted.
+I was so happy when I finally saw the 0 line. At the time there was nobody to share this finding with :D (no web, no email)
+It worked on Didactic Gama (ZX Spectrum compatible machine)
+
+</pre></div></main></body></html>

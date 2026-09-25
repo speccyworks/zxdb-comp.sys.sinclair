@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terrors of Trantoss Walkthrough · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Terrors of Trantoss Walkthrough</h1><p class="facts">10 posts, 2001-08-29 – 2001-09-10</p><div class="post" id="p113391"><div class="ph"><a class="d" href="#p113391">2001-08-29 13:27:27</a> <span>Oli Ollerenshaw</span> </div><pre>Hey dudes,
+
+I&#x27;m sure I asked this question a while back, but I was wondering if
+anyone has a walkthrough for Terrors of Trantoss on the Spectrum?
+
+I&#x27;ve been looking for AGES and have only manged to get my hands on an
+old hints sheet for Your Sinclair.
+
+Any help is appreicated!
+
+Later,
+
+Oli :)
+
+
+
+</pre></div><div class="post" id="p113397"><div class="ph"><a class="d" href="#p113397">2001-08-29 18:39:40</a> <span>Jim Grimwood</span> <span>Re: Terrors of Trantoss Walkthrough</span> <a class="badge" href="game-7089.html">ZXDB: The Terrors of Trantoss</a></div><pre>On 29 Aug 2001 06:27:27 -0700, …@… (Oli Ollerenshaw)
+wrote:
+
+<span class="qt">&gt;I&#x27;m sure I asked this question a while back, but I was wondering if</span>
+<span class="qt">&gt;anyone has a walkthrough for Terrors of Trantoss on the Spectrum?</span>
+
+Yes, you did - October last year.
+
+<span class="qt">&gt;I&#x27;ve been looking for AGES and have only manged to get my hands on an</span>
+<span class="qt">&gt;old hints sheet for Your Sinclair.</span>
+
+That&#x27;s probably the one I sent you, then - but that&#x27;s supposed to give a
+complete solution to all the problems, so why haven&#x27;t you finished it yet
+after all this time? There are numerous other tips in the mags, so if I
+knew what the sticking point was I could check them; although I&#x27;d expect
+that they&#x27;re just likely to cover selections of the same problems covered
+in the YS solution, and some/all of them may already be available at The
+Tipshop (<a href="http://www.the-tipshop.co.uk/" rel="noreferrer">http://www.the-tipshop.co.uk/</a>). If they&#x27;re not there and you&#x27;re
+still stuck, and can identify some particular problems, then I&#x27;ll check
+the other back issues.
+
+Here&#x27;s the list of tip entries, in case you have any of the mags:
+
+  S YS  9.87  p. 86 .SH1  solution first half
+  S YS 10.87  p. 89 .SH2  solution second half
+  T C   1.88  p. 58
+  T SU  2.87  p. 79
+  T SU  5.87  p. 81
+  T YS  6.87  p. 73
+  T YS  7.87  p. 78
+  T YS 10.87  p. 83
+  T YS  3.89  p. 60
+  T YS  2.90  p. 62
+  T YS  6.91  p. 59
+  T ZX  4.87  p. 85
+
+
+--
+Another Fine Product from:
+Jim Grimwood (…@…), Weardale, England
+
+
+
+</pre></div><div class="post" id="p113546"><div class="ph"><a class="d" href="#p113546">2001-08-31 08:45:53</a> <span>Oli Ollerenshaw</span> <span>Re: Terrors of Trantoss Walkthrough</span></div><pre>Thanks for the reply Jim!!
+
+Yeah, there is ONE section in the YS tips for Terrors of Trantoss
+which seem to be incorrect.
+
+There is a bit in the game where you go down some stairs and come to a
+door with a hole in it. The tips say:
+
+PUT ORB IN HOLE
+SAY OPEN
+
+but this doesn&#x27;t work.
+
+It&#x27;s driving me up the wall, as I remember getting stuck in this bit
+before (when I was a nipper and playing the game on my real speccy)
+but I got past it in the end.
+
+If you have any ideas, I&#x27;d appreciate &#x27;em!
+
+Best regards,
+
+Oli
+
+…@… (Jim Grimwood) wrote in message news:&lt;…@…&gt;...
+<span class="qt">&gt; On 29 Aug 2001 06:27:27 -0700, …@… (Oli Ollerenshaw)</span>
+<span class="qt">&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;I&#x27;m sure I asked this question a while back, but I was wondering if</span>
+<span class="qt">&gt; &gt;anyone has a walkthrough for Terrors of Trantoss on the Spectrum?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Yes, you did - October last year.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;I&#x27;ve been looking for AGES and have only manged to get my hands on an</span>
+<span class="qt">&gt; &gt;old hints sheet for Your Sinclair.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; That&#x27;s probably the one I sent you, then - but that&#x27;s supposed to give a</span>
+<span class="qt">&gt; complete solution to all the problems, so why haven&#x27;t you finished it yet</span>
+<span class="qt">&gt; after all this time? There are numerous other tips in the mags, so if I</span>
+<span class="qt">&gt; knew what the sticking point was I could check them; although I&#x27;d expect</span>
+<span class="qt">&gt; that they&#x27;re just likely to cover selections of the same problems covered</span>
+<span class="qt">&gt; in the YS solution, and some/all of them may already be available at The</span>
+<span class="qt">&gt; Tipshop (<a href="http://www.the-tipshop.co.uk/" rel="noreferrer">http://www.the-tipshop.co.uk/</a>). If they&#x27;re not there and you&#x27;re</span>
+<span class="qt">&gt; still stuck, and can identify some particular problems, then I&#x27;ll check</span>
+<span class="qt">&gt; the other back issues.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Here&#x27;s the list of tip entries, in case you have any of the mags:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;   S YS  9.87  p. 86 .SH1  solution first half</span>
+<span class="qt">&gt;   S YS 10.87  p. 89 .SH2  solution second half</span>
+<span class="qt">&gt;   T C   1.88  p. 58</span>
+<span class="qt">&gt;   T SU  2.87  p. 79</span>
+<span class="qt">&gt;   T SU  5.87  p. 81</span>
+<span class="qt">&gt;   T YS  6.87  p. 73</span>
+<span class="qt">&gt;   T YS  7.87  p. 78</span>
+<span class="qt">&gt;   T YS 10.87  p. 83</span>
+<span class="qt">&gt;   T YS  3.89  p. 60</span>
+<span class="qt">&gt;   T YS  2.90  p. 62</span>
+<span class="qt">&gt;   T YS  6.91  p. 59</span>
+<span class="qt">&gt;   T ZX  4.87  p. 85</span>
+
+
+
+</pre></div><div class="post" id="p113565"><div class="ph"><a class="d" href="#p113565">2001-08-31 11:26:24</a> <span>Nick Humphries</span> <span>Re: Terrors of Trantoss Walkthrough</span></div><pre>On 31 Aug 2001 01:45:53 -0700, …@… (Oli Ollerenshaw) wrote:
+
+<span class="qt">&gt;Thanks for the reply Jim!!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Yeah, there is ONE section in the YS tips for Terrors of Trantoss</span>
+<span class="qt">&gt;which seem to be incorrect.</span>
+
+The Adventures coverage in The Tipshop isn&#x27;t as wide-ranging as we wish it
+was. We&#x27;re working on that, though. 
+
+-- 
+------------------------------------------------------------------------
+<span class="qt">| Nick Humphries                                …@… |</span>
+<span class="qt">| The Your Sinclair Rock&#x27;n&#x27;Roll Years:        <a href="http://www.ysrnry.co.uk/" rel="noreferrer">http://www.ysrnry.co.uk/</a> |</span>
+<span class="qt">| The Tipshop:                           <a href="http://www.the-tipshop.co.uk/" rel="noreferrer">http://www.the-tipshop.co.uk/</a> |</span>
+<span class="qt">| Java games:                            <a href="http://www.the-den.clara.net/" rel="noreferrer">http://www.the-den.clara.net/</a> |</span>
+------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p113601"><div class="ph"><a class="d" href="#p113601">2001-08-31 18:54:12</a> <span>Jim Grimwood</span> <span>Re: Terrors of Trantoss Walkthrough</span></div><pre>On 31 Aug 2001 01:45:53 -0700, …@… (Oli Ollerenshaw)
+wrote:
+
+<span class="qt">&gt;[...]</span>
+<span class="qt">&gt;There is a bit in the game where you go down some stairs and come to a</span>
+<span class="qt">&gt;door with a hole in it. The tips say:</span>
+<span class="qt">&gt;PUT ORB IN HOLE</span>
+<span class="qt">&gt;SAY OPEN</span>
+<span class="qt">&gt;but this doesn&#x27;t work.</span>
+<span class="qt">&gt;[...]</span>
+
+Well, you&#x27;re not reading the tips I sent you, then. In that solution from
+YS the phrase used is &quot;FIT SPHERE INTO HOLE&quot;. Try that.
+
+
+--
+Another Fine Product from:
+Jim Grimwood (…@…), Weardale, England
+
+
+
+</pre></div><div class="post" id="p113676"><div class="ph"><a class="d" href="#p113676">2001-09-01 18:38:33</a> <span>Llama-Wax Len</span> <span>Re: Terrors of Trantoss Walkthrough</span></div><pre>
+&quot;Jim Grimwood&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Well, you&#x27;re not reading the tips I sent you, then. In that solution from</span>
+<span class="qt">&gt; YS the phrase used is &quot;FIT SPHERE INTO HOLE&quot;. Try that.</span>
+
+-&gt;FIT SPHERE INTO HOLE
+You have now been served with a restraining order an banned from Marks &amp;
+Spencers.
+What now?
+-&gt;_
+
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+DISCLAIMER: By replying to this message, you hereby acknowledge
+that the ZX Spectrum game &quot;Robocop&quot; was too difficult.
+
+
+
+
+
+</pre></div><div class="post" id="p113877"><div class="ph"><a class="d" href="#p113877">2001-09-04 11:06:44</a> <span>Oli Ollerenshaw</span> <span>Re: Terrors of Trantoss Walkthrough</span></div><pre>Thanks for that Len!
+
+Oli :)
+
+&quot;Llama-Wax Len&quot; &lt;…@…&gt; wrote in message news:&lt;9mreks$3cn$…@…&gt;...
+<span class="qt">&gt; &quot;Jim Grimwood&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt; &gt; Well, you&#x27;re not reading the tips I sent you, then. In that solution from</span>
+<span class="qt">&gt; &gt; YS the phrase used is &quot;FIT SPHERE INTO HOLE&quot;. Try that.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; -&gt;FIT SPHERE INTO HOLE</span>
+<span class="qt">&gt; You have now been served with a restraining order an banned from Marks &amp;</span>
+<span class="qt">&gt; Spencers.</span>
+<span class="qt">&gt; What now?</span>
+<span class="qt">&gt; -&gt;_</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Len</span>
+
+
+
+</pre></div><div class="post" id="p114055"><div class="ph"><a class="d" href="#p114055">2001-09-06 11:01:00</a> <span>Oli Ollerenshaw</span> <span>Re: Terrors of Trantoss Walkthrough</span></div><pre>A huge thanks to Jim Grimwood who came up with the solution to this problem:
+
+The correct phrase to use is:
+
+SAY OPHEN
+
+truly bizarre but it works none the less.
+
+Cheers again Jim!
+
+Oli
+
+
+…@… (Oli Ollerenshaw) wrote in message news:&lt;…@…&gt;...
+<span class="qt">&gt; Thanks for that Len!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Oli :)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &quot;Llama-Wax Len&quot; &lt;…@…&gt; wrote in message news:&lt;9mreks$3cn$…@…&gt;...</span>
+<span class="qt">&gt; &gt; &quot;Jim Grimwood&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; &gt; news:…@…...</span>
+<span class="qt">&gt; &gt; &gt; Well, you&#x27;re not reading the tips I sent you, then. In that solution from</span>
+<span class="qt">&gt; &gt; &gt; YS the phrase used is &quot;FIT SPHERE INTO HOLE&quot;. Try that.</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; -&gt;FIT SPHERE INTO HOLE</span>
+<span class="qt">&gt; &gt; You have now been served with a restraining order an banned from Marks &amp;</span>
+<span class="qt">&gt; &gt; Spencers.</span>
+<span class="qt">&gt; &gt; What now?</span>
+<span class="qt">&gt; &gt; -&gt;_</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Len</span>
+
+
+
+</pre></div><div class="post" id="p114087"><div class="ph"><a class="d" href="#p114087">2001-09-06 20:53:10</a> <span>Chris Young</span> <span>Re: Terrors of Trantoss Walkthrough</span></div><pre>On 6 Sep 2001 04:01:00 -0700, Oli Ollerenshaw (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; A huge thanks to Jim Grimwood who came up with the solution to this problem:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The correct phrase to use is:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; SAY OPHEN</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; truly bizarre but it works none the less.</span>
+
+Obviously OPHEN is some kind of magic word.  Like abracadabra(?), but
+only having the magical ability to complete strange Spectrum adventure
+games.
+
+Chris
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p114512"><div class="ph"><a class="d" href="#p114512">2001-09-10 23:50:54</a> <span>Carys Toms</span> <span>Re: Terrors of Trantoss Walkthrough</span></div><pre>…@… (Oli Ollerenshaw) wrote in message news:&lt;…@…&gt;...
+<span class="qt">&gt; Hey dudes,</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;m sure I asked this question a while back, but I was wondering if</span>
+<span class="qt">&gt; anyone has a walkthrough for Terrors of Trantoss on the Spectrum?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;ve been looking for AGES and have only manged to get my hands on an</span>
+<span class="qt">&gt; old hints sheet for Your Sinclair.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Any help is appreicated!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Later,</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Oli :)</span>
+
+If anyone is interested, I have got hold of quite a lot of stuff from
+both Phipps Associates and Ramjam (my dad used to work for them) and
+at some point I will scan a lot of it in and stick it up on a website.
+It includes stuff like the hand written solutions for Terrors Of
+Trantoss, Colditz, Greedy Gulch and other games, and I have a whole
+load of books that my dad wrote and cassettes etc that I will sell.
+
+Carys
+
+
+
+</pre></div></main></body></html>

@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fahrenheit 3000 cheat mode · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Fahrenheit 3000 cheat mode</h1><p class="facts">1 posts, 1997-09-01 – 1997-09-01</p><div class="post" id="p29149"><div class="ph"><a class="d" href="#p29149">1997-09-01</a> <span>richard g.hallas</span>  <a class="badge" href="game-1710.html">ZXDB: Fahrenheit 3000</a></div><pre>
+Hi everyone,
+
+Forgive the long posting, but I thought that this might be of interest
+to some people.
+
+Back in 1985 when I bought Fahrenheit 3000 (Firebird Silver platform
+game in a similar style to JSW), I accidentally discovered a cheat
+mode which asked for a password. However, I never managed to figure
+out how to use it. I intended writing in to one of the magazines to
+ask them about it, but I never got around to it, so the cheat mode
+has remained unknown until now.
+
+Recently, though, Blood has been going on about hacking games, so I
+asked him if he could figure this cheat mode out, and he has done!
+I&#x27;ve therefore created an SGD entry for Fahrenheit 3000 which provides
+the full details. Here it is.
+
+THE SPECTRUM GAMES DATABASE
+
+FAHRENHEIT 3000
+
+PUBLISHER
+Firebird (Silver range)
+
+AUTHOR
+Tim Williams, Softstone Ltd
+
+YEAR
+1985
+
+CATEGORY
+Platform game
+
+DESCRIPTION
+The central core of the Dragon nuclear reactor is on
+ a direct course to meltdown... Radiation leakage is
+  increasing every moment... Your only protection
+   an anti-radiation suit, you must enter the
+    reactor&#x27;s chambers and close off all 64 pressure
+     valves before the core reaches...
+      FAHRENHEIT 3000!
+(Text taken from the spine of the original inlay)
+
+Basically this is a Jet Set Willy-style platform
+game. You must go through all the screens, collecting
+&quot;packs&quot;. There is one pack per screen, and when you
+have collected them all you must shut down the nuclear
+reactor and then locate and eliminate the culprit who
+was responsible for the meltdown in the first place.
+
+CONTROLS
+Fahrenheit 3000 may be played with a Kempston
+joystick, or the following keys:
+ LEFT = Q
+RIGHT = W
+ JUMP = SPACE
+ QUIT = 0
+
+INSTRUCTIONS (ORIGINAL INLAY CARD TEXT)
+When you enter the Dragon (get it?) nuclear reactor,
+you will have a limited time to reach all 64 pressure
+valves (one in each of the reactor&#x27;s chambers) and
+shut them off before meltdown occurs. Some valves
+may already be leaking radiation, in which case they
+will appear green.
+Contact with any leaking valve is fatal.
+Core meltdown occurs when the radiation level
+reaches the maximum - Fahrenheit 3000 - resulting
+in disaster for you (and the end of the game).
+
+HINTS/CHEATS
+
+(For some pokes, see the end of this section)
+
+TIPS
+When you are attempting to collect the valves (packs),
+you must be careful only to touch them when they&#x27;re
+red; when they&#x27;re green (and they flick randomly
+between red and green) they kill you. You have a few
+seconds upon entering a room before they start
+wavering between red and green, so if the pack is
+close to a room exit, it&#x27;s often well worth going out
+of the exit and entering the room again, to touch the
+pack before it becomes lethal. (This is useful in the
+very first room, for instance.)
+
+Note that in this game, lives equate to radiation
+level: each time you die, the radiation increases by
+one. This effectively means that you have 40 lives.
+
+CHEAT MODE
+There is a full cheat mode, which I (Richard Hallas)
+discovered by accident in 1985, but only recently
+(thanks to Lee Tonks) found out how to use!
+
+To enter the cheat mode, press keys 6, 7, 8, 9 and 0
+simultaneously. You must be careful to press 0 last,
+because it will cause the game to quit unless you are
+holding down all the other keys first. To make the
+cheat mode easier to access, do a POKE 30370,2: this
+will cause it to be activated when you press just 9,
+rather than the default five-key combination.
+
+There will be a brief border effect, and the following
+message will appear on the screen:
+
+HI TIM - PASSOWRD PLEASE...
+
+(Yes, the spelling mistake is really there!) It then
+waits for five consecutive keypresses (and this is what
+Blood has recently figured out).
+
+Basically it&#x27;s a level-skip cheat; you can use it to go
+to any level in the game. You have to enter a 3-letter
+password and a 2-figure level code. The thing about the
+password is that it doesn&#x27;t have to be a particular
+string - quite a few things will work.
+
+When you type the password in, the code looks at the
+first three letters and decides whether these two rules
+are true:
+
+1) Do the ASCII codes of the letters add up to 224?
+2) Is the third letter a G? (all input is converted to
+   capitals)
+
+If all this is true, the game then jumps you to the
+screen specified in the next two characters. This means
+that various passwords will work, like JOG?? or FSG??
+or DUG??. I suggest using JOG, because it&#x27;s easy to
+remember.
+
+The next thing you have to do is to enter a level code
+to jump to. This works as follows:
+
+The 64 screens in the game are arranged in an 8x8 grid,
+where each row and column is numbered from 1 to 8 from
+the bottom left. Therefore, in terms of transporter
+codes, the map looks like this:
+
+81 82 83 84 85 86 87 88
+71 72 73 74 75 76 77 78
+61 62 63 64 65 66 67 68
+51 52 53 54 55 56 57 58
+41 42 43 44 45 46 47 48
+31 32 33 34 35 36 37 38
+21 22 23 24 25 26 27 28
+11 12 13 14 15 16 17 18
+
+So, the two figures in the password are y- and x-
+coordinates on the map. For example, the top-right
+room, 88, is the nuclear generator room. To jump to
+the penultimate screen (the one to the left of it),
+you would type JOG87 at the password prompt.
+
+If you enter 9 as the x-coordinate, it&#x27;s the same as
+entering the first column of the next row up; so room
+19 is actually room 21, 59 is 61 and so on. Be very
+careful not to enter anything else that&#x27;s illegal,
+because you will almost certainly cause the game to
+crash if you do!
+
+POKES
+POKE 30370,2: cheat mode is activated by pressing 9
+POKE 30818,0: infinite lives
+POKE 30116,#: # = number of packs left to collect
+
+Thanks to Lee Tonks (Blood) for the infinite lives
+and password pokes, and to Richard Hallas for the
+number of packs poke.
+
+URL
+ftp.nvg.unit.no/pub/sinclair/snaps/games/platform/fahrenheit3000.zip
+
+GENERAL FACTS
+There are various Jet Set Willy references in the game
+(e.g. a room called &quot;Mr. Smith Will Never See This&quot;).
+
+NOTES
+Superficially a fairly abysmal-looking game with
+terrible graphics, Fahrenheit 3000 actually turns
+out to be quite addictive and playable once you&#x27;ve
+got used to it. However, it has one of most
+disappointing endings of all Spectrum games!
+
+-- 
+Richard
+-=-=-=-
+Richard G. Hallas          -oOo-          Editor of RISC User magazine
+Proprietor of KeyNote:  Music Typesetting &amp; General Desktop Publishing
+E-mail: …@… * Telephone/Facsimile: 01484 460280
+
+
+
+</pre></div></main></body></html>

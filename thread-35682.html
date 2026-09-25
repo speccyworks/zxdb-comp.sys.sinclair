@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Try this one weird POKE on your ZX Spectrum, TS2068 or ZX Vega · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Try this one weird POKE on your ZX Spectrum, TS2068 or ZX Vega</h1><p class="facts">6 posts, 2015-03-02 – 2015-03-03</p><div class="post" id="p227194"><div class="ph"><a class="d" href="#p227194">2015-03-02 11:17:46</a> <span>Geoff Wearmouth</span>  <a class="badge" href="game-41426.html">ZXDB: Try This</a></div><pre>... and you won&#x27;t believe your eyes
+
+POKE 23659,1 : INPUT ; 
+
+--
+G.
+
+</pre></div><div class="post" id="p227196"><div class="ph"><a class="d" href="#p227196">2015-03-02 13:06:04</a> <span>deKay</span> <span>Re: Try this one weird POKE on your ZX Spectrum, TS2068 or ZX Vega</span></div><pre>On Mon, 2 Mar 2015, Geoff Wearmouth wrote:
+
+<span class="qt">&gt; ... and you won&#x27;t believe your eyes</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; POKE 23659,1 : INPUT ;</span>
+
+That appears to send me directly to jial, without passing go. Or 
+collecting any money.
+
+deKay
+-- 
+  Lofi Gaming - <a href="http://lofi-gaming.org.uk" rel="noreferrer">http://lofi-gaming.org.uk</a>
+  Gaming Diary - <a href="http://lofi-gaming.org.uk/diary" rel="noreferrer">http://lofi-gaming.org.uk/diary</a>
+  Blog - <a href="http://lofi-gaming.org.uk/blog" rel="noreferrer">http://lofi-gaming.org.uk/blog</a>
+  My computer runs at 3.5MHz and I&#x27;m proud of that
+
+</pre></div><div class="post" id="p227197"><div class="ph"><a class="d" href="#p227197">2015-03-02 20:48:19</a> <span>Mauricio</span> <span>Re: Try this one weird POKE on your ZX Spectrum, TS2068 or ZX Vega</span></div><pre>is there any technical explanation about how can it produce that bars?
+
+</pre></div><div class="post" id="p227198"><div class="ph"><a class="d" href="#p227198">2015-03-02 21:17:13</a> <span>John Elliott</span> <span>Re: Try this one weird POKE on your ZX Spectrum, TS2068 or ZX Vega</span></div><pre>Mauricio &lt;…@…&gt; wrote:
+<span class="qt">&gt; is there any technical explanation about how can it produce that bars?</span>
+
+  Off the top of my head: The poke is to DF SZ, the number of lines in the
+bottom half of the screen. So... when it&#x27;s POKEd to 1, that causes an 
+arithmetic overflow and the attributes get scrolled into the display file?
+
+  (It&#x27;s definitely the attributes, because setting the screen to different
+colours before the POKE produces different stripe patterns).
+
+-- 
+John Elliott
+
+Thinks: This is what a nice clean life leads to. Hmm, why did I ever lead one?
+		-- Bluebottle, in the Goon Show
+
+</pre></div><div class="post" id="p227199"><div class="ph"><a class="d" href="#p227199">2015-03-02 21:51:31</a> <span>Brian Gaff</span> <span>Re: Try this one weird POKE on your ZX Spectrum, TS2068 or ZX Vega</span></div><pre>Yes does not the issue occur when the system returns to input mode and thus 
+has not enough lines to do that. I&#x27;ve seen pokes to this location in loaders 
+to stop people breaking in, it just falls over.
+
+There are allso pokes that can make the screen look like itssaving or 
+loading all the time, but its been a long while since I did it and I&#x27;ve 
+forgotten them.
+
+We used to put  a two line program in and run it, the first simply said 
+Elite is loading, please wait, and then the poke and a line that went to 
+itself.
+ Brian
+
+-- 
+From the Sofa of Brian Gaff Reply address is  active
+&quot;John Elliott&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; Mauricio &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; is there any technical explanation about how can it produce that bars?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;  Off the top of my head: The poke is to DF SZ, the number of lines in the</span>
+<span class="qt">&gt; bottom half of the screen. So... when it&#x27;s POKEd to 1, that causes an</span>
+<span class="qt">&gt; arithmetic overflow and the attributes get scrolled into the display file?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;  (It&#x27;s definitely the attributes, because setting the screen to different</span>
+<span class="qt">&gt; colours before the POKE produces different stripe patterns).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; -- </span>
+<span class="qt">&gt; John Elliott</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Thinks: This is what a nice clean life leads to. Hmm, why did I ever lead </span>
+<span class="qt">&gt; one?</span>
+<span class="qt">&gt; -- Bluebottle, in the Goon Show </span>
+
+
+
+</pre></div><div class="post" id="p227201"><div class="ph"><a class="d" href="#p227201">2015-03-03 23:03:08</a> <span>Damian Murphy</span> <span>Re: Try this one weird POKE on your ZX Spectrum, TS2068 or ZX Vega</span></div><pre>Heh. Yeah, try &#x27;randomize usr 1331&#x27; or something like that, if memory serves. 
+
+</pre></div></main></body></html>

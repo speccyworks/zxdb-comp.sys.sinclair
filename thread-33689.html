@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSSCGC 2007 - winner announced! [long] · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>CSSCGC 2007 - winner announced! [long]</h1><p class="facts">15 posts, 2007-12-24 – 2008-01-09</p><div class="post" id="p215085"><div class="ph"><a class="d" href="#p215085">2007-12-24 10:02:00</a> <span>Chris Young</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2061">CSSCGC Crap Games Contest 2007</a> <a class="badge" href="game-30966.html">ZXDB: Chesney Hawkes&#x27; Celebrity Digital Higher or Lower Simulator</a> <a class="badge" href="game-30997.html">ZXDB: Where In The World Is John Darwin</a> <a class="badge" href="game-30988.html">ZXDB: Say The Colour And Not The Word</a> <a class="badge" href="game-30962.html">ZXDB: Advanced Jet Set Willy Guardian Simulator</a> <a class="badge" href="game-30972.html">ZXDB: Evel Knievel One-Liner Bus Jumping</a> <a class="badge" href="game-30973.html">ZXDB: The Quest for the Golden Egg</a> <a class="badge" href="game-30968.html">ZXDB: Deluxe Greyhound Racing Simulator</a> <a class="badge" href="game-30969.html">ZXDB: Deluxe Horse Racing Simulator</a> <a class="badge" href="game-30967.html">ZXDB: Crap Castle Master 2</a> <a class="badge" href="game-30987.html">ZXDB: Remmy, The First Part</a> <a class="badge" href="game-30990.html">ZXDB: Shooting Training - Part 1</a> <a class="badge" href="game-33394.html">ZXDB: Advanced 3D Maze</a> <a class="badge" href="game-30978.html">ZXDB: Jet Set Bulimic</a> <a class="badge" href="game-30994.html">ZXDB: Turtles Part 1</a> <a class="badge" href="game-30995.html">ZXDB: Turtles Part 2</a> <a class="badge" href="game-30965.html">ZXDB: Bed and Breakfast</a> <a class="badge" href="game-30977.html">ZXDB: Hit The Road</a> <a class="badge" href="game-30985.html">ZXDB: Outrun - M25 Edition</a> <a class="badge" href="game-30986.html">ZXDB: Pilot Wings 48</a> <a class="badge" href="game-30989.html">ZXDB: Shave Rick&#x27;s Beard</a> <a class="badge" href="game-30991.html">ZXDB: Slippery Feet 2000</a> <a class="badge" href="game-30992.html">ZXDB: The Blind Chicken</a> <a class="badge" href="game-30975.html">ZXDB: Hat Catch</a> <a class="badge" href="game-33395.html">ZXDB: Lights Out</a> <a class="badge" href="game-30981.html">ZXDB: Maxwell&#x27;s Demon</a> <a class="badge" href="game-30971.html">ZXDB: Dobsonic Defendor</a> <a class="badge" href="game-30976.html">ZXDB: Haunted House</a> <a class="badge" href="game-30979.html">ZXDB: Killer Colours</a> <a class="badge" href="game-30984.html">ZXDB: OutPlay_128</a> <a class="badge" href="game-30982.html">ZXDB: Nazi Sudoku</a> <a class="badge" href="game-30993.html">ZXDB: Third Tournament</a> <a class="badge" href="game-30996.html">ZXDB: Velcro Head</a> <a class="badge" href="game-30999.html">ZXDB: Zuzzle Xobble</a> <a class="badge" href="game-30970.html">ZXDB: Desant</a> <a class="badge" href="game-30974.html">ZXDB: Handbags</a> <a class="badge" href="game-30983.html">ZXDB: Norton</a> <a class="badge" href="game-30998.html">ZXDB: Znapshot</a> <a class="badge" href="game-31000.html">ZXDB: ZXwire</a></div><pre>I&#x27;ve put the entire results/reviews straight in here as it is worth
+reading all the way through and the results might make a bit more
+sense if you do.  If you&#x27;re too impatient, scroll down to the end to
+find out the winner.  The archive is up at
+<a href="http://www.yoursinclair.co.uk/files/csscgc2007.zip" rel="noreferrer">http://www.yoursinclair.co.uk/files/csscgc2007.zip</a> and shortly WOS. 
+The official web page will be updated some time after Christmas.
+
+Merry Christmas, and congratulation to the winner!  The prize may or
+may not materialise.
+
+CSS Crap Games Competition 2007
+<a href="http://www.unsatisfactorysoftware.co.uk/?pg=cgc2007" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk/?pg=cgc2007</a>
+
+So, welcome to the CSSCGC 2007. As usual, it&#x27;s been a
+collection of absolute bollocks. With up to 41 entries (one or two of which
+were quite playable) we had our work cut out, literally spending all day
+playing crap games. That is time which we&#x27;re never going to see again, so
+we hope you&#x27;re all satisfied. We have of course approached the task of
+reviewing these games with a healthy dose of cynicism - probably more so
+than previous years - so some may deem the reviews quite harsh. Well, it&#x27;s
+no less than you all deserve. In fact, we reckon some of you have got off
+quite lightly. So without further ado, here is how you&#x27;ve all chosen to
+waste your time:
+
+
+a3dm/ad3dmaze.p - Advanced 3D Maze by Andy Rea
+
+Dear Trading Standards, Please find enclosed a tape containing a game sent
+to us for the zx81 entitled &quot;Advanced 3D Maze.&quot; We are submitting it to
+yourselves because we believe that it is in clear breach of the Trades
+Descriptions Act (1968), being as it is neither advanced nor in 3D. In fact
+it cannot even claim to be isometric, as it is merely a series of lines on
+a screen. Similarly, as it describes itself as a &#x27;Maze&#x27; game, it is also in
+breach of the Property Misdescriptions Act, as upon playing said game we
+discovered that the &#x27;walls&#x27; have no relevance to the &#x27;Maze&#x27; as it is
+possible to move straight through them, thus making it not even an accurate
+representation of any kind of maze. We trust that the author, Mr. A. Rea,
+will be hearing from you soon, and will therefore instruct him to recall
+all sold copies and cease further distribution. Yours, Unsatisfactory
+Software
+
+dog/Dog11.z80 - Deluxe Greyhound Racing Simulator v1.01 by Andrew Blood
+
+The promise of a dog racing simulator, as dictated by the text file,
+sounded, well, promising. After all, who wouldn&#x27;t want to recreate a night
+out at the dogs at Walthamstow, or Romford? We fired it up with
+anticipation. Even the loading screen looked great (once we&#x27;d located it in
+a separate file). We picked the track and got our readies out, eager to
+place our bets. We picked the dog... And they&#x27;re off! Eh? When do you place
+your bets, exactly? D-
+
+hatcatch/hat128.tzx - Hat Catch by Michael Wihlborg
+
+&quot;I hope you won&#x27;t enjoy it,&quot; says the author. Well, this is after all the
+CSSCGC, so we probably won&#x27;t. The game sounded promising - help Mr Hat
+catch his hat, almost like one of those Game &amp; Watch games from the 80s.
+How wrong we were. It&#x27;s basically guess the number. A &#x27;hat&#x27; graphic
+would&#x27;ve been nice, but, as it stands, it could be anything that Mr Hat is
+catching. Well, anything red and vaguely quadrilateral (if you squint) - a
+fire extinguisher, a block of edam cheese, a postbox - even an old
+telephone box. Mr Hat isn&#x27;t even rendered as a man. He&#x27;s a yellow square.
+The game might as well be titled, &quot;Position A Skip Under A Falling Red
+Crate Of Crap.&quot;
+
+horse117/horse117.z80 - Deluxe Horse Racing Simulator v1.17 by Andrew Blood
+
+Andrew Blood submitted his Dog Racing Simulator (Dog11.z80) along with
+this, a horse racing simulator in a similar vein (well, it&#x27;s identical).
+Andrew, if you think churning out the same stuff and hope that nobody
+notices the difference, then congratulations - you&#x27;re well on the way to a
+career with Electronic Arts, working on their FIFA Soccer series of games.
+
+jsb/Jet Set Bulimic.tap - Jet Set Bulimic by DrUnKeN mAsTeR
+
+We instantly knew what to expect from this submission - a rip-off of Jet
+Set Willy, as annual tradition should dictate. The aim is to eat as 256
+cheeseburgers (or &#x27;200&#x27; as the instruction suggests.... ?) and then vomit
+them all up again down the toilet (which didn&#x27;t work). The instructions
+didn&#x27;t say anything about the third screen, and the sprite getting stuck
+when we got to the bed area. So unfortunately we couldn&#x27;t finish it.
+Verdict: Crap.
+
+lightsout/lightsout.p - Lights Out by Andy Rea
+
+Another ZX81 game from Andrew Rea. It&#x27;s a version of the old Tiger
+Electronics puzzle and... it&#x27;s pretty good. Move the cursor to turn the
+lights on and off, and it&#x27;ll also turn off the 4 lights around it. It&#x27;s
+written in Assembler (source code provided!) and there&#x27;s not actually
+anything bad about it. Andrew has clearly submitted this to the wrong
+competition. Sorry Andrew - you&#x27;re not going to win a Crap Games
+Competition with *good entries.*
+
+lost/lost.z80 - Lost by Ben Rapier
+
+This year&#x27;s first TV tie-in to be reviewed, Lost had us in suspense. We
+were looking forward to re-enacting the adventures on the mysterious island
+of The Doctor Bloke, That Woman Who Did Time For Drink Driving, Hurley and
+Geoffrey Out Of Hetty Wainthrop Investigates. Imagine our disappointment
+when we discovered it was a mere text adventure, with only one command -
+enter the bloody numbers before the timer runs out. if you don&#x27;t know what
+they are, just do a search for &quot;Lost&quot; and &quot;Numbers.&quot; Entering anything else
+will cause you to lose the game. What&#x27;s brilliant about Lost is the lack of
+testing that&#x27;s gone into it - if you let the timer run out, well we won&#x27;t
+spoil the surprise. Coming soon - Lost 2, in which you have to enter the
+entire text of the Flann O&#x27;Brien novel *The Third Policeman* before the end
+of the century. Without typos.
+
+maxwell/maxwell.tap - Maxwell&#x27;s Demon by Stuart Naylor
+
+Not so much a game as a physics simulation masquerading as a game,
+*Maxwell&#x27;s Demon* is more of an &quot;edutainment&quot; product. Not sure there&#x27;s
+much &quot;Edu&quot; involved though - we&#x27;ve got both Physics and Maths A-Levels and
+a Computer Engineering degree and we still have no idea what&#x27;s going on.
+And while we&#x27;re at it, there&#x27;s not much &quot;tainment&quot; in evidence either -
+holding down the space bar to let a pixel across the screen does not a game
+make.
+
+turtles1/turtles-part1.z80 - Turtles Part 1 by Rickard Berglind
+
+One of the best entries so far, and the only entry to seemingly feature
+it&#x27;s own DRM in the source code (a LIST command brings up what appears to
+be jibberish and/or hieroglyphics). You play one of the eponymous ninja
+turtles - it doesn&#x27;t matter which one - and must defend his home, which is
+now seemingly somewhere out in the countryside as opposed to the New York
+City sewers. It&#x27;s indicative of the impact that shows like *A Place In The
+Sun* and *Build a New Life in the Country* have when our Crap Games are
+taking cues from them. Gameplay-wise, it&#x27;s fairly straightforward - it&#x27;s of
+the one key variety, and there&#x27;s only one move, &quot;Stab,&quot; with the controls
+helpfully emblazoned on the bottom of the screen in large type. Apparently
+this game was 20 years in the making (19 3/4 of those in the loft. And
+giving it 1/4 of a year is generous) and it shows; however, it&#x27;s still
+better than tat like Daikatana.
+
+turtles2/turtles-part2.z80 - Turtles Part 2 by Rickard Berglind
+
+And so, the sequel. And it&#x27;s not half bad, certainly one of the better crap
+games we&#x27;ve played so far. It&#x27;s a spin on the old Frogger games - cross the
+river to get the diving gear (we all remember that in Frogger), and then
+dive down to get the treasure, past one of the largest baddies ever seen in
+a crap game. But therein lies the problem - in which episode of the turtles
+did they go looking for sunken treasure? Also screamingly obvious is the
+misnomer - why is it called Turtles when there&#x27;s only one of them? Did the
+other three tell him to sod off?
+
+advanced-jetsetwilly-guardian-simulator.z80 - Advanced Jet Set Willy
+Guardian Simulator by Rickard Berglind
+
+Another rip-off of Jet Set Willy, but with a twist - you play one of the
+weird objects (called &quot;The Guardian&quot;) that patrol the house, in this case,
+The Top Landing. Your aim is to move back and forth and stop Miner Willy
+when he appears, which he will do when you are going the other direction.
+If he gets past, you won&#x27;t see him for toffee. The only reasonable course
+of action is therefore to reset the Spectrum. Crap!
+
+Atak pajakow (Spider Attack) 1.tzx - Atak Pajakow (Spider Attack) 1 by
+Daniel Gromann
+
+Wow. Another game straight from the 80s (although the green and black
+colour scheme makes it look like the 70s), spider Attack has the added
+challenge of being all in Polish, although the author has kindly provided a
+translation. Once again, what we have here is a Frogger clone, with spiders
+(we all remember those in Frogger). Rather helpfully, one of the controls
+resets the Spectrum - the control you&#x27;ll be using most, no doubt.
+
+Atak pajakow (Spider Attack) 2.tzx - Atak Pajakow (Spider Attack) 2 by
+Daniel Gromann
+
+Spider Attack 2 follows on (presumably) from the events of Spider Attack 1.
+Our hero (if you can call a man escaping some attacking spiders which
+aren&#x27;t, er, attacking, by running away, a hero) has made it safely home.
+Now you have to make use of your installed &quot;arrow launcher&quot; (a popular home
+defence system in 1940s Poland, one presumes) to fight off the spiders. And
+that&#x27;s about it, really. There&#x27;s only really one key - Fire. Oh, and one to
+reset the spectrum again.
+
+bfast.tzx - Bed and Breakfast by Paul E Collins
+
+Bed and Breakfast appears, by all accounts, to be an accurate simulation of
+running a B&amp;B. A poor B&amp;B at that, but a B&amp;B nonetheless. Gameplay involves
+remembering the breakfast orders for all of your guests, who all happen to
+come down for breakfast at exactly the same time. It&#x27;s the speccy
+equivalent of those games you used to play at 6th birthday parties, where
+your friend&#x27;s mum brings out a tray with a load of random household items
+on it, covered with a teatowel, and whoever remembers the most wins. There
+don&#x27;t seem to be any winners from playing this, though - only losers.
+
+chh.tap - Chesney Hawkes&#x27; Celebrity Digital Higher or Lower Simulator by
+Gavin Callard
+
+Christ. Chesney Hawkes&#x27; Celebrity Digital Higher Or Lower Simulator, to
+give it it&#x27;s full title, does exactly what it says on the tin. A
+cyan-rendered image (which takes bloody ages to generate) of the mid-90s
+popster guides you through what is effectively a round of Play Your Cards
+Right without the cards. Place your bets, and then guess whether one number
+is higher than another. And that&#x27;s it. Well, at least it didn&#x27;t crash. The
+less said the better.
+
+CrapCastleMaster2.tap - Crap Castle Master 2 by Anthony Lycett
+
+Well, at least it&#x27;s an honest title. To be fair, A.L. Graphics&#x27; effort is
+technically competent - the wireframe castle is fairly impressive (and who
+knows, maybe historically accurate). The main problem with the game is that
+I don&#x27;t know anyone who&#x27;s got enough time on their hands to play it. Even
+the bloke outside the shopping centre selling the Big Issue is too busy to
+dedicate enough time to what is, in effect, watching a fictional castle
+being drawn (or indeed, watching paint dry. which maybe preferable). 95%
+for effort, 0.1% for gameplay. Except it actually only a deserves 5% for
+effort, being as it is a rip-off of the previous Crap Castle Master
+attempt.
+
+Darwin.tap - Where In The World Is John Darwin? by Malthadius Zoff
+
+One of the better of this year&#x27;s entries, Where In The World Is John Darwin
+(&quot;Can-oe find him?&quot;) proves also to be one of the most topical, and also
+original (alright, maybe not). But it is fun, one of the most vital
+elements of a crap game. You travel the world investigating the case of
+canoe enthusiast and alleged international fraudster John Darwin (within
+the budget of the local police authority). Is he in Rome? Is he in Fucking
+Austria? Who knows? Only you will find out, as you travel the continents in
+search of clues. The only thing that stands in your way is time - crack the
+case before time runs out and you&#x27;ll bag yourself a promotion and hefty
+bonus. And a nice tan. If not, your wife will leave you and you&#x27;re off the
+case! Cripes!
+
+dd.tap - Dobsonic Defendor (Gold Edition) by David Mackenzie
+
+Dobsonic Defendor describes itself as a &quot;thrilling shoot-em-up with over 4
+weapons.&quot; That&#x27;s probably one of the most accurate descriptions issued to
+any of the crap games on offer this year. Taking it&#x27;s cues from Space
+Invaders, you control your craft, the Dobsonic Defendor, with the O and P
+keys, and Space to fire. It&#x27;s deceptively simple, and yet the depth and
+attention to detail is stunning. B+.
+
+Desant (Landing Operation).tzx - Desant (Landing Operation) by Daniel and
+Krystyna Gromann
+
+Another Polish entry from Daniel Gromann (with his mum on this effort).
+Rather touchingly, the opening screen has a poem relating to parachutists.
+In the instructions/translation, Daniel says, &quot;This poem itself should give
+me victory in the Crap Games Compo!&quot; Don&#x27;t be too sure Daniel - this is a
+crap games compo, not a crap poetry compo. We&#x27;ll leave that to Tom Paulin
+on Newsnight Review. As for the game itself - it&#x27;s a crap-games standard
+Game &amp; Watch knock-off, a bit like &quot;Hat Catch&quot; but with more Gameplay; you
+can actually move the ship to catch the parachutists left and right. And
+the sprites actually look like what they&#x27;re meant to be. Furthermore, the
+game reiterates it&#x27;s crapness credentials by not having the ability to get
+back to the main title screen and, even better, even the author isn&#x27;t sure
+if it&#x27;s possible. Daniel, your game is crap. And I&#x27;m sure that&#x27;s exactly
+what you wanted to hear.
+
+evel.tzx - Evel Knievel One-Liner Bus Jumping by Digital Prawn
+
+Evel Knievel One-Liner Bus Jumping is billed as a &quot;mini-homage to the
+stuntman,&quot; mini being the operative word - coded in just one line of
+(incomprehensible) BASIC, the game sees you trying to jump over increasing
+numbers of red buses, which is achieved by basically bashing random keys of
+your choice - the concept behind it is pretty good, but the implementation
+is crap - random keys? See what we did there? The review above was only one
+line.
+
+golden.p - The Quest For The Golden Egg by Digital Prawn
+
+Man, this is one of the worst games I&#x27;ve ever played - and I&#x27;ve played Rise
+Of The Robots. Quest For The Golden Egg is effectively an attempt to locate
+an egg based on a set of X,Y coordinates - it wants to be an arcade/RPG
+adventure, but it would be more at home on an Excel Spreadsheet. It could
+work as a text adventure, but, erm, it isn&#x27;t one. Play at your peril. The
+instructions state, &quot;Here the real enemy is existensial despair.&quot; You&#x27;ll
+face this just by typing LOAD&quot;&quot;. You have been warned.
+
+handbags.tap - handbags.tap by A.J.Moss
+
+Interesting. This is what seems to be some sort of postmodern text
+adventure. Except it&#x27;s not - it&#x27;s much more than that and yet so much less
+at the same time. The game - if you can call it that - sees you writing a
+crap game for the crap games competition - *this year&#x27;s* crap games
+competition, no less - on the day of submission, and the HitchHiker&#x27;s Guide
+To The Galaxy has just started on BBC2. The crux of it is effectively a
+BASIC IDE, with no funtionality whatsoever. When you&#x27;ve entered the code,
+type &quot;SAVE&quot; and email your .tap off as soon as possible. But be quick -
+you&#x27;ve only got 50 minutes left! In terms of gameplay? Well, obviously,
+there&#x27;s none whatsoever. D-.
+
+haunted-house.z80 - Haunted House by Rickard Berglind
+
+This one&#x27;s billed as a &quot;Multi-screen arcade adventure.&quot; At first it sounded
+impressive, until we actually played it. There&#x27;s only two screens, and one
+of those is only attainable at the point of your character&#x27;s inevitable
+death? Why inevitable? Because the controls don&#x27;t work. The &quot;Jump&quot; action
+appears to be non-existant, despite being referenced in the documentation.
+The documentation also states, &quot;A not completely finished game from
+mid-80&#x27;s&quot; which, in addition to being quite non-specific, is appalling.
+Calvin Harris sang, &quot;It was acceptable in the 80s.&quot; How wrong he was.
+
+hittheroad.tap - Hit The Road by Quique Llarï¿½a
+
+A first for the crap games compo, as this is the first to feature a
+&#x27;Karaoke&#x27; option. Unfortunately, this is not only the best part of the
+game, but it&#x27;s also as tuneless as any X-Factor entrant (expect to see the
+title song, &quot;Hit the Road,&quot; on next year&#x27;s Britain&#x27;s Got Talent). The game
+itself sees you, as some ASBO-afflicted teenage yob, dropping rocks onto
+cars from a flyover. Despite the level of social commentary on show, the
+game as a whole is let down by a) the graphics appear to have been drawn by
+a five-year-old and b) the gameplay is non-existant. It&#x27;s as random as a
+Hat Catch, or better still, Chesney Hawks&#x27; Number Guessing Bollocks.
+
+killer.tzx - Killer Colours by Paul E Collins
+
+OK, this is a load of arse, but we weren&#x27;t expecting any better, to be
+honest. It&#x27;s basically &quot;Simon Says&quot; with coloured squares, crossed with
+Twister. To be fair though, the title is pretty good.
+
+m25.tzx - Outrun: M25 Edition by Andrew Owen
+
+Or, Outrun:M25 Edition, to give it it&#x27;s full title. From what we&#x27;ve seen so
+far, it&#x27;s pretty realistic, and definitely recreates driving on the M25.
+The only missing option is that of bibbing your horn, really (oo-er). It&#x27;s
+also the only game here to sensibly come with a health warning, which the
+author insists you read first. This can only score it more points, as far
+as we&#x27;re concerned. Which is more than it deserves.
+
+Outplay_128.tzx - OutPlay_128 by Chris Born
+
+Man, those crazy Dutch, man, with their Hash Brownies, and whore-ridden
+waterways. This isn&#x27;t so much a game, as, well, it&#x27;s not one at all. It
+came with no instructions, and the email just said (paraphrasing) &quot;It won&#x27;t
+just crap, or will it?&quot; Well, yes it will, and it has. It seems to be some
+sort of music tracker program, but we can&#x27;t even be sure. How can you
+review something when you don&#x27;t even know what it is? You don&#x27;t see Barry
+Norman go along to the cinema, only to find he&#x27;s not reviewing a film, but
+some obscure live-on-stage Eastern European Dance/Mime act, do you?
+
+pw.tap - Pilot Wings 48 by Nathan Cross
+
+One of the SNES&#x27; most memorable games, Pilotwings, has now made it&#x27;s way to
+the spectrum, where it&#x27;s not quite so memorable. It is however a faithful
+representation of the gameplay - stage 1 sees you guiding a parachutist
+(and we all remember that bit in Frogger, as it might as well be Frogger)
+onto a target, whereas stage 2 involves flying a crudely rendered bi-plane
+through a series of rings (or in the 48k version, blocks). Finally, there
+is a jetpack stage. And that&#x27;s it. We completed it in about 5 minutes, on
+our 2nd attempt. It&#x27;s still one of the better conversions here.
+
+Remmy.z80 - Remmy, The First Part by Rickard Berglind
+
+Apparently, this is one of Rickard Berglind&#x27;s finished games. I hate to
+imagine what one of his unfinished games would be like. Oh wait - we
+already played *Haunted House*. You have to give him top marks for trying
+though. This one is a Ghouls &#x27;n&#x27; Ghosts / Ghosts &#x27;n&#x27; Goblins clone (and it
+*really* doesn&#x27;t matter which one - it might be a Ghostbusters clone for
+all we know). Gameplay is at a bare minimum - we&#x27;ve left it running in the
+background for 10 minutes now and nothing&#x27;s happened, despite there being
+at least one &quot;daemon&quot; on screen. It&#x27;s even got that excellent bug, which
+should be a pre-requisite of all crap games, where the controls reverse
+when you hit the left-hand side of the screen. Nice FMV intro, though.
+
+ShaveRicksBeard.tzx - Shave Rick&#x27;s Beard by Chris Walsh
+
+A pretty good effort from Chris Walsh, the only downside being his
+patent-pending Thin Screen (TM) technology, which basically requires you to
+put your telly on it&#x27;s side, which is far from convenient, to be honest.
+Especially if it&#x27;s a 50-inch plasma mounted on the wall (although everyone
+we know who&#x27;s got one has a speccy hooked up to it, controlling the array
+of digital boxes and recording gear). The game itself is pretty good, with
+accurate skill levels (unlike other spider-based Polish games we could
+mention, the selection isn&#x27;t totally arbitrary). Otherwise, not bad.
+Although you need to make your mind up if it&#x27;s Dave or Rick who is the
+centre-piece.
+
+shooting-training.z80 - Shooting Training Part 1 by Rickard Berglind
+
+Another &quot;unfinished&quot; entry from Rickard Berglind, although, *Turtles*
+aside, it&#x27;s his most complete looking effort, which speaks volumes about
+his other games. As should be the case with crap games, both the controls
+and gameplay are simple. Maybe in this case a little bit too simple.
+Actually, it&#x27;s major downfall is that it&#x27;s not a light gun game. It would
+beat the shit out of *Bullseye* any day.
+
+SLP.tap - Slippery Feet 2000 by Gavin Callard
+
+A strange little puzzle game, this. Strange, in that the concept and
+thought behind it is pretty good. The execution though,is bloody awful. I&#x27;d
+be compelled to play it further if it weren&#x27;t for the fact that you have to
+wait a month for the controls to register, and then ages still for the
+sprites to move. It&#x27;s your standard Q-A-O-P controls, and wherever your
+little feller goes (fnar!) the ghost follows - even if you are squashed up
+against a wall. Oh, and the instructions say to watch out for bombs -
+shouldn&#x27;t be too difficult, as we&#x27;ve played through the game (so you don&#x27;t
+have to!) and it appears that there aren&#x27;t any. C#.
+
+stcantw.z80 - Say The Colour And Not The Word by Jamie Percival
+
+Say The Colour And Not The Word. Well, it&#x27;s not as bad as Quest for The
+Golden Egg, although that&#x27;s not saying much. Losing a limb in some sort of
+industrial accident isn&#x27;t as bad as playing Quest For The Golden Egg. But
+we digress. The problem with STCANTW is that it really isn&#x27;t computer game
+material - at best it should be at home on ITV&#x27;s &quot;Make Your Play&quot;
+overnight-phone-scam-quiz. It has an option of one or two-player mode,
+although it&#x27;s of no consequence really. You could probably say you had 50
+players and it&#x27;d function in exactly the same way. In fact, we&#x27;ve just
+checked, and it does. We now have 50 people crammed round the speccy
+shouting random colours, and it&#x27;s no more fun than playing it on your own.
+A poor man&#x27;s Brain Training. We&#x27;re off to watch Quiz Call on Channel 5. You
+Say, We Pay. ï¿½1 million to the regulators, that is.
+
+sudoku.tap - Nazi Sudoku by A.J.Moss
+
+Top marks for tastelessness on this one - Nazi Sudoku where, as opposed to
+using the numbers 1-9 in Sudoku, you use the letters A,U,S,C,H,W,I,T and Z.
+Control the cursor using 5,6,7 and 8 (for some unfathomable reason) and
+enter the letter you think is missing. The logic is competent - proper
+error checking and everything, like proper Sudoku on digital teletext. We
+don&#x27;t see any national newspaper picking it up any time soon though. well,
+maybe The Sun.
+
+Symantec.tap - Norton by A.J.Moss
+
+We&#x27;re not entirely sure what this was supposed to be. All we know is it
+seemed to be some sort of program which suggested that the speccy had been
+&quot;pwned&quot; by a virus, but we couldn&#x27;t get it to work properly. 10/10 for digs
+at Norton though. It would have been more realistic if it just tried to
+download endless updates, from a looped C90.
+
+TBC.tzx - The Blind Chicken by deVandemar Croup
+
+Blimey. Blimey O&#x27;reilly O&#x27;rourke. This is another random-&#x27;em-up, perhaps on
+a par with Hat Catch. All that is involved is, er pressing any key and see
+if your blind chicken can find any grain(?!). It would be worthwhile if the
+chicken could see, because then there might be some graphics or gameplay.
+But there aren&#x27;t, so there isn&#x27;t. The loading screen is more inviting than
+the game actually is entertaining, but that&#x27;s nothing new where crap games
+are concerned - that&#x27;s par for the course. If we&#x27;re judging each game on
+it&#x27;s merits (or their loading screens), The Blind Chicken will still lose.
+It&#x27;s crap credentials are too crap. Possibly one of the worst and most
+boring games. Still, not as bad as *Golden Egg.* At least there&#x27;s a timer
+to tell you how long the agony is going to last. The Blind Chicken? That
+Bloody Chicken, more like.
+
+thirdtournament.z80 - Third Tournament by Ivan Kostrub
+
+This one purports to be from the *Unreal Tournament* series. High Hopes,
+eh? &quot;Does anyone want to license this brilliant engine?&quot; asks Ivan.
+Unlikely, to be honest. Although it does look *a bit* like an FPS. As
+knocked-up-in-an-afternoon games go (we assume it was knocked up in an
+afternoon, as most of the entries were, albeit afternoons in the 80s) it&#x27;s
+not half-bad. Only 2 eighths-bad. It does resemble 3D Monster Maze on the
+ZX81. With Guns. Which is good in anyone&#x27;s book.
+
+VEL.tap - Velcro Head by Gavin Callard
+
+Why is this called Velcro Head? It sounds like the name of some crap
+mid-90s experimental indie band. Oh wait - that&#x27;s Radiohead we&#x27;re thinking
+of. Although to be fair Radiohead aren&#x27;t necessarily crap. This game is
+however. It&#x27;s the usual avoid-the-gravity-defying-blocks fare - and you
+control an asterisk. As far as we can make out, you get three lives and,
+er, that&#x27;s it. What more can you say? Next!
+
+znapshot-klar.z80 - Znapshot by Rickard Berglind
+
+Eh? Znap Zhot? What the hell does that mean? I can only presume that it&#x27;s
+Swedish for &#x27;Crap Arkanoid clone.&#x27; Which makes the name all the more
+self-explanatory, as it is a crap Arkanoid clone. What&#x27;s excellent is that
+Rickard&#x27;s documentation describes the bugs as &#x27;features.&#x27; We even found
+another &#x27;feature&#x27;: there are none of those promised, pesky &#x27;power-up&#x27;
+tokens getting in the way. Instead they&#x27;re helpfully stored in the
+bottom-right hand side of the screen, ready to be collected. Otherwise it&#x27;s
+pretty much as you&#x27;d expect: something that vaguely resembles a re-hash of
+the &#x27;breakout&#x27; game listings in the back of the +2A/+3 manual. It may be a
+load of old bobbins, but I suppose at least it&#x27;s semi-competent bobbins.
+
+zuzzle.tap - Zuzzle Xobble by James Weatherley
+
+This one&#x27;s a thinly-disguised Puzzle Bobble / Bust-a-move clone, and a
+piss-poor one at that. Largely as it doesn&#x27;t work. All of the essential
+features of Puzzle Bobble have yet to be implemented, meaning you are
+effectively drawing different coloured circles. And, er, that&#x27;s it. You
+can&#x27;t win. Or lose. Well, except by playing it. The only way out is to play
+it until you get the &quot;Integer Out Of Range&quot; error which, given how slow it
+goes, could take several years. Still it&#x27;s not as slow as Crap Castle
+Master 2. The &quot;inlay&quot; says that Bub and Bob - sorry, Zub and Xob - are
+invisible. Translation: couldn&#x27;t be arsed. 10/10 for lack of effort.
+
+zxwire.tap - ZXwire by Chris Young
+
+First off, we&#x27;ll have to admit to some level of bias here, as ZXWire is an
+fully fledged (arf!) Unsatisfactory Software production. Well,
+half-fledged. But that doesn&#x27;t let it off - we wrote it and we know it&#x27;s
+crap. As a conversion of Palm Favourite AckWire, it&#x27;s something more akin
+to someone&#x27;s end of year accounts - a kind of Monopoly on a spreadsheet, if
+you will. Gameplay effectively entails entering some numbers and then
+waiting a bit, and then entering some more numbers, during which nobody has
+any idea what&#x27;s going on. Even we don&#x27;t know what&#x27;s going on. Summat about
+hotels, and shares and that. We forget. In fact, we don&#x27;t even know what
+was in the code *as it was being written.* One or two (probably more)
+essential features are still MIA, particularly that of any way of gauging a
+winner.
+
+
+And The Winner Is......
+
+In Reverse order:
+
+3rd Place
+
+Where In The World Is John Darwin? It&#x27;s topical, it&#x27;s entertaining - it has
+one joke (nay, it *is* one joke) and above all, it&#x27;s crap. It could&#x27;ve had
+more gameplay, with additional clues based on the other global locations,
+and Darwin appearing in other locales, but Zoff couldn&#x27;t be arsed. We can
+only admire such laziness in crap game development.
+
+
+2nd Place
+
+Nazi Sudoku This is sure to be a controversial decision, but we stand by
+it. Not the game that is - it&#x27;s quite offensive and nothing to do with us.
+But you&#x27;ve got to admire the balls in having the gall to write a game as
+dull as that, mixed in with borderline-nazism. No-one would ever buy that -
+even giving it away would probably prove to be a challenge. And that in and
+of itself makes it crap.
+
+
+1st place
+
+Surprise Winner:
+
+Dobsonic Defendor
+
+Bad spelling aside, Dobsonic Defendor stood out because although it looks
+impressive (like a proper game!) it is in actual fact crap. It&#x27;s got the
+best array of weapons ever seen (James Blunt! We all remember that weapon
+in Frogger) on any game (on pretty much any platform). It&#x27;s also impossible
+to lose, has practical controls and pretty good aracde-style graphics. All
+that&#x27;s missing is any kind of entertainment, which makes it very crap,
+considering what it could have been.
+
+Special Mentions to:
+
+Maxwell&#x27;s Demon, for being downright bizarre.... Turtles Pt. 2 (and
+Rickard&#x27;s persistence in recovering several crap games from the 80s)...
+Chesney Hawkes Celebrity Digital Higher Or Lower Simulator Or Whatever It&#x27;s
+Called... Hit The Road, for the Karaoke option (although not the actual
+game)... Daniel Gromann&#x27;s Desant, for featuring poetry, and help from his
+mum in the 80s... And everyone else who submitted crap (literally). Sorry
+all... better luck next year.
+
+And the losers.....
+
+Everyone, of course! The absolute pits goes to:
+
+(Drum Roll)
+
+Quest For The Golden Egg. What a waste of time. (Although Hat Catch and
+Blind Chicken were pretty dire also. Who the hell is trying to catch a hat
+anyway?)
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p215087"><div class="ph"><a class="d" href="#p215087">2007-12-24 11:44:13</a> <span>Digital Prawn</span> <span>Re: CSSCGC 2007 - winner announced! [long]</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2061">CSSCGC Crap Games Contest 2007</a></div><pre>I guess it was inevitable my game would come last!
+
+I take it from this that I win the &quot;booby prize&quot; of having to host the
+compo next year?
+
+I&#x27;m happy to do this if that is the case.
+
+If so then I will put a 2008 compo page together sometime early next
+year. I already have a website.
+
+Cheers, DP
+
+
+
+
+</pre></div><div class="post" id="p215089"><div class="ph"><a class="d" href="#p215089">2007-12-24 12:57:35</a> <span>andy</span> <span>Re: CSSCGC 2007 - winner announced! [long]</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2061">CSSCGC Crap Games Contest 2007</a></div><pre>LOL some of your comments are pretty funny.
+
+Congrats to the winners and comiserations to the losers.
+
+Regards Andy. 
+
+
+
+
+
+</pre></div><div class="post" id="p215092"><div class="ph"><a class="d" href="#p215092">2007-12-24 16:35:08</a> <span>Duncan Snowden</span> <span>Re: CSSCGC 2007 - winner announced! [long]</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2061">CSSCGC Crap Games Contest 2007</a></div><pre>Chris Young wrote:
+
+Some stuff.
+
+Crikey, has hell frozen over or something? (No. You still haven&#x27;t 
+written an entry for the compo yet. -Ed.)
+
+Hm. Yes. Anyway, congrats to Mr. Maxwell for his victorious load of crap 
+(it&#x27;s official!) and a distinctly un-crap Christmas to Spec-chums 
+everywhere.
+
+
+-- 
+Duncan Snowden.
+
+
+
+</pre></div><div class="post" id="p215093"><div class="ph"><a class="d" href="#p215093">2007-12-24 21:56:08</a> <span>Mal F</span> <span>Re: CSSCGC 2007 - winner announced! [long]</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2061">CSSCGC Crap Games Contest 2007</a></div><pre>In article &lt;476F836F.MD-
+…@…&gt;, chris.usenet@mail-
+filter.com says...
+<span class="qt">&gt; </span>
+<span class="qt">&gt; lightsout/lightsout.p - Lights Out by Andy Rea</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Another ZX81 game from Andrew Rea. It&#x27;s a version of the old Tiger</span>
+<span class="qt">&gt; Electronics puzzle and... it&#x27;s pretty good. Move the cursor to turn the</span>
+<span class="qt">&gt; lights on and off, and it&#x27;ll also turn off the 4 lights around it. It&#x27;s</span>
+<span class="qt">&gt; written in Assembler (source code provided!) and there&#x27;s not actually</span>
+<span class="qt">&gt; anything bad about it. Andrew has clearly submitted this to the wrong</span>
+<span class="qt">&gt; competition. Sorry Andrew - you&#x27;re not going to win a Crap Games</span>
+<span class="qt">&gt; Competition with *good entries.*</span>
+<span class="qt">&gt; </span>
+
+reminded me that i wrote a version of this game as an easter egg for our 
+Access 4.2 based company database :)
+
+
+
+</pre></div><div class="post" id="p215095"><div class="ph"><a class="d" href="#p215095">2007-12-25 00:30:49</a> <span>OwenBot</span> <span>Re: CSSCGC 2007 - winner announced! [long]</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2061">CSSCGC Crap Games Contest 2007</a></div><pre>Next year I&#x27;m resorting to bribery.
+
+
+
+</pre></div><div class="post" id="p215197"><div class="ph"><a class="d" href="#p215197">2008-01-01 19:42:59</a> <span>Chris Young</span> <span>Re: CSSCGC 2007 - winner announced! [long]</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2061">CSSCGC Crap Games Contest 2007</a></div><pre>On Mon, 24 Dec 2007 03:44:13 -0800 (PST) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Digital Prawn:
+
+<span class="qt">&gt; I guess it was inevitable my game would come last!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I take it from this that I win the &quot;booby prize&quot; of having to host the</span>
+<span class="qt">&gt; compo next year?</span>
+
+Oh, yes :-)
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p215198"><div class="ph"><a class="d" href="#p215198">2008-01-01 19:46:26</a> <span>Chris Young</span> <span>Re: CSSCGC 2007 - winner announced! [long]</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2061">CSSCGC Crap Games Contest 2007</a></div><pre>On Mon, 24 Dec 2007 16:35:08 +0000 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Duncan Snowden:
+
+<span class="qt">&gt; Crikey, has hell frozen over or something?</span>
+
+Yes, sorry about that, I left the freezer door open in, erm (I&#x27;m
+reluctant to say Hell&#x27;s Kitchen, but there you go).
+
+<span class="qt">&gt; Hm. Yes. Anyway, congrats to Mr. Maxwell</span>
+
+Who?
+
+It was Mr Mackenzie who won!
+
+I don&#x27;t think there was a Mr Maxwell who entered.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p215201"><div class="ph"><a class="d" href="#p215201">2008-01-01 23:02:18</a> <span>qaopm</span> <span>Re: CSSCGC 2007 - winner announced! [long]</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2061">CSSCGC Crap Games Contest 2007</a></div><pre>Chris Young wrote:
+
+<span class="qt">&gt; On Mon, 24 Dec 2007 16:35:08 +0000 da kidz on comp.sys.sinclair</span>
+<span class="qt">&gt; were rappin&#x27; to MC Duncan Snowden:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Crikey, has hell frozen over or something?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Yes, sorry about that, I left the freezer door open in, erm (I&#x27;m</span>
+<span class="qt">&gt; reluctant to say Hell&#x27;s Kitchen, but there you go).</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Hm. Yes. Anyway, congrats to Mr. Maxwell</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Who?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; It was Mr Mackenzie who won!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I don&#x27;t think there was a Mr Maxwell who entered.</span>
+
+whatever happened to Alan anyway?
+
+I must finish my entry... I&#x27;ve been working on it since early 2006!
+
+
+
+</pre></div><div class="post" id="p215202"><div class="ph"><a class="d" href="#p215202">2008-01-01 23:14:31</a> <span class="small">address hidden</span> <span>Re: CSSCGC 2007 - winner announced! [long]</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2061">CSSCGC Crap Games Contest 2007</a></div><pre>qaopm &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; Chris Young wrote:</span>
+
+<span class="qt">&gt;&gt; On Mon, 24 Dec 2007 16:35:08 +0000 da kidz on comp.sys.sinclair</span>
+<span class="qt">&gt;&gt; were rappin&#x27; to MC Duncan Snowden:</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt;&gt; Crikey, has hell frozen over or something?</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Yes, sorry about that, I left the freezer door open in, erm (I&#x27;m</span>
+<span class="qt">&gt;&gt; reluctant to say Hell&#x27;s Kitchen, but there you go).</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt;&gt; Hm. Yes. Anyway, congrats to Mr. Maxwell</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Who?</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; It was Mr Mackenzie who won!</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; I don&#x27;t think there was a Mr Maxwell who entered.</span>
+
+<span class="qt">&gt; whatever happened to Alan anyway?</span>
+
+Len has posted here slightly recently...
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   | &quot;Are you pondering what I&#x27;m pondering Pinky?&quot;   |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|                                                 |</span>
+<span class="qt">|            in            | &quot;I think so brain, but this time, you control   |</span>
+<span class="qt">|     Computer Science     |  the Encounter suit, and I&#x27;ll do the voice...&quot;  |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p215204"><div class="ph"><a class="d" href="#p215204">2008-01-02 01:34:57</a> <span>Duncan Snowden</span> <span>Re: CSSCGC 2007 - winner announced! [long]</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2061">CSSCGC Crap Games Contest 2007</a></div><pre>Chris Young wrote:
+
+<span class="qt">&gt; On Mon, 24 Dec 2007 16:35:08 +0000 da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt; to MC Duncan Snowden:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Hm. Yes. Anyway, congrats to Mr. Maxwell</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Who?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; It was Mr Mackenzie who won!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I don&#x27;t think there was a Mr Maxwell who entered.</span>
+
+Crap Congratulatory Post.
+
+That&#x27;s my story, and I&#x27;m sticking to it.
+
+-- 
+Duncan Snowden.
+
+
+
+</pre></div><div class="post" id="p215205"><div class="ph"><a class="d" href="#p215205">2008-01-02 01:51:24</a> <span class="small">address hidden</span> <span>Re: CSSCGC 2007 - winner announced! [long]</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2061">CSSCGC Crap Games Contest 2007</a></div><pre>Duncan Snowden &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; Chris Young wrote:</span>
+
+<span class="qt">&gt;&gt; On Mon, 24 Dec 2007 16:35:08 +0000 da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt;&gt; to MC Duncan Snowden:</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt;&gt; Hm. Yes. Anyway, congrats to Mr. Maxwell</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Who?</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; It was Mr Mackenzie who won!</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; I don&#x27;t think there was a Mr Maxwell who entered.</span>
+
+<span class="qt">&gt; Crap Congratulatory Post.</span>
+
+Congraturatory post shirely?
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   | &quot;Are you pondering what I&#x27;m pondering Pinky?&quot;   |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|                                                 |</span>
+<span class="qt">|            in            | &quot;I think so brain, but this time, you control   |</span>
+<span class="qt">|     Computer Science     |  the Encounter suit, and I&#x27;ll do the voice...&quot;  |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p215215"><div class="ph"><a class="d" href="#p215215">2008-01-02 18:05:38</a> <span>Duncan Snowden</span> <span>Re: CSSCGC 2007 - winner announced! [long]</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2061">CSSCGC Crap Games Contest 2007</a></div><pre>…@… wrote:
+
+<span class="qt">&gt; Duncan Snowden &lt;…@…&gt; did eloquently scribble:</span>
+<span class="qt">&gt;&gt; Chris Young wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;&gt; On Mon, 24 Dec 2007 16:35:08 +0000 da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt;&gt;&gt; to MC Duncan Snowden:</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;&gt; Hm. Yes. Anyway, congrats to Mr. Maxwell</span>
+<span class="qt">&gt;&gt;&gt; Who?</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; It was Mr Mackenzie who won!</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; I don&#x27;t think there was a Mr Maxwell who entered.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Crap Congratulatory Post.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Congraturatory post shirely?</span>
+
+See? Totully crap.
+
+-- 
+Duncan Snowden.
+
+
+
+</pre></div><div class="post" id="p215249"><div class="ph"><a class="d" href="#p215249">2008-01-06 17:07:00</a> <span>David Mackenzie</span> <span>Re: CSSCGC 2007 - winner announced! [long]</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2061">CSSCGC Crap Games Contest 2007</a></div><pre>On Tue, 01 Jan 2008 19:46:26 GMT, &quot;Chris Young&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;On Mon, 24 Dec 2007 16:35:08 +0000 da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt;to MC Duncan Snowden:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Crikey, has hell frozen over or something?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Yes, sorry about that, I left the freezer door open in, erm (I&#x27;m</span>
+<span class="qt">&gt;reluctant to say Hell&#x27;s Kitchen, but there you go).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Hm. Yes. Anyway, congrats to Mr. Maxwell</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Who?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;It was Mr Mackenzie who won!</span>
+
+Yes, I believe I did.
+
+I&#x27;m thrilled at writing the crappest game of 2007!
+
+-- 
+David ( @priz.co.uk )
+
+
+
+</pre></div><div class="post" id="p215296"><div class="ph"><a class="d" href="#p215296">2008-01-09 19:04:30</a> <span>Llama-Wax Len</span> <span>Re: CSSCGC 2007 - winner announced! [long]</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2061">CSSCGC Crap Games Contest 2007</a></div><pre>&lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; qaopm &lt;…@…&gt; did eloquently scribble:</span>
+<span class="qt">&gt;&gt; whatever happened to Alan anyway?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Len has posted here slightly recently...</span>
+
+Even more recently now. And apologies if I&#x27;ve missed something (which, given 
+all my recent absences, I obviously have... several times) - Mr Qaopm, who 
+are you?!
+
+Back on the subject matter - congratulations to this year&#x27;s winner and, in 
+keeping with the aim of the competition, even more congratulations to the 
+losers.
+
+Len
+-- 
+If replying, my address after the @ should
+be replaced with freeserve then .co.uk 
+
+
+
+
+</pre></div></main></body></html>

@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Hobbit - Vector Graphics Disassembly? · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>The Hobbit - Vector Graphics Disassembly?</h1><p class="facts">3 posts, 2021-01-29 – 2021-02-05</p><div class="post" id="p228905"><div class="ph"><a class="d" href="#p228905">2021-01-29 22:04:46</a> <span>Volker Bartheld</span> </div><pre>Hi!
+
+Anyone remember the iconic vector graphics of ZX Spectrum&#x27;s &quot;The Hobbit&quot; by
+Melbourne House? 
+
+<a href="https://worldofspectrum.org/archive/software/text-adventures/the-hobbit-melbourne-house" rel="noreferrer">https://worldofspectrum.org/archive/software/text-adventures/the-hobbit-melbourne-house</a>
+
+I wonder, if this has been disassembled since then or if there&#x27;s even a
+free M/C library available that can do lines, arcs, circles and pattern
+fill - ideally in color?
+
+Somewhere in my stash is a recursive fill algorithm I wrote decades ago
+(was quite fast but with a quite hefty memory footprint) and
+reimplementing a poor man&#x27;s SVG standard shouldn&#x27;t be too hard either -
+but why reinvent the wheel?
+
+Thanks for any pointers.
+
+Volker
+
+</pre></div><div class="post" id="p228908"><div class="ph"><a class="d" href="#p228908">2021-02-01 09:55:50</a> <span>Volker Bartheld</span> <span>Re: The Hobbit - Vector Graphics Disassembly?</span></div><pre>Addendum:
+
+On Fri, 29 Jan 2021 23:04:46 +0100, Volker Bartheld wrote:
+<span class="qt">&gt; Somewhere in my stash is a recursive fill algorithm I wrote decades ago</span>
+<span class="qt">&gt; (was quite fast but with a quite hefty memory footprint)</span>
+
+I ran across a version of the scanline flood fill by John Metcalf
+<a href="http://www.retroprogramming.com/2017/04/zx-spectrum-scanline-flood-fill.html" rel="noreferrer">http://www.retroprogramming.com/2017/04/zx-spectrum-scanline-flood-fill.html</a>
+that is quite cool and a little easier on the memory side.
+
+To make it work with tniASM [1] (which I highly recommend) and Bin2Tap [2]
+to use from Sinclair Basic, just change the initial code to
+
+%include &quot;compat.asm&quot;
+fname &quot;floodfill.bin&quot;
+
+ORG     EA60h
+
+  ld hl,(5b00h)
+	push hl
+	pop de
+
+, then
+
+10 CLEAR 59999
+20 LOAD &quot;&quot; CODE 60000
+30 CIRCLE 128,96,40
+40 POKE 23296,128
+50 POKE 23297,96
+60 RANDOMIZE USR 60000 
+
+For a pattern fill my best guess would be to create an empty screen buffer
+somewhere and also fill this &quot;shadow copy&quot; of it, which could be done by
+changing that section of the code:
+
+goright:
+  call scrpos
+  jr z,rightedge
+  ld (hl),a
+
+to
+
+  ld (hl),a
+  PUSH AF
+  PUSH HL
+  EXX
+  POP HL
+  POP AF
+  ld (hl),a
+  EXX
+
+(you might get away with using the IX register instead of swapping the set
+and call scrpos must be adjusted as well, but you get the point).
+
+You then end up with only the filled portion (not the outline and the rest
+of the image) in your buffer. You can then XOR your UDG (=fill pattern)
+over it, using a modified version of the print routine in ROM. Then you
+would XOR the buffer over to the screen area and voilá: Pattern fill.
+
+Color can be added by calculating the location in the ATTR area (check out
+the PO-ATTR entry point in the ROM for pointers [3]) and update it on
+every plot.
+
+Needs 6144 bytes extra (256*192/8) and is probably not very fast either.
+
+Greets,
+Volker
+
+[1] <a href="http://www.tni.nl/products/tniasm.html" rel="noreferrer">http://www.tni.nl/products/tniasm.html</a>
+[2] <a href="https://sourceforge.net/p/zxspectrumutils/wiki/bin2tap/" rel="noreferrer">https://sourceforge.net/p/zxspectrumutils/wiki/bin2tap/</a>
+[3] <a href="http://primrosebank.net/computers/zxspectrum/docs/CompleteSpectrumROMDisassemblyThe.pdf" rel="noreferrer">http://primrosebank.net/computers/zxspectrum/docs/CompleteSpectrumROMDisassemblyThe.pdf</a>
+
+</pre></div><div class="post" id="p228909"><div class="ph"><a class="d" href="#p228909">2021-02-05 00:04:34</a> <span>Volker Bartheld</span> <span>A colored pattern fill algorithm for the ZX Spectrum (was: The Hobbit - Vector Graphics Disassembly?)</span> <a class="badge" href="game-6440.html">ZXDB: The Hobbit</a></div><pre>On Fri, 29 Jan 2021 23:04:46 +0100, Volker Bartheld wrote:
+<span class="qt">&gt; Somewhere in my stash is a recursive fill algorithm I wrote decades ago</span>
+<span class="qt">&gt; (was quite fast but with a quite hefty memory footprint) and</span>
+<span class="qt">&gt; reimplementing a poor man&#x27;s SVG standard shouldn&#x27;t be too hard either -</span>
+<span class="qt">&gt; but why reinvent the wheel?</span>
+
+I gave the scanline flood fill algorithm over there at John Metcalf&#x27;s site
+[1] a little whirl and came up with a quite interesting solution that can
+do colored pattern fills on the ZX Spectrum using a neat shadow buffer
+technique. That means, that you&#x27;re always wasting 6144 bytes but in return
+there is no need for extensive housekeeping.
+
+Here&#x27;s the ZX Spectrum Basic listing you could feed Bas2Tap to convert it
+for an emulator such as EightyOne (or type it in manually, if you&#x27;re a
+masochist):
+
+&lt;patternfill.bas&gt;
+1 REM Colored Pattern Fill
+2 REM (C) 2021 V. Bartheld
+3 REM CC BY License
+4 REM www.bartheld.net
+5 REM Based on an idea of
+6 REM John Metcalf
+7 REM www.retroprogramming.com/2017/04/zx-spectrum-scanline-flood-fill.html
+
+10 CLEAR 57343: REM Leave some space for shadow screen buffer
+20 GO SUB 9000: REM Prep m/c
+
+100 FOR i=1 TO 20
+110 LET x=40+RND*176
+120 LET y=40+RND*95
+130 LET r=10+RND*30
+140 CIRCLE x,y,r
+
+200 REM Coordinates to start fill
+210 POKE 63694,x: REM x
+220 POKE 63695,175-y: REM y
+
+300 REM Location of fill pattern
+310 IF RND&gt;0.8 THEN GO TO 370
+320 LET o=15624+8*INT(RND*30)
+330 REM Character fill
+340 POKE 63692,o-256*INT(o/256): REM lower byte
+350 POKE 63693,o/256: REM higher byte
+360 GO TO 400
+370 REM Hatched fill
+380 POKE 63692,196: REM lower byte
+390 POKE 63693,248: REM higher byte
+
+400 REM color
+410 LET c=56+RND*7
+420 POKE 63696, c: REM random ink, white paper
+
+500 RANDOMIZE USR 63488
+510 NEXT i
+520 STOP
+
+9000 PRINT &quot;{AT 10,11}WAIT...&quot;
+9010 LET a=63488
+9020 READ a$: PRINT &quot;{AT 20,0}&quot;;a$
+9030 IF a$=&quot;&quot; THEN CLS: RETURN
+9040 FOR n=1 TO LEN a$ STEP 2
+9050 LET s$=a$(n): GO SUB 9100: LET v=16*s: LET s$=a$(n+1): GO SUB 9100: LET v=v+s
+9060 POKE a,v: LET a=a+1
+9070 NEXT n
+9080 GO TO 9020
+
+9100 LET s=0
+9110 IF s$(1)&gt;=&quot;0&quot; AND s$(1)&lt;=&quot;9&quot; THEN LET s=CODE S$(1)-CODE(&quot;0&quot;)
+9120 IF s$(1)&gt;=&quot;A&quot; AND s$(1)&lt;=&quot;F&quot; THEN LET s=10+CODE S$(1)-CODE(&quot;A&quot;)
+9130 RETURN
+
+9500 DATA &quot;010018C50B2100E0E5545D133600EDB02ACEF8555CCD4BF8E1E50603C5ED5BCC&quot;
+9510 DATA &quot;F8CD37F8C110F5E1110040C11AAE1213230D20F810F6C90E08E506001AEEFFA6&quot;
+9520 DATA &quot;772310F8E124130D20EFC92EFFE57AE6073C473E010F10FD48477AB7280D15CB&quot;
+9530 DATA &quot;00CD99F820F4CB08142828CD99F8282377E57CF6E0677EB077E17C0F0F0FE603&quot;
+9540 DATA &quot;F658673AD0F8771CCDB3F81D1DCDB3F81C18D3D17B3C20B6C97BE6F81F371F1F&quot;
+9550 DATA &quot;6FABE6F8AB677DAAE607AA0F0F0F6F78B6BEC9CB217BFEC0D0CD9AF8C80CCB51&quot;
+9560 DATA &quot;C0E1D5E9AA55AA55AA55AA55C4F880603A&quot;
+9570 DATA &quot;&quot;
+&lt;/patternfill.bas&gt;
+
+If someone is interested in the commented Z80 machine code (this works out
+of the box with TNiasm but anything else will probably do fine as well),
+here we go...:
+
+&lt;patternfill.z80&gt;
+    %include &quot;compat.asm&quot;
+    %outfile &quot;patternfill.bin&quot;
+
+SCREEN: EQU 4000h   ; 16384d
+
+    ORG E000h       ; start of &quot;shadow screen&quot; (57344d)
+SHADOW:
+
+    ORG E000h+1800h ; start of main program (63488d)
+START:
+
+    ; clear shadow screen area first
+    LD BC,1800h
+    PUSH BC
+    DEC BC
+    LD HL,SHADOW
+    PUSH HL
+    LD D,H
+    LD E,L
+    INC DE
+    LD (HL),0
+    LDIR
+
+    ; flood fill main screen starting from coordinate in COORD while caching only the filled portions in shadow screen area
+    LD HL,(COORD) ; L=x-coordinate, H=y-coordinate
+    LD D,L        ; swap
+    LD E,H
+    CALL FILL     ; call modified flood fill by John Metcalf
+
+    ; create pattern in shadow screen area, spanning all 3 thirds of the screen
+    POP HL
+    PUSH HL
+    LD B,3        ; screen is divided in 3 consecutive thirds
+THIRD:
+    PUSH BC
+    LD DE,(PATT)  ; pattern/udg start address (8 bytes)
+    CALL PATFILL  ; fill one third of the screen with pattern
+    POP BC
+    DJNZ THIRD    ; 3 times
+
+    ; write back shadow area to main screen
+    POP HL
+    LD DE,SCREEN
+    POP BC
+
+WRBACK:
+    LD A,(DE)
+    XOR (HL)
+    LD (DE),A
+    INC DE
+    INC HL
+    DEC C
+    JR NZ,WRBACK
+    DJNZ WRBACK
+
+    RET
+
+; The ZX Spectrum&#x27;s screen layout is a bit weird:
+; The first 3 bits of the address are always 010.
+; The next 2 bits denote in which third of the screen the byte is.
+; the last 3 bits denote in which of the 8 scan lines within a third
+; the byte is located. There are 24 discrete values.
+; So if HL contains the first scan line of a screen position, we just need
+; to increment H (add 256) to get to the next scan line.
+; If we increment L, we advance one byte (8 pixel positions) to the left.
+; %010 00 000 is the top left position in the 1st third of the screen.
+; %010 01 000 is the top left position in the 2nd third of the screen.
+; %010 10 000 is the top left position in the 3rd third of the screen.
+;
+; %010 tt sss cccccccc
+
+; we expect HL pointing to a screen buffer containing a mask of black pixels
+; those pixels are then replaced by a pattern starting at DE
+; if we XOR back this screen buffer to the real screen that has been already filled solid black
+; the result is a pettern fill
+PATFILL:
+    LD C,8      ; each character has 8 rows
+
+NXTLIN:
+    PUSH HL
+    LD B,0      ; 8 scan lines with 256 pixels divided into 32 columns (8*256/8)
+
+ROW:
+    LD A,(DE)   ; get pattern
+    XOR FFh     ; invert it
+    AND (HL)    ; merge with screen contents
+    LD (HL),A   ; and write back
+    INC HL      ; next column
+    DJNZ ROW    ; next row
+
+    POP HL
+    INC H       ; advance to next scan line of screen
+    INC DE      ; advance to next line of pattern
+    DEC C
+    JR NZ,NXTLIN
+
+    RET
+
+; scanline fill by John Metcalf
+; call with D=x-coord, E=y-coord
+
+; set end marker
+FILL:
+  LD L,255
+  PUSH HL
+
+; calculate bit position of pixel
+NEXTRUN:
+  LD A,D
+  AND 7   ; retain pixel position within x-coordinate in D
+  INC A   ; must increment by one since x=0 means rotating one time to the right, to get from %00000001 -&gt; %100000000
+  LD B,A
+  LD A,1
+BITPOS:
+  RRCA    ; rotate %00000001 right across 8 bit (no carry)
+  DJNZ BITPOS ; for x%8+1 times
+  LD C,B
+  LD B,A
+
+; move left until hitting a set pixel or the screen edge
+SEEKLEFT:
+  LD A,D
+  OR A
+  JR Z,GORIGHT    ; D is zero already, we have reached the left border of the screen. Skip going any further.
+  DEC D
+  RLC B
+  CALL SCRPOS
+  JR NZ,SEEKLEFT
+
+; move right until hitting a set pixel or the screen edge,
+; setting pixels as we go. Check rows above and below and
+; save their coordinates to fill later if necessary
+SEEKRIGHT:
+  RRC B
+  INC D
+  JR Z,RIGHTEDGE  ; D has just overflown from 255 -&gt; 0, so we crossed the right edge of the screen. skip going any further.
+
+GORIGHT:
+  CALL SCRPOS     ; Test screen position
+  JR Z,RIGHTEDGE
+
+
+  ; pixel is blank: fill it
+  LD (HL),A       ; plot pixel on &quot;real&quot; screen
+
+  ; now get address of shadow screen
+  PUSH HL
+  LD A,H
+  OR %11100000    ; calculate address on &quot;shadow screen&quot; %010 tt sss cccccccc -&gt; %111 tt sss cccccccc
+  LD H,A
+  LD A,(HL)       ; get the byte there
+  OR B            ; fill pixel
+  LD (HL),A       ; and write back
+  POP HL
+
+  ; deal with color attribute now (stolen from L0BDB/PO-ATTR in the ZX Spectrum ROM)
+  LD A,H
+  RRCA            ; shift
+  RRCA            ; bits 3 and 4
+  RRCA            ; to right
+  AND 03h         ; range is now 0-2
+  OR 58h          ; form correct high byte for third of screen
+  LD H,A          ; HL is now correct
+  LD A,(ATTR)     ; get color attribute
+  LD (HL),A       ; and set it
+
+  INC E           ; increase y-coordinate to look at row below current one
+  CALL CHECKADJ   ; check limits and if there&#x27;s a pixel to be filled
+  DEC E           ; revert
+  DEC E           ; decrease y-coordinate to look at row above current one
+  CALL CHECKADJ   ; check limits and if there&#x27;s a pixel to be filled
+  INC E           ; revert
+  JR SEEKRIGHT
+
+; check to see if there&#x27;s another row waiting to be filled
+RIGHTEDGE:
+  POP DE
+  LD A,E
+  INC A     ; if 255 was on the stack: A=0
+  JR NZ,NEXTRUN
+  RET
+
+; calculate the pixel address of coordinate in DE (D=x, E=y) and whether or not it&#x27;s set
+; this is similar to PIXEL-ADD (L22AA) in the ZX Spectrum ROM with the exception,
+; that the coordinates are in DE instead of BC and the bit mask (in B) is already
+; prerotated. If the Z flag is not set, the pixel at DE is blank (=needs to be filled)
+SCRPOS:
+  LD A,E
+
+SCRPOS1:
+  AND %11111000
+  RRA
+  SCF
+  RRA
+  RRA
+  LD L,A
+  XOR E
+  AND %11111000
+  XOR E
+  LD H,A
+  LD A,L
+  XOR D
+  AND %00000111
+  XOR D
+  RRCA
+  RRCA
+  RRCA
+  LD L,A
+  LD A,B
+  OR (HL)
+  CP (HL)   ; if content of A did not change after the OR, the pixel was already set. E. g. testing for bit 4: 00010000 OR 11111111 == 11111111
+  RET
+
+; check and save the coordinates of an adjacent row
+CHECKADJ:
+  SLA C
+  LD A,E
+  CP 192        ; did we arrive at the bottom of the screen (y=192)?
+  RET NC        ; done.
+  CALL SCRPOS1  ; skip useless LD A,E instruction
+  RET Z
+  INC C
+  BIT 2,C
+  RET NZ
+  POP HL
+  PUSH DE
+  JP (HL)
+
+PATT_D:
+    ; checkerboard pattern
+    DB    %10101010
+    DB    %01010101
+    DB    %10101010
+    DB    %01010101
+    DB    %10101010
+    DB    %01010101
+    DB    %10101010
+    DB    %01010101
+
+PATT: DW PATT_D ; point to your fill pattern here
+; PATT: DW 3D08h ; can also be a target within the ZX Spectrum&#x27;s charset, e.g. 3D00h+8h to fill with &#x27;!&#x27;
+
+COORD:          ; start coordinates for fill
+    DB 80h      ; x
+    DB 60h      ; y
+
+ATTR:
+    DB %00111010  ; the bits are: Flash|Bright|Paper(Green|Red|Blue)|Ink(Green|Red|Blue)
+ENDPRG:
+&lt;/patternfill.z80&gt;
+
+Greets &amp; take care,
+Volker
+
+[1] <a href="http://www.retroprogramming.com/2017/04/zx-spectrum-scanline-flood-fill.html" rel="noreferrer">http://www.retroprogramming.com/2017/04/zx-spectrum-scanline-flood-fill.html</a>
+[2] <a href="https://github.com/speccyorg/bas2tap" rel="noreferrer">https://github.com/speccyorg/bas2tap</a>
+[3] <a href="http://www.tni.nl/products/tniasm.html" rel="noreferrer">http://www.tni.nl/products/tniasm.html</a>
+[4] <a href="https://sourceforge.net/projects/eightyone-sinclair-emulator/" rel="noreferrer">https://sourceforge.net/projects/eightyone-sinclair-emulator/</a>
+
+</pre></div></main></body></html>

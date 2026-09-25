@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSSCGC 2002 · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>CSSCGC 2002</h1><p class="facts">3 posts, 2002-08-03 – 2002-08-05</p><div class="post" id="p143540"><div class="ph"><a class="d" href="#p143540">2002-08-03 21:12:12</a> <span>&quot;Eq Tetrachloride&quot; &lt;eq@@cl4.org&gt;</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a> <a class="badge" href="game-30734.html">ZXDB: Supermarket Trolley Jousting</a></div><pre>After the following discussion on #zx, I have decided to forcibly host[1]
+the CSSCGC 2002, unless someone has already (and very quietly) decided to
+do so - in which case I challenge that person to a duel at Supermarket
+Trolley Jousting.
+
+&lt;luv-snail&gt; i made a csscgc entry this morning :)
+&lt;luv-snail&gt; except it doesn&#x27;t quite work yet
+&lt;luv-snail&gt; but maybe that&#x27;s what makes it crap
+&lt;dave&gt; are you hosting the csscgc this year eq?
+&lt;Equin0x&gt; i offered to
+&lt;Equin0x&gt; but thought someone else already was (so chris young said once,
+but now he appears not to know)
+&lt;Equin0x&gt; i could announce on the group &quot;I SHALL DO THE CGC unless someone
+stops me&quot;
+&lt;Equin0x&gt; kind of thing
+&lt;dave&gt; might be worth it, I&#x27;ve seen no other mention of hosting it
+&lt;dave&gt; and there is not a lot of 2002 left now
+
+Therefore, CGC entries should be cooked up in a filthy BASIC pot and
+submitted to eq at CL4 dot org for mockery and eventual judgement. When a
+few people have produced entries I shall start putting a Web page together
+so that everyone can enjoy your efforts.
+
+For guidelines on the sort of &quot;crap&quot; we like to see, go to last year&#x27;s CGC
+page:
+<a href="http://www.ygv50.dial.pipex.com/csscgc/" rel="noreferrer">http://www.ygv50.dial.pipex.com/csscgc/</a>
+
+kthx
+Eq.
+
+[1] I know that splitting infinitives is evil, but &quot;to host forcibly&quot;
+sounds even worse.
+
+--
+Equinox Tetrachloride
+www.CL4.org - www.insecurities.org
+
+
+
+
+
+</pre></div><div class="post" id="p143543"><div class="ph"><a class="d" href="#p143543">2002-08-03 22:26:31</a> <span>Llama-Wax Len</span> <span>Re: CSSCGC 2002</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>
+&quot;Eq Tetrachloride&quot; &lt;eq@@cl4.org&gt; wrote in message
+news:aihgvc$bam$…@…...
+<span class="qt">&gt; After the following discussion on #zx, I have decided to forcibly host[1]</span>
+<span class="qt">&gt; the CSSCGC 2002, unless someone has already (and very quietly) decided to</span>
+<span class="qt">&gt; do so - in which case I challenge that person to a duel at Supermarket</span>
+<span class="qt">&gt; Trolley Jousting.</span>
+
+Blimey, I&#x27;ll have to resume work on my masterpiece that I started last year
+then, although I only got as far as a loading screen and a menu.
+
+Except I&#x27;ve been sidetracked by another idea for a crap game, and I&#x27;m
+working on that instead.
+
+I&#x27;d be willing to bet that I don&#x27;t actually get either of them finished.
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+DISCLAIMER: By replying to this message, you hereby acknowledge
+that the ZX Spectrum game &quot;Robocop&quot; was too difficult.
+
+
+
+
+
+</pre></div><div class="post" id="p143673"><div class="ph"><a class="d" href="#p143673">2002-08-05 19:54:17</a> <span>Chris Young</span> <span>Re: CSSCGC 2002</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>On Sat, 3 Aug 2002 23:26:31 +0100, Llama-Wax Len ate a Rolo, and turned into...
+Llama-Wax Len-Man!  A super-hero with the power to write complete crap
+to comp.sys.sinclair, such as this gem:
+
+<span class="qt">&gt; Blimey, I&#x27;ll have to resume work on my masterpiece that I started last year</span>
+<span class="qt">&gt; then, although I only got as far as a loading screen and a menu.</span>
+
+Well, you&#x27;ve got further than me.  And I can&#x27;t find the bit of paper I
+scribbled my two best ideas down on.
+
+Ah, here it is.  Actually, yes they should be quite entertaining although
+are destined to turn out more crap in real life than they look in my
+head.  That&#x27;s probably a good thing considering the circumstances.
+
+<span class="qt">&gt; I&#x27;d be willing to bet that I don&#x27;t actually get either of them finished.</span>
+
+Who cares?  Just submit a loading screen with some half-finished code
+which runs about as far as selecting the first menu option, and crashes
+spectaculary(?)[1] if the player chooses anything else.
+
+Chris
+[1] A small &quot;0 OK&quot; message at the bottom of the screen is a good one.
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div></main></body></html>

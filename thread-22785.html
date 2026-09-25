@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dragon&#x27;s Lair · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Dragon&#x27;s Lair</h1><p class="facts">17 posts, 2001-08-05 – 2001-08-07</p><div class="post" id="p110495"><div class="ph"><a class="d" href="#p110495">2001-08-05 14:36:39</a> <span>Matthew Wilson</span> </div><pre>Anyone know what to do on the second level of Dragon&#x27;s Lair? On
+various TAPs and TZXs I&#x27;ve downloaded, the character just stands there
+and seems not to respond to any controls, then after a couple of
+seconds some rats (or something) appear and nibble you to death.
+
+The Tipshop says &quot;On the second screen, stand still, but keep pressing
+fire. Once the first lot of nastiness has gone you can move on.&quot; but
+that doesn&#x27;t seem to work. (Unless it only works on keyboard, maybe.)
+
+Any hints?
+
+Matthew
+
+
+
+</pre></div><div class="post" id="p110496"><div class="ph"><a class="d" href="#p110496">2001-08-05 14:54:12</a> <span>Steve Farrell</span> <span>Re: Dragon&#x27;s Lair</span></div><pre>At some point in the past (Sun, 05 Aug 2001 14:36:39 GMT, as it happens), 
+somebody called Matthew Wilson made the following views known to all at 
+comp.sys.sinclair:
+
+<span class="qt">&gt;The Tipshop says &quot;On the second screen, stand still, but keep pressing</span>
+<span class="qt">&gt;fire. Once the first lot of nastiness has gone you can move on.&quot; but</span>
+<span class="qt">&gt;that doesn&#x27;t seem to work. (Unless it only works on keyboard, maybe.)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Any hints?</span>
+
+On a normal Speccy: Open the tape recorder.
+Take out the Dragon&#x27;s Lair cassette. 
+Unwind it. 
+Burn it.
+
+On an emulator: Open the folder with the Dragon&#x27;s Lair file in.
+Press &#x27;delete&#x27;.
+
+Steve
+-- 
+I&#x27;ve been accused of a great many things in my time, but paranoia isn&#x27;t one 
+of them. Unless people have been saying it behind my back.
+
+
+
+</pre></div><div class="post" id="p110523"><div class="ph"><a class="d" href="#p110523">2001-08-06 01:09:12</a> <span>Klyfix</span> <span>Re: Dragon&#x27;s Lair</span></div><pre>In article &lt;…@…&gt;,
+…@… (Steve Farrell) writes:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;At some point in the past (Sun, 05 Aug 2001 14:36:39 GMT, as it happens), </span>
+<span class="qt">&gt;somebody called Matthew Wilson made the following views known to all at </span>
+<span class="qt">&gt;comp.sys.sinclair:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;The Tipshop says &quot;On the second screen, stand still, but keep pressing</span>
+<span class="qt">&gt;&gt;fire. Once the first lot of nastiness has gone you can move on.&quot; but</span>
+<span class="qt">&gt;&gt;that doesn&#x27;t seem to work. (Unless it only works on keyboard, maybe.)</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Any hints?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;On a normal Speccy: Open the tape recorder.</span>
+<span class="qt">&gt;Take out the Dragon&#x27;s Lair cassette. </span>
+<span class="qt">&gt;Unwind it. </span>
+<span class="qt">&gt;Burn it.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;On an emulator: Open the folder with the Dragon&#x27;s Lair file in.</span>
+<span class="qt">&gt;Press &#x27;delete&#x27;.</span>
+<span class="qt">&gt;</span>
+
+Is that a criticism of the game in general or just the Spectrum
+version? One of my Loyal Associates got the PC version and
+generally was fond of; I found the original arcade version to
+be pointlessly difficult.
+
+V. S. Greene : …@… : Boston, near Arkham...
+Eckzylon:  <a href="http://m1.aol.com/klyfix/eckzylon.html" rel="noreferrer">http://m1.aol.com/klyfix/eckzylon.html</a>
+RPG and SF, predictions, philosophy, and other things. 
+&quot;It&#x27;s not like Sioux Falls&quot;-A guy on the Boston subway. 
+
+
+
+</pre></div><div class="post" id="p110526"><div class="ph"><a class="d" href="#p110526">2001-08-06 03:09:29</a> <span>Brian White</span> <span>Re: Dragon&#x27;s Lair</span></div><pre>On 06 Aug 2001 01:09:12 GMT, …@… (Klyfix) wrote:
+<span class="qt">&gt; In article &lt;…@…&gt;,</span>
+<span class="qt">&gt; …@… (Steve Farrell) writes:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;At some point in the past (Sun, 05 Aug 2001 14:36:39 GMT, as it happens), </span>
+<span class="qt">&gt; &gt;somebody called Matthew Wilson made the following views known to all at </span>
+<span class="qt">&gt; &gt;comp.sys.sinclair:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;&gt;The Tipshop says &quot;On the second screen, stand still, but keep pressing</span>
+<span class="qt">&gt; &gt;&gt;fire. Once the first lot of nastiness has gone you can move on.&quot; but</span>
+<span class="qt">&gt; &gt;&gt;that doesn&#x27;t seem to work. (Unless it only works on keyboard, maybe.)</span>
+<span class="qt">&gt; &gt;&gt;</span>
+<span class="qt">&gt; &gt;&gt;Any hints?</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;On a normal Speccy: Open the tape recorder.</span>
+<span class="qt">&gt; &gt;Take out the Dragon&#x27;s Lair cassette. </span>
+<span class="qt">&gt; &gt;Unwind it. </span>
+<span class="qt">&gt; &gt;Burn it.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;On an emulator: Open the folder with the Dragon&#x27;s Lair file in.</span>
+<span class="qt">&gt; &gt;Press &#x27;delete&#x27;.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Is that a criticism of the game in general or just the Spectrum</span>
+<span class="qt">&gt; version? One of my Loyal Associates got the PC version and</span>
+<span class="qt">&gt; generally was fond of; I found the original arcade version to</span>
+<span class="qt">&gt; be pointlessly difficult.</span>
+
+And now you can play the pointlessly difficult Dragons lair on your home DVD machine or computer DVD drives.
+Yes it has been remastered to DVD.
+
+They even have Dragons Lair II, Space Ace, Time Traveller and the Wild West one.
+
+
+
+
+</pre></div><div class="post" id="p110551"><div class="ph"><a class="d" href="#p110551">2001-08-06 13:44:19</a> <span>Jim Grimwood</span> <span>Re: Dragon&#x27;s Lair</span></div><pre>On Sun, 05 Aug 2001 14:36:39 GMT, …@… (Matthew
+Wilson) wrote:
+
+<span class="qt">&gt;Anyone know what to do on the second level of Dragon&#x27;s Lair? On</span>
+<span class="qt">&gt;various TAPs and TZXs I&#x27;ve downloaded, the character just stands there</span>
+<span class="qt">&gt;and seems not to respond to any controls, then after a couple of</span>
+<span class="qt">&gt;seconds some rats (or something) appear and nibble you to death.</span>
+<span class="qt">&gt;[...]</span>
+
+I&#x27;m afraid this game is renowned as one of the most unplayable ever
+released for the Spectrum; in particular, having to rewind and reload
+after failing on any level soon became unutterably tedious - although this
+aspect is made slightly more tolerable when using an emulator (unless
+you&#x27;ve got it on TZX).
+
+Anyway, here&#x27;s the instructions from the Encore re-issue (repeatedly
+taking off my glasses so I can read the microscopic print about an inch
+from my nose, and then putting them on again so I can see the screen to
+type). You&#x27;ll see why you&#x27;re having a problem on the 2nd level - although
+I&#x27;d expect that, despite the instructions, you&#x27;ll be no closer to
+resolving it. I never got past the second level - but I was playing it
+back in 1986 on a real Spectrum, so the continual re-loading soon did for
+me (I bought the original Software Projects release, but that was stolen
+some years ago, so I&#x27;ve only got the Encore tape now).
+
+&quot;&quot;
+You earn an extra life for completing the Weapons Room, and one for each
+screen completed, up to a maximum of five. To record your high score press
+the space bar when on the title screen and you&#x27;ll be able to enter your
+initials.
+
+Order of screens: 1 Falling Disk; 2 Skull Hallway; 3 Burning Ropes; 4
+Weapons Room; 5 Ramps &amp; Giddy Goons; 6 Tentacle Room; 7 Second Disk; 8
+Deadly Checkerboard; 9 Slaying the Dragon.
+
+Either keyboard or joystick may be used simultaneously:
+Z	Left	Move left
+X	Right	Move right
+K	Up	Move up
+M	Down	Move down
+L	Fire	Draw sword -or- Jump
+Space		Jump on Giddy Goon
+
+When playing the Ramps &amp; Giddy Goons screen you will need to press SPACE
+to jump from ramp to ramp. In Skull Hallway, Weapons Room and Tentacle
+Room, the joystick will only accept the correct action at the correct
+time; the correct action at the wrong time will be ignored. If you hold
+the joystick in anticipation of a move it will be ignored, resulting in
+losing a life. 
+
+To use your sword just press L to draw and slash with the sword (at the
+correct time). You always have your sword with you except on the final
+screen where you will need to collect it from the top of the cliff before
+slaying the dragon.
+&quot;&quot;
+
+--
+Another Fine Product from:
+Jim Grimwood (…@…), Weardale, England
+
+
+
+</pre></div><div class="post" id="p110569"><div class="ph"><a class="d" href="#p110569">2001-08-06 16:16:56</a> <span>Jim Grimwood</span> <span>Re: Dragon&#x27;s Lair</span></div><pre>On Sun, 05 Aug 2001 14:36:39 GMT, …@… (Matthew
+Wilson) wrote:
+
+<span class="qt">&gt;Anyone know what to do on the second level of Dragon&#x27;s Lair? On</span>
+<span class="qt">&gt;various TAPs and TZXs I&#x27;ve downloaded, the character just stands there</span>
+<span class="qt">&gt;and seems not to respond to any controls, then after a couple of</span>
+<span class="qt">&gt;seconds some rats (or something) appear and nibble you to death.</span>
+<span class="qt">&gt;[...]</span>
+
+Further to my previous reply ...
+
+There&#x27;s a solution for Dragon&#x27;s Lair in Crash 38 (Mar&#x27;87,p.67), which I
+presume you&#x27;ve got as you&#x27;ve got articles from it on CMO (which saves me
+typing it in here).
+
+There&#x27;s an exact solution (supposedly) for level 2 in YS 18 (Jun&#x27;87,p.31):
+
+NASTY	MOVE	JUMPS
+Skulls	up	10
+Hand	fire	3
+Skulls	up	10
+Hand	fire	1
+Hand	fire	1
+Bats	down	8
+Goo	left	5
+Hand	fire	3
+Goo	up	6
+Hand	fire	1
+Goo	right	4
+
+I think it means &quot;move up after 10 jumps to avoid the skulls, then fire
+after 3 jumps to avoid the hand, ...&quot; and so on. How long it might take
+someone to divine this sequence by trial and error I can&#x27;t imagine.
+
+
+--
+Another Fine Product from:
+Jim Grimwood (…@…), Weardale, England
+
+
+
+</pre></div><div class="post" id="p110572"><div class="ph"><a class="d" href="#p110572">2001-08-06 17:36:35</a> <span>Steve Farrell</span> <span>Re: Dragon&#x27;s Lair</span></div><pre>At some point in the past (Mon, 06 Aug 2001 01:09:12 GMT, as it happens),
+somebody called Klyfix made the following views known to all at
+comp.sys.sinclair: 
+
+<span class="qt">&gt;Is that a criticism of the game in general or just the Spectrum</span>
+<span class="qt">&gt;version? One of my Loyal Associates got the PC version and</span>
+<span class="qt">&gt;generally was fond of; I found the original arcade version to</span>
+<span class="qt">&gt;be pointlessly difficult.</span>
+
+The game in general. 
+
+I take note of your use of the phrase &#x27;pointlessly difficult&#x27;. It is 
+entirely accurate.
+
+Steve
+-- 
+I&#x27;ve been accused of a great many things in my time, but paranoia isn&#x27;t one 
+of them. Unless people have been saying it behind my back.
+
+
+
+</pre></div><div class="post" id="p110577"><div class="ph"><a class="d" href="#p110577">2001-08-06 18:19:11</a> <span>Matthew Wilson</span> <span>Re: Dragon&#x27;s Lair</span></div><pre>On Mon, 06 Aug 2001 13:44:19 GMT, …@… (Jim Grimwood)
+wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;the joystick will only accept the correct action at the correct</span>
+<span class="qt">&gt;time; the correct action at the wrong time will be ignored. If you hold</span>
+<span class="qt">&gt;the joystick in anticipation of a move it will be ignored, resulting in</span>
+<span class="qt">&gt;losing a life. </span>
+
+(stares blankly)
+
+Not quite sure how this squares with what SP told CRASH in a preview
+article in issue 31:
+
+Since October 1985, the company has adopted a new policy which
+puts quality as its main priority. Before then, Software Projects had
+produced
+about ten games which, as Paul remarked, &quot;didn&#x27;t do very well and
+weren&#x27;t very
+good.&quot; The new policy is only to maket very good games - anything of
+dubious
+quality is scratched, even if a lot of money has been invested. 
+
+Matthew
+
+
+
+</pre></div><div class="post" id="p110578"><div class="ph"><a class="d" href="#p110578">2001-08-06 18:19:29</a> <span>Matthew Wilson</span> <span>Re: Dragon&#x27;s Lair</span></div><pre>On Mon, 06 Aug 2001 16:16:56 GMT, …@… (Jim Grimwood)
+wrote:
+
+<span class="qt">&gt;On Sun, 05 Aug 2001 14:36:39 GMT, …@… (Matthew</span>
+<span class="qt">&gt;Wilson) wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;Anyone know what to do on the second level of Dragon&#x27;s Lair? On</span>
+<span class="qt">&gt;&gt;various TAPs and TZXs I&#x27;ve downloaded, the character just stands there</span>
+<span class="qt">&gt;&gt;and seems not to respond to any controls, then after a couple of</span>
+<span class="qt">&gt;&gt;seconds some rats (or something) appear and nibble you to death.</span>
+<span class="qt">&gt;&gt;[...]</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Further to my previous reply ...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;There&#x27;s a solution for Dragon&#x27;s Lair in Crash 38 (Mar&#x27;87,p.67), which I</span>
+<span class="qt">&gt;presume you&#x27;ve got as you&#x27;ve got articles from it on CMO (which saves me</span>
+<span class="qt">&gt;typing it in here).</span>
+
+Except that my copy is missing this page... 8-(
+
+Matthew
+
+
+
+</pre></div><div class="post" id="p110594"><div class="ph"><a class="d" href="#p110594">2001-08-06 19:33:40</a> <span>Jim Grimwood</span> <span>Re: Dragon&#x27;s Lair</span> <a class="badge" href="game-1497.html">ZXDB: Dragon&#x27;s Lair</a></div><pre>On Mon, 06 Aug 2001 18:19:29 GMT, …@… (Matthew
+Wilson) wrote:
+
+<span class="qt">&gt;On Mon, 06 Aug 2001 16:16:56 GMT, …@… (Jim Grimwood)</span>
+<span class="qt">&gt;wrote:</span>
+<span class="qt">&gt;[...]</span>
+<span class="qt">&gt;&gt;There&#x27;s a solution for Dragon&#x27;s Lair in Crash 38 (Mar&#x27;87,p.67), which I</span>
+<span class="qt">&gt;&gt;presume you&#x27;ve got as you&#x27;ve got articles from it on CMO (which saves me</span>
+<span class="qt">&gt;&gt;typing it in here).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Except that my copy is missing this page... 8-(</span>
+
+&quot;&quot;
+FIRST DISK
+The POKEs should get you through this tricky first section without much
+trouble (see below).
+
+SKULL HALLWAY
+Continually tap forward on the joystick to avoid the skulls. Press the
+fire button to crush the first hand, and tap forward to avoid the second
+set of skulls. Press fire to destroy the two hands - one comes from the
+left, the other from the right. Pull back on the joystick to avoid the
+bats, and then push right to avoid them. Push left to elude the slime,
+then forward to shun it when it comes back again, and finally right to
+escape from it for the last time.
+
+BURNING ROPES
+Push up and keep your finger on the fire button until you reach the third
+stone. Always wait until the rope nearly touches the stone before jumping
+onto it. When on a rope, swing twice before jumping to the next.
+
+WEAPONS ROOM
+Continually press fire to dispose of the ball and chain. Push left to
+avoid the jug. Press fire to push back the wall. Push right to dodge the
+axe and then right again to eschew the shield. Press fire to push back the
+other wall. Push left to shirk from another axe. Press fire to dispose of
+yet another shield. Push forward to elude another axe. Push right to
+escape from the fireball before you exit.
+
+RAMPS &amp; GIDDY GOONS
+Kill all the goons or you will not be able to jump to the next ramp. The
+ramps disappear after a while so don&#x27;t linger.
+
+TENTACLE ROOM
+Continually press fire to dispose of the tentacle from the ceiling. Push
+left to move away from the tentacle which attacks from the floor, then
+push forward to evade another. Press fire to dispose of the two tentacles
+which appear one after another from the ceiling. Push right to move closer
+to the door, then right again to dodge another tentacle before you exit.
+
+SECOND DISK
+No POKEs for this one, I&#x27;m afraid, but it&#x27;s easier than the first disk
+anyway. The wind doesn&#x27;t blow as hard, but it gusts for twice as long and
+appears at least eight times.
+
+DEADLY CHECKERBOARD
+Keep jumping onto a square next to a knight, hitting him with your sword
+each time.
+
+DRAGON&#x27;S LAIR
+Get the treasure if possible. Be careful as you go for the sword -
+especially at the edge of the cliff. Watch out for Singe&#x27;s fire. Jump off
+the ramp and Daphne is yours.
+&quot;&quot;
+
+
+POKEs for First Disk (I haven&#x27;t tested this, but there was an obvious typo
+in line 40 (30803 instead of 40803) which I&#x27;ve corrected):
+
+10 REM DRAGON&#x27;S LAIR BY J NORTH
+20 LOAD &quot;&quot; CODE
+30 POKE 30772,205: POKE 30773,74: POKE 30774,120
+40 FOR f=40794 TO 40803: READ a: POKE f,a: NEXT f
+50 RANDOMIZE USR 30720
+60 DATA 175,50,43,206,50,155,202,195,48,184
+
+
+--
+Another Fine Product from:
+Jim Grimwood (…@…), Weardale, England
+
+
+
+</pre></div><div class="post" id="p110601"><div class="ph"><a class="d" href="#p110601">2001-08-06 20:18:14</a> <span>Matthew Wilson</span> <span>Re: Dragon&#x27;s Lair</span></div><pre>On Mon, 06 Aug 2001 19:33:40 GMT, …@… (Jim Grimwood)
+wrote:
+
+<span class="qt">&gt;On Mon, 06 Aug 2001 18:19:29 GMT, …@… (Matthew</span>
+<span class="qt">&gt;Wilson) wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;On Mon, 06 Aug 2001 16:16:56 GMT, …@… (Jim Grimwood)</span>
+<span class="qt">&gt;&gt;wrote:</span>
+<span class="qt">&gt;&gt;[...]</span>
+<span class="qt">&gt;&gt;&gt;There&#x27;s a solution for Dragon&#x27;s Lair in Crash 38 (Mar&#x27;87,p.67), which I</span>
+<span class="qt">&gt;&gt;&gt;presume you&#x27;ve got as you&#x27;ve got articles from it on CMO (which saves me</span>
+<span class="qt">&gt;&gt;&gt;typing it in here).</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Except that my copy is missing this page... 8-(</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&quot;&quot;</span>
+
+Thanks Jim.
+
+Matthew
+
+
+
+</pre></div><div class="post" id="p110663"><div class="ph"><a class="d" href="#p110663">2001-08-07 09:02:46</a> <span>Gerard Sweeney</span> </div><pre>Allo me petites.. Ich bin ein Dustbin.
+
+Just to let you know that there are several tips for this (cough) fine
+game on The Tipshop, <a href="http://www.the-tipshop.co.uk" rel="noreferrer">http://www.the-tipshop.co.uk</a> , just in case anyone
+didn&#x27;t know the URL (Right, plug tax. Now! Ed). Yoinks!
+
+Toodle-pip!
+Gerard
+
+
+
+
+</pre></div><div class="post" id="p110710"><div class="ph"><a class="d" href="#p110710">2001-08-07 13:01:12</a> <span>Steve Leyland</span> <span>Re: Dragon&#x27;s Lair</span></div><pre>
+&quot;Matthew Wilson&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Anyone know what to do on the second level of Dragon&#x27;s Lair?</span>
+
+YOU ACTUALLY GOT PAST THE FIRST LEVEL??!!
+sorry for caps, but when Matt Smith gave me a freebie copy when it was
+released I spent weeks, nay months falling down that fsckin&#x27; hole.
+When I told him it was a load of poo, he agreed.
+--
+Steve
+
+A hair in the head is worth two in the brush.
+
+
+
+
+
+
+</pre></div><div class="post" id="p110717"><div class="ph"><a class="d" href="#p110717">2001-08-07 13:55:12</a> <span>Derek Jolly</span> <span>Re: Dragon&#x27;s Lair</span></div><pre>Previously, on comp.sys.sinclair, Steve Leyland said
+
+<span class="qt">&gt; YOU ACTUALLY GOT PAST THE FIRST LEVEL??!!</span>
+<span class="qt">&gt; sorry for caps, but when Matt Smith gave me a freebie copy when it was</span>
+<span class="qt">&gt; released I spent weeks, nay months falling down that fsckin&#x27;</span>
+
+I managed the first level too (the disk falling down, wind blowing
+one), but the second level was completely impossible, just like the
+arcade game unless you knew exactly what to do.
+
+Crap game in all incarnations.  Now available on a DVD player near
+you.
+-- 
+Derek Jolly (…@…)  Web: <a href="http://rivet.50megs.com/" rel="noreferrer">http://rivet.50megs.com/</a>
+comp.sys.sinclair folklore FAQ: <a href="http://rivet.50megs.com/cssfolk.html" rel="noreferrer">http://rivet.50megs.com/cssfolk.html</a>
+Transversion PC: <a href="http://rivet.50megs.com/games.html" rel="noreferrer">http://rivet.50megs.com/games.html</a>
+Change &quot;deadspam&quot; to &quot;sage&quot; in my e-mail address to contact me.
+
+
+
+</pre></div><div class="post" id="p110747"><div class="ph"><a class="d" href="#p110747">2001-08-07 17:09:53</a> <span>Matthew Wilson</span> <span>Re: Dragon&#x27;s Lair</span></div><pre>On Mon, 06 Aug 2001 16:16:56 GMT, …@… (Jim Grimwood)
+wrote:
+
+<span class="qt">&gt;On Sun, 05 Aug 2001 14:36:39 GMT, …@… (Matthew</span>
+<span class="qt">&gt;Wilson) wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;Anyone know what to do on the second level of Dragon&#x27;s Lair? On</span>
+<span class="qt">&gt;&gt;various TAPs and TZXs I&#x27;ve downloaded, the character just stands there</span>
+<span class="qt">&gt;&gt;and seems not to respond to any controls, then after a couple of</span>
+<span class="qt">&gt;&gt;seconds some rats (or something) appear and nibble you to death.</span>
+<span class="qt">&gt;&gt;[...]</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Further to my previous reply ...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;There&#x27;s a solution for Dragon&#x27;s Lair in Crash 38 (Mar&#x27;87,p.67), which I</span>
+<span class="qt">&gt;presume you&#x27;ve got as you&#x27;ve got articles from it on CMO (which saves me</span>
+<span class="qt">&gt;typing it in here).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;There&#x27;s an exact solution (supposedly) for level 2 in YS 18 (Jun&#x27;87,p.31):</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;NASTY	MOVE	JUMPS</span>
+<span class="qt">&gt;Skulls	up	10</span>
+<span class="qt">&gt;Hand	fire	3</span>
+<span class="qt">&gt;Skulls	up	10</span>
+<span class="qt">&gt;Hand	fire	1</span>
+<span class="qt">&gt;Hand	fire	1</span>
+<span class="qt">&gt;Bats	down	8</span>
+<span class="qt">&gt;Goo	left	5</span>
+<span class="qt">&gt;Hand	fire	3</span>
+<span class="qt">&gt;Goo	up	6</span>
+<span class="qt">&gt;Hand	fire	1</span>
+<span class="qt">&gt;Goo	right	4</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I think it means &quot;move up after 10 jumps to avoid the skulls, then fire</span>
+<span class="qt">&gt;after 3 jumps to avoid the hand, ...&quot; and so on. How long it might take</span>
+<span class="qt">&gt;someone to divine this sequence by trial and error I can&#x27;t imagine.</span>
+
+I&#x27;ve completed level 2 now, and I don&#x27;t know what the &quot;Jumps&quot; column
+in that table means.
+
+Matthew
+
+
+
+</pre></div><div class="post" id="p110748"><div class="ph"><a class="d" href="#p110748">2001-08-07 17:11:22</a> <span>Matthew Wilson</span> <span>Re: Dragon&#x27;s Lair</span></div><pre>On 7 Aug 2001 13:55:12 GMT, …@… (Derek Jolly)
+wrote:
+
+<span class="qt">&gt;Previously, on comp.sys.sinclair, Steve Leyland said</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; YOU ACTUALLY GOT PAST THE FIRST LEVEL??!!</span>
+<span class="qt">&gt;&gt; sorry for caps, but when Matt Smith gave me a freebie copy when it was</span>
+<span class="qt">&gt;&gt; released I spent weeks, nay months falling down that fsckin&#x27;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I managed the first level too (the disk falling down, wind blowing</span>
+<span class="qt">&gt;one), but the second level was completely impossible, just like the</span>
+<span class="qt">&gt;arcade game unless you knew exactly what to do.</span>
+
+Second level now done (with an emulator and lots of saving snapshots).
+It might as well be random.
+
+Now, can I be bothered to stick it out till the final level in order
+to get an appropriate screenshot for CRASH Online?
+
+Matthew
+
+
+
+</pre></div><div class="post" id="p110772"><div class="ph"><a class="d" href="#p110772">2001-08-07 19:52:51</a> <span>Matthew Wilson</span> <span>Re: Dragon&#x27;s Lair</span></div><pre>Update: I have now reached the final level.
+
+(Note the absence of the phrase &quot;without hacking&quot;.)
+
+I can report that the penultimate level is almost playable.
+
+Here&#x27;s some more of what Software Projects said in CRASH 31:
+
+&quot;Everyone gave the game nine or ten out of ten,&quot; said Paul happily.
+&quot;They asked us to change certain things and we did. Everything they
+asked us to change, we changed.&quot; Dirk, the dynamic hero of the game,
+was thought to have too big a nose, so slices of it were lopped off in
+a neat bit of computer surgery. Some thought the first screen was too
+easy, so that was made more tricky. And there have been several other
+minor changes, all as a result of players&#x27; suggestions.
+
+Hmm.
+
+Matthew
+
+
+
+</pre></div></main></body></html>

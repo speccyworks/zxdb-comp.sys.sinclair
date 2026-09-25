@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSSCGC2004 - it&#x27;s all over at last · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>CSSCGC2004 - it&#x27;s all over at last</h1><p class="facts">13 posts, 2005-03-01 – 2005-03-04</p><div class="post" id="p190258"><div class="ph"><a class="d" href="#p190258">2005-03-01 15:37:48</a> <span>J.I.L.</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a> <a class="badge" href="game-30844.html">ZXDB: DANCEtrumTM</a></div><pre>The comp.sys.sinclair Crap Game Competition 2004 is over! (Whaddya mean 
+you didn&#x27;t know it had started?)
+
+Due to a useless, inept voting system (my fault), Equinox haev teh 
+w1n0rz with his lazy rushed incomplete effort &quot;Falling&quot;, due to loadsa 
+people accidentally clicking the VOTE button before selecting a game 
+from the drop-down list (in retrospect, I should&#x27;ve left the top 
+selection blank!).
+
+However, I think a special mention should also go to &quot;DANCEtrumTM&quot; by 
+Chris Young which was the only game that failed to receive a single 
+vote! Coming last in the CGC has to be an achievement, dontcha think?
+
+You can now download all 69 games in one handy zip, so go geddit...
+
+www.speccyspoilers.co.uk/cgc2004/
+
+Many thanks to all of you that entered a game - the general standard of 
+programming was abysmal so give yourselves a slap on the back.  :)
+
+Jim L.
+
+
+
+</pre></div><div class="post" id="p190261"><div class="ph"><a class="d" href="#p190261">2005-03-01 17:47:30</a> <span>Marcus Durham</span> <span>Re: CSSCGC2004 - it&#x27;s all over at last</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>In message &lt;g%%Ud.899$…@…&gt;, J.I.L. 
+&lt;…@…&gt; writes
+[snip]
+<span class="qt">&gt;www.speccyspoilers.co.uk/cgc2004/</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Many thanks to all of you that entered a game - the general standard of </span>
+<span class="qt">&gt;programming was abysmal so give yourselves a slap on the back.  :)</span>
+
+Fantastic. I&#x27;ve loved the CGC for years.
+
+One small point, and I don&#x27;t mean to be rude, but the page takes an age 
+to load. I have 2 meg broadband and the page took a minute to download. 
+I imagine if you were on a modem it would take potentially 10 minutes. 
+Any chance you could make the page more efficient. For a start it would 
+save you an awful lot of bandwidth on your server.
+
+It is a fantastic page though and there is so much there!
+
+-- 
+Marcus Durham
+
+
+
+</pre></div><div class="post" id="p190268"><div class="ph"><a class="d" href="#p190268">2005-03-01 20:53:54</a> <span>Chris Young</span> <span>Re: CSSCGC2004 - it&#x27;s all over at last</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>On Tue, 01 Mar 2005 15:37:48 GMT da kidz on comp.sys.sinclair were rappin&#x27;
+to MC J.I.L.:
+
+<span class="qt">&gt; However, I think a special mention should also go to &quot;DANCEtrumTM&quot; by </span>
+<span class="qt">&gt; Chris Young which was the only game that failed to receive a single </span>
+<span class="qt">&gt; vote! Coming last in the CGC has to be an achievement, dontcha think?</span>
+
+Surely that should win for being so crap, nobody even bothered to vote
+for it?
+
+Actually, I didn&#x27;t even know the voting had started (it hadn&#x27;t last
+time I looked, and I don&#x27;t recall seeing it announced anywhere)
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p190277"><div class="ph"><a class="d" href="#p190277">2005-03-02 03:03:16</a> <span>J.I.L.</span> <span>Re: CSSCGC2004 - it&#x27;s all over at last</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>Chris Young wrote:
+<span class="qt">&gt; On Tue, 01 Mar 2005 15:37:48 GMT da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt; to MC J.I.L.:</span>
+<span class="qt">&gt;&gt;However, I think a special mention should also go to &quot;DANCEtrumTM&quot; by </span>
+<span class="qt">&gt;&gt;Chris Young which was the only game that failed to receive a single </span>
+<span class="qt">&gt;&gt;vote! Coming last in the CGC has to be an achievement, dontcha think?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Surely that should win for being so crap, nobody even bothered to vote</span>
+<span class="qt">&gt; for it?</span>
+
+I was wondering that myself, that&#x27;s why I thought DANCEtrumTM deserved 
+at least a special mention. Trouble is, if I now declare DANCEtrumTM the 
+winner then those that voted for Falling may not be happy (even if they 
+did all vote for it by accident). :)
+
+<span class="qt">&gt; Actually, I didn&#x27;t even know the voting had started (it hadn&#x27;t last</span>
+<span class="qt">&gt; time I looked, and I don&#x27;t recall seeing it announced anywhere)</span>
+
+Oops sorry about that. Somehow I didn&#x27;t quite get around to mentioning 
+the voting had begun in here, although I did post a reminder of the 
+compo&#x27;s closing date just before Xmas so logically the vote would follow 
+just after that. The crappy poll was online for about three weeks.
+
+Maybe I should have another poll so people can vote to decide whether or 
+not to have the CGC poll re-run. Although if I drag it on much longer, 
+there won&#x27;t be enough time left in the year for the CSSCGC 2005 to get 
+going! So, who&#x27;s up for hosting it this year then?
+
+Jim L.
+
+
+
+</pre></div><div class="post" id="p190278"><div class="ph"><a class="d" href="#p190278">2005-03-02 03:29:15</a> <span>J.I.L.</span> <span>Re: CSSCGC2004 - it&#x27;s all over at last</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>Marcus Durham wrote:
+<span class="qt">&gt;&gt; www.speccyspoilers.co.uk/cgc2004/</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; One small point, and I don&#x27;t mean to be rude, but the page takes an age </span>
+<span class="qt">&gt; to load. I have 2 meg broadband and the page took a minute to download. </span>
+<span class="qt">&gt; I imagine if you were on a modem it would take potentially 10 minutes. </span>
+<span class="qt">&gt; Any chance you could make the page more efficient. For a start it would </span>
+<span class="qt">&gt; save you an awful lot of bandwidth on your server.</span>
+
+Yes I suppose a megabyte of images on one page is pushing the limits 
+somewhat. I never quite got around to breaking up the page into smaller 
+pages (same goes for the Speccy Spoilers game endings).  :)
+I will try and reduce it all to ten games per page as soon as I can.
+
+Jim L.
+
+
+
+</pre></div><div class="post" id="p190284"><div class="ph"><a class="d" href="#p190284">2005-03-02 11:00:37</a> <span>deKay</span> <span>Re: CSSCGC2004 - it&#x27;s all over at last</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Wed, 02 Mar
+2005 03:03:16 GMT, sefini jorgo geanyet des mani yeof do comp.sys.sinclair,
+yawatina tan reek esk &quot;J.I.L.&quot; &lt;…@…&gt; fornis do
+marikano es bono tan el:
+
+<span class="qt">&gt;Maybe I should have another poll so people can vote to decide whether or </span>
+<span class="qt">&gt;not to have the CGC poll re-run. Although if I drag it on much longer, </span>
+<span class="qt">&gt;there won&#x27;t be enough time left in the year for the CSSCGC 2005 to get </span>
+<span class="qt">&gt;going! So, who&#x27;s up for hosting it this year then?</span>
+
+I volunteered a while ago, so I assumed it was me.  I&#x27;m still up for it,
+unless anyone objects.
+
+deKay
+-- 
+ + Lofi Gaming - www.lofi-gaming.org.uk  [Gamertag: deKay 01]
+<span class="qt"> |- Gaming Diary - www.lofi-gaming.org.uk/diary/  </span>
+<span class="qt"> |- My computer runs at 3.5MHz and I&#x27;m proud of that</span>
+<span class="qt"> |- Hurry up and go touch it.</span>
+
+
+
+</pre></div><div class="post" id="p190309"><div class="ph"><a class="d" href="#p190309">2005-03-02 23:23:57</a> <span class="small">address hidden</span> <span>Re: CSSCGC2004 - it&#x27;s all over at last</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>deKay &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Wed, 02 Mar</span>
+<span class="qt">&gt; 2005 03:03:16 GMT, sefini jorgo geanyet des mani yeof do comp.sys.sinclair,</span>
+<span class="qt">&gt; yawatina tan reek esk &quot;J.I.L.&quot; &lt;…@…&gt; fornis do</span>
+<span class="qt">&gt; marikano es bono tan el:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;Maybe I should have another poll so people can vote to decide whether or </span>
+<span class="qt">&gt;&gt;not to have the CGC poll re-run. Although if I drag it on much longer, </span>
+<span class="qt">&gt;&gt;there won&#x27;t be enough time left in the year for the CSSCGC 2005 to get </span>
+<span class="qt">&gt;&gt;going! So, who&#x27;s up for hosting it this year then?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I volunteered a while ago, so I assumed it was me.  I&#x27;m still up for it,</span>
+<span class="qt">&gt; unless anyone objects.</span>
+
+IF you do dekay... Learn from jim&#x27;s mistakes :)
+When voting time comes, a few things you should bear in mind.
+1: don&#x27;t have a dropdown menu with the first game as the default so people
+just clicking &quot;vote&quot; without selecting something vote for the first one.
+and
+2: try to dynamically generate the page in such a way that the games are
+displayed in a random order so people going to the page and voting for the
+first game they see will distribute the votes randomly rather than all
+voting for the first one.
+
+:)
+
+(personally, I think a re-poll should be done this year. There&#x27;s no reason
+why that should get in the way of the start of 2005&#x27;s though)
+ 
+<span class="qt">&gt; deKay</span>
+
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   | &quot;I&#x27;m alive!!! I can touch! I can taste!         |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|  I can SMELL!!!  KRYTEN!!! Unpack Rachel and    |</span>
+<span class="qt">|            in            |  get out the puncture repair kit!&quot;              |</span>
+<span class="qt">|     Computer Science     |     Arnold Judas Rimmer- Red Dwarf              |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p190321"><div class="ph"><a class="d" href="#p190321">2005-03-03 13:08:50</a> <span>deKay</span> <span>Re: CSSCGC2004 - it&#x27;s all over at last</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Wed, 2 Mar
+2005 23:23:57 -0000, sefini jorgo geanyet des mani yeof do comp.sys.sinclair,
+yawatina tan reek esk …@… fornis do marikano es bono tan el:
+
+<span class="qt">&gt;(personally, I think a re-poll should be done this year. There&#x27;s no reason</span>
+<span class="qt">&gt;why that should get in the way of the start of 2005&#x27;s though)</span>
+
+I think it would be better to go back to the old system of having a judge or
+judges and not voting at all :)
+
+deKay
+-- 
+ + Lofi Gaming - www.lofi-gaming.org.uk      
+<span class="qt"> |- ugvm Magazine - www.ugvm.org.uk          </span>
+<span class="qt"> |- My computer runs at 3.5MHz and I&#x27;m proud of that</span>
+<span class="qt"> |- &quot;CLART - YOU KNOWS IT&quot;</span>
+
+
+
+</pre></div><div class="post" id="p190322"><div class="ph"><a class="d" href="#p190322">2005-03-03 14:12:34</a> <span>redkeyreddoor</span> <span>Re: CSSCGC2004 - it&#x27;s all over at last</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>deKay wrote:
+<span class="qt">&gt; &gt;(personally, I think a re-poll should be done this year. There&#x27;s no</span>
+reason
+<span class="qt">&gt; &gt;why that should get in the way of the start of 2005&#x27;s though)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I think it would be better to go back to the old system of having a</span>
+judge or
+<span class="qt">&gt; judges and not voting at all :)</span>
+<span class="qt">&gt;</span>
+
+Hey folks,
+
+Probably a good time to mention that Matthew Lewis - the Cassette 50
+author I interviewed recently - is very up for judging the next CSSCGC.
+
+Cheers,
+Mark
+
+
+
+
+</pre></div><div class="post" id="p190332"><div class="ph"><a class="d" href="#p190332">2005-03-03 18:18:57</a> <span>Chris Young</span> <span>Re: CSSCGC2004 - it&#x27;s all over at last</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>On Thu, 03 Mar 2005 13:08:50 +0000 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC deKay:
+
+<span class="qt">&gt; &gt;(personally, I think a re-poll should be done this year. There&#x27;s no reason</span>
+<span class="qt">&gt; &gt;why that should get in the way of the start of 2005&#x27;s though)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I think it would be better to go back to the old system of having a judge or</span>
+<span class="qt">&gt; judges and not voting at all :)</span>
+
+I much preferred that system, giving the general public the vote
+results in all the *good* games winning.  I mean, I ask you, tch.
+
+And, of course, Matt Lewis is up for grabs as celebrity judge for what
+I should also point out is the tenth CSSCGC (so that&#x27;s two reasons to
+celebrate I think)
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p190336"><div class="ph"><a class="d" href="#p190336">2005-03-03 19:44:38</a> <span>deKay</span> <span>Re: CSSCGC2004 - it&#x27;s all over at last</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>Soni tempori elseu romani yeof helsforo nisson ol sefini ill des 3 Mar 2005
+19:18:57 +0100, sefini jorgo geanyet des mani yeof do comp.sys.sinclair,
+yawatina tan reek esk &quot;Chris Young&quot; &lt;…@…&gt; fornis do marikano
+es bono tan el:
+
+<span class="qt">&gt;I much preferred that system, giving the general public the vote</span>
+<span class="qt">&gt;results in all the *good* games winning.  I mean, I ask you, tch.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;And, of course, Matt Lewis is up for grabs as celebrity judge for what</span>
+<span class="qt">&gt;I should also point out is the tenth CSSCGC (so that&#x27;s two reasons to</span>
+<span class="qt">&gt;celebrate I think)</span>
+
+Indeed.
+
+So, no objections to me hosting then?
+
+deKay
+-- 
+ + Lofi Gaming - www.lofi-gaming.org.uk  [Gamertag: deKay 01]
+<span class="qt"> |- Gaming Diary - www.lofi-gaming.org.uk/diary/  </span>
+<span class="qt"> |- My computer runs at 3.5MHz and I&#x27;m proud of that</span>
+<span class="qt"> |- Hurry up and go touch it.</span>
+
+
+
+</pre></div><div class="post" id="p190344"><div class="ph"><a class="d" href="#p190344">2005-03-04 08:40:46</a> <span>The Starglider</span> <span>Re: CSSCGC2004 - it&#x27;s all over at last</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>On Thu, 03 Mar 2005 19:44:38 +0000, deKay &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Soni tempori elseu romani yeof helsforo nisson ol sefini ill des 3 Mar 2005</span>
+<span class="qt">&gt;19:18:57 +0100, sefini jorgo geanyet des mani yeof do comp.sys.sinclair,</span>
+<span class="qt">&gt;yawatina tan reek esk &quot;Chris Young&quot; &lt;…@…&gt; fornis do marikano</span>
+<span class="qt">&gt;es bono tan el:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;I much preferred that system, giving the general public the vote</span>
+<span class="qt">&gt;&gt;results in all the *good* games winning.  I mean, I ask you, tch.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;And, of course, Matt Lewis is up for grabs as celebrity judge for what</span>
+<span class="qt">&gt;&gt;I should also point out is the tenth CSSCGC (so that&#x27;s two reasons to</span>
+<span class="qt">&gt;&gt;celebrate I think)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Indeed.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;So, no objections to me hosting then?</span>
+<span class="qt">&gt;</span>
+I OBJECT!!!![1]
+
+[1] I just said something to pretend that I was paying attention!
+-- 
+        **************The Starglider***************  Public E-Mail. 
+        *  <a href="http://www.starglider.dynu.com/radio" rel="noreferrer">http://www.starglider.dynu.com/radio</a>   * Ask for private
+        *  Starglider Radio - listen and enjoy!   *    address.
+        * E-Mail:…@…  *     _WW_
+        *     CHANGE WIBBLE TO YAHOO TO REPLY     *    /_  _\
+        *******************************************   | O  O |
+_____________________________________________________oOO_\/_OOo_____
+
+
+
+</pre></div><div class="post" id="p190384"><div class="ph"><a class="d" href="#p190384">2005-03-04 23:49:49</a> <span>Duncan Snowden</span> <span>Re: CSSCGC2004 - it&#x27;s all over at last</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>Program: Chris Young
+
+Bytes: Thursday
+
+<span class="qt">&gt; And, of course, Matt Lewis is up for grabs as celebrity judge for</span>
+<span class="qt">&gt; what I should also point out is the tenth CSSCGC (so that&#x27;s two</span>
+<span class="qt">&gt; reasons to celebrate I think)</span>
+
+He should definitely do it, then. Hey, I might even enter if he does.
+(Like that&#x27;s an incentive for him. -Ed.)
+
+-- 
+Duncan Snowden. 
+
+f Invalid name, 1200:2 
+
+
+
+</pre></div></main></body></html>

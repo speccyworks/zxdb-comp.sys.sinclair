@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Re: [ASM-ZX81] Partial sceen scrolling. · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Re: [ASM-ZX81] Partial sceen scrolling.</h1><p class="facts">6 posts, 2006-10-14 – 2006-10-26</p><div class="post" id="p207345"><div class="ph"><a class="d" href="#p207345">2006-10-14 20:42:17</a> <span>Julián Albo</span> </div><pre>GzavSnap wrote:
+
+<span class="qt">&gt; POP HL              : Save HL reg.</span>
+
+<span class="qt">&gt; PUSH HL           : Retrive HL (source)</span>
+
+<span class="qt">&gt; Any suggestions ?</span>
+
+Check yours push and pops.
+
+-- 
+Salu2
+
+
+
+</pre></div><div class="post" id="p207347"><div class="ph"><a class="d" href="#p207347">2006-10-14 21:44:13</a> <span>GzavSnap</span> <span>[ASM-ZX81] Partial sceen scrolling.</span></div><pre>Hi !
+
+I have seen many machine code programs to make a up scrolling but i can&#x27;t
+change this code to move two lines (line 21 and 22) to the ligne 2!
+
+The main technologie to scroll the screen is le LDIR or LDDR functions.
+
+Reg HL = Source offset.
+Reg DE = Target offset.
+reg BC = Length of memory segment.
+LDIR = Copy memory HL to DE with BC segment.
+
+Full screen ASM (ASM2 assembler) codes:
+
+Up scrolling:
+LD HL,(400c)   : Get D_File offset to HL reg.
+PUSH HL         :  Implement HL stak.
+LD DE,21         : Get +33 to DE reg.
+ADD HL,DE     : Add DE to HL
+POP DE            : Decrement DE reg.
+LD BC,2DC      : Load 2dc to BC reg.
+LDIR                 : Copy memory function
+RET                   : return to basic
+
+My code :
+
+I want to scroll only 21/22 lines.
+The fist line don&#x27;t move and is diplayed! ( scores, text ...)
+It must take all lines up to line 3 and will be put on line 2.
+
+:Get source offset of ligne 3.
+LD HL,(400c)     : Get D_FILE
+LD DE,+99
+ADD HL,DE       : HL = D_file+99
+POP HL              : Save HL reg.
+
+:Get Target offset of ligne 2.
+LD HL,(400c)     : Get D_FILE
+LD DE,+66
+ADD HL,DE       : HL = D_file+66
+LD D,H               : Copy HL to DE
+LD E,L                : Copy HL to DE
+PUSH HL           : Retrive HL (source)
+
+LD BC,+660      : Memory bloc (20 lines: 33*20 )
+LDIR
+RET
+
+But, this code is wrong!
+The LDIR function can&#x27;t retrive HL ...
+
+Any suggestions ?
+
+Thanks in advance
+
+<span class="qt">&gt;&lt;avsnap</span>
+
+
+
+
+
+</pre></div><div class="post" id="p207348"><div class="ph"><a class="d" href="#p207348">2006-10-14 23:04:02</a> <span>GzavSnap</span> </div><pre>
+My Basic program:
+(text file using ZXtext2P.exe by Chris Cowley... or/and ZxBasic
+precompiler.)
+
+# ASM PRG : SCROLLING UP WITHOUT LINE 1.
+# LINES 4330 TO 4400 CAN BE REMOVED AFTER A GOSUB 4300
+#  TO INIT THIS SUB.
+#  &gt;&lt;AVSNAP.
+#
+# 32 CHARS.
+    1 REM XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    10 GOSUB 4300
+    12 PRINT AT 0,0;&quot;********** MY SCREEN: **********&quot;
+    14 FOR A=1 TO 20
+    16 PRINT AT A,0;&quot;*&quot;;TAB(31);&quot;*&quot;
+    18 NEXT A
+    20 POKE 16418,0
+    25 PRINT AT 21,0;&quot;********************************\
+=------------------------------=&quot;
+    30 RAND USR 16522
+    40 STOP
+ 4300 REM
+ 4310 LET RUP=16514
+ 4330 FAST
+ 4340 LET  C=256
+ 4350 LET C$=&quot;01010101010100002A0C4011630019E12A0C4011\
+420019545DE5019402EDB0C9&quot;
+ 4360 FOR R=RUP TO RUP+31
+ 4370 POKE R,CODE C$(1)*16+CODE C$(2)-476
+ 4380 LET C$=C$(3 TO )
+ 4390 NEXT R
+ 4400 SLOW
+ 4420 RETURN
+
+
+
+
+
+
+</pre></div><div class="post" id="p207350"><div class="ph"><a class="d" href="#p207350">2006-10-15 05:54:17</a> <span>GzavSnap</span> </div><pre>Without Push &amp; Pops... (for Julian Albo!)
+Ok...
+ this code seem working:
+
+ LD HL,(400C)
+ LD DE,+99
+ ADD HL,DE
+ LD (DATA1),HL
+
+ LD HL,(400C)
+ LD DE,+66
+ ADD HL,DE
+ LD (DATA2),HL
+
+ LD HL,(DATA1)
+ LD DE,(DATA2)
+ LD BC,+693
+ LDIR
+ RET
+
+@DATA1 00 00
+@DATA2 00 00
+
+This Exemple repeate 19 times ($13) this scrolling
+
+ LD A,+19
+ LD HL,(400C)
+ LD DE,+99
+ ADD HL,DE
+ LD (DATA1),HL
+
+ LD HL,(400C)
+ LD DE,+66
+ ADD HL,DE
+ LD (DATA2),HL
+
+@RET1
+ LD HL,(DATA1)
+ LD DE,(DATA2)
+ LD BC,+693
+ LDIR
+ DEC A
+ JP NZ RET1
+ RET
+
+@DATA1 00 00
+@DATA2 00 00
+
+Basic program:
+ ( ZxBasic <a href="http://dskcenter.free.fr/zxtools.html" rel="noreferrer">http://dskcenter.free.fr/zxtools.html</a>
+   ZxText2P <a href="http://www.grok.co.uk" rel="noreferrer">http://www.grok.co.uk</a> by Chris Cowley)
+
+# TMP PRG : SCROLLING UP WITHOUT LINE 1.
+# LINES 4330 TO 4400 CAN BE REMOVED AFTER A GOSUB 4300
+#  TO INIT THIS SUB.
+#  XAVSNAP.
+
+     1 REM XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXHLDE
+    10 GOSUB 4300
+    12 PRINT AT 0,0;&quot;********** MY SCREEN: **********&quot;
+    14 FOR A=1 TO 20
+    16 PRINT AT A,0;&quot;*&quot;;TAB(31);&quot;*&quot;
+    18 NEXT A
+    20 POKE 16418,0
+    25 PRINT AT 21,0;&quot;********************************\
+=------------------------------=&quot;
+    30 RAND USR 16514
+    40 STOP
+
+ 4300 REM
+ 4310 LET RUP=16514
+ 4330 FAST
+ 4340 LET  C=256
+ 4350 LET C$=&quot;3E132A0C4011630019220B5C2A0C401142001922\
+0D5C2A0B5CED5B0D5C01B502EDB03DC2FA5BC900000000&quot;
+ 4360 FOR R=RUP TO RUP+42
+ 4370 POKE R,CODE C$(1)*16+CODE C$(2)-476
+ 4380 LET C$=C$(3 TO )
+ 4390 NEXT R
+ 4400 SLOW
+ 4420 RETURN
+
+Or @RET1  LDIR ...
+ 4350 LET C$=&quot;3E132A0C4011630019220B5C2A0C401142001922\
+0D5C2A0B5CED5B0D5C01B502EDB03DC2FA5BC900000000&quot;
+
+Regards.
+
+<span class="qt">&gt;&lt;avSnap.</span>
+
+
+
+
+
+</pre></div><div class="post" id="p207377"><div class="ph"><a class="d" href="#p207377">2006-10-16 18:01:42</a> <span>GzavSnap</span> <span>Re: [ASM-ZX81] Partial screen scrolling.</span></div><pre>Arghh !
+
+Only 1 loop ?
+
+<span class="qt">&gt; This Exemple repeate 19 times ($13) this scrolling</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;  LD A,+19</span>
+<span class="qt">&gt;  LD HL,(400C)</span>
+<span class="qt">&gt;  LD DE,+99</span>
+<span class="qt">&gt;  ADD HL,DE</span>
+<span class="qt">&gt;  LD (DATA1),HL</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;  LD HL,(400C)</span>
+<span class="qt">&gt;  LD DE,+66</span>
+<span class="qt">&gt;  ADD HL,DE</span>
+<span class="qt">&gt;  LD (DATA2),HL</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; @RET1</span>
+<span class="qt">&gt;  LD HL,(DATA1)</span>
+<span class="qt">&gt;  LD DE,(DATA2)</span>
+<span class="qt">&gt;  LD BC,+693</span>
+<span class="qt">&gt;  LDIR</span>
+<span class="qt">&gt;  DEC A</span>
+<span class="qt">&gt;  JP NZ RET1</span>
+<span class="qt">&gt;  RET</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; @DATA1 00 00</span>
+<span class="qt">&gt; @DATA2 00 00</span>
+
+Wrong BC ?
+But, with code seem true...
+LDIR may use the A register ???
+
+... to reverse this scrolling, swap DATA1 and DATA2!
+two poke in your rem can reverse this scrolling.
+Counter : LD A,1 for 1 loop ( poke 16515,1)
+But this counter seem buggy...
+
+ Regards.
+
+<span class="qt"> &gt;&lt;avSnap.</span>
+
+
+
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p207497"><div class="ph"><a class="d" href="#p207497">2006-10-26 19:31:29</a> <span>GzavSnap</span> <span>[ASM-ZX81/TS1000] Artic ASM2 Assembler: Partial screen scrolling.</span> <a class="badge" href="game-40643.html">ZXDB: Screen Scrolling</a></div><pre>Hi !
+To compile an assembler code with Artic ASM2, you had to specify the first
+code memory address, using the &quot;ORG&quot; function.
+In my exemple, this funtion was not specified, and code was compiled to  the
+default address ... $5BE4/23524 !
+The main problem, if you had to put this code in a basic program, your code
+will be decay to 16514 if you had to delete the zero line (Main ASM2
+program) and run it.
+Your compiled code will be wrong because of &quot;jump&quot; functions will jump to
+old $5Bxx memory segment, and your code will crash the computer.
+
+Try this Code :
+
+This Exemple repeate 19 times ($13) this scrolling
+&quot;@&quot; is a label : shit + A (don&#x27;t type anything else)
+
+ORG +16514
+00 00
+ LD A,+19
+ LD HL,(400C)
+ LD DE,+99
+ ADD HL,DE
+ LD (DATA1),HL
+
+ LD HL,(400C)
+ LD DE,+66
+ ADD HL,DE
+ LD (DATA2),HL
+
+@RET1
+ LD HL,(DATA1)
+ LD DE,(DATA2)
+ LD BC,+693
+ LDIR
+ DEC A
+ JP NZ RET1
+ RET
+
+@DATA1 00 00
+@DATA2 00 00
+
+and assemble it with &quot;A&quot; in ASM2 menu.
+All jump and memory address (DATA1 and DATA2) will be right to put this line
+in a 1 REM xxx at 16514.
+first &quot;00&quot; and &quot;00&quot;, are reserved to mask the end of this line with a &quot;$76&quot;
+or &quot;$76&quot;.
+($76 (hexa) = +118 (dec) ... poke 16514,118 and poke 16515,118)
+
+Basic program:
+ ( ZxBasic <a href="http://dskcenter.free.fr/zxtools.html" rel="noreferrer">http://dskcenter.free.fr/zxtools.html</a>
+   ZxText2P <a href="http://www.grok.co.uk" rel="noreferrer">http://www.grok.co.uk</a> by Chris Cowley)
+
+# TMP PRG : SCROLLING UP WITHOUT LINE 1.
+# LINES 4330 TO 4400 CAN BE REMOVED AFTER A GOSUB 4300
+#  TO INIT THIS SUB.
+#  &gt;&lt;AVSNAP.
+
+     1 REM --XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXHLDE
+    10 GOSUB 4300
+    12 PRINT AT 0,0;&quot;********** MY SCREEN: **********&quot;
+    14 FOR A=1 TO 20
+    16 PRINT AT A,0;&quot;*&quot;;TAB(31);&quot;*&quot;
+    18 NEXT A
+    20 POKE 16418,0
+    25 PRINT AT 21,0;&quot;********************************\
+=------------------------------=&quot;
+    30 RAND USR 16516
+    40 STOP
+
+ 4300 REM
+ 4310 LET RUP=16514
+ 4330 FAST
+ 4340 LET  C=256
+# ASSEMBLED AT 16514
+ 4350 LET C$=&quot;00003E132A0C401163001922AB402A0C401142001922\
+AD402AAB40ED5BAD4001B502EDB03DC29A40C92043FF42&quot;
+ 4360 FOR R=RUP TO RUP+44
+ 4370 POKE R,CODE C$(1)*16+CODE C$(2)-476
+ 4380 LET C$=C$(3 TO )
+ 4390 NEXT R
+ 4400 SLOW
+ 4420 RETURN
+
+Regards.
+
+<span class="qt">&gt;&lt;avSnap.</span>
+
+
+
+
+
+
+
+
+</pre></div></main></body></html>

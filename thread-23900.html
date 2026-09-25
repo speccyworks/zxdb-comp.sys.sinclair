@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSSCGC search engine - now with added XXX[1] pictures! · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>CSSCGC search engine - now with added XXX[1] pictures!</h1><p class="facts">21 posts, 2001-12-03 – 2001-12-10</p><div class="post" id="p123604"><div class="ph"><a class="d" href="#p123604">2001-12-03 22:12:09</a> <span>Chris Young</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a> <a class="badge" href="game-30666.html">ZXDB: Erotic Pinball</a></div><pre>YES!  The CSSCGC search engine now has pictures of all[2] the entries
+from previous compos!  It will contain screenshots of absolutely every
+entry soon, but it will probably take me a while to capture them in
+all their glory, so I&#x27;m announcing this now.  2001 entries aren&#x27;t in
+the database yet, because judging hasn&#x27;t begun.
+
+<a href="http://www.perl5.cjb.net/csscgc.cgi" rel="noreferrer">http://www.perl5.cjb.net/csscgc.cgi</a>
+
+Oh, and I realise I have just plugged two websites in the space of two
+minutes, but be nice to me, I only do this once a year.  The plug tax
+is in the post.
+
+Chris
+[1] The one for Erotic Pinball
+[2] For values of &quot;all&quot; meaning &quot;CSSCGC2000 entries only&quot;
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p123721"><div class="ph"><a class="d" href="#p123721">2001-12-04 20:56:00</a> <span>Rob Uttley</span> <span>Re: CSSCGC search engine - now with added XXX[1] pictures!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>In article &lt;…@…&gt;, 
+…@… (Chris Young) wrote:
+
+<span class="qt">&gt; YES!  The CSSCGC search engine now has pictures of all[2] the entries</span>
+<span class="qt">&gt; from previous compos!  It will contain screenshots of absolutely every</span>
+
+[etc]
+
+Can I just interrupt and say that I spent a couple of hours on Sunday 
+enjoying the CSSGCG2k1 stuff. If anyone who regularly enjoys[1] the 
+newsgroup hasn&#x27;t already whiled away an afternoon of crap games, you really 
+should. I really laughed out loud at some of them[2] and feel inspired to 
+try and enter something next time[3].
+
+
+We should all be proud of institutions like CSSCGC, it&#x27;s crap. :-)
+
+[1]if enjoys is not too strong a word there
+[2]most of them, for various reasons
+[3]because I&#x27;ll certainly fail to get anything done before t&#x27;end o&#x27;t&#x27;year.
+
+
+Rob
+-- 
+…@…            <a href="http://www.robsoft.co.uk" rel="noreferrer">http://www.robsoft.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p123731"><div class="ph"><a class="d" href="#p123731">2001-12-04 22:23:51</a> <span>Chris Young</span> <span>Re: CSSCGC search engine - now with added XXX[1] pictures!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>On Tue, 4 Dec 2001 20:56 +0000 (GMT Standard Time), Rob Uttley (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; Can I just interrupt and say that I spent a couple of hours on Sunday </span>
+<span class="qt">&gt; enjoying the CSSGCG2k1 stuff. If anyone who regularly enjoys[1] the </span>
+<span class="qt">&gt; newsgroup hasn&#x27;t already whiled away an afternoon of crap games, you really </span>
+<span class="qt">&gt; should. I really laughed out loud at some of them[2] and feel inspired to </span>
+<span class="qt">&gt; try and enter something next time[3].</span>
+
+And anybody who hasn&#x27;t seen the poor attempt by the C64 crowd to do
+the same thing, take a look at <a href="http://www.cgc.cosine.org.uk" rel="noreferrer">http://www.cgc.cosine.org.uk</a> and be
+shocked.  The only thing crap about these games is the fact they run
+on a C64 - I&#x27;ve sen worse commercial releases!
+
+(And Jason, if you&#x27;re reading - are we going to get the results for
+this year&#x27;s compo anytime, um, this year would be nice?)
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p123748"><div class="ph"><a class="d" href="#p123748">2001-12-05 00:28:35</a> <span>CreaMD/Dmagic</span> <span>Re: CSSCGC search engine - now with added XXX[1] pictures!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>Chris| And anybody who hasn&#x27;t seen the poor attempt by the C64 crowd to do
+Chris| the same thing, take a look at <a href="http://www.cgc.cosine.org.uk" rel="noreferrer">http://www.cgc.cosine.org.uk</a> and be
+Chris| shocked.  The only thing crap about these games is the fact they run
+Chris| on a C64 - I&#x27;ve sen worse commercial releases!
+
+I doubt that you runned a c64 emulator to check those games so here is the
+link to review of C64 crap games compo games.
+<a href="http://www.c64.sk/index.php?content=article.php&articleid=11&id=53" rel="noreferrer">http://www.c64.sk/index.php?content=article.php&amp;articleid=11&amp;id=53</a>
+IMAO most of them is unbeatably brutal CRAP, however it&#x27;s quite pathetic to
+turn the debate about who has better games to debate about which machine has
+crappeir games ;-))). I actually think the both systems RULE! And I played a
+lot of great games on them.  E.g. ELITE on Speccy is unbeatable and I since
+I played it I&#x27;ve never had fun with C64 Elite anymore ;-).
+
+CreaMD
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p123757"><div class="ph"><a class="d" href="#p123757">2001-12-05 02:04:00</a> <span>Rob Uttley</span> <span>Re: CSSCGC search engine - now with added XXX[1] pictures!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>In article &lt;…@…&gt;, 
+…@… (Chris Young) wrote:
+
+<span class="qt">&gt; And anybody who hasn&#x27;t seen the poor attempt by the C64 crowd to do</span>
+<span class="qt">&gt; the same thing, take a look at <a href="http://www.cgc.cosine.org.uk" rel="noreferrer">http://www.cgc.cosine.org.uk</a> and be</span>
+<span class="qt">&gt; shocked.  The only thing crap about these games is the fact they run</span>
+<span class="qt">&gt; on a C64 - I&#x27;ve sen worse commercial releases!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; (And Jason, if you&#x27;re reading - are we going to get the results for</span>
+<span class="qt">&gt; this year&#x27;s compo anytime, um, this year would be nice?)</span>
+
+Surely Dec 31 2K1 is the closing date? I&#x27;m sure I&#x27;ve seen that somewhere on 
+the website.
+
+Having said that, it would be nice to have 2k1 entries judged in 2k1.
+
+Can TSC get extra kudos for having ported to the Gameboy? I&#x27;ll be posting 
+proof in the next day or so.... :-)
+
+
+Rob
+-- 
+…@…            <a href="http://www.robsoft.co.uk" rel="noreferrer">http://www.robsoft.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p123804"><div class="ph"><a class="d" href="#p123804">2001-12-05 19:10:59</a> <span>Llama-Wax Len</span> <span>Re: CSSCGC search engine - now with added XXX[1] pictures!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>
+&quot;Rob Uttley&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Can I just interrupt and say that I spent a couple of hours on Sunday</span>
+<span class="qt">&gt; enjoying the CSSGCG2k1 stuff. If anyone who regularly enjoys[1] the</span>
+<span class="qt">&gt; newsgroup hasn&#x27;t already whiled away an afternoon of crap games, you</span>
+really
+<span class="qt">&gt; should.</span>
+
+Agreed. And then go back and try the entries from 2000 as well. And 1999.
+etc.
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+DISCLAIMER: By replying to this message, you hereby acknowledge
+that the ZX Spectrum game &quot;Robocop&quot; was too difficult.
+
+
+
+
+
+</pre></div><div class="post" id="p123811"><div class="ph"><a class="d" href="#p123811">2001-12-05 19:24:51</a> <span>Chris Young</span> <span>Re: CSSCGC search engine - now with added XXX[1] pictures!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>On Wed, 5 Dec 2001 02:04 +0000 (GMT Standard Time), Rob Uttley (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; &gt; And anybody who hasn&#x27;t seen the poor attempt by the C64 crowd to do</span>
+<span class="qt">&gt; &gt; the same thing, take a look at <a href="http://www.cgc.cosine.org.uk" rel="noreferrer">http://www.cgc.cosine.org.uk</a> and be</span>
+<span class="qt">&gt; &gt; shocked.  The only thing crap about these games is the fact they run</span>
+<span class="qt">&gt; &gt; on a C64 - I&#x27;ve sen worse commercial releases!</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; (And Jason, if you&#x27;re reading - are we going to get the results for</span>
+<span class="qt">&gt; &gt; this year&#x27;s compo anytime, um, this year would be nice?)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Surely Dec 31 2K1 is the closing date? I&#x27;m sure I&#x27;ve seen that somewhere on </span>
+<span class="qt">&gt; the website.</span>
+
+No, you&#x27;re thinking of the CSSCGC.  The C64CGC closed earlier in the
+year.
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p123813"><div class="ph"><a class="d" href="#p123813">2001-12-05 19:34:55</a> <span>Chris Young</span> <span>Re: CSSCGC search engine - now with added XXX[1] pictures!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>On Wed, 5 Dec 2001 01:28:35 +0100, CreaMD/Dmagic (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; Chris| And anybody who hasn&#x27;t seen the poor attempt by the C64 crowd to do</span>
+<span class="qt">&gt; Chris| the same thing, take a look at <a href="http://www.cgc.cosine.org.uk" rel="noreferrer">http://www.cgc.cosine.org.uk</a> and be</span>
+<span class="qt">&gt; Chris| shocked.  The only thing crap about these games is the fact they run</span>
+<span class="qt">&gt; Chris| on a C64 - I&#x27;ve sen worse commercial releases!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I doubt that you runned a c64 emulator to check those games</span>
+
+Actually, I did!  Or I ran a couple of them at least (The Weakest Link
+from the 2K1 compo being one of them).  Sure, the 2001 entries are
+better quality (in terms of crapness) then the 1999 entries.  But most
+of them still look far too polished!
+
+<span class="qt">&gt; so here is the</span>
+<span class="qt">&gt; link to review of C64 crap games compo games.</span>
+<span class="qt">&gt; <a href="http://www.c64.sk/index.php?content=article.php&articleid=11&id=53" rel="noreferrer">http://www.c64.sk/index.php?content=article.php&amp;articleid=11&amp;id=53</a></span>
+
+I quote, &quot;quite a good one&quot;, &quot;it also features absolutely
+perfectly...&quot;.  Such phrases should not be used in CGC reviews, unless
+they are being used sarcastically.
+
+<span class="qt">&gt; IMAO most of them is unbeatably brutal CRAP, however it&#x27;s quite pathetic to</span>
+<span class="qt">&gt; turn the debate about who has better games to debate about which machine has</span>
+<span class="qt">&gt; crappeir games ;-))).</span>
+
+Erm, the fact that the C64CGC entries are good is a tribute to the
+coders who wrote them.  However, the fact that it is a CRAP game compo
+may indicate that they have missed the point somewhat.
+
+<span class="qt">&gt; I actually think the both systems RULE! And I played a</span>
+<span class="qt">&gt; lot of great games on them.  E.g. ELITE on Speccy is unbeatable and I since</span>
+<span class="qt">&gt; I played it I&#x27;ve never had fun with C64 Elite anymore ;-).</span>
+
+My post wasn&#x27;t intended to start a C64 vs Speccy flamewar, it was
+pointing out that the C64 crowd seemed to have missed the point of the
+CGC, as you appear to have done with my post.
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p123815"><div class="ph"><a class="d" href="#p123815">2001-12-05 20:36:51</a> <span>CreaMD/Dmagic</span> <span>Re: CSSCGC search engine - now with added XXX[1] pictures!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>I didn&#x27;t base my review upon any tradition. As I didn&#x27;t know that this idea
+comes from speccy scene. My review is maybe too nice, too serious, but you
+know I simply don&#x27;t that native speaker&#x27;s richness of language and I simply
+cant say fart, tits and shit in thousand different ways as CSS visitors
+easily prove in some of the latest posts. Lurking around your pool of wisdom
+here at com.sys.sinclair I learn a lot of new things and I assure you that
+I&#x27;ll try my best to make the next crap compo reviews to be fully compliant
+with so-called spectrum crap-reviewing standards. I&#x27;ve already downloaded
+all crap I cuold for further study and I&#x27;m really happy that I can learn
+from the masters of the crap himself, the proud maintainers of the
+tradition - the spectrum users.. (uff... do you think it could make one or
+two paranoiac speccy users upset? or still not sarcastic enough?)
+
+Also some of the so-called crap games contain subtle humour which IMAO
+doesn&#x27;t make the crapiness of the game less but just give it a different
+quality.
+
+btw. here is the intro to that review ;) to assure you that I at least tried
+hard to treat the crap properly.
+
+14. JULY 2001
+ Crap Games Competition releases 17:57
+
+Are you healthy? Is your heart strong? Brains sane and organism in a good
+condition? Are you sitting comfortably on your chair? Do you usually get
+nervous too fast? Do you usually follow the instructions in manuals blindly?
+Okay then. Don&#x27;t check this game collection! And if you still decide to do
+so, please remember, you&#x27;ve been warned!!! Learn more in the article at
+(link) location.
+Written by CreamD
+
+have a nice day,
+
+CreaMD
+
+
+
+
+
+</pre></div><div class="post" id="p123832"><div class="ph"><a class="d" href="#p123832">2001-12-05 23:40:16</a> <span>Jeff Braine</span> <span>Re: CSSCGC search engine - now with added XXX[1] pictures!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>On 5 Dec 2001, Chris Young wrote:
+
+<span class="qt">&gt; Actually, I did!  Or I ran a couple of them at least (The Weakest Link</span>
+<span class="qt">&gt; from the 2K1 compo being one of them).  Sure, the 2001 entries are</span>
+<span class="qt">&gt; better quality (in terms of crapness) then the 1999 entries.  But most</span>
+<span class="qt">&gt; of them still look far too polished!</span>
+
+Er, isn&#x27;t 2K1 equivalent to 2100?
+
+
+-- 
+Jeff Braine
+Senior Unix System Engineer
+Griffith University, Nathan Campus
+
+
+
+
+</pre></div><div class="post" id="p123871"><div class="ph"><a class="d" href="#p123871">2001-12-06 19:48:54</a> <span>Chris Young</span> <span>Re: CSSCGC search engine - now with added XXX[1] pictures!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>On Thu, 6 Dec 2001 09:40:16 +1000, Jeff Braine (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; Er, isn&#x27;t 2K1 equivalent to 2100?</span>
+
+Don&#x27;t ask me, I only work here.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p123875"><div class="ph"><a class="d" href="#p123875">2001-12-06 20:30:56</a> <span>Suzanne Archibald</span> <span>Re: CSSCGC search engine - now with added XXX[1] pictures!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>Jeff Braine wrote:
+
+<span class="qt">&gt; On 5 Dec 2001, Chris Young wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Actually, I did!  Or I ran a couple of them at least (The Weakest Link</span>
+<span class="qt">&gt;&gt; from the 2K1 compo being one of them).  Sure, the 2001 entries are</span>
+<span class="qt">&gt;&gt; better quality (in terms of crapness) then the 1999 entries.  But most</span>
+<span class="qt">&gt;&gt; of them still look far too polished!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Er, isn&#x27;t 2K1 equivalent to 2100?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+
+If you come from an EE background where 4K7 means something important to 
+you, yes :)
+
+However, like many other things, popular media has hijacked the SI style of 
+specifying numbers, and abused it to mean something else :/
+
+
+-- 
+Listen to my music at :
+<a href="http://www.MP3.com/Suzanne_Archibald" rel="noreferrer">http://www.MP3.com/Suzanne_Archibald</a>
+
+
+
+</pre></div><div class="post" id="p123879"><div class="ph"><a class="d" href="#p123879">2001-12-06 22:23:41</a> <span>Jeff Braine</span> <span>Re: CSSCGC search engine - now with added XXX[1] pictures!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>On Thu, 6 Dec 2001, Suzanne Archibald wrote:
+
+<span class="qt">&gt; &gt; Er, isn&#x27;t 2K1 equivalent to 2100?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; If you come from an EE background where 4K7 means something important to </span>
+<span class="qt">&gt; you, yes :)</span>
+
+I sorta do, aye.
+
+<span class="qt">&gt; However, like many other things, popular media has hijacked the SI style of </span>
+<span class="qt">&gt; specifying numbers, and abused it to mean something else :/</span>
+
+Indeed. 1 megabyte is 1000K my arse. Bloody hard drive manufacturers.
+
+How are ya Suzanne? Haven&#x27;t seen you in IRC for bloody ages!
+
+-- 
+Jeff Braine
+Senior Unix System Engineer
+Griffith University, Nathan Campus
+
+
+
+
+</pre></div><div class="post" id="p123881"><div class="ph"><a class="d" href="#p123881">2001-12-06 22:45:56</a> <span>Suzanne Archibald</span> <span>Re: CSSCGC search engine - now with added XXX[1] pictures!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>Jeff Braine wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; However, like many other things, popular media has hijacked the SI style</span>
+<span class="qt">&gt;&gt; of specifying numbers, and abused it to mean something else :/</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Indeed. 1 megabyte is 1000K my arse. Bloody hard drive manufacturers.</span>
+
+Unfortunately, they&#x27;re kinda right on that, SI suffixes are supposed to be 
+powers of 10...
+
+Though, that said, it makes little sense given that computers work in base 
+2 :)
+
+<span class="qt">&gt; </span>
+<span class="qt">&gt; How are ya Suzanne? Haven&#x27;t seen you in IRC for bloody ages!</span>
+<span class="qt">&gt; </span>
+
+I&#x27;m doing ok, busy coding C++, playing gamecube, and other assorted stuff
+
+-- 
+Listen to my music at :
+<a href="http://www.MP3.com/Suzanne_Archibald" rel="noreferrer">http://www.MP3.com/Suzanne_Archibald</a>
+
+
+
+</pre></div><div class="post" id="p123882"><div class="ph"><a class="d" href="#p123882">2001-12-06 23:09:25</a> <span class="small">address hidden</span> <span>Re: CSSCGC search engine - now with added XXX[1] pictures!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>Suzanne Archibald &lt;…@…&gt; wrote:
+<span class="qt">&gt; Jeff Braine wrote:</span>
+
+<span class="qt">&gt;&gt; Indeed. 1 megabyte is 1000K my arse. Bloody hard drive manufacturers.</span>
+<span class="qt">&gt; Unfortunately, they&#x27;re kinda right on that, SI suffixes are supposed to be </span>
+<span class="qt">&gt; powers of 10...</span>
+<span class="qt">&gt; Though, that said, it makes little sense given that computers work in base </span>
+<span class="qt">&gt; 2 :)</span>
+
+But that is why the world graced us with the kibi, the mebi and the
+gibi. Please ignore any retching-noise you may hear in the background.
+
+-a
+
+
+
+</pre></div><div class="post" id="p123885"><div class="ph"><a class="d" href="#p123885">2001-12-07 00:00:57</a> <span>Suzanne Archibald</span> <span>Re: CSSCGC search engine - now with added XXX[1] pictures!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>…@… wrote:
+
+<span class="qt">&gt; Suzanne Archibald &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; Jeff Braine wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;&gt; Indeed. 1 megabyte is 1000K my arse. Bloody hard drive manufacturers.</span>
+<span class="qt">&gt;&gt; Unfortunately, they&#x27;re kinda right on that, SI suffixes are supposed to</span>
+<span class="qt">&gt;&gt; be powers of 10...</span>
+<span class="qt">&gt;&gt; Though, that said, it makes little sense given that computers work in</span>
+<span class="qt">&gt;&gt; base 2 :)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; But that is why the world graced us with the kibi, the mebi and the</span>
+<span class="qt">&gt; gibi. Please ignore any retching-noise you may hear in the background.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; -a</span>
+
+
+Actually, mebi sounds pretty appropriate... &quot;Mebi I get 10MB of space after 
+formatting, Mebi I get 8.1MB...&quot;
+
+Now Kibi, for some reason I always think of &#x27;Kibbles and Bits&#x27; whenever I 
+see that word...
+
+Yes, they&#x27;re totally ridiculous, and thankfully not very popular, but every 
+now and then you run into some SI-nazi that insists on referring to them as 
+GibiByte drives - usually just before getting one, right in the back of the 
+head.
+
+
+-- 
+Listen to my music at :
+<a href="http://www.MP3.com/Suzanne_Archibald" rel="noreferrer">http://www.MP3.com/Suzanne_Archibald</a>
+
+
+
+</pre></div><div class="post" id="p123900"><div class="ph"><a class="d" href="#p123900">2001-12-07 09:00:10</a> <span>Anders Carlsson</span> <span>Re: CSSCGC search engine - now with added XXX[1] pictures!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>Suzanne Archibald &lt;…@…&gt; writes:
+
+<span class="qt">&gt; SI suffixes are supposed to be powers of 10...</span>
+
+I once read in a home computer magazine an user question why kB is
+1024 bytes, not 1000 as one would expect. The staff&#x27;s answer was
+something like things are not always what you would expect them to
+be, and used another example to illustrate that:
+
+A horse is a mammal on four legs. A horsepower is 75 kpm/sï¿½. But
+that doesn&#x27;t make a one-horse ride a 75 kpm/s-ride. Or something.
+
+I agree the example was quite silly.
+
+ï¿½) or 0.1757 kcal/s, or 735.5 W if you like
+
+-- 
+Anders Carlsson - children back there bread and after they refuse a diploma
+
+
+
+</pre></div><div class="post" id="p123915"><div class="ph"><a class="d" href="#p123915">2001-12-07 11:31:01</a> <span>Andrew Owen</span> <span>Re: CSSCGC search engine - now with added XXX[1] pictures!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>in article 85sou9.u3h.ln@suzanne, Suzanne Archibald at …@…
+wrote on 6/12/01 10:45 PM:
+
+<span class="qt">&gt; Jeff Braine wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; How are ya Suzanne? Haven&#x27;t seen you in IRC for bloody ages!</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;m doing ok, busy coding C++, playing gamecube, and other assorted stuff</span>
+
+How is the gamecube compared to other consoles? Have you tried using GBAs as
+controllers and if so are they any good? Have you put any more of your music
+on the web? Are you still working on your new Spectrum hardware project?
+
+-Andrew
+
+
+
+
+</pre></div><div class="post" id="p123937"><div class="ph"><a class="d" href="#p123937">2001-12-07 16:16:03</a> <span>Suzanne Archibald</span> <span>Re: CSSCGC search engine - now with added XXX[1] pictures!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>Andrew Owen wrote:
+
+<span class="qt">&gt; in article 85sou9.u3h.ln@suzanne, Suzanne Archibald at</span>
+<span class="qt">&gt; …@… wrote on 6/12/01 10:45 PM:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Jeff Braine wrote:</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt;&gt; How are ya Suzanne? Haven&#x27;t seen you in IRC for bloody ages!</span>
+<span class="qt">&gt;&gt;&gt; </span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; I&#x27;m doing ok, busy coding C++, playing gamecube, and other assorted stuff</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; How is the gamecube compared to other consoles? Have you tried using GBAs</span>
+
+Compared to the dreamcast, its amazing, the load times are minimal, in fact 
+the only time you notice them, is if you want to skip the cinematic between 
+levels on certain titles, and you find that you have to wait about 0.5 
+seconds into the cine before you can skip, good way of hiding load time, 
+and short enough anyway to not be too annoying.
+
+I can&#x27;t compare it to the PS2 or Xbox, because I have neither, and plan to 
+get neither.
+
+Rogue Leader is simply amazing, screen shots don&#x27;t do it justice, well, 
+they do, they show you how many polygons its pushing (about 15 million a 
+second), but don&#x27;t show the fact that the frame rate is usually smooth, the 
+lighting is amazing, etc. The moment of jaw dropping has to be when you 
+first hit the death star level, and realise that when you get close to the 
+surface of the DS, all of the surface is true polygons. And all those 
+hundreds of lasers^H^H^H^H^H^Hblasters being fired around you are providing 
+dynamic lighting. Then later on when you&#x27;re playing on Hoth, you get close 
+to the ground, get so amazed by the fact that the hundreds of snow troopers 
+are beautifully detailed and animated, that you slam straight into the leg 
+of an AT-AT.
+
+Oh, and a Tatooine dual-sunset has to be experienced to be believed (just 
+play the training level at around sunset time real time).
+
+The most bizarre part of Rogue Leader is the surround sound... Its supposed 
+to be Dolby Pro Logic II, which needs a new receiver that supports PL2... 
+yet my 3 year old (nearly) Yamaha receiver somehow manages to decode to a 
+5.1 positional audio, at least the &#x27;Surround test&#x27; produces a tie fighter 
+that can be distinctly heard moving thru all 5 speakers even the 2 rear 
+speakers. My only conclusion is that Yamaha implemented PL2 early and 
+unofficially (Nowhere does it claim PL2 support, and the mode its in when 
+Rogue Leader starts up is &#x27;Pro Logic Enhanced&#x27; - perhaps Yamaha&#x27;s DSP 
+enhancement is what became PL2)
+
+All that said, I haven&#x27;t got to the most impressive part of RL yet, which 
+is allegedly the level where you have to take on Star Destroyers.
+
+<span class="qt">&gt; as controllers and if so are they any good? Have you put any more of your</span>
+
+Don&#x27;t have any GBAs yet, so I can&#x27;t comment, and my understanding is that 
+it will only work for games that support it, which will be either Mario 
+Kart or Kirby&#x27;s Tilt and Tumble 2 (I believe) - which looks amazing, though 
+its a shame that Nintendo couldn&#x27;t give Sega a TnT kit to implement in 
+Super Monkey Ball, given that the only control in the main game for SMB is 
+tilting the board, the TnT control would have been ideal. Though, maybe 
+nintendo did, and we&#x27;ll find out come TnT release time...
+
+Haven&#x27;t put any more of my music on the web yet, I have a few ideas I&#x27;m 
+working on, but haven&#x27;t sat down to record them yet.
+
+<span class="qt">&gt; music on the web? Are you still working on your new Spectrum hardware</span>
+<span class="qt">&gt; project?</span>
+
+No, I kind of lost interest after reformatting my machine a year or so ago, 
+and losing all my CPLD source, then not being able to rerun it because I 
+can&#x27;t remember my username/password to request a new FlexLM license for the 
+CPLD software, damned copy protection.
+
+<span class="qt">&gt; </span>
+<span class="qt">&gt; -Andrew</span>
+
+-- 
+Listen to my music at :
+<a href="http://www.MP3.com/Suzanne_Archibald" rel="noreferrer">http://www.MP3.com/Suzanne_Archibald</a>
+
+
+
+</pre></div><div class="post" id="p123955"><div class="ph"><a class="d" href="#p123955">2001-12-07 23:23:54</a> <span>Duncan Snowden</span> <span>Re: CSSCGC search engine - now with added XXX[1] pictures!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>On Friday, Suzanne Archibald wrote:
+
+<span class="qt">&gt; Rogue Leader is simply amazing,</span>
+[snip]
+
+Yummmmmmmmm! I wanna GameCube!
+ 
+-- 
+Duncan Snowden. 
+
+K Invalid colour, 950:2 
+
+
+
+</pre></div><div class="post" id="p124139"><div class="ph"><a class="d" href="#p124139">2001-12-10 12:25:00</a> <span>Rob Uttley</span> <span>Re: CSSCGC search engine - now with added XXX[1] pictures!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>In article &lt;…@…&gt;, 
+…@… (Duncan Snowden) wrote:
+
+<span class="qt">&gt; On Friday, Suzanne Archibald wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; Rogue Leader is simply amazing,</span>
+<span class="qt">&gt; [snip]</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Yummmmmmmmm! I wanna GameCube!</span>
+
+Finally got mine up and working today (frustrating had it sat around for a 
+week with a telly that wouldn&#x27;t show the picture properly).
+
+It&#x27;s lovely; and as Suzanne said, the loading times are tiny (I&#x27;m a huge DC 
+fan, but I think that the GC is already my favourite beast).
+
+The controller is great too (I&#x27;ve got quite small hands). It&#x27;s really, 
+really near. It&#x27;s just a shame that getting games for it is such a pain at 
+the moment.
+
+Rogue Leader is due to arrive sometime this week; I can&#x27;t wait!
+
+Rob
+-- 
+…@…            <a href="http://www.robsoft.co.uk" rel="noreferrer">http://www.robsoft.co.uk</a>
+
+
+
+</pre></div></main></body></html>

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSSCGC 2002 update · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>CSSCGC 2002 update</h1><p class="facts">5 posts, 2002-10-11 – 2002-10-30</p><div class="post" id="p147919"><div class="ph"><a class="d" href="#p147919">2002-10-11 19:16:34</a> <span>&quot;Eq Tetrachloride&quot; &lt;eq@@CL4.org&gt;</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a> <a class="badge" href="game-30748.html">ZXDB: Ivor the Engine</a> <a class="badge" href="game-30743.html">ZXDB: Big Brother</a></div><pre>I trust everybody is enduri-- er, enjoying - the crop of crap
+games submitted thus far. Hajo Spuunup&#x27;s _Big Brother_ and
+Orinoco&#x27;s _Ivor the Engine_ are the latest and greatest[1]
+additions to the site.
+
+<a href="http://www.cl4.org/comp/spectrum/cgc2002/" rel="noreferrer">http://www.cl4.org/comp/spectrum/cgc2002/</a>
+
+Send your submissions to CGC at CL4.org. I love each and every
+one of them.
+
+Eq.
+
+[1] I know, but it rhymes.
+
+--
+Equinox Tetrachloride
+www.CL4.org - www.insecurities.org
+
+
+
+
+
+</pre></div><div class="post" id="p148632"><div class="ph"><a class="d" href="#p148632">2002-10-23 15:05:15</a> <span>Adam D. Moss</span> <span>Re: CSSCGC 2002 update</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>Eq Tetrachloride wrote:
+<span class="qt">&gt; <a href="http://www.cl4.org/comp/spectrum/cgc2002/" rel="noreferrer">http://www.cl4.org/comp/spectrum/cgc2002/</a></span>
+
+Oi, when&#x27;s the closing date?  (Just wondering if it
+was pushed back due my own special breed of roguish
+ineptitude.)  Might be able to squeeze out an entry.
+Dunno.
+
+-- 
+Adam D. Moss   . ,,^^   …@…   <a href="http://www.foxbox.org/" rel="noreferrer">http://www.foxbox.org/</a>   co:3
+Be valiant, space warror.  The fate of earth is in your hands!
+
+
+
+</pre></div><div class="post" id="p148782"><div class="ph"><a class="d" href="#p148782">2002-10-25 18:34:29</a> <span>&quot;Eq Tetrachloride&quot; &lt;eq@@CL4.org&gt;</span> <span>Re: CSSCGC 2002 update</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>&quot;Adam D. Moss&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; &gt; <a href="http://www.cl4.org/comp/spectrum/cgc2002/" rel="noreferrer">http://www.cl4.org/comp/spectrum/cgc2002/</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Oi, when&#x27;s the closing date?  (Just wondering if it</span>
+<span class="qt">&gt; was pushed back due my own special breed of roguish</span>
+<span class="qt">&gt; ineptitude.)  Might be able to squeeze out an entry.</span>
+<span class="qt">&gt; Dunno.</span>
+
+I haven&#x27;t really picked one yet. I expect I&#x27;ll let it run over
+past December a month or two, because it started quite late in
+the year.
+
+Eq.
+
+--
+Equinox Tetrachloride
+www.CL4.org - www.insecurities.org
+
+
+
+
+
+</pre></div><div class="post" id="p148822"><div class="ph"><a class="d" href="#p148822">2002-10-26 04:02:45</a> <span>A. J. Moss</span> <span>Re: CSSCGC 2002 update</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>Eq Tetrachloride wrote:
+<span class="qt">&gt;&quot;Adam D. Moss&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; &gt; <a href="http://www.cl4.org/comp/spectrum/cgc2002/" rel="noreferrer">http://www.cl4.org/comp/spectrum/cgc2002/</a></span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Oi, when&#x27;s the closing date?  (Just wondering if it</span>
+<span class="qt">&gt;&gt; was pushed back due my own special breed of roguish</span>
+<span class="qt">&gt;&gt; ineptitude.)  Might be able to squeeze out an entry.</span>
+<span class="qt">&gt;&gt; Dunno.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I haven&#x27;t really picked one yet. I expect I&#x27;ll let it run over</span>
+<span class="qt">&gt;past December a month or two, because it started quite late in</span>
+<span class="qt">&gt;the year.</span>
+
+Is there going to be a panel of at least three judges writing
+sarcastic comments about each game, like there was last year 
+and quite noticeably wasn&#x27;t in some previous years? If not, 
+I&#x27;m not going to bother entering.
+
+
+
+
+</pre></div><div class="post" id="p149060"><div class="ph"><a class="d" href="#p149060">2002-10-30 14:17:39</a> <span>Adam D. Moss</span> <span>Re: CSSCGC 2002 update</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>&quot;A. J. Moss&quot; wrote:
+<span class="qt">&gt; </span>
+
+That&#x27;s quite enough A. Mosses for this thread thank you!
+
+-- 
+Adam D. Moss   . ,,^^   …@…   <a href="http://www.foxbox.org/" rel="noreferrer">http://www.foxbox.org/</a>   co:3
+&quot;You could make a mince pie mountain and
+carve yourself a lair inside to live in.&quot;
+
+
+
+</pre></div></main></body></html>

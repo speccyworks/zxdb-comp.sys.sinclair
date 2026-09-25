@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to get Data from Images (Sna; Z80 ...) to disk · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>How to get Data from Images (Sna; Z80 ...) to disk</h1><p class="facts">6 posts, 2005-06-09 – 2005-06-11</p><div class="post" id="p192137"><div class="ph"><a class="d" href="#p192137">2005-06-09 20:25:59</a> <span>J���rgen Strobel</span> </div><pre>Hy, for know the idea with the MF3 seems to make problems, so i tried 
+another way.
+Is there a chance to get z80 or sna data onto a disk for the +3?
+I tried the MF3conv and &quot;snaprun&quot;(which have an empty DSK File on the 
+ftp.nvg.unit.no server. And nothing worked well for me... :(
+How does other guys get games from the Emulator Images to disk. (Maybe 
+strange converting ways from one Format to other and to file...and so on...)
+Thanks for help
+Tolkin 
+
+
+
+
+
+</pre></div><div class="post" id="p192141"><div class="ph"><a class="d" href="#p192141">2005-06-09 21:34:51</a> <span>John Elliott</span> <span>Re: How to get Data from Images (Sna; Z80 ...) to disk</span> <a class="badge" href="game-11796.html">ZXDB: Images</a></div><pre>Sinclair PC200 512k (V1.5) on 9 June 2005
+Loading &quot;Jurgen Strobel&quot; &lt;odity@odity&gt;.SYS.....
+: Hy, for know the idea with the MF3 seems to make problems, so i tried 
+: another way.
+: Is there a chance to get z80 or sna data onto a disk for the +3?
+: I tried the MF3conv and &quot;snaprun&quot;(which have an empty DSK File on the 
+: ftp.nvg.unit.no server. 
+
+  You&#x27;re right. The odd thing is that the sectors all appear to be present. 
+Let&#x27;s see... &lt;hexedit hexedit&gt;
+  Ah. Whatever tool as used to image the DSK got it dead wrong, because the
+sectors are numbered 0-8 not 1-9. 
+
+  If you&#x27;ve got LibDsk 1.1.x installed, then you can fix the problem like
+this: 
+
+1. Create a .libdskrc file in your home directory (that&#x27;s &quot;My Documents&quot; on 
+a Windows system). Put the following lines in it:
+
+[cf2_0]
+Description = Incorrect CF2 image
+Sides = Alt
+Cylinders = 40
+Heads = 1
+Sectors = 9
+SecBase = 0
+SecSize = 512
+DataRate = SD
+RWGap = 42
+FmtGap = 82
+FM = N
+
+2. Remove the incorrect sector info.
+
+	dsktrans -otype raw -format cf2_0 snaprun.dsk snaprun.ufi
+
+3. Generate new sector info.
+
+	dsktrans snaprun.ufi snaprun2.dsk
+
+  (operations 2 and 3 can also be done from the GUI front end (dsktool) if 
+you have that installed).
+
+: And nothing worked well for me... :(
+: How does other guys get games from the Emulator Images to disk. (Maybe 
+: strange converting ways from one Format to other and to file...and so on...)
+
+  I seem to recall being involved in similar threads before.
+&lt;<a href="http://groups.google.com/groups?hl=la&lr=&c2coff=1&threadm=9airsn%24itu%241%40kern.srcf.societies.cam.ac.uk&gt;" rel="noreferrer">http://groups.google.com/groups?hl=la&amp;lr=&amp;c2coff=1&amp;threadm=9airsn%24itu%241%40kern.srcf.societies.cam.ac.uk&gt;</a>
+
+  I&#x27;ve said before that what we need for these situations is a single disc
+image that someone can download, containing as many emulation-compatibility
+tools as we can think of. Perhaps one of these days I&#x27;ll actually get round
+to doing something about it.
+
+-- 
+---------------------------       ,@@.   ,@@.             TRYMON  BEAR  1
+John Elliott              |    o  @@@@   @@@@                \\.....\_O_
+CHAOS in a sig...         |  \/|&gt; &#x27;||`   &#x27;||`                /o/     \I `
+---------------------------    |\  JL     JL                  \\     /\\
+
+
+
+</pre></div><div class="post" id="p192148"><div class="ph"><a class="d" href="#p192148">2005-06-10 21:03:52</a> <span>John Elliott</span> <span>Re: How to get Data from Images (Sna; Z80 ...) to disk</span></div><pre>Sinclair PC200 512k (V1.5) on 10 June 2005
+Loading &quot;Jurgen Strobel&quot; &lt;odity@odity&gt;.SYS.....
+: Is there a chance to get z80 or sna data onto a disk for the +3?
+
+  OK. I&#x27;ve now written a simple SNA loader for the +3, which can be 
+downloaded at &lt;<a href="http://www.seasip.demon.co.uk/ZX/spectrum.html&gt;." rel="noreferrer">http://www.seasip.demon.co.uk/ZX/spectrum.html&gt;.</a> Source is
+included. 
+
+-- 
+---------------------------       ,@@.   ,@@.             TRYMON  BEAR  1
+John Elliott              |    o  @@@@   @@@@                \\.....\_O_
+CHAOS in a sig...         |  \/|&gt; &#x27;||`   &#x27;||`                /o/     \I `
+---------------------------    |\  JL     JL                  \\     /\\
+
+
+
+</pre></div><div class="post" id="p192149"><div class="ph"><a class="d" href="#p192149">2005-06-10 23:26:55</a> <span>J���rgen Strobel</span> <span>Re: How to get Data from Images (Sna; Z80 ...) to disk</span></div><pre>Wow!
+This is very hard ;)
+Will try this tonight
+Thank you so much
+Tolkin
+&quot;John Elliott&quot; &lt;…@…&gt; schrieb im Newsbeitrag 
+news:…@…...
+<span class="qt">| Sinclair PC200 512k (V1.5) on 10 June 2005</span>
+<span class="qt">| Loading &quot;Jurgen Strobel&quot; &lt;odity@odity&gt;.SYS.....</span>
+<span class="qt">| : Is there a chance to get z80 or sna data onto a disk for the +3?</span>
+<span class="qt">|</span>
+<span class="qt">|  OK. I&#x27;ve now written a simple SNA loader for the +3, which can be</span>
+<span class="qt">| downloaded at &lt;<a href="http://www.seasip.demon.co.uk/ZX/spectrum.html&gt;." rel="noreferrer">http://www.seasip.demon.co.uk/ZX/spectrum.html&gt;.</a> Source is</span>
+<span class="qt">| included.</span>
+<span class="qt">|</span>
+<span class="qt">| -- </span>
+<span class="qt">| ---------------------------       ,@@.   ,@@.             TRYMON  BEAR  1</span>
+<span class="qt">| John Elliott              |    o  @@@@   @@@@                \\.....\_O_</span>
+<span class="qt">| CHAOS in a sig...         |  \/|&gt; &#x27;||`   &#x27;||`                /o/     \I `</span>
+<span class="qt">| ---------------------------    |\  JL     JL                  \\     /\\ </span>
+
+
+
+
+
+</pre></div><div class="post" id="p192150"><div class="ph"><a class="d" href="#p192150">2005-06-10 23:58:17</a> <span>J���rgen Strobel</span> <span>Re: How to get Data from Images (Sna; Z80 ...) to disk</span></div><pre>Hy, this worked very well! The image now can be read by the +3 and can be 
+written to disk in a working way. (I used cpdwrite for this.)
+Thanks for your help ;)
+(I will upload the corrected DSK on the NVG-FTP to the &quot;incoming-Folder&quot;)
+Tolkin
+
+
+&quot;John Elliott&quot; &lt;…@…&gt; schrieb im Newsbeitrag 
+news:…@…...
+<span class="qt">| Sinclair PC200 512k (V1.5) on 9 June 2005</span>
+<span class="qt">| Loading &quot;Jurgen Strobel&quot; &lt;odity@odity&gt;.SYS.....</span>
+<span class="qt">| : Hy, for know the idea with the MF3 seems to make problems, so i tried</span>
+<span class="qt">| : another way.</span>
+<span class="qt">| : Is there a chance to get z80 or sna data onto a disk for the +3?</span>
+<span class="qt">| : I tried the MF3conv and &quot;snaprun&quot;(which have an empty DSK File on the</span>
+<span class="qt">| : ftp.nvg.unit.no server.</span>
+<span class="qt">|</span>
+<span class="qt">|  You&#x27;re right. The odd thing is that the sectors all appear to be present.</span>
+<span class="qt">| Let&#x27;s see... &lt;hexedit hexedit&gt;</span>
+<span class="qt">|  Ah. Whatever tool as used to image the DSK got it dead wrong, because the</span>
+<span class="qt">| sectors are numbered 0-8 not 1-9.</span>
+<span class="qt">|</span>
+<span class="qt">|  If you&#x27;ve got LibDsk 1.1.x installed, then you can fix the problem like</span>
+<span class="qt">| this:</span>
+<span class="qt">|</span>
+<span class="qt">| 1. Create a .libdskrc file in your home directory (that&#x27;s &quot;My Documents&quot; </span>
+on
+<span class="qt">| a Windows system). Put the following lines in it:</span>
+<span class="qt">|</span>
+<span class="qt">| [cf2_0]</span>
+<span class="qt">| Description = Incorrect CF2 image</span>
+<span class="qt">| Sides = Alt</span>
+<span class="qt">| Cylinders = 40</span>
+<span class="qt">| Heads = 1</span>
+<span class="qt">| Sectors = 9</span>
+<span class="qt">| SecBase = 0</span>
+<span class="qt">| SecSize = 512</span>
+<span class="qt">| DataRate = SD</span>
+<span class="qt">| RWGap = 42</span>
+<span class="qt">| FmtGap = 82</span>
+<span class="qt">| FM = N</span>
+<span class="qt">|</span>
+<span class="qt">| 2. Remove the incorrect sector info.</span>
+<span class="qt">|</span>
+<span class="qt">| dsktrans -otype raw -format cf2_0 snaprun.dsk snaprun.ufi</span>
+<span class="qt">|</span>
+<span class="qt">| 3. Generate new sector info.</span>
+<span class="qt">|</span>
+<span class="qt">| dsktrans snaprun.ufi snaprun2.dsk</span>
+<span class="qt">|</span>
+<span class="qt">|  (operations 2 and 3 can also be done from the GUI front end (dsktool) if</span>
+<span class="qt">| you have that installed).</span>
+<span class="qt">|</span>
+<span class="qt">| : And nothing worked well for me... :(</span>
+<span class="qt">| : How does other guys get games from the Emulator Images to disk. (Maybe</span>
+<span class="qt">| : strange converting ways from one Format to other and to file...and so </span>
+on...)
+<span class="qt">|</span>
+<span class="qt">|  I seem to recall being involved in similar threads before.</span>
+<span class="qt">| </span>
+&lt;<a href="http://groups.google.com/groups?hl=la&lr=&c2coff=1&threadm=9airsn%24itu%241%40kern.srcf.societies.cam.ac.uk&gt;" rel="noreferrer">http://groups.google.com/groups?hl=la&amp;lr=&amp;c2coff=1&amp;threadm=9airsn%24itu%241%40kern.srcf.societies.cam.ac.uk&gt;</a>
+<span class="qt">|</span>
+<span class="qt">|  I&#x27;ve said before that what we need for these situations is a single disc</span>
+<span class="qt">| image that someone can download, containing as many </span>
+emulation-compatibility
+<span class="qt">| tools as we can think of. Perhaps one of these days I&#x27;ll actually get </span>
+round
+<span class="qt">| to doing something about it.</span>
+<span class="qt">|</span>
+<span class="qt">| -- </span>
+<span class="qt">| ---------------------------       ,@@.   ,@@.             TRYMON  BEAR  1</span>
+<span class="qt">| John Elliott              |    o  @@@@   @@@@                \\.....\_O_</span>
+<span class="qt">| CHAOS in a sig...         |  \/|&gt; &#x27;||`   &#x27;||`                /o/     \I `</span>
+<span class="qt">| ---------------------------    |\  JL     JL                  \\     /\\ </span>
+
+
+
+
+
+</pre></div><div class="post" id="p192153"><div class="ph"><a class="d" href="#p192153">2005-06-11 17:26:27</a> <span>J���rgen Strobel</span> <span>Re: How to get Data from Images (Sna; Z80 ...) to disk</span></div><pre>Hy, have tried it tody, work great. not all sna Files but many of them ;)
+Thanks so much ;)
+&quot;John Elliott&quot; &lt;…@…&gt; schrieb im Newsbeitrag 
+news:…@…...
+<span class="qt">| Sinclair PC200 512k (V1.5) on 10 June 2005</span>
+<span class="qt">| Loading &quot;Jurgen Strobel&quot; &lt;odity@odity&gt;.SYS.....</span>
+<span class="qt">| : Is there a chance to get z80 or sna data onto a disk for the +3?</span>
+<span class="qt">|</span>
+<span class="qt">|  OK. I&#x27;ve now written a simple SNA loader for the +3, which can be</span>
+<span class="qt">| downloaded at &lt;<a href="http://www.seasip.demon.co.uk/ZX/spectrum.html&gt;." rel="noreferrer">http://www.seasip.demon.co.uk/ZX/spectrum.html&gt;.</a> Source is</span>
+<span class="qt">| included.</span>
+<span class="qt">|</span>
+<span class="qt">| -- </span>
+<span class="qt">| ---------------------------       ,@@.   ,@@.             TRYMON  BEAR  1</span>
+<span class="qt">| John Elliott              |    o  @@@@   @@@@                \\.....\_O_</span>
+<span class="qt">| CHAOS in a sig...         |  \/|&gt; &#x27;||`   &#x27;||`                /o/     \I `</span>
+<span class="qt">| ---------------------------    |\  JL     JL                  \\     /\\ </span>
+
+
+
+
+
+</pre></div></main></body></html>

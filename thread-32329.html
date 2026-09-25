@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ant Attack map. · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Ant Attack map.</h1><p class="facts">14 posts, 2006-06-21 – 2006-06-29</p><div class="post" id="p203913"><div class="ph"><a class="d" href="#p203913">2006-06-21 22:51:25</a> <span>DanSolo</span>  <a class="badge" href="game-210.html">ZXDB: Ant Attack</a></div><pre>I&#x27;m trying to change the Ant Attack map (for mostly pointless reasons),
+but when I change the map bytes in memory I don&#x27;t seem to get any
+visible change, although the new blocks are invisbly there. What&#x27;s
+going on? Is the map data separate from the map visuals?
+
+
+
+
+</pre></div><div class="post" id="p203940"><div class="ph"><a class="d" href="#p203940">2006-06-23 07:25:11</a> <span>Tyrone C</span> <span>Re: Ant Attack map.</span> <a class="badge" href="game-210.html">ZXDB: Ant Attack</a></div><pre>DanSolo said:
+
+<span class="qt">| I&#x27;m trying to change the Ant Attack map (for mostly pointless reasons),</span>
+<span class="qt">| but when I change the map bytes in memory I don&#x27;t seem to get any</span>
+<span class="qt">| visible change, although the new blocks are invisbly there. What&#x27;s</span>
+<span class="qt">| going on? Is the map data separate from the map visuals?</span>
+
+No, the map and visuals are one and the same. Are you perchance trying to
+add something more than six blocks high? Only bits 0-5 of each byte are
+drawn as blocks, the two highest bits are ignored.
+
+-- 
+Tyrone C.
+
+
+</pre></div><div class="post" id="p204036"><div class="ph"><a class="d" href="#p204036">2006-06-26 14:25:50</a> <span>DanSolo</span> <span>Re: Ant Attack map.</span> <a class="badge" href="game-210.html">ZXDB: Ant Attack</a></div><pre>Mea culpa. I&#x27;ve been looking at both the Spectrum and the (no spitting
+now) C64 versions, and it seems it&#x27;s the C64 version I have this
+problem with. Maybe the lazy C64 conversion people didn&#x27;t bother to
+write a graphics routine, but surely they would have needed similar
+code to allow ants/hero to be infront of or behind blocks?
+Further research required... also EmuZWin seems to save snapshots
+rather weirdly so I can&#x27;t find the map in memory...
+
+
+
+
+</pre></div><div class="post" id="p204037"><div class="ph"><a class="d" href="#p204037">2006-06-26 14:29:25</a> <span>Dunny</span> <span>Re: Ant Attack map.</span> <a class="badge" href="game-210.html">ZXDB: Ant Attack</a></div><pre>In news:…@…,
+DanSolo &lt;…@…&gt; typed:
+
+<span class="qt">&gt; Mea culpa. I&#x27;ve been looking at both the Spectrum and the (no spitting</span>
+<span class="qt">&gt; now) C64 versions, and it seems it&#x27;s the C64 version I have this</span>
+<span class="qt">&gt; problem with. Maybe the lazy C64 conversion people didn&#x27;t bother to</span>
+<span class="qt">&gt; write a graphics routine, but surely they would have needed similar</span>
+<span class="qt">&gt; code to allow ants/hero to be infront of or behind blocks?</span>
+<span class="qt">&gt; Further research required... also EmuZWin seems to save snapshots</span>
+<span class="qt">&gt; rather weirdly so I can&#x27;t find the map in memory...</span>
+
+What format (.sna, .z80, .szx etc) did you save as? If you save using a 
+compressed format then you&#x27;ve little hope of simply ripping anything out. 
+Save as .sna, however, and all will be laid bare for you.
+
+D.
+
+
+
+
+
+</pre></div><div class="post" id="p204056"><div class="ph"><a class="d" href="#p204056">2006-06-27 23:29:22</a> <span>DanSolo</span> <span>Re: Ant Attack map.</span> <a class="badge" href="game-210.html">ZXDB: Ant Attack</a></div><pre>Good call on the .SNA, I didn&#x27;t think the default save would be
+compressed. Unbelievable as it might sound, the map graphics and block
+data seem to be separate entities on the C64. I guess they had the
+extra memory just filled it! The Spectrum version shows on screen the
+changes I&#x27;ve made to the map.
+I&#x27;ve put a fence around those meddlesome ants so I can have a good look
+around...
+
+
+
+
+</pre></div><div class="post" id="p204063"><div class="ph"><a class="d" href="#p204063">2006-06-28 06:11:06</a> <span>Ian Rawlings</span> <span>Re: Ant Attack map.</span> <a class="badge" href="game-210.html">ZXDB: Ant Attack</a></div><pre>On 2006-06-27, DanSolo &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; I&#x27;ve put a fence around those meddlesome ants so I can have a good look</span>
+<span class="qt">&gt; around...</span>
+
+No real need, when one appears just jump on it rather than kill it,
+the game only tracks 5 ants which includes paralysed ones, so once 5
+ants are paralysed, no more ants!
+
+-- 
+Blast off and strike the evil Bydo empire!
+
+
+
+</pre></div><div class="post" id="p204076"><div class="ph"><a class="d" href="#p204076">2006-06-28 12:56:27</a> <span>Chris Cowley</span> <span>Re: Ant Attack map.</span> <a class="badge" href="game-210.html">ZXDB: Ant Attack</a></div><pre>On Wed, 28 Jun 2006 07:11:06 +0100, Ian Rawlings &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;On 2006-06-27, DanSolo &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; I&#x27;ve put a fence around those meddlesome ants so I can have a good look</span>
+<span class="qt">&gt;&gt; around...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;No real need, when one appears just jump on it rather than kill it,</span>
+<span class="qt">&gt;the game only tracks 5 ants which includes paralysed ones, so once 5</span>
+<span class="qt">&gt;ants are paralysed, no more ants!</span>
+
+They only stay paralysed for a bit though, don&#x27;t they? Or am I
+mis-remembering?
+-- 
+Chris Cowley
+
+
+
+</pre></div><div class="post" id="p204077"><div class="ph"><a class="d" href="#p204077">2006-06-28 13:48:17</a> <span>Ian Rawlings</span> <span>Re: Ant Attack map.</span> <a class="badge" href="game-210.html">ZXDB: Ant Attack</a></div><pre>On 2006-06-28, Chris Cowley &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; They only stay paralysed for a bit though, don&#x27;t they? Or am I</span>
+<span class="qt">&gt; mis-remembering?</span>
+
+You are mis-remembering, although I might be too..  (trying
+desperately to ignore the circular logic there)
+
+-- 
+Blast off and strike the evil Bydo empire!
+
+
+
+</pre></div><div class="post" id="p204079"><div class="ph"><a class="d" href="#p204079">2006-06-28 14:08:32</a> <span>Philip Kendall</span> <span>Re: Ant Attack map.</span> <a class="badge" href="game-210.html">ZXDB: Ant Attack</a></div><pre>On 2006-06-28, Ian Rawlings &lt;…@…&gt; wrote:
+<span class="qt">&gt; On 2006-06-28, Chris Cowley &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; They only stay paralysed for a bit though, don&#x27;t they? Or am I</span>
+<span class="qt">&gt;&gt; mis-remembering?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; You are mis-remembering, although I might be too..  (trying</span>
+<span class="qt">&gt; desperately to ignore the circular logic there)</span>
+
+They stay paralyzed until they are blown up by a nearby grenade, or
+woken up by a not quite so nearby grenade.
+
+Cheers,
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p204081"><div class="ph"><a class="d" href="#p204081">2006-06-28 14:19:51</a> <span>Chris Cowley</span> <span>Re: Ant Attack map.</span> <a class="badge" href="game-210.html">ZXDB: Ant Attack</a></div><pre>On 28 Jun 2006 14:08:32 GMT, Philip Kendall &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;On 2006-06-28, Ian Rawlings &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; On 2006-06-28, Chris Cowley &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; They only stay paralysed for a bit though, don&#x27;t they? Or am I</span>
+<span class="qt">&gt;&gt;&gt; mis-remembering?</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; You are mis-remembering, although I might be too..  (trying</span>
+<span class="qt">&gt;&gt; desperately to ignore the circular logic there)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;They stay paralyzed until they are blown up by a nearby grenade, or</span>
+<span class="qt">&gt;woken up by a not quite so nearby grenade.</span>
+
+Ahah! Yes, that&#x27;s it.  I&#x27;ve got a memory like an errm... wotsit...
+thingy... you know... round thing with lots of tiny holes in it... one
+of them.
+-- 
+Chris Cowley
+
+
+
+</pre></div><div class="post" id="p204086"><div class="ph"><a class="d" href="#p204086">2006-06-28 14:55:31</a> <span>Ian Rawlings</span> <span>Re: Ant Attack map.</span> <a class="badge" href="game-210.html">ZXDB: Ant Attack</a></div><pre>On 2006-06-28, Chris Cowley &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Ahah! Yes, that&#x27;s it.  I&#x27;ve got a memory like an errm... wotsit...</span>
+<span class="qt">&gt; thingy... you know... round thing with lots of tiny holes in it... one</span>
+<span class="qt">&gt; of them.</span>
+
+A floppy disc bought from a car boot sale?
+
+-- 
+Blast off and strike the evil Bydo empire!
+
+
+
+</pre></div><div class="post" id="p204090"><div class="ph"><a class="d" href="#p204090">2006-06-28 18:01:15</a> <span>Chris Young</span> <span>Re: Ant Attack map.</span> <a class="badge" href="game-210.html">ZXDB: Ant Attack</a></div><pre>On Wed, 28 Jun 2006 15:55:31 +0100 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Ian Rawlings:
+
+<span class="qt">&gt; &gt; Ahah! Yes, that&#x27;s it.  I&#x27;ve got a memory like an errm... wotsit...</span>
+<span class="qt">&gt; &gt; thingy... you know... round thing with lots of tiny holes in it... one</span>
+<span class="qt">&gt; &gt; of them.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; A floppy disc bought from a car boot sale?</span>
+
+A bowl advertised as &quot;not tested, believed to be working&quot; on eBay?
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p204115"><div class="ph"><a class="d" href="#p204115">2006-06-28 22:19:43</a> <span>Mestor</span> <span>Re: Ant Attack map.</span> <a class="badge" href="game-210.html">ZXDB: Ant Attack</a></div><pre>On Wed, 28 Jun 2006 15:19:51 +0100, Chris Cowley &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;On 28 Jun 2006 14:08:32 GMT, Philip Kendall &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;On 2006-06-28, Ian Rawlings &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;&gt; On 2006-06-28, Chris Cowley &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;&gt; They only stay paralysed for a bit though, don&#x27;t they? Or am I</span>
+<span class="qt">&gt;&gt;&gt;&gt; mis-remembering?</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; You are mis-remembering, although I might be too..  (trying</span>
+<span class="qt">&gt;&gt;&gt; desperately to ignore the circular logic there)</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;They stay paralyzed until they are blown up by a nearby grenade, or</span>
+<span class="qt">&gt;&gt;woken up by a not quite so nearby grenade.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Ahah! Yes, that&#x27;s it.  I&#x27;ve got a memory like an errm... wotsit...</span>
+<span class="qt">&gt;thingy... you know... round thing with lots of tiny holes in it... one</span>
+<span class="qt">&gt;of them.</span>
+
+
+Sounds like my head, after a night on the tiles. :D
+
+
+
+</pre></div><div class="post" id="p204134"><div class="ph"><a class="d" href="#p204134">2006-06-29 09:03:01</a> <span>DanSolo</span> <span>Re: Ant Attack map.</span> <a class="badge" href="game-210.html">ZXDB: Ant Attack</a></div><pre>Sorry to realign this tangential discussion, but has anybody used the
+Ant Attack Map Editor (<a href="http://www.encho.demon.co.uk/aa3d/" rel="noreferrer">http://www.encho.demon.co.uk/aa3d/</a>)? It looks
+great, but, um, what&#x27;s the point of it? It doesn&#x27;t seem to save the
+maps in any format usable by either the ZX Ant Attack or the PC remake.
+Time to get the QBASIC out again I guess. A little routine to take the
+blocks from the Map Editor save file, add up the 6 bits for each column
+and write them into the correct part of the .SNA file. Alternative
+starting points for hero/ants anybody? New rescue locations?
+Multiplayer internet ant-controlling? (OK, the last one&#x27;s a joke)
+
+
+
+
+</pre></div></main></body></html>

@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spectrum timer · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Spectrum timer</h1><p class="facts">9 posts, 2001-02-17 – 2001-02-23</p><div class="post" id="p89683"><div class="ph"><a class="d" href="#p89683">2001-02-17 23:18:45</a> <span>Chr$ Young</span> </div><pre>Just a quickie (f&#x27;nar! - Ed) - what address do you need to PEEK in
+order to find out how long the Speccy has been running for?  What unit
+is it in?
+
+And don&#x27;t ask me to look in the back of my manual, because I don&#x27;t
+have one.  And don&#x27;t ask me to check out the FAQ because I...
+actually, I probably should check out the FAQ, but I don&#x27;t remember
+this information being in there last time I looked.
+
+Chris
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p89688"><div class="ph"><a class="d" href="#p89688">2001-02-17 23:35:54</a> <span>Philip Kendall</span> <span>Re: Spectrum timer</span></div><pre>In article &lt;…@…&gt;,
+Chr$ Young &lt;…@…&gt; wrote:
+<span class="qt">&gt;Just a quickie (f&#x27;nar! - Ed) - what address do you need to PEEK in</span>
+<span class="qt">&gt;order to find out how long the Speccy has been running for?  What unit</span>
+<span class="qt">&gt;is it in?</span>
+
+23672 - 23674 (LSB), in 50ths of a second. Strictly, this is the number
+of interrupts which have occured, and therefore doesn&#x27;t increment when
+doing a BEEP or LOAD/SAVE.
+
+<span class="qt">&gt;And don&#x27;t ask me to look in the back of my manual, because I don&#x27;t</span>
+<span class="qt">&gt;have one.</span>
+
+<a href="http://www.madhippy.com/8-bit/sinclair/zxspecman/index.html" rel="noreferrer">http://www.madhippy.com/8-bit/sinclair/zxspecman/index.html</a>
+
+<span class="qt">&gt;And don&#x27;t ask me to check out the FAQ because I...</span>
+<span class="qt">&gt;actually, I probably should check out the FAQ, but I don&#x27;t remember</span>
+<span class="qt">&gt;this information being in there last time I looked.</span>
+
+It&#x27;s not... but it does tell you where to find the manual online :-)
+(Resources | Essential Sites)
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+  New? Read the FAQ: <a href="http://www.srcf.ucam.org/~pak21/cssfaq/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/cssfaq/</a>
+
+
+
+</pre></div><div class="post" id="p89690"><div class="ph"><a class="d" href="#p89690">2001-02-17 23:57:24</a> <span>Stoney</span> <span>Re: Spectrum timer</span></div><pre>&quot;Chr$ Young&quot; wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Just a quickie (f&#x27;nar! - Ed) - what address do you need to PEEK in</span>
+<span class="qt">&gt; order to find out how long the Speccy has been running for?  What unit</span>
+<span class="qt">&gt; is it in?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; And don&#x27;t ask me to look in the back of my manual, because I don&#x27;t</span>
+<span class="qt">&gt; have one.  And don&#x27;t ask me to check out the FAQ because I...</span>
+<span class="qt">&gt; actually, I probably should check out the FAQ, but I don&#x27;t remember</span>
+<span class="qt">&gt; this information being in there last time I looked.</span>
+<span class="qt">&gt; </span>
+
+On the +3 at least, this prints the number of seconds the speccy has
+been on for:
+PRINT (65536* PEEK 23674+256* PEEK 23673+ PEEK 23672)/50
+
+-- 
++------------------------------------------------------------------+
+<span class="qt">|Adam Stonehewer.                            …@…   |</span>
+<span class="qt">|-----BEGIN GEEK CODE BLOCK---V3.12--------------------------------|</span>
+<span class="qt">|GCS&gt;$ d-(+) s+: a--- C++ UL P+ L+&gt;++ E--- W+(--) N++ o K? w(w---) |</span>
+<span class="qt">|O- M-- V-- PS+ PE Y PGP+ t+ 5 X(+)@ R tv+ b++ DI-- D+ G++ e h!    |</span>
++------END GEEK CODE BLOCK---------------------------icq:24988557--+
+
+
+
+</pre></div><div class="post" id="p89707"><div class="ph"><a class="d" href="#p89707">2001-02-18 01:28:31</a> <span>Mark B</span> <span>Re: Spectrum timer</span> <a class="badge" href="game-40136.html">ZXDB: Timer</a></div><pre>
+Chr$ Young &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Just a quickie (f&#x27;nar! - Ed) - what address do you need to PEEK in</span>
+<span class="qt">&gt; order to find out how long the Speccy has been running for?  What unit</span>
+<span class="qt">&gt; is it in?</span>
+<span class="qt">&gt;</span>
+
+- quote mode ON -
+
+The numbers PEEK 23674, PEEK 23673 and PEEK 23672 are held inside the
+computer and used for counting in 50ths of a second Each is between 0 and
+255, and they gradually increase through all the numbers from 0 to 255;
+after 255 they drop straight back to 0.
+
+  The one that increases most often is PEEK 23672. Every 1/50 second it
+increases by 1. When it is at 255, the next increase takes it to 0, and at
+the same time it nudges PEEK 23673 by up to 1. When (every 256/50 seconds)
+PEEK 23673 is nudged from 255 to 0, it in turn nudges PEEK 23674 up by 1.
+This should be enough to explain why the expression above works.
+
+  Now, consider carefully: suppose our three numbers are 0 (for PEEK 23674),
+255 (for PEEK 23673) and 255 (for PEEK 23672). This means that it is about
+21 minutes after switch-on - our expression ought to yield
+
+ (65536*0+256*255+255)/50= 1 31 0.7
+
+But there is a hidden danger. The next time there is a 1/50 second count,
+the three numbers will change to 1, 0 and 0. Every so often, this will
+happen when you are half way through evaluating the expression: the computer
+would evaluate PEEK 23674 as 0, but then change the other two to 0 before it
+can peek them. The answer would then be
+
+ (65536*0+256*0+0)l50=0
+
+which is hopelessly wrong.
+
+  A simple rule to avoid this problem is evaluate the expression twice in
+succession and take the larger answer. If you look carefully at the program
+above you can see that it does this implicitly.
+
+  Here is a trick to apply the rule. Define functions
+
+ 10 DEF FN m(x,y)=(x+y+ABS (x-y))/2: REM the larger of x and y
+ 20 DEF FN u()=(65536*PEEK 23674+256*PEEK 23673+PEEK 23672)/50:
+          REM time, may be wrong
+ 30 DEF FN t()=FN m(FN u(), FN u()): REM time, right
+
+  You can change the three counter numbers so that they give the real time
+instead of the time since the computer was switched on. For instance, to set
+the time at 10.00am, you work out that this is 10*60*60*50=1800000 fiftieths
+of a second, and that
+
+   1800000=65536*27+256*1 19+64
+
+  To set the three numbers to 27, 119 and 64, you do
+
+   POKE 23674,27: POKE 23673,119: POKE 23672,64
+
+  In countries with mains frequencies of 60 Hertz these programs must
+replace &#x27;50&#x27; by &#x27;60&#x27; where appropriate.
+
+-Qoute mode OFF -
+
+Mark
+
+
+
+
+
+
+</pre></div><div class="post" id="p89734"><div class="ph"><a class="d" href="#p89734">2001-02-18 10:05:33</a> <span>Matthew Wilson</span> <span>Re: Spectrum timer</span></div><pre>On Sat, 17 Feb 2001 23:57:24 +0000, Stoney
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;&quot;Chr$ Young&quot; wrote:</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Just a quickie (f&#x27;nar! - Ed) - what address do you need to PEEK in</span>
+<span class="qt">&gt;&gt; order to find out how long the Speccy has been running for?  What unit</span>
+<span class="qt">&gt;&gt; is it in?</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; And don&#x27;t ask me to look in the back of my manual, because I don&#x27;t</span>
+<span class="qt">&gt;&gt; have one.  And don&#x27;t ask me to check out the FAQ because I...</span>
+<span class="qt">&gt;&gt; actually, I probably should check out the FAQ, but I don&#x27;t remember</span>
+<span class="qt">&gt;&gt; this information being in there last time I looked.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;On the +3 at least, this prints the number of seconds the speccy has</span>
+<span class="qt">&gt;been on for:</span>
+<span class="qt">&gt;PRINT (65536* PEEK 23674+256* PEEK 23673+ PEEK 23672)/50</span>
+
+As Phil pointed out, this will not be exactly right, because the timer
+won&#x27;t increment when using the disk drive.
+
+Also see the manual for a description of occasions when this will go
+horribly wrong, due to wraparound of the timer during evaluation of
+the expression.
+
+Matthew
+
+
+
+</pre></div><div class="post" id="p89797"><div class="ph"><a class="d" href="#p89797">2001-02-18 14:41:20</a> <span>Darren Salt</span> <span>Re: Spectrum timer</span></div><pre>I demand that Philip Kendall may or may not have written...
+
+<span class="qt">&gt; In article &lt;…@…&gt;, Chr$ Young</span>
+<span class="qt">&gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; Just a quickie (f&#x27;nar! - Ed) - what address do you need to PEEK in order</span>
+<span class="qt">&gt;&gt; to find out how long the Speccy has been running for?  What unit is it in?</span>
+
+<span class="qt">&gt; 23672 - 23674 (LSB), in 50ths of a second. Strictly, this is the number of</span>
+<span class="qt">&gt; interrupts which have occured, and therefore doesn&#x27;t increment when doing a</span>
+<span class="qt">&gt; BEEP or LOAD/SAVE.</span>
+
+Er, no... the system variable cannot increment anything; nor can it beep,
+load or save.
+
+My coat&#x27;ll get me.
+
+-- 
+<span class="qt">| Darren Salt  anti-UCE  | d youmustbejoking,demon,co,uk | nr. Ashington,</span>
+<span class="qt">| Spec+3, Risc PC, A3010 | s zap,uk,eu,org               | Northumberland</span>
+<span class="qt">| BBC M128, Linux PC     | @ retrospec,co,uk             | Toon Army</span>
+<span class="qt">|   Down with the Mackems!</span>
+
+Yoda of Borg: &quot;Irrelevant, proper order of words is.&quot;
+
+
+
+</pre></div><div class="post" id="p90291"><div class="ph"><a class="d" href="#p90291">2001-02-20 16:42:19</a> <span>Adam D. Moss</span> <span>The Manual</span></div><pre>&quot;Chr$ Young&quot; wrote:
+<span class="qt">&gt; And don&#x27;t ask me to look in the back of my manual, because I don&#x27;t</span>
+<span class="qt">&gt; have one.</span>
+
+You could, though.  Go to the seaside town of Felixstowe
+in Suffolk, down the main road toward the beach, turn left 
+three streets back from the seafront, then forty metres
+up there on your left is a little second-hand-bookshop.
+Walk to the back of the shop and turn left, go along the
+hall and turn left again down into the cellar (watch the
+last step).  Turn right into the second basement room
+and across to the far wall; on the bottom shelf, to
+the right, is an original spiral-bound spectrum manual
+for two quid.
+
+Hope that helps.
+
+--Adam
+
+
+
+</pre></div><div class="post" id="p90367"><div class="ph"><a class="d" href="#p90367">2001-02-20 22:11:49</a> <span>Chris Young</span> <span>Re: The Manual</span></div><pre>On Tue, 20 Feb 2001 16:42:19 +0000, Adam D. Moss (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; You could, though.  Go to the seaside town of Felixstowe</span>
+<span class="qt">&gt; in Suffolk, down the main road toward the beach, turn left </span>
+<span class="qt">&gt; three streets back from the seafront, then forty metres</span>
+<span class="qt">&gt; up there on your left is a little second-hand-bookshop.</span>
+<span class="qt">&gt; Walk to the back of the shop and turn left, go along the</span>
+<span class="qt">&gt; hall and turn left again down into the cellar (watch the</span>
+<span class="qt">&gt; last step).  Turn right into the second basement room</span>
+<span class="qt">&gt; and across to the far wall; on the bottom shelf, to</span>
+<span class="qt">&gt; the right, is an original spiral-bound spectrum manual</span>
+<span class="qt">&gt; for two quid.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Hope that helps.</span>
+
+Thanks.  Next time I&#x27;m in Felixstowe (I estimate to be there on the
+3rd of August 2031), I&#x27;ll check it out.
+
+Chris
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p91010"><div class="ph"><a class="d" href="#p91010">2001-02-23 10:29:34</a> <span>HajoSpuunup</span> <span>Re: The Manual</span></div><pre>La la la dum de dum, Adam D. Moss...,
+
+<span class="qt">&gt;&quot;Chr$ Young&quot; wrote:</span>
+<span class="qt">&gt;&gt; And don&#x27;t ask me to look in the back of my manual, because I don&#x27;t</span>
+<span class="qt">&gt;&gt; have one.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;You could, though.  Go to the seaside town of Felixstowe</span>
+<span class="qt">&gt;in Suffolk, down the main road toward the beach, turn left </span>
+<span class="qt">&gt;three streets back from the seafront, then forty metres</span>
+<span class="qt">&gt;up there on your left is a little second-hand-bookshop.</span>
+<span class="qt">&gt;Walk to the back of the shop and turn left, go along the</span>
+<span class="qt">&gt;hall and turn left again down into the cellar (watch the</span>
+<span class="qt">&gt;last step).  Turn right into the second basement room</span>
+<span class="qt">&gt;and across to the far wall; on the bottom shelf, to</span>
+<span class="qt">&gt;the right, is an original spiral-bound spectrum manual</span>
+<span class="qt">&gt;for two quid.</span>
+<span class="qt">&gt;</span>
+
+Can we put this in the FAQ under &quot;Where can I buy a Spectrum manual&quot; 
+please? Until someone buys it, of course.
+
+hajo
+
+
+
+</pre></div></main></body></html>

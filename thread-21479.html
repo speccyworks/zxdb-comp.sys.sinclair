@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sabre Wulf Map · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Sabre Wulf Map</h1><p class="facts">12 posts, 2001-04-07 – 2001-04-12</p><div class="post" id="p96765"><div class="ph"><a class="d" href="#p96765">2001-04-07 11:15:50</a> <span>Dunny</span>  <a class="badge" href="game-9408.html">ZXDB: Sabre Wulf</a></div><pre>It&#x27;s that man again.
+
+    Just completed a map of Sabre wulf, in the style of FishyFish&#x27;s screen
+shot maps. Anyone want a copy? It&#x27;s about 740k, 5000x3000x256 (ish) with
+nice gfx for the side bar/key. I&#x27;m quite chuffed with it actually.
+    I made it with the most god-awful piece of software ever - SpecMapper.
+It&#x27;s just too slow. A Good Idea, just a very poor implementation. Mind, it
+was written in VB. I&#x27;m gonna write a better one. When it&#x27;s got 256 screens
+in memory, it takes about 30 seconds to *repaint* ie, respond to WM_PAINT
+messages, so it does that whenever you click on the map, right click to open
+a menu, move the screen, hide the emulator etc. &lt;/rant&gt; No offense intended,
+but I just spent six hours mapping 256 screens.
+
+    Secondly,
+    Does anyone know of a poster printing service? I would really like to
+get a glossy A3 poster of this map. It&#x27;s high enough resolution for god&#x27;s
+sake :)
+
+    Paul.
+
+
+
+
+
+
+</pre></div><div class="post" id="p96828"><div class="ph"><a class="d" href="#p96828">2001-04-08 15:54:00</a> <span>Rob Uttley</span> <span>Re: Sabre Wulf Map</span> <a class="badge" href="game-9408.html">ZXDB: Sabre Wulf</a></div><pre>In article &lt;9ICz6.3699$…@…&gt;, 
+…@… (Dunny) wrote:
+
+<span class="qt">&gt; It&#x27;s that man again.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;     Just completed a map of Sabre wulf, in the style of FishyFish&#x27;s </span>
+<span class="qt">&gt; screen</span>
+<span class="qt">&gt; shot maps. Anyone want a copy? It&#x27;s about 740k, 5000x3000x256 (ish) with</span>
+<span class="qt">&gt; nice gfx for the side bar/key. I&#x27;m quite chuffed with it actually.</span>
+
+Hi Paul.
+
+I&#x27;d be very interested in hosting it on my Ultimate Play The Game site, or 
+at least pointing a URL at it.
+
+Cheers
+
+Rob
+-- 
+…@…
+<a href="http://www.robsoft.co.uk/ultimate" rel="noreferrer">http://www.robsoft.co.uk/ultimate</a> - Ultimate/Rare Appreciation
+
+
+
+</pre></div><div class="post" id="p96848"><div class="ph"><a class="d" href="#p96848">2001-04-08 19:00:39</a> <span>Matthew Wilson</span> <span>Re: Sabre Wulf Map</span> <a class="badge" href="game-9408.html">ZXDB: Sabre Wulf</a></div><pre>On Sat, 7 Apr 2001 12:15:50 +0100, &quot;Dunny&quot; &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;It&#x27;s that man again.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;    Just completed a map of Sabre wulf, in the style of FishyFish&#x27;s screen</span>
+<span class="qt">&gt;shot maps. Anyone want a copy? </span>
+
+You could always upload it to WoS.
+
+Matthew
+
+
+
+</pre></div><div class="post" id="p96855"><div class="ph"><a class="d" href="#p96855">2001-04-08 20:09:59</a> <span>Dunny</span> <span>Re: Sabre Wulf Map</span> <a class="badge" href="game-9408.html">ZXDB: Sabre Wulf</a></div><pre>
+Matthew Wilson &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; You could always upload it to WoS.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Matthew</span>
+
+I&#x27;ll do that, it would also solve Rob Uttley&#x27;s query too. He could host a
+740k map, but it&#x27;s a tad big for a casual download...
+
+Paul.
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p96868"><div class="ph"><a class="d" href="#p96868">2001-04-09 00:21:24</a> <span>Jan Werner</span> <span>Re: Sabre Wulf Map</span> <a class="badge" href="game-9408.html">ZXDB: Sabre Wulf</a></div><pre><span class="qt">&gt; shot maps. Anyone want a copy? It&#x27;s about 740k, 5000x3000x256 (ish) with</span>
+
+of course !!! :)  please, send it to …@… :)
+
+thnx...
+
+Jan
+
+
+
+
+
+</pre></div><div class="post" id="p96869"><div class="ph"><a class="d" href="#p96869">2001-04-09 00:42:51</a> <span>Dunny</span> <span>Re: Sabre Wulf Map</span> <a class="badge" href="game-9408.html">ZXDB: Sabre Wulf</a></div><pre>
+Dunny &lt;…@…&gt; wrote in message
+news:SC3A6.1727$…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Matthew Wilson &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; You could always upload it to WoS.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Matthew</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;ll do that, it would also solve Rob Uttley&#x27;s query too. He could host a</span>
+<span class="qt">&gt; 740k map, but it&#x27;s a tad big for a casual download...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Paul.</span>
+<span class="qt">&gt;</span>
+
+That is, assuming, that you have a 56k connection of course.
+
+Paul.
+
+
+
+
+
+
+</pre></div><div class="post" id="p97066"><div class="ph"><a class="d" href="#p97066">2001-04-10 23:27:43</a> <span>Gareth Brisbane</span> <span>Re: Sabre Wulf Map</span> <a class="badge" href="game-9408.html">ZXDB: Sabre Wulf</a></div><pre>…@… (Matthew Wilson) writes:
+
+<span class="qt">&gt;On Sat, 7 Apr 2001 12:15:50 +0100, &quot;Dunny&quot; &lt;…@…&gt;</span>
+<span class="qt">&gt;wrote:</span>
+
+<span class="qt">&gt;&gt;It&#x27;s that man again.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;    Just completed a map of Sabre wulf, in the style of FishyFish&#x27;s screen</span>
+<span class="qt">&gt;&gt;shot maps. Anyone want a copy? </span>
+
+<span class="qt">&gt;You could always upload it to WoS.</span>
+
+<span class="qt">&gt;Matthew</span>
+
+Doesn&#x27;t anyone own the Sabre Wulf map that appeared in some magazine? I know
+I still have a copy of it at home.
+	Gazza
+
+
+
+</pre></div><div class="post" id="p97084"><div class="ph"><a class="d" href="#p97084">2001-04-11 09:40:25</a> <span>Stef Robb</span> <span>Re: Sabre Wulf Map</span> <a class="badge" href="game-9408.html">ZXDB: Sabre Wulf</a></div><pre>In article &lt;3ad396ef$…@…&gt;, …@… (Gareth
+Brisbane) spake thusly: 
+
+<span class="qt">&gt;…@… (Matthew Wilson) writes:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; [...]</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Doesn&#x27;t anyone own the Sabre Wulf map that appeared in some magazine? I</span>
+<span class="qt">&gt;know I still have a copy of it at home.</span>
+<span class="qt">&gt;     Gazza</span>
+
+I&#x27;ve still got the Sabre Wulf map that I made on 5mm square paper with a 
+blue biro somewhere, first map I ever made that.  My Uridium one was quite 
+good too -- right up until I got bored and chucked it.  I once entered a 
+Nodes of Yesod map into a competition (Crash I think), didn&#x27;t win (was 
+bloody good though and you don&#x27;t get them back either!)  Did anyone here 
+ever win a map compo?
+
+-Stef
+
+-- 
+New to Speccy emulation? Read this group&#x27;s FAQ at:
+&lt;URL:<a href="http://www.srcf.ucam.org/~pak21/cssfaq/&gt;" rel="noreferrer">http://www.srcf.ucam.org/~pak21/cssfaq/&gt;</a>
+
+
+
+</pre></div><div class="post" id="p97146"><div class="ph"><a class="d" href="#p97146">2001-04-11 22:11:35</a> <span>Dunny</span> <span>Re: Sabre Wulf Map</span> <a class="badge" href="game-9408.html">ZXDB: Sabre Wulf</a></div><pre>
+Gareth Brisbane &lt;…@…&gt; wrote in message
+news:3ad396ef$…@…...
+<span class="qt">&gt; …@… (Matthew Wilson) writes:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;On Sat, 7 Apr 2001 12:15:50 +0100, &quot;Dunny&quot; &lt;…@…&gt;</span>
+<span class="qt">&gt; &gt;wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;&gt;It&#x27;s that man again.</span>
+<span class="qt">&gt; &gt;&gt;</span>
+<span class="qt">&gt; &gt;&gt;    Just completed a map of Sabre wulf, in the style of FishyFish&#x27;s</span>
+screen
+<span class="qt">&gt; &gt;&gt;shot maps. Anyone want a copy?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;You could always upload it to WoS.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;Matthew</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Doesn&#x27;t anyone own the Sabre Wulf map that appeared in some magazine? I</span>
+know
+<span class="qt">&gt; I still have a copy of it at home.</span>
+<span class="qt">&gt; Gazza</span>
+
+Of course, it&#x27;s on WOS - but min&#x27;e better :)
+
+Paul
+
+
+
+
+
+
+</pre></div><div class="post" id="p97154"><div class="ph"><a class="d" href="#p97154">2001-04-11 23:30:04</a> <span>Hitman</span> <span>Re: Sabre Wulf Map</span> <a class="badge" href="game-9408.html">ZXDB: Sabre Wulf</a></div><pre>Yes please....
+And wheres that FK map.. ?
+
+don&#x27;t forget WOS...
+
+Hitman.
+
+
+
+
+
+
+</pre></div><div class="post" id="p97180"><div class="ph"><a class="d" href="#p97180">2001-04-12 14:16:46</a> <span>Dunny</span> <span>Re: Sabre Wulf Map</span> <a class="badge" href="game-9408.html">ZXDB: Sabre Wulf</a></div><pre>
+Hitman &lt;…@…&gt; wrote in message
+news:%O5B6.5058$…@…...
+<span class="qt">&gt; Yes please....</span>
+<span class="qt">&gt; And wheres that FK map.. ?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; don&#x27;t forget WOS...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Hitman.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+Jeez - give us a chance, mate! I&#x27;m still writing the software! Tell you
+what, sunday night, in your email, okay?
+
+Paul.
+
+
+
+
+
+
+</pre></div><div class="post" id="p97190"><div class="ph"><a class="d" href="#p97190">2001-04-12 18:35:42</a> <span>Hitman</span> <span>Re: Sabre Wulf Map</span> <a class="badge" href="game-9408.html">ZXDB: Sabre Wulf</a></div><pre>Email is fine - thankyou...
+I didn&#x27;t mean to sound impatient i was only kidding.
+I didn&#x27;t realise you were still writing the software for the job.
+
+Hope its all going okay !
+ Whenever you&#x27;re ready.....
+
+Hitman.
+
+
+
+
+
+
+</pre></div></main></body></html>

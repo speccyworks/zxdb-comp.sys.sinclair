@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shadowfire - the solution · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Shadowfire - the solution</h1><p class="facts">2 posts, 1995-10-27 – 1995-10-29</p><div class="post" id="p12884"><div class="ph"><a class="d" href="#p12884">1995-10-27 19:48:01</a> <span>Chris Owen</span>  <a class="badge" href="game-4433.html">ZXDB: Shadowfire</a></div><pre> [from Crash, June 1986]
+
+
+                          SHADOWFIRE - The solution
+                          -------------------------
+
+ Before setting off on your mission make sure you equip your characters 
+properly - the booklet gives a lot of hints on how to do this. Now beam 
+down to the fighter bay (red) and take all members except Sevrina. Syylk 
+and Maul. Move the characters that you have beamed down S twice, then SE 
+and E. At about this point you should be attacked by two to three aliens. 
+Once they have been destroyed get Manto to beam down Sevrina. Go to Sevrina&#x27;s
+object screen and get her to pick the lock which is to the south.
+
+ Once the lock is picked, using Manto beam Sevrina back to the ship. Now 
+move your three characters S twice, which will take them to a junction with 
+exits leading E, W, N and SW. Take the E route. You should now be attacked by 
+a trooper from NE. Kill him and move NE twice.
+
+ Moving E from here should take you to just outside a locked door which has a
+trooper behind - here Sevrina&#x27;s talents are needed so beam her down to pick 
+the lock. When this is done beam down the other members of the Enigma team to
+fight the trooper. Once all your characters are beyond the door you will be 
+attacked by two more enemies and these have to be massacred before advancing
+E.
+
+ Advance three of the characters that still have a good amount of strength E 
+to attack a Marshal. Send another reasonably fit character W then N once. 
+This will take him into the Robot Armoury. From here take the Rocket launcher
+- if it is too heavy then wait a while for your character&#x27;s strength to build
+up.
+
+ By now the Marshal should be dead, if he isn&#x27;t then attack him with a few 
+more characters until he&#x27;s really dead. By now all your team should be 
+standing outside a locked door which leads SE. Give the rocket launcher to 
+Maul. If he is too weak then drop it by him. Wait for 5 to 10 minutes for 
+your characters&#x27; strength to build up, or for however long you think 
+appropriate. Get Sevrina to pick the lock and advance every character through
+the door making sure they are all well-armed. In this room you will be 
+heavily attacked so before entering, make sure your strength is up.
+
+ If you survive the onslaught you will realise you are in a room called &#x27;Zoff
+Security&#x27; which has four exits. Get Sevrina to unlock them all. Using Zark, 
+go through the SE exit. You are now in a room that contains General Zoff, 
+Ambassador Kryxix and the self-destruct card. Zoff will try to flee so you 
+must be quick to capture him. Go to Kryxix with Zark and you should get the 
+report that you&#x27;ve found Kryxix and that he follows Zark. Kryxix will only 
+follow Zark because Zark is the translator. Get Kryxix onto the same location
+as Manto and beam him aboard Enigma - you have now rescued Kryxix. 
+
+ Also in the Fighter Bay is Zoff&#x27;s second in command, Sky Fortress Captain 
+Churl, he is located in his quarters near the bridge. A time delay device can
+be found near Churl and if used properly can help capture Zoff. The reason 
+for not beaming all the characters down at the beginning of the game is it 
+is quicker to move the three characters with more agility than to bother 
+moving all six when some of them are really only any use in a fight.
+
+ To capture General Zoff position Manto outside his quarters and drop the 
+transporter beamer. Pick the lock and send someone into Zoff&#x27;s quarters. Move
+a character into the same location as Zoff. Zoff will then try to escape. As 
+soon as he moves onto the same location as Manto, beam him aboard the Enigma. 
+A similar method can be used to capture the enemy soldiers - this saves energy.
+
+ The other half of the destruct code can be found on the Bridge but it is 
+unlikely that you will need it because to complete the game you must capture 
+the Zoff 5. This can be done by capturing or killing everyone on board. With 
+a bit of practice at these strategies it shouldn&#x27;t take long to complete the 
+game.
+
+ General tips are:
+
+ * Always rest after a good bout of fighting. 
+
+ * Only beam down Maul when you are in a tricky situation because he is too
+  slow to keep up with the others. 
+
+ * Throughout the game you will constantly be arming and rearming because 
+  your strength goes down. My strategy for this is to go into battle with a 
+  heavy weapon and switch to a lighter one as soon as the character shows 
+  signs of flagging. It is best to use some games just for mapping and 
+  exploring levels (or you can use the Shadowfire Tuner if you own a copy) 
+  because many rooms seem to serve no specific purpose.
+
+-- 
+<span class="qt">|        Chris Owen       |  New Mansion House, Lancaster Gate, London SE1  | </span>
+<span class="qt">|----------------------------------------------------------------------------</span>
+<span class="qt">|      SINCLAIR PAGES HAVE MOVED TO: <a href="http://www.nvg.unit.no/spectrum/" rel="noreferrer">http://www.nvg.unit.no/spectrum/</a>       |</span>
+<span class="qt">|     Howling in the wires - Canter &amp; Siegel, criminal Armenians at law     |</span>
+
+</pre></div><div class="post" id="p12912"><div class="ph"><a class="d" href="#p12912">1995-10-29 14:10:13</a> <span>Matt</span> <span>Re: Shadowfire - the solution</span></div><pre>Chris Owen (…@…) wrote:
+:  [from Crash, June 1986]
+
+
+:                           SHADOWFIRE - The solution
+:                           -------------------------
+
+....
+:   signs of flagging. It is best to use some games just for mapping and 
+:   exploring levels (or you can use the Shadowfire Tuner if you own a copy) 
+:   because many rooms seem to serve no specific purpose.
+
+Personally I can&#x27;t really see these tips working very well. In general 
+I&#x27;ve always found it best to startoff in the top left fighter bay. But I 
+digress..
+
+The thing is, what was the tuner like? I didn&#x27;t manage to find a copy and 
+it sounded like a good idea. Did anybody see one and use it?
+
+: -- 
+: |        Chris Owen       |  New Mansion House, Lancaster Gate, London SE1  | 
+: |----------------------------------------------------------------------------
+: |      SINCLAIR PAGES HAVE MOVED TO: <a href="http://www.nvg.unit.no/spectrum/" rel="noreferrer">http://www.nvg.unit.no/spectrum/</a>       |
+: |     Howling in the wires - Canter &amp; Siegel, criminal Armenians at law     |
+
+--
+---Matthew Smith,College of St. Hild and St. Bede,Durham University,England---
+		   --- <a href="http://www.dur.ac.uk/~d3g45s" rel="noreferrer">http://www.dur.ac.uk/~d3g45s</a> ---
+
+</pre></div></main></body></html>

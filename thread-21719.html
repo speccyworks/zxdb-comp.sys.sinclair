@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stormlord 2 - Map · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Stormlord 2 - Map</h1><p class="facts">7 posts, 2001-04-29 – 2001-05-08</p><div class="post" id="p98836"><div class="ph"><a class="d" href="#p98836">2001-04-29 09:44:59</a> <span>anonymous</span>  <a class="badge" href="game-4922.html">ZXDB: Stormlord</a></div><pre>Hi there,
+
+Anyone knows if there is a map made on Stormlord 2 : Deliverance ?
+
+Or how the old speccy maps were made ? Any special technique to yank them out, or simply using screenshots ?
+</pre></div><div class="post" id="p99033"><div class="ph"><a class="d" href="#p99033">2001-05-01 11:43:10</a> <span>Siponen Antti</span> <span>Re: Stormlord 2 - Map</span> <a class="badge" href="game-4922.html">ZXDB: Stormlord</a></div><pre>In article &lt;3aebe364$…@…&gt;, anonymous wrote:
+<span class="qt">&gt;SGkgdGhlcmUsDQoNCkFueW9uZSBrbm93cyBpZiB0aGVyZSBpcyBhIG1hcCBtYWRlIG9uIFN0b3Jt</span>
+<span class="qt">&gt;bG9yZCAyIDogRGVsaXZlcmFuY2UgPw0KDQpPciBob3cgdGhlIG9sZCBzcGVjY3kgbWFwcyB3ZXJl</span>
+<span class="qt">&gt;IG1hZGUgPyBBbnkgc3BlY2lhbCB0ZWNobmlxdWUgdG8geWFuayB0aGVtIG91dCwgb3Igc2ltcGx5</span>
+<span class="qt">&gt;IHVzaW5nIHNjcmVlbnNob3RzID8NCg==</span>
+<span class="qt">&gt;</span>
+
+Damn the Irish! I wish they would, just for a second, forget their pride 
+and use English when posting to CSS.
+
+Antti Siponen
+
+
+
+</pre></div><div class="post" id="p99208"><div class="ph"><a class="d" href="#p99208">2001-05-02 19:57:00</a> <span>Chris Young</span> <span>Re: Stormlord 2 - Map</span> <a class="badge" href="game-4922.html">ZXDB: Stormlord</a></div><pre>On 1 May 2001 11:43:10 GMT, Siponen Antti (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; In article &lt;3aebe364$…@…&gt;, anonymous wrote:</span>
+<span class="qt">&gt; &gt;SGkgdGhlcmUsDQoNCkFueW9uZSBrbm93cyBpZiB0aGVyZSBpcyBhIG1hcCBtYWRlIG9uIFN0b3Jt</span>
+<span class="qt">&gt; &gt;bG9yZCAyIDogRGVsaXZlcmFuY2UgPw0KDQpPciBob3cgdGhlIG9sZCBzcGVjY3kgbWFwcyB3ZXJl</span>
+<span class="qt">&gt; &gt;IG1hZGUgPyBBbnkgc3BlY2lhbCB0ZWNobmlxdWUgdG8geWFuayB0aGVtIG91dCwgb3Igc2ltcGx5</span>
+<span class="qt">&gt; &gt;IHVzaW5nIHNjcmVlbnNob3RzID8NCg==</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Damn the Irish! I wish they would, just for a second, forget their pride </span>
+<span class="qt">&gt; and use English when posting to CSS.</span>
+
+For the benefit of our Finnish viewers:
+
+<span class="qt">&gt; Hi there,</span>
+<span class="qt">&gt; Anyone knows if there is a map made on Stormlord 2 : Deliverance ?</span>
+<span class="qt">&gt; Or how the old speccy maps were made ? Any special technique to yank</span>
+<span class="qt">&gt; them out, or simply using screenshots?</span>
+
+(insert a &quot;f&#x27;nar!&quot; after &quot;Any special technique to yank them out&quot;, if
+you deem it necessary)
+
+Chris
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p99319"><div class="ph"><a class="d" href="#p99319">2001-05-03 17:35:26</a> <span>Jaz</span> <span>Re: Stormlord 2 - Map</span> <a class="badge" href="game-4922.html">ZXDB: Stormlord</a></div><pre>
+Siponen Antti wrote in message ...
+<span class="qt">&gt;In article &lt;3aebe364$…@…&gt;, anonymous wrote:</span>
+<span class="qt">&gt;&gt;SGkgdGhlcmUsDQoNCkFueW9uZSBrbm93cyBpZiB0aGVyZSBpcyBhIG1hcCBtYWRlIG9uIFN0b3</span>
+Jt
+<span class="qt">&gt;&gt;bG9yZCAyIDogRGVsaXZlcmFuY2UgPw0KDQpPciBob3cgdGhlIG9sZCBzcGVjY3kgbWFwcyB3ZX</span>
+Jl
+<span class="qt">&gt;&gt;IG1hZGUgPyBBbnkgc3BlY2lhbCB0ZWNobmlxdWUgdG8geWFuayB0aGVtIG91dCwgb3Igc2ltcG</span>
+x5
+<span class="qt">&gt;&gt;IHVzaW5nIHNjcmVlbnNob3RzID8NCg==</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Damn the Irish! I wish they would, just for a second, forget their pride</span>
+<span class="qt">&gt;and use English when posting to CSS.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Antti Siponen</span>
+
+Ever since the film Braveheart...
+This is what you get.
+
+Jaz
+
+
+
+
+
+</pre></div><div class="post" id="p99341"><div class="ph"><a class="d" href="#p99341">2001-05-03 20:26:26</a> <span>Siponen Antti</span> <span>Re: Stormlord 2 - Map</span> <a class="badge" href="game-4922.html">ZXDB: Stormlord</a></div><pre>In article &lt;…@…&gt;, Chris Young wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;For the benefit of our Finnish viewers:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Hi there,</span>
+<span class="qt">&gt;&gt; Anyone knows if there is a map made on Stormlord 2 : Deliverance ?</span>
+<span class="qt">&gt;&gt; Or how the old speccy maps were made ? Any special technique to yank</span>
+<span class="qt">&gt;&gt; them out, or simply using screenshots?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;(insert a &quot;f&#x27;nar!&quot; after &quot;Any special technique to yank them out&quot;, if</span>
+<span class="qt">&gt;you deem it necessary)</span>
+
+Gee... Thanks!
+
+Just how did you yank that out (f&#x27;nar!) of anonymous&#x27;s post? It looked 
+almost like a binary to me. I even had a soap-in-a-sock ready...
+
+
+Antti Siponen
+
+
+
+</pre></div><div class="post" id="p99568"><div class="ph"><a class="d" href="#p99568">2001-05-05 15:29:04</a> <span>Chris Young</span> <span>Re: Stormlord 2 - Map</span> <a class="badge" href="game-4922.html">ZXDB: Stormlord</a></div><pre>On 3 May 2001 20:26:26 GMT, Siponen Antti (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; In article &lt;…@…&gt;, Chris Young wrote:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;For the benefit of our Finnish viewers:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;&gt; Hi there,</span>
+<span class="qt">&gt; &gt;&gt; Anyone knows if there is a map made on Stormlord 2 : Deliverance ?</span>
+<span class="qt">&gt; &gt;&gt; Or how the old speccy maps were made ? Any special technique to yank</span>
+<span class="qt">&gt; &gt;&gt; them out, or simply using screenshots?</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;(insert a &quot;f&#x27;nar!&quot; after &quot;Any special technique to yank them out&quot;, if</span>
+<span class="qt">&gt; &gt;you deem it necessary)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Gee... Thanks!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Just how did you yank that out (f&#x27;nar!) of anonymous&#x27;s post? It looked </span>
+<span class="qt">&gt; almost like a binary to me. I even had a soap-in-a-sock ready...</span>
+
+I think it was Base64 encoded text.  My newsreader happily decodes it
+without me even realising, which is nice... but doesn&#x27;t excuse the
+fact the original poster&#x27;s newsreader isn&#x27;t set up correctly.
+
+Chris
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p99824"><div class="ph"><a class="d" href="#p99824">2001-05-08 03:35:56</a> <span>Vlad Sandrini</span> <span>Re: Stormlord 2 - Map</span> <a class="badge" href="game-4922.html">ZXDB: Stormlord</a></div><pre>Aye Engengah Chris Young H&#x27;ee L&#x27;geb F&#x27;ai Throdog
+5 May 2001 16:29:04 +0100:
+
+<span class="qt">&gt;&gt; Just how did you yank that out (f&#x27;nar!) of anonymous&#x27;s post? It looked </span>
+<span class="qt">&gt;&gt; almost like a binary to me. I even had a soap-in-a-sock ready...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I think it was Base64 encoded text.  My newsreader happily decodes it</span>
+<span class="qt">&gt;without me even realising, which is nice... but doesn&#x27;t excuse the</span>
+<span class="qt">&gt;fact the original poster&#x27;s newsreader isn&#x27;t set up correctly.</span>
+
+it is, my news reader opens it through this &#x27;metamail&#x27; thing which
+reads mime. and, since it is base64 encoded, it is a binary.
+
+
+-- 
+Sator 72
+sator72[at]libero[dot]it;nyarlato[at]tiscalinet[dot]it
+kicq#906246 - <a href="http://sator.250x.com" rel="noreferrer">http://sator.250x.com</a>
+root of all evil: […@… /root]# rm -rf /
+
+B This is too much, 4950:1
+
+
+
+</pre></div></main></body></html>

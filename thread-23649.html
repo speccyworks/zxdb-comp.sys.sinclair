@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bloodwych map · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Bloodwych map</h1><p class="facts">7 posts, 2001-11-06 – 2001-11-13</p><div class="post" id="p120995"><div class="ph"><a class="d" href="#p120995">2001-11-06 05:01:39</a> <span>Gareth Brisbane</span>  <a class="badge" href="game-592.html">ZXDB: Bloodwych</a></div><pre>Hi everyone,
+	at long last - I&#x27;ve managed to finish Bloodwych after getting stuck
+earlier. After searching Dejanews and finding virtually no comment on it -
+maybe noone else has! Anyway - if you are interested in the map (Excel,
+~200k) let me know and I&#x27;ll pass it on. It has about 36 levels. I just don&#x27;t
+have anywhere in particular to host it but in the interests of posterity I&#x27;d
+like it go somewhere...
+	Gazza
+
+
+
+
+</pre></div><div class="post" id="p120999"><div class="ph"><a class="d" href="#p120999">2001-11-06 08:28:20</a> <span>N Fishwick FishyFish</span> <span>Re: Bloodwych map</span> <a class="badge" href="game-592.html">ZXDB: Bloodwych</a></div><pre>On 6 Nov 2001 15:01:39 +1000, …@… (Gareth Brisbane)
+farted out the following incoherent babble:
+
+<span class="qt">&gt;Hi everyone,</span>
+<span class="qt">&gt;	at long last - I&#x27;ve managed to finish Bloodwych after getting stuck</span>
+<span class="qt">&gt;earlier. After searching Dejanews and finding virtually no comment on it -</span>
+<span class="qt">&gt;maybe noone else has! Anyway - if you are interested in the map (Excel,</span>
+<span class="qt">&gt;~200k) let me know and I&#x27;ll pass it on. It has about 36 levels. I just don&#x27;t</span>
+<span class="qt">&gt;have anywhere in particular to host it but in the interests of posterity I&#x27;d</span>
+<span class="qt">&gt;like it go somewhere...</span>
+<span class="qt">&gt;	Gazza</span>
+<span class="qt">&gt;</span>
+I&#x27;ll stick it on my site if you like. I&#x27;m sure it&#x27;d be welcome on WOS
+too.
+
+Fishy
+--
+Spectrum Games Maps at - <a href="http://www.btinternet.com/~fishyfish/" rel="noreferrer">http://www.btinternet.com/~fishyfish/</a>
+Email me using …@… (remove the NOSPAMTHANKS)
+
+
+
+</pre></div><div class="post" id="p121013"><div class="ph"><a class="d" href="#p121013">2001-11-06 12:15:16</a> <span>Adam D. Moss</span> <span>Re: Bloodwych map</span> <a class="badge" href="game-592.html">ZXDB: Bloodwych</a></div><pre>&quot;N Fishwick (FishyFish)&quot; wrote:
+<span class="qt">&gt; On 6 Nov 2001 15:01:39 +1000, …@… (Gareth Brisbane)</span>
+<span class="qt">&gt; farted out the following incoherent babble:</span>
+<span class="qt">&gt; &gt;       at long last - I&#x27;ve managed to finish Bloodwych after getting stuck</span>
+<span class="qt">&gt; &gt;earlier. After searching Dejanews and finding virtually no comment on it -</span>
+<span class="qt">&gt; &gt;maybe noone else has! Anyway - if you are interested in the map (Excel,</span>
+<span class="qt">&gt; &gt;~200k) let me know and I&#x27;ll pass it on. It has about 36 levels. I just don&#x27;t</span>
+<span class="qt">&gt; &gt;have anywhere in particular to host it but in the interests of posterity I&#x27;d</span>
+<span class="qt">&gt; &gt;like it go somewhere...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; I&#x27;ll stick it on my site if you like. I&#x27;m sure it&#x27;d be welcome on WOS</span>
+<span class="qt">&gt; too.</span>
+
+Though something less bizarre than Excel format would go down
+better, I think.  But beggars can&#x27;t be choosers!
+
+
+
+</pre></div><div class="post" id="p121053"><div class="ph"><a class="d" href="#p121053">2001-11-06 22:21:51</a> <span>Gerard Sweeney (remove B)</span> <span>Re: Bloodwych map</span> <a class="badge" href="game-592.html">ZXDB: Bloodwych</a></div><pre>Whilst I was reinstalling absolutely everything (while downloading the
+internet? Ed), Gareth Brisbane wrote:
+
+<span class="qt">&gt; I just don&#x27;t have anywhere in particular to host it</span>
+
+I suspect WOS would be a splendid place indeed. That way, we Tipshop
+chappies will be able to add it to our ever expanding tips resource, now
+that we have links to the WOS maps archive as well....
+
+Toodle-pip!
+Gerard
+
+
+
+
+
+</pre></div><div class="post" id="p121147"><div class="ph"><a class="d" href="#p121147">2001-11-07 22:48:21</a> <span>Gareth Brisbane</span> <span>Re: Bloodwych map</span> <a class="badge" href="game-592.html">ZXDB: Bloodwych</a></div><pre>&quot;Adam D. Moss&quot; &lt;…@…&gt; writes:
+
+<span class="qt">&gt;&quot;N Fishwick (FishyFish)&quot; wrote:</span>
+<span class="qt">&gt;&gt; On 6 Nov 2001 15:01:39 +1000, …@… (Gareth Brisbane)</span>
+<span class="qt">&gt;&gt; farted out the following incoherent babble:</span>
+<span class="qt">&gt;&gt; &gt;       at long last - I&#x27;ve managed to finish Bloodwych after getting stuck</span>
+<span class="qt">&gt;&gt; &gt;earlier. After searching Dejanews and finding virtually no comment on it -</span>
+<span class="qt">&gt;&gt; &gt;maybe noone else has! Anyway - if you are interested in the map (Excel,</span>
+<span class="qt">&gt;&gt; &gt;~200k) let me know and I&#x27;ll pass it on. It has about 36 levels. I just don&#x27;t</span>
+<span class="qt">&gt;&gt; &gt;have anywhere in particular to host it but in the interests of posterity I&#x27;d</span>
+<span class="qt">&gt;&gt; &gt;like it go somewhere...</span>
+<span class="qt">&gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; I&#x27;ll stick it on my site if you like. I&#x27;m sure it&#x27;d be welcome on WOS</span>
+<span class="qt">&gt;&gt; too.</span>
+
+<span class="qt">&gt;Though something less bizarre than Excel format would go down</span>
+<span class="qt">&gt;better, I think.  But beggars can&#x27;t be choosers!</span>
+
+Excel is very handy for constructing 3-d maps + using macros etc. I guess if
+you were keen - it would be possible to print them all to bitmaps or
+something! Are there any other tools that people use? That way next time I
+can do it in something a little more useful. I&#x27;ll send the map through to
+Fishy. Would WOS want it?/Who do I send it to?
+	Gazza
+
+
+
+</pre></div><div class="post" id="p121198"><div class="ph"><a class="d" href="#p121198">2001-11-08 16:36:12</a> <span>Darren Salt</span> <span>Re: Bloodwych map</span> <a class="badge" href="game-592.html">ZXDB: Bloodwych</a></div><pre>I demand that Gareth Brisbane may or may not have written...
+
+[snip]
+<span class="qt">&gt; Excel is very handy for constructing 3-d maps</span>
+
+Surely a vector graphics editor with an isometric grid option would be
+better? I&#x27;d probably use Draw...
+
+-- 
+<span class="qt">| Darren Salt  anti-UCE  | nr. Ashington, | d youmustbejoking,demon,co,uk</span>
+<span class="qt">| Spec+3, Risc PC, A3010 | Northumberland | s zap,tartarus,org</span>
+<span class="qt">| BBC M128, Linux PC     | Toon Army      | @ retrospec,co,uk</span>
+<span class="qt">|   When replying: &quot;news&quot;-&gt;&quot;ds&quot;, &quot;cu&quot;-&gt;&quot;co.uk&quot;, and validate</span>
+
+Invention: powdered water.
+
+
+
+</pre></div><div class="post" id="p121626"><div class="ph"><a class="d" href="#p121626">2001-11-13 15:21:45</a> <span>Andrew Owen</span> <span>Re: Bloodwych map</span> <a class="badge" href="game-592.html">ZXDB: Bloodwych</a></div><pre>in article 3be9ac25$…@…, Gareth Brisbane at …@…
+wrote on 11/7/01 10:48 PM:
+
+<span class="qt">&gt; &quot;Adam D. Moss&quot; &lt;…@…&gt; writes:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; &quot;N Fishwick (FishyFish)&quot; wrote:</span>
+<span class="qt">&gt;&gt;&gt; On 6 Nov 2001 15:01:39 +1000, …@… (Gareth Brisbane)</span>
+<span class="qt">&gt;&gt;&gt; farted out the following incoherent babble:</span>
+<span class="qt">&gt;&gt;&gt;&gt; at long last - I&#x27;ve managed to finish Bloodwych after getting stuck</span>
+<span class="qt">&gt;&gt;&gt;&gt; earlier. After searching Dejanews and finding virtually no comment on it -</span>
+<span class="qt">&gt;&gt;&gt;&gt; maybe noone else has! Anyway - if you are interested in the map (Excel,</span>
+<span class="qt">&gt;&gt;&gt;&gt; ~200k) let me know and I&#x27;ll pass it on. It has about 36 levels. I just</span>
+<span class="qt">&gt;&gt;&gt;&gt; don&#x27;t</span>
+<span class="qt">&gt;&gt;&gt;&gt; have anywhere in particular to host it but in the interests of posterity</span>
+<span class="qt">&gt;&gt;&gt;&gt; I&#x27;d</span>
+<span class="qt">&gt;&gt;&gt;&gt; like it go somewhere...</span>
+<span class="qt">&gt;&gt;&gt;&gt; </span>
+<span class="qt">&gt;&gt;&gt; I&#x27;ll stick it on my site if you like. I&#x27;m sure it&#x27;d be welcome on WOS</span>
+<span class="qt">&gt;&gt;&gt; too.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Though something less bizarre than Excel format would go down</span>
+<span class="qt">&gt;&gt; better, I think.  But beggars can&#x27;t be choosers!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Excel is very handy for constructing 3-d maps + using macros etc. I guess if</span>
+<span class="qt">&gt; you were keen - it would be possible to print them all to bitmaps or</span>
+<span class="qt">&gt; something! Are there any other tools that people use? That way next time I</span>
+<span class="qt">&gt; can do it in something a little more useful. I&#x27;ll send the map through to</span>
+<span class="qt">&gt; Fishy. Would WOS want it?/Who do I send it to?</span>
+<span class="qt">&gt; Gazza</span>
+
+I think what we need is a 3D-map maker that actually runs on the Spectrum
+(you can run two emulations at once right?) but I don&#x27;t have the time to
+write it right now.
+
+-Andrew
+
+
+
+
+</pre></div></main></body></html>

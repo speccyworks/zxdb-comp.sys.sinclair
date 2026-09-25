@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pyjamarama question (and map!) · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Pyjamarama question (and map!)</h1><p class="facts">8 posts, 1999-10-15 – 1999-10-18</p><div class="post" id="p55300"><div class="ph"><a class="d" href="#p55300">1999-10-15</a> <span class="small">address hidden</span>  <a class="badge" href="game-3949.html">ZXDB: Pyjamarama</a></div><pre>***De-lurking process succesful***
+
+Hi people,
+
+
+I&#x27;ve recently re-played Pyjamarama, and was wondering what&#x27;s needed to
+get a 100% score (I finished it with 88 percent complete)?
+
+Whilst playing through, I took loads of screenshots which I&#x27;ve pieced
+together into a map. I must say that the layout of Wally&#x27;s house is a
+bloody nightmare!
+
+The map&#x27;s online at;
+
+<a href="http://www.btinternet.com/~fishyfish/pyjamarama_map.htm" rel="noreferrer">http://www.btinternet.com/~fishyfish/pyjamarama_map.htm</a>
+
+Hope someone likes it!
+
+Cheers!
+
+Nige.
+--
+This posting was supervised by the Interplanetary Humane Society...
+Body count was high and casualties are heavy.
+
+
+</pre></div><div class="post" id="p55301"><div class="ph"><a class="d" href="#p55301">1999-10-15</a> <span class="small">address hidden</span> <span>Re: Pyjamarama question (and map!)</span> <a class="badge" href="game-3949.html">ZXDB: Pyjamarama</a></div><pre>On Fri, 15 Oct 1999 16:28:08 +0100, &quot;Kevin Watkins&quot;
+ wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Do you want me to host it on my Wally Week site? (I have some space to</span>
+<span class="qt">&gt;spare)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Kev</span>
+
+Thanks, that&#x27;d be great. I&#x27;ve got tons of spare room, but hosting it
+on your site makes good sense. I was actually going to drop you an
+e-mail later to let you know about the map (yours was the first site I
+visited when looking to see if an online map already existed).
+
+I didn&#x27;t manage to find any other maps, although I&#x27;m sure there must
+be one that could be scanned from an old Crash or Your Sinclair.
+
+It was good fun making it though, and the screenshots look pretty
+cool.
+
+So, yep, feel free to host the map.
+
+Regards,
+
+Nige.
+--
+This posting was supervised by the Interplanetary Humane Society...
+Body count was high and casualties are heavy.
+
+
+</pre></div><div class="post" id="p55304"><div class="ph"><a class="d" href="#p55304">1999-10-15</a> <span class="small">address hidden</span> <span>Re: Pyjamarama question (and map!)</span> <a class="badge" href="game-3949.html">ZXDB: Pyjamarama</a></div><pre>On Fri, 15 Oct 1999 15:43:33 GMT, …@…
+(Nige) wrote:
+
+<span class="qt">&gt;[...]</span>
+<span class="qt">&gt;I didn&#x27;t manage to find any other maps, although I&#x27;m sure there must</span>
+<span class="qt">&gt;be one that could be scanned from an old Crash or Your Sinclair.</span>
+
+There was one in Crash 11 (Dec&#x27;84), also compiled from screen shots (31 of
+them) but it&#x27;s in rather fuzzy b&amp;w (probably why no-one&#x27;s bothered to scan
+it), so your colour one would be much better. There is a solution in
+issues 11+13 of Crash, but at the end it says &quot;you may not receive 100%&quot;.
+I expect that you have to visit every room and collect every possible
+collectable thing, even the unnecessary ones, to get a maximum score.
+
+--
+Another Fine Product from:
+Jim Grimwood (…@…), Hatfield, England
+--
+
+
+</pre></div><div class="post" id="p55305"><div class="ph"><a class="d" href="#p55305">1999-10-15</a> <span class="small">address hidden</span> <span>Re: Pyjamarama question (and map!)</span> <a class="badge" href="game-3949.html">ZXDB: Pyjamarama</a></div><pre>On Fri, 15 Oct 1999 17:43:26 GMT, …@… (Jim Grimwood)
+wrote:
+
+<span class="qt">&gt;There was one in Crash 11 (Dec&#x27;84), also compiled from screen shots (31 of</span>
+<span class="qt">&gt;them) </span>
+Phew! At least I&#x27;ve not missed any &quot;secret&quot; rooms or anything.
+
+<span class="qt">&gt;There is a solution in</span>
+<span class="qt">&gt;issues 11+13 of Crash, but at the end it says &quot;you may not receive 100%&quot;.</span>
+<span class="qt">&gt;I expect that you have to visit every room and collect every possible</span>
+<span class="qt">&gt;collectable thing, even the unnecessary ones, to get a maximum score.</span>
+
+I&#x27;ll have another go when I get the chance. There were a few
+intriguing bits (the gold medallion behind the falling weight) that
+require investigation :-)
+
+Thanks,
+
+Nige.
+
+
+--
+This posting was supervised by the Interplanetary Humane Society...
+Body count was high and casualties are heavy.
+
+
+</pre></div><div class="post" id="p55327"><div class="ph"><a class="d" href="#p55327">1999-10-15 15:28:51</a> <span>kevin watkins</span> <span>Re: Pyjamarama question (and map!)</span> <a class="badge" href="game-3949.html">ZXDB: Pyjamarama</a></div><pre>
+
+<span class="qt">&gt;The map&#x27;s online at;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;<a href="http://www.btinternet.com/~fishyfish/pyjamarama_map.htm" rel="noreferrer">http://www.btinternet.com/~fishyfish/pyjamarama_map.htm</a></span>
+<span class="qt">&gt;</span>
+
+
+Do you want me to host it on my Wally Week site? (I have some space to
+spare)
+
+Kev
+
+<a href="http://www.soft.net.uk/watkins/wally" rel="noreferrer">http://www.soft.net.uk/watkins/wally</a>
+
+P.S. As for the 100% thing, I have completed it with 100% (I think) but it
+was ages ago. I&#x27;ll run through it again sometime when I have some time to
+spare.
+
+
+
+
+
+
+</pre></div><div class="post" id="p55335"><div class="ph"><a class="d" href="#p55335">1999-10-17</a> <span>darren salt</span> <span>Re: Pyjamarama question (and map!)</span> <a class="badge" href="game-3949.html">ZXDB: Pyjamarama</a></div><pre>In message &lt;7uco8e$vpi$…@…&gt;
+          …@… wrote:
+
+[snip]
+<span class="qt">&gt; Here a *cough* Official *cough* solution which I had stashed away...</span>
+[snip solution]
+
+<span class="qt">&gt; The thing is... I STILL dont recall this ever giving me 100 percent...</span>
+<span class="qt">&gt; But use it as a checklist for what you already done..</span>
+
+It seems that you have to ensure that every object is moved from its original
+location.
+
+-- 
+<span class="qt">| Darren Salt  anti-UCE | d youmustbejoking,demon,co,uk | nr. Ashington,</span>
+<span class="qt">| Spectrum +3, Risc PC, | s zap,uk,eu,org   ** anti-UBE | Northumberland</span>
+<span class="qt">| A3010, BBC Master 128 | @ retrospec,co,uk             | Toon Army</span>
+<span class="qt">|   Find a snapshot: </span>
+
+It is morally wrong to allow a sucker to keep his money.
+
+
+</pre></div><div class="post" id="p55337"><div class="ph"><a class="d" href="#p55337">1999-10-17 14:59:30</a> <span class="small">address hidden</span> <span>Re: Pyjamarama question (and map!)</span> <a class="badge" href="game-3949.html">ZXDB: Pyjamarama</a></div><pre>In article &lt;…@…&gt;,
+  …@… wrote:
+<span class="qt">&gt; ***De-lurking process succesful***</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Hi people,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;ve recently re-played Pyjamarama, and was wondering what&#x27;s needed to</span>
+<span class="qt">&gt; get a 100% score (I finished it with 88 percent complete)?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Whilst playing through, I took loads of screenshots which I&#x27;ve pieced</span>
+<span class="qt">&gt; together into a map. I must say that the layout of Wally&#x27;s house is a</span>
+<span class="qt">&gt; bloody nightmare!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The map&#x27;s online at;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; <a href="http://www.btinternet.com/â€¾fishyfish/pyjamarama_map.htm" rel="noreferrer">http://www.btinternet.com/â€¾fishyfish/pyjamarama_map.htm</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Hope someone likes it!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Cheers!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Nige.</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; This posting was supervised by the Interplanetary Humane Society...</span>
+<span class="qt">&gt; Body count was high and casualties are heavy.</span>
+<span class="qt">&gt;</span>
+
+Here a *cough* Official *cough* solution which I had stashed away...
+
+1) Get the Bucket and fill it at the bathroom tap.
+2) Get the Plant Pot and head to the room containing thefly-traps.
+3) Swap the BP Can for the bucket of water.
+4) Get the triangle key from Floor 3.
+5) Go to Floor 1 and fill the BP Can at the petrol pump.
+6) Get the pound coin and swap it for the penny.
+7) Enter the now unlocked Toilet and get the hammer.
+8) Swap the hammer for the fire extinguisher in the lift room.
+9) Go to floor 3 and find the room containing the pile of teachests.
+10) Climb up the chests and exit through the window.
+11) Continue past fire and quickly get the square key.
+12) Enter the unlocked snooker room and get the laser gun.
+13) With triangle key and laser gun, go to Floor 1.
+14) Go past the pump room and take, then drop the battery.
+15) With the Bp Can and the Full Laser Gun go to Floor 3.
+16) Enter the rocket and leave the laser gun on the moon.
+17) Returning to Earth, slide down the banister and get thehelmet.
+18) Swap the library ticket for the library book.
+19) With the helmet and the book, get the scissors.
+20) Switch HELP on, and go to the room with the balloon.
+21) Get the box key and swap it for the magnet.
+22) Re-fill the BP Can and return to the moon with the magnet.
+23) Touch the magnetic lock and get the clock key.
+24) Return to Wallys Bedroom, touch the clock and you have doneit!!
+
+The thing is... I STILL dont recall this ever giving me 100 percent...
+But use it as a checklist for what you already done..
+
+Later,
+
+-=dogbomb=-
++------------------------------------+
+<span class="qt">|  <a href="http://fly.to/dogbomb" rel="noreferrer">http://fly.to/dogbomb</a> - Personal  |</span>
+<span class="qt">|  httP://start.at/cloud9 - Chat     |</span>
++------------------------------------+
+
+
+Sent via Deja.com <a href="http://www.deja.com/" rel="noreferrer">http://www.deja.com/</a>
+Before you buy.
+
+
+</pre></div><div class="post" id="p55341"><div class="ph"><a class="d" href="#p55341">1999-10-18</a> <span class="small">address hidden</span> <span>Re: Pyjamarama question (and map!)</span> <a class="badge" href="game-3949.html">ZXDB: Pyjamarama</a></div><pre>Nige ha scritto:
+
+<span class="qt">&gt; ***De-lurking process succesful***</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Hi people,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;ve recently re-played Pyjamarama, and was wondering what&#x27;s needed to</span>
+<span class="qt">&gt; get a 100% score (I finished it with 88 percent complete)?</span>
+
+You have to pick up all the objects (even the unuseful ones) at least one
+time.
+
+
+
+
+
+</pre></div></main></body></html>

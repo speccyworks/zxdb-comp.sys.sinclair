@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZX81 16K RAM Pack shows 0.5K · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ZX81 16K RAM Pack shows 0.5K</h1><p class="facts">7 posts, 2004-07-24 – 2004-07-28</p><div class="post" id="p182638"><div class="ph"><a class="d" href="#p182638">2004-07-24 22:35:17</a> <span>Martin Ancher Holm</span>  <a class="badge" href="game-1001098.html">ZXDB: 16K RAM Pack</a></div><pre>Hi!
+
+A few years back I got three 16K RAM Packs and a ZX Printer together with
+some other old stuff. I&#x27;ve never had a ZX81, though several times I
+thought it would be cool to find one of these old devices at a garage
+sale, but it never happened. The 16K RAM Packs were just put in storage
+for fun.
+
+A week ago a friend of mine told me there was a ZX81 on QXL (web-auction)
+and since I&#x27;d talked about ZX81 several times, he&#x27;d just mention it.
+
+I made several bids and now I have an unused ZX81 for apx. 45 GBP - Yes!
+
+I&#x27;ve tried ZXC.EXE and loaded 1K Chess and 1K Breakout and both works
+fine. Cool, but I wanted to try Softwarefarm&#x27;s Forty, so I found my three
+16K RAM Packs in the basement.
+
+Together with the 16K RAM Packs was a sheet of paper:
+&quot;ZX 16K RAM Pack - Instruction for use&quot;.
+
+On that sheet of paper was this program:
+
+MEMORY TEST PROGRAM
+1 POKE 18000,33
+2 POKE 18001,11
+3 POKE 18002,0
+4 POKE 18003,57
+5 POKE 18004,68
+6 POKE 18005,77
+7 POKE 18006,201
+8 PRINT (USR(18000)-16373)/1024;&quot;K&quot;
+
+When I run the program without any RAM Pack it displays:
+1K
+
+When I run the program with a 16K RAM Pack it displays:
+0.5K
+
+Anybody know what&#x27;s wrong. The small 1K programs won&#x27;t load with the
+16K RAM Pack, so I guest the program is right, when it says: 0.5K. :-(
+
+Any thoughts?
+
+--
+Martin Ancher Holm &lt;aim:ancherorg&gt;
+<a href="http://ancher.org/" rel="noreferrer">http://ancher.org/</a>
+
+
+
+</pre></div><div class="post" id="p182639"><div class="ph"><a class="d" href="#p182639">2004-07-24 23:34:00</a> <span>Geoff Wearmouth</span> <span>Re: ZX81 16K RAM Pack shows 0.5K</span></div><pre>In article &lt;…@…&gt;, Martin Ancher Holm
+&lt;…@…&gt; writes
+
+<span class="qt">&gt;When I run the program without any RAM Pack it displays:</span>
+<span class="qt">&gt;1K</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;When I run the program with a 16K RAM Pack it displays:</span>
+<span class="qt">&gt;0.5K</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Anybody know what&#x27;s wrong. The small 1K programs won&#x27;t load with the</span>
+<span class="qt">&gt;16K RAM Pack, so I guest the program is right, when it says: 0.5K. :-(</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Any thoughts?</span>
+
+For all three RAM Packs to give the same result I would say that one of
+the address lines on the edge connector needs cleaning. I have bought
+non working interfaces from ebay that have worked after a clean.
+
+The 1K internal RAM is not used when the RAM Packs are fitted.
+
+I am sure there are people here that could tell you exactly which pin
+needs cleaning and whether it is on top or on the underside.
+
+Good Luck,
+
+-- 
+Geoff Wearmouth.
+ZX81 ROM Assembly File: <a href="http://www.wearmouth.demon.co.uk" rel="noreferrer">http://www.wearmouth.demon.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p182653"><div class="ph"><a class="d" href="#p182653">2004-07-25 06:34:42</a> <span>Brian Gaff</span> <span>Re: ZX81 16K RAM Pack shows 0.5K</span></div><pre>This was common when the edge connector was dirty. In my old machine I ended
+up taking it apart t o clean the damn thing, as I recall. However, if you
+got the ram packs from some end of run, they could probably all be user
+returns with the same fault.
+
+You need to find a known good one, even if you only borrow it, to make sure
+the fault is not in the 81.
+
+Brian
+
+-- 
+
+Brian Gaff....Note, this account does not accept Bcc: email.
+ graphics are great, but the blind can&#x27;t hear them
+Email: …@…
+____________________________________________________________________________
+__________________________________
+
+
+&quot;Martin Ancher Holm&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Hi!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; A few years back I got three 16K RAM Packs and a ZX Printer together with</span>
+<span class="qt">&gt; some other old stuff. I&#x27;ve never had a ZX81, though several times I</span>
+<span class="qt">&gt; thought it would be cool to find one of these old devices at a garage</span>
+<span class="qt">&gt; sale, but it never happened. The 16K RAM Packs were just put in storage</span>
+<span class="qt">&gt; for fun.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; A week ago a friend of mine told me there was a ZX81 on QXL (web-auction)</span>
+<span class="qt">&gt; and since I&#x27;d talked about ZX81 several times, he&#x27;d just mention it.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I made several bids and now I have an unused ZX81 for apx. 45 GBP - Yes!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;ve tried ZXC.EXE and loaded 1K Chess and 1K Breakout and both works</span>
+<span class="qt">&gt; fine. Cool, but I wanted to try Softwarefarm&#x27;s Forty, so I found my three</span>
+<span class="qt">&gt; 16K RAM Packs in the basement.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Together with the 16K RAM Packs was a sheet of paper:</span>
+<span class="qt">&gt; &quot;ZX 16K RAM Pack - Instruction for use&quot;.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; On that sheet of paper was this program:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; MEMORY TEST PROGRAM</span>
+<span class="qt">&gt; 1 POKE 18000,33</span>
+<span class="qt">&gt; 2 POKE 18001,11</span>
+<span class="qt">&gt; 3 POKE 18002,0</span>
+<span class="qt">&gt; 4 POKE 18003,57</span>
+<span class="qt">&gt; 5 POKE 18004,68</span>
+<span class="qt">&gt; 6 POKE 18005,77</span>
+<span class="qt">&gt; 7 POKE 18006,201</span>
+<span class="qt">&gt; 8 PRINT (USR(18000)-16373)/1024;&quot;K&quot;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; When I run the program without any RAM Pack it displays:</span>
+<span class="qt">&gt; 1K</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; When I run the program with a 16K RAM Pack it displays:</span>
+<span class="qt">&gt; 0.5K</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Anybody know what&#x27;s wrong. The small 1K programs won&#x27;t load with the</span>
+<span class="qt">&gt; 16K RAM Pack, so I guest the program is right, when it says: 0.5K. :-(</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Any thoughts?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; Martin Ancher Holm &lt;aim:ancherorg&gt;</span>
+<span class="qt">&gt; <a href="http://ancher.org/" rel="noreferrer">http://ancher.org/</a></span>
+
+
+---
+Outgoing mail is certified Virus Free.
+Checked by AVG anti-virus system (<a href="http://www.grisoft.com" rel="noreferrer">http://www.grisoft.com</a>).
+Version: 6.0.726 / Virus Database: 481 - Release Date: 22/07/2004
+
+
+
+
+
+</pre></div><div class="post" id="p182700"><div class="ph"><a class="d" href="#p182700">2004-07-26 00:03:21</a> <span>Duncan Snowden</span> <span>Re: ZX81 16K RAM Pack shows 0.5K</span></div><pre>Prï¿½gramm: Geoff Wearmouth
+
+Bijts: Setterdag
+
+<span class="qt">&gt; For all three RAM Packs to give the same result I would say that one</span>
+<span class="qt">&gt; of the address lines on the edge connector needs cleaning. I have</span>
+<span class="qt">&gt; bought non working interfaces from ebay that have worked after a</span>
+<span class="qt">&gt; clean.</span>
+
+Could be that, but I wonder when Martin says he has three RAM packs if
+they&#x27;re Memotech ones, which can be &quot;piggybacked&quot; to give 32, 48, or
+64K. They have DIP switches on the back which IIRC are used configure
+them for this and, although I don&#x27;t know for sure, I expect a single one
+might exhibit similar behaviour to his if it&#x27;s set up as a &quot;slave&quot;.
+
+But don&#x27;t ask me what the right setting is. I&#x27;m sure my Memotech manual is
+lying around here somewhere, and I can remember exactly what it looks
+like, but I couldn&#x27;t tell you whether it was 20 days or 20 years since I
+last saw it.
+
+-- 
+Duncan Snowden. 
+
+skrï¿½llen? 
+
+
+
+</pre></div><div class="post" id="p182729"><div class="ph"><a class="d" href="#p182729">2004-07-26 15:41:15</a> <span>Martin Ancher Holm</span> <span>Re: ZX81 16K RAM Pack shows 0.5K</span></div><pre>In article &lt;…@…&gt;,
+ Duncan Snowden &lt;…@…&gt; wrote:
+<span class="qt">&gt; &gt; For all three RAM Packs to give the same result I would say that one</span>
+<span class="qt">&gt; &gt; of the address lines on the edge connector needs cleaning. I have</span>
+<span class="qt">&gt; &gt; bought non working interfaces from ebay that have worked after a</span>
+<span class="qt">&gt; &gt; clean.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Could be that, but I wonder when Martin says he has three RAM packs if</span>
+<span class="qt">&gt; they&#x27;re Memotech ones, which can be &quot;piggybacked&quot; to give 32, 48, or</span>
+<span class="qt">&gt; 64K.</span>
+
+Thanks for the replies.
+
+No, they&#x27;re real Sinclair 16K RAM Packs.
+
+I can see that there&#x27;s a &quot;white layer&quot; on the lower side of
+PCB-connector on the ZX81, so this will be the first place to clean.
+
+I&#x27;ll have a look at the ZX81 Service Manual I found on the Internet to
+dissemble the ZX81 to clean it.
+
+--
+Martin Ancher Holm &lt;aim:ancherorg&gt;
+<a href="http://ancher.org/" rel="noreferrer">http://ancher.org/</a>
+
+
+
+</pre></div><div class="post" id="p182835"><div class="ph"><a class="d" href="#p182835">2004-07-27 22:33:35</a> <span>Martin Ancher Holm</span> <span>Re: ZX81 16K RAM Pack shows 0.5K</span></div><pre>In article &lt;…@…&gt;,
+ Martin Ancher Holm &lt;…@…&gt; wrote:
+<span class="qt">&gt; &gt; &gt; For all three RAM Packs to give the same result I would say that one</span>
+<span class="qt">&gt; &gt; &gt; of the address lines on the edge connector needs cleaning. I have</span>
+<span class="qt">&gt; &gt; &gt; bought non working interfaces from ebay that have worked after a</span>
+<span class="qt">&gt; &gt; &gt; clean.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I can see that there&#x27;s a &quot;white layer&quot; on the lower side of</span>
+<span class="qt">&gt; PCB-connector on the ZX81, so this will be the first place to clean.</span>
+
+It&#x27;s cleaned, and it works! Cool.
+
+I&#x27;ve just played Softwarefarm&#x27;s Forty which requires the 16K - Nice!
+
+--
+Martin Ancher Holm &lt;aim:ancherorg&gt;
+<a href="http://ancher.org/" rel="noreferrer">http://ancher.org/</a>
+
+
+
+</pre></div><div class="post" id="p182876"><div class="ph"><a class="d" href="#p182876">2004-07-28 21:02:46</a> <span>Peter Liebert-Adelt</span> <span>Re: ZX81 16K RAM Pack shows 0.5K</span></div><pre>
+
+Duncan Snowden schrieb:
+
+<span class="qt">&gt; Could be that, but I wonder when Martin says he has three RAM packs if</span>
+<span class="qt">&gt; they&#x27;re Memotech ones, which can be &quot;piggybacked&quot; to give 32, 48, or</span>
+<span class="qt">&gt; 64K. They have DIP switches on the back which IIRC are used configure</span>
+<span class="qt">&gt; them for this and, although I don&#x27;t know for sure, I expect a single one</span>
+<span class="qt">&gt; might exhibit similar behaviour to his if it&#x27;s set up as a &quot;slave&quot;.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; But don&#x27;t ask me what the right setting is. I&#x27;m sure my Memotech manual is</span>
+<span class="qt">&gt; lying around here somewhere, and I can remember exactly what it looks</span>
+<span class="qt">&gt; like, but I couldn&#x27;t tell you whether it was 20 days or 20 years since I</span>
+<span class="qt">&gt; last saw it.</span>
+
+MEMOTECH &quot;manuals&quot; are available at ZX-TEAM-Homepage: <a href="http://www.zx81.de" rel="noreferrer">http://www.zx81.de</a>
+
+Don&#x27;t worry, the are on the english pages ;-))
+
+Good by(t)e
+
+Peter
+
+
+
+</pre></div></main></body></html>

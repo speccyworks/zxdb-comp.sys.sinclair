@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Name that game (16k, random maps, dragons, definitely not Stonkers!) · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Name that game (16k, random maps, dragons, definitely not Stonkers!)</h1><p class="facts">8 posts, 2007-12-24 – 2008-01-09</p><div class="post" id="p215080"><div class="ph"><a class="d" href="#p215080">2007-12-24 07:08:21</a> <span class="small">address hidden</span>  <a class="badge" href="game-32013.html">ZXDB: Dragons</a> <a class="badge" href="game-4913.html">ZXDB: Stonkers</a></div><pre>*points at subject*
+
+I&#x27;ve got some memories of playing a fairly basic dungeon crawler,
+which I&#x27;d quite like to track down: from what I can remember, it
+fitted into 16k, the maze was randomly generated (which took a long
+time to complete) and there was an unkillable nasty dragon lurking in
+the map.  Oh, and I think it was presented via a 3d-tunnel
+perspective.
+
+Ring any bells?
+
+(oh, and merry Xmas too - festive Ed)
+
+
+
+
+</pre></div><div class="post" id="p215081"><div class="ph"><a class="d" href="#p215081">2007-12-24 08:10:37</a> <span>Fred Bloggs</span> <span>Re: Name that game (16k, random maps, dragons, definitely not Stonkers!)</span> <a class="badge" href="game-32013.html">ZXDB: Dragons</a> <a class="badge" href="game-4913.html">ZXDB: Stonkers</a></div><pre>
+&lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; *points at subject*</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;ve got some memories of playing a fairly basic dungeon crawler,</span>
+<span class="qt">&gt; which I&#x27;d quite like to track down: from what I can remember, it</span>
+<span class="qt">&gt; fitted into 16k, the maze was randomly generated (which took a long</span>
+<span class="qt">&gt; time to complete) and there was an unkillable nasty dragon lurking in</span>
+<span class="qt">&gt; the map.  Oh, and I think it was presented via a 3d-tunnel</span>
+<span class="qt">&gt; perspective.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Ring any bells?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; (oh, and merry Xmas too - festive Ed)</span>
+<span class="qt">&gt;</span>
+
+It sounds a bit like Skull, a game in which you moved through a maze. A 
+first-person game. Occasionally, a giant skull would stand in you path. 
+
+
+
+
+
+</pre></div><div class="post" id="p215086"><div class="ph"><a class="d" href="#p215086">2007-12-24 10:36:26</a> <span class="small">address hidden</span> <span>Re: Name that game (16k, random maps, dragons, definitely not Stonkers!)</span> <a class="badge" href="game-32013.html">ZXDB: Dragons</a> <a class="badge" href="game-4913.html">ZXDB: Stonkers</a></div><pre>On Dec 24, 8:10 am, &quot;Fred Bloggs&quot; &lt;…@…&gt;
+wrote:
+<span class="qt">&gt; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; *points at subject*</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; I&#x27;ve got some memories of playing a fairly basic dungeon crawler,</span>
+<span class="qt">&gt; &gt; which I&#x27;d quite like to track down: from what I can remember, it</span>
+<span class="qt">&gt; &gt; fitted into 16k, the maze was randomly generated (which took a long</span>
+<span class="qt">&gt; &gt; time to complete) and there was an unkillable nasty dragon lurking in</span>
+<span class="qt">&gt; &gt; the map.  Oh, and I think it was presented via a 3d-tunnel</span>
+<span class="qt">&gt; &gt; perspective.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Ring any bells?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; (oh, and merry Xmas too - festive Ed)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; It sounds a bit like Skull, a game in which you moved through a maze. A</span>
+<span class="qt">&gt; first-person game. Occasionally, a giant skull would stand in you path.</span>
+
+Oooo!
+
+That do be looking very similar, though there&#x27;s no dragons and (IIRC)
+the graphics are black on white, rather than white on black - and it&#x27;s
+also listed as 48k  (but apart from that, what have the Romans ever
+done for us? - pedantic Ed).  Of course, I may just be misremembering
+the game, so I&#x27;ll try and have a blast on this one later.
+
+Cheers!
+
+
+
+</pre></div><div class="post" id="p215091"><div class="ph"><a class="d" href="#p215091">2007-12-24 15:55:09</a> <span>xd18911</span> <span>Re: Name that game (16k, random maps, dragons, definitely not Stonkers!)</span> <a class="badge" href="game-32013.html">ZXDB: Dragons</a> <a class="badge" href="game-4913.html">ZXDB: Stonkers</a></div><pre>…@… wrote in news:fa792f89-7800-4bf0-85d2-
+…@…:
+
+<span class="qt">&gt; On Dec 24, 8:10 am, &quot;Fred Bloggs&quot; &lt;…@…&gt;</span>
+<span class="qt">&gt; wrote:</span>
+<span class="qt">&gt;&gt; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; news:3f8e1e4c-fd73-421e-8572-ec7c36fc7fd2</span>
+@l6g2000prm.googlegroups.com...
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; &gt; *points at subject*</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; &gt; I&#x27;ve got some memories of playing a fairly basic dungeon crawler,</span>
+<span class="qt">&gt;&gt; &gt; which I&#x27;d quite like to track down: from what I can remember, it</span>
+<span class="qt">&gt;&gt; &gt; fitted into 16k, the maze was randomly generated (which took a long</span>
+<span class="qt">&gt;&gt; &gt; time to complete) and there was an unkillable nasty dragon lurking </span>
+in
+<span class="qt">&gt;&gt; &gt; the map.  Oh, and I think it was presented via a 3d-tunnel</span>
+<span class="qt">&gt;&gt; &gt; perspective.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; &gt; Ring any bells?</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; &gt; (oh, and merry Xmas too - festive Ed)</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; It sounds a bit like Skull, a game in which you moved through a maze. </span>
+A
+<span class="qt">&gt;&gt; first-person game. Occasionally, a giant skull would stand in you </span>
+path.
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Oooo!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; That do be looking very similar, though there&#x27;s no dragons and (IIRC)</span>
+<span class="qt">&gt; the graphics are black on white, rather than white on black - and it&#x27;s</span>
+<span class="qt">&gt; also listed as 48k  (but apart from that, what have the Romans ever</span>
+<span class="qt">&gt; done for us? - pedantic Ed).  Of course, I may just be misremembering</span>
+<span class="qt">&gt; the game, so I&#x27;ll try and have a blast on this one later.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Cheers!</span>
+<span class="qt">&gt; </span>
+
+It sounds like that old ZX81 classic, 3D Monster Maze!
+
+
+
+</pre></div><div class="post" id="p215273"><div class="ph"><a class="d" href="#p215273">2008-01-08 15:07:30</a> <span class="small">address hidden</span> <span>Re: Name that game (16k, random maps, dragons, definitely not Stonkers!)</span> <a class="badge" href="game-32013.html">ZXDB: Dragons</a> <a class="badge" href="game-4913.html">ZXDB: Stonkers</a></div><pre>On Dec 24 2007, 7:08 am, …@… wrote:
+<span class="qt">&gt; *points at subject*</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;ve got some memories of playing a fairly basic dungeon crawler,</span>
+<span class="qt">&gt; which I&#x27;d quite like to track down: from what I can remember, it</span>
+<span class="qt">&gt; fitted into 16k, the maze was randomly generated (which took a long</span>
+<span class="qt">&gt; time to complete) and there was an unkillable nasty dragon lurking in</span>
+<span class="qt">&gt; the map.  Oh, and I think it was presented via a 3d-tunnel</span>
+<span class="qt">&gt; perspective.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Ring any bells?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; (oh, and merry Xmas too - festive Ed)</span>
+
+*bump* (now that MI5 pillock seems to have quietened down - Ed)
+
+There&#x27;s been a couple of suggestions, but they didn&#x27;t seem to match:
+does
+anyone have any better ideas?
+
+Cheers!
+
+
+
+</pre></div><div class="post" id="p215275"><div class="ph"><a class="d" href="#p215275">2008-01-08 18:41:43</a> <span class="small">address hidden</span> <span>Re: Name that game (16k, random maps, dragons, definitely not Stonkers!)</span> <a class="badge" href="game-32013.html">ZXDB: Dragons</a> <a class="badge" href="game-4913.html">ZXDB: Stonkers</a></div><pre>…@… did eloquently scribble:
+<span class="qt">&gt; On Dec 24 2007, 7:08 am, …@… wrote:</span>
+<span class="qt">&gt;&gt; *points at subject*</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; I&#x27;ve got some memories of playing a fairly basic dungeon crawler,</span>
+<span class="qt">&gt;&gt; which I&#x27;d quite like to track down: from what I can remember, it</span>
+<span class="qt">&gt;&gt; fitted into 16k, the maze was randomly generated (which took a long</span>
+<span class="qt">&gt;&gt; time to complete) and there was an unkillable nasty dragon lurking in</span>
+<span class="qt">&gt;&gt; the map.  Oh, and I think it was presented via a 3d-tunnel</span>
+<span class="qt">&gt;&gt; perspective.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Ring any bells?</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; (oh, and merry Xmas too - festive Ed)</span>
+
+<span class="qt">&gt; *bump* (now that MI5 pillock seems to have quietened down - Ed)</span>
+
+<span class="qt">&gt; There&#x27;s been a couple of suggestions, but they didn&#x27;t seem to match:</span>
+<span class="qt">&gt; does</span>
+<span class="qt">&gt; anyone have any better ideas?</span>
+
+Sure it&#x27;s not 3D Monster Maze for the zx81?
+That was a 16k game, there was an unkillable T-Rex in the maze, the maze was
+randomly generated and took some time and it was presended as a (blocky of
+course) 3D maze with one exit.
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   | &quot;I&#x27;m alive!!! I can touch! I can taste!         |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|  I can SMELL!!!  KRYTEN!!! Unpack Rachel and    |</span>
+<span class="qt">|            in            |  get out the puncture repair kit!&quot;              |</span>
+<span class="qt">|     Computer Science     |     Arnold Judas Rimmer- Red Dwarf              |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p215278"><div class="ph"><a class="d" href="#p215278">2008-01-09 11:10:03</a> <span class="small">address hidden</span> <span>Re: Name that game (16k, random maps, dragons, definitely not Stonkers!)</span> <a class="badge" href="game-32013.html">ZXDB: Dragons</a> <a class="badge" href="game-4913.html">ZXDB: Stonkers</a></div><pre>On Jan 8, 6:41 pm, …@… wrote:
+<span class="qt">&gt; &gt;&gt; I&#x27;ve got some memories of playing a fairly basic dungeon crawler,</span>
+<span class="qt">&gt; &gt;&gt; which I&#x27;d quite like to track down: from what I can remember, it</span>
+<span class="qt">&gt; &gt;&gt; fitted into 16k, the maze was randomly generated (which took a long</span>
+<span class="qt">&gt; &gt;&gt; time to complete) and there was an unkillable nasty dragon lurking in</span>
+<span class="qt">&gt; &gt;&gt; the map.  Oh, and I think it was presented via a 3d-tunnel</span>
+<span class="qt">&gt; &gt;&gt; perspective.</span>
+
+<span class="qt">&gt; Sure it&#x27;s not 3D Monster Maze for the zx81?</span>
+<span class="qt">&gt; That was a 16k game, there was an unkillable T-Rex in the maze, the maze was</span>
+<span class="qt">&gt; randomly generated and took some time and it was presended as a (blocky of</span>
+<span class="qt">&gt; course) 3D maze with one exit.</span>
+Given I didn&#x27;t own a ZX81 back in the day, it&#x27;s pretty unlikely!
+
+This was one of a bunch of games given to me for Christmas by my
+cousin, back
+when I received my first Spectrum (a grey +2) - he had a rubber-keyed
+48k since
+the early days, but moved on to girls and pubs by this time.  Not
+surprising, since
+he&#x27;s about 10 years older than me!
+
+The games included classics like 3D Deathchase, Sabre Wulf, Manic
+Miner,
+Jet Set Willy... and this one.
+
+The trouble (in terms of remembering what it&#x27;s called) is that I
+didn&#x27;t actually play it
+that much at the time, partly because I&#x27;ve never been that much into
+RPG games,
+and partly because the map-generation took an ungodly amount of time -
+a good
+two or three minutes on top of the actual tape-load.  It probably
+didn&#x27;t help that I
+was then introduced to a relative who&#x27;d spent an absolute fortune on
+Spectrum
+games - he had a stack of about 200 originals - stuff like Exolon,
+Cybernoid,
+Outrun, Starglider: an ancient and fairly primitive RPG didn&#x27;t really
+stand a
+chance!
+
+
+
+</pre></div><div class="post" id="p215279"><div class="ph"><a class="d" href="#p215279">2008-01-09 12:39:48</a> <span class="small">address hidden</span> <span>Re: Name that game (16k, random maps, dragons, definitely not Stonkers!)</span> <a class="badge" href="game-32013.html">ZXDB: Dragons</a> <a class="badge" href="game-4913.html">ZXDB: Stonkers</a></div><pre>On Jan 9, 11:10 am, …@… wrote:
+<span class="qt">&gt; On Jan 8, 6:41 pm, …@… wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt;&gt; I&#x27;ve got some memories of playing a fairly basic dungeon crawler,</span>
+<span class="qt">&gt; &gt; &gt;&gt; which I&#x27;d quite like to track down: from what I can remember, it</span>
+<span class="qt">&gt; &gt; &gt;&gt; fitted into 16k, the maze was randomly generated (which took a long</span>
+<span class="qt">&gt; &gt; &gt;&gt; time to complete) and there was an unkillable nasty dragon lurking in</span>
+<span class="qt">&gt; &gt; &gt;&gt; the map.  Oh, and I think it was presented via a 3d-tunnel</span>
+<span class="qt">&gt; &gt; &gt;&gt; perspective.</span>
+<span class="qt">&gt; &gt; Sure it&#x27;s not 3D Monster Maze for the zx81?</span>
+<span class="qt">&gt; &gt; That was a 16k game, there was an unkillable T-Rex in the maze, the maze was</span>
+<span class="qt">&gt; &gt; randomly generated and took some time and it was presended as a (blocky of</span>
+<span class="qt">&gt; &gt; course) 3D maze with one exit.</span>
+<span class="qt">&gt;</span>
+[EDIT: smeg: Google uses a variable-width font and hard-wraps
+at about 75 chars.  Hopefully this is more readable!]
+
+<span class="qt">&gt; Given I didn&#x27;t own a ZX81 back in the day, it&#x27;s pretty unlikely!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; This was one of a bunch of games given to me for Christmas by my</span>
+<span class="qt">&gt; cousin, back when I received my first Spectrum (a grey +2) - he</span>
+<span class="qt">&gt; had a rubber-keyed 48k since the early days, but moved on to</span>
+<span class="qt">&gt; girls and pubs by this time.  Not surprising, since he&#x27;s about</span>
+<span class="qt">&gt; 10 years older than me!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The games included classics like 3D Deathchase, Sabre Wulf,</span>
+<span class="qt">&gt; Manic Miner, Jet Set Willy... and this one.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The trouble (in terms of remembering what it&#x27;s called) is that I</span>
+<span class="qt">&gt; didn&#x27;t actually play it that much at the time, partly because</span>
+<span class="qt">&gt; I&#x27;ve never been that much into RPG games, and partly because the</span>
+<span class="qt">&gt; map-generation took an ungodly amount of time - a good two or</span>
+<span class="qt">&gt; three minutes on top of the actual tape-load.  It probably</span>
+<span class="qt">&gt; didn&#x27;t help that I was then introduced to a relative who&#x27;d spent</span>
+<span class="qt">&gt; an absolute fortune on Spectrum games - he had a stack of about</span>
+<span class="qt">&gt; 200 originals - stuff like Exolon, Cybernoid, Outrun, Starglider:</span>
+<span class="qt">&gt; an ancient and fairly primitive RPG didn&#x27;t really stand a chance!</span>
+
+
+
+</pre></div></main></body></html>

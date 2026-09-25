@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adventure 200: New Thread. Game Objective and starter hints... · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Adventure 200: New Thread. Game Objective and starter hints...</h1><p class="facts">3 posts, 2003-01-15 – 2003-01-20</p><div class="post" id="p153461"><div class="ph"><a class="d" href="#p153461">2003-01-15 12:31:42</a> <span>Patrick</span>  <a class="badge" href="game-5911.html">ZXDB: Adventure 200</a></div><pre>Hi Mike and All at CSS!
+
+This is a starter for Adventure 200, a 200 location
+text adventure originally release in 1982 for the
+ZX-81 16k and ZX-Spectrum. It was published by a
+company called, FOILKADE SOFTWARE (ceased trading now)
+and was written by C.J.Coombs
+
+*** Two of us have tried to complete this game since
+1983/4 and we still haven&#x27;t done it **
+That&#x27;s 20 years!!!
+
+Can you help?
+
+There was no SAVE facility in the game (very annoying)
+so I use the zx32 spectrum emulator. You can then use
+the ZX-&gt;Save as... menu to save the game at any point.
+
+The game can be downloaded from WoS:-
+
+<a href="http://www.worldofspectrum.org/infoseek.cgi?regexp=^Adventure+200$&pub=^C%2eJ%2e+Coombs$" rel="noreferrer">http://www.worldofspectrum.org/infoseek.cgi?regexp=^Adventure+200$&amp;pub=^C%2eJ%2e+Coombs$</a>
+
+
+Objective of the game
+=====================
+
+You start at the EAST gate of the PALACE. The objective is
+to get all the treasures and enter the palace. If you enter
+the palace and don&#x27;t have all the treasure you are killed
+by the King.
+
+Commands used in the game
+=========================
+
+Very limited command set. (remember this fitted into 16k!!!)
+
+
+DEscribe	&lt;item&gt;   	(give more info on an item)
+DIg				(ermm. dig!)
+DRInk 				(drink fresh water / or sea water!)
+DRop 		&lt;item&gt;
+LIght		&lt;item&gt; 		(i.e. light lamp)
+LOck				(lock something)
+Inventory			(lists items you are carrying)
+Quit				(give up!)
+TAke		&lt;item&gt;		(pick up an item)
+THrow		&lt;item&gt;		(throw an item you are carrying)
+UNlock				(unlock something)
+View				(refresh screen)
+
+That&#x27;s it! All that&#x27;s left is movement commands:-
+
+N,S,E,W,NE,SE,SW,NW,UP and DOWN.
+
+Suggestion and 1st objective
+============================
+
+You must make a map as you go along!!!
+
+I would suggest that anyone that attempts this game should try
+and get to the IRON BRIDGE with the TROLL guarding the way
+with the following items in your inventory:-
+
+FISH
+AXE
+COIN
+LAMP (lit)
+JUG
+
+
+We can provide help here on CSS. Please put Adventure 200 in
+the subject. Or email me: pbeilby &#x27;at&#x27; yahoo &#x27;dot&#x27; co &#x27;dot&#x27; uk
+(I hate spam and those scripts that parse newsgroups!!!)
+
+Patrick/
+
+
+
+
+</pre></div><div class="post" id="p153639"><div class="ph"><a class="d" href="#p153639">2003-01-19 17:05:12</a> <span>Dek</span> <span>Re: Adventure 200: New Thread. Game Objective and starter hints...</span></div><pre>Go for it Pat -
+
+we&#x27;ve mapped out the 2 remaining mazes and our walkthrough
+is complete. Lets post the walkthrough and hope a band of
+hardy adventurers take up the challenge.
+
+Go for it - release it to the world!!!!!!!!!!!!!!!
+
+Dek
+
+Patrick &lt;…@…&gt; wrote in message news:&lt;…@…&gt;...
+<span class="qt">&gt; Hi Mike and All at CSS!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; This is a starter for Adventure 200, a 200 location</span>
+<span class="qt">&gt; text adventure originally release in 1982 for the</span>
+<span class="qt">&gt; ZX-81 16k and ZX-Spectrum. It was published by a</span>
+<span class="qt">&gt; company called, FOILKADE SOFTWARE (ceased trading now)</span>
+<span class="qt">&gt; and was written by C.J.Coombs</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; *** Two of us have tried to complete this game since</span>
+<span class="qt">&gt; 1983/4 and we still haven&#x27;t done it **</span>
+<span class="qt">&gt; That&#x27;s 20 years!!!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Can you help?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; There was no SAVE facility in the game (very annoying)</span>
+<span class="qt">&gt; so I use the zx32 spectrum emulator. You can then use</span>
+<span class="qt">&gt; the ZX-&gt;Save as... menu to save the game at any point.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The game can be downloaded from WoS:-</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; <a href="http://www.worldofspectrum.org/infoseek.cgi?regexp=^Adventure+200$&pub=^C%2eJ%2e+Coombs$" rel="noreferrer">http://www.worldofspectrum.org/infoseek.cgi?regexp=^Adventure+200$&amp;pub=^C%2eJ%2e+Coombs$</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Objective of the game</span>
+<span class="qt">&gt; =====================</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; You start at the EAST gate of the PALACE. The objective is</span>
+<span class="qt">&gt; to get all the treasures and enter the palace. If you enter</span>
+<span class="qt">&gt; the palace and don&#x27;t have all the treasure you are killed</span>
+<span class="qt">&gt; by the King.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Commands used in the game</span>
+<span class="qt">&gt; =========================</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Very limited command set. (remember this fitted into 16k!!!)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; DEscribe	&lt;item&gt;   	(give more info on an item)</span>
+<span class="qt">&gt; DIg				(ermm. dig!)</span>
+<span class="qt">&gt; DRInk 				(drink fresh water / or sea water!)</span>
+<span class="qt">&gt; DRop 		&lt;item&gt;</span>
+<span class="qt">&gt; LIght		&lt;item&gt; 		(i.e. light lamp)</span>
+<span class="qt">&gt; LOck				(lock something)</span>
+<span class="qt">&gt; Inventory			(lists items you are carrying)</span>
+<span class="qt">&gt; Quit				(give up!)</span>
+<span class="qt">&gt; TAke		&lt;item&gt;		(pick up an item)</span>
+<span class="qt">&gt; THrow		&lt;item&gt;		(throw an item you are carrying)</span>
+<span class="qt">&gt; UNlock				(unlock something)</span>
+<span class="qt">&gt; View				(refresh screen)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; That&#x27;s it! All that&#x27;s left is movement commands:-</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; N,S,E,W,NE,SE,SW,NW,UP and DOWN.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Suggestion and 1st objective</span>
+<span class="qt">&gt; ============================</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; You must make a map as you go along!!!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I would suggest that anyone that attempts this game should try</span>
+<span class="qt">&gt; and get to the IRON BRIDGE with the TROLL guarding the way</span>
+<span class="qt">&gt; with the following items in your inventory:-</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; FISH</span>
+<span class="qt">&gt; AXE</span>
+<span class="qt">&gt; COIN</span>
+<span class="qt">&gt; LAMP (lit)</span>
+<span class="qt">&gt; JUG</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; We can provide help here on CSS. Please put Adventure 200 in</span>
+<span class="qt">&gt; the subject. Or email me: pbeilby &#x27;at&#x27; yahoo &#x27;dot&#x27; co &#x27;dot&#x27; uk</span>
+<span class="qt">&gt; (I hate spam and those scripts that parse newsgroups!!!)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Patrick/</span>
+
+
+
+</pre></div><div class="post" id="p153669"><div class="ph"><a class="d" href="#p153669">2003-01-20 17:28:34</a> <span>Adam D. Moss</span> <span>Re: Adventure 200: New Thread. Game Objective and starter hints...</span></div><pre>Patrick wrote:
+<span class="qt">&gt; This is a starter for Adventure 200, a 200 location</span>
+<span class="qt">&gt; text adventure originally release in 1982 for the</span>
+<span class="qt">&gt; ZX-81 16k and ZX-Spectrum. It was published by a</span>
+<span class="qt">&gt; company called, FOILKADE SOFTWARE (ceased trading now)</span>
+<span class="qt">&gt; and was written by C.J.Coombs</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; *** Two of us have tried to complete this game since</span>
+<span class="qt">&gt; 1983/4 and we still haven&#x27;t done it **</span>
+<span class="qt">&gt; That&#x27;s 20 years!!!</span>
+
+Kudos for your persistance!
+
+-- 
+Adam D. Moss   . ,,^^   …@…   <a href="http://www.foxbox.org/" rel="noreferrer">http://www.foxbox.org/</a>   co:3
+&quot;She felt rudderless and directionless, like the dead
+ sheep the November rains had carried down the river.&quot;
+
+
+
+</pre></div></main></body></html>

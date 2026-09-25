@@ -1,0 +1,897 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tir Na Nog · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Tir Na Nog</h1><p class="facts">33 posts, 1997-09-04 – 1997-09-17</p><div class="post" id="p29226"><div class="ph"><a class="d" href="#p29226">1997-09-04</a> <span class="small">address hidden</span> </div><pre>
+Sorry....this is going to be another of my
+&quot;what ever happened to.....&quot; posts but here goes...
+
+Does anybody know if the people that programmed Tir na nog ever did
+anything else after that series? 
+I have searched around but didn&#x27;t turn anything up. Having played
+those games again recently i still think they were very odd and
+original, especially for the time.
+I made one of many speccy cock ups when, having got TNN for christmas
+and not being able to load it i swopped it at Smiths
+for................the &quot;great&quot; space race......
+Still makes me cringe.......
+
+Space
+
+
+</pre></div><div class="post" id="p29240"><div class="ph"><a class="d" href="#p29240">1997-09-05</a> <span class="small">address hidden</span> <span>Re: Tir Na Nog</span></div><pre>
+
+<span class="qt">&gt;And I know either Carter or Follis was working on a PC T N N .... I</span>
+<span class="qt">&gt;don&#x27;t know if it ever got released/finished tho.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Think they where doing it via Psygnosis...?</span>
+
+Wow...brilliant, i&#x27;d love to know what happened to that.
+Apparently one of my old school friends works for Psygnosis now but
+i&#x27;ve not spoken to him for years.
+So....any Psygnosis workers out there, do you know Jonathon Amor?
+
+PC TNN.....sweet dreams for me tonight.....
+Space
+
+
+</pre></div><div class="post" id="p29245"><div class="ph"><a class="d" href="#p29245">1997-09-05</a> <span class="small">address hidden</span> <span>Re: Tir Na Nog</span></div><pre>
+In article &lt;…@…&gt;,
+Space  wrote:
+<span class="qt">&gt;Sorry....this is going to be another of my</span>
+<span class="qt">&gt;&quot;what ever happened to.....&quot; posts but here goes...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Does anybody know if the people that programmed Tir na nog ever did</span>
+<span class="qt">&gt;anything else after that series? </span>
+<span class="qt">&gt;I have searched around but didn&#x27;t turn anything up. Having played</span>
+<span class="qt">&gt;those games again recently i still think they were very odd and</span>
+<span class="qt">&gt;original, especially for the time.</span>
+
+Gargoyle went on to do:
+
+    Dun Darach
+    Marsport
+    Heavy on the Magick
+
+in that vein. Other stuff they did included:
+
+    Scooby Doo
+    Lightforce
+    Shockway Rider
+
+I recommend HotM if you haven&#x27;t played that already. Wonderful game.
+
+<span class="qt">&gt;Space</span>
+
+A.
+
+-- 
+Alligator Descartes      |   &quot;The waves upon the water are like ripples in
+…@…    |    your mind.&quot;
+<a href="http://www.arcana.co.uk" rel="noreferrer">http://www.arcana.co.uk</a>  |         -- Martin Walkyier, ``Advent of Insanity&#x27;&#x27;
+
+
+</pre></div><div class="post" id="p29253"><div class="ph"><a class="d" href="#p29253">1997-09-06</a> <span>david@spamme&amp;youdie.net</span> <span>Re: Tir Na Nog</span></div><pre>
+On 5 Sep 1997 02:12:58 +0100, …@… (Alligator
+Descartes) wrote:
+
+<span class="qt">&gt;In article &lt;…@…&gt;,</span>
+<span class="qt">&gt;Space  wrote:</span>
+<span class="qt">&gt;&gt;Sorry....this is going to be another of my</span>
+<span class="qt">&gt;&gt;&quot;what ever happened to.....&quot; posts but here goes...</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Does anybody know if the people that programmed Tir na nog ever did</span>
+<span class="qt">&gt;&gt;anything else after that series? </span>
+<span class="qt">&gt;&gt;I have searched around but didn&#x27;t turn anything up. Having played</span>
+<span class="qt">&gt;&gt;those games again recently i still think they were very odd and</span>
+<span class="qt">&gt;&gt;original, especially for the time.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Gargoyle went on to do:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;    Dun Darach</span>
+<span class="qt">&gt;    Marsport</span>
+<span class="qt">&gt;    Heavy on the Magick</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;in that vein. Other stuff they did included:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;    Scooby Doo</span>
+<span class="qt">&gt;    Lightforce</span>
+<span class="qt">&gt;    Shockway Rider</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I recommend HotM if you haven&#x27;t played that already. Wonderful game.</span>
+
+And I know either Carter or Follis was working on a PC T N N .... I
+don&#x27;t know if it ever got released/finished tho.
+
+Think they where doing it via Psygnosis...?
+
+
+
+</pre></div><div class="post" id="p29254"><div class="ph"><a class="d" href="#p29254">1997-09-06</a> <span>david@spamme&amp;youdie.net</span> <span>Re: Tir Na Nog</span></div><pre>
+On Fri, 05 Sep 1997 23:15:38 GMT, …@…
+(Space) wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;And I know either Carter or Follis was working on a PC T N N .... I</span>
+<span class="qt">&gt;&gt;don&#x27;t know if it ever got released/finished tho.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Think they where doing it via Psygnosis...?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Wow...brilliant, i&#x27;d love to know what happened to that.</span>
+<span class="qt">&gt;Apparently one of my old school friends works for Psygnosis now but</span>
+<span class="qt">&gt;i&#x27;ve not spoken to him for years.</span>
+<span class="qt">&gt;So....any Psygnosis workers out there, do you know Jonathon Amor?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;PC TNN.....sweet dreams for me tonight.....</span>
+
+BTW Did you know David Jones (Finders Keepers, Spellbound, etc) works
+for Psygnosis as well now?
+
+He came to one of the Gloucester SAM &amp; Spectrum shows a while ago to
+see a work-in-progress version of SAM Spellbound. Quite an interesting
+fellow to chat to!
+
+
+
+
+</pre></div><div class="post" id="p29272"><div class="ph"><a class="d" href="#p29272">1997-09-06</a> <span>graham goring</span> <span>Re: Tir Na Nog</span></div><pre>
+
+In article &lt;…@…&gt;, Daveykins
+ writes
+<span class="qt">&gt;&gt;&gt;And I know either Carter or Follis was working on a PC T N N .... I</span>
+<span class="qt">&gt;&gt;&gt;don&#x27;t know if it ever got released/finished tho.</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;Think they where doing it via Psygnosis...?</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Wow...brilliant, i&#x27;d love to know what happened to that.</span>
+<span class="qt">&gt;&gt;Apparently one of my old school friends works for Psygnosis now but</span>
+<span class="qt">&gt;&gt;i&#x27;ve not spoken to him for years.</span>
+<span class="qt">&gt;&gt;So....any Psygnosis workers out there, do you know Jonathon Amor?</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;PC TNN.....sweet dreams for me tonight.....</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;BTW Did you know David Jones (Finders Keepers, Spellbound, etc) works</span>
+<span class="qt">&gt;for Psygnosis as well now?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;He came to one of the Gloucester SAM &amp; Spectrum shows a while ago to</span>
+<span class="qt">&gt;see a work-in-progress version of SAM Spellbound. Quite an interesting</span>
+<span class="qt">&gt;fellow to chat to!</span>
+
+He looks like Phil Collin, only shorter. And lives in Stroud. As I
+remember Spellbound never got finished. Probably &#x27;coz I stopped doing
+the damn graphics...
+
+Graham Goring
+
+/====================================================¥  +--------------+
+<span class="qt">|              My proverb for this week:             |  |This Space For|</span>
+<span class="qt">|      &quot;The less bits, the less can go wrong...      |  | Hire - Ideal |</span>
+<span class="qt">| Unless you wobble something important at the back&quot; |  |For Weddings &amp;|</span>
+¥==Graham Goring - …@…==/  |  Bahmitzvas  |
+    My Website, coming to a server near you - SOON      +--------------+
+
+
+</pre></div><div class="post" id="p29274"><div class="ph"><a class="d" href="#p29274">1997-09-07</a> <span>mike baker</span> <span>Re: Tir Na Nog</span></div><pre>
+<span class="qt">&gt;&gt;Does anybody know if the people that programmed Tir na nog ever did</span>
+<span class="qt">&gt;&gt;anything else after that series? </span>
+<span class="qt">&gt;&gt;I have searched around but didn&#x27;t turn anything up. Having played</span>
+<span class="qt">&gt;&gt;those games again recently i still think they were very odd and</span>
+<span class="qt">&gt;&gt;original, especially for the time.</span>
+
+<span class="qt">&gt;Gargoyle went on to do:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;    Dun Darach</span>
+<span class="qt">&gt;    Marsport</span>
+<span class="qt">&gt;    Heavy on the Magick</span>
+
+<span class="qt">&gt;in that vein. Other stuff they did included:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;    Scooby Doo</span>
+<span class="qt">&gt;    Lightforce</span>
+<span class="qt">&gt;    Shockway Rider</span>
+
+I *think* they also did AD Astra and the two Sweevo games, Sweevo&#x27;s
+World and Hydrofool.
+
+-- 
+     _______    _   _  __  _____
+    /__   __\  ( ) ( )/ / (  ___)
+   ( ) ( ) ( ) ( ) (  _/  ( )___    
+   ( ) ( ) ( ) ( ) ( )_   (  ___)   
+   ( ) (_) ( ) ( ) (   \  ( )___   
+   (_)     (_) (_) (_)\_\ (_____)
+                      
+…@…
+
+
+</pre></div><div class="post" id="p29309"><div class="ph"><a class="d" href="#p29309">1997-09-08</a> <span class="small">address hidden</span> <span>Re: Tir Na Nog</span></div><pre>
+
+<span class="qt">&gt;And I know either Carter or Follis was working on a PC T N N .... I</span>
+<span class="qt">&gt;don&#x27;t know if it ever got released/finished tho.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Think they where doing it via Psygnosis...?</span>
+
+In a weird twist of fate somebody called Stuart Cox has written a
+letter to C4&#x27;s computer section claiming to be sad that, having read
+their web pages about the Speccy era his games are not mentioned.
+These games are....Tir na nog and Marsport! (oh...and Thundercats).
+
+Was he another of the team or is this an imposter?
+Should point him to c.s.s.....we remember him (well, his games
+anyway).
+
+Space - Who goes back to college next week so won&#x27;t have time to read
+C4 teletext.....well....maybe not.
+
+
+</pre></div><div class="post" id="p29356"><div class="ph"><a class="d" href="#p29356">1997-09-09</a> <span>brian l forbes</span> <span>Re: Tir Na Nog</span></div><pre>
+…@… wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; In article &lt;…@…&gt;,</span>
+<span class="qt">&gt;   …@… (Space) wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; In a weird twist of fate somebody called Stuart Cox has written a</span>
+<span class="qt">&gt; &gt; letter to C4&#x27;s computer section claiming to be sad that, having read</span>
+<span class="qt">&gt; &gt; their web pages about the Speccy era his games are not mentioned.</span>
+<span class="qt">&gt; &gt; These games are....Tir na nog and Marsport! (oh...and Thundercats).</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Yes, I saw that on Digitiser yesterday.  I just did a search on AltaVista</span>
+<span class="qt">&gt; for Tir Na Nog and, although the game doesn&#x27;t show up, apparently there&#x27;s</span>
+<span class="qt">&gt; an Irish pub in Italy called Tir Na Nog.  Weird or what ?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; There&#x27;s a pub in Oban, on the Scottish west coast, called Tir Na Nog too. Thought I&#x27;d mention it!</span>
+
+
+</pre></div><div class="post" id="p29374"><div class="ph"><a class="d" href="#p29374">1997-09-09 11:15:20</a> <span class="small">address hidden</span> <span>Re: Tir Na Nog</span></div><pre>
+In article &lt;…@…&gt;,
+  …@… (Space) wrote:
+
+
+<span class="qt">&gt; In a weird twist of fate somebody called Stuart Cox has written a</span>
+<span class="qt">&gt; letter to C4&#x27;s computer section claiming to be sad that, having read</span>
+<span class="qt">&gt; their web pages about the Speccy era his games are not mentioned.</span>
+<span class="qt">&gt; These games are....Tir na nog and Marsport! (oh...and Thundercats).</span>
+
+
+Yes, I saw that on Digitiser yesterday.  I just did a search on AltaVista
+for Tir Na Nog and, although the game doesn&#x27;t show up, apparently there&#x27;s
+an Irish pub in Italy called Tir Na Nog.  Weird or what ?
+
+--
+Derek Jolly (…@…)
+
+&quot;-So your family like telling jokes then, Baldrick ?
+  -Yes sir, I have a punning clan.&quot;
+
+-------------------==== Posted via Deja News ====-----------------------
+      <a href="http://www.dejanews.com/" rel="noreferrer">http://www.dejanews.com/</a>     Search, Read, Post to Usenet
+
+
+</pre></div><div class="post" id="p29386"><div class="ph"><a class="d" href="#p29386">1997-09-10</a> <span class="small">address hidden</span> <span>Re: Tir Na Nog</span></div><pre>
+kev-p  wrote:
+
+<span class="qt">&gt; Mike Baker wrote:</span>
+
+<span class="qt">&gt; &gt; &gt;Gargoyle went on to do:</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt;    Dun Darach</span>
+<span class="qt">&gt; &gt; &gt;    Marsport</span>
+<span class="qt">&gt; &gt; &gt;    Heavy on the Magick</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; &gt;in that vein. Other stuff they did included:</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt;    Scooby Doo</span>
+<span class="qt">&gt; &gt; &gt;    Lightforce</span>
+<span class="qt">&gt; &gt; &gt;    Shockway Rider</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; I *think* they also did AD Astra and the two Sweevo games, Sweevo&#x27;s</span>
+<span class="qt">&gt; &gt; World and Hydrofool.</span>
+
+<span class="qt">&gt; That&#x27;s Right - and they were all crap, except Sweevo&#x27;s World!</span>
+
+I used to have Shockway Rider on my Commode and it was ace. Not many
+games give you the chance to brick old ladies, after all. 
+
+toodle pip
+mat
+-- 
+.........................
+By reading my humble email you have made my life complete. Thank you.
+
+…@…  |  web: <a href="http://www.arrgh.demon.co.uk" rel="noreferrer">http://www.arrgh.demon.co.uk</a>
+
+
+</pre></div><div class="post" id="p29394"><div class="ph"><a class="d" href="#p29394">1997-09-10</a> <span>stef robb</span> <span>Re: Tir Na Nog</span></div><pre>
+Brian L Forbes wrote:
+
+<span class="qt">&gt; There&#x27;s a pub in Oban, on the Scottish west coast, called Tir Na Nog too. Thought I&#x27;d mention it!</span>
+
+Can anyone remember what Tir Na Nog actually meant?
+
+I&#x27;m sure it had a meaning but I can&#x27;t remember it.
+
+-Stef
+
+--
+<span class="qt">|   Stef Robb   |   …@…</span>
+<span class="qt">| &quot;We must perform a Quirkafleeg!&quot;</span>
+<span class="qt">| GCS/E d- s:- a- C+++ ULAVSC++(on) P++ L++ E--- W++ N++ !o-- K- w O-</span>
+<span class="qt">| M V- PS+++ PE Y+ PGP- t 5++ X++ R tv++ b++ !DI D++ G e++ h-- r++ y**</span>
+
+
+
+
+</pre></div><div class="post" id="p29395"><div class="ph"><a class="d" href="#p29395">1997-09-10</a> <span>stef robb</span> <span>Re: Tir Na Nog</span></div><pre>
+Stef Robb wrote:
+
+<span class="qt">&gt; Can anyone remember what Tir Na Nog actually meant?</span>
+
+Oooh, replying to my own post ... :)
+
+Anyway, it means &#x27;The Land of Youth&#x27; and it&#x27;s Irish, so there!
+
+-Stef
+
+--
+<span class="qt">|   Stef Robb   |   …@…</span>
+<span class="qt">| &quot;We must perform a Quirkafleeg!&quot;</span>
+<span class="qt">| GCS/E d- s:- a- C+++ ULAVSC++(on) P++ L++ E--- W++ N++ !o-- K- w O-</span>
+<span class="qt">| M V- PS+++ PE Y+ PGP- t 5++ X++ R tv++ b++ !DI D++ G e++ h-- r++ y**</span>
+
+
+
+
+</pre></div><div class="post" id="p29397"><div class="ph"><a class="d" href="#p29397">1997-09-10</a> <span>mike lowndes</span> <span>Re: Tir Na Nog-still stuck...</span></div><pre>
+Well, I started tir na nog when it game out, but never finished it.
+I played it again on a Mac emulator but still couldn&#x27;t finish it. Don&#x27;t
+even TALK to me about Dun Darach...
+If /anyone/ has managed to complete TNN I would STILL like to know!
+Sad isn&#x27;t it.
+
+Mike.
+
+I have all  4 pieces of the Seal and the hammer, but I appear to lack
+the anvil???
+
+
+</pre></div><div class="post" id="p29398"><div class="ph"><a class="d" href="#p29398">1997-09-10</a> <span>mike lowndes</span> <span>Re: Tir Na Nog</span></div><pre>
+<span class="qt">&gt; &gt;&gt;Does anybody know if the people that programmed Tir na nog ever did</span>
+
+<span class="qt">&gt; &gt;Gargoyle went on to do:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;    Dun Darach</span>
+<span class="qt">&gt; &gt;    Marsport</span>
+<span class="qt">&gt; &gt;    Heavy on the Magick</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;in that vein. Other stuff they did included:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;    Scooby Doo</span>
+<span class="qt">&gt; &gt;    Lightforce</span>
+<span class="qt">&gt; &gt;    Shockway Rider</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I *think* they also did AD Astra and the two Sweevo games, Sweevo&#x27;s</span>
+<span class="qt">&gt; World and Hydrofool.</span>
+
+They &#x27;became&#x27; FTL (Faster than Light) at least for Lightforce.
+
+
+</pre></div><div class="post" id="p29402"><div class="ph"><a class="d" href="#p29402">1997-09-10</a> <span>kev-p</span> <span>Re: Tir Na Nog</span></div><pre>
+Mike Baker wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;&gt;Does anybody know if the people that programmed Tir na nog ever did</span>
+<span class="qt">&gt; &gt;&gt;anything else after that series?</span>
+<span class="qt">&gt; &gt;&gt;I have searched around but didn&#x27;t turn anything up. Having played</span>
+<span class="qt">&gt; &gt;&gt;those games again recently i still think they were very odd and</span>
+<span class="qt">&gt; &gt;&gt;original, especially for the time.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;Gargoyle went on to do:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;    Dun Darach</span>
+<span class="qt">&gt; &gt;    Marsport</span>
+<span class="qt">&gt; &gt;    Heavy on the Magick</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;in that vein. Other stuff they did included:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;    Scooby Doo</span>
+<span class="qt">&gt; &gt;    Lightforce</span>
+<span class="qt">&gt; &gt;    Shockway Rider</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I *think* they also did AD Astra and the two Sweevo games, Sweevo&#x27;s</span>
+<span class="qt">&gt; World and Hydrofool.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt;      _______    _   _  __  _____</span>
+<span class="qt">&gt;     /__   __\  ( ) ( )/ / (  ___)</span>
+<span class="qt">&gt;    ( ) ( ) ( ) ( ) (  _/  ( )___</span>
+<span class="qt">&gt;    ( ) ( ) ( ) ( ) ( )_   (  ___)</span>
+<span class="qt">&gt;    ( ) (_) ( ) ( ) (   \  ( )___</span>
+<span class="qt">&gt;    (_)     (_) (_) (_)\_\ (_____)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; …@…</span>
+-----
+
+That&#x27;s Right - and they were all crap, except Sweevo&#x27;s World!
+-- 
+Please Note -
+
+NEW     E-Mail Address: …@… (ACTIVE)
+ALTERED E-Mail Address:  …@…     (NOW REDIRECTS TO ABOVE)
+
+
+</pre></div><div class="post" id="p29409"><div class="ph"><a class="d" href="#p29409">1997-09-10</a> <span class="small">address hidden</span> <span>Re: Tir Na Nog</span></div><pre>
+
+On Wed, 10 Sep 1997 13:00:19 +0100, kev-p 
+wrote:
+
+<span class="qt">&gt;Mike Baker (he of the overly-large sig) wrote:</span>
+<span class="qt">&gt;&gt; I *think* they also did AD Astra and the two Sweevo games, Sweevo&#x27;s</span>
+<span class="qt">&gt;&gt; World and Hydrofool.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;That&#x27;s Right - and they were all crap, except Sweevo&#x27;s World!</span>
+
+Nah, SW wasn&#x27;t much cop, but I liked Hydrofool. Nice music, and
+swimming about gave the 3d genre a new angle (no pun intended).
+-- 
+ //// Damien Burke (replace d.c.u in address with demon.co.uk if replying)
+//// Spectrum pages: <a href="http://www.jetman.demon.co.uk/speccy/" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/</a>
+//// New to this group? Read this: <a href="http://www.jetman.demon.co.uk/speccy/faq/" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/faq/</a>
+
+
+</pre></div><div class="post" id="p29412"><div class="ph"><a class="d" href="#p29412">1997-09-10</a> <span class="small">address hidden</span> <span>Re: Tir Na Nog</span></div><pre>
+Stef Robb (…@…) wrote:
+: Brian L Forbes wrote:
+: 
+: &gt; There&#x27;s a pub in Oban, on the Scottish west coast, called Tir Na Nog too. Thought I&#x27;d mention it!
+: 
+: Can anyone remember what Tir Na Nog actually meant?
+: 
+: I&#x27;m sure it had a meaning but I can&#x27;t remember it.
+
+Wasn&#x27;t it &quot;Land of Youth&quot;, or something similar?
+-- 
+______________________________________________________________________________
+<span class="qt">|…@…| &quot;I&#x27;m alive!!! I can touch! I can taste!         |</span>
+<span class="qt">|Andrew Halliwell          |  I can SMELL!!!  KRYTEN!!! Unpack Rachel and    |</span>
+<span class="qt">|Principal subjects in:-   |  get out the puncture repair kit!&quot;              |</span>
+<span class="qt">|Comp Sci &amp; Electronics    |     Arnold Judas Rimmer- Red Dwarf              |</span>
+------------------------------------------------------------------------------
+<span class="qt">|GCv3.1 GCS/EL&gt;$ d---(dpu) s+/- a- C++ U N++ o+ K- w-- M+/++ PS+++ PE- Y t+  |</span>
+<span class="qt">|5++ X+/++ R+ tv+ b+ D G e&gt;PhD h/h+ !r! !y-|I can&#x27;t say F**K either now! :(  |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p29445"><div class="ph"><a class="d" href="#p29445">1997-09-11</a> <span>mike lowndes</span> <span>Re: Tir Na Nog-still stuck...</span></div><pre>
+
+Gareth Brisbane wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Mike Lowndes  writes:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;Well, I started tir na nog when it game out, but never finished it.</span>
+<span class="qt">&gt; &gt;I played it again on a Mac emulator but still couldn&#x27;t finish it. Don&#x27;t</span>
+<span class="qt">&gt; &gt;even TALK to me about Dun Darach...</span>
+<span class="qt">&gt; &gt;If /anyone/ has managed to complete TNN I would STILL like to know!</span>
+<span class="qt">&gt; &gt;Sad isn&#x27;t it.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;Mike.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;I have all  4 pieces of the Seal and the hammer, but I appear to lack</span>
+<span class="qt">&gt; &gt;the anvil???</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; As far as I can workout, you take all the pieces back to the starting point</span>
+<span class="qt">&gt; an drop them in front of the chimney thing (I think its an anvil) with the</span>
+<span class="qt">&gt; hammer and the game will flash green. Shrug - I&#x27;ve never seen anything else</span>
+<span class="qt">&gt; in the game and all the puzzles look to be solved.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Gazza (co-incidentally listening to Queen &quot;Hammer to Fall&quot; in the background)</span>
+
+Yup, got that far. The game flashes green, but no Seal appears, no
+messages, nothing. I can&#x27;t quite believe thats the end of it. 
+Hmmm, anyone know where the writers are?
+Mike
+
+
+</pre></div><div class="post" id="p29447"><div class="ph"><a class="d" href="#p29447">1997-09-11</a> <span>stef robb</span> <span>Re: Tir Na Nog</span></div><pre>
+Graham Goring wrote:
+
+<span class="qt">&gt; &gt;I&#x27;d love to know what was actually supposed to happen in the end.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I think I have, as I remember you get the standard Game-Over screen</span>
+<span class="qt">&gt; with NOW MOVE ONTO THE DEATHBOWL as the rating.</span>
+
+Oooh, that&#x27;s right I remember that now!  Did Gargoyle ever develop any Sweevo
+game involving a DeathBowl or just move straight on to HydroFool?  Hmm...
+
+<span class="qt">&gt; Or am I an utter arse-head?</span>
+
+Could be ... ;-)
+
+<span class="qt">&gt; Graham Goring</span>
+
+-Stef
+
+--
+<span class="qt">|   Stef Robb   |   …@…</span>
+<span class="qt">| &quot;We must perform a Quirkafleeg!&quot;</span>
+<span class="qt">| GCS/E d- s:- a- C+++ ULAVSC++(on) P++ L++ E--- W++ N++ !o-- K- w O-</span>
+<span class="qt">| M V- PS+++ PE Y+ PGP- t 5++ X++ R tv++ b++ !DI D++ G e++ h-- r++ y**</span>
+
+
+
+
+</pre></div><div class="post" id="p29448"><div class="ph"><a class="d" href="#p29448">1997-09-11</a> <span>stef robb</span> <span>Re: Tir Na Nog</span></div><pre>
+Mat Simpson wrote:
+
+<span class="qt">&gt; I used to have Shockway Rider on my Commode and it was ace. Not many</span>
+<span class="qt">&gt; games give you the chance to brick old ladies, after all.</span>
+
+Let&#x27;s face it - this was it&#x27;s biggest selling point.  It&#x27;s like all those games
+where the idea is to shoot the bad-guys while avoiding the good-guys, you just
+have to kill all the good-guys!  WestBank was a classic for this, blow &#x27;er
+away!  I think more games should have been written where the idea is to bump of
+all the
+&#x27;forces of light&#x27; types and plunge the Universe into &#x27;an eternity of darkness&#x27;
+... yeah, kill &#x27;em all!
+
+Heh, heh, heh ...
+
+-Stef
+
+--
+<span class="qt">|   Stef Robb   |   …@…</span>
+<span class="qt">| &quot;We must perform a Quirkafleeg!&quot;</span>
+<span class="qt">| GCS/E d- s:- a- C+++ ULAVSC++(on) P++ L++ E--- W++ N++ !o-- K- w O-</span>
+<span class="qt">| M V- PS+++ PE Y+ PGP- t 5++ X++ R tv++ b++ !DI D++ G e++ h-- r++ y**</span>
+
+
+
+
+</pre></div><div class="post" id="p29454"><div class="ph"><a class="d" href="#p29454">1997-09-11</a> <span class="small">address hidden</span> <span>Re: Tir Na Nog-still stuck...</span></div><pre>
+On Thu, 11 Sep 1997 09:36:33 +0100, Mike Lowndes
+ wrote:
+
+<span class="qt">&gt;Yup, got that far. The game flashes green, but no Seal appears, no</span>
+<span class="qt">&gt;messages, nothing. I can&#x27;t quite believe thats the end of it. </span>
+
+You can definitely finish, as I did years ago on my original 48k Spectrum,
+with only a *little* help from Gargoyle&#x27;s hint sheet (I ran out of spades
+first time around).
+
+To quote from their hint sheet:
+[After depositing the four parts of the seal in front of the altar and
+translating the Oghum scroll to find Calum&#x27;s hammer.]
+&quot;3. Place the hammer in front of the altar and the words &quot;Gu Leir&quot; will
+appear - this means &quot;together, completed&quot;, and is the end of the game.
+Everyone at Gargoyle Games apologises profusely for the end effect, but
+there were only 37 bytes left after we had finished the rest of the game!&quot;
+
+
+--
+Another Fine Product from:
+Jim Grimwood, Dead Dog Farm, Hatfield, England
+Home of the SPOT Database (Spectrums On Top)
+--
+
+
+</pre></div><div class="post" id="p29455"><div class="ph"><a class="d" href="#p29455">1997-09-11</a> <span class="small">address hidden</span> <span>Re: Tir Na Nog</span></div><pre>
+On Wed, 10 Sep 1997 23:32:30 GMT, …@… (W R
+Bennett) wrote:
+
+[on Gargoyle Games]
+<span class="qt">&gt;Not the same FTL that did Dungeon Master, surely?</span>
+
+No, they were an American lot I think. Certainly not the same
+FTL.
+-- 
+ //// Damien Burke (replace d.c.u in address with demon.co.uk if replying)
+//// Spectrum pages: <a href="http://www.jetman.demon.co.uk/speccy/" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/</a>
+//// New to this group? Read this: <a href="http://www.jetman.demon.co.uk/speccy/faq/" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/faq/</a>
+
+
+</pre></div><div class="post" id="p29459"><div class="ph"><a class="d" href="#p29459">1997-09-11</a> <span class="small">address hidden</span> <span>Re: Tir Na Nog</span></div><pre>
+On Thu, 11 Sep 1997 10:30:07 +0100, Stef Robb
+ wrote:
+
+<span class="qt">&gt;Let&#x27;s face it - this was it&#x27;s biggest selling point.  It&#x27;s like all those games</span>
+<span class="qt">&gt;where the idea is to shoot the bad-guys while avoiding the good-guys, you just</span>
+<span class="qt">&gt;have to kill all the good-guys!  WestBank was a classic for this, blow &#x27;er</span>
+<span class="qt">&gt;away!  I think more games should have been written where the idea is to bump of</span>
+<span class="qt">&gt;all the</span>
+<span class="qt">&gt;&#x27;forces of light&#x27; types and plunge the Universe into &#x27;an eternity of darkness&#x27;</span>
+<span class="qt">&gt;... yeah, kill &#x27;em all!</span>
+
+Ah, Syndicate... pity they removed the old women and bird with
+pushchairs.
+-- 
+ //// Damien Burke (replace d.c.u in address with demon.co.uk if replying)
+//// Spectrum pages: <a href="http://www.jetman.demon.co.uk/speccy/" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/</a>
+//// New to this group? Read this: <a href="http://www.jetman.demon.co.uk/speccy/faq/" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/faq/</a>
+
+
+</pre></div><div class="post" id="p29476"><div class="ph"><a class="d" href="#p29476">1997-09-12</a> <span>stef robb</span> <span>Re: Tir Na Nog</span></div><pre>
+Graham Goring wrote:
+
+<span class="qt">&gt; Where d&#x27;you think Hydrofool is set? :)</span>
+
+Ah, oops!  Never really played Hydrofool.  DeathBowl though, sounds dynamic,
+exciting, dangerous ... not at all like swimming about with the ickle fishes and
+baby whales!  Where&#x27;s the blood, guts &#x27;n&#x27; death!
+
+Ah, well ... one of these days ...
+
+-Stef
+
+--
+<span class="qt">|   Stef Robb   |   …@…</span>
+<span class="qt">| &quot;We must perform a Quirkafleeg!&quot;</span>
+<span class="qt">| GCS/E d- s:- a- C+++ ULAVSC++(on) P++ L++ E--- W++ N++ !o-- K- w O-</span>
+<span class="qt">| M V- PS+++ PE Y+ PGP- t 5++ X++ R tv++ b++ !DI D++ G e++ h-- r++ y**</span>
+
+
+
+
+</pre></div><div class="post" id="p29514"><div class="ph"><a class="d" href="#p29514">1997-09-14</a> <span class="small">address hidden</span> <span>Re: Tir Na Nog</span></div><pre>
+On Wed, 10 Sep 1997 11:32:54 +0100, Mike Lowndes
+ wrote:
+
+<span class="qt">&gt;They &#x27;became&#x27; FTL (Faster than Light) at least for Lightforce.</span>
+
+And `Shockwave Rider&#x27; or something like that..
+
+Rob.
+
+
+</pre></div><div class="post" id="p29517"><div class="ph"><a class="d" href="#p29517">1997-09-14</a> <span class="small">address hidden</span> <span>Re: Tir Na Nog</span></div><pre>
+On Thu, 11 Sep 1997 10:30:07 +0100, Stef Robb 
+wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Let&#x27;s face it - this was it&#x27;s biggest selling point.  It&#x27;s like all those games</span>
+<span class="qt">&gt;where the idea is to shoot the bad-guys while avoiding the good-guys, you just</span>
+<span class="qt">&gt;have to kill all the good-guys!  WestBank was a classic for this, blow &#x27;er</span>
+<span class="qt">&gt;away!  I think more games should have been written where the idea is to bump of</span>
+<span class="qt">&gt;all the</span>
+<span class="qt">&gt;&#x27;forces of light&#x27; types and plunge the Universe into &#x27;an eternity of darkness&#x27;</span>
+<span class="qt">&gt;... yeah, kill &#x27;em all!</span>
+
+TIE Fighter...
+
+Rob.
+<span class="qt">&gt;</span>
+
+
+
+</pre></div><div class="post" id="p29520"><div class="ph"><a class="d" href="#p29520">1997-09-14</a> <span class="small">address hidden</span> <span>Re: Tir Na Nog-still stuck...</span> <a class="badge" href="game-5292.html">ZXDB: Tir Na Nog</a></div><pre>
+On Sun, 14 Sep 1997 00:37:34 GMT, …@… (W R Bennett) wrote:
+
+<span class="qt">&gt;How did you translate the Ogham scroll?  I pondered those cryptic texts </span>
+<span class="qt">&gt;for _years_ before giving up in disgust.</span>
+
+I went to a library and looked up the meaning of the symbols. I&#x27;ve just
+looked up my original notes for the game (still got them after 12 years!),
+which don&#x27;t make an awful lot of sense now, but they&#x27;ve reminded me that
+the Ogham symbols in the game are incorrect, and translate as
+&quot;CROLLROADTEBB&quot;, which rather complicated matters; not knowing which
+letters were right and which wrong I was rather stumped at that point. I
+got the correct translation after writing to the &#x27;Gordo Greatbelly&#x27;
+adventure help at Sinclair User (my letter&#x27;s in #43, Oct.1985). It turned
+out that what it was supposed to have said was &quot;CROSSROADTENN&quot;, which
+gives the position of Calum&#x27;s Hammer relative to the cross in Stormbase.
+
+
+<span class="qt">&gt;And how was one supposed to join the two halves of the torc together?  </span>
+<span class="qt">&gt;And did it do anything?</span>
+
+The torc made Cuchulainn invisible so he could walk past the serpent
+Nathair to get Dagda&#x27;s Cauldron. I think there was an invisible back
+entrance there so you could get the cauldron without passing the serpent,
+so you didn&#x27;t need the torc (this is effectively a cheat, as there&#x27;s no
+way you could know about the invisible door in normal play, without
+passing Nathair first, for which you need the torc). You have to leave
+that way, anyway, as the cauldron makes Cuchulainn visible again.
+
+I can&#x27;t remember how the halves were joined; maybe just holding them
+together or dropping them together. Neither the Gargoyle hints sheet or
+the Crash solution I have give any specific instructions on how the halves
+of the torc are joined once found. I noticed a solution a while ago on SSD
+(www.icemark.ch/zx/ssd); maybe that has more info (although it&#x27;s most
+likely the one from Crash). I definitely got them joined somehow, as I
+remember Cuchulainn turning invisible.
+
+
+--
+Another Fine Product from:
+Jim Grimwood, Dead Dog Farm, Hatfield, England
+Home of the SPOT Database (Spectrums On Top)
+--
+
+
+</pre></div><div class="post" id="p29532"><div class="ph"><a class="d" href="#p29532">1997-09-14</a> <span>mike baker</span> <span>Tir Na Nog-still stuck... also Marsport..</span> <a class="badge" href="game-5292.html">ZXDB: Tir Na Nog</a> <a class="badge" href="game-3040.html">ZXDB: Marsport</a></div><pre>
+Bill Bennett wrote
+<span class="qt">&gt;How did you translate the Ogham scroll?  I pondered those cryptic texts </span>
+<span class="qt">&gt;for _years_ before giving up in disgust.</span>
+Dunno. I used to watch my Dad playing it when I was about 7 so it
+wouldn&#x27;t have made any sense to me. I think it tells you to get the
+hammer 9 paces east of the Celtic cross or summat like that, though I
+don&#x27;t know the logic behind it. Hmmmm, I&#x27;ll see if my old man can
+remember :-)
+ 
+<span class="qt">&gt;And how was one supposed to join the two halves of the torc together?  </span>
+<span class="qt">&gt;And did it do anything?</span>
+Didn&#x27;t you have to take them back to the Altar? Once you&#x27;ve got it
+you&#x27;re invisible so you can pass Naithar (the dragon guarding the
+cauldron).
+
+I take it this means you got the cauldron by holding the daisy and
+finding the invisible &#x27;i&#x27; door. Not how it&#x27;s supposed to be done! ;-)
+
+Oh yeah, while on the subject of unfathomable puzzles in gargoyle games,
+did anyone complete Marsport WITHOUT the solution? When you get to the
+second phase there are two clues that I&#x27;ve not been able to work out.
+
+&quot;ONE IS EASY AND FULL OF APLOMB&quot;
+
+Easy = Piece of cake so you need the cake. The &#x27;full of aplomb&#x27; bit is
+supposed to mean the lead suit, but who are you supposed to work that
+out?
+
+&quot;ONE DRAWS NEAR AND THROWS AWAY&quot;
+
+How are you supposed to work out that &#x27;One draws near&#x27; means charcoal.
+
+If anyone can help, my sanity will be eternally grateful.
+
+Cheers
+  _______    _   _  __  _____
+ /__   __¥  ( ) ( )/ / (  ___)   ******…@…******
+( ) ( ) ( ) ( ) (  _/  ( )___    /¥/¥/¥/¥/¥/¥/¥/¥/¥/¥/¥/¥/¥/¥/¥/¥/¥/¥
+( ) ( ) ( ) ( ) ( )_   (  ___)   ----------My SPECCY page!!!---------
+( ) (_) ( ) ( ) (   ¥  ( )___    COULD be ready for the new millenium
+(_)     (_) (_) (_)¥_¥ (_____)   ^^^^^
+
+
+</pre></div><div class="post" id="p29552"><div class="ph"><a class="d" href="#p29552">1997-09-15</a> <span class="small">address hidden</span> <span>Re: Tir Na Nog-still stuck... also Marsport..</span></div><pre>
+In article &lt;5vjfgf$886$…@…&gt;, …@… (Jon South) wrote:
+<span class="qt">&gt;Gareth Owen (…@…) wrote:</span>
+<span class="qt">&gt;: Well plumb lines, and the symbol Pb both come from the fact that the</span>
+<span class="qt">&gt;: Latin for lead is/was &quot;Plumbom&quot; (sp?, well it&#x27;s only a transliteration</span>
+<span class="qt">&gt;: anyways)</span>
+<span class="qt">&gt;Plumbum, and no it isn&#x27;t a transliteration. Greek needs transliterating,</span>
+<span class="qt">&gt;Latin doesn&#x27;t.</span>
+
+And &quot;anyway&quot; doesn&#x27;t have an &quot;s&quot; on it unless you are an ignorant American...
+-- 
+---- Ian Collier : …@… : WWW page (including Spectrum section):
+------ <a href="http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html" rel="noreferrer">http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html</a>
+
+New to this group?  Answers to frequently-asked questions can be had from
+<a href="http://www.jetman.demon.co.uk/speccy/faq/index.html" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/faq/index.html</a> .
+Sam Coupï¿½ FAQ: <a href="http://www.mono.org/~unc/Coupe/FAQ.txt" rel="noreferrer">http://www.mono.org/~unc/Coupe/FAQ.txt</a>
+
+
+</pre></div><div class="post" id="p29577"><div class="ph"><a class="d" href="#p29577">1997-09-15</a> <span class="small">address hidden</span> <span>Re: Tir Na Nog-still stuck... also Marsport..</span></div><pre>
+Gareth Owen (…@…) wrote:
+: Mike Baker  writes:
+
+
+: &gt; 
+: &gt; &quot;ONE IS EASY AND FULL OF APLOMB&quot;
+: &gt; 
+: &gt; Easy = Piece of cake so you need the cake. The &#x27;full of aplomb&#x27; bit is
+: &gt; supposed to mean the lead suit, but who are you supposed to work that
+: &gt; out?
+
+: Well plumb lines, and the symbol Pb both come from the fact that the
+: Latin for lead is/was &quot;Plumbom&quot; (sp?, well it&#x27;s only a transliteration
+: anyways)
+Plumbum, and no it isn&#x27;t a transliteration. Greek needs transliterating,
+Latin doesn&#x27;t.
+
+-Jon.
+
+
+</pre></div><div class="post" id="p29594"><div class="ph"><a class="d" href="#p29594">1997-09-16</a> <span class="small">address hidden</span> <span>Re: Tir Na Nog</span></div><pre>
+
+Russ Juckes  wrote:
+
+<span class="qt">&gt; And, just as a passing comment - has anybody else noticed how popular NOD &amp;</span>
+<span class="qt">&gt; Soviet forces are when playing Command &amp; Conquer, or that Orcs are chosen</span>
+<span class="qt">&gt; over Humans in Warcraft2?  People prefer the bad guys.  It&#x27;s much more fun</span>
+<span class="qt">&gt; bombing civilian buildings than protecting them...</span>
+  
+talking of games with a dodgy moral character, I have just got
+Carmageddon for my Mac.. an excellently gruesome game (not like the
+wimpy UK PC version with green zombie juice instead of old people and
+bright red gore)
+
+Carmageddon is by UK softco Stainless, and another game with dodgy
+morals is the upcoming Grand Theft Auto by DMA Design. Along with
+Bullfrog&#x27;s Syndicate this surely makes us Brits the most amoralistic
+turds in the known gaming universe. Ain&#x27;t it great? :)
+
+*evil cackle*
+mat
+
+-- 
+.........................
+www.arrgh.demon.co.uk - the retro games home
+
+email: …@…
+
+
+</pre></div><div class="post" id="p29652"><div class="ph"><a class="d" href="#p29652">1997-09-17</a> <span class="small">address hidden</span> <span>Re: Tir Na Nog</span></div><pre>
+
+On Tue, 16 Sep 1997 21:12:17 +0100, …@… (Mat
+Simpson) wrote:
+
+
+<span class="qt">&gt;talking of games with a dodgy moral character, I have just got</span>
+<span class="qt">&gt;Carmageddon for my Mac.. an excellently gruesome game (not like the</span>
+<span class="qt">&gt;wimpy UK PC version with green zombie juice instead of old people and</span>
+<span class="qt">&gt;bright red gore)</span>
+
+Well there was a patch to reinstall the gore and the PC version...
+
+
+<span class="qt">&gt;Carmageddon is by UK softco Stainless, and another game with dodgy</span>
+<span class="qt">&gt;morals is the upcoming Grand Theft Auto by DMA Design. Along with</span>
+<span class="qt">&gt;Bullfrog&#x27;s Syndicate this surely makes us Brits the most amoralistic</span>
+<span class="qt">&gt;turds in the known gaming universe. Ain&#x27;t it great? :)</span>
+
+Oh no they are not out on the Mac!
+
+Rob.
+
+
+
+</pre></div></main></body></html>

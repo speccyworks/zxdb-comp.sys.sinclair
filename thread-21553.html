@@ -1,0 +1,1127 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JSW April Showers &amp; Technician Ted megamix · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB</a>
+<a href="games.html">Games</a> <a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>JSW April Showers &amp; Technician Ted megamix</h1><p class="facts">36 posts, 2001-04-16 – 2001-04-27</p><div class="post" id="p97416"><div class="ph"><a class="d" href="#p97416">2001-04-16 13:11:18</a> <span>Martin Ball</span> </div><pre>Hi,
+
+Does anyone have the program &#x27;April Showers&#x27; published in Your Spectrum for
+the additional room for Jet Set Willy. I have a snapshot of JSW with the
+extra room included but would like the program seperate as either a snapshot
+/ TAP / TZX file.
+While on the subject of JSW is there a definitive version out there which
+has all the (known) bugs removed? If so which one?
+
+Along similar lines to JSW I notice that the Megamix of Technician Ted is
+only available as a snapshot file. I have an original cassette which is
+supposed to contain the 128k version, but everytime I try and load it it
+alwasy crashes at the end. I have tried setting my emulator to variety of
+128 settings but am unable to get it to load. Any ideas of how I can get
+this beast to load?
+
+--
+
+Regards
+
+Martin
+
+
+
+
+
+</pre></div><div class="post" id="p97436"><div class="ph"><a class="d" href="#p97436">2001-04-16 17:07:08</a> <span>The Starglider</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>In article &lt;9bf84l$g8n$…@…&gt;, Fraser Muir
+&lt;…@…&gt; writes
+<span class="qt">&gt;Here&#x27;s the April Showers program, attached as a .zip file.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;All the bumph you need to know is inside the .zip.</span>
+<span class="qt">&gt;</span>
+NO BINARIES TO A NON BINARIES GROUP PLEASE.
+
+Please post them to alt.binaries.comp.sinclair
+-- 
+          ****************The Starglider*****************    Change d.c.u to 
+          *    Web site:<a href="http://www.starglider.co.uk" rel="noreferrer">http://www.starglider.co.uk</a>     *      demon.co.uk
+          *   ADE VS. THE SPACESHIP: AN ONGOING SAGA!   *       TO REPLY.
+          *   AT:www.thespian.demon.co.uk/effects.htm   *     _WW_
+          *  &quot;FANTASTIC! MARVELLOUS!&quot; - David Darling   *    /_  _\
+          ***********************************************   | O  O |
+___________________________________________________________oOO_\/_OOo___________
+
+
+
+
+</pre></div><div class="post" id="p97445"><div class="ph"><a class="d" href="#p97445">2001-04-16 19:10:41</a> <span>Dave</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>
+&quot;Fraser Muir&quot; &lt;…@…&gt; wrote in message
+news:9bf84l$g8n$…@…...
+<span class="qt">&gt; Here&#x27;s the April Showers program, attached as a .zip file.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; All the bumph you need to know is inside the .zip.</span>
+
+And once again for the wally&#x27;s who can&#x27;t read the FAQ&#x27;s....
+
+DONT POST BINARIES TO C.S.S!!
+DONT POST BINARIES TO C.S.S!!
+DONT POST BINARIES TO C.S.S!!
+
+
+
+
+
+</pre></div><div class="post" id="p97491"><div class="ph"><a class="d" href="#p97491">2001-04-16 22:47:25</a> <span>russ juckes</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>On Mon, 16 Apr 2001 14:11:18 +0100, &quot;Martin Ball&quot;
+&lt;…@…&gt; scribed:
+
+<span class="qt">&gt;Hi,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Does anyone have the program &#x27;April Showers&#x27; published in Your Spectrum for</span>
+<span class="qt">&gt;the additional room for Jet Set Willy. I have a snapshot of JSW with the</span>
+<span class="qt">&gt;extra room included but would like the program seperate as either a snapshot</span>
+<span class="qt">&gt;/ TAP / TZX file.</span>
+<span class="qt">&gt;While on the subject of JSW is there a definitive version out there which</span>
+<span class="qt">&gt;has all the (known) bugs removed? If so which one?</span>
+
+I suggest you pop over to my site -
+<a href="http://www.russandem.co.uk/raiden/quirk.htm" rel="noreferrer">http://www.russandem.co.uk/raiden/quirk.htm</a> and download the April
+Showers Mix, which may be what you&#x27;re after.
+
+I originally released this as &quot;The Storm Warning Mix&quot;, after I cleared
+the bugs out, removed the infinite lives POKE etc, and Darren Salt
+added April Showers.  It&#x27;s appeared elsewhere since, with somebody
+else taking the credit (grrrrr.) though.
+
+There&#x27;s a copy of The Gaping pit version, and JSW2 there as well.  And
+of course, there&#x27;s the explanation of the Quirkafleeg, and scans of
+Fat Freddy&#x27;s cat #5 - so hey!  Go there now kids.
+
+
+Outta here,
+
+Russ Juckes - Atari Jaguar, Jamma Cabinet &amp; Sinclair ZX Spectrum Owner
+-- 
+&quot;Do you *really* want to play?&quot;        <a href="http://www.russandem.co.uk" rel="noreferrer">http://www.russandem.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p97526"><div class="ph"><a class="d" href="#p97526">2001-04-17 11:41:34</a> <span>Fraser Muir</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>*oops*
+
+Sorry, folks.  I consider myself a fairly competent punter, and don&#x27;t wish
+to tread on any toes.
+
+I had no idea this sort of this was frowned upon.  What exactly constitutes
+a binary file?
+
+I was only trying to help, you know. :)
+
+Fraser Muir.
+
+
+
+
+
+</pre></div><div class="post" id="p97527"><div class="ph"><a class="d" href="#p97527">2001-04-17 11:48:10</a> <span>Hitman</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>Don&#x27;t worry too much - i was getting ready to upload some maps...
+since seeing your telling off, i think i&#x27;ll hold off that idea  ;-)
+
+I&#x27;m fairly new to this group too... But almost all of the poeple in here are
+great, helpful, and bonkers.
+
+I&#x27;m here to stay - it&#x27;s a cool group.
+Now i see you were told to post it in the binaries sinclair group. There was
+only 9 posts in there last time i looked.
+I suggest posting it there and announcing it here....
+
+Enjoy the group.
+
+Hitman.
+
+
+
+
+
+
+</pre></div><div class="post" id="p97528"><div class="ph"><a class="d" href="#p97528">2001-04-17 12:02:02</a> <span>Derek Jolly</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>&quot;Hitman&quot; &lt;…@…&gt;, in message
+&lt;15WC6.10467$…@…&gt;, wrote 
+
+<span class="qt">&gt;Don&#x27;t worry too much - i was getting ready to upload some maps...</span>
+<span class="qt">&gt;since seeing your telling off, i think i&#x27;ll hold off that idea  ;-)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I&#x27;m fairly new to this group too... But almost all of the poeple in here</span>
+<span class="qt">&gt;are great, helpful, and bonkers.</span>
+
+See the folklore FAQ for a general introduction to the nuttiness here
+(as well as info about binaries).
+
+<a href="http://www.redrival.com/rivet/cssfolk.html" rel="noreferrer">http://www.redrival.com/rivet/cssfolk.html</a>
+-- 
+* Derek Jolly (…@…) Web: <a href="http://www.redrival.com/rivet" rel="noreferrer">http://www.redrival.com/rivet</a> *
+* Bemused by the jargon in comp.sys.sinclair?  Check out the CSS        *
+* folklore FAQ at <a href="http://www.redrival.com/rivet/cssfolk.html" rel="noreferrer">http://www.redrival.com/rivet/cssfolk.html</a>            *
+* Transversion PC at <a href="http://www.redrival.com/rivet/games.html" rel="noreferrer">http://www.redrival.com/rivet/games.html</a>           *
+
+
+
+</pre></div><div class="post" id="p97532"><div class="ph"><a class="d" href="#p97532">2001-04-17 15:01:27</a> <span>The Starglider</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>In article &lt;9bha3s$8sh$…@…&gt;, Fraser Muir
+&lt;…@…&gt; writes
+<span class="qt">&gt;*oops*</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Sorry, folks.  I consider myself a fairly competent punter, and don&#x27;t wish</span>
+<span class="qt">&gt;to tread on any toes.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I had no idea this sort of this was frowned upon.  What exactly constitutes</span>
+<span class="qt">&gt;a binary file?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I was only trying to help, you know. :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Fraser Muir.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+Anything other than the text used for sending messages to a newsgroup.
+
+Pictures, programs and files of any other kind are right out.
+
+On a plus side, you got away lightly!
+-- 
+          ****************The Starglider*****************    Change d.c.u to 
+          *    Web site:<a href="http://www.starglider.co.uk" rel="noreferrer">http://www.starglider.co.uk</a>     *      demon.co.uk
+          *   ADE VS. THE SPACESHIP: AN ONGOING SAGA!   *       TO REPLY.
+          *   AT:www.thespian.demon.co.uk/effects.htm   *     _WW_
+          *  &quot;FANTASTIC! MARVELLOUS!&quot; - David Darling   *    /_  _\
+          ***********************************************   | O  O |
+___________________________________________________________oOO_\/_OOo___________
+
+
+
+
+</pre></div><div class="post" id="p97543"><div class="ph"><a class="d" href="#p97543">2001-04-17 18:31:27</a> <span>ewgf</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>try either
+
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/willy/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/willy/</a>
+
+or
+
+<a href="http://jswremakes.emuunlim.com/" rel="noreferrer">http://jswremakes.emuunlim.com/</a>
+
+for fixed versions of JSW with no bugs and that don&#x27;t need the colour card.
+
+
+Martin Ball &lt;…@…&gt; wrote in message
+news:9beqqm$be3$…@…...
+<span class="qt">&gt; Hi,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Does anyone have the program &#x27;April Showers&#x27; published in Your Spectrum</span>
+for
+<span class="qt">&gt; the additional room for Jet Set Willy. I have a snapshot of JSW with the</span>
+<span class="qt">&gt; extra room included but would like the program seperate as either a</span>
+snapshot
+<span class="qt">&gt; / TAP / TZX file.</span>
+<span class="qt">&gt; While on the subject of JSW is there a definitive version out there which</span>
+<span class="qt">&gt; has all the (known) bugs removed? If so which one?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Along similar lines to JSW I notice that the Megamix of Technician Ted is</span>
+<span class="qt">&gt; only available as a snapshot file. I have an original cassette which is</span>
+<span class="qt">&gt; supposed to contain the 128k version, but everytime I try and load it it</span>
+<span class="qt">&gt; alwasy crashes at the end. I have tried setting my emulator to variety of</span>
+<span class="qt">&gt; 128 settings but am unable to get it to load. Any ideas of how I can get</span>
+<span class="qt">&gt; this beast to load?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Regards</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Martin</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+
+
+
+</pre></div><div class="post" id="p97544"><div class="ph"><a class="d" href="#p97544">2001-04-17 18:54:17</a> <span>Martin Ball</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>Thanks very much for the file, sorry about the flack it seemed to cause.
+
+Regards
+
+Martin
+
+
+&quot;Fraser Muir&quot; &lt;…@…&gt; wrote in message
+news:9bf84l$g8n$…@…...
+<span class="qt">&gt; Here&#x27;s the April Showers program, attached as a .zip file.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; All the bumph you need to know is inside the .zip.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Cheers,</span>
+<span class="qt">&gt; Fraser Muir.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+
+
+
+</pre></div><div class="post" id="p97559"><div class="ph"><a class="d" href="#p97559">2001-04-17 21:26:52</a> <span>Darren Salt</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>I demand that Hitman may or may not have written...
+
+<span class="qt">&gt; I&#x27;m fairly new to this group too... But almost all of the poeple in here</span>
+<span class="qt">&gt; are great, helpful, and bonkers.</span>
+
+Although not necessarily in that order.
+
+-- 
+<span class="qt">| Darren Salt  anti-UCE  | nr. Ashington, | d youmustbejoking,demon,co,uk</span>
+<span class="qt">| Spec+3, Risc PC, A3010 | Northumberland | s zap,uk,eu,org</span>
+<span class="qt">| BBC M128, Linux PC     | Toon Army      | @ retrospec,co,uk</span>
+<span class="qt">|   Z80Em and 6502Em Support Packs. AY sound support.</span>
+
+Reality is for people who can&#x27;t handle Star Trek.
+
+
+
+</pre></div><div class="post" id="p97560"><div class="ph"><a class="d" href="#p97560">2001-04-17 21:27:38</a> <span>Darren Salt</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>I demand that The Starglider may or may not have written...
+
+<span class="qt">&gt; In article &lt;9bha3s$8sh$…@…&gt;, Fraser Muir</span>
+<span class="qt">&gt; &lt;…@…&gt; writes</span>
+<span class="qt">&gt;&gt; *oops*</span>
+
+<span class="qt">&gt;&gt; Sorry, folks.  I consider myself a fairly competent punter, and don&#x27;t wish</span>
+<span class="qt">&gt;&gt; to tread on any toes.</span>
+
+<span class="qt">&gt;&gt; I had no idea this sort of this was frowned upon.  What exactly</span>
+<span class="qt">&gt;&gt; constitutes a binary file?</span>
+
+<span class="qt">&gt;&gt; I was only trying to help, you know. :)</span>
+
+<span class="qt">&gt; Anything other than the text used for sending messages to a newsgroup.</span>
+
+<span class="qt">&gt; Pictures, programs and files of any other kind are right out.</span>
+
+<span class="qt">&gt; On a plus side, you got away lightly!</span>
+
+Ah yes, I knew that I was forgetting something...
+
+#######  #    #  #    #   ####   #####     #
+   #     #    #  #    #  #    #  #    #    #
+   #     ######  #    #  #    #  #    #    #
+   #     #    #  #    #  ######  #####     #
+   #     #    #  # ## #  #    #  #
+   #     #    #   #  #   #    #  #         #
+
+:-)
+
+-- 
+<span class="qt">| Darren Salt  anti-UCE  | d youmustbejoking,demon,co,uk | nr. Ashington,</span>
+<span class="qt">| Spec+3, Risc PC, A3010 | s zap,uk,eu,org               | Northumberland</span>
+<span class="qt">| BBC M128, Linux PC     | @ retrospec,co,uk             | Toon Army</span>
+<span class="qt">|   I don&#x27;t ask for much, just untold riches...</span>
+
+The world is a stage, but the play is badly cast.
+
+
+
+</pre></div><div class="post" id="p97572"><div class="ph"><a class="d" href="#p97572">2001-04-17 22:37:53</a> <span>Llama-Wax Len</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>
+Hitman wrote in message
+&lt;15WC6.10467$…@…&gt;...
+<span class="qt">&gt;I&#x27;m here to stay - it&#x27;s a cool group.</span>
+<span class="qt">&gt;Now i see you were told to post it in the binaries sinclair group. There</span>
+was
+<span class="qt">&gt;only 9 posts in there last time i looked.</span>
+<span class="qt">&gt;I suggest posting it there and announcing it here....</span>
+
+That&#x27;s the idea, although often people post something to ABCS without
+announcing it here. Generally when we&#x27;re discussing something where a file
+may be of use, it&#x27;s handy to be able to post it in ABCS. Depending on your
+circumstances, its generally a better solution than putting it on the web.
+
+Of course, there is the problem that some people can&#x27;t get ABCS. I won&#x27;t
+mention any names, but they&#x27;re going to miss out on the binary file I&#x27;ve
+just posted, entitled &quot;Why Duncan Snowden is a silly arse and if he doesn&#x27;t
+reply to this post I&#x27;ll assume he agrees with everything contained within&quot;.
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+LEGAL DISCLAIMER: By replying to this message, you hereby
+acknowledge that the ZX Spectrum game &quot;Robocop&quot; was too hard.
+
+
+
+
+
+</pre></div><div class="post" id="p97575"><div class="ph"><a class="d" href="#p97575">2001-04-17 22:45:32</a> <span>The Starglider</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>In article &lt;…@…&gt;, Darren
+Salt &lt;…@…&gt; writes
+<span class="qt">&gt;I demand that The Starglider may or may not have written...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; In article &lt;9bha3s$8sh$…@…&gt;, Fraser Muir</span>
+<span class="qt">&gt;&gt; &lt;…@…&gt; writes</span>
+<span class="qt">&gt;&gt;&gt; *oops*</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;&gt; Sorry, folks.  I consider myself a fairly competent punter, and don&#x27;t wish</span>
+<span class="qt">&gt;&gt;&gt; to tread on any toes.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;&gt; I had no idea this sort of this was frowned upon.  What exactly</span>
+<span class="qt">&gt;&gt;&gt; constitutes a binary file?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;&gt; I was only trying to help, you know. :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Anything other than the text used for sending messages to a newsgroup.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Pictures, programs and files of any other kind are right out.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; On a plus side, you got away lightly!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Ah yes, I knew that I was forgetting something...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;#######  #    #  #    #   ####   #####     #</span>
+<span class="qt">&gt;   #     #    #  #    #  #    #  #    #    #</span>
+<span class="qt">&gt;   #     ######  #    #  #    #  #    #    #</span>
+<span class="qt">&gt;   #     #    #  #    #  ######  #####     #</span>
+<span class="qt">&gt;   #     #    #  # ## #  #    #  #</span>
+<span class="qt">&gt;   #     #    #   #  #   #    #  #         #</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;:-)</span>
+<span class="qt">&gt;</span>
+God! Will I have to prompt you every time from now on? If so, please
+tell me now so I can keep up!
+-- 
+          ****************The Starglider*****************    Change d.c.u to 
+          *    Web site:<a href="http://www.starglider.co.uk" rel="noreferrer">http://www.starglider.co.uk</a>     *      demon.co.uk
+          *   ADE VS. THE SPACESHIP: AN ONGOING SAGA!   *       TO REPLY.
+          *   AT:www.thespian.demon.co.uk/effects.htm   *     _WW_
+          *  &quot;FANTASTIC! MARVELLOUS!&quot; - David Darling   *    /_  _\
+          ***********************************************   | O  O |
+___________________________________________________________oOO_\/_OOo___________
+
+
+
+
+</pre></div><div class="post" id="p97578"><div class="ph"><a class="d" href="#p97578">2001-04-17 23:01:45</a> <span>Dave</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>
+&quot;The Starglider&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; In article &lt;9bha3s$8sh$…@…&gt;, Fraser Muir</span>
+<span class="qt">&gt; &lt;…@…&gt; writes</span>
+<span class="qt">&gt; &gt;*oops*</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Sorry, folks.  I consider myself a fairly competent punter, and don&#x27;t</span>
+wish
+<span class="qt">&gt; &gt;to tread on any toes.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;I had no idea this sort of this was frowned upon.  What exactly</span>
+constitutes
+<span class="qt">&gt; &gt;a binary file?</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;I was only trying to help, you know. :)</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Fraser Muir.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; Anything other than the text used for sending messages to a newsgroup.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Pictures, programs and files of any other kind are right out.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; On a plus side, you got away lightly!</span>
+
+I&#x27;m not as nasty as some people have been :)
+
+Don&#x27;t worry - I&#x27;m sure we&#x27;ll let you off, just don&#x27;t do it again :)
+
+
+
+
+
+</pre></div><div class="post" id="p97758"><div class="ph"><a class="d" href="#p97758">2001-04-19 21:22:59</a> <span>russ juckes</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>
+
+I decided to play the April showers version today, in homage of the
+fact that we&#x27;ve suffered classic examples of April showers all day
+today.
+
+And it made my day, I can tell you.
+
+
+Outta here,
+
+Russ Juckes - Atari Jaguar, Jamma Cabinet &amp; Sinclair ZX Spectrum Owner
+-- 
+&quot;Do you *really* want to play?&quot;        <a href="http://www.russandem.co.uk" rel="noreferrer">http://www.russandem.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p97985"><div class="ph"><a class="d" href="#p97985">2001-04-21 23:22:26</a> <span>Duncan Snowden</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>On Tuesday, Llama-Wax Len wrote:
+
+<span class="qt">&gt; Of course, there is the problem that some people can&#x27;t get ABCS. I</span>
+<span class="qt">&gt; won&#x27;t mention any names, but they&#x27;re going to miss out on the binary</span>
+<span class="qt">&gt; file I&#x27;ve just posted, entitled &quot;Why Duncan Snowden is a silly arse and</span>
+<span class="qt">&gt; if he doesn&#x27;t reply to this post I&#x27;ll assume he agrees with everything</span>
+<span class="qt">&gt; contained within&quot;.</span>
+
+Bast.
+
+Wait a sec, though... As ABCS clearly doesn&#x27;t exist, you&#x27;re obviously
+lying. Hah!
+
+-- 
+Duncan Snowden. 
+
+J Invalid I/O device, 420:2 
+
+
+
+</pre></div><div class="post" id="p97993"><div class="ph"><a class="d" href="#p97993">2001-04-21 23:54:44</a> <span>David Lees</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>&quot;/|ndy |&lt;avanagh&quot; &lt;…@…&gt; wrote in message
+news:kxTiOkT44jyN=…@…...
+<span class="qt">&gt; Soni tempori elseu romani yeof helsforo nisson ol sefini ill des (ko 21</span>
+Apr
+<span class="qt">&gt; 2001 23:22:26), sefini jorgo geanyet des mani yeof do comp.sys.sinclair,</span>
+<span class="qt">&gt; yawatina tan reek esk Duncan Snowden fornis do marikano es bono tan el:</span>
+<span class="qt">&gt; &gt;On Tuesday, Llama-Wax Len wrote:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;&gt; Of course, there is the problem that some people can&#x27;t get ABCS. I</span>
+<span class="qt">&gt; &gt;&gt; won&#x27;t mention any names, but they&#x27;re going to miss out on the binary</span>
+<span class="qt">&gt; &gt;&gt; file I&#x27;ve just posted, entitled &quot;Why Duncan Snowden is a silly arse and</span>
+<span class="qt">&gt; &gt;&gt; if he doesn&#x27;t reply to this post I&#x27;ll assume he agrees with everything</span>
+<span class="qt">&gt; &gt;&gt; contained within&quot;.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Bast.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Wait a sec, though... As ABCS clearly doesn&#x27;t exist, you&#x27;re obviously</span>
+<span class="qt">&gt; &gt;lying. Hah!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; FACT:  Len is a KNOWN LIAR!</span>
+
+Stop shouting.
+
+
+
+
+
+</pre></div><div class="post" id="p98026"><div class="ph"><a class="d" href="#p98026">2001-04-22 06:57:27</a> <span>The Starglider</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>In article &lt;T6pE6.119582$…@…&gt;, David Lees
+&lt;…@…&gt; writes
+<span class="qt">&gt;&quot;/|ndy |&lt;avanagh&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt;news:kxTiOkT44jyN=…@…...</span>
+<span class="qt">&gt;&gt; Soni tempori elseu romani yeof helsforo nisson ol sefini ill des (ko 21</span>
+<span class="qt">&gt;Apr</span>
+<span class="qt">&gt;&gt; 2001 23:22:26), sefini jorgo geanyet des mani yeof do comp.sys.sinclair,</span>
+<span class="qt">&gt;&gt; yawatina tan reek esk Duncan Snowden fornis do marikano es bono tan el:</span>
+<span class="qt">&gt;&gt; &gt;On Tuesday, Llama-Wax Len wrote:</span>
+<span class="qt">&gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; &gt;&gt; Of course, there is the problem that some people can&#x27;t get ABCS. I</span>
+<span class="qt">&gt;&gt; &gt;&gt; won&#x27;t mention any names, but they&#x27;re going to miss out on the binary</span>
+<span class="qt">&gt;&gt; &gt;&gt; file I&#x27;ve just posted, entitled &quot;Why Duncan Snowden is a silly arse and</span>
+<span class="qt">&gt;&gt; &gt;&gt; if he doesn&#x27;t reply to this post I&#x27;ll assume he agrees with everything</span>
+<span class="qt">&gt;&gt; &gt;&gt; contained within&quot;.</span>
+<span class="qt">&gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; &gt;Bast.</span>
+<span class="qt">&gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; &gt;Wait a sec, though... As ABCS clearly doesn&#x27;t exist, you&#x27;re obviously</span>
+<span class="qt">&gt;&gt; &gt;lying. Hah!</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; FACT:  Len is a KNOWN LIAR!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Stop shouting.</span>
+<span class="qt">&gt;</span>
+YOU HAVE NO RIGHT TO SAY WHAT ANYONE HERE CAN DO OR SAY. I CAN SHOUT AS
+MUCH AS I LIKED AND YOU WOULD HAVE NO POWER OVER ME.
+
+So just fuck off.
+-- 
+          ****************The Starglider*****************    Change d.c.u to 
+          *    Web site:<a href="http://www.starglider.co.uk" rel="noreferrer">http://www.starglider.co.uk</a>     *      demon.co.uk
+          *   ADE VS. THE SPACESHIP: AN ONGOING SAGA!   *       TO REPLY.
+          *   AT:www.thespian.demon.co.uk/effects.htm   *     _WW_
+          *  &quot;FANTASTIC! MARVELLOUS!&quot; - David Darling   *    /_  _\
+          ***********************************************   | O  O |
+___________________________________________________________oOO_\/_OOo___________
+
+
+
+
+</pre></div><div class="post" id="p98045"><div class="ph"><a class="d" href="#p98045">2001-04-22 12:26:55</a> <span class="small">address hidden</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>Fraser Muir &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; *oops*</span>
+
+<span class="qt">&gt; Sorry, folks.  I consider myself a fairly competent punter, and don&#x27;t wish</span>
+<span class="qt">&gt; to tread on any toes.</span>
+
+<span class="qt">&gt; I had no idea this sort of this was frowned upon.  What exactly constitutes</span>
+<span class="qt">&gt; a binary file?</span>
+
+Anything that can&#x27;t be read by human eyes alone...
+Anything that&#x27;s been uuencode/binhex/base64 encoded for the purpose of
+posting 8-bit data to a 7-bit forum.
+This includes zips, pictures, sounds, doc files, animations, programs,
+snaps, taps and even (in the case of incredibly stupid plebs who don&#x27;t know
+how to use their software, text that&#x27;s been encoded because it was included
+as an attachment).
+
+<span class="qt">&gt; I was only trying to help, you know. :)</span>
+
+That&#x27;s what they ALWAYS say.
+But anyone who even claims to be newsgroup aware has no excuse not knowing
+the no binaries rule. It exists in 90% of all discussion groups. (probably
+more)
+
+
+
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   | &quot;I&#x27;m alive!!! I can touch! I can taste!         |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|  I can SMELL!!!  KRYTEN!!! Unpack Rachel and    |</span>
+<span class="qt">|            in            |  get out the puncture repair kit!&quot;              |</span>
+<span class="qt">|     Computer Science     |     Arnold Judas Rimmer- Red Dwarf              |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p98046"><div class="ph"><a class="d" href="#p98046">2001-04-22 12:28:10</a> <span class="small">address hidden</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>Hitman &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; Don&#x27;t worry too much - i was getting ready to upload some maps...</span>
+<span class="qt">&gt; since seeing your telling off, i think i&#x27;ll hold off that idea  ;-)</span>
+
+<span class="qt">&gt; I&#x27;m fairly new to this group too... But almost all of the poeple in here are</span>
+<span class="qt">&gt; great, helpful, and bonkers.</span>
+
+<span class="qt">&gt; I&#x27;m here to stay - it&#x27;s a cool group.</span>
+<span class="qt">&gt; Now i see you were told to post it in the binaries sinclair group. There was</span>
+<span class="qt">&gt; only 9 posts in there last time i looked.</span>
+<span class="qt">&gt; I suggest posting it there and announcing it here....</span>
+
+That&#x27;s the idea.
+Although putting it on a web page makes it more accessable because not
+everyone can get a.b.c.s
+
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   | &quot;Are you pondering what I&#x27;m pondering Pinky?&quot;   |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|                                                 |</span>
+<span class="qt">|            in            | &quot;I think so brain, but this time, you control   |</span>
+<span class="qt">|     Computer Science     |  the Encounter suit, and I&#x27;ll do the voice...&quot;  |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p98047"><div class="ph"><a class="d" href="#p98047">2001-04-22 12:29:43</a> <span class="small">address hidden</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>Duncan Snowden &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; On Tuesday, Llama-Wax Len wrote:</span>
+
+<span class="qt">&gt;&gt; Of course, there is the problem that some people can&#x27;t get ABCS. I</span>
+<span class="qt">&gt;&gt; won&#x27;t mention any names, but they&#x27;re going to miss out on the binary</span>
+<span class="qt">&gt;&gt; file I&#x27;ve just posted, entitled &quot;Why Duncan Snowden is a silly arse and</span>
+<span class="qt">&gt;&gt; if he doesn&#x27;t reply to this post I&#x27;ll assume he agrees with everything</span>
+<span class="qt">&gt;&gt; contained within&quot;.</span>
+
+<span class="qt">&gt; Bast.</span>
+
+<span class="qt">&gt; Wait a sec, though... As ABCS clearly doesn&#x27;t exist, you&#x27;re obviously</span>
+<span class="qt">&gt; lying. Hah!</span>
+
+/me whispers to duncan...
+
+whisper whisper whisper whisper...
+
+Got that?
+:)
+
+-- 
+-----------------------------------------------------------------------------
+<span class="qt">|   …@…   |   Windows95 (noun): 32 bit extensions and a    |</span>
+<span class="qt">|                          | graphical shell for a 16 bit patch to an 8 bit |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)| operating system originally  coded for a 4 bit |</span>
+<span class="qt">|            in            |microprocessor, written by a 2 bit company, that|</span>
+<span class="qt">|     Computer Science     |        can&#x27;t stand 1 bit of competition.       |</span>
+-----------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p98129"><div class="ph"><a class="d" href="#p98129">2001-04-22 22:08:20</a> <span>Tomaz Cedilnik</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>The Starglider wrote:
+
+<span class="qt">&gt; &gt;&gt; FACT:  Len is a KNOWN LIAR!</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Stop shouting.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; YOU HAVE NO RIGHT TO SAY WHAT ANYONE HERE CAN DO OR SAY.</span>
+
+But that&#x27;s exactly what YOU just did, Starglider. So you do have that
+right then and David doesn&#x27;t? ;-)
+
+Tom
+-- 
+<span class="qt">  |\      _,,,,--,,_     Tomaz Cedilnik</span>
+  /,`.-&#x27;`&#x27;    -,  \-;,
+<span class="qt"> |,4-  ) ),,__ ,\ (  ;;    …@…</span>
+&#x27;---&#x27;&#x27;(.&#x27;--&#x27;  `-&#x27;`.)`&#x27;
+
+
+
+</pre></div><div class="post" id="p98137"><div class="ph"><a class="d" href="#p98137">2001-04-22 22:48:06</a> <span>The Starglider</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>In article &lt;…@…&gt;, Tomaz Cedilnik &lt;…@…&gt;
+writes
+<span class="qt">&gt;The Starglider wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; &gt;&gt; FACT:  Len is a KNOWN LIAR!</span>
+<span class="qt">&gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; &gt;Stop shouting.</span>
+<span class="qt">&gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; YOU HAVE NO RIGHT TO SAY WHAT ANYONE HERE CAN DO OR SAY.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;But that&#x27;s exactly what YOU just did, Starglider. So you do have that</span>
+<span class="qt">&gt;right then and David doesn&#x27;t? ;-)</span>
+<span class="qt">&gt;</span>
+I don&#x27;t, but I never said I did. I admit that David has never said he
+did, but I just wanted to annoying him!
+-- 
+          ****************The Starglider*****************    Change d.c.u to 
+          *    Web site:<a href="http://www.starglider.co.uk" rel="noreferrer">http://www.starglider.co.uk</a>     *      demon.co.uk
+          *   ADE VS. THE SPACESHIP: AN ONGOING SAGA!   *       TO REPLY.
+          *   AT:www.thespian.demon.co.uk/effects.htm   *     _WW_
+          *  &quot;FANTASTIC! MARVELLOUS!&quot; - David Darling   *    /_  _\
+          ***********************************************   | O  O |
+___________________________________________________________oOO_\/_OOo___________
+
+
+
+
+</pre></div><div class="post" id="p98144"><div class="ph"><a class="d" href="#p98144">2001-04-22 23:04:40</a> <span>David Lees</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>&quot;The Starglider&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; In article &lt;…@…&gt;, Tomaz Cedilnik &lt;…@…&gt;</span>
+<span class="qt">&gt; writes</span>
+<span class="qt">&gt; &gt;The Starglider wrote:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;&gt; &gt;&gt; FACT:  Len is a KNOWN LIAR!</span>
+<span class="qt">&gt; &gt;&gt; &gt;</span>
+<span class="qt">&gt; &gt;&gt; &gt;Stop shouting.</span>
+<span class="qt">&gt; &gt;&gt; &gt;</span>
+<span class="qt">&gt; &gt;&gt; YOU HAVE NO RIGHT TO SAY WHAT ANYONE HERE CAN DO OR SAY.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;But that&#x27;s exactly what YOU just did, Starglider. So you do have that</span>
+<span class="qt">&gt; &gt;right then and David doesn&#x27;t? ;-)</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; I don&#x27;t, but I never said I did. I admit that David has never said he</span>
+<span class="qt">&gt; did, but I just wanted to annoying him!</span>
+
+Doesn&#x27;t that make you a known troll?
+
+
+
+
+
+</pre></div><div class="post" id="p98146"><div class="ph"><a class="d" href="#p98146">2001-04-22 23:11:32</a> <span>The Starglider</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>In article &lt;YsJE6.125419$…@…&gt;, David Lees
+&lt;…@…&gt; writes
+<span class="qt">&gt;&quot;The Starglider&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt;news:…@…...</span>
+<span class="qt">&gt;&gt; In article &lt;…@…&gt;, Tomaz Cedilnik &lt;…@…&gt;</span>
+<span class="qt">&gt;&gt; writes</span>
+<span class="qt">&gt;&gt; &gt;The Starglider wrote:</span>
+<span class="qt">&gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; &gt;&gt; &gt;&gt; FACT:  Len is a KNOWN LIAR!</span>
+<span class="qt">&gt;&gt; &gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; &gt;&gt; &gt;Stop shouting.</span>
+<span class="qt">&gt;&gt; &gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; &gt;&gt; YOU HAVE NO RIGHT TO SAY WHAT ANYONE HERE CAN DO OR SAY.</span>
+<span class="qt">&gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; &gt;But that&#x27;s exactly what YOU just did, Starglider. So you do have that</span>
+<span class="qt">&gt;&gt; &gt;right then and David doesn&#x27;t? ;-)</span>
+<span class="qt">&gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; I don&#x27;t, but I never said I did. I admit that David has never said he</span>
+<span class="qt">&gt;&gt; did, but I just wanted to annoying him!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Doesn&#x27;t that make you a known troll?</span>
+<span class="qt">&gt;</span>
+In your case, yes, but I&#x27;m not denying that.
+-- 
+          ****************The Starglider*****************    Change d.c.u to 
+          *    Web site:<a href="http://www.starglider.co.uk" rel="noreferrer">http://www.starglider.co.uk</a>     *      demon.co.uk
+          *   ADE VS. THE SPACESHIP: AN ONGOING SAGA!   *       TO REPLY.
+          *   AT:www.thespian.demon.co.uk/effects.htm   *     _WW_
+          *  &quot;FANTASTIC! MARVELLOUS!&quot; - David Darling   *    /_  _\
+          ***********************************************   | O  O |
+___________________________________________________________oOO_\/_OOo___________
+
+
+
+
+</pre></div><div class="post" id="p98150"><div class="ph"><a class="d" href="#p98150">2001-04-22 23:22:56</a> <span>David Lees</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>&quot;The Starglider&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; In article &lt;YsJE6.125419$…@…&gt;, David Lees</span>
+<span class="qt">&gt; &lt;…@…&gt; writes</span>
+<span class="qt">&gt; &gt;&quot;The Starglider&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; &gt;&gt; &gt;&gt; YOU HAVE NO RIGHT TO SAY WHAT ANYONE HERE CAN DO OR SAY.</span>
+<span class="qt">&gt; &gt;&gt; &gt;</span>
+<span class="qt">&gt; &gt;&gt; &gt;But that&#x27;s exactly what YOU just did, Starglider. So you do have that</span>
+<span class="qt">&gt; &gt;&gt; &gt;right then and David doesn&#x27;t? ;-)</span>
+<span class="qt">&gt; &gt;&gt; &gt;</span>
+<span class="qt">&gt; &gt;&gt; I don&#x27;t, but I never said I did. I admit that David has never said he</span>
+<span class="qt">&gt; &gt;&gt; did, but I just wanted to annoying him!</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Doesn&#x27;t that make you a known troll?</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; In your case, yes, but I&#x27;m not denying that.</span>
+
+Hmm, its an interesting concept.  Rather then trolling a newsgroup you are
+trolling me?  Is that whats happening here?
+
+
+
+
+
+</pre></div><div class="post" id="p98157"><div class="ph"><a class="d" href="#p98157">2001-04-23 05:21:56</a> <span>The Starglider</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>In article &lt;6KJE6.125450$…@…&gt;, David Lees
+&lt;…@…&gt; writes
+<span class="qt">&gt;&quot;The Starglider&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt;news:…@…...</span>
+<span class="qt">&gt;&gt; In article &lt;YsJE6.125419$…@…&gt;, David Lees</span>
+<span class="qt">&gt;&gt; &lt;…@…&gt; writes</span>
+<span class="qt">&gt;&gt; &gt;&quot;The Starglider&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt;&gt; &gt;&gt; &gt;&gt; YOU HAVE NO RIGHT TO SAY WHAT ANYONE HERE CAN DO OR SAY.</span>
+<span class="qt">&gt;&gt; &gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; &gt;&gt; &gt;But that&#x27;s exactly what YOU just did, Starglider. So you do have that</span>
+<span class="qt">&gt;&gt; &gt;&gt; &gt;right then and David doesn&#x27;t? ;-)</span>
+<span class="qt">&gt;&gt; &gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; &gt;&gt; I don&#x27;t, but I never said I did. I admit that David has never said he</span>
+<span class="qt">&gt;&gt; &gt;&gt; did, but I just wanted to annoying him!</span>
+<span class="qt">&gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; &gt;Doesn&#x27;t that make you a known troll?</span>
+<span class="qt">&gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; In your case, yes, but I&#x27;m not denying that.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Hmm, its an interesting concept.  Rather then trolling a newsgroup you are</span>
+<span class="qt">&gt;trolling me?  Is that whats happening here?</span>
+<span class="qt">&gt;</span>
+Oh yes.
+
+That should be familiar ground for you, should it not?
+-- 
+          ****************The Starglider*****************    Change d.c.u to 
+          *    Web site:<a href="http://www.starglider.co.uk" rel="noreferrer">http://www.starglider.co.uk</a>     *      demon.co.uk
+          *   ADE VS. THE SPACESHIP: AN ONGOING SAGA!   *       TO REPLY.
+          *   AT:www.thespian.demon.co.uk/effects.htm   *     _WW_
+          *  &quot;FANTASTIC! MARVELLOUS!&quot; - David Darling   *    /_  _\
+          ***********************************************   | O  O |
+___________________________________________________________oOO_\/_OOo___________
+
+
+
+
+</pre></div><div class="post" id="p98229"><div class="ph"><a class="d" href="#p98229">2001-04-24 05:43:48</a> <span>Vlad Sandrini</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>Aye Engengah …@… H&#x27;ee L&#x27;geb F&#x27;ai Throdog
+Sun, 22 Apr 2001 12:26:55 +0000:
+<span class="qt">&gt;snaps, taps and even (in the case of incredibly stupid plebs who don&#x27;t know</span>
+<span class="qt">&gt;how to use their software, text that&#x27;s been encoded because it was included</span>
+<span class="qt">&gt;as an attachment).</span>
+
+i recall some1 did it... funny thing.
+i didn&#x27;t read the included text, of course, because DFN-CIS blocks
+binary messages.
+
+<span class="qt">&gt;the no binaries rule. It exists in 90% of all discussion groups. (probably</span>
+<span class="qt">&gt;more)</span>
+
+usually, it&#x27;s either discussion or binaries. tertium non datur (you don&#x27;t
+discuss often in binary groups even because, them being bigger because they
+contain files, the messages in them expire in _usually_ a day or two to save
+space. and binaries are not allowed in forums).
+
+-- 
+Sator 72
+sator72[at]libero[dot]it;nyarlato[at]tiscalinet[dot]it
+kicq#906246 - <a href="http://sator.250x.com" rel="noreferrer">http://sator.250x.com</a>
+root of all evil: […@… /root]# rm -rf /
+
+np: Celtic Frost: Under Apollyion&#x27;s Sun
+
+
+
+</pre></div><div class="post" id="p98303"><div class="ph"><a class="d" href="#p98303">2001-04-24 21:34:38</a> <span>Chris Young</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>On Sun, 22 Apr 2001 11:30:11 +0100, /|ndy |&lt;avanagh (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; Soni tempori elseu romani yeof helsforo nisson ol sefini ill des (ko Sun, 22</span>
+<span class="qt">&gt; Apr 2001 00:54:44 +0100), sefini jorgo geanyet des mani yeof do</span>
+<span class="qt">&gt; comp.sys.sinclair, yawatina tan reek esk David Lees fornis do marikano es</span>
+<span class="qt">&gt; bono tan el:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;&gt; &gt;Wait a sec, though... As ABCS clearly doesn&#x27;t exist, you&#x27;re obviously</span>
+<span class="qt">&gt; &gt;&gt; &gt;lying. Hah!</span>
+<span class="qt">&gt; &gt;&gt;</span>
+<span class="qt">&gt; &gt;&gt; FACT:  Len is a KNOWN LIAR!</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Stop shouting.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; NO.  YOU STARTED IT.  NOW GO.</span>
+
+You mean: FODL
+
+Chris
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p98455"><div class="ph"><a class="d" href="#p98455">2001-04-26 00:10:33</a> <span>Duncan Snowden</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>On Sunday, …@… wrote:
+
+<span class="qt">&gt; Duncan Snowden &lt;…@…&gt; did eloquently scribble:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Wait a sec, though... As ABCS clearly doesn&#x27;t exist, you&#x27;re obviously</span>
+<span class="qt">&gt;&gt; lying. Hah!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; /me whispers to duncan...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; whisper whisper whisper whisper...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Got that?</span>
+<span class="qt">&gt; :)</span>
+
+Yes, and you ought to be ashamed of yourself. Does your mother know you
+use language like that? Disgusting...
+ 
+-- 
+Duncan Snowden. 
+
+c CODE error, 1280:4 
+
+
+
+</pre></div><div class="post" id="p98493"><div class="ph"><a class="d" href="#p98493">2001-04-26 10:56:04</a> <span>Ian Griffiths</span> <span>Re: How to be a Complete Bastard solution required</span></div><pre>&quot;BigBadMick&quot; &lt;…@…&gt; wrote in message
+news:9c7dl5$a2o$…@…...
+<span class="qt">&gt; I was just wondering if anyone knows where I can get a complete solution</span>
+for
+<span class="qt">&gt; &quot;How to be a Complete Bastard&quot;, a game I never tired of playing since I</span>
+got
+<span class="qt">&gt; it off a Your Sinclair covertape.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Does anybody have a complete list of what everything does or what items</span>
+<span class="qt">&gt; should be used on who?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I once read the code for the game as an ASCII screen dump and saw various</span>
+<span class="qt">&gt; intriguing messages like &quot;More little bastards on the way&quot;. I assume this</span>
+<span class="qt">&gt; message refers to using the condom on some accomodating female in the</span>
+<span class="qt">&gt; bedroom. Can anyone enlighten me?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I complete list of where to use every item would be bloody useful, if</span>
+<span class="qt">&gt; anybody has one.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;ve grown fed up with blowing myself up with farting after I&#x27;ve eaten the</span>
+<span class="qt">&gt; curry in the kitchen.  :(</span>
+
+WHAT? You mean you WEREN&#x27;T supposed to just go around pissing on everything?
+Darn....
+
+Ian G.
+
+--
+&lt;Light in a world full of too many C64 lovers (shudder)&gt;
+
+
+
+
+
+</pre></div><div class="post" id="p98515"><div class="ph"><a class="d" href="#p98515">2001-04-26 16:49:43</a> <span>BigBadMick</span> <span>How to be a Complete Bastard solution required</span></div><pre>I was just wondering if anyone knows where I can get a complete solution for
+&quot;How to be a Complete Bastard&quot;, a game I never tired of playing since I got
+it off a Your Sinclair covertape.
+
+Does anybody have a complete list of what everything does or what items
+should be used on who?
+
+I once read the code for the game as an ASCII screen dump and saw various
+intriguing messages like &quot;More little bastards on the way&quot;. I assume this
+message refers to using the condom on some accomodating female in the
+bedroom. Can anyone enlighten me?
+
+I complete list of where to use every item would be bloody useful, if
+anybody has one.
+
+I&#x27;ve grown fed up with blowing myself up with farting after I&#x27;ve eaten the
+curry in the kitchen.  :(
+
+
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p98578"><div class="ph"><a class="d" href="#p98578">2001-04-26 22:50:08</a> <span class="small">address hidden</span> <span>Re: JSW April Showers &amp; Technician Ted megamix</span></div><pre>Duncan Snowden &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; On Sunday, …@… wrote:</span>
+
+<span class="qt">&gt;&gt; Duncan Snowden &lt;…@…&gt; did eloquently scribble:</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt;&gt; Wait a sec, though... As ABCS clearly doesn&#x27;t exist, you&#x27;re obviously</span>
+<span class="qt">&gt;&gt;&gt; lying. Hah!</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; /me whispers to duncan...</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; whisper whisper whisper whisper...</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Got that?</span>
+<span class="qt">&gt;&gt; :)</span>
+
+<span class="qt">&gt; Yes, and you ought to be ashamed of yourself. Does your mother know you</span>
+<span class="qt">&gt; use language like that? Disgusting...</span>
+
+I know... Terrible aren&#x27;t I?
+At least I didn&#x27;t mention KNOWN LIARS/Che*a*p (pol{em}ics) and commode 64s
+though...
+
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)| &quot;ARSE! GERLS!! DRINK! DRINK! DRINK!!!&quot;          |</span>
+<span class="qt">|            in            | &quot;THAT WOULD BE AN ECUMENICAL MATTER!...FECK!!!! |</span>
+<span class="qt">|     Computer Science     | - Father Jack in &quot;Father Ted&quot;                   |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p98599"><div class="ph"><a class="d" href="#p98599">2001-04-27 05:52:22</a> <span>Jim Grimwood</span> <span>Re: How to be a Complete Bastard solution required</span> <a class="badge" href="game-2366.html">ZXDB: How to be a Complete Bastard</a></div><pre>On Thu, 26 Apr 2001 09:49:43 -0700, &quot;BigBadMick&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;I was just wondering if anyone knows where I can get a complete solution for</span>
+<span class="qt">&gt;&quot;How to be a Complete Bastard&quot;, a game I never tired of playing since I got</span>
+<span class="qt">&gt;it off a Your Sinclair covertape. [...]</span>
+
+Here&#x27;s a load of playing tips sent in by Ross Anderson to Your Sinclair in
+1991, printed by Linda Barker in issue #68 (Aug.1991), transcribed by
+someone (probably not) christened &quot;Vaxalon&quot; and probably uploaded to some
+website (so you could probably have found it by doing a search for related
+files at Snapsearch or WoS), from which it was copied by the producers of
+the &quot;Die Speccy CD 1996&quot;, from which CD I&#x27;ve just copied it and pasted it
+into this message.
+
+&quot;Vaxalon&quot; refers to it as a &quot;solution&quot; but, as it said in the mag, it&#x27;s
+more an extensive selection of playing tips, rather than a step by step
+guide to completing the game.
+
+HOW TO BE A COMPLETE BASTARD - SOLUTION - TYPED BY VAXALON - 1994
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ If you&#x27;re trying to make the letters at the bottom of the screen light
+up,
+then what you need to do is...
+
+ Go to the coat in the hall, get the pen and stab someone with it.
+ Cover somebody in either toothpaste, washing up liquid, shaving foam,
+paint,
+oil, itching powder or sneezing powder.
+ Put icecubes in someones undies.
+ Tie someone up with hose.
+ Spray a man with perfume.
+ Put a plant pot on somebodys head (but not yours).
+ Put a pillowcase on somebodys head (again, not yours).
+ Spill wine down someone&#x27;s neck.
+ Squash a potato on a mans head.
+
+ Or if your drunk, you&#x27;ll get your letters lit up if you....
+
+ Take the Tyre and put it over someone&#x27;s head.
+ Shock someone with a battery charger.
+ Put worms down a girls neck.
+ Put a bucket over someone&#x27;s head.
+ Put soapsuds down someones someones neck.
+ Cut girls hair with shears.
+
+ For extra points......
+
+ Make stink bombs from the chemistry set.
+ Squash the soap.
+ Set the dogs mess on the ground.
+ Set the spider on the ground.
+ Pretend to be a ghost with sheet and talc.
+ Set fire to or smash all the furniture.
+ Put the 3d specs on.
+ Read the comedy book.
+ Eat the furry pet.
+ Drink some of the &#x27;Monster get pissed quick&#x27; lager.
+ Play the piano.
+ Throw the brick.
+ Throw the dart at the wall.
+ Throw or smash the umbrella.
+ Get drunk on stock of booze.
+ Squeeze your zits.
+ Eat the Curry.
+ Throw the chicken and the pizza.
+ Break the toothbrush.
+
+ If you&#x27;ve had a bit too much of the strong stuff and need sobering up....
+
+ Drink some black coffee.
+ Drink the medicine in the bathroom cabinet.
+
+ DO NOT....
+
+ Eat any cigarettes, coleslaw, burgers, sausages or crisps.
+ Fart in the kitchen.
+ Drink the weed killer.
+ Eat any pills.
+ Kill someone with chainsaw or razorblade.
+ Open umbrella inside (you&#x27;ll turn into an oven?)
+ Reset the computer.
+
+
+--
+Another Fine Product from:
+Jim Grimwood (…@…), Weardale, England
+--
+
+
+
+</pre></div><div class="post" id="p98674"><div class="ph"><a class="d" href="#p98674">2001-04-27 19:33:37</a> <span>Llama-Wax Len</span> <span>Re: How to be a Complete Bastard solution required</span></div><pre>
+Jim Grimwood wrote in message &lt;…@…&gt;...
+<span class="qt">&gt; DO NOT....</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Open umbrella inside (you&#x27;ll turn into an oven?)</span>
+
+Heheheheheh. That was always one of my favourite aspects of the game. I
+laughed for, ooh, probably at least five minutes at that. Absolutely
+brilliant.
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+LEGAL DISCLAIMER: By replying to this message, you hereby
+acknowledge that the ZX Spectrum game &quot;Robocop&quot; was too hard.
+
+
+
+
+
+</pre></div></main></body></html>
