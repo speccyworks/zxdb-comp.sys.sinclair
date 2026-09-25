@@ -4,7 +4,7 @@ The Usenet newsgroup comp.sys.sinclair (December 1993 – August 2026) compared 
 Spectrum Computing: releases ZXDB lacks, release days and versions, CSSCGC contest entries and authors, real names
 and handles, and games in the Tipshop's updates. Each finding links to the post that shows it.
 
-**Read it online:** https://speccyworks.github.io/zxdb-com.sys.sinclair/ (or open `index.html` from a copy of this repository).
+**Read it online:** https://speccyworks.github.io/comp.sys.sinclair/ (or open `index.html` from a copy of this repository).
 
 **Comment:** open an issue. Name the list and the item (e.g. "CSSCGC, entries with no author: Dark Room Simulator")
 and say what is wrong or missing.
