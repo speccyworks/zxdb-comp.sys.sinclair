@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZX81 Chopper Drop 3000 ***RELEASED*** · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ZX81 Chopper Drop 3000 ***RELEASED***</h1><p class="facts">10 posts, 2009-05-05 – 2009-05-12</p><div class="post" id="p220026"><div class="ph"><a class="d" href="#p220026">2009-05-05 01:12:19</a> <span>Nama</span>  <a class="badge" href="https://spectrumcomputing.co.uk/entry/32008">ZXDB: Chopper Drop 3000</a></div><pre>Hooray!!!
+
+Finally, the ultimate high action helicopter flying experience for the
+ZX81 has arrived.
+A year and a half in the making (ok, I did take a break in the
+middle), and with much help from Siggi and Andre***. (Andre*** sped up
+my original basic coding, and Siggi helped with compiling the basic
+into machine code using McoderII). I wanted to publicly thank the both
+of you. THANKS!
+
+the game has been tested on a real 16k ZX81, as well as ZXSP (OS X)
+and EightyOne (Windows) emulators.
+
+Chopper Drop 3000 game information can be found here:
+
+<a href="http://web.mac.com/lord_philip/sinclair/ZX81_Chopper_Drop_3000.html" rel="noreferrer">http://web.mac.com/lord_philip/sinclair/ZX81_Chopper_Drop_3000.html</a>
+
+Two versions of the compiled game exist.
+One version (CD3000.p) using my preferred keys (Q,A,O,P and  M)
+and an &#x27;alternative keyboard&#x27; version (CD3000ak.p) for the ZX81 purist
+which uses the standard arrow configuration (5,6,7,8 and 0).
+Both versions can be downloaded form from here, under the &#x27;ZX81&#x27;
+folder:
+
+<a href="http://tiny.cc/0VbLD" rel="noreferrer">http://tiny.cc/0VbLD</a>
+
+Thanks for playing, and if you like our game, please let us know.
+
+Philip (aka Nama)
+
+
+
+</pre></div><div class="post" id="p220027"><div class="ph"><a class="d" href="#p220027">2009-05-05 06:52:37</a> <span>…@…</span> <span>Re: ZX81 Chopper Drop 3000 ***RELEASED***</span></div><pre>On 5 Mai, 03:12, Nama &lt;…@…&gt; wrote:
+<span class="qt">&gt; Hooray!!!</span>
+<span class="qt">&gt;</span>
+
+<span class="qt">&gt; A year and a half in the making (ok, I did take a break in the  middle),</span>
+
+Hi Philip
+
+in Germany we say &quot;Gut Ding will Weile haben&quot;, which means in
+something like &quot; a good thing needs its time&quot; (but Yahoo Babelfish
+tells something about &quot;Tall oaks from little acorns grow&quot;).
+
+Anyway: grown from BASIC to M/C, Chopper Drop 3000 is a &quot;Gut Ding&quot; :-)
+
+Siggi
+
+
+
+</pre></div><div class="post" id="p220028"><div class="ph"><a class="d" href="#p220028">2009-05-05 09:39:55</a> <span>Nama</span> <span>Re: ZX81 Chopper Drop 3000 ***RELEASED***</span></div><pre>Seems Apple has upgraded idisk without telling me, so now the previous
+link doesn&#x27;t seem to work.
+
+The new link is as follows:
+<a href="http://idisk.mac.com/lord_philip-Public?view=web" rel="noreferrer">http://idisk.mac.com/lord_philip-Public?view=web</a>
+
+Just look under the ZX81 folder for the CD3000.p files
+
+
+Well Siggi, thanks to you and Andre***, the acorn is all grown up. A
+truly international effort.
+For those of you who don&#x27;t know, Siggi has a ZX81 web server. An
+amazing feat considering how basic a stock ZX81 actually is. Needless
+to say, Siggi&#x27;s Zeddy isn&#x27;t exactly stock.
+
+check it out here:
+zx81-siggi.endoftheinternet.org/index.html
+
+he&#x27;s got some good zx81 stuff for download there too.
+
+Cheers
+Phil
+
+
+
+
+Seems
+
+
+
+</pre></div><div class="post" id="p220046"><div class="ph"><a class="d" href="#p220046">2009-05-10 00:49:00</a> <span>Kirk Johnson</span> <span>Re: ZX81 Chopper Drop 3000 ***RELEASED***</span></div><pre>
+&quot;Nama&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; Hooray!!!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Finally, the ultimate high action helicopter flying experience for the</span>
+<span class="qt">&gt; ZX81 has arrived.</span>
+<span class="qt">&gt; A year and a half in the making (ok, I did take a break in the</span>
+<span class="qt">&gt; middle), and with much help from Siggi and Andre***. (Andre*** sped up</span>
+<span class="qt">&gt; my original basic coding, and Siggi helped with compiling the basic</span>
+<span class="qt">&gt; into machine code using McoderII). I wanted to publicly thank the both</span>
+<span class="qt">&gt; of you. THANKS!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; the game has been tested on a real 16k ZX81, as well as ZXSP (OS X)</span>
+<span class="qt">&gt; and EightyOne (Windows) emulators.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Chopper Drop 3000 game information can be found here:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; <a href="http://web.mac.com/lord_philip/sinclair/ZX81_Chopper_Drop_3000.html" rel="noreferrer">http://web.mac.com/lord_philip/sinclair/ZX81_Chopper_Drop_3000.html</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Two versions of the compiled game exist.</span>
+<span class="qt">&gt; One version (CD3000.p) using my preferred keys (Q,A,O,P and  M)</span>
+<span class="qt">&gt; and an &#x27;alternative keyboard&#x27; version (CD3000ak.p) for the ZX81 purist</span>
+<span class="qt">&gt; which uses the standard arrow configuration (5,6,7,8 and 0).</span>
+<span class="qt">&gt; Both versions can be downloaded form from here, under the &#x27;ZX81&#x27;</span>
+<span class="qt">&gt; folder:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; <a href="http://tiny.cc/0VbLD" rel="noreferrer">http://tiny.cc/0VbLD</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Thanks for playing, and if you like our game, please let us know.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Philip (aka Nama)</span>
+
+
+Stretch my old ring out.
+
+I Am Kirk Johnson.
+&quot;Anal Stretching, Wrenching &amp; Expanding Specialist&quot;
+<a href="http://www.imagefap.com/image.php?id=1988478267" rel="noreferrer">http://www.imagefap.com/image.php?id=1988478267</a>
+
+
+
+
+
+</pre></div><div class="post" id="p220048"><div class="ph"><a class="d" href="#p220048">2009-05-10 16:15:35</a> <span>GzavSnap</span> <span>Re: ZX81 Chopper Drop 3000 ***RELEASED***</span></div><pre>Hi,
+
+<span class="qt">|the game has been tested on a real 16k ZX81, as well as ZXSP (OS X)</span>
+<span class="qt">|and EightyOne (Windows) emulators.</span>
+Arrgh !
+Dont work on VB81...
+8-(
+
+
+
+
+
+</pre></div><div class="post" id="p220050"><div class="ph"><a class="d" href="#p220050">2009-05-11 00:13:19</a> <span>Nama</span> <span>Re: ZX81 Chopper Drop 3000 ***RELEASED***</span></div><pre>On May 11, 1:15 am, &quot;GzavSnap&quot; &lt;zx81.pas2spams.ordi5 chez free en
+france&gt; wrote:
+<span class="qt">&gt; Hi,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; |the game has been tested on a real 16k ZX81, as well as ZXSP (OS X)</span>
+<span class="qt">&gt; |and EightyOne (Windows) emulators.</span>
+<span class="qt">&gt; Arrgh !</span>
+<span class="qt">&gt; Dont work on VB81...</span>
+<span class="qt">&gt; 8-(</span>
+
+Really! thats strange.
+
+Let me test it.
+
+Philip
+
+
+
+</pre></div><div class="post" id="p220051"><div class="ph"><a class="d" href="#p220051">2009-05-11 00:20:29</a> <span>Nama</span> <span>Re: ZX81 Chopper Drop 3000 ***RELEASED***</span></div><pre>On May 11, 1:15 am, &quot;GzavSnap&quot; &lt;zx81.pas2spams.ordi5 chez free en
+france&gt; wrote:
+<span class="qt">&gt; Hi,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; |the game has been tested on a real 16k ZX81, as well as ZXSP (OS X)</span>
+<span class="qt">&gt; |and EightyOne (Windows) emulators.</span>
+<span class="qt">&gt; Arrgh !</span>
+<span class="qt">&gt; Dont work on VB81...</span>
+<span class="qt">&gt; 8-(</span>
+
+I just tested it. It works fine on VB81 XuR. What version are you
+using?
+
+
+
+</pre></div><div class="post" id="p220052"><div class="ph"><a class="d" href="#p220052">2009-05-11 16:02:18</a> <span>GzavSnap</span> <span>Re: ZX81 Chopper Drop 3000 ***RELEASED***</span></div><pre>Hi Mana,
+
+<span class="qt">|I just tested it. It works fine on VB81 XuR. What version are you</span>
+<span class="qt">|using?</span>
+I usually use a bugged XuR Realease !!!  /LOL\
+It was a joke !
+Nice game and Lovely tape cover...
+Have Fun.
+
+
+
+
+
+</pre></div><div class="post" id="p220055"><div class="ph"><a class="d" href="#p220055">2009-05-12 02:56:05</a> <span>Nama</span> <span>Re: ZX81 Chopper Drop 3000 ***RELEASED***</span></div><pre>On May 12, 1:02 am, &quot;GzavSnap&quot; &lt;zx81.pas2spams.ordi5 chez free en
+france&gt; wrote:
+<span class="qt">&gt; Hi Mana,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; |I just tested it. It works fine on VB81 XuR. What version are you</span>
+<span class="qt">&gt; |using?</span>
+<span class="qt">&gt; I usually use a bugged XuR Realease !!!  /LOL\</span>
+<span class="qt">&gt; It was a joke !</span>
+<span class="qt">&gt; Nice game and Lovely tape cover...</span>
+<span class="qt">&gt; Have Fun.</span>
+
+Yes, I thought so...but I didn&#x27;t want to assume VB81 XuR was your
+baby.
+
+Anyway, good to know it works on all three MAJOR ZX81 emulators.
+
+P
+
+
+
+</pre></div><div class="post" id="p220056"><div class="ph"><a class="d" href="#p220056">2009-05-12 17:18:56</a> <span>Chris Young</span> <span>Re: ZX81 Chopper Drop 3000 ***RELEASED***</span></div><pre>On Mon, 11 May 2009 19:56:05 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Nama:
+
+<span class="qt">&gt; Anyway, good to know it works on all three MAJOR ZX81 emulators.</span>
+
+It also works on the Amiga port of the PSP port[1] of xz81, so it
+should be ok on z81/xz81 proper too.
+
+Chris
+[1] The PSP port has been converted to use SDL which makes porting to
+other platforms less hassle.
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div></main></body></html>

@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Format converters... · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Format converters...</h1><p class="facts">8 posts, 1999-12-13 – 1999-12-24</p><div class="post" id="p57657"><div class="ph"><a class="d" href="#p57657">1999-12-13 14:56:08</a> <span>…@…</span> </div><pre>What is the current state of play with emulator file formats for
+Speccy games? I know not all the emulators support all the formats.
+
+ Is there a &#x27;definitive&#x27; format converter that will change between any
+ two formats required?
+
+ Why isn&#x27;t there a standard filter/loader-plugin format that allows
+ any emulator to use someone else&#x27;s format filters?
+
+--
+NT    As long as but a hundred of us remain alive, never will we on any
+\ \/ /conditions be brought under English rule. It is in truth not for
+ \  / glory, nor riches, nor honours that we are fighting, but for
+ /  \ freedom -- for that alone, which no honest man gives up but with
+/ /\ \life itself.                                    -- Arbroath, 1320
+   
+     
+    
+
+
+</pre></div><div class="post" id="p57675"><div class="ph"><a class="d" href="#p57675">1999-12-13 23:00:28</a> <span>…@…</span> <span>Re: Format converters...</span></div><pre>
+Equin0x (…@…) wrote:
+: On 13 Dec 1999, Niall Tracey wrote:
+
+: &gt; Why isn&#x27;t there a standard filter/loader-plugin format that allows
+: &gt; any emulator to use someone else&#x27;s format filters?
+
+: Different formats contain different information. For example, TAP contains
+: multiple files whereas SNA, Z80 do not. On the other hand, snapshot
+: formats save state (registers, devices attached, etc.), which tape-stream
+: formats don&#x27;t.
+
+I&#x27;m well aware of this - I know multi-loaders are restricted to tape
+archives, but I reckon it must be fairly simple to write a loader that
+loads the majority of snapshots into a loadable file.
+
+The best way to do this would be to write a cut-down version of one of
+the emulators that supports all file formats in C (to make it
+compilable on as many systems as possible) and loads the file into
+memory, then writes the output snapshot as the image appears directly
+after loading, either as a snapshot file or a &#x27;trained&#x27; tap/tzx
+file. This would help solve the annoying little quirk of many
+snapshots that they open with an intro tune in the middle of the
+second bar...
+
+: The best idea is probably to decide on one standard format with the best
+: features (probably a tape-stream with compression; TZX might come close)
+: rather than every emulator creating a new format and each one having to
+: deal with differently named and typed files. That said, the emulator scene
+: is almost exclusively amateur-driven, so this isn&#x27;t likely to happen.
+
+Yup. Ain&#x27;t that the way it goes.
+
+I disagree on one count. There should be several standard formats:
+  One tape       - TZX
+  One snapshot   - Because people will always want mid-game saves.
+  One microdrive - There is only one anyway, isn&#x27;t there?
+  One for every type of disc that ever existed.
+
+This post was written in NGFHTML(TM)[1].
+______________________________________________________________________
+[1]NewsGroup Friendly HyperText Markup Language. Basically it prints
+   it out in plain text, exactly as written by me, on any HTML
+   newsreader.
+
+Feel free to join the NGFHTML revolution by copying the HTML tags from
+the top and bottom of this post into your own. Show the Netscape/IE
+heathens the true meaning of Usenet!
+--
+NT    As long as but a hundred of us remain alive, never will we on any
+\ \/ /conditions be brought under English rule. It is in truth not for
+ \  / glory, nor riches, nor honours that we are fighting, but for
+ /  \ freedom -- for that alone, which no honest man gives up but with
+/ /\ \life itself.                                    -- Arbroath, 1320
+
+
+</pre></div><div class="post" id="p57687"><div class="ph"><a class="d" href="#p57687">1999-12-14</a> <span>chris young</span> <span>Re: Format converters...</span></div><pre>On 13 Dec 1999 14:56:08 GMT, Niall Tracey (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; What is the current state of play with emulator file formats for</span>
+<span class="qt">&gt; Speccy games? I know not all the emulators support all the formats.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;  Is there a &#x27;definitive&#x27; format converter that will change between any</span>
+<span class="qt">&gt;  two formats required?</span>
+
+SnapConv.  Check WOS (<a href="http://www.void.jump.org" rel="noreferrer">http://www.void.jump.org</a>)
+
+Chris
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
+<span class="qt">| <a href="http://www.bigfoot.com/~ysac" rel="noreferrer">http://www.bigfoot.com/~ysac</a>              |</span>
++------------------------------ICQ:28784166-+
+
+
+</pre></div><div class="post" id="p57689"><div class="ph"><a class="d" href="#p57689">1999-12-14</a> <span>darren salt</span> <span>Re: Format converters...</span></div><pre>In message &lt;833tqc$1ri$…@…&gt;
+          …@… (Niall Tracey) wrote:
+
+[snip]
+<span class="qt">&gt; I know multi-loaders are restricted to tape archives</span>
+
+The SLT format says otherwise (if you&#x27;re prepared to hack the loader).
+
+-- 
+<span class="qt">| Darren Salt  anti-UCE  | d youmustbejoking,demon,co,uk | nr. Ashington,</span>
+<span class="qt">| Spec+3, Risc PC, A3010 | s zap,uk,eu,org   ** anti-UBE | Northumberland</span>
+<span class="qt">| BBC M128, Linux PC     | @ retrospec,co,uk             | Toon Army</span>
+<span class="qt">|   We&#x27;ve got Shearer, you haven&#x27;t</span>
+
+Every instructor assumes you have nothing to do but study for his course.
+
+
+</pre></div><div class="post" id="p57714"><div class="ph"><a class="d" href="#p57714">1999-12-15</a> <span>andrew barker</span> <span>Re: Format converters...</span></div><pre>[Snip]
+<span class="qt">&gt; I&#x27;m well aware of this - I know multi-loaders are restricted to tape</span>
+<span class="qt">&gt; archives, but I reckon it must be fairly simple to write a loader that</span>
+<span class="qt">&gt; loads the majority of snapshots into a loadable file.</span>
+
+SLT and LLT support this, basically SLT contains a snapshot (SNA/Z80)
+and
+then has the levels hacked into DAT files which are combined into a
+SLT file, LLT has the DAT files separately.
+
+Also refer to Phillip Kendals FAQ........as per usual :}
+
+<span class="qt">&gt; The best way to do this would be to write a cut-down version of one of</span>
+<span class="qt">&gt; the emulators that supports all file formats in C (to make it</span>
+<span class="qt">&gt; compilable on as many systems as possible) and loads the file into</span>
+<span class="qt">&gt; memory, then writes the output snapshot as the image appears directly</span>
+<span class="qt">&gt; after loading, either as a snapshot file or a &#x27;trained&#x27; tap/tzx</span>
+<span class="qt">&gt; file. This would help solve the annoying little quirk of many</span>
+<span class="qt">&gt; snapshots that they open with an intro tune in the middle of the</span>
+<span class="qt">&gt; second bar...</span>
+
+x128 does this and is available on PCs and Amigas :}
+Most other emulators also cater for this or have I missed something?
+
+<span class="qt">&gt; Yup. Ain&#x27;t that the way it goes.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I disagree on one count. There should be several standard formats:</span>
+<span class="qt">&gt;   One tape       - TZX</span>
+<span class="qt">&gt;   One snapshot   - Because people will always want mid-game saves.</span>
+<span class="qt">&gt;   One microdrive - There is only one anyway, isn&#x27;t there?</span>
+<span class="qt">&gt;   One for every type of disc that ever existed.</span>
+<span class="qt">&gt; </span>
+
+They are have been in discussion for some time on the MIA mailing list:
+
+Tape		- TZX
+Snapshot	- SZX
+Sound		- AZX
+Disk		- DZX
+
+TZX can actually cater for most of the above in a simple format, and the
+specs are
+freelly available from WOS.
+
+Regards
+
+Andy Barker
+
+
+</pre></div><div class="post" id="p57764"><div class="ph"><a class="d" href="#p57764">1999-12-16</a> <span>chris young</span> <span>Re: Format converters...</span></div><pre>On 15 Dec 1999 09:40:34 +0000, Philip Kendall (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; &quot;Chris Young&quot;  writes:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; SnapConv.  Check WOS (<a href="http://www.void.jump.org" rel="noreferrer">http://www.void.jump.org</a>)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Or even my home page, where you can actually find it :-)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; <a href="http://www.kendalls.demon.co.uk/pak21/spectrum/snapconv.html" rel="noreferrer">http://www.kendalls.demon.co.uk/pak21/spectrum/snapconv.html</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Phil</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; (OK, I&#x27;ll upload it to WoS...)</span>
+
+Sorry, thought it was already there :-)
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
+<span class="qt">| <a href="http://www.bigfoot.com/~ysac" rel="noreferrer">http://www.bigfoot.com/~ysac</a>              |</span>
++------------------------------ICQ:28784166-+
+
+
+</pre></div><div class="post" id="p58051"><div class="ph"><a class="d" href="#p58051">1999-12-24</a> <span>…@…</span> <span>Re: Format converters...</span></div><pre>Philip Kendall (…@…) wrote:
+
+<span class="qt">&gt; I&#x27;ll give you one warning: it&#x27;s not nearly as easy as it looks. There</span>
+<span class="qt">&gt; is no one format which currently supports everything you need to save</span>
+<span class="qt">&gt; (especially for Pentagon/Scorpion snaps), and every format has its own</span>
+<span class="qt">&gt; problems to deal with.</span>
+
+In case of Pentagon/Scorpion snaps, XZX uses an extension to the .Z80 format.
+
+-- 
+…@…
+
+Maintainer of XZX, *THE* Spectrum 48/128/+3 emulator for UNIX/X11.
+XZX home page: <a href="http://www.philosys.de/~kunze/xzx/" rel="noreferrer">http://www.philosys.de/~kunze/xzx/</a>
+
+
+</pre></div><div class="post" id="p58052"><div class="ph"><a class="d" href="#p58052">1999-12-24</a> <span>…@…</span> <span>Re: Format converters...</span></div><pre>Andrew Barker (…@…) wrote:
+
+<span class="qt">&gt; They are have been in discussion for some time on the MIA mailing list:</span>
+
+Wasn&#x27;t this the EMUL mailing list?
+
+<span class="qt">&gt; Tape		- TZX</span>
+<span class="qt">&gt; Snapshot	- SZX</span>
+<span class="qt">&gt; Sound		- AZX</span>
+<span class="qt">&gt; Disk		- DZX</span>
+
+<span class="qt">&gt; TZX can actually cater for most of the above in a simple format, and the</span>
+<span class="qt">&gt; specs are</span>
+<span class="qt">&gt; freelly available from WOS.</span>
+
+
+-- 
+…@…
+
+Maintainer of XZX, *THE* Spectrum 48/128/+3 emulator for UNIX/X11.
+XZX home page: <a href="http://www.philosys.de/~kunze/xzx/" rel="noreferrer">http://www.philosys.de/~kunze/xzx/</a>
+
+
+</pre></div></main></body></html>

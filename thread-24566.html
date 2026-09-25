@@ -1,0 +1,940 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tzx/cdt · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>tzx/cdt</h1><p class="facts">7 posts, 2002-02-20 – 2002-03-11</p><div class="post" id="p131582"><div class="ph"><a class="d" href="#p131582">2002-02-20 13:03:28</a> <span>Kevin Thacker</span> </div><pre>Hi All,
+
+I have started a archive of Amstrad TZX&#x27;s along the same lines as the
+TZXVault.
+e.g. the files should be taken from originals for preservation
+purposes.
+
+I am also writing a document to help the authors of emulators so they
+can support these files.
+
+I have read the spec and there are some Spectrum and C64 specific
+blocks.
+I have listed the problem blocks and my suggestions.
+
+ID:2A Stop the tape if in 48k mode
+
+This block MUST be ignored, there shouldn&#x27;t be any pause or anything.
+It is suggested that block (ID:30 Text Description) should be used.
+The emulator should allow the tape to be resumed from this point.
+
+ID:34 Emulation Info
+
+This block MUST be ignored. Some information doesn&#x27;t apply to Amstrad
+emulators.
+The ID:33 hardware type, and ID:31 text description should be used to
+describe why; but not prevent the user from actually trying the
+program.
+
+ID:40 Snapshot block.
+
+This block MUST be ignored. The information doesn&#x27;t apply to the
+Amstrad.
+
+ID:10 Standard Speed Data Block
+
+Standard Spectrum loading parameters must be used.
+Pilot Pulse: 2168, Pilot length: ?? what should I put here
+Sync 1: 667, Sync 2: 735 etc
+
+ID:16,ID:17 C64 blocks
+
+SHOULD be supported to accuratly reproduce sound signal, but MUST not
+be present in Amstrad specific CDTs. It is possible therefore to take
+a tzx specific to C64 and use it on the emu, but don&#x27;t expect it to
+load ;)
+
+ID:20 pause or stop the tape.
+
+If &quot;0&quot;, the tape should not be stopped. Play must continue, it is up
+to the user to actually &quot;stop the tape&quot;.
+
+ID:35 Custom Info
+
+Spectrum Screen Block, ZX-Edit document block MUST be ignored.
+I&#x27;m not sure if picture block should be ignored as well (i.e. don&#x27;t
+display), but instructions is ok.
+
+Hardware block:
+
+0 = computers (is ok), 1-F applies to spectrum and should be ignored.
+
+What do you think to this?
+
+Regards,
+Kev
+
+
+
+</pre></div><div class="post" id="p132719"><div class="ph"><a class="d" href="#p132719">2002-03-06 14:53:32</a> <span>Andrew Barker</span> <span>Re: tzx/cdt</span></div><pre>Hi Kevin,
+
+Kevin Thacker wrote:
+
+<span class="qt">&gt; Hi All,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I have started a archive of Amstrad TZX&#x27;s along the same lines as the</span>
+<span class="qt">&gt; TZXVault.</span>
+<span class="qt">&gt; e.g. the files should be taken from originals for preservation</span>
+<span class="qt">&gt; purposes.</span>
+
+Care to let us in on the URL ?
+
+<span class="qt">&gt; I am also writing a document to help the authors of emulators so they</span>
+<span class="qt">&gt; can support these files.</span>
+
+Cool, I&#x27;ve done a couple of CPC tapes, but the utils are a bit weak at
+the
+moment to handle them.
+
+<span class="qt">&gt; I have read the spec and there are some Spectrum and C64 specific</span>
+<span class="qt">&gt; blocks.</span>
+
+More so for Spectrum as we took hold of the TZX format immediately and
+started creating TZXs.  This was back in the days that Tomaz had more
+time
+to devote to it.
+
+<span class="qt">&gt; I have listed the problem blocks and my suggestions.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; ID:2A Stop the tape if in 48k mode</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; This block MUST be ignored, there shouldn&#x27;t be any pause or anything.</span>
+
+This was a spectrum specific block becuase some 128k games loaded
+additional data.
+I think I came up with that one in the mailing list, but I&#x27;m sure others
+will have also
+thought that.
+
+
+<span class="qt">&gt; It is suggested that block (ID:30 Text Description) should be used.</span>
+<span class="qt">&gt; The emulator should allow the tape to be resumed from this point.</span>
+
+Why not just use &quot;ID 20 - Pause (Silence) or `Stop the Tape&#x27; Command&quot; ?
+
+<span class="qt">&gt; ID:34 Emulation Info</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; This block MUST be ignored. Some information doesn&#x27;t apply to Amstrad</span>
+<span class="qt">&gt; emulators.</span>
+
+That&#x27;s cos the TZX format was primarily customised for use with the
+Spectrum.
+
+<span class="qt">&gt; The ID:33 hardware type, and ID:31 text description should be used to</span>
+<span class="qt">&gt; describe why; but not prevent the user from actually trying the</span>
+<span class="qt">&gt; program.</span>
+
+It doesn&#x27;t prevent anything, it&#x27;s just information.  The emu authors can
+use it
+if they wish.
+You seem to like your text descriptions don&#x27;t you ;-)
+
+<span class="qt">&gt; ID:40 Snapshot block.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; This block MUST be ignored. The information doesn&#x27;t apply to the</span>
+<span class="qt">&gt; Amstrad.</span>
+
+It&#x27;s hardly if ever, uses for Spectrum tapes either.
+
+<span class="qt">&gt; ID:10 Standard Speed Data Block</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Standard Spectrum loading parameters must be used.</span>
+<span class="qt">&gt; Pilot Pulse: 2168, Pilot length: ?? what should I put here</span>
+<span class="qt">&gt; Sync 1: 667, Sync 2: 735 etc</span>
+
+Dunno ?
+
+<span class="qt">&gt; ID:16,ID:17 C64 blocks</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; SHOULD be supported to accuratly reproduce sound signal, but MUST not</span>
+<span class="qt">&gt; be present in Amstrad specific CDTs. It is possible therefore to take</span>
+<span class="qt">&gt; a tzx specific to C64 and use it on the emu, but don&#x27;t expect it to</span>
+<span class="qt">&gt; load ;)</span>
+
+Well I&#x27;ve tried contacting authors of Vice and CCS64 and they aren&#x27;t
+willing to
+use the TZX format for their emus, they tell me RAW-TAP is enough for
+them.
+I wish TZX was improved to cater for C64 tapes which I&#x27;m told can have 3
+signal
+pulses.  This could actually assist to store blocks like UniLODE used
+in Trivial Pursuit etc (I think ?)
+
+I have well over 100 working C64 TZXs, and have half a dozen CDT/TZX
+files as well.
+
+<span class="qt">&gt; ID:20 pause or stop the tape.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; If &quot;0&quot;, the tape should not be stopped. Play must continue, it is up</span>
+<span class="qt">&gt; to the user to actually &quot;stop the tape&quot;.</span>
+
+Not if you&#x27;re loading at 1000%, the tape would have played until the end
+before you presses stop
+and you&#x27;d miss the next block needed.
+
+<span class="qt">&gt; ID:35 Custom Info</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Spectrum Screen Block, ZX-Edit document block MUST be ignored.</span>
+<span class="qt">&gt; I&#x27;m not sure if picture block should be ignored as well (i.e. don&#x27;t</span>
+<span class="qt">&gt; display), but instructions is ok.</span>
+
+Depends on how CPC/C64 etc store their screens.  You&#x27;d probably need
+a C64 and CPC Screen Block to be defined.  No one seems bothered for
+other formats than spectrum ;-(
+
+<span class="qt">&gt; Hardware block:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; 0 = computers (is ok), 1-F applies to spectrum and should be ignored.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; What do you think to this?</span>
+
+You&#x27;d ignore non specific blocks anyway, so I&#x27;m not sure why you&#x27;ve
+listed all of them
+and mentioned using the Text Description.
+
+<span class="qt">&gt; Regards,</span>
+<span class="qt">&gt; Kev</span>
+
+Anyway,  I&#x27;m glad that other people are interested in the TZX Format and
+maybe one day
+it will be enhanced to cater for other 8-bit tape systems.
+Let me know the URL as I might be able to TZX/CDT some tapes for you.
+
+Regards
+
+Andy Barker (ZX STP Maintainer - <a href="http://www.sunderland.ac.uk/~as0aba/" rel="noreferrer">http://www.sunderland.ac.uk/~as0aba/</a>)
+
+
+
+
+</pre></div><div class="post" id="p132729"><div class="ph"><a class="d" href="#p132729">2002-03-06 17:01:22</a> <span>Andy Cadley</span> <span>Re: tzx/cdt</span></div><pre>
+
+On Wed, 6 Mar 2002, Andrew Barker wrote:
+
+<span class="qt">&gt; &gt; If &quot;0&quot;, the tape should not be stopped. Play must continue, it is up</span>
+<span class="qt">&gt; &gt; to the user to actually &quot;stop the tape&quot;.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Not if you&#x27;re loading at 1000%, the tape would have played until the end</span>
+<span class="qt">&gt; before you presses stop</span>
+<span class="qt">&gt; and you&#x27;d miss the next block needed.</span>
+
+
+Not really an issue with CDT&#x27;s though, since the CPC is capable of
+stopping/starting the tape itself when necessary.
+
+AndyC
+
+
+
+
+</pre></div><div class="post" id="p132733"><div class="ph"><a class="d" href="#p132733">2002-03-06 17:20:22</a> <span>Andrew Barker</span> <span>Re: tzx/cdt</span></div><pre>
+
+Andy Cadley wrote:
+
+<span class="qt">&gt; On Wed, 6 Mar 2002, Andrew Barker wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; If &quot;0&quot;, the tape should not be stopped. Play must continue, it is up</span>
+<span class="qt">&gt; &gt; &gt; to the user to actually &quot;stop the tape&quot;.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Not if you&#x27;re loading at 1000%, the tape would have played until the end</span>
+<span class="qt">&gt; &gt; before you presses stop</span>
+<span class="qt">&gt; &gt; and you&#x27;d miss the next block needed.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Not really an issue with CDT&#x27;s though, since the CPC is capable of</span>
+<span class="qt">&gt; stopping/starting the tape itself when necessary.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; AndyC</span>
+
+Fair enough, as long as the emulator also tells stops the tape.  C64s do this
+as well.
+
+Cheers
+
+Andy B
+
+
+
+
+</pre></div><div class="post" id="p132752"><div class="ph"><a class="d" href="#p132752">2002-03-07 10:29:56</a> <span>Kevin Thacker</span> <span>Re: tzx/cdt</span></div><pre>Andrew Barker &lt;…@…&gt; wrote in message news:&lt;…@…&gt;...
+<span class="qt">&gt; Hi Kevin,</span>
+
+Hi Andrew,
+
+Thankyou for your comments.
+
+<span class="qt">&gt; Kevin Thacker wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; Hi All,</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; I have started a archive of Amstrad TZX&#x27;s along the same lines as the</span>
+<span class="qt">&gt; &gt; TZXVault.</span>
+<span class="qt">&gt; &gt; e.g. the files should be taken from originals for preservation</span>
+<span class="qt">&gt; &gt; purposes.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Care to let us in on the URL ?</span>
+<a href="http://andercheran.aiind.upv.es/ftp/pub/cpc/ADATE/" rel="noreferrer">http://andercheran.aiind.upv.es/ftp/pub/cpc/ADATE/</a> or
+<a href="ftp://andercheran.aiind.upv.es/pub/cpc/ADATE/" rel="noreferrer">ftp://andercheran.aiind.upv.es/pub/cpc/ADATE/</a>
+
+You can upload to the incoming sub directory. At this time there is a
+space problem, so for now you can e-mail files to me at:
+…@…
+
+Please read the upload.txt in the docs sub-directory. This describes
+the format of the file_id.diz to include in the ZIP file. I have a
+program that automatically parses this to generate the index files. If
+you do use it, then it saves me some time. You don&#x27;t have to include
+all the fields. At a minimum it is best to include title, publisher,
+year and language.
+ 
+<span class="qt">&gt; &gt; I am also writing a document to help the authors of emulators so they</span>
+<span class="qt">&gt; &gt; can support these files.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Cool, I&#x27;ve done a couple of CPC tapes, but the utils are a bit weak at</span>
+<span class="qt">&gt; the</span>
+<span class="qt">&gt; moment to handle them.</span>
+yes I agree.
+
+Some CPC loaders are similar to the Spectrum and can be converted
+using the existing Spectrum tools, especially voc2tzx. This has been a
+big benefit, and this shows with the current collection of cdt&#x27;s that
+are available.
+
+But other loaders, including later Amstrad variants of Speedlock don&#x27;t
+seem to work. :(
+
+I have started a open-source tool which I hope will help people to
+transfer the Amstrad loaders. I hope this will help and encourage more
+tapes to be transfered.
+
+<span class="qt">&gt; &gt; I have read the spec and there are some Spectrum and C64 specific</span>
+<span class="qt">&gt; &gt; blocks.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; More so for Spectrum as we took hold of the TZX format immediately and</span>
+<span class="qt">&gt; started creating TZXs.  This was back in the days that Tomaz had more</span>
+<span class="qt">&gt; time</span>
+<span class="qt">&gt; to devote to it.</span>
+And there is nothing wrong with that. I can see the format was defined
+for the benefit of Spectrum users and then later extended for other
+computers too. I have no complaint with that.
+
+But, I was attempting to clarify the action for Amstrad emulators and
+Amstrad CDT/TZX creation tools, and the spec is not completely clear
+in these cases.
+
+The aim is that the same tape images can be used on all emulators,
+with the same sound wave being generated.
+
+I could use a Spectrum tape image with a Amstrad emulator, and I do
+have a program to read the Standard Spectrum loading scheme, and
+therefore I could read the files from the tape image with no problem.
+
+ 
+<span class="qt">&gt; &gt; ID:2A Stop the tape if in 48k mode</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; This block MUST be ignored, there shouldn&#x27;t be any pause or anything.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; This was a spectrum specific block becuase some 128k games loaded</span>
+<span class="qt">&gt; additional data.</span>
+<span class="qt">&gt; I think I came up with that one in the mailing list, but I&#x27;m sure others</span>
+<span class="qt">&gt; will have also</span>
+<span class="qt">&gt; thought that.</span>
+As the Amstrad has a tape relay, the block is redudant; so I suggest
+that Amstrad emulators should ignore it. If possible, the Amstrad
+tools should not insert it.
+
+If the tape should be stopped, I believe it should be a suggestion by
+adding some kind of marker (it could be this block or it could be a
+text message). But in both cases, the Amstrad would ignore it.
+ 
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; It is suggested that block (ID:30 Text Description) should be used.</span>
+<span class="qt">&gt; &gt; The emulator should allow the tape to be resumed from this point.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Why not just use &quot;ID 20 - Pause (Silence) or `Stop the Tape&#x27; Command&quot; ?</span>
+it could, but if the aim is to suggest that the tape be stopped, then
+a message block is equally as good?
+ 
+<span class="qt">&gt; &gt; ID:34 Emulation Info</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; This block MUST be ignored. Some information doesn&#x27;t apply to Amstrad</span>
+<span class="qt">&gt; &gt; emulators.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; That&#x27;s cos the TZX format was primarily customised for use with the</span>
+<span class="qt">&gt; Spectrum.</span>
+I think of the CDT as a way to describe the signal. This is additional
+information just to help users. If the information is important, then
+it could be equally good if it was described using text. Maybe this
+block should be depreciated, considering the number of accurate
+Amstrad and Spectrum emulations that exist?
+
+<span class="qt">&gt; &gt; The ID:33 hardware type, and ID:31 text description should be used to</span>
+<span class="qt">&gt; &gt; describe why; but not prevent the user from actually trying the</span>
+<span class="qt">&gt; &gt; program.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; It doesn&#x27;t prevent anything, it&#x27;s just information.  The emu authors can</span>
+<span class="qt">&gt; use it</span>
+<span class="qt">&gt; if they wish.</span>
+that is cool :)
+<span class="qt">&gt; You seem to like your text descriptions don&#x27;t you ;-)</span>
+yes I do. ;)
+
+<span class="qt">&gt; &gt; ID:40 Snapshot block.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; This block MUST be ignored. The information doesn&#x27;t apply to the</span>
+<span class="qt">&gt; &gt; Amstrad.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; It&#x27;s hardly if ever, uses for Spectrum tapes either.</span>
+I see it as a &quot;polution&quot; of the tape image format, and I can
+understand why it is not used.
+
+Part of the problem is that the tape image may not be portable if it
+relies
+on this block. I would not be able to take a tzx and use it on the
+Amstrad emulator. If this block was required, it makes it much more
+difficult to use a tape in this way.
+
+Also, I would prefer to have a tape image and snapshot file instead of
+embedding it into the tape image file. This would mean more files, but
+better portability, and also the snapshot could be updated to make it
+more accurate without causing any problem to existing tape images.
+
+<span class="qt">&gt; &gt; ID:10 Standard Speed Data Block</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Standard Spectrum loading parameters must be used.</span>
+<span class="qt">&gt; &gt; Pilot Pulse: 2168, Pilot length: ?? what should I put here</span>
+<span class="qt">&gt; &gt; Sync 1: 667, Sync 2: 735 etc</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Dunno ?</span>
+The spec seems to imply that the timings are based on the Machine type
+used.
+But what if no type is specified?
+
+A suggestion: if no machine type is specified then Spectrum parameters
+should be used. In this way the tape signal reproduced will be the
+same even on a Amstrad emulator.
+
+
+<span class="qt">&gt; &gt; ID:16,ID:17 C64 blocks</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; SHOULD be supported to accuratly reproduce sound signal, but MUST not</span>
+<span class="qt">&gt; &gt; be present in Amstrad specific CDTs. It is possible therefore to take</span>
+<span class="qt">&gt; &gt; a tzx specific to C64 and use it on the emu, but don&#x27;t expect it to</span>
+<span class="qt">&gt; &gt; load ;)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Well I&#x27;ve tried contacting authors of Vice and CCS64 and they aren&#x27;t</span>
+<span class="qt">&gt; willing to</span>
+<span class="qt">&gt; use the TZX format for their emus, they tell me RAW-TAP is enough for</span>
+<span class="qt">&gt; them.</span>
+<span class="qt">&gt; I wish TZX was improved to cater for C64 tapes which I&#x27;m told can have 3</span>
+<span class="qt">&gt; signal</span>
+<span class="qt">&gt; pulses.  This could actually assist to store blocks like UniLODE used</span>
+<span class="qt">&gt; in Trivial Pursuit etc (I think ?)</span>
+:( I did read a long thread in the comp.sys.cbm newsgroup explaining
+why they wanted it this way.
+
+They believe that the signal is represented more accuratly; which in
+part is true. But I see tzx as a way to describe a master tape.
+I think they also believe that using a different format means that, in
+the future, if a better format is devised, then the tapes can be
+converted into this format.
+
+I can understand that with TZX, that to describe more signals that
+don&#x27;t use the same kind of recording format as Spectrum and Amstrad
+that more blocks would need to be defined. But then again, shirley it
+is possible to describe almost any loading signal using &quot;pulses of
+different lengths&quot; exclusively? That would mean a large file, but
+should work?
+
+<span class="qt">&gt; I have well over 100 working C64 TZXs, and have half a dozen CDT/TZX</span>
+<span class="qt">&gt; files as well.</span>
+cool.
+
+<span class="qt">&gt; &gt; ID:20 pause or stop the tape.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; If &quot;0&quot;, the tape should not be stopped. Play must continue, it is up</span>
+<span class="qt">&gt; &gt; to the user to actually &quot;stop the tape&quot;.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Not if you&#x27;re loading at 1000%, the tape would have played until the end</span>
+<span class="qt">&gt; before you presses stop</span>
+<span class="qt">&gt; and you&#x27;d miss the next block needed.</span>
+But the cassette recorder would stop if instructed by the computer.
+
+In a way this block is just a helper and doesn&#x27;t relate to real life.
+
+In real life on the Spectrum (48k), the cassette recorder wouldn&#x27;t
+stop. So if I forgot to stop it, I would curse and rewind it. On the
+emulator, I should be able to do the same. To help me, there could be
+some kind of indicator block
+which I could use to &quot;fast-rewind&quot; back to the exact point. This could
+be a text description, or it could be this block.
+
+On the Amstrad it wouldn&#x27;t actually stop unless the computer indicated
+it should stop.
+
+<span class="qt">&gt; &gt; ID:35 Custom Info</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Spectrum Screen Block, ZX-Edit document block MUST be ignored.</span>
+<span class="qt">&gt; &gt; I&#x27;m not sure if picture block should be ignored as well (i.e. don&#x27;t</span>
+<span class="qt">&gt; &gt; display), but instructions is ok.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Depends on how CPC/C64 etc store their screens.  You&#x27;d probably need</span>
+<span class="qt">&gt; a C64 and CPC Screen Block to be defined.  No one seems bothered for</span>
+<span class="qt">&gt; other formats than spectrum ;-(</span>
+My preference would be to not include the screen.
+If a screen is wanted then it should be included as a .gif/.png etc in
+the zip archive that the cdt/tzx is distributed with.
+
+The trouble for the Amstrad is that the screen dimensions and position
+can be defined using the 6845 CRTC, and some very complex screens are
+possible. I wouldn&#x27;t want to attempt to describe a block which could
+reproduce this. The best solution would be a picture dump taken using
+the emulator itself.
+ 
+<span class="qt">&gt; &gt; Hardware block:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; 0 = computers (is ok), 1-F applies to spectrum and should be ignored.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; What do you think to this?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; You&#x27;d ignore non specific blocks anyway, so I&#x27;m not sure why you&#x27;ve</span>
+<span class="qt">&gt; listed all of them</span>
+<span class="qt">&gt; and mentioned using the Text Description.</span>
+Only to make it crystal clear what in my opinion should be done. I am
+trying to anticipating some questions that the Amstrad emulator
+author&#x27;s will have.
+ 
+<span class="qt">&gt; Anyway,  I&#x27;m glad that other people are interested in the TZX Format and</span>
+<span class="qt">&gt; maybe one day</span>
+<span class="qt">&gt; it will be enhanced to cater for other 8-bit tape systems.</span>
+I think it is a great format; and ideal for describing loaders.
+
+The aim of the doc was to advise tool makers and emulator authors
+about the way to handle TZX/CDT&#x27;s and allowing TZX&#x27;s made for other
+computers to also be supported.
+
+I am trying to promote it as much as possible. At this time there are
+only
+3 emulators which support it: CPCE (<a href="http://cpce.emuunlim.com/" rel="noreferrer">http://cpce.emuunlim.com/</a>), Arnold
+(<a href="http://arnold.emuunlim.com/" rel="noreferrer">http://arnold.emuunlim.com/</a>) and Multi-Machine.
+
+The other two major emulators, Caprice and Winape don&#x27;t support it
+yet. :(
+
+But, there is a growing collection of tape images already. There have
+been a core group of about 5 people doing the transfers, but we are
+already being
+held back by the lack of support for Amstrad speedloaders and a lack
+of a Amstrad specific tool :( But I hope that will change soon as the
+tools mature.
+
+<span class="qt">&gt; Let me know the URL as I might be able to TZX/CDT some tapes for you.</span>
+all are welcome :) I prefer that they are not beautified. I believe
+that you wouldn&#x27;t do this anyway ;)
+
+
+I am not trying to cause a argument. TZX is a good format, and can
+describe the signal well, so that it could be used to reproduce the
+original tapes if required.
+
+I was just wanting to clarify some parts of the spec for Amstrad and
+other users, especially since some is geared towards Spectrum (mainly
+because of the enthusiasm and usage in that field). I also want to be
+able to allow the tape images to be used with other emulators, and the
+same signal to be reproduced. I appreciate your help with this. In the
+end, my ideas are only suggestions, but if they help people to adopt
+this format on the Amstrad, then this is good.
+
+Regards,
+Kev
+
+
+
+</pre></div><div class="post" id="p132771"><div class="ph"><a class="d" href="#p132771">2002-03-07 20:10:07</a> <span>Gilby</span> <span>Re: tzx/cdt</span></div><pre>Hi Kev,
+
+I think everything mentioned so far sounds fair enough to me! Like I&#x27;ve said
+before, I can give you some help along with Andy in getting some tapes
+dumped.
+
+If you&#x27;re struggling for web-space, how about hosting your files at the .tzx
+vault? I can have a word with Martijn about updating the html generation
+tools which would then make adding the dumped tapes to the database and the
+update process very easy!!
+
+What do you reckon?
+
+Steve
+
+&quot;Kevin Thacker&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Andrew Barker &lt;…@…&gt; wrote in message</span>
+news:&lt;…@…&gt;...
+<span class="qt">&gt; &gt; Hi Kevin,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Hi Andrew,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Thankyou for your comments.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Kevin Thacker wrote:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; Hi All,</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; I have started a archive of Amstrad TZX&#x27;s along the same lines as the</span>
+<span class="qt">&gt; &gt; &gt; TZXVault.</span>
+<span class="qt">&gt; &gt; &gt; e.g. the files should be taken from originals for preservation</span>
+<span class="qt">&gt; &gt; &gt; purposes.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Care to let us in on the URL ?</span>
+<span class="qt">&gt; <a href="http://andercheran.aiind.upv.es/ftp/pub/cpc/ADATE/" rel="noreferrer">http://andercheran.aiind.upv.es/ftp/pub/cpc/ADATE/</a> or</span>
+<span class="qt">&gt; <a href="ftp://andercheran.aiind.upv.es/pub/cpc/ADATE/" rel="noreferrer">ftp://andercheran.aiind.upv.es/pub/cpc/ADATE/</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; You can upload to the incoming sub directory. At this time there is a</span>
+<span class="qt">&gt; space problem, so for now you can e-mail files to me at:</span>
+<span class="qt">&gt; …@…</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Please read the upload.txt in the docs sub-directory. This describes</span>
+<span class="qt">&gt; the format of the file_id.diz to include in the ZIP file. I have a</span>
+<span class="qt">&gt; program that automatically parses this to generate the index files. If</span>
+<span class="qt">&gt; you do use it, then it saves me some time. You don&#x27;t have to include</span>
+<span class="qt">&gt; all the fields. At a minimum it is best to include title, publisher,</span>
+<span class="qt">&gt; year and language.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; I am also writing a document to help the authors of emulators so they</span>
+<span class="qt">&gt; &gt; &gt; can support these files.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Cool, I&#x27;ve done a couple of CPC tapes, but the utils are a bit weak at</span>
+<span class="qt">&gt; &gt; the</span>
+<span class="qt">&gt; &gt; moment to handle them.</span>
+<span class="qt">&gt; yes I agree.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Some CPC loaders are similar to the Spectrum and can be converted</span>
+<span class="qt">&gt; using the existing Spectrum tools, especially voc2tzx. This has been a</span>
+<span class="qt">&gt; big benefit, and this shows with the current collection of cdt&#x27;s that</span>
+<span class="qt">&gt; are available.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; But other loaders, including later Amstrad variants of Speedlock don&#x27;t</span>
+<span class="qt">&gt; seem to work. :(</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I have started a open-source tool which I hope will help people to</span>
+<span class="qt">&gt; transfer the Amstrad loaders. I hope this will help and encourage more</span>
+<span class="qt">&gt; tapes to be transfered.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; I have read the spec and there are some Spectrum and C64 specific</span>
+<span class="qt">&gt; &gt; &gt; blocks.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; More so for Spectrum as we took hold of the TZX format immediately and</span>
+<span class="qt">&gt; &gt; started creating TZXs.  This was back in the days that Tomaz had more</span>
+<span class="qt">&gt; &gt; time</span>
+<span class="qt">&gt; &gt; to devote to it.</span>
+<span class="qt">&gt; And there is nothing wrong with that. I can see the format was defined</span>
+<span class="qt">&gt; for the benefit of Spectrum users and then later extended for other</span>
+<span class="qt">&gt; computers too. I have no complaint with that.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; But, I was attempting to clarify the action for Amstrad emulators and</span>
+<span class="qt">&gt; Amstrad CDT/TZX creation tools, and the spec is not completely clear</span>
+<span class="qt">&gt; in these cases.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The aim is that the same tape images can be used on all emulators,</span>
+<span class="qt">&gt; with the same sound wave being generated.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I could use a Spectrum tape image with a Amstrad emulator, and I do</span>
+<span class="qt">&gt; have a program to read the Standard Spectrum loading scheme, and</span>
+<span class="qt">&gt; therefore I could read the files from the tape image with no problem.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; ID:2A Stop the tape if in 48k mode</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; This block MUST be ignored, there shouldn&#x27;t be any pause or anything.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; This was a spectrum specific block becuase some 128k games loaded</span>
+<span class="qt">&gt; &gt; additional data.</span>
+<span class="qt">&gt; &gt; I think I came up with that one in the mailing list, but I&#x27;m sure others</span>
+<span class="qt">&gt; &gt; will have also</span>
+<span class="qt">&gt; &gt; thought that.</span>
+<span class="qt">&gt; As the Amstrad has a tape relay, the block is redudant; so I suggest</span>
+<span class="qt">&gt; that Amstrad emulators should ignore it. If possible, the Amstrad</span>
+<span class="qt">&gt; tools should not insert it.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; If the tape should be stopped, I believe it should be a suggestion by</span>
+<span class="qt">&gt; adding some kind of marker (it could be this block or it could be a</span>
+<span class="qt">&gt; text message). But in both cases, the Amstrad would ignore it.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; It is suggested that block (ID:30 Text Description) should be used.</span>
+<span class="qt">&gt; &gt; &gt; The emulator should allow the tape to be resumed from this point.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Why not just use &quot;ID 20 - Pause (Silence) or `Stop the Tape&#x27; Command&quot; ?</span>
+<span class="qt">&gt; it could, but if the aim is to suggest that the tape be stopped, then</span>
+<span class="qt">&gt; a message block is equally as good?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; ID:34 Emulation Info</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; This block MUST be ignored. Some information doesn&#x27;t apply to Amstrad</span>
+<span class="qt">&gt; &gt; &gt; emulators.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; That&#x27;s cos the TZX format was primarily customised for use with the</span>
+<span class="qt">&gt; &gt; Spectrum.</span>
+<span class="qt">&gt; I think of the CDT as a way to describe the signal. This is additional</span>
+<span class="qt">&gt; information just to help users. If the information is important, then</span>
+<span class="qt">&gt; it could be equally good if it was described using text. Maybe this</span>
+<span class="qt">&gt; block should be depreciated, considering the number of accurate</span>
+<span class="qt">&gt; Amstrad and Spectrum emulations that exist?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; The ID:33 hardware type, and ID:31 text description should be used to</span>
+<span class="qt">&gt; &gt; &gt; describe why; but not prevent the user from actually trying the</span>
+<span class="qt">&gt; &gt; &gt; program.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; It doesn&#x27;t prevent anything, it&#x27;s just information.  The emu authors can</span>
+<span class="qt">&gt; &gt; use it</span>
+<span class="qt">&gt; &gt; if they wish.</span>
+<span class="qt">&gt; that is cool :)</span>
+<span class="qt">&gt; &gt; You seem to like your text descriptions don&#x27;t you ;-)</span>
+<span class="qt">&gt; yes I do. ;)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; ID:40 Snapshot block.</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; This block MUST be ignored. The information doesn&#x27;t apply to the</span>
+<span class="qt">&gt; &gt; &gt; Amstrad.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; It&#x27;s hardly if ever, uses for Spectrum tapes either.</span>
+<span class="qt">&gt; I see it as a &quot;polution&quot; of the tape image format, and I can</span>
+<span class="qt">&gt; understand why it is not used.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Part of the problem is that the tape image may not be portable if it</span>
+<span class="qt">&gt; relies</span>
+<span class="qt">&gt; on this block. I would not be able to take a tzx and use it on the</span>
+<span class="qt">&gt; Amstrad emulator. If this block was required, it makes it much more</span>
+<span class="qt">&gt; difficult to use a tape in this way.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Also, I would prefer to have a tape image and snapshot file instead of</span>
+<span class="qt">&gt; embedding it into the tape image file. This would mean more files, but</span>
+<span class="qt">&gt; better portability, and also the snapshot could be updated to make it</span>
+<span class="qt">&gt; more accurate without causing any problem to existing tape images.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; ID:10 Standard Speed Data Block</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; Standard Spectrum loading parameters must be used.</span>
+<span class="qt">&gt; &gt; &gt; Pilot Pulse: 2168, Pilot length: ?? what should I put here</span>
+<span class="qt">&gt; &gt; &gt; Sync 1: 667, Sync 2: 735 etc</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Dunno ?</span>
+<span class="qt">&gt; The spec seems to imply that the timings are based on the Machine type</span>
+<span class="qt">&gt; used.</span>
+<span class="qt">&gt; But what if no type is specified?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; A suggestion: if no machine type is specified then Spectrum parameters</span>
+<span class="qt">&gt; should be used. In this way the tape signal reproduced will be the</span>
+<span class="qt">&gt; same even on a Amstrad emulator.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; ID:16,ID:17 C64 blocks</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; SHOULD be supported to accuratly reproduce sound signal, but MUST not</span>
+<span class="qt">&gt; &gt; &gt; be present in Amstrad specific CDTs. It is possible therefore to take</span>
+<span class="qt">&gt; &gt; &gt; a tzx specific to C64 and use it on the emu, but don&#x27;t expect it to</span>
+<span class="qt">&gt; &gt; &gt; load ;)</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Well I&#x27;ve tried contacting authors of Vice and CCS64 and they aren&#x27;t</span>
+<span class="qt">&gt; &gt; willing to</span>
+<span class="qt">&gt; &gt; use the TZX format for their emus, they tell me RAW-TAP is enough for</span>
+<span class="qt">&gt; &gt; them.</span>
+<span class="qt">&gt; &gt; I wish TZX was improved to cater for C64 tapes which I&#x27;m told can have 3</span>
+<span class="qt">&gt; &gt; signal</span>
+<span class="qt">&gt; &gt; pulses.  This could actually assist to store blocks like UniLODE used</span>
+<span class="qt">&gt; &gt; in Trivial Pursuit etc (I think ?)</span>
+<span class="qt">&gt; :( I did read a long thread in the comp.sys.cbm newsgroup explaining</span>
+<span class="qt">&gt; why they wanted it this way.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; They believe that the signal is represented more accuratly; which in</span>
+<span class="qt">&gt; part is true. But I see tzx as a way to describe a master tape.</span>
+<span class="qt">&gt; I think they also believe that using a different format means that, in</span>
+<span class="qt">&gt; the future, if a better format is devised, then the tapes can be</span>
+<span class="qt">&gt; converted into this format.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I can understand that with TZX, that to describe more signals that</span>
+<span class="qt">&gt; don&#x27;t use the same kind of recording format as Spectrum and Amstrad</span>
+<span class="qt">&gt; that more blocks would need to be defined. But then again, shirley it</span>
+<span class="qt">&gt; is possible to describe almost any loading signal using &quot;pulses of</span>
+<span class="qt">&gt; different lengths&quot; exclusively? That would mean a large file, but</span>
+<span class="qt">&gt; should work?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; I have well over 100 working C64 TZXs, and have half a dozen CDT/TZX</span>
+<span class="qt">&gt; &gt; files as well.</span>
+<span class="qt">&gt; cool.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; ID:20 pause or stop the tape.</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; If &quot;0&quot;, the tape should not be stopped. Play must continue, it is up</span>
+<span class="qt">&gt; &gt; &gt; to the user to actually &quot;stop the tape&quot;.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Not if you&#x27;re loading at 1000%, the tape would have played until the end</span>
+<span class="qt">&gt; &gt; before you presses stop</span>
+<span class="qt">&gt; &gt; and you&#x27;d miss the next block needed.</span>
+<span class="qt">&gt; But the cassette recorder would stop if instructed by the computer.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; In a way this block is just a helper and doesn&#x27;t relate to real life.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; In real life on the Spectrum (48k), the cassette recorder wouldn&#x27;t</span>
+<span class="qt">&gt; stop. So if I forgot to stop it, I would curse and rewind it. On the</span>
+<span class="qt">&gt; emulator, I should be able to do the same. To help me, there could be</span>
+<span class="qt">&gt; some kind of indicator block</span>
+<span class="qt">&gt; which I could use to &quot;fast-rewind&quot; back to the exact point. This could</span>
+<span class="qt">&gt; be a text description, or it could be this block.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; On the Amstrad it wouldn&#x27;t actually stop unless the computer indicated</span>
+<span class="qt">&gt; it should stop.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; ID:35 Custom Info</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; Spectrum Screen Block, ZX-Edit document block MUST be ignored.</span>
+<span class="qt">&gt; &gt; &gt; I&#x27;m not sure if picture block should be ignored as well (i.e. don&#x27;t</span>
+<span class="qt">&gt; &gt; &gt; display), but instructions is ok.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Depends on how CPC/C64 etc store their screens.  You&#x27;d probably need</span>
+<span class="qt">&gt; &gt; a C64 and CPC Screen Block to be defined.  No one seems bothered for</span>
+<span class="qt">&gt; &gt; other formats than spectrum ;-(</span>
+<span class="qt">&gt; My preference would be to not include the screen.</span>
+<span class="qt">&gt; If a screen is wanted then it should be included as a .gif/.png etc in</span>
+<span class="qt">&gt; the zip archive that the cdt/tzx is distributed with.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The trouble for the Amstrad is that the screen dimensions and position</span>
+<span class="qt">&gt; can be defined using the 6845 CRTC, and some very complex screens are</span>
+<span class="qt">&gt; possible. I wouldn&#x27;t want to attempt to describe a block which could</span>
+<span class="qt">&gt; reproduce this. The best solution would be a picture dump taken using</span>
+<span class="qt">&gt; the emulator itself.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; Hardware block:</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; 0 = computers (is ok), 1-F applies to spectrum and should be ignored.</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; What do you think to this?</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; You&#x27;d ignore non specific blocks anyway, so I&#x27;m not sure why you&#x27;ve</span>
+<span class="qt">&gt; &gt; listed all of them</span>
+<span class="qt">&gt; &gt; and mentioned using the Text Description.</span>
+<span class="qt">&gt; Only to make it crystal clear what in my opinion should be done. I am</span>
+<span class="qt">&gt; trying to anticipating some questions that the Amstrad emulator</span>
+<span class="qt">&gt; author&#x27;s will have.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Anyway,  I&#x27;m glad that other people are interested in the TZX Format and</span>
+<span class="qt">&gt; &gt; maybe one day</span>
+<span class="qt">&gt; &gt; it will be enhanced to cater for other 8-bit tape systems.</span>
+<span class="qt">&gt; I think it is a great format; and ideal for describing loaders.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The aim of the doc was to advise tool makers and emulator authors</span>
+<span class="qt">&gt; about the way to handle TZX/CDT&#x27;s and allowing TZX&#x27;s made for other</span>
+<span class="qt">&gt; computers to also be supported.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I am trying to promote it as much as possible. At this time there are</span>
+<span class="qt">&gt; only</span>
+<span class="qt">&gt; 3 emulators which support it: CPCE (<a href="http://cpce.emuunlim.com/" rel="noreferrer">http://cpce.emuunlim.com/</a>), Arnold</span>
+<span class="qt">&gt; (<a href="http://arnold.emuunlim.com/" rel="noreferrer">http://arnold.emuunlim.com/</a>) and Multi-Machine.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The other two major emulators, Caprice and Winape don&#x27;t support it</span>
+<span class="qt">&gt; yet. :(</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; But, there is a growing collection of tape images already. There have</span>
+<span class="qt">&gt; been a core group of about 5 people doing the transfers, but we are</span>
+<span class="qt">&gt; already being</span>
+<span class="qt">&gt; held back by the lack of support for Amstrad speedloaders and a lack</span>
+<span class="qt">&gt; of a Amstrad specific tool :( But I hope that will change soon as the</span>
+<span class="qt">&gt; tools mature.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Let me know the URL as I might be able to TZX/CDT some tapes for you.</span>
+<span class="qt">&gt; all are welcome :) I prefer that they are not beautified. I believe</span>
+<span class="qt">&gt; that you wouldn&#x27;t do this anyway ;)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I am not trying to cause a argument. TZX is a good format, and can</span>
+<span class="qt">&gt; describe the signal well, so that it could be used to reproduce the</span>
+<span class="qt">&gt; original tapes if required.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I was just wanting to clarify some parts of the spec for Amstrad and</span>
+<span class="qt">&gt; other users, especially since some is geared towards Spectrum (mainly</span>
+<span class="qt">&gt; because of the enthusiasm and usage in that field). I also want to be</span>
+<span class="qt">&gt; able to allow the tape images to be used with other emulators, and the</span>
+<span class="qt">&gt; same signal to be reproduced. I appreciate your help with this. In the</span>
+<span class="qt">&gt; end, my ideas are only suggestions, but if they help people to adopt</span>
+<span class="qt">&gt; this format on the Amstrad, then this is good.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Regards,</span>
+<span class="qt">&gt; Kev</span>
+
+
+
+
+
+</pre></div><div class="post" id="p132957"><div class="ph"><a class="d" href="#p132957">2002-03-11 09:58:17</a> <span>Kevin Thacker</span> <span>Re: tzx/cdt</span></div><pre>&quot;Gilby&quot; &lt;…@…&gt; wrote in message news:&lt;a68hes$1qc$…@…&gt;...
+<span class="qt">&gt; I think everything mentioned so far sounds fair enough to me! Like I&#x27;ve said</span>
+<span class="qt">&gt; before, I can give you some help along with Andy in getting some tapes</span>
+<span class="qt">&gt; dumped.</span>
+Thankyou. :)
+
+<span class="qt">&gt; If you&#x27;re struggling for web-space, how about hosting your files at the .tzx</span>
+<span class="qt">&gt; vault? I can have a word with Martijn about updating the html generation</span>
+<span class="qt">&gt; tools which would then make adding the dumped tapes to the database and the</span>
+<span class="qt">&gt; update process very easy!!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; What do you reckon?</span>
+I appreciate the offer, but I am happy with andercheran. The space
+problem has been solved and I have updated it again.
+
+But, if in the future I have problems, and the offer is still open, I
+would put tzx vault at the top of my list.
+
+Kev
+
+
+
+</pre></div></main></body></html>

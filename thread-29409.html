@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANNOUNCE: CRAP GAME COMPETITION 2004 · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANNOUNCE: CRAP GAME COMPETITION 2004</h1><p class="facts">25 posts, 2004-04-13 – 2004-06-13</p><div class="post" id="p176391"><div class="ph"><a class="d" href="#p176391">2004-04-13 03:50:15</a> <span>Jim</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>I&#x27;ve finally knocked up a crappy webpage...
+
+www.speccyspoilers.co.uk/cgc2004
+
+...so I now declare the comp.sys.sinclair Crap Game Competition 2004
+officially open!
+
+Get those crappy entries in now! Entries must be emailed to me directly for
+inclusion - this way I can be sure of having the final version, what with so
+many unfinished versions of some games floating about - yes, that includes
+you, Woody! :P
+
+Jim L.  :)
+
+
+
+</pre></div><div class="post" id="p176394"><div class="ph"><a class="d" href="#p176394">2004-04-13 07:58:14</a> <span>Brian Gaff</span> <span>Re: ANNOUNCE: CRAP GAME COMPETITION 2004</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>I loved that tape called Don&#x27;t Buy This. The car racing game was a true
+classic crappy game. The zero to supersonic speed increase in the blink of
+an eye was  awesome...
+
+I can recall writing a Basic game called Number Cruncher, which was so slow
+it was soporific.
+
+By the way, was it just me that found Jack and the Beanstalk complete
+rubbish?
+
+Brian
+
+--
+Brian Gaff....Note, this account does not accept Bcc: email.
+ graphics are great, but the blind can&#x27;t hear them
+Email: …@…
+____________________________________________________________________________
+__________________________________
+
+
+&quot;Jim&quot; &lt;…@…&gt; wrote in message
+news:vrJec.47$…@…...
+<span class="qt">| I&#x27;ve finally knocked up a crappy webpage...</span>
+<span class="qt">|</span>
+<span class="qt">| www.speccyspoilers.co.uk/cgc2004</span>
+<span class="qt">|</span>
+<span class="qt">| ...so I now declare the comp.sys.sinclair Crap Game Competition 2004</span>
+<span class="qt">| officially open!</span>
+<span class="qt">|</span>
+<span class="qt">| Get those crappy entries in now! Entries must be emailed to me directly</span>
+for
+<span class="qt">| inclusion - this way I can be sure of having the final version, what with</span>
+so
+<span class="qt">| many unfinished versions of some games floating about - yes, that includes</span>
+<span class="qt">| you, Woody! :P</span>
+<span class="qt">|</span>
+<span class="qt">| Jim L.  :)</span>
+
+
+---
+Outgoing mail is certified Virus Free.
+Checked by AVG anti-virus system (<a href="http://www.grisoft.com" rel="noreferrer">http://www.grisoft.com</a>).
+Version: 6.0.656 / Virus Database: 421 - Release Date: 09/04/04
+
+
+
+
+
+</pre></div><div class="post" id="p176396"><div class="ph"><a class="d" href="#p176396">2004-04-13 08:17:19</a> <span>The Starglider</span> <span>Re: ANNOUNCE: CRAP GAME COMPETITION 2004</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>On Tue, 13 Apr 2004 04:50:15 +0100, &quot;Jim&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;I&#x27;ve finally knocked up a crappy webpage...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;www.speccyspoilers.co.uk/cgc2004</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;...so I now declare the comp.sys.sinclair Crap Game Competition 2004</span>
+<span class="qt">&gt;officially open!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Get those crappy entries in now! Entries must be emailed to me directly for</span>
+<span class="qt">&gt;inclusion - this way I can be sure of having the final version, what with so</span>
+<span class="qt">&gt;many unfinished versions of some games floating about - yes, that includes</span>
+<span class="qt">&gt;you, Woody! :P</span>
+<span class="qt">&gt;</span>
+Yes, and Woody, whatever you to enter into the competition is supposed to be
+crap - *NOT* good.
+-- 
+        **************The Starglider***************  Public E-Mail. 
+        *  <a href="http://www.starglider.dynu.com/radio" rel="noreferrer">http://www.starglider.dynu.com/radio</a>   * Ask for private
+        *  Starglider Radio - listen and enjoy!   *    address.
+        * E-Mail:…@…  *     _WW_
+        *     CHANGE WIBBLE TO YAHOO TO REPLY     *    /_  _\
+        *******************************************   | O  O |
+_____________________________________________________oOO_\/_OOo_____
+
+
+
+</pre></div><div class="post" id="p176402"><div class="ph"><a class="d" href="#p176402">2004-04-13 09:04:20</a> <span>deKay</span> <span>Re: ANNOUNCE: CRAP GAME COMPETITION 2004</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>Do you mean Race Ace?  How can such a crap game come from the same mind as Run
+Baby Run?!
+
+<span class="qt">&gt;I can recall writing a Basic game called Number Cruncher, which was so slow</span>
+<span class="qt">&gt;it was soporific.</span>
+
+Is that one of the games that was released in a compilation with Wild Words
+and Robot Runner, amongst others?  ACE.
+
+deKay
+-- 
+ + Lofi Gaming - www.lofi-gaming.org.uk  AC: deKay in Sponge
+<span class="qt"> |- ugvm Magazine - www.ugvm.org.uk      Gamertag: deKay 01</span>
+<span class="qt"> |- My computer runs at 3.5MHz and I&#x27;m proud of that</span>
+<span class="qt"> |- &quot;SPIN ME SPIN ME!  HURRY UP AND SPIN ME!&quot;</span>
+
+
+
+</pre></div><div class="post" id="p176404"><div class="ph"><a class="d" href="#p176404">2004-04-13 09:07:12</a> <span>Philip Kendall</span> <span>Re: ANNOUNCE: CRAP GAME COMPETITION 2004</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>In article &lt;c5g7oe$18lts$…@…&gt;,
+Brian Gaff &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;By the way, was it just me that found Jack and the Beanstalk complete</span>
+<span class="qt">&gt;rubbish?</span>
+
+No; see <a href="http://www.worldofspectrum.org/infoseekscore.cgi?id=0002562" rel="noreferrer">http://www.worldofspectrum.org/infoseekscore.cgi?id=0002562</a>
+
+(Or to paraphrase to make Brian&#x27;s life easier: Jack&#x27;s average score on
+WoS&#x27;s user rating system is 2.33 out of 10, with 67% of voters rating it
+as 1 out of 10).
+
+Cheers,
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p176432"><div class="ph"><a class="d" href="#p176432">2004-04-13 17:25:05</a> <span>Woody</span> <span>Re: ANNOUNCE: CRAP GAME COMPETITION 2004</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>On Tue, 13 Apr 2004 09:17:19 +0100, The Starglider
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Yes, and Woody, whatever you to enter into the competition is supposed to be</span>
+<span class="qt">&gt;crap - *NOT* good.</span>
+
+No entries :P
+
+
+
+
+</pre></div><div class="post" id="p176441"><div class="ph"><a class="d" href="#p176441">2004-04-13 18:55:52</a> <span>Anders Carlsson</span> <span>Re: ANNOUNCE: CRAP GAME COMPETITION 2004</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>Woody &lt;…@…&gt; writes:
+
+<span class="qt">&gt;&gt; Yes, and Woody, whatever you to enter into the competition is</span>
+<span class="qt">&gt;&gt; supposed to be crap - *NOT* good.</span>
+<span class="qt">&gt; No entries :P</span>
+
+Since you like machine code, you can try to make a really good
+game in 1 or 4K and enter the MiniGame Compo later this year.
+
+-- 
+Anders Carlsson
+
+
+
+</pre></div><div class="post" id="p176448"><div class="ph"><a class="d" href="#p176448">2004-04-13 20:49:26</a> <span>…@…</span> <span>Re: ANNOUNCE: CRAP GAME COMPETITION 2004</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>Woody &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; On Tue, 13 Apr 2004 09:17:19 +0100, The Starglider</span>
+<span class="qt">&gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;Yes, and Woody, whatever you to enter into the competition is supposed to be</span>
+<span class="qt">&gt;&gt;crap - *NOT* good.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; No entries :P</span>
+<span class="qt">&gt; </span>
+Oh come on woody, if you&#x27;re capable of a good game, you MUST be capable of
+one so stinky it&#x27;d make an ogre faint... Give it a try, that&#x27;s the whole
+point of the CGC. Make something worthy of cascade 50.
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   | &quot;I&#x27;m alive!!! I can touch! I can taste!         |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|  I can SMELL!!!  KRYTEN!!! Unpack Rachel and    |</span>
+<span class="qt">|            in            |  get out the puncture repair kit!&quot;              |</span>
+<span class="qt">|     Computer Science     |     Arnold Judas Rimmer- Red Dwarf              |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p176452"><div class="ph"><a class="d" href="#p176452">2004-04-13 23:07:36</a> <span>The Starglider</span> <span>Re: ANNOUNCE: CRAP GAME COMPETITION 2004</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>On Tue, 13 Apr 2004 21:49:26 +0100, …@… wrote:
+
+<span class="qt">&gt;Woody &lt;…@…&gt; did eloquently scribble:</span>
+<span class="qt">&gt;&gt; On Tue, 13 Apr 2004 09:17:19 +0100, The Starglider</span>
+<span class="qt">&gt;&gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt;&gt;Yes, and Woody, whatever you to enter into the competition is supposed to be</span>
+<span class="qt">&gt;&gt;&gt;crap - *NOT* good.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; No entries :P</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;Oh come on woody, if you&#x27;re capable of a good game, you MUST be capable of</span>
+<span class="qt">&gt;one so stinky it&#x27;d make an ogre faint... Give it a try, that&#x27;s the whole</span>
+<span class="qt">&gt;point of the CGC. Make something worthy of cascade 50.</span>
+
+Or rather, something not even worth putting on Cassette 50.
+-- 
+        **************The Starglider***************  Public E-Mail. 
+        *  <a href="http://www.starglider.dynu.com/radio" rel="noreferrer">http://www.starglider.dynu.com/radio</a>   * Ask for private
+        *  Starglider Radio - listen and enjoy!   *    address.
+        * E-Mail:…@…  *     _WW_
+        *     CHANGE WIBBLE TO YAHOO TO REPLY     *    /_  _\
+        *******************************************   | O  O |
+_____________________________________________________oOO_\/_OOo_____
+
+
+
+</pre></div><div class="post" id="p176458"><div class="ph"><a class="d" href="#p176458">2004-04-14 04:41:43</a> <span>Peter Murray</span> <span>Re: ANNOUNCE: CRAP GAME COMPETITION 2004</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>what language you all writing speccy games in?
+
+&quot;Jim&quot; &lt;…@…&gt; wrote in message
+news:vrJec.47$…@…...
+<span class="qt">&gt; I&#x27;ve finally knocked up a crappy webpage...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; www.speccyspoilers.co.uk/cgc2004</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; ...so I now declare the comp.sys.sinclair Crap Game Competition 2004</span>
+<span class="qt">&gt; officially open!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Get those crappy entries in now! Entries must be emailed to me directly</span>
+for
+<span class="qt">&gt; inclusion - this way I can be sure of having the final version, what with</span>
+so
+<span class="qt">&gt; many unfinished versions of some games floating about - yes, that includes</span>
+<span class="qt">&gt; you, Woody! :P</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Jim L.  :)</span>
+<span class="qt">&gt;</span>
+
+
+
+
+
+</pre></div><div class="post" id="p176466"><div class="ph"><a class="d" href="#p176466">2004-04-14 07:36:45</a> <span>The Starglider</span> <span>Re: ANNOUNCE: CRAP GAME COMPETITION 2004</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>On Wed, 14 Apr 2004 00:41:43 -0400, &quot;Peter Murray&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;what language you all writing speccy games in?</span>
+<span class="qt">&gt;</span>
+Ooh, that&#x27;s a good one!
+
+Well, whatever language you&#x27;re fluent in I suppose. It would make it more crap
+to put it in Czech and then not bother to translate for example!
+
+-- 
+        **************The Starglider***************  Public E-Mail. 
+        *  <a href="http://www.starglider.dynu.com/radio" rel="noreferrer">http://www.starglider.dynu.com/radio</a>   * Ask for private
+        *  Starglider Radio - listen and enjoy!   *    address.
+        * E-Mail:…@…  *     _WW_
+        *     CHANGE WIBBLE TO YAHOO TO REPLY     *    /_  _\
+        *******************************************   | O  O |
+_____________________________________________________oOO_\/_OOo_____
+
+
+
+</pre></div><div class="post" id="p176473"><div class="ph"><a class="d" href="#p176473">2004-04-14 09:58:14</a> <span>deKay</span> <span>Re: ANNOUNCE: CRAP GAME COMPETITION 2004</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Wed, 14 Apr
+2004 00:41:43 -0400, sefini jorgo geanyet des mani yeof do comp.sys.sinclair,
+yawatina tan reek esk &quot;Peter Murray&quot; &lt;…@…&gt; fornis do marikano es
+bono tan el:
+
+<span class="qt">&gt;what language you all writing speccy games in?</span>
+
+German.
+
+deKay
+-- 
+ + Lofi Gaming - www.lofi-gaming.org.uk  AC: deKay in Sponge
+<span class="qt"> |- ugvm Magazine - www.ugvm.org.uk      Gamertag: deKay 01</span>
+<span class="qt"> |- My computer runs at 3.5MHz and I&#x27;m proud of that</span>
+<span class="qt"> |- &quot;SPIN ME SPIN ME!  HURRY UP AND SPIN ME!&quot;</span>
+
+
+
+</pre></div><div class="post" id="p176491"><div class="ph"><a class="d" href="#p176491">2004-04-14 19:02:24</a> <span>Derek Jolly</span> <span>Re: ANNOUNCE: CRAP GAME COMPETITION 2004</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>&quot;Jim&quot; &lt;…@…&gt; wrote in
+news:vrJec.47$…@…: 
+
+<span class="qt">&gt; Get those crappy entries in now! Entries must be emailed to me</span>
+<span class="qt">&gt; directly for inclusion - this way I can be sure of having the final</span>
+<span class="qt">&gt; version, what with so many unfinished versions of some games floating</span>
+<span class="qt">&gt; about - yes, that includes you, Woody! :P</span>
+
+Wahey!  I&#x27;m working on[1] a strip poker game at the minute for this.  
+Makes a slight change from Top Shelf Challenge I suppose.
+
+[1] Well, I say working on.  I&#x27;ve downloaded the piccies for it.
+-- 
+Derek Jolly (derek at rivetsoft dot freeserve dot co dot uk)
+Homepage: <a href="http://rivet.50megs.com/" rel="noreferrer">http://rivet.50megs.com/</a>
+comp.sys.sinclair folklore FAQ: <a href="http://www.sinclairfaq.com/cssfolklore/" rel="noreferrer">http://www.sinclairfaq.com/cssfolklore/</a>
+YASPIC 1.5.1: <a href="http://rivet.50megs.com/speccy.html" rel="noreferrer">http://rivet.50megs.com/speccy.html</a>
+
+
+
+</pre></div><div class="post" id="p176495"><div class="ph"><a class="d" href="#p176495">2004-04-14 19:26:49</a> <span>leeg</span> <span>Re: ANNOUNCE: CRAP GAME COMPETITION 2004</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>Derek Jolly wrote:
+
+<span class="qt">&gt; &quot;Jim&quot; &lt;…@…&gt; wrote in</span>
+<span class="qt">&gt; news:vrJec.47$…@…:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Get those crappy entries in now! Entries must be emailed to me</span>
+<span class="qt">&gt;&gt; directly for inclusion - this way I can be sure of having the final</span>
+<span class="qt">&gt;&gt; version, what with so many unfinished versions of some games floating</span>
+<span class="qt">&gt;&gt; about - yes, that includes you, Woody! :P</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Wahey!  I&#x27;m working on[1] a strip poker game at the minute for this.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; [1] Well, I say working on.  I&#x27;ve downloaded the piccies for it.</span>
+
+That&#x27;s my excuse, too.
+-- 
+Graham Lee
+I am leeg, for we are many
+&quot;A little GPL leavens the whole loaf&quot; - Stallmanians 5:9
+<a href="http://users.ox.ac.uk/~wadh1342" rel="noreferrer">http://users.ox.ac.uk/~wadh1342</a>
+
+
+
+
+</pre></div><div class="post" id="p176496"><div class="ph"><a class="d" href="#p176496">2004-04-14 19:41:09</a> <span>Peter Murray</span> <span>Re: ANNOUNCE: CRAP GAME COMPETITION 2004</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>LOL, I meant what programming language? hehe
+
+&quot;The Starglider&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; On Wed, 14 Apr 2004 00:41:43 -0400, &quot;Peter Murray&quot; &lt;…@…&gt;</span>
+wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;what language you all writing speccy games in?</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; Ooh, that&#x27;s a good one!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Well, whatever language you&#x27;re fluent in I suppose. It would make it more</span>
+crap
+<span class="qt">&gt; to put it in Czech and then not bother to translate for example!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt;         **************The Starglider***************  Public E-Mail.</span>
+<span class="qt">&gt;         *  <a href="http://www.starglider.dynu.com/radio" rel="noreferrer">http://www.starglider.dynu.com/radio</a>   * Ask for private</span>
+<span class="qt">&gt;         *  Starglider Radio - listen and enjoy!   *    address.</span>
+<span class="qt">&gt;         * E-Mail:…@…  *     _WW_</span>
+<span class="qt">&gt;         *     CHANGE WIBBLE TO YAHOO TO REPLY     *    /_  _\</span>
+<span class="qt">&gt;         *******************************************   | O  O |</span>
+<span class="qt">&gt; _____________________________________________________oOO_\/_OOo_____</span>
+
+
+
+
+
+</pre></div><div class="post" id="p176503"><div class="ph"><a class="d" href="#p176503">2004-04-14 22:36:27</a> <span>The Starglider</span> <span>Re: ANNOUNCE: CRAP GAME COMPETITION 2004</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>On Wed, 14 Apr 2004 15:41:09 -0400, &quot;Peter Murray&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;LOL, I meant what programming language? hehe</span>
+<span class="qt">&gt;</span>
+heh, well that&#x27;s up to you, but you&#x27;ll score way more points if you use BASIC -
+badly.
+-- 
+        **************The Starglider***************  Public E-Mail. 
+        *  <a href="http://www.starglider.dynu.com/radio" rel="noreferrer">http://www.starglider.dynu.com/radio</a>   * Ask for private
+        *  Starglider Radio - listen and enjoy!   *    address.
+        * E-Mail:…@…  *     _WW_
+        *     CHANGE WIBBLE TO YAHOO TO REPLY     *    /_  _\
+        *******************************************   | O  O |
+_____________________________________________________oOO_\/_OOo_____
+
+
+
+</pre></div><div class="post" id="p176508"><div class="ph"><a class="d" href="#p176508">2004-04-15 03:54:34</a> <span>Peter Murray</span> <span>Re: ANNOUNCE: CRAP GAME COMPETITION 2004</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>Whats the speccy screen resolution?
+
+&quot;Jim&quot; &lt;…@…&gt; wrote in message
+news:vrJec.47$…@…...
+<span class="qt">&gt; I&#x27;ve finally knocked up a crappy webpage...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; www.speccyspoilers.co.uk/cgc2004</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; ...so I now declare the comp.sys.sinclair Crap Game Competition 2004</span>
+<span class="qt">&gt; officially open!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Get those crappy entries in now! Entries must be emailed to me directly</span>
+for
+<span class="qt">&gt; inclusion - this way I can be sure of having the final version, what with</span>
+so
+<span class="qt">&gt; many unfinished versions of some games floating about - yes, that includes</span>
+<span class="qt">&gt; you, Woody! :P</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Jim L.  :)</span>
+<span class="qt">&gt;</span>
+
+
+
+
+
+</pre></div><div class="post" id="p176509"><div class="ph"><a class="d" href="#p176509">2004-04-15 05:14:02</a> <span>Peter Murray</span> <span>Re: ANNOUNCE: CRAP GAME COMPETITION 2004</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>ignore that last question,
+  anyway I finished it and its crap :P i just emailed it off
+
+&quot;Peter Murray&quot; &lt;…@…&gt; wrote in message
+news:DInfc.24758$…@…...
+<span class="qt">&gt; Whats the speccy screen resolution?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;Jim&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:vrJec.47$…@…...</span>
+<span class="qt">&gt; &gt; I&#x27;ve finally knocked up a crappy webpage...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; www.speccyspoilers.co.uk/cgc2004</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; ...so I now declare the comp.sys.sinclair Crap Game Competition 2004</span>
+<span class="qt">&gt; &gt; officially open!</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Get those crappy entries in now! Entries must be emailed to me directly</span>
+<span class="qt">&gt; for</span>
+<span class="qt">&gt; &gt; inclusion - this way I can be sure of having the final version, what</span>
+with
+<span class="qt">&gt; so</span>
+<span class="qt">&gt; &gt; many unfinished versions of some games floating about - yes, that</span>
+includes
+<span class="qt">&gt; &gt; you, Woody! :P</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Jim L.  :)</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+
+
+
+</pre></div><div class="post" id="p176537"><div class="ph"><a class="d" href="#p176537">2004-04-15 23:40:47</a> <span>Duncan Snowden</span> <span>Re: ANNOUNCE: CRAP GAME COMPETITION 2004</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>Program: Derek Jolly
+
+Bytes: Wednesday
+
+<span class="qt">&gt; Wahey!  I&#x27;m working on[1] a strip poker game at the minute for this. </span>
+<span class="qt">&gt;  Makes a slight change from Top Shelf Challenge I suppose.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; [1] Well, I say working on.  I&#x27;ve downloaded the piccies for it.</span>
+
+So you&#x27;re only two letters out, then?
+
+-- 
+Duncan Snowden. 
+
+R Chuntey disruption, 280:4 
+
+
+
+</pre></div><div class="post" id="p176543"><div class="ph"><a class="d" href="#p176543">2004-04-16 10:45:57</a> <span>Woody</span> <span>Re: ANNOUNCE: CRAP GAME COMPETITION 2004</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>On 13 Apr 2004 20:55:52 +0200, Anders Carlsson
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Woody &lt;…@…&gt; writes:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;&gt; Yes, and Woody, whatever you to enter into the competition is</span>
+<span class="qt">&gt;&gt;&gt; supposed to be crap - *NOT* good.</span>
+<span class="qt">&gt;&gt; No entries :P</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Since you like machine code, you can try to make a really good</span>
+<span class="qt">&gt;game in 1 or 4K and enter the MiniGame Compo later this year.</span>
+
+And I might do just that this year :)
+
+
+
+
+</pre></div><div class="post" id="p176544"><div class="ph"><a class="d" href="#p176544">2004-04-16 10:46:58</a> <span>Woody</span> <span>Re: ANNOUNCE: CRAP GAME COMPETITION 2004</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>On Tue, 13 Apr 2004 21:49:26 +0100, …@… wrote:
+
+<span class="qt">&gt;Woody &lt;…@…&gt; did eloquently scribble:</span>
+<span class="qt">&gt;&gt; On Tue, 13 Apr 2004 09:17:19 +0100, The Starglider</span>
+<span class="qt">&gt;&gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt;&gt;Yes, and Woody, whatever you to enter into the competition is supposed to be</span>
+<span class="qt">&gt;&gt;&gt;crap - *NOT* good.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; No entries :P</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;Oh come on woody, if you&#x27;re capable of a good game, you MUST be capable of</span>
+<span class="qt">&gt;one so stinky it&#x27;d make an ogre faint... Give it a try, that&#x27;s the whole</span>
+<span class="qt">&gt;point of the CGC. Make something worthy of cascade 50.</span>
+
+Yeah, I&#x27;ll knock something together later. I&#x27;m busy doing other stuff
+atm though.
+
+
+
+
+</pre></div><div class="post" id="p176561"><div class="ph"><a class="d" href="#p176561">2004-04-16 21:42:57</a> <span>Derek Jolly</span> <span>Re: ANNOUNCE: CRAP GAME COMPETITION 2004</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>Duncan Snowden &lt;…@…&gt; wrote in 
+news:…@…:
+
+<span class="qt">&gt; Program: Derek Jolly</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Bytes: Wednesday</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Wahey!  I&#x27;m working on[1] a strip poker game at the minute for this. </span>
+<span class="qt">&gt;&gt;  Makes a slight change from Top Shelf Challenge I suppose.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; [1] Well, I say working on.  I&#x27;ve downloaded the piccies for it.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; So you&#x27;re only two letters out, then?</span>
+
+Or something.  Bast.
+
+It will be a crap strip poker game though, so that&#x27;s alright.
+-- 
+Derek Jolly (derek at rivetsoft dot freeserve dot co dot uk)
+Homepage: <a href="http://rivet.50megs.com/" rel="noreferrer">http://rivet.50megs.com/</a>
+comp.sys.sinclair folklore FAQ: <a href="http://www.sinclairfaq.com/cssfolklore/" rel="noreferrer">http://www.sinclairfaq.com/cssfolklore/</a>
+YASPIC 1.5.1: <a href="http://rivet.50megs.com/speccy.html" rel="noreferrer">http://rivet.50megs.com/speccy.html</a>
+
+
+
+</pre></div><div class="post" id="p176613"><div class="ph"><a class="d" href="#p176613">2004-04-18 23:25:46</a> <span>fuzzbucket</span> <span>Re: ANNOUNCE: CRAP GAME COMPETITION 2004</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>Philip Kendall wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; (Or to paraphrase to make Brian&#x27;s life easier: Jack&#x27;s average score</span>
+<span class="qt">&gt; on WoS&#x27;s user rating system is 2.33 out of 10, with 67% of voters</span>
+<span class="qt">&gt; rating it as 1 out of 10).</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Cheers,</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Phil</span>
+<span class="qt">&gt; </span>
+
+Agreed, it was shite. I remember it being on a compilation called
+Softaid, linked to the whole Live Aid thing. That had some cracking
+games like Gilligan&#x27;s Gold and Kokotoni Wilf.
+The best thing Thor could stump up &quot;for charidee, mate!&quot; was Jack and
+the poxy Beanstalk. I think they _wanted_ people to die.
+
+-- 
+<a href="http://www.fuzzbucket.tk/" rel="noreferrer">http://www.fuzzbucket.tk/</a>
+<a href="http://www.randimaginator.tk/" rel="noreferrer">http://www.randimaginator.tk/</a>
+
+
+
+</pre></div><div class="post" id="p179145"><div class="ph"><a class="d" href="#p179145">2004-06-13 11:39:28</a> <span>Llama-Wax Len</span> <span>Re: ANNOUNCE: CRAP GAME COMPETITION 2004</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>
+&quot;The Starglider&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; On Tue, 13 Apr 2004 21:49:26 +0100, …@… wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;Oh come on woody, if you&#x27;re capable of a good game, you MUST be capable</span>
+of
+<span class="qt">&gt; &gt;one so stinky it&#x27;d make an ogre faint... Give it a try, that&#x27;s the whole</span>
+<span class="qt">&gt; &gt;point of the CGC. Make something worthy of cascade 50.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Or rather, something not even worth putting on Cassette 50.</span>
+
+Should the CSSCGC not perhaps be split into two categories? Rather than the
+debate, you can have one winner of the good-crap category and another of the
+crap-crap category.
+
+Len
+--
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+REPLYING: replace first spamoff with auldgreytoon DOT freeserve
+and replace second spamoff with co DOT uk (simple, eh?)
+
+
+
+
+
+</pre></div><div class="post" id="p179218"><div class="ph"><a class="d" href="#p179218">2004-06-13 23:48:00</a> <span>Jim</span> <span>Re: ANNOUNCE: CRAP GAME COMPETITION 2004</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre><span class="qt">&gt; Should the CSSCGC not perhaps be split into two categories? Rather than the</span>
+<span class="qt">&gt; debate, you can have one winner of the good-crap category and another of the</span>
+<span class="qt">&gt; crap-crap category.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Len</span>
+
+Yes I was pondering doing something along those lines. Not quite decided how
+to implement it yet though - maybe the good games can go into a &quot;reject&quot;
+category! :)
+
+Jim
+www.speccyspoilers.co.uk/cgc2004
+
+
+
+</pre></div></main></body></html>

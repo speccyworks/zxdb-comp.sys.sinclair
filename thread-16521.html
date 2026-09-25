@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>new ZX SPECTRUM disk system · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>new ZX SPECTRUM disk system</h1><p class="facts">2 posts, 1999-10-31 – 1999-10-31</p><div class="post" id="p55870"><div class="ph"><a class="d" href="#p55870">1999-10-31</a> <span>yerzmyey</span> </div><pre>Hi. I have got this text from Yarek , author of this
+system for SAM, ZX and all Speccy-models owners.
+----------------------------------------------------------------------------
+-------
+               LITTLE DESCRIPTION OF ZXVGS SYSTEM
+                   (c) 1999 BY YAREK ADAMSKI
+
+A man that has only one computer (meaning that he doesn&#x27;t use
+two different disk systems) will never see the reason to make a
+change. I use a SAM Coupe and a TIMEX FDD and can say with all the
+responsibility that before my operating system came into being
+there was 0% of compatibility between them.
+
+And when he wants to send something to other people he finds
+that any exchange is possible only at tape level. But in this
+case he can say &quot;bye, bye&quot; to memory extention, additional screen
+modes, printer, mouse, etc. because there&#x27;s a standard for this.
+
+Usually in games there is menu like this:
+1. Keyboard
+2. Kempston
+3. Sinclair 2
+4. Cursor
+5. Fuller
+There&#x27;s no problem with this, because the list is complete and
+it is possible to place into one program all the required code that
+will use all possibilities.
+It could be also possible with a mouse and printer, but there is
+one hitch: there are many solutions. Look at the installer for ArtStudio -
+there&#x27;s about 18 different printer interfaces. Don&#x27;t think that all
+existing printers are listed there either! I suspect that no single man will
+have
+a notion about all of them - always at least one of them will be
+overlooked! Besides, if anyone would like to support every
+solution, not much free memory will remain for the main program or
+the installer will be as big as a cow and slow in use.
+
+Only a good operating system can guarantee that the program will
+be able to use a &quot;resource&quot; not known by the author of the mentioned
+program.
+
+It would be good to load programs from HDD, play music on sound
+cards, print various things and play with the mouse. But there
+_must_ be a standard for them. At present the only standard
+I know is a hardware standard - ZX128 (this means 128KB RAM, AY,
+Sinclair2 and tape). I don&#x27;t think this is what we always dream
+about.
+
+This time there&#x27;s no way to introduce any new hardware to that standard.
+(Even Kempston joysticks are not owned by everyone). Too expensive, too
+many competitive products and too much variety of existing
+hardware to make a success. All we can do now is to introduce a
+software standard what means operating system like ZXVGS or
+NeOS. But we must want and work on it a bit. To reach a new
+production standard of to be &quot;under system&quot; and not &quot;for hardware&quot;.
+
+There are of course some other ways:
+- everyone has a set of hardware on the rule: one piece
+of each construction;
+- someone constructs &quot;multicompatible&quot; hardware combination (big
+and expensive);
+- we stick to emulators like X128;
+- there can be separate &quot;hardware ghettos&quot;.
+But I find them as worse.
+
+
+In future ZXVGS will have possibilities as follows:
+- read files of many filesystems without converting:
+   - CP/M;
+   - MS-DOS;
+   - TR-DOS;
+   - G+DOS;
+   - others;
+- load programs of many formats without converting:
+   - &quot;*.TAP&quot;;
+   - &quot;*.Z80&quot;;
+   - &quot;*.SNA&quot;;
+   - HoBeta files of TR-DOS;
+   - &quot;*.TRD&quot;;
+   - &quot;*.DSK&quot;;
+   - others;
+- use extended BASIC syntax of:
+   - TOS A.2;
+   - G+DOS;
+   - Interface 1;
+   - others;
+- emulate some disk operating systems at machine code level:
+   - TR-DOS;
+   - NeOS;
+   - others;
+- get software compatibility at machine code level in matter of:
+   - 4 kinds of joysticks;
+   - mouses;
+   - graphic and character printers;
+   - 4MB of memory banks;
+   - file access;
+   - others;
+- get software compatibility on different hardware:
+   - SAM Coupe;
+   - ZX with TIMEX INTERFACE;
+   - ZX with DISCiPlE/+D;
+   - Scorpion;
+   - Pentagon;
+   - ZX+3 with internal drive;
+   - others.
+
+Present version of ZXVGS (0.15) offers:
+- CP/M filesystem;
+- cable server for Amiga computers (files, mouse, printer);
+- loading of &quot;*.TAP&quot; files;
+- limited TOS A.2 syntax extention of BASIC;
+- 4 joysticks;
+- mouse;
+- graphic and character printers;
+- 144KB (or 200KB in SAM Coupe) of memory banks;
+- file access;
+- SAM Coupe implementation;
+- ZX with TIMEX INTERFACE implementation.
+In preparation:
+- &quot;*.Z80&quot; files;
+- TR-DOS emulation;
+- ZX+3 implementation.
+----------------------------------------------------------------------------
+------
+
+
+
+
+
+
+</pre></div><div class="post" id="p55871"><div class="ph"><a class="d" href="#p55871">1999-10-31</a> <span>yerzmyey</span> <span>Re: new ZX SPECTRUM disk system</span></div><pre>Niall Tracey wrote in message &lt;7vhave$82j$…@…&gt;...
+<span class="qt">&gt;Thanks for passing it on - it&#x27;s dead interesting.</span>
+
+I will send all Your text to Yarek. :)
+
+<span class="qt">&gt;Isn&#x27;t ZXDOOM TR-DOS..?</span>
+Well, yeah. Sadly I haven&#x27;t seen TAP version of DOOM. :(
+
+Greetz.
+                          Y.
+
+
+
+
+</pre></div></main></body></html>

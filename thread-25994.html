@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANN: SE Basic becomes open source · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANN: SE Basic becomes open source</h1><p class="facts">10 posts, 2002-08-22 – 2002-08-25</p><div class="post" id="p144642"><div class="ph"><a class="d" href="#p144642">2002-08-22 19:28:38</a> <span>Andrew Owen</span> </div><pre>Hi all,
+
+As I&#x27;m sure you know by now, I have worked very hard for a very long time
+on this project but I haven&#x27;t done any work on it since February and I
+don&#x27;t think I can ever finish it by myself. So, having done the ground
+work, I&#x27;m making the project open source. What that means is I&#x27;m still in
+control of the project, but the code is now freely(ish) available, and
+improvements will be included in future official releases at my
+discretion. If you want a copy of the (mostly) commented source code in
+TASM/ZASM compatible format then email me. That way I can keep track of
+who is working on the code. The source is for the earlier 0.69T
+non-release but except for the copyright message it compiles exactly the
+same binary as the 0.70 public release which is available as an .ips file
+from <a href="http://www.worldofspectrum.org/sinclairbasic/" rel="noreferrer">http://www.worldofspectrum.org/sinclairbasic/</a>
+
+-- 
+I&#x27;m really here. You&#x27;re not imagining it.
+
+
+
+</pre></div><div class="post" id="p144643"><div class="ph"><a class="d" href="#p144643">2002-08-22 19:46:38</a> <span>Chris Young</span> <span>Re: ANN: SE Basic becomes open source</span></div><pre>On Thu, 22 Aug 2002 20:28:38 +0100, Andrew Owen ate a Rolo, and turned into...
+Andrew Owen-Man!  A super-hero with the power to write complete crap
+to comp.sys.sinclair, such as this gem:
+
+<span class="qt">&gt; The source is for the earlier 0.69T</span>
+<span class="qt">&gt; non-release but except for the copyright message it compiles exactly the</span>
+<span class="qt">&gt; same binary as the 0.70 public release which is available as an .ips file</span>
+<span class="qt">&gt; from <a href="http://www.worldofspectrum.org/sinclairbasic/" rel="noreferrer">http://www.worldofspectrum.org/sinclairbasic/</a></span>
+
+That&#x27;s odd.  The latest version I have is 0.68.  What are the
+differences?
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p144651"><div class="ph"><a class="d" href="#p144651">2002-08-22 20:47:53</a> <span>Andrew Owen</span> <span>Re: ANN: SE Basic becomes open source</span></div><pre>In article &lt;…@…&gt;, &quot;Chris Young&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; On Thu, 22 Aug 2002 20:28:38 +0100, Andrew Owen ate a Rolo, and turned into...</span>
+<span class="qt">&gt; Andrew Owen-Man!  A super-hero with the power to write complete crap</span>
+<span class="qt">&gt; to comp.sys.sinclair, such as this gem:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; The source is for the earlier 0.69T</span>
+<span class="qt">&gt; &gt; non-release but except for the copyright message it compiles exactly the</span>
+<span class="qt">&gt; &gt; same binary as the 0.70 public release which is available as an .ips file</span>
+<span class="qt">&gt; &gt; from <a href="http://www.worldofspectrum.org/sinclairbasic/" rel="noreferrer">http://www.worldofspectrum.org/sinclairbasic/</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; That&#x27;s odd.  The latest version I have is 0.68.  What are the</span>
+<span class="qt">&gt; differences?</span>
+
+0.68 wouldn&#x27;t compile properly on TASM. A few lines are changed, but the
+binary is virtually identical as far as I recall.
+
+-- 
+I&#x27;m really here. You&#x27;re not imagining it.
+
+
+
+</pre></div><div class="post" id="p144664"><div class="ph"><a class="d" href="#p144664">2002-08-23 07:05:49</a> <span>Geoff Wearmouth</span> <span>Re: ANN: SE Basic becomes open source</span></div><pre>In article &lt;…@…
+addr.btopenworld.com&gt;, Andrew Owen &lt;…@…&gt; writes
+<span class="qt">&gt;In article &lt;…@…&gt;, &quot;Chris Young&quot;</span>
+<span class="qt">&gt;&lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; On Thu, 22 Aug 2002 20:28:38 +0100, Andrew Owen ate a Rolo, and turned into...</span>
+<span class="qt">&gt;&gt; Andrew Owen-Man!  A super-hero with the power to write complete crap</span>
+<span class="qt">&gt;&gt; to comp.sys.sinclair, such as this gem:</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; &gt; The source is for the earlier 0.69T</span>
+<span class="qt">&gt;&gt; &gt; non-release but except for the copyright message it compiles exactly the</span>
+<span class="qt">&gt;&gt; &gt; same binary as the 0.70 public release which is available as an .ips file</span>
+<span class="qt">&gt;&gt; &gt; from <a href="http://www.worldofspectrum.org/sinclairbasic/" rel="noreferrer">http://www.worldofspectrum.org/sinclairbasic/</a></span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; That&#x27;s odd.  The latest version I have is 0.68.  What are the</span>
+<span class="qt">&gt;&gt; differences?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;0.68 wouldn&#x27;t compile properly on TASM. A few lines are changed, but the</span>
+<span class="qt">&gt;binary is virtually identical as far as I recall.</span>
+
+Hi,
+
+You carbon copied me the binary and source back in January and like
+Chris I couldn&#x27;t get the binary to work so never looked at the source
+file. I just had a peek last night.
+
+The problem could be that it is set up for a rather lenient assembler 
+under MacOs and needs something with discipline like the DOS/Unix
+Telemark one that I use.
+
+In your tokenizer section there is the instruction 
+EX IX,(SP)  which Zilog insist should be  EX (SP),IX 
+Also,
+ADD B       which should be               ADD A,B  (twice)  
+ADD 8       which should be               ADD A,8  (once)
+
+Your assembler insists on colons at the end of labels, and I altered the 
+base file to suit this, but it also allows colons in for example
+PROG: equ  $5C53
+which is plain wrong.
+I also had to define a lower case equ 
+
+Your assembler may not be laying down the bytes you think it is
+disguised by the fact that you instruct it to always build a 16K file.
+
+Making the above changes, I ended up with a ROM file with a cute
+tokenizer that gave PRINT INT(.5 + .5) correctly.
+
+Making these changes would make the file more acceptable among the
+Unix/DOS community.
+
+Cheers,
+
+
+-- 
+Geoff Wearmouth
+The ZX ROM Files <a href="http://www.wearmouth.demon.co.uk" rel="noreferrer">http://www.wearmouth.demon.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p144667"><div class="ph"><a class="d" href="#p144667">2002-08-23 08:38:46</a> <span>Andrew Owen</span> <span>Re: ANN: SE Basic becomes open source</span></div><pre>In article &lt;…@…&gt;, Geoff Wearmouth
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; In article &lt;…@…</span>
+<span class="qt">&gt; addr.btopenworld.com&gt;, Andrew Owen &lt;…@…&gt; writes</span>
+<span class="qt">&gt; &gt;In article &lt;…@…&gt;, &quot;Chris Young&quot;</span>
+<span class="qt">&gt; &gt;&lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;&gt; On Thu, 22 Aug 2002 20:28:38 +0100, Andrew Owen ate a Rolo, and</span>
+turned into...
+<span class="qt">&gt; &gt;&gt; Andrew Owen-Man!  A super-hero with the power to write complete crap</span>
+<span class="qt">&gt; &gt;&gt; to comp.sys.sinclair, such as this gem:</span>
+<span class="qt">&gt; &gt;&gt; </span>
+<span class="qt">&gt; &gt;&gt; &gt; The source is for the earlier 0.69T</span>
+<span class="qt">&gt; &gt;&gt; &gt; non-release but except for the copyright message it compiles exactly the</span>
+<span class="qt">&gt; &gt;&gt; &gt; same binary as the 0.70 public release which is available as an .ips file</span>
+<span class="qt">&gt; &gt;&gt; &gt; from <a href="http://www.worldofspectrum.org/sinclairbasic/" rel="noreferrer">http://www.worldofspectrum.org/sinclairbasic/</a></span>
+<span class="qt">&gt; &gt;&gt; </span>
+<span class="qt">&gt; &gt;&gt; That&#x27;s odd.  The latest version I have is 0.68.  What are the</span>
+<span class="qt">&gt; &gt;&gt; differences?</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;0.68 wouldn&#x27;t compile properly on TASM. A few lines are changed, but the</span>
+<span class="qt">&gt; &gt;binary is virtually identical as far as I recall.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Hi,</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; You carbon copied me the binary and source back in January and like</span>
+<span class="qt">&gt; Chris I couldn&#x27;t get the binary to work so never looked at the source</span>
+<span class="qt">&gt; file. I just had a peek last night.</span>
+
+Much better than an uncommented binary isn&#x27;t it. :)
+
+<span class="qt">&gt; The problem could be that it is set up for a rather lenient assembler </span>
+<span class="qt">&gt; under MacOs and needs something with discipline like the DOS/Unix</span>
+<span class="qt">&gt; Telemark one that I use.</span>
+
+The problem at the moment is that I&#x27;ve migrated to MacOS X and I can&#x27;t get
+the X version of ZASM to work (it&#x27;s CLI based now). If anyone has a binary
+of a Unix based cross assembler that will work unmodified on MacOS X I&#x27;d
+like to hear from them. Alternatively I could go back to using TASM under
+PC emulation I suppose.
+
+<span class="qt">&gt; In your tokenizer section there is the instruction </span>
+<span class="qt">&gt; EX IX,(SP)  which Zilog insist should be  EX (SP),IX </span>
+<span class="qt">&gt; Also,</span>
+<span class="qt">&gt; ADD B       which should be               ADD A,B  (twice)  </span>
+<span class="qt">&gt; ADD 8       which should be               ADD A,8  (once)</span>
+
+You&#x27;re not the first to point out such errors. Actually I think you are
+but someone else has as well and I fixed a whole series of these problems.
+I&#x27;ll have to check the source and see if I missed a few.
+ 
+<span class="qt">&gt; Your assembler insists on colons at the end of labels, and I altered the </span>
+<span class="qt">&gt; base file to suit this, but it also allows colons in for example</span>
+<span class="qt">&gt; PROG: equ  $5C53</span>
+<span class="qt">&gt; which is plain wrong.</span>
+<span class="qt">&gt; I also had to define a lower case equ </span>
+
+The main problem with the assembler file was making it compile on TASM and
+ZASM and produce exactly the same result (which it does although I guess
+the result is just wrong on both).
+
+<span class="qt">&gt; Your assembler may not be laying down the bytes you think it is</span>
+<span class="qt">&gt; disguised by the fact that you instruct it to always build a 16K file.</span>
+
+Very good point.
+
+<span class="qt">&gt; Making the above changes, I ended up with a ROM file with a cute</span>
+<span class="qt">&gt; tokenizer that gave PRINT INT(.5 + .5) correctly.</span>
+
+Great. Have you noticed anything left that still doesn&#x27;t work right?
+ 
+<span class="qt">&gt; Making these changes would make the file more acceptable among the</span>
+<span class="qt">&gt; Unix/DOS community.</span>
+
+I would ultimately like a source file that will compile without
+modification on all the major platforms - AmigaOS, Windows/DOS,
+Linux/Unix, MacOS.
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Cheers,</span>
+
+-- 
+I&#x27;m really here. You&#x27;re not imagining it.
+
+
+
+</pre></div><div class="post" id="p144681"><div class="ph"><a class="d" href="#p144681">2002-08-23 11:56:37</a> <span>Geoff Wearmouth</span> <span>Re: ANN: SE Basic becomes open source</span></div><pre>In article &lt;…@…
+addr.btopenworld.com&gt;, Andrew Owen &lt;…@…&gt; writes
+
+<span class="qt">&gt;&gt; Making the above changes, I ended up with a ROM file with a cute</span>
+<span class="qt">&gt;&gt; tokenizer that gave PRINT INT(.5 + .5) correctly.</span>
+
+<span class="qt">&gt;Great. Have you noticed anything left that still doesn&#x27;t work right?</span>
+
+No but that is not an endorsement. :-) It just means I haven&#x27;t checked
+anything. As you know I think the line number thing is a retrograde
+step. However if I should come across something, I will let you know.
+Once I get time, I am planning my own &quot;Sea Change&quot; ROM.
+
+The secret is to test every little change as it is made.
+
+I believe you have abandoned the 128K ROMs but there is a bug in some
+that is due to a mistake in &quot;The canonical list of +3 oddities&quot; which
+is, in turn, due to an error in &quot;The Complete Spectrum ROM Disassembly&quot;.
+
+The latter has 
+
+2096 INPUT-1    LD      (DF-SZ),+01
+
+which actually disassembles as 
+
+2096 INPUT-1    LD      (TVFLAG),+01
+
+A comparison with the 128K INPUT routine and &quot;The Book&quot; produced the
+discrepancy in the canonical list which is actually OK.
+
+219C: A &quot;LD (TVFLAG),1&quot; should probably be &quot;LD (DFSZ),1&quot; (harmless).
+
+So if a ROM makes the change then there will be two blank lines instead
+of one between the lower input window and the upper screen window.
+
+Furthermore, INPUT can continue until the upper window is obliterated
+altogether, whereas at least one line should always show.
+
+-- 
+Geoff Wearmouth
+The ZX ROM Files <a href="http://www.wearmouth.demon.co.uk" rel="noreferrer">http://www.wearmouth.demon.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p144765"><div class="ph"><a class="d" href="#p144765">2002-08-25 18:15:32</a> <span>Andrew Owen</span> <span>Re: ANN: SE Basic becomes open source</span></div><pre>In article &lt;…@…&gt;, Geoff Wearmouth
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; In article &lt;…@…</span>
+<span class="qt">&gt; addr.btopenworld.com&gt;, Andrew Owen &lt;…@…&gt; writes</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;&gt; Making the above changes, I ended up with a ROM file with a cute</span>
+<span class="qt">&gt; &gt;&gt; tokenizer that gave PRINT INT(.5 + .5) correctly.</span>
+
+I checked. Those changes are implimented from version 0.69T. You must have
+an earlier version.
+
+<span class="qt">&gt; &gt;Great. Have you noticed anything left that still doesn&#x27;t work right?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; No but that is not an endorsement. :-) It just means I haven&#x27;t checked</span>
+<span class="qt">&gt; anything. As you know I think the line number thing is a retrograde</span>
+<span class="qt">&gt; step. However if I should come across something, I will let you know.</span>
+
+I feel I&#x27;ve just harmonized the line number thing with the way the ROM is
+set up. You have to muck about with more things to make the range 0-9999
+across the ROM than you do 0-16383. And since most people number in 10s
+anyway I think it&#x27;s a useful addition. Any programs using the extended
+range will still execute on the original ROM, which was my main
+consideration in deciding whether to do it or not.
+
+<span class="qt">&gt; Once I get time, I am planning my own &quot;Sea Change&quot; ROM.</span>
+
+That I would like to see. Feel free to take any code you like from my ROM
+but let me know what you&#x27;ve used. If nothing else I think my reset routine
+is worth inclusion. :)
+ 
+<span class="qt">&gt; The secret is to test every little change as it is made.</span>
+
+That works fine for the stuff you&#x27;re changing, but it stops working when
+the fact that you&#x27;ve changed two things which used to work together in a
+particular way to give a particular result and now they don&#x27;t although
+each one still gives the correct results for single use. I&#x27;ve had a lot of
+beta testing done on the ROM by some very committed people and I&#x27;ve
+managed to avoid any glaring problems. I&#x27;ve also tracked down most of the
+specific problems encountered. 
+ 
+<span class="qt">&gt; I believe you have abandoned the 128K ROMs but there is a bug in some</span>
+<span class="qt">&gt; that is due to a mistake in &quot;The canonical list of +3 oddities&quot; which</span>
+<span class="qt">&gt; is, in turn, due to an error in &quot;The Complete Spectrum ROM Disassembly&quot;.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The latter has </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; 2096 INPUT-1    LD      (DF-SZ),+01</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; which actually disassembles as </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; 2096 INPUT-1    LD      (TVFLAG),+01</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; A comparison with the 128K INPUT routine and &quot;The Book&quot; produced the</span>
+<span class="qt">&gt; discrepancy in the canonical list which is actually OK.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; 219C: A &quot;LD (TVFLAG),1&quot; should probably be &quot;LD (DFSZ),1&quot; (harmless).</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; So if a ROM makes the change then there will be two blank lines instead</span>
+<span class="qt">&gt; of one between the lower input window and the upper screen window.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Furthermore, INPUT can continue until the upper window is obliterated</span>
+<span class="qt">&gt; altogether, whereas at least one line should always show.</span>
+
+Actually I haven&#x27;t abandoned the 128 ROMs. I&#x27;m just waiting for a clean
+version of BASIC before I start messing with the 128 editor. The plan is
+to get an assembly listing for it and fix the bugs in the source rather
+than patching it. This is possible since the whole ROM is relocateable
+without causing too many problems (compare the 128 editor and the +2
+editor).
+
+-- 
+I&#x27;m really here. You&#x27;re not imagining it.
+
+
+
+</pre></div><div class="post" id="p144769"><div class="ph"><a class="d" href="#p144769">2002-08-25 19:26:08</a> <span>Geoff Wearmouth</span> <span>Re: ANN: SE Basic becomes open source</span></div><pre>In article &lt;…@…
+addr.btopenworld.com&gt;, Andrew Owen &lt;…@…&gt; writes
+<span class="qt">&gt;In article &lt;…@…&gt;, Geoff Wearmouth</span>
+<span class="qt">&gt;&lt;…@…&gt; wrote:</span>
+
+<span class="qt">&gt;&gt; &gt;&gt; Making the above changes, I ended up with a ROM file with a cute</span>
+<span class="qt">&gt;&gt; &gt;&gt; tokenizer that gave PRINT INT(.5 + .5) correctly.</span>
+
+<span class="qt">&gt;I checked. Those changes are implimented from version 0.69T. You must have</span>
+<span class="qt">&gt;an earlier version.</span>
+
+I think we have misunderstood. The romfile, cc&#x27;d to Chris as well,
+didn&#x27;t work. The source file was sebas068.asm but internally it was
+labelled V0.70 Beta 2. All that I altered was the stuff like &quot;ADD B&quot;
+that TASM threw out. I didn&#x27;t alter the actual coding. It turned from 
+a totally unworkable ROM into one that I was expecting and behaved in
+accordance with the list of changes in the Chronology at the end of the
+source file.
+
+<span class="qt">&gt;&gt; Once I get time, I am planning my own &quot;Sea Change&quot; ROM.</span>
+
+<span class="qt">&gt;That I would like to see. Feel free to take any code you like from my ROM</span>
+<span class="qt">&gt;but let me know what you&#x27;ve used. If nothing else I think my reset routine</span>
+<span class="qt">&gt;is worth inclusion. :)</span>
+
+I made a start yesterday. Most of what I am doing is not original. I get
+the feeling someone has been there before and I found another clue
+today. Mysteries still remain. I&#x27;m doing it in stages and should
+stabilize mid-week when I&#x27;ll give the first draft an airing.
+
+I saw that you&#x27;d tried my suggestion in K-DECODE to stop keys V,W,X,Y,Z
+doing anything in Graphics Mode and that it doesn&#x27;t work. There should
+have been two POP AF instructions. I&#x27;ve corrected the suggestion now.
+
+Cheers,
+
+
+
+-- 
+Geoff Wearmouth
+The ZX ROM Files <a href="http://www.wearmouth.demon.co.uk" rel="noreferrer">http://www.wearmouth.demon.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p144772"><div class="ph"><a class="d" href="#p144772">2002-08-25 20:29:41</a> <span>Jaime Tejedor G���mez, aka Metalbrain</span> <span>Re: ANN: SE Basic becomes open source</span></div><pre><span class="qt">&gt;I would ultimately like a source file that will compile without</span>
+<span class="qt">&gt;modification on all the major platforms - AmigaOS, Windows/DOS,</span>
+<span class="qt">&gt;Linux/Unix, MacOS.</span>
+
+ Have you ever tried the ZMAC assembler? It&#x27;s the best of the ones I&#x27;ve
+tested so far.
+
+ You can find it here:
+<a href="http://www.nenie.org/cpcip/#zmac" rel="noreferrer">http://www.nenie.org/cpcip/#zmac</a>
+ or here:
+<a href="http://www.tim-mann.org/trs80resources.html#zmac" rel="noreferrer">http://www.tim-mann.org/trs80resources.html#zmac</a>
+
+METALBRAIN
+(C) 1977 Tejedor &amp; Gï¿½mez Research Ltd.
+
+
+
+</pre></div><div class="post" id="p144776"><div class="ph"><a class="d" href="#p144776">2002-08-25 21:38:01</a> <span>Andrew Owen</span> <span>Re: ANN: SE Basic becomes open source</span></div><pre>In article &lt;…@…&gt;, Geoff Wearmouth
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; In article &lt;…@…</span>
+<span class="qt">&gt; addr.btopenworld.com&gt;, Andrew Owen &lt;…@…&gt; writes</span>
+<span class="qt">&gt; &gt;In article &lt;…@…&gt;, Geoff Wearmouth</span>
+<span class="qt">&gt; &gt;&lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;&gt; &gt;&gt; Making the above changes, I ended up with a ROM file with a cute</span>
+<span class="qt">&gt; &gt;&gt; &gt;&gt; tokenizer that gave PRINT INT(.5 + .5) correctly.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;I checked. Those changes are implimented from version 0.69T. You must have</span>
+<span class="qt">&gt; &gt;an earlier version.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I think we have misunderstood. The romfile, cc&#x27;d to Chris as well,</span>
+<span class="qt">&gt; didn&#x27;t work. The source file was sebas068.asm but internally it was</span>
+<span class="qt">&gt; labelled V0.70 Beta 2. All that I altered was the stuff like &quot;ADD B&quot;</span>
+<span class="qt">&gt; that TASM threw out. I didn&#x27;t alter the actual coding. It turned from </span>
+<span class="qt">&gt; a totally unworkable ROM into one that I was expecting and behaved in</span>
+<span class="qt">&gt; accordance with the list of changes in the Chronology at the end of the</span>
+<span class="qt">&gt; source file.</span>
+
+Odd. The sourcefile I have for 0.69T has the changes and the ROM file for
+the 0.70 works as you describe (with changes). Maybe Isent you a corrupted
+file. 
+
+<span class="qt">&gt; &gt;&gt; Once I get time, I am planning my own &quot;Sea Change&quot; ROM.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;That I would like to see. Feel free to take any code you like from my ROM</span>
+<span class="qt">&gt; &gt;but let me know what you&#x27;ve used. If nothing else I think my reset routine</span>
+<span class="qt">&gt; &gt;is worth inclusion. :)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I made a start yesterday. Most of what I am doing is not original. I get</span>
+<span class="qt">&gt; the feeling someone has been there before and I found another clue</span>
+<span class="qt">&gt; today. Mysteries still remain. I&#x27;m doing it in stages and should</span>
+<span class="qt">&gt; stabilize mid-week when I&#x27;ll give the first draft an airing.</span>
+
+Drop a copy in by email.
+ 
+<span class="qt">&gt; I saw that you&#x27;d tried my suggestion in K-DECODE to stop keys V,W,X,Y,Z</span>
+<span class="qt">&gt; doing anything in Graphics Mode and that it doesn&#x27;t work. There should</span>
+<span class="qt">&gt; have been two POP AF instructions. I&#x27;ve corrected the suggestion now.</span>
+
+I think I tried that and it still didn&#x27;t work. I cheated in the end I think.
+
+-- 
+I&#x27;m really here. You&#x27;re not imagining it.
+
+
+
+</pre></div></main></body></html>

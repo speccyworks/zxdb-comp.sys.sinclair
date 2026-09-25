@@ -1,0 +1,945 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hardware gadget for tape loading · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Hardware gadget for tape loading</h1><p class="facts">23 posts, 1999-09-16 – 1999-09-24</p><div class="post" id="p54254"><div class="ph"><a class="d" href="#p54254">1999-09-16 08:07:42</a> <span>…@…</span> </div><pre>Hi fellow 8-bit computing fans,
+
+(O.K., the denizens of &quot;comp.sys.acorn.misc&quot; could be Archimedes
+enthusiasts, but I&#x27;m presuming that there are a fair share of Beebers
+there as well...)
+
+For the past several years, Speccy enthusiasts using the emulator
+&quot;Z80&quot; by Gerton Lunter have had the use of a neat little gadget to
+interface the parallel port to a cassette deck for tape loading.  (I
+think this gadget has been adopted by other emus as well -- the gadget
+may also work on other makes of computer, though I haven&#x27;t heard about
+this.)
+
+Recently, it has been proposed on the Sinclair and Oric NGs that this
+gadget also be adopted as the tape-loading method for the PC Oric emu,
+Euphoric.
+
+I hereby propose that it be adopted as the standard for *anyone*
+writing or maintaining an emu for *any* 8-bit machine where transfer
+of old tapes to snapshot (and back) is desired, so I&#x27;ve crossposted
+this to all the relevant NGs I can think of.  If I&#x27;ve missed any, feel
+free to repost it.
+
+Now, all we need is for someone to start supplying ready-built ones
+again...
+
+N.B.  Due to the crap way in which nntp.freeserve.net (mal)functions,
+I&#x27;ve had to set follow-ups.  Remember to clear them before replying...
+
+-- 
+--------------------------------------------------
+Regards, Robert the Eboreg
+New?  Read the FAQ:  <a href="http://www.kendalls.demon.co.uk/cssfaq/" rel="noreferrer">http://www.kendalls.demon.co.uk/cssfaq/</a>
+Got a binary file to post?  Go to alt.binaries.emulators.misc
+
+
+</pre></div><div class="post" id="p54279"><div class="ph"><a class="d" href="#p54279">1999-09-17</a> <span>chris young</span> <span>Re: Hardware gadget for tape loading</span></div><pre>On Thu, 16 Sep 1999 08:07:40 GMT, Robert J. Baker (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; For the past several years, Speccy enthusiasts using the emulator</span>
+<span class="qt">&gt; &quot;Z80&quot; by Gerton Lunter have had the use of a neat little gadget to</span>
+<span class="qt">&gt; interface the parallel port to a cassette deck for tape loading.  (I</span>
+<span class="qt">&gt; think this gadget has been adopted by other emus as well -- the gadget</span>
+<span class="qt">&gt; may also work on other makes of computer, though I haven&#x27;t heard about</span>
+<span class="qt">&gt; this.)</span>
+
+The Amiga ZXAM one is essentially the same thing, but connects to a
+different port.
+
+<span class="qt">&gt; Recently, it has been proposed on the Sinclair and Oric NGs that this</span>
+<span class="qt">&gt; gadget also be adopted as the tape-loading method for the PC Oric emu,</span>
+<span class="qt">&gt; Euphoric.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I hereby propose that it be adopted as the standard for *anyone*</span>
+<span class="qt">&gt; writing or maintaining an emu for *any* 8-bit machine where transfer</span>
+<span class="qt">&gt; of old tapes to snapshot (and back) is desired, so I&#x27;ve crossposted</span>
+<span class="qt">&gt; this to all the relevant NGs I can think of.</span>
+
+I&#x27;d argue that using sound sampling hardware - if already available -
+is probably better (or, at least, means that people don&#x27;t need a new
+interface if they already have something capable of converting sound
+to data)
+
+Chris
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
+<span class="qt">| <a href="http://www.bigfoot.com/~ysac" rel="noreferrer">http://www.bigfoot.com/~ysac</a>              |</span>
++------------------------------ICQ:28784166-+
+
+
+</pre></div><div class="post" id="p54301"><div class="ph"><a class="d" href="#p54301">1999-09-18</a> <span>…@…</span> <span>Re: Hardware gadget for tape loading</span></div><pre>…@… (Robert J. Baker) wrote:
+
+<span class="qt">&gt;Hi fellow 8-bit computing fans,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;(O.K., the denizens of &quot;comp.sys.acorn.misc&quot; could be Archimedes</span>
+<span class="qt">&gt;enthusiasts, but I&#x27;m presuming that there are a fair share of Beebers</span>
+<span class="qt">&gt;there as well...)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;For the past several years, Speccy enthusiasts using the emulator</span>
+<span class="qt">&gt;&quot;Z80&quot; by Gerton Lunter have had the use of a neat little gadget to</span>
+<span class="qt">&gt;interface the parallel port to a cassette deck for tape loading.  (I</span>
+<span class="qt">&gt;think this gadget has been adopted by other emus as well -- the gadget</span>
+<span class="qt">&gt;may also work on other makes of computer, though I haven&#x27;t heard about</span>
+<span class="qt">&gt;this.)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Recently, it has been proposed on the Sinclair and Oric NGs that this</span>
+<span class="qt">&gt;gadget also be adopted as the tape-loading method for the PC Oric emu,</span>
+<span class="qt">&gt;Euphoric.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I hereby propose that it be adopted as the standard for *anyone*</span>
+<span class="qt">&gt;writing or maintaining an emu for *any* 8-bit machine where transfer</span>
+<span class="qt">&gt;of old tapes to snapshot (and back) is desired, so I&#x27;ve crossposted</span>
+<span class="qt">&gt;this to all the relevant NGs I can think of.  If I&#x27;ve missed any, feel</span>
+<span class="qt">&gt;free to repost it.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Now, all we need is for someone to start supplying ready-built ones</span>
+<span class="qt">&gt;again...</span>
+
+That&#x27;s interesting.  The Apple IIGS&#x27; 32-channel Ensoniq
+wavetable synthesis chip includes its own Analog to
+Digital Converter (ADC) so in theory, you can use
+sound digitization program to grab the files off a data
+tape.
+
+What would it be used for on a IIGS?  Mostly novelty.
+The IIe emulation built into the IIGS allows the 16-bit
+computer to emulate all the 8-bit Apple II units back
+to the original II, which did have cassette storage (or
+optional cassette storage).
+
+Also, I think there were programs that allowed CP/M
+or early machines based on NEC processors to run
+Timex Sinclair software due to the commonality of
+support for the Z-80 processor.  If so, there are
+hardware/software combination emulators for CP/M
+and IBM PC (NEC processor), respectively, computers
+on the IIGS.
+
+
+</pre></div><div class="post" id="p54305"><div class="ph"><a class="d" href="#p54305">1999-09-18</a> <span>darren salt</span> <span>Re: Hardware gadget for tape loading</span></div><pre>In message &lt;…@…&gt;
+          …@… wrote:
+
+<span class="qt">&gt; It would be better to use the sound card,</span>
+
+Sound card? Perhaps you should look at where this is crossposted...
+
+-- 
+<span class="qt">| Darren Salt  anti-UCE | nr. Ashington, | d youmustbejoking,demon,co,uk</span>
+<span class="qt">| Spectrum +3, Risc PC, | Northumberland | s zap,uk,eu,org</span>
+<span class="qt">| A3010, BBC Master 128 | Toon Army      | @ retrospec,co,uk</span>
+<span class="qt">|   The second RISC OS version of JSW.</span>
+
+Then you must be Don Francisco&#x27;s sister!
+
+
+</pre></div><div class="post" id="p54316"><div class="ph"><a class="d" href="#p54316">1999-09-18 21:48:08</a> <span>…@…</span> <span>Re: Hardware gadget for tape loading</span></div><pre>On Sat, 18 Sep 1999 12:55:19 GMT, …@… wrote:
+
+<span class="qt">&gt;It would be better to use the sound card, since these outnumber little</span>
+<span class="qt">&gt;parallel port gadgets by a hundred to one.</span>
+
+Speaking for the Atari 8-bit machines, I wrote a program in &#x27;C&#x27;
+back in 1997 to read Atari cassettes using a sound card on the PC.
+The data is extracted and saved.  You can send that data to
+the Atari.
+The Atari reads the cassette as a 600 baud serial device, so the
+data can be sent over the PC&#x27;s serial port to the Serial IO bus of the
+Atari.  Only a simple voltage level adapter is needed, as the ones
+already in use for the disk drive emulators SIO2PC and APE.
+
+
+<span class="qt">&gt;I think the TZX format is flexible enough to hold other computers&#x27;</span>
+<span class="qt">&gt;formats, have a look at the specs and see if it&#x27;s suitable. It would</span>
+<span class="qt">&gt;be quite good to see a common tape format, it would mean the utilities</span>
+<span class="qt">&gt;for digitising and re-tapifying tapes, could be centralised and have</span>
+<span class="qt">&gt;much more time put into them, better sampling techniques, etc, so</span>
+<span class="qt">&gt;everything would be better.</span>
+
+Well, I did not know of this format or these utilities.  I looked at
+the format specification, and to me it looks very complicated.
+Flexible yes, but also very very complicated.
+
+
+<span class="qt">&gt;Can TZX have meta data put in it, so you can store what computer it&#x27;s</span>
+<span class="qt">&gt;for and who sampled it etc? I know I could just go look it up but it</span>
+<span class="qt">&gt;needs bringing up anyway.</span>
+
+I think this is possible.  But I do not know why anyone would want
+this.  Tapes for one system cannot be loaded on another system.
+I think it is very confusing to store all sorts of tape files for
+different machines in the same format.  Like, I have a ton of
+diskettes.  Some are for the PC.  Some for the Atari ST.  Some for the
+Atari 8-bit machines.  Some for macintosh.  Some for Wang Classic,
+some for Wang VS.  And then some for emulator use.  Sometimes it is
+hard to tell what is what.
+The same problem would arise with these emulated cassettes.
+If searching for a tape file, you might get confused.  The only
+advantage is the one you mention, we can share knowledge
+and technology, and thus improve the tools.  I think we can
+accomplish this easily if the developers get in touch with each other.
+We do not need to bother the users with this, making life harder for
+them.
+
+
+<span class="qt">&gt;Do the current samplers just look for 0 transitions, or something?</span>
+<span class="qt">&gt;Maybe a bit of low and high-pass filtering could help clean up old</span>
+<span class="qt">&gt;tapes. etc etc, there must be loads of things to make sound card</span>
+<span class="qt">&gt;loading more reliable.</span>
+
+My conversion program counts the number of samples between a
+high and a low value in the wave file.  My program comes with the
+documentation and &#x27;C&#x27; source code.  They only work for the Atari
+8-bit, since that is the only system I know about.  I have no
+technical knowledge of other systems, and I really do not care
+about them anyway.  I hate tapes.  That is why I wrote these
+programs.  But the signal processing is not too bad.
+I did not want to sample in real time, because that adds complexity
+to the program.  Besides, I know nothing about reading from a
+sound card.  If you sample to a wave file, you can edit and try
+to repair the wave file, if drop-outs and other stuff appear on the
+tape.
+
+Begin this year I also wrote a program to convert the data back
+to audio, so the wave file can be recorded on a cassette tape
+again after cleaning it up.
+
+My programs do not look nice and flashy, but they seem to do
+the job.  Anyway, I have received very little feedback, which
+makes me believe that on the Atari 8-bit machines, almost
+everybody is using emulated disk images, not cassette stuff.
+I think all stuff that was released for the Atari 8-bit was also
+released on disk.  It is much easier to get a disk version.
+That is why emulators for the Atari do not support the
+cassette unit.  Nobody needs it.  So no need to support
+cassette emulation either.
+
+My stuff can be used to recover programs that people
+wrote themselves and saved to tape.  Anyway, used or not,
+my stuff is available free from the Umich archives, and can
+also be found on my home-page.  If you are interested in
+cassette processing software, you can download the
+programs, including the &#x27;C&#x27; source code from
+<a href="http://home.planet.nl/~ernest" rel="noreferrer">http://home.planet.nl/~ernest</a>
+
+I only read the comp.sys.atari.8bit news group, although
+this is cross posted.  Send me an E-mail if you have questions,
+or reply in c.s.a.8
+
+Keep those XL&#x27;s/XE&#x27;s humming,
+Ernest.
+
+
+
+</pre></div><div class="post" id="p54324"><div class="ph"><a class="d" href="#p54324">1999-09-19</a> <span>darren salt</span> <span>Re: Hardware gadget for tape loading</span></div><pre>In message 
+          Philip Kendall  wrote:
+
+<span class="qt">&gt; In article &lt;…@…&gt;, Darren Salt</span>
+<span class="qt">&gt;  wrote</span>
+<span class="qt">&gt;&gt; In message &lt;…@…&gt;</span>
+<span class="qt">&gt;&gt;          …@… wrote:</span>
+<span class="qt">&gt;&gt;&gt; It would be better to use the sound card,</span>
+<span class="qt">&gt;&gt; Sound card? Perhaps you should look at where this is crossposted...</span>
+
+<span class="qt">&gt; But we&#x27;re talking about a hardware gadget which connects to the parallel</span>
+<span class="qt">&gt; port</span>
+
+I&#x27;m well aware of that. I have one such device myself...
+
+<span class="qt">&gt; on your PC (or whatever it connects to on the Miggy) anyway, so a sound</span>
+<span class="qt">&gt; card *is* the equivalent device.</span>
+
+Only if you happen to have a machine which needs one for anything other than
+simple beeps and to which one can be fitted.
+
+-- 
+<span class="qt">| Darren Salt  anti-UCE | d youmustbejoking,demon,co,uk | nr. Ashington,</span>
+<span class="qt">| Spectrum +3, Risc PC, | s zap,uk,eu,org   ** anti-UBE | Northumberland</span>
+<span class="qt">| A3010, BBC Master 128 | @ retrospec,co,uk             | Toon Army</span>
+<span class="qt">|   Find a snapshot: </span>
+
+Apple: &quot;I know! Let&#x27;s call it the Raincoat.&quot;
+
+
+</pre></div><div class="post" id="p54330"><div class="ph"><a class="d" href="#p54330">1999-09-19</a> <span>…@…</span> <span>Re: Hardware gadget for tape loading</span></div><pre>In article &lt;…@…&gt;, Ernest R. Schreurs
+&lt;…@…&gt; wrote
+<span class="qt">&gt;On Sat, 18 Sep 1999 12:55:19 GMT, …@… wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;I think the TZX format is flexible enough to hold other computers&#x27;</span>
+<span class="qt">&gt;&gt;formats, have a look at the specs and see if it&#x27;s suitable. It would</span>
+<span class="qt">&gt;&gt;be quite good to see a common tape format, it would mean the utilities</span>
+<span class="qt">&gt;&gt;for digitising and re-tapifying tapes, could be centralised and have</span>
+<span class="qt">&gt;&gt;much more time put into them, better sampling techniques, etc, so</span>
+<span class="qt">&gt;&gt;everything would be better.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Well, I did not know of this format or these utilities.  I looked at</span>
+<span class="qt">&gt;the format specification, and to me it looks very complicated.</span>
+<span class="qt">&gt;Flexible yes, but also very very complicated.</span>
+
+IMHO, it&#x27;s not complicated. You never need to use most of the block
+types -- most Speccy games can get by with using just one or two.
+
+(I&#x27;ll admit that the .tzx format is a bit of a mess in places eg the
+fact that the early block types don&#x27;t have length bytes :-( )
+
+<span class="qt">&gt;&gt;Can TZX have meta data put in it, so you can store what computer it&#x27;s</span>
+<span class="qt">&gt;&gt;for and who sampled it etc? I know I could just go look it up but it</span>
+<span class="qt">&gt;&gt;needs bringing up anyway.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I think this is possible.  But I do not know why anyone would want</span>
+<span class="qt">&gt;this.  Tapes for one system cannot be loaded on another system.</span>
+
+Yes, they can! It&#x27;s normally a software problem, not a hardware problem.
+There isn&#x27;t the software built into most machines to allow you to do
+this, but that doesn&#x27;t mean it hasn&#x27;t been written in the past.
+
+Example 1: There are plenty of *Spectrum* programs which allow you to
+load ZX81 tapes on a Spectrum; as there&#x27;s no fundamental difference in
+the hardware, all that is needed for someone to take an old Spectrum
+program, run it on their emulator and then start up the ZX81 tape file.
+If we were using different tape formats for every machine, this would
+not be possible, as it would require rewriting the emulator (or
+producing some external utility to do this), which a fair proportion of
+emulator users may not be able to do.
+
+Example 2: The Spectrum and Commodore 64 versions of Trivial Pursuit
+used the same data format to load extra sets of questions.1
+
+<span class="qt">&gt;I think it is very confusing to store all sorts of tape files for</span>
+<span class="qt">&gt;different machines in the same format.  Like, I have a ton of</span>
+<span class="qt">&gt;diskettes. [...] Sometimes it is hard to tell what is what.</span>
+<span class="qt">&gt;The same problem would arise with these emulated cassettes.</span>
+
+To be honest, that&#x27;s more of a organisational problem -- the biggest
+Spectrum archive is now running at ~12000 programs, so there are already
+some very efficient tools around for dealing with this sort of thing.
+
+Phil
+
+-- 
+ / Philip Kendall (…@… …@…) \
+<span class="qt"> | New? Read the FAQ: <a href="http://www.kendalls.demon.co.uk/cssfaq/" rel="noreferrer">http://www.kendalls.demon.co.uk/cssfaq/</a>  |</span>
+<span class="qt"> |             The Threat to Spectrum Emulation:               |</span>
+ \ <a href="http://www.kendalls.demon.co.uk/pak21/spectrum/threat.html" rel="noreferrer">http://www.kendalls.demon.co.uk/pak21/spectrum/threat.html</a>  /
+
+
+
+</pre></div><div class="post" id="p54331"><div class="ph"><a class="d" href="#p54331">1999-09-19</a> <span>…@…</span> <span>Re: Hardware gadget for tape loading</span></div><pre>In article &lt;…@…&gt;, Darren Salt
+&lt;…@…&gt; wrote
+<span class="qt">&gt;In message &lt;…@…&gt;</span>
+<span class="qt">&gt;          …@… wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; It would be better to use the sound card,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Sound card? Perhaps you should look at where this is crossposted...</span>
+
+But we&#x27;re talking about a hardware gadget which connects to the parallel
+port on your PC (or whatever it connects to on the Miggy) anyway, so a
+sound card *is* the equivalent device.
+
+Phil
+
+-- 
+ / Philip Kendall (…@… …@…) \
+<span class="qt"> | New? Read the FAQ: <a href="http://www.kendalls.demon.co.uk/cssfaq/" rel="noreferrer">http://www.kendalls.demon.co.uk/cssfaq/</a>  |</span>
+<span class="qt"> |             The Threat to Spectrum Emulation:               |</span>
+ \ <a href="http://www.kendalls.demon.co.uk/pak21/spectrum/threat.html" rel="noreferrer">http://www.kendalls.demon.co.uk/pak21/spectrum/threat.html</a>  /
+
+
+
+</pre></div><div class="post" id="p54347"><div class="ph"><a class="d" href="#p54347">1999-09-19 20:05:09</a> <span>jim groom</span> <span>Re: Hardware gadget for tape loading</span></div><pre>I dug out my old Z80 tape interface to check out some tapes I picked up
+recently (the real Specs are having a nap in the attic). I&#x27;ve got it
+plugged into a switch box, so I don&#x27;t have to unplug it and the printer
+all the time. The problem is, I can&#x27;t get it to work (it definitely used
+to). I have set up the device using the DIAGRAM.Z80 program that comes
+with Z80. I have set up the single TAP file option in the F7 menu (in
+all sorts of combinations). Typing LOAD&quot;&quot; starts the program looking for
+a header file. When the program starts to come thorough, the familiar
+red bands followed by blue and yellow bands appear, but nothing loads.
+The next file after the header doesn&#x27;t register on screen, but it looks
+like it attempts to load the next header and fails again. If I have the
+Mirror to Disk option set, then the program comes up with a problem and
+won&#x27;t save that data to disk. Again this happens with every header file
+and the file following the header isn&#x27;t registered at all (hardly
+surprising as the header file doesn&#x27;t load properly). I have tried
+several tapes, all with the same result. I am guessing that the problem
+may lie with the switchbox setup (which is ok for the printer, but I&#x27;ve
+been told you need to keep cabling as short as possible to avoid
+transmission errors), but before I unplug everything again, I was
+wondering if any of you have any other ideas?
+
+Regards,
+
+Jim
+-- 
+ ________________________________________________________________
+<span class="qt">|                                                                |</span>
+<span class="qt">|email: …@…                                   |</span>
+<span class="qt">|                                                                |</span>
+<span class="qt">|Website for fans of the Oric computer and the Sega Master System|</span>
+<span class="qt">|game Miracle Warriors at:                                       |</span>
+<span class="qt">|                                                                |</span>
+<span class="qt">|<a href="http://freespace.virgin.net/james.groom/homepage.htm" rel="noreferrer">http://freespace.virgin.net/james.groom/homepage.htm</a>            |</span>
+<span class="qt">|________________________________________________________________|</span>
+
+
+</pre></div><div class="post" id="p54440"><div class="ph"><a class="d" href="#p54440">1999-09-22</a> <span>chris young</span> <span>Re: Hardware gadget for tape loading</span></div><pre>On Sun, 19 Sep 1999 09:23:58 +0100, Philip Kendall (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; In article &lt;…@…&gt;, Darren Salt</span>
+<span class="qt">&gt;  wrote</span>
+<span class="qt">&gt; &gt;In message &lt;…@…&gt;</span>
+<span class="qt">&gt; &gt;          …@… wrote:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;&gt; It would be better to use the sound card,</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Sound card? Perhaps you should look at where this is crossposted...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; But we&#x27;re talking about a hardware gadget which connects to the parallel</span>
+<span class="qt">&gt; port on your PC (or whatever it connects to on the Miggy)</span>
+
+Joystick port.  I thought I mentioned that, actually, but looking back
+I see I didn&#x27;t.  It essentially toggles the fire button on and off as
+sound goes in.  It&#x27;s best not to have joystick emulation switched on
+while it&#x27;s connected, though :-)
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
+<span class="qt">| <a href="http://www.bigfoot.com/~ysac" rel="noreferrer">http://www.bigfoot.com/~ysac</a>              |</span>
++------------------------------ICQ:28784166-+
+
+
+</pre></div><div class="post" id="p54444"><div class="ph"><a class="d" href="#p54444">1999-09-22</a> <span>darren salt</span> <span>Re: Hardware gadget for tape loading</span></div><pre>In message &lt;7sai2c$rcr$…@…&gt;
+          …@… (Niall Tracey) wrote:
+
+<span class="qt">&gt; Ernest R. Schreurs (…@…) wrote:</span>
+[snip]
+<span class="qt">&gt;&gt; Tapes for one system cannot be loaded on another system. I think it is</span>
+<span class="qt">&gt;&gt; very confusing to store all sorts of tape files for different machines in</span>
+<span class="qt">&gt;&gt; the same format. [...]</span>
+
+<span class="qt">&gt; Then I&#x27;d like to suggest a slight alteration to the implementation of TZX</span>
+<span class="qt">&gt; files. Provide alternative filename extensions for different machines.</span>
+
+That loses immediately :-)
+
+<span class="qt">&gt; The actual encoding could be identical, but the extensions would allow the</span>
+<span class="qt">&gt; user to distinguish between files for different machines. Say:</span>
+<span class="qt">&gt;  TII for Apple II</span>
+<span class="qt">&gt;  T80 for ZX80</span>
+<span class="qt">&gt;  T81 for ZX81</span>
+<span class="qt">&gt;  TBC or TAC for BBC Micro/Acorn Electron</span>
+<span class="qt">&gt;  TAM or TPC for Amstrad CPC</span>
+<span class="qt">&gt; etc</span>
+
+<span class="qt">&gt; (It&#x27;s a shame some OSes only support 3-letter extensions. [...]</span>
+
+Hmm. RISC OS doesn&#x27;t recognise filename extensions at all on Filecore-based
+filing systems such as ADFS and provides extension-to-filetype mapping in
+DOSFS and CDFS (and 3rd-party FSes of this type), so unless we&#x27;re going to
+allocate yet more filetype numbers...
+
+<span class="qt">&gt; Then the emulator/archive program could have the &#x27;files of which type&#x27;</span>
+<span class="qt">&gt; options:</span>
+<span class="qt">&gt;  TZX for [computer being used] - that would show only files with the</span>
+<span class="qt">&gt;                                  relevant extension.</span>
+<span class="qt">&gt;  All TZX files                 - that would show all files with an</span>
+<span class="qt">&gt;                                  extension accepted by the TZX</span>
+<span class="qt">&gt;                                  standards body.</span>
+
+Fair enough, but why bother when the emulator can multitask and interact with
+the Filer? :-)
+
+-- 
+<span class="qt">| Darren Salt  anti-UCE | d youmustbejoking,demon,co,uk | nr. Ashington,</span>
+<span class="qt">| Spectrum +3, Risc PC, | s zap,uk,eu,org   ** anti-UBE | Northumberland</span>
+<span class="qt">| A3010, BBC Master 128 | @ retrospec,co,uk             | Toon Army</span>
+<span class="qt">|   This space reserved for future expansion</span>
+
+Clones are people two.
+
+
+</pre></div><div class="post" id="p54449"><div class="ph"><a class="d" href="#p54449">1999-09-22</a> <span>mickael pointier</span> <span>Re: Hardware gadget for tape loading</span></div><pre>:Anyway what I&#x27;m saying is, emulation science is still advancing, and
+:tape emulation can be seen as separate to the machine emulation
+:itself, so if you pooled resources, all 8-bitters would benefit from
+:new advances straight away. We don&#x27;t *need* separate tape utilities
+:for each machine. The same way, many people use Marat&#x27;s Z80 core for
+:their emu&#x27;s, why bother reinventing the microchip?
+
+
+I believe in that case that it would be possible to have a similar system
+for disk drives ?
+A standard way of encoding disk datas, that would allow us to have
+&quot;writedisk&quot; and
+&quot;readdisk&quot; utilities that works for Atari ST, Oric, Spectrum, Apple, etc...
+
+    Mike
+
+--------------------
+<a href="http://www.defence-force.org" rel="noreferrer">http://www.defence-force.org</a>
+…@…
+
+
+
+
+
+
+</pre></div><div class="post" id="p54450"><div class="ph"><a class="d" href="#p54450">1999-09-22</a> <span>craig harrison</span> <span>Re: Hardware gadget for tape loading</span></div><pre>3 inch 40track drive based computer emulators already use the common .DSK or
+EDSK formats, but when talking about 80 track discs as well, this could get
+complicated!!
+
+--
+Craig
+E-mail:
+…@…
+…@…
+
+AmsTech Home Page
+<a href="http://members.tripod.co.uk/Craigster/index.html" rel="noreferrer">http://members.tripod.co.uk/Craigster/index.html</a>
+
+Mickael Pointier  wrote in message
+news:7sb5v1$jvc$…@…...
+<span class="qt">&gt; :Anyway what I&#x27;m saying is, emulation science is still advancing, and</span>
+<span class="qt">&gt; :tape emulation can be seen as separate to the machine emulation</span>
+<span class="qt">&gt; :itself, so if you pooled resources, all 8-bitters would benefit from</span>
+<span class="qt">&gt; :new advances straight away. We don&#x27;t *need* separate tape utilities</span>
+<span class="qt">&gt; :for each machine. The same way, many people use Marat&#x27;s Z80 core for</span>
+<span class="qt">&gt; :their emu&#x27;s, why bother reinventing the microchip?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I believe in that case that it would be possible to have a similar system</span>
+<span class="qt">&gt; for disk drives ?</span>
+<span class="qt">&gt; A standard way of encoding disk datas, that would allow us to have</span>
+<span class="qt">&gt; &quot;writedisk&quot; and</span>
+<span class="qt">&gt; &quot;readdisk&quot; utilities that works for Atari ST, Oric, Spectrum, Apple,</span>
+etc...
+<span class="qt">&gt;</span>
+<span class="qt">&gt;     Mike</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; --------------------</span>
+<span class="qt">&gt; <a href="http://www.defence-force.org" rel="noreferrer">http://www.defence-force.org</a></span>
+<span class="qt">&gt; …@…</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+
+
+</pre></div><div class="post" id="p54451"><div class="ph"><a class="d" href="#p54451">1999-09-22</a> <span>craig harrison</span> <span>Re: Hardware gadget for tape loading</span></div><pre>Hey, we now have claims that 8bit tapes are better transferred by
+
+1. Soundcard (Midi presumably)
+2. Parallel Port
+3. Joystick socket
+
+Now I think I will sugest something really wacky (or wacci!!) how about a
+hardware SCSI port for tape data transfer!!
+;-)
+
+
+Craig
+E-mail:
+…@…
+…@…
+
+AmsTech Home Page
+<a href="http://members.tripod.co.uk/Craigster/index.html" rel="noreferrer">http://members.tripod.co.uk/Craigster/index.html</a>
+
+
+
+
+
+</pre></div><div class="post" id="p54455"><div class="ph"><a class="d" href="#p54455">1999-09-22</a> <span>…@…</span> <span>Re: Hardware gadget for tape loading</span></div><pre>&quot;Craig Harrison&quot;  wrote:
+<span class="qt">&gt;3 inch 40track drive based computer emulators already use the common .DSK or</span>
+<span class="qt">&gt;EDSK formats, but when talking about 80 track discs as well, this could get</span>
+<span class="qt">&gt;complicated!!</span>
+
+  The .DSK format scales perfectly well to 80 cylinders; I use it like this
+in JOYCE. It would work equally well for PC emulators, or anything else 
+with a uPD765A controller. Whether it would work for computers with other
+FDCs, I&#x27;m not sure.
+
+------------- <a href="http://www.seasip.demon.co.uk/index.html" rel="noreferrer">http://www.seasip.demon.co.uk/index.html</a> --------------------
+John Elliott           |BLOODNOK: &quot;But why have you got such a long face?&quot;
+<span class="qt">                       |SEAGOON: &quot;Heavy dentures, Sir!&quot;    - The Goon Show </span>
+:-------------------------------------------------------------------------)
+
+
+</pre></div><div class="post" id="p54466"><div class="ph"><a class="d" href="#p54466">1999-09-22 12:17:41</a> <span>…@…</span> <span>Re: Hardware gadget for tape loading</span></div><pre>Philip Kendall (…@…) wrote:
+: In article &lt;…@…&gt;, Darren Salt
+:  wrote
+: &gt;In message &lt;…@…&gt;
+: &gt;          …@… wrote:
+: &gt;
+: &gt;&gt; It would be better to use the sound card,
+: &gt;
+: &gt;Sound card? Perhaps you should look at where this is crossposted...
+
+: But we&#x27;re talking about a hardware gadget which connects to the parallel
+: port on your PC (or whatever it connects to on the Miggy) anyway, so a
+: sound card *is* the equivalent device.
+
+The sound input _is_ the simplest way and is easily implemented with
+no seperate interface standards getting in the way. The idea that the
+parallel port interfaces should be standardised is sound and in no way
+creates a threat to sound device loading. It is entirely
+complementary.
+
+And a good idea.
+
+--
+NT    As long as but a hundred of us remain alive, never will we on any
+\ \/ /conditions be brought under English rule. It is in truth not for
+ \  / glory, nor riches, nor honours that we are fighting, but for
+ /  \ freedom -- for that alone, which no honest man gives up but with
+/ /\ \life itself.                                    -- Arbroath, 1320
+   
+     
+    
+
+
+</pre></div><div class="post" id="p54467"><div class="ph"><a class="d" href="#p54467">1999-09-22 12:29:00</a> <span>…@…</span> <span>Re: Hardware gadget for tape loading</span></div><pre>Ernest R. Schreurs (…@…) wrote:
+: On Sat, 18 Sep 1999 12:55:19 GMT, …@… wrote:
+
+: &gt;It would be better to use the sound card, since these outnumber little
+: &gt;parallel port gadgets by a hundred to one.
+
+The sound card is the best method, but as I state elsewhere, the
+additional parallel port interface is an extra that provides further
+flexibility and additional compatibilty. Using both methods makes
+sense to me.
+
+: &gt;Can TZX have meta data put in it, so you can store what computer it&#x27;s
+: &gt;for and who sampled it etc? I know I could just go look it up but it
+: &gt;needs bringing up anyway.
+
+: I think this is possible.  But I do not know why anyone would want
+: this.  Tapes for one system cannot be loaded on another system.
+: I think it is very confusing to store all sorts of tape files for
+: different machines in the same format.  Like, I have a ton of
+: diskettes.  Some are for the PC.  Some for the Atari ST.  Some for the
+: Atari 8-bit machines.  Some for macintosh.  Some for Wang Classic,
+: some for Wang VS.  And then some for emulator use.  Sometimes it is
+: hard to tell what is what.
+: The same problem would arise with these emulated cassettes.
+: If searching for a tape file, you might get confused.  The only
+: advantage is the one you mention, we can share knowledge
+: and technology, and thus improve the tools.  I think we can
+: accomplish this easily if the developers get in touch with each other.
+: We do not need to bother the users with this, making life harder for
+: them.
+
+Then I&#x27;d like to suggest a slight alteration to the implementation of
+TZX files. Provide alternative filename extensions for different
+machines. The actual encoding could be identical, but the extensions
+would allow the user to distinguish between files for different
+machines. Say:
+ TII for Apple II
+ T80 for ZX80
+ T81 for ZX81
+ TBC or TAC for BBC Micro/Acorn Electron
+ TAM or TPC for Amstrad CPC
+etc
+(It&#x27;s a shame some OSes only support 3-letter extensions. It makes
+ this far too complicated. .T64, for example, already exists for a C64
+ tape archive.)
+
+Then the emulator/archive program could have the &#x27;files of which type&#x27;
+options:
+ TZX for [computer being used] - that would show only files with the
+                                 relevant extension.
+ All TZX files                 - that would show all files with an
+                                 extension accepted by the TZX
+                                 standards body.
+
+--
+NT    As long as but a hundred of us remain alive, never will we on any
+\ \/ /conditions be brought under English rule. It is in truth not for
+ \  / glory, nor riches, nor honours that we are fighting, but for
+ /  \ freedom -- for that alone, which no honest man gives up but with
+/ /\ \life itself.                                    -- Arbroath, 1320
+   
+     
+    
+
+
+</pre></div><div class="post" id="p54477"><div class="ph"><a class="d" href="#p54477">1999-09-22 18:48:38</a> <span>…@…</span> <span>Re: Hardware gadget for tape loading</span></div><pre>On 22 Sep 1999 12:17:41 GMT, in comp.sys.sinclair, …@…
+(Niall Tracey) spake thus about &quot;Re: Hardware gadget for tape
+loading&quot;:
+
+<span class="qt">&gt;The sound input _is_ the simplest way and is easily implemented with</span>
+<span class="qt">&gt;no seperate interface standards getting in the way. The idea that the</span>
+<span class="qt">&gt;parallel port interfaces should be standardised is sound and in no way</span>
+<span class="qt">&gt;creates a threat to sound device loading.</span>
+
+Pun not intended?   ;&lt;)
+
+Still, at least you typed &quot;complementary&quot; (supplemental) instead of
+&quot;complimentary&quot; (free).  Now the latter *would* be something!!  ;&lt;)
+
+[Once more, due to use of news.freeserve.crap, FUs set -- remember to
+clear before replying...]
+
+-- 
+--------------------------------------------------
+Regards, Robert the Eboreg
+New?  Read the FAQ:  <a href="http://www.kendalls.demon.co.uk/cssfaq/" rel="noreferrer">http://www.kendalls.demon.co.uk/cssfaq/</a>
+Got a binary file to post?  Go to alt.binaries.emulators.misc
+
+
+</pre></div><div class="post" id="p54480"><div class="ph"><a class="d" href="#p54480">1999-09-22 19:41:20</a> <span>…@…</span> <span>Re: Hardware gadget for tape loading</span></div><pre>On Wed, 22 Sep 1999 20:10:10 +0200, &quot;Mickael Pointier&quot;
+ wrote:
+
+<span class="qt">&gt;I believe in that case that it would be possible to have a similar system</span>
+<span class="qt">&gt;for disk drives ?</span>
+<span class="qt">&gt;A standard way of encoding disk datas, that would allow us to have</span>
+<span class="qt">&gt;&quot;writedisk&quot; and</span>
+<span class="qt">&gt;&quot;readdisk&quot; utilities that works for Atari ST, Oric, Spectrum, Apple, etc...</span>
+
+For disk images you might want to look at the 2IMG format created for
+Apple IIgs emulators.  It is a universal disk image format with a
+header that contains information about the size of the disk image.  It
+is currently being used for images of both 5.25&quot; and 3.5&quot; and hard
+drive Apple II disks using Apple DOS 3.3, ProDOS and HFS.  It might
+even work with MS-DOS formatting but I haven&#x27;t tried it.
+
+It might require some tweaking of the format to make it multi-system
+capable as it does assume 512 byte blocks but Apple DOS 3.3 actually
+uses 256 byte sectors but they are just paired up in the 512 byte
+blocks so the format might work as is.  There is a spot that the
+program that creates the image can put its own information so it
+should be possible to work around any problems using that.
+
++------------------------------------------------------------------------+
+<span class="qt">| Jeff Blakeney - Dean of the Apple II University in A2Pro on Delphi     |</span>
+<span class="qt">|                    Delphi Apple II Forums Web Pages                    |</span>
+<span class="qt">| A2: <a href="http://www.delphi.com/apple2" rel="noreferrer">http://www.delphi.com/apple2</a>   A2Pro: <a href="http://www.delphi.com/a2pro" rel="noreferrer">http://www.delphi.com/a2pro</a>  |</span>
++------------------------------------------------------------------------+
+
+
+</pre></div><div class="post" id="p54546"><div class="ph"><a class="d" href="#p54546">1999-09-24</a> <span>chris young</span> <span>Re: Hardware gadget for tape loading</span></div><pre>On Wed, 22 Sep 1999 23:03:17 +0100, Craig Harrison (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; Hey, we now have claims that 8bit tapes are better transferred by</span>
+
+Er.. I never said it was better...
+
+<span class="qt">&gt; 1. Soundcard (Midi presumably)</span>
+
+I fail to see how MIDI is going to help tape transfer.
+
+Oh, or perhaps you were being sarcastic (and I completely failed to
+notice, as usual)
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
+<span class="qt">| <a href="http://www.bigfoot.com/~ysac" rel="noreferrer">http://www.bigfoot.com/~ysac</a>              |</span>
++------------------------------ICQ:28784166-+
+
+
+</pre></div><div class="post" id="p54547"><div class="ph"><a class="d" href="#p54547">1999-09-24</a> <span>chris young</span> <span>Re: Hardware gadget for tape loading</span></div><pre>On 22 Sep 1999 12:29:00 GMT, Niall Tracey (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; Then I&#x27;d like to suggest a slight alteration to the implementation of</span>
+<span class="qt">&gt; TZX files. Provide alternative filename extensions for different</span>
+<span class="qt">&gt; machines. The actual encoding could be identical, but the extensions</span>
+<span class="qt">&gt; would allow the user to distinguish between files for different</span>
+<span class="qt">&gt; machines. Say:</span>
+<span class="qt">&gt;  TII for Apple II</span>
+<span class="qt">&gt;  T80 for ZX80</span>
+<span class="qt">&gt;  T81 for ZX81</span>
+<span class="qt">&gt;  TBC or TAC for BBC Micro/Acorn Electron</span>
+<span class="qt">&gt;  TAM or TPC for Amstrad CPC</span>
+<span class="qt">&gt; etc</span>
+
+I don&#x27;t really see the point.  Nobody is going to mix up the files on
+their HD, are they?  Most likely, the files will be categorised
+into directories or subdirectories of the relevant emulator. 
+Eg.
+Tapes/Spectrum/
+Tapes/AppleII/
+Tapes/ZX80/
+
+<span class="qt">&gt; (It&#x27;s a shame some OSes only support 3-letter extensions. It makes</span>
+<span class="qt">&gt;  this far too complicated. .T64, for example, already exists for a C64</span>
+<span class="qt">&gt;  tape archive.)</span>
+
+Just stick them all under .TZX (or, more accurately, they should be
+under &quot;.8BT&quot; (8 bit tape) or &quot;.TPE&quot; or something.)
+
+Chris
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
+<span class="qt">| <a href="http://www.bigfoot.com/~ysac" rel="noreferrer">http://www.bigfoot.com/~ysac</a>              |</span>
++------------------------------ICQ:28784166-+
+
+
+</pre></div><div class="post" id="p54548"><div class="ph"><a class="d" href="#p54548">1999-09-24</a> <span>chris young</span> <span>Re: Hardware gadget for tape loading</span></div><pre>On Wed, 22 Sep 1999 20:07:21 +0100, Darren Salt (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; &gt; (It&#x27;s a shame some OSes only support 3-letter extensions. [...]</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Hmm. RISC OS doesn&#x27;t recognise filename extensions at all on Filecore-based</span>
+<span class="qt">&gt; filing systems such as ADFS and provides extension-to-filetype mapping in</span>
+<span class="qt">&gt; DOSFS and CDFS (and 3rd-party FSes of this type), so unless we&#x27;re going to</span>
+<span class="qt">&gt; allocate yet more filetype numbers...</span>
+
+Agreed.  All the formats are identical, so they should have the same
+filetype identifier (be it extension, filetype or whatever).  Of
+course, if you can identify files by actually looking at the first few
+bytes, then there&#x27;s no way to differentiate anyway.
+
+Of course, we might need some &quot;TZX Launchers&quot; that can interpret the
+&quot;machine type&quot; field and send the file to the correct emulator on
+double-click.
+
+Chris
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
+<span class="qt">| <a href="http://www.bigfoot.com/~ysac" rel="noreferrer">http://www.bigfoot.com/~ysac</a>              |</span>
++------------------------------ICQ:28784166-+
+
+
+</pre></div><div class="post" id="p54587"><div class="ph"><a class="d" href="#p54587">1999-09-24 16:06:17</a> <span>…@…</span> <span>Re: Hardware gadget for tape loading</span></div><pre>Darren Salt (…@…) wrote:
+: In message &lt;7sai2c$rcr$…@…&gt;
+:           …@… (Niall Tracey) wrote:
+
+: &gt; Ernest R. Schreurs (…@…) wrote:
+: [snip]
+: &gt;&gt; Tapes for one system cannot be loaded on another system. I think it is
+: &gt;&gt; very confusing to store all sorts of tape files for different machines in
+: &gt;&gt; the same format. [...]
+
+: &gt; Then I&#x27;d like to suggest a slight alteration to the implementation of TZX
+: &gt; files. Provide alternative filename extensions for different machines.
+
+: That loses immediately :-)
+
+: &gt; The actual encoding could be identical, but the extensions would allow the
+: &gt; user to distinguish between files for different machines. Say:
+: &gt;  TII for Apple II
+: &gt;  T80 for ZX80
+: &gt;  T81 for ZX81
+: &gt;  TBC or TAC for BBC Micro/Acorn Electron
+: &gt;  TAM or TPC for Amstrad CPC
+: &gt; etc
+
+: &gt; (It&#x27;s a shame some OSes only support 3-letter extensions. [...]
+
+: Hmm. RISC OS doesn&#x27;t recognise filename extensions at all on Filecore-based
+: filing systems such as ADFS and provides extension-to-filetype mapping in
+: DOSFS and CDFS (and 3rd-party FSes of this type), so unless we&#x27;re going to
+: allocate yet more filetype numbers...
+
+OK, well for the majority of machines, the extension idea should
+stick. I&#x27;m afraid Arc users may have to settle for a single
+filetype. But then that&#x27;s not a problem, because the multiple
+extension standard would really only be required for idiots. The only
+idiots I know with RISC PCs and Arcs are school teachers... :)
+
+: &gt; Then the emulator/archive program could have the &#x27;files of which type&#x27;
+: &gt; options:
+: &gt;  TZX for [computer being used] - that would show only files with the
+: &gt;                                  relevant extension.
+: &gt;  All TZX files                 - that would show all files with an
+: &gt;                                  extension accepted by the TZX
+: &gt;                                  standards body.
+
+: Fair enough, but why bother when the emulator can multitask and interact with
+: the Filer? :-)
+
+Because the lure of the dark side is strong. It promises much to those
+willing to listen. It fools the unwary and weak willed into believing
+it has more power than the light side. You and I both know
+differently...
+
+There is much conflict in me. I can feel it. Perhaps one day I can
+return to the true path...
+
+: Clones are people two.
+
+OUCH!
+
+--
+NT    As long as but a hundred of us remain alive, never will we on any
+\ \/ /conditions be brought under English rule. It is in truth not for
+ \  / glory, nor riches, nor honours that we are fighting, but for
+ /  \ freedom -- for that alone, which no honest man gives up but with
+/ /\ \life itself.                                    -- Arbroath, 1320
+   
+     
+    
+
+
+</pre></div></main></body></html>

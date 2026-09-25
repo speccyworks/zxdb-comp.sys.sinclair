@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSSCGC 1998 : Update · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>CSSCGC 1998 : Update</h1><p class="facts">17 posts, 1998-05-21 – 1998-05-31</p><div class="post" id="p37230"><div class="ph"><a class="d" href="#p37230">1998-05-21</a> <span>…@…</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30566">ZXDB: Advanced W*nking Simulator</a></div><pre>
+Hi gang,
+
+Just thought I&#x27;d bring you a quick update on how the CSSCGC&#x27;s coming
+along. :)
+
+So far we&#x27;ve had approximately 30 entries which I haven&#x27;t disqualified
+and I&#x27;ve disqualified the following:
+
+The two entries that were sent via replay.com (an anonymous remailer)
+which I didn&#x27;t even bother to decode and play
+
+Pod from Alan Brown (aka Gonad the Barbarian) because it was
+originally released on the BBC Micro as a commercial product and I
+don&#x27;t particularly feel like being arrested funnily enough
+
+Advanced W*nking Simulator (I won&#x27;t shame the culprit by naming him
+here) on grounds of decency (and probably legality)
+
+Spaceman Bob from Andy Davis because it&#x27;s just too good to be
+considered a crap game (and has been published by Alchemist Research)
+
+Just thought I&#x27;d clear that up before Andy sent me the rest of the AR
+PD collection (the fact that I&#x27;m probably going to end up downloading
+it later is neither here nor there ).
+
+And now it&#x27;s over to Mystic Meg to predict the winner so far:
+
+This years cgc winner will be a man...or a woman. The letters E and L
+appear somewhere in the persons name and the game in question will be
+written entirely in BASIC and was submitted as part of a group of
+entries. The numbers 10 and 31 are important tooo.
+
+Thanks for that Meg. ;-&gt; Can ya guess who it is yet?
+
+Cya,
+
+Barry
+
+-- 
+Barry Salter                   PGP key available from key servers
+E-mail: …@…, ICQ: 809009
+To reply via e-mail change mmmyy to barrykas
+PGP key available by emailing …@…
+The above are not the views of my employer (probably)
+-- 
+Political T.V. commercials prove one thing: some candidates can tell
+all their good points and qualifications in just 30 seconds.
+
+
+
+</pre></div><div class="post" id="p37289"><div class="ph"><a class="d" href="#p37289">1998-05-22</a> <span>robert manuel</span> <span>Re: CSSCGC 1998 : Update</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+…@… wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Hi gang,</span>
+[snip]
+<span class="qt">&gt; and I&#x27;ve disqualified the following:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Advanced W*nking Simulator (I won&#x27;t shame the culprit by naming him</span>
+<span class="qt">&gt; here) on grounds of decency (and probably legality)</span>
+[snip]
+
+Unfair! I want to see this game. 
+
+Other 8-bit sex games:
+
+1. I remeber a friend had on the BBC Micro a program called &quot;Pig Man&quot; -
+which caused great amusement at school with its 2 frame graphical
+depiction of a transpecies coupling....
+
+2. Theres some version of Tetris for the speccy that features falling
+naked women &amp; some dititised porno animation. No exactly FMV - but much
+like a 2 colour postage stamp AVI.
+
+3. &amp; My favourite - the &quot;genuine sweedish erotica&quot; of &quot;Custer&#x27;s
+Revenge&quot;. A Atari 2600 classic of bad taste, and shit graphics.
+
+
+Any more?
+
+robert manuel
+
+
+</pre></div><div class="post" id="p37306"><div class="ph"><a class="d" href="#p37306">1998-05-22</a> <span>…@…</span> <span>Re: CSSCGC 1998 : Update</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+…@… writes:
+
+<span class="qt">&gt;So far we&#x27;ve had approximately 30 entries which I haven&#x27;t disqualified</span>
+<span class="qt">&gt;and I&#x27;ve disqualified the following:</span>
+
+<span class="qt">&gt;Pod from Alan Brown (aka Gonad the Barbarian) because it was</span>
+<span class="qt">&gt;originally released on the BBC Micro as a commercial product and I</span>
+<span class="qt">&gt;don&#x27;t particularly feel like being arrested funnily enough</span>
+
+WHAT????  My version of Pod was COMPLETELY different to the BBC version!
+For one it was 100% BASIC, and much crapper than the BBC version.
+Anyways, presumably it is okay to write games for the speccy based on
+games for other platforms, seeing as you can now download the originals
+off the web for free....Tell you what, if I rename it something else
+will it be allowed?
+
+Anyway, my piece de resistance is yet to come.....
+
+;-)
+
+GtB
+
+
+</pre></div><div class="post" id="p37312"><div class="ph"><a class="d" href="#p37312">1998-05-22</a> <span>sabre man</span> <span>Re: CSSCGC 1998 : Update</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+I wa bored one summer hols when at Uni, so I wrote an adult 128k speccy
+adventure on PAW, called Soho Mission.
+
+I put a small ad. in Sinclair User, and even sold copies to Holland and
+Germany.
+
+Looking back on it, I can&#x27;t believe how perverted and sick I was (and still
+am).
+
+If, by a remote possibility, anyone out there has played it, let me know.
+
+
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Other 8-bit sex games:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;1. I remeber a friend had on the BBC Micro a program called &quot;Pig Man&quot; -</span>
+<span class="qt">&gt;which caused great amusement at school with its 2 frame graphical</span>
+<span class="qt">&gt;depiction of a transpecies coupling....</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;2. Theres some version of Tetris for the speccy that features falling</span>
+<span class="qt">&gt;naked women &amp; some dititised porno animation. No exactly FMV - but much</span>
+<span class="qt">&gt;like a 2 colour postage stamp AVI.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;3. &amp; My favourite - the &quot;genuine sweedish erotica&quot; of &quot;Custer&#x27;s</span>
+<span class="qt">&gt;Revenge&quot;. A Atari 2600 classic of bad taste, and shit graphics.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Any more?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;robert manuel</span>
+
+
+
+
+
+
+</pre></div><div class="post" id="p37375"><div class="ph"><a class="d" href="#p37375">1998-05-24</a> <span>…@…</span> <span>Re: CSSCGC 1998 : Update</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+On Sun, 24 May 1998 12:34:40 GMT,
+…@…!ARSE!ARSE!uk (Sam.) wrote:
+
+<span class="qt">&gt;&gt;The two entries that were sent via replay.com (an anonymous remailer)</span>
+<span class="qt">&gt;&gt;which I didn&#x27;t even bother to decode and play</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Why not?</span>
+
+The whole idea is that you&#x27;re able to inform the &quot;contestant&quot; by
+e-mail that their entry arrived safely. If it&#x27;s sent through an
+anonymous remailer then that can&#x27;t happen...In any case, the entry was
+resubmitted using a &quot;real&quot; e-mail address so it&#x27;s still there. :-)
+
+<span class="qt">&gt;Who voted on these rules? Why did you make them up?</span>
+
+Erm...&#x27;cos I don&#x27;t particularly fancy getting nicked? Okay so it&#x27;s not
+very likely but it *could* happen.
+
+<span class="qt">&gt;That sucks. I had 3 good games in mind for this year&#x27;s compy, looks</span>
+<span class="qt">&gt;like I&#x27;ll get round to writing them next year. It&#x27;s just supposed to</span>
+<span class="qt">&gt;be a bit of stupid nonsense, why does it have to be &quot;decent&quot;? </span>
+
+So that the judges don&#x27;t get arrested? Remember that we have to keep
+copies of each game to do a final comparison...
+
+<span class="qt">&gt;Some of the funniest Speccy software I&#x27;ve seen has been those terrible</span>
+<span class="qt">&gt;Rombo-digitised pornos from Poland or wherever. Actually they weren&#x27;t</span>
+<span class="qt">&gt;good games I was planning, they were crap ones. </span>
+
+That&#x27;s the whole idea &#x27;cos good games are instantly dq&#x27;ed. ;)
+
+As the saying goes, if you don&#x27;t like the rules (and there were no
+complaints at the time of the original post) you know what to do...
+
+EOT...
+
+Cya,
+
+Barry
+
+-- 
+Barry Salter                   PGP key available from key servers
+E-mail: …@…, ICQ: 809009
+To reply via e-mail change mmmyy to barrykas
+PGP key available by emailing …@…
+The above are not the views of my employer (probably)
+-- 
+If scientific reasoning were limited to the logical processes of
+arithmetic, we should not get very far in our understanding of the
+physical world.  One might as well attempt to grasp the game of poker
+entirely by the use of the mathematics of probability.
+		-- Vannevar Bush
+
+
+
+</pre></div><div class="post" id="p37435"><div class="ph"><a class="d" href="#p37435">1998-05-26</a> <span>martijn van der heide</span> <span>Re: CSSCGC 1998 : Update</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+Andy Kavanagh wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; On Fri, 22 May 1998, robert manuel wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; Other 8-bit sex games:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; [snip]</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Paradise Cafe</span>
+<span class="qt">&gt; SexSim</span>
+<span class="qt">&gt; Horny Harry</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; All on WOS I believe.  I er, downloaded them by accident you see...</span>
+
+Yup, all there :-)
+Plus several other sex games for the interested (some 20 or so).
+You can either go to
+   <a href="ftp://ftp.gns.getronics.nl/pub/os/sinclair/games-pertype/Sex/" rel="noreferrer">ftp://ftp.gns.getronics.nl/pub/os/sinclair/games-pertype/Sex/</a>
+or search for &#x27;Type&#x27; = &#x27;Sex&#x27; using the first search engine on the WOS
+archive page.
+
+Why are they there? Simply because several of them were in fact
+commercially released (eg. &#x27;Samantha Fox Strippoker&#x27;).
+
+Cheers,
+
+Martijn.
+
+
+</pre></div><div class="post" id="p37439"><div class="ph"><a class="d" href="#p37439">1998-05-26</a> <span>…@…</span> <span>Re: CSSCGC 1998 : Update</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+On Tue, 26 May 1998 11:04:05 +0100, Andy Kavanagh
+ wrote:
+
+<span class="qt">&gt;Ah, but my entry hasn&#x27;t registered, since I&#x27;ve had no e-mail telling me </span>
+<span class="qt">&gt;it&#x27;s arrived.</span>
+
+Try sending it again then...Probably dropped down a Fidohole ;)
+
+Cya,
+
+Barry
+
+-- 
+Barry Salter                   PGP key available from key servers
+E-mail: …@…, ICQ: 809009
+To reply via e-mail change mmmyy to barrykas
+PGP key available by emailing …@…
+The above are not the views of my employer (probably)
+-- 
+We may not return the affection of those who like us, but we always
+respect their good judgement.
+
+
+
+</pre></div><div class="post" id="p37442"><div class="ph"><a class="d" href="#p37442">1998-05-26</a> <span>…@…</span> <span>Re: CSSCGC 1998 : Update</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+On Tue, 26 May 1998 20:44:55 +0100, Stuart Brady
+ wrote:
+
+<span class="qt">&gt;I&#x27;ve posted mine *three* times now (or tried to) and I&#x27;ve got no reply</span>
+
+If it was Advanced Milk Float Simulator then it&#x27;s definitely arrived
+safely. Here&#x27;s the headers from the version in the archive:
+
+
+
+Received: from relay-14.mail.demon.net ([194.217.242.138]) by
+vvaultbbs.uk.eu.org
+          with SMTP (Mailtraq/0.8.7.71) id VVLT14036116A
+          for xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx; Mon, 06 Apr 1998
+19:28:47 +0100
+Received: from punt-1.mail.demon.net by mailstore
+          for xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx id
+891865572:11:08228:0;
+          Mon, 06 Apr 98 12:26:12 GMT
+Received: from post-31.mail.demon.net ([194.217.242.41])
+          by punt-1.mail.demon.net  id aa0912695; 6 Apr 98 12:25 GMT
+Received: from (wholehog.demon.co.uk) [193.237.133.156] 
+	by post.mail.demon.net with smtp (Exim 1.82 #2)
+	id 0yMAy7-0003Hi-00; Mon, 6 Apr 1998 13:25:44 +0100
+Message-ID: 
+Date: Mon, 6 Apr 1998 13:17:12 +0100
+To: c.s.s Crap Games Compy Entries
+
+Sender: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+From: Stuart Brady 
+Errors-To: xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Subject: CSSCGC 1998 : Entry 1 from Stuart Brady
+MIME-Version: 1.0
+Content-Type: multipart/mixed
+ ; boundary=&quot;_Turnpike_)eJ:SN(y5pFNcw7NmC6=Go)c8v_J4wD(zpaxbs-4&quot;
+X-Mailer: Turnpike Trial Version 3.04 
+X-List-Archive: SEND 18
+X-Hops: 2
+X-POST-MessageClass: 10; Mailing List Message
+
+
+
+HTH,
+
+Barry
+
+-- 
+Barry Salter                   PGP key available from key servers
+E-mail: …@…, ICQ: 809009
+To reply via e-mail change mmmyy to barrykas
+PGP key available by emailing …@…
+The above are not the views of my employer (probably)
+-- 
+$3,000,000
+
+
+
+</pre></div><div class="post" id="p37448"><div class="ph"><a class="d" href="#p37448">1998-05-26</a> <span>…@…</span> <span>Re: CSSCGC 1998 : Update</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+On Tue, 26 May 1998 06:10:47 GMT,
+…@…!ARSE!ARSE!uk (Sam.) wrote:
+
+<span class="qt">&gt;I would presume that he knew that when he sent it, and wasn&#x27;t</span>
+<span class="qt">&gt;bothered. Do you have something against anonymous remailers?</span>
+
+It is kind of nice to be able to put a name to a game without having
+to ask in the ng. If only to be able to compile the instructions and
+contents guide. ;)
+
+<span class="qt">&gt;I don&#x27;t recall seeing this many rules, and like I said, I&#x27;m not</span>
+<span class="qt">&gt;entering any competition where you&#x27;re the censor.</span>
+
+Fair enuff...Right. For the last week of the competition (w/c 1st
+June) I&#x27;ll accept anything provided that it&#x27;s not been released
+commercially or is, in the judges opinion, too good to be a crap game.
+
+
+Entries to:
+csscgc-entries (at) salterg (dot) demon (dot) co (dot) uk
+
+Entries by FTP (when I&#x27;m on-line):
+salterg.demon.co.uk
+Username: csscgc, Password: 
+Directory: /incoming/
+
+Admin queries to:
+csscgc-admin (at) salterg (dot) demon (dot) co (dot) uk
+
+Messages to the judges to:
+csscgc-judges (at) salterg (dot) demon (dot) co (dot) uk
+
+Flames to: flames (at) bo-l (dot) co (dot) uk
+
+Cya,
+
+Barry
+-- 
+Barry Salter                   PGP key available from key servers
+E-mail: …@…, ICQ: 809009
+To reply via e-mail change mmmyy to barrykas
+PGP key available by emailing …@…
+The above are not the views of my employer (probably)
+-- 
+&quot;Of course power tools and alcohol don&#x27;t mix.  Everyone knows power
+tools aren&#x27;t soluble in alcohol ...&quot;
+		-- Crazy Nigel
+
+
+
+</pre></div><div class="post" id="p37502"><div class="ph"><a class="d" href="#p37502">1998-05-27</a> <span>…@…</span> <span>Re: CSSCGC 1998 : Update</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+On Wed, 27 May 1998 15:42:16 +0100, Andy Kavanagh
+ wrote:
+
+<span class="qt">&gt;When was that deadline again?</span>
+
+Monday week (8th June)...
+
+Cya,
+
+Barry
+
+-- 
+Barry Salter                   PGP key available from key servers
+E-mail: …@…, ICQ: 809009
+To reply via e-mail change mmmyy to barrykas
+PGP key available by emailing …@…
+The above are not the views of my employer (probably)
+-- 
+Sharks are as tough as those football fans who take their shirts off
+during games in Chicago in January, only more intelligent.
+		-- Dave Barry, &quot;Sex and the Single Amoeba: What Every
+		   Teen Should Know&quot;
+
+
+
+</pre></div><div class="post" id="p37505"><div class="ph"><a class="d" href="#p37505">1998-05-27</a> <span>…@…</span> <span>Re: CSSCGC 1998 : Update</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+On Tue, 26 May 1998 20:44:55 +0100, Stuart Brady
+ wibbled on for an age:
+
+<span class="qt">&gt;In article ,</span>
+<span class="qt">&gt;Andy Kavanagh  writes</span>
+<span class="qt">&gt;&gt;On Sun, 24 May 1998 …@… wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; The whole idea is that you&#x27;re able to inform the &quot;contestant&quot; by</span>
+<span class="qt">&gt;&gt;&gt; e-mail that their entry arrived safely. If it&#x27;s sent through an</span>
+<span class="qt">&gt;&gt;&gt; anonymous remailer then that can&#x27;t happen...In any case, the entry was</span>
+<span class="qt">&gt;&gt;&gt; resubmitted using a &quot;real&quot; e-mail address so it&#x27;s still there. :-)</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Ah, but my entry hasn&#x27;t registered, since I&#x27;ve had no e-mail telling me </span>
+<span class="qt">&gt;&gt;it&#x27;s arrived.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I&#x27;ve posted mine *three* times now (or tried to) and I&#x27;ve got no reply</span>
+<span class="qt">&gt;:(</span>
+
+I&#x27;ve sent mine twice, and am about to send it again... and I&#x27;m going
+to send the &quot;proper&quot; entry as well (my first one was a quick crap game
+because I didn&#x27;t think I&#x27;d get this finished in time.  In actual fact,
+I finished it about 10 minutes ago)  I want a reply please....
+<span class="qt">&gt;</span>
+<span class="qt">&gt;So I&#x27;m rewriting it.</span>
+
+I didn&#x27;t bother - incompetence of the judge at sending out
+confirmations, probably.  (erm, that doesn&#x27;t automatically disqualify
+me, does it?)
+
+Chris
+
+…@…
+<a href="http://www.geocities.com/SiliconValley/Campus/2656/" rel="noreferrer">http://www.geocities.com/SiliconValley/Campus/2656/</a>
+
+Your Sinclair: A Celebration
+<a href="http://homepages.enterprise.net/cavan/ysac/" rel="noreferrer">http://homepages.enterprise.net/cavan/ysac/</a>
+
+
+</pre></div><div class="post" id="p37595"><div class="ph"><a class="d" href="#p37595">1998-05-29</a> <span>c.rothwell</span> <span>Re: CSSCGC 1998 : Update</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+
+
+Sam. wrote:
+
+<span class="qt">&gt; It could happen, that the Metropolitan Police, hot on the trail of</span>
+<span class="qt">&gt; illegal porn on the Internet, and desparate to get some good publicity</span>
+<span class="qt">&gt; after last year&#x27;s newsgroup censorship debacle, get a search warrant,</span>
+<span class="qt">&gt; from a judge, and kick your front door in at 3 in the morning, and</span>
+<span class="qt">&gt; arrest you under the Obscene Publications Act, for a crap Spectrum</span>
+<span class="qt">&gt; game called &quot;Advanced Wanking Simulator&quot;? You know you can&#x27;t be found</span>
+<span class="qt">&gt; guilty of it without a jury trial.</span>
+
+Hardcore Porn, for your own use is not illegal in the UK - Its only illegal
+to sell it, even then the police won&#x27;t waste there time in taking you to
+court they would just take it away, and &#x27;Burn it&#x27; (Give it to there friends)
+Sky Ones &#x27;Coppers&#x27; had a program devoted to it you see :) .
+
+Speccy Demos:
+
+I sat for a while deleting the porn from the WOS CD but gave up as there
+were a LOT of &#x27;Stag&#x27; style demos, there was one with a child and a wolf (a
+cartoon hand drawn thing)  in it I remember (yes i deleted it!)
+
+-Craig.
+
+
+
+
+
+</pre></div><div class="post" id="p37598"><div class="ph"><a class="d" href="#p37598">1998-05-29</a> <span>…@…</span> <span>Re: CSSCGC 1998 : Update</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+On Wed, 27 May 1998 23:22:23 GMT, …@… (Chris
+Young) wrote:
+
+<span class="qt">&gt;&gt;I&#x27;ve posted mine *three* times now (or tried to) and I&#x27;ve got no reply</span>
+<span class="qt">&gt;&gt;:(</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I&#x27;ve sent mine twice, and am about to send it again... and I&#x27;m going</span>
+<span class="qt">&gt;to send the &quot;proper&quot; entry as well (my first one was a quick crap game</span>
+<span class="qt">&gt;because I didn&#x27;t think I&#x27;d get this finished in time.  In actual fact,</span>
+<span class="qt">&gt;I finished it about 10 minutes ago)  I want a reply please....</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;So I&#x27;m rewriting it.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I didn&#x27;t bother - incompetence of the judge at sending out</span>
+<span class="qt">&gt;confirmations, probably.  (erm, that doesn&#x27;t automatically disqualify</span>
+<span class="qt">&gt;me, does it?)</span>
+
+ No. It&#x27;s incompetence on the part of the programmer that
+wrote the software handling the mailing list. He managed to write the
+latest version in such a way that it turned off acknowledgements and I
+never noticed. :( 
+
+Here&#x27;s a list of entries received so far:
+
+Ian Stevenson : 1
+Derek Jolly : 10
+Radovan Garabik : 2
+Alan Brown (aka GtB) : 4
+Steve Lake : 1
+A J Moss : 3
+Jamie Higgins : 1
+Tony Blews : 1
+Stuart Brady : 1
+Andrew Farmer : 1
+Chris Young : 4
+
+The list of games (in order of their archive appearance):
+
+Outrun the O
+Alien Abduction Simulator
+Wurmer
+Enforcer 2
+Curse of the Sandwich
+Honest Joe
+Jet Fighters
+PC Emulator
+Super Beam Riders
+Steve&#x27;s Crap Number Guesser
+Yahtzee
+1D Tetris
+Advanced Death Simulator
+Paul Abdey Simulator
+Maze Man Michael
+Grand Prix
+Spriggy
+Forgotten Village
+Advanced Binary Simulator
+Advanced Milkfloat Simulator
+World Cup Final
+SimRock
+Horace goes Snowboarding
+Minefield 2
+Advanced Mountain Climbing Simulator
+Magic Square
+Coin Toss Simulator
+Software Piracy Simulator
+Mind Games
+Spectrum Emulator
+Channel 5 Retuners
+C5 Simulator
+Advanced C5 Simulator
+Advanced Win95 Simulator
+
+Woo...34 entries :) If your game/games* is/are* not listed above
+please resubmit them ensuring that there&#x27;s a valid reply-to address
+for the acknowledgement.
+
+* Delete as applicable
+
+Cya,
+
+Barry
+
+-- 
+Barry Salter                   PGP key available from key servers
+E-mail: …@…, ICQ: 809009
+To reply via e-mail change mmmyy to barrykas
+PGP key available by emailing …@…
+The above are not the views of my employer (probably)
+-- 
+A [golf] ball sliced or hooked into the rough shall be lifted and
+placed in the fairway at a point equal to the distance it carried or
+rolled into the rough.  Such veering right or left frequently results
+from friction between the face of the club and the cover of the ball
+and the player should not be penalized for the erratic behavior of the
+ball resulting from such uncontrollable physical
+phenomena.
+		-- Donald A. Metz
+
+
+
+</pre></div><div class="post" id="p37639"><div class="ph"><a class="d" href="#p37639">1998-05-31</a> <span>…@…</span> <span>Re: CSSCGC 1998 : Update</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+On Tue, 26 May 1998 13:07:56 +0200, Martijn van der Heide
+ wibbled on for an age:
+
+<span class="qt">&gt;Why are they there? Simply because several of them were in fact</span>
+<span class="qt">&gt;commercially released (eg. &#x27;Samantha Fox Strippoker&#x27;).</span>
+
+I saw a programme on the telly a couple of months ago, with Sam Fox as
+a guest.  The &#x27;host&#x27; was talking about &#x27;Sam Fox Strip Poker&#x27; (and
+admitted to not having seen anything, because he was crap at poker).
+Apparently, Sam didn&#x27;t actually see the game herself.
+
+Chris
+
+…@…
+<a href="http://www.geocities.com/SiliconValley/Campus/2656/" rel="noreferrer">http://www.geocities.com/SiliconValley/Campus/2656/</a>
+
+Your Sinclair: A Celebration
+<a href="http://homepages.enterprise.net/cavan/ysac/" rel="noreferrer">http://homepages.enterprise.net/cavan/ysac/</a>
+
+
+</pre></div><div class="post" id="p37642"><div class="ph"><a class="d" href="#p37642">1998-05-31</a> <span>…@…</span> <span>Re: CSSCGC 1998 : Update</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+On Fri, 29 May 1998 09:44:24 GMT, …@… wibbled on
+for an age:
+
+<span class="qt">&gt;&gt;I didn&#x27;t bother - incompetence of the judge at sending out</span>
+<span class="qt">&gt;&gt;confirmations, probably.  (erm, that doesn&#x27;t automatically disqualify</span>
+<span class="qt">&gt;&gt;me, does it?)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; No. It&#x27;s incompetence on the part of the programmer that</span>
+<span class="qt">&gt;wrote the software handling the mailing list. He managed to write the</span>
+<span class="qt">&gt;latest version in such a way that it turned off acknowledgements and I</span>
+<span class="qt">&gt;never noticed. :( </span>
+
+Ah.  That explains it, then.
+
+<span class="qt">&gt;Here&#x27;s a list of entries received so far:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Derek Jolly : 10</span>
+
+TEN????!
+
+That means I&#x27;ve got six more to write, to catch up...
+
+<span class="qt">&gt;Chris Young : 4</span>
+
+<span class="qt">&gt;C5 Simulator</span>
+<span class="qt">&gt;Advanced C5 Simulator</span>
+
+Anyone for Professional C5 Simulator or Championship C5 Simulator?
+
+No?
+
+Oh, well.  Guess I&#x27;ll have to think of something else...
+
+<span class="qt">&gt;Woo...34 entries :) If your game/games* is/are* not listed above</span>
+<span class="qt">&gt;please resubmit them ensuring that there&#x27;s a valid reply-to address</span>
+<span class="qt">&gt;for the acknowledgement.</span>
+
+Why?  It doesn&#x27;t work anyway!
+
+Chris
+
+…@…
+<a href="http://www.geocities.com/SiliconValley/Campus/2656/" rel="noreferrer">http://www.geocities.com/SiliconValley/Campus/2656/</a>
+
+Your Sinclair: A Celebration
+<a href="http://homepages.enterprise.net/cavan/ysac/" rel="noreferrer">http://homepages.enterprise.net/cavan/ysac/</a>
+
+
+</pre></div><div class="post" id="p37644"><div class="ph"><a class="d" href="#p37644">1998-05-31</a> <span>…@…</span> <span>Re: CSSCGC 1998 : Update</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+On Sun, 31 May 1998 00:03:39 GMT, …@… (Chris
+Young) wrote:
+
+<span class="qt">&gt;Ah.  That explains it, then.</span>
+
+Fixed now (but then you knew that already, having received an
+acknowledgement for your latest masterpiece )...
+
+<span class="qt">&gt;Why?  It doesn&#x27;t work anyway!</span>
+
+It does now :)
+
+Cya,
+
+Barry
+Don&#x27;t forget that the free for all starts tomorrow
+I&#x27;ll accept anything as long as (a) it works and (b) I can acknowledge
+the entry.
+BTW, Tertio, your entry doesn&#x27;t work on my copy of X128 :( Please
+resubmit it as a TAP or Z80...
+-- 
+Barry Salter, Beta Tester for Demon Internet and UUNet UK
+Webmaster, Businesses On-Line Ltd (www.bo-l.co.uk)
+PGP key? Mail …@… or visit wwwkeys.pgp.net
+The above are not the views of my employer (probably)
+-- 
+Lewis&#x27;s Law of Travel:
+	The first piece of luggage out of the chute doesn&#x27;t belong to
+anyone, ever.
+
+
+
+</pre></div><div class="post" id="p37658"><div class="ph"><a class="d" href="#p37658">1998-05-31</a> <span>…@…</span> <span>Re: CSSCGC 1998 : Update</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+On Sun, 31 May 1998 01:24:29 GMT, …@… wibbled on
+for an age:
+
+<span class="qt">&gt;On Sun, 31 May 1998 00:03:39 GMT, …@… (Chris</span>
+<span class="qt">&gt;Young) wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;Ah.  That explains it, then.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Fixed now (but then you knew that already, having received an</span>
+<span class="qt">&gt;acknowledgement for your latest masterpiece )...</span>
+
+Actually, I haven&#x27;t!  The mail server has gone down for about two
+days, now.  I retrieved one message, but the rest have gone into
+oblivion...  Oh well.  If anyone tries to contact me, I should be back
+up and running &quot;real soon now&quot;.  I hope.
+
+Chris
+
+
+…@…
+<a href="http://www.geocities.com/SiliconValley/Campus/2656/" rel="noreferrer">http://www.geocities.com/SiliconValley/Campus/2656/</a>
+
+Your Sinclair: A Celebration
+<a href="http://homepages.enterprise.net/cavan/ysac/" rel="noreferrer">http://homepages.enterprise.net/cavan/ysac/</a>
+
+
+</pre></div></main></body></html>

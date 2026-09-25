@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New TAPE format proposal ... · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>New TAPE format proposal ...</h1><p class="facts">4 posts, 1996-06-04 – 1996-06-04</p><div class="post" id="p18162"><div class="ph"><a class="d" href="#p18162">1996-06-04</a> <span>…@…</span> </div><pre>
+
+  Well, after looking into how inadequate ( or how do you spell it :) ) the
+current .TAP format is for ANY custom loading routine, I tried to come up with
+a solution that would load ANY spectrum game into emulators or real spectrum
+( which i prefer ). I hate those .VOC files, since they are HUGE and there is
+no nice way to load them into real spectrum via SoundBlaster ( because of SB&#x27;s
+strange way of selecting sample rate many .VOC files that can be loaded into
+emulators CANNOT be loaded back to spectrum ... ).
+  I believe the implementation of the file that is described below would work
+on BOTH emulators and it will ( probably ) be good for loading the file to a
+real spectrum via whatever SoundCard on whatever computer.
+  This is only a proposal for a file, therefore it has some still unanswered
+questions in the structure... since I recieved first Turbo loading routines
+and custom loaders only 2 weeks ago ( YES, i lived off pirated software back
+in the eightiees ... that what Yugoslavia was back them ... noone could buy
+original stuff so we had to be sattisfied with cracked games... I only saw one
+turbo loading game back then - Knight Rider :) ) ...
+  Now I have quite a few .VOC files that CANNOT be loaded into real spectrum
+( i made a pretty good utility that loads MOST of them to the real thing, but
+some turbo loaded ones cannot be loaded WITH any player for .VOC files i got ).
+I am willing to make a .VOC to .??? convert utility when the .??? file
+structure is defined... and ofcourse a loader to load them into real spectrum
+via SoundBlaster too..
+
+  OK, heres the structure of the new tape format file... it consists of
+blocks, just like normal .TAP file, but it has some more information in them :)
+
+btw. Can someone propose a name for this tape format ( and extension ... since
+.??? is illegal ;))) )
+
+note: There are some games ( like BubbleBobble ) that NEED the blocks to be
+      without ANY pause between them... therefore the pause block is necessary
+      Maybe there should be another block type ... USUAL saved block...
+      which could be just the same as .TAP block ... ???
+
+Offset  Length   Description
+    00      01   Block TYPE :  00 : Normal Block of DATA
+                               01 : LEADER Tone
+                               02 : Pause
+                               03 : Indefinite Pause (i.e. between Levels)
+
+  00 - Normal Block :
+
+    01      02   Length of Half Period (half of ___--- wave) in Z80 clock ticks
+                 ( would 1 byte suffice for this ? I guess it will ;) )
+                 AND is it ALWAYS   bit 1= twice the length of bit 0 ???
+                 ( if not then define separate lengths for 0 and 1 )
+    03      01   Starting amplitude ( either ___ (-128) or --- (127) )
+    04      01   Number of BITS in the LAST Byte (1-8)
+    05      01   Is last BIT full length ( both ___ and --- ) ? (0-yes, 1-no)
+                 ( is this one necessary ? )
+    06      02   Number of Bytes of Data that follow
+    08      ??   DATA
+
+  01 - LEADER Tone :
+
+    01      02   Length of Half Period (see above)
+    03      01   Starting amplitude (see above)
+    04      02   Is last Half Period full length (see above)
+    05      02   Number of Half Periods
+                 ( is 2 bytes enough ? )
+
+    note: are the Starting Amplitude and &quot;Is last h.perido full&quot; really
+          necessary ???
+
+  02 - Pause :
+
+    01      ??   Lenght of Pause ( either miliseconds or something else ??? )
+
+Files can be appended together just like .TAP files can be ( with normal
+COPY /B file1.??? + file2.??? outfile.???
+
+Regards,
+  Tomaz
+
+P.S. For those interested in 8-Bit Heaven CD... it will be out REAL soon...
+     I just added a BBC section ( YES, with ORIGINAL ELITE too :) ) ,
+     Atari XL/XE section ( loads of games ) and Atari VCS section (only
+     around 400 games ... since there is no emulator available YET )
+     Spectrum Section grew a bit ( 500 new games, with originals ( many
+     turbo and custom loading .VOC files ;) and new cover tapes of Crash,
+     YS and SU ) ...
+
+
+</pre></div><div class="post" id="p18163"><div class="ph"><a class="d" href="#p18163">1996-06-04</a> <span>…@…</span> <span>Re: New TAPE format proposal ...</span></div><pre>
+Quoting myself here ...
+
+<span class="qt">&gt; questions in the structure... since I recieved first Turbo loading routines</span>
+<span class="qt">&gt; and custom loaders only 2 weeks ago ( YES, i lived off pirated software back</span>
+<span class="qt">&gt; in the eightiees ... that what Yugoslavia was back them ... noone could buy</span>
+<span class="qt">&gt; original stuff so we had to be sattisfied with cracked games... I only saw one</span>
+<span class="qt">&gt; turbo loading game back then - Knight Rider :) ) ...</span>
+
+  I didnt LIVE off pirated software in the sense of selling it... I just ment I
+bought the software from pirates and not originals ... so there arent any funny
+thoughts floating on the net ... :)  ( Originals came to slovenia somewhere in
+1990 and were still to expensive to buy ).
+
+Tomaz
+
+
+</pre></div><div class="post" id="p18179"><div class="ph"><a class="d" href="#p18179">1996-06-04</a> <span>…@…</span> <span>Re: New TAPE format proposal ...</span></div><pre>
+Instead of being over complicated, how about this idea.
+
+Type				marker
+header (tone)			255
+Pulse header			254	
+Pause				253
+tone 1 (standard load [0])	0
+tone 2 (standard [1])		1
+Various hyperload tones		2-252
+
+That way, the file might be a bit larger than a .Tap file, but it&#x27;d be a
+hell of a lot smaller than a sound sample file (Voc?).
+
+If hyperloads where less varied than that, you could use nibbles instead of
+bytes, with 13,14 and 15 being the header tones and pauses....
+
+Seems quite sensible to me.....
+-- 
+______________________________________________________________________________
+<span class="qt">|                       |What to do if you find yourself stuck in a crack in |</span>
+<span class="qt">|…@…   |the ground beneath a giant boulder, which you can&#x27;t |</span>
+<span class="qt">|                       |move, with no hope of rescue.	                     |</span>
+<span class="qt">|Andrew Halliwell	|Consider how lucky you are that life has been good  |</span>
+<span class="qt">|Principal subjects in:-|to you so far...                                    |</span>
+<span class="qt">|Comp Sci &amp;  something  |      -The BOOK, Hitch-hiker&#x27;s guide to the galaxy. |</span>
+------------------------------------------------------------------------------
+<span class="qt">|GCv3.1 GCS/FA&gt;$ d---(dpu) s+/- a- C++ U N++ K- w-- M+/++ PS+++ PE- Y t+ 5++ |</span>
+<span class="qt">|X+/++ R+ tv+ b+ D G e&gt;PhD h/h+ !r! !y-|I can&#x27;t say F**K either now! &gt;*SULK*&lt;|</span>
+------------------------------------------------------------------------------
+
+
+</pre></div><div class="post" id="p18184"><div class="ph"><a class="d" href="#p18184">1996-06-04</a> <span>…@…</span> <span>Re: New TAPE format proposal ...</span></div><pre>
+In article &lt;1996Jun4.131120.1572@rcum&gt;, Tomaz Kac (…@…) wrote:
+
+:   Well, after looking into how inadequate ( or how do you spell it :) ) the
+: current .TAP format is for ANY custom loading routine, I tried to come up with
+: a solution that would load ANY spectrum game into emulators or real spectrum
+: ( which i prefer ).
+
+  How about .ZXS? 
+
+---------------------------                         Simon Magus MAGIC BOLT 6
+John Elliott              | \o_~^~          *:                  _o  \|/
+CHAOS in a sig...         |  |                       ==@         |\  V
+--------------------------- /| ;==;&lt;               _//\\         A  .|.
+
+
+</pre></div></main></body></html>

@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>+++ JET SET WILLY: NEW VERSION OF J4! +++ · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>+++ JET SET WILLY: NEW VERSION OF J4! +++</h1><p class="facts">16 posts, 1999-03-04 – 1999-03-31</p><div class="post" id="p47720"><div class="ph"><a class="d" href="#p47720">1999-03-04</a> <span>andrew broad</span>  <a class="badge" href="https://spectrumcomputing.co.uk/entry/2604">ZXDB: J4 - The Fourth Remix</a></div><pre>J4 (the fourth remix of Jet Set Willy by Geoff Eddy, Iain Eddy and
+Alasdair Swanson) was modified at 22:22 on February 23rd, to fix the
+unreachable item in &quot;Garden of Worm&quot;.
+
+So if you downloaded it before that time, you need to replace your copy
+with the latest version, or else the game will not be possible to
+complete! :-)
+
+If you have not yet downloaded J4, I strongly recommend that you do so,
+as it is absolutely brilliant!!
+
+The URL (from Geoff Eddy&#x27;s website) is:
+<a href="http://www.cix.co.uk/~morven/j4.zip" rel="noreferrer">http://www.cix.co.uk/~morven/j4.zip</a>
+
+--
+Andrew Broad
+<a href="http://www.cs.man.ac.uk/~broada/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/willy/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/willy/</a>
+
+
+
+
+</pre></div><div class="post" id="p47757"><div class="ph"><a class="d" href="#p47757">1999-03-05</a> <span>john pickford</span> <span>Re: +++ JET SET WILLY: NEW VERSION OF J4! +++</span></div><pre>First room WAY too hard - poorly designed in my opinion.
+
+Pissed me off, before I got out of that room.
+
+JP
+
+
+Andrew Broad  wrote in message
+news:…@…...
+<span class="qt">&gt;J4 (the fourth remix of Jet Set Willy by Geoff Eddy, Iain Eddy and</span>
+<span class="qt">&gt;Alasdair Swanson) was modified at 22:22 on February 23rd, to fix the</span>
+<span class="qt">&gt;unreachable item in &quot;Garden of Worm&quot;.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;So if you downloaded it before that time, you need to replace your copy</span>
+<span class="qt">&gt;with the latest version, or else the game will not be possible to</span>
+<span class="qt">&gt;complete! :-)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;If you have not yet downloaded J4, I strongly recommend that you do so,</span>
+<span class="qt">&gt;as it is absolutely brilliant!!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;The URL (from Geoff Eddy&#x27;s website) is:</span>
+<span class="qt">&gt;<a href="http://www.cix.co.uk/~morven/j4.zip" rel="noreferrer">http://www.cix.co.uk/~morven/j4.zip</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;--</span>
+<span class="qt">&gt;Andrew Broad</span>
+<span class="qt">&gt;<a href="http://www.cs.man.ac.uk/~broada/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/</a></span>
+<span class="qt">&gt;<a href="http://www.cs.man.ac.uk/~broada/spectrum/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/</a></span>
+<span class="qt">&gt;<a href="http://www.cs.man.ac.uk/~broada/spectrum/willy/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/willy/</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+
+
+</pre></div><div class="post" id="p47837"><div class="ph"><a class="d" href="#p47837">1999-03-08</a> <span>andrew broad</span> <span>Re: +++ JET SET WILLY: NEW VERSION OF J4! +++</span></div><pre>Andy Kavanagh wrote:
+
+<span class="qt">&gt; On Fri, 5 Mar 1999, john pickford wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; First room WAY too hard - poorly designed in my opinion.</span>
+
+If you consider THAT to be a hard JSW room, you&#x27;d better get practicing for
+when We Pretty comes out! :-&gt;
+
+<span class="qt">&gt; &gt; Pissed me off, before I got out of that room.</span>
+
+You&#x27;ve got to stick with it - it gets much better after the first few rooms!
+
+
+[Andy Kavanagh]
+
+<span class="qt">&gt; I managed the second screen ;)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; However, the room design isn&#x27;t anywhere near the standard of the other</span>
+<span class="qt">&gt; JSW games - there isn&#x27;t a theme to the whole thing.  OK, so the original</span>
+<span class="qt">&gt; JSW had a few bizarre rooms that didn&#x27;t fit in, or looked crap, but they</span>
+<span class="qt">&gt; were like that for a reason.  J4 doesn&#x27;t seem to have proper links</span>
+<span class="qt">&gt; between screens.</span>
+
+In my opinion, J4 is one of the best JSW games ever - great atmosphere,
+terrifically visually attractive, and the most technically innovative of all
+the sequels based on the original JSW game engine.
+
+As for not having a `theme&#x27;, and not having `proper links&#x27; between screens,
+that&#x27;s probably due to it being written by three different people. The game
+may lack a good title and a coherent concept (which a plot, for example, would
+have provided), but that doesn&#x27;t detract much from its brilliance in my view!!
+
+In what way does the original JSW have rooms that don&#x27;t fit in or look crap,
+such that they are like that for a reason whereas those in J4 are NOT like
+that for a reason? Would someone care to elaborate?
+
+
+<span class="qt">&gt; However, I&#x27;ve not got very far into it so it may improve.</span>
+
+It certainly DOES improve. I was actually quite disappointed when I saw the
+first few rooms - the first five or so rooms are so linear and regimented, and
+have no items to collect. But after the first few rooms (from &quot;My Ethereal
+SubGarage of a Skull&quot; onwards), it all changes into arguably the best JSW game
+ever released!
+
+--
+Andrew Broad
+<a href="http://www.cs.man.ac.uk/~broada/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/willy/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/willy/</a>
+
+
+
+
+</pre></div><div class="post" id="p47863"><div class="ph"><a class="d" href="#p47863">1999-03-09</a> <span>john pickford</span> <span>Re: +++ JET SET WILLY: NEW VERSION OF J4! +++</span></div><pre><span class="qt">&gt;You&#x27;ve got to stick with it - it gets much better after the first few</span>
+rooms!
+
+Sorry no excuse in my opinion.
+
+I have been designing games for a living for 14 years  - I&#x27;ve never got away
+with saying that yet!  ;-)
+
+Why SHOULD anyone persevere,  you have to LEAD the player into the game -  a
+little challenge,  a little reward, a bigger challenge etc.. etc..
+
+
+Regards,
+
+
+JP
+
+
+Andrew Broad  wrote in message
+news:…@…...
+<span class="qt">&gt;Andy Kavanagh wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; On Fri, 5 Mar 1999, john pickford wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; &gt; First room WAY too hard - poorly designed in my opinion.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;If you consider THAT to be a hard JSW room, you&#x27;d better get practicing for</span>
+<span class="qt">&gt;when We Pretty comes out! :-&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; &gt; Pissed me off, before I got out of that room.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;You&#x27;ve got to stick with it - it gets much better after the first few</span>
+rooms!
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;[Andy Kavanagh]</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; I managed the second screen ;)</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; However, the room design isn&#x27;t anywhere near the standard of the other</span>
+<span class="qt">&gt;&gt; JSW games - there isn&#x27;t a theme to the whole thing.  OK, so the original</span>
+<span class="qt">&gt;&gt; JSW had a few bizarre rooms that didn&#x27;t fit in, or looked crap, but they</span>
+<span class="qt">&gt;&gt; were like that for a reason.  J4 doesn&#x27;t seem to have proper links</span>
+<span class="qt">&gt;&gt; between screens.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;In my opinion, J4 is one of the best JSW games ever - great atmosphere,</span>
+<span class="qt">&gt;terrifically visually attractive, and the most technically innovative of</span>
+all
+<span class="qt">&gt;the sequels based on the original JSW game engine.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;As for not having a `theme&#x27;, and not having `proper links&#x27; between screens,</span>
+<span class="qt">&gt;that&#x27;s probably due to it being written by three different people. The game</span>
+<span class="qt">&gt;may lack a good title and a coherent concept (which a plot, for example,</span>
+would
+<span class="qt">&gt;have provided), but that doesn&#x27;t detract much from its brilliance in my</span>
+view!!
+<span class="qt">&gt;</span>
+<span class="qt">&gt;In what way does the original JSW have rooms that don&#x27;t fit in or look</span>
+crap,
+<span class="qt">&gt;such that they are like that for a reason whereas those in J4 are NOT like</span>
+<span class="qt">&gt;that for a reason? Would someone care to elaborate?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; However, I&#x27;ve not got very far into it so it may improve.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;It certainly DOES improve. I was actually quite disappointed when I saw the</span>
+<span class="qt">&gt;first few rooms - the first five or so rooms are so linear and regimented,</span>
+and
+<span class="qt">&gt;have no items to collect. But after the first few rooms (from &quot;My Ethereal</span>
+<span class="qt">&gt;SubGarage of a Skull&quot; onwards), it all changes into arguably the best JSW</span>
+game
+<span class="qt">&gt;ever released!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;--</span>
+<span class="qt">&gt;Andrew Broad</span>
+<span class="qt">&gt;<a href="http://www.cs.man.ac.uk/~broada/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/</a></span>
+<span class="qt">&gt;<a href="http://www.cs.man.ac.uk/~broada/spectrum/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/</a></span>
+<span class="qt">&gt;<a href="http://www.cs.man.ac.uk/~broada/spectrum/willy/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/willy/</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+
+
+</pre></div><div class="post" id="p48064"><div class="ph"><a class="d" href="#p48064">1999-03-16</a> <span>andrew broad</span> <span>Re: +++ JET SET WILLY: NEW VERSION OF J4! +++</span></div><pre>john pickford wrote:
+
+<span class="qt">&gt; &gt;You&#x27;ve got to stick with it - it gets much better after the first few</span>
+<span class="qt">&gt; rooms!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Sorry no excuse in my opinion.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I have been designing games for a living for 14 years  - I&#x27;ve never got away</span>
+<span class="qt">&gt; with saying that yet!  ;-)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Why SHOULD anyone persevere,  you have to LEAD the player into the game -  a</span>
+<span class="qt">&gt; little challenge,  a little reward, a bigger challenge etc.. etc..</span>
+
+In the case of novel games, I would agree. In the case of MM/JSW sequels, it&#x27;s
+a bit different. Those who play MM/JSW sequels should be no mean MM/JSW players
+already, having hopefully mastered the original MM/JSW. So it&#x27;s fair to throw
+them in at the deep end, in the sequels. I consider the first room in J4 to be
+a medium challenge by my standards - a good warm-up for me, but not a
+head-basher.
+
+I like writing rock hard MM/JSW games, as a challenge to myself and other
+MM/JSW experts. Manic Miner 4 has some very difficult rooms after a couple of
+really easy ones to start with. The opening room of We Pretty (my next JSW
+game) should be enough to weed off the stragglers! :-&gt;
+
+In the case of Manic Miner: The Hobbit and Jet Set Willy: Lord of the Rings,
+though, I&#x27;m writing for a Tolkien audience as well as a MM/JSW audience. I
+think I will do two versions of these games: the `real&#x27; version, and a
+watered-down version for Tolkien fans and those who like their MM/JSW games
+easy.
+
+--
+Andrew Broad
+<a href="http://www.cs.man.ac.uk/~broada/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/willy/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/willy/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/download/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/download/</a>
+
+
+
+
+</pre></div><div class="post" id="p48352"><div class="ph"><a class="d" href="#p48352">1999-03-24</a> <span>andrew broad</span> <span>We Pretty (was Re: +++ JET SET WILLY: NEW VERSION OF J4! +++)</span></div><pre>…@… wrote:
+
+<span class="qt">&gt; Andrew Broad wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; The opening room of We Pretty (my next JSW game) should be enough</span>
+<span class="qt">&gt; &gt; to weed off the stragglers! :-&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Forgive me if I&#x27;m being dense, but what possessed you to give it a title like</span>
+<span class="qt">&gt; We Pretty?</span>
+
+:-D
+
+I call it We Pretty because I love esoteric titles! :-)
+
+The specific reason why it&#x27;s called We Pretty is that I was listening to David
+Bowie being interviewed by Mark Radcliffe on Radio 1 FM just before his amazing
+Outside album was released (in September 1995). I had not seen a track listing
+for the album, five songs from which were played on that show. One of them was
+&quot;We Prick You&quot;, but I misheard and thought it was &quot;We Pretty&quot;! I thought this
+mondegreen was a lovely enigmatic title, so I decided to do a JSW game of that
+name!
+
+David Bowie&#x27;s Outside album is the single biggest inspiration for We Pretty
+(which refracts an eclectic mix of diverse inspirations from music, tennis,
+dreams and personal experiences). Like Outside, We Pretty is based on a
+nonlinear, fragmentary storyline, written up in the form of a diary. Like
+Outside, the central theme is art-ritual murder. And like Outside, We Pretty is
+intended to be the first of a series.
+
+The concepts underlying We Pretty are very surreal and incompletely specified,
+leading the audience to their own personal interpretations. The plot is that the
+player has been found guilty of a crime known as abstract behaviour in the 21st
+century and, by way of sentence, is deported back to the 17th century (through a
+black hole). The player ends up in a parallel universe (the inevitable
+consequence of any /backward/ time travel). In this parallel universe, the
+player has a doppelganger called Kari Krisnikova - the central character, who
+performs the art-ritual murders described in the diary.
+
+The name We Pretty is open to personal interpretation - my own interpretation
+concerns the struggle for dominance between forces of good and evil. My idea is
+that Kari Krisnikova would appear very fair and innocent to those who didn&#x27;t
+know her (hence Pretty), but is, in fact, a killer cold as steel, as robotic as
+a guardian in JSW. Because Kari is the player&#x27;s doppelganger, they both look
+alike (hence We) except that the player is white and Kari is cyan (a colour
+symbolism which came to me in a dream).
+
+I know I&#x27;ve been talking about We Pretty for over a year now, but the good news
+is that implementation is now seriously underway after I was held back for ages
+(due to other commitments) with only up-in-the-sky ideas. I&#x27;m now aiming for a
+July 1999 release. And up in the sky is the first place we&#x27;ll be going...
+
+--
+Andrew Broad
+<a href="http://www.cs.man.ac.uk/~broada/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/download/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/download/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/download/we_pretty.html" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/download/we_pretty.html</a>
+
+
+
+
+</pre></div><div class="post" id="p48371"><div class="ph"><a class="d" href="#p48371">1999-03-24 08:59:04</a> <span>…@…</span> <span>Re: +++ JET SET WILLY: NEW VERSION OF J4! +++</span></div><pre>Andrew Broad wrote:
+
+<span class="qt">&gt; The opening room of We Pretty (my next JSW game) should be enough</span>
+<span class="qt">&gt; to weed off the stragglers! :-&gt;</span>
+
+Forgive me if I&#x27;m being dense, but what possessed you to give it a title like
+We Pretty?
+
+Paul
+
+-----------== Posted via Deja News, The Discussion Network ==----------
+<a href="http://www.dejanews.com/" rel="noreferrer">http://www.dejanews.com/</a>       Search, Read, Discuss, or Start Your Own    
+
+
+</pre></div><div class="post" id="p48388"><div class="ph"><a class="d" href="#p48388">1999-03-24 18:40:30</a> <span>…@…</span> <span>Re: We Pretty (was Re: +++ JET SET WILLY: NEW VERSION OF J4! +++)</span></div><pre>In article &lt;…@…&gt;, Andrew Broad  wrote:
+
+can i have some of whatever you&#x27;re having?
+
+        juice
+<span class="qt">&gt;The specific reason why it&#x27;s called We Pretty is that I was listening to David</span>
+<span class="qt">&gt;Bowie being interviewed by Mark Radcliffe on Radio 1 FM just before his amazing</span>
+<span class="qt">&gt;Outside album was released (in September 1995). I had not seen a track listing</span>
+<span class="qt">&gt;for the album, five songs from which were played on that show. One of them was</span>
+<span class="qt">&gt;&quot;We Prick You&quot;, but I misheard and thought it was &quot;We Pretty&quot;! I thought this</span>
+<span class="qt">&gt;mondegreen was a lovely enigmatic title, so I decided to do a JSW game of that</span>
+<span class="qt">&gt;name!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;David Bowie&#x27;s Outside album is the single biggest inspiration for We Pretty</span>
+<span class="qt">&gt;(which refracts an eclectic mix of diverse inspirations from music, tennis,</span>
+<span class="qt">&gt;dreams and personal experiences). Like Outside, We Pretty is based on a</span>
+<span class="qt">&gt;nonlinear, fragmentary storyline, written up in the form of a diary. Like</span>
+<span class="qt">&gt;Outside, the central theme is art-ritual murder. And like Outside, We Pretty is</span>
+<span class="qt">&gt;intended to be the first of a series.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;The concepts underlying We Pretty are very surreal and incompletely specified,</span>
+<span class="qt">&gt;leading the audience to their own personal interpretations. The plot is that</span>
+<span class="qt">&gt; the</span>
+<span class="qt">&gt;player has been found guilty of a crime known as abstract behaviour in the 21st</span>
+<span class="qt">&gt;century and, by way of sentence, is deported back to the 17th century (through</span>
+<span class="qt">&gt; a</span>
+<span class="qt">&gt;black hole). The player ends up in a parallel universe (the inevitable</span>
+<span class="qt">&gt;consequence of any /backward/ time travel). In this parallel universe, the</span>
+<span class="qt">&gt;player has a doppelganger called Kari Krisnikova - the central character, who</span>
+<span class="qt">&gt;performs the art-ritual murders described in the diary.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;The name We Pretty is open to personal interpretation - my own interpretation</span>
+<span class="qt">&gt;concerns the struggle for dominance between forces of good and evil. My idea is</span>
+<span class="qt">&gt;that Kari Krisnikova would appear very fair and innocent to those who didn&#x27;t</span>
+<span class="qt">&gt;know her (hence Pretty), but is, in fact, a killer cold as steel, as robotic as</span>
+<span class="qt">&gt;a guardian in JSW. Because Kari is the player&#x27;s doppelganger, they both look</span>
+<span class="qt">&gt;alike (hence We) except that the player is white and Kari is cyan (a colour</span>
+<span class="qt">&gt;symbolism which came to me in a dream).</span>
+
+
+</pre></div><div class="post" id="p48396"><div class="ph"><a class="d" href="#p48396">1999-03-25</a> <span>andrew broad</span> <span>Re: We Pretty (was Re: +++ JET SET WILLY: NEW VERSION OF J4! +++)</span></div><pre>juice wrote:
+
+<span class="qt">&gt; can i have some of whatever you&#x27;re having?</span>
+
+I hope this comment is not meant to imply that I am on drugs, because I am against all
+drugs as a matter of principle (especially alcohol and nicotine, which pose a far greater
+threat to society than the illegal drugs). The implication that I use drugs to assist my
+artistic creativity insults and sickens me - I don&#x27;t have to get stoned out of my gourd
+to write a great JSW game!
+
+What I have is an overactive and unorthodox imagination, and some intriguing sources of
+inspiration. It&#x27;s not really my place to offer you the former, but for the latter I&#x27;d
+suggest the music of David Bowie (his Outside album in particular), and perhaps some
+surreal movies such as Lost Highway.
+
+<span class="qt">&gt; In article &lt;…@…&gt;, Andrew Broad  wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;The specific reason why it&#x27;s called We Pretty is that I was listening to David</span>
+<span class="qt">&gt; &gt;Bowie being interviewed by Mark Radcliffe on Radio 1 FM just before his amazing</span>
+<span class="qt">&gt; &gt;Outside album was released (in September 1995). I had not seen a track listing</span>
+<span class="qt">&gt; &gt;for the album, five songs from which were played on that show. One of them was</span>
+<span class="qt">&gt; &gt;&quot;We Prick You&quot;, but I misheard and thought it was &quot;We Pretty&quot;! I thought this</span>
+<span class="qt">&gt; &gt;mondegreen was a lovely enigmatic title, so I decided to do a JSW game of that</span>
+<span class="qt">&gt; &gt;name!</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;David Bowie&#x27;s Outside album is the single biggest inspiration for We Pretty</span>
+<span class="qt">&gt; &gt;(which refracts an eclectic mix of diverse inspirations from music, tennis,</span>
+<span class="qt">&gt; &gt;dreams and personal experiences). Like Outside, We Pretty is based on a</span>
+<span class="qt">&gt; &gt;nonlinear, fragmentary storyline, written up in the form of a diary. Like</span>
+<span class="qt">&gt; &gt;Outside, the central theme is art-ritual murder. And like Outside, We Pretty is</span>
+<span class="qt">&gt; &gt;intended to be the first of a series.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;The concepts underlying We Pretty are very surreal and incompletely specified,</span>
+<span class="qt">&gt; &gt;leading the audience to their own personal interpretations. The plot is that</span>
+<span class="qt">&gt; &gt; the</span>
+<span class="qt">&gt; &gt;player has been found guilty of a crime known as abstract behaviour in the 21st</span>
+<span class="qt">&gt; &gt;century and, by way of sentence, is deported back to the 17th century (through</span>
+<span class="qt">&gt; &gt; a</span>
+<span class="qt">&gt; &gt;black hole). The player ends up in a parallel universe (the inevitable</span>
+<span class="qt">&gt; &gt;consequence of any /backward/ time travel). In this parallel universe, the</span>
+<span class="qt">&gt; &gt;player has a doppelganger called Kari Krisnikova - the central character, who</span>
+<span class="qt">&gt; &gt;performs the art-ritual murders described in the diary.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;The name We Pretty is open to personal interpretation - my own interpretation</span>
+<span class="qt">&gt; &gt;concerns the struggle for dominance between forces of good and evil. My idea is</span>
+<span class="qt">&gt; &gt;that Kari Krisnikova would appear very fair and innocent to those who didn&#x27;t</span>
+<span class="qt">&gt; &gt;know her (hence Pretty), but is, in fact, a killer cold as steel, as robotic as</span>
+<span class="qt">&gt; &gt;a guardian in JSW. Because Kari is the player&#x27;s doppelganger, they both look</span>
+<span class="qt">&gt; &gt;alike (hence We) except that the player is white and Kari is cyan (a colour</span>
+<span class="qt">&gt; &gt;symbolism which came to me in a dream).</span>
+
+--
+Andrew Broad
+<a href="http://www.cs.man.ac.uk/~broada/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/download/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/download/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/download/we_pretty.html" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/download/we_pretty.html</a>
+
+
+
+</pre></div><div class="post" id="p48467"><div class="ph"><a class="d" href="#p48467">1999-03-26</a> <span>andrew broad</span> <span>Re: We Pretty (was Re: +++ JET SET WILLY: NEW VERSION OF J4! +++)</span></div><pre>sam@greenaumARSE!ARSE!ARSE!.demon.co.uk wrote:
+
+<span class="qt">&gt; Cooooool. Interestingly I had a dream about JSW a couple of nights</span>
+<span class="qt">&gt; ago, he had to jump up and pull a handle, which caused some of the</span>
+<span class="qt">&gt; walls (not all the walls) to come from left and right to crush him,</span>
+
+Have you been watching Star Wars Episode IV (A New Hope)?
+
+<span class="qt">&gt; but he rose up on the handle. Then he could walk across the walls and</span>
+<span class="qt">&gt; get to a new room.</span>
+
+This should actually be possible to implement using the Patch Vector in Geoff
+Mode.
+
+<span class="qt">&gt; Now I think, I was playing JSW-PC that night. So</span>
+<span class="qt">&gt; it&#x27;s not as strange as you&#x27;d think, and not nearly as interesting as</span>
+<span class="qt">&gt; the second word of this paragraph implies.</span>
+
+I had a dream about MM/JSW on the morning of 17th February. I had a very vivid
+dream about a new Manic Miner cavern. It was very dark, and had horizontal
+strips of soil and nettles. I was playing as Miner Willy, but Kari Krisnikova
+was there, manifesting herself as a cyan (of course) horizontal guardian. The
+image of the room was so vivid that when I woke up, I created a new MM game
+that day to put it in! (for future reference, I have given this game a working
+title of &quot;Ma jolie&quot; and the room in question is the first one).
+
+Anyway, the dream continued into Jet Set Willy. I dreamed that JSW was being
+extended with new guardian types (i.e. in addition to horizontal guardians,
+vertical guardians, ropes and arrows). But JSW blurred into 3D (one of the new
+guardian types was a three-dimensional tree), and then into reality (the tree
+was actually a particular tree in my garden that I used to climb a lot).
+
+--
+Andrew Broad
+<a href="http://www.cs.man.ac.uk/~broada/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/</a>
+
+
+
+</pre></div><div class="post" id="p48515"><div class="ph"><a class="d" href="#p48515">1999-03-27 04:19:10</a> <span>…@…</span> <span>Re: We Pretty (was Re: +++ JET SET WILLY: NEW VERSION OF J4! +++)</span></div><pre>In article &lt;…@…&gt;, Andrew Broad  wrote:
+<span class="qt">&gt;juice wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; can i have some of whatever you&#x27;re having?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I hope this comment is not meant to imply that I am on drugs, because I am</span>
+<span class="qt">&gt; against all</span>
+<span class="qt">&gt;drugs as a matter of principle (especially alcohol and nicotine, which pose a</span>
+<span class="qt">&gt; far greater</span>
+<span class="qt">&gt;threat to society than the illegal drugs). The implication that I use drugs to</span>
+<span class="qt">&gt; assist my</span>
+<span class="qt">&gt;artistic creativity insults and sickens me - I don&#x27;t have to get stoned out of</span>
+<span class="qt">&gt; my gourd</span>
+<span class="qt">&gt;to write a great JSW game!</span>
+<span class="qt">&gt;</span>
+I apologise- it was a vague allusion to that film thingy with the woman in the 
+cafe making strange noises:)
+
+As long as you don&#x27;t wear togas to nightclubs, then the world is safe:)
+<span class="qt">&gt;What I have is an overactive and unorthodox imagination, and some intriguing</span>
+<span class="qt">&gt; sources of</span>
+<span class="qt">&gt;inspiration. It&#x27;s not really my place to offer you the former, but for the</span>
+<span class="qt">&gt; latter I&#x27;d</span>
+<span class="qt">&gt;suggest the music of David Bowie (his Outside album in particular), and perhaps</span>
+<span class="qt">&gt; some</span>
+<span class="qt">&gt;surreal movies such as Lost Highway.</span>
+you&#x27;re talking to the person who invented the church of the pOt nOOdle:)
+and as for surreal movies, I think Roadrats has to rank *way* up there...
+
+anyways, I do apologise if i have offended you
+        juice
+
+
+</pre></div><div class="post" id="p48551"><div class="ph"><a class="d" href="#p48551">1999-03-29</a> <span>andrew broad</span> <span>Re: We Pretty (was Re: +++ JET SET WILLY: NEW VERSION OF J4! +++)</span></div><pre>sam@greenaumARSE!ARSE!ARSE!.demon.co.uk wrote:
+
+<span class="qt">&gt; Apart from that I can&#x27;t fault your insane idea for a game. Are you</span>
+<span class="qt">&gt; going to do a soundtrack? A special 128 version with mad looming AY</span>
+<span class="qt">&gt; music I would like.</span>
+
+I&#x27;ll to stick to 48K. I&#x27;m going to use David Bowie&#x27;s &quot;Telling Lies&quot; (specifically the riff
+from the Adam F mix) as the title screen/in-game music.
+
+It&#x27;s interesting that you should mention doing a soundtrack for We Pretty, because lately
+I&#x27;ve been thinking about doing just that. I have in mind a 90-minute compilation of music
+that has a `We Pretty&#x27; atmosphere - music that I associate with the concepts behind the game.
+This soundtrack wouldn&#x27;t actually be released, of course (it would only exist as a private
+recording on a 90-minute audio cassette), but I might list the tracks I use in the
+documentation in case anyone wants to reproduce the soundtrack!
+
+For the soundtrack, I&#x27;ll be looking to include pieces of music that reflect Kari Krisnikova&#x27;s
+character - basically an ice-cold, blood-lustful murderess, concealed beneath an innocent,
+saccharine exterior. So I want to combine tracks that express musically one or the other side
+of this character.
+
+My ideas for the We Pretty soundtrack at the moment are:
+- Many David Bowie songs (mostly from Outside, perhaps a few from Earthling, and even some
+from Contamination if that comes out before We Pretty!);
+- Trent Reznor&#x27;s &quot;Driver Down&quot; from the Lost Highway soundtrack and Scott Walker&#x27;s &quot;The
+Cockfighter&quot; for their frenzied, chaotic atmosphere;
+- An Abba song (namely &quot;Angel Eyes&quot;) for the saccharine factor;
+- Some Bjork Gudmundsdottir songs (e.g. &quot;Joga&quot;, &quot;Bachelorette&quot;, &quot;Enjoy&quot; or &quot;Army Of Me&quot;);
+- Miscellaneous songs with covert We Pretty associations (e.g. Fluke&#x27;s &quot;Atom Bomb&quot; or
+Radiohead&#x27;s &quot;Electioneering&quot;).
+
+
+<span class="qt">&gt; Can you put text in JSW rooms?</span>
+
+The obvious answers are to put text in the room names, and to define the block graphics as
+text, or build giant letters from blocks (as in DIE MORTAL in &quot;Entrance to Hades&quot;). The
+original JSW engine does not support arbitrary text in the screen layouts, but this could be
+achieved using the Patch Vector in Geoff Mode to print text on certain screens as an ad hoc
+special effect.
+
+--
+Andrew Broad
+<a href="http://www.cs.man.ac.uk/~broada/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/download/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/download/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/download/we_pretty.html" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/download/we_pretty.html</a>
+
+
+
+</pre></div><div class="post" id="p48585"><div class="ph"><a class="d" href="#p48585">1999-03-30</a> <span>andrew broad</span> <span>Re: We Pretty (was Re: +++ JET SET WILLY: NEW VERSION OF J4! +++)</span></div><pre>sam@greenaumARSE!ARSE!ARSE!.demon.co.uk wrote:
+
+<span class="qt">&gt; To preempt you even further, I don&#x27;t suppose it will be compatible</span>
+<span class="qt">&gt; with JSW-PC?</span>
+
+I wouldn&#x27;t know. That&#x27;s not my responsibility. I don&#x27;t even play JSW-PC myself
+(I don&#x27;t have a PC at home). I understand that JSW-PC reads the room data
+(etc.) from snapshots, so I guess We Pretty would work with JSW-PC to the
+extent that JSW-PC is faithful to the original JSW game engine and room
+formats.
+
+
+<span class="qt">&gt; If you&#x27;re using patches (these are new chunks of code</span>
+<span class="qt">&gt; yes?) I suppose Craig will have to rewrite them in C to include them.</span>
+
+We Pretty will be pretty much based on the code from the original JSW (except
+maybe a few patches to disable the colour code and WRITETYPER, and perhaps an
+anti-cheat protection mechanism), but these do not affect the actual game play
+and shouldn&#x27;t therefore upset JSW-PC. The big thing that probably /will/ upset
+JSW-PC, though, is that We Pretty uses fall-without-dying (POKE 36477,1) - a
+little fix to JSW-PC would be needed to detect this in the snapshot and adjust
+accordingly, if it doesn&#x27;t already.
+
+Some of my future games may use more major extensions such as John Elliott&#x27;s
+teleporter overlay and Geoff Mode, thus requiring bigger changes to JSW-PC.
+
+
+<span class="qt">&gt; Anyway, you could give your music compilation away in a low-bitrate</span>
+<span class="qt">&gt; MP3 maybe, it&#x27;s about a megabyte a minute for 44KHz stereo, but you</span>
+<span class="qt">&gt; could use a lot lower. Or Realaudio. Actually that&#x27;s probably still</span>
+<span class="qt">&gt; going to be too large, as well as illegal, what you could do, is get</span>
+<span class="qt">&gt; someone to render them all into MIDI and maybe have a few samples.</span>
+
+There&#x27;s no way I would do that, for several reasons:
+
+* I could get into big legal trouble for distributing copyright music in that
+way, resulting in loss of Internet access - I&#x27;d never be able to upload or
+download MM/JSW games ever again :-(
+
+* Digitised music takes up a ridiculous amount of disk space (when encoded at
+CD quality). It would probably take less than five minutes of music to exceed
+my filestore quota.
+
+* I don&#x27;t have the means to convert music to computer files, and I wouldn&#x27;t
+trust anyone to do it for me (as that would mean exposing my postal address,
+and anyone might turn up to nail my head to the wall, bugger me senseless,
+pump me full of strange drugs, or whatever)
+
+* I don&#x27;t approve of music being distributed on the Internet in principle - it
+would be highly embarrassing for me to be surfing the Internet in a corner of
+a lab at university, and for some music to come blaring out! Thank God it
+always says &quot;plug-in not found&quot; when I visit a website with music on!
+
+* I know I&#x27;m not alone in not having the technology to listen to music on the
+Internet. I think it&#x27;s really unfair that some music (e.g. David Bowie&#x27;s
+Earthling Live album) is distributed exclusively on the Internet, because that
+excludes all these people. In my opinion, such music should be released on
+CD/audio cassette/vinyl and available in physical shops, or else not released
+at all.
+
+
+<span class="qt">&gt; My point is, it&#x27;s amazing how good JSW is</span>
+<span class="qt">&gt; on it&#x27;s update to the PC, many Speccy games would look a bit crap and</span>
+<span class="qt">&gt; unsophisticated with the power of PC graphics and sound, but JSW</span>
+<span class="qt">&gt; doesn&#x27;t.</span>
+
+JSW may be simple, even badly programmed in some places, but its game play is
+amazingly addictive, and continues to exert a power over the mind (as Geoff
+Eddy would say) that no other game can manage after all this time. The
+atmosphere of the original JSW is simply tremendous once you come to
+appreciate it fully, but We Pretty may turn out to be even better, though I do
+say so myself! :-)
+
+Making new sequels (and playing other people&#x27;s sequels) is what has really
+kept MM and JSW alive for me in the long term, though.
+
+
+<span class="qt">&gt; Anyway apologies for running your project for you. It just sounds dead</span>
+<span class="qt">&gt; amusing.</span>
+
+:-D
+
+<span class="qt">&gt; If you ever do start taking drugs just carry on what you&#x27;re</span>
+<span class="qt">&gt; doing, JSW is still top.</span>
+
+There&#x27;s no way on God&#x27;s earth that I am ever going to start taking drugs. I
+made this vow when I was 11, and although they said I&#x27;d probably be smoking
+and drinking alcohol by 18, I&#x27;m still clean at 23, and I&#x27;ll still be clean
+when I die.
+
+    Piss on the icon monsters, whose guitars bequeath you pain
+    They&#x27;ll face you down to their level, with their addictions and their fast
+lanes
+    Corrupt with shaky visions, and crack and coke and alcohol
+    They&#x27;re just a bunch of assholes, with butt-holes for their brains
+    Can&#x27;t keep on riding the pain you know so well
+    They&#x27;ll ride you down to the gutter, and they&#x27;ll ride you down to hell
+
+    [Tin Machine, &quot;Crack City&quot;]
+
+--
+Andrew Broad
+<a href="http://www.cs.man.ac.uk/~broada/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/download/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/download/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/download/we_pretty.html" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/download/we_pretty.html</a>
+
+
+
+
+
+</pre></div><div class="post" id="p48607"><div class="ph"><a class="d" href="#p48607">1999-03-30 09:08:47</a> <span>…@…</span> <span>Re: We Pretty (was Re: +++ JET SET WILLY: NEW VERSION OF J4! +++)</span></div><pre>
+<span class="qt">&gt; Anyway, the dream continued into Jet Set Willy. I dreamed that JSW was being</span>
+<span class="qt">&gt; extended with new guardian types (i.e. in addition to horizontal guardians,</span>
+<span class="qt">&gt; vertical guardians, ropes and arrows). But JSW blurred into 3D (one of the new</span>
+<span class="qt">&gt; guardian types was a three-dimensional tree), and then into reality (the tree</span>
+<span class="qt">&gt; was actually a particular tree in my garden that I used to climb a lot).</span>
+
+It wasn&#x27;t a Banyan Tree was it? ;-)
+
+Jet Set Willy is still a classic game, and a great challenge for all those who
+expect to be able to change direction in mid-jump.
+
+Did you know that the rope animation is achieved by having a static rope which
+moves up and down within a fixed visible window?
+
+Did that last sentence make any sense at all?
+
+Chink! Chink! Chink! Chink! Chink! Chink! Chink! Chink! Vwwwoooooooorrrrppp!!!
+
+Paul
+
+-----------== Posted via Deja News, The Discussion Network ==----------
+<a href="http://www.dejanews.com/" rel="noreferrer">http://www.dejanews.com/</a>       Search, Read, Discuss, or Start Your Own    
+
+
+</pre></div><div class="post" id="p48617"><div class="ph"><a class="d" href="#p48617">1999-03-30 15:58:00</a> <span>…@…</span> <span>Mondegreens in Speccy games [was: Re: We Pretty (was Re: +++ JET SET WILLY: NEW VERSION OF J4! +++)]</span></div><pre>The new GeoCities AUP, which came into effect on Wed, 24 Mar
+1999 12:00:11 +0000, forbids such page content as this message from
+Andrew Broad :
+
+<span class="qt">&gt;…@… wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Andrew Broad wrote:</span>
+[...]
+<span class="qt">&gt;&gt; Forgive me if I&#x27;m being dense, but what possessed you to give it a title like</span>
+<span class="qt">&gt;&gt; We Pretty?</span>
+
+[...]
+<span class="qt">&gt;The specific reason why it&#x27;s called We Pretty is that I was listening to David</span>
+<span class="qt">&gt;Bowie being interviewed by Mark Radcliffe on Radio 1 FM just before his amazing</span>
+<span class="qt">&gt;Outside album was released (in September 1995). I had not seen a track listing</span>
+<span class="qt">&gt;for the album, five songs from which were played on that show. One of them was</span>
+<span class="qt">&gt;&quot;We Prick You&quot;, but I misheard and thought it was &quot;We Pretty&quot;! I thought this</span>
+<span class="qt">&gt;mondegreen was a lovely enigmatic title, so I decided to do a JSW game of that</span>
+<span class="qt">&gt;name!</span>
+
+I wonder if any other mondegreen has ever been used as a JSW level
+name, or in a Speccy game generally.  After all, given where JSW
+started, &quot;Bathroom on the Right&quot; would probably make a good level...
+
+Also, JSW&#x27;s Emergency Power Generator pays homage to Pink Floyd&#x27;s
+&quot;Animals&quot;, although it&#x27;s not a mondegreen...
+
+------------------------------------------------
+Visit the South London &quot;Mental Health&quot; Web Site:
+(new location soon, as GeoTitties sucks)
+
+
+</pre></div><div class="post" id="p48623"><div class="ph"><a class="d" href="#p48623">1999-03-31</a> <span>andrew broad</span> <span>Re: Mondegreens in Speccy games [was: Re: We Pretty (was ...)]</span></div><pre>Robert J Baker wrote:
+
+<span class="qt">&gt; &gt;&gt; Andrew Broad wrote:</span>
+<span class="qt">&gt; &gt;The specific reason why it&#x27;s called We Pretty is that I was listening to David</span>
+<span class="qt">&gt; &gt;Bowie being interviewed by Mark Radcliffe on Radio 1 FM just before his amazing</span>
+<span class="qt">&gt; &gt;Outside album was released (in September 1995). I had not seen a track listing</span>
+<span class="qt">&gt; &gt;for the album, five songs from which were played on that show. One of them was</span>
+<span class="qt">&gt; &gt;&quot;We Prick You&quot;, but I misheard and thought it was &quot;We Pretty&quot;! I thought this</span>
+<span class="qt">&gt; &gt;mondegreen was a lovely enigmatic title, so I decided to do a JSW game of that</span>
+<span class="qt">&gt; &gt;name!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I wonder if any other mondegreen has ever been used as a JSW level</span>
+<span class="qt">&gt; name, or in a Speccy game generally.  After all, given where JSW</span>
+<span class="qt">&gt; started, &quot;Bathroom on the Right&quot; would probably make a good level...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Also, JSW&#x27;s Emergency Power Generator pays homage to Pink Floyd&#x27;s</span>
+<span class="qt">&gt; &quot;Animals&quot;, although it&#x27;s not a mondegreen...</span>
+
+There are going to be loads of mondegreens in We Pretty, mainly from
+David Bowie songs. For example, there&#x27;s this line in &quot;Stay&quot;,
+
+    I really meant to so bad this time
+
+which, the way he sings it, I always thought was:
+
+    I really meant to sow my tears to hang
+
+This mondegreen actually sounds better than the true lyric - it&#x27;s more
+typical of David Bowie&#x27;s impressive-sounding nonsense! :-) So I have
+written a room in We Pretty based on the surreal concept suggested by
+this mondegreen.
+
+Another mondegreen room title in We Pretty is &quot;The Starry Lasso&quot;, from
+the song &quot;Volare&quot;, the lyrics of which are in Italian. I don&#x27;t know
+Italian, so this line in the song sounds to me like &quot;Fair lee-jay, dee
+starry lasso&quot;. And there&#x27;s another room called &quot;gen Italien&quot; ;-&gt;
+(which translates, I believe, to &quot;to Italy&quot;)
+
+--
+Andrew Broad
+<a href="http://www.cs.man.ac.uk/~broada/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/download/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/download/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/download/we_pretty.html" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/download/we_pretty.html</a>
+
+
+</pre></div></main></body></html>

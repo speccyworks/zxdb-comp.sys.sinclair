@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proposed New ZX Tape format · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Proposed New ZX Tape format</h1><p class="facts">16 posts, 1997-02-17 – 1997-02-27</p><div class="post" id="p24128"><div class="ph"><a class="d" href="#p24128">1997-02-17</a> <span>…@…</span> </div><pre>
+
+  This is a proposed .ZXT (.ZXTape) format with support for all kinds of Turbo
+and Custom Loaders. I wrote something similar once before, but got almost NONE
+response. I guess now that there is some more discussion on the subject someone
+might find this interesting - especially the emulator writers. But primarily I
+wrote this to use with my HypraLoader. First I wanted to use ZXS but gave it up.
+
+  The file is identified with the first 6 bytes being &#x27;ZXTape&#x27;. If most of you
+want then it can be ommited... which would mean that you could link various
+files together just like you can .TAP files.
+  Then the body follows which is devised from blocks. Each block is identified
+with its ID byte followed by its body. There are currently 4 types of blocks.
+
+So the file structure is :  &#x27;ZXTape&#x27; ID1 Body1 ID2 Body2 ...
+                             0       6   7     ...
+Or without the &#x27;ZXTape&#x27; Identification if it would please more of you :)
+
+  The Two-Byte (Word) values are always stored LSB (Least Significant Byte)
+First.
+  The timings are given in Z80 clock ticks (or T states) unless otherwise
+stated.   1 T state=1sec/3500000   !
+  The values in the tables mean : Offset (in bytes), Length (in bytes
+(i.e. 1 - byte, 2 - word)) and then the description.
+  You might interpret full-period as one pulse (----____ or ____----) and
+half-period as only one half of the pulse (---- or ____).
+
+These are the possible blocks :
+
+ID : 00  -  Change of Loading Speed
+-------     By default the values in Brackets should be used. They represent
+            the values used by the Spectrum ROM loading routine. If this block
+            is never present then all blocks are saved with normal speed.
+            If my default values are incorrect then please inform me !
+
+00 2  Length of PILOT half-period     [2100]
+02 2  Length of SYNC  half-period     [700]
+04 2  Length of 0-bit half-period     [800]
+06 2  Length of 1-bit half-period     [1600]
+
+ID : 01  -  Pause
+-------     If Pause value is 0 then there should be an Indefinite Pause
+            (i.e. waiting for Keypress)
+
+00 2  Length of Pause in mili seconds (ms)
+
+ID : 02  -  Text Description
+-------     The description can be upto 255 characters long, but please keep
+            it down to about 30 so the programs can show it in one line !!!
+            This is ment to identify parts of the tapes. So you know where
+            Level 1 starts, where to rewind when you lose all the lives, etc.
+            Ofcourse you Can use it in the beginning to Identify the name of
+            the game or program used in the file.
+
+00 1  Length of the Text
+01 x  Text in ASCII
+
+ID : 03  -  DATA Block
+-------     This is the block with actual Data. It is very similar to the .TAP
+            block but with some additional Info.
+
+00 2  Length of PILOT tone (in PILOT full-periods) [2000 for Header, 4000 Data]
+02 1  Length of SYNC tone (in SYNC full-periods)              [1]
+      Some loaders don&#x27;t use this at all, so for those Length of SYNC=0.
+03 1  Used bits in LAST Byte (other bits should be 0 !)  [8]
+      i.e. if this is 6 then the bits (x) used in LAST byte are: xxxxxx00
+04 1  Starting wave (the Amplutude of FIRST half-period)      00=Low  FF=High
+      i.e. if the first pulse of PILOT starts with ---- or ____
+05 1  Reserved
+06 2  Length of DATA that follows
+08 x  DATA, the bits are saved MSb (Most Significant Bit) first
+
+  This should do it for now! I think this format is much better than .ZXS and
+is also MUCH more understandable. If you have ANY additions/corrections or any
+other ideas please post them to comp.sys.sinclair. I am not exactly sure if all
+spectrum loaders used the same coding (i.e. both half-periods are the same
+length) or not. I went through the 50 or so custom loading tapes and all of them
+have the same coding, only the timings differ. Some of them have NO pause
+between blocks (the PILOT tone of the next block is basically continuation of
+the current data part) - like StarStrike II and most of the Crash (or was that
+SU) cover tapes. Anyway, I hope we can make a better tape format !
+
+Regards,
+  Tomaz
+
+
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div><div class="post" id="p24131"><div class="ph"><a class="d" href="#p24131">1997-02-17</a> <span>…@…</span> <span>Re: Proposed New ZX Tape format</span></div><pre>
+On Mon, 17 Feb 1997 14:00:01 GMT, …@… (Tomaz Kac) wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;  This is a proposed .ZXT (.ZXTape) format with support for all kinds of Turbo</span>
+<span class="qt">&gt;and Custom Loaders. I wrote something similar once before, but got almost NONE</span>
+<span class="qt">&gt;response. I guess now that there is some more discussion on the subject someone</span>
+<span class="qt">&gt;might find this interesting - especially the emulator writers. But primarily I</span>
+<span class="qt">&gt;wrote this to use with my HypraLoader. First I wanted to use ZXS but gave it up.</span>
+
+Looks okay to me. Not that I would have to do anything besides add it to the
+FAQ... :) As you say, if emulator writers would care to comment?
+
+--
+Damien Burke (remove nojunkmail part of my address to reply)
+Speccy pages: <a href="http://www.jetman.demon.co.uk/speccy/" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/</a>
+New to this group? Read the FAQ: <a href="http://as_above/speccy/faq/" rel="noreferrer">http://as_above/speccy/faq/</a>
+Opinions are mine alone and do not represent RNSETT
+
+
+</pre></div><div class="post" id="p24133"><div class="ph"><a class="d" href="#p24133">1997-02-17</a> <span>…@…</span> <span>Re: Proposed New ZX Tape format</span></div><pre>
+On Mon, 17 Feb 1997 15:23:13 GMT, …@… (Damien
+Burke) wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Looks okay to me. Not that I would have to do anything besides add it to the</span>
+<span class="qt">&gt;FAQ... :) As you say, if emulator writers would care to comment?</span>
+<span class="qt">&gt;</span>
+
+Yeah, the format is not finished yet. I am getting some emails about it and
+already know how to improve it some more ... so better wait with the faq
+addition until it is final ... :)
+
+<span class="qt">&gt;--</span>
+<span class="qt">&gt;Damien Burke (remove nojunkmail part of my address to reply)</span>
+<span class="qt">&gt;Speccy pages: <a href="http://www.jetman.demon.co.uk/speccy/" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/</a></span>
+<span class="qt">&gt;New to this group? Read the FAQ: <a href="http://as_above/speccy/faq/" rel="noreferrer">http://as_above/speccy/faq/</a></span>
+<span class="qt">&gt;Opinions are mine alone and do not represent RNSETT</span>
+
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div><div class="post" id="p24139"><div class="ph"><a class="d" href="#p24139">1997-02-17</a> <span>…@…</span> <span>Re: Proposed New ZX Tape format</span></div><pre>
+In article &lt;…@…&gt;, Tomaz Kac (…@…) wrote:
+
+:   This is a proposed .ZXT (.ZXTape) format 
+
+  I&#x27;d prefer you called it something else than .ZXT, since that&#x27;s the type  
+extension I used for .TAP files with +3DOS headers (see TAPROM.ZEA at nvg)
+
+------------- <a href="http://www.seasip.demon.co.uk/index.html" rel="noreferrer">http://www.seasip.demon.co.uk/index.html</a> --------------------
+John Elliott           |BLOODNOK: &quot;But why have you got such a long face?&quot;
+<span class="qt">                       |SEAGOON: &quot;Heavy dentures, Sir!&quot;    - The Goon Show </span>
+:-------------------------------------------------------------------------)
+
+
+</pre></div><div class="post" id="p24157"><div class="ph"><a class="d" href="#p24157">1997-02-18</a> <span>…@…</span> <span>Re: Proposed New ZX Tape format</span></div><pre>
+On Tue, 18 Feb 1997 04:32:57 GMT, …@… (Tomaz Kac) wrote:
+
+<span class="qt">&gt;OK, even though I never saw a file with that extension I respect that :)</span>
+<span class="qt">&gt;Uhm ... now I ran out of the ideas for the extension :) Any suggestions ?</span>
+
+.TTF for Tomaz&#x27;s Tape Format? or .STF for Super/Speccy Tape Format?
+--
+Damien Burke (remove nojunkmail part of my address to reply)
+Speccy pages: <a href="http://www.jetman.demon.co.uk/speccy/" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/</a>
+New to this group? Read the FAQ: <a href="http://as_above/speccy/faq/" rel="noreferrer">http://as_above/speccy/faq/</a>
+Opinions are mine alone and do not represent RNSETT
+
+
+</pre></div><div class="post" id="p24159"><div class="ph"><a class="d" href="#p24159">1997-02-18</a> <span>…@…</span> <span>Re: Proposed New ZX Tape format</span></div><pre>
+On Tue, 18 Feb 1997 08:47:32 GMT, …@… (Damien
+Burke) wrote:
+
+<span class="qt">&gt;On Tue, 18 Feb 1997 04:32:57 GMT, …@… (Tomaz Kac) wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;OK, even though I never saw a file with that extension I respect that :)</span>
+<span class="qt">&gt;&gt;Uhm ... now I ran out of the ideas for the extension :) Any suggestions ?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;.TTF for Tomaz&#x27;s Tape Format? or .STF for Super/Speccy Tape Format?</span>
+
+.TTF stands for True Type Font already (and I (and nor many others probably)
+would not like to see my name in the file extension ;) ).
+But .STF is nice ... for Spectrum Tape Format, but why don&#x27;t we lose the word
+Format and just use Spectrum Tape ( .SPT ) ? 
+Should the magic word in the start of the file be changed to match this
+extension ??? (now it is ZXTape, but I guess it can stay since SpectrumTape is
+kinda long ;) )  ...
+
+any other suggestions ?
+
+Tomaz
+
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div><div class="post" id="p24161"><div class="ph"><a class="d" href="#p24161">1997-02-18</a> <span>…@…</span> <span>Re: Proposed New ZX Tape format</span></div><pre>
+On Tue, 18 Feb 1997 14:39:46 GMT, …@… (Tomaz Kac) wrote:
+
+<span class="qt">&gt;.TTF stands for True Type Font already (and I (and nor many others probably)</span>
+<span class="qt">&gt;would not like to see my name in the file extension ;) ).</span>
+
+Shame.
+
+<span class="qt">&gt;But .STF is nice ... for Spectrum Tape Format, but why don&#x27;t we lose the word</span>
+<span class="qt">&gt;Format and just use Spectrum Tape ( .SPT ) ? </span>
+
+SPT sounds vaguely familiar... or am I thinking of LPT?
+
+<span class="qt">&gt;Should the magic word in the start of the file be changed to match this</span>
+<span class="qt">&gt;extension ??? (now it is ZXTape, but I guess it can stay since SpectrumTape is</span>
+<span class="qt">&gt;kinda long ;) )  ...</span>
+
+How about changing it to &quot;SpectrumTapeBTWSinclairUserSucks&quot; ;)
+Or &quot;NotAC64Tape&quot;...
+
+But, being serious for a mo, how about making sure the initial magic is an
+uneven length and ending it with an EOF character (ASCII 26?) so if people try
+to view the file (e.g. with MORE) they get some idea of what it is and don&#x27;t get
+a screenful of garbage.
+--
+Damien Burke (remove nojunkmail part of my address to reply)
+Speccy pages: <a href="http://www.jetman.demon.co.uk/speccy/" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/</a>
+New to this group? Read the FAQ: <a href="http://as_above/speccy/faq/" rel="noreferrer">http://as_above/speccy/faq/</a>
+Opinions are mine alone and do not represent RNSETT
+
+
+</pre></div><div class="post" id="p24163"><div class="ph"><a class="d" href="#p24163">1997-02-18</a> <span>…@…</span> <span>Re: Proposed New ZX Tape format</span></div><pre>
+[mailed and posted]
+
+On 18 Feb 1997 15:58:59 GMT, gerton@PROBLEM_WITH_INEWS_GATEWAY_FILE () wrote:
+
+<span class="qt">&gt;Hmm, I think I missed something...  Has a suggestion as to how the format</span>
+<span class="qt">&gt;is going to look like been posted already?  I didn&#x27;t see it.  Or are you</span>
+<span class="qt">&gt;all discussing the extension first, before thinking about the details.. :-)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Could someone please repost the suggested new tape format, or mail it to</span>
+<span class="qt">&gt;me?  (…@…).  Thanks,</span>
+
+See the thread called &#x27;Update of the ZXTape format&#x27; where Tomaz has posted the
+latest suggestion.
+-- 
+    //// Damien Burke (to reply, remove the &#x27;nojunkmail&#x27; part from my address)
+  //// Spectrum pages: <a href="http://www.jetman.demon.co.uk/speccy/" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/</a>
+//// New to this group? Read this: <a href="http://www.jetman.demon.co.uk/speccy/faq/" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/faq/</a>
+
+
+</pre></div><div class="post" id="p24164"><div class="ph"><a class="d" href="#p24164">1997-02-18</a> <span>…@…</span> <span>Re: Proposed New ZX Tape format</span></div><pre>
+On 17 Feb 1997 19:05:44 GMT, …@…  (John Elliott)
+wrote:
+
+<span class="qt">&gt;In article &lt;…@…&gt;, Tomaz Kac (…@…) wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;:   This is a proposed .ZXT (.ZXTape) format </span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;  I&#x27;d prefer you called it something else than .ZXT, since that&#x27;s the type  </span>
+<span class="qt">&gt;extension I used for .TAP files with +3DOS headers (see TAPROM.ZEA at nvg)</span>
+
+OK, even though I never saw a file with that extension I respect that :)
+Uhm ... now I ran out of the ideas for the extension :) Any suggestions ?
+
+Tomaz
+
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div><div class="post" id="p24174"><div class="ph"><a class="d" href="#p24174">1997-02-18</a> <span>gerton@problem_WITH_INEWS_GATEWAY_FILE</span> <span>Re: Proposed New ZX Tape format</span></div><pre>
+
+Damien Burke (…@…) wrote:
+<span class="qt">&gt; On Tue, 18 Feb 1997 14:39:46 GMT, …@… (Tomaz Kac) wrote:</span>
+
+<span class="qt">&gt; &gt;But .STF is nice ... for Spectrum Tape Format, but why don&#x27;t we lose the word</span>
+<span class="qt">&gt; &gt;Format and just use Spectrum Tape ( .SPT ) ? </span>
+
+
+Hmm, I think I missed something...  Has a suggestion as to how the format
+is going to look like been posted already?  I didn&#x27;t see it.  Or are you
+all discussing the extension first, before thinking about the details.. :-)
+
+Could someone please repost the suggested new tape format, or mail it to
+me?  (…@…).  Thanks,
+
+
+Gerton.
+
+
+
+</pre></div><div class="post" id="p24191"><div class="ph"><a class="d" href="#p24191">1997-02-19</a> <span>…@…</span> <span>Re: Proposed New ZX Tape format</span></div><pre>
+On 19 Feb 1997 11:03:35 GMT, gerton@PROBLEM_WITH_INEWS_GATEWAY_FILE () wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; So the file structure is :  &#x27;ZXTape&#x27; ID1 Body1 ID2 Body2 ...</span>
+<span class="qt">&gt;&gt;                              0       6   7     ...</span>
+<span class="qt">&gt;&gt; Or without the &#x27;ZXTape&#x27; Identification if it would please more of you :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I very much agree with having an ID string at the beginning.  Someone</span>
+<span class="qt">&gt;commented that this string should end in 27dec, ^Z, so that the screen</span>
+<span class="qt">&gt;would not be messed up if you TYPE&#x27;d (erm, PG&#x27;ed of course) it to the</span>
+<span class="qt">&gt;terminal.</span>
+
+Yep, same here. But the EOF character is 26 (1A hex) - tested it :) 
+Suggestion was to keep the length of the ID string (with the EOF) to an even
+number... so what about &#x27;ZXTape!&#x27; and 26dec (1A hex) ?
+
+<span class="qt">&gt;From Ian Logan and Frank O&#x27;hara I get these figures:</span>
+<span class="qt">&gt;First sync (half-period) 667 T&#x27;s</span>
+<span class="qt">&gt;Second sync (half-period) 735 T&#x27;s</span>
+
+All changes applied.
+Anyway to put all this in order the CHANGE SPEED BLOCK has now a switch, with
+which you tell it WHICH value it should change (because some of the turbo
+loaders still use Standard PILOT signal and/or SYNC). I hope this is OK with
+everyone, it does keep the length of the file down a bit ... Here is the block :
+
+ID : 00  -  Loading Speed Change for Custom Loading Blocks
+-------     and Change of the Standard Pause
+
+          If this block is never present then all blocks are saved with normal
+          speed. The Default values are supplied by Gerton and should be correct
+          NOTE: ALL CUSTOM LOADING blocks that follow this block use the
+          applied change ! The Standard Pause is applied after ALL Blocks that
+          don&#x27;t have a special Pause Block (ID=01) After them !!!
+
+00 1  Change which Value : 00 - Length of PILOT half-period        [2168]
+                           01 - Length of SYNC First half-period   [667]
+                           02 - Length of SYNC Second half-period  [735]
+                           03 - Length of ZERO-bit half-period     [855]
+                           04 - Length of ONE-bit half-period      [1710]
+                           05 - Standard Pause After Blocks        [10]
+
+01 2  Value : for 00-04 in Z80 T-States
+              for 05    First byte contains value in tenth of seconds (1s/10)
+                        Second byte should contain 0 !
+
+<span class="qt">&gt;&gt; ID : 01  -  Pause</span>
+<span class="qt">&gt;&gt; -------     If Pause value is 0 then there should be an Indefinite Pause</span>
+<span class="qt">&gt;&gt;             (i.e. waiting for Keypress)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; 00 2  Length of Pause in mili seconds (ms)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I suggest we do tenth of seconds here.  Then 0 would be no pause, 10=normal,</span>
+<span class="qt">&gt;and 255=indefinite (not 25.5 seconds).  There is no need to specify the pause</span>
+<span class="qt">&gt;accurate up to milliseconds, and with tenth of seconds we can do with a byte.</span>
+
+Applied... the Pause block now looks like this :
+
+ID : 01  -  Pause
+-------
+          If there should be a longer (or shorter) Pause then a Standard
+          Pause then this block should be used.
+          If the Value is 0   then there should be absolutely NO pause.
+          If the Value is 255 then the Pause should be Indefinite
+                                   (Waiting for a keypress)
+
+00 1  Value of the pause in tenth of seconds (1s/10)
+
+<span class="qt">&gt;&gt; ID : 03  -  DATA Block</span>
+<span class="qt">&gt;&gt; -------     This is the block with actual Data. It is very similar to the .TAP</span>
+<span class="qt">&gt;&gt;             block but with some additional Info.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; 00 2  Length of PILOT tone (in PILOT full-periods) [2000 for Header, 4000 Data]</span>
+<span class="qt">&gt;Header is longer than data.  Original values are: 8064 (dec) for header,</span>
+<span class="qt">&gt;3220 (dec) for data.</span>
+
+Ofcourse, my mistake (it was changed in the 0.1 version ;) ) ... but I seemed to
+get the values all wrong :( Thanx Gerton !
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; 02 1  Length of SYNC tone (in SYNC full-periods)              [1]</span>
+<span class="qt">&gt;&gt;       Some loaders don&#x27;t use this at all, so for those Length of SYNC=0.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Does anyone know of a tape format that uses more than 1 sync full period?</span>
+<span class="qt">&gt;A flag indicating whether or not the sync is present would be necessary.</span>
+
+True... there is now a General Purpose Flag Byte of which bit 0 (LSb) is the
+flag for whether the SYNC bit is present.
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; 03 1  Used bits in LAST Byte (other bits should be 0 !)  [8]</span>
+<span class="qt">&gt;&gt;       i.e. if this is 6 then the bits (x) used in LAST byte are: xxxxxx00</span>
+<span class="qt">&gt;&gt; 04 1  Starting wave (the Amplutude of FIRST half-period)      00=Low  FF=High</span>
+<span class="qt">&gt;&gt;       i.e. if the first pulse of PILOT starts with ---- or ____</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;This I object against.  The standard load routine is insensitive to the po-</span>
+<span class="qt">&gt;larity of the signal, as it should be, because one cannot be sure whether</span>
+<span class="qt">&gt;or not the tape recorder changes the polarity.  Any loading routine should</span>
+<span class="qt">&gt;be similarly insensitive to the polarity.  So let&#x27;s not include a polarity</span>
+<span class="qt">&gt;flag.</span>
+
+True, therefore it is deleted . One quick note though... if there is NO pause
+between the two blocks then the program should keep track of the last amplitude
+of the last pulse from the first block, so the Pilot signal of the next block
+would follow correctly (i.e. with the opposite amplitude).
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; 05 1  Reserved</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Should contain 0 then.</span>
+<span class="qt">&gt;</span>
+
+Yes, but I deleted it... Hopefully thats ok (everything is alligned correctly
+now (inside the block). There are still 7 bits empty in the General Purpose Flag
+... if any flag would still be necessary to add. Otherwise it can be renamed
+back to SYNC Byte present with only two values.
+
+<span class="qt">&gt;&gt; 06 2  Length of DATA that follows</span>
+<span class="qt">&gt;&gt; 08 x  DATA, the bits are saved MSb (Most Significant Bit) first</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Let&#x27;s also agree that when the pause block says &#x27;no pause&#x27;, then the emulator</span>
+<span class="qt">&gt;indeed puts in no pause at all, not a single T state.  In this way, it is</span>
+<span class="qt">&gt;even possible to put the loading format of say Tomahawk, with ticks in the</span>
+<span class="qt">&gt;leader, into .ZXS (or whatever extension...) format.</span>
+<span class="qt">&gt;</span>
+
+Yes, true. Thats why I made some drastic changes in the second version of PAUSE
+command (but now it is almost back to where it was in the first version) ... I
+hope this way it is OK for everyone .
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Maybe we can also include another type of block, &#x27;standard .TAP block&#x27;.</span>
+<span class="qt">&gt;This would make most files slightly shorter.  Every tape file starts with</span>
+<span class="qt">&gt;(a few) standard format blocks.  </span>
+
+OK, there is a NEW block with ID 04 which is for this purpose. NO speed changes
+apply to this block.
+
+Please take a look at the next posting where the whole tape format update will
+be written. I will also send it to Gerton personally just in case he misses it
+:)
+
+Reagards,
+  Tomaz
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div><div class="post" id="p24194"><div class="ph"><a class="d" href="#p24194">1997-02-19</a> <span>…@…</span> <span>Re: Proposed New ZX Tape format</span></div><pre>
+On Tue, 18 Feb 1997 15:42:36 GMT, …@… (Damien
+Burke) wrote:
+
+<span class="qt">&gt;SPT sounds vaguely familiar... or am I thinking of LPT?</span>
+<span class="qt">&gt;</span>
+
+Yeah, .LPT is basically the same as .TAP :)
+
+<span class="qt">&gt;But, being serious for a mo, how about making sure the initial magic is an</span>
+<span class="qt">&gt;uneven length and ending it with an EOF character (ASCII 26?) so if people try</span>
+<span class="qt">&gt;to view the file (e.g. with MORE) they get some idea of what it is and don&#x27;t get</span>
+<span class="qt">&gt;a screenful of garbage.</span>
+
+OK, changed to &#x27;ZXTape!&#x27; and ASCII 26 ... so the length of the magic is 8 :)
+Hopefully it is good this way.
+
+Check out the next posting containing the new revision of the format with the
+additions proposed by Gerton!
+
+Tomaz
+
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div><div class="post" id="p24197"><div class="ph"><a class="d" href="#p24197">1997-02-19</a> <span>gerton@problem_WITH_INEWS_GATEWAY_FILE</span> <span>Re: Proposed New ZX Tape format</span></div><pre>
+Tomaz Kac (…@…) wrote:
+
+<span class="qt">&gt;   This is a proposed .ZXT (.ZXTape) format with support for all kinds of Turbo</span>
+<span class="qt">&gt; and Custom Loaders. I wrote something similar once before, but got almost NONE</span>
+
+[snip]
+
+
+<span class="qt">&gt; So the file structure is :  &#x27;ZXTape&#x27; ID1 Body1 ID2 Body2 ...</span>
+<span class="qt">&gt;                              0       6   7     ...</span>
+<span class="qt">&gt; Or without the &#x27;ZXTape&#x27; Identification if it would please more of you :)</span>
+
+I very much agree with having an ID string at the beginning.  Someone
+commented that this string should end in 27dec, ^Z, so that the screen
+would not be messed up if you TYPE&#x27;d (erm, PG&#x27;ed of course) it to the
+terminal.
+
+<span class="qt">&gt;   The timings are given in Z80 clock ticks (or T states) unless otherwise</span>
+<span class="qt">&gt; stated.   1 T state=1sec/3500000   !</span>
+
+Absolutely.
+
+<span class="qt">&gt;   The values in the tables mean : Offset (in bytes), Length (in bytes</span>
+<span class="qt">&gt; (i.e. 1 - byte, 2 - word)) and then the description.</span>
+<span class="qt">&gt;   You might interpret full-period as one pulse (----____ or ____----) and</span>
+<span class="qt">&gt; half-period as only one half of the pulse (---- or ____).</span>
+
+<span class="qt">&gt; These are the possible blocks :</span>
+
+<span class="qt">&gt; ID : 00  -  Change of Loading Speed</span>
+<span class="qt">&gt; -------     By default the values in Brackets should be used. They represent</span>
+<span class="qt">&gt;             the values used by the Spectrum ROM loading routine. If this block</span>
+<span class="qt">&gt;             is never present then all blocks are saved with normal speed.</span>
+<span class="qt">&gt;             If my default values are incorrect then please inform me !</span>
+
+<span class="qt">&gt; 00 2  Length of PILOT half-period     [2100]</span>
+<span class="qt">&gt; 02 2  Length of SYNC  half-period     [700]</span>
+<span class="qt">&gt; 04 2  Length of 0-bit half-period     [800]</span>
+<span class="qt">&gt; 06 2  Length of 1-bit half-period     [1600]</span>
+
+From Ian Logan and Frank O&#x27;hara I get these figures:
+Pilot half-period is 2168 T&#x27;s
+First sync (half-period) 667 T&#x27;s
+Second sync (half-period) 735 T&#x27;s
+Zero bit half-period 855 T&#x27;s
+One bit half-period 2x855=1710 T&#x27;s
+
+<span class="qt">&gt; ID : 01  -  Pause</span>
+<span class="qt">&gt; -------     If Pause value is 0 then there should be an Indefinite Pause</span>
+<span class="qt">&gt;             (i.e. waiting for Keypress)</span>
+
+<span class="qt">&gt; 00 2  Length of Pause in mili seconds (ms)</span>
+
+I suggest we do tenth of seconds here.  Then 0 would be no pause, 10=normal,
+and 255=indefinite (not 25.5 seconds).  There is no need to specify the pause
+accurate up to milliseconds, and with tenth of seconds we can do with a byte.
+
+
+<span class="qt">&gt; ID : 02  -  Text Description</span>
+<span class="qt">&gt; -------     The description can be upto 255 characters long, but please keep</span>
+<span class="qt">&gt;             it down to about 30 so the programs can show it in one line !!!</span>
+<span class="qt">&gt;             This is ment to identify parts of the tapes. So you know where</span>
+<span class="qt">&gt;             Level 1 starts, where to rewind when you lose all the lives, etc.</span>
+<span class="qt">&gt;             Ofcourse you Can use it in the beginning to Identify the name of</span>
+<span class="qt">&gt;             the game or program used in the file.</span>
+
+<span class="qt">&gt; 00 1  Length of the Text</span>
+<span class="qt">&gt; 01 x  Text in ASCII</span>
+
+<span class="qt">&gt; ID : 03  -  DATA Block</span>
+<span class="qt">&gt; -------     This is the block with actual Data. It is very similar to the .TAP</span>
+<span class="qt">&gt;             block but with some additional Info.</span>
+
+<span class="qt">&gt; 00 2  Length of PILOT tone (in PILOT full-periods) [2000 for Header, 4000 Data]</span>
+Header is longer than data.  Original values are: 8064 (dec) for header,
+3220 (dec) for data.
+
+<span class="qt">&gt; 02 1  Length of SYNC tone (in SYNC full-periods)              [1]</span>
+<span class="qt">&gt;       Some loaders don&#x27;t use this at all, so for those Length of SYNC=0.</span>
+
+Does anyone know of a tape format that uses more than 1 sync full period?
+A flag indicating whether or not the sync is present would be necessary.
+
+<span class="qt">&gt; 03 1  Used bits in LAST Byte (other bits should be 0 !)  [8]</span>
+<span class="qt">&gt;       i.e. if this is 6 then the bits (x) used in LAST byte are: xxxxxx00</span>
+<span class="qt">&gt; 04 1  Starting wave (the Amplutude of FIRST half-period)      00=Low  FF=High</span>
+<span class="qt">&gt;       i.e. if the first pulse of PILOT starts with ---- or ____</span>
+
+This I object against.  The standard load routine is insensitive to the po-
+larity of the signal, as it should be, because one cannot be sure whether
+or not the tape recorder changes the polarity.  Any loading routine should
+be similarly insensitive to the polarity.  So let&#x27;s not include a polarity
+flag.
+
+<span class="qt">&gt; 05 1  Reserved</span>
+
+Should contain 0 then.
+
+<span class="qt">&gt; 06 2  Length of DATA that follows</span>
+<span class="qt">&gt; 08 x  DATA, the bits are saved MSb (Most Significant Bit) first</span>
+
+Let&#x27;s also agree that when the pause block says &#x27;no pause&#x27;, then the emulator
+indeed puts in no pause at all, not a single T state.  In this way, it is
+even possible to put the loading format of say Tomahawk, with ticks in the
+leader, into .ZXS (or whatever extension...) format.
+
+
+Maybe we can also include another type of block, &#x27;standard .TAP block&#x27;.
+This would make most files slightly shorter.  Every tape file starts with
+(a few) standard format blocks.  
+
+
+Gerton.
+
+
+</pre></div><div class="post" id="p24286"><div class="ph"><a class="d" href="#p24286">1997-02-23</a> <span>darren salt</span> <span>Re: Proposed New ZX Tape format</span></div><pre>
+In article &lt;…@…&gt;
+          …@… (Damien Burke) wrote:
+
+<span class="qt">&gt; On Tue, 18 Feb 1997 14:39:46 GMT, …@… (Tomaz Kac) wrote:</span>
+[snip]
+<span class="qt">&gt;&gt; But .STF is nice ... for Spectrum Tape Format, but why don&#x27;t we lose the</span>
+<span class="qt">&gt;&gt; word Format and just use Spectrum Tape ( .SPT ) ?</span>
+
+<span class="qt">&gt; SPT sounds vaguely familiar... or am I thinking of LPT?</span>
+
+LPT, AFAIK, isn&#x27;t used anywhere... SPT is - I know, I&#x27;ve seen it used by a
+file splitting utility...
+
+-- 
+<span class="qt">| Darren Salt              | 01268 515441 | Acorn Risc PC,    | Toon Army</span>
+<span class="qt">| …@… | free email &amp; | A3010, BBC Master | Season ticket</span>
+<span class="qt">| …@…    | Usenet       | Spectrum +3       |</span>
+<span class="qt">|   Flying the British flag in the UEFA Cup</span>
+
+Blessed are the young for they shall inherit the National Debt.
+
+
+</pre></div><div class="post" id="p24313"><div class="ph"><a class="d" href="#p24313">1997-02-24</a> <span>…@…</span> <span>Re: Proposed New ZX Tape format</span></div><pre>
+On Sun, 23 Feb 1997 19:59:15 GMT, Darren Salt  wrote:
+
+<span class="qt">&gt;In article &lt;…@…&gt;</span>
+<span class="qt">&gt;          …@… (Damien Burke) wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; On Tue, 18 Feb 1997 14:39:46 GMT, …@… (Tomaz Kac) wrote:</span>
+<span class="qt">&gt;[snip]</span>
+<span class="qt">&gt;&gt;&gt; But .STF is nice ... for Spectrum Tape Format, but why don&#x27;t we lose the</span>
+<span class="qt">&gt;&gt;&gt; word Format and just use Spectrum Tape ( .SPT ) ?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; SPT sounds vaguely familiar... or am I thinking of LPT?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;LPT, AFAIK, isn&#x27;t used anywhere... SPT is - I know, I&#x27;ve seen it used by a</span>
+<span class="qt">&gt;file splitting utility...</span>
+
+Uhm.... LTP is a format used by Radovan&#x27;s Spectrum emulator (it does resemble
+LPT),   LPT is a Line Printer device under MSDOS ;) or atleast I think it is... 
+I know many programs who have .DAT as their default extension, so i wouldnt
+worry if some file splitting utility that has nothing to do with a spectrum (or
+maybe it does ??? to split .TAP files ???) uses the same extension... anyway
+this is how many votes each format got until now :
+
+.SPT   2
+.TZX   1
+.TPE  1
+
+:) Do vote on it ! or suggest other...
+
+Tomaz
+
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div><div class="post" id="p24415"><div class="ph"><a class="d" href="#p24415">1997-02-27</a> <span>…@…</span> <span>Re: Proposed New ZX Tape format</span></div><pre>
+Darren Salt (…@…) wrote:
+
+: LPT, AFAIK, isn&#x27;t used anywhere... SPT is - I know, I&#x27;ve seen it used by a
+: file splitting utility...
+
+LPT might get confused with its printer connotation (sp?) (abbreviation for 
+Line PrinTer perhaps?). But then that&#x27;s only on DOS PCs (*spit*)...
+
+--
+James
+
+&quot;Under a pale grey sky, we shall arise&quot; (Sepultura)
+
+
+</pre></div></main></body></html>

@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANN: SE Basic RC1 / AY note tables · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANN: SE Basic RC1 / AY note tables</h1><p class="facts">11 posts, 2010-02-19 – 2010-03-10</p><div class="post" id="p221655"><div class="ph"><a class="d" href="#p221655">2010-02-19 01:18:43</a> <span>OwenBot</span>  <a class="badge" href="https://spectrumcomputing.co.uk/entry/27510">ZXDB: OpenSE BASIC</a></div><pre>I&#x27;m pleased to announce SE Basic RC1. This is almost feature complete
+(there are 66 bytes left) and fixes some issues with Beta 2. Same link
+as before (and same file name, but different contents when you expand
+the zip file).
+
+<a href="http://bit.ly/d64mo3" rel="noreferrer">http://bit.ly/d64mo3</a>
+
+Even those with no interest in SE Basic may be interested in the
+release note as I have included complete 8 octave note tables for all
+three variant clock speeds of the AY chip found in official and
+licensed machines.
+
+
+
+</pre></div><div class="post" id="p221656"><div class="ph"><a class="d" href="#p221656">2010-02-20 06:45:02</a> <span>OwenBot</span> <span>Re: ANN: SE Basic RC1 / AY note tables</span></div><pre>Ahem. Bumped to RC2 because at some point, even before Beta 2, I&#x27;d
+managed to overwrite the 8 byte table that is used to set the 64
+colour palette. Down to 58 spare bytes now.
+
+
+
+</pre></div><div class="post" id="p221657"><div class="ph"><a class="d" href="#p221657">2010-02-21 02:03:47</a> <span>OwenBot</span> <span>Re: ANN: SE Basic RC1 / AY note tables</span></div><pre>And now RC3. No more GO TO characters during loading. Juggled things
+around a bit and now there are 68 bytes available. I really want to
+get DEC in there if I can.
+
+
+
+</pre></div><div class="post" id="p221659"><div class="ph"><a class="d" href="#p221659">2010-02-21 17:14:51</a> <span>BloodBaz</span> <span>Re: ANN: SE Basic RC1 / AY note tables</span></div><pre>On 21 Feb, 02:03, OwenBot &lt;…@…&gt; wrote:
+<span class="qt">&gt; And now RC3. No more GO TO characters during loading. Juggled things</span>
+<span class="qt">&gt; around a bit and now there are 68 bytes available. I really want to</span>
+<span class="qt">&gt; get DEC in there if I can.</span>
+
+The up/down keys during an EDIT is great and it is fine also that they
+go to the begining and end of a line when on the first or last line.
+However, after pressing UP to go to the beginning of the line, DOWN
+fails to work until you have moved RIGHT at least one character.  Are
+you aware of this?
+
+PS: Just discovered the &amp; character for inputting hex.  Love it.
+Still struggling to operate a spectrum emulator with it in, esp. as I
+move between my +2A and emulator!
+
+
+
+</pre></div><div class="post" id="p221660"><div class="ph"><a class="d" href="#p221660">2010-02-21 19:35:02</a> <span>OwenBot</span> <span>Re: ANN: SE Basic RC1 / AY note tables</span></div><pre>On 21 Feb, 17:14, BloodBaz &lt;…@…&gt; wrote:
+
+<a href="http://bit.ly/d64mo3" rel="noreferrer">http://bit.ly/d64mo3</a>
+
+And now up to RC4, which is the final release candidate. The next one
+is the live release.
+
+<span class="qt">&gt; The up/down keys during an EDIT is great and it is fine also that they</span>
+<span class="qt">&gt; go to the begining and end of a line when on the first or last line.</span>
+<span class="qt">&gt; However, after pressing UP to go to the beginning of the line, DOWN</span>
+<span class="qt">&gt; fails to work until you have moved RIGHT at least one character.  Are</span>
+<span class="qt">&gt; you aware of this?</span>
+
+Yes, it&#x27;s expected functionality. When you&#x27;re on the zero character up
+and down move the edit line up and down as before.
+
+<span class="qt">&gt; PS: Just discovered the &amp; character for inputting hex.  Love it.</span>
+<span class="qt">&gt; Still struggling to operate a spectrum emulator with it in, esp. as I</span>
+<span class="qt">&gt; move between my +2A and emulator!</span>
+
+And now it&#x27;s joined by the ~ character for converting decimal. It&#x27;s a
+real calculator function (replacing e-to-fp) and returns a four
+character string.
+
+
+
+</pre></div><div class="post" id="p221661"><div class="ph"><a class="d" href="#p221661">2010-02-22 01:11:28</a> <span>zxbruno</span> <span>Re: ANN: SE Basic RC1 / AY note tables</span></div><pre>Chris, do you think you could come up with a small listing showing
+what SE Basic is capable of? It would be great to see.
+
+
+
+</pre></div><div class="post" id="p221666"><div class="ph"><a class="d" href="#p221666">2010-02-22 09:24:36</a> <span>BloodBaz</span> <span>Re: ANN: SE Basic RC1 / AY note tables</span></div><pre>On Feb 22, 1:11 am, zxbruno &lt;…@…&gt; wrote:
+<span class="qt">&gt; Chris, do you think you could come up with a small listing showing</span>
+<span class="qt">&gt; what SE Basic is capable of? It would be great to see.</span>
+
+Moi?  I can see what I can do.  I warn you though, our first child is
+almost due and I might be out of action for a week or two, but a great
+idea.
+
+
+
+</pre></div><div class="post" id="p221671"><div class="ph"><a class="d" href="#p221671">2010-02-23 10:51:07</a> <span>OwenBot</span> <span>Re: ANN: SE Basic RC1 / AY note tables</span></div><pre>I have updated the RC4 notes as there was an error in the +2A/+3
+paging section. I have changed the wording of the credits as requested
+by the major contributor. I have added all the names I can think of
+for those may or may not have contributed code.
+
+I added the footnote because of a number of misleading posts on WoSF,
+including the statement: &quot;You can&#x27;t simply shorten error messages by
+using tokens as any character over 127 is used to mark the end of the
+message and all tokens are over 127.&quot; Well I did shorten the error
+messages by using tokens. Open the ROM in a hex editor and look at the
+error messages if you want proof. :)
+
+
+
+</pre></div><div class="post" id="p221674"><div class="ph"><a class="d" href="#p221674">2010-02-23 17:59:22</a> <span>Geoff Wearmouth</span> <span>Re: ANN: SE Basic RC1 / AY note tables</span></div><pre>On 23 Feb, 10:51, OwenBot &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; I added the footnote because of a number of misleading posts on WoSF,</span>
+<span class="qt">&gt; including the statement: &quot;You can&#x27;t simply shorten error messages by</span>
+<span class="qt">&gt; using tokens as any character over 127 is used to mark the end of the</span>
+<span class="qt">&gt; message and all tokens are over 127.&quot; Well I did shorten the error</span>
+<span class="qt">&gt; messages by using tokens. Open the ROM in a hex editor and look at the</span>
+<span class="qt">&gt; error messages if you want proof. :)</span>
+
+That will be me then :-)
+The ROM that is there now is not the ROM that was there when I wrote
+that.
+I said that any space saving had not been implemented and noted that a
+simple 9999 RETURN gave the error
+
+7 RETURN without GOSUB, 9999:1
+
+It now gives
+
+7 RETURN without GO SUB, 9999:1
+
+That&#x27;s 31 characters and not enough for a 3-digit statement number.
+By using space in the spare section of ROM you have dealt with
+characters over 127 and it is only by looking at the source code that
+the number of bytes saved can be quantified. I think you have won but
+the margin is slight.
+
+
+
+
+
+</pre></div><div class="post" id="p221686"><div class="ph"><a class="d" href="#p221686">2010-02-23 22:47:26</a> <span>OwenBot</span> <span>Re: ANN: SE Basic RC1 / AY note tables</span></div><pre>On Feb 23, 5:59 pm, Geoff Wearmouth &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; The ROM that is there now is not the ROM that was there when I wrote</span>
+<span class="qt">&gt; that.</span>
+
+Perhaps not, but the tokens in error messages have been in since RC1
+on 15th February and you stated you hadn&#x27;t heard of it until the 21st.
+
+<span class="qt">&gt; I said that any space saving had not been implemented</span>
+
+It had, honestly.
+
+<span class="qt">&gt; It now gives</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; 7 RETURN without GO SUB, 9999:1</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; That&#x27;s 31 characters and not enough for a 3-digit statement number.</span>
+
+I don&#x27;t recall ever seeing a line of BASIC with 99 nested statements
+after the first one. Even with the increased line range you&#x27;d still
+need a RETURN without GO SUB error to occur on the 10th nested
+statement or later. Also when the line runs over it doesn&#x27;t actually
+cause any problems. If it really bothers people I can drop the leading
+error number/letter.
+
+<span class="qt">&gt; By using space in the spare section of ROM you have dealt with</span>
+<span class="qt">&gt; characters over 127 and it is only by looking at the source code that</span>
+<span class="qt">&gt; the number of bytes saved can be quantified. I think you have won but</span>
+<span class="qt">&gt; the margin is slight.</span>
+
+Slight indeed. About 27 bytes, but enough room for a new use for
+calculator literal 3C as a HEX$ function.
+
+
+
+</pre></div><div class="post" id="p221808"><div class="ph"><a class="d" href="#p221808">2010-03-10 11:50:21</a> <span>OwenBot</span> <span>Re: ANN: SE Basic RC1 / AY note tables</span></div><pre>The best laid plans... after finding a number of issues in the
+unreleased RC5, and having decided that IF1 and +D support do matter,
+I&#x27;ve been refactoring. Watch this space.
+
+
+
+</pre></div></main></body></html>

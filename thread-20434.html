@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chaos Editor? · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Chaos Editor?</h1><p class="facts">9 posts, 2001-01-12 – 2001-01-14</p><div class="post" id="p83717"><div class="ph"><a class="d" href="#p83717">2001-01-12 18:19:03</a> <span>Ian Gledhill</span> </div><pre>Hi Everybody,
+
+Maybe - just maybe - someone here can help satiate my curiosity....
+
+I&#x27;ve just noticed from pure coincidence that Emulate! magazine (issue 1)
+contained the Chaos Editor, and in the 1997 Speccy FAQ it lists one
+Peter Thomas as having a webpage &quot;and his Chaos Editor&quot;.
+
+How many people here have ever used this? Is it the same program?
+
+I&#x27;m intrigued as to how many people were &quot;blessed&quot; with this program
+&#x27;cos it was the first program I ever wrote and got published (back when
+I were a lad at the tender age of 13).  I notice that Emulate! very
+kindly removed my name from the copy they saved, though, and put their
+own on! How kind!
+
+Anybody know anything about its distribution? I didn`t even know anyone
+had bothered to type it in from Program Pitstop! :-)
+
+BTW, anyone want a copy of version 2, with machine codey bits? :-)
+
+--
+Ian Gledhill
+…@…   IanG@**nospam.**amiganet.org**.please**
+
+
+Sent via Deja.com
+<a href="http://www.deja.com/" rel="noreferrer">http://www.deja.com/</a>
+
+
+
+</pre></div><div class="post" id="p83744"><div class="ph"><a class="d" href="#p83744">2001-01-12 23:02:34</a> <span>Pete T</span> <span>Re: Chaos Editor?</span></div><pre>On Fri, 12 Jan 2001 18:19:03 GMT, Ian Gledhill &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;Maybe - just maybe - someone here can help satiate my curiosity....</span>
+<span class="qt">&gt;I&#x27;ve just noticed from pure coincidence that Emulate! magazine (issue 1)</span>
+<span class="qt">&gt;contained the Chaos Editor, and in the 1997 Speccy FAQ it lists one</span>
+<span class="qt">&gt;Peter Thomas as having a webpage &quot;and his Chaos Editor&quot;.</span>
+
+&lt;steps forward, blushes&gt;
+
+Erm, that&#x27;d be me then. I did write my own Chaos Editor, back in about
+1996, using Spectrum Emulator 1.7 on the Amiga, and all it did was let
+you change the values. (It was just a BASIC prog really)
+
+I had a very tiny Speccy site, which was on
+<a href="http://www.prodge.demon.co.uk/speccy" rel="noreferrer">http://www.prodge.demon.co.uk/speccy</a>
+
+That hasn&#x27;t been in existence since about 1997 or 1998. (Can&#x27;t quite
+remember when I left Demon)
+
+<span class="qt">&gt;How many people here have ever used this? Is it the same program?</span>
+
+I&#x27;ve not come across Emulate! magazine, but I&#x27;d be surprised if it was
+my program. I downloaded someone&#x27;s Chaos Editor a while ago, and it
+really outclasses mine. I mean, it lets you edit the graphics as well,
+so my own one is really poor and pointless now!
+
+<span class="qt">&gt;I&#x27;m intrigued as to how many people were &quot;blessed&quot; with this program</span>
+<span class="qt">&gt;&#x27;cos it was the first program I ever wrote and got published (back when</span>
+<span class="qt">&gt;I were a lad at the tender age of 13).  I notice that Emulate! very</span>
+<span class="qt">&gt;kindly removed my name from the copy they saved, though, and put their</span>
+<span class="qt">&gt;own on! How kind!</span>
+
+What a bunch of baskets!
+
+<span class="qt">&gt;Anybody know anything about its distribution? I didn`t even know anyone</span>
+<span class="qt">&gt;had bothered to type it in from Program Pitstop! :-)</span>
+
+I think it may be on WOS somewhere.
+
+<span class="qt">&gt;BTW, anyone want a copy of version 2, with machine codey bits? :-)</span>
+
+Yes please!
+
+-- 
+pete @ sinclairspectrum {DOT} com
+
+I&#x27;d tell you to look at www.sinclairspectrum.com if it were ready.
+
+
+
+</pre></div><div class="post" id="p83767"><div class="ph"><a class="d" href="#p83767">2001-01-13 11:32:56</a> <span>Ian Gledhill</span> <span>Re: Chaos Editor?</span></div><pre>Wotcher,
+
+In article &lt;…@…&gt;,
+  …@… (Pete T) wrote:
+<span class="qt">&gt; On Fri, 12 Jan 2001 18:19:03 GMT, Ian Gledhill &lt;…@…&gt;</span>
+<span class="qt">&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;Maybe - just maybe - someone here can help satiate my curiosity....</span>
+<span class="qt">&gt; &gt;I&#x27;ve just noticed from pure coincidence that Emulate! magazine (issue 1)</span>
+<span class="qt">&gt; &gt;contained the Chaos Editor, and in the 1997 Speccy FAQ it lists one</span>
+<span class="qt">&gt; &gt;Peter Thomas as having a webpage &quot;and his Chaos Editor&quot;.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &lt;steps forward, blushes&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Erm, that&#x27;d be me then. I did write my own Chaos Editor, back in about</span>
+<span class="qt">&gt; 1996, using Spectrum Emulator 1.7 on the Amiga, and all it did was let</span>
+<span class="qt">&gt; you change the values. (It was just a BASIC prog really)</span>
+
+Heh.. so was mine. At least, version one was. :-) Hey, I was only 13 at
+the time - for the machine coded version I had to hand-assemble it!
+That&#x27;s why there&#x27;s only a few machine code routines in V2, just enough
+to speed it up 500 fold..
+
+<span class="qt">&gt; I had a very tiny Speccy site, which was on</span>
+<span class="qt">&gt; <a href="http://www.prodge.demon.co.uk/speccy" rel="noreferrer">http://www.prodge.demon.co.uk/speccy</a></span>
+
+Yeah, _that&#x27;s_ the site I couldn`t get to!
+
+<span class="qt">&gt; &gt;How many people here have ever used this? Is it the same program?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;ve not come across Emulate! magazine, but I&#x27;d be surprised if it was</span>
+<span class="qt">&gt; my program. I downloaded someone&#x27;s Chaos Editor a while ago, and it</span>
+<span class="qt">&gt; really outclasses mine. I mean, it lets you edit the graphics as well,</span>
+<span class="qt">&gt; so my own one is really poor and pointless now!</span>
+
+Coo, ta. :-)
+IIRC the data for the characters included the stats, the name _and the
+addresses of the animation frames_, so it was only one step from the
+name to the graphics. One grid and cursor knocked up later, and you
+could change the graphics. Whoopee! :-)
+
+<span class="qt">&gt; &gt;I&#x27;m intrigued as to how many people were &quot;blessed&quot; with this program</span>
+<span class="qt">&gt; &gt;&#x27;cos it was the first program I ever wrote and got published (back when</span>
+<span class="qt">&gt; &gt;I were a lad at the tender age of 13).  I notice that Emulate! very</span>
+<span class="qt">&gt; &gt;kindly removed my name from the copy they saved, though, and put their</span>
+<span class="qt">&gt; &gt;own on! How kind!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; What a bunch of baskets!</span>
+
+Yeah, quite! If I upload version two I&#x27;ll put a &quot;NOT copyright Emulate!&quot;
+on it!!
+
+<span class="qt">&gt; &gt;Anybody know anything about its distribution? I didn`t even know anyone</span>
+<span class="qt">&gt; &gt;had bothered to type it in from Program Pitstop! :-)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I think it may be on WOS somewhere.</span>
+
+Yup, it is - much to my delight (&#x27;cos my work was on the net without me
+knowing!) and chargrin (&#x27;cos my name had been removed from it!!!!)
+
+<span class="qt">&gt; &gt;BTW, anyone want a copy of version 2, with machine codey bits? :-)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Yes please!</span>
+
+Cool - I&#x27;ll try and fish out the microdrive with it on next time I go
+back to my parents&#x27;!
+
+--
+Ian Gledhill
+…@…   IanG@**nospam.**amiganet.org**.please**
+
+
+Sent via Deja.com
+<a href="http://www.deja.com/" rel="noreferrer">http://www.deja.com/</a>
+
+
+
+</pre></div><div class="post" id="p83784"><div class="ph"><a class="d" href="#p83784">2001-01-13 15:12:31</a> <span>Vincent Lynch</span> <span>Re: Chaos Editor?</span></div><pre>Dave B &lt;…@…&gt; wrote:
+<span class="qt">&gt; Here it is, its kinda spacey isnt it, got it from speccygamesmine.cjb.net</span>
+<span class="qt">&gt; where I did the remakes page (with me busy its been hard to do any updating</span>
+<span class="qt">&gt; but will do soon, it needs one sorry Ian).</span>
+
+All together now:
+
+NO BINARIES!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Ta.
+
+-Vincent
+
+
+
+</pre></div><div class="post" id="p83795"><div class="ph"><a class="d" href="#p83795">2001-01-13 20:21:35</a> <span>Dave B</span> <span>Re: Chaos Editor?</span></div><pre>Sorry for trying to help out someone lol
+
+It wasnt that big it could have been 3mb worth ;-)
+
+Dave
+
+
+
+
+
+</pre></div><div class="post" id="p83797"><div class="ph"><a class="d" href="#p83797">2001-01-13 21:19:08</a> <span>Pete T</span> <span>Re: Chaos Editor?</span></div><pre>On Sat, 13 Jan 2001 11:32:56 GMT, Ian Gledhill &lt;…@…&gt;
+wrote:
+
+
+<span class="qt">&gt;&gt;&gt;Maybe - just maybe - someone here can help satiate my curiosity....</span>
+<span class="qt">&gt;&gt;&gt;I&#x27;ve just noticed from pure coincidence that Emulate! magazine (issue 1)</span>
+<span class="qt">&gt;&gt;&gt;contained the Chaos Editor, and in the 1997 Speccy FAQ it lists one</span>
+<span class="qt">&gt;&gt;&gt;Peter Thomas as having a webpage &quot;and his Chaos Editor&quot;.</span>
+<span class="qt">&gt;&gt;&lt;steps forward, blushes&gt;</span>
+<span class="qt">&gt;&gt; Erm, that&#x27;d be me then. I did write my own Chaos Editor, back in about</span>
+<span class="qt">&gt;&gt; 1996, using Spectrum Emulator 1.7 on the Amiga, and all it did was let</span>
+<span class="qt">&gt;&gt; you change the values. (It was just a BASIC prog really)</span>
+<span class="qt">&gt;Heh.. so was mine. At least, version one was. :-) Hey, I was only 13 at</span>
+<span class="qt">&gt;the time</span>
+
+Well, I was like, 24 at the time! I feel terribly inferior!
+
+<span class="qt">&gt;- for the machine coded version I had to hand-assemble it!</span>
+
+I&#x27;ve never written anything in machine code!
+
+(Well, that&#x27;s a lie... I&#x27;ve done it. But they were very very brief and
+simple routines, nothing too difficult. Stuff like making a pretty
+pattern in the border. And it was mostly all compiled from basic
+anyway.)
+
+<span class="qt">&gt;That&#x27;s why there&#x27;s only a few machine code routines in V2, just enough</span>
+<span class="qt">&gt;to speed it up 500 fold..</span>
+
+Kudos to you, sir. I may attempt some m/c for my next effort (a quiz
+game)... if I can get the compiler doing what I want it to :)
+
+<span class="qt">&gt;&gt; I had a very tiny Speccy site, which was on</span>
+<span class="qt">&gt;&gt; <a href="http://www.prodge.demon.co.uk/speccy" rel="noreferrer">http://www.prodge.demon.co.uk/speccy</a></span>
+<span class="qt">&gt;Yeah, _that&#x27;s_ the site I couldn`t get to!</span>
+
+Yeah, been gone for over a year. I think it&#x27;s still on my hard drive,
+but it&#x27;s too naff to put up really. And it was always &#x27;under
+construction&#x27;. I shudder...
+
+<span class="qt">&gt;&gt; &gt;How many people here have ever used this? Is it the same program?</span>
+<span class="qt">&gt;&gt; I&#x27;ve not come across Emulate! magazine, but I&#x27;d be surprised if it was</span>
+<span class="qt">&gt;&gt; my program. I downloaded someone&#x27;s Chaos Editor a while ago, and it</span>
+<span class="qt">&gt;&gt; really outclasses mine. I mean, it lets you edit the graphics as well,</span>
+<span class="qt">&gt;&gt; so my own one is really poor and pointless now!</span>
+<span class="qt">&gt;Coo, ta. :-)</span>
+
+I know when to wave the white flag.
+
+<span class="qt">&gt;IIRC the data for the characters included the stats, the name _and the</span>
+<span class="qt">&gt;addresses of the animation frames_, so it was only one step from the</span>
+<span class="qt">&gt;name to the graphics. One grid and cursor knocked up later, and you</span>
+<span class="qt">&gt;could change the graphics. Whoopee! :-)</span>
+
+Yeah, but even these days, I keep forgetting the mathematic formula
+for sticking a 5-digit number into two bytes. I think I asked this a
+few months ago on here!
+
+<span class="qt">&gt;&gt; &gt;I&#x27;m intrigued as to how many people were &quot;blessed&quot; with this program</span>
+<span class="qt">&gt;&gt; &gt;&#x27;cos it was the first program I ever wrote and got published (back when</span>
+<span class="qt">&gt;&gt; &gt;I were a lad at the tender age of 13).  I notice that Emulate! very</span>
+<span class="qt">&gt;&gt; &gt;kindly removed my name from the copy they saved, though, and put their</span>
+<span class="qt">&gt;&gt; &gt;own on! How kind!</span>
+<span class="qt">&gt;&gt; What a bunch of baskets!</span>
+<span class="qt">&gt;Yeah, quite! If I upload version two I&#x27;ll put a &quot;NOT copyright Emulate!&quot;</span>
+<span class="qt">&gt;on it!!</span>
+
+Hmm, I like the concept of &quot;not-copyright&quot;. Does it have a symbol,
+like the regular copyright symbol, but with a clear strikethrough on
+it (road-sign style)?
+
+<span class="qt">&gt;&gt; &gt;Anybody know anything about its distribution? I didn`t even know anyone</span>
+<span class="qt">&gt;&gt; &gt;had bothered to type it in from Program Pitstop! :-)</span>
+<span class="qt">&gt;&gt; I think it may be on WOS somewhere.</span>
+<span class="qt">&gt;Yup, it is - much to my delight (&#x27;cos my work was on the net without me</span>
+<span class="qt">&gt;knowing!) and chargrin (&#x27;cos my name had been removed from it!!!!)</span>
+
+Grrrr...
+
+<span class="qt">&gt;&gt; &gt;BTW, anyone want a copy of version 2, with machine codey bits? :-)</span>
+<span class="qt">&gt;&gt; Yes please!</span>
+<span class="qt">&gt;Cool - I&#x27;ll try and fish out the microdrive with it on next time I go</span>
+<span class="qt">&gt;back to my parents&#x27;!</span>
+
+Yay!
+
+-- 
+pete @ sinclairspectrum {DOT} com
+
+I&#x27;d tell you to look at www.sinclairspectrum.com if it were ready.
+
+
+
+</pre></div><div class="post" id="p83805"><div class="ph"><a class="d" href="#p83805">2001-01-14 01:46:17</a> <span>Vincent Lynch</span> <span>Re: Chaos Editor?</span></div><pre>Dave B &lt;…@…&gt; wrote:
+<span class="qt">&gt; Sorry for trying to help out someone lol</span>
+
+At the inconvenience of others!  There are lots of ways of sending files to
+specific persons that don&#x27;t involve posting them to non-binary newsgroups
+(which cost some people real money to read).  Even ignoring the courtesy
+issue, there&#x27;s every chance of it not getting through anyway - many news
+servers won&#x27;t accept binary posts to ordinary newsgroups.
+
+<span class="qt">&gt; It wasnt that big it could have been 3mb worth ;-)</span>
+
+You mean it wasn&#x27;t as big as something bigger?  There&#x27;s no arguing with
+that.
+
+-Vincent
+
+
+
+</pre></div><div class="post" id="p83809"><div class="ph"><a class="d" href="#p83809">2001-01-14 11:41:09</a> <span>…@…</span> <span>Re: Chaos Editor?</span></div><pre>Dave B &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; Here it is, its kinda spacey isnt it, got it from speccygamesmine.cjb.net</span>
+<span class="qt">&gt; where I did the remakes page (with me busy its been hard to do any updating</span>
+<span class="qt">&gt; but will do soon, it needs one sorry Ian).</span>
+
+<span class="qt">&gt; Dave</span>
+
+
+<span class="qt">&gt; begin 666 chaos2.zip</span>
+<span class="qt">&gt; M4$L#!!0````(`)&amp;K)BIP0X3C3&amp;8``/_ ```*````8VAA;W,R+G1A&lt;.V]&quot;UQ4</span>
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+&lt;deep breath&gt; AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+<span class="qt">&gt;*sob*&lt; ARGH</span>
+
+MORON!
+
+IDIOT!
+
+Total and UTTER TWONK!
+
+Fucking TWAT!
+(I usually start getting really REALLY abusive at this point, but it&#x27;s too
+early in the day)
+
+#     # #######
+##    # #     #
+# #   # #     #
+#  #  # #     #
+#   # # #     #
+#    ## #     #
+#     # #######
+
+######    ###   #     #    #    ######    ###   #######  #####    ###
+#     #    #    ##    #   # #   #     #    #    #       #     #   ###
+#     #    #    # #   #  #   #  #     #    #    #       #         ###
+######     #    #  #  # #     # ######     #    #####    #####     #
+#     #    #    #   # # ####### #   #      #    #             #
+#     #    #    #    ## #     # #    #     #    #       #     #   ###
+######    ###   #     # #     # #     #   ###   #######  #####    ###
+
+
+
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   | &quot;I&#x27;m alive!!! I can touch! I can taste!         |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|  I can SMELL!!!  KRYTEN!!! Unpack Rachel and    |</span>
+<span class="qt">|            in            |  get out the puncture repair kit!&quot;              |</span>
+<span class="qt">|     Computer Science     |     Arnold Judas Rimmer- Red Dwarf              |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p83810"><div class="ph"><a class="d" href="#p83810">2001-01-14 11:41:51</a> <span>…@…</span> <span>Re: Chaos Editor?</span></div><pre>Dave B &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; Sorry for trying to help out someone lol</span>
+
+<span class="qt">&gt; It wasnt that big it could have been 3mb worth ;-)</span>
+
+Ever heard of E-mail, Mr Clever dick???
+
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)| &quot;The day Microsoft makes something that doesn&#x27;t |</span>
+<span class="qt">|            in            |  suck is probably the day they start making     |</span>
+<span class="qt">|     Computer science     |  vacuum cleaners&quot; - Ernst Jan Plugge            |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div></main></body></html>

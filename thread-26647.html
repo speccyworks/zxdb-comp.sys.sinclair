@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Re: Kempston Mouse Interface · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Re: Kempston Mouse Interface</h1><p class="facts">8 posts, 2002-11-24 – 2002-12-15</p><div class="post" id="p150887"><div class="ph"><a class="d" href="#p150887">2002-11-24 11:31:44</a> <span>LCD</span> </div><pre>
+
+Chris Cowley wrote:
+
+<span class="qt">&gt; The only technical info I&#x27;ve been able to find for the Kempston mouse</span>
+<span class="qt">&gt; interface is:-</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;    <a href="http://www.breezer.demon.co.uk/spec/tech/hware.html#kempmouse" rel="noreferrer">http://www.breezer.demon.co.uk/spec/tech/hware.html#kempmouse</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; which says the ports used are:-</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;         64479 or 4929 = MouseX</span>
+<span class="qt">&gt;         65503 or 1951 = MouseY</span>
+<span class="qt">&gt;         64223 or 1751 = Buttons (bits 0 and 1)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; That seems a little odd to me. Is that really how the port decoding</span>
+<span class="qt">&gt; works or does the interface only look at certain address lines (meaning</span>
+<span class="qt">&gt; that there are other ways of addressing the mouse besides the ports</span>
+<span class="qt">&gt; listed above)?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Also, does anyone know of any software that supports the Kempston mouse</span>
+<span class="qt">&gt; interface besides:-</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;   The Artist II</span>
+<span class="qt">&gt;   OCP&#x27;s Art Studio 128 (with the Kempston mouse hack applied)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Ta,</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; Chris Cowley</span>
+
+Some russian coders made a lot of games and menusystems that can
+be controled with kempston mouse. Deluxe Paint should work with
+kempston mouse too, and the Sprinter computer is Kempston-Mouse
+compatible.
+
+LCD
+
+
+
+
+</pre></div><div class="post" id="p150899"><div class="ph"><a class="d" href="#p150899">2002-11-24 13:38:00</a> <span>Fraser Ross</span> </div><pre>Carrier Command which is an impressive game for the Spectrum.
+
+Fraser.
+
+
+
+
+
+</pre></div><div class="post" id="p150902"><div class="ph"><a class="d" href="#p150902">2002-11-24 15:01:56</a> <span>Remixcat</span> </div><pre>Chris Cowley wrote:
+&lt;snip&gt;
+<span class="qt">&gt; Also, does anyone know of any software that supports the Kempston</span>
+<span class="qt">&gt; mouse interface besides:-</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;   The Artist II</span>
+<span class="qt">&gt;   OCP&#x27;s Art Studio 128 (with the Kempston mouse hack applied)</span>
+
+Wasn&#x27;t Ikari Warriors mouse compatible?
+
+Sean
+
+
+
+
+
+</pre></div><div class="post" id="p150903"><div class="ph"><a class="d" href="#p150903">2002-11-24 16:19:08</a> <span>Jonathan Needle</span> </div><pre>Hi Chris,
+
+&quot;Chris Cowley&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; The only technical info I&#x27;ve been able to find for the Kempston mouse</span>
+<span class="qt">&gt; interface is:-</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;    <a href="http://www.breezer.demon.co.uk/spec/tech/hware.html#kempmouse" rel="noreferrer">http://www.breezer.demon.co.uk/spec/tech/hware.html#kempmouse</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; which says the ports used are:-</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; 64479 or 4929 = MouseX</span>
+<span class="qt">&gt; 65503 or 1951 = MouseY</span>
+<span class="qt">&gt; 64223 or 1751 = Buttons (bits 0 and 1)</span>
+
+The second set of ports looks a little suspect to me as the numbers don&#x27;t
+make alot of sense when converted to hex.
+
+I&#x27;ve got a Datel Genius mouse which is kempston compatible and only responds
+to the following port addresses:
+
+xpos delta 0xfbdf
+ypos delta 0xffdf
+buttons  0xfadf ; active low (bit 1==left, bit 0==right, rest follows
+floating bus)
+
+ie. the first set of ports you mentioned. This is what I&#x27;ve implemented for
+Spectaculator&#x27;s mouse emulation. Art Studio 128 supports the kempston mouse
+natively - you don&#x27;t need any extra pokes.
+
+Regards,
+
+Jon.
+--
+  Jonathan Needle
+  Spectaculator Creator
+  <a href="http://www.spectaculator.com/" rel="noreferrer">http://www.spectaculator.com/</a>
+
+
+
+
+
+
+</pre></div><div class="post" id="p150907"><div class="ph"><a class="d" href="#p150907">2002-11-24 18:00:53</a> <span>Woody</span> </div><pre>On Sun, 24 Nov 2002 16:19:08 -0000, &quot;Jonathan Needle&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;I&#x27;ve got a Datel Genius mouse which is kempston compatible and only responds</span>
+<span class="qt">&gt;to the following port addresses:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;xpos delta 0xfbdf</span>
+<span class="qt">&gt;ypos delta 0xffdf</span>
+<span class="qt">&gt;buttons  0xfadf ; active low (bit 1==left, bit 0==right, rest follows</span>
+<span class="qt">&gt;floating bus)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;ie. the first set of ports you mentioned. This is what I&#x27;ve implemented for</span>
+<span class="qt">&gt;Spectaculator&#x27;s mouse emulation. Art Studio 128 supports the kempston mouse</span>
+<span class="qt">&gt;natively - you don&#x27;t need any extra pokes.</span>
+
+Hmm, both sets have been implemented into the next SPIN release. Maybe
+we should drop that second set then?!
+
+
+
+
+</pre></div><div class="post" id="p150995"><div class="ph"><a class="d" href="#p150995">2002-11-27 00:12:20</a> <span>Stoney</span> </div><pre>
+Chris Cowley wrote:
+<span class="qt">&gt; Also, does anyone know of any software that supports the Kempston mouse</span>
+<span class="qt">&gt; interface besides:-</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;   The Artist II</span>
+<span class="qt">&gt;   OCP&#x27;s Art Studio 128 (with the Kempston mouse hack applied)</span>
+<span class="qt">&gt; </span>
+
+As I recall, IconGraphix128 had an option for Kempston mouse control.
+
+I never had a mouse (Kempston or otherwise) for my speccy so I couldn&#x27;t
+say what the support was like..
+IconGraphix128 was on the covertape of SU 127 - the WOS url is:
+
+<a href="ftp://ftp.worldofspectrum.org/pub/sinclair/magazines/SinclairUser/Issue127/Tape/IconGraphix-128k.tap.zip" rel="noreferrer">ftp://ftp.worldofspectrum.org/pub/sinclair/magazines/SinclairUser/Issue127/Tape/IconGraphix-128k.tap.zip</a>
+
+Dunno about the 48K version mind....
+
+
+-- 
++------------------------------------------------------------------+
+<span class="qt">|Adam Stonehewer.                            …@…   |</span>
+<span class="qt">|-----BEGIN GEEK CODE BLOCK---V3.12--------------------------------|</span>
+<span class="qt">|GCS&gt;$ d-(+) s+: a-- C++ UO+ P++ L+&gt;++ E--- W+(--) N++ o K w(w---) |</span>
+<span class="qt">|O- M-- V-- PS+ PE Y PGP+ t+ 5 X(+)@ R tv+ b++ DI-- D+ G++ e h-    |</span>
++------END GEEK CODE BLOCK---------------------------icq:24988557--+
+ np: Felt - Evergreen Dazed
+
+
+
+</pre></div><div class="post" id="p151728"><div class="ph"><a class="d" href="#p151728">2002-12-15 02:48:55</a> <span>Breezer</span> </div><pre>
+&quot;Chris Cowley&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; On Sun, 24 Nov 2002 18:00:53 +0000, Woody &lt;…@…&gt;</span>
+<span class="qt">&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;&gt;ie. the first set of ports you mentioned. This is what I&#x27;ve implemented</span>
+for
+<span class="qt">&gt; &gt;&gt;Spectaculator&#x27;s mouse emulation. Art Studio 128 supports the kempston</span>
+mouse
+<span class="qt">&gt; &gt;&gt;natively - you don&#x27;t need any extra pokes.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Hmm, both sets have been implemented into the next SPIN release. Maybe</span>
+<span class="qt">&gt; &gt;we should drop that second set then?!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Unless I can find any Speccy software that uses something other than the</span>
+<span class="qt">&gt; first set of ports (#FBDF, #FFDF, #FADF), then I&#x27;m going to stick to</span>
+<span class="qt">&gt; only them in vbSpec.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I agree with Jon -- the second set do look too strange to be correct!</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; Chris Cowley</span>
+
+Well, I can&#x27;t remember exactly where I got the info for the
+<span class="qt">&gt;</span>
+<span class="qt">&gt;    <a href="http://www.breezer.demon.co.uk/spec/tech/hware.html#kempmouse" rel="noreferrer">http://www.breezer.demon.co.uk/spec/tech/hware.html#kempmouse</a></span>
+<span class="qt">&gt;</span>
+
+webpage - I  guess I either got sent it or it was discussed on the group a
+long time ago, or found it in a Your Sinclair issue techy bit somewhere. I
+can&#x27;t remember either (yes, it&#x27;s a long time since I did any of this stuff)
+whether I tested it out much. I&#x27;ve got an actual Kempston mouse interface so
+I could test which ports it responds to, if I can get my Speccy out and plug
+it all in again. Ought to have the time (looking for a job at the moment -
+I&#x27;ve got good C++ programming on Unix skills btw), but preparing for moving
+house over the next couple of weeks.
+
+John (webmaster of www.breezer.demon.co.uk)
+
+
+
+
+
+
+</pre></div><div class="post" id="p151729"><div class="ph"><a class="d" href="#p151729">2002-12-15 02:50:05</a> <span>Breezer</span> </div><pre>
+&quot;Stoney&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Chris Cowley wrote:</span>
+<span class="qt">&gt; &gt; Also, does anyone know of any software that supports the Kempston mouse</span>
+<span class="qt">&gt; &gt; interface besides:-</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;   The Artist II</span>
+<span class="qt">&gt; &gt;   OCP&#x27;s Art Studio 128 (with the Kempston mouse hack applied)</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; As I recall, IconGraphix128 had an option for Kempston mouse control.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I never had a mouse (Kempston or otherwise) for my speccy so I couldn&#x27;t</span>
+<span class="qt">&gt; say what the support was like..</span>
+<span class="qt">&gt; IconGraphix128 was on the covertape of SU 127 - the WOS url is:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<a href="ftp://ftp.worldofspectrum.org/pub/sinclair/magazines/SinclairUser/Issue127/T" rel="noreferrer">ftp://ftp.worldofspectrum.org/pub/sinclair/magazines/SinclairUser/Issue127/T</a>
+ape/IconGraphix-128k.tap.zip
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Dunno about the 48K version mind....</span>
+
+I remember that. It wasn&#x27;t a bad program. Mouse stuff worked, but I think(??
+not sure) it might have been a little annoying in some way to do with which
+buttons did what etc... Memory fails me a bit.
+
+John.
+
+
+
+
+
+
+</pre></div></main></body></html>

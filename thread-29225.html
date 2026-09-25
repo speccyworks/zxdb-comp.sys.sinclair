@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSSCGC2003 Results · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>CSSCGC2003 Results</h1><p class="facts">21 posts, 2004-03-01 – 2004-03-08</p><div class="post" id="p175072"><div class="ph"><a class="d" href="#p175072">2004-03-01 20:31:24</a> <span>Dave the Lurker</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30772">ZXDB: The Amazing Unofficial Radiohead Adventure</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30829">ZXDB: Touch My Spectrum</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30785">ZXDB: Crap Invaders</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30801">ZXDB: Lying Minesweeper</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30788">ZXDB: Drag Racer</a></div><pre>Well this is it.  
+The moment you have all been waiting for...
+
+The results are out.
+
+Place  	Author  	Game
+1st 		Woody 		Crap Invaders
+2nd 		Jim 		The Amazing Unofficial Radiohead Adventure
+3rd 		Eq 		Lying Minesweeper
+4th Joint 	Monkey 	Touch my Spectrum
+4th Joint 	Derek Jolly 	Drag Racer
+
+<a href="http://8bitorbust.info/cgc/results.html" rel="noreferrer">http://8bitorbust.info/cgc/results.html</a>
+
+Well done to Woody, better luck next time Jim.
+
+I&#x27;ll contact winners soon to sort out prizes.
+
+cheers,
+Dave
+
+
+
+</pre></div><div class="post" id="p175075"><div class="ph"><a class="d" href="#p175075">2004-03-02 08:14:21</a> <span>The Starglider</span> <span>Re: CSSCGC2003 Results</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30785">ZXDB: Crap Invaders</a></div><pre>On Mon, 1 Mar 2004 20:31:24 -0000, Dave the Lurker &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Well this is it.  </span>
+<span class="qt">&gt;The moment you have all been waiting for...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;The results are out.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Place  	Author  	Game</span>
+<span class="qt">&gt;1st 		Woody 		Crap Invaders</span>
+<span class="qt">&gt;2nd 		Jim 		The Amazing Unofficial Radiohead Adventure</span>
+<span class="qt">&gt;3rd 		Eq 		Lying Minesweeper</span>
+<span class="qt">&gt;4th Joint 	Monkey 	Touch my Spectrum</span>
+<span class="qt">&gt;4th Joint 	Derek Jolly 	Drag Racer</span>
+<span class="qt">&gt;</span>
+Did everyone who voted miss the point of the CGC? I mean, Crap Invaders is
+machine code written, smooth, playable with good sound effects? This should lose
+on every single count.
+
+I don&#x27;t think the next competition should be based on a public vote, since it
+seems no-one understands what they are meant to be voting for - THE WORST GAME!
+
+-- 
+        **************The Starglider***************  Public E-Mail. 
+        *    Web site:   Under Construction       * Ask for private
+        *                                         *    address.
+        * E-Mail:…@…  *     _WW_
+        *     CHANGE WIBBLE TO YAHOO TO REPLY     *    /_  _\
+        *******************************************   | O  O |
+_____________________________________________________oOO_\/_OOo_____
+
+
+
+</pre></div><div class="post" id="p175076"><div class="ph"><a class="d" href="#p175076">2004-03-02 08:39:13</a> <span>deKay</span> <span>Re: CSSCGC2003 Results</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Tue, 02 Mar
+2004 08:14:21 +0000, sefini jorgo geanyet des mani yeof do comp.sys.sinclair,
+yawatina tan reek esk The Starglider &lt;…@…&gt; fornis
+do marikano es bono tan el:
+
+<span class="qt">&gt;I don&#x27;t think the next competition should be based on a public vote, since it</span>
+<span class="qt">&gt;seems no-one understands what they are meant to be voting for - THE WORST GAME!</span>
+
+Well, I did tell Dave he needed to point that out on the voting page...
+
+deKay
+-- 
+ + Lofi Gaming - www.lofi-gaming.org.uk  AC: deKay in Sponge
+<span class="qt"> |- ugvm Magazine - www.ugvm.org.uk      Gamertag: deKay 01</span>
+<span class="qt"> |- My computer runs at 3.5MHz and I&#x27;m proud of that</span>
+<span class="qt"> |- &quot;SPIN ME SPIN ME!  HURRY UP AND SPIN ME!&quot;</span>
+
+
+
+</pre></div><div class="post" id="p175078"><div class="ph"><a class="d" href="#p175078">2004-03-02 11:51:55</a> <span>Graham Goring</span> <span>Re: CSSCGC2003 Results</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre><span class="qt">&gt; Did everyone who voted miss the point of the CGC? I mean, Crap Invaders is</span>
+<span class="qt">&gt; machine code written, smooth, playable with good sound effects? This</span>
+should lose
+<span class="qt">&gt; on every single count.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I don&#x27;t think the next competition should be based on a public vote, since</span>
+it
+<span class="qt">&gt; seems no-one understands what they are meant to be voting for - THE WORST</span>
+GAME!
+
+Yeah, it was much acer when I did it. ;)
+
+Graham Goring
+
+
+
+
+
+</pre></div><div class="post" id="p175079"><div class="ph"><a class="d" href="#p175079">2004-03-02 13:46:28</a> <span>Biggo</span> <span>Re: CSSCGC2003 Results</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30829">ZXDB: Touch My Spectrum</a></div><pre>The Starglider &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; it seems no-one understands what they are meant to be voting for - THE</span>
+<span class="qt">&gt; WORST GAME!</span>
+
+Or the most &quot;promising yet disappointing and pointless&quot; one.
+&quot;Touch My Spectrum&quot; would have been a winner if it had a good tagline, I
+mean, mentioning auras and reikis and mental strenght .-)
+
+The Radiohead adventure, though, is frustrating enough for a second
+place. How am I supposed to go out? This one is so *un*promising that I
+don&#x27;t feel like thinking about a complex solution (like, er, take down a
+wall or something), and I&#x27;d be very disappointed if there *were* (was?)
+a solution at all .-)
+
+-- 
+<span class="qt">||_ (o) __  __  __  |   Biggo.   Strattinare &lt;mailto:…@…&gt;</span>
+<span class="qt">|&#x27;o\| |/o \/o \/o \ |   Se/quando c&#x27;e&#x27;, c&#x27;e&#x27;: &lt;<a href="http://biggo.dyndns.org&gt;" rel="noreferrer">http://biggo.dyndns.org&gt;</a></span>
+<span class="qt">|._/|_|\__/\__/\__/ | * An out of control ego will sometimes get in the</span>
+       /_/ /_/      |   way of your success.                  (Todd H.)
+
+
+
+</pre></div><div class="post" id="p175082"><div class="ph"><a class="d" href="#p175082">2004-03-02 16:27:35</a> <span>Dunny</span> <span>Re: CSSCGC2003 Results</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30807">ZXDB: Nightmare Park</a></div><pre>The Starglider wrote:
+
+<span class="qt">&gt; I don&#x27;t think the next competition should be based on a public vote,</span>
+<span class="qt">&gt; since it seems no-one understands what they are meant to be voting</span>
+<span class="qt">&gt; for - THE WORST GAME!</span>
+
+Bollocks.
+
+The whole point of Cascade&#x27;s cassette 50 (with FREE calculator watch) was that
+many of the authors had written games which they *believed* to be good attempts
+at games. The fact that they were part of the biggest collection of gaming dross
+ever assembled in one place was incidental to those authors.
+
+So I voted for the people who had *tried* to produce a game. I certainly
+wouldn&#x27;t vote for anyone who attempted to produce a crap game. I wouldn&#x27;t vote
+for anyone who tried to pass off an in-joke as a game. I&#x27;d not vote for anyone
+who had written a small BASIC stub and called it a game when they *knew* it
+wasn&#x27;t. You know who you are.
+
+If Cassette 50 was part of the compo, I&#x27;d vote for the best of that lot -
+probably something like Frogger or another well-attempted game. We shouldn&#x27;t
+reward people who produce pointless shite.
+
+Rant over, carry on.
+
+Oh, and Woody&#x27;s entry was one of my faves - a crap game, but well attempted.
+BadBeard&#x27;s Nightmare Park was possibly the the best Cassette 50 style game too.
+It was great fun to play, and well thought out.
+
+D.
+
+
+
+
+
+
+</pre></div><div class="post" id="p175083"><div class="ph"><a class="d" href="#p175083">2004-03-02 16:39:34</a> <span>Chris Cowley</span> <span>Re: CSSCGC2003 Results</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>On Tue, 2 Mar 2004 16:27:35 -0000, &quot;Dunny&quot; &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;If Cassette 50 was part of the compo, I&#x27;d vote for the best of that lot -</span>
+<span class="qt">&gt;probably something like Frogger or another well-attempted game. We shouldn&#x27;t</span>
+<span class="qt">&gt;reward people who produce pointless shite.</span>
+
+I&#x27;d just like to say: me too! Some of the entries concentrate way too
+much on the &quot;crap&quot; on not enough, or not at all, on the &quot;game&quot;.
+
+I reckon the compo should reward effort over ability and, while Woody
+has the advantage of being an accomplished asm programmer, I do think he
+was one of the people who actually put a bit of effort into his crap
+game and is a deserving winner of the half-eaten Rolo or whatever the
+1st prize is!
+
+-- 
+Chris Cowley
+
+
+
+</pre></div><div class="post" id="p175086"><div class="ph"><a class="d" href="#p175086">2004-03-02 19:01:49</a> <span>Paul E Collins</span> <span>Re: CSSCGC2003 Results</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>&quot;The Starglider&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Did everyone who voted miss the point of the</span>
+<span class="qt">&gt; CGC? I mean, Crap Invaders is machine code</span>
+<span class="qt">&gt; written, smooth, playable with good sound effects?</span>
+<span class="qt">&gt; This should lose on every single count.</span>
+
+I have to agree. Personally, I think that a good CGC entry should be somehow
+pointless or agonisingly slow to play, while still having *some* degree of
+playability to it (i.e. not just a fancy screenshot followed by an in joke,
+as Dunny mentioned in his reply).
+
+Still, if others&#x27; opinions vary, that&#x27;s fine. I think the public vote was a
+good idea, and I&#x27;m surprised nobody thought of it before (me included!).
+
+P.
+
+-- 
+www.CL4.org
+
+
+
+
+
+</pre></div><div class="post" id="p175087"><div class="ph"><a class="d" href="#p175087">2004-03-02 19:03:50</a> <span>Chris Young</span> <span>Re: CSSCGC2003 Results</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>On Tue, 2 Mar 2004 11:51:55 -0000 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Graham Goring:
+
+<span class="qt">&gt; &gt; Did everyone who voted miss the point of the CGC? I mean, Crap Invaders is</span>
+<span class="qt">&gt; &gt; machine code written, smooth, playable with good sound effects? This</span>
+<span class="qt">&gt; should lose</span>
+<span class="qt">&gt; &gt; on every single count.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; I don&#x27;t think the next competition should be based on a public vote, since</span>
+<span class="qt">&gt; it</span>
+<span class="qt">&gt; &gt; seems no-one understands what they are meant to be voting for - THE WORST</span>
+<span class="qt">&gt; GAME!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Yeah, it was much acer when I did it. ;)</span>
+
+So, you&#x27;ll be hosting next year&#x27;s compo, then?
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p175088"><div class="ph"><a class="d" href="#p175088">2004-03-02 19:15:26</a> <span>Chris Young</span> <span>Re: CSSCGC2003 Results</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30785">ZXDB: Crap Invaders</a></div><pre>On Tue, 02 Mar 2004 16:39:34 +0000 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Chris Cowley:
+
+<span class="qt">&gt; On Tue, 2 Mar 2004 16:27:35 -0000, &quot;Dunny&quot; &lt;…@…&gt;</span>
+<span class="qt">&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;If Cassette 50 was part of the compo, I&#x27;d vote for the best of that lot -</span>
+<span class="qt">&gt; &gt;probably something like Frogger or another well-attempted game. We shouldn&#x27;t</span>
+<span class="qt">&gt; &gt;reward people who produce pointless shite.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;d just like to say: me too! Some of the entries concentrate way too</span>
+<span class="qt">&gt; much on the &quot;crap&quot; on not enough, or not at all, on the &quot;game&quot;.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I reckon the compo should reward effort over ability and, while Woody</span>
+<span class="qt">&gt; has the advantage of being an accomplished asm programmer, I do think he</span>
+<span class="qt">&gt; was one of the people who actually put a bit of effort into his crap</span>
+<span class="qt">&gt; game and is a deserving winner of the half-eaten Rolo or whatever the</span>
+<span class="qt">&gt; 1st prize is!</span>
+
+I see where you&#x27;re going with this.  What we need is a single judge who
+can spot that a lot of effort has gone into a title, and yet it has still
+turned out to be the Worst Thing Ever.
+
+I still think Crap Invaders is far to good to win.  Effort has gone into
+it, but it is actually a good game.
+
+I prefer (and voted for) the Radiohead adventure game.  It looks
+polished, well presented and professional, but play it for any period of
+time and you realise how bad the underlying code is.  This is the sort of
+thing that should win.
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p175091"><div class="ph"><a class="d" href="#p175091">2004-03-02 19:25:08</a> <span>Paul E Collins</span> <span>Re: CSSCGC2003 Results</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>&quot;Dunny&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; We shouldn&#x27;t reward people who produce pointless shite.</span>
+
+&quot;I helped save b3ta!&quot;
+
+P.
+
+-- 
+www.CL4.org
+
+
+
+
+
+</pre></div><div class="post" id="p175093"><div class="ph"><a class="d" href="#p175093">2004-03-02 19:39:07</a> <span>Anders Carlsson</span> <span>Re: CSSCGC2003 Results</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>&quot;Dunny&quot; &lt;…@…&gt; writes:
+
+<span class="qt">&gt; Oh, and Woody&#x27;s entry was one of my faves - a crap game, but well</span>
+<span class="qt">&gt; attempted. BadBeard&#x27;s Nightmare Park was possibly the the best</span>
+<span class="qt">&gt; Cassette 50 style game too. It was great fun to play, and well</span>
+<span class="qt">&gt; thought out.</span>
+
+I liked Pitfall ZX - it very closely mimics the original game, but
+with a really ugly character (which moves backwards when going to
+the left) and on some occassions awfully blocky graphics. Maybe it
+was over worked by some people&#x27;s definition.
+
+Another favorite was Eq&#x27;s Ascent, but it is maybe too fun to play
+to be a crap game. Consider some gameplay improvements, squeeze it
+into 1 or 4K (machine code and compression allowed) and re-enter 
+the MiniGame compo later this season.
+
+-- 
+Anders Carlsson
+
+
+
+</pre></div><div class="post" id="p175094"><div class="ph"><a class="d" href="#p175094">2004-03-02 19:41:21</a> <span>Chris Young</span> <span>Re: CSSCGC2003 Results</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>On Tue, 2 Mar 2004 19:01:49 +0000 (UTC) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Paul E Collins:
+
+<span class="qt">&gt; I have to agree. Personally, I think that a good CGC entry should be somehow</span>
+<span class="qt">&gt; pointless or agonisingly slow to play, while still having *some* degree of</span>
+<span class="qt">&gt; playability to it (i.e. not just a fancy screenshot followed by an in joke,</span>
+<span class="qt">&gt; as Dunny mentioned in his reply).</span>
+
+You know, I rewrote my other reply about three times before posting it. 
+I wish I had read down the thread a bit further, as I agree with you.
+
+I nearly conceded that a crap games compo couldn&#x27;t be done, unless you
+called it an Absoutely Brilliant Games Compo and then singled out the
+worst entries and did a hasty U-turn to change it into a crap games
+compo.
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p175103"><div class="ph"><a class="d" href="#p175103">2004-03-03 10:48:31</a> <span>Jim</span> <span>Re: CSSCGC2003 Results</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>In article &lt;…@…&gt;, …@… 
+(Biggo) wrote:
+
+<span class="qt">&gt; The Starglider &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; it seems no-one understands what they are meant to be voting for - THE</span>
+<span class="qt">&gt;&gt; WORST GAME!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The Radiohead adventure, though, is frustrating enough for a second</span>
+<span class="qt">&gt; place. How am I supposed to go out? This one is so *un*promising that I</span>
+<span class="qt">&gt; don&#x27;t feel like thinking about a complex solution (like, er, take down a</span>
+<span class="qt">&gt; wall or something), and I&#x27;d be very disappointed if there *were* (was?)</span>
+<span class="qt">&gt; a solution at all .-)</span>
+
+Yes it can be completed  ;)  Although I&#x27;m surprised you haven&#x27;t even managed
+to get out the house yet, that&#x27;s a piece of piss compared to getting out of
+the taxi...  :D
+
+The ending is amazing too - 5 channel sound, digitalised band animation
+etc... cor, you don&#x27;t know what you&#x27;re missing!
+
+Jim
+Jimsoft(R)
+
+
+
+</pre></div><div class="post" id="p175114"><div class="ph"><a class="d" href="#p175114">2004-03-03 19:33:58</a> <span>Dave the Lurker</span> <span>Re: CSSCGC2003 Results</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>In article &lt;…@…&gt;, 
+…@… says...
+<span class="qt">&gt; On Mon, 1 Mar 2004 20:31:24 -0000, Dave the Lurker &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;Well this is it.  </span>
+<span class="qt">&gt; &gt;The moment you have all been waiting for...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;The results are out.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Place  	Author  	Game</span>
+<span class="qt">&gt; &gt;1st 		Woody 		Crap Invaders</span>
+<span class="qt">&gt; &gt;2nd 		Jim 		The Amazing Unofficial Radiohead Adventure</span>
+<span class="qt">&gt; &gt;3rd 		Eq 		Lying Minesweeper</span>
+<span class="qt">&gt; &gt;4th Joint 	Monkey 	Touch my Spectrum</span>
+<span class="qt">&gt; &gt;4th Joint 	Derek Jolly 	Drag Racer</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; Did everyone who voted miss the point of the CGC? I mean, Crap Invaders is</span>
+<span class="qt">&gt; machine code written, smooth, playable with good sound effects? This should lose</span>
+<span class="qt">&gt; on every single count.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I don&#x27;t think the next competition should be based on a public vote, since it</span>
+<span class="qt">&gt; seems no-one understands what they are meant to be voting for - THE WORST GAME!</span>
+
+Well, if you are keeping with the spirit of the C50, then it should be 
+entries where the author is convinced they have made a game, but that is 
+lacking that special something.
+
+To be honest, very few games this year fell into that category.  They 
+were either too good (anything by Eq, Woody, some others) or total crap 
+not even made an effort - naming no names here.
+
+This is just my take on it anyway, I&#x27;d said from the start I was going 
+to make it a public vote and I&#x27;m glad I did.
+
+Anyway regardless of the quality of the entries, I had great fun play 
+testing them all.
+
+So who is gonna do the next one?
+
+cheers,
+Dave
+
+
+
+</pre></div><div class="post" id="p175115"><div class="ph"><a class="d" href="#p175115">2004-03-03 19:40:48</a> <span>Dave the Lurker</span> <span>Re: CSSCGC2003 Results</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>Sorry if this turns up twice, I posted it early yesterday and I can&#x27;t 
+see it in the group yet...
+
+
+In article &lt;…@…&gt;, 
+…@… says...
+<span class="qt">&gt; On Mon, 1 Mar 2004 20:31:24 -0000, Dave the Lurker &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;Well this is it.  </span>
+<span class="qt">&gt; &gt;The moment you have all been waiting for...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;The results are out.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Place  	Author  	Game</span>
+<span class="qt">&gt; &gt;1st 		Woody 		Crap Invaders</span>
+<span class="qt">&gt; &gt;2nd 		Jim 		The Amazing Unofficial Radiohead Adventure</span>
+<span class="qt">&gt; &gt;3rd 		Eq 		Lying Minesweeper</span>
+<span class="qt">&gt; &gt;4th Joint 	Monkey 	Touch my Spectrum</span>
+<span class="qt">&gt; &gt;4th Joint 	Derek Jolly 	Drag Racer</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; Did everyone who voted miss the point of the CGC? I mean, Crap Invaders is</span>
+<span class="qt">&gt; machine code written, smooth, playable with good sound effects? This should lose</span>
+<span class="qt">&gt; on every single count.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I don&#x27;t think the next competition should be based on a public vote, since it</span>
+<span class="qt">&gt; seems no-one understands what they are meant to be voting for - THE WORST GAME!</span>
+
+Well, if you are keeping with the spirit of the C50, then it should be 
+entries where the author is convinced they have made a game, but that is 
+lacking that special something.
+
+To be honest, very few games this year fell into that category.  They 
+were either too good (anything by Eq, Woody, some others) or total crap 
+not even made an effort - naming no names here.
+
+This is just my take on it anyway, I&#x27;d said from the start I was going 
+to make it a public vote and I&#x27;m glad I did.
+
+Anyway regardless of the quality of the entries, I had great fun play 
+testing them all.
+
+So who is gonna do the next one?
+
+cheers,
+Dave
+
+
+
+</pre></div><div class="post" id="p175123"><div class="ph"><a class="d" href="#p175123">2004-03-04 00:33:27</a> <span>Biggo</span> <span>Re: CSSCGC2003 Results</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>Jim &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; I&#x27;m surprised you haven&#x27;t even managed to get out the house yet,</span>
+
+I couldn&#x27;t get out of the main menu of a +3 without a map.
+
+<span class="qt">&gt; The ending is amazing too - 5 channel sound, digitalised band animation</span>
+<span class="qt">&gt; etc... cor, you don&#x27;t know what you&#x27;re missing!</span>
+
+Wow! Should I connect my speccy to the Prologic system or something?
+
+-- 
+<span class="qt">||_ (o) __  __  __  |   Biggo.   Strattinare &lt;mailto:…@…&gt;</span>
+<span class="qt">|&#x27;o\| |/o \/o \/o \ |   Se/quando c&#x27;e&#x27;, c&#x27;e&#x27;: &lt;<a href="http://biggo.dyndns.org&gt;" rel="noreferrer">http://biggo.dyndns.org&gt;</a></span>
+<span class="qt">|._/|_|\__/\__/\__/ | * An out of control ego will sometimes get in the</span>
+       /_/ /_/      |   way of your success.                  (Todd H.)
+
+
+
+</pre></div><div class="post" id="p175124"><div class="ph"><a class="d" href="#p175124">2004-03-04 01:56:16</a> <span>Jim</span> <span>Re: CSSCGC2003 Results</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre><span class="qt">&gt; So who is gonna do the next one?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; cheers,</span>
+<span class="qt">&gt; Dave</span>
+
+I&#x27;ll give it a shot, if no-one else can be bothered - if I can host on your
+server, Dave!? That way, you wouldn&#x27;t have to change the URL  :)
+Jim
+
+
+
+</pre></div><div class="post" id="p175132"><div class="ph"><a class="d" href="#p175132">2004-03-04 21:05:07</a> <span>Chris Young</span> <span>Re: CSSCGC2003 Results</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>On Wed, 03 Mar 2004 10:48:31 +0000 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Jim:
+
+<span class="qt">&gt; Yes it can be completed  ;)  Although I&#x27;m surprised you haven&#x27;t even managed</span>
+<span class="qt">&gt; to get out the house yet, that&#x27;s a piece of piss compared to getting out of</span>
+<span class="qt">&gt; the taxi...  :D</span>
+
+I broke into the listing in order to figure out how to get out of the
+taxi, and I still couldn&#x27;t work it out.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p175134"><div class="ph"><a class="d" href="#p175134">2004-03-04 22:33:01</a> <span>fuzzbucket</span> <span>Re: CSSCGC2003 Results</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>Paul E Collins wrote:
+<span class="qt">&gt; &quot;Dunny&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; We shouldn&#x27;t reward people who produce pointless shite.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &quot;I helped save b3ta!&quot;</span>
+<span class="qt">&gt; </span>
+
+Yeah, not sure if I regret that now :)
+
+-- 
+<a href="http://www.fuzzbucket.tk/" rel="noreferrer">http://www.fuzzbucket.tk/</a>
+<a href="http://www.randimaginator.tk/" rel="noreferrer">http://www.randimaginator.tk/</a>
+
+
+
+</pre></div><div class="post" id="p175262"><div class="ph"><a class="d" href="#p175262">2004-03-08 02:11:08</a> <span>Jim</span> <span>Re: CSSCGC2003 Results</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>In article &lt;…@…&gt;, &quot;Chris Young&quot; 
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; On Wed, 03 Mar 2004 10:48:31 +0000 da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt; to MC Jim:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Yes it can be completed  ;)  Although I&#x27;m surprised you haven&#x27;t even managed</span>
+<span class="qt">&gt;&gt; to get out the house yet, that&#x27;s a piece of piss compared to getting out of</span>
+<span class="qt">&gt;&gt; the taxi...  :D</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I broke into the listing in order to figure out how to get out of the</span>
+<span class="qt">&gt; taxi, and I still couldn&#x27;t work it out.</span>
+
+Heh! Obviously my complex coding has outwitted you!  :P
+
+It can be done though - I did check a few times that I could play it through
+to the end (which is more than many programmers used to do, it seems!) and
+also Madmekon has completed the game (without cheating I presume?). When
+(if?) you manage to do it, you&#x27;ll kick yourself!
+
+I may post a solution sometime, but not quite yet...  :P  The game can
+actually be completed in very few moves, once you&#x27;ve worked out how!
+
+
+
+</pre></div></main></body></html>

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crap Games Contest 2024 · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Crap Games Contest 2024</h1><p class="facts">7 posts, 2023-12-18 – 2024-01-02</p><div class="post" id="p231135"><div class="ph"><a class="d" href="#p231135">2023-12-18 13:09:22</a> <span>EdToo</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2119">CSSCGC Crap Games Contest 2024</a></div><pre>Apologies if you end up with two posts. I sent a much longer one via Google Groups which didn&#x27;t show up for me, though a later test message came through. The site for this years reviews will be here <a href="https://csscgc24.blogspot.com/" rel="noreferrer">https://csscgc24.blogspot.com/</a> entries can be emailed to edward.toovey@[IGNORETHISBIT]talktalk.net
+
+I haven&#x27;t used usenet since the 90&#x27;s and see Google is pulling the plug Feb 2024, if there are any usenet Guru&#x27;s who can point me to a modern way of accessing let me know.
+
+Ed
+
+</pre></div><div class="post" id="p231137"><div class="ph"><a class="d" href="#p231137">2023-12-18 14:15:39</a> <span>Guesser</span> <span>Re: Crap Games Contest 2024</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2119">CSSCGC Crap Games Contest 2024</a></div><pre>On 2023-12-18 13:09, EdToo wrote:
+<span class="qt">&gt; I haven&#x27;t used usenet since the 90&#x27;s and see Google is pulling the plug Feb 2024, if there are any usenet Guru&#x27;s who can point me to a modern way of accessing let me know.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Ed</span>
+
+Tee hee, it worked. Welcome!
+
+I personally use <a href="https://www.eternal-september.org" rel="noreferrer">https://www.eternal-september.org</a> for Usenet access, 
+and thunderbird as my reader.
+
+Guesser
+
+</pre></div><div class="post" id="p231138"><div class="ph"><a class="d" href="#p231138">2023-12-18 14:54:31</a> <span>EdToo</span> <span>Re: Crap Games Contest 2024</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2119">CSSCGC Crap Games Contest 2024</a></div><pre>Guesser &lt;…@…&gt; wrote in
+news:ulpk6b$2uvfd$…@…: 
+
+<span class="qt">&gt; I personally use <a href="https://www.eternal-september.org" rel="noreferrer">https://www.eternal-september.org</a> for Usenet access, </span>
+<span class="qt">&gt; and thunderbird as my reader.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Guesser</span>
+<span class="qt">&gt; </span>
+
+No idea what happened to the first message, I just signed up with eternal-
+september so glad to hear it is what you use. I&#x27;ll try thunderbird and see 
+how I get on.
+
+</pre></div><div class="post" id="p231139"><div class="ph"><a class="d" href="#p231139">2023-12-18 16:19:54</a> <span>IanJ</span> <span>Re: Crap Games Contest 2024</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2119">CSSCGC Crap Games Contest 2024</a></div><pre>EdToo &lt;…@…&gt; wrote:
+<span class="qt">&gt; I haven&#x27;t used usenet since the 90&#x27;s and see Google is pulling the</span>
+<span class="qt">&gt; plug Feb 2024, if there are any usenet Guru&#x27;s who can point me to a</span>
+<span class="qt">&gt; modern way of accessing let me know.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Ed</span>
+
+The new way is the old way, using a usenet news reader built into an
+email client (Thunderbird?) or some dedicated client.
+
+www.eternal-september.org can provide you with a free account to access
+usenet groups. 
+
+Welcome back to the 90&#x27;s, where technology was more friendly.
+:D
+
+-- 
+
+IanJ
+
+gopher://gopher.icu
+
+</pre></div><div class="post" id="p231140"><div class="ph"><a class="d" href="#p231140">2023-12-20 12:13:13</a> <span>Matt Rudge</span> <span>Re: Crap Games Contest 2024</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2119">CSSCGC Crap Games Contest 2024</a></div><pre>On 18/12/2023 13:09, EdToo wrote:
+<span class="qt">&gt; Apologies if you end up with two posts. I sent a much longer one via Google Groups which didn&#x27;t show up for me, though a later test message came through. The site for this years reviews will be here <a href="https://csscgc24.blogspot.com/" rel="noreferrer">https://csscgc24.blogspot.com/</a> entries can be emailed to edward.toovey@[IGNORETHISBIT]talktalk.net</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I haven&#x27;t used usenet since the 90&#x27;s and see Google is pulling the plug Feb 2024, if there are any usenet Guru&#x27;s who can point me to a modern way of accessing let me know.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Ed</span>
+Brilliant stuff, it worked. Well done!
+
+I&#x27;ll change <a href="https://csscgc.org" rel="noreferrer">https://csscgc.org</a> to point to the new compo on January 1st.
+
+FWIW I use Eternal September too...seems to be the best way of getting 
+my Usenet fix nowadays.
+
+Matt
+
+</pre></div><div class="post" id="p231142"><div class="ph"><a class="d" href="#p231142">2023-12-20 23:58:16</a> <span>Pierre</span> <span>Re: Crap Games Contest 2024</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2119">CSSCGC Crap Games Contest 2024</a></div><pre>IanJ &lt;…@…&gt; wrote:
+<span class="qt">&gt; EdToo &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; I haven&#x27;t used usenet since the 90&#x27;s and see Google is pulling the</span>
+<span class="qt">&gt;&gt; plug Feb 2024, if there are any usenet Guru&#x27;s who can point me to a</span>
+<span class="qt">&gt;&gt; modern way of accessing let me know.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Ed</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The new way is the old way, using a usenet news reader built into an</span>
+<span class="qt">&gt; email client (Thunderbird?) or some dedicated client.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; www.eternal-september.org can provide you with a free account to access</span>
+<span class="qt">&gt; usenet groups. </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Welcome back to the 90&#x27;s, where technology was more friendly.</span>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<span class="qt">&gt; :D</span>
+<span class="qt">&gt; </span>
+
+100% agree :)
+
+</pre></div><div class="post" id="p231153"><div class="ph"><a class="d" href="#p231153">2024-01-02 17:23:19</a> <span>EdToo</span> <span>Re: Crap Games Contest 2024</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2119">CSSCGC Crap Games Contest 2024</a></div><pre>Guesser &lt;…@…&gt; wrote in
+news:ulpk6b$2uvfd$…@…: 
+
+
+
+The first 2 reviews of 2024 are up at <a href="https://csscgc24.blogspot.com/" rel="noreferrer">https://csscgc24.blogspot.com/</a> games 
+can be downloaded at <a href="https://taskmastersoftware.itch.io/csscgc2024" rel="noreferrer">https://taskmastersoftware.itch.io/csscgc2024</a>
+
+</pre></div></main></body></html>

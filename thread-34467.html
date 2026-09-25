@@ -1,0 +1,958 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>csscgc page updated · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>csscgc page updated</h1><p class="facts">32 posts, 2009-06-07 – 2009-09-12</p><div class="post" id="p220241"><div class="ph"><a class="d" href="#p220241">2009-06-07 20:47:41</a> <span>Guesser</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/31117">ZXDB: Overtake the Pope</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/31114">ZXDB: MONObirinth</a></div><pre>Added reviews for:
+
+Overtake the Pope by Edward Cree
+
+and
+
+MONObirinth by Simon Laszlo
+
+-- 
+link my boring website <a href="http://alistairsserver.no-ip.org/" rel="noreferrer">http://alistairsserver.no-ip.org/</a>
+
+
+
+</pre></div><div class="post" id="p220249"><div class="ph"><a class="d" href="#p220249">2009-06-09 09:27:05</a> <span>Tim Fardell</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>On Sun, 7 Jun 2009, Guesser wrote:
+
+<span class="qt">&gt; Added reviews for:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Overtake the Pope by Edward Cree</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; and</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; MONObirinth by Simon Laszlo</span>
+
+Good stuff :-)
+
+Incidentally, did you get my entry? I sent it a few weeks back. 
+
+Tim. 
+
+-- 
+Please remove all-your-clothes before replying. 
+
+
+
+
+</pre></div><div class="post" id="p220268"><div class="ph"><a class="d" href="#p220268">2009-06-14 20:49:05</a> <span>Chris Young</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>On Tue, 9 Jun 2009 10:27:05 +0100 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Tim Fardell:
+
+<span class="qt">&gt; On Sun, 7 Jun 2009, Guesser wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; Added reviews for:</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Overtake the Pope by Edward Cree</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; and</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; MONObirinth by Simon Laszlo</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Good stuff :-)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Incidentally, did you get my entry? I sent it a few weeks back. </span>
+
+Same here not on site
+Do I send again or not?
+I could add more bugs
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p220269"><div class="ph"><a class="d" href="#p220269">2009-06-14 21:06:22</a> <span>Guesser</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>Chris Young wrote:
+<span class="qt">&gt; On Tue, 9 Jun 2009 10:27:05 +0100 da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt; to MC Tim Fardell:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; On Sun, 7 Jun 2009, Guesser wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; Added reviews for:</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; Overtake the Pope by Edward Cree</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; and</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; MONObirinth by Simon Laszlo</span>
+<span class="qt">&gt;&gt; Good stuff :-)</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Incidentally, did you get my entry? I sent it a few weeks back. </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Same here not on site</span>
+<span class="qt">&gt; Do I send again or not?</span>
+<span class="qt">&gt; I could add more bugs</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Chris</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+
+I can confirm I *have* received these games, I just haven&#x27;t got around 
+to reviewing them yet.
+I&#x27;ve had exams and stuff last week and three more next week so things 
+have been piling up a bit (I did a couple of reviews this week, so only 
+4 games waiting to be dealt with currently)
+Things will probably be hectic for another couple of weeks after that 
+but I /might/ get the reviews up to date. If not they everything should 
+be back to normal within the next month, once I get all my stuff dragged 
+back home and get back settled in with my family... What fun.
+
+Guesser
+
+-- 
+link my boring website <a href="http://alistairsserver.no-ip.org/" rel="noreferrer">http://alistairsserver.no-ip.org/</a>
+
+and the comp.sys.sinclair crap games competition 2009
+<a href="http://alistairsserver.no-ip.org/public/cgc/" rel="noreferrer">http://alistairsserver.no-ip.org/public/cgc/</a>
+
+
+
+</pre></div><div class="post" id="p220292"><div class="ph"><a class="d" href="#p220292">2009-06-16 13:18:41</a> <span>Tim Fardell</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>On Sun, 14 Jun 2009, Guesser wrote:
+
+<span class="qt">&gt; Chris Young wrote:</span>
+<span class="qt">&gt; &gt; On Tue, 9 Jun 2009 10:27:05 +0100 da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt; &gt; to MC Tim Fardell:</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt;&gt; On Sun, 7 Jun 2009, Guesser wrote:</span>
+<span class="qt">&gt; &gt;&gt;</span>
+<span class="qt">&gt; &gt;&gt;&gt; Added reviews for:</span>
+<span class="qt">&gt; &gt;&gt;&gt;</span>
+<span class="qt">&gt; &gt;&gt;&gt; Overtake the Pope by Edward Cree</span>
+<span class="qt">&gt; &gt;&gt;&gt;</span>
+<span class="qt">&gt; &gt;&gt;&gt; and</span>
+<span class="qt">&gt; &gt;&gt;&gt;</span>
+<span class="qt">&gt; &gt;&gt;&gt; MONObirinth by Simon Laszlo</span>
+<span class="qt">&gt; &gt;&gt; Good stuff :-)</span>
+<span class="qt">&gt; &gt;&gt;</span>
+<span class="qt">&gt; &gt;&gt; Incidentally, did you get my entry? I sent it a few weeks back. </span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Same here not on site</span>
+<span class="qt">&gt; &gt; Do I send again or not?</span>
+<span class="qt">&gt; &gt; I could add more bugs</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Chris</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I can confirm I *have* received these games, I just haven&#x27;t got around </span>
+<span class="qt">&gt; to reviewing them yet.</span>
+
+Bugger. Thought I&#x27;d got away with that. 
+
+;-)
+
+-- 
+Please remove all-your-clothes before replying. 
+
+
+
+
+</pre></div><div class="post" id="p220407"><div class="ph"><a class="d" href="#p220407">2009-07-04 17:02:42</a> <span>Guesser</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>Guesser wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I can confirm I *have* received these games, I just haven&#x27;t got around </span>
+<span class="qt">&gt; to reviewing them yet.</span>
+<span class="qt">&gt; I&#x27;ve had exams and stuff last week and three more next week so things </span>
+<span class="qt">&gt; have been piling up a bit (I did a couple of reviews this week, so only </span>
+<span class="qt">&gt; 4 games waiting to be dealt with currently)</span>
+<span class="qt">&gt; Things will probably be hectic for another couple of weeks after that </span>
+<span class="qt">&gt; but I /might/ get the reviews up to date. If not they everything should </span>
+<span class="qt">&gt; be back to normal within the next month, once I get all my stuff dragged </span>
+<span class="qt">&gt; back home and get back settled in with my family... What fun.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Guesser</span>
+<span class="qt">&gt; </span>
+
+Right. I got home from university for the summer (well until resit week 
+anyway) yesterday, and all my computer stuff is now settling back into 
+it&#x27;s old tangled mess in my bedroom.
+
+I&#x27;ve made a start on my (not so big anymore really) backlog of CGC 
+submissions, the first update is:
+
+Commode Nybbler Part Deux by Digital Prawn
+
+it&#x27;ll be time to get started on the barbequeueueueue shortly though so 
+I&#x27;m off to make a jug of Pimms
+
+
+-- 
+link my boring website <a href="http://alistairsserver.no-ip.org/" rel="noreferrer">http://alistairsserver.no-ip.org/</a>
+
+and the comp.sys.sinclair crap games competition 2009
+<a href="http://alistairsserver.no-ip.org/public/cgc/" rel="noreferrer">http://alistairsserver.no-ip.org/public/cgc/</a>
+
+
+
+</pre></div><div class="post" id="p220411"><div class="ph"><a class="d" href="#p220411">2009-07-04 18:31:40</a> <span>Digital Prawn</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>On 4 July, 18:02, Guesser &lt;…@…&gt; wrote:
+<span class="qt">&gt; Guesser wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;ve made a start on my (not so big anymore really) backlog of CGC</span>
+<span class="qt">&gt; submissions, the first update is:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Commode Nybbler Part Deux by Digital Prawn</span>
+<span class="qt">&gt;</span>
+Oh dear, I&#x27;d forgotten how truly awful it is. Thanks for the update
+though!
+
+
+
+</pre></div><div class="post" id="p220412"><div class="ph"><a class="d" href="#p220412">2009-07-04 18:56:05</a> <span>Andrew Halliwell</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>Digital Prawn &lt;…@…&gt; wrote:
+<span class="qt">&gt; On 4 July, 18:02, Guesser &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; Guesser wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; I&#x27;ve made a start on my (not so big anymore really) backlog of CGC</span>
+<span class="qt">&gt;&gt; submissions, the first update is:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Commode Nybbler Part Deux by Digital Prawn</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt; Oh dear, I&#x27;d forgotten how truly awful it is. Thanks for the update</span>
+<span class="qt">&gt; though!</span>
+
+If it&#x27;s truly awful, you stand a chance of winning.
+:)
+-- 
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|   Andrew Halliwell BSc   | &quot;The day Microsoft makes something that doesn&#x27;t |</span>
+<span class="qt">|            in            |  suck is probably the day they start making     |</span>
+<span class="qt">|     Computer science     |  vacuum cleaners&quot; - Ernst Jan Plugge            |</span>
+
+
+
+</pre></div><div class="post" id="p220413"><div class="ph"><a class="d" href="#p220413">2009-07-04 19:23:43</a> <span>Digital Prawn</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>On 4 July, 19:56, Andrew Halliwell &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt; If it&#x27;s truly awful, you stand a chance of winning.</span>
+<span class="qt">&gt; :)</span>
+
+Here&#x27;s hoping that guesser will simply let me off with a caution as I
+so naughtily bent this year&#x27;s rules with that submission. With
+hindsight, a fade into infinite obscurity would probably be the best
+reward for it. Actuallly attempting to play the game now seems
+somewhat more frustrating than attempting to nail jelly to the wall
+during an earthquake. However, I believe a hypothetical victory of any
+game written in 6502 ASM would cause the biggest CSSCGC outrage since
+it was discovered that no-one even bothered to submit a Nora Batty
+tribute game last year. :)
+
+
+
+</pre></div><div class="post" id="p220414"><div class="ph"><a class="d" href="#p220414">2009-07-04 20:10:34</a> <span>Andrew Halliwell</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>Digital Prawn &lt;…@…&gt; wrote:
+<span class="qt">&gt; On 4 July, 19:56, Andrew Halliwell &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; If it&#x27;s truly awful, you stand a chance of winning.</span>
+<span class="qt">&gt;&gt; :)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Here&#x27;s hoping that guesser will simply let me off with a caution as I</span>
+<span class="qt">&gt; so naughtily bent this year&#x27;s rules with that submission. With</span>
+<span class="qt">&gt; hindsight, a fade into infinite obscurity would probably be the best</span>
+<span class="qt">&gt; reward for it. Actuallly attempting to play the game now seems</span>
+<span class="qt">&gt; somewhat more frustrating than attempting to nail jelly to the wall</span>
+<span class="qt">&gt; during an earthquake. However, I believe a hypothetical victory of any</span>
+<span class="qt">&gt; game written in 6502 ASM would cause the biggest CSSCGC outrage since</span>
+<span class="qt">&gt; it was discovered that no-one even bothered to submit a Nora Batty</span>
+<span class="qt">&gt; tribute game last year. :)</span>
+
+Hmmmm... Never even occurred to me...
+PONDER PONDER...
+I see a pussy...
+Possibly getting damp...
+
+-- 
+<span class="qt">|   …@…   |   Windows95 (noun): 32 bit extensions and a    |</span>
+<span class="qt">|                          | graphical shell for a 16 bit patch to an 8 bit |</span>
+<span class="qt">|   Andrew Halliwell BSc   | operating system originally  coded for a 4 bit |</span>
+<span class="qt">|            in            |microprocessor, written by a 2 bit company, that|</span>
+<span class="qt">|     Computer Science     |        can&#x27;t stand 1 bit of competition.       |</span>
+
+
+
+</pre></div><div class="post" id="p220415"><div class="ph"><a class="d" href="#p220415">2009-07-04 22:29:50</a> <span>Sam Gillett</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>
+&quot;Andrew Halliwell&quot; &lt;…@…&gt; wrote ...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I see a pussy...</span>
+<span class="qt">&gt; Possibly getting damp...</span>
+
+Good grief man!
+Bring your cat in out of the rain!
+
+-- 
+Best regards,
+
+Sam Gillett
+
+I saw Elvis at the McDonalds drive-thru window.
+He was riding in a pink polka-dot UFO! 
+
+
+
+
+
+</pre></div><div class="post" id="p220416"><div class="ph"><a class="d" href="#p220416">2009-07-04 22:54:43</a> <span>Andrew Halliwell</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>Sam Gillett &lt;…@…&gt; wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &quot;Andrew Halliwell&quot; &lt;…@…&gt; wrote ...</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; I see a pussy...</span>
+<span class="qt">&gt;&gt; Possibly getting damp...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Good grief man!</span>
+<span class="qt">&gt; Bring your cat in out of the rain!</span>
+ 
+It&#x27;s not mine, silly.
+It&#x27;s Mrs Slocombe&#x27;s! (You might not&#x27;ve heard over there, but Molly Sugden
+died on the same day as Karl Malden (of streets of san fransisco fame)
+-- 
+<span class="qt">|   …@…,uk   | &quot;Are you pondering what I&#x27;m pondering Pinky?&quot;   |</span>
+<span class="qt">|   Andrew Halliwell BSc   |                                                 |</span>
+<span class="qt">|            in            | &quot;I think so brain, but this time, you control   |</span>
+<span class="qt">|     Computer Science     |  the Encounter suit, and I&#x27;ll do the voice...&quot;  |</span>
+
+
+
+</pre></div><div class="post" id="p220417"><div class="ph"><a class="d" href="#p220417">2009-07-05 04:07:54</a> <span>Sam Gillett</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>
+&quot;Andrew Halliwell&quot; &lt;…@…&gt; wrote ...
+
+<span class="qt">&gt; Sam Gillett &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; &quot;Andrew Halliwell&quot; &lt;…@…&gt; wrote ...</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; I see a pussy...</span>
+<span class="qt">&gt;&gt;&gt; Possibly getting damp...</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Good grief man!</span>
+<span class="qt">&gt;&gt; Bring your cat in out of the rain!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; It&#x27;s not mine, silly.</span>
+<span class="qt">&gt; It&#x27;s Mrs Slocombe&#x27;s! (You might not&#x27;ve heard over there, but Molly Sugden</span>
+<span class="qt">&gt; died on the same day as Karl Malden (of streets of san fransisco fame)</span>
+
+No, I hadn&#x27;t heard until you mentioned it.  At first I thought perhaps Miss
+Brahms might adopt the cat, but I found out that she died February 26th.
+Maybe Captain Peacock could take Mrs. Slocombe&#x27;s pussy...
+-- 
+Best regards,
+
+Sam Gillett
+
+Global warming is caused by the sun.
+Duh!
+
+
+
+
+
+
+</pre></div><div class="post" id="p220418"><div class="ph"><a class="d" href="#p220418">2009-07-05 18:16:25</a> <span>Charles Richmond</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>Sam Gillett wrote:
+<span class="qt">&gt; &quot;Andrew Halliwell&quot; &lt;…@…&gt; wrote ...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Sam Gillett &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;&gt; &quot;Andrew Halliwell&quot; &lt;…@…&gt; wrote ...</span>
+<span class="qt">&gt;&gt;&gt;&gt; I see a pussy...</span>
+<span class="qt">&gt;&gt;&gt;&gt; Possibly getting damp...</span>
+<span class="qt">&gt;&gt;&gt; Good grief man!</span>
+<span class="qt">&gt;&gt;&gt; Bring your cat in out of the rain!</span>
+<span class="qt">&gt;&gt; It&#x27;s not mine, silly.</span>
+<span class="qt">&gt;&gt; It&#x27;s Mrs Slocombe&#x27;s! (You might not&#x27;ve heard over there, but Molly Sugden</span>
+<span class="qt">&gt;&gt; died on the same day as Karl Malden (of streets of san fransisco fame)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; No, I hadn&#x27;t heard until you mentioned it.  At first I thought perhaps Miss</span>
+<span class="qt">&gt; Brahms might adopt the cat, but I found out that she died February 26th.</span>
+<span class="qt">&gt; Maybe Captain Peacock could take Mrs. Slocombe&#x27;s pussy...</span>
+
+Is all this something like &quot;patting a girl on the fanny&quot;, which means 
+something different in the U.S. than it does in Britain???
+
+
+-- 
++----------------------------------------------------------------+
+<span class="qt">|   Charles and Francis Richmond     richmond at plano dot net   |</span>
++----------------------------------------------------------------+
+
+
+
+</pre></div><div class="post" id="p220419"><div class="ph"><a class="d" href="#p220419">2009-07-05 19:27:57</a> <span>Andrew Halliwell</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>Charles Richmond &lt;…@…&gt; wrote:
+<span class="qt">&gt;&gt; No, I hadn&#x27;t heard until you mentioned it.  At first I thought perhaps Miss</span>
+<span class="qt">&gt;&gt; Brahms might adopt the cat, but I found out that she died February 26th.</span>
+<span class="qt">&gt;&gt; Maybe Captain Peacock could take Mrs. Slocombe&#x27;s pussy...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Is all this something like &quot;patting a girl on the fanny&quot;, which means </span>
+<span class="qt">&gt; something different in the U.S. than it does in Britain???</span>
+
+In the UK pussy is another word for fanny (which is another word for c(STOP
+THAT! Ed.)
+
+All those Mrs Slocombe jokes in &quot;are you being served&quot; about her pussy got
+laughs because of that. 
+-- 
+<span class="qt">|   …@…   |   Windows95 (noun): 32 bit extensions and a    |</span>
+<span class="qt">|                          | graphical shell for a 16 bit patch to an 8 bit |</span>
+<span class="qt">|   Andrew Halliwell BSc   | operating system originally  coded for a 4 bit |</span>
+<span class="qt">|            in            |microprocessor, written by a 2 bit company, that|</span>
+<span class="qt">|     Computer Science     |        can&#x27;t stand 1 bit of competition.       |</span>
+
+
+
+</pre></div><div class="post" id="p220421"><div class="ph"><a class="d" href="#p220421">2009-07-05 20:58:40</a> <span>Guesser</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>another one down, two more to go.
+
+added the review for:
+See How Many Points You Can Score in the Allotted Time by Trellis
+
+-- 
+link my boring website <a href="http://alistairsserver.no-ip.org/" rel="noreferrer">http://alistairsserver.no-ip.org/</a>
+
+and the comp.sys.sinclair crap games competition 2009
+<a href="http://alistairsserver.no-ip.org/public/cgc/" rel="noreferrer">http://alistairsserver.no-ip.org/public/cgc/</a>
+
+
+
+</pre></div><div class="post" id="p220422"><div class="ph"><a class="d" href="#p220422">2009-07-05 21:14:54</a> <span>Andrew Halliwell</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>Guesser &lt;…@…&gt; wrote:
+<span class="qt">&gt; another one down, two more to go.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; added the review for:</span>
+<span class="qt">&gt; See How Many Points You Can Score in the Allotted Time by Trellis</span>
+<span class="qt">&gt; </span>
+Mrs?
+Of south wales?
+-- 
+<span class="qt">|   …@…   |   Windows95 (noun): 32 bit extensions and a    |</span>
+<span class="qt">|                          | graphical shell for a 16 bit patch to an 8 bit |</span>
+<span class="qt">|   Andrew Halliwell BSc   | operating system originally  coded for a 4 bit |</span>
+<span class="qt">|            in            |microprocessor, written by a 2 bit company, that|</span>
+<span class="qt">|     Computer Science     |        can&#x27;t stand 1 bit of competition.       |</span>
+
+
+
+</pre></div><div class="post" id="p220428"><div class="ph"><a class="d" href="#p220428">2009-07-06 00:40:18</a> <span>Sam Gillett</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>
+&quot;Charles Richmond&quot; &lt;…@…&gt; wrote ...
+
+<span class="qt">&gt; Sam Gillett wrote:</span>
+<span class="qt">&gt;&gt; &quot;Andrew Halliwell&quot; &lt;…@…&gt; wrote ...</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; Sam Gillett &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;&gt;&gt; &quot;Andrew Halliwell&quot; &lt;…@…&gt; wrote ...</span>
+<span class="qt">&gt;&gt;&gt;&gt;&gt; I see a pussy...</span>
+<span class="qt">&gt;&gt;&gt;&gt;&gt; Possibly getting damp...</span>
+<span class="qt">&gt;&gt;&gt;&gt; Good grief man!</span>
+<span class="qt">&gt;&gt;&gt;&gt; Bring your cat in out of the rain!</span>
+<span class="qt">&gt;&gt;&gt; It&#x27;s not mine, silly.</span>
+<span class="qt">&gt;&gt;&gt; It&#x27;s Mrs Slocombe&#x27;s! (You might not&#x27;ve heard over there, but Molly Sugden</span>
+<span class="qt">&gt;&gt;&gt; died on the same day as Karl Malden (of streets of san fransisco fame)</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; No, I hadn&#x27;t heard until you mentioned it.  At first I thought perhaps </span>
+<span class="qt">&gt;&gt; Miss</span>
+<span class="qt">&gt;&gt; Brahms might adopt the cat, but I found out that she died February 26th.</span>
+<span class="qt">&gt;&gt; Maybe Captain Peacock could take Mrs. Slocombe&#x27;s pussy...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Is all this something like &quot;patting a girl on the fanny&quot;, which means </span>
+<span class="qt">&gt; something different in the U.S. than it does in Britain???</span>
+
+Vague references are being made to a British TV series (comedy) named &quot;Are 
+You Being Served&quot;  BTW, the series is broadcast in the US on some public 
+television stations.
+-- 
+Best regards,
+
+Sam Gillett
+
+Change is inevitable,
+except from vending machines! 
+
+
+
+
+
+</pre></div><div class="post" id="p220429"><div class="ph"><a class="d" href="#p220429">2009-07-06 08:34:17</a> <span>Andrew Halliwell</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>Sam Gillett &lt;…@…&gt; wrote:
+<span class="qt">&gt;&gt; Is all this something like &quot;patting a girl on the fanny&quot;, which means </span>
+<span class="qt">&gt;&gt; something different in the U.S. than it does in Britain???</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Vague references are being made to a British TV series (comedy) named &quot;Are </span>
+<span class="qt">&gt; You Being Served&quot;  BTW, the series is broadcast in the US on some public </span>
+<span class="qt">&gt; television stations.</span>
+
+AIUI, americans love that programme, some even think it&#x27;s the funniest
+comedy ever, along with benny hill.
+
+Quite sad, really.
+:)
+-- 
+<span class="qt">|                          |What to do if you find yourself stuck in a crack|</span>
+<span class="qt">|  …@…    |in the ground beneath a giant boulder, which you|</span>
+<span class="qt">|                          |can&#x27;t move, with no hope of rescue.             |</span>
+<span class="qt">|  Andrew Halliwell BSc    |Consider how lucky you are that life has been   |</span>
+<span class="qt">|           in             |good to you so far...                           |</span>
+<span class="qt">|    Computer Science      |   -The BOOK, Hitch-hiker&#x27;s guide to the galaxy.|</span>
+
+
+
+</pre></div><div class="post" id="p220445"><div class="ph"><a class="d" href="#p220445">2009-07-08 19:21:41</a> <span>Tim Fardell</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>On Sun, 5 Jul 2009 22:14:54 +0100, Andrew Halliwell
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Guesser &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; another one down, two more to go.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; added the review for:</span>
+<span class="qt">&gt;&gt; See How Many Points You Can Score in the Allotted Time by Trellis</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;Mrs?</span>
+<span class="qt">&gt;Of south wales?</span>
+
+I&#x27;m pleased Guesser didn&#x27;t reveal my real name - that would&#x27;ve been
+very embarrassing. 
+
+Oh bugger. 
+-- 
+Please remove all-your-clothes before replying. 
+
+
+
+</pre></div><div class="post" id="p220446"><div class="ph"><a class="d" href="#p220446">2009-07-08 20:36:00</a> <span>Lister</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>On Sun, 5 Jul 2009 22:14:54 +0100, Andrew Halliwell
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Guesser &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; another one down, two more to go.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; added the review for:</span>
+<span class="qt">&gt;&gt; See How Many Points You Can Score in the Allotted Time by Trellis</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;Mrs?</span>
+<span class="qt">&gt;Of south wales?</span>
+
+
+
+Is it time got a game of MC again?
+
+
+
+</pre></div><div class="post" id="p220488"><div class="ph"><a class="d" href="#p220488">2009-07-21 16:19:26</a> <span>Guesser</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>Finally up to date with the submissions... I got a bit engrossed playing 
+Sim City 2000 and lost a week of my life.
+
+Minemower by Chris Young
+
+Sofa Move Simulator (3D) by Simon Laszlo
+
+Horace and the Boulders by Arda
+
+-- 
+link my boring website <a href="http://alistairsserver.no-ip.org/" rel="noreferrer">http://alistairsserver.no-ip.org/</a>
+
+and the comp.sys.sinclair crap games competition 2009
+<a href="http://alistairsserver.no-ip.org/public/cgc/" rel="noreferrer">http://alistairsserver.no-ip.org/public/cgc/</a>
+
+
+
+</pre></div><div class="post" id="p220489"><div class="ph"><a class="d" href="#p220489">2009-07-21 19:02:35</a> <span>Brian Gaff</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>Not that I&#x27;ve looked, but did any of the crap we used to publish on Micronet 
+in the 80s under the naffsoft banner ever come up from the depths of beyond. 
+I doubt if any of the authors wold be very worried if they did, they were 
+never paid anything!
+
+I must admit I did put a few of my basic ones in from time to time,  like 
+Spider Diner, spacepark, number cruncher and rodent run.
+
+all superbly naff.
+
+The sort of program your five year old might have written in an afternoon.
+
+Brian
+
+-- 
+Brian Gaff - …@…
+Note:- In order to reduce spam, any email without &#x27;Brian Gaff&#x27;
+in the display name may be lost.
+Blind user, so no pictures please!
+&quot;Guesser&quot; &lt;…@…&gt; wrote in message 
+news:h44pqh$alg$…@…...
+<span class="qt">&gt; Finally up to date with the submissions... I got a bit engrossed playing </span>
+<span class="qt">&gt; Sim City 2000 and lost a week of my life.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Minemower by Chris Young</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Sofa Move Simulator (3D) by Simon Laszlo</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Horace and the Boulders by Arda</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; -- </span>
+<span class="qt">&gt; link my boring website <a href="http://alistairsserver.no-ip.org/" rel="noreferrer">http://alistairsserver.no-ip.org/</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; and the comp.sys.sinclair crap games competition 2009</span>
+<span class="qt">&gt; <a href="http://alistairsserver.no-ip.org/public/cgc/" rel="noreferrer">http://alistairsserver.no-ip.org/public/cgc/</a> </span>
+
+
+
+
+
+</pre></div><div class="post" id="p220494"><div class="ph"><a class="d" href="#p220494">2009-07-22 15:29:18</a> <span>Paul E Collins</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>&quot;Brian Gaff&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Not that I&#x27;ve looked, but did any of the crap we used to publish on </span>
+<span class="qt">&gt; Micronet  in the 80s under the naffsoft banner ever come up from the </span>
+<span class="qt">&gt; depths of beyond. [...] I must admit I did put a few of my basic ones in </span>
+<span class="qt">&gt; from time to time,  like Spider Diner, spacepark, number cruncher and </span>
+<span class="qt">&gt; rodent run.</span>
+
+WoS doesn&#x27;t have any Naffsoft games from before the early nineties. &quot;Spider 
+Diner&quot; is missing in action!
+
+Eq.
+
+
+
+
+
+</pre></div><div class="post" id="p220496"><div class="ph"><a class="d" href="#p220496">2009-07-22 17:23:34</a> <span>Lister</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>On Wed, 22 Jul 2009 16:29:18 +0100, &quot;Paul E Collins&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;&quot;Brian Gaff&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Not that I&#x27;ve looked, but did any of the crap we used to publish on </span>
+<span class="qt">&gt;&gt; Micronet  in the 80s under the naffsoft banner ever come up from the </span>
+<span class="qt">&gt;&gt; depths of beyond. [...] I must admit I did put a few of my basic ones in </span>
+<span class="qt">&gt;&gt; from time to time,  like Spider Diner, spacepark, number cruncher and </span>
+<span class="qt">&gt;&gt; rodent run.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;WoS doesn&#x27;t have any Naffsoft games from before the early nineties. &quot;Spider </span>
+<span class="qt">&gt;Diner&quot; is missing in action!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Eq.</span>
+<span class="qt">&gt;</span>
+
+
+If  someone hadc the tapes, how would they convert it?
+
+
+
+
+-- 
+Lister
+
+Posting from his new flat
+
+
+
+</pre></div><div class="post" id="p220497"><div class="ph"><a class="d" href="#p220497">2009-07-22 18:41:16</a> <span>Chris Young</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>On Wed, 22 Jul 2009 18:23:34 +0100 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Lister:
+
+<span class="qt">&gt; &gt;WoS doesn&#x27;t have any Naffsoft games from before the early nineties. &quot;Spider </span>
+<span class="qt">&gt; &gt;Diner&quot; is missing in action!</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; If  someone hadc the tapes, how would they convert it?</span>
+
+1 tape playing device
+1 audio connection lead thingy
+1 computer of some description which has required port to connect
+audio connection lead thingy to
+1 adapter of unknown description in case the required computer
+specification is not met
+1 copy of maketzx or alternative software compiled for the operating
+system installed on the designated computer
+
+Insert one end of the audio connection lead thingy into the headphone
+socket of the tape playing device, insert the other end into the
+computer, utilising the optional adapter if required.  Stir gently
+until combined.
+
+Press the eject button on the tape playing device firmly until the
+tape mechanism exits the tape playing device, leaving a gap into which
+the 300ml of milk can be poured.  Add the tape, ensure the lid is
+securely in place and blend.
+
+Power on the computer and preheat to gas mark 4.  Once pre-heated,
+load up the maketzx or equivalent, following the instructions on the
+packet.  Squeeze the play button on the tape device once the software
+is in record mode.
+
+Add the cinnamon.
+
+Leave for 30 minutes or until slightly browned on top.
+
+This delicious ca... software is best served with a warm Spectrum and
+a glass of wine.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p220498"><div class="ph"><a class="d" href="#p220498">2009-07-22 19:07:18</a> <span>Andrew Halliwell</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>Chris Young &lt;…@…&gt; wrote:
+<span class="qt">&gt; Add the cinnamon.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Leave for 30 minutes or until slightly browned on top.</span>
+
+You forgot the smaaaaaaaaaaaaaaaall aubergine.
+
+-- 
+<span class="qt">|   …@…,uk   | &quot;Are you pondering what I&#x27;m pondering Pinky?&quot;   |</span>
+<span class="qt">|   Andrew Halliwell BSc   |                                                 |</span>
+<span class="qt">|            in            | &quot;I think so brain, but this time, you control   |</span>
+<span class="qt">|     Computer Science     |  the Encounter suit, and I&#x27;ll do the voice...&quot;  |</span>
+
+
+
+</pre></div><div class="post" id="p220499"><div class="ph"><a class="d" href="#p220499">2009-07-22 20:06:02</a> <span>Lister</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>On 22 Jul 2009 19:41:16 +0100, &quot;Chris Young&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;On Wed, 22 Jul 2009 18:23:34 +0100 da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt;to MC Lister:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; &gt;WoS doesn&#x27;t have any Naffsoft games from before the early nineties. &quot;Spider </span>
+<span class="qt">&gt;&gt; &gt;Diner&quot; is missing in action!</span>
+<span class="qt">&gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; If  someone hadc the tapes, how would they convert it?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;1 tape playing device</span>
+<span class="qt">&gt;1 audio connection lead thingy</span>
+<span class="qt">&gt;1 computer of some description which has required port to connect</span>
+<span class="qt">&gt;audio connection lead thingy to</span>
+<span class="qt">&gt;1 adapter of unknown description in case the required computer</span>
+<span class="qt">&gt;specification is not met</span>
+<span class="qt">&gt;1 copy of maketzx or alternative software compiled for the operating</span>
+<span class="qt">&gt;system installed on the designated computer</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Insert one end of the audio connection lead thingy into the headphone</span>
+<span class="qt">&gt;socket of the tape playing device, insert the other end into the</span>
+<span class="qt">&gt;computer, utilising the optional adapter if required.  Stir gently</span>
+<span class="qt">&gt;until combined.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Press the eject button on the tape playing device firmly until the</span>
+<span class="qt">&gt;tape mechanism exits the tape playing device, leaving a gap into which</span>
+<span class="qt">&gt;the 300ml of milk can be poured.  Add the tape, ensure the lid is</span>
+<span class="qt">&gt;securely in place and blend.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Power on the computer and preheat to gas mark 4.  Once pre-heated,</span>
+<span class="qt">&gt;load up the maketzx or equivalent, following the instructions on the</span>
+<span class="qt">&gt;packet.  Squeeze the play button on the tape device once the software</span>
+<span class="qt">&gt;is in record mode.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Add the cinnamon.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Leave for 30 minutes or until slightly browned on top.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;This delicious ca... software is best served with a warm Spectrum and</span>
+<span class="qt">&gt;a glass of wine.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Chris</span>
+
+
+When I remember, I&#x27;ll ask my  Speccy owning  mate if he has the games 
+
+
+
+
+-- 
+Lister
+
+Posting from his new flat
+
+
+
+</pre></div><div class="post" id="p220500"><div class="ph"><a class="d" href="#p220500">2009-07-23 09:53:28</a> <span>Brian Gaff</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>Actually, Spider Diner was reworked by the Cavers and appeared in an issue 
+of Outlet.
+
+They added a better looking web and some better graphics.
+
+I&#x27;m sure if all these discs I have here were looked at on the many 
+interfaces they were made on, all sorts of naff rubbish would be 
+discovered..
+I recall a then young slightly insane person making a game called house of 
+many games. it was basically a lot of silly simple games behind doors in a 
+house.
+
+Brian
+
+-- 
+Brian Gaff - …@…
+Note:- In order to reduce spam, any email without &#x27;Brian Gaff&#x27;
+in the display name may be lost.
+Blind user, so no pictures please!
+&quot;Lister&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; On 22 Jul 2009 19:41:16 +0100, &quot;Chris Young&quot;</span>
+<span class="qt">&gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;On Wed, 22 Jul 2009 18:23:34 +0100 da kidz on comp.sys.sinclair were </span>
+<span class="qt">&gt;&gt;rappin&#x27;</span>
+<span class="qt">&gt;&gt;to MC Lister:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; &gt;WoS doesn&#x27;t have any Naffsoft games from before the early nineties. </span>
+<span class="qt">&gt;&gt;&gt; &gt;&quot;Spider</span>
+<span class="qt">&gt;&gt;&gt; &gt;Diner&quot; is missing in action!</span>
+<span class="qt">&gt;&gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt;&gt; If  someone hadc the tapes, how would they convert it?</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;1 tape playing device</span>
+<span class="qt">&gt;&gt;1 audio connection lead thingy</span>
+<span class="qt">&gt;&gt;1 computer of some description which has required port to connect</span>
+<span class="qt">&gt;&gt;audio connection lead thingy to</span>
+<span class="qt">&gt;&gt;1 adapter of unknown description in case the required computer</span>
+<span class="qt">&gt;&gt;specification is not met</span>
+<span class="qt">&gt;&gt;1 copy of maketzx or alternative software compiled for the operating</span>
+<span class="qt">&gt;&gt;system installed on the designated computer</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Insert one end of the audio connection lead thingy into the headphone</span>
+<span class="qt">&gt;&gt;socket of the tape playing device, insert the other end into the</span>
+<span class="qt">&gt;&gt;computer, utilising the optional adapter if required.  Stir gently</span>
+<span class="qt">&gt;&gt;until combined.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Press the eject button on the tape playing device firmly until the</span>
+<span class="qt">&gt;&gt;tape mechanism exits the tape playing device, leaving a gap into which</span>
+<span class="qt">&gt;&gt;the 300ml of milk can be poured.  Add the tape, ensure the lid is</span>
+<span class="qt">&gt;&gt;securely in place and blend.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Power on the computer and preheat to gas mark 4.  Once pre-heated,</span>
+<span class="qt">&gt;&gt;load up the maketzx or equivalent, following the instructions on the</span>
+<span class="qt">&gt;&gt;packet.  Squeeze the play button on the tape device once the software</span>
+<span class="qt">&gt;&gt;is in record mode.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Add the cinnamon.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Leave for 30 minutes or until slightly browned on top.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;This delicious ca... software is best served with a warm Spectrum and</span>
+<span class="qt">&gt;&gt;a glass of wine.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Chris</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; When I remember, I&#x27;ll ask my  Speccy owning  mate if he has the games</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; -- </span>
+<span class="qt">&gt; Lister</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Posting from his new flat </span>
+
+
+
+
+
+</pre></div><div class="post" id="p220626"><div class="ph"><a class="d" href="#p220626">2009-08-29 23:41:59</a> <span>Guesser</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>site updated with reviews for
+
+Steroid sports: Tennis by Apenao
+
+and
+
+Balls! by Gavin Callard
+
+
+I might even review some more of entries in my heaving inbox (f&#x27;nar?) 
+tomorrow! (you lucky people you)
+
+-- 
+link my boring website <a href="http://alistairsserver.no-ip.org/" rel="noreferrer">http://alistairsserver.no-ip.org/</a>
+
+and the comp.sys.sinclair crap games competition 2009
+<a href="http://alistairsserver.no-ip.org/public/cgc/" rel="noreferrer">http://alistairsserver.no-ip.org/public/cgc/</a>
+
+
+
+</pre></div><div class="post" id="p220654"><div class="ph"><a class="d" href="#p220654">2009-09-10 14:50:25</a> <span>Guesser</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>site updated with reviews for:
+
+Real 3D Maze by Chris Young
+
+and
+
+Steroid Sports: 100MT - Bolt vs Semenya by Apenao
+
+-- 
+link my boring website <a href="http://alistairsserver.no-ip.org/" rel="noreferrer">http://alistairsserver.no-ip.org/</a>
+
+and the comp.sys.sinclair crap games competition 2009
+<a href="http://alistairsserver.no-ip.org/public/cgc/" rel="noreferrer">http://alistairsserver.no-ip.org/public/cgc/</a>
+
+
+
+</pre></div><div class="post" id="p220659"><div class="ph"><a class="d" href="#p220659">2009-09-12 22:03:23</a> <span>Duncan Snowden</span> <span>Re: csscgc page updated</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2063">CSSCGC Crap Games Contest 2009</a></div><pre>Guesser wrote:
+
+<span class="qt">&gt; site updated with reviews for:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Real 3D Maze by Chris Young</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; and</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Steroid Sports: 100MT - Bolt vs Semenya by Apenao</span>
+
+I&#x27;ve just had my first look at this year&#x27;s entries (they don&#x27;t call me 
+on-the-ball... at all) and some of them appear worryingly good. 
+Fortunately most of them look crap, so that&#x27;s okay. And if there was a 
+prize for &quot;Best. Title. Ever.&quot;, it would have to go to the mystifyingly 
+enigmatic &quot;See How Many Points You Can Score in the Allotted Time&quot;. 
+Whatever can it mean?
+
+There also seems to be a satirical theme against the Church of Rome 
+running through the compo this year, with all those nuns being whacked 
+and popes overtaken. Very strange. Is protestantism the ï¿½in thingï¿½ among 
+the young people these days? I can&#x27;t keep up. In my day it was yo-yos.
+
+-- 
+Duncan Snowden.
+
+
+
+</pre></div></main></body></html>

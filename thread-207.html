@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MicroEMACS v3.11 under Pointer Env. · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>MicroEMACS v3.11 under Pointer Env.</h1><p class="facts">2 posts, 1994-01-07 – 1994-01-10</p><div class="post" id="p353"><div class="ph"><a class="d" href="#p353">1994-01-07 00:18:23</a> <span>…@…</span> </div><pre>I did it !
+
+Do you know that MicroEMACS v3.11 is now available with pulldown menus ?
+Yes you can get it from QL Contact France library.
+
+You can contact me too (…@…)
+
+QL Forever !
+
+--
+Godefroy
+Internet: …@…
+
+</pre></div><div class="post" id="p412"><div class="ph"><a class="d" href="#p412">1994-01-10 19:59:46</a> <span>…@…</span> <span>Re: MicroEMACS v3.11 under Pointer Env.</span></div><pre>In article  …@… (Godefroy) writes:
+<span class="qt">&gt;I did it !</span>
+
+<span class="qt">&gt;Do you know that MicroEMACS v3.11 is now available with pulldown menus ?</span>
+<span class="qt">&gt;Yes you can get it from QL Contact France library.</span>
+
+I too have done a version of MicroEMACS which supports mice (code inspired 
+by Godefroy&#x27;s) and menus (all my own work; in fact the _asm file containing 
+most of the window definitions is constructed by a MicroEMACS macro from a 
+rather more compact and editable definition...) It also supports Things (in 
+various ways --- uses Menu Extension and Scrap if present, execute Things 
+from ^X$ etc) and has a few extra commands bolted on.
+
+It also appears in a &quot;nice&quot; window which has &quot;move&quot; and &quot;sleep&quot; icons 
+(though &quot;sleep&quot; only works if Qpac2 is installed.) It seems to work without 
+the PE but I do not intend to support such use of it.
+
+There are versions with messages in English, Dutch, German, French and 
+Spanish (though some of the messages are English in all versions.)
+
+It should be on its way to SJPD, Qubbesoft and Quanta within the next few 
+days. I could send a copy to QLCF as well if someone gives me an address.
+
+Roger contentedly made many bad smells and burned      |Richard Kettlewell
+himself repeatedly, to considerable profit. Within a   | …@…
+span of two years he had mastered most of the appalling|
+jargon of alchemy, designed not to communicate but to  |     Churchill College
+conceal.                                               |             Cambridge
+                    --- James Blish, &quot;Doctor Mirabilis&quot;|               CB3 0DS
+
+</pre></div></main></body></html>

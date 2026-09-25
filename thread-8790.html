@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANNOUNCE: Build your own ZX81 without using a ULA !!! · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANNOUNCE: Build your own ZX81 without using a ULA !!!</h1><p class="facts">3 posts, 1997-03-10 – 1997-03-14</p><div class="post" id="p24763"><div class="ph"><a class="d" href="#p24763">1997-03-10</a> <span>…@…</span> </div><pre>
+I have now added to my &quot;Build your own ZX80&quot; page an NMI generator circuit 
+which I have designed (with some help from Wilf Rigter and Doug Duchene). This 
+is a complete stand-alone circuit which can be used to &quot;upgrade&quot; the ZX80 
+circuit to a fully blown ZX81 with SLOW and FAST modes capable of playing 
+games and software written for a ZX81. The difference between this approach 
+and the original ZX81 is that it uses off-the-shelf components so there is no 
+need for a ULA! I must admit it has been a very educational experience and I 
+hope others will feel the same way.
+
+The site is www.babytalk.demon.co.uk/zx80/zx80.html
+
+This page details how to build your own ZX80 along with a link near the top of 
+it to the NMI generator page. This is a fully working design. Also on th ZX80 
+page is a circuit for the ZX80 (I am STILL in the process of making it a bit 
+clearer), ROM images, component lists and building details.
+
+I must stress this is not for a beginner to electronics as there is quite a 
+lot of soldering involved.
+
+Any comments or suggestions welcome.
+
+Enjoy!
+
+Grant.
+
+Build your own ZX80 and ZX81 &gt;&gt;&gt; www.babytalk.demon.co.uk/zx80/zx80.html &lt;&lt;&lt;
+ 
+
+
+</pre></div><div class="post" id="p24829"><div class="ph"><a class="d" href="#p24829">1997-03-12</a> <span>…@…</span> <span>Re: ANNOUNCE: Build your own ZX81 without using a ULA !!!</span></div><pre>
+In article &lt;…@…&gt;,
+   …@… (Grant Searle) wrote:
+
+<span class="qt">&gt;I have now added to my &quot;Build your own ZX80&quot; page an NMI generator circuit </span>
+<span class="qt">&gt;which I have designed (with some help from Wilf Rigter and Doug Duchene). </span>
+
+Great job Grant!
+
+Lest there are ZX81 fans out there who don&#x27;t subscribe to Jack Raats  ZX81 
+news server here is a recent ZX97 article reprinted for your pleasure.
+Change your reader or editor to a fixed font like NEW COURIER to read the 
+ASCII schematic diagram below.
+
+Hello Sinclair Fans,
+
+The ZX81 has been reborn in discrete form as the ZX97!
+
+This project to build an enhanced, low power discrete logic version
+of the ZX81 has reached a critical stage: freezing the basic design
+in order to lay out the PCB. The ZX97 prototype has been tested for
+a while now and seems to work fine. I had to mop up a few bugs like
+the crazy FAST mode and the jumpy keyboard and I added a few 
+modifications to use more readily available components (ie 74LS245 vs 
+74LS257). The design is still open to participation, suggestions, 
+comments, and criticism for a few more weekends so let&#x27;s hear from you.
+
+Just to remind you what we are aiming for: the ZX97 is functionally
+equivalent to a ZX81 with 32K of RAM and 32K of EPROM.
+The ZX97 has 3 parallel bidirectional ports for high speed communication
+with a PC, and controlling the world and has a &quot;shadow&quot; RAM (ROM overlay) for 
+development of ZX81/97 operating system enhancements.
+
+It is always possible to add more bells and whistles but one of the
+design objectives is to create an enhanced ZX81 and yet use fewer chips
+than the ZX80 (the ZX81 predecesor). The other objective is to use
+readily available &quot;off the shelf&quot; chips instead of custom chips.
+In the final analysis, true emulation of the ZX81 and the ability to
+run all ZX81 software including various hires programs is the &quot;proof of
+the pudding&quot; of the ZX97 design.
+
+Attached is the latest revision which handles the keyboard and the FAST
+mode correctly.
+
+                            ZX97 (March 11)
+                              WILF RIGTER
+                                
+The circuit is described in functional blocks as shown in FIG 1. 
+The circuit details are shown in the schematic FIG 2. The critical
+video timing is shown in timing diagram FIG 3.
+
+CRYSTAL TIME BASE CIRCUIT
+
+This circuit generates the 6.5MHz video clock, the 3.25MHz CPU clock and
+the 15.75KHz horizontal clock.
+The 6.5 MHz crystal clock is divided by 2 with a 74HC74 to generate the
+CPU clock and the 74HC393 dual 4 bit counter together with the 74HC11
+divides the CPU clock further by 207 to generate the 15.75 KHz
+horizontal frequency. The 74HC08 generates 4.6 us wide SYNC/NMI pulses
+which are gated by the SYNC and NMI latches before routing to the
+video/sync mixer and the CPU NMI input. The counter is also held reset
+during the VSYNC period to maintain synchronization in the FAST mode
+between the software generated VSYNC and the hardware generated HSYNC.
+
+NMI/SYNC LATCH
+
+Two SR latches are used to control the flow of NMI pulses to the CPU and
+SYNC pulses to the VIDEO/SYNC MIXER. The NMI latch is set with OUT FE
+which gates the NMI pulses to the CPU and is reset with OUT FD.
+The action of the SYNC latch is a little more complicated because it
+turns off the HSYNC pulses and generates a continuous negative sync level.
+The SYNC latch is set with IN FE which resets the 15.75 KHz counter and
+inverts the CSYNC output and thereby starts the vertical SYNC pulse.
+Any OUT command resets the latch, terminates the VSYNC pulse and enables
+normal HSYNC pulses.
+
+I/O DECODING
+
+To maintain compatability with the ZX81 I/O port assignment, the same
+incomplete I/O address decoding is used for I/O address bits 0-3.
+A few 74HC32 OR gates provide the necesary logic to access the NMI and
+SYNC latches. See the previous description of the NMI and SYNC latches
+for details. The ZX97 keyboard interface uses the same A8-15 row scanning
+as the ZX81 and the five keyboard data lines are connected to bits 0-4
+of a 74LS245 tristate buffer. The output is enabled with IN FE to read
+keyboard colunm data. Another 74LS245 chip is used by the &quot;NOP&quot; circuit
+described below and is enabled whenever a character is fetched from Dfile.
+A more conventional I/O decoding circuit is used to generate address DF
+for the 8255 24 bit parallel interface controller. The 8255 is used as
+three general purpose parallel I/O ports. Note that the 8255 defaults to
+3 input ports on reset and no further initialization is required unless
+you want to use ports for output. Port A is generally used as a high speed
+interface to a PC printer port. The ports are access with the port number
+in register B and the I/O address DF in register C. Therefore the control
+register is at port 03 and the I/O PORT A-C at registers 00-02.
+A typical initialization to set up  ports A and B as inputs and port C as
+output requires a control word value of 93 to be written to register 03.
+Port C output bits can be accessed at two different locations:
+Port C output byte is PORT 02 but in addition you can reset or set
+individually at PORT 03 with control word values 00 to 0F. Even values 02 to
+0E reset bits 0 to 7 respectively and odd values 01 to 0F set bits 0 to 7.
+The format of the control word is as follows:
+
+Note: Typical initialization                  D7 D6 D5 D4 D3 D2 D1 D0
+      for port C as output:                   \_________/ \_____/  \_/
+      LD BC,03DF ; registe 03                      |         |      |
+      LD A,92    ; control data                 always 0    bit #   1=on
+      OUT (C),A  ; write to DF
+                                 
+MEMORY DECODING
+
+Memory decoding is performed with a 74HC251 which maps the EPROM at adress
+0-8K and 40K-64K. The RAM is mapped 8K-40K but the RAM segment 32-40K may
+be mapped over the 0-8K area to allow installation of modified BASIC or
+other operating systems by setting 8255 port C bit 7. Note that the 0-8K
+EPROM segment is then remapped to 32-40K. Furthermore the 0-8K RAM is write
+protected and the VIDEO pattern data continues to be supplied from the
+EPROM pattern table unless the I register is changed. This allows the 1E00
+to 1FFF area of the shadow RAM to be used for 512 byte of program code.
+Note that the 74HC251 is enabled with MREQ and RFSH to access the video
+pattern data.The bank input is included so that a bankswitch decoder can
+disable the system memory decoder when accessing bank memory.
+
+RAM and EPROM
+
+In this revision, both RAM and EPROM are 32K byte CMOS devices.
+The RAM is battery backed up and write protected in the 0-8K segment
+to avoid corrupting the shadow RAM operating system from spurious writes
+especially since Sinclair BASIC performs some dummy writes to locations
+0000-0004.
+
+ROW COUNTER / CHR$ LATCH
+
+The sinclair text mode is supported with a pattern table in EPROM at address
+1E00-1FFF. User Defined Graphics (UDG) RAM pattern tables are also supported.
+UDGs are accessed by changing the I register to point to the new pattern
+table in RAM or EPROM. One half of a 74HC393 dual hex counter is used as
+a modulo 8 ROW counter which increments every HSYNC pulse and during
+RFSH time it addresses the 8 rows of patterns for each character. The ROW
+counter is reset with the VSYNC signal. The 74HC374 CHR$ latch is loaded with
+each DFILE character code and during RFSH it is used to address the
+corresponding pattern table entries. Two bits of the 374 and a 74HC125
+are used  to provide tristate outputs for the ROW counter.
+The I register is intialized to address the Sinclair pattern table at base
+address of 1E00 during RFSH time. In order to support True High Resolution
+graphics (ie WRX16) , bit 6 of the 8255 port C is used to disable the ROW
+counter and CHR$ latch tristate outputs during RFSH. Pseudo Hires is
+supported without any changes although UDG&#x27;s and True Hires would appear
+more logical choices given the ZX97 hardware features.
+
+KEYBOARD LOGIC
+
+The Sinclair keyboard scanning method uses A8-15 to scan keyboard rows and
+5 bits of a 74LS245 to sense column data. Two other bits are used to
+sense the 50/60 Hz option, and tape in.
+
+NOP LOGIC
+
+When a valid character is read for screen display, the NOP LOGIC (74HC138)
+decodes this condition, which turns on a 74H245 buffer to force a low level
+on the CPU data bus thereby tricking the Z80 into executing NOPs during DFILE
+execution.
+
+VIDEO SHIFT REGISTER/VIDEO INVERT LOGIC/VIDEO SYNC MIXER
+
+When a valid CHR$ is fetched from DFILE, the NOP LOGIC is saved in the
+NOP register (74HC74A) and is used together with the PULSE GENERATOR to
+load the video shift register and the invert latch.
+The video shift register is loaded with the video pattern data from RAM
+or EPROM and the pixels are clocked out at 6.5 MHz.
+A 74HC74 is used to capture bit 7 of each character code and load it
+into the invert register at the same time as the pattern data is loaded
+into the shift register. The invert register uses a AND gate with a feedback
+resistor. If bit 7 of the CHR$ code is a 1 then the video serial bits are 
+inverted using an XOR gate. The video is combined (mixed) with the CSYNC 
+signal to produce a composite video signal suitable for connecting to a 
+video monitor or RF modulator.
+
+-------------------------------------------------------------------------
+ ____
+<span class="qt">| 6.5|---&gt;------------------------------------------------------+</span>
+<span class="qt">|    |     _____     ________     _____    _____     _____    __|__</span>
+<span class="qt">|XTAL|    | CPU |   | MEMORY |   | RAM |  |EPROM|   | ROW |  |VIDEO|</span>
+<span class="qt">|TIME|    | MREQ|--&gt;| DECODE |--&gt;| A0-2|-&gt;| A0-2|&lt;--| CTR |  | S/R |</span>
+<span class="qt">|BASE|    |     |   |________|   |     |  |     |   |-----|  |     |</span>
+<span class="qt">|____|    |  ADR|-&gt;-+----[2K]---&gt;|A3-8 |-&gt;|A3-8 |&lt;--| CHR |  | SOUT|---+</span>
+<span class="qt">| 3.2|---&gt;|CLK  |   |-----------&gt;|A9-14|-&gt;|A9-14|   |LATCH|  |     |   |</span>
+<span class="qt">|    |    | DATA|&lt;--|-+--[2K]---&gt;|D0-7 |-&gt;|D0-7 |--&gt;|D0-7 |-&gt;|_S/L_|   |</span>
+<span class="qt">| /2 |    |     |   | |    __    |     |  |     |   |___Q7|-&gt;---|----+ |</span>
+<span class="qt">|____|    | IORQ|_  | +-&lt;-|NOP|  |_____|  |_   _|    __|__      |    | |</span>
+<span class="qt">|    | +-&gt;|NMI  | | |     |___|&lt;------------------&lt;-| NOP |-----+    | |</span>
+<span class="qt">|    | |  |_____| | |__________                     |LOGIC|   _____  | |</span>
+<span class="qt">|/207| |   _____  |  ________  |  _____    _____    |_____|  |VIDEO|&lt;+ |</span>
+<span class="qt">|    | +--| NMI | |_|   I/O  | | |KEYBD|  | 8255|    _____   |INVRT|   |</span>
+<span class="qt">|15.7|---&gt;|/SYNC|&lt;--| DECODER| +&gt;|LOGIC|-&gt;| I/O |   |VIDEO|&lt;-|_____|&lt;--+</span>
+<span class="qt">| RST|&lt;---|LATCH|   |________|   |_____|  |_____|   |/SYNC|</span>
+<span class="qt">|____|    |     |--&gt; ROW CNTR RESET          |      |MIXER|--&gt; COMPOSITE</span>
+<span class="qt">  |       |_____|----------------------------|-----&gt;|_____|    VIDEO OUT</span>
+<span class="qt">  |                                          |__________</span>
+  +--&gt;ROW CNTR CLK       FIG 1 - ZX97 BLOCK DIAGRAM     `----&gt; to PC LPT
+
+------------------------------------------------------------------------
+
+  VIDEO CLOCK            HSYNC/NMI TIME BASE
+   6.5 MHz                   15.7 KHz
+  __|-|___                   ______
+<span class="qt"> |  |-|   |                 |393A R|___________________________________</span>
+<span class="qt"> |        |    CPU CLOCK    |     R|___|                 __            |</span>
+<span class="qt"> |-[10M]--|      3.2MHz     |    Q1|--------------------|11 \    __    |</span>
+<span class="qt"> |      [2K]     _____      |    Q2|--------------------|    &gt;--|32 \__|</span>
+<span class="qt"> |__|\____|_|\__|CP  Q|--   |      |            __    +-|__ / +-|__ /</span>
+<span class="qt">    |/    | |/  | 74A |     |    Q3|-----------|11 \  |       |</span>
+<span class="qt">          |    _|D  /Q|__   |    Q4|--+--------|    &gt;-+       |</span>
+6.5M______|   | |_R_S_|  |  |   CLB|__|      +-|__ /          |
+<span class="qt">              |   |_|    |  |    Q5|         |                |</span>
+<span class="qt">              |   +5V    |  |    Q6|   __    |                |</span>
+3.2M__________|__________|__|CLA Q7|--|08 \__|                |
+<span class="qt">                            |    Q8|--|__ /  |                |</span>
+<span class="qt">                            |______|         |                |</span>
+HSYNC (15.7KHz)___/|_________________________|                |
+                  \|  74LS04                                  |
+VSYNC ________________________________________________________|
+
+                     FIG2A - ZX97 TIMEBASE
+-----------------------------------------------------------------------
+
+                                                        +5V
+CSYNC --------------------------|&lt;--------------+--[1K]--|
+       ______                 1N4448            |        |
+6.5M--|CLK   |                                  |        |
+D0`---|D0 165| VIDEO              __            |        | C
+D1`---|D1  S0|-------------------)86 \_         |      |/
+D2`---|D2    |                +--)__ / `--[1K]--+------| 2N3904
+D3`---|D3    |                | VIDEO INVERTER       B |\
+D4`---|D4    |                |                          | E
+D5`---|D5    |                |           VIDEO         |2|
+D6`---|D6    |                |           LEVEL      P1 |0|&lt;---@  VIDEO
+D7`---|D7    |                |           ADJUST        |0|    |  OUTPUT
+    __|S/L   |                |                      0V__|_____|
+<span class="qt">   |  |______|                |_________________________________</span>
+<span class="qt">   |____________________________________________________________|__</span>
+<span class="qt">                                                                |  |</span>
+0V____||________                                                |  |
+ 100pf|| |      |                                               |  |
+       __|__   [1K]                          VIDEO INVERT LATCH |  |
+MREQ__|D R Q|___|_________________________________       __     |  |
+<span class="qt">      | 74A | PULSE GENERATOR  |         __       `-----|08 \___|  |</span>
+3.2___|CP /Q|------------------|--------|   \         +-|__ /   |  |
+<span class="qt">      |_____|         _____    |  +-----| 11 &gt;----&gt;|--+--[1K]---+  |</span>
+D7___________________|D   Q|   |  |  +--|__ /  1N4448              |
+     INVERT REGISTER | 74B |   |  |  |                             |
+RD___________________|CP /Q|___|__|  |                             |
+<span class="qt">                  |  |_____|   |     |                             |</span>
+     NOP LOGIC    |    |_|     |     |     S/L LOAD PULSE          |
+       _____      |    +5V     |     |   __                        |
+HALT--|E    |     |   _____    +-----|--)32 \______________________|
+M1----|/E   |     |__|CP  Q|---------|--)__ /
+D6&#x27;---|/E   |        | 74B |         |
++5V---|A  O7|________|D  /Q|_________|
+A14---|B    |  |     |_S_R_|
+A15---|C 138|  |       |_|   NOP REGISTER
+<span class="qt">      |_____|  |       +5V</span>
+<span class="qt">               |_________________________________________________</span>
+<span class="qt">                                                                 |</span>
+                     FIG2B - ZX97  VIDEO CIRCUIT                NOP
+----------------------------------------------------------------------
+                                                     ______     NOP
+NMI_________________________________________________|NMI   |     |
+<span class="qt">                                       |     __     |      |     |</span>
+                                       +----)32 \___|WAIT  |     |
+                                       +----)__ /   |  Z80 |     |
+<span class="qt">                                       |            |      |   _____</span>
+<span class="qt">                                       |_______/|___|HALT  |  | OE  |</span>
+                   ______     _____     _____  \|   |      |  | 245 |
+D0&#x27;---------------|    D0|---|   D0|---|   D0|-[1K]-|D0    |--|A0 B0|__
+D1&#x27;---------------|    D1|---|   D1|---|   D1|-[1K]-|D1    |--|A1 B1|__|
+D2&#x27;---------------|    D2|---|   D2|---|   D2|-[1K]-|D2    |--|A2 B2|__|
+D3&#x27;---------------|    D3|---|   D3|---|   D3|-[1K]-|D3    |--|A3 B3|__|
+D4&#x27;---------------|    D4|---|   D4|---|   D4|-[1K]-|D4    |--|A4 B4|__|
+D5&#x27;---------------|    D5|---|   D5|---|   D5|-[1K]-|D5    |--|A5 B5|__|
+     __    _______|OE    |   |   D6|---|   D6|-[1K]-|D6    |--|A6 B6|__|
+PC6-)32 \_|  __   |      |   |   D7|---|   D7|-[1K]-|D7    |--|A7 B7|__|
+RFS-)__ / `-|125\_|......|---|A0 A0|---|   A0|-[1K]-|A0    |  |__D__|  |
+     +------|__ / |      |   |     |   |     |      |  IORQ|--&gt;  |_____|
+<span class="qt">     |   _____    |  374 |   |62256|   |27256|      |  MREQ|--&gt;        |</span>
+<span class="qt">     |__|Q0 Q1|---|D6  Q6|---|   A1|---|   A1|-[1K]-|A1  RD|--&gt;       0V</span>
+<span class="qt">        |   Q2|---|D7  Q7|---|   A2|---|   A2|-[1K]-|A2  WR|--&gt;</span>
+<span class="qt">        | 393B|   |    Q0|---|   A3|---|   A3|-[1K]-|A3  M1|--&gt;</span>
+/VSYNC__|CLR  |   |    Q1|---|   A4|---|   A4|-[1K]-|A4 RFS|--&gt;
+ HSYNC__|CP   |   |    Q2|---|   A5|---|   A5|-[1K]-|A5   0|&lt;-- 3.2
+<span class="qt">        |_____|   |    Q3|---|   A6|---|   A6|-[1K]-|A6  A6|___</span>
+<span class="qt">                  |    Q4|---|   A7|---|   A7|-[1K]-|A7 INT|___|</span>
+RD----------------|CP  Q5|---|   A8|---|   A8|-[1K]-|A8    |
+  BATTERY BACKUP  |______|   |   A9|---|   A9|------|A9    |
+      B1   1N34A             |  A10|---|  A10|------|A10   |
++5 --[3V]---|&lt;---+-----------|  A11|---|  A11|------|A11   |
+0V ---------|&lt;---|      +5   |  A12|---|  A12|------|A12   |
++5------||-------+       |   |  A13|---|  A13|------|A13   |
+     1uF  __    _____  [2K]  |  A14|---|  A14|------|A14   |
+RD ------)32 \_|0 251|   |  _|OE   |  _|OE   |    __|RST   |
+/C7------)__ / |    Z|___|_|_|CE   | |_|CE   |   |  |      |
+C7 ____________|4    |       |_____| | |_____|   |  |______|
+0V ____________|1    |               |           |
+0V ____________|2    |  +5           |           |
+0V ____________|3    |   |           |           |    +5V
+5V ____________|5    | [2K]          |           |     |
+5V ____________|6   Y|___|___________|           |   [10K]
+5V ____________|7    |                           |_____|____
+A13____________|A    |  SYSTEM MEMORY DECODER    |    +|    |S1
+A14____________|B    |                           | 1uF===    |-  RESET
+A15____________|C   E|_________                  |     |____|
+<span class="qt">               |_____|  __     |                 |     |</span>
+RFSH ------------------|08 \___|                 |     0V
+MREQ -----[2K]--+------|__ /                     |
+BANK ___________|                                |
+RST  ____________________________________________|
+
+                        FIG2C - ZX97 CPU/MEMORY CIRCUIT
+----------------------------------------------------------------------
+                                                     ________     LPT1
+RST  _______________________________|\______________|RST  PB0|---&lt;  D0
+<span class="qt">                                    |/    C6________|PC6  PB1|---&lt;  D1</span>
+     1N4448   KEY MATRIX                        |   |     PB2|---&lt;  D2
+A8 ----|&lt;------|-|-|-|-|                      [10K] |     PB3|---&lt;  D3
+A9 ----|&lt;------|-|-|-|-|          74HC14        |   |     PB4|---&lt;  D4
+A10----|&lt;------|-|-|-|-|                        0V  |     PB5|---&lt;  D5
+A11----|&lt;------|-|-|-|-|                  C7____    |     PB6|---&lt;  D6
+A12----|&lt;------|-|-|-|-|      /C7 ___/|_________|___|PC7  PB7|---&lt;  D7
+A13----|&lt;------|-|-|-|-|             \|         |   |     PC0|---&gt; STB
+A14----|&lt;------|-|-|-|-|                      [10K] |     PC1|---&gt; ACK
+A15----|&lt;------|-|-|-|-|                        |   |     PC2|---&gt; FUT
+      KEY PORT | | | | |                        0V  |     PC3|---&gt;  &quot;
+        _____  | | | | |                            |     PC4|---&gt;  &quot;
+D0 ____|A0 B0|_| | | | |                    D0------|D0   PC5|---&gt;  &quot;
+D1 ____|A1 B1|___| | | |                    D1------|D1 8255 |
+D2 ____|A2 B2|_____| | |                    D2------|D2   PA0|---&gt; FUT
+D3 ____|A3 B3|_______| |                    D3------|D3   PA1|---&gt;  &quot;
+D4 ____|A4 B4|_________|                    D4------|D4   PA2|---&gt;  &quot;
+D5 ____|A5 B5|___ 0V (NOT USED)             D5------|D5   PA3|---&gt;  &quot;
+D6 ____|A6 B6|___ 0V (50Hz                  D6------|D6   PA4|---&gt;  &quot;
+D7 ____|A7 B7|___ EAR                       D7------|D7    A5|---&gt;  &quot;
+    ___|OE  D|___ 0V                                |     PA6|---&gt;  &quot;
+<span class="qt">   |   | 245 |                              A8------|A    PA7|---&gt;  &quot;</span>
+<span class="qt">   |   |_____|                              A9------|B     CE|____</span>
+<span class="qt">   |__________________                              |________|    |</span>
+<span class="qt">                      |            I/O ADDRESS          _____  DF |</span>
+<span class="qt">                      |              DECODER    A5-----|A   3|____|</span>
+<span class="qt">                      |                         A6-----|B 138|</span>
+<span class="qt">                      |                         A7-----|C    |--FUT I/O</span>
+      __              |                         M1-----|E    |--FUT I/O
+A0 --)32 \__    __    |             SYNC/NMI    IORQ---|/E   |--FUT I/O
+RD --)__ /  `--)32 \__|      __      LATCHES           |_____|
+            +--)__ /  `-----)32 \__    __
+<span class="qt">            |  IN FE      +-)__ /  `--|00 \____________________/VSYNC</span>
+<span class="qt">            | (VSYNC ON)  |         +-|__ /  |       __________ HSYNC</span>
+IORQ -------+             |         |________|__    |   __
+<span class="qt">            |             |          ________|  |   +--|86 \___ CSYNC</span>
+<span class="qt">            |   __        |         |  __       |---|--|__ /</span>
+            +--)32 \__    |         +-|00 \_____|___|__________ VSYNC
+WR ------------)__ /  +---|-----------|__ /         |   __
+              OUT NN  |   |__________________       +--)32 \____NMI
+           (HSYNC ON) |     __               |  +------)__ /
+                      +----)32 \__     __    |  |
+A0 -------------------|----)__ /  `---|00 \__|  |
+             OUT FE   |             +-|__ /  |  |
+            (NMI ON)  |             |________|__|
+<span class="qt">                      |              ________|  |</span>
+             OUT FD   |     __      |  __       |
+            (NMI OFF) +----)32 \__  +-|00 \_____|
+A1 ------------------------)__ /  `---|__ /  NMI-ON
+
+                       FIG2D- ZX97 I/O CIRCUIT
+ -----------------------------------------------------------------
+                       ZX97 CHARACTER DISPLAY TIMING
+
+The Sinclair ZX97 character display hardware shown in FIG 2 generates
+a standard ZX81 screen of 24 lines of 32 characters. The character
+display starts when the last blank line at the top of the screen has
+occurred and and the video routine jumps to the DFILE echo above 48K.
+The NOP LOGIC takes control when any opcode is executed above 48K
+(A14/15 high, M1 low, data bit D6 low).
+
+In summary the video data is loaded in the following steps:
+
+1. The CPU reads a character code from DFILE above 48K and the NOP LOGIC
+   turns on the 74HC245 and forces the CPU data lines low.
+2. RD loads the 8 bit character code from RAM into the 74HC374 register
+   with bit D7 into the invert register and NOP into the NOP register.
+   The CPU interprets the low data lines as a NOP.
+4. The refresh signal provides OE for the 74HC374 and the 74HC163 ROW
+   COUNTER tristate buffer, and together with the I register this
+   generates the address to the pattern byte in EPROM (or UDG in RAM).
+5. The pattern byte and the invert bit are loaded into the video shift
+   register and the invert latch and the video is clocked out.
+
+In SINCLAIR video the DFILE is literally executed with NOPs substituted
+for each character code. Each NOP executes in 4 clock cycles at 3.2 MHz,
+during which 8 pixels are clocked from the video shift register at 6.5MHz.
+
+        &lt;--------CHARACTER 1-----------&gt;&lt;--------CHARACTER 2-----------&gt;
+T STATE &lt;--T1--&gt;&lt;--T2--&gt;&lt;--T3--&gt;&lt;--T4--&gt;&lt;--T1--&gt;&lt;--T2--&gt;&lt;--T3--&gt;&lt;--T4--&gt;
+  (ref)  ___1    ___    2___3    ___    4___    1___    2___3    ___    4
+CPU CLK |   |___|   |___|   |___|   |___|   |___|   |___|   |___|   |___|
+        _ _______________ _______________ _______________ _______________
+ A0-A15 _X_____PC________X___I+CHR+CTR___X______PC_______X___I+CHR+CTR___
+             ____________ _______________    ____________ _______________
+   DATA &gt;---|__CHR_+_NOP_|_PATTERN DATA__|--|__CHR_+_NOP_|_PATTERN DATA__|
+
+                    FIG 3 ZX97 CHARACTER DISPLAY TIMING
+
+
+The detailed sequence of operations for each character byte is shown in
+FIG 3. This sequence is described as follows:
+
+1. Each displayable CHR$ code (bit 6 low) in DFILE is addressed by the
+   CPU PC and decoded by the NOP LOGIC which forces the CPU data lines low.
+2. On the rising edge of RD, CHR$ data (D0-5) is loaded from DFILE into the
+   74HC374 together with D6-7 into 74HC74B.  On the rising edge of T3 the
+   low data lines are interpreted by the CPU as a NOP instruction.
+3. During T3/4, the CPU executes the Refresh cycle and ROM address lines
+   are generated with I register on A9-A15, the CHR$ latch on A3-A8, and
+   the ROW counter on address lines A0-A2.
+4. On the rising edge of T1, pattern data from the EPROM (or RAM) is loaded
+   into video shift register and 8 pixels are shifted out at 6.5MHz. If the
+   invert latch was set by bit 7, then the serial video data is inverted.
+
+The character bytes are fetched for each horizontal line and the display is
+generated as follows:
+
+   The CPU increments the program counter and fetches the next character
+   code processing each displayable character as described above.
+   This repeats until a HALT is fetched. HALT opcode bit 6 = 1 and is
+   therefore executed (no NOP).
+   The SYNC timebase generates a HSYNC pulse independend of the CPU timing
+   and  the ROW counter is incremented. The halted CPU continues to execute
+   NOPs, incrementing register R and samples the INT input on the rising
+   edge of each T4. When A6, which is hardwired to INT, goes low during
+   refresh time, (bit 6 of the R reg = 0), the Z80 executes the INT routine
+   (below 32K).
+   The CPU returns from INT and resumes &quot;excution&quot; of DFILE CHR$ codes.
+   The process repeats 192 times and then INT routine returns to the main
+   video routine, turns on the NMI latch and switches back to the
+   application code.
+
+   This is a short version of the ZX80/ZX81/ZX97 display system analysis
+   described in more detail in the ZX81 VIDEO TUTORIAL.
+
+
+
+
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p24913"><div class="ph"><a class="d" href="#p24913">1997-03-14</a> <span>…@…</span> <span>Re: ANNOUNCE: Build your own ZX81 without using a ULA !!!</span></div><pre>
+This is absolutely fantastic and really makes me reminis.....
+
+Can anyone tell me 
+
+1) Are there any plans to make pcbs for this and sell them? (well, it
+would save me the job!)
+
+2) How do I subscribe to the newsgroup &#x27;Jack Raats  ZX81 
+news server&#x27;
+
+Cheers
+Dicky
+-----------------------------------------------------
+You enter the dimly lit room.
+The wind gently blows the curtains through the open window.
+A woman lies half naked upon the covers of the bed.
+
+What now?
+           ------------------------------
+Email = …@…
+Web Page = <a href="http://homepages.enterprise.net/dicky" rel="noreferrer">http://homepages.enterprise.net/dicky</a>
+-----------------------------------------------------
+
+
+</pre></div></main></body></html>

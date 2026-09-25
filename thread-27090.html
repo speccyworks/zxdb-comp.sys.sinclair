@@ -1,0 +1,1121 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANN: CSS FAQ Updated · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANN: CSS FAQ Updated</h1><p class="facts">39 posts, 2003-02-01 – 2003-03-07</p><div class="post" id="p154500"><div class="ph"><a class="d" href="#p154500">2003-02-01 19:57:50</a> <span>Bethany Carlton</span> </div><pre>For those of you that may have missed the automated announcement, or have
+not seen the message posted to the WoS forums &amp; &#x27;What&#x27;s new?&#x27; pages, here is
+a copy FYI:
+
+---------------------
+On behalf of the CSS FAQ Maintenance group, I&#x27;m absolutely delighted to be
+able to tell you that a new version of the comp.sys.sinclair FAQ is now
+available from:
+
+<a href="http://www.sinclairfaq.com/" rel="noreferrer">http://www.sinclairfaq.com/</a>
+
+Copies are also available for offline use.
+
+Several new sections have been introduced as part of this update, and a
+&#x27;help&#x27; page is available to guide you through the new layout and design.
+
+Since this is a major update, please read through each section carefully,
+even if you do not normally use them; this will help identify any errors,
+corrections or areas that may need attention in future.
+
+*Please* report any problems as soon as possible to the CSS FAQ Maintenance
+group - contact information is provided throughout the FAQ - and any
+comments, suggestions or submissions are very welcome. You may reply to this
+announcement, start a new thread, post a comment to comp.sys.sinclair, send
+a message to the maintenance address provided, or email me directly.
+
+I firmly believe the FAQ belongs to those that use it, and hope you find it
+an increasingly valuable resource with each subsequent revision. Every entry
+in the current FAQ has been reviewed, verified and/or updated as necessary -
+this process will continue during future revisions.
+
+Please don&#x27;t hesitate to provide any comments or feedback through any means
+you feel appropriate, and thank you for your patience while this revision
+has been in development.
+
+
+
+
+
+</pre></div><div class="post" id="p154506"><div class="ph"><a class="d" href="#p154506">2003-02-01 22:41:51</a> <span>Colin Woodcock</span> <span>Re: CSS FAQ Updated</span></div><pre>&quot;Bethany Carlton&quot; &lt;…@…&gt; wrote in message
+news:b1h8s0$1391bc$…@…...
+<span class="qt">&gt; On behalf of the CSS FAQ Maintenance group, I&#x27;m absolutely delighted to be</span>
+<span class="qt">&gt; able to tell you that a new version of the comp.sys.sinclair FAQ is now</span>
+<span class="qt">&gt; available from:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; <a href="http://www.sinclairfaq.com/" rel="noreferrer">http://www.sinclairfaq.com/</a></span>
+
+
+Bethany I&#x27;ve sent you feedback directly about the new FAQ, but I&#x27;d also like
+to say - as I&#x27;m sure everyone else here is thinking - a very big and public
+thankyou to you and the rest of the maintenance group for such a marvellous
+piece of work.  It really is superb.  Well done all of you.
+
+Colin
+
+
+
+-------
+
+ZXF: Spectrum computing today
+
+Download the PDF magazine for free at www.zxf.cjb.net
+
+
+
+
+
+</pre></div><div class="post" id="p154538"><div class="ph"><a class="d" href="#p154538">2003-02-02 14:30:46</a> <span>neuro</span> <span>Re: CSS FAQ Updated</span></div><pre>Bethany Carlton wrote in message
+news:b1h8s0$1391bc$…@…:
+<span class="qt">&gt; [new faq snippage]</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Since this is a major update, please read through each section</span>
+<span class="qt">&gt; carefully, even if you do not normally use them; this will help</span>
+<span class="qt">&gt; identify any errors, corrections or areas that may need attention in</span>
+<span class="qt">&gt; future.</span>
+
+Hmm, the font size appears to have decreased since the test release - what
+changed, and can we change it to a larger font, c&#x27;est vous plait?
+
+
+--
+_ __/|   ___  ___ __ _________    irc-&gt; irc.astrolink.org #speccy 16384
+\`O_o&#x27;  / _ \/ -_) // / __/ _ \   faq-&gt; <a href="http://retro.zensoft.net/faq/css/" rel="noreferrer">http://retro.zensoft.net/faq/css/</a>
+=(_ _)=/_//_/\__/\_,_/_/  \___/ woscd-&gt; <a href="http://neuro.me.uk/woscd/" rel="noreferrer">http://neuro.me.uk/woscd/</a>
+   U - Ack! Phttpt! Thhbbt!     @ well.com :: William Anderson
+
+
+
+
+
+</pre></div><div class="post" id="p154566"><div class="ph"><a class="d" href="#p154566">2003-02-02 18:43:10</a> <span>Bethany Carlton</span> <span>Re: CSS FAQ Updated</span></div><pre>&quot;Colin Woodcock&quot; &lt;…@…&gt; wrote in message
+news:b1hiip$nhk$…@…...
+<span class="qt">&gt; &quot;Bethany Carlton&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:b1h8s0$1391bc$…@…...</span>
+<span class="qt">&gt; &gt; On behalf of the CSS FAQ Maintenance group, I&#x27;m absolutely delighted to</span>
+be
+<span class="qt">&gt; &gt; able to tell you that a new version of the comp.sys.sinclair FAQ is now</span>
+<span class="qt">&gt; &gt; available from:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; <a href="http://www.sinclairfaq.com/" rel="noreferrer">http://www.sinclairfaq.com/</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Bethany I&#x27;ve sent you feedback directly about the new FAQ, but I&#x27;d also</span>
+like
+<span class="qt">&gt; to say - as I&#x27;m sure everyone else here is thinking - a very big and</span>
+public
+<span class="qt">&gt; thankyou to you and the rest of the maintenance group for such a</span>
+marvellous
+<span class="qt">&gt; piece of work.  It really is superb.  Well done all of you.</span>
+
+You&#x27;re welcome!
+
+:)
+
+
+
+
+
+</pre></div><div class="post" id="p154623"><div class="ph"><a class="d" href="#p154623">2003-02-03 09:46:04</a> <span>Jonathan Needle</span> <span>Re: CSS FAQ Updated</span></div><pre>
+&quot;neuro&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Hmm, the font size appears to have decreased since the test release - what</span>
+<span class="qt">&gt; changed, and can we change it to a larger font, c&#x27;est vous plait?</span>
+
+Font size seems the same to me - excellent job, btw, Bethany :)
+
+Regards,
+
+Jon.
+--
+  Jonathan Needle
+  Spectaculator Creator
+  <a href="http://www.spectaculator.com/" rel="noreferrer">http://www.spectaculator.com/</a>
+
+
+
+
+
+</pre></div><div class="post" id="p154888"><div class="ph"><a class="d" href="#p154888">2003-02-05 18:32:29</a> <span>Bethany Carlton</span> <span>Re: CSS FAQ Updated</span></div><pre>&quot;Jonathan Needle&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;neuro&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt; &gt; Hmm, the font size appears to have decreased since the test release -</span>
+what
+<span class="qt">&gt; &gt; changed, and can we change it to a larger font, c&#x27;est vous plait?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Font size seems the same to me - excellent job, btw, Bethany :)</span>
+<span class="qt">&gt;</span>
+
+Yay!
+
+
+
+
+
+</pre></div><div class="post" id="p154937"><div class="ph"><a class="d" href="#p154937">2003-02-06 04:21:47</a> <span>Alvin</span> <span>Re: ANN: CSS FAQ Updated</span></div><pre>
+Hi Bethany,
+
+Nice job on the FAQ.  I like the sleeker, simpler version.  I
+was reading the Timex reference section, learned a thing or two,
+and spotted a couple of small errors:
+
+At one point, talking about port $ff, it&#x27;s mentioned that
+it &quot;seems likely to be partially decoded&quot; as with the Spectrum&#x27;s
+ports.  All i/o ports are fully decoded in the TS2068 (and
+presumably the TC2068/TC2048).
+
+The joystick fire button is attached to bit 7, not bit 4
+as shown.
+
+The EXROM back is not fully decoded.  This means the
+EXROM memory that sits in the 0-8k chunk also appears
+in every 8k chunk in the 64k space of the EXROM
+bank.
+
+Anyway great job to you and Andrew.
+
+
+Alvin
+
+
+
+</pre></div><div class="post" id="p154941"><div class="ph"><a class="d" href="#p154941">2003-02-06 09:17:46</a> <span>Philip Kendall</span> <span>Re: ANN: CSS FAQ Updated</span></div><pre>In article &lt;…@…&gt;,
+Alvin  &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;At one point, talking about port $ff, it&#x27;s mentioned that</span>
+<span class="qt">&gt;it &quot;seems likely to be partially decoded&quot; as with the Spectrum&#x27;s</span>
+<span class="qt">&gt;ports.  All i/o ports are fully decoded in the TS2068 (and</span>
+<span class="qt">&gt;presumably the TC2068/TC2048).</span>
+
+Fred Meunier tested this on his real TC2048 for Fuse and discovered that
+it&#x27;s fully decoded in the lower 8 bits only.
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p154950"><div class="ph"><a class="d" href="#p154950">2003-02-06 12:43:17</a> <span>Tayles</span> <span>Re: ANN: CSS FAQ Updated</span></div><pre>&quot;Bethany Carlton&quot; &lt;…@…&gt; wrote in message news:&lt;b1h8s0$1391bc$…@…&gt;...
+<span class="qt">&gt; For those of you that may have missed the automated announcement, or have</span>
+<span class="qt">&gt; not seen the message posted to the WoS forums &amp; &#x27;What&#x27;s new?&#x27; pages, here is</span>
+<span class="qt">&gt; a copy FYI:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; ---------------------</span>
+<span class="qt">&gt; On behalf of the CSS FAQ Maintenance group, I&#x27;m absolutely delighted to be</span>
+<span class="qt">&gt; able to tell you that a new version of the comp.sys.sinclair FAQ is now</span>
+<span class="qt">&gt; available from:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; <a href="http://www.sinclairfaq.com/" rel="noreferrer">http://www.sinclairfaq.com/</a></span>
+<span class="qt">&gt; </span>
+
+Gosh, I&#x27;m in the hallowed temple of excellence that is the &#x27;Essential
+Sites&#x27; page!  It makes it all worthwhile. Thanks to all twenty odd
+thousand of you who have passed through my site.
+
+Russ
+--
+<a href="http://www.zxgoldenyears.co.uk/" rel="noreferrer">http://www.zxgoldenyears.co.uk/</a>
+
+
+
+</pre></div><div class="post" id="p154951"><div class="ph"><a class="d" href="#p154951">2003-02-06 13:19:05</a> <span>Cyborg</span> <span>Re: ANN: CSS FAQ Updated</span></div><pre>I&#x27;m meantioned in the FAQ! Hurrah!
+<a href="http://www.sinclairfaq.com/cssfaq/reference/reference.htm" rel="noreferrer">http://www.sinclairfaq.com/cssfaq/reference/reference.htm</a>
+&quot;This section contains technical &amp; reference information Zilog Z80,
+including sections on undocumented flags, etc. If you are interested
+in learning more about Z80 Assembler, James Hollidge has written an
+introductory guide, which may be of assistance.&quot;
+
+Now you just need a search box so it&#x27;s easier to find everything.
+
+
+
+</pre></div><div class="post" id="p154957"><div class="ph"><a class="d" href="#p154957">2003-02-06 16:43:41</a> <span>Alvin</span> <span>Re: ANN: CSS FAQ Updated</span></div><pre>Philip Kendall wrote:
+
+<span class="qt">&gt; &gt;At one point, talking about port $ff, it&#x27;s mentioned that</span>
+<span class="qt">&gt; &gt;it &quot;seems likely to be partially decoded&quot; as with the Spectrum&#x27;s</span>
+<span class="qt">&gt; &gt;ports.  All i/o ports are fully decoded in the TS2068 (and</span>
+<span class="qt">&gt; &gt;presumably the TC2068/TC2048).</span>
+
+<span class="qt">&gt; Fred Meunier tested this on his real TC2048 for Fuse and discovered that</span>
+<span class="qt">&gt; it&#x27;s fully decoded in the lower 8 bits only.</span>
+
+Ah, okay.  This is what I call fully decoded.  While
+it&#x27;s true that i/o space is 16-bits wide, the
+instruction set leans toward an 8-bit space and so
+do Zilog&#x27;s docs.
+
+Whenever I do hardware, I think of the peripheral&#x27;s id as
+taking up the bottom 8 bits and any further information
+required optionally sits in the the top 8.  The keyboard
+works this way: bottom 8 bits = 254 identifies the fact
+you&#x27;re reading from the keyboard and the top 8 bits
+identifies which scan row you&#x27;re looking at.
+
+Alvin
+
+
+
+</pre></div><div class="post" id="p154971"><div class="ph"><a class="d" href="#p154971">2003-02-06 22:01:55</a> <span>Fred</span> <span>Re: ANN: CSS FAQ Updated</span></div><pre>Philip Kendall wrote:
+<span class="qt">&gt; In article &lt;…@…&gt;,</span>
+<span class="qt">&gt; Alvin  &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;At one point, talking about port $ff, it&#x27;s mentioned that</span>
+<span class="qt">&gt;&gt;it &quot;seems likely to be partially decoded&quot; as with the Spectrum&#x27;s</span>
+<span class="qt">&gt;&gt;ports.  All i/o ports are fully decoded in the TS2068 (and</span>
+<span class="qt">&gt;&gt;presumably the TC2068/TC2048).</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Fred Meunier tested this on his real TC2048 for Fuse and discovered that</span>
+<span class="qt">&gt; it&#x27;s fully decoded in the lower 8 bits only.</span>
+<span class="qt">&gt; </span>
+
+Except oddly the kempston joystick port which is readable in all sorts 
+of odd places over the port space, and not obviously corresponding to a 
+simple bit pattern where a couple of bits need to be set/reset.
+
+Fred
+
+
+
+
+</pre></div><div class="post" id="p155044"><div class="ph"><a class="d" href="#p155044">2003-02-07 18:29:10</a> <span>Bethany Carlton</span> <span>Re: ANN: CSS FAQ Updated</span></div><pre>&quot;Alvin&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Hi Bethany,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Nice job on the FAQ.  I like the sleeker, simpler version.  I</span>
+<span class="qt">&gt; was reading the Timex reference section, learned a thing or two,</span>
+
+Great! I&#x27;m glad you like it :)
+
+<span class="qt">&gt; and spotted a couple of small errors:</span>
+
+Uh oh :(
+
+<span class="qt">&gt; At one point, talking about port $ff, it&#x27;s mentioned that</span>
+<span class="qt">&gt; it &quot;seems likely to be partially decoded&quot; as with the Spectrum&#x27;s</span>
+<span class="qt">&gt; ports.  All i/o ports are fully decoded in the TS2068 (and</span>
+<span class="qt">&gt; presumably the TC2068/TC2048).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The joystick fire button is attached to bit 7, not bit 4</span>
+<span class="qt">&gt; as shown.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The EXROM back is not fully decoded.  This means the</span>
+<span class="qt">&gt; EXROM memory that sits in the 0-8k chunk also appears</span>
+<span class="qt">&gt; in every 8k chunk in the 64k space of the EXROM</span>
+<span class="qt">&gt; bank.</span>
+
+I&#x27;ll make the changes (including the clarifications that followed from
+Philip, Fred, etc.) and include them as part of the first proper update. So
+far, the only corrections identified have been quite small, so they&#x27;ll
+roll-up into a maintenance package quite easily. The next full revision
+should take care of any other technical corrections that might come along,
+and will include some additional entries that didn&#x27;t make the first version.
+
+<span class="qt">&gt; Anyway great job to you and Andrew.</span>
+
+Andrew and I collaborated quite closely on several sections, but the Timex
+entry was pretty much all his; I just fiddled about with it! Hopefully, we
+can expand these entries a lot more and all learn a thing or two :)
+
+Thanks for your feedback!
+
+Bethany
+
+
+
+
+
+</pre></div><div class="post" id="p155045"><div class="ph"><a class="d" href="#p155045">2003-02-07 18:34:23</a> <span>Bethany Carlton</span> <span>Re: ANN: CSS FAQ Updated</span></div><pre>&quot;Tayles&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; &quot;Bethany Carlton&quot; &lt;…@…&gt; wrote in message</span>
+news:&lt;b1h8s0$1391bc$…@…&gt;...
+
+[snipped, but not this bit ;)]
+
+<span class="qt">&gt; &gt; <a href="http://www.sinclairfaq.com/" rel="noreferrer">http://www.sinclairfaq.com/</a></span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Gosh, I&#x27;m in the hallowed temple of excellence that is the &#x27;Essential</span>
+<span class="qt">&gt; Sites&#x27; page!  It makes it all worthwhile.</span>
+
+Quite rightly so, I&#x27;d say. There&#x27;s so much interesting content that it would
+be hard to not spend ages reading it; if that doesn&#x27;t make it &#x27;essential&#x27;,
+then I&#x27;m obviously missing something!
+
+Bethany
+
+
+
+
+
+</pre></div><div class="post" id="p155046"><div class="ph"><a class="d" href="#p155046">2003-02-07 18:43:00</a> <span>Bethany Carlton</span> <span>Re: ANN: CSS FAQ Updated</span></div><pre>
+&quot;Cyborg&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+
+<span class="qt">&gt; Now you just need a search box so it&#x27;s easier to find everything.</span>
+
+I agree. Once all the content changes are made and the transition between
+old and new content areas is complete, a search option might happen.
+
+Bethany
+
+
+
+
+
+</pre></div><div class="post" id="p155092"><div class="ph"><a class="d" href="#p155092">2003-02-08 11:58:35</a> <span>Chris Young</span> <span>Re: ANN: CSS FAQ Updated</span></div><pre>On Fri, 7 Feb 2003 12:29:10 -0600, there was a flash of lightening and a clap
+of thunder. A voice, believed to be the voice of God (but later turned
+out to just be Bethany Carlton trying out a karaoke machine and having a few
+electrical problems) boomed out:
+
+<span class="qt">&gt; So</span>
+<span class="qt">&gt; far, the only corrections identified have been quite small</span>
+
+You appear to have forgotten to change my site URL as well, not that it
+makes much difference.
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p155125"><div class="ph"><a class="d" href="#p155125">2003-02-08 20:14:06</a> <span>Philip Bee</span> <span>Re: CSS FAQ Updated</span></div><pre>Very nice design!
+
+I can&#x27;t seem to locate the &#x27;where are they now&#x27; section about Speccy
+&#x27;personalities&#x27;.  Has it been removed?  It was quite fun to browse through .
+. .
+
+That reminds me, Michael (as he likes to be called now) Follin did tell me
+what his brothers were up to (back in December 2001):
+
+Geoff is teaching at a primary school near St Helens.  Tim is working at
+home still doing some game music, and trying to make a film.  Rather more
+practically, he&#x27;s been working with the St Helens educational department
+producing a video and CD-ROM on their Special Needs teaching methods.
+
+Michael is currently &quot;assistant&quot; curate at an Anglican Church, having been
+ordained deacon last year.
+
+Regards,
+
+Phil
+
+
+
+
+
+
+</pre></div><div class="post" id="p155271"><div class="ph"><a class="d" href="#p155271">2003-02-10 00:08:35</a> <span>david</span> <span>Re: CSS FAQ Updated</span></div><pre>&quot;Philip Bee&quot; &lt;…@…&gt; wrote in message
+news:kHd1a.2481$…@…...
+<span class="qt">&gt; Very nice design!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I can&#x27;t seem to locate the &#x27;where are they now&#x27; section about Speccy</span>
+<span class="qt">&gt; &#x27;personalities&#x27;.  Has it been removed?  It was quite fun to browse through</span>
+.
+<span class="qt">&gt; . .</span>
+
+Yes - this does seem to be missing :(
+
+Looks good otherwise however :)
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p155296"><div class="ph"><a class="d" href="#p155296">2003-02-10 02:30:57</a> <span>Bethany Carlton</span> <span>Re: CSS FAQ Updated</span></div><pre>
+&quot;Philip Bee&quot; &lt;…@…&gt; wrote in message
+news:kHd1a.2481$…@…...
+<span class="qt">&gt; Very nice design!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I can&#x27;t seem to locate the &#x27;where are they now&#x27; section about Speccy</span>
+<span class="qt">&gt; &#x27;personalities&#x27;.  Has it been removed?  It was quite fun to browse through</span>
+.
+
+It has been. It was one of the few sections to be completely dropped with
+this revision, and it&#x27;s unlikely to make a comeback any time soon.
+
+Following a &#x27;straw-poll&#x27; (last year) of users, there were a few sections
+that were considered weak, almost universally. In some cases, this was
+because there was generally little enthusiasm for them, or that they were
+felt to be continually outdated; so-much-so that people rarely relied on
+them and automatically went elsewhere instead (e.g. to RaWW, WoS, etc.)
+since they tended to be more regularly notified of changes, and were
+generally maintained more often. The most obvious example that comes to mind
+was emulators, but there were several others.
+
+That said, there&#x27;s absolutely no reason not to add this information in at
+some point; some of the company sites are already on the &#x27;pending&#x27; list for
+the links section, and some are already in there. If enough people are
+interested, and are willing to help verify/update the previous entries, then
+it can be added in quite easily; the old version of the FAQ is still
+available from the &#x27;versions&#x27; page, so you can use that in the interim, and
+can send any verified information that you&#x27;d like included to the FAQ
+mailbox to be added later.
+
+Following on from that, there&#x27;s plenty of room for additional content, and
+there&#x27;s a lot coming along - you should expect to see a revision every 4-6
+weeks, although not all of them will include a vast amount more information,
+there should be a fairly good increase over the last one, and the
+&#x27;moving-target&#x27; sections (links, emulators, etc.) should generally be more
+&#x27;tight&#x27; over time. Note, though, that adding something to the FAQ for the
+sake of adding it isn&#x27;t going to happen; it has to be something that there
+is general support for - if you look carefully at the &#x27;new&#x27; items in the
+FAQ, you&#x27;ll see that they&#x27;re quite commonly asked about in css
+(documentation, etc.), are frequently emulated (e.g.. peripherals), or are
+things that naturally &#x27;belong&#x27; but have not been in previous revisions
+(Timex, etc.) There is a fair amount of lateral expansion still to take
+place in specific places, and if people stop reading certain bits (or didn&#x27;t
+ever start) these will be moved out in favour of more detail about the bits
+that are being used.
+
+CSS drives the FAQ; if you want something added, talk about it (I *am*
+watching you). Whether I want it or not is unimportant; I just happen to be
+the one that types it up. Equally, every entry takes time to research,
+verify, write and maintain, so it&#x27;s only likely to get in there if it&#x27;s
+genuinely going to be used by people. If it&#x27;s looking 50:50, I have no
+problem tossing it out for discussion and going with public opinion. It&#x27;s
+your FAQ, not mine ;)
+
+
+Bethany
+
+
+
+
+
+</pre></div><div class="post" id="p155298"><div class="ph"><a class="d" href="#p155298">2003-02-10 02:37:04</a> <span>Bethany Carlton</span> <span>Re: CSS FAQ Updated</span></div><pre>&quot;david&quot; &lt;…@…&gt; wrote in message
+news:b26qi3$pff$…@…...
+<span class="qt">&gt; &quot;Philip Bee&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:kHd1a.2481$…@…...</span>
+<span class="qt">&gt; &gt; Very nice design!</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; I can&#x27;t seem to locate the &#x27;where are they now&#x27; section about Speccy</span>
+<span class="qt">&gt; &gt; &#x27;personalities&#x27;.  Has it been removed?  It was quite fun to browse</span>
+through
+<span class="qt">&gt; .</span>
+<span class="qt">&gt; &gt; . .</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Yes - this does seem to be missing :(</span>
+
+Yup. I just stuffed a rolled up explanation down the big thick wire a few
+minutes ago, so you should see it around here momentarily.
+
+<span class="qt">&gt; Looks good otherwise however :)</span>
+
+Hooray! Should keep getting better as well, so keep an eye out for the next
+few update notices.
+
+Bethany
+
+
+
+
+
+</pre></div><div class="post" id="p155369"><div class="ph"><a class="d" href="#p155369">2003-02-10 23:22:25</a> <span>Duncan Snowden</span> <span>Re: ANN: CSS FAQ Updated</span></div><pre>Alvin. Thursday. comp.sys.sinclair. Tch, eh?
+
+<span class="qt">&gt; Anyway great job to you and Andrew.</span>
+
+Yup. I finally got round to taking a look the other night. It&#x27;s maybe not
+as pretty as the old one (although that could be my browser, for all I
+know), but it&#x27;s ceratinly easier to find your way around. Excellent job.
+Have some Rolos.
+
+-- 
+Duncan Snowden. 
+
+G No room for line, 1500:4 
+
+
+
+</pre></div><div class="post" id="p155383"><div class="ph"><a class="d" href="#p155383">2003-02-11 00:45:13</a> <span>Bethany Carlton</span> <span>Re: ANN: CSS FAQ Updated</span></div><pre>&quot;Duncan Snowden&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Alvin. Thursday. comp.sys.sinclair. Tch, eh?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Anyway great job to you and Andrew.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Yup. I finally got round to taking a look the other night. It&#x27;s maybe not</span>
+<span class="qt">&gt; as pretty as the old one (although that could be my browser, for all I</span>
+<span class="qt">&gt; know), but it&#x27;s ceratinly easier to find your way around. Excellent job.</span>
+
+It should look pretty much the same regardless of your browser, so that&#x27;s
+maybe unlikely.
+
+A major part of the exercise this time around was re-arranging some of the
+information so it &#x27;flowed&#x27; better from section to section, and I&#x27;m glad it
+seems to be working :)
+
+There&#x27;s more of this to come, but rather than confuse everyone immediately,
+doing a bit at a time will make the transition easier to bear -  once
+everything has settled into place, the move to a more structured layout can
+begin properly. There will be incremental design changes (most of which will
+be transparent) over time, but getting the content complete and correct is
+the first priority, so they&#x27;re not so urgent with the first few revisions.
+They are on the radar, however!
+
+<span class="qt">&gt; Have some Rolos.</span>
+
+I&#x27;ll be needing all I can get to pay the plug tax!
+
+Bethany
+
+
+
+
+
+</pre></div><div class="post" id="p155517"><div class="ph"><a class="d" href="#p155517">2003-02-12 23:00:32</a> <span>neuro</span> <span>Re: CSS FAQ Updated</span></div><pre>Bethany Carlton wrote in message
+news:b272t5$18tvbk$…@…:
+<span class="qt">&gt; &quot;Philip Bee&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:kHd1a.2481$…@…...</span>
+<span class="qt">&gt; &gt; Very nice design!</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; I can&#x27;t seem to locate the &#x27;where are they now&#x27; section about Speccy</span>
+<span class="qt">&gt; &gt; &#x27;personalities&#x27;.  Has it been removed?  It was quite fun to browse</span>
+<span class="qt">&gt; &gt; through .</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; It has been. It was one of the few sections to be completely dropped</span>
+<span class="qt">&gt; with this revision, and it&#x27;s unlikely to make a comeback any time soon.</span>
+
+I didn&#x27;t notice it had gone, as I haven&#x27;t had time to toothcomb the FAQ yet,
+but I personally would like to see this section back - keeps a nice human
+element to it.
+
+--
+_ __/|   ___  ___ __ _________    irc-&gt; irc.astrolink.org #speccy 16384
+\`O_o&#x27;  / _ \/ -_) // / __/ _ \   faq-&gt; <a href="http://retro.zensoft.net/faq/css/" rel="noreferrer">http://retro.zensoft.net/faq/css/</a>
+=(_ _)=/_//_/\__/\_,_/_/  \___/ woscd-&gt; <a href="http://neuro.me.uk/woscd/" rel="noreferrer">http://neuro.me.uk/woscd/</a>
+   U - Ack! Phttpt! Thhbbt!     @ well.com :: William Anderson
+
+
+
+
+
+</pre></div><div class="post" id="p155542"><div class="ph"><a class="d" href="#p155542">2003-02-13 07:38:05</a> <span>Bethany Carlton</span> <span>Re: CSS FAQ Updated</span></div><pre>&quot;neuro&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Bethany Carlton wrote in message</span>
+<span class="qt">&gt; news:b272t5$18tvbk$…@…:</span>
+<span class="qt">&gt; &gt; &quot;Philip Bee&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; &gt; news:kHd1a.2481$…@…...</span>
+<span class="qt">&gt; &gt; &gt; Very nice design!</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; I can&#x27;t seem to locate the &#x27;where are they now&#x27; section about Speccy</span>
+<span class="qt">&gt; &gt; &gt; &#x27;personalities&#x27;.  Has it been removed?  It was quite fun to browse</span>
+<span class="qt">&gt; &gt; &gt; through .</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; It has been. It was one of the few sections to be completely dropped</span>
+<span class="qt">&gt; &gt; with this revision, and it&#x27;s unlikely to make a comeback any time soon.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I didn&#x27;t notice it had gone, as I haven&#x27;t had time to toothcomb the FAQ</span>
+yet,
+<span class="qt">&gt; but I personally would like to see this section back - keeps a nice human</span>
+<span class="qt">&gt; element to it.</span>
+
+2 votes and counting :)
+
+
+
+
+
+</pre></div><div class="post" id="p155553"><div class="ph"><a class="d" href="#p155553">2003-02-13 11:15:32</a> <span>Stef Robb</span> <span>Re: CSS FAQ Updated</span></div><pre>Yadda, yadda, yadda, Bethany Carlton, blah, blah, blah, 13 Feb 2003,
+gibber, news:b2fi14$1cj2p9$…@…: 
+
+<span class="qt">&gt; 2 votes and counting :)</span>
+
+Make that 3!  I hadn&#x27;t noticed that this section had gone, I liked to find 
+out what folk were upto.
+
+What&#x27;s the point of reducing the amount of information available in the 
+FAQ?  It might not be the most accessed or used area but the information is 
+still valid and relevant.  It&#x27;s not like you&#x27;re sort on diskspace, it it?
+
+-Stef
+
+-- 
+New to Speccy emulation? Read this group&#x27;s FAQ at:
+&lt;URL:<a href="http://www.sinclairfaq.com/&gt;" rel="noreferrer">http://www.sinclairfaq.com/&gt;</a>
+
+
+
+</pre></div><div class="post" id="p155569"><div class="ph"><a class="d" href="#p155569">2003-02-13 17:01:58</a> <span>Bethany Carlton</span> <span>Re: CSS FAQ Updated</span></div><pre>&quot;Stef Robb&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Yadda, yadda, yadda, Bethany Carlton, blah, blah, blah, 13 Feb 2003,</span>
+<span class="qt">&gt; gibber, news:b2fi14$1cj2p9$…@…:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; 2 votes and counting :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Make that 3!  I hadn&#x27;t noticed that this section had gone, I liked to find</span>
+<span class="qt">&gt; out what folk were upto.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; What&#x27;s the point of reducing the amount of information available in the</span>
+<span class="qt">&gt; FAQ?</span>
+
+There is substantially more information in the new FAQ than the old.
+
+<span class="qt">&gt; It might not be the most accessed or used area but the information is</span>
+<span class="qt">&gt; still valid and relevant.</span>
+
+It&#x27;s not accurate at all, and was one of the few sections that was
+*specifically* singled out by those that expressed an opinion in response to
+the questionaire sent out last year, as being:
+
+a) never well maintained in the first place
+b) a poor alternative to the information available from WoS (see copyrights
+pages)
+
+In actuality, WoS has been listing this for years, and in much, much more
+detail than the FAQ. Rather than duplicate both the effort and the
+information, why not go to the definitive resource directly? Wouldn&#x27;t the
+time required to verify and update/correct the entries to put them in the
+FAQ be better spent on helping WoS maintainers achieve the same thing, given
+that they&#x27;re already 100&#x27;s of entries more up-to-date already?
+
+<span class="qt">&gt; It&#x27;s not like you&#x27;re sort on diskspace, it it?</span>
+
+Not even vaguely close. Just because it&#x27;s there, doesn&#x27;t mean you need to
+fill it.
+
+
+
+
+
+</pre></div><div class="post" id="p155570"><div class="ph"><a class="d" href="#p155570">2003-02-13 17:21:14</a> <span>Stef Robb</span> <span>Re: CSS FAQ Updated</span></div><pre>Yadda, yadda, yadda, Bethany Carlton, blah, blah, blah, 13 Feb 2003,
+gibber, news:b2gj47$1c6l4e$…@…: 
+
+<span class="qt">&gt; &quot;Stef Robb&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; What&#x27;s the point of reducing the amount of information available in</span>
+<span class="qt">&gt;&gt; the FAQ?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; There is substantially more information in the new FAQ than the old.</span>
+
+Oh yes, I realise that.  I knew about the copyright pages on WoS also, just 
+didn&#x27;t think about the obvious overlap.
+
+<span class="qt">&gt;&gt; It&#x27;s not like you&#x27;re sort on diskspace, it it?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Not even vaguely close. Just because it&#x27;s there, doesn&#x27;t mean you need</span>
+<span class="qt">&gt; to fill it.</span>
+
+Oh yes it does, install something from Microsoft, go on!
+
+-Stef
+
+-- 
+New to Speccy emulation? Read this group&#x27;s FAQ at:
+&lt;URL:<a href="http://www.sinclairfaq.com/&gt;" rel="noreferrer">http://www.sinclairfaq.com/&gt;</a>
+
+
+
+</pre></div><div class="post" id="p155576"><div class="ph"><a class="d" href="#p155576">2003-02-13 19:18:55</a> <span>Nick Humphries</span> <span>Re: CSS FAQ Updated</span></div><pre>On Thu, 13 Feb 2003 11:01:58 -0600, &quot;Bethany Carlton&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;&quot;Stef Robb&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt;news:…@…...</span>
+
+<span class="qt">&gt;&gt; It might not be the most accessed or used area but the information is</span>
+<span class="qt">&gt;&gt; still valid and relevant.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;It&#x27;s not accurate at all, and was one of the few sections that was</span>
+<span class="qt">&gt;*specifically* singled out by those that expressed an opinion in response to</span>
+<span class="qt">&gt;the questionaire sent out last year, as being:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;a) never well maintained in the first place</span>
+
+This is also why the YSRnRY doesn&#x27;t have a &quot;Where are they now?&quot; section -
+keeping track of over 50 people&#x27;s careers isn&#x27;t practical and possibly not
+desirable.
+
+-- 
+------------------------------------------------------------------------
+<span class="qt">| Nick Humphries                                    …@… |</span>
+<span class="qt">| The Your Sinclair Rock&#x27;n&#x27;Roll Years:        <a href="http://www.ysrnry.co.uk/" rel="noreferrer">http://www.ysrnry.co.uk/</a> |</span>
+<span class="qt">| The YSRnRY TV Show (Coming Soon)     <a href="http://www.ysrnry.co.uk/tvprog/" rel="noreferrer">http://www.ysrnry.co.uk/tvprog/</a> |</span>
+<span class="qt">| The Tipshop:                           <a href="http://www.the-tipshop.co.uk/" rel="noreferrer">http://www.the-tipshop.co.uk/</a> |</span>
+------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p155610"><div class="ph"><a class="d" href="#p155610">2003-02-14 10:00:25</a> <span>lechien</span> <span>Re: CSS FAQ Updated</span></div><pre>Bethany Carlton wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; In actuality, WoS has been listing this for years, and in much, much more</span>
+<span class="qt">&gt; detail than the FAQ. Rather than duplicate both the effort and the</span>
+<span class="qt">&gt; information, why not go to the definitive resource directly? Wouldn&#x27;t the</span>
+<span class="qt">&gt; time required to verify and update/correct the entries to put them in the</span>
+<span class="qt">&gt; FAQ be better spent on helping WoS maintainers achieve the same thing, given</span>
+<span class="qt">&gt; that they&#x27;re already 100&#x27;s of entries more up-to-date already?</span>
+<span class="qt">&gt; </span>
+
+Would an effective compromise be to have a &quot;Whatever happened to....&quot; 
+question on the home page with a link that points to the WoS pages?
+
+Excellent job btw, Bethany.  A well-presented, up-to-date FAQ is 
+becoming increasingly rare today.
+
+/matt
+
+
+
+
+</pre></div><div class="post" id="p155644"><div class="ph"><a class="d" href="#p155644">2003-02-14 16:26:18</a> <span>Bethany Carlton</span> <span>Re: CSS FAQ Updated</span></div><pre>&quot;lechien&quot; &lt;…@…&gt; wrote in message
+news:YU23a.9560$…@…...
+<span class="qt">&gt; Bethany Carlton wrote:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; In actuality, WoS has been listing this for years, and in much, much</span>
+more
+<span class="qt">&gt; &gt; detail than the FAQ. Rather than duplicate both the effort and the</span>
+<span class="qt">&gt; &gt; information, why not go to the definitive resource directly? Wouldn&#x27;t</span>
+the
+<span class="qt">&gt; &gt; time required to verify and update/correct the entries to put them in</span>
+the
+<span class="qt">&gt; &gt; FAQ be better spent on helping WoS maintainers achieve the same thing,</span>
+given
+<span class="qt">&gt; &gt; that they&#x27;re already 100&#x27;s of entries more up-to-date already?</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Would an effective compromise be to have a &quot;Whatever happened to....&quot;</span>
+<span class="qt">&gt; question on the home page with a link that points to the WoS pages?</span>
+
+Sounds perfectly sensible to me - consider it done for with the next update
+[1]
+
+<span class="qt">&gt; Excellent job btw, Bethany.  A well-presented, up-to-date FAQ is</span>
+<span class="qt">&gt; becoming increasingly rare today.</span>
+
+1 down, 67,492 left to go.... ;)
+
+[1] Early March.
+
+
+
+
+
+</pre></div><div class="post" id="p155896"><div class="ph"><a class="d" href="#p155896">2003-02-17 22:58:27</a> <span>Andrew Owen</span> <span>Re: ANN: CSS FAQ Updated</span></div><pre>In article &lt;…@…&gt;, Alvin
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Hi Bethany,</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Nice job on the FAQ.  I like the sleeker, simpler version.  I</span>
+<span class="qt">&gt; was reading the Timex reference section, learned a thing or two,</span>
+<span class="qt">&gt; and spotted a couple of small errors:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; At one point, talking about port $ff, it&#x27;s mentioned that</span>
+<span class="qt">&gt; it &quot;seems likely to be partially decoded&quot; as with the Spectrum&#x27;s</span>
+<span class="qt">&gt; ports.  All i/o ports are fully decoded in the TS2068 (and</span>
+<span class="qt">&gt; presumably the TC2068/TC2048).</span>
+
+No they aren&#x27;t. At least on the TC2048 some ports are decidedly only
+partially decoded, and since it&#x27;s basically the same SCLD/ULA as the
+TS2068 I&#x27;d guess the same is true for that machine as well. *Most* ports
+are fully decoded.
+
+<span class="qt">&gt; The joystick fire button is attached to bit 7, not bit 4</span>
+<span class="qt">&gt; as shown.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The EXROM back is not fully decoded.  This means the</span>
+<span class="qt">&gt; EXROM memory that sits in the 0-8k chunk also appears</span>
+<span class="qt">&gt; in every 8k chunk in the 64k space of the EXROM</span>
+<span class="qt">&gt; bank.</span>
+
+I wondered about that.
+ 
+<span class="qt">&gt; Anyway great job to you and Andrew.</span>
+
+My thanks to Johnny Red and Jarek Adamski and you for providing much of
+the info in the first place.
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p155993"><div class="ph"><a class="d" href="#p155993">2003-02-19 01:38:25</a> <span>Duncan Snowden</span> <span>Re: ANN: CSS FAQ Updated</span></div><pre>Program: Bethany Carlton
+
+Bytes: Last Tuesday
+
+<span class="qt">&gt; It should look pretty much the same regardless of your browser, so</span>
+<span class="qt">&gt; that&#x27;s maybe unlikely.</span>
+
+Possibly. But I&#x27;m used to things looking crap on a browser most people
+have never even heard of, so when a site looks a bit plain, I usually
+assume that&#x27;s what&#x27;s going on. It&#x27;s not a complaint, though; obviously,
+as you say, the content&#x27;s what matters at this stage.
+
+<span class="qt">&gt;&gt; Have some Rolos.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;ll be needing all I can get to pay the plug tax!</span>
+
+Oh, don&#x27;t waste them on that. G&#x27;wan... spoil yourself...
+
+-- 
+Duncan Snowden. 
+
+L BREAK into program, 1170:4 
+
+
+
+</pre></div><div class="post" id="p156009"><div class="ph"><a class="d" href="#p156009">2003-02-19 04:01:05</a> <span>Bethany Carlton</span> <span>Re: ANN: CSS FAQ Updated</span></div><pre>&quot;Duncan Snowden&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Program: Bethany Carlton</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Bytes: Last Tuesday</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; It should look pretty much the same regardless of your browser, so</span>
+<span class="qt">&gt; &gt; that&#x27;s maybe unlikely.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Possibly. But I&#x27;m used to things looking crap on a browser most people</span>
+<span class="qt">&gt; have never even heard of, so when a site looks a bit plain, I usually</span>
+<span class="qt">&gt; assume that&#x27;s what&#x27;s going on. It&#x27;s not a complaint, though; obviously,</span>
+<span class="qt">&gt; as you say, the content&#x27;s what matters at this stage.</span>
+
+Well, I expect to be fiddling around with the design for a bit anyway, so if
+you think there&#x27;s anything that would be beneficial to work in along the way
+then there&#x27;s no harm in letting me know. Worst case scenario is it rattles
+around in the &quot;yeah, whatever...&quot; bucket for a while before mysteriously
+disappearing altogether, but this is pretty unlikely :)
+
+<span class="qt">&gt; &gt;&gt; Have some Rolos.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; I&#x27;ll be needing all I can get to pay the plug tax!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Oh, don&#x27;t waste them on that. G&#x27;wan... spoil yourself...</span>
+
+How many Rolos do I need to qualify for a Creme Egg?
+
+Bethany
+
+
+
+
+
+</pre></div><div class="post" id="p156067"><div class="ph"><a class="d" href="#p156067">2003-02-19 15:47:53</a> <span>Derek Glen</span> <span>Re: ANN: CSS FAQ Updated</span></div><pre>
+&quot;Bethany Carlton&quot; &lt;…@…&gt; wrote in message
+news:b2uvi8$1ghlcf$…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; How many Rolos do I need to qualify for a Creme Egg?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Bethany</span>
+<span class="qt">&gt;</span>
+
+I just checked on the FT website. Current trade rates are 12.41 Rolos to the
+Creme Egg, although analysts expect the rate to rise sharply towards Easter
+and peak just after, possibly as high as 25 Rolos to the Egg, once all this
+year&#x27;s ration of Creme Eggs have been sold. They believe it is unlikely,
+however, that we will again see the astonishing panic-buying of Creme Eggs
+and the resultant depleted world Rolo stocks that were witnessed in the
+early 90s, because of the increase in Creme Egg production capacity at
+Bournville brought about by my activities on-site there in the second half
+of 2000!
+
+--
+degsy. :o)
+Where are we going and why am I in this handbasket?
+
+
+
+
+
+</pre></div><div class="post" id="p157235"><div class="ph"><a class="d" href="#p157235">2003-03-04 01:54:34</a> <span>Bethany Carlton</span> <span>Re: ANN: CSS FAQ Updated</span></div><pre>&quot;Chris Young&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; On Fri, 7 Feb 2003 12:29:10 -0600, there was a flash of lightening and a</span>
+clap
+<span class="qt">&gt; of thunder. A voice, believed to be the voice of God (but later turned</span>
+<span class="qt">&gt; out to just be Bethany Carlton trying out a karaoke machine and having a</span>
+few
+<span class="qt">&gt; electrical problems) boomed out:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; So</span>
+<span class="qt">&gt; &gt; far, the only corrections identified have been quite small</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; You appear to have forgotten to change my site URL as well, not that it</span>
+<span class="qt">&gt; makes much difference.</span>
+
+I&#x27;m updating the FAQ just now, and have changed it to:
+
+
+
+
+
+
+</pre></div><div class="post" id="p157236"><div class="ph"><a class="d" href="#p157236">2003-03-04 01:55:44</a> <span>Bethany Carlton</span> <span>Re: ANN: CSS FAQ Updated</span></div><pre>&quot;Bethany Carlton&quot; &lt;…@…&gt; wrote in message
+news:b4110u$1rcqs0$…@…...
+<span class="qt">&gt; &quot;Chris Young&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt; &gt; On Fri, 7 Feb 2003 12:29:10 -0600, there was a flash of lightening and a</span>
+<span class="qt">&gt; clap</span>
+<span class="qt">&gt; &gt; of thunder. A voice, believed to be the voice of God (but later turned</span>
+<span class="qt">&gt; &gt; out to just be Bethany Carlton trying out a karaoke machine and having a</span>
+<span class="qt">&gt; few</span>
+<span class="qt">&gt; &gt; electrical problems) boomed out:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; So</span>
+<span class="qt">&gt; &gt; &gt; far, the only corrections identified have been quite small</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; You appear to have forgotten to change my site URL as well, not that it</span>
+<span class="qt">&gt; &gt; makes much difference.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;m updating the FAQ just now, and have changed it to:</span>
+
+Oops.
+
+<a href="http://www.ysac.unsatisfactorysoftware.co.uk/" rel="noreferrer">http://www.ysac.unsatisfactorysoftware.co.uk/</a>
+
+
+
+
+
+</pre></div><div class="post" id="p157237"><div class="ph"><a class="d" href="#p157237">2003-03-04 02:02:33</a> <span>Bethany Carlton</span> <span>Re: ANN: CSS FAQ Updated</span></div><pre>&quot;Bethany Carlton&quot; &lt;…@…&gt; wrote in message
+news:b41134$1qluch$…@…...
+<span class="qt">&gt; &quot;Bethany Carlton&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:b4110u$1rcqs0$…@…...</span>
+<span class="qt">&gt; &gt; &quot;Chris Young&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; &gt; news:…@…...</span>
+<span class="qt">&gt; &gt; &gt; On Fri, 7 Feb 2003 12:29:10 -0600, there was a flash of lightening and</span>
+a
+<span class="qt">&gt; &gt; clap</span>
+<span class="qt">&gt; &gt; &gt; of thunder. A voice, believed to be the voice of God (but later turned</span>
+<span class="qt">&gt; &gt; &gt; out to just be Bethany Carlton trying out a karaoke machine and having</span>
+a
+<span class="qt">&gt; &gt; few</span>
+<span class="qt">&gt; &gt; &gt; electrical problems) boomed out:</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; &gt; So</span>
+<span class="qt">&gt; &gt; &gt; &gt; far, the only corrections identified have been quite small</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; You appear to have forgotten to change my site URL as well, not that</span>
+it
+<span class="qt">&gt; &gt; &gt; makes much difference.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; I&#x27;m updating the FAQ just now, and have changed it to:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Oops.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; <a href="http://www.ysac.unsatisfactorysoftware.co.uk/" rel="noreferrer">http://www.ysac.unsatisfactorysoftware.co.uk/</a></span>
+
+Alright, one more oops and I&#x27;m done:
+
+<a href="http://ysac.unsatisfactorysoftware.co.uk/" rel="noreferrer">http://ysac.unsatisfactorysoftware.co.uk/</a>
+
+
+
+
+
+
+</pre></div><div class="post" id="p157476"><div class="ph"><a class="d" href="#p157476">2003-03-06 19:34:50</a> <span>Chris Young</span> <span>Re: ANN: CSS FAQ Updated</span></div><pre>On Mon, 3 Mar 2003 20:02:33 -0600, there was a flash of lightening and a clap
+of thunder. A voice, believed to be the voice of God (but later turned
+out to just be Bethany Carlton trying out a karaoke machine and having a few
+electrical problems) boomed out:
+
+<span class="qt">&gt; Alright, one more oops and I&#x27;m done:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; <a href="http://ysac.unsatisfactorysoftware.co.uk/" rel="noreferrer">http://ysac.unsatisfactorysoftware.co.uk/</a></span>
+
+That&#x27;s the bunny!  (actually, technically it&#x27;s not a bunny but a
+collection of web pages)
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p157571"><div class="ph"><a class="d" href="#p157571">2003-03-07 18:35:27</a> <span>neuro</span> <span>Re: ANN: CSS FAQ Updated</span></div><pre>Chris Young wrote:
+<span class="qt">&gt; On Mon, 3 Mar 2003 20:02:33 -0600, there was a flash of lightening and a</span>
+<span class="qt">&gt; clap of thunder. A voice, believed to be the voice of God (but later</span>
+<span class="qt">&gt; turned</span>
+<span class="qt">&gt; out to just be Bethany Carlton trying out a karaoke machine and having a</span>
+<span class="qt">&gt; few electrical problems) boomed out:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Alright, one more oops and I&#x27;m done:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; <a href="http://ysac.unsatisfactorysoftware.co.uk/" rel="noreferrer">http://ysac.unsatisfactorysoftware.co.uk/</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; That&#x27;s the bunny!  (actually, technically it&#x27;s not a bunny but a</span>
+<span class="qt">&gt; collection of web pages)</span>
+
+close enough!
+
+--
+_ __/|   ___  ___ __ _________    irc-&gt; irc.astrolink.org #speccy 16384
+\`O_o&#x27;  / _ \/ -_) // / __/ _ \   faq-&gt; <a href="http://retro.zensoft.net/faq/css/" rel="noreferrer">http://retro.zensoft.net/faq/css/</a>
+=(_ _)=/_//_/\__/\_,_/_/  \___/ woscd-&gt; <a href="http://neuro.me.uk/woscd/" rel="noreferrer">http://neuro.me.uk/woscd/</a>
+   U - Ack! Phttpt! Thhbbt!     @ well.com :: William Anderson
+
+
+
+
+
+</pre></div></main></body></html>

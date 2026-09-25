@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANNOUNCE: Speccy-Player (AY file player for a Real Spectrum) version 0.1 available for download · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANNOUNCE: Speccy-Player (AY file player for a Real Spectrum) version 0.1 available for download</h1><p class="facts">12 posts, 2003-05-27 – 2003-06-02</p><div class="post" id="p162188"><div class="ph"><a class="d" href="#p162188">2003-05-27 19:24:47</a> <span>Tim Fardell</span> </div><pre>I finally managed to get my AY file player for Real Spectrum 128
+(working title &quot;Speccy-Player&quot;) into a suitable state to unleash it on
+the unsuspecting world. 
+
+<a href="http://www.crumblenet.co.uk/speccyplayer/" rel="noreferrer">http://www.crumblenet.co.uk/speccyplayer/</a>
+
+Please note that this is an early development version, so don&#x27;t expect
+it to work properly ;-) 
+
+Comments appreciated! 
+
+Don&#x27;t laugh too hard. 
+
+
+
+
+
+</pre></div><div class="post" id="p162241"><div class="ph"><a class="d" href="#p162241">2003-05-28 15:17:33</a> <span>Cyborg</span> <span>Re: ANNOUNCE: Speccy-Player (AY file player for a Real Spectrum) version 0.1 available for download</span></div><pre>…@… (Tim Fardell) wrote in message news:&lt;…@…&gt;...
+<span class="qt">&gt; I finally managed to get my AY file player for Real Spectrum 128</span>
+<span class="qt">&gt; (working title &quot;Speccy-Player&quot;) into a suitable state to unleash it on</span>
+<span class="qt">&gt; the unsuspecting world. </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; <a href="http://www.crumblenet.co.uk/speccyplayer/" rel="noreferrer">http://www.crumblenet.co.uk/speccyplayer/</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Please note that this is an early development version, so don&#x27;t expect</span>
+<span class="qt">&gt; it to work properly ;-) </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Comments appreciated! </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Don&#x27;t laugh too hard.</span>
+
+Works well enough - generates an error in BASIC in +3 emulation.
+
+
+
+</pre></div><div class="post" id="p162245"><div class="ph"><a class="d" href="#p162245">2003-05-28 17:05:48</a> <span>Tim Fardell</span> <span>Re: ANNOUNCE: Speccy-Player (AY file player for a Real Spectrum) version 0.1 available for download</span></div><pre>
+Thanks for trying it out :-)
+
+On 28 May 2003 08:17:33 -0700, …@… (Cyborg) wrote:
+<span class="qt">&gt;Works well enough - generates an error in BASIC in +3 emulation.</span>
+
+Damn! What&#x27;s the error? 
+
+I won a +3 on eBay but haven&#x27;t taken delivery of it yet, so am
+presently unable to test on a +3. 
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p162256"><div class="ph"><a class="d" href="#p162256">2003-05-28 19:50:48</a> <span>Tim Fardell</span> <span>Re: ANNOUNCE: Speccy-Player (AY file player for a Real Spectrum) version 0.1 available for download</span></div><pre>On Wed, 28 May 2003 17:05:48 GMT, …@… (Tim
+Fardell) wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Thanks for trying it out :-)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;On 28 May 2003 08:17:33 -0700, …@… (Cyborg) wrote:</span>
+<span class="qt">&gt;&gt;Works well enough - generates an error in BASIC in +3 emulation.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Damn! What&#x27;s the error? </span>
+
+Sorry to follow-up my own post (bad form, I know), but I grabbed a
+copy of Spectaculator, and found the problem. Seems +3 BASIC uses the
+INPUT keyword slightly differently. 
+
+Version 0.1a is now available, and fixes this problem (I hope). 
+
+
+
+
+</pre></div><div class="post" id="p162265"><div class="ph"><a class="d" href="#p162265">2003-05-28 22:51:22</a> <span>Chipmunk</span> <span>Re: ANNOUNCE: Speccy-Player (AY file player for a Real Spectrum) version 0.1 available for download</span></div><pre>&quot;Tim Fardell&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Comments appreciated!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Don&#x27;t laugh too hard.</span>
+
+Seems to work pretty well ;)
+
+I&#x27;ve only tried it in Spectaculator so far, but the only slight
+problem so far is that in most files I&#x27;ve converted (and even
+on the one supplied with it), one of the channels is missing...
+
+Anyone else noticed that? Or is it just me? :}
+
+/Chip.
+
+
+
+
+
+
+</pre></div><div class="post" id="p162268"><div class="ph"><a class="d" href="#p162268">2003-05-28 23:00:04</a> <span>Cyborg</span> <span>Re: ANNOUNCE: Speccy-Player (AY file player for a Real Spectrum) version 0.1 available for download</span></div><pre>…@… (Tim Fardell) wrote in message news:&lt;…@…&gt;...
+<span class="qt">&gt; Thanks for trying it out :-)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; On 28 May 2003 08:17:33 -0700, …@… (Cyborg) wrote:</span>
+<span class="qt">&gt; &gt;Works well enough - generates an error in BASIC in +3 emulation.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Damn! What&#x27;s the error? </span>
+
+I think it&#x27;s probably due to the tape loader routine... haven&#x27;t really
+looked that deeply into it. You can recreate the error in Spin no
+problem (I haven&#x27;t used a real +3 for awhile...)
+
+
+
+</pre></div><div class="post" id="p162293"><div class="ph"><a class="d" href="#p162293">2003-05-29 11:42:20</a> <span>Tim Fardell</span> <span>Re: ANNOUNCE: Speccy-Player (AY file player for a Real Spectrum) version 0.1 available for download</span></div><pre>On Wed, 28 May 2003 23:51:22 +0100, &quot;Chipmunk&quot; &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;Seems to work pretty well ;)</span>
+
+Thanks for trying it out :-)
+
+<span class="qt">&gt;I&#x27;ve only tried it in Spectaculator so far, but the only slight</span>
+<span class="qt">&gt;problem so far is that in most files I&#x27;ve converted (and even</span>
+<span class="qt">&gt;on the one supplied with it), one of the channels is missing...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Anyone else noticed that? Or is it just me? :}</span>
+
+Hmmm. This is a weird one. Not quite sure how this could happen, since
+the actual code that generates the music is unchanged, unless it
+relies on a particular configuration of the soundchip before being
+invoked.I&#x27;m not familiar with Spectaculator - could it be a quirk of
+the emulator? 
+
+I will have a play tonight and see if I can duplicate the problem. 
+
+Thanks! 
+
+
+
+
+</pre></div><div class="post" id="p162294"><div class="ph"><a class="d" href="#p162294">2003-05-29 11:43:34</a> <span>Tim Fardell</span> <span>Re: ANNOUNCE: Speccy-Player (AY file player for a Real Spectrum) version 0.1 available for download</span></div><pre>On 28 May 2003 16:00:04 -0700, …@… (Cyborg) wrote:
+
+<span class="qt">&gt;&gt; Damn! What&#x27;s the error? </span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I think it&#x27;s probably due to the tape loader routine... haven&#x27;t really</span>
+<span class="qt">&gt;looked that deeply into it. You can recreate the error in Spin no</span>
+<span class="qt">&gt;problem (I haven&#x27;t used a real +3 for awhile...)</span>
+
+Possibly. I should be getting a +3 quite soon, so I will investigate
+further. 
+
+The error I got in Spectaculator was &quot;Device not ready&quot; - was this
+what you saw? 
+
+
+
+
+</pre></div><div class="post" id="p162303"><div class="ph"><a class="d" href="#p162303">2003-05-29 17:45:41</a> <span>Chipmunk</span> <span>Re: ANNOUNCE: Speccy-Player (AY file player for a Real Spectrum) version 0.1 available for download</span></div><pre>&quot;Tim Fardell&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; On Wed, 28 May 2003 23:51:22 +0100, &quot;Chipmunk&quot; &lt;…@…&gt;</span>
+<span class="qt">&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Hmmm. This is a weird one. Not quite sure how this could happen, since</span>
+<span class="qt">&gt; the actual code that generates the music is unchanged, unless it</span>
+<span class="qt">&gt; relies on a particular configuration of the soundchip before being</span>
+<span class="qt">&gt; invoked.I&#x27;m not familiar with Spectaculator - could it be a quirk of</span>
+<span class="qt">&gt; the emulator?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I will have a play tonight and see if I can duplicate the problem.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Thanks!</span>
+
+Don&#x27;t try too hard, I&#x27;ve since tried again today at work, and they worked
+fine... (In spectaculator too!)
+
+On further investigation when I got home, I found that my headphones were
+switched to &quot;mono&quot; mode! Doh!
+
+My only excuse is that it was late :}
+
+/Chip.
+
+&lt;Sounds of me getting my coat...&gt; uh... seeya! :} &lt;Door closes...&gt;
+
+
+
+
+
+</pre></div><div class="post" id="p162432"><div class="ph"><a class="d" href="#p162432">2003-05-31 21:10:58</a> <span>Alvin</span> <span>Re: ANNOUNCE: Speccy-Player (AY file player for a Real Spectrum) version 0.1 available for download</span></div><pre>…@… (Tim Fardell) wrote in message news:&lt;…@…&gt;...
+<span class="qt">&gt; I finally managed to get my AY file player for Real Spectrum 128</span>
+<span class="qt">&gt; (working title &quot;Speccy-Player&quot;) into a suitable state to unleash it on</span>
+<span class="qt">&gt; the unsuspecting world. </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; <a href="http://www.crumblenet.co.uk/speccyplayer/" rel="noreferrer">http://www.crumblenet.co.uk/speccyplayer/</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Please note that this is an early development version, so don&#x27;t expect</span>
+<span class="qt">&gt; it to work properly ;-) </span>
+
+Nice work Tim.  I (think) I&#x27;ve found a bug for you.
+I converted &quot;Acoustic Dreams&quot; from the WOS archive
+and found that song #7 has glitches and song #4
+doesn&#x27;t terminate properly.  I&#x27;m sot sure if the
+latter happens because the ay file is bigger than
+the 16K limit (a known issue you mention in the
+readme) but the other songs do manage to repeat
+when they reach the end.  The songs were tested
+on Spectaculator but I think Spectaculator&#x27;s
+mature enough not to be responsible.
+
+I look forward to getting hold of the source :)
+
+Alvin
+
+
+
+</pre></div><div class="post" id="p162446"><div class="ph"><a class="d" href="#p162446">2003-06-01 09:07:37</a> <span>Tim Fardell</span> <span>Re: ANNOUNCE: Speccy-Player (AY file player for a Real Spectrum) version 0.1 available for download</span></div><pre>On 31 May 2003 14:10:58 -0700, …@… (Alvin) wrote:
+
+<span class="qt">&gt;Nice work Tim.  I (think) I&#x27;ve found a bug for you.</span>
+<span class="qt">&gt;I converted &quot;Acoustic Dreams&quot; from the WOS archive</span>
+<span class="qt">&gt;and found that song #7 has glitches and song #4</span>
+<span class="qt">&gt;doesn&#x27;t terminate properly.  I&#x27;m sot sure if the</span>
+<span class="qt">&gt;latter happens because the ay file is bigger than</span>
+<span class="qt">&gt;the 16K limit (a known issue you mention in the</span>
+<span class="qt">&gt;readme) but the other songs do manage to repeat</span>
+<span class="qt">&gt;when they reach the end.  The songs were tested</span>
+<span class="qt">&gt;on Spectaculator but I think Spectaculator&#x27;s</span>
+<span class="qt">&gt;mature enough not to be responsible.</span>
+
+Thanks very much for the feedback. 
+I get the same problems with the file you mention with a real +2
+machine, so it&#x27;s not Spectaculator&#x27;s fault.
+Looks like there are two problems here, both due to the &quot;memory
+overlap&quot; issue. There&#x27;s a big datablock which gets loaded into a
+memory location that overlaps the source file, which is probably why
+there are glitches in the song. The same datablock also overwrites the
+BASIC area, which is why the song doesn&#x27;t exit properly. The former
+should be fixable by shifting the source file to an unused memory
+location before doing the load, but I&#x27;m not sure there will be enough
+free memory realestate to save the BASIC area and restore it after
+playback. Nevertheless, I&#x27;ll look into this. 
+
+<span class="qt">&gt;I look forward to getting hold of the source :)</span>
+
+Hmmm. Source... well, there isn&#x27;t any really :-) It&#x27;s mainly written
+in Spectrum BASIC (no chuckling at the back) with a few M/C routines
+thrown in. I (perhaps foolishly) didn&#x27;t keep the disassembly of the
+m/c bits, but WinZ80&#x27;s debug option will get it back. It&#x27;s not exactly
+complex stuff :-) 
+The PC-based bit doesn&#x27;t really do anything except create a checksum
+and write out a TAP file. You&#x27;re welcome to see the source code for
+that bit, but it&#x27;s very dull :-)
+
+Thanks again for the feedback - it&#x27;s very much appreciated! 
+
+Tim. 
+
+
+
+
+</pre></div><div class="post" id="p162496"><div class="ph"><a class="d" href="#p162496">2003-06-02 01:48:47</a> <span>Duncan Snowden</span> <span>Re: ANNOUNCE: Speccy-Player (AY file player for a Real Spectrum) version 0.1 available for download</span></div><pre>Program: Tim Fardell
+
+Bytes: Sunday
+
+<span class="qt">&gt; The PC-based bit doesn&#x27;t really do anything except create a checksum</span>
+<span class="qt">&gt; and write out a TAP file.</span>
+
+Thought so. I managed to get it working on ASp by using bas2tap from
+z88dk and fiddling with ASp&#x27;s tape browser to miss the basic loader that
+it bungs on the beginning. It actually sounds better than the AY plugin
+for Delitracker... and it does beeper tunes, which Delitracker,
+infuriatingly, doesn&#x27;t. Hurrah!
+
+-- 
+Duncan Snowden. 
+
+M RAMTOP no good, 1410:4 
+
+
+
+</pre></div></main></body></html>

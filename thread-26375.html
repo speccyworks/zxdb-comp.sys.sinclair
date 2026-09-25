@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANN: ZX Spectrum SE is completed · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANN: ZX Spectrum SE is completed</h1><p class="facts">11 posts, 2002-10-13 – 2002-10-17</p><div class="post" id="p147987"><div class="ph"><a class="d" href="#p147987">2002-10-13 14:44:08</a> <span>Andrew Owen</span> </div><pre>Hi all,
+
+Bet you thought it would never happen eh? Well, prototype one is finished
+(well actually the AY isn&#x27;t stereo at the moment but the circuit is). And
+I ran SE Basic on it today without too much difficulty. I should point out
+I&#x27;m not a hardware guru. I knew what I wanted and I got a very talented
+speccy engineer to build it for me so please visit www.yarek.com if you&#x27;re
+interested in any of the mods (some aren&#x27;t on the site yet as they were
+designed specifically for the SE). So here&#x27;s the spex:
+
+Base machine: Timex Portugal TC2048
+
+PSU: I&#x27;m using the PSU off a grey +2 just to make sure all the extra
+hardware gets enough juice.
+
+CPU: Z80A @ 3.528 MHz (as per TC2048)
+
+ULA: Modified Timex SCLD. Total of 27K of memory usable by video chip.
+Uses both ZX128 and Timex modes to give a total of 4x standard spectrum
+screen, 2x hi-res screen or 2x hi-colour screen. standard mode is 256x192.
+hi-res is 512x192 mono. hi-colour is 256x192 but attributes are in 8x1
+cells instead of 8x8 cells.
+
+Interrupts: can be physically disabled via I/O without a DI instruction.
+
+Keyboard: One of those notebook size PS/2 keyboards in black via ProFace-AT.
+
+Mouse: Amiga 2-button via built-in modified Kempston port.
+
+Joystick: 2 button + autofire via built-in modified Kempston port. (bought
+a new Konix Speedking from an Amiga supplier)
+
+LED: Next to on off switch. RED = connected. GREEN = power on.
+
+Soft-reset: CTRL-ALT-DEL via keyboard.
+
+NMI: button added to original machine.
+
+Memory: 280K. 144K in Spectrum 128 layout (extra 16K in place of bank 2).
+128K in Timex horizontal memory (64K accessible at one time via DOCK or EX
+banks). 8K EEPROM accessible via AY chip.
+
+Sound: retro-fitted ABC/ACB switchable stereo AY circuit (currently wired
+to internal speaker). Wired to ZX128 and TS2068 sound ports for maximum
+compatibility.
+
+ROM: Modified 128 editor (Resets Timex display, doesn&#x27;t call TEST
+routine). Standard 48K Basic. More compatible than original 128. Custom
+ROMs can be used via DOCK or EX-BANK. (SE Basic works a treat). Traps for
+TR-DOS emulation (not implimented).
+
+Not really much of an upgrade in some respects, but rather more powerful
+than it was in its original configuration, and more video modes than you
+can shake a stick at. Plus plenty of memory. So what&#x27;s next? I&#x27;ll be
+adding a ZXATASP hard disk interface. And then I&#x27;ll be getting on with SE
+Basic. And when that&#x27;s out of Beta, I&#x27;ll start work on the code behind the
+GUI.
+
+And how much did it all cost? I think I paid over the odds for the
+original machine, but the parts were dirt cheap and Jarek charges very
+reasonable labour costs. So if you want your own ZX Spectrum SE, visit
+www.yarek.com and drop him an email. Plus, if you get a ZXATASP interface
+then you won&#x27;t need the Timex&#x27;s shadow RAM to use SE Basic as it has its
+own shadow RAM. The ZXATASP isn&#x27;t one of Jarek&#x27;s devices. I can&#x27;t remember
+the web address off hand but there&#x27;s a link on the ZX Spectrum +3e site I
+think.
+
+Comments, questions?
+
+-- 
+I&#x27;m really here. You&#x27;re not imagining it.
+
+
+
+</pre></div><div class="post" id="p148001"><div class="ph"><a class="d" href="#p148001">2002-10-13 20:30:46</a> <span>Ramlink666</span> <span>Re: ANN: ZX Spectrum SE is completed</span></div><pre>Fantastic... I&#x27;ll give it a mention in Micro Mart magazine through the &quot;Retro
+Computer Mart&quot; column...
+
+Shaun.
+
+
+
+</pre></div><div class="post" id="p148008"><div class="ph"><a class="d" href="#p148008">2002-10-13 21:43:24</a> <span>Andrew Owen</span> <span>Re: ANN: ZX Spectrum SE is completed</span></div><pre>In article &lt;…@…&gt;,
+…@… (Ramlink666) wrote:
+
+<span class="qt">&gt; Fantastic... I&#x27;ll give it a mention in Micro Mart magazine through the &quot;Retro</span>
+<span class="qt">&gt; Computer Mart&quot; column...</span>
+
+When is that? I&#x27;d like to get the new web page up before it goes out. The
+current page at zxse.raww.net is well out of date.
+
+-- 
+I&#x27;m really here. You&#x27;re not imagining it.
+
+
+
+</pre></div><div class="post" id="p148062"><div class="ph"><a class="d" href="#p148062">2002-10-14 19:12:02</a> <span>Dave the Lurker</span> <span>Re: ANN: ZX Spectrum SE is completed</span></div><pre>In article &lt;…@…
+addr.btopenworld.com&gt;, …@… says...
+<span class="qt">&gt; Hi all,</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Bet you thought it would never happen eh? Well, prototype one is finished</span>
+<span class="qt">&gt; (well actually the AY isn&#x27;t stereo at the moment but the circuit is). And</span>
+<span class="qt">&gt; I ran SE Basic on it today without too much difficulty. I should point out</span>
+<span class="qt">&gt; I&#x27;m not a hardware guru. I knew what I wanted and I got a very talented</span>
+<span class="qt">&gt; speccy engineer to build it for me so please visit www.yarek.com if you&#x27;re</span>
+<span class="qt">&gt; interested in any of the mods (some aren&#x27;t on the site yet as they were</span>
+<span class="qt">&gt; designed specifically for the SE). So here&#x27;s the spex:</span>
+
+[snippage of specs]
+
+That sounds like a nice machine, I love the idea of an I2C RAM chip 
+running off the AY.  I may have to pinch that for my speccy upgrade 
+project.
+
+Now that the thesis is just about done I may actually have some free 
+time to start dabbling with the speccy again.
+
+Andrew, or anyone else: Any chance of a quick howto on adding a command 
+to the speccy rom?  I&#x27;ve done some basic hacking of the ROM and I can 
+add commands when the IF1 ROM is paged in.  Just something simple will 
+do, I can bugger about once I have the general idea.
+
+cheers
+Dave
+
+
+
+</pre></div><div class="post" id="p148066"><div class="ph"><a class="d" href="#p148066">2002-10-14 19:59:56</a> <span>Andrew Owen</span> <span>Re: ANN: ZX Spectrum SE is completed</span></div><pre>In article &lt;…@…&gt;, Dave the Lurker
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; In article &lt;…@…</span>
+<span class="qt">&gt; addr.btopenworld.com&gt;, …@… says...</span>
+<span class="qt">&gt; &gt; Hi all,</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Bet you thought it would never happen eh? Well, prototype one is finished</span>
+<span class="qt">&gt; &gt; (well actually the AY isn&#x27;t stereo at the moment but the circuit is). And</span>
+<span class="qt">&gt; &gt; I ran SE Basic on it today without too much difficulty. I should point out</span>
+<span class="qt">&gt; &gt; I&#x27;m not a hardware guru. I knew what I wanted and I got a very talented</span>
+<span class="qt">&gt; &gt; speccy engineer to build it for me so please visit www.yarek.com if you&#x27;re</span>
+<span class="qt">&gt; &gt; interested in any of the mods (some aren&#x27;t on the site yet as they were</span>
+<span class="qt">&gt; &gt; designed specifically for the SE). So here&#x27;s the spex:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; [snippage of specs]</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; That sounds like a nice machine, I love the idea of an I2C RAM chip </span>
+<span class="qt">&gt; running off the AY.  I may have to pinch that for my speccy upgrade </span>
+<span class="qt">&gt; project.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Now that the thesis is just about done I may actually have some free </span>
+<span class="qt">&gt; time to start dabbling with the speccy again.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Andrew, or anyone else: Any chance of a quick howto on adding a command </span>
+<span class="qt">&gt; to the speccy rom?  I&#x27;ve done some basic hacking of the ROM and I can </span>
+<span class="qt">&gt; add commands when the IF1 ROM is paged in.  Just something simple will </span>
+<span class="qt">&gt; do, I can bugger about once I have the general idea.</span>
+
+Well, you could just re-write the error routine at RST 08H to mimic the
+IF1. That&#x27;s probably the easiest way. Everything else requires much more
+work.
+
+What commands were you thinking of adding?
+
+And why don&#x27;t you contribute them to SE Basic instead? ;)
+
+-- 
+The ZX Spectrum SE is really here. You&#x27;re not imagining it.
+
+<a href="http://zxse.raww.net/" rel="noreferrer">http://zxse.raww.net/</a>
+
+
+
+</pre></div><div class="post" id="p148124"><div class="ph"><a class="d" href="#p148124">2002-10-15 18:57:25</a> <span>Dave the Lurker</span> <span>Re: ANN: ZX Spectrum SE is completed</span></div><pre>In article &lt;…@…
+addr.btopenworld.com&gt;, …@… says...
+
+<span class="qt">&gt; &gt; Andrew, or anyone else: Any chance of a quick howto on adding a command </span>
+<span class="qt">&gt; &gt; to the speccy rom?  I&#x27;ve done some basic hacking of the ROM and I can </span>
+<span class="qt">&gt; &gt; add commands when the IF1 ROM is paged in.  Just something simple will </span>
+<span class="qt">&gt; &gt; do, I can bugger about once I have the general idea.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Well, you could just re-write the error routine at RST 08H to mimic the</span>
+<span class="qt">&gt; IF1. That&#x27;s probably the easiest way. Everything else requires much more</span>
+<span class="qt">&gt; work.</span>
+
+Hmmm, I&#x27;ll probably have a go at doing it that way then.  I have several 
+ideas for things to do anyway, so I&#x27;ll probably end up needing the space 
+in another ROM, I could just leave the ROM as it is and mod the hardware 
+to page in the custom one as needed.
+
+<span class="qt">&gt; </span>
+<span class="qt">&gt; What commands were you thinking of adding?</span>
+
+Basically I&#x27;d like to just add features as and when I think they may be 
+useful to me, I&#x27;m basically a hardware guy.  I have some ideas and want 
+to also try and write the code to support them.
+
+Things I hope to do: (in no particular order and to be completed at no 
+particular time)
+
+FAT file system for floppy drives (for a customised +2a)
+
+Realtime clock (code mostly done)
+
+ISO9660 support (I&#x27;d love to do this, but it&#x27;ll probably be one of the 
+last things to do)
+
+Very basic TCP/IP stack &amp; NIC interface code (TCP/IP is in the process 
+of being done, going V. Slowly, NIC interface code is working but I need 
+to improve it and probably re-write to use an interrupt)
+
+ 
+<span class="qt">&gt; And why don&#x27;t you contribute them to SE Basic instead? ;)</span>
+
+Well all the code will be available, but I&#x27;m writing it mainly for my 
+own use.  I&#x27;ll have no objections with anyone else using it.
+
+Well that is enough about what I want to do, time to find Leventhal &amp; 
+the Assembler and actually do it.
+
+cheers
+Dave
+
+
+
+</pre></div><div class="post" id="p148125"><div class="ph"><a class="d" href="#p148125">2002-10-15 19:44:41</a> <span>Andrew Owen</span> <span>Re: ANN: ZX Spectrum SE is completed</span></div><pre>In article &lt;…@…&gt;, Dave the Lurker
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; &gt; &gt; Andrew, or anyone else: Any chance of a quick howto on adding a command </span>
+<span class="qt">&gt; &gt; &gt; to the speccy rom?  I&#x27;ve done some basic hacking of the ROM and I can </span>
+<span class="qt">&gt; &gt; &gt; add commands when the IF1 ROM is paged in.  Just something simple will </span>
+<span class="qt">&gt; &gt; &gt; do, I can bugger about once I have the general idea.</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Well, you could just re-write the error routine at RST 08H to mimic the</span>
+<span class="qt">&gt; &gt; IF1. That&#x27;s probably the easiest way. Everything else requires much more</span>
+<span class="qt">&gt; &gt; work.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Hmmm, I&#x27;ll probably have a go at doing it that way then.  I have several </span>
+<span class="qt">&gt; ideas for things to do anyway, so I&#x27;ll probably end up needing the space </span>
+<span class="qt">&gt; in another ROM, I could just leave the ROM as it is and mod the hardware </span>
+<span class="qt">&gt; to page in the custom one as needed.</span>
+
+There&#x27;s actually a lot of spare space in the original ROM. There are
+several routines that are not even used and a few others that can be
+optimised without causing any incompatibility, part of what I&#x27;m doing with
+SE Basic.
+
+<span class="qt">&gt; &gt; What commands were you thinking of adding?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Basically I&#x27;d like to just add features as and when I think they may be </span>
+<span class="qt">&gt; useful to me, I&#x27;m basically a hardware guy.  I have some ideas and want </span>
+<span class="qt">&gt; to also try and write the code to support them.</span>
+
+Well, I&#x27;m after a proper UART RS232 and parallel interface if you&#x27;re
+interested. I could help with the software side.
+
+
+<span class="qt">&gt; Things I hope to do: (in no particular order and to be completed at no </span>
+<span class="qt">&gt; particular time)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; FAT file system for floppy drives (for a customised +2a)</span>
+
+I guess if I want a FAT system for Zip drives I&#x27;m going to have to write
+it myself. :)
+
+<span class="qt">&gt; Realtime clock (code mostly done)</span>
+
+I&#x27;d like one of those. Look forward to seeing the details.
+
+<span class="qt">&gt; ISO9660 support (I&#x27;d love to do this, but it&#x27;ll probably be one of the </span>
+<span class="qt">&gt; last things to do)</span>
+
+It would be nice to be able to load games directly off the WoS CD.
+
+<span class="qt">&gt; Very basic TCP/IP stack &amp; NIC interface code (TCP/IP is in the process </span>
+<span class="qt">&gt; of being done, going V. Slowly, NIC interface code is working but I need </span>
+<span class="qt">&gt; to improve it and probably re-write to use an interrupt)</span>
+
+I&#x27;d be very interested in that. Well, if I can get LYNX running on my ZX
+Spectrum SE. I&#x27;ve got the screen res, and probably enough memory, but I&#x27;d
+have to rewrite the whole thing from the ground up in Z80.
+
+<span class="qt">&gt; &gt; And why don&#x27;t you contribute them to SE Basic instead? ;)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Well all the code will be available, but I&#x27;m writing it mainly for my </span>
+<span class="qt">&gt; own use.  I&#x27;ll have no objections with anyone else using it.</span>
+
+Well, keep me posted and I&#x27;ll reuse any generally useful stuff you come up with.
+ 
+<span class="qt">&gt; Well that is enough about what I want to do, time to find Leventhal &amp; </span>
+<span class="qt">&gt; the Assembler and actually do it.</span>
+
+With assembly language I recommend using TASM as it is fairly portable
+between cross-assemblers.
+
+-- 
+The ZX Spectrum SE is really here. You&#x27;re not imagining it.
+
+<a href="http://zxse.raww.net/" rel="noreferrer">http://zxse.raww.net/</a>
+
+
+
+</pre></div><div class="post" id="p148129"><div class="ph"><a class="d" href="#p148129">2002-10-15 21:33:08</a> <span>Dave the Lurker</span> <span>Re: ANN: ZX Spectrum SE is completed</span></div><pre>In article &lt;…@…
+addr.btopenworld.com&gt;, …@… says...
+
+[rom hacking stuff]
+
+<span class="qt">&gt; &gt; Hmmm, I&#x27;ll probably have a go at doing it that way then.  I have several </span>
+<span class="qt">&gt; &gt; ideas for things to do anyway, so I&#x27;ll probably end up needing the space </span>
+<span class="qt">&gt; &gt; in another ROM, I could just leave the ROM as it is and mod the hardware </span>
+<span class="qt">&gt; &gt; to page in the custom one as needed.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; There&#x27;s actually a lot of spare space in the original ROM. There are</span>
+<span class="qt">&gt; several routines that are not even used and a few others that can be</span>
+<span class="qt">&gt; optimised without causing any incompatibility, part of what I&#x27;m doing with</span>
+<span class="qt">&gt; SE Basic.</span>
+
+any chance of a quick note on where these areas are?  I&#x27;ve seen a likely 
+area but getting the details directly from a proper hacker would be 
+appreciated.
+
+
+<span class="qt">&gt; &gt; &gt; What commands were you thinking of adding?</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Basically I&#x27;d like to just add features as and when I think they may be </span>
+<span class="qt">&gt; &gt; useful to me, I&#x27;m basically a hardware guy.  I have some ideas and want </span>
+<span class="qt">&gt; &gt; to also try and write the code to support them.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Well, I&#x27;m after a proper UART RS232 and parallel interface if you&#x27;re</span>
+<span class="qt">&gt; interested. I could help with the software side.</span>
+
+Ah, yes.  RS232 that is also something I&#x27;d like to get going properly.  
+You may want to take a look at 
+<a href="http://www.webshed.org/micros/index.html#local" rel="noreferrer">http://www.webshed.org/micros/index.html#local</a>
+
+The RS232 port in the article there is a bit basic and uses a hard to 
+get device now, but updating it to use a more modern device should be 
+doable.
+
+First thing to do though is replace the EPROMS in the speccy with some 
+battery backed SRAM and sort out some basic write protect circuitry to 
+stop it all getting corrupt.
+
+cheers
+Dave
+
+
+
+</pre></div><div class="post" id="p148131"><div class="ph"><a class="d" href="#p148131">2002-10-15 22:55:42</a> <span>Andrew Owen</span> <span>Re: ANN: ZX Spectrum SE is completed</span></div><pre>In article &lt;…@…&gt;, Dave the Lurker
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; In article &lt;…@…</span>
+<span class="qt">&gt; addr.btopenworld.com&gt;, …@… says...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; [rom hacking stuff]</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; &gt; Hmmm, I&#x27;ll probably have a go at doing it that way then.  I have several </span>
+<span class="qt">&gt; &gt; &gt; ideas for things to do anyway, so I&#x27;ll probably end up needing the space </span>
+<span class="qt">&gt; &gt; &gt; in another ROM, I could just leave the ROM as it is and mod the hardware </span>
+<span class="qt">&gt; &gt; &gt; to page in the custom one as needed.</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; There&#x27;s actually a lot of spare space in the original ROM. There are</span>
+<span class="qt">&gt; &gt; several routines that are not even used and a few others that can be</span>
+<span class="qt">&gt; &gt; optimised without causing any incompatibility, part of what I&#x27;m doing with</span>
+<span class="qt">&gt; &gt; SE Basic.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; any chance of a quick note on where these areas are?  I&#x27;ve seen a likely </span>
+<span class="qt">&gt; area but getting the details directly from a proper hacker would be </span>
+<span class="qt">&gt; appreciated.</span>
+
+Off the top of my head, you can lose the ZX81-NAME routine, REC-EDIT,
+quite a bit of the NEW/START code is unnecessary, the CLOSE-2 routine and
+lookup table can be dumped (unless you want to rewrite the channels code).
+There&#x27;s a large bit of code in the calculator that I ususaly replace with
+the -65536 bugfix that can also go. And you can free up quite a few bytes
+by shortening the error messages.
+
+<span class="qt">&gt; &gt; &gt; &gt; What commands were you thinking of adding?</span>
+<span class="qt">&gt; &gt; &gt; </span>
+<span class="qt">&gt; &gt; &gt; Basically I&#x27;d like to just add features as and when I think they may be </span>
+<span class="qt">&gt; &gt; &gt; useful to me, I&#x27;m basically a hardware guy.  I have some ideas and want </span>
+<span class="qt">&gt; &gt; &gt; to also try and write the code to support them.</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Well, I&#x27;m after a proper UART RS232 and parallel interface if you&#x27;re</span>
+<span class="qt">&gt; &gt; interested. I could help with the software side.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Ah, yes.  RS232 that is also something I&#x27;d like to get going properly.  </span>
+<span class="qt">&gt; You may want to take a look at </span>
+<span class="qt">&gt; <a href="http://www.webshed.org/micros/index.html#local" rel="noreferrer">http://www.webshed.org/micros/index.html#local</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The RS232 port in the article there is a bit basic and uses a hard to </span>
+<span class="qt">&gt; get device now, but updating it to use a more modern device should be </span>
+<span class="qt">&gt; doable.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; First thing to do though is replace the EPROMS in the speccy with some </span>
+<span class="qt">&gt; battery backed SRAM and sort out some basic write protect circuitry to </span>
+<span class="qt">&gt; stop it all getting corrupt.</span>
+
+You&#x27;ll need to modify the ROM to stop it overwriting itself. It does this
+at STK-CONST and when scrolling (scrolls one line to many into the
+character set) as I recall.
+
+-- 
+The ZX Spectrum SE is really here. You&#x27;re not imagining it.
+
+<a href="http://zxse.raww.net/" rel="noreferrer">http://zxse.raww.net/</a>
+
+
+
+</pre></div><div class="post" id="p148132"><div class="ph"><a class="d" href="#p148132">2002-10-16 01:08:43</a> <span>Geoff Wearmouth</span> <span>Re: ANN: ZX Spectrum SE is completed</span></div><pre>In article &lt;…@…&gt;, Dave the Lurker
+&lt;…@…&gt; writes
+<span class="qt">&gt;In article &lt;…@…</span>
+<span class="qt">&gt;addr.btopenworld.com&gt;, …@… says...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;[rom hacking stuff]</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; There&#x27;s actually a lot of spare space in the original ROM. There are</span>
+<span class="qt">&gt;&gt; several routines that are not even used and a few others that can be</span>
+<span class="qt">&gt;&gt; optimised without causing any incompatibility, part of what I&#x27;m doing with</span>
+<span class="qt">&gt;&gt; SE Basic.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;any chance of a quick note on where these areas are?  I&#x27;ve seen a likely </span>
+<span class="qt">&gt;area but getting the details directly from a proper hacker would be </span>
+<span class="qt">&gt;appreciated.</span>
+
+The largest area of spare space is the 1170 bytes preceding the
+character set. This, as early Spectrum adverts pronounced, 
+was designated for the RS232/Network software.
+
+<a href="http://www.wearmouth.demon.co.uk/GIF/advert.gif" rel="noreferrer">http://www.wearmouth.demon.co.uk/GIF/advert.gif</a>
+
+Would it fit? Did they run out of room? I don&#x27;t think so.
+
+There are plenty of clues to suggest that the Spectrum was inputting and
+outputting to these channels long before it went into production.
+
+The &quot;Sea Change&quot; ROM is an attempt to prove that the concept of a &quot;Real
+World&quot; Spectrum was viable. 
+
+<a href="http://www.wearmouth.demon.co.uk/sc01.htm" rel="noreferrer">http://www.wearmouth.demon.co.uk/sc01.htm</a>
+
+I have fitted the RS232 and network routines from Interface 1 into the
+spare space.  While I believe that the RS232 routines are the original
+Spectrum routines (neither of the Interface 1 authors Dr. Ian Logan
+(microdrives) or Martin Brennan (network) claim authorship), the network
+routines are not those of Nine Tiles Networks who wrote the rest of the
+Spectrum ROM.
+
+It has consequently been a tight fit and in making space available I
+have had to optimize some routines, a task in which I have been helped
+by Andrew Owen and James Smith.  Some of this probably comes across as
+nitpicking, but it is only that the end result would be so desirable
+that this has been done.  
+
+The Spectrum ROM author was quite capable of doing these changes 
+himself and indeed some of them, like moving the end-calc routine to
+space between the restarts and using two bytes of the space character as
+the default line zero pointer had already been done in the ZX81 but were
+reversed at the commencement of the Spectrum development as they are
+cryptic and make the software harder to maintain.  
+
+Above all, the Spectrum was intended as a professional development and
+it is ironic that the Beta Test ROM was put into production.
+
+A long-standing plan to release the debugged alpha ROM was scotched by
+Nigel Searle.  Indeed, during development, the software would vary on a
+daily basis and it is possible that the wrong Beta was chosen as the
+basis for the ROM.  It is at odds with the manual and two years later,
+in the Pitman Pocket Book, the author seems to be writing about a
+different ROM he either wrote or imagined he&#x27;d written.
+
+The Complete Spectrum ROM Disassembly points out a few unused routines,
+most notably the ZX81 Name Routine, EACH-STMT, P-INT-STO but misses 
+REC-EDIT which was used in the ZX81 and ZX80 from which the Spectrum 
+was developed.
+
+Success to your project,
+
+
+-- 
+Geoff Wearmouth
+The ZX ROM Files <a href="http://www.wearmouth.demon.co.uk" rel="noreferrer">http://www.wearmouth.demon.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p148197"><div class="ph"><a class="d" href="#p148197">2002-10-17 16:47:16</a> <span>Robert J Baker</span> <span>Re: ANN: ZX Spectrum SE is completed</span></div><pre>Geoff Wearmouth &lt;…@…&gt; wrote in message news:&lt;…@…&gt;...
+
+<span class="qt">&gt; Would it fit? Did they run out of room? I don&#x27;t think so.</span>
+
+Er, I&#x27;m afraid that&#x27;s ambiguous -- those two are opposing questions,
+so to which were you answering?
+
+
+
+</pre></div></main></body></html>

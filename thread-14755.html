@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>POKE to prevent program name display · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>POKE to prevent program name display</h1><p class="facts">5 posts, 1999-03-29 – 1999-03-30</p><div class="post" id="p48553"><div class="ph"><a class="d" href="#p48553">1999-03-29</a> <span>…@…</span> </div><pre>Can anyone tell me the POKE that can be used to stop the names of files
+loading being displayed? I have designed a fab loading screen for my
+Crap Games Compo entry, and I don&#x27;t want it messed up.
+
+(Actually, maybe the game would be extra crap if the loading screen
+*did* get messed up...)
+
+Lee
+
+
+</pre></div><div class="post" id="p48554"><div class="ph"><a class="d" href="#p48554">1999-03-29</a> <span>andrew broad</span> <span>Re: POKE to prevent program name display</span></div><pre>96171975 wrote:
+
+<span class="qt">&gt; Can anyone tell me the POKE that can be used to stop the names of files</span>
+<span class="qt">&gt; loading being displayed? I have designed a fab loading screen for my</span>
+<span class="qt">&gt; Crap Games Compo entry, and I don&#x27;t want it messed up.</span>
+
+A good trick I know is to use OVER 1 and PRINT the header after the
+SCREEN$ has loaded. Then set the cursor position so that the actual header
+will be printed over that and, like magic, it will disappear! So the
+loader might look something like this (the following is probably
+bug-ridden because I don&#x27;t have a Spectrum at hand to test it on, but a
+bit of hacking should certainly produce the desired effect):
+
+10 LOAD &quot;&quot; SCREEN$
+20 OVER 1
+30 PRINT AT 1,0;&quot;Bytes: game&quot;
+40 PRINT AT 0,0;
+50 LOAD &quot;game&quot; CODE
+
+An alternative for more sophisticated Spectrum users who are familiar with
+the method is to save and load the code by calling ROM routines directly
+(1218 and 1366 if I remember rightly - but they can&#x27;t be called directly
+from BASIC, the calls need to be preceeded by machine code to set up the
+registers), bypassing the file header altogether.
+
+
+<span class="qt">&gt; (Actually, maybe the game would be extra crap if the loading screen</span>
+<span class="qt">&gt; *did* get messed up...)</span>
+
+:-D
+
+--
+Andrew Broad
+<a href="http://www.cs.man.ac.uk/~broada/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/</a>
+
+
+
+</pre></div><div class="post" id="p48571"><div class="ph"><a class="d" href="#p48571">1999-03-29 16:29:24</a> <span>…@…</span> <span>Re: POKE to prevent program name display</span> <a class="badge" href="https://spectrumcomputing.co.uk/entry/41074">ZXDB: Program Name</a></div><pre>Andrew Broad entertained comp.sys.sinclair with the following story:
+<span class="qt">&gt;96171975 wrote:</span>
+<span class="qt">&gt;&gt; Can anyone tell me the POKE that can be used to stop the names of files</span>
+<span class="qt">&gt;&gt; loading being displayed?</span>
+
+Under normal circumstances (which includes not having an interface 1),
+POKE 23739,111 will temporarily stop screen output.  This lasts until
+either you clear the screen or you poke it back to 249.
+
+For this to be more general you should instead POKE the address:
+PEEK 23631+256*PEEK 23632+5
+(which you should find is equal to 23739 in the same normal circumstances as
+referred to above).
+
+<span class="qt">&gt;A good trick I know is to use OVER 1 and PRINT the header after the</span>
+<span class="qt">&gt;SCREEN$ has loaded. Then set the cursor position so that the actual header</span>
+<span class="qt">&gt;will be printed over that and, like magic, it will disappear!</span>
+
+An old trick is to design the loading screen with a horizontal black stripe
+cunningly hidden in it.  Then say &quot;INK 0: PAPER 0&quot; and use a PRINT AT to
+make sure that the program name will be printed over the black stripe, thus
+making zero difference to what&#x27;s on the screen.  The stripe needs to start
+at the left hand edge because the Speccy always prints a carriage return
+before saying &quot;Program: whatever&quot;.
+-- 
+---- Ian Collier : …@… : WWW page (including Spectrum section):
+------ <a href="http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html" rel="noreferrer">http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html</a>
+
+New to this group?  Answers to frequently-asked questions can be had from
+<a href="http://www.kendalls.demon.co.uk/cssfaq/index.html" rel="noreferrer">http://www.kendalls.demon.co.uk/cssfaq/index.html</a> .
+Sam CoupÃ© FAQ: <a href="http://www.mono.org/~unc/Coupe/FAQ.txt" rel="noreferrer">http://www.mono.org/~unc/Coupe/FAQ.txt</a>
+
+
+</pre></div><div class="post" id="p48601"><div class="ph"><a class="d" href="#p48601">1999-03-30</a> <span>…@…</span> <span>Re: POKE to prevent program name display</span></div><pre>Ian Collier wrote this.  Honest guv!
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Graham Goring entertained comp.sys.sinclair with the following story:</span>
+<span class="qt">&gt;&gt;Use CHR$(16) followed by the co-ordinates of the &quot;Program&quot; prompt.</span>
+<span class="qt">&gt;          ^^</span>
+<span class="qt">&gt;This number is in hex, of course.</span>
+
+Yep.  16 (decimal)&#x27;s the INK control, 16 (hex)=22 (decimal) is the AT
+control.
+
+(Blimmin&#x27; useful thing the character set in the BASIC programming manual,
+isn&#x27;t it?)
+-- 
+***********************************************************************
+* Derek Jolly  (…@…)  (Remove the &#x27;x&#x27; for e-mail)  *
+* Currently playing: PSX: Populous: The Beginning,  MSX: Metal Gear 2 *
+***********************************************************************
+
+
+
+</pre></div><div class="post" id="p48611"><div class="ph"><a class="d" href="#p48611">1999-03-30 11:10:48</a> <span>…@…</span> <span>Re: POKE to prevent program name display</span></div><pre>Graham Goring entertained comp.sys.sinclair with the following story:
+<span class="qt">&gt;Use CHR$(16) followed by the co-ordinates of the &quot;Program&quot; prompt.</span>
+          ^^
+This number is in hex, of course.
+-- 
+---- Ian Collier : …@… : WWW page (including Spectrum section):
+------ <a href="http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html" rel="noreferrer">http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html</a>
+
+New to this group?  Answers to frequently-asked questions can be had from
+<a href="http://www.kendalls.demon.co.uk/cssfaq/index.html" rel="noreferrer">http://www.kendalls.demon.co.uk/cssfaq/index.html</a> .
+Sam CoupÃ© FAQ: <a href="http://www.mono.org/~unc/Coupe/FAQ.txt" rel="noreferrer">http://www.mono.org/~unc/Coupe/FAQ.txt</a>
+
+
+</pre></div></main></body></html>

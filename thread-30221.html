@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What game is this (with a difference!) · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>What game is this (with a difference!)</h1><p class="facts">22 posts, 2004-10-03 – 2004-10-05</p><div class="post" id="p185643"><div class="ph"><a class="d" href="#p185643">2004-10-03 17:55:40</a> <span>Gerard Sweeney</span> </div><pre>Hello chums..
+
+Seeing as these posts of Guess The Game, and &quot;What game is this&quot; are
+proving rather popular, here&#x27;s my slightly warped version, and this one
+benefits the Speccy Community (honest!)
+
+Guess the games:
+<a href="http://www.the-tipshop.co.uk/Italian/gallery.htm" rel="noreferrer">http://www.the-tipshop.co.uk/Italian/gallery.htm</a>
+
+If you spot any, email me with the name of the picture, and the name of
+the game.
+
+Toodle-pip!
+Gerard
+
+
+-- 
+
+Gerard Sweeney
+Hackers Anonymous/Team Amiga
+<a href="http://fly.to/ha3" rel="noreferrer">http://fly.to/ha3</a> and <a href="http://www.the-tipshop.co.uk" rel="noreferrer">http://www.the-tipshop.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p185645"><div class="ph"><a class="d" href="#p185645">2004-10-03 19:13:43</a> <span>Robert van der Veeke</span> <span>Re: What game is this (with a difference!)</span></div><pre>&quot;Gerard Sweeney&quot; &lt;…@…&gt; schreef in bericht
+news:…@…...
+<span class="qt">&gt; Hello chums..</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Seeing as these posts of Guess The Game, and &quot;What game is this&quot; are</span>
+<span class="qt">&gt; proving rather popular, here&#x27;s my slightly warped version, and this one</span>
+<span class="qt">&gt; benefits the Speccy Community (honest!)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Guess the games:</span>
+<span class="qt">&gt; <a href="http://www.the-tipshop.co.uk/Italian/gallery.htm" rel="noreferrer">http://www.the-tipshop.co.uk/Italian/gallery.htm</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; If you spot any, email me with the name of the picture, and the name of</span>
+<span class="qt">&gt; the game.</span>
+
+Yes it is Stonkers!
+
+--
+Robert van der Veeke
+(Remove the pin to Email)
+Currently listening to: Ben Hur - Miklos Rozsa
+
+Basugasubasubasu Basugasubakuhaku Gasubakuhakuhaku!!
+&quot;Better is the enemy of good enough.&quot; Dr. Mikoyan of the Mikoyan Gurevich
+Design Bureau
+
+
+---
+Outgoing mail is certified Virus Free.
+Checked by AVG anti-virus system (<a href="http://www.grisoft.com" rel="noreferrer">http://www.grisoft.com</a>).
+Version: 6.0.770 / Virus Database: 517 - Release Date: 27/09/2004
+
+
+
+
+
+</pre></div><div class="post" id="p185647"><div class="ph"><a class="d" href="#p185647">2004-10-03 19:14:40</a> <span>Robert van der Veeke</span> <span>Re: What game is this (with a difference!)</span></div><pre>
+&quot;Gerard Sweeney&quot; &lt;…@…&gt; schreef in bericht
+news:…@…...
+<span class="qt">&gt; Hello chums..</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Seeing as these posts of Guess The Game, and &quot;What game is this&quot; are</span>
+<span class="qt">&gt; proving rather popular, here&#x27;s my slightly warped version, and this one</span>
+<span class="qt">&gt; benefits the Speccy Community (honest!)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Guess the games:</span>
+<span class="qt">&gt; <a href="http://www.the-tipshop.co.uk/Italian/gallery.htm" rel="noreferrer">http://www.the-tipshop.co.uk/Italian/gallery.htm</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; If you spot any, email me with the name of the picture, and the name of</span>
+<span class="qt">&gt; the game.</span>
+
+Seccond try
+
+Yes it is Stonkers!
+
+
+--
+Robert van der Veeke
+(Remove the pin to Email)
+Currently listening to: Ben Hur - Miklos Rozsa
+
+Basugasubasubasu Basugasubakuhaku Gasubakuhakuhaku!!
+&quot;Better is the enemy of good enough.&quot; Dr. Mikoyan of the Mikoyan Gurevich
+Design Bureau
+
+
+---
+Outgoing mail is certified Virus Free.
+Checked by AVG anti-virus system (<a href="http://www.grisoft.com" rel="noreferrer">http://www.grisoft.com</a>).
+Version: 6.0.770 / Virus Database: 517 - Release Date: 27/09/2004
+
+
+
+
+
+</pre></div><div class="post" id="p185648"><div class="ph"><a class="d" href="#p185648">2004-10-03 19:28:51</a> <span>Paul E Collins</span> <span>Re: What game is this (with a difference!)</span></div><pre>&quot;Gerard Sweeney&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; <a href="http://www.the-tipshop.co.uk/Italian/gallery.htm" rel="noreferrer">http://www.the-tipshop.co.uk/Italian/gallery.htm</a></span>
+
+- &quot;fuggi_fuggi&quot; is Bubble Trouble by Arcade Software.
+- &quot;if_15&quot; is Xcel by Program Techniques.
+
+P.
+
+
+
+
+
+</pre></div><div class="post" id="p185654"><div class="ph"><a class="d" href="#p185654">2004-10-03 20:26:44</a> <span>Gerard Sweeney</span> <span>Re: What game is this (with a difference!)</span></div><pre>Buttering his ciabatta (FNAR?! Ed), Paul E Collins and Robert van der
+Veeke wrote:
+
+<span class="qt">&gt; - &quot;fuggi_fuggi&quot; is Bubble Trouble by Arcade Software.</span>
+<span class="qt">&gt; Stonkers</span>
+
+Top stuff, chaps..
+
+I can&#x27;t believe I didn&#x27;t recognise blummin&#x27; Stonkers... Still, at least
+it let a few people say it definitely IS Stonkers. Arf!
+
+Anyhoo, the database and gallery have been updated accordingly.
+
+Toodle-pip!
+Gerard
+
+-- 
+
+Gerard Sweeney
+Hackers Anonymous/Team Amiga
+<a href="http://fly.to/ha3" rel="noreferrer">http://fly.to/ha3</a> and <a href="http://www.the-tipshop.co.uk" rel="noreferrer">http://www.the-tipshop.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p185657"><div class="ph"><a class="d" href="#p185657">2004-10-03 20:48:39</a> <span>Matt Clemson</span> <span>Re: What game is this (with a difference!)</span></div><pre>
+&quot;Gerard Sweeney&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+
+<span class="qt">&gt; Seeing as these posts of Guess The Game, and &quot;What game is this&quot;</span>
+<span class="qt">&gt; are proving rather popular, here&#x27;s my slightly warped version,</span>
+<span class="qt">&gt; and this one benefits the Speccy Community (honest!)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Guess the games:</span>
+<span class="qt">&gt; <a href="http://www.the-tipshop.co.uk/Italian/gallery.htm" rel="noreferrer">http://www.the-tipshop.co.uk/Italian/gallery.htm</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; If you spot any, email me with the name of the picture, and the name of</span>
+<span class="qt">&gt; the game.</span>
+
+ricostruzione might be The Nowotnik Puzzle (or something like that,
+anyway) - yep, checking WOS, that&#x27;s the case.
+
+giardino... gah. I&#x27;ve seen it. Somewhere. Perhaps an official arcade version
+on MAME... I&#x27;ll get back if it springs to mind.
+
+-Matt
+
+
+
+
+
+</pre></div><div class="post" id="p185658"><div class="ph"><a class="d" href="#p185658">2004-10-03 21:31:06</a> <span>Darren Salt</span> <span>Re: What game is this (with a difference!)</span></div><pre>I demand that Gerard Sweeney may or may not have written...
+
+<span class="qt">&gt; Seeing as these posts of Guess The Game, and &quot;What game is this&quot; are</span>
+<span class="qt">&gt; proving rather popular, here&#x27;s my slightly warped version, and this one</span>
+<span class="qt">&gt; benefits the Speccy Community (honest!)</span>
+
+<span class="qt">&gt; Guess the games:</span>
+<span class="qt">&gt; <a href="http://www.the-tipshop.co.uk/Italian/gallery.htm" rel="noreferrer">http://www.the-tipshop.co.uk/Italian/gallery.htm</a></span>
+
+Next: guess why the images are JPEGs rather than PNGs or GIFs... ;-|
+
+-- 
+<span class="qt">| Darren Salt | nr. Ashington, | d youmustbejoking,demon,co,uk</span>
+<span class="qt">| RISC OS,    | Northumberland | s zap,tartarus,org</span>
+<span class="qt">| Linux       | Toon Army      | @</span>
+<span class="qt">|   The RISC OS version of Mindtrap.</span>
+
+The chance of disk failure is directly proportional to the value of the data.
+
+
+
+</pre></div><div class="post" id="p185660"><div class="ph"><a class="d" href="#p185660">2004-10-03 21:41:14</a> <span>J.I.L.</span> <span>Re: What game is this (with a difference!)</span></div><pre>Gerard Sweeney wrote:
+<span class="qt">&gt; Buttering his ciabatta (FNAR?! Ed), Paul E Collins and Robert van der</span>
+<span class="qt">&gt; Veeke wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;- &quot;fuggi_fuggi&quot; is Bubble Trouble by Arcade Software.</span>
+<span class="qt">&gt;&gt;Stonkers</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Top stuff, chaps..</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I can&#x27;t believe I didn&#x27;t recognise blummin&#x27; Stonkers... Still, at least</span>
+<span class="qt">&gt; it let a few people say it definitely IS Stonkers. Arf!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Anyhoo, the database and gallery have been updated accordingly.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Toodle-pip!</span>
+<span class="qt">&gt; Gerard</span>
+
+Whoa hang on Gerard! Has anyone emailed you with these ones yet?...
+Here&#x27;s four more (the first three of which just happen to be at Speccy 
+Spoilers plug plugity plug)...
+
+&quot;giardino&quot; is --Humpty Dumpty In The Garden-- by Artic.
+
+&quot;run_gravity_game&quot; is --Humpty Dumpty Meets The Fuzzy Wuzzies-- by Artic 
+again.
+
+&quot;thriller&quot; is --Madhatter-- by Gamma (and later included in Automata 
+UK&#x27;s 10-pack Vol.3).
+((Screenshot in original Crash Dec&#x27;84 review here...))
+<a href="ftp://ftp.worldofspectrum.org/pub/sinclair/magazines/Crash/Issue11/Pages/Crash1100016.jpg" rel="noreferrer">ftp://ftp.worldofspectrum.org/pub/sinclair/magazines/Crash/Issue11/Pages/Crash1100016.jpg</a>
+
+&quot;il_pittore_picchiatello&quot; is --Potty Painter In The Jungle-- by Rabbit.
+
+There are a few more I&#x27;m sure I&#x27;ve played before but I can&#x27;t quite 
+remember, so I&#x27;ll just go check out a couple of possibilities... :)
+
+
+BTW, you might like to remove that recent credit in the Good Eggs 
+section for &quot;Jil&quot; if you like (re: On The Bench &#x27;hax00r&#x27; taken from my 
+WoS forum post), cos that&#x27;s me and I&#x27;ve already been credited under my 
+real name (Jim Langmead). But this isn&#x27;t quite the most important thing 
+in the world so I can forgive you if you have slightly more important 
+things to deal with. ;)
+
+
+
+</pre></div><div class="post" id="p185661"><div class="ph"><a class="d" href="#p185661">2004-10-03 21:48:44</a> <span>Robert J Baker</span> <span>Re: What game is this (with a difference!)</span></div><pre>&quot;Gerard Sweeney&quot; &lt;…@…&gt; wrote in message news:&lt;…@…&gt;...
+<span class="qt">&gt; Hello chums..</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Seeing as these posts of Guess The Game, and &quot;What game is this&quot; are</span>
+<span class="qt">&gt; proving rather popular, here&#x27;s my slightly warped version, and this one</span>
+<span class="qt">&gt; benefits the Speccy Community (honest!)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Guess the games:</span>
+<span class="qt">&gt; <a href="http://www.the-tipshop.co.uk/Italian/gallery.htm" rel="noreferrer">http://www.the-tipshop.co.uk/Italian/gallery.htm</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; If you spot any, email me with the name of the picture, and the name of</span>
+<span class="qt">&gt; the game.</span>
+
+And for once, one of them (now removed from that gallery &#x27;cos it&#x27;s
+been ID&#x27;d) definitely *was* Stonkers! :-)
+
+
+
+</pre></div><div class="post" id="p185668"><div class="ph"><a class="d" href="#p185668">2004-10-03 22:36:36</a> <span>Chris Young</span> <span>Re: What game is this (with a difference!)</span></div><pre>On 3 Oct 2004 17:55:40 GMT da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Gerard Sweeney:
+
+<span class="qt">&gt; If you spot any, email me with the name of the picture, and the name of</span>
+<span class="qt">&gt; the game.</span>
+
+double_game.jpg looks a bit like Moon Cresta, or Terra Cresta or
+whatever it&#x27;s called.  I don&#x27;t think it is though.
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p185670"><div class="ph"><a class="d" href="#p185670">2004-10-03 22:43:05</a> <span>J.I.L.</span> <span>Re: What game is this (with a difference!)</span></div><pre>J.I.L. wrote:
+<span class="qt">&gt; There are a few more I&#x27;m sure I&#x27;ve played before but I can&#x27;t quite </span>
+<span class="qt">&gt; remember, so I&#x27;ll just go check out a couple of possibilities... :)</span>
+
+Aha! Thought so...
+
+&quot;lifter&quot; is --Bristles-- by Statesoft.
+(Crash review with screenshot...)
+<a href="ftp://ftp.worldofspectrum.org/pub/sinclair/magazines/Crash/Issue14/Pages/Crash1400032.jpg" rel="noreferrer">ftp://ftp.worldofspectrum.org/pub/sinclair/magazines/Crash/Issue14/Pages/Crash1400032.jpg</a>
+
+Do I win five pounds? :)
+
+
+
+</pre></div><div class="post" id="p185675"><div class="ph"><a class="d" href="#p185675">2004-10-04 00:54:47</a> <span>J.I.L.</span> <span>Re: What game is this (with a difference!)</span></div><pre><span class="qt"> &gt; Guess the games:</span>
+<span class="qt"> &gt; <a href="http://www.the-tipshop.co.uk/Italian/gallery.htm" rel="noreferrer">http://www.the-tipshop.co.uk/Italian/gallery.htm</a></span>
+
+Here&#x27;s another that seems to have appeared on the page since I last 
+looked...
+
+&quot;hot_gran_prix&quot; is --Speed Duel-- by dk&#x27;tronics.
+
+:D   &lt;---smugface
+
+
+
+</pre></div><div class="post" id="p185682"><div class="ph"><a class="d" href="#p185682">2004-10-04 08:02:11</a> <span>Gerard Sweeney</span> <span>Re: What game is this (with a difference!)</span></div><pre>Shooing the seagulls away from his grass, Darren Salt wrote:
+
+<span class="qt">&gt; Next: guess why the images are JPEGs rather than PNGs or GIFs... ;-|</span>
+
+Believe me, I&#x27;m not happy about it either! This came about because the
+Gallery generator I use only allows me to export them as JPEG.
+
+I&#x27;ve been hunting for longer than I care to think about for something
+which will allow me to QUICKLY do the following:
+
+1. Read in a collection of BMPs (the screenshots saved using SPIN)
+2. Create a web-friendly converted copy of those
+3. Create a series of thumbnails for them
+4. Create a single webpage linking those thumbnails to their larger
+converted equivelants. This webpage should ideally allow me to add my
+own text (for the email link)
+
+The reason for these requirements is that I plan to capture a shed-load
+more screenshots, and would like some quick way of updating the webpage
+for when people contact me with resolved titles.
+
+If someone can point me to a bit of freeware (Windows format) which can
+let me have the thumbnails/full pictures in a non-JPG format, I&#x27;d be
+tickled pink.
+
+Or, if there&#x27;s some dashed clever Java/Perl script which will
+dynamically create a thumbnailed gallery based on GIF/PNG files stored
+in a folder, that&#x27;d also be superb... I did try a PERL script, but it
+was (annoyingly) far too complex for my requirements and didn&#x27;t really
+create what I was after.
+
+Any suggestions will be gratefully received!
+
+Toodle-pip!
+Gerard
+
+-- 
+
+Gerard Sweeney
+Hackers Anonymous/Team Amiga
+<a href="http://fly.to/ha3" rel="noreferrer">http://fly.to/ha3</a> and <a href="http://www.the-tipshop.co.uk" rel="noreferrer">http://www.the-tipshop.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p185683"><div class="ph"><a class="d" href="#p185683">2004-10-04 08:07:57</a> <span>Gerard Sweeney</span> <span>Re: What game is this (with a difference!)</span></div><pre>Playing the trumpet with his dog&#x27;s mouth, Matt Clemson and J.I.L. wrote:
+
+[various titles]
+
+Thanks for the information, chums..
+Also, Jim - I&#x27;ve updated the Tipshop credits/updates page accordingly,
+as well as the Italian database and gallery pages.
+The updates should be getting uploaded soon.
+
+Toodle-pip!
+Gerard
+
+-- 
+
+Gerard Sweeney
+Hackers Anonymous/Team Amiga
+<a href="http://fly.to/ha3" rel="noreferrer">http://fly.to/ha3</a> and <a href="http://www.the-tipshop.co.uk" rel="noreferrer">http://www.the-tipshop.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p185696"><div class="ph"><a class="d" href="#p185696">2004-10-04 11:16:50</a> <span>Philip Kendall</span> <span>Re: What game is this (with a difference!)</span></div><pre>In article &lt;…@…&gt;,
+Gerard Sweeney &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I&#x27;ve been hunting for longer than I care to think about for something</span>
+<span class="qt">&gt;which will allow me to QUICKLY do the following:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;1. Read in a collection of BMPs (the screenshots saved using SPIN)</span>
+<span class="qt">&gt;2. Create a web-friendly converted copy of those</span>
+<span class="qt">&gt;3. Create a series of thumbnails for them</span>
+<span class="qt">&gt;4. Create a single webpage linking those thumbnails to their larger</span>
+<span class="qt">&gt;converted equivelants. This webpage should ideally allow me to add my</span>
+<span class="qt">&gt;own text (for the email link)</span>
+
+<a href="http://gallery.sourceforge.net/" rel="noreferrer">http://gallery.sourceforge.net/</a>
+
+(I&#x27;m assuming that works with BMPs. If not, converting them first
+shouldn&#x27;t be hard).
+
+Cheers,
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p185704"><div class="ph"><a class="d" href="#p185704">2004-10-04 13:43:05</a> <span>J.I.L.</span> <span>Re: What game is this (with a difference!)</span></div><pre>Gerard Sweeney wrote:
+<span class="qt">&gt; Also, Jim - I&#x27;ve updated the Tipshop credits/updates page accordingly,</span>
+<span class="qt">&gt; as well as the Italian database and gallery pages.</span>
+<span class="qt">&gt; The updates should be getting uploaded soon.</span>
+
+Cheers Gerard! Oh, and here&#x27;s another one for you...
+
+&quot;slot_machine&quot; is --Fruit Machine-- by dk&#x27;Tronics
+
+
+
+</pre></div><div class="post" id="p185715"><div class="ph"><a class="d" href="#p185715">2004-10-04 17:50:38</a> <span>Robert J Baker</span> <span>Re: What game is this (with a difference!)</span></div><pre>&quot;Gerard Sweeney&quot; &lt;…@…&gt; wrote in message news:&lt;…@…&gt;...
+<span class="qt">&gt; Shooing the seagulls away from his grass, Darren Salt wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; Next: guess why the images are JPEGs rather than PNGs or GIFs... ;-|</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Believe me, I&#x27;m not happy about it either! This came about because the</span>
+<span class="qt">&gt; Gallery generator I use only allows me to export them as JPEG.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;ve been hunting for longer than I care to think about for something</span>
+<span class="qt">&gt; which will allow me to QUICKLY do the following:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; 1. Read in a collection of BMPs (the screenshots saved using SPIN)</span>
+<span class="qt">&gt; 2. Create a web-friendly converted copy of those</span>
+
+Not 100% certain, but I *think* those two steps can be done using the
+batch converter built into XNView (www.xnview.com); XNView is worth
+having anyway, as it allows one to view piccies in over 500 formats,
+most of which you&#x27;ll never even have heard of (it even recognises .SCR
+files, although the FLASH attribute is not supported).  The one gripe
+I have about it is that although the main prog recognises .SCR, the
+batch converter doesn&#x27;t, so XNView is at present only useful for
+converting .SCRs one at a time (for batch conversion, as the first
+step I use Gerton Lunter&#x27;s CONVERT (driven by a DOS FOR command) to
+convert them to GIFs)...
+
+
+
+</pre></div><div class="post" id="p185717"><div class="ph"><a class="d" href="#p185717">2004-10-04 19:11:12</a> <span>Gerard Sweeney</span> <span>Re: What game is this (with a difference!)</span></div><pre>A few people wrote some stuff, so here&#x27;s my reply...
+
+Hello, chaps..
+
+Thanks to Phil and Robert for the suggestions - I&#x27;ll try them both out,
+and see what happens.
+
+Also to Jim for the additional resolved title. 
+
+Toodle-pip!
+Gerard
+
+-- 
+
+Gerard Sweeney
+Hackers Anonymous/Team Amiga
+<a href="http://fly.to/ha3" rel="noreferrer">http://fly.to/ha3</a> and <a href="http://www.the-tipshop.co.uk" rel="noreferrer">http://www.the-tipshop.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p185732"><div class="ph"><a class="d" href="#p185732">2004-10-04 22:56:24</a> <span>Paul F</span> <span>Re: What game is this (with a difference!)</span></div><pre>In article &lt;…@…&gt;, Gerard Sweeney 
+&lt;…@…&gt; writes
+<span class="qt">&gt;Hello chums..</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Seeing as these posts of Guess The Game, and &quot;What game is this&quot; are</span>
+<span class="qt">&gt;proving rather popular, here&#x27;s my slightly warped version, and this one</span>
+<span class="qt">&gt;benefits the Speccy Community (honest!)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Guess the games:</span>
+<span class="qt">&gt;<a href="http://www.the-tipshop.co.uk/Italian/gallery.htm" rel="noreferrer">http://www.the-tipshop.co.uk/Italian/gallery.htm</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;If you spot any, email me with the name of the picture, and the name of</span>
+<span class="qt">&gt;the game.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Toodle-pip!</span>
+<span class="qt">&gt;Gerard</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+double_game is &#x27;Star Warrior&#x27; by John Edwards. Guarantee it, I used to 
+play this loads years ago.
+
+
+
+
+</pre></div><div class="post" id="p185734"><div class="ph"><a class="d" href="#p185734">2004-10-04 23:08:59</a> <span>Gerard Sweeney</span> <span>Re: What game is this (with a difference!)</span></div><pre>Performing a cover version of I Should Be So Lucky on spoons, Paul F
+wrote:
+
+<span class="qt">&gt; double_game is &#x27;Star Warrior&#x27; by John Edwards.</span>
+
+Splendid. Thanks very much. I&#x27;ll get the page updated as soon as I can.
+I&#x27;d have emailed you, but it bounced (yes, I removed the spamtrap)
+
+Toodle-pip!
+Gerard
+
+-- 
+
+Gerard Sweeney
+Hackers Anonymous/Team Amiga
+<a href="http://fly.to/ha3" rel="noreferrer">http://fly.to/ha3</a> and <a href="http://www.the-tipshop.co.uk" rel="noreferrer">http://www.the-tipshop.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p185735"><div class="ph"><a class="d" href="#p185735">2004-10-05 00:09:53</a> <span>Dunny</span> <span>Re: What game is this (with a difference!)</span></div><pre>&quot;Saturn&quot; is Beamrider by activision.
+
+D.
+
+
+
+
+
+
+</pre></div><div class="post" id="p185738"><div class="ph"><a class="d" href="#p185738">2004-10-05 10:54:51</a> <span>Richard Hallas</span> <span>Re: What game is this (with a difference!)</span></div><pre>Dr Kill is Stay Kool, written by Leigh Hugill and published by Bug-Byte.
+
+-- 
+Richard
+-=-=-=-
+Richard G. Hallas  * Writer &amp; Designer *  Editor, Foundation RISC User
+Proprietor of KeyNote:  Music Typesetting &amp; General Desktop Publishing
+Email: …@… / …@… * Tel/Fax: 01484 460280
+
+
+
+</pre></div></main></body></html>

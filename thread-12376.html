@@ -1,0 +1,959 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>URGENT : CSSCGC 1998 · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>URGENT : CSSCGC 1998</h1><p class="facts">32 posts, 1998-06-07 – 1998-06-19</p><div class="post" id="p37927"><div class="ph"><a class="d" href="#p37927">1998-06-07</a> <span>…@…</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+Hi guys,
+
+Unfortunately there&#x27;s a *major* problem regarding the CSSCGC. My HD
+crashed yesterday and I&#x27;ve lost all of the entries :( Assuming that
+Alistair&#x27;s still got them all on his HD I&#x27;d ask him to send &#x27;em all to
+me at my personal address (barrykas (at) bo-l (dot) co (dot) uk)...
+
+If he hasn&#x27;t then, I&#x27;m afraid, everyone&#x27;s going to have to resubmit
+everything. :( *IF* that&#x27;s necessary I&#x27;ll repost in here and extend
+the competition by a fortnight to give you time to do so.
+
+Cya,
+
+Barry
+
+
+
+</pre></div><div class="post" id="p37967"><div class="ph"><a class="d" href="#p37967">1998-06-08</a> <span>…@…</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+On Sun, 07 Jun 1998 23:19:31 GMT, …@… (Barry K A
+Salter) wibbled on for an age:
+
+<span class="qt">&gt;Hi guys,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Unfortunately there&#x27;s a *major* problem regarding the CSSCGC. My HD</span>
+<span class="qt">&gt;crashed yesterday and I&#x27;ve lost all of the entries :( Assuming that</span>
+<span class="qt">&gt;Alistair&#x27;s still got them all on his HD I&#x27;d ask him to send &#x27;em all to</span>
+<span class="qt">&gt;me at my personal address (barrykas (at) bo-l (dot) co (dot) uk)...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;If he hasn&#x27;t then, I&#x27;m afraid, everyone&#x27;s going to have to resubmit</span>
+<span class="qt">&gt;everything. :( *IF* that&#x27;s necessary I&#x27;ll repost in here and extend</span>
+<span class="qt">&gt;the competition by a fortnight to give you time to do so.</span>
+<span class="qt">&gt;</span>
+
+I&#x27;ve still got all mine, so no-one&#x27;ll miss out on the delights of
+Advanced Windows 95 Simulator and the C5 sim trilogy etc...
+
+Chris
+
+…@…
+<a href="http://www.bigfoot.com/~unsatisfactory/" rel="noreferrer">http://www.bigfoot.com/~unsatisfactory/</a>
+
+Your Sinclair: A Celebration
+<a href="http://homepages.enterprise.net/cavan/ysac/" rel="noreferrer">http://homepages.enterprise.net/cavan/ysac/</a>
+
+
+</pre></div><div class="post" id="p37968"><div class="ph"><a class="d" href="#p37968">1998-06-08</a> <span>Anonymous</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+On Sun, 07 Jun 1998 23:19:31 GMT, …@… (Barry K A
+Salter) wrote:
+
+<span class="qt">&gt;Hi guys,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Unfortunately there&#x27;s a *major* problem regarding the CSSCGC. My HD</span>
+<span class="qt">&gt;crashed yesterday and I&#x27;ve lost all of the entries :( Assuming that</span>
+<span class="qt">&gt;Alistair&#x27;s still got them all on his HD I&#x27;d ask him to send &#x27;em all to</span>
+<span class="qt">&gt;me at my personal address (barrykas (at) bo-l (dot) co (dot) uk)...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;If he hasn&#x27;t then, I&#x27;m afraid, everyone&#x27;s going to have to resubmit</span>
+<span class="qt">&gt;everything. :( *IF* that&#x27;s necessary I&#x27;ll repost in here and extend</span>
+<span class="qt">&gt;the competition by a fortnight to give you time to do so.</span>
+<span class="qt">&gt;</span>
+
+
+resubmit to where this time?
+
+
+--
+Tony Blews (…@…)
+&quot;The sooner you realise i&#x27;m perfectly happy,
+ When I&#x27;m left to decide the company I choose.&quot;
+
+
+</pre></div><div class="post" id="p37975"><div class="ph"><a class="d" href="#p37975">1998-06-08</a> <span>…@…</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+…@… (Derek Jolly) writes:
+
+<span class="qt">&gt;Barry K A Salter felt forced to mention...</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Hi guys,</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Unfortunately there&#x27;s a *major* problem regarding the CSSCGC. My HD</span>
+<span class="qt">&gt;&gt;crashed yesterday and I&#x27;ve lost all of the entries :( Assuming that</span>
+<span class="qt">&gt;&gt;Alistair&#x27;s still got them all on his HD I&#x27;d ask him to send &#x27;em all to</span>
+<span class="qt">&gt;&gt;me at my personal address (barrykas (at) bo-l (dot) co (dot) uk)...</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;If he hasn&#x27;t then, I&#x27;m afraid, everyone&#x27;s going to have to resubmit</span>
+<span class="qt">&gt;&gt;everything. :( *IF* that&#x27;s necessary I&#x27;ll repost in here and extend</span>
+<span class="qt">&gt;&gt;the competition by a fortnight to give you time to do so.</span>
+
+<span class="qt">&gt;Bugger!</span>
+
+Bugger indeed. I hope that you have not lost the 50-odd crap games that
+I submitted at 11:59pm last night, only a few seconds before the closing
+date, and which were of such quality (crapness) that they were bound to
+win?
+
+If you no longer have these entries please let me know and give me two
+weeks to write ... erm.... resubmit them...
+
+;-)
+
+GtB
+
+
+</pre></div><div class="post" id="p37977"><div class="ph"><a class="d" href="#p37977">1998-06-08</a> <span>…@…</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+Barry K A Salter felt forced to mention...
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Hi guys,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Unfortunately there&#x27;s a *major* problem regarding the CSSCGC. My HD</span>
+<span class="qt">&gt;crashed yesterday and I&#x27;ve lost all of the entries :( Assuming that</span>
+<span class="qt">&gt;Alistair&#x27;s still got them all on his HD I&#x27;d ask him to send &#x27;em all to</span>
+<span class="qt">&gt;me at my personal address (barrykas (at) bo-l (dot) co (dot) uk)...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;If he hasn&#x27;t then, I&#x27;m afraid, everyone&#x27;s going to have to resubmit</span>
+<span class="qt">&gt;everything. :( *IF* that&#x27;s necessary I&#x27;ll repost in here and extend</span>
+<span class="qt">&gt;the competition by a fortnight to give you time to do so.</span>
+
+Bugger!
+I think I&#x27;ve still got all my entries, apart from one (Jet Fighters)
+which I accidentally deleted.  I&#x27;m not rewriting it.
+-- 
+Derek Jolly  (…@…)  (Remove the &#x27;x&#x27; for e-mail)
+The answer&#x27;s 83.  What&#x27;s the question?
+
+
+
+</pre></div><div class="post" id="p37978"><div class="ph"><a class="d" href="#p37978">1998-06-08</a> <span>…@…</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+…@… ( A Brown) wrote:
+
+<span class="qt">&gt;Bugger indeed. I hope that you have not lost the 50-odd crap games that</span>
+<span class="qt">&gt;I submitted at 11:59pm last night,</span>
+
+You as well?
+
+Heh, exactly what I did too, with my game (the much-talked-about(ish)
+one starring Gerard Sweeney, Gerard&#x27;s Ed, R*ck*tsh*p and The
+Starglider.)
+
+I started writing it at 2pm yesterday (Sunday), and finished it at
+11:52pm, then connected to the internet immediately to send it over to
+ICQ to Barry. (Got the bad news about his HD crash, but as it&#x27;s fixed
+now, he&#x27;s okay about our games sent. I think.)
+
+<span class="qt">&gt;only a few seconds before the closing</span>
+<span class="qt">&gt;date, and which were of such quality (crapness) that they were bound to</span>
+<span class="qt">&gt;win?</span>
+
+You haven&#x27;t seen mine yet. :)
+
+<span class="qt">&gt;If you no longer have these entries please let me know and give me two</span>
+<span class="qt">&gt;weeks to write ... erm.... resubmit them...</span>
+<span class="qt">&gt;;-)</span>
+
+I don&#x27;t mind about the compo being extended.
+
+Actually, I want to put another level into my game, if that&#x27;s
+&#x27;allowed&#x27; by Barry. If it&#x27;s not, then just accept my first submission!
+
+Cheers.
+
+-- 
+&quot;Best time to ring is 1am - 7am&quot; - A Demon Tech Support Operator.
+pete [at] prodge.demon.co.uk  ICQ# 6692412
+ New to Sinclair emulation? -&gt; www.kendalls.demon.co.uk/cssfaq
+ Every Speccy game (almost) at www.void.demon.nl
+**DO NOT POST BINARIES TO THIS NEWSGROUP!!**
+
+
+
+</pre></div><div class="post" id="p37980"><div class="ph"><a class="d" href="#p37980">1998-06-09</a> <span>gerard sweeney / hackers anonymous</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+Peter Thomas said
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Heh, exactly what I did too, with my game (the much-talked-about(ish)</span>
+<span class="qt">&gt; one starring Gerard Sweeney, Gerard&#x27;s Ed, R*ck*tsh*p and The</span>
+<span class="qt">&gt; Starglider.)</span>
+
+Hurrah! You mean it&#x27;s finished? Oh happy days.. I&#x27;m in a game. Even if it
+is a crap one. It puts me in the same group as people like David
+Hasslehoff, bloke-from Street Hawk, Don Johnston &amp; erm, the other one. All
+of those people appeared in crap games too :-)
+
+Due to my new celebrity status, I&#x27;ve hired Bob the bouncer. Take it away
+Bob..
+
+RIGHT - Sign an orderly queue for autographs, please. Ladies, stop fighting
+over Gerard&#x27;s body.. He&#x27;ll get to you all in good time.. OI! NO PICTURES! I
+SAID, NO PICTURES [WHACK]
+
+Oh dear.. It would seem Bob has gone and got himself arrested for beating
+up that photographer (actually, a child of 8).. That&#x27;s a touch
+inconvenient.. I was going to ask him to beat up some people for me. Tch.
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I started writing it at 2pm yesterday (Sunday), and finished it at</span>
+<span class="qt">&gt; 11:52pm,</span>
+
+Blimey.. That&#x27;s double the time spent on some budget titles.. Some full
+price ones too, in fact (exhibit A, the unspeakably awful Centurions)
+
+Toodle-oo!
+Gerard
+-- 
+Gerard Sweeney - Hackers Anonymous/Team Amiga
+Visit The Hackers Anonymous Speccy Playground for Hack Attack 3
+where you&#x27;re always likely to get a good POKE (fnar!).
+Or look for speccy games using the NVG catalogue. All at:
+<a href="http://fly.to/ha3" rel="noreferrer">http://fly.to/ha3</a> , <a href="http://fly.to/nvgcat" rel="noreferrer">http://fly.to/nvgcat</a> or
+<a href="http://www.geocities.com/SiliconValley/Lakes/4871" rel="noreferrer">http://www.geocities.com/SiliconValley/Lakes/4871</a>
+
+
+</pre></div><div class="post" id="p37984"><div class="ph"><a class="d" href="#p37984">1998-06-09</a> <span>…@…</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+In article &lt;…@…&gt;, …@… (Peter Thomas) wrote:
+<span class="qt">&gt;I started writing it at 2pm yesterday (Sunday), and finished it at</span>
+<span class="qt">&gt;11:52pm, then connected to the internet immediately to send it over to</span>
+<span class="qt">&gt;ICQ to Barry.</span>
+
+It&#x27;s just like schoolwork assignments isn&#x27;t it?  I did almost exactly the
+same except that 11:52pm is the time at which I finished writing the mail
+message containing the entries and pressed the send button.  The good news
+is the mail hasn&#x27;t bounced (yet).  The bad news is I haven&#x27;t received a
+confirmation message either.
+-- 
+---- Ian Collier : …@… : WWW page (including Spectrum section):
+------ <a href="http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html" rel="noreferrer">http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html</a>
+
+New to this group?  Answers to frequently-asked questions can be had from
+<a href="http://www.kendalls.demon.co.uk/cssfaq/index.html" rel="noreferrer">http://www.kendalls.demon.co.uk/cssfaq/index.html</a> .
+Sam Coupï¿½ FAQ: <a href="http://www.mono.org/~unc/Coupe/FAQ.txt" rel="noreferrer">http://www.mono.org/~unc/Coupe/FAQ.txt</a>
+
+
+</pre></div><div class="post" id="p38004"><div class="ph"><a class="d" href="#p38004">1998-06-09</a> <span>…@…</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+On 8 Jun 1998 13:59:55 GMT, …@… ( A Brown) wrote:
+
+<span class="qt">&gt;Bugger indeed. I hope that you have not lost the 50-odd crap games that</span>
+<span class="qt">&gt;I submitted at 11:59pm last night, only a few seconds before the closing</span>
+<span class="qt">&gt;date, and which were of such quality (crapness) that they were bound to</span>
+<span class="qt">&gt;win?</span>
+
+Nice try buy it won&#x27;t work because all my mail was safely sitting on
+Demon&#x27;s mail server between the time it crashed and the reinstall
+(which I finished completely about an hour ago)... :-p
+
+Cya,
+
+Barry
+
+-- 
+Barry K A Salter
+To reply via e-mail change spam to barrykas
+This week I have been mostly reinstalling everything
+after my Hard Drive crashed :(
+
+
+</pre></div><div class="post" id="p38007"><div class="ph"><a class="d" href="#p38007">1998-06-09</a> <span>…@…</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+On Mon, 08 Jun 1998 23:29:04 GMT, …@…. (Tony
+Blews) wrote:
+
+<span class="qt">&gt;resubmit to where this time?</span>
+
+Same address as originally but only if Alistair hasn&#x27;t got copies of
+&#x27;em...
+
+IE: csscgc-entries (at) salterg (dot) demon (dot) co (dot) uk
+
+Cya,
+
+Barry
+
+-- 
+Barry K A Salter
+To reply via e-mail change spam to barrykas
+This week I have been mostly reinstalling everything
+after my Hard Drive crashed :(
+
+
+</pre></div><div class="post" id="p38014"><div class="ph"><a class="d" href="#p38014">1998-06-09</a> <span>…@…</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+On 9 Jun 1998 00:52:34 GMT, …@… (Ian Collier) wrote:
+
+<span class="qt">&gt;It&#x27;s just like schoolwork assignments isn&#x27;t it?  I did almost exactly the</span>
+<span class="qt">&gt;same except that 11:52pm is the time at which I finished writing the mail</span>
+<span class="qt">&gt;message containing the entries and pressed the send button.  The good news</span>
+<span class="qt">&gt;is the mail hasn&#x27;t bounced (yet).  The bad news is I haven&#x27;t received a</span>
+<span class="qt">&gt;confirmation message either.</span>
+
+The even worse news is that I&#x27;ve forgotten Alistair&#x27;s e-mail address
+(Doh!) so he hasn&#x27;t got copies of the last minute entries. :(
+
+Right. Acknowledgments (all times quoted are the times they arrived at
+Demon and are in GMT):
+
+A J Moss, received entries 14 &amp; 15 (Advanced W*nking Simulator at
+09:35 on the 7th June and Quake at 20:30 on the 7th)
+
+Joakim Pietras, received entry 1 (Snake 2 at 21:52 on the 7th)
+
+Sam Greenaum, received entries 1 &amp; 2 (LifeX and Cheeza at 18:58 on the
+7th)
+
+Ian M Collier, received entries 1 to 4 (Darts, Catch 19, Monotris and
+Spice Girls Manager at 22:50 on the 7th)
+
+Cya,
+
+Barry
+
+-- 
+Barry K A Salter
+To reply via e-mail change spam to barrykas
+This week I have been mostly reinstalling everything
+after my Hard Drive crashed :(
+
+
+</pre></div><div class="post" id="p38015"><div class="ph"><a class="d" href="#p38015">1998-06-09</a> <span>…@…</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+On 9 Jun 1998 10:23:45 GMT, …@… wibbled on for an age:
+
+<span class="qt">&gt;In his obvious haste, Chris Young  babbled thusly:</span>
+<span class="qt">&gt;: I&#x27;ve still got all mine, so no-one&#x27;ll miss out on the delights of</span>
+<span class="qt">&gt;: Advanced Windows 95 Simulator....</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;LOL! What&#x27;s it do? Crash at the hit of a key?</span>
+<span class="qt">&gt;(Or have I spoiled the joke now?)</span>
+
+Oh?  Have you seen it?
+
+Chris
+
+…@…
+<a href="http://www.bigfoot.com/~unsatisfactory/" rel="noreferrer">http://www.bigfoot.com/~unsatisfactory/</a>
+
+Your Sinclair: A Celebration
+<a href="http://homepages.enterprise.net/cavan/ysac/" rel="noreferrer">http://homepages.enterprise.net/cavan/ysac/</a>
+
+
+</pre></div><div class="post" id="p38018"><div class="ph"><a class="d" href="#p38018">1998-06-09</a> <span>…@…</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+On Tue, 9 Jun 1998 16:23:41 +0100, Graham Goring
+ wrote:
+
+<span class="qt">&gt;I for one would welcome a fortnight extension as I&#x27;ve been too caught up</span>
+<span class="qt">&gt;in my traumatic (and non-existant) love-life of late. :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Erm... But a birrova bugger for you, obviously.</span>
+
+(THWACK!!! - Ed)
+
+You grovel so well Graham :-p I&#x27;m feeling in a good mood now &#x27;cos
+Win98&#x27;s running fine (ah, the joys of working for a PC company and
+getting a copy in advance of the release date so you can preinstall it
+on your PCs ) and a lot faster than 95. :-)
+
+As a result of this good mood I&#x27;m going to reopen the competition
+until the end of the month so, come 00:00 on July 1, I&#x27;ll close the
+box. :)
+
+Cya,
+
+Barry
+
+-- 
+Barry K A Salter
+To reply via e-mail change spam to barrykas
+This week I have been mostly reinstalling everything
+after my Hard Drive crashed :(
+
+
+</pre></div><div class="post" id="p38027"><div class="ph"><a class="d" href="#p38027">1998-06-09</a> <span>unknown</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+In his obvious haste, Chris Young  babbled thusly:
+: I&#x27;ve still got all mine, so no-one&#x27;ll miss out on the delights of
+: Advanced Windows 95 Simulator....
+
+LOL! What&#x27;s it do? Crash at the hit of a key?
+(Or have I spoiled the joke now?)
+-- 
+<span class="qt">|                          |What to do if you find yourself stuck in a crack|</span>
+<span class="qt">|…@…|in the ground beneath a giant boulder, which you|</span>
+<span class="qt">|                          |can&#x27;t move, with no hope of rescue.             |</span>
+<span class="qt">|Andrew Halliwell          |Consider how lucky you are that life has been   |</span>
+<span class="qt">|Principal Subjects in:-   |good to you so far...                           |</span>
+<span class="qt">|Comp Sci &amp; Electronics    |   -The BOOK, Hitch-hiker&#x27;s guide to the galaxy.|</span>
+-----------------------------------------------------------------------------
+<span class="qt">|GCv3.1 GCS/EL&gt;$ d---(dpu) s+/- a- C++ U N++ o+ K- w-- M+/++ PS+++ PE- Y t+ |</span>
+<span class="qt">|5++ X+/++ R+ tv+ b+ D G e&gt;PhD h/h+ !r! !y-|I can&#x27;t say F**K either now! :( |</span>
+
+
+
+</pre></div><div class="post" id="p38034"><div class="ph"><a class="d" href="#p38034">1998-06-09</a> <span>…@…</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+&quot;Gerard Sweeney / Hackers Anonymous&quot;
+ wrote:
+
+<span class="qt">&gt;&gt; Heh, exactly what I did too, with my game (the much-talked-about(ish)</span>
+<span class="qt">&gt;&gt; one starring Gerard Sweeney, Gerard&#x27;s Ed, R*ck*tsh*p and The</span>
+<span class="qt">&gt;&gt; Starglider.)</span>
+<span class="qt">&gt;Hurrah! You mean it&#x27;s finished?</span>
+
+Yeah, er, finally. <a href="http://www.prodge.demon.co.uk/ome.tap" rel="noreferrer">http://www.prodge.demon.co.uk/ome.tap</a>
+
+<span class="qt">&gt;Oh happy days.. I&#x27;m in a game. Even if it</span>
+<span class="qt">&gt;is a crap one. It puts me in the same group as people like David</span>
+<span class="qt">&gt;Hasslehoff,</span>
+
+I&#x27;m sorry to hear that!
+
+<span class="qt">&gt;bloke-from Street Hawk, Don Johnston &amp; erm, the other one. All</span>
+<span class="qt">&gt;of those people appeared in crap games too :-)</span>
+
+Don&#x27;t forget Father Christmas himself, and Count Duckula. :)
+
+<span class="qt">&gt;Due to my new celebrity status, I&#x27;ve hired Bob the bouncer.</span>
+
+Dunno why! In that pic you sent me, you look exactly like a bouncer!
+
+<span class="qt">&gt;Take it away</span>
+<span class="qt">&gt;Bob..</span>
+<span class="qt">&gt;RIGHT - Sign an orderly queue for autographs, please. Ladies, stop fighting</span>
+<span class="qt">&gt;over Gerard&#x27;s body.. He&#x27;ll get to you all in good time.. OI! NO PICTURES! I</span>
+<span class="qt">&gt;SAID, NO PICTURES [WHACK]</span>
+
+Hey, they were all queuing for me, of course. :)
+
+<span class="qt">&gt;&gt; I started writing it at 2pm yesterday (Sunday), and finished it at</span>
+<span class="qt">&gt;&gt; 11:52pm,</span>
+<span class="qt">&gt;Blimey.. That&#x27;s double the time spent on some budget titles.. Some full</span>
+<span class="qt">&gt;price ones too, in fact (exhibit A, the unspeakably awful Centurions)</span>
+
+I once bought some dire budget game (forgotten the name), played it
+for about 5 minutes, then dumped the damn thing! Beat that everyone!
+(Well, they probably will - Ed)
+
+-- 
+&quot;Best time to ring is 1am - 7am&quot; - A Demon Tech Support Operator.
+pete [at] prodge.demon.co.uk  ICQ# 6692412
+ New to Sinclair emulation? -&gt; www.kendalls.demon.co.uk/cssfaq
+ Every Speccy game (almost) at www.void.demon.nl
+**DO NOT POST BINARIES TO THIS NEWSGROUP!!**
+
+
+
+</pre></div><div class="post" id="p38036"><div class="ph"><a class="d" href="#p38036">1998-06-10</a> <span>gerard sweeney / hackers anonymous</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+Barry K A Salter said
+
+<span class="qt">&gt;I&#x27;m feeling in a good mood now &#x27;cos Win98&#x27;s running fine</span>
+
+Did it crash when you connected a scanner to it? Or does that only happen
+if getting watched by several hundred people in an audience, and lots of
+news cameras? Arf arf arf :-)))
+
+Toodle-oo..
+Gerard
+-- 
+Gerard Sweeney - Hackers Anonymous/Team Amiga
+Visit The Hackers Anonymous Speccy Playground for Hack Attack 3
+where you&#x27;re always likely to get a good POKE (fnar!).
+Or look for speccy games using the NVG catalogue. All at:
+<a href="http://fly.to/ha3" rel="noreferrer">http://fly.to/ha3</a> , <a href="http://fly.to/nvgcat" rel="noreferrer">http://fly.to/nvgcat</a> or
+<a href="http://www.geocities.com/SiliconValley/Lakes/4871" rel="noreferrer">http://www.geocities.com/SiliconValley/Lakes/4871</a>
+
+
+</pre></div><div class="post" id="p38037"><div class="ph"><a class="d" href="#p38037">1998-06-10</a> <span>gerard sweeney / hackers anonymous</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+Peter Thomas said
+
+Gerard the talking hatstand said
+
+<span class="qt">&gt; &gt;Due to my new celebrity status, I&#x27;ve hired Bob the bouncer.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Dunno why! In that pic you sent me, you look exactly like a bouncer!</span>
+
+A bouncer?! A BOUNCER?! Ha! I&#x27;m totally opposed to violence. Apart from
+inflicting it on members of staff who annoy me while I&#x27;m doing speccy
+related things.. Honestly, could I fix their computer indeed! Hah! Go and
+find a technician to do that... Eh? Well, go and find a technician who
+CARES that you can&#x27;t login (You&#x27;re fired. Gerard&#x27;s Boss)
+
+<span class="qt">&gt; I once bought some dire budget game (forgotten the name), played it</span>
+<span class="qt">&gt; for about 5 minutes, then dumped the damn thing! Beat that everyone!</span>
+<span class="qt">&gt; (Well, they probably will - Ed)</span>
+
+Ah, but that was Codie&#x27;s &quot;Advanced throw it in the bin simulator&quot;.. Doesn&#x27;t
+count (or exist! Ed), I&#x27;m afraid
+
+<span class="qt">&gt; &quot;Best time to ring is 1am - 7am&quot; - A Demon Tech Support Operator.</span>
+
+Funny, that used to be the best time to get me on the modem when I was
+unemployed :-)
+
+Toodle-oo!
+Gerard
+-- 
+Gerard Sweeney - Hackers Anonymous/Team Amiga
+Visit The Hackers Anonymous Speccy Playground for Hack Attack 3
+where you&#x27;re always likely to get a good POKE (fnar!).
+Or look for speccy games using the NVG catalogue. All at:
+<a href="http://fly.to/ha3" rel="noreferrer">http://fly.to/ha3</a> , <a href="http://fly.to/nvgcat" rel="noreferrer">http://fly.to/nvgcat</a> or
+<a href="http://www.geocities.com/SiliconValley/Lakes/4871" rel="noreferrer">http://www.geocities.com/SiliconValley/Lakes/4871</a>
+
+
+</pre></div><div class="post" id="p38040"><div class="ph"><a class="d" href="#p38040">1998-06-10</a> <span>…@…</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+In article &lt;…@…&gt;, …@… (Barry K A Salter) wrote:
+<span class="qt">&gt;As a result of this good mood I&#x27;m going to reopen the competition</span>
+<span class="qt">&gt;until the end of the month so, come 00:00 on July 1, I&#x27;ll close the</span>
+<span class="qt">&gt;box. :)</span>
+
+Don&#x27;t you think that&#x27;s a bit _too_ generous?  Now all the people who submitted
+on time (:-)) have another month to wait to see the results.
+-- 
+---- Ian Collier : …@… : WWW page (including Spectrum section):
+------ <a href="http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html" rel="noreferrer">http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html</a>
+
+New to this group?  Answers to frequently-asked questions can be had from
+<a href="http://www.kendalls.demon.co.uk/cssfaq/index.html" rel="noreferrer">http://www.kendalls.demon.co.uk/cssfaq/index.html</a> .
+Sam Coupï¿½ FAQ: <a href="http://www.mono.org/~unc/Coupe/FAQ.txt" rel="noreferrer">http://www.mono.org/~unc/Coupe/FAQ.txt</a>
+
+
+</pre></div><div class="post" id="p38056"><div class="ph"><a class="d" href="#p38056">1998-06-10</a> <span>…@…</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+On 10 Jun 1998 11:45:02 GMT, &quot;Gerard Sweeney / Hackers Anonymous&quot;
+ wrote:
+
+<span class="qt">&gt;Barry K A Salter said</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;I&#x27;m feeling in a good mood now &#x27;cos Win98&#x27;s running fine</span>
+
+I&#x27;m in a good mood, because I couldn&#x27;t retrieve any newsgroup messages
+earlier.  From *any* server.  But I can now.  Hurrah!
+
+Incidentally, I appear to have missed the message that originally
+appeared in.
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Did it crash when you connected a scanner to it? Or does that only happen</span>
+<span class="qt">&gt;if getting watched by several hundred people in an audience, and lots of</span>
+<span class="qt">&gt;news cameras? Arf arf arf :-)))</span>
+
+I agree - that was a classic.
+
+Style,
+
+Chris
+
+
+
+</pre></div><div class="post" id="p38063"><div class="ph"><a class="d" href="#p38063">1998-06-10</a> <span>…@…</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+A fair while ago &lt;…@…&gt;, Barry K A
+Salter &lt;…@…&gt; said something along the lines of
+<span class="qt">&gt;&gt;If he hasn&#x27;t then, I&#x27;m afraid, everyone&#x27;s going to have to resubmit</span>
+<span class="qt">&gt;&gt;everything. :( *IF* that&#x27;s necessary I&#x27;ll repost in here and extend</span>
+<span class="qt">&gt;&gt;the competition by a fortnight to give you time to do so.</span>
+
+On Mon, 8 Jun 1998 07:56:39 +0100, The Starglider
+ wrote:
+<span class="qt">&gt;Yeah! Extend!</span>
+
+Actually don&#x27;t. I&#x27;ve already spent far too much time dreaming up crap
+games (I opened a window -- turn that into a crap game. I made a cup
+of tea -- turn *that* into a crap game), and I&#x27;m not going through
+that all over again.
+
+
+</pre></div><div class="post" id="p38066"><div class="ph"><a class="d" href="#p38066">1998-06-10</a> <span>…@…</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+On 10 Jun 1998 06:10:50 GMT, …@…_no_spam (Tero Turtiainen)
+wrote:
+
+<span class="qt">&gt;I may have missed some posts concerning this CSSCGC-mess... Do we all have</span>
+<span class="qt">&gt;to resubmit our entries now? Do I have to wait a few weeks more to see</span>
+<span class="qt">&gt;the resulting crap? ;-)</span>
+
+Your TZX wouldn&#x27;t load on X128 so you need to resubmit it anyway :( As
+for everyone else, I&#x27;m going to wait for Alistair to turn up  and
+I&#x27;ve extended the closing date to the end of the month so judging will
+start in earnest on the 1st of July. :)
+
+HTH,
+
+Barry
+-- 
+Barry K A Salter
+To reply via e-mail change spam to barrykas
+This week I have been mostly reinstalling everything
+after my Hard Drive crashed :(
+
+
+</pre></div><div class="post" id="p38070"><div class="ph"><a class="d" href="#p38070">1998-06-10</a> <span>…@…</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+Graham Goring  writes:
+
+<span class="qt">&gt;&gt;I once bought some dire budget game (forgotten the name), played it</span>
+<span class="qt">&gt;&gt;for about 5 minutes, then dumped the damn thing! Beat that everyone!</span>
+<span class="qt">&gt;&gt;(Well, they probably will - Ed)</span>
+
+<span class="qt">&gt;Easy, Plasma Ball and Back To The Future. I&#x27;d be surprised if the</span>
+<span class="qt">&gt;*combined* play time was 5 minutes.</span>
+
+5 mins? Huh, that&#x27;s nothing, I bought &#x27;Play it again Sam&#x27; or somesuch
+thing and couldn&#x27;t get the tape to load, so I took it back to the shop
+and got a replacement. The replacement wouldn&#x27;t load either, then I went
+off to University, and 6  months later I couldn&#x27;t be arsed anymore -
+total playing time - NO (zero, nothing, bugger all) minutes!
+
+Now beat that!
+
+GtB
+
+
+</pre></div><div class="post" id="p38071"><div class="ph"><a class="d" href="#p38071">1998-06-10</a> <span>…@…</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+…@… (Barry K A Salter) writes:
+
+<span class="qt">&gt;As a result of this good mood I&#x27;m going to reopen the competition</span>
+<span class="qt">&gt;until the end of the month so, come 00:00 on July 1, I&#x27;ll close the</span>
+<span class="qt">&gt;box. :)</span>
+
+Hooray!
+
+My brand new, amazingly crap BASIC game may make it into the competition
+after all (so long as I do not leave it to the last minute again)
+
+But I think the closing time should be 23:59 on the 30th June, to avoid
+any &#x27;what day is midnight&#x27; confusion - like what I had last time (or am
+I the only one that gets confused?)
+
+;-)
+
+GtB
+NEW CRAP GAME UPDATE:
+First NEW GonadoVision Speccy BASIC game in 10 years - TAP file
+currently around 100K!
+
+
+</pre></div><div class="post" id="p38074"><div class="ph"><a class="d" href="#p38074">1998-06-10</a> <span>unknown</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+In his obvious haste, Barry K A Salter  babbled thusly:
+: You grovel so well Graham :-p I&#x27;m feeling in a good mood now &#x27;cos
+: Win98&#x27;s running fine (ah, the joys of working for a PC company and
+: getting a copy in advance of the release date so you can preinstall it
+: on your PCs ) and a lot faster than 95. :-)
+
+I&#x27;ve picked up a little joke about Win98....
+
+The Internet Oracle has pondered your question deeply.
+Your question was:
+ 
+<span class="qt">&gt; </span>
+<span class="qt">&gt; ..nton was unavailable for comment.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; And now, with some late-breaking news of world-shattering significance,</span>
+<span class="qt">&gt; the Usenet Oracle, reporting from Indiana.</span>
+ 
+And in response, thus spake the Oracle:
+ 
+} Hi, and welcome to the Oracle&#x27;s computer news section. Today Microsoft
+} shocked us all as they announced that their latest operating system -
+} Windows 98 is to be renamed prior to launch as Diana, Princess of
+} Windows.
+}
+} A spokesman for Microsoft said that this was in tribute to the late
+} ex-royal and is a fitting name in that the product will look flashy, be
+} mostly superficial, consume vast amounts of resources and crash
+} spectacularly.
+}
+} And now for the weather ...
+-- 
+______________________________________________________________________________
+<span class="qt">|…@…| &quot;I&#x27;m alive!!! I can touch! I can taste!         |</span>
+<span class="qt">|Andrew Halliwell          |  I can SMELL!!!  KRYTEN!!! Unpack Rachel and    |</span>
+<span class="qt">|Principal subjects in:-   |  get out the puncture repair kit!&quot;              |</span>
+<span class="qt">|Comp Sci &amp; Electronics    |     Arnold Judas Rimmer- Red Dwarf              |</span>
+------------------------------------------------------------------------------
+<span class="qt">|GCv3.1 GCS/EL&gt;$ d---(dpu) s+/- a- C++ U N++ o+ K- w-- M+/++ PS+++ PE- Y t+  |</span>
+<span class="qt">|5++ X+/++ R+ tv+ b+ D G e&gt;PhD h/h+ !r! !y-|I can&#x27;t say F**K either now! :(  |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p38079"><div class="ph"><a class="d" href="#p38079">1998-06-10</a> <span>…@…</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+Graham Goring felt forced to mention...
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Quoth the Raven in article &lt;897418075.7707.14.nnrp-</span>
+<span class="qt">&gt;…@…&gt;, Peter Thomas …@…&gt; writes</span>
+<span class="qt">&gt;&gt;I once bought some dire budget game (forgotten the name), played it</span>
+<span class="qt">&gt;&gt;for about 5 minutes, then dumped the damn thing! Beat that everyone!</span>
+<span class="qt">&gt;&gt;(Well, they probably will - Ed)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Easy, Plasma Ball and Back To The Future. I&#x27;d be surprised if the</span>
+<span class="qt">&gt;*combined* play time was 5 minutes.</span>
+
+I completed Back to the Future.  I dunno, I guess I must have been
+in a masochistic frame of mind at the time.
+-- 
+Derek Jolly  (…@…)  (Remove the &#x27;x&#x27; for e-mail)
+The answer&#x27;s 83.  What&#x27;s the question?
+
+
+
+</pre></div><div class="post" id="p38085"><div class="ph"><a class="d" href="#p38085">1998-06-10</a> <span>…@…</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+&quot;Gerard Sweeney / Hackers Anonymous&quot;
+ wrote:
+
+<span class="qt">&gt;&gt; &gt;Due to my new celebrity status, I&#x27;ve hired Bob the bouncer.</span>
+<span class="qt">&gt;&gt; Dunno why! In that pic you sent me, you look exactly like a bouncer!</span>
+<span class="qt">&gt;A bouncer?! A BOUNCER?! Ha! I&#x27;m totally opposed to violence.</span>
+
+In that case, you&#x27;d make a very crap bouncer! :)
+
+<span class="qt">&gt;&gt; I once bought some dire budget game (forgotten the name), played it</span>
+<span class="qt">&gt;&gt; for about 5 minutes, then dumped the damn thing! Beat that everyone!</span>
+<span class="qt">&gt;&gt; (Well, they probably will - Ed)</span>
+<span class="qt">&gt;Ah, but that was Codie&#x27;s &quot;Advanced throw it in the bin simulator&quot;.. Doesn&#x27;t</span>
+<span class="qt">&gt;count (or exist! Ed), I&#x27;m afraid</span>
+
+No, I have reason to believe that it was the secret title for every
+game they released. 
+
+<span class="qt">&gt;&gt; &quot;Best time to ring is 1am - 7am&quot; - A Demon Tech Support Operator.</span>
+<span class="qt">&gt;Funny, that used to be the best time to get me on the modem when I was</span>
+<span class="qt">&gt;unemployed :-)</span>
+
+That would be quite useful for me to upload to my www.crosswinds.net
+space, because they seem to shut it down at other times... sassen
+frassen rassen...
+
+Seeing as we&#x27;re going off-topic, let&#x27;s plunge further...
+
+This week&#x27;s funky 80s tune is the theme from those Kia Ora adverts.
+<a href="http://tv.cream.org/kiaora.mp3" rel="noreferrer">http://tv.cream.org/kiaora.mp3</a>
+
+&quot;I&#x27;ll be your dawg!&quot;
+
+Enjoy.
+
+-- 
+&quot;Best time to ring is 1am - 7am&quot; - A Demon Tech Support Operator.
+pete [at] prodge.demon.co.uk  ICQ# 6692412
+ New to Sinclair emulation? -&gt; www.kendalls.demon.co.uk/cssfaq
+ Every Speccy game (almost) at www.void.demon.nl
+**DO NOT POST BINARIES TO THIS NEWSGROUP!!**
+
+
+
+</pre></div><div class="post" id="p38112"><div class="ph"><a class="d" href="#p38112">1998-06-11</a> <span>…@…</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+On Thu, 11 Jun 1998 11:22:48 +0100, Alistair Nelson
+ wrote:
+
+<span class="qt">&gt;Fear not for it is I! Good news all round i would say as i have all the</span>
+<span class="qt">&gt;entries i have received saved on disk, well i think i have them all? Will</span>
+<span class="qt">&gt;check today when i get a chance, and will send a new message after that.</span>
+
+Well I&#x27;ve just forwarded the ones I got after the restore to you. :)
+Could you send &#x27;em the rest to me please (barrykas (at) bo-l (dot) co
+(dot) uk)?
+
+<span class="qt">&gt;Noooooo, I have a stinky first year report to hand in then, and the world</span>
+<span class="qt">&gt;cup is on so it will be a busy time for me around that time, so maybe</span>
+<span class="qt">&gt;another couple of weeks on to that would be best, n&#x27;est pas?</span>
+
+At this rate I&#x27;ll have extended it to the start of the new academic
+year in September. ;) Fine, 15th of July it is (3 days after the World
+Cup final)...
+
+Everybody happy with that? No...Tough. ;-p
+
+Cya,
+
+Barry
+
+-- 
+Barry K A Salter
+To reply via e-mail change spam to barrykas
+This week I have been mostly reinstalling everything
+after my Hard Drive crashed :(
+
+
+</pre></div><div class="post" id="p38122"><div class="ph"><a class="d" href="#p38122">1998-06-11</a> <span>…@…</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+Barry K A Salter felt forced to mention...
+<span class="qt">&gt;</span>
+<span class="qt">&gt;On 10 Jun 1998 06:10:50 GMT, …@…_no_spam (Tero Turtiainen)</span>
+<span class="qt">&gt;wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;I may have missed some posts concerning this CSSCGC-mess... Do we all have</span>
+<span class="qt">&gt;&gt;to resubmit our entries now? Do I have to wait a few weeks more to see</span>
+<span class="qt">&gt;&gt;the resulting crap? ;-)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Your TZX wouldn&#x27;t load on X128 so you need to resubmit it anyway :( As</span>
+<span class="qt">&gt;for everyone else, I&#x27;m going to wait for Alistair to turn up  and</span>
+<span class="qt">&gt;I&#x27;ve extended the closing date to the end of the month so judging will</span>
+<span class="qt">&gt;start in earnest on the 1st of July. :)</span>
+
+OK.  I managed to find a backup of Jet Fighters on a disk at home, so
+I&#x27;ve still got all 10 of my entries.  They&#x27;re now zipped up and ready
+if they need to be resubmitted.
+
+Of course, since the compo&#x27;s been extended I&#x27;m sure I could knock
+together a few more. :)
+-- 
+Derek Jolly  (…@…)  (Remove the &#x27;x&#x27; for e-mail)
+The answer&#x27;s 83.  What&#x27;s the question?
+
+
+
+</pre></div><div class="post" id="p38142"><div class="ph"><a class="d" href="#p38142">1998-06-12</a> <span>…@…</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+In article &lt;…@…&gt;, …@… (Barry K A Salter) wrote:
+<span class="qt">&gt;At this rate I&#x27;ll have extended it to the start of the new academic</span>
+<span class="qt">&gt;year in September. ;) Fine, 15th of July it is (3 days after the World</span>
+<span class="qt">&gt;Cup final)...</span>
+
+Oh come on!
+
+Surely the World Cup shouldn&#x27;t stop anyone from speccy programming?
+-- 
+---- Ian Collier : …@… : WWW page (including Spectrum section):
+------ <a href="http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html" rel="noreferrer">http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html</a>
+
+New to this group?  Answers to frequently-asked questions can be had from
+<a href="http://www.kendalls.demon.co.uk/cssfaq/index.html" rel="noreferrer">http://www.kendalls.demon.co.uk/cssfaq/index.html</a> .
+Sam Coupï¿½ FAQ: <a href="http://www.mono.org/~unc/Coupe/FAQ.txt" rel="noreferrer">http://www.mono.org/~unc/Coupe/FAQ.txt</a>
+
+
+</pre></div><div class="post" id="p38208"><div class="ph"><a class="d" href="#p38208">1998-06-13</a> <span>darren salt</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+In message &lt;…@…&gt;
+  …@… (Barry K A Salter) wrote:
+
+<span class="qt">&gt; On Tue, 9 Jun 1998 16:23:41 +0100, Graham Goring</span>
+<span class="qt">&gt;  wrote:</span>
+
+<span class="qt">&gt;&gt; I for one would welcome a fortnight extension as I&#x27;ve been too caught up</span>
+<span class="qt">&gt;&gt; in my traumatic (and non-existant) love-life of late. :)</span>
+
+<span class="qt">&gt;&gt; Erm... But a birrova bugger for you, obviously.</span>
+
+<span class="qt">&gt; (THWACK!!! - Ed)</span>
+
+<span class="qt">&gt; You grovel so well Graham :-p I&#x27;m feeling in a good mood now &#x27;cos Win98</span>
+
+Ah. This is clearly the reason for the crash... perhaps you should upgrade to
+Linux, or that nice new yellow box due from Acorn later this year... :-&gt;
+
+[snip rest]
+
+-- 
+<span class="qt">| Darren Salt     anti-UCE | nr Ashington, Northumberland    | Spec+3, A3010,</span>
+<span class="qt">| arcsalt@spuddy,mew,co,uk | Toon Army     | 01268 515441    | Acorn Risc PC,</span>
+<span class="qt">| darren,salt@unn,ac,uk    | Season ticket | free mail, news | BBC Master</span>
+<span class="qt">|   Retrocomputing: a PC card in a Risc PC</span>
+
+Eye user spare ling chequer sew be wear!
+
+
+</pre></div><div class="post" id="p38229"><div class="ph"><a class="d" href="#p38229">1998-06-14</a> <span>…@…</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+On Sat, 13 Jun 1998 22:16:51 GMT, Darren Salt
+ wrote:
+
+<span class="qt">&gt;Ah. This is clearly the reason for the crash... perhaps you should upgrade to</span>
+<span class="qt">&gt;Linux, or that nice new yellow box due from Acorn later this year... :-&gt;</span>
+
+I would love to acquire an Acorn but, alas, they have this nasty habit
+of being expensive (compared to IBM compatibles) because they&#x27;re a
+&quot;niche&quot; market (albeit very nice to use). But when you consider that
+I&#x27;ve got s/w costing at least Â£2500 on this machine (including my BBS
+software) I&#x27;d only get the Acorn as a second machine. Now. Anyone want
+to buy a new IBM compatible? ;-&gt;
+
+Cya,
+
+Barry
+
+-- 
+Barry K A Salter
+To reply via e-mail change spam to barrykas
+This week I have been mostly reinstalling everything
+after my Hard Drive crashed :(
+
+
+</pre></div><div class="post" id="p38344"><div class="ph"><a class="d" href="#p38344">1998-06-19</a> <span>darren salt</span> <span>Re: URGENT : CSSCGC 1998</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+In message &lt;…@…&gt;
+  …@… (Barry K A Salter) wrote:
+
+<span class="qt">&gt; On Sat, 13 Jun 1998 22:16:51 GMT, Darren Salt</span>
+<span class="qt">&gt;  wrote:</span>
+
+<span class="qt">&gt;&gt; Ah. This is clearly the reason for the crash... perhaps you should upgrade</span>
+<span class="qt">&gt;&gt; to Linux, or that nice new yellow box due from Acorn later this year...</span>
+<span class="qt">&gt;&gt; :-&gt;</span>
+
+<span class="qt">&gt; I would love to acquire an Acorn but, alas, they have this nasty habit of</span>
+<span class="qt">&gt; being expensive (compared to IBM compatibles) because they&#x27;re a &quot;niche&quot;</span>
+<span class="qt">&gt; market</span>
+
+With a certain large monopolistic marketing machine around, that&#x27;s one way to
+survive...
+
+<span class="qt">&gt; (albeit very nice to use).</span>
+
+You don&#x27;t have to tell *me* that :-)
+
+<span class="qt">&gt; But when you consider that I&#x27;ve got s/w costing at least ï¿½2500 on this</span>
+<span class="qt">&gt; machine (including my BBS software) I&#x27;d only get the Acorn as a second</span>
+<span class="qt">&gt; machine.</span>
+
+There seem to be a few Risc PCs for sale ATM in csa.misc...
+
+<span class="qt">&gt; Now. Anyone want to buy a new IBM compatible? ;-&gt;</span>
+
+I will not buy an PC contemptible... :-)
+
+ObSinclair: see .sig ;-)
+
+-- 
+<span class="qt">| Darren Salt     anti-UCE | Spec+3, A3010, | 01268 515441    | Toon Army</span>
+<span class="qt">| arcsalt@spuddy,mew,co,uk | Acorn Risc PC, | free mail, news | Season ticket</span>
+<span class="qt">| darren,salt@unn,ac,uk    | BBC Master     | nr Ashington, Northumberland</span>
+<span class="qt">|   Where is Matthew Smith?</span>
+
+When you want to use your modem, somebody else will be using the phone.
+
+
+</pre></div></main></body></html>

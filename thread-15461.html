@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSSCGC 1999 impressions · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>CSSCGC 1999 impressions</h1><p class="facts">1 posts, 1999-06-15 – 1999-06-15</p><div class="post" id="p51270"><div class="ph"><a class="d" href="#p51270">1999-06-15</a> <span>graham goring</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2053">CSSCGC Crap Games Contest 1999</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30621">ZXDB: A Day in the Life of Mike the Mole</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30623">ZXDB: End of the World Simulator</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30634">ZXDB: Manic Miner Pre-school Edition</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30612">ZXDB: Advanced Pro Wife Simulator</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30615">ZXDB: Buffy The Vampire Slayer</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30617">ZXDB: Class 1 Lawnmower Racing</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30618">ZXDB: Class 2 Lawnmower Racing</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30620">ZXDB: Curse of the Sandwitch</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30626">ZXDB: English to Giant Translator</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30649">ZXDB: Think of a Number</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30610">ZXDB: Advanced Basic Debugger</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30624">ZXDB: The Enforcer 2</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30639">ZXDB: Playing With Polygons</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30642">ZXDB: Really Smart Game</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30616">ZXDB: Chemistry Test</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30619">ZXDB: Clifftop View</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/43494">ZXDB: Connect 3</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30622">ZXDB: Dodgy&#x27;s Castle</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30625">ZXDB: The Enforcer</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30627">ZXDB: The Entertainer</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30629">ZXDB: Fantastic Adventure</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30630">ZXDB: Forgotten Village</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30632">ZXDB: Hunchback 84</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30631">ZXDB: Honest Joe</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30633">ZXDB: Little Batty</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30635">ZXDB: Mow Business</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30637">ZXDB: Nuclear Reactions</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30641">ZXDB: Queen Puzzle</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30646">ZXDB: Shut It!</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30636">ZXDB: Nails</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30644">ZXDB: Sentences</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30645">ZXDB: Sheepdog</a></div><pre>While you&#x27;re all waiting for the deliberations of Alistair and I to be
+concluded I thought I&#x27;d post this little message so that those who
+entered the CSSCGC 1999 could see who&#x27;s likely to win and who&#x27;s not.
+When it comes down to it, the ball is in Alistair&#x27;s court, so even if
+I&#x27;ve said that your game won&#x27;t win here, there&#x27;s a good chance that it
+probably might possibly (by a long stretch of the imagination) have a
+slight hope of perhaps being lucky enough to be fleetingly considered
+as a winner. :)
+
+I&#x27;d like to congratulate all the entrants, though. The standard as ever
+has been pretty abysmal, but there are definitely a few stand-out games
+that take unplayability to a new level. Well done.
+
+So, without further ado, here&#x27;s some brief appraisals of all the items
+of evidence. Ahem. I mean entries... (Please note, that although I may
+be very cruel about the game you wrote, it&#x27;s probably for the best and
+you&#x27;d be advised to give up programming and take up a profession that&#x27;s
+less likely to find you writing the software for some critical system
+in a nuclear submarine&#x27;s launch subroutines)
+
+------------------------------------------------------------------------
+
+Aberdeen - This game loses out as it provides a valuable insight
+ into why no-one should ever visit the God-forsaken titular city.
+
+A Day In The Life Of Mike The Mole - This is a fantastically
+ playable game that relies upon split-second reactions and the
+ the RND statement not conspiring to block your exit and make the
+ game impossible to play. Far too enjoyable, but it does have a
+ very nice error in the shape of a &quot;3 subscript wrong&quot; error when
+ you start the game and press LEFT. Crap, but not crap enough.
+
+Advanced Basic Debugger - Plain crap, and obviously trying to cash
+ in on the controversial success of Derek Jolly&#x27;s winner from last
+ year. I will not tolerate this!
+
+Advance Coin Sim - Unfortunately it does accurately emulate the random
+ nature of a coin falling and therefor is far too good to win.
+
+Advanced Pro Wife Simulator - The rather nice looking machine code
+ screen fade for this game made it look far too professional, and the
+ software emulation of a wife&#x27;s AI was much too realistic for this to
+ be considered anything but a triumph of programming design.
+
+Arcade Emulator - This is an excellent piece of software that
+ provides all the thrills and spills of finding out that your
+ favourite arcade game is now pushing up the daisies because of
+ it&#x27;s corrupted ROM. However it isn&#x27;t really a game, is it? Tsk!
+
+Arklay Football Club - I&#x27;ve never liked football management games
+ and so this automatically fulfils the requirement of being crap
+ by it&#x27;s very nature. But it&#x27;s not going to win, as I completed it
+ on my first try and it didn&#x27;t even force me to sit through a three
+ minute rendition of &quot;Here we go!&quot; played on the BEEP chip.
+
+Buffy The Vampire Slayer - This game had all the depth and playability 
+ of a normal TV/Movie gaming tie-ins and as such was indistinguishable 
+ from some of the best Spectrum licensed games like Knight Rider and 
+ Street Hawk. Sorry, far too good.
+
+Class 1 Lawnmower Racing - Although this game had lots of crapness, it
+ was all over far too soon, and didn&#x27;t force me to sit through any
+ interminably long BEEP tunes when I won. So, again it lost.
+
+Class 2 Lawnmower Racing - Very similar to it&#x27;s 1 player precursor, this
+ is in with a chance of winning due to it&#x27;s cleverly exploiting the fact
+ that once one player has started, as long as he doesn&#x27;t release his key
+ and can fend off the other player he&#x27;ll win. Truly crap.
+
+Chemistry Test - This game sent me into a hypnotic state of boredom, and
+ as such has a valuable future in the field of hypnotherapy, and is
+ therefor anything but crap. However, should it ever be harnessed by
+ Paul McKenna in the making of one of his dreadful TV shows, then it may
+ be re-assessed.
+
+Clifftop View - As an accurate simulation of a Seagull this game 
+ excelled, and indeed is better than many of the titles that regularly 
+ top the Spectrum sales charts. It also includes a strategic element in 
+ the way it forces the player to balance the pros and cons of flying low 
+ to increase accuracy. Far too good to win.
+
+Connect 3 - An excellent attempt to destroy one of my favourite counter
+ related games. Unfortunately the AI is far too good for the game to be
+ really crap, despite the deeply flawed basic gameplay. 
+
+Curse Of The Sandwitch - This had many elements of crapness that places 
+ it high among my possible winners, from massively long beep tunes 
+ (which are unfortunately in-tune, which does detract from the game&#x27;s 
+ crapness level) to the fact that it&#x27;s an adventure game (and I loathe 
+ those buggers). This is a game to look out for in the possible winner&#x27;s 
+ pen. If anything can seriously harm this game&#x27;s chances it the 
+ excellent usage of graphics that easily rivals the best that the GAC 
+ ever created...
+
+Dodgy&#x27;s Castle - If there&#x27;s anything more annoying than a text
+ adventure, it&#x27;s a text adventure that not only doesn&#x27;t understand
+ abbreviations for the cardinal directions of north, south, east
+ and west but which also forces you to type in every instruction
+ twice. Truly crap on every level, and as of now a excellent bet
+ for winning the 1999 CSS CGC.
+
+End Of The World Simulator - The realism of this program had me cowering
+ behind the sofa with the same degree of terror that Daleks cause in me,
+ meaning that it cannot possibly win because of its authenticity.
+
+English To Giant Translator - This isn&#x27;t even a game! However
+ it is program that&#x27;s of immense use if you&#x27;re seriously
+ planning that package tour up the beanstalk that&#x27;s curiously
+ appeared in your back garden. Therefor it&#x27;s not crap. Sorry.
+
+The Enforcer - I would have happily paid Â£7.99 for this game, such is my
+ love of it&#x27;s classic gameplay, and superb machine code music. I suggest
+ that the author of this game immediately removes himself to the nearest
+ software developer and uses this pinnacle of gaming excellence to get
+ himself a job there.
+
+The Enforcer 2 - The amazing 3D visuals of this game made me duck as 
+ bullets came screaming out of my monitor and thudded into the wall 
+ behind me. A truly worthy follow up to The Enforcer and a game of such 
+ excessive excellence that it cannot possibly be considered crap in any 
+ way.
+
+The Entertainer - A 128K rendition of the tune that gets just enough of 
+ it&#x27;s notes completely and ear-jarringly wrong to ensure that I proclaim  
+ it the crappest program of the competition. Unfortunately it&#x27;s not a 
+ game, so I have to disqualify it. Bad luck that man.
+
+Europevision - This is a good attempt to capture all the crapness of
+ the Eurovision Song Contest in gaming form. Unfortunately it&#x27;s let down
+ by the fact that I played it through to completion no less that four
+ times and Ireland didn&#x27;t win once, indicating that the programming 
+ behind the voting simulation is deeply flawed. I&#x27;m not sure whether 
+ that&#x27;s a good thing or not, though.
+
+Fantastic Adventure - This game boasts some lovely colour-cycling around 
+ the edge of the screen and it&#x27;s this fact that ensures that it can&#x27;t 
+ win because it really looked rather nice. Not even the fact that the 
+ game can be won with the single line &quot;OPEN DOOR&quot; can help this game 
+ snatch defeat from the jaws of success.
+
+Forgotten Village - Despite being truly scared by the grisly opening 
+ loading screen, I ventured deeper into this game to find that it was a 
+ worryingly competent looking text adventure with good descriptions and 
+ an adequate parser. How this didn&#x27;t end up on a Crash cover tape I&#x27;ll 
+ never know. The battle sections of the game where also as exciting as 
+ any WWF match, and for all these reasons this game cannot be classed 
+ as crap, merely misguided.
+
+Hunchback 84 - Is no better or worse that any of the similarly themed 
+ games that Ocean released, however it did generate a &quot;B Integer out of 
+ range&quot; error message, which is my favourite kind of error message as it 
+ shows a true lack of coding talent. This is one to look out for.
+
+Honest Joe - This game could have almost been a license of Lock Stock 
+ And Two Smoking Barrels, a film that I immensely enjoyed. Unfortunately 
+ for the game, this mental association of mine means that I had nothing 
+ but fun in Joe&#x27;s quest to gain Â£100. Even when I was caught by the 
+ rozzers (ouch!).
+
+Little Batty - This lost out simply because I actually had fun playing
+ it, and therefor it must be of some merit, a fact that got disqualified
+ instantaneously.
+
+Manic Miner Pre-school Edition - A triumph of level design, and a game 
+ that almost ensured that Derek Jolly won for a second year running, 
+ until careful investigation upon my part revealed that he didn&#x27;t even 
+ do all the coding himself, and that evidently some friend of his called 
+ Matthew Smith had collaborated with him in the production of the game. 
+ I also decided to disqualify him because the filename for his entry had 
+ more than three characters in it.
+
+Mow Business - This is an attempt to update the traditional
+ Lawm Mower Sim by including an extra level of complexity and
+ therefor boredom to the equation by giving you a choice of
+ four garden tools, which you can swap between at any time.
+ Within seconds of starting the game I was utterly bored by this
+ complete tripe. However it&#x27;s not going to win in the hope that
+ it&#x27;ll disuade you people from producing more of these bloody
+ lawn mower games... Grrr!
+
+Nails - Without even going into the game proper, this game is
+ my favourite by the virtue of having a loading screen that
+ features &quot;Vince&quot; from the excellent Rex The Runt animation
+ series. However, after going into the actual game, I find that
+ it confounds me intensely by playing a BEEPed rendition of a
+ tune from a cartoon that I can&#x27;t remember the bloody name of,
+ and further shoots itself in the foot by having a graphic
+ description of the incredibly painful process of having your
+ fingernails removed without anaesthetic.
+
+Nuclear Reactions - This game immediately lost out due to it&#x27;s stunning
+ loading screen, which was far too good and made excellent use of
+ colour. It also made out that I caused a nuclear meltdown, and I don&#x27;t 
+ like having that kind of rumour spread about me.
+
+Octopus Light - This game is very similar to the Nintendo Game And Watch
+ titles of the early 80&#x27;s, and as such brought back many happy memories 
+ of school. A side-effect of this was that I found myself in too happy a 
+ mood to possibly be nasty about this game.
+
+Playing With Polygons - Derek Jolly once again gets far too clever for 
+ his own good in providing a program that in no way can be considered a 
+ game, and which has only one practical use in that it can be used to 
+ generate a fairly authentic reproduction of the final boss of Arkanoid, 
+ &quot;Doh&quot;. I was also expecting an entertaining game about dead parrots, so 
+ this one loses out by being neither a game, and also by breaching the 
+ trades and descriptions act.
+
+Pod - Pod is a low-budget version of Little Computer People, and
+ although in many ways crap it loses out by the amazing coincidence that 
+ it actually understood the first two words I typed in (those being 
+ &quot;dance&quot; and &quot;jump&quot;) meaning that the programmer was far too thorough in 
+ his researching of the human experience and it&#x27;s digital
+ implementation.
+
+Queen Puzzle - A brilliantly conceived puzzle executed to the full
+ extent of crapness by it&#x27;s lack of any challenge. This is a hot
+ contender for the winner&#x27;s podium...
+
+Rock Paper Scissors - This game captures all the excitement of the
+ traditional game used to decided who will carry out some particularly
+ vile task when a coin isn&#x27;t available for the tossing. The programming
+ is spot on, and the graphics clear and lovely. So it loses on every
+ count. The loading picture is also very good, but the author does win
+ some points for obliterating part of it with a blacked-out &quot;Program:&quot;
+ message.
+
+Really Smart Game - Although it features excellent use of spelling
+ mistakes this game loses out by including all the depth and subtlety
+ of modern-day Japanese RPG&#x27;s in it&#x27;s battle system, while not
+ encumbering the player with some tedious story about the fight
+ between good and evil or the coming of age of some psychically
+ gifted youth. Bad luck, Andy.
+
+Sentences - This seems to be randomly spewed words with little or
+ no gameplay, as a result it uncannily mimics my most hated of all
+ genres, the text adventure and instantly loses out.
+
+Sheepdog - This game boasts dodgy controls, piss-poor graphics and
+ negligible gameplay. In other words, it&#x27;s currently odds-on favourite
+ for the winner unless something else truly crap appears.
+
+Shut It - This games features a full motion video rendition of the
+ beginning of the seminal police drama, The Sweeney (shown at
+ approximately 1 frame every 20 seconds) and digitised speech. This
+ places it on the same level of competence as most of Codemasters
+ releases. It also features many excellent graphics, but it cleverly
+ avoids including any gameplay, and so could indeed win the competition
+ should every other participant die in a horrible kitchen appliance
+ related disaster.
+
+Snow - This is a blatant rip-off of an old BBC-B program that was
+ used at every opportunity every Christmas to annoy the hell out of
+ the teachers. However this isn&#x27;t Christmas, so this program simply
+ served to remind me that the weather is far too hot and that I was
+ pining for colder times. Grrr!
+
+Scissors Paper Stone - This is an insipid re-tread of the earlier
+ entry Rock Paper Scissors, but without the graphical flair of it&#x27;s
+ superior relation. The sterile presentation and simplistic gameplay
+ belies the fact that this probably started out in a book by Tim
+ Hartnell.
+
+Think Of A Number - Brilliantly capturing all the tedium associated
+ with the statement &quot;Guess who I saw today!&quot; that&#x27;s often posed by
+ annoying people this game only loses because it&#x27;s by Derek Jolly,
+ and I&#x27;m damned if he&#x27;s winning two years in a row. Ha!
+
+------------------------------------------------------------------------
+
+Graham Goring
+
+-- 
+
+/========================================================\ Cheeses That
+<span class="qt">| &quot;And lo, it came to pass that The Evil One eventually  | I Have Eaten</span>
+<span class="qt">|  uploaded his most despicable of web pages. And there  |    No. 02</span>
+<span class="qt">|  befell a time of much wailing and gnashing of teeth.&quot; |</span>
+<span class="qt">|     Book Of Brevelation - The New Toastament           | A Nice Mild</span>
+\==== <a href="http://www.duketastrophy.demon.co.uk/index.htm" rel="noreferrer">http://www.duketastrophy.demon.co.uk/index.htm</a> ====/   Cheddar
+
+
+</pre></div></main></body></html>

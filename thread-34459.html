@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANNOUNCE: JSW64 Manic Miner: James Bond [v1.1] · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANNOUNCE: JSW64 Manic Miner: James Bond [v1.1]</h1><p class="facts">8 posts, 2009-05-28 – 2009-06-06</p><div class="post" id="p220194"><div class="ph"><a class="d" href="#p220194">2009-05-28 22:57:08</a> <span>Andrew Broad</span> </div><pre>#######################################################
+…@… is for spammers
+Others: see <a href="http://geocities.com/andrewbroad/email.html" rel="noreferrer">http://geocities.com/andrewbroad/email.html</a>
+#######################################################
+
+I am delighted to announce the second gamma-release of JSW64 Manic
+Miner: James Bond (v1.1), which is available as a free download from:
+<a href="http://geocities.com/andrewbroad/spectrum/download/" rel="noreferrer">http://geocities.com/andrewbroad/spectrum/download/</a>
+
+v1.1 adds a room called &quot;Quantum of Solace&quot;. I&#x27;ve also produced an
+easy variant of the entire game (to reduce stressful or frustrating
+manoeuvres without eliminating my beloved quirky features), and room-
+by room documentation - including a thorough list of playing-tips that
+should cover anything you might be stuck on.
+
+The game is based on the James Bond character created by Ian Fleming,
+and has 22 rooms, each corresponding to one of the official James Bond
+007 films produced by EON Productions (please don&#x27;t sue me; I&#x27;m making
+no money out of this whatsoever, so just think of it as free
+advertising that might attract a few more people to the James Bond
+franchise).
+
+The game is based on John Elliott&#x27;s JSW64 engine (Variant Z), which
+combines almost all the features of Matthew Smith&#x27;s classic Manic
+Miner and Jet Set Willy, and adds novel features such as new guardians
+(e.g. diagonal guardians, fast horizontal guardians, triggers and
+stoppers), new cell-types (Trap-cells feature quite a lot in my game),
+the ability to have up to 16 different cell-classes in a room (each
+with its own cell-type, pixel-pattern and colour-attribute), and the
+ability to enable superjump on a room-by-room basis. In particular,
+this game is based on John Elliott&#x27;s conversion of Manic Miner to
+JSW64.
+
+Using the JSW64 engine has enhanced the game technically, visually and
+atmospherically. The ability to have different-coloured Air-cells in
+each room has helped me to capture the atmosphere of two or three
+locations from each Bond-film.
+
+Although JSW64MM:JB uses features that originated in JSW (such as
+ramps, arrows and (non-swinging) ropes), it is essentially a Manic
+Miner game: the only way out of each room is via the portal, which
+opens (turns red) after you have collected all the items in the room
+without losing a life (in this game, you only live twice).
+
+On top of the JSW64:Z engine, I have applied several patches of my
+own: most notably Broadsoft Lifts (allowing you to stand on certain
+horizontal and vertical guardians), and I have knocked out all the
+exits at the edges of the screen so that instead of being taken to
+another room, you wrap around just like in the Manic Miner sequels
+that allow this. I have also reused Geoff Eddy&#x27;s patch-vector to flip
+Willy&#x27;s horizontal position every 32 time-frames in &quot;The Man with the
+Golden Gun&quot;.
+
+The difficulty of my MM/JSW games is always severe, and JSW64MM:JB is
+no exception! It&#x27;s full of quirky features and tight manoeuvres, often
+requiring pixel-perfect jumps, sometimes with perfect timing. Each
+room is an intricate network of constraints, forcing you to face every
+single one of my intended challenges, though you do sometimes have to
+make difficult choices about the order in which you do things. My use
+of Crumbly cells, the relationships between guardians, and their
+relationships with conveyors, all mean that the consequences of your
+mistakes may return to haunt you several minutes later!
+
+I plan to extend my game as future Bond-films are released. Bond 23 is
+due in cinemas in 2011, so that shall be added in v1.2.
+
+I have also updated the MM/JSW section of my website (including my
+List of MM/JSW Games):
+<a href="http://geocities.com/andrewbroad/spectrum/willy/" rel="noreferrer">http://geocities.com/andrewbroad/spectrum/willy/</a>
+
+--
+Dr. Andrew Broad
+<a href="http://groups.yahoo.com/group/manicminerandjetsetwilly/" rel="noreferrer">http://groups.yahoo.com/group/manicminerandjetsetwilly/</a>
+
+#######################################################
+…@… is for spammers
+Others: see <a href="http://geocities.com/andrewbroad/email.html" rel="noreferrer">http://geocities.com/andrewbroad/email.html</a>
+#######################################################
+
+
+
+</pre></div><div class="post" id="p220195"><div class="ph"><a class="d" href="#p220195">2009-05-28 23:06:13</a> <span>Andrew Halliwell</span> <span>Re: ANNOUNCE: JSW64 Manic Miner: James Bond [v1.1]</span></div><pre>Andrew Broad &lt;…@…&gt; wrote:
+<span class="qt">&gt; #######################################################</span>
+<span class="qt">&gt; …@… is for spammers</span>
+<span class="qt">&gt; Others: see <a href="http://geocities.com/andrewbroad/email.html" rel="noreferrer">http://geocities.com/andrewbroad/email.html</a></span>
+<span class="qt">&gt; #######################################################</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I am delighted to announce the second gamma-release of JSW64 Manic</span>
+<span class="qt">&gt; Miner: James Bond (v1.1), which is available as a free download from:</span>
+<span class="qt">&gt; <a href="http://geocities.com/andrewbroad/spectrum/download/" rel="noreferrer">http://geocities.com/andrewbroad/spectrum/download/</a></span>
+
+I&#x27;d get yourself a new website if I were you.
+Yahoo&#x27;s shutting down geocities soon.
+
+-- 
+<span class="qt">|   …@…,uk   | &quot;Are you pondering what I&#x27;m pondering Pinky?&quot;   |</span>
+<span class="qt">|   Andrew Halliwell BSc   |                                                 |</span>
+<span class="qt">|            in            | &quot;I think so brain, but this time, you control   |</span>
+<span class="qt">|     Computer Science     |  the Encounter suit, and I&#x27;ll do the voice...&quot;  |</span>
+
+
+
+</pre></div><div class="post" id="p220197"><div class="ph"><a class="d" href="#p220197">2009-05-29 21:34:09</a> <span>Zedex Dragon</span> <span>Re: ANNOUNCE: JSW64 Manic Miner: James Bond [v1.1]</span></div><pre>On May 29, 12:06 am, Andrew Halliwell &lt;…@…&gt; wrote:
+<span class="qt">&gt; Andrew Broad &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt; #######################################################</span>
+<span class="qt">&gt; &gt; …@… is for spammers</span>
+<span class="qt">&gt; &gt; Others: see<a href="http://geocities.com/andrewbroad/email.html" rel="noreferrer">http://geocities.com/andrewbroad/email.html</a></span>
+<span class="qt">&gt; &gt; #######################################################</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; I am delighted to announce the second gamma-release of JSW64 Manic</span>
+<span class="qt">&gt; &gt; Miner: James Bond (v1.1), which is available as a free download from:</span>
+<span class="qt">&gt; &gt;<a href="http://geocities.com/andrewbroad/spectrum/download/" rel="noreferrer">http://geocities.com/andrewbroad/spectrum/download/</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;d get yourself a new website if I were you.</span>
+<span class="qt">&gt; Yahoo&#x27;s shutting down geocities soon.</span>
+
+I don&#x27;t think he bothers to read followups to his announcements. His
+email settings bounced emails from both accounts I used to try and
+contact him. Given how busy he is he&#x27;ll probably realize Geocities is
+gone the first time he tries to upload a new Manic Miner game to it. I
+hope he keeps local backups.
+
+
+
+</pre></div><div class="post" id="p220198"><div class="ph"><a class="d" href="#p220198">2009-05-29 22:28:38</a> <span>Andrew Halliwell</span> <span>Re: ANNOUNCE: JSW64 Manic Miner: James Bond [v1.1]</span></div><pre>Zedex Dragon &lt;…@…&gt; wrote:
+<span class="qt">&gt; On May 29, 12:06ï¿œam, Andrew Halliwell &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; Andrew Broad &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; &gt; #######################################################</span>
+<span class="qt">&gt;&gt; &gt; …@… is for spammers</span>
+<span class="qt">&gt;&gt; &gt; Others: see<a href="http://geocities.com/andrewbroad/email.html" rel="noreferrer">http://geocities.com/andrewbroad/email.html</a></span>
+<span class="qt">&gt;&gt; &gt; #######################################################</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; &gt; I am delighted to announce the second gamma-release of JSW64 Manic</span>
+<span class="qt">&gt;&gt; &gt; Miner: James Bond (v1.1), which is available as a free download from:</span>
+<span class="qt">&gt;&gt; &gt;<a href="http://geocities.com/andrewbroad/spectrum/download/" rel="noreferrer">http://geocities.com/andrewbroad/spectrum/download/</a></span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; I&#x27;d get yourself a new website if I were you.</span>
+<span class="qt">&gt;&gt; Yahoo&#x27;s shutting down geocities soon.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I don&#x27;t think he bothers to read followups to his announcements. </span>
+
+How rude.
+:)
+-- 
+<span class="qt">|                          |What to do if you find yourself stuck in a crack|</span>
+<span class="qt">|  …@…    |in the ground beneath a giant boulder, which you|</span>
+<span class="qt">|                          |can&#x27;t move, with no hope of rescue.             |</span>
+<span class="qt">|  Andrew Halliwell BSc    |Consider how lucky you are that life has been   |</span>
+<span class="qt">|           in             |good to you so far...                           |</span>
+<span class="qt">|    Computer Science      |   -The BOOK, Hitch-hiker&#x27;s guide to the galaxy.|</span>
+
+
+
+</pre></div><div class="post" id="p220199"><div class="ph"><a class="d" href="#p220199">2009-05-29 23:10:37</a> <span>Paul E Collins</span> <span>Re: ANNOUNCE: JSW64 Manic Miner: James Bond [v1.1]</span></div><pre>&quot;Zedex Dragon&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; &gt; I&#x27;d get yourself a new website if I were you. Yahoo&#x27;s shutting down </span>
+<span class="qt">&gt; &gt; geocities soon.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I don&#x27;t think he bothers to read followups to his announcements. His email </span>
+<span class="qt">&gt; settings bounced emails from both accounts I used to try and contact him. </span>
+<span class="qt">&gt; Given how busy he is he&#x27;ll probably realize Geocities is gone the first </span>
+<span class="qt">&gt; time he tries to upload a new Manic Miner game to it. I hope he keeps </span>
+<span class="qt">&gt; local backups.</span>
+
+The MM/JSW Yahoo discussion group is probably the best way to reach him, but 
+I&#x27;m not currently subscribed to it. I just sent him a reminder, though, in 
+case he somehow hasn&#x27;t become aware of Geo closing down.
+
+All the good stuff is on WoS anyway :)
+
+Eq.
+
+
+
+
+
+</pre></div><div class="post" id="p220201"><div class="ph"><a class="d" href="#p220201">2009-05-30 15:41:57</a> <span>Ian B</span> <span>Re: ANNOUNCE: JSW64 Manic Miner: James Bond [v1.1]</span></div><pre>Andrew Halliwell wrote:
+<span class="qt">&gt; Andrew Broad &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; #######################################################</span>
+<span class="qt">&gt;&gt; …@… is for spammers</span>
+<span class="qt">&gt;&gt; Others: see <a href="http://geocities.com/andrewbroad/email.html" rel="noreferrer">http://geocities.com/andrewbroad/email.html</a></span>
+<span class="qt">&gt;&gt; #######################################################</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; I am delighted to announce the second gamma-release of JSW64 Manic</span>
+<span class="qt">&gt;&gt; Miner: James Bond (v1.1), which is available as a free download from:</span>
+<span class="qt">&gt;&gt; <a href="http://geocities.com/andrewbroad/spectrum/download/" rel="noreferrer">http://geocities.com/andrewbroad/spectrum/download/</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;d get yourself a new website if I were you.</span>
+<span class="qt">&gt; Yahoo&#x27;s shutting down geocities soon.</span>
+
+I&#x27;m just amazed there&#x27;s a geocities website somebody&#x27;s still updating. 
+Generally, the last thing posted to a geocities site is, &quot;sorry there 
+haven&#x27;t been many updates lately, I am working on a major overhaul of the 
+entire site&quot;, some time in 1999.
+
+
+Ian
+www.jaxtrawstudios.com 
+
+
+
+
+
+</pre></div><div class="post" id="p220202"><div class="ph"><a class="d" href="#p220202">2009-05-30 16:08:38</a> <span>Andrew Halliwell</span> <span>Re: ANNOUNCE: JSW64 Manic Miner: James Bond [v1.1]</span></div><pre>Ian B &lt;…@…&gt; wrote:
+<span class="qt">&gt; Andrew Halliwell wrote:</span>
+<span class="qt">&gt;&gt; Andrew Broad &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;&gt; #######################################################</span>
+<span class="qt">&gt;&gt;&gt; …@… is for spammers</span>
+<span class="qt">&gt;&gt;&gt; Others: see <a href="http://geocities.com/andrewbroad/email.html" rel="noreferrer">http://geocities.com/andrewbroad/email.html</a></span>
+<span class="qt">&gt;&gt;&gt; #######################################################</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; I am delighted to announce the second gamma-release of JSW64 Manic</span>
+<span class="qt">&gt;&gt;&gt; Miner: James Bond (v1.1), which is available as a free download from:</span>
+<span class="qt">&gt;&gt;&gt; <a href="http://geocities.com/andrewbroad/spectrum/download/" rel="noreferrer">http://geocities.com/andrewbroad/spectrum/download/</a></span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; I&#x27;d get yourself a new website if I were you.</span>
+<span class="qt">&gt;&gt; Yahoo&#x27;s shutting down geocities soon.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;m just amazed there&#x27;s a geocities website somebody&#x27;s still updating. </span>
+<span class="qt">&gt; Generally, the last thing posted to a geocities site is, &quot;sorry there </span>
+<span class="qt">&gt; haven&#x27;t been many updates lately, I am working on a major overhaul of the </span>
+<span class="qt">&gt; entire site&quot;, some time in 1999.</span>
+
+Heheh. I&#x27;m guilty of that sorta thing too.
+I setup a geocities site in the mid &#x27;90s for &quot;club ql&quot;. It was a floppy
+disk distributed &quot;magazine&quot; thing. People sent in disks with their
+submissions, and got the compiled together thing sent back out.
+(I didn&#x27;t do the compilation stuff)
+
+I&#x27;d voluteered to put it on the web.
+It ended in about 1999 or so and since then I&#x27;ve lost the password and
+changed e-mail addresses 3 times, so there&#x27;s no way to recover it.
+:)
+ 
+-- 
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|   Andrew Halliwell BSc   | &quot;The day Microsoft makes something that doesn&#x27;t |</span>
+<span class="qt">|            in            |  suck is probably the day they start making     |</span>
+<span class="qt">|     Computer science     |  vacuum cleaners&quot; - Ernst Jan Plugge            |</span>
+
+
+
+</pre></div><div class="post" id="p220235"><div class="ph"><a class="d" href="#p220235">2009-06-06 03:23:40</a> <span>…@…</span> <span>Re: ANNOUNCE: JSW64 Manic Miner: James Bond [v1.1]</span></div><pre>#######################################################
+…@… is for spammers
+Others: see <a href="http://geocities.com/andrewbroad/email.html" rel="noreferrer">http://geocities.com/andrewbroad/email.html</a>
+#######################################################
+
+On May 29, 10:34 pm, Zedex Dragon &lt;…@…&gt; wrote:
+<span class="qt">&gt; On May 29, 12:06 am, Andrew Halliwell &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; I&#x27;d get yourself a new website if I were you.</span>
+<span class="qt">&gt;&gt; Yahoo&#x27;s shutting down geocities soon.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I don&#x27;t think he bothers to read followups to his announcements.</span>
+
+I do, but I&#x27;ve been extremely busy until now, and for that I
+apologise.
+
+<span class="qt">&gt; His email settings bounced emails from both accounts I used to try and contact him.</span>
+
+My current email-address is at <a href="http://geocities.com/andrewbroad/email.html" rel="noreferrer">http://geocities.com/andrewbroad/email.html</a>
+
+<span class="qt">&gt; Given how busy he is he&#x27;ll probably realize Geocities is</span>
+<span class="qt">&gt; gone the first time he tries to upload a new Manic Miner game to it.</span>
+
+I realise Geocities will be closing later this year, but I&#x27;m too busy
+to research alternative hosts right now. I don&#x27;t have a date for when
+it will be closing, but I presume I have a few months left, so rest
+assured it will become a high priority for me at the appropriate time.
+
+<span class="qt">&gt; I hope he keeps local backups.</span>
+
+I certainly do.
+
+--
+Dr. Andrew Broad
+<a href="http://geocities.com/andrewbroad/" rel="noreferrer">http://geocities.com/andrewbroad/</a>
+
+#######################################################
+…@… is for spammers
+Others: see <a href="http://geocities.com/andrewbroad/email.html" rel="noreferrer">http://geocities.com/andrewbroad/email.html</a>
+#######################################################
+
+
+
+</pre></div></main></body></html>

@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZXZVM 0.02 · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ZXZVM 0.02</h1><p class="facts">13 posts, 1998-04-13 – 1998-04-19</p><div class="post" id="p35983"><div class="ph"><a class="d" href="#p35983">1998-04-13</a> <span>…@…</span> </div><pre>
+Newsgroups: comp.sys.sinclair, comp.sys.amstrad.8bit
+
+  ZXZVM (Z80 Infocom interpreter) has now reached version 0.02.
+
+New in this version:
+
+* Interpreter core: Bug fixes to the lexical analyser, object management 
+  and abbreviation expansion. All debugging breakpoints removed (I hope).
+
+* Spectrum front end: A simple BASIC loader is now supplied.
+
+* PCW16 front end: Newly created. You can now play v5/v8 Z-code files on 
+  a PCW16.
+
+  ZXZVM isn&#x27;t really stable enough to distribute yet, but if you want to do
+some alpha-testing, it&#x27;s at:
+
+
+
+------------- <a href="http://www.seasip.demon.co.uk/index.html" rel="noreferrer">http://www.seasip.demon.co.uk/index.html</a> --------------------
+John Elliott           |BLOODNOK: &quot;But why have you got such a long face?&quot;
+<span class="qt">                       |SEAGOON: &quot;Heavy dentures, sir!&quot;    - The Goon Show </span>
+:-------------------------------------------------------------------------)
+
+
+</pre></div><div class="post" id="p36009"><div class="ph"><a class="d" href="#p36009">1998-04-14</a> <span>graham goring</span> <span>Re: ZXZVM 0.02</span></div><pre>
+Quoth the Raven in article &lt;6gvg6b$8pe$…@…&gt;, Cliff
+Lawson  writes
+<span class="qt">&gt;John Elliott wrote in message &lt;…@…&gt;...</span>
+<span class="qt">&gt;&gt;  ZXZVM (Z80 Infocom interpreter) has now reached version 0.02.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;But is it possible to say in one line what it is?!?!</span>
+
+Here goes (and I&#x27;m guessing here...)
+
+A z80 computer based interpreter for the infocom text adventures.
+
+Hurrah! I win!
+
+At least, I hope I do...
+
+Graham
+
+-- 
+
+/=====================================================================¥
+<span class="qt">| If you&#x27;d like to see a game with the depth of gameplay of Elite and |</span>
+<span class="qt">|    Frontier on the PlayStation, then please sign the petition by    |</span>
+<span class="qt">|   sending a mail headed &quot;Elite/Frontier Petition&quot;, including your   |</span>
+<span class="qt">| FULL name and E-Mail address to: …@… |</span>
+¥===========Or do you *really* want another Wing Commander?===========/
+
+Please send replies to: graham at duketastrophy dot demon dot co dot uk
+
+
+</pre></div><div class="post" id="p36011"><div class="ph"><a class="d" href="#p36011">1998-04-14</a> <span>cliff lawson</span> <span>Re: ZXZVM 0.02</span></div><pre>
+John Elliott wrote in message &lt;…@…&gt;...
+<span class="qt">&gt;  ZXZVM (Z80 Infocom interpreter) has now reached version 0.02.</span>
+
+
+But is it possible to say in one line what it is?!?!
+
+Cliff
+
+
+
+
+
+</pre></div><div class="post" id="p36021"><div class="ph"><a class="d" href="#p36021">1998-04-14</a> <span>…@…</span> <span>Re: ZXZVM 0.02</span></div><pre>
+Graham Goring  wrote:
+<span class="qt">&gt;Quoth the Raven in article &lt;6gvg6b$8pe$…@…&gt;, Cliff</span>
+<span class="qt">&gt;Lawson  writes</span>
+<span class="qt">&gt;&gt;John Elliott wrote in message &lt;…@…&gt;...</span>
+<span class="qt">&gt;&gt;&gt;  ZXZVM (Z80 Infocom interpreter) has now reached version 0.02.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;But is it possible to say in one line what it is?!?!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;A z80 computer based interpreter for the infocom text adventures.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Hurrah! I win!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;At least, I hope I do...</span>
+
+  You win. 
+
+------------- <a href="http://www.seasip.demon.co.uk/index.html" rel="noreferrer">http://www.seasip.demon.co.uk/index.html</a> --------------------
+John Elliott           |BLOODNOK: &quot;But why have you got such a long face?&quot;
+<span class="qt">                       |SEAGOON: &quot;Heavy dentures, Sir!&quot;    - The Goon Show </span>
+:-------------------------------------------------------------------------)
+
+
+</pre></div><div class="post" id="p36027"><div class="ph"><a class="d" href="#p36027">1998-04-14 15:09:46</a> <span>…@…</span> <span>Re: ZXZVM 0.02</span></div><pre>
+In article &lt;6gvg6b$8pe$…@…&gt;,
+  &quot;Cliff Lawson&quot;  wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt; John Elliott wrote in message &lt;…@…&gt;...</span>
+<span class="qt">&gt; &gt;  ZXZVM (Z80 Infocom interpreter) has now reached version 0.02.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; But is it possible to say in one line what it is?!?!</span>
+
+
+Umm.... it&#x27;s a Z80 Infocom Interpreter, isn&#x27;t it? :-)
+
+
+
+Blood.
+
+-----== Posted via Deja News, The Leader in Internet Discussion ==-----
+<a href="http://www.dejanews.com/" rel="noreferrer">http://www.dejanews.com/</a>   Now offering spam-free web-based newsreading
+
+
+</pre></div><div class="post" id="p36051"><div class="ph"><a class="d" href="#p36051">1998-04-15</a> <span>cliff lawson</span> <span>Re: ZXZVM 0.02</span></div><pre>
+Cliff Lawson wrote in message &lt;6gvg6b$8pe$…@…&gt;...
+<span class="qt">&gt;John Elliott wrote in message &lt;…@…&gt;...</span>
+<span class="qt">&gt;&gt;  ZXZVM (Z80 Infocom interpreter) has now reached version 0.02.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;But is it possible to say in one line what it is?!?!</span>
+
+
+Oh sorry me. I realise now that it was ridiculous to ask this question as
+obviously all humans are born with the knowledge of what &quot;Infocom&quot; means.
+(It could have been a programming language which is what may be suggested by
+the use of the word &quot;interpreter&quot;).
+
+Cliff
+
+
+
+
+
+</pre></div><div class="post" id="p36052"><div class="ph"><a class="d" href="#p36052">1998-04-15</a> <span>…@…</span> <span>Re: ZXZVM 0.02</span></div><pre>
+In the sacred domain of comp.sys.sinclair didst Cliff Lawson  eloquently scribe:
+: Cliff Lawson wrote in message &lt;6gvg6b$8pe$…@…&gt;...
+:&gt;John Elliott wrote in message &lt;…@…&gt;...
+:&gt;&gt;  ZXZVM (Z80 Infocom interpreter) has now reached version 0.02.
+:&gt;
+:&gt;But is it possible to say in one line what it is?!?!
+
+
+: Oh sorry me. I realise now that it was ridiculous to ask this question as
+: obviously all humans are born with the knowledge of what &quot;Infocom&quot; means.
+: (It could have been a programming language which is what may be suggested by
+: the use of the word &quot;interpreter&quot;).
+
+Well... Technically, it *IS* a programming language, if you get the compiler
+as well at least....
+-- 
+______________________________________________________________________________
+<span class="qt">|…@…| &quot;I&#x27;m alive!!! I can touch! I can taste!         |</span>
+<span class="qt">|Andrew Halliwell          |  I can SMELL!!!  KRYTEN!!! Unpack Rachel and    |</span>
+<span class="qt">|Principal subjects in:-   |  get out the puncture repair kit!&quot;              |</span>
+<span class="qt">|Comp Sci &amp; Electronics    |     Arnold Judas Rimmer- Red Dwarf              |</span>
+------------------------------------------------------------------------------
+<span class="qt">|GCv3.1 GCS/EL&gt;$ d---(dpu) s+/- a- C++ U N++ o+ K- w-- M+/++ PS+++ PE- Y t+  |</span>
+<span class="qt">|5++ X+/++ R+ tv+ b+ D G e&gt;PhD h/h+ !r! !y-|I can&#x27;t say F**K either now! :(  |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p36062"><div class="ph"><a class="d" href="#p36062">1998-04-15</a> <span>…@…</span> <span>Re: ZXZVM 0.02</span></div><pre>
+…@… wrote:
+: In the sacred domain of comp.sys.sinclair didst Cliff Lawson  eloquently scribe:
+: : Oh sorry me. I realise now that it was ridiculous to ask this question as
+: : obviously all humans are born with the knowledge of what &quot;Infocom&quot; means.
+: : (It could have been a programming language which is what may be suggested by
+: : the use of the word &quot;interpreter&quot;).
+
+: Well... Technically, it *IS* a programming language, if you get the compiler
+: as well at least....
+
+  Well, the compiler is Inform, but you&#x27;re absolutely right. In fact, Inform is 
+probably the highest-level PCW16 language available at the moment. You wouldn&#x27;t
+be able to use any of Rosanne&#x27;s features, but the same binary would be usable
+on PCs, Macs, palmtops, Spectrum+3s...
+  
+[Main;
+ &quot;Hello world&quot;;
+];
+
+------------- <a href="http://www.seasip.demon.co.uk/index.html" rel="noreferrer">http://www.seasip.demon.co.uk/index.html</a> --------------------
+John Elliott           |BLOODNOK: &quot;But why have you got such a long face?&quot;
+<span class="qt">                       |SEAGOON: &quot;Heavy dentures, Sir!&quot;    - The Goon Show </span>
+:-------------------------------------------------------------------------)
+
+
+</pre></div><div class="post" id="p36089"><div class="ph"><a class="d" href="#p36089">1998-04-16</a> <span>unknown</span> <span>Re: ZXZVM 0.02</span></div><pre>
+In the sacred domain of comp.sys.sinclair didst John Elliott  eloquently scribe:
+:   Well, the compiler is Inform, but you&#x27;re absolutely right. In fact, Inform is 
+: probably the highest-level PCW16 language available at the moment. You wouldn&#x27;t
+: be able to use any of Rosanne&#x27;s features, but the same binary would be usable
+: on PCs, Macs, palmtops, Spectrum+3s...
+
+OI!
+Don&#x27;t forget the QL in that list....
+-- 
+<span class="qt">|                          |What to do if you find yourself stuck in a crack|</span>
+<span class="qt">|…@…|in the ground beneath a giant boulder, which you|</span>
+<span class="qt">|                          |can&#x27;t move, with no hope of rescue.             |</span>
+<span class="qt">|Andrew Halliwell          |Consider how lucky you are that life has been   |</span>
+<span class="qt">|Principal Subjects in:-   |good to you so far...                           |</span>
+<span class="qt">|Comp Sci &amp; Electronics    |   -The BOOK, Hitch-hiker&#x27;s guide to the galaxy.|</span>
+-----------------------------------------------------------------------------
+<span class="qt">|GCv3.1 GCS/EL&gt;$ d---(dpu) s+/- a- C++ U N++ o+ K- w-- M+/++ PS+++ PE- Y t+ |</span>
+<span class="qt">|5++ X+/++ R+ tv+ b+ D G e&gt;PhD h/h+ !r! !y-|I can&#x27;t say F**K either now! :( |</span>
+
+
+
+</pre></div><div class="post" id="p36095"><div class="ph"><a class="d" href="#p36095">1998-04-17</a> <span>…@…</span> <span>Re: ZXZVM 0.02</span></div><pre>
+On 13 Apr 1998, John Elliott wrote:
+[About alpha stage Infocom-Interpreter for Spectrum]
+
+Brilliant, absolutely brilliant. I am looking forward to the final
+release.
+
+Nele
+
+
+
+
+</pre></div><div class="post" id="p36100"><div class="ph"><a class="d" href="#p36100">1998-04-17</a> <span>…@…</span> <span>Re: ZXZVM 0.02</span></div><pre>
+On 13 Apr 1998 18:25:45 GMT, …@… (John Elliott)
+wrote:
+
+<span class="qt">&gt;Newsgroups: comp.sys.sinclair, comp.sys.amstrad.8bit</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;  ZXZVM (Z80 Infocom interpreter) has now reached version 0.02.</span>
+
+You forgot to say it is a Unix based piece of software (or at least
+the archive is)... :(
+
+Ben
+
+-- 
+Benjamin Fall - …@…
+Remove &#x27;ihs.&#x27; if replying from newsgroups via email
+It stands for I Hate Spam, just incase you&#x27;re wondering...
+
+
+
+</pre></div><div class="post" id="p36112"><div class="ph"><a class="d" href="#p36112">1998-04-17</a> <span>…@…</span> <span>Re: ZXZVM 0.02</span></div><pre>
+…@… (Benjamin Fall) wrote:
+<span class="qt">&gt;On 13 Apr 1998 18:25:45 GMT, …@… (John Elliott)</span>
+<span class="qt">&gt;wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;Newsgroups: comp.sys.sinclair, comp.sys.amstrad.8bit</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;  ZXZVM (Z80 Infocom interpreter) has now reached version 0.02.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;You forgot to say it is a Unix based piece of software (or at least</span>
+<span class="qt">&gt;the archive is)... :(</span>
+
+  No, it&#x27;s a Spectrum and/or PcW16 based piece of software. 
+
+  All right, I developed it under Unix. But there are perfectly good 
+implementations of tar and gzip/gunzip for other platforms.
+
+------------- <a href="http://www.seasip.demon.co.uk/index.html" rel="noreferrer">http://www.seasip.demon.co.uk/index.html</a> --------------------
+John Elliott           |BLOODNOK: &quot;But why have you got such a long face?&quot;
+<span class="qt">                       |SEAGOON: &quot;Heavy dentures, Sir!&quot;    - The Goon Show </span>
+:-------------------------------------------------------------------------)
+
+
+</pre></div><div class="post" id="p36150"><div class="ph"><a class="d" href="#p36150">1998-04-19</a> <span>…@…</span> <span>Re: ZXZVM 0.02</span></div><pre>
+In article &lt;…@…&gt;, Benjamin Fall
+&lt;…@…&gt; writes
+<span class="qt">&gt;On 13 Apr 1998 18:25:45 GMT, …@… (John Elliott)</span>
+<span class="qt">&gt;wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;Newsgroups: comp.sys.sinclair, comp.sys.amstrad.8bit</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;  ZXZVM (Z80 Infocom interpreter) has now reached version 0.02.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;You forgot to say it is a Unix based piece of software (or at least</span>
+<span class="qt">&gt;the archive is)... :(</span>
+
+??? I&#x27;ve got gnu (un)zip. I&#x27;ll post it to anyone who wants it. And I&#x27;ve
+got a tape archiver too.
+-- 
+Stuart Brady
+Replace nospam with wholehog to reply.
+
+
+
+</pre></div></main></body></html>

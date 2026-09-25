@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANNOUNCE : pre-pre-pre-alpha of my first Spectrum game! · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANNOUNCE : pre-pre-pre-alpha of my first Spectrum game!</h1><p class="facts">6 posts, 1999-08-07 – 1999-08-09</p><div class="post" id="p52730"><div class="ph"><a class="d" href="#p52730">1999-08-07</a> <span>thomas harte</span> </div><pre>Hi,
+
+	though it is of no practical interest to absolutely anyone here, and
+demonstrates nearly nothing except an ability to understand written
+documents, I&#x27;ve uploaded a pre-pre-pre-alpha of my first Spectrum game!
+
+	All it does at the minute is show a lone, tiny (8x8), solitary sprite
+who you can control in a Joust fashion using space, z and x. He bounces
+off (near) the top of the screen, correctly appears half on one side and
+half on another, rubs himself out, syncs with the 50.08Hz signal to
+prevent flicker, and &#x27;lands&#x27; on the floor. When I say lands, he just
+isn&#x27;t allowed to drop any further than 8 pixels from the bottom of the
+screen. He won&#x27;t actually behave correctly and allow you to make him
+&#x27;skid&#x27; to a standstill / change direction quickly. Bit basic, but then
+it is my first real z80 or ZX Spectrum program, and I&#x27;ve only spent a
+couple of hours on it. Can probably handle quite a few more sprites, as
+I say, it just clears the old sprite, redraws the new one then enters an
+infinite nothing loop until the next interrupt occurs.
+
+	The file is a .zip&#x27;d .sna, which I have developed using a dos basec
+cross-assembler and a quick &#x27;binary file -&gt; sna converter&#x27; written by
+me. And it is just 1049 bytes to download at
+<a href="http://www.binternet.com/~t.harte/specgame1.zip" rel="noreferrer">http://www.binternet.com/~t.harte/specgame1.zip</a> ! I&#x27;ve tested it with
+X128, winz80 and my own emulator and it works perfectly on all of them.
+Might have some difficulties on an upgraded real spectrum though because
+I&#x27;ve been sort of lazy about interrupt mode 2 handling - anything other
+than an FF on the data bus at interrupt time, and it will go badly
+wrong.
+
+	As for technical details, it uses a table format to hold a list of
+currently active sprites - each table entry holding a pointer to the
+input/control routine, a pointer to the current sprite for that object,
+and then an x and y, a vector x and y, and the suggesed vector x and y
+change that is returned by the input/control routine. So should be easy
+to &#x27;expand&#x27; upon.
+
+	If you do bother downloading, tell me what you think! Sorry about the
+&#x27;sprite&#x27;, I am less than an artist. It is a grab from another game
+converted hastily into 2 colour format. Sorry to waste newsgroup time,
+I&#x27;m just particularly proud because I&#x27;ve always secretly thought of ASM
+coding as the impossible to master work of the devil!
+
+	Thanks for listening.
+
+		-Thomas
+
+
+</pre></div><div class="post" id="p52732"><div class="ph"><a class="d" href="#p52732">1999-08-07</a> <span>thomas harte</span> <span>Re: ANNOUNCE : pre-pre-pre-alpha of my first Spectrum game!</span></div><pre><span class="qt">&gt; &gt;<a href="http://www.binternet.com/~t.harte/specgame1.zip" rel="noreferrer">http://www.binternet.com/~t.harte/specgame1.zip</a> ! I&#x27;ve tested it with</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Like to have a look but the address wont work :(</span>
+
+	Try this then :
+
+		<a href="http://www.btinternet.com/~t.harte/specgame1.zip" rel="noreferrer">http://www.btinternet.com/~t.harte/specgame1.zip</a>
+
+	with an extra t such that it looks as though I am using an ISP that
+actually exists rather than one I made up for a laugh.
+
+		-Thomas
+
+
+</pre></div><div class="post" id="p52780"><div class="ph"><a class="d" href="#p52780">1999-08-08</a> <span>thomas harte</span> <span>Re: ANNOUNCE : pre-pre-pre-alpha of my first Spectrum game!</span></div><pre><span class="qt">&gt; I don&#x27;t suppose you&#x27;d be interested in collaborating on my VSGC </span>
+<span class="qt">&gt; project? <a href="http://www.brandnewco.org/vsgc/" rel="noreferrer">http://www.brandnewco.org/vsgc/</a> (sorry everyone, I know I </span>
+<span class="qt">&gt; keep plugging this but I could really use some help)</span>
+
+	I have a whole list of plans for z80 related products! For one thing,
+the computer science course I&#x27;ll hopefully end up on next year at
+university will be quite z80 related I am told. So, I need to get as
+much practice as possible, and therefore - I&#x27;d be happy to help.
+
+<span class="qt">&gt; For the record, it refuses to work on MacSpectacle 1.8.2 resulting in </span>
+<span class="qt">&gt; an interrupt error but is quite happy on my own emulator ZX82 2.0, </span>
+<span class="qt">&gt; which is itself a modified version of an earlier version of </span>
+<span class="qt">&gt; MacSpectacle (probably 1.5 but I can&#x27;t remember).</span>
+
+	Well I am being a little dodgy, assuming that the low byte of the IM 2
+generated word will be 255. I&#x27;m told it always is on an unexpanded
+Spectrum, and that only dodgy add-ons change this. So, Spectrum
+emulators (and presumably most do) can get away without emulating the
+&#x27;feature&#x27;, but I&#x27;ll guess MacSpectacle doesn&#x27;t.
+
+<span class="qt">&gt; This is exactly the sort of routine I&#x27;ve been looking for to put in </span>
+<span class="qt">&gt; the ROM of the VSGC.</span>
+
+	Mine is really not very good. To get around the difficulties of calling
+a value in a register, while playing to my lack of familiarity with my
+assembler (both DOS and Linux ports of the UNIX as80), I load the return
+address to BC and push it to the stack before JP&#x27;ing to the correct
+routine. Whereas, obviously, I should be doing something such as
+dynamically modifying my code to throw the call address infront of a
+real call opcode. But I&#x27;ll probably pluck up the bravery to try
+something like that once I am more &#x27;familiar&#x27;.
+
+	Although, of course, something like that wouldn&#x27;t even be possible in a
+replacement ROM!
+
+<span class="qt">&gt; I&#x27;m new to Z80 programming myself but I&#x27;m impressed. I&#x27;m also an </span>
+<span class="qt">&gt; artist in my &#x27;copious free time&#x27; so if you want any help with the </span>
+<span class="qt">&gt; graphics I&#x27;ll volunteer.</span>
+
+	Don&#x27;t be too impressed, I still have a lot of optimising to do. I&#x27;m
+just doing stupid things like calculating the line addresses for sprites
+twice (once to draw, once to rub out) and so on at the minute. Such
+terrible &#x27;just make it work now&#x27; measures mean I can&#x27;t get more than 5
+sprites on screen at once (they start vanishing towards the top of the
+screen as they are rubbed out, but not redrawn before the ULA passes
+them by)! But it is only my first program.
+
+	I&#x27;ll try out the VSGC thing tomorrow, and write you an e-mail if I can
+think of any way in which I could be helpful!
+
+	Also, I may try and modify my emulator to have a 512x192 mode that
+catches the pixels and displays the alternate frames simultaneously.
+Though I&#x27;ll have to fix the timing code first . . .
+
+		-Thomas
+
+
+</pre></div><div class="post" id="p52787"><div class="ph"><a class="d" href="#p52787">1999-08-08</a> <span>andrew owen</span> <span>Re: ANNOUNCE : pre-pre-pre-alpha of my first Spectrum game!</span></div><pre>Re: <a href="http://www.btinternet.com/~t.harte/specgame1.zip" rel="noreferrer">http://www.btinternet.com/~t.harte/specgame1.zip</a> 
+
+Thomas Harte  wrote:
+
+[snip]
+
+<span class="qt">&gt; Bit basic, but then</span>
+<span class="qt">&gt; it is my first real z80 or ZX Spectrum program, and I&#x27;ve only spent a</span>
+<span class="qt">&gt; couple of hours on it. Can probably handle quite a few more sprites, as</span>
+<span class="qt">&gt; I say, it just clears the old sprite, redraws the new one then enters an</span>
+<span class="qt">&gt; infinite nothing loop until the next interrupt occurs.</span>
+
+I don&#x27;t suppose you&#x27;d be interested in collaborating on my VSGC project?
+<a href="http://www.brandnewco.org/vsgc/" rel="noreferrer">http://www.brandnewco.org/vsgc/</a> (sorry everyone, I know I keep plugging this
+but I could really use some help)
+
+<span class="qt">&gt; The file is a .zip&#x27;d .sna, which I have developed using a dos basec</span>
+<span class="qt">&gt; cross-assembler and a quick &#x27;binary file -&gt; sna converter&#x27; written by</span>
+<span class="qt">&gt; me. And it is just 1049 bytes to download at</span>
+<span class="qt">&gt; <a href="http://www.binternet.com/~t.harte/specgame1.zip" rel="noreferrer">http://www.binternet.com/~t.harte/specgame1.zip</a> ! I&#x27;ve tested it with</span>
+<span class="qt">&gt; X128, winz80 and my own emulator and it works perfectly on all of them.</span>
+<span class="qt">&gt; Might have some difficulties on an upgraded real spectrum though because</span>
+<span class="qt">&gt; I&#x27;ve been sort of lazy about interrupt mode 2 handling - anything other</span>
+<span class="qt">&gt; than an FF on the data bus at interrupt time, and it will go badly</span>
+<span class="qt">&gt; wrong.</span>
+
+For the record, it refuses to work on MacSpectacle 1.8.2 resulting in an
+interrupt error but is quite happy on my own emulator ZX82 2.0, which is
+itself a modified version of an earlier version of MacSpectacle (probably
+1.5 but I can&#x27;t remember).
+
+<span class="qt">&gt; As for technical details, it uses a table format to hold a list of</span>
+<span class="qt">&gt; currently active sprites - each table entry holding a pointer to the</span>
+<span class="qt">&gt; input/control routine, a pointer to the current sprite for that object,</span>
+<span class="qt">&gt; and then an x and y, a vector x and y, and the suggesed vector x and y</span>
+<span class="qt">&gt; change that is returned by the input/control routine. So should be easy</span>
+<span class="qt">&gt; to &#x27;expand&#x27; upon.</span>
+
+This is exactly the sort of routine I&#x27;ve been looking for to put in the ROM
+of the VSGC.
+
+<span class="qt">&gt; If you do bother downloading, tell me what you think! Sorry about the</span>
+<span class="qt">&gt; &#x27;sprite&#x27;, I am less than an artist. It is a grab from another game</span>
+<span class="qt">&gt; converted hastily into 2 colour format. Sorry to waste newsgroup time,</span>
+<span class="qt">&gt; I&#x27;m just particularly proud because I&#x27;ve always secretly thought of ASM</span>
+<span class="qt">&gt; coding as the impossible to master work of the devil!</span>
+
+I&#x27;m new to Z80 programming myself but I&#x27;m impressed. I&#x27;m also an artist in
+my &#x27;copious free time&#x27; so if you want any help with the graphics I&#x27;ll
+volunteer.
+
+-Andrew
+
+
+</pre></div><div class="post" id="p52811"><div class="ph"><a class="d" href="#p52811">1999-08-09</a> <span>alvin albrecht</span> <span>Re: ANNOUNCE : pre-pre-pre-alpha of my first Spectrum game!</span></div><pre>Thomas Harte wrote:
+
+<span class="qt">&gt;         Well I am being a little dodgy, assuming that the low byte of the IM 2</span>
+<span class="qt">&gt; generated word will be 255. I&#x27;m told it always is on an unexpanded</span>
+<span class="qt">&gt; Spectrum, and that only dodgy add-ons change this. So, Spectrum</span>
+<span class="qt">&gt; emulators (and presumably most do) can get away without emulating the</span>
+<span class="qt">&gt; &#x27;feature&#x27;, but I&#x27;ll guess MacSpectacle doesn&#x27;t.</span>
+
+One such dodgy add-on is the Kempston joystick interface
+which means the IM 2 problem can&#x27;t really be ignored on
+real machines.
+
+
+Alvin
+
+
+</pre></div><div class="post" id="p52821"><div class="ph"><a class="d" href="#p52821">1999-08-09 12:05:34</a> <span>…@…</span> <span>Re: ANNOUNCE : pre-pre-pre-alpha of my first Spectrum game!</span></div><pre>Thomas Harte entertained comp.sys.sinclair with the following story:
+<span class="qt">&gt;	Mine is really not very good. To get around the difficulties of calling</span>
+<span class="qt">&gt;a value in a register, while playing to my lack of familiarity with my</span>
+<span class="qt">&gt;assembler (both DOS and Linux ports of the UNIX as80), I load the return</span>
+<span class="qt">&gt;address to BC and push it to the stack before JP&#x27;ing to the correct</span>
+<span class="qt">&gt;routine.</span>
+
+Stick the routine address in HL and then CALL X where X is a location which
+says &quot;JP (HL)&quot;.  Or: push the return address, then push the routine address,
+then RET.  (That is how the BASIC USR function works.)
+-- 
+---- Ian Collier : …@… : WWW page (including Spectrum section):
+------ <a href="http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html" rel="noreferrer">http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html</a>
+
+New to this group?  Answers to frequently-asked questions can be had from
+<a href="http://www.kendalls.demon.co.uk/cssfaq/index.html" rel="noreferrer">http://www.kendalls.demon.co.uk/cssfaq/index.html</a> .
+Sam CoupÃ© FAQ: <a href="http://www.mono.org/~unc/Coupe/FAQ.txt" rel="noreferrer">http://www.mono.org/~unc/Coupe/FAQ.txt</a>
+
+
+</pre></div></main></body></html>

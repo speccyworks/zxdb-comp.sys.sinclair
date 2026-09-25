@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZX Spectrum SE software update · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ZX Spectrum SE software update</h1><p class="facts">18 posts, 2003-11-09 – 2003-11-17</p><div class="post" id="p171145"><div class="ph"><a class="d" href="#p171145">2003-11-09 10:26:12</a> <span>Andrew Owen</span> </div><pre>Hi there,
+
+Just a quick note to mention that, while I haven&#x27;t done much with the
+hardware over the last year, I have done a little bit on the software
+side, and there are now quite a few emulation options for the machine.
+At present it can emulate:
+
+ZX80
+ZX81
+ZX Spectrum 16K
+ZX Spectrum 48K
+TK95 (and any other custom ROMs, eg SE Basic)
+Interface II ROMs (Planetoids etc)
+Mikro Plus (Shadow of the Unicorn)
+TC2048 (the base machine)
+TC2068/UK2086 (including ROM carts)
+BBC Basic
+ZX Spectrum 128K
+
+Currently, to build a ZX Spectrum SE you need a TC2048, TC2068, TS2068
+or UK2086. But I&#x27;m hopeful that someone will eventually make a version
+of SpeccyBob that is based on the ZXSE hardware description in the CSS
+FAQ so people can actually buy one. I&#x27;m excited by the 7IC version at
+<a href="http://aticatac.altervista.org/" rel="noreferrer">http://aticatac.altervista.org/</a> Now if only I had an email address for
+Lodo.
+
+
+
+</pre></div><div class="post" id="p171149"><div class="ph"><a class="d" href="#p171149">2003-11-09 14:00:23</a> <span>Sinclair QL a.k.a. P.D</span> <span>Re: ZX Spectrum SE software update</span></div><pre>οΏ½οΏ½οΏ½/On 9 Nov 2003 02:26:12 -0800,οΏ½(οΏ½) Andrew Owen &lt;…@…&gt; 
+οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½/wrote:
+
+<span class="qt">&gt; Hi there,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Just a quick note to mention that, while I haven&#x27;t done much with the</span>
+<span class="qt">&gt; hardware over the last year, I have done a little bit on the software</span>
+<span class="qt">&gt; side, and there are now quite a few emulation options for the machine.</span>
+<span class="qt">&gt; At present it can emulate:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; ZX80</span>
+<span class="qt">&gt; ZX81</span>
+<span class="qt">&gt; ZX Spectrum 16K</span>
+<span class="qt">&gt; ZX Spectrum 48K</span>
+<span class="qt">&gt; TK95 (and any other custom ROMs, eg SE Basic)</span>
+<span class="qt">&gt; Interface II ROMs (Planetoids etc)</span>
+<span class="qt">&gt; Mikro Plus (Shadow of the Unicorn)</span>
+<span class="qt">&gt; TC2048 (the base machine)</span>
+<span class="qt">&gt; TC2068/UK2086 (including ROM carts)</span>
+<span class="qt">&gt; BBC Basic</span>
+<span class="qt">&gt; ZX Spectrum 128K</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Currently, to build a ZX Spectrum SE you need a TC2048, TC2068, TS2068</span>
+<span class="qt">&gt; or UK2086. But I&#x27;m hopeful that someone will eventually make a version</span>
+<span class="qt">&gt; of SpeccyBob that is based on the ZXSE hardware description in the CSS</span>
+<span class="qt">&gt; FAQ so people can actually buy one. I&#x27;m excited by the 7IC version at</span>
+<span class="qt">&gt; <a href="http://aticatac.altervista.org/" rel="noreferrer">http://aticatac.altervista.org/</a> Now if only I had an email address for</span>
+<span class="qt">&gt; Lodo.</span>
+
+That is MUCHO cool :-) If anyone does have the builder&#x27;s address, I&#x27;d like 
+the info too... I&#x27;d love to build the damn thing!
+
+
+-- 
+Visit the QL-FAQ at: &lt;<a href="http://www.dokos-gr.net/ql/faq/&gt;" rel="noreferrer">http://www.dokos-gr.net/ql/faq/&gt;</a> (Still uploading 
+stuff!)
+Visit the uQLX-win32 homepage at: &lt;<a href="http://www.dokos-gr.net/ql/uqlx.html&gt;" rel="noreferrer">http://www.dokos-gr.net/ql/uqlx.html&gt;</a>
+Visit the uQLX-mac home page at:&lt;<a href="http://www.dokos-gr.net/ql/uqlxmac.html&gt;" rel="noreferrer">http://www.dokos-gr.net/ql/uqlxmac.html&gt;</a>
+For mail reply to: ql PUNKT css AT dokos MINUS gr DOT net
+
+
+
+</pre></div><div class="post" id="p171159"><div class="ph"><a class="d" href="#p171159">2003-11-09 16:09:18</a> <span>aticatac</span> <span>Re: ZX Spectrum SE software update</span></div><pre><span class="qt">&gt;</span>
+<span class="qt">&gt; That is MUCHO cool :-) If anyone does have the builder&#x27;s address, I&#x27;d like</span>
+<span class="qt">&gt; the info too... I&#x27;d love to build the damn thing!</span>
+
+Somebody is looking for me? ;)
+
+
+
+
+
+</pre></div><div class="post" id="p171160"><div class="ph"><a class="d" href="#p171160">2003-11-09 16:13:36</a> <span>Sinclair QL a.k.a. P.D</span> <span>Re: ZX Spectrum SE software update</span></div><pre>οΏ½οΏ½οΏ½/On Sun, 09 Nov 2003 16:09:18 GMT,οΏ½(οΏ½) aticatac &lt;…@…&gt; 
+οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½/wrote:
+
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; That is MUCHO cool :-) If anyone does have the builder&#x27;s address, I&#x27;d </span>
+<span class="qt">&gt;&gt; like</span>
+<span class="qt">&gt;&gt; the info too... I&#x27;d love to build the damn thing!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Somebody is looking for me? ;)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+Apparently many :-) I&#x27;d like some schematics on those clones you built. 
+(I&#x27;d like to give it a go myself too :-) (BTW: Love the keyboard ;-)
+
+Phoebus
+
+-- 
+Visit the QL-FAQ at: &lt;<a href="http://www.dokos-gr.net/ql/faq/&gt;" rel="noreferrer">http://www.dokos-gr.net/ql/faq/&gt;</a> (Still uploading 
+stuff!)
+Visit the uQLX-win32 homepage at: &lt;<a href="http://www.dokos-gr.net/ql/uqlx.html&gt;" rel="noreferrer">http://www.dokos-gr.net/ql/uqlx.html&gt;</a>
+Visit the uQLX-mac home page at:&lt;<a href="http://www.dokos-gr.net/ql/uqlxmac.html&gt;" rel="noreferrer">http://www.dokos-gr.net/ql/uqlxmac.html&gt;</a>
+For mail reply to: ql PUNKT css AT dokos MINUS gr DOT net
+
+
+
+</pre></div><div class="post" id="p171161"><div class="ph"><a class="d" href="#p171161">2003-11-09 16:24:18</a> <span>aticatac</span> <span>Re: ZX Spectrum SE software update</span></div><pre>Ok, due to the limited time (job, wife, other hobbies...) my site contains
+only photos :(
+I&#x27;m still working on the 128K clone, need some time but soon I&#x27;ll release
+everything... maybe after Christmas..
+
+Bye
+
+
+&quot;Sinclair QL a.k.a. P.D&quot; &lt;…@…&gt; ha scritto nel
+messaggio news:…@…...
+<span class="qt">&gt; ï¿½ï¿½ï¿½/On Sun, 09 Nov 2003 16:09:18 GMT,ï¿½(ï¿½) aticatac &lt;…@…&gt;</span>
+<span class="qt">&gt; ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;&gt;</span>
+<span class="qt">&gt; &gt;&gt; That is MUCHO cool :-) If anyone does have the builder&#x27;s address, I&#x27;d</span>
+<span class="qt">&gt; &gt;&gt; like</span>
+<span class="qt">&gt; &gt;&gt; the info too... I&#x27;d love to build the damn thing!</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Somebody is looking for me? ;)</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Apparently many :-) I&#x27;d like some schematics on those clones you built.</span>
+<span class="qt">&gt; (I&#x27;d like to give it a go myself too :-) (BTW: Love the keyboard ;-)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Phoebus</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; Visit the QL-FAQ at: &lt;<a href="http://www.dokos-gr.net/ql/faq/&gt;" rel="noreferrer">http://www.dokos-gr.net/ql/faq/&gt;</a> (Still uploading</span>
+<span class="qt">&gt; stuff!)</span>
+<span class="qt">&gt; Visit the uQLX-win32 homepage at: &lt;<a href="http://www.dokos-gr.net/ql/uqlx.html&gt;" rel="noreferrer">http://www.dokos-gr.net/ql/uqlx.html&gt;</a></span>
+<span class="qt">&gt; Visit the uQLX-mac home page at:&lt;<a href="http://www.dokos-gr.net/ql/uqlxmac.html&gt;" rel="noreferrer">http://www.dokos-gr.net/ql/uqlxmac.html&gt;</a></span>
+<span class="qt">&gt; For mail reply to: ql PUNKT css AT dokos MINUS gr DOT net</span>
+
+
+
+
+
+</pre></div><div class="post" id="p171162"><div class="ph"><a class="d" href="#p171162">2003-11-09 16:35:15</a> <span>Farlie A</span> <span>Re: ZX Spectrum SE software update</span></div><pre>
+&quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Hi there,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Just a quick note to mention that, while I haven&#x27;t done much with the</span>
+<span class="qt">&gt; hardware over the last year, I have done a little bit on the software</span>
+<span class="qt">&gt; side, and there are now quite a few emulation options for the machine.</span>
+<span class="qt">&gt; At present it can emulate:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; ZX80</span>
+<span class="qt">&gt; ZX81</span>
+<span class="qt">&gt; ZX Spectrum 16K</span>
+<span class="qt">&gt; ZX Spectrum 48K</span>
+<span class="qt">&gt; TK95 (and any other custom ROMs, eg SE Basic)</span>
+<span class="qt">&gt; Interface II ROMs (Planetoids etc)</span>
+<span class="qt">&gt; Mikro Plus (Shadow of the Unicorn)</span>
+<span class="qt">&gt; TC2048 (the base machine)</span>
+<span class="qt">&gt; TC2068/UK2086 (including ROM carts)</span>
+<span class="qt">&gt; BBC Basic ?</span>
+
+How?  I thought the only BBC basic that existed for Z80 was a CP/M special
+and in any case you wouldn&#x27;t be able to get the grpahics modes on a standard
+Spectrum..
+
+Any plans for a CP/M mode as I need something to replace a PCW that died.
+
+Alex
+
+
+
+
+
+</pre></div><div class="post" id="p171163"><div class="ph"><a class="d" href="#p171163">2003-11-09 18:08:13</a> <span>Sinclair QL a.k.a. P.D</span> <span>Re: ZX Spectrum SE software update</span></div><pre>οΏ½οΏ½οΏ½/On Sun, 9 Nov 2003 16:35:15 -0000,οΏ½(οΏ½) Farlie A 
+&lt;…@…&gt; οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½/wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt;&gt; Hi there,</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Just a quick note to mention that, while I haven&#x27;t done much with the</span>
+<span class="qt">&gt;&gt; hardware over the last year, I have done a little bit on the software</span>
+<span class="qt">&gt;&gt; side, and there are now quite a few emulation options for the machine.</span>
+<span class="qt">&gt;&gt; At present it can emulate:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; ZX80</span>
+<span class="qt">&gt;&gt; ZX81</span>
+<span class="qt">&gt;&gt; ZX Spectrum 16K</span>
+<span class="qt">&gt;&gt; ZX Spectrum 48K</span>
+<span class="qt">&gt;&gt; TK95 (and any other custom ROMs, eg SE Basic)</span>
+<span class="qt">&gt;&gt; Interface II ROMs (Planetoids etc)</span>
+<span class="qt">&gt;&gt; Mikro Plus (Shadow of the Unicorn)</span>
+<span class="qt">&gt;&gt; TC2048 (the base machine)</span>
+<span class="qt">&gt;&gt; TC2068/UK2086 (including ROM carts)</span>
+<span class="qt">&gt;&gt; BBC Basic ?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; How?  I thought the only BBC basic that existed for Z80 was a CP/M </span>
+<span class="qt">&gt; special</span>
+<span class="qt">&gt; and in any case you wouldn&#x27;t be able to get the grpahics modes on a </span>
+<span class="qt">&gt; standard</span>
+<span class="qt">&gt; Spectrum..</span>
+
+Nope it ain&#x27;t. There is a Spectrum version of the BBC Basic (based on 
+Brandy Basic AFAIK) and you can find it here: &lt;url: 
+<a href="http://www.mdfsnet.f9.co.uk/Software/BBCBasic/Spectrum/&gt;" rel="noreferrer">http://www.mdfsnet.f9.co.uk/Software/BBCBasic/Spectrum/&gt;</a> -works great 
+although I haven&#x27;t yet tried it on a real spectrum only on an Emulator
+(I already compiled btw Brandy Basic for the QL a little while ago and I 
+am still testing it I will release it one of these days :-)
+
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Any plans for a CP/M mode as I need something to replace a PCW that died.</span>
+
+
+For CP/M go to Yarek&#x27;s site :-)
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Alex</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+
+-- 
+Visit the QL-FAQ at: &lt;<a href="http://www.dokos-gr.net/ql/faq/&gt;" rel="noreferrer">http://www.dokos-gr.net/ql/faq/&gt;</a> (Still uploading 
+stuff!)
+Visit the uQLX-win32 homepage at: &lt;<a href="http://www.dokos-gr.net/ql/uqlx.html&gt;" rel="noreferrer">http://www.dokos-gr.net/ql/uqlx.html&gt;</a>
+Visit the uQLX-mac home page at:&lt;<a href="http://www.dokos-gr.net/ql/uqlxmac.html&gt;" rel="noreferrer">http://www.dokos-gr.net/ql/uqlxmac.html&gt;</a>
+For mail reply to: ql PUNKT css AT dokos MINUS gr DOT net
+
+
+
+</pre></div><div class="post" id="p171164"><div class="ph"><a class="d" href="#p171164">2003-11-09 18:10:28</a> <span>Sinclair QL a.k.a. P.D</span> <span>Re: ZX Spectrum SE software update</span></div><pre>οΏ½οΏ½οΏ½/On Sun, 09 Nov 2003 16:24:18 GMT,οΏ½(οΏ½) aticatac &lt;…@…&gt; 
+οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½/wrote:
+
+<span class="qt">&gt; Ok, due to the limited time (job, wife, other hobbies...) my site </span>
+<span class="qt">&gt; contains</span>
+<span class="qt">&gt; only photos :(</span>
+
+Oh I sympathise... (all of the above go for me plus a kid :-)
+<span class="qt">&gt; I&#x27;m still working on the 128K clone, need some time but soon I&#x27;ll release</span>
+<span class="qt">&gt; everything... maybe after Christmas..</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Bye</span>
+<span class="qt">&gt;</span>
+
+Is the mode emulation downloadable to the FPGA? (Ie Sprinter style?)
+I am waiting for it... Would love to build one... hmmm maybe SAM mode too? 
+:-D *rubs hands*
+
+Phoebus
+
+-- 
+Visit the QL-FAQ at: &lt;<a href="http://www.dokos-gr.net/ql/faq/&gt;" rel="noreferrer">http://www.dokos-gr.net/ql/faq/&gt;</a> (Still uploading 
+stuff!)
+Visit the uQLX-win32 homepage at: &lt;<a href="http://www.dokos-gr.net/ql/uqlx.html&gt;" rel="noreferrer">http://www.dokos-gr.net/ql/uqlx.html&gt;</a>
+Visit the uQLX-mac home page at:&lt;<a href="http://www.dokos-gr.net/ql/uqlxmac.html&gt;" rel="noreferrer">http://www.dokos-gr.net/ql/uqlxmac.html&gt;</a>
+For mail reply to: ql PUNKT css AT dokos MINUS gr DOT net
+
+
+
+</pre></div><div class="post" id="p171183"><div class="ph"><a class="d" href="#p171183">2003-11-10 13:04:09</a> <span>Andrew Owen</span> <span>Re: ZX Spectrum SE software update</span></div><pre>&quot;aticatac&quot; &lt;…@…&gt; wrote in message news:&lt;OEtrb.442348$…@…&gt;...
+
+<span class="qt">&gt; Somebody is looking for me? ;)</span>
+
+Er, yes. Any chance of developing your minimal IC speccy up to ZX
+Spectrum SE specification?
+
+Here are some reasons you might want to consider doing this:
+
+The SE folds in the architecture of the Spectrum 128 and the Timex
+Sinclair machines, offering the best of both worlds in enhancements to
+the original 48K machine (and a few extensions to that model like
+extra memory and more video RAM).
+
+It is *more* compatible with 48K software than the Spectrum 128 or the
+Timex machines thanks to a custom ROM set (uses 48 Basic from the
+original machine and a modified 128 editor ROM).
+
+In addition to running 99% of Spectrum software it can also emulate
+earlier Sinclair machines, Timex and other clones, and use custom ROMs
+including IFII games, Mikro Plus, BBC Basic (thanks to an MMU that
+allows 32K of RAM to be paged into the first 16K of the Z80&#x27;s memory
+map).
+
+The specifications of the machine are fully detailed in the css faq at
+<a href="http://www.worldofspectrum.org/faq/reference/sereference.htm" rel="noreferrer">http://www.worldofspectrum.org/faq/reference/sereference.htm</a>
+
+Fredrick Meunier, who is responsible for the Mac OS X port of FUSE, is
+in the process of adding ZX Spectrum SE emulation to FUSE, which of
+course means apps can be developed and tested on modern hardware
+(TC2048 support was practically non-existent until Chris Cowley added
+it to vbSpec, but now support is growing - once ZX Spectrum SE support
+is in FUSE it shouldn&#x27;t be long before it makes it to a Windows based
+emulator).
+
+SE Basic (<a href="http://www.worldofspectrum.org/sinclairbasic/sebasic.html" rel="noreferrer">http://www.worldofspectrum.org/sinclairbasic/sebasic.html</a>)
+has built in support for the ZX Spectrum SE&#x27;s additional hardware. And
+I can add support for any additional hardware you want to add, like
+serial, parallel and IDE interfaces.
+
+So, have I sold you on the idea? Hope so. I&#x27;d love to see the machine
+really take off as a cheap super-spectrum. Particularly now the real
+thing is becoming collectible and hence expensive. I&#x27;m wary of putting
+my email address on usenet, but if you are interested I will.
+
+
+
+</pre></div><div class="post" id="p171190"><div class="ph"><a class="d" href="#p171190">2003-11-10 19:44:57</a> <span>Dirk Diggler</span> <span>Re: ZX Spectrum SE software update</span></div><pre>I wish i could coooook stuff like that up in the kitchen.
+
+
+
+&quot;Farlie A&quot; &lt;…@…&gt; wrote in message
+news:bolqed$c2g$1$…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt; &gt; Hi there,</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Just a quick note to mention that, while I haven&#x27;t done much with the</span>
+<span class="qt">&gt; &gt; hardware over the last year, I have done a little bit on the software</span>
+<span class="qt">&gt; &gt; side, and there are now quite a few emulation options for the machine.</span>
+<span class="qt">&gt; &gt; At present it can emulate:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; ZX80</span>
+<span class="qt">&gt; &gt; ZX81</span>
+<span class="qt">&gt; &gt; ZX Spectrum 16K</span>
+<span class="qt">&gt; &gt; ZX Spectrum 48K</span>
+<span class="qt">&gt; &gt; TK95 (and any other custom ROMs, eg SE Basic)</span>
+<span class="qt">&gt; &gt; Interface II ROMs (Planetoids etc)</span>
+<span class="qt">&gt; &gt; Mikro Plus (Shadow of the Unicorn)</span>
+<span class="qt">&gt; &gt; TC2048 (the base machine)</span>
+<span class="qt">&gt; &gt; TC2068/UK2086 (including ROM carts)</span>
+<span class="qt">&gt; &gt; BBC Basic ?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; How?  I thought the only BBC basic that existed for Z80 was a CP/M special</span>
+<span class="qt">&gt; and in any case you wouldn&#x27;t be able to get the grpahics modes on a</span>
+standard
+<span class="qt">&gt; Spectrum..</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Any plans for a CP/M mode as I need something to replace a PCW that died.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Alex</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+
+
+
+</pre></div><div class="post" id="p171192"><div class="ph"><a class="d" href="#p171192">2003-11-10 20:03:10</a> <span>aticatac</span> <span>Re: ZX Spectrum SE software update</span></div><pre>Ok Andrew, I&#x27;m using version 0.80 of SE basic on my clone and I like it :)
+There&#x27;s some problem with plusd but the tokenizer is a good thing if you
+have a diy keyboard ;)
+I saw the Speccy SE specification and I&#x27;m still trying to understand the
+Timex memory management... I&#x27;ll try to implement all the functions but the
+different video modes are still a big problem.
+Bye
+
+&quot;Andrew Owen&quot; &lt;…@…&gt; ha scritto nel messaggio
+news:…@…...
+<span class="qt">&gt; &quot;aticatac&quot; &lt;…@…&gt; wrote in message</span>
+news:&lt;OEtrb.442348$…@…&gt;...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Somebody is looking for me? ;)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Er, yes. Any chance of developing your minimal IC speccy up to ZX</span>
+<span class="qt">&gt; Spectrum SE specification?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Here are some reasons you might want to consider doing this:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The SE folds in the architecture of the Spectrum 128 and the Timex</span>
+<span class="qt">&gt; Sinclair machines, offering the best of both worlds in enhancements to</span>
+<span class="qt">&gt; the original 48K machine (and a few extensions to that model like</span>
+<span class="qt">&gt; extra memory and more video RAM).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; It is *more* compatible with 48K software than the Spectrum 128 or the</span>
+<span class="qt">&gt; Timex machines thanks to a custom ROM set (uses 48 Basic from the</span>
+<span class="qt">&gt; original machine and a modified 128 editor ROM).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; In addition to running 99% of Spectrum software it can also emulate</span>
+<span class="qt">&gt; earlier Sinclair machines, Timex and other clones, and use custom ROMs</span>
+<span class="qt">&gt; including IFII games, Mikro Plus, BBC Basic (thanks to an MMU that</span>
+<span class="qt">&gt; allows 32K of RAM to be paged into the first 16K of the Z80&#x27;s memory</span>
+<span class="qt">&gt; map).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The specifications of the machine are fully detailed in the css faq at</span>
+<span class="qt">&gt; <a href="http://www.worldofspectrum.org/faq/reference/sereference.htm" rel="noreferrer">http://www.worldofspectrum.org/faq/reference/sereference.htm</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Fredrick Meunier, who is responsible for the Mac OS X port of FUSE, is</span>
+<span class="qt">&gt; in the process of adding ZX Spectrum SE emulation to FUSE, which of</span>
+<span class="qt">&gt; course means apps can be developed and tested on modern hardware</span>
+<span class="qt">&gt; (TC2048 support was practically non-existent until Chris Cowley added</span>
+<span class="qt">&gt; it to vbSpec, but now support is growing - once ZX Spectrum SE support</span>
+<span class="qt">&gt; is in FUSE it shouldn&#x27;t be long before it makes it to a Windows based</span>
+<span class="qt">&gt; emulator).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; SE Basic (<a href="http://www.worldofspectrum.org/sinclairbasic/sebasic.html" rel="noreferrer">http://www.worldofspectrum.org/sinclairbasic/sebasic.html</a>)</span>
+<span class="qt">&gt; has built in support for the ZX Spectrum SE&#x27;s additional hardware. And</span>
+<span class="qt">&gt; I can add support for any additional hardware you want to add, like</span>
+<span class="qt">&gt; serial, parallel and IDE interfaces.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; So, have I sold you on the idea? Hope so. I&#x27;d love to see the machine</span>
+<span class="qt">&gt; really take off as a cheap super-spectrum. Particularly now the real</span>
+<span class="qt">&gt; thing is becoming collectible and hence expensive. I&#x27;m wary of putting</span>
+<span class="qt">&gt; my email address on usenet, but if you are interested I will.</span>
+
+
+
+
+
+</pre></div><div class="post" id="p171208"><div class="ph"><a class="d" href="#p171208">2003-11-11 08:48:10</a> <span>Andrew Owen</span> <span>Re: ZX Spectrum SE software update</span></div><pre>&quot;aticatac&quot; &lt;…@…&gt; wrote in message news:&lt;2aSrb.3028$…@…&gt;...
+<span class="qt">&gt; Ok Andrew, I&#x27;m using version 0.80 of SE basic on my clone and I like it :)</span>
+
+Cool! I&#x27;ll email you a copy of the latest version as soon as I get to
+my machine.
+
+<span class="qt">&gt; There&#x27;s some problem with plusd but the tokenizer is a good thing if you</span>
+<span class="qt">&gt; have a diy keyboard ;)</span>
+
+I use a PC keyboard with my machine as well, so I know what you mean.
+The problems with the Plus D are likely the same as the problems with
+the IF1. I&#x27;m aware of them and I know how to fix them in principle. I
+may even buy a +D system in order to fix them since clones are now
+available. But do HD disks really work in place of DD disks?
+
+<span class="qt">&gt; I saw the Speccy SE specification and I&#x27;m still trying to understand the</span>
+<span class="qt">&gt; Timex memory management...</span>
+
+Well, the Timex has three banks of 64K, pageable in 8K chunks. The
+normal bank contains the 16K ROM and 48K of RAM. This can be paged
+over with memory from the HOME or EX banks, but they are mutually
+exclusive - you can&#x27;t page in memory from the HOME and EX banks at the
+same time. You decide which bank you want to use and then you tell the
+machine which of the eight pages of 8K you want paged in. With the
+boot configuration of the 128 memory this works as normal, but owing
+to the extended hardware, if you page in upper memory from the 128
+system, sometimes the Timex bank you want paged in doesn&#x27;t actually
+get paged in. Of course this is a limitation of the prototype and
+there&#x27;s no reason you have to include it in your machine. The other
+thing to note is that the 128 memory of the ZX Spectrum SE actually
+has 144K available. All the details are in the faq and if you have any
+questions you can email me at my russian email address. It&#x27;s the same
+as my Australian one but you need to remove the &#x27;inoz&#x27; before the @
+and put &#x27;mail.ru&#x27; after the @ instead of &#x27;yahoo.com.au&#x27;.
+
+<span class="qt">&gt; I&#x27;ll try to implement all the functions but the</span>
+<span class="qt">&gt; different video modes are still a big problem.</span>
+
+I know the SpeccyBob video supports the 512x192 mode, so it&#x27;s the
+hi-color mode that will be trickier, but I think if you talk to Mike
+Wynne he can explain how to do it. Also SpeccyBob still lets you
+choose the border colour in 512x192 mode, whereas on a real Timex the
+border is set according to the ink/paper choice. Still, I see no
+reason to limit the machine to the original Timex specs. Also, a free
+choice of ink/paper in this mode would be a benefit. The real trick is
+to get the timing right so that mixed modes work, like the first half
+of the screen in hi-colour and the second in hi-res for graphic
+adventure games. Finally the ZX Spectrum SE has the Timex and Spectrum
+128 screen pages so you end up with four chunks of 6912K available for
+video which means up to three shadow screens in normal spectrum mode
+or one shadow screen in hi-colour or hi-res mode.
+
+Let me know if I can help in any way, and don&#x27;t worry about how long
+it takes as I&#x27;m going to New Zealand for at least a year so time
+really isn&#x27;t an issue for me.
+
+Cheers!
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p171215"><div class="ph"><a class="d" href="#p171215">2003-11-11 19:08:50</a> <span>aticatac</span> <span>Re: ZX Spectrum SE software update</span></div><pre>
+
+<span class="qt">&gt; Let me know if I can help in any way, and don&#x27;t worry about how long</span>
+<span class="qt">&gt; it takes as I&#x27;m going to New Zealand for at least a year so time</span>
+<span class="qt">&gt; really isn&#x27;t an issue for me.</span>
+
+How are you lucky? ;)
+Anyway now I&#x27;m working on a &quot;pure&quot; 128K clone, plus a floppy interface
+(maybe a +D because is quite simple to find the controller). I want also a
+cf interface maybe later...
+After that, while playing with my new machine, I&#x27;ll start to think about a
+monster clone, close to SE specification..
+
+What version of SE basic is the current? I saw the 0.83 but I didnt try it,
+so if you can please send the 48K last version, my email address is
+…@… dot it (remove all the dots, I&#x27;m sick of spam :( )
+
+Bye
+
+
+
+
+
+</pre></div><div class="post" id="p171232"><div class="ph"><a class="d" href="#p171232">2003-11-12 11:23:10</a> <span>Andrew Owen</span> <span>Re: ZX Spectrum SE software update</span></div><pre>&quot;aticatac&quot; &lt;…@…&gt; wrote in message news:&lt;6tasb.6847$…@…&gt;...
+<span class="qt">&gt; &gt; Let me know if I can help in any way, and don&#x27;t worry about how long</span>
+<span class="qt">&gt; &gt; it takes as I&#x27;m going to New Zealand for at least a year so time</span>
+<span class="qt">&gt; &gt; really isn&#x27;t an issue for me.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; How are you lucky? ;)</span>
+
+Got a working holiday visa. :)
+
+<span class="qt">&gt; Anyway now I&#x27;m working on a &quot;pure&quot; 128K clone, plus a floppy interface</span>
+<span class="qt">&gt; (maybe a +D because is quite simple to find the controller). I want also a</span>
+<span class="qt">&gt; cf interface maybe later...</span>
+
+I definitely want a CF interface. Maybe the ZXCF one, since ResiDOS is
+rather good (and it shouldn&#x27;t interfere with the +D as it uses IF1
+hooks).
+
+<span class="qt">&gt; After that, while playing with my new machine, I&#x27;ll start to think about a</span>
+<span class="qt">&gt; monster clone, close to SE specification..</span>
+
+As long as it includes SE compatibility I&#x27;d be interested in having
+one, in fact I&#x27;d be looking at the costs of putting it into production
+and licensing the ROM from Amstrad. No reason not to exceed the SE
+spec though.
+
+<span class="qt">&gt; What version of SE basic is the current? I saw the 0.83 but I didnt try it,</span>
+<span class="qt">&gt; so if you can please send the 48K last version, my email address is...</span>
+
+Version 0.93e is the latest available online - it ships with SPIN and
+vbSpec, but I have a subsequent version I never got around to
+releasing with new commands, some of which (EDIT, DELETE and SYSTEM)
+actually work. In theory it is possible to add unlimited commands to
+SE Basic, the code is there, but it would mean going over the 16K ROM
+limit and using un-tokenized commands. I&#x27;ll send you a copy (along
+with everyone else - see the SE Basic thread) this weekend.
+
+
+
+</pre></div><div class="post" id="p171234"><div class="ph"><a class="d" href="#p171234">2003-11-12 15:02:56</a> <span>J.G.Harston</span> <span>Re: ZX Spectrum SE software update</span></div><pre>&quot;Sinclair QL a.k.a. P.D&quot; &lt;…@…&gt; wrote:
+<span class="qt">&gt; &gt; &quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; &gt;&gt; BBC Basic ?</span>
+<span class="qt">&gt; &gt; How?  I thought the only BBC basic that existed for Z80 was a CP/M </span>
+<span class="qt">&gt; Nope it ain&#x27;t. There is a Spectrum version of the BBC Basic (based on </span>
+<span class="qt">&gt; Brandy Basic AFAIK) and you can find it here: &lt;url: </span>
+<span class="qt">&gt; <a href="http://www.mdfsnet.f9.co.uk/Software/BBCBasic/Spectrum/&gt;" rel="noreferrer">http://www.mdfsnet.f9.co.uk/Software/BBCBasic/Spectrum/&gt;</a> -works great </span>
+
+Nope, it&#x27;s not based on Brandy Basic. It&#x27;s the 1983 BBC Basic for the
+Acorn Z80 CoProcessor with an additional bit of host interface code to
+provide the jump block it expects at &amp;FFxx.
+
+I&#x27;m putting together some documentation aimed at easing the porting
+to new hardware, such as the Spectrum SE. It should appear at the above
+URL &quot;real soon now&quot;.
+
+-- 
+JGH - www.mdfs.net
+
+
+
+</pre></div><div class="post" id="p171253"><div class="ph"><a class="d" href="#p171253">2003-11-12 23:34:52</a> <span>Andrew Owen</span> <span>Re: ZX Spectrum SE software update</span></div><pre>…@… (J.G.Harston) wrote in message news:&lt;…@…&gt;...
+
+<span class="qt">&gt; Nope, it&#x27;s not based on Brandy Basic. It&#x27;s the 1983 BBC Basic for the</span>
+<span class="qt">&gt; Acorn Z80 CoProcessor with an additional bit of host interface code to</span>
+<span class="qt">&gt; provide the jump block it expects at &amp;FFxx.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;m putting together some documentation aimed at easing the porting</span>
+<span class="qt">&gt; to new hardware, such as the Spectrum SE. It should appear at the above</span>
+<span class="qt">&gt; URL &quot;real soon now&quot;.</span>
+
+That&#x27;s cool, because I was planning on doing a proper port. BTW, is
+there enough room in the ROM to support the additional screen modes of
+the SE? Having a BASIC that works in 64 column mode would be good,
+even if hi-colour mode is out of the question.
+
+
+
+</pre></div><div class="post" id="p171359"><div class="ph"><a class="d" href="#p171359">2003-11-17 15:55:27</a> <span>J.G.Harston</span> <span>Re: ZX Spectrum SE software update</span></div><pre>…@… (Andrew Owen) wrote in message: 
+<span class="qt">&gt; …@… (J.G.Harston) wrote in message:</span>
+<span class="qt">&gt; &gt; I&#x27;m putting together some documentation aimed at easing the porting</span>
+<span class="qt">&gt; &gt; to new hardware, such as the Spectrum SE. It should appear at the above</span>
+<span class="qt">&gt; &gt; URL &quot;real soon now&quot;.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; That&#x27;s cool, because I was planning on doing a proper port. BTW, is</span>
+<span class="qt">&gt; there enough room in the ROM to support the additional screen modes of</span>
+<span class="qt">&gt; the SE? Having a BASIC that works in 64 column mode would be good,</span>
+<span class="qt">&gt; even if hi-colour mode is out of the question.</span>
+
+I&#x27;ve put together a page on porting BBC BASIC (80) to other Z80-based
+platforms (which would include the Spectrum SE and Sprinter, for example)
+at <a href="http://www.mdfs.net/Software/BBCBasic/Spectrum/port.htm" rel="noreferrer">http://www.mdfs.net/Software/BBCBasic/Spectrum/port.htm</a>
+
+At the moment most of the work I&#x27;m doing myself is targetting the 48k
+machine, but I&#x27;m gathering together information to access other machines&#x27;
+facilities, such as additional sound, screen and storage.
+
+-- 
+JGH - www.mdfs.net
+
+
+
+</pre></div><div class="post" id="p171362"><div class="ph"><a class="d" href="#p171362">2003-11-17 19:47:00</a> <span>Andrew Owen</span> <span>Re: ZX Spectrum SE software update</span></div><pre>In article &lt;…@…&gt;,
+…@… (J.G.Harston) wrote:
+
+<span class="qt">&gt; …@… (Andrew Owen) wrote in message: </span>
+<span class="qt">&gt; &gt; …@… (J.G.Harston) wrote in message:</span>
+<span class="qt">&gt; &gt; &gt; I&#x27;m putting together some documentation aimed at easing the porting</span>
+<span class="qt">&gt; &gt; &gt; to new hardware, such as the Spectrum SE. It should appear at the above</span>
+<span class="qt">&gt; &gt; &gt; URL &quot;real soon now&quot;.</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; That&#x27;s cool, because I was planning on doing a proper port. BTW, is</span>
+<span class="qt">&gt; &gt; there enough room in the ROM to support the additional screen modes of</span>
+<span class="qt">&gt; &gt; the SE? Having a BASIC that works in 64 column mode would be good,</span>
+<span class="qt">&gt; &gt; even if hi-colour mode is out of the question.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;ve put together a page on porting BBC BASIC (80) to other Z80-based</span>
+<span class="qt">&gt; platforms (which would include the Spectrum SE and Sprinter, for example)</span>
+<span class="qt">&gt; at <a href="http://www.mdfs.net/Software/BBCBasic/Spectrum/port.htm" rel="noreferrer">http://www.mdfs.net/Software/BBCBasic/Spectrum/port.htm</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; At the moment most of the work I&#x27;m doing myself is targetting the 48k</span>
+<span class="qt">&gt; machine, but I&#x27;m gathering together information to access other machines&#x27;</span>
+<span class="qt">&gt; facilities, such as additional sound, screen and storage.</span>
+
+I had a look at the page in question. I don&#x27;t think it is possible to use
+the extra screen modes of the Timex machines as they use the memory areas
+at 0x04000 and 0x06000, however the ZX Spectrum SE can also use these
+modes in the shadow screen area used by the Spectrum 128 so that could be
+a way around the problem. The AY chip is different from the one in the BBC
+but it is capable of the same waveforms etc and there is a program
+somewhere on the net, possible by Andrew Toone, that plays a BBC tune over
+the AY chip. It would be nice to give BBC Basic access to the full 280K,
+well most of it, of the ZX Spectrum SE, but I think 128K accessible to
+Basic is more realistic. The main problem I see at this point is that the
+ROM won&#x27;t work from RAM. I&#x27;ve emailed you about this and I hope a solution
+can be found.
+
+-Andrew
+
+
+
+</pre></div></main></body></html>

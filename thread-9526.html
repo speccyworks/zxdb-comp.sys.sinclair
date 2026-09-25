@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Re: Warajevo 1.7 in development · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Re: Warajevo 1.7 in development</h1><p class="facts">6 posts, 1997-06-17 – 1997-06-27</p><div class="post" id="p27370"><div class="ph"><a class="d" href="#p27370">1997-06-17</a> <span>…@…</span> </div><pre>
+On Tue, 17 Jun 1997 07:22:19 -0600, …@… wrote:
+
+..Snip
+
+<span class="qt">&gt;- I am not yet sure about direct using of SLT and TZX in emulator and</span>
+<span class="qt">&gt;network emulation.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Suggestions? Remarks?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;                                                           Samir</span>
+<span class="qt">&gt;…@…</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;-------------------==== Posted via Deja News ====-----------------------</span>
+<span class="qt">&gt;      <a href="http://www.dejanews.com/" rel="noreferrer">http://www.dejanews.com/</a>     Search, Read, Post to Usenet</span>
+
+
+TZX is a very nice format to have, and as for implimentation it is
+very straight forward to do with the help of Mr. Tomaz Zac&#x27;s example
+code as reference. On the emulator I&#x27;m currently writing it took just
+under 6 hours to write a baseline TZX handler that does everything bar
+the message printing code. Go for it make a TZX today as Mr. Zac says.
+
+
+
+
+
+Paul A. Hodgson.
+…@…
++-------------------------------------------------+
+<span class="qt">| Old machines never die, they just get emulated. |</span>
++-------------------------------------------------+
+
+
+</pre></div><div class="post" id="p27375"><div class="ph"><a class="d" href="#p27375">1997-06-17</a> <span>…@…</span> </div><pre>
+On Tue, 17 Jun 1997 07:22:19 -0600, …@… wrote:
+
+<span class="qt">&gt;- Start button!</span>
+
+Aaarrgghhh!
+
+<span class="qt">&gt;- I will look the grammar in manuals. It is REALLY boring. Any native</span>
+<span class="qt">&gt;English speaker wants to do it?</span>
+
+If you&#x27;re not flooded with offers, I&#x27;d be happy to do it.
+
+<span class="qt">&gt;- I am not yet sure about direct using of SLT and TZX in emulator and</span>
+<span class="qt">&gt;network emulation.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Suggestions? Remarks?</span>
+
+Seen the recent suggestion about network play? (Picking up
+keypresses over a network or PPP connection so two people can
+play a two player game without both sitting at the same
+keyboard?)
+-- 
+ //// Damien Burke (replace d.c.u in address with demon.co.uk if replying)
+//// Spectrum pages: <a href="http://www.jetman.demon.co.uk/speccy/" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/</a>
+//// New to this group? Read this: <a href="http://www.jetman.demon.co.uk/speccy/faq/" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/faq/</a>
+
+
+</pre></div><div class="post" id="p27386"><div class="ph"><a class="d" href="#p27386">1997-06-17 12:12:57</a> <span>…@…</span> <span>Warajevo 1.7 in development</span></div><pre>
+I want to inform readers of this workgroup that Zeljko and I prepare new
+version of Warajevo, most probabbly 1.7. I think that this will be last
+DOS release, then we will switch to Windows 95.
+
+New features:
+
+- Accurate timing of instructions, still in development, but we hope that
+we will sucess to make real-time emulation, may be with rainbowing
+effects.
+
+- Sound Blaster support, including MIDI interface.
+
+- Users shell will be in graphic mode (with hourglass mouse cursors,
+nicer checkboxes, and picture of the current snapshot) or in
+text mode as in 1.5 release
+
+- Fixed some bugs in user shell ( loading using SoundBlaster will be
+better, SPACE key in edit snapshot) and emulator (sometimes microdrive
+file in previous version was truncated)
+
+- Improved speed of users shell ( Switching from emulator to shell is
+done in less than one second, even if current tape file is on floppy
+disc, many database operations are accelerated, simplified entering
+of tape file name in database, compression requires less RAM)
+
+- Added convertors for new tape formats (BLK, LPT, TZX, ZX Brukner, and
+ Roman &amp; Easy in both directions), snapshot formats (SIT, SEM, SLT,
+SNP, SNA 128), enlarging of MDR to maximum size, database format
+(SpecPice, ZX Rainbow and SGD). Snapshot to TAP now has additional
+capabilities.
+
+- Start button! In bottom left corner :-). Click on it, and select the
+file. It will be automatically in few seconds converted to temporary file
+and started.  Currently I support:  - Z80, SNA, SNA128, SIT, SEM, SLT,
+SP, VGASPEC SP, PRG  - Warajevo TAP, Lunter TAP, BLK, LPT, TZX (only for
+standard, turbo  and pure data blocks).  - MDR
+
+
+- I will look the grammar in manuals. It is REALLY boring. Any native
+English speaker wants to do it?
+
+- I am not yet sure about direct using of SLT and TZX in emulator and
+network emulation.
+
+
+Suggestions? Remarks?
+
+                                                           Samir
+…@…
+
+-------------------==== Posted via Deja News ====-----------------------
+      <a href="http://www.dejanews.com/" rel="noreferrer">http://www.dejanews.com/</a>     Search, Read, Post to Usenet
+
+
+</pre></div><div class="post" id="p27406"><div class="ph"><a class="d" href="#p27406">1997-06-18</a> <span>…@…</span> </div><pre>
+On Wed, 18 Jun 1997 11:26:51 GMT, …@… (Tomaz Kac)
+wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;&gt;- I am not yet sure about direct using of SLT and TZX in emulator and</span>
+<span class="qt">&gt;&gt;&gt;network emulation.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;TZX is a very nice format to have, and as for implimentation it is</span>
+<span class="qt">&gt;&gt;very straight forward to do with the help of Mr. Tomaz Zac&#x27;s example</span>
+<span class="qt">&gt;&gt;code as reference. On the emulator I&#x27;m currently writing it took just</span>
+<span class="qt">&gt;&gt;under 6 hours to write a baseline TZX handler that does everything bar</span>
+<span class="qt">&gt;&gt;the message printing code. Go for it make a TZX today as Mr. Zac says.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Well, I do remember the authors of Warajevo did have some suggestions and input</span>
+<span class="qt">&gt;when the format was still being developed, however I didn&#x27;t get answers to a few</span>
+<span class="qt">&gt;of my last mails to them. I would be happy to send them the source code that is</span>
+<span class="qt">&gt;mentioned ... ofcourse :) Basically there is only one requirement for TZX files</span>
+<span class="qt">&gt;to work: Cycle-exact CPU emulation... I think this IS the case with Warajevo ? </span>
+
+If they want to take a look at my (rather sloppy) TZX code then they
+are more than welcome.
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;btw. it is Tomaz Kac (pronounced as &quot;Tomasz Katz&quot; or very similar) ;) but Zac</span>
+<span class="qt">&gt;does sound much more &quot;English&quot; ;)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Regards,</span>
+<span class="qt">&gt; Tomaz</span>
+<span class="qt">&gt;-- </span>
+<span class="qt">&gt;**************************************************</span>
+<span class="qt">&gt;Tomaz Kac, University of Maribor, Computer Science</span>
+<span class="qt">&gt;E-Mail:    …@…</span>
+
+
+Sorry, my humble appologies. I have a terrible memory for names and
+have been calling you Zac rather than Kac for a while now. I shall
+remember not to forget. In saying that I spent 3 years at school being
+called Jason by everyone because one person got my name wrong and then
+it just stuck.
+
+
+
+
+Paul A. Hodgson.
+…@…
++-------------------------------------------------+
+<span class="qt">| Old machines never die, they just get emulated. |</span>
++-------------------------------------------------+
+
+
+</pre></div><div class="post" id="p27408"><div class="ph"><a class="d" href="#p27408">1997-06-18</a> <span>…@…</span> </div><pre>
+
+<span class="qt">&gt;&gt;- I am not yet sure about direct using of SLT and TZX in emulator and</span>
+<span class="qt">&gt;&gt;network emulation.</span>
+
+<span class="qt">&gt;TZX is a very nice format to have, and as for implimentation it is</span>
+<span class="qt">&gt;very straight forward to do with the help of Mr. Tomaz Zac&#x27;s example</span>
+<span class="qt">&gt;code as reference. On the emulator I&#x27;m currently writing it took just</span>
+<span class="qt">&gt;under 6 hours to write a baseline TZX handler that does everything bar</span>
+<span class="qt">&gt;the message printing code. Go for it make a TZX today as Mr. Zac says.</span>
+<span class="qt">&gt;</span>
+
+Well, I do remember the authors of Warajevo did have some suggestions and input
+when the format was still being developed, however I didn&#x27;t get answers to a few
+of my last mails to them. I would be happy to send them the source code that is
+mentioned ... ofcourse :) Basically there is only one requirement for TZX files
+to work: Cycle-exact CPU emulation... I think this IS the case with Warajevo ? 
+
+btw. it is Tomaz Kac (pronounced as &quot;Tomasz Katz&quot; or very similar) ;) but Zac
+does sound much more &quot;English&quot; ;)
+
+Regards,
+ Tomaz
+-- 
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div><div class="post" id="p27640"><div class="ph"><a class="d" href="#p27640">1997-06-27</a> <span>…@…</span> </div><pre>
+
+Samir &amp;  Zeljko
+
+I&#x27;d like to offer my help if need with translation or beta testing.
+
+Andy
+
+
+
+</pre></div></main></body></html>

@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[ZX81-TZX] Is there any web pages on Zx81 Tzx format? · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>[ZX81-TZX] Is there any web pages on Zx81 Tzx format?</h1><p class="facts">12 posts, 2007-07-17 – 2007-07-23</p><div class="post" id="p212719"><div class="ph"><a class="d" href="#p212719">2007-07-17 13:31:35</a> <span>GzavSnap</span> </div><pre>Hi,
+
+I&#x27;m coding a TZX reader for VB81 XuR and i have found this page:
+<a href="http://www.ramsoft.bbk.org/" rel="noreferrer">http://www.ramsoft.bbk.org/</a>
+or
+<a href="http://www.worldofspectrum.org/" rel="noreferrer">http://www.worldofspectrum.org/</a>
+But, this format was made for the Spectrum!
+Is there any officials web pages with zx81 hardwares?
+I&#x27;m able to extract hardware&#x27;s specificity in EO resources...
+But, is where any recent database on this computer?(add-ons, sound card,
+graphics card)
+
+note:
+My TZX driver is ready (VB codes), and can be include in the XuR.
+Mail me to get my later release!
+Pfile extraction, images (gif,jpg,bmp), texts, hardware specs...
+
+Regards,
+
+<span class="qt">&gt;&lt;avSnap.</span>
+
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p212720"><div class="ph"><a class="d" href="#p212720">2007-07-17 20:08:29</a> <span>Chris Young</span> <span>Re: [ZX81-TZX] Is there any web pages on Zx81 Tzx format?</span></div><pre>On Tue, 17 Jul 2007 15:31:35 +0200 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC GzavSnap:
+
+<span class="qt">&gt; I&#x27;m coding a TZX reader for VB81 XuR and i have found this page:</span>
+<span class="qt">&gt; <a href="http://www.ramsoft.bbk.org/" rel="noreferrer">http://www.ramsoft.bbk.org/</a></span>
+<span class="qt">&gt; or</span>
+<span class="qt">&gt; <a href="http://www.worldofspectrum.org/" rel="noreferrer">http://www.worldofspectrum.org/</a></span>
+<span class="qt">&gt; But, this format was made for the Spectrum!</span>
+<span class="qt">&gt; Is there any officials web pages with zx81 hardwares?</span>
+
+I believe TZX was adapted for the ZX81 by Mike Wynne.  I think he
+still pops up on c.s.s. from time to time, but in any case the TZX
+documentation on WOS should have the information on the ZX81 blocks.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p212721"><div class="ph"><a class="d" href="#p212721">2007-07-17 23:38:26</a> <span>…@…</span> <span>Re: [ZX81-TZX] Is there any web pages on Zx81 Tzx format?</span></div><pre>Chris Young &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; On Tue, 17 Jul 2007 15:31:35 +0200 da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt; to MC GzavSnap:</span>
+
+<span class="qt">&gt;&gt; I&#x27;m coding a TZX reader for VB81 XuR and i have found this page:</span>
+<span class="qt">&gt;&gt; <a href="http://www.ramsoft.bbk.org/" rel="noreferrer">http://www.ramsoft.bbk.org/</a></span>
+<span class="qt">&gt;&gt; or</span>
+<span class="qt">&gt;&gt; <a href="http://www.worldofspectrum.org/" rel="noreferrer">http://www.worldofspectrum.org/</a></span>
+<span class="qt">&gt;&gt; But, this format was made for the Spectrum!</span>
+<span class="qt">&gt;&gt; Is there any officials web pages with zx81 hardwares?</span>
+
+<span class="qt">&gt; I believe TZX was adapted for the ZX81 by Mike Wynne.  I think he</span>
+<span class="qt">&gt; still pops up on c.s.s. from time to time, but in any case the TZX</span>
+<span class="qt">&gt; documentation on WOS should have the information on the ZX81 blocks.</span>
+
+He&#x27;s not been on for a few months, he posted to WOS apparently last week.
+He&#x27;s had an incredible run of bad luck and things&#x27;ve only just started to
+return to a semblance of normality.
+:/
+
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)| &quot;ARSE! GERLS!! DRINK! DRINK! DRINK!!!&quot;          |</span>
+<span class="qt">|            in            | &quot;THAT WOULD BE AN ECUMENICAL MATTER!...FECK!!!! |</span>
+<span class="qt">|     Computer Science     | - Father Jack in &quot;Father Ted&quot;                   |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p212722"><div class="ph"><a class="d" href="#p212722">2007-07-18 00:15:34</a> <span>GzavSnap</span> <span>Re: [ZX81-TZX] Is there any web pages on Zx81 Tzx format?</span></div><pre>
+&lt;…@…&gt; a ï¿½crit dans le message de
+news:…@…...
+<span class="qt">&gt; Chris Young &lt;…@…&gt; did eloquently scribble:</span>
+<span class="qt">&gt; &gt; On Tue, 17 Jul 2007 15:31:35 +0200 da kidz on comp.sys.sinclair were</span>
+rappin&#x27;
+<span class="qt">&gt; &gt; to MC GzavSnap:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;&gt; I&#x27;m coding a TZX reader for VB81 XuR and i have found this page:</span>
+<span class="qt">&gt; &gt;&gt; <a href="http://www.ramsoft.bbk.org/" rel="noreferrer">http://www.ramsoft.bbk.org/</a></span>
+<span class="qt">&gt; &gt;&gt; or</span>
+<span class="qt">&gt; &gt;&gt; <a href="http://www.worldofspectrum.org/" rel="noreferrer">http://www.worldofspectrum.org/</a></span>
+<span class="qt">&gt; &gt;&gt; But, this format was made for the Spectrum!</span>
+<span class="qt">&gt; &gt;&gt; Is there any officials web pages with zx81 hardwares?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; I believe TZX was adapted for the ZX81 by Mike Wynne.  I think he</span>
+<span class="qt">&gt; &gt; still pops up on c.s.s. from time to time, but in any case the TZX</span>
+<span class="qt">&gt; &gt; documentation on WOS should have the information on the ZX81 blocks.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; He&#x27;s not been on for a few months, he posted to WOS apparently last week.</span>
+<span class="qt">&gt; He&#x27;s had an incredible run of bad luck and things&#x27;ve only just started to</span>
+<span class="qt">&gt; return to a semblance of normality.</span>
+<span class="qt">&gt; :/</span>
+
+True ... bad news regard Mike. he must spend his time to his familly!
+Not for a old ï¿½ï¿½%%ï¿½ computer...
+;)
+
+... Eo resource contain some ZX81 blocs spec, and i was able to code my
+own driver, but Mike was the fist to use it on ZX81...
+i don&#x27;t read Tony Barnett&#x27;s docs on TZX files?
+Is here any Zx81 hard ID on misc...
+... i will download his doc as soon as.
+
+<span class="qt">&gt;&lt;avSnap.</span>
+
+
+
+
+
+</pre></div><div class="post" id="p212730"><div class="ph"><a class="d" href="#p212730">2007-07-18 12:43:55</a> <span>Tomaz Kac</span> <span>Re: [ZX81-TZX] Is there any web pages on Zx81 Tzx format?</span></div><pre><span class="qt">&gt;&gt; &gt; I believe TZX was adapted for the ZX81 by Mike Wynne.  I think he</span>
+<span class="qt">&gt;&gt; &gt; still pops up on c.s.s. from time to time, but in any case the TZX</span>
+<span class="qt">&gt;&gt; &gt; documentation on WOS should have the information on the ZX81 blocks.</span>
+
+Hello.
+
+TZX 1.20 contains support for ZX81 type blocks. The Generalized Data block is
+used to encode the ZX-81 data. Mike&#x27;s great EightyOne uses this and you can
+download the sample tzx files from his site/package.
+
+The documentation is on World of Spectrum. look here :
+
+<a href="http://www.worldofspectrum.org/TZXformat.html#GENDATA" rel="noreferrer">http://www.worldofspectrum.org/TZXformat.html#GENDATA</a>
+
+There is also an example ZX81 encoding there.
+
+Best regards,
+ Tomaz
+ -----------
+  Tomaz Kac,   …@…
+/*--------------------------------------------------------*/
+float l,I,Q,_,o;int E;main(){I=1.125;while(I&gt;=-1.225){for(l=
+-2;l&lt;=1;l+=3/79.0){Q=_=0;for(E=127;Q*Q+_*_&lt;4.0&amp;&amp;--E&gt;32;){o=Q
+;Q=Q*Q-_*_+l;_=2*o*_+I;}putchar(E);}putchar(10);I-=9/88.0;}}
+
+
+
+</pre></div><div class="post" id="p212737"><div class="ph"><a class="d" href="#p212737">2007-07-18 19:28:20</a> <span>OwenBot</span> <span>Re: Is there any web pages on Zx81 Tzx format?</span></div><pre>Not sure what, if any, help it is. But EightyOne supports the latest
+TZX format with ZX81 support. Might be of some use to you.
+
+
+
+
+</pre></div><div class="post" id="p212747"><div class="ph"><a class="d" href="#p212747">2007-07-20 12:20:18</a> <span>hldswrth</span> <span>Re: Is there any web pages on Zx81 Tzx format?</span></div><pre>On Jul 18, 8:28 pm, OwenBot &lt;…@…&gt; wrote:
+<span class="qt">&gt; Not sure what, if any, help it is. But EightyOne supports the latest</span>
+<span class="qt">&gt; TZX format with ZX81 support. Might be of some use to you.</span>
+
+If you want examples, I&#x27;ve got squillions of ZX81 .TZX files on my web
+site.
+
+You can load and save ZX81 .TZX files and convert to/from .wav using
+my Tape converter at:
+<a href="http://www.zx81stuff.org.uk/zx81/tapeutils/overview.html" rel="noreferrer">http://www.zx81stuff.org.uk/zx81/tapeutils/overview.html</a>
+
+I can also post the Java code I have to read and write Zx81 .TZX files
+if that would be useful to you.
+
+Cheers, Simon
+<a href="http://www.zx81stuff.org.uk/" rel="noreferrer">http://www.zx81stuff.org.uk/</a>
+
+
+
+
+</pre></div><div class="post" id="p212749"><div class="ph"><a class="d" href="#p212749">2007-07-20 20:33:52</a> <span>GzavSnap</span> <span>Re: Is there any web pages on Zx81 Tzx format?</span></div><pre>Tanks Simon!
+
+&quot;hldswrth&quot; &lt;…@…&gt; a ï¿½crit dans le message de
+news:…@…...
+<span class="qt">&gt; On Jul 18, 8:28 pm, OwenBot &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt; Not sure what, if any, help it is. But EightyOne supports the latest</span>
+<span class="qt">&gt; &gt; TZX format with ZX81 support. Might be of some use to you.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; If you want examples, I&#x27;ve got squillions of ZX81 .TZX files on my web</span>
+<span class="qt">&gt; site.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; You can load and save ZX81 .TZX files and convert to/from .wav using</span>
+<span class="qt">&gt; my Tape converter at:</span>
+<span class="qt">&gt; <a href="http://www.zx81stuff.org.uk/zx81/tapeutils/overview.html" rel="noreferrer">http://www.zx81stuff.org.uk/zx81/tapeutils/overview.html</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I can also post the Java code I have to read and write Zx81 .TZX files</span>
+<span class="qt">&gt; if that would be useful to you.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Cheers, Simon</span>
+
+My Tzx drivers in Vb seem corrupt!
+I had to update Vb81 Xur, but some of bocks Id seem hang or crash Eo or
+Vbspec!
+Pictures and message are not coded in there programs.
+You can test it with:
+<a href="http://zx81.vb81.free.fr/download/tzxmanager.zip" rel="noreferrer">http://zx81.vb81.free.fr/download/tzxmanager.zip</a>
+
+(incule exe and Vb res. --&gt; you had to retieve system dll used with VB81 XuR
+VB5fr to run it)
+
+I had to test its compatibility ...
+
+Your test TZX file must be named &quot;super9.tzx&quot; ;)
+Have Fun !
+
+Xavier /&gt;&lt;avsnap/
+
+
+
+
+
+
+</pre></div><div class="post" id="p212750"><div class="ph"><a class="d" href="#p212750">2007-07-20 20:59:33</a> <span>GzavSnap</span> <span>Re: [ZX81-TZX] Is there any web pages on Zx81 Tzx format?</span></div><pre>Ok Tomaz,
+
+I will update my codes ...
+
+
+
+&quot;Tomaz Kac&quot; &lt;…@…&gt; a ï¿½crit dans le message de
+news:…@…...
+<span class="qt">&gt; &gt;&gt; &gt; I believe TZX was adapted for the ZX81 by Mike Wynne.  I think he</span>
+<span class="qt">&gt; &gt;&gt; &gt; still pops up on c.s.s. from time to time, but in any case the TZX</span>
+<span class="qt">&gt; &gt;&gt; &gt; documentation on WOS should have the information on the ZX81 blocks.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Hello.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; TZX 1.20 contains support for ZX81 type blocks. The Generalized Data block</span>
+is
+<span class="qt">&gt; used to encode the ZX-81 data. Mike&#x27;s great EightyOne uses this and you</span>
+can
+<span class="qt">&gt; download the sample tzx files from his site/package.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The documentation is on World of Spectrum. look here :</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; <a href="http://www.worldofspectrum.org/TZXformat.html#GENDATA" rel="noreferrer">http://www.worldofspectrum.org/TZXformat.html#GENDATA</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; There is also an example ZX81 encoding there.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Best regards,</span>
+<span class="qt">&gt;  Tomaz</span>
+<span class="qt">&gt;  -----------</span>
+<span class="qt">&gt;   Tomaz Kac,   …@…</span>
+<span class="qt">&gt; /*--------------------------------------------------------*/</span>
+<span class="qt">&gt; float l,I,Q,_,o;int E;main(){I=1.125;while(I&gt;=-1.225){for(l=</span>
+<span class="qt">&gt; -2;l&lt;=1;l+=3/79.0){Q=_=0;for(E=127;Q*Q+_*_&lt;4.0&amp;&amp;--E&gt;32;){o=Q</span>
+<span class="qt">&gt; ;Q=Q*Q-_*_+l;_=2*o*_+I;}putchar(E);}putchar(10);I-=9/88.0;}}</span>
+
+
+
+
+
+</pre></div><div class="post" id="p212751"><div class="ph"><a class="d" href="#p212751">2007-07-20 21:04:09</a> <span>GzavSnap</span> <span>Re: [ZX81-TZX] Is there any web pages on Zx81 Tzx format?</span></div><pre>Coooool !
+
+
+<span class="qt">&gt; &gt; <a href="http://www.worldofspectrum.org/TZXformat.html#GENDATA" rel="noreferrer">http://www.worldofspectrum.org/TZXformat.html#GENDATA</a></span>
+
+This is the last update of  TzX structure.
+
+
+
+&quot;GzavSnap&quot; &lt;…@…&gt; a ï¿½crit dans le message de
+news:46a120b9$0$27781$…@…...
+<span class="qt">&gt; Ok Tomaz,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I will update my codes ...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;Tomaz Kac&quot; &lt;…@…&gt; a ï¿½crit dans le message de</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt; &gt; &gt;&gt; &gt; I believe TZX was adapted for the ZX81 by Mike Wynne.  I think he</span>
+<span class="qt">&gt; &gt; &gt;&gt; &gt; still pops up on c.s.s. from time to time, but in any case the TZX</span>
+<span class="qt">&gt; &gt; &gt;&gt; &gt; documentation on WOS should have the information on the ZX81</span>
+blocks.
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Hello.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; TZX 1.20 contains support for ZX81 type blocks. The Generalized Data</span>
+block
+<span class="qt">&gt; is</span>
+<span class="qt">&gt; &gt; used to encode the ZX-81 data. Mike&#x27;s great EightyOne uses this and you</span>
+<span class="qt">&gt; can</span>
+<span class="qt">&gt; &gt; download the sample tzx files from his site/package.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; The documentation is on World of Spectrum. look here :</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; <a href="http://www.worldofspectrum.org/TZXformat.html#GENDATA" rel="noreferrer">http://www.worldofspectrum.org/TZXformat.html#GENDATA</a></span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; There is also an example ZX81 encoding there.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Best regards,</span>
+<span class="qt">&gt; &gt;  Tomaz</span>
+<span class="qt">&gt; &gt;  -----------</span>
+<span class="qt">&gt; &gt;   Tomaz Kac,   …@…</span>
+<span class="qt">&gt; &gt; /*--------------------------------------------------------*/</span>
+<span class="qt">&gt; &gt; float l,I,Q,_,o;int E;main(){I=1.125;while(I&gt;=-1.225){for(l=</span>
+<span class="qt">&gt; &gt; -2;l&lt;=1;l+=3/79.0){Q=_=0;for(E=127;Q*Q+_*_&lt;4.0&amp;&amp;--E&gt;32;){o=Q</span>
+<span class="qt">&gt; &gt; ;Q=Q*Q-_*_+l;_=2*o*_+I;}putchar(E);}putchar(10);I-=9/88.0;}}</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+
+
+
+</pre></div><div class="post" id="p212756"><div class="ph"><a class="d" href="#p212756">2007-07-22 06:48:49</a> <span>GzavSnap</span> <span>Re: Is there any web pages on Zx81 Tzx format?</span></div><pre>
+Arrrgh !
+
+Something&#x27;s wrong ...
+
+OE hardware specifications apeare to be differant than 1.2
+specifications.(regard 1.13
+release)
+aspecialy in the hardware Id Bolck (33h) (Lambda is decayed)
+realease 1.2:
+ID - Name.
+1E - Inves Spectrum+
+1F - Profi
+20 - GrandRomMax
+21 - Kay 1024
+(...)
+2A - TS-1500
+2B - Lambda
+2C - TK-65
+2D - ZX-97
+
+EO realease 43c:
+ID - Name.
+1E = &quot;TS1500&quot;
+1F = &quot;Lambda&quot;
+20 = &quot;TK85&quot;
+21 = &quot;ZX97&quot;
+
+The scan is corrupt!
+
+and the graphic card &quot;Wrx h-res&quot; is decayed!
+[33-10] - Graphic Card on EO
+Const GrCard_00 = &quot;None&quot; (???)
+Const GrCard_01 = &quot;WRX&quot;
+Const GrCard_02 = &quot;Memotech&quot;
+Const GrCard_03 = &quot;G007&quot;
+Const GrCard_04 = &quot;Lambda&quot;
+
+[33-10] - Graphic Card on 1.2 TZX release
+00 - WRX Hi-Res
+01 - G007
+02 - Memotech
+03 - Lambda Colour
+
+I will code a specific scan for EO (regard TZX EO tag name ... )
+to avoid any problems. ;)
+
+Note:
+In Eo some of compatibility tags (run, use feature, run but... and don&#x27;t
+run) are corrupt! (or my harware list is corrupt too!).
+
+
+
+Xavier.
+
+&quot;GzavSnap&quot; &lt;…@…&gt; a ï¿½crit dans le message de
+news:46a11b38$0$14115$…@…...
+<span class="qt">&gt; Tanks Simon!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;hldswrth&quot; &lt;…@…&gt; a ï¿½crit dans le message de</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt; &gt; On Jul 18, 8:28 pm, OwenBot &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt; &gt; Not sure what, if any, help it is. But EightyOne supports the latest</span>
+<span class="qt">&gt; &gt; &gt; TZX format with ZX81 support. Might be of some use to you.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; If you want examples, I&#x27;ve got squillions of ZX81 .TZX files on my web</span>
+<span class="qt">&gt; &gt; site.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; You can load and save ZX81 .TZX files and convert to/from .wav using</span>
+<span class="qt">&gt; &gt; my Tape converter at:</span>
+<span class="qt">&gt; &gt; <a href="http://www.zx81stuff.org.uk/zx81/tapeutils/overview.html" rel="noreferrer">http://www.zx81stuff.org.uk/zx81/tapeutils/overview.html</a></span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; I can also post the Java code I have to read and write Zx81 .TZX files</span>
+<span class="qt">&gt; &gt; if that would be useful to you.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Cheers, Simon</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; My Tzx drivers in Vb seem corrupt!</span>
+<span class="qt">&gt; I had to update Vb81 Xur, but some of bocks Id seem hang or crash Eo or</span>
+<span class="qt">&gt; Vbspec!</span>
+<span class="qt">&gt; Pictures and message are not coded in there programs.</span>
+<span class="qt">&gt; You can test it with:</span>
+<span class="qt">&gt; <a href="http://zx81.vb81.free.fr/download/tzxmanager.zip" rel="noreferrer">http://zx81.vb81.free.fr/download/tzxmanager.zip</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; (incule exe and Vb res. --&gt; you had to retieve system dll used with VB81</span>
+XuR
+<span class="qt">&gt; VB5fr to run it)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I had to test its compatibility ...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Your test TZX file must be named &quot;super9.tzx&quot; ;)</span>
+<span class="qt">&gt; Have Fun !</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Xavier /&gt;&lt;avsnap/</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p212763"><div class="ph"><a class="d" href="#p212763">2007-07-23 16:47:00</a> <span>GzavSnap</span> <span>Re: Is there any web pages on Zx81 Tzx format?</span></div><pre>Good news !
+Eighty-one 51 is now available.
+
+It is fully combatible with TZX 1.2 format and work fine.
+But previous Tzx tapes name may be corrupt.
+
+My VB driver is ready and updated:
+<a href="http://zx81.vb81.free.fr/download/tzxmanager.zip" rel="noreferrer">http://zx81.vb81.free.fr/download/tzxmanager.zip</a>
+
+(incule exe and Vb res. --&gt; you had to retieve system dll used with VB81 XuR
+VB5fr to run it)
+
+I had to test its compatibility ...
+
+Your test TZX file must be named &quot;super9.tzx&quot; ;)
+Have Fun !
+
+
+&quot;GzavSnap&quot; &lt;…@…&gt; a ï¿½crit dans le message de
+news:46a2fea5$0$7635$…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Arrrgh !</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Something&#x27;s wrong ...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; OE hardware specifications apeare to be differant than 1.2</span>
+<span class="qt">&gt; specifications.(regard 1.13</span>
+<span class="qt">&gt; release)</span>
+<span class="qt">&gt; aspecialy in the hardware Id Bolck (33h) (Lambda is decayed)</span>
+<span class="qt">&gt; realease 1.2:</span>
+<span class="qt">&gt; ID - Name.</span>
+<span class="qt">&gt; 1E - Inves Spectrum+</span>
+<span class="qt">&gt; 1F - Profi</span>
+<span class="qt">&gt; 20 - GrandRomMax</span>
+<span class="qt">&gt; 21 - Kay 1024</span>
+<span class="qt">&gt; (...)</span>
+<span class="qt">&gt; 2A - TS-1500</span>
+<span class="qt">&gt; 2B - Lambda</span>
+<span class="qt">&gt; 2C - TK-65</span>
+<span class="qt">&gt; 2D - ZX-97</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; EO realease 43c:</span>
+<span class="qt">&gt; ID - Name.</span>
+<span class="qt">&gt; 1E = &quot;TS1500&quot;</span>
+<span class="qt">&gt; 1F = &quot;Lambda&quot;</span>
+<span class="qt">&gt; 20 = &quot;TK85&quot;</span>
+<span class="qt">&gt; 21 = &quot;ZX97&quot;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The scan is corrupt!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; and the graphic card &quot;Wrx h-res&quot; is decayed!</span>
+<span class="qt">&gt; [33-10] - Graphic Card on EO</span>
+<span class="qt">&gt; Const GrCard_00 = &quot;None&quot; (???)</span>
+<span class="qt">&gt; Const GrCard_01 = &quot;WRX&quot;</span>
+<span class="qt">&gt; Const GrCard_02 = &quot;Memotech&quot;</span>
+<span class="qt">&gt; Const GrCard_03 = &quot;G007&quot;</span>
+<span class="qt">&gt; Const GrCard_04 = &quot;Lambda&quot;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; [33-10] - Graphic Card on 1.2 TZX release</span>
+<span class="qt">&gt; 00 - WRX Hi-Res</span>
+<span class="qt">&gt; 01 - G007</span>
+<span class="qt">&gt; 02 - Memotech</span>
+<span class="qt">&gt; 03 - Lambda Colour</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I will code a specific scan for EO (regard TZX EO tag name ... )</span>
+<span class="qt">&gt; to avoid any problems. ;)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Note:</span>
+<span class="qt">&gt; In Eo some of compatibility tags (run, use feature, run but... and don&#x27;t</span>
+<span class="qt">&gt; run) are corrupt! (or my harware list is corrupt too!).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Xavier.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;GzavSnap&quot; &lt;…@…&gt; a ï¿½crit dans le message de</span>
+<span class="qt">&gt; news:46a11b38$0$14115$…@…...</span>
+<span class="qt">&gt; &gt; Tanks Simon!</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; &quot;hldswrth&quot; &lt;…@…&gt; a ï¿½crit dans le message de</span>
+<span class="qt">&gt; &gt; news:…@…...</span>
+<span class="qt">&gt; &gt; &gt; On Jul 18, 8:28 pm, OwenBot &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt; &gt; &gt; Not sure what, if any, help it is. But EightyOne supports the latest</span>
+<span class="qt">&gt; &gt; &gt; &gt; TZX format with ZX81 support. Might be of some use to you.</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; If you want examples, I&#x27;ve got squillions of ZX81 .TZX files on my web</span>
+<span class="qt">&gt; &gt; &gt; site.</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; You can load and save ZX81 .TZX files and convert to/from .wav using</span>
+<span class="qt">&gt; &gt; &gt; my Tape converter at:</span>
+<span class="qt">&gt; &gt; &gt; <a href="http://www.zx81stuff.org.uk/zx81/tapeutils/overview.html" rel="noreferrer">http://www.zx81stuff.org.uk/zx81/tapeutils/overview.html</a></span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; I can also post the Java code I have to read and write Zx81 .TZX files</span>
+<span class="qt">&gt; &gt; &gt; if that would be useful to you.</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; Cheers, Simon</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; My Tzx drivers in Vb seem corrupt!</span>
+<span class="qt">&gt; &gt; I had to update Vb81 Xur, but some of bocks Id seem hang or crash Eo or</span>
+<span class="qt">&gt; &gt; Vbspec!</span>
+<span class="qt">&gt; &gt; Pictures and message are not coded in there programs.</span>
+<span class="qt">&gt; &gt; You can test it with:</span>
+<span class="qt">&gt; &gt; <a href="http://zx81.vb81.free.fr/download/tzxmanager.zip" rel="noreferrer">http://zx81.vb81.free.fr/download/tzxmanager.zip</a></span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; (incule exe and Vb res. --&gt; you had to retieve system dll used with VB81</span>
+<span class="qt">&gt; XuR</span>
+<span class="qt">&gt; &gt; VB5fr to run it)</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; I had to test its compatibility ...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Your test TZX file must be named &quot;super9.tzx&quot; ;)</span>
+<span class="qt">&gt; &gt; Have Fun !</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Xavier /&gt;&lt;avsnap/</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+
+
+
+</pre></div></main></body></html>

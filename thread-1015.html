@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The DRIVER v1.0 Synopsis by Simon Cooke from Prime 6 · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>The DRIVER v1.0 Synopsis by Simon Cooke from Prime 6</h1><p class="facts">2 posts, 1994-05-04 – 1994-05-04</p><div class="post" id="p2116"><div class="ph"><a class="d" href="#p2116">1994-05-04 11:43:45</a> <span>…@…</span> </div><pre>             The Driver review by Simon Cooke
+
+                  Picture the scene: Budding journalist, filled with the
+             heady atmosphere of the Gloucester show, runs over to the
+             Revelation stall and buys a brand new pristine copy of The
+             Driver, Steve Taylor&#x27;s brand new SAM product, which promised
+             to do for the SAM what the cotton industry did for sandpaper
+             Y-fronts (In that it makes everything seem a lot more
+             tasteful, palatable, and infinitely less scratchy). I tried
+             in vain to find a free machine to play around with it on,
+             and unfortunately was immensely unsuccessful. Still, it was
+             only a short train journey until I&#x27;d be back in my flat in
+             studentville, Manchester, able to zing my mouse cursor
+             around the screen in long awaited bliss.
+                  There are a couple of clauses in the above sentence
+             that are blatantly false (not including the crack about
+             undergarments), but I&#x27;ll leave you to decide what they are
+             in a decidedly obtuse manner and get on with the review (oh,
+             for the irrelevant, irreverant days of YS... how I miss
+             them).
+                  I suppose I&#x27;d better explain exactly what The Driver
+             is. If you&#x27;ve ever seen a PC running Windows, an Apple
+             Macintosh, an Atari ST or an Amiga, you&#x27;ve seen what a
+             Graphical User Interface is (or GUI for short). They
+             normally are controlled using a small hand-held device
+             called a mouse, which controls an arrow-shaped pointer on
+             the screen. This can be moved around to click on different
+             parts of the screen to control programs, incorporating such
+             things as pull-down menus, windows and buttons.
+                  To fully explain what a GUI is would take a lot more
+             space than is available to me for this article, so find a
+             friend with one of these machines and ask them to show you
+             their WIMP environment (yet another abbreviation, meaning a
+             lot of pretty pictures). A GUI, when it comes down to it, is
+             a very picturesque way of presenting a program, making it
+             instantly accessible and incredibly easy to control.
+                  And now we&#x27;ve got one on the SAM. Hurrah!
+                  Actually, come to think about it, better not break out
+             the champagne yet -- there&#x27;s something important that I have
+             to tell you about the system. But first, what does it look
+             and feel like?
+                  At first glance, it looks very Amiga-ry. The colour
+             scheme, for one, is orange, white, grey and black -- this
+             can be changed of course, using a utility that is supplied
+             on the disc. It&#x27;s quite a pretty system, with lots of nice
+             Icons too. The SAM having a pretty small screen resolution
+             doesn&#x27;t help much, but other than that the system copes
+             admirably. There is a program-identifier bar across the top
+             of the screen (with a shut-down button to the right of the
+             bar), and below that there is a menu-bar, on which the pull-
+             down menu&#x27;s sit. This is all fair enough, but I can&#x27;t help
+             but think that the space could have been better used by
+             dropping the ID bar to give more room for the actual program
+             itself. Also, having been weaned on Windows, the shut-down
+             button being on the right of the screen is a little
+             annoying, but that&#x27;s a tiny personal niggle.
+                  When the program starts up, it enters File Manager
+             mode, giving a directory of the current disc (in quite a
+             picturesque format too). The directory is held in a window
+             on the screen, with scroll bars and movement and sizing
+             buttons, and a close button (oooh! just like the GUI&#x27;s on
+             the &quot;big&quot; machines). Other programs on the master disc (as
+             well as File Manager, that is) are an Icon designer, the
+             aforementioned Preferences utility, a brief tutorial on the
+             basics of using The Driver, a calculator program and a
+             sliding puzzle game. And a wordprocessor -- which is the
+             reason I bought the utility in the first place -- at last, a
+             SAM wordprocessor which used ASCII rather than filling
+             everything with spaces, as Outwrite and Tasword were wont to
+             do.
+                  Soooo.... it would appear that we have one of the SAM
+             dreams come true -- excellent software at last. The only
+             problem is that there are a lot of bugs and niggles with it.
+                  A minor niggle is that instead of being able to click
+             on name-bar of a window and drag it around the screen using
+             that, to move windows you have to click on a special Move
+             button. This is unlike every other system on the market, and
+             totally disregards the GUI programmer&#x27;s bible -- the Apple
+             Human Interface guidelines.
+                  More serious bugs are those that occur when the File
+             Manager is sorting the directory listing prior to displaying
+             it on the screen -- if you select that same drive again to
+             open it up and read the directory, it can&#x27;t handle it and
+             proceeds to crash, giving an Abort, Continue or Reset
+             option. This should have been spotted. Also, at spurious
+             times the screen doesn&#x27;t properly update, giving bits of
+             information boxes being left piecemeal across the display
+             area.
+                  In order to use The Driver to access your own programs
+             with an icon of your choice (an icon being a pretty picture
+             representing your program), you have to create a small file
+             called an &quot;application bootstrap&quot;. This is all well and
+             good, and quite acceptable, but for one tiny problem. The
+             part of File Manager that creates these is slightly bugged,
+             leaving part of the file-name of your program being written
+             over the top of the icon, resulting in the top two lines of
+             the icon looking like a mess of random colours.
+                  Perhaps the most annoying bugs are those that inhabit
+             the Notepad program (the wordprocessor that accompanies The
+             Driver). One of these occurs during regular use -- when
+             typing on a large document, the screen update is so slow as
+             to lose text if you have even a slow typing speed. This
+             would seem to suggest that a larger keyboard buffer is
+             required, but it is an omission that should have been picked
+             up during testing.
+                  The other, more frightening problem occurs when working
+             on larger documents, and seems to be due to cutting and
+             pasting text between two copies of the Notepad. This leads
+             to text being copied over and over again, and moving down
+             through it just keeps putting you back at the same place,
+             losing the rest of your document. It would appear (for the
+             technically minded of you) to be a page-boundary problem.
+                  All these bugs were found within 15 minutes extensive
+             use of The Driver, which makes me wonder what Revelation are
+             playing at -- and Carol Brooksbank too. She wrote a glowing
+             review for Format, which didn&#x27;t mention any of these
+             problems. Then again, Revelation themselves couldn&#x27;t
+             replicate many of these problems (the only one that they
+             could replicate was the icon corruption bug). It wasn&#x27;t just
+             on my machine either; I tested it with every possible
+             combination of DOS version and hardware configuration, but
+             the problems persisted whichever I used. Their inability to
+             replicate problems that I gave them explicit instructions on
+             how to find is worrying, as is the apparent lack of beta-
+             testing.
+                  Now it must be said that being an experienced technical
+             writer and reviewer, I do tend to put a program more through
+             its paces than most people would, but these bugs should all
+             have been spotted before this program went on sale. It would
+             appear to me that Revelation rushed this one out in order to
+             make quick profits. More worrying is that in the reply to my
+             letter, I was told that the disc was fine when compared to
+             their master (which I knew -- I never said that the disc was
+             faulty, I said that the program was faulty and in an
+             unusable and unsaleable state). I was also told that of the
+             faults that they could replicate (ie one of them), a fix for
+             them would be made available on an upgrade disc, the arrival
+             of which would be made public through Format and Fred
+             magazine. Unfortunate really, seeing that I don&#x27;t subscribe
+             to either of them. Besides, I should really ask for a full
+             refund, as the program is unusable (no matter what they say
+             about it gaining support amongst its fans, and that it is
+             still usable with the bugs as they are). It also would
+             appear that this upgrade is not free either, which is
+             insulting to say the least.
+                  Another unforgiveable thing that Revelation have done
+             is not to give technical information and pre-release copies
+             to developers. It would appear to be impossible for any
+             programmer other than Steve Taylor himself to write for The
+             Driver at the moment, which is annoying to say the least.
+             Looks like I may be writing my own GUI in the future.
+             (Journalist sighs and shakes his head in despair).
+                  Okay, to wrap this up, this is needed software. Send
+             off for it by all means, and use it. Support it -- the
+             support is needed. But if it&#x27;s bugged when you get it, annoy
+             the hell out of Revelation. Your statutory consumer rights
+             mean that now they have been informed of the faults, they
+             cannot sell the product with the faults without providing a
+             free upgrade. If you&#x27;re really incessed by it, send back
+             your disc and demand a refund -- they have to give it to
+             you.
+                  If the bugs get removed, the SAM could really have a
+             nice front-end at last.
+                  One last note, which is quite worrying. (Motions to the
+             readers to move in closer, and lowers his voice). Revelation
+             have their discs duplicated by Format publications. Fair
+             enough, I thought. It was then sent back to Revelation,
+             apparently with nothing wrong with it. Again, fair enough.
+             And then I looked at the postmark on the envelope.
+                  Surprisingly, for a company based in Essex, Revelation
+             software has a tendancy to go a long way to post its
+             letters. Gloucester in fact. Now there are a lot of rumours
+             about Revelation being run by Bob Brenchley rather than
+             Frank Broughton. In fact, according to some sources, Frank
+             either doesn&#x27;t exist, or is a relation of Bob&#x27;s. The plot
+             thickens.
+                  Come to think of it, thinking of some of the very mis-
+             informed comments that Bob has written in his letters page
+             over the past year, selling a product like The Driver,
+             without beta-testing is something I wouldn&#x27;t put past him.
+                  But of course, that&#x27;s all rumour and hearsay. Isn&#x27;t it?
+
+             Rating: 4/10, but if it gets completely debugged, I&#x27;ll give
+             it a 6. Not as good as it could be, but it remains to be
+             seen what programmers and developers can do with it.
+
+			Additional (not in published article)
+
+                 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+             Having seen Driver v2.0 at the show, it&#x27;s well worth waiting
+             for. Unfortunately, Bob Brenchley is being very sneaky about
+               the whole thing and not letting anyone actually *see* it
+             until it&#x27;s released fully -- so that he can charge existing
+             users extortionate amounts for the upgrade. V2.0 solves all
+             of the problems I mention above, and is very Windows-esque -
+                             - and works incredibly well.
+              It also is going to be Midget compatible for all those of
+                                 you who want it !!!
+
+              Steve Taylor, it seems, is not to blame, and from a lot of
+              what I heard at the show (reasons for hardware alterations
+              to make the SAM Elite, etc), Bob Brenchley is just playing
+                                         god.
+
+                 +++++++++++++++++++++++++++++++++++++++++++++++++++
+
+             Simon Cooke (YS&#x27;s ex Tech Ed, head of Entropy)
+
++------------------INTERNET: …@…+
+<span class="qt">| &quot;You know... you can tell someone&#x27;s vain when they quote themselves |</span>
+<span class="qt">|           in their own .sig file...&quot; -- Simon Cooke                 |</span>
++--------------------JANET: …@…+
+
+</pre></div><div class="post" id="p2121"><div class="ph"><a class="d" href="#p2121">1994-05-04 19:06:17</a> <span>…@…</span> <span>Re: The DRIVER v1.0 Synopsis by Simon Cooke from Prime 6</span></div><pre>…@… (Simon Cooke) wrote:
+<span class="qt">&gt;                   One last note, which is quite worrying. (Motions to the</span>
+<span class="qt">&gt;              readers to move in closer, and lowers his voice). Revelation</span>
+<span class="qt">&gt;              have their discs duplicated by Format publications. Fair</span>
+<span class="qt">&gt;              enough, I thought. It was then sent back to Revelation,</span>
+<span class="qt">&gt;              apparently with nothing wrong with it. Again, fair enough.</span>
+<span class="qt">&gt;              And then I looked at the postmark on the envelope.</span>
+<span class="qt">&gt;                   Surprisingly, for a company based in Essex, Revelation</span>
+<span class="qt">&gt;              software has a tendancy to go a long way to post its</span>
+<span class="qt">&gt;              letters. Gloucester in fact. Now there are a lot of rumours</span>
+<span class="qt">&gt;              about Revelation being run by Bob Brenchley rather than</span>
+<span class="qt">&gt;              Frank Broughton. In fact, according to some sources, Frank</span>
+<span class="qt">&gt;              either doesn&#x27;t exist, or is a relation of Bob&#x27;s. The plot</span>
+<span class="qt">&gt;              thickens.</span>
+
+Ah. Right. For those that don&#x27;t know, I &#x27;protect&#x27; Revelation&#x27;s games (I use
+&#x27;protect&#x27; in quotes to keep Simon happy...) and get paid a flat rate of 25
+quid per game. Hell, it means I can live for another week...
+
+Anyway. I get the game from Bob. He signs the letter. It has the Format header
+across the top. It&#x27;s got the Format address in the top-right. It&#x27;s postmarked
+Gloucester.
+
+And then I send it back. To Bob. In Gloucester.
+
+And then a few days later I get a cheque. From Bob&#x27;s building society account.
+In Gloucester. Signed by Bob. Although later payments are more like a few
+weeks later than a few days...
+
+And according to someone (I won&#x27;t mention who) the address in Essex is Bob&#x27;s
+mum&#x27;s address. But I don&#x27;t know this for sure. But he usually gets things
+right does this bloke, so I&#x27;m willing to trust his word on this one...
+
+And that&#x27;s all I&#x27;m saying ;-)
+
+Dan.
+
+
+</pre></div></main></body></html>

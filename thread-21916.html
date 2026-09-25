@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TZX file format · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>TZX file format</h1><p class="facts">6 posts, 2001-05-17 – 2001-05-20</p><div class="post" id="p100881"><div class="ph"><a class="d" href="#p100881">2001-05-17 10:16:38</a> <span>Bastos</span> </div><pre>What is it? Does it have any advantages over Z80 or TAP?
+
+Thanks in advance
+
+
+
+
+
+</pre></div><div class="post" id="p100883"><div class="ph"><a class="d" href="#p100883">2001-05-17 10:59:50</a> <span>Zathras</span> <span>Re: TZX file format</span></div><pre>
+&quot;Bastos&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; What is it? Does it have any advantages over Z80 or TAP?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Thanks in advance</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+Lets see if I get this correct.
+
+Z80 is just a basic memory dump. more or less
+
+TZX is an upgrade of TAP, it will contain original loading screens, loader
+(turboload included, and fancy ways of showing the loading screen), and will
+usually contain everything that the original tape contained.
+
+Brian.
+
+
+---
+Outgoing mail is certified Virus Free by AVG.
+Checked by AVG anti-virus system (<a href="http://www.grisoft.com" rel="noreferrer">http://www.grisoft.com</a>).
+Version: 6.0.252 / Virus Database: 125 - Release Date: 9/05/2001
+
+
+
+
+
+</pre></div><div class="post" id="p100909"><div class="ph"><a class="d" href="#p100909">2001-05-17 13:49:51</a> <span>Andrew Barker</span> <span>Re: TZX file format</span></div><pre>Here&#x27;s Why:
+
+<a href="http://www.void.jump.org/TZXformat.html" rel="noreferrer">http://www.void.jump.org/TZXformat.html</a>
+
+Regards
+
+Andy Barker
+
+Bastos wrote:
+
+<span class="qt">&gt; What is it? Does it have any advantages over Z80 or TAP?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Thanks in advance</span>
+
+
+
+
+</pre></div><div class="post" id="p101030"><div class="ph"><a class="d" href="#p101030">2001-05-19 07:55:39</a> <span>Vlad Sandrini</span> <span>Re: TZX file format</span></div><pre>Aye Engengah Zathras H&#x27;ee L&#x27;geb F&#x27;ai Throdog
+Thu, 17 May 2001 18:59:50 +0800:
+
+<span class="qt">&gt;&quot;Bastos&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt;&gt; What is it? Does it have any advantages over Z80 or TAP?</span>
+<span class="qt">&gt;Lets see if I get this correct.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Z80 is just a basic memory dump. more or less</span>
+
+memory and register status, if i&#x27;m not wrong. a snapshot, similar
+to .SNA ones.
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;TZX is an upgrade of TAP, it will contain original loading screens, loader</span>
+<span class="qt">&gt;(turboload included, and fancy ways of showing the loading screen), and will</span>
+<span class="qt">&gt;usually contain everything that the original tape contained.</span>
+
+more or less. i&#x27;d say they both are virtual tape images, but TAP stores
+raw data bytes and kids your rom routine when you&#x27;re saving/loading, so it
+only works with the standard loader.
+TZX though, contains raw data + timing data (correct me if i&#x27;m talking
+nonsense) allowing an exact tape reproduction - this way it works with
+non-standard loaders too.
+
+-- 
+Sator 72 &lt;sator72[at]libero[dot]it&gt;
+icq#906246 - <a href="http://sator.250x.com" rel="noreferrer">http://sator.250x.com</a>
+root of all evil: […@… /root]# rm -rf /
+
+testament - john doe
+
+
+
+</pre></div><div class="post" id="p101050"><div class="ph"><a class="d" href="#p101050">2001-05-19 19:20:01</a> <span>Llama-Wax Len</span> <span>Re: TZX file format</span></div><pre>
+Vlad Sandrini wrote in message ...
+<span class="qt">&gt;TZX though, contains raw data + timing data (correct me if i&#x27;m talking</span>
+<span class="qt">&gt;nonsense) allowing an exact tape reproduction - this way it works with</span>
+<span class="qt">&gt;non-standard loaders too.</span>
+
+
+While we&#x27;re on the subject of TZX then, I&#x27;ve another question (I bet this is
+in a FAQ somewhere so forgive me). I&#x27;ve been looking at WoS during my recent
+TZXing frenzy - what&#x27;s the difference between a perfect TZX and an archive
+one?
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+LEGAL DISCLAIMER: By replying to this message, you hereby
+acknowledge that the ZX Spectrum game &quot;Robocop&quot; was too hard.
+
+
+
+
+
+</pre></div><div class="post" id="p101082"><div class="ph"><a class="d" href="#p101082">2001-05-20 03:44:35</a> <span>Zathras</span> <span>Re: TZX file format</span></div><pre>
+&quot;Llama-Wax Len&quot; &lt;…@…&gt; wrote in message
+news:9e6gp7$nt$…@…...
+
+<span class="qt">&gt; While we&#x27;re on the subject of TZX then, I&#x27;ve another question (I bet this</span>
+is
+<span class="qt">&gt; in a FAQ somewhere so forgive me). I&#x27;ve been looking at WoS during my</span>
+recent
+<span class="qt">&gt; TZXing frenzy - what&#x27;s the difference between a perfect TZX and an archive</span>
+<span class="qt">&gt; one?</span>
+
+Well I dont understand the question, PERFECT TZX, means that it is 100%
+accurate to the original tape. but some TZX&#x27;s might not have say the loading
+screen or some other piece of the original game, or if it is a Multi-Level
+game (loads more data from tape at a specific point) it might be missing a
+block of data.
+
+
+
+
+
+---
+Outgoing mail is certified Virus Free by AVG.
+Checked by AVG anti-virus system (<a href="http://www.grisoft.com" rel="noreferrer">http://www.grisoft.com</a>).
+Version: 6.0.252 / Virus Database: 125 - Release Date: 10/05/2001
+
+
+
+
+
+</pre></div></main></body></html>

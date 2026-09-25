@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANNOUNCE: Manic Miner: Ma jolie · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANNOUNCE: Manic Miner: Ma jolie</h1><p class="facts">4 posts, 2003-01-04 – 2003-01-08</p><div class="post" id="p152606"><div class="ph"><a class="d" href="#p152606">2003-01-04 16:57:49</a> <span>Andrew Broad</span>  <a class="badge" href="https://spectrumcomputing.co.uk/entry/14578">ZXDB: Ma jolie</a></div><pre>I shall say this only once. I have decided to release my new Manic Miner game 
+&quot;Ma jolie&quot; in twenty weekly instalments, each containing one more room than the 
+last. Room 0 (&quot;Kari Weeds Off The Stragglers&quot;) was released on 1st January, Room 
+1 will be released on 8th January, &amp;c.
+
+You will find each successive version of Ma jolie in the Files section of the 
+Manic Miner and Jet Set Willy Yahoo! Group (you have to join the Group first, 
+which prerequires signing up for a Yahoo! account and is free of charge).
+
+--
+Andrew Broad
+<a href="http://www.cs.man.ac.uk/~broada/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/download/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/download/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/download/ma_jolie.html" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/download/ma_jolie.html</a>
+
+<a href="http://groups.yahoo.com/group/manicminerandjetsetwilly/" rel="noreferrer">http://groups.yahoo.com/group/manicminerandjetsetwilly/</a>
+
+
+
+
+</pre></div><div class="post" id="p152617"><div class="ph"><a class="d" href="#p152617">2003-01-04 21:33:54</a> <span>Derek Jolly</span> <span>Re: ANNOUNCE: Manic Miner: Ma jolie</span></div><pre>Andrew Broad &lt;…@…&gt; wrote in
+news:…@…: 
+
+<span class="qt">&gt; I shall say this only once. I have decided to release my new Manic</span>
+<span class="qt">&gt; Miner game &quot;Ma jolie&quot; in twenty weekly instalments, each containing</span>
+<span class="qt">&gt; one more room than the last. Room 0 (&quot;Kari Weeds Off The Stragglers&quot;)</span>
+<span class="qt">&gt; was released on 1st January, Room 1 will be released on 8th January,</span>
+<span class="qt">&gt; &amp;c. </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; You will find each successive version of Ma jolie in the Files section</span>
+<span class="qt">&gt; of the Manic Miner and Jet Set Willy Yahoo! Group (you have to join</span>
+<span class="qt">&gt; the Group first, which prerequires signing up for a Yahoo! account and</span>
+<span class="qt">&gt; is free of charge). </span>
+
+Blimmin&#x27; &#x27;eck!  That has to be the single most evil Manic Miner room I&#x27;ve
+ever played!  I can get one key[1] and then I&#x27;m stuffed.
+
+[1] Normally after losing all but one of my lives trying to jump over
+the weeds.
+-- 
+Derek Jolly (derek at rivetsoft dot freeserve dot co dot uk)
+Leaner, cleaner homepage: <a href="http://rivet.50megs.com/" rel="noreferrer">http://rivet.50megs.com/</a>
+comp.sys.sinclair folklore FAQ: <a href="http://rivet.50megs.com/cssfolk.html" rel="noreferrer">http://rivet.50megs.com/cssfolk.html</a>
+
+
+
+</pre></div><div class="post" id="p152638"><div class="ph"><a class="d" href="#p152638">2003-01-05 00:54:39</a> <span>Robert J Baker</span> <span>Re: ANNOUNCE: Manic Miner: Ma jolie</span></div><pre>Andrew Broad &lt;…@…&gt; wrote in message news:&lt;…@…&gt;...
+
+<span class="qt">&gt; You will find each successive version of Ma jolie in the Files section of the </span>
+<span class="qt">&gt; Manic Miner and Jet Set Willy Yahoo! Group (you have to join the Group first, </span>
+<span class="qt">&gt; which prerequires signing up for a Yahoo! account and is free of charge).</span>
+
+Will it (eventually) be posted elsewhere, such as WoS?  I don&#x27;t want a
+Yahoo ID, given the hell of a job I had getting rid of the one I had
+(long-term readers of this NG might remember what I&#x27;m on about -- if
+not, try a Google Groups search for &quot;geo666&quot;)...
+
+
+
+</pre></div><div class="post" id="p152987"><div class="ph"><a class="d" href="#p152987">2003-01-08 14:29:45</a> <span>Andrew Broad</span> <span>Re: ANNOUNCE: Manic Miner: Ma jolie</span></div><pre>Robert J Baker wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; You will find each successive version of Ma jolie in the Files section of</span>
+<span class="qt">&gt; &gt; the Manic Miner and Jet Set Willy Yahoo! Group (you have to join the Group</span>
+<span class="qt">&gt; &gt; first, which prerequires signing up for a Yahoo! account and is free of</span>
+<span class="qt">&gt; &gt; charge).</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Will it (eventually) be posted elsewhere, such as WoS?</span>
+
+If I still have a website when the final instalment comes out (14th
+May 2003), I will put it there. My current website will probably have
+closed by then, as I am about to finish my PhD and leave university. I
+hope to set up a new website when the time comes.
+
+As for WoS, it will depend on when Martijn van der Heide gets around
+to uploading it. It doesn&#x27;t even have my 1999 JSW game We Pretty yet.
+:-(
+
+
+<span class="qt">&gt; I don&#x27;t want a Yahoo ID, given the hell of a job I had getting rid of the</span>
+<span class="qt">&gt; one I had (long-term readers of this NG might remember what I&#x27;m on about --</span>
+<span class="qt">&gt; if not, try a Google Groups search for &quot;geo666&quot;)...</span>
+
+Deleting your Yahoo! account is straightforward:
+<a href="https://edit.yahoo.com/config/delete_user" rel="noreferrer">https://edit.yahoo.com/config/delete_user</a>
+But why would you want to, once you&#x27;re a member of the Manic Miner and
+Jet Set Willy Group? ;-)
+
+Of course, it&#x27;s important to memorise/record your password when you
+sign up for the account! But if you do forget your password, there are
+ways to get it back. You have to remember either your Yahoo! ID or
+your email-address. I guess you&#x27;d be screwed if you forgot your Yahoo!
+ID and the email-address you signed up with was no longer valid.
+
+--
+Andrew Broad
+<a href="http://www.cs.man.ac.uk/~broada/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/download/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/download/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/download/ma_jolie.html" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/download/ma_jolie.html</a>
+
+<a href="http://groups.yahoo.com/group/manicminerandjetsetwilly/" rel="noreferrer">http://groups.yahoo.com/group/manicminerandjetsetwilly/</a>
+
+
+
+</pre></div></main></body></html>

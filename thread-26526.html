@@ -1,0 +1,867 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANN: SE Basic 0.72 · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANN: SE Basic 0.72</h1><p class="facts">18 posts, 2002-11-05 – 2002-11-15</p><div class="post" id="p149490"><div class="ph"><a class="d" href="#p149490">2002-11-05 16:32:15</a> <span>Andrew Owen</span> </div><pre>Hi there folks,
+
+My name&#x27;s Troy McClure. You may remember me from such classic movies as
+&#x27;Who Stole My Aardvark&#x27;, and &#x27;There Goes The Neighborhood&quot;. I&#x27;m here to
+tell you about this new fangled thing called SE Basic. Apparently there
+was a bug in the last version which led to several people being needlessly
+electrocuted, but I&#x27;m assured that that&#x27;s all sorted out now, and the
+relatives of the deceased are very happy with their complementary ZX
+Spectrum SEs. There&#x27;s also something very special about this version so
+I&#x27;ll hand you over to Evil Geniuh, er, I mean creator, Andrew Owen...
+
+You can use this version on a real machine without the use of a soldering
+iron. There&#x27;s a tape file which you can use on real hardware. It&#x27;s meant
+to be used on a 48K machine or a 128K machine in 48K mode. Just load it
+into your Spectrum using your utility of choice (Taper, WinAmp with the
+.tap player or whatever). You will then have a 32K Spectrum running SE
+Basic. You&#x27;ll only be able to use programs that don&#x27;t use the top 16K of
+memory with it, but at least you&#x27;ll get a chance to try it on a real
+machine before you decide whether you want to get the soldering iron out.
+
+Download it here:
+
+<a href="http://www.worldofspectrum.org/sinclairbasic/sebas072.zip" rel="noreferrer">http://www.worldofspectrum.org/sinclairbasic/sebas072.zip</a>
+
+And email me about any probelms you have with it (which *should* be none).
+
+-- 
+The ZX Spectrum SE is really here. You&#x27;re not imagining it.
+
+<a href="http://zxse.raww.net/" rel="noreferrer">http://zxse.raww.net/</a>
+
+
+
+</pre></div><div class="post" id="p149533"><div class="ph"><a class="d" href="#p149533">2002-11-05 22:25:52</a> <span>Colin Woodcock</span> <span>Re: SE Basic 0.72</span></div><pre>&quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; You can use this version on a real machine without the use of a soldering</span>
+<span class="qt">&gt; iron. There&#x27;s a tape file which you can use on real hardware. It&#x27;s meant</span>
+<span class="qt">&gt; to be used on a 48K machine or a 128K machine in 48K mode. Just load it</span>
+<span class="qt">&gt; into your Spectrum using your utility of choice (Taper, WinAmp with the</span>
+<span class="qt">&gt; .tap player or whatever). You will then have a 32K Spectrum running SE</span>
+<span class="qt">&gt; Basic. You&#x27;ll only be able to use programs that don&#x27;t use the top 16K of</span>
+<span class="qt">&gt; memory with it, but at least you&#x27;ll get a chance to try it on a real</span>
+<span class="qt">&gt; machine before you decide whether you want to get the soldering iron out.</span>
+
+
+Excellent!  Now nobody has reason not to give it a go.  (When are the
+manuals coming out?)
+
+Well done.
+
+Colin
+
+
+
+-------
+
+ZXF: Spectrum computing today
+
+Download the PDF magazine for free at www.zxformat.cjb.net
+
+
+
+
+
+
+</pre></div><div class="post" id="p149536"><div class="ph"><a class="d" href="#p149536">2002-11-05 23:24:19</a> <span>Andrew Owen</span> <span>Re: SE Basic 0.72</span></div><pre>In article &lt;aq9gjo$mgt$…@…&gt;, &quot;Colin Woodcock&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; &quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt; &gt; You can use this version on a real machine without the use of a soldering</span>
+<span class="qt">&gt; &gt; iron. There&#x27;s a tape file which you can use on real hardware. It&#x27;s meant</span>
+<span class="qt">&gt; &gt; to be used on a 48K machine or a 128K machine in 48K mode. Just load it</span>
+<span class="qt">&gt; &gt; into your Spectrum using your utility of choice (Taper, WinAmp with the</span>
+<span class="qt">&gt; &gt; .tap player or whatever). You will then have a 32K Spectrum running SE</span>
+<span class="qt">&gt; &gt; Basic. You&#x27;ll only be able to use programs that don&#x27;t use the top 16K of</span>
+<span class="qt">&gt; &gt; memory with it, but at least you&#x27;ll get a chance to try it on a real</span>
+<span class="qt">&gt; &gt; machine before you decide whether you want to get the soldering iron out.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Excellent!  Now nobody has reason not to give it a go.</span>
+
+That&#x27;s the idea.
+
+<span class="qt">&gt; (When are the manuals coming out?)</span>
+
+Well, aside from a few extra sections, the only bit of the manual that
+really differs much from the original is the one that describes the
+editor, and since I keep on modifying the way the editor works, there&#x27;s
+not much point writing a description of it yet. I don&#x27;t really want lots
+of different manuals knocking around, so I guess, the manual will be out
+when the behaviour of the editor is finalised.
+
+<span class="qt">&gt; Well done.</span>
+
+Don&#x27;t thank me, thank, um, let me check my source code, oh crap I deleted
+the credits, uh, whoever it was that made Geoff Wearmouth&#x27;s Incomplete ROM
+Assembly (almost) fully relocateable. To make it completely relocateable,
+you have to change the pointers to the font, but once that&#x27;s done it&#x27;s
+easy to compile the ROM to run at any location in memory. If I ever get to
+the stage of having a final version of SE Basic, I&#x27;ll do a RAM based
+version that only includes the modified routines, which will make a lot
+more room available to BASIC, but as long as I&#x27;m still developing it,
+there&#x27;s not much point in doing that yet.
+
+-- 
+The ZX Spectrum SE is really here. You&#x27;re not imagining it.
+
+<a href="http://zxse.raww.net/" rel="noreferrer">http://zxse.raww.net/</a>
+
+
+
+</pre></div><div class="post" id="p149539"><div class="ph"><a class="d" href="#p149539">2002-11-06 00:01:13</a> <span>Geoff Wearmouth</span> <span>Re: SE Basic 0.72</span></div><pre>In article &lt;…@…
+addr.btopenworld.com&gt;, Andrew Owen &lt;…@…&gt; writes
+<span class="qt">&gt;Don&#x27;t thank me, thank, um, let me check my source code, oh crap I deleted</span>
+<span class="qt">&gt;the credits, uh, whoever it was that made Geoff Wearmouth&#x27;s Incomplete ROM</span>
+<span class="qt">&gt;Assembly (almost) fully relocateable.</span>
+
+That would be Andy Styles who posted the modifications to this group a
+year or two ago. He recently posted a nice modification to the SCREEN$
+function which I still have my eye on.
+
+-- 
+Geoff Wearmouth
+The ZX ROM Files <a href="http://www.wearmouth.demon.co.uk" rel="noreferrer">http://www.wearmouth.demon.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p149540"><div class="ph"><a class="d" href="#p149540">2002-11-06 00:05:55</a> <span>Dunny</span> <span>Re: SE Basic 0.72</span></div><pre>
+&quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Hi there folks,</span>
+
+[snip SE rom available as .tap]
+
+Hi Andrew -
+
+    Nice, I prefer the editor to either of the previous spectrum ROM styles.
+I&#x27;m not sure about the thinner font though - the spacing looks awful[1], and
+the flashing cursor at the command prompt looks, well, wrong. That&#x27;s my
+opinion though - I *like* the sinclair font, and always have. Aesthetics
+aside, as I say the editor is great. Makes entering programs a lot less
+tedious, as it&#x27;s better than tokens and faster/more responsive than the 128k
+editor.
+
+Best of both worlds, really :)
+
+D.
+
+[1] That&#x27;s not meant to sound insulting :-)
+
+
+
+
+
+</pre></div><div class="post" id="p149544"><div class="ph"><a class="d" href="#p149544">2002-11-06 02:09:53</a> <span>Andrew Owen</span> <span>Re: SE Basic 0.72</span></div><pre>In article &lt;$…@…&gt;, Geoff Wearmouth
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; In article &lt;…@…</span>
+<span class="qt">&gt; addr.btopenworld.com&gt;, Andrew Owen &lt;…@…&gt; writes</span>
+<span class="qt">&gt; &gt;Don&#x27;t thank me, thank, um, let me check my source code, oh crap I deleted</span>
+<span class="qt">&gt; &gt;the credits, uh, whoever it was that made Geoff Wearmouth&#x27;s Incomplete ROM</span>
+<span class="qt">&gt; &gt;Assembly (almost) fully relocateable.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; That would be Andy Styles who posted the modifications to this group a</span>
+<span class="qt">&gt; year or two ago. He recently posted a nice modification to the SCREEN$</span>
+<span class="qt">&gt; function which I still have my eye on.</span>
+
+Yeah, I saved that for future use. :)
+
+-- 
+The ZX Spectrum SE is really here. You&#x27;re not imagining it.
+
+<a href="http://zxse.raww.net/" rel="noreferrer">http://zxse.raww.net/</a>
+
+
+
+</pre></div><div class="post" id="p149546"><div class="ph"><a class="d" href="#p149546">2002-11-06 02:17:53</a> <span>Andrew Owen</span> <span>Re: SE Basic 0.72</span></div><pre>In article &lt;aq9md1$7r2lr$…@…&gt;, &quot;Dunny&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; [snip SE rom available as .tap]</span>
+
+<span class="qt">&gt; Nice, I prefer the editor to either of the previous spectrum ROM styles.</span>
+
+Thank you. I aim to please.
+
+<span class="qt">&gt; I&#x27;m not sure about the thinner font though</span>
+
+I guess I&#x27;m going to have to build 42 column mode into the core of SE
+Basic permanently so people stop complaining about it. If you don&#x27;t like
+it you can patch the original one over it. It is not compulsory to use the
+new font!
+
+<span class="qt">&gt; - the spacing looks awful[1],</span>
+<span class="qt">&gt; [1] That&#x27;s not meant to sound insulting :-)</span>
+
+What do you expect from a mono-spaced typeface? The spacing looks awful on
+all mono-spaced fonts. I&#x27;ll have you know the spacing is much tighter than
+on the original Spectrum font. I&#x27;ve just spent an hour sorting it out for
+someone elses project. Maybe I&#x27;ll include it as an option at compile time
+in a future release of SE Basic.
+
+<span class="qt">&gt; and</span>
+<span class="qt">&gt; the flashing cursor at the command prompt looks, well, wrong.</span>
+
+I could change it to a bright blue one like on the 128 if you&#x27;d prefer.
+
+<span class="qt">&gt; That&#x27;s my opinion though - </span>
+
+And I like to hear other people&#x27;s opinions, otherwise what would be the
+point of doing public releases.
+
+<span class="qt">&gt; I *like* the sinclair font, and always have.</span>
+
+It&#x27;s not a bad font as they go. It&#x27;s a lot more readable than the bold
+fonts on some of the other 8-bit machines, but as 6x8 fonts go I reckon
+mine is better than mode 7 on the BBC, the Oric font, the MTX font, or the
+SAM font.
+
+<span class="qt">&gt; Aesthetics aside,</span>
+
+Did I mention I studied typography?
+
+<span class="qt">&gt; as I say the editor is great. Makes entering programs a lot less</span>
+<span class="qt">&gt; tedious, as it&#x27;s better than tokens and faster/more responsive than the 128k</span>
+<span class="qt">&gt; editor.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Best of both worlds, really :)</span>
+
+Thank you, but the editor is nowhere near as good as it&#x27;s going to be.
+Once I get the bugs out there will be a range of improvements over the
+current version.
+
+-- 
+The ZX Spectrum SE is really here. You&#x27;re not imagining it.
+
+<a href="http://zxse.raww.net/" rel="noreferrer">http://zxse.raww.net/</a>
+
+
+
+</pre></div><div class="post" id="p149563"><div class="ph"><a class="d" href="#p149563">2002-11-06 10:54:42</a> <span>Dunny</span> <span>Re: SE Basic 0.72</span></div><pre>
+&quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message
+news:…@…..
+.
+<span class="qt">&gt; In article &lt;aq9md1$7r2lr$…@…&gt;, &quot;Dunny&quot;</span>
+<span class="qt">&gt; &lt;…@…&gt; wrote:</span>
+
+<span class="qt">&gt; &gt; the flashing cursor at the command prompt looks, well, wrong.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I could change it to a bright blue one like on the 128 if you&#x27;d prefer.</span>
+
+It&#x27;s not that - it&#x27;s the large amount of space either side of the character
+that bugs :) That, and it stretches all the way to the top of the character
+square - the old font had a nice 1 pixel border around each char (with
+obvious exceptions). But...
+
+<span class="qt">&gt; &gt; I *like* the sinclair font, and always have.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; It&#x27;s not a bad font as they go. It&#x27;s a lot more readable than the bold</span>
+<span class="qt">&gt; fonts on some of the other 8-bit machines, but as 6x8 fonts go I reckon</span>
+<span class="qt">&gt; mine is better than mode 7 on the BBC, the Oric font, the MTX font, or the</span>
+<span class="qt">&gt; SAM font.</span>
+
+If your font is eventually going to be used in a non-8x8 screen layout then
+it&#x27;ll probably look a lot better than it does at the current 8x8, in which
+case I&#x27;ll reserve my comments until I&#x27;ve seen the finished result.
+
+<span class="qt">&gt; Did I mention I studied typography?</span>
+
+Yep - still doesn&#x27;t mean that you&#x27;re going to please everyone though :)
+tastes differ, and I suppose there&#x27;s only so much you can do with a limited
+amount of pixels.
+
+All in all, it&#x27;s quite impressive. I&#x27;ve not tried the ROM version as much as
+the tape file - I&#x27;m off to give that a go now, and see what the differences
+are (extended mode chars as you said should be gone now).
+
+Keep it up Andrew, it&#x27;s a great project.
+
+D.
+
+
+
+
+
+
+</pre></div><div class="post" id="p149573"><div class="ph"><a class="d" href="#p149573">2002-11-06 11:58:24</a> <span>Andrew Owen</span> <span>Re: SE Basic 0.72</span></div><pre>In article &lt;aqasdf$7tsqa$…@…&gt;, &quot;Dunny&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; &quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:…@…..</span>
+<span class="qt">&gt; .</span>
+<span class="qt">&gt; &gt; In article &lt;aq9md1$7r2lr$…@…&gt;, &quot;Dunny&quot;</span>
+<span class="qt">&gt; &gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; &gt; the flashing cursor at the command prompt looks, well, wrong.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; I could change it to a bright blue one like on the 128 if you&#x27;d prefer.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; It&#x27;s not that - it&#x27;s the large amount of space either side of the character</span>
+<span class="qt">&gt; that bugs :) That, and it stretches all the way to the top of the character</span>
+<span class="qt">&gt; square - the old font had a nice 1 pixel border around each char (with</span>
+<span class="qt">&gt; obvious exceptions). But...</span>
+
+Every other 8-bit font I can think of is 7 pixels high, and even the
+Sinclair font has the odd character that won&#x27;t fit in a 6x6 block like &#x27;T&#x27;
+and &#x27;(c)&#x27;.
+ 
+<span class="qt">&gt; &gt; &gt; I *like* the sinclair font, and always have.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; It&#x27;s not a bad font as they go. It&#x27;s a lot more readable than the bold</span>
+<span class="qt">&gt; &gt; fonts on some of the other 8-bit machines, but as 6x8 fonts go I reckon</span>
+<span class="qt">&gt; &gt; mine is better than mode 7 on the BBC, the Oric font, the MTX font, or the</span>
+<span class="qt">&gt; &gt; SAM font.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; If your font is eventually going to be used in a non-8x8 screen layout then</span>
+<span class="qt">&gt; it&#x27;ll probably look a lot better than it does at the current 8x8, in which</span>
+<span class="qt">&gt; case I&#x27;ll reserve my comments until I&#x27;ve seen the finished result.</span>
+
+I&#x27;ll see if I can dig out my 42 column display code and email you a copy.
+ 
+<span class="qt">&gt; &gt; Did I mention I studied typography?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Yep - still doesn&#x27;t mean that you&#x27;re going to please everyone though :)</span>
+<span class="qt">&gt; tastes differ, and I suppose there&#x27;s only so much you can do with a limited</span>
+<span class="qt">&gt; amount of pixels.</span>
+
+If I had my way I&#x27;d make the font proportional, but that would screw up
+too many existing programs.
+ 
+<span class="qt">&gt; All in all, it&#x27;s quite impressive. I&#x27;ve not tried the ROM version as much as</span>
+<span class="qt">&gt; the tape file - I&#x27;m off to give that a go now, and see what the differences</span>
+<span class="qt">&gt; are (extended mode chars as you said should be gone now).</span>
+
+If I ever get a final version released, I&#x27;ll try and make some
+improvements to the RAM based version.
+
+<span class="qt">&gt; Keep it up Andrew, it&#x27;s a great project.</span>
+
+Thank you!
+
+-- 
+The ZX Spectrum SE is really here. You&#x27;re not imagining it.
+
+<a href="http://zxse.raww.net/" rel="noreferrer">http://zxse.raww.net/</a>
+
+
+
+</pre></div><div class="post" id="p149650"><div class="ph"><a class="d" href="#p149650">2002-11-06 21:13:12</a> <span>John Elliott</span> <span>Re: SE Basic 0.72</span></div><pre>Andrew Owen &lt;…@…&gt; wrote:
+: In article &lt;aq9md1$7r2lr$…@…&gt;, &quot;Dunny&quot;
+: &lt;…@…&gt; wrote:
+
+:&gt; and
+:&gt; the flashing cursor at the command prompt looks, well, wrong.
+
+: I could change it to a bright blue one like on the 128 if you&#x27;d prefer.
+
+  I like flashing blue cursors. In the TAPROM archive on nvg, I&#x27;ve got a 
+program that patches the standard cursor to flashing blue, and the syntax
+error cursor to flashing red. I wish Sinclair had done that on the 128. 
+(&quot;colcur&quot; in &quot;rompoke.zxt&quot; in &quot;taprom.zea&quot;).
+
+  Here is an assembly listing of the changes made; obviously in SE BASIC,
+you wouldn&#x27;t have all the spaghetti that I indulged in to get the code 
+into the existing spare space.
+
+	org	25h	;3 spare bytes
+	exx
+	jr	2Bh	
+
+	org	2Bh	;5 spare bytes
+	ld	hl,(ATTR_T)
+	jr	5Fh	
+
+	org	5Fh	;7 spare bytes
+	push	hl
+	ld	hl,0D7h	;Bright red/white
+	jp	18CAh
+
+	org	189Eh	;Draw ? cursor
+	call	25h	;instead of 18CAh
+
+	org	18C6h	;Draw K/C/E/L/G cursor
+	ld	hl,0CFh	;Bright blue/white
+	nop		;Replaces RES 7,H ! SET 7,L in original ROM	
+  
+-- 
+------------- <a href="http://www.seasip.demon.co.uk/index.html" rel="noreferrer">http://www.seasip.demon.co.uk/index.html</a> --------------------
+John Elliott           |BLOODNOK: &quot;But why have you got such a long face?&quot;
+<span class="qt">                       |SEAGOON: &quot;Heavy dentures, Sir!&quot;    - The Goon Show </span>
+:-------------------------------------------------------------------------)
+
+
+
+</pre></div><div class="post" id="p149658"><div class="ph"><a class="d" href="#p149658">2002-11-06 21:40:02</a> <span>Andrew Owen</span> <span>Re: SE Basic 0.72</span></div><pre>In article &lt;…@…&gt;, John Elliott
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Andrew Owen &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; : In article &lt;aq9md1$7r2lr$…@…&gt;, &quot;Dunny&quot;</span>
+<span class="qt">&gt; : &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; :&gt; and</span>
+<span class="qt">&gt; :&gt; the flashing cursor at the command prompt looks, well, wrong.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; : I could change it to a bright blue one like on the 128 if you&#x27;d prefer.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;   I like flashing blue cursors.</span>
+
+How about cursors that float over the text rather than appearing after it
+(like in 128 Basic). I can probably do that as well if anyone&#x27;s
+interested. My only reservation about adding coloured cursors to SE Basic
+is that they may not look very good if you&#x27;re editing with a blue or red
+border. You&#x27;d still be able to see them because they&#x27;d be bright. And some
+people might miss the pointer to which mode is engaged.
+
+More feedback please.
+
+-- 
+SE Basic and ZX Spectrum SE home:
+
+<a href="http://www.worldofspectrum.org/sinclairbasic/" rel="noreferrer">http://www.worldofspectrum.org/sinclairbasic/</a>
+
+
+
+</pre></div><div class="post" id="p149726"><div class="ph"><a class="d" href="#p149726">2002-11-07 23:50:27</a> <span>Duncan Snowden</span> <span>Re: SE Basic 0.72</span></div><pre>Program: Andrew Owen
+
+Bytes: Wednesday
+
+<span class="qt">&gt; How about cursors that float over the text rather than appearing after</span>
+<span class="qt">&gt; it (like in 128 Basic). I can probably do that as well if anyone&#x27;s</span>
+<span class="qt">&gt; interested. My only reservation about adding coloured cursors to SE</span>
+<span class="qt">&gt; Basic is that they may not look very good if you&#x27;re editing with a blue</span>
+<span class="qt">&gt; or red border. You&#x27;d still be able to see them because they&#x27;d be</span>
+<span class="qt">&gt; bright. And some people might miss the pointer to which mode is</span>
+<span class="qt">&gt; engaged.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; More feedback please.</span>
+
+IMO, the best thing about plain coloured cursors is the fact that they
+can float over the text. I&#x27;d really like that. However, you&#x27;re absolutely
+right about the mode pointers. I suppose different colours could be used,
+but it might be hard to remember which is which (mind you, if I&#x27;ve
+understood the new editor right, you&#x27;ve lost Extended mode, so it might
+not be so bad). Although there&#x27;s still the problem of in-line attributes.
+Would an underscore-type cursor be out of the question? I&#x27;m assuming a
+status bar - as in the Spanish 128K editor - is.
+
+By the way, how do you *get* in-line attributes, now that Extended mode&#x27;s
+gone? Or don&#x27;t you? In which case, problem solved. Er, sort of.
+
+-- 
+Duncan Snowden. 
+
+l Number too big, 540:4 
+
+
+
+</pre></div><div class="post" id="p149747"><div class="ph"><a class="d" href="#p149747">2002-11-08 02:21:50</a> <span>Andrew Owen</span> <span>Re: SE Basic 0.72</span></div><pre>In article &lt;…@…&gt;,
+Duncan Snowden &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Program: Andrew Owen</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Bytes: Wednesday</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; How about cursors that float over the text rather than appearing after</span>
+<span class="qt">&gt; &gt; it (like in 128 Basic). I can probably do that as well if anyone&#x27;s</span>
+<span class="qt">&gt; &gt; interested. My only reservation about adding coloured cursors to SE</span>
+<span class="qt">&gt; &gt; Basic is that they may not look very good if you&#x27;re editing with a blue</span>
+<span class="qt">&gt; &gt; or red border. You&#x27;d still be able to see them because they&#x27;d be</span>
+<span class="qt">&gt; &gt; bright. And some people might miss the pointer to which mode is</span>
+<span class="qt">&gt; &gt; engaged.</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; More feedback please.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; IMO, the best thing about plain coloured cursors is the fact that they</span>
+<span class="qt">&gt; can float over the text.</span>
+
+Multicoloured ones can also float. 128 Basic has multi-coloured floating
+cursors.
+
+<span class="qt">&gt; I&#x27;d really like that. However, you&#x27;re absolutely</span>
+<span class="qt">&gt; right about the mode pointers. I suppose different colours could be used,</span>
+<span class="qt">&gt; but it might be hard to remember which is which (mind you, if I&#x27;ve</span>
+<span class="qt">&gt; understood the new editor right, you&#x27;ve lost Extended mode, so it might</span>
+<span class="qt">&gt; not be so bad).</span>
+
+I am planning on scrapping GRAPH mode as well and replacing it with
+something better.
+
+<span class="qt">&gt; Although there&#x27;s still the problem of in-line attributes.</span>
+
+I really wish there never had been in-line attributes. I can stop them
+being displayed in a listing except at run time, but they do complicate
+matters.
+
+<span class="qt">&gt; Would an underscore-type cursor be out of the question?</span>
+
+I could turn the cursor into an underscore, but I don&#x27;t see how that would
+look any better than a plain block. I think a floating underscore cursor
+would probably look worse.
+
+<span class="qt">&gt; I&#x27;m assuming a status bar - as in the Spanish 128K editor - is.</span>
+
+I could add a status bar, but then you&#x27;d only have one line to edit text
+on, which would be a severe limitation. I could modify the editor to use
+the main screen for the edit line, but then you couldn&#x27;t have the listing
+up while editing a line. I think a status bar is probably a bad idea. Of
+course I could have different coloured borders to indicate modes, which
+would go back to whatever you&#x27;d set the border to be when you actually ran
+the program.
+ 
+<span class="qt">&gt; By the way, how do you *get* in-line attributes, now that Extended mode&#x27;s</span>
+<span class="qt">&gt; gone?</span>
+
+Same way as before. Extended mode isn&#x27;t completely gone, it&#x27;s just hidden.
+
+<span class="qt">&gt; Or don&#x27;t you? In which case, problem solved. Er, sort of.</span>
+
+Problem not solved unfortunately. Although I&#x27;m not documenting how to
+produce control codes in the manual because it makes for incomplete
+listings when you output to ASCII.
+
+-- 
+SE Basic and ZX Spectrum SE homepage:
+
+<a href="http://www.worldofspectrum.org/sinclairbasic/" rel="noreferrer">http://www.worldofspectrum.org/sinclairbasic/</a>
+
+
+
+</pre></div><div class="post" id="p149935"><div class="ph"><a class="d" href="#p149935">2002-11-11 00:17:33</a> <span>Duncan Snowden</span> <span>Re: SE Basic 0.72</span></div><pre>Andrew Owen. Friday. comp.sys.sinclair. Tch, eh?
+
+<span class="qt">&gt; In article &lt;…@…&gt;,</span>
+<span class="qt">&gt; Duncan Snowden &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; IMO, the best thing about plain coloured cursors is the fact that they</span>
+<span class="qt">&gt;&gt; can float over the text.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Multicoloured ones can also float. 128 Basic has multi-coloured</span>
+<span class="qt">&gt; floating cursors.</span>
+
+Yes, I suppose they are multicoloured. I meant plain, non-character
+blocks, as opposed to the &quot;L&quot;, &quot;K&quot;, etc.
+
+<span class="qt">&gt;&gt; Would an underscore-type cursor be out of the question?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I could turn the cursor into an underscore, but I don&#x27;t see how that</span>
+<span class="qt">&gt; would look any better than a plain block. I think a floating underscore</span>
+<span class="qt">&gt; cursor would probably look worse.</span>
+
+I don&#x27;t mean a plain underscore, the same colour as the line you&#x27;re
+editing. What I&#x27;m talking about is a coloured block like the 128K editor,
+but with an underscore, so that it&#x27;s visible when the part you&#x27;re editing
+is the same colour as the cursor block.
+
+Mind you, given that it&#x27;s bright *and* flashing, it might not be too bad
+as it is.
+
+<span class="qt">&gt;&gt; I&#x27;m assuming a status bar - as in the Spanish 128K editor - is.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I could add a status bar, but then you&#x27;d only have one line to edit</span>
+<span class="qt">&gt; text on, which would be a severe limitation. I could modify the editor</span>
+<span class="qt">&gt; to use the main screen for the edit line, but then you couldn&#x27;t have</span>
+<span class="qt">&gt; the listing up while editing a line. I think a status bar is probably a</span>
+<span class="qt">&gt; bad idea. Of course I could have different coloured borders to indicate</span>
+<span class="qt">&gt; modes, which would go back to whatever you&#x27;d set the border to be when</span>
+<span class="qt">&gt; you actually ran the program.</span>
+
+I think I&#x27;d prefer coloured cursors. And if you do get rid of Graphics
+mode, you&#x27;ll only need two colours (plus the red syntax error marker),
+which avoids the confusion over what colour each mode is. If you made
+Caps Lock yellow, it would even be possible to tell them apart on a
+mono display.
+ 
+<span class="qt">&gt;&gt; By the way, how do you *get* in-line attributes, now that Extended</span>
+<span class="qt">&gt;&gt; mode&#x27;s gone?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Same way as before. Extended mode isn&#x27;t completely gone, it&#x27;s just</span>
+<span class="qt">&gt; hidden.</span>
+
+Oh. &lt;tippety-tappity-tap&gt; So it is. Sneaky.
+
+-- 
+Duncan Snowden. 
+
+R Chuntey disruption, 1280:3 
+
+
+
+</pre></div><div class="post" id="p149941"><div class="ph"><a class="d" href="#p149941">2002-11-11 01:13:58</a> <span>Andrew Owen</span> <span>Re: SE Basic 0.72</span></div><pre>In article &lt;…@…&gt;,
+Duncan Snowden &lt;…@…&gt; wrote:
+
+Hi,
+
+Go check out version 0.80a. It&#x27;s getting more 128 like every release
+(except for the bugs :). Now it beeps and jumps to the error point if you
+enter a line with the wrong syntax.
+
+<span class="qt">&gt; &gt; Multicoloured ones can also float. 128 Basic has multi-coloured</span>
+<span class="qt">&gt; &gt; floating cursors.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Yes, I suppose they are multicoloured. I meant plain, non-character</span>
+<span class="qt">&gt; blocks, as opposed to the &quot;L&quot;, &quot;K&quot;, etc.</span>
+
+I&#x27;ve been investigating how the Spanish 128 does cursors and it doesn&#x27;t
+actually set the flash bit, it complements it, so that you get a BRIGHT 0
+cursor on a bright background. This looks ok and I think people can
+probably remember if they&#x27;re in CAPS LOCK mode or not. I&#x27;ll be hiding &#x27;G&#x27;
+mode soon as well, so there doesn&#x27;t seem much point in keeping the old
+style cursors. However, I won&#x27;t be able to do floating cursors until I&#x27;ve
+done a detokenizer.
+
+<span class="qt">&gt; &gt;&gt; Would an underscore-type cursor be out of the question?</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; I could turn the cursor into an underscore, but I don&#x27;t see how that</span>
+<span class="qt">&gt; &gt; would look any better than a plain block. I think a floating underscore</span>
+<span class="qt">&gt; &gt; cursor would probably look worse.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I don&#x27;t mean a plain underscore, the same colour as the line you&#x27;re</span>
+<span class="qt">&gt; editing. What I&#x27;m talking about is a coloured block like the 128K editor,</span>
+<span class="qt">&gt; but with an underscore, so that it&#x27;s visible when the part you&#x27;re editing</span>
+<span class="qt">&gt; is the same colour as the cursor block.</span>
+
+Oh I see, you mean the character in the block would be an underscore.
+Well, yes, I could do that, but I can&#x27;t do that *and* floating cursors.
+Which would you prefer?
+ 
+<span class="qt">&gt; Mind you, given that it&#x27;s bright *and* flashing, it might not be too bad</span>
+<span class="qt">&gt; as it is.</span>
+
+Except that it isn&#x27;t bright or flashing in 512x192 mode. It is inverse
+though which is an improvement over the old ROM. Then it just looked like
+another character.
+ 
+<span class="qt">&gt; &gt;&gt; I&#x27;m assuming a status bar - as in the Spanish 128K editor - is.</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; I could add a status bar, but then you&#x27;d only have one line to edit</span>
+<span class="qt">&gt; &gt; text on, which would be a severe limitation. I could modify the editor</span>
+<span class="qt">&gt; &gt; to use the main screen for the edit line, but then you couldn&#x27;t have</span>
+<span class="qt">&gt; &gt; the listing up while editing a line. I think a status bar is probably a</span>
+<span class="qt">&gt; &gt; bad idea. Of course I could have different coloured borders to indicate</span>
+<span class="qt">&gt; &gt; modes, which would go back to whatever you&#x27;d set the border to be when</span>
+<span class="qt">&gt; &gt; you actually ran the program.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I think I&#x27;d prefer coloured cursors. And if you do get rid of Graphics</span>
+<span class="qt">&gt; mode, you&#x27;ll only need two colours (plus the red syntax error marker),</span>
+<span class="qt">&gt; which avoids the confusion over what colour each mode is. If you made</span>
+<span class="qt">&gt; Caps Lock yellow, it would even be possible to tell them apart on a</span>
+<span class="qt">&gt; mono display.</span>
+
+Well that&#x27;s two votes for coloured cursors and none against. I&#x27;m not sure
+about yellow, but it&#x27;s an option. But you have to remember that these will
+not show up in 512x192 mode. And if I did go with yellow, would you want
+it to alternate between yellow and white? I could make the cursor pick up
+the default paper setting but then if it was the same colour as the cursor
+you wouldn&#x27;t be able to see it very well.
+
+<span class="qt">&gt; &gt;&gt; By the way, how do you *get* in-line attributes, now that Extended</span>
+<span class="qt">&gt; &gt;&gt; mode&#x27;s gone?</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Same way as before. Extended mode isn&#x27;t completely gone, it&#x27;s just</span>
+<span class="qt">&gt; &gt; hidden.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Oh. &lt;tippety-tappity-tap&gt; So it is. Sneaky.</span>
+
+On the other hand I will be removing the controls to set an unset INVERSE.
+This is because I need these keys for page up and page down.
+
+Cheers for the feedback!
+
+-- 
+SE Basic and ZX Spectrum SE homepage:
+
+<a href="http://www.worldofspectrum.org/sinclairbasic/" rel="noreferrer">http://www.worldofspectrum.org/sinclairbasic/</a>
+
+
+
+</pre></div><div class="post" id="p150140"><div class="ph"><a class="d" href="#p150140">2002-11-14 00:33:07</a> <span>Duncan Snowden</span> <span>Re: SE Basic 0.72</span></div><pre>Program: Andrew Owen
+
+Bytes: Monday
+
+<span class="qt">&gt; Go check out version 0.80a.</span>
+
+Just have. :)
+
+<span class="qt">&gt;                             It&#x27;s getting more 128 like every release</span>
+<span class="qt">&gt; (except for the bugs :).</span>
+
+Speaking of which... after a USR 0, the keyclick is longer. Is this a
+bug, or is there some fiendishly well-considered reason for it?
+
+<span class="qt">&gt; However, I won&#x27;t be able to do floating cursors until I&#x27;ve done a </span>
+<span class="qt">&gt; detokenizer.</span>
+
+Fairy nuff.
+ 
+<span class="qt">&gt; Oh I see, you mean the character in the block would be an underscore.</span>
+<span class="qt">&gt; Well, yes, I could do that, but I can&#x27;t do that *and* floating cursors.</span>
+<span class="qt">&gt; Which would you prefer?</span>
+
+Floating, definitely. I just thought an underscore might make a floating
+cursor stand out better. There wouldn&#x27;t really be much point of one
+as the &quot;intrusive&quot; cursor; you might as well have proper characters.
+
+<span class="qt">&gt; Well that&#x27;s two votes for coloured cursors and none against. I&#x27;m not</span>
+<span class="qt">&gt; sure about yellow, but it&#x27;s an option. But you have to remember that</span>
+<span class="qt">&gt; these will not show up in 512x192 mode.</span>
+
+Not a problem for me, but I can see it might be a difficulty. Hmm. It&#x27;s a
+tricky one. You know, I&#x27;m actually coming round to just leaving it well
+alone. I&#x27;ve always thought that for all its faults, the (UK) 128K editor
+*looks* better, and a lot of that is due to the coloured floating cursor.
+But it&#x27;s beginning to look like implementing it in SE BASIC is causing
+more trouble than a minor spot of prettification is really worth. 
+
+I&#x27;d still like to see it, though. :)
+
+<span class="qt">&gt; Cheers for the feedback!</span>
+
+No probs. It&#x27;s good to feel I&#x27;m making a contribution for once, instead
+of just throwing sarky comments about.
+
+-- 
+Duncan Snowden. 
+
+OK 0,1
+
+
+
+</pre></div><div class="post" id="p150152"><div class="ph"><a class="d" href="#p150152">2002-11-14 04:14:38</a> <span>Andrew Owen</span> <span>Re: SE Basic 0.72</span></div><pre>In article &lt;…@…&gt;,
+Duncan Snowden &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Speaking of which... after a USR 0, the keyclick is longer. Is this a</span>
+<span class="qt">&gt; bug, or is there some fiendishly well-considered reason for it?</span>
+
+This is a bug, owing to the reset routine preserving the old value of
+RASP, which is corrupted by the USR 0 command. However I&#x27;ve fixed it on
+the latest version as RASP/PIP is reset every time and NMIADD is preserved
+instead (only I&#x27;ve made sure NMIADD isn&#x27;t corrupted).
+
+<span class="qt">&gt; &gt; However, I won&#x27;t be able to do floating cursors until I&#x27;ve done a </span>
+<span class="qt">&gt; &gt; detokenizer.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Fairy nuff.</span>
+
+Actually I won&#x27;t be able to do floating cursors at all unless I have a
+separate cursor routine for the INPUT A$ command as I think having the
+cursor float over one of the quote marks would look silly. On the other
+hand I could force INPUT A$ to be INPUT LINE A$. What do you think?
+
+<span class="qt">&gt; &gt; Oh I see, you mean the character in the block would be an underscore.</span>
+<span class="qt">&gt; &gt; Well, yes, I could do that, but I can&#x27;t do that *and* floating cursors.</span>
+<span class="qt">&gt; &gt; Which would you prefer?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Floating, definitely. I just thought an underscore might make a floating</span>
+<span class="qt">&gt; cursor stand out better. There wouldn&#x27;t really be much point of one</span>
+<span class="qt">&gt; as the &quot;intrusive&quot; cursor; you might as well have proper characters.</span>
+
+Well I&#x27;ll keep floating cursors in mind for a future release.
+ 
+<span class="qt">&gt; &gt; Well that&#x27;s two votes for coloured cursors and none against. I&#x27;m not</span>
+<span class="qt">&gt; &gt; sure about yellow, but it&#x27;s an option. But you have to remember that</span>
+<span class="qt">&gt; &gt; these will not show up in 512x192 mode.</span>
+
+Actually, yellow works best. Coloured cursors are done in 0.83c. Have to
+sort out a few issues with this version though.
+
+<span class="qt">&gt; Not a problem for me, but I can see it might be a difficulty. Hmm. It&#x27;s a</span>
+<span class="qt">&gt; tricky one. You know, I&#x27;m actually coming round to just leaving it well</span>
+<span class="qt">&gt; alone. I&#x27;ve always thought that for all its faults, the (UK) 128K editor</span>
+<span class="qt">&gt; *looks* better, and a lot of that is due to the coloured floating cursor.</span>
+<span class="qt">&gt; But it&#x27;s beginning to look like implementing it in SE BASIC is causing</span>
+<span class="qt">&gt; more trouble than a minor spot of prettification is really worth. </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;d still like to see it, though. :)</span>
+
+Well, coloured cursors turned out to be easier than I expected. And since
+the character I&#x27;m using is an inverted space it will show up as a solid
+block cursor in 512x192 mode, which should be fine. I&#x27;d like floating
+cursors as well, but I need to do a detokenizer first so I&#x27;ll leave it for
+now.
+ 
+<span class="qt">&gt; &gt; Cheers for the feedback!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; No probs. It&#x27;s good to feel I&#x27;m making a contribution for once, instead</span>
+<span class="qt">&gt; of just throwing sarky comments about.</span>
+
+I always said you didn&#x27;t have to be a programmer to help.
+
+-- 
+SE Basic and ZX Spectrum SE homepage:
+
+<a href="http://www.worldofspectrum.org/sinclairbasic/" rel="noreferrer">http://www.worldofspectrum.org/sinclairbasic/</a>
+
+
+
+</pre></div><div class="post" id="p150226"><div class="ph"><a class="d" href="#p150226">2002-11-15 01:00:00</a> <span>Duncan Snowden</span> <span>Re: SE Basic 0.72</span></div><pre>Andrew Owen. Thursday. comp.sys.sinclair. Tch, eh?
+
+<span class="qt">&gt; Actually I won&#x27;t be able to do floating cursors at all unless I have a</span>
+<span class="qt">&gt; separate cursor routine for the INPUT A$ command as I think having the</span>
+<span class="qt">&gt; cursor float over one of the quote marks would look silly. On the other</span>
+<span class="qt">&gt; hand I could force INPUT A$ to be INPUT LINE A$. What do you think?</span>
+
+I&#x27;m not sure, to be completely honest. I don&#x27;t think forcing INPUT LINE
+would be such a good idea, though; sometimes it can be useful to know
+what kind of input the program expects. As with the editor, I suppose
+it&#x27;s really an aesthetic decision and it doesn&#x27;t matter what you end up
+doing, someone&#x27;s bound to prefer the old way.
+
+-- 
+Duncan Snowden. 
+
+c CODE error, 1300:2 
+
+
+
+</pre></div></main></body></html>

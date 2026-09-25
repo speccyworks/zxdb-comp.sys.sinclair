@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANNOUNCE: ZXSpectrum +3e ROMs v0.87 · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANNOUNCE: ZXSpectrum +3e ROMs v0.87</h1><p class="facts">14 posts, 2001-01-16 – 2001-01-24</p><div class="post" id="p83973"><div class="ph"><a class="d" href="#p83973">2001-01-16 00:34:48</a> <span>Garry Lancaster</span> </div><pre>
+
+At long last I&#x27;ve got around to updating the +3e ROMs!
+
+I hope you&#x27;ll agree the new version (v0.87) was worth waiting for; there
+are a large number of useful changes, including:
+
+* full support for two IDE drives
+* additional compatibility with some previously unusable drives
+* new commands for renaming partitions and showing current drive
+mappings
+* ability to map floppy drives and RAMdisk to any drive letter
+  (yes, you can now have your 3.5inch external drive as A: and the 3inch
+   internal drive as B: if you want!)
+* extensions to several commands so that drive mappings, default drive,
+  Editor/BASIC colour schemes etc can be automatically set up each time
+  you turn the +3e on
+* improved boot speed for single-harddisk systems
+* several fixes to minor +3 problems
+
+You can get the ROMs and full details from the new website (don&#x27;t forget
+to update your links/bookmarks!) which is now at:
+
+	<a href="http://www.z88forever.org.uk/zxplus3e/" rel="noreferrer">http://www.z88forever.org.uk/zxplus3e/</a>
+
+(This change is due to the imminent closure of RedHotAnt)
+
+Enjoy! (And don&#x27;t worry - the next release is being worked on already!)
+
+--
+Garry Lancaster
+Z88 Forever! Website     - <a href="http://www.z88forever.org.uk/" rel="noreferrer">http://www.z88forever.org.uk/</a>
+ZX Spectrum +3e Homepage - <a href="http://www.z88forever.org.uk/zxplus3e/" rel="noreferrer">http://www.z88forever.org.uk/zxplus3e/</a>
+
+
+Sent via Deja.com
+<a href="http://www.deja.com/" rel="noreferrer">http://www.deja.com/</a>
+
+
+
+</pre></div><div class="post" id="p84013"><div class="ph"><a class="d" href="#p84013">2001-01-16 06:06:39</a> <span>paul.dunn4</span> <span>Re: ANNOUNCE: ZXSpectrum +3e ROMs v0.87</span></div><pre>
+Adam Short &lt;…@…&gt; wrote in message
+news:jZW86.149$…@…...
+<span class="qt">&gt; Wish I hadn&#x27;t sold my +3, would have been an interesting little project...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Adam D. Moss &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Cor, that looks good.  Now I just need</span>
+<span class="qt">&gt; &gt; a +2A/+3 and some 5k1llZ...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+Good job I kept mine then.
+
+paul.
+
+
+
+
+
+
+</pre></div><div class="post" id="p84021"><div class="ph"><a class="d" href="#p84021">2001-01-16 08:34:02</a> <span>Derek Jolly</span> <span>Re: ANNOUNCE: ZXSpectrum +3e ROMs v0.87</span></div><pre>Garry Lancaster &lt;…@…&gt;, in message 
+&lt;9404v8$eol$…@…&gt;, wrote
+
+<span class="qt">&gt;* ability to map floppy drives and RAMdisk to any drive letter</span>
+<span class="qt">&gt;  (yes, you can now have your 3.5inch external drive as A: and the 3inch</span>
+<span class="qt">&gt;   internal drive as B: if you want!)</span>
+<span class="qt">&gt;</span>
+
+Aw!  Can&#x27;t I have it as /dev/fd0 and /dev/fd1? ;)
+-- 
+* Derek Jolly  (…@…)                                *
+* For 50/60Hz PSX Action Replay switch codes and some Speccy stuff   *
+* check out my homepage on <a href="http://www.redrival.com/rivet/" rel="noreferrer">http://www.redrival.com/rivet/</a>            *
+* Registered Linux User (<a href="http://counter.li.org/" rel="noreferrer">http://counter.li.org/</a>) No. 176120          *
+
+
+
+</pre></div><div class="post" id="p84035"><div class="ph"><a class="d" href="#p84035">2001-01-16 11:31:45</a> <span>Adam D. Moss</span> <span>Re: ANNOUNCE: ZXSpectrum +3e ROMs v0.87</span></div><pre>
+Cor, that looks good.  Now I just need
+a +2A/+3 and some 5k1llZ...
+
+
+
+</pre></div><div class="post" id="p84044"><div class="ph"><a class="d" href="#p84044">2001-01-16 12:19:58</a> <span>Adam Short</span> <span>Re: ANNOUNCE: ZXSpectrum +3e ROMs v0.87</span></div><pre>Wish I hadn&#x27;t sold my +3, would have been an interesting little project...
+
+Adam D. Moss &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Cor, that looks good.  Now I just need</span>
+<span class="qt">&gt; a +2A/+3 and some 5k1llZ...</span>
+
+
+
+
+
+</pre></div><div class="post" id="p84167"><div class="ph"><a class="d" href="#p84167">2001-01-17 12:28:30</a> <span>Adam Short</span> <span>Re: ANNOUNCE: ZXSpectrum +3e ROMs v0.87</span></div><pre><span class="qt">&gt; Good job I kept mine then.</span>
+
+Well, it does help.
+
+Anyone ever tried to make anything spectacular out of an old speccy? I
+always quite fancied ripping out the guts and replacing them with a small
+motherboard (on board everything), then running some OS no one else has ever
+heard of and pretending it was a speccy upgrade. Sad, but true.
+
+Adam
+
+
+
+
+
+</pre></div><div class="post" id="p84193"><div class="ph"><a class="d" href="#p84193">2001-01-17 17:21:18</a> <span>Vincent Lynch</span> <span>Re: ANNOUNCE: ZXSpectrum +3e ROMs v0.87</span></div><pre>Adam Short &lt;…@…&gt; wrote:
+<span class="qt">&gt;&gt; Good job I kept mine then.</span>
+<span class="qt">&gt; Well, it does help.</span>
+<span class="qt">&gt; Anyone ever tried to make anything spectacular out of an old speccy? I</span>
+<span class="qt">&gt; always quite fancied ripping out the guts and replacing them with a small</span>
+<span class="qt">&gt; motherboard (on board everything), then running some OS no one else has ever</span>
+<span class="qt">&gt; heard of and pretending it was a speccy upgrade. Sad, but true.</span>
+
+I think it would be quite cool to rip out the guts and use the case to carry
+my lunch in.
+
+-Vincent
+
+
+
+</pre></div><div class="post" id="p84640"><div class="ph"><a class="d" href="#p84640">2001-01-20 13:44:38</a> <span>Tony Austin</span> <span>Re: ANNOUNCE: ZXSpectrum +3e ROMs v0.87</span></div><pre><span class="qt">&gt;Aw!  Can&#x27;t I have it as /dev/fd0 and /dev/fd1? ;)</span>
+
+
+If you remember, +3DOS was based on CP/M, as is/was MS-DOS, The speccy is
+actually on the windows stylee track as opposed to the UNIX one.
+
+[sounds of a hundred speccies being chucked out of the window]
+
+Is that a coat I see before me?
+
+-tony
+
+
+
+
+
+</pre></div><div class="post" id="p84641"><div class="ph"><a class="d" href="#p84641">2001-01-20 13:50:37</a> <span>Tony Austin</span> <span>Re: ANNOUNCE: ZXSpectrum +3e ROMs v0.87</span></div><pre><span class="qt">&gt;Anyone ever tried to make anything spectacular out of an old speccy?</span>
+
+Well a newish speccy, this was back in the speccy days! Me and a mate
+planned to do a portable speccy with one of those colour TVs and a bit of
+perspex, problem was pocket TVs cost a fortune in them days. Would have been
+cool though. No Keyboard, just a box, a screen, a joystick and three
+buttons - reset, power on, and a J,&lt;sybol shift&gt;+P,&lt;sybol shift&gt;+P,&lt;enter&gt;
+button!
+
+-tony
+
+
+
+
+
+</pre></div><div class="post" id="p84881"><div class="ph"><a class="d" href="#p84881">2001-01-21 19:57:58</a> <span>Chris Young</span> <span>Re: ANNOUNCE: ZXSpectrum +3e ROMs v0.87</span></div><pre>On Sat, 20 Jan 2001 13:44:38 -0000, Tony Austin (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; &gt;Aw!  Can&#x27;t I have it as /dev/fd0 and /dev/fd1? ;)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; If you remember, +3DOS was based on CP/M</span>
+
+Maybe it was, but different enough to warrant a version of CP/M also
+being available.
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p84914"><div class="ph"><a class="d" href="#p84914">2001-01-21 23:15:30</a> <span>Tony Austin</span> <span>Re: ANNOUNCE: ZXSpectrum +3e ROMs v0.87</span></div><pre>
+<span class="qt">&gt;Maybe it was, but different enough to warrant a version of CP/M also</span>
+<span class="qt">&gt;being available.</span>
+
+
+What? For the Z80 CPU???
+
+-tony
+
+
+
+
+
+</pre></div><div class="post" id="p84939"><div class="ph"><a class="d" href="#p84939">2001-01-22 01:50:57</a> <span>Biggo</span> <span>Re: ANNOUNCE: ZXSpectrum +3e ROMs v0.87</span></div><pre>Tony Austin wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;Maybe it was, but different enough to warrant a version of CP/M also</span>
+<span class="qt">&gt; &gt;being available.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; What? For the Z80 CPU???</span>
+
+So they&#x27;re putting operating systems on computers, now?
+
+-- 
+    Biggo. &lt;mailto:…@…&gt; 
+(Remove the hyphen! Spambusters at work!)
+listen to aaria (two and a Mac): <a href="http://www.mp3.com/aaria" rel="noreferrer">http://www.mp3.com/aaria</a>
+
+*** You never finish a recording. You just stop. ***
+
+
+
+</pre></div><div class="post" id="p84945"><div class="ph"><a class="d" href="#p84945">2001-01-22 02:55:36</a> <span>Tony Austin</span> <span>Re: ANNOUNCE: ZXSpectrum +3e ROMs v0.87</span></div><pre>
+<span class="qt">&gt;So they&#x27;re putting operating systems on computers, now?</span>
+
+
+Are you trying to say your computer doesn&#x27;t have an operating system? If
+it&#x27;s not too obvious a question.... how do you operate it?
+
+-tony
+
+
+
+
+
+</pre></div><div class="post" id="p85168"><div class="ph"><a class="d" href="#p85168">2001-01-24 01:54:34</a> <span>Duncan Snowden</span> <span>Re: ANNOUNCE: ZXSpectrum +3e ROMs v0.87</span></div><pre>On Monday, Hob wrote:
+
+<span class="qt">&gt; God, have I really been playing with computers for 18 years? (Christmas</span>
+<span class="qt">&gt; 1982 when I got my ZX81)</span>
+
+More to the point, have I really been playing with computers for 18 years
+*and achieved precicely nothing of any consequence whatsoever*?
+
+-- 
+Duncan Snowden. 
+
+K Invalid colour, 1470:2 
+
+
+
+</pre></div></main></body></html>

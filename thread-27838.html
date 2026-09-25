@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Distributed computing · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Distributed computing</h1><p class="facts">10 posts, 2003-05-25 – 2003-05-25</p><div class="post" id="p162107"><div class="ph"><a class="d" href="#p162107">2003-05-25 13:33:10</a> <span>Frodo Morris</span> </div><pre>Anyone fancy using their Spectrum to help find extra-terrestrial life? 
+Well, my first CSSCGC entry, Speccy@Home, can help you to do exactly 
+that!  Download the TZX from <a href="http://users.ox.ac.uk/~wadh1342/speccy," rel="noreferrer">http://users.ox.ac.uk/~wadh1342/speccy,</a> and 
+help your spare CPU cycles go into (i)a cool screensaver and (ii)finding 
+little green men!
+-- 
+Frodo Morris
+All your bast are belong to us
+
+
+
+
+</pre></div><div class="post" id="p162111"><div class="ph"><a class="d" href="#p162111">2003-05-25 15:24:47</a> <span>A. J. Moss</span> <span>Re: Distributed computing</span></div><pre>On Sun, 25 May 2003, Frodo Morris &lt;…@…&gt;
+wrote:
+<span class="qt">&gt;Anyone fancy using their Spectrum to help find extra-terrestrial life? </span>
+<span class="qt">&gt;Well, my first CSSCGC entry, Speccy@Home, can help you to do exactly </span>
+<span class="qt">&gt;that!  Download the TZX from <a href="http://users.ox.ac.uk/~wadh1342/speccy," rel="noreferrer">http://users.ox.ac.uk/~wadh1342/speccy,</a> and </span>
+<span class="qt">&gt;help your spare CPU cycles go into (i)a cool screensaver and (ii)finding </span>
+<span class="qt">&gt;little green men!</span>
+
+I take the credit for coming up with this idea. I told Frodo that I
+almost turned up to the meet wearing a deliberately offensive T-shirt:
+
+On the front is a copy of my SETI@home certificate:
+
+    &quot;This certifies that A. J. Moss has completed 
+     25,000 work units for SETI@home.&quot;
+
+On the back is the boast, &quot;My computer is faster than yours!&quot;
+
+The conversation veered onto the subject of completing 25,000 work
+units on a Spectrum. The fact that this would take about one million
+years was not mentioned.
+
+
+
+</pre></div><div class="post" id="p162113"><div class="ph"><a class="d" href="#p162113">2003-05-25 15:35:07</a> <span>Biggo</span> <span>Re: Distributed computing</span></div><pre>Frodo Morris &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Download the TZX</span>
+
+Any TZX-enabled emulators for MacOS? Or a TZX2TAP for Mac? Please, don&#x27;t
+make me unbury the &amp;*ï¿½&quot; Virtual PC.
+
+-- 
+<span class="qt">||_ (o) __  __  __  |  Biggo. &lt;mailto:…@…&gt; </span>
+<span class="qt">|&#x27;o\| |/o \/o \/o \ |  On The aaria: <a href="http://OnTheaaria.webhop.org" rel="noreferrer">http://OnTheaaria.webhop.org</a></span>
+<span class="qt">|._/|_|\__/\__/\__/ | *An out of control ego will sometimes get in the</span>
+       /_/ /_/      |  way of your success.                  (Todd H.)
+
+
+
+</pre></div><div class="post" id="p162114"><div class="ph"><a class="d" href="#p162114">2003-05-25 15:37:17</a> <span>Frodo Morris</span> <span>Re: Distributed computing</span></div><pre>Biggo wrote:
+<span class="qt">&gt; Frodo Morris &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;Download the TZX</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Any TZX-enabled emulators for MacOS? Or a TZX2TAP for Mac? Please, don&#x27;t</span>
+<span class="qt">&gt; make me unbury the &amp;*ï¿½&quot; Virtual PC.</span>
+<span class="qt">&gt; </span>
+If you mean Mac OS X, then I believe FUSE should work.  /me taps Phil on 
+the shoulder... :-)
+
+-- 
+Frodo Morris
+All your bast are belong to us
+
+
+
+
+</pre></div><div class="post" id="p162116"><div class="ph"><a class="d" href="#p162116">2003-05-25 15:42:39</a> <span>Biggo</span> <span>Re: Distributed computing</span></div><pre>Frodo Morris &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Biggo wrote:</span>
+<span class="qt">&gt; &gt; Any TZX-enabled emulators for MacOS? Or a TZX2TAP for Mac? Please, don&#x27;t</span>
+<span class="qt">&gt; &gt; make me unbury the &amp;*ï¿½&quot; Virtual PC.</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; If you mean Mac OS X</span>
+
+*Urp*. Er, no, the *real* MacOS ;-)
+
+-- 
+<span class="qt">||_ (o) __  __  __  |  Biggo. &lt;mailto:…@…&gt; </span>
+<span class="qt">|&#x27;o\| |/o \/o \/o \ |  On The aaria: <a href="http://OnTheaaria.webhop.org" rel="noreferrer">http://OnTheaaria.webhop.org</a></span>
+<span class="qt">|._/|_|\__/\__/\__/ | *An out of control ego will sometimes get in the</span>
+       /_/ /_/      |  way of your success.                  (Todd H.)
+
+
+
+</pre></div><div class="post" id="p162118"><div class="ph"><a class="d" href="#p162118">2003-05-25 16:09:59</a> <span>Frodo Morris</span> <span>Re: Distributed computing</span></div><pre>Biggo wrote:
+<span class="qt">&gt; Frodo Morris &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;Biggo wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;Any TZX-enabled emulators for MacOS? Or a TZX2TAP for Mac? Please, don&#x27;t</span>
+<span class="qt">&gt;&gt;&gt;make me unbury the &amp;*ï¿½&quot; Virtual PC.</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;If you mean Mac OS X</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; *Urp*. Er, no, the *real* MacOS ;-)</span>
+<span class="qt">&gt; </span>
+Classic Mac OS is as much a real Operating System as Guantanemo Bay is a 
+real holiday camp.  But anyhoo, try 
+<a href="http://www.worldofspectrum.org/emulators.html#mac" rel="noreferrer">http://www.worldofspectrum.org/emulators.html#mac</a> :-)
+
+-- 
+Frodo Morris
+All your bast are belong to us
+
+
+
+
+</pre></div><div class="post" id="p162120"><div class="ph"><a class="d" href="#p162120">2003-05-25 16:22:39</a> <span>Biggo</span> <span>Re: Distributed computing</span></div><pre>Frodo Morris &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; <a href="http://www.worldofspectrum.org/emulators.html#mac" rel="noreferrer">http://www.worldofspectrum.org/emulators.html#mac</a> :-)</span>
+
+Thanks, but no TZX support. *sob* *sniff* *sigh* 
+
+-- 
+<span class="qt">||_ (o) __  __  __  |  Biggo. &lt;mailto:…@…&gt; </span>
+<span class="qt">|&#x27;o\| |/o \/o \/o \ |  On The aaria: <a href="http://OnTheaaria.webhop.org" rel="noreferrer">http://OnTheaaria.webhop.org</a></span>
+<span class="qt">|._/|_|\__/\__/\__/ | *An out of control ego will sometimes get in the</span>
+       /_/ /_/      |  way of your success.                  (Todd H.)
+
+
+
+</pre></div><div class="post" id="p162121"><div class="ph"><a class="d" href="#p162121">2003-05-25 16:23:58</a> <span>Frodo Morris</span> <span>Re: Distributed computing</span></div><pre>Biggo wrote:
+<span class="qt">&gt; Frodo Morris &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;<a href="http://www.worldofspectrum.org/emulators.html#mac" rel="noreferrer">http://www.worldofspectrum.org/emulators.html#mac</a> :-)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Thanks, but no TZX support. *sob* *sniff* *sigh* </span>
+<span class="qt">&gt; </span>
+Time for a proper OS, then :P
+
+-- 
+Frodo Morris
+All your bast are belong to us
+
+
+
+
+</pre></div><div class="post" id="p162131"><div class="ph"><a class="d" href="#p162131">2003-05-25 19:46:49</a> <span>Frodo Morris</span> <span>Re: Distributed computing</span></div><pre>A. J. Moss wrote:
+<span class="qt">&gt; On Sun, 25 May 2003, Frodo Morris &lt;…@…&gt;</span>
+<span class="qt">&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;Anyone fancy using their Spectrum to help find extra-terrestrial life? </span>
+<span class="qt">&gt;&gt;Well, my first CSSCGC entry, Speccy@Home, can help you to do exactly </span>
+<span class="qt">&gt;&gt;that!  Download the TZX from <a href="http://users.ox.ac.uk/~wadh1342/speccy," rel="noreferrer">http://users.ox.ac.uk/~wadh1342/speccy,</a> and </span>
+<span class="qt">&gt;&gt;help your spare CPU cycles go into (i)a cool screensaver and (ii)finding </span>
+<span class="qt">&gt;&gt;little green men!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I take the credit for coming up with this idea. I told Frodo that I</span>
+<span class="qt">&gt; almost turned up to the meet wearing a deliberately offensive T-shirt:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; On the front is a copy of my SETI@home certificate:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;     &quot;This certifies that A. J. Moss has completed </span>
+<span class="qt">&gt;      25,000 work units for SETI@home.&quot;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; On the back is the boast, &quot;My computer is faster than yours!&quot;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The conversation veered onto the subject of completing 25,000 work</span>
+<span class="qt">&gt; units on a Spectrum. The fact that this would take about one million</span>
+<span class="qt">&gt; years was not mentioned.</span>
+Quite, forgot to say that.  Cheers AJ!  If it wins the CGC we&#x27;ll share 
+the prize :-)
+-- 
+Frodo Morris
+All your bast are belong to us
+
+
+
+
+</pre></div><div class="post" id="p162132"><div class="ph"><a class="d" href="#p162132">2003-05-25 19:52:44</a> <span>Philip Kendall</span> <span>Re: Distributed computing</span></div><pre>In article &lt;baqnvr$d8n$…@…&gt;,
+Frodo Morris  &lt;…@…&gt; wrote:
+<span class="qt">&gt;Biggo wrote:</span>
+<span class="qt">&gt;&gt; Frodo Morris &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Any TZX-enabled emulators for MacOS? Or a TZX2TAP for Mac? Please, don&#x27;t</span>
+<span class="qt">&gt;&gt; make me unbury the &amp;*ï¿½&quot; Virtual PC.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;If you mean Mac OS X, then I believe FUSE should work.  /me taps Phil on </span>
+<span class="qt">&gt;the shoulder... :-)</span>
+
+[ Made slightly pointless by the rest of thre thread, but hey... ]
+
+Well, a lot of the credit for the OS X versions should go to Fred rather
+than me :-)
+
+Also, fuse-utils&#x27;s tapeconv with do the TZX-&gt;TAP conversion (as well as
+that conversion can ever be done, anyway).
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div></main></body></html>

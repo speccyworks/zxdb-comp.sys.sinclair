@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSSCGC2005 game &quot;extremely offensive&quot; · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>CSSCGC2005 game &quot;extremely offensive&quot;</h1><p class="facts">29 posts, 2005-06-06 – 2005-06-15</p><div class="post" id="p192079"><div class="ph"><a class="d" href="#p192079">2005-06-06 19:35:32</a> <span>deKay</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/17505">ZXDB: Manic Muslim</a></div><pre>Just in case any of you don&#x27;t read the WOS forums, I&#x27;d like to fill you in on
+an email I received yesterday.  Here it is:
+
+-----------
+Dear Sir
+
+Please remove or re-name the above software ASAP.
+
+I find it extremely offensive that you have decided to
+tarnish a whole religion based on one individual to
+further your site.
+
+I hope I don&#x27;t have to take this further.
+
+Thank you for your compliance.
+
+Yours faithfully
+
+Shak H.
+-----------
+
+I haven&#x27;t (yet) removed or renamed the game, but have let Simon &quot;Chaosmongers&quot;
+Ullyatt know of the complaint.
+
+I&#x27;d be interested to hear your thoughts.  You can see the game here:
+<a href="http://www.lofi-gaming.org.uk/speccy/cgc2005/" rel="noreferrer">http://www.lofi-gaming.org.uk/speccy/cgc2005/</a> (it&#x27;s game 07).
+
+For the record, my reply was:
+
+-----------
+The game was not written by me, but by someone who entered this year&#x27;s
+competition.  As far as I can tell, the game is called Manic Muslim as a play
+on words on the game &quot;Manic Miner&quot; - a game similar to this one.  It doesn&#x27;t
+have anything to do with Muslims in general, only one in particular.
+
+The competition&#x27;s other titles also include the UK&#x27;s political parties,
+teenagers, the Spanish, and the Second World War.  Titles from previous years
+have been of similar content.  None of which are meant to be taken seriously,
+and certainly none are intended to be disrespect any particular religion,
+group of people, or social standing - certainly no more than any TV programme
+such as Have I Got News For You, Spitting Image, or Brasseye.
+
+I&#x27;m sorry you have seen the game to be offensive, but none of the games there
+are my responsibility - I merely upload those games entered into the
+competition as they are.  There are no rules regarding content, so
+responsibility towards that lies with the author.  I do not believe in
+censoring these games.  As for &quot;furthering my site&quot;, I am simply hosting the
+competition this year.  Previous years have been hosted by other people on
+their sites.  I can provide links if you wish.
+
+I will, however, pass your comments on to the author.
+
+I hope you see my side of this,
+Andy
+---------
+
+Also of note, is &quot;Shak H&quot; appears to share his email address with someone
+called &quot;John Smith&quot;, according to Google.
+
+deKay
+-- 
+ + Lofi Gaming: www.lofi-gaming.org.uk  [Gamertag: deKay 01]
+<span class="qt"> |- Gaming Diary: www.lofi-gaming.org.uk/diary/  </span>
+<span class="qt"> |- My computer runs at 3.5MHz and I&#x27;m proud of that</span>
+<span class="qt"> |- CSS Crap Games Comp 2005: <a href="http://www.lofi-gaming.org.uk/speccy/cgc2005/" rel="noreferrer">http://www.lofi-gaming.org.uk/speccy/cgc2005/</a></span>
+
+
+
+</pre></div><div class="post" id="p192080"><div class="ph"><a class="d" href="#p192080">2005-06-06 21:10:04</a> <span>Chris Young</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>On Mon, 06 Jun 2005 20:35:32 +0100, deKay wibbled on for an age:
+
+<span class="qt">&gt; I&#x27;d be interested to hear your thoughts.</span>
+
+Is this the first occurance of a CSSCGC game being complained about? 
+
+We&#x27;ve had games so crap that the author has withdrawn them from the
+compo (I can&#x27;t remember the title, spritedemo or something I think,
+but it inadvertantly ended up in one of the archives that it shouldn&#x27;t
+have done, despite it having the ingredients of an almost perfect crap
+game)
+
+We&#x27;ve even had games that have been withdrawn from distribution years
+after the compo finished (Fisherman&#x27;s Friend and Naughts and Crosses
+by Joseph Aron, 1997).
+
+But I don&#x27;t think one has ever been complained about.  Perhaps you
+could go the whole hog and ban it, which will surely see it achieve
+imfamy, make it a &quot;must have&quot; game and incur an effect that is total
+the opposite of what the complainant hoped.
+
+Or maybe the CSSCGC isn&#x27;t well known enough for all that stuff to
+happen.
+
+Chris
+
+
+
+</pre></div><div class="post" id="p192081"><div class="ph"><a class="d" href="#p192081">2005-06-06 21:24:55</a> <span>Paul E Collins</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>&quot;Chris Young&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; We&#x27;ve even had games that have been withdrawn from</span>
+<span class="qt">&gt; distribution years after the compo finished (Fisherman&#x27;s</span>
+<span class="qt">&gt; Friend and Naughts and Crosses by Joseph Aron, 1997).</span>
+
+What, why, how? Did Codemasters license it or something?
+
+<span class="qt">&gt; But I don&#x27;t think one has ever been complained about.</span>
+
+Frankly, I found Manic Muslim disgustingly offensive and libellous, 
+and I plan to bring down the full weight of INTERNET LAW. My sister&#x27;s 
+husband&#x27;s cousin has a friend who&#x27;s a solicitor, you know.
+
+P.
+
+
+
+
+
+</pre></div><div class="post" id="p192082"><div class="ph"><a class="d" href="#p192082">2005-06-06 21:46:35</a> <span>Bill H</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>I hope that Atari doesn&#x27;t come after me for Super Bust Out seeing that
+it is an obvoius rip off of Breakout, minus the graphics, sound,
+continous play, ease of use etc.
+
+Bill H www.ts1000.us
+
+
+
+
+</pre></div><div class="post" id="p192083"><div class="ph"><a class="d" href="#p192083">2005-06-06 21:57:27</a> <span>Chris Young</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>On Mon, 6 Jun 2005 21:24:55 +0000 (UTC), Paul E Collins wibbled on for an age:
+
+<span class="qt">&gt; &gt; We&#x27;ve even had games that have been withdrawn from</span>
+<span class="qt">&gt; &gt; distribution years after the compo finished (Fisherman&#x27;s</span>
+<span class="qt">&gt; &gt; Friend and Naughts and Crosses by Joseph Aron, 1997).</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; What, why, how? Did Codemasters license it or something?</span>
+
+Nah, the author requested they be removed (I don&#x27;t know why, didn&#x27;t
+ask)
+
+<span class="qt">&gt; &gt; But I don&#x27;t think one has ever been complained about.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Frankly, I found Manic Muslim disgustingly offensive and libellous, </span>
+<span class="qt">&gt; and I plan to bring down the full weight of INTERNET LAW. My sister&#x27;s </span>
+<span class="qt">&gt; husband&#x27;s cousin has a friend who&#x27;s a solicitor, you know.</span>
+
+I thought it was hilarious.  Certainly one of the better CSSCGC
+entries.
+
+Chris
+
+
+
+</pre></div><div class="post" id="p192084"><div class="ph"><a class="d" href="#p192084">2005-06-06 23:26:32</a> <span>A. J. Moss</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>deKay &lt;…@…&gt; wrote:
+<span class="qt">&gt;The game was not written by me, but by someone who entered this year&#x27;s</span>
+<span class="qt">&gt;competition.  As far as I can tell, the game is called Manic Muslim as a play</span>
+<span class="qt">&gt;on words on the game &quot;Manic Miner&quot; - a game similar to this one.  It doesn&#x27;t</span>
+<span class="qt">&gt;have anything to do with Muslims in general, only one in particular.</span>
+
+Tell him to fuck off and stop trolling.
+
+I *guarantee* that if you remove that game, I will immediately write a
+replacement called Jet Set Terrorist.
+
+
+
+</pre></div><div class="post" id="p192086"><div class="ph"><a class="d" href="#p192086">2005-06-07 01:29:34</a> <span>…@…</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>A. J. Moss &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; deKay &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;The game was not written by me, but by someone who entered this year&#x27;s</span>
+<span class="qt">&gt;&gt;competition.  As far as I can tell, the game is called Manic Muslim as a play</span>
+<span class="qt">&gt;&gt;on words on the game &quot;Manic Miner&quot; - a game similar to this one.  It doesn&#x27;t</span>
+<span class="qt">&gt;&gt;have anything to do with Muslims in general, only one in particular.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Tell him to fuck off and stop trolling.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I *guarantee* that if you remove that game, I will immediately write a</span>
+<span class="qt">&gt; replacement called Jet Set Terrorist.</span>
+
+
+No no, that doesn&#x27;t scan.
+Technician terrorist might work though
+
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)| &quot;ARSE! GERLS!! DRINK! DRINK! DRINK!!!&quot;          |</span>
+<span class="qt">|            in            | &quot;THAT WOULD BE AN ECUMENICAL MATTER!...FECK!!!! |</span>
+<span class="qt">|     Computer Science     | - Father Jack in &quot;Father Ted&quot;                   |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p192087"><div class="ph"><a class="d" href="#p192087">2005-06-07 06:33:43</a> <span>Ian Rawlings</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>On 2005-06-06, deKay &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; I find it extremely offensive that you have decided to tarnish a</span>
+<span class="qt">&gt; whole religion based on one individual to further your site.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I hope I don&#x27;t have to take this further.</span>
+
+If there&#x27;s one thing I hate, it&#x27;s religion, and this is an example of
+why.
+
+Quite frankly the idea that any religion needs any help at all in
+giving itself a bad name is laughable, and the muslims are pretty much
+top of the pile at making themselves look bad.  The christians are
+building up steam again with the help of George Bush and seem to be
+getting more and more loopy, while the sikhs were keeping things under
+control until that brouhaha about a play but they seem to have their
+act together again now.  The rest of the religions aren&#x27;t really
+hitting the headlines these days but maintain an air of general
+silliness.
+
+To be honest, the best thing to do with the religious is to ignore
+them completely, it&#x27;s hard to rationally argue with bone-headed belief
+and personally I can&#x27;t be bothered to put any effort into it as the
+rewards aren&#x27;t worth it.
+
+If he replies again, I&#x27;d suggest just deleting the mail and forgetting
+about it.
+
+-- 
+For every expert, there is an equal but opposite expert
+
+
+
+</pre></div><div class="post" id="p192088"><div class="ph"><a class="d" href="#p192088">2005-06-07 08:45:53</a> <span>Brian Gaff</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>Could this see a whole host of politacally incorrect and bad taste games?
+
+Hindu Hedgehog, perhaps, or maybe Incinerator or maybe the one I wish they 
+would write where a blind person has to negotiate lots of pesky street 
+furniture and cyclists with a death wish, should be great with the limited 
+resolution of the Speccy!
+
+How about Nuke the Greens or maybe Dolphin Death Wish?
+
+
+Brian
+
+
+-- 
+Brian Gaff....Note, this account does not accept Bcc: email.
+ graphics are great, but the blind can&#x27;t hear them
+Email: …@…
+______________________________________________________________________________________________________________
+
+
+&quot;deKay&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; Just in case any of you don&#x27;t read the WOS forums, I&#x27;d like to fill you in </span>
+<span class="qt">&gt; on</span>
+<span class="qt">&gt; an email I received yesterday.  Here it is:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; -----------</span>
+<span class="qt">&gt; Dear Sir</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Please remove or re-name the above software ASAP.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I find it extremely offensive that you have decided to</span>
+<span class="qt">&gt; tarnish a whole religion based on one individual to</span>
+<span class="qt">&gt; further your site.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I hope I don&#x27;t have to take this further.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Thank you for your compliance.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Yours faithfully</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Shak H.</span>
+<span class="qt">&gt; -----------</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I haven&#x27;t (yet) removed or renamed the game, but have let Simon </span>
+<span class="qt">&gt; &quot;Chaosmongers&quot;</span>
+<span class="qt">&gt; Ullyatt know of the complaint.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;d be interested to hear your thoughts.  You can see the game here:</span>
+<span class="qt">&gt; <a href="http://www.lofi-gaming.org.uk/speccy/cgc2005/" rel="noreferrer">http://www.lofi-gaming.org.uk/speccy/cgc2005/</a> (it&#x27;s game 07).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; For the record, my reply was:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; -----------</span>
+<span class="qt">&gt; The game was not written by me, but by someone who entered this year&#x27;s</span>
+<span class="qt">&gt; competition.  As far as I can tell, the game is called Manic Muslim as a </span>
+<span class="qt">&gt; play</span>
+<span class="qt">&gt; on words on the game &quot;Manic Miner&quot; - a game similar to this one.  It </span>
+<span class="qt">&gt; doesn&#x27;t</span>
+<span class="qt">&gt; have anything to do with Muslims in general, only one in particular.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The competition&#x27;s other titles also include the UK&#x27;s political parties,</span>
+<span class="qt">&gt; teenagers, the Spanish, and the Second World War.  Titles from previous </span>
+<span class="qt">&gt; years</span>
+<span class="qt">&gt; have been of similar content.  None of which are meant to be taken </span>
+<span class="qt">&gt; seriously,</span>
+<span class="qt">&gt; and certainly none are intended to be disrespect any particular religion,</span>
+<span class="qt">&gt; group of people, or social standing - certainly no more than any TV </span>
+<span class="qt">&gt; programme</span>
+<span class="qt">&gt; such as Have I Got News For You, Spitting Image, or Brasseye.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;m sorry you have seen the game to be offensive, but none of the games </span>
+<span class="qt">&gt; there</span>
+<span class="qt">&gt; are my responsibility - I merely upload those games entered into the</span>
+<span class="qt">&gt; competition as they are.  There are no rules regarding content, so</span>
+<span class="qt">&gt; responsibility towards that lies with the author.  I do not believe in</span>
+<span class="qt">&gt; censoring these games.  As for &quot;furthering my site&quot;, I am simply hosting </span>
+<span class="qt">&gt; the</span>
+<span class="qt">&gt; competition this year.  Previous years have been hosted by other people on</span>
+<span class="qt">&gt; their sites.  I can provide links if you wish.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I will, however, pass your comments on to the author.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I hope you see my side of this,</span>
+<span class="qt">&gt; Andy</span>
+<span class="qt">&gt; ---------</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Also of note, is &quot;Shak H&quot; appears to share his email address with someone</span>
+<span class="qt">&gt; called &quot;John Smith&quot;, according to Google.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; deKay</span>
+<span class="qt">&gt; -- </span>
+<span class="qt">&gt; + Lofi Gaming: www.lofi-gaming.org.uk  [Gamertag: deKay 01]</span>
+<span class="qt">&gt; |- Gaming Diary: www.lofi-gaming.org.uk/diary/</span>
+<span class="qt">&gt; |- My computer runs at 3.5MHz and I&#x27;m proud of that</span>
+<span class="qt">&gt; |- CSS Crap Games Comp 2005: <a href="http://www.lofi-gaming.org.uk/speccy/cgc2005/" rel="noreferrer">http://www.lofi-gaming.org.uk/speccy/cgc2005/</a> </span>
+
+
+
+
+
+</pre></div><div class="post" id="p192089"><div class="ph"><a class="d" href="#p192089">2005-06-07 09:25:55</a> <span>…@…</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>Brian Gaff &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; Could this see a whole host of politacally incorrect and bad taste games?</span>
+
+We&#x27;ve always had our fair share, haven&#x27;t we?
+Like Spacman or tsunami wave simulator from last year&#x27;s compo?
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)| &quot;ARSE! GERLS!! DRINK! DRINK! DRINK!!!&quot;          |</span>
+<span class="qt">|            in            | &quot;THAT WOULD BE AN ECUMENICAL MATTER!...FECK!!!! |</span>
+<span class="qt">|     Computer Science     | - Father Jack in &quot;Father Ted&quot;                   |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p192090"><div class="ph"><a class="d" href="#p192090">2005-06-07 10:00:28</a> <span>deKay</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Tue, 07 Jun
+2005 09:25:55 GMT, sefini jorgo geanyet des mani yeof do comp.sys.sinclair,
+yawatina tan reek esk …@… fornis do marikano es bono tan el:
+
+<span class="qt">&gt;Brian Gaff &lt;…@…&gt; did eloquently scribble:</span>
+<span class="qt">&gt;&gt; Could this see a whole host of politacally incorrect and bad taste games?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;We&#x27;ve always had our fair share, haven&#x27;t we?</span>
+<span class="qt">&gt;Like Spacman or tsunami wave simulator from last year&#x27;s compo?</span>
+
+I thought Spacman was called as it was Spectrum Pacman?
+
+deKay
+-- 
+ + Lofi Gaming - www.lofi-gaming.org.uk      
+<span class="qt"> |- ugvm Magazine - www.ugvm.org.uk          </span>
+<span class="qt"> |- My computer runs at 3.5MHz and I&#x27;m proud of that</span>
+<span class="qt"> |- &quot;CLART - YOU KNOWS IT&quot;</span>
+
+
+
+</pre></div><div class="post" id="p192092"><div class="ph"><a class="d" href="#p192092">2005-06-07 10:28:55</a> <span>Lance Lyon</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>
+&quot;A. J. Moss&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; deKay &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;The game was not written by me, but by someone who entered this year&#x27;s</span>
+<span class="qt">&gt;&gt;competition.  As far as I can tell, the game is called Manic Muslim as a </span>
+<span class="qt">&gt;&gt;play</span>
+<span class="qt">&gt;&gt;on words on the game &quot;Manic Miner&quot; - a game similar to this one.  It </span>
+<span class="qt">&gt;&gt;doesn&#x27;t</span>
+<span class="qt">&gt;&gt;have anything to do with Muslims in general, only one in particular.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Tell him to fuck off and stop trolling.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I *guarantee* that if you remove that game, I will immediately write a</span>
+<span class="qt">&gt; replacement called Jet Set Terrorist.</span>
+
+Can you do it anyway ? :-)
+
+cheers,
+
+Lance
+
+
+-- 
+// <a href="http://landover.no-ip.com" rel="noreferrer">http://landover.no-ip.com</a>
+     Historical Sydney ferries webpages
+     <a href="http://landover.no-ip.com/pods/index.php" rel="noreferrer">http://landover.no-ip.com/pods/index.php</a>
+     Classic X86, 8 &amp; 16 bit computers                    // 
+
+
+
+
+
+</pre></div><div class="post" id="p192094"><div class="ph"><a class="d" href="#p192094">2005-06-07 12:38:19</a> <span>Lister</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>On Tue, 07 Jun 2005 08:45:53 GMT, &quot;Brian Gaff&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Could this see a whole host of politacally incorrect and bad taste games?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Hindu Hedgehog, perhaps, or maybe Incinerator or maybe the one I wish they </span>
+<span class="qt">&gt;would write where a blind person has to negotiate lots of pesky street </span>
+<span class="qt">&gt;furniture and cyclists with a death wish, should be great with the limited </span>
+<span class="qt">&gt;resolution of the Speccy!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;How about Nuke the Greens or maybe Dolphin Death Wish?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Brian</span>
+
+
+Paki bash?
+
+
+/me runs
+
+
+
+-- 
+.sig for rent
+
+Apply within
+
+
+
+</pre></div><div class="post" id="p192095"><div class="ph"><a class="d" href="#p192095">2005-06-07 13:03:11</a> <span>Lemmiwinks, The Gerbil King</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>On Mon, 06 Jun 2005 20:35:32 +0100, deKay &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;I&#x27;d be interested to hear your thoughts.  You can see the game here:</span>
+<span class="qt">&gt;<a href="http://www.lofi-gaming.org.uk/speccy/cgc2005/" rel="noreferrer">http://www.lofi-gaming.org.uk/speccy/cgc2005/</a> (it&#x27;s game 07).</span>
+
+Well, my thoughts are: fuck him. Anyone that overly sensitive about
+something so trivial fully deserves to be offended. Although I suspect
+he&#x27;s probably just trolling based on what you said about his e-mail
+address.
+
+You graced him with a polite reply, which is more than I&#x27;d have been
+bothered to do in the same circumstances. 
+
+I&#x27;m half-tempted to write an &quot;Advanced Whinging Politically Correct
+Tosser Simulator&quot; but luckily I&#x27;m far too lazy!
+
+
+
+</pre></div><div class="post" id="p192096"><div class="ph"><a class="d" href="#p192096">2005-06-07 13:30:06</a> <span>Paul Dunn</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>deKay wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Brian Gaff &lt;…@…&gt; did eloquently scribble:</span>
+<span class="qt">&gt;&gt;&gt; Could this see a whole host of politacally incorrect and bad taste</span>
+<span class="qt">&gt;&gt;&gt; games?</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; We&#x27;ve always had our fair share, haven&#x27;t we?</span>
+<span class="qt">&gt;&gt; Like Spacman or tsunami wave simulator from last year&#x27;s compo?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I thought Spacman was called as it was Spectrum Pacman?</span>
+
+That&#x27;s right. Anyone who reads any form of insult into that title has the 
+issues with spackers, not me.
+
+D.
+
+
+
+
+
+</pre></div><div class="post" id="p192098"><div class="ph"><a class="d" href="#p192098">2005-06-07 18:09:13</a> <span>Niall Wallace</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>
+&quot;Lemmiwinks, The Gerbil King&quot; &lt;…@…&gt; wrote in 
+message
+
+<span class="qt">&gt; I&#x27;m half-tempted to write an &quot;Advanced Whinging Politically Correct</span>
+<span class="qt">&gt; Tosser Simulator&quot; but luckily I&#x27;m far too lazy!</span>
+
+About time for me to start on my entries then 
+
+
+
+
+
+</pre></div><div class="post" id="p192101"><div class="ph"><a class="d" href="#p192101">2005-06-07 20:24:31</a> <span>deKay</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>I wrote back, basically asking if a short disclaimer would suffice.  And, I
+get this back in response:
+
+
+-------
+Andy, I can understand that you yourself can&#x27;t do
+anything about the name change of this particular
+game.
+
+Would the authors of said game be content if, for
+example, the game was called &#x27;Manic Jew&#x27; ?
+
+I hope you will pass my comments on to those involved.
+
+Kind Regards
+-------
+
+
+Erm?!
+
+deKay
+-- 
+ + Lofi Gaming: www.lofi-gaming.org.uk  [Gamertag: deKay 01]
+<span class="qt"> |- Gaming Diary: www.lofi-gaming.org.uk/diary/  </span>
+<span class="qt"> |- My computer runs at 3.5MHz and I&#x27;m proud of that</span>
+<span class="qt"> |- CSS Crap Games Comp 2005: <a href="http://www.lofi-gaming.org.uk/speccy/cgc2005/" rel="noreferrer">http://www.lofi-gaming.org.uk/speccy/cgc2005/</a></span>
+
+
+
+</pre></div><div class="post" id="p192103"><div class="ph"><a class="d" href="#p192103">2005-06-07 20:36:08</a> <span>deKay</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Tue, 07 Jun
+2005 21:24:31 +0100, sefini jorgo geanyet des mani yeof do comp.sys.sinclair,
+yawatina tan reek esk deKay &lt;…@…&gt; fornis do marikano es
+bono tan el:
+
+<span class="qt">&gt;I wrote back, basically asking if a short disclaimer would suffice.  And, I</span>
+<span class="qt">&gt;get this back in response:</span>
+
+OK, own up now.  Someone is taking the piss, I&#x27;m sure of it.
+
+deKay
+-- 
+ + Lofi Gaming: www.lofi-gaming.org.uk  [Gamertag: deKay 01]
+<span class="qt"> |- Gaming Diary: www.lofi-gaming.org.uk/diary/  </span>
+<span class="qt"> |- My computer runs at 3.5MHz and I&#x27;m proud of that</span>
+<span class="qt"> |- CSS Crap Games Comp 2005: <a href="http://www.lofi-gaming.org.uk/speccy/cgc2005/" rel="noreferrer">http://www.lofi-gaming.org.uk/speccy/cgc2005/</a></span>
+
+
+
+</pre></div><div class="post" id="p192104"><div class="ph"><a class="d" href="#p192104">2005-06-07 20:54:52</a> <span>Anders Carlsson</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>deKay &lt;…@…&gt; writes:
+
+<span class="qt">&gt; Would the authors of said game be content if, for</span>
+<span class="qt">&gt; example, the game was called &#x27;Manic Jew&#x27; ?</span>
+
+Isn&#x27;t that the follow-up, Jew Set Willy?
+
+-- 
+Anders Carlsson
+
+
+
+</pre></div><div class="post" id="p192107"><div class="ph"><a class="d" href="#p192107">2005-06-07 21:24:24</a> <span>Paul Dunn</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>deKay wrote:
+
+<span class="qt">&gt; Would the authors of said game be content if, for</span>
+<span class="qt">&gt; example, the game was called &#x27;Manic Jew&#x27; ?</span>
+
+<span class="qt">&gt; I hope you will pass my comments on to those involved.</span>
+
+Why not reply, saying you&#x27;ve passed on his suggestion to Chaosmongers? I 
+wonder how he&#x27;d react to being called an anti-semite?
+
+And then put up another version called &quot;Manic Jew&quot;, starring Osama Bin Laden 
+trying to get home... etc etc.
+
+D.
+
+
+
+
+
+</pre></div><div class="post" id="p192110"><div class="ph"><a class="d" href="#p192110">2005-06-07 23:56:56</a> <span>Kryten</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>
+&quot;Lister&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+
+<span class="qt">&gt;&gt;How about Nuke the Greens or maybe Dolphin Death Wish?</span>
+
+I heard of a T-shirt with &quot;Nuke a Gay Whale for Jesus!&quot; on it.
+
+Translated to a game, you could have a fundamentalist Christian whaling 
+vessel firing nuclear tipped harpoons at whales...
+
+Sounds like a South Park plot. 
+
+
+
+
+
+</pre></div><div class="post" id="p192111"><div class="ph"><a class="d" href="#p192111">2005-06-08 02:41:14</a> <span>Lemmiwinks, The Gerbil King</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>On Tue, 7 Jun 2005 18:09:13 +0000 (UTC), &quot;Niall Wallace&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&quot;Lemmiwinks, The Gerbil King&quot; &lt;…@…&gt; wrote in </span>
+<span class="qt">&gt;message</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; I&#x27;m half-tempted to write an &quot;Advanced Whinging Politically Correct</span>
+<span class="qt">&gt;&gt; Tosser Simulator&quot; but luckily I&#x27;m far too lazy!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;About time for me to start on my entries then </span>
+
+Sounds like a good plan to me! Obviously, if you write anything
+resembling my patented &quot;Advanced Whinging Politically Correct Tosser
+Simulator&quot; I will have to unleash an army of highly-trained Gerbil
+Lawyers to sue you to within an inch of your life. No offence or
+anything, but business is business and the Gerbils are hungry!
+
+
+
+</pre></div><div class="post" id="p192116"><div class="ph"><a class="d" href="#p192116">2005-06-08 16:01:11</a> <span>Niall Wallace</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>
+&quot;Lemmiwinks, The Gerbil King&quot; &lt;…@…&gt; wrote in
+message &gt;
+<span class="qt">&gt;Sounds like a good plan to me! Obviously, if you write anything</span>
+<span class="qt">&gt; resembling my patented &quot;Advanced Whinging Politically Correct Tosser</span>
+<span class="qt">&gt; Simulator&quot; I will have to unleash an army of highly-trained Gerbil</span>
+<span class="qt">&gt; Lawyers to sue you to within an inch of your life. No offence or</span>
+<span class="qt">&gt; anything, but business is business and the Gerbils are hungry!</span>
+
+Nah I think Advanced Beurocrat Simulator is different enough, jsut my
+computer caught soemthing nasty while trying to find a picture for the
+secretary.
+
+
+
+
+
+</pre></div><div class="post" id="p192133"><div class="ph"><a class="d" href="#p192133">2005-06-09 15:29:01</a> <span>A. J. Moss</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>deKay &lt;…@…&gt; wrote:
+<span class="qt">&gt;Just in case any of you don&#x27;t read the WOS forums, I&#x27;d like to fill you in on</span>
+<span class="qt">&gt;an email I received yesterday.  Here it is:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Dear Sir</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Please remove or re-name the above software ASAP.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I find it extremely offensive that you have decided to</span>
+<span class="qt">&gt;tarnish a whole religion based on one individual to</span>
+<span class="qt">&gt;further your site.</span>
+
+Well folks, we&#x27;d better kick the wog-wog in the nuts while we still
+can. If you write a sequel to this game for the 2006 compo, you could
+get seven years:
+
+Story from BBC NEWS:
+&lt;<a href="http://news.bbc.co.uk/go/pr/fr/-/1/hi/uk_politics/4075442.stm&gt;" rel="noreferrer">http://news.bbc.co.uk/go/pr/fr/-/1/hi/uk_politics/4075442.stm&gt;</a>
+
+Religious hatred bill is unveiled
+
+Controversial plans to make incitement to religious hatred
+illegal are being unveiled by the government.
+
+Critics say the re-introduced bill - which bans insulting
+words or behaviour intended or likely to stir up religious
+hatred - will stifle free speech.
+
+But ministers have pledged the new law will not affect
+&quot;criticism, commentary or ridicule of faiths&quot;.
+
+If it mirrors racial hatred laws, the maximum sentence for
+those found guilty will be seven years in prison.
+
+The bill will apply to comments made in public or in the
+media, as well as through written material.
+
+Freedom of speech
+
+The government says the legislation is a response to the
+concerns of faith groups, particularly Muslims.
+
+The Muslim Council of Britain has welcomed the move, arguing
+that the courts have already extended such protection to
+Sikh and Jewish people.
+
+
+
+
+</pre></div><div class="post" id="p192154"><div class="ph"><a class="d" href="#p192154">2005-06-11 18:10:54</a> <span>fuzzix</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>…@… wrote:
+<span class="qt">&gt; No no, that doesn&#x27;t scan.</span>
+<span class="qt">&gt; Technician terrorist might work though</span>
+<span class="qt">&gt; </span>
+
+That&#x27;s not funny, though.
+
+Heh - Jet Set.
+
+
+
+</pre></div><div class="post" id="p192162"><div class="ph"><a class="d" href="#p192162">2005-06-12 11:14:40</a> <span>…@…</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>hmm, a nice war game idea brewing here
+
+crazy christyan versus manic mooslim
+
+of course it would be based around some bloke and slightly insane,
+possibly turban wearing anorexic cows, and any similarity between the
+ficticiuos characters within would be entirely deliberate
+
+
+
+
+</pre></div><div class="post" id="p192249"><div class="ph"><a class="d" href="#p192249">2005-06-15 14:04:45</a> <span>Tarquin Mills</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>In message &lt;…@…&gt;
+          Lister &lt;…@…&gt; wrote:
+<span class="qt">&gt; /me runs</span>
+
+Sod off Lister (and A.J. Moss &amp; Co)  
+
+-- 
+                       Tarquin Mills (Chairman)
+ACCUS (Anglia Classic Computer Users Society)
+<a href="http://www.speccyverse.me.uk/comp/accus/" rel="noreferrer">http://www.speccyverse.me.uk/comp/accus/</a>
+<a href="http://www.PetitionOnline.com/Spectrum/" rel="noreferrer">http://www.PetitionOnline.com/Spectrum/</a> (We want a Spectrum +4)
+
+
+
+</pre></div><div class="post" id="p192250"><div class="ph"><a class="d" href="#p192250">2005-06-15 15:33:50</a> <span>Lister</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>On Wed, 15 Jun 2005 14:04:45 GMT, Tarquin Mills &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;In message &lt;…@…&gt;</span>
+<span class="qt">&gt;          Lister &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; /me runs</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Sod off Lister (and A.J. Moss &amp; Co)  </span>
+
+
+Sorry man, I heard that was a real program though
+
+
+
+
+-- 
+How can I meet Kylie Minogue?
+
+
+
+</pre></div><div class="post" id="p192252"><div class="ph"><a class="d" href="#p192252">2005-06-15 16:09:53</a> <span>Bitz</span> <span>Re: CSSCGC2005 game &quot;extremely offensive&quot;</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2059">CSSCGC Crap Games Contest 2005</a></div><pre>oo-er...best we remove Turmoil (angry Arabs dontchaknow) and City Slicker 
+(scandalous clever terrorist) from WoS then.
+
+
+
+</pre></div></main></body></html>

@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAM Coupe tape format · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>SAM Coupe tape format</h1><p class="facts">11 posts, 1997-07-06 – 1997-08-08</p><div class="post" id="p27781"><div class="ph"><a class="d" href="#p27781">1997-07-06</a> <span>…@…</span> </div><pre>
+I&#x27;ve recently been converting a load of &quot;Your Sinclair&quot; covertapes
+to the TZX format with Taper, and discovered that SAM Coupe programs 
+seem to convert fine as well (on the default settings). 
+
+Would somebody with a SAM &amp; Taper like to test these out, to see if
+they have indeed converted correctly?
+Alternatively, is there a Coupe emulator around which supports
+tape loading?
+
+I&#x27;d also be very interested to know the specifics of the Coupe&#x27;s
+tape format (timings, header layout etc), as this could perhaps
+be incorporated into the TZX format.
+
+I&#x27;ve converted 4 SAM programs so far, and the average timings seem
+to be:
+   PILOT pulse: 1340T
+   PILOT length: 6000 pulses
+   Sync 1: 612T
+   Sync 2: 350T
+   ZERO bit: 550T
+   ONE bit: 1100T
+
+Although the blocks all convert correctly with the right parity byte,
+all of them have extra bits afterwards: 7 bits in half the cases &amp;
+8 bits in the other half. Whether it&#x27;s 7 or 8 bits, the &quot;last byte&quot;
+is always 02. Does anyone know why this is?
+
+Header blocks seem to be of length 80 with a flag byte of 1, and
+data blocks have a flag byte of 255.
+
+-- 
+Garry Lancaster
+Z88 Forever! Homepage: <a href="http://www.netforward.com/deathsdoor/?dharkhig" rel="noreferrer">http://www.netforward.com/deathsdoor/?dharkhig</a>
+Email: dharkhig at deathsdoor.com (replace &quot; at &quot; with &quot;@&quot;)
+
+
+
+
+</pre></div><div class="post" id="p27803"><div class="ph"><a class="d" href="#p27803">1997-07-08</a> <span>…@…</span> <span>Re: SAM Coupe tape format</span></div><pre>
+In article &lt;…@…&gt;, …@… wrote:
+<span class="qt">&gt;I&#x27;d also be very interested to know the specifics of the Coupe&#x27;s</span>
+<span class="qt">&gt;tape format (timings, header layout etc), as this could perhaps</span>
+<span class="qt">&gt;be incorporated into the TZX format.</span>
+
+The default Sam tape format is identical to that of the Spectrum,
+except that, as you note:
+
+<span class="qt">&gt;Header blocks seem to be of length 80 with a flag byte of 1, and</span>
+<span class="qt">&gt;data blocks have a flag byte of 255.</span>
+
+Exactly what data goes into the header is mentioned in the technical
+manual, but I don&#x27;t have the details with me.
+
+The loader contains a trick so that if you set the flag to 1 and it
+actually finds a zero then it will continue as if it matched and also
+set the length to 17.  This allows you to load a Spectrum header when
+you were expecting a Sam header (if you type LOAD &quot;&quot; CODE you can play
+in a Spectrum code file).
+
+I believe the higher and lower tape speeds on the Sam are similar to the
+normal speed with the numbers scaled up or down in proportion, but I
+couldn&#x27;t guarantee it.
+-- 
+---- Ian Collier : …@… : WWW page (including Spectrum section):
+------ <a href="http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html" rel="noreferrer">http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html</a>
+
+New to this group?  Answers to frequently-asked questions can be had from
+<a href="http://www.jetman.demon.co.uk/speccy/faq/index.html" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/faq/index.html</a> .
+Sam Coupï¿½ FAQ: <a href="http://www.mono.org/~unc/Coupe/FAQ.txt" rel="noreferrer">http://www.mono.org/~unc/Coupe/FAQ.txt</a>
+
+
+</pre></div><div class="post" id="p27849"><div class="ph"><a class="d" href="#p27849">1997-07-09</a> <span>…@…</span> <span>Re: SAM Coupe tape format</span></div><pre>
+<span class="qt">&gt;&gt;I&#x27;d also be very interested to know the specifics of the Coupe&#x27;s</span>
+<span class="qt">&gt;&gt;tape format (timings, header layout etc), as this could perhaps</span>
+<span class="qt">&gt;&gt;be incorporated into the TZX format.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;The default Sam tape format is identical to that of the Spectrum,</span>
+<span class="qt">&gt;except that, as you note:</span>
+
+Glad to hear that :)
+
+<span class="qt">&gt;&gt;Header blocks seem to be of length 80 with a flag byte of 1, and</span>
+<span class="qt">&gt;&gt;data blocks have a flag byte of 255.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Exactly what data goes into the header is mentioned in the technical</span>
+<span class="qt">&gt;manual, but I don&#x27;t have the details with me.</span>
+
+Can I ask you if you can provide the exact timings ? (Any time is good time...
+no hurry what so ever). Since I would love to include them in the TZX file
+format.
+
+<span class="qt">&gt;I believe the higher and lower tape speeds on the Sam are similar to the</span>
+<span class="qt">&gt;normal speed with the numbers scaled up or down in proportion, but I</span>
+<span class="qt">&gt;couldn&#x27;t guarantee it.</span>
+
+Well, I will try and support SAM Coupe, ZX-81 and possibly Amstrad CPC range in
+the same format. Everything is looking good (well, apart from that I have lost
+the mail that Paul Hodgson sent me with the Amstrad timings :( )
+
+What about that extra byte (or 7 bits) after the XOR Checksum in SAM blocks ?
+Why are they there ?
+
+Tomaz Kac                                             |\      _,,,---,,_
+^~&#x27;~^~&#x27;~^  University of Maribor , Computer Science   /,`.-&#x27;`&#x27;    -.  ;-;;,
+ E-Mail: …@… , Phone: ++602/20-546   |,4-  ) )-,_. ,\ (  `&#x27;::.
+ZXTape Homepage:  www.uni-mb.si/~uel047r1a/ZXTape  &#x27;----&#x27;&#x27;(_/--&#x27;  `-&#x27;\_)   TC
+
+
+</pre></div><div class="post" id="p27863"><div class="ph"><a class="d" href="#p27863">1997-07-10</a> <span>…@…</span> <span>Re: SAM Coupe tape format</span></div><pre>
+In article &lt;…@…&gt;, …@… wrote:
+<span class="qt">&gt;Can I ask you if you can provide the exact timings ? (Any time is good time...</span>
+<span class="qt">&gt;no hurry what so ever). Since I would love to include them in the TZX file</span>
+<span class="qt">&gt;format.</span>
+
+It would require someone to add up cycle times in the ROM to do this, and
+that someone probably isn&#x27;t me for the time being.  (Cookie?)
+
+<span class="qt">&gt;What about that extra byte (or 7 bits) after the XOR Checksum in SAM blocks ?</span>
+<span class="qt">&gt;Why are they there ?</span>
+
+I&#x27;m not aware that they are there.  Another thing to look at in the ROM...
+-- 
+---- Ian Collier : …@… : WWW page (including Spectrum section):
+------ <a href="http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html" rel="noreferrer">http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html</a>
+
+New to this group?  Answers to frequently-asked questions can be had from
+<a href="http://www.jetman.demon.co.uk/speccy/faq/index.html" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/faq/index.html</a> .
+Sam Coupï¿½ FAQ: <a href="http://www.mono.org/~unc/Coupe/FAQ.txt" rel="noreferrer">http://www.mono.org/~unc/Coupe/FAQ.txt</a>
+
+
+</pre></div><div class="post" id="p27958"><div class="ph"><a class="d" href="#p27958">1997-07-12</a> <span>…@…</span> <span>Re: SAM Coupe tape format</span></div><pre>
+In article &lt;…@…&gt; …@… &quot;Ian Collier&quot; writes:
+
+<span class="qt">&gt; &gt;What about that extra byte (or 7 bits) after the XOR Checksum in SAM blocks ?</span>
+<span class="qt">&gt; &gt;Why are they there ?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;m not aware that they are there.  Another thing to look at in the ROM...</span>
+
+I thought perhaps this was an extra check for correct &quot;end of block&quot;, as the
+byte always seems to be 02. Of course, it could just be characteristic
+noise generated by YS&#x27;s SAM and/or cassette recorder at the end of recording.
+None of the Speccy progs on the same cassette had these extra bits though.
+
+-- 
+Garry Lancaster
+Z88 Forever! Homepage: <a href="http://www.netforward.com/deathsdoor/?dharkhig" rel="noreferrer">http://www.netforward.com/deathsdoor/?dharkhig</a>
+Email: dharkhig at deathsdoor.com (replace &quot; at &quot; with &quot;@&quot;)
+
+
+
+</pre></div><div class="post" id="p28023"><div class="ph"><a class="d" href="#p28023">1997-07-14</a> <span>…@…</span> <span>Re: SAM Coupe tape format</span></div><pre>
+Ian Collier (…@…) wrote:
+: In article &lt;…@…&gt;, …@… wrote:
+: &gt;Can I ask you if you can provide the exact timings ? (Any time is good time...
+: &gt;no hurry what so ever). Since I would love to include them in the TZX file
+: &gt;format.
+
+: It would require someone to add up cycle times in the ROM to do this, and
+: that someone probably isn&#x27;t me for the time being.  (Cookie?)
+
+: &gt;What about that extra byte (or 7 bits) after the XOR Checksum in SAM blocks ?
+: &gt;Why are they there ?
+
+: I&#x27;m not aware that they are there.  Another thing to look at in the ROM...
+
+I&#x27;ll see what I can do if I can dig out my copy -- it&#x27;s on my CD
+somewhere...
+
+Hmmm... one question though; as tapes were barely used on the SAM after
+the first 6 months or so, why bother? :)
+
+Simon
+
+
+</pre></div><div class="post" id="p28248"><div class="ph"><a class="d" href="#p28248">1997-07-23</a> <span>…@…</span> <span>Re: SAM Coupe tape format</span></div><pre>
+In article &lt;…@…&gt;, …@… wrote:
+<span class="qt">&gt;Can I ask you if you can provide the exact timings ? (Any time is good time...</span>
+<span class="qt">&gt;no hurry what so ever). Since I would love to include them in the TZX file</span>
+<span class="qt">&gt;format.</span>
+
+<span class="qt">&gt;What about that extra byte (or 7 bits) after the XOR Checksum in SAM blocks ?</span>
+<span class="qt">&gt;Why are they there ?</span>
+
+OK, my calculations are as follows.  No particular guarantee that they
+are correct.  :-) The Sam tape saving routine appears to be written a bit
+more sloppily than the Speccy one so the times are a bit irregular.  In
+addition, I think the ULA will add some wait states when the Sam tries
+to access the tape port and the paging port, but I don&#x27;t know how many.
+Consider rounding the times up to the nearest multiple of 8.
+
+Notes:
+  - The sam&#x27;s clock speed is 6MHz.
+  - There is a system variable (which you can set by executing the command
+    DEVICE Txxx where xxx is the desired number) which sets the speed.  The
+    usual number, I believe, is 112.  I refer to this as n below.
+  - Some of the timings below differ by one cycle depending on whether
+    the next bit to be saved is 1 or 0. The notation +nxtbit means add
+    one cycle if the next bit is a 1.
+  - All times are half-cycles, that is, the time from one OUT to the next.
+    A full cycle has two OUTs, of course.
+
+The normal leader tone has a half-period of 99+32n cycles.
+Then there is one half-cycle of period 145+32n.
+The first sync pulse has a period of 99+16*ceil(n/2) and the second
+has a period of 194+16*ceil(n/2)+nxtbit.
+
+Within a byte, the first pulse of a zero-bit is 33+13n cycles, and
+the second pulse is 32+13n+nxtbit.  A one-bit has timings 72+26n and
+71+26n+nxtbit.
+
+The second pulse of the last bit in a byte usually takes 15 cycles less than
+usual (although there are two extra IN instructions here so the ULA might
+add some more cycles).  However, if an exact multiple of 64K bytes remain
+then it takes 16 cycles more than usual, unless this is the last byte or
+the parity byte, in which case it is only 6 cycles more.  In addition, if
+the next byte lies across a page boundary then it takes 13 extra cycles to
+fetch it.
+
+Now, because the fetching of the next byte occurs during the second pulse
+of the last bit of the previous byte, this means that after the last byte
+has been saved there is still one OUT instruction to go, to finish the
+current pulse.  It seems that rather than coding this directly, the ROM
+author decided to save another junk byte.  Hence there are an extra 7.5
+bits of junk after the XOR checksum byte.  I think these always represent
+the number 2, as it happens.
+
+imc
+
+
+</pre></div><div class="post" id="p28254"><div class="ph"><a class="d" href="#p28254">1997-07-23</a> <span>persona</span> <span>Re: SAM Coupe tape format</span></div><pre>
+Garry Lancaster wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; In article &lt;…@…&gt; …@… &quot;Ian Collier&quot; writes</span>
+<span class="qt">&gt; lots of stuff ending with:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; Now, because the fetching of the next byte occurs during the second pulse</span>
+<span class="qt">&gt; &gt; of the last bit of the previous byte, this means that after the last byte</span>
+<span class="qt">&gt; &gt; has been saved there is still one OUT instruction to go, to finish the</span>
+<span class="qt">&gt; &gt; current pulse.  It seems that rather than coding this directly, the ROM</span>
+<span class="qt">&gt; &gt; author decided to save another junk byte.  Hence there are an extra 7.5</span>
+<span class="qt">&gt; &gt; bits of junk after the XOR checksum byte.  I think these always represent</span>
+<span class="qt">&gt; &gt; the number 2, as it happens.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Thanks for all that. Sounds like the SAM ROM designers just wanted to</span>
+<span class="qt">&gt; follow in the Sinclair tradition &amp; not write a single byte of code more</span>
+<span class="qt">&gt; than they had to.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Garry</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; Garry Lancaster</span>
+<span class="qt">&gt; Z88 Forever! Homepage: <a href="http://www.netforward.com/deathsdoor/?dharkhig" rel="noreferrer">http://www.netforward.com/deathsdoor/?dharkhig</a></span>
+<span class="qt">&gt; Email: dharkhig at deathsdoor.com (replace &quot; at &quot; with &quot;@&quot;)</span>
+
+More likely Dr Andy Wright didn&#x27;t have much ROM space to waste with 
+unnecessary code. There&#x27;s only so much of a decent Basic you can fit in
+32K!
+
+
+
+</pre></div><div class="post" id="p28272"><div class="ph"><a class="d" href="#p28272">1997-07-23</a> <span>…@…</span> <span>Re: SAM Coupe tape format</span></div><pre>
+In article &lt;…@…&gt; …@… &quot;Ian Collier&quot; writes
+lots of stuff ending with:
+
+<span class="qt">&gt; Now, because the fetching of the next byte occurs during the second pulse</span>
+<span class="qt">&gt; of the last bit of the previous byte, this means that after the last byte</span>
+<span class="qt">&gt; has been saved there is still one OUT instruction to go, to finish the</span>
+<span class="qt">&gt; current pulse.  It seems that rather than coding this directly, the ROM</span>
+<span class="qt">&gt; author decided to save another junk byte.  Hence there are an extra 7.5</span>
+<span class="qt">&gt; bits of junk after the XOR checksum byte.  I think these always represent</span>
+<span class="qt">&gt; the number 2, as it happens.</span>
+
+Thanks for all that. Sounds like the SAM ROM designers just wanted to
+follow in the Sinclair tradition &amp; not write a single byte of code more
+than they had to.
+
+Garry
+
+-- 
+Garry Lancaster
+Z88 Forever! Homepage: <a href="http://www.netforward.com/deathsdoor/?dharkhig" rel="noreferrer">http://www.netforward.com/deathsdoor/?dharkhig</a>
+Email: dharkhig at deathsdoor.com (replace &quot; at &quot; with &quot;@&quot;)
+
+
+
+</pre></div><div class="post" id="p28530"><div class="ph"><a class="d" href="#p28530">1997-08-02</a> <span>…@…</span> <span>Re: SAM Coupe tape format</span></div><pre>
+
+I have no idea why, but the news server here has delayed this message a lot... 
+(I got all the replies to it a week ago)
+
+<span class="qt">&gt;  - The sam&#x27;s clock speed is 6MHz.</span>
+
+Uhhh :) Well, the TZX format will have ALL the timings ALWAYS for 3.5Mhz format,
+so if anyone wants to use it in a SAM Coupe emulator then he/she will have to
+convert the timings to 6Mhz format ... which is (basically) multipling every
+timing with 6/3.5 :) The same goes for CPC emulators ... this was suggested by
+the MultiMachine emulator author Paul Hodgson and it already works perfectly in
+it :)
+
+<span class="qt">&gt;  - There is a system variable (which you can set by executing the command</span>
+<span class="qt">&gt;    DEVICE Txxx where xxx is the desired number) which sets the speed.  The</span>
+<span class="qt">&gt;    usual number, I believe, is 112.  I refer to this as n below.</span>
+
+Oh well.. this means that there is basically NO standard loading speed for the
+SAM Coupe either (like it is with CPC) ... I think it is the best way (as it is
+with CPC - notice a little pattern here ;)) to use &#x27;Custom Loading&#x27; block for
+all SAM Coupe blocks ?
+
+<span class="qt">&gt;The normal leader tone has a half-period of 99+32n cycles.</span>
+<span class="qt">&gt;Then there is one half-cycle of period 145+32n.</span>
+
+Hmmm, this means that AFTER the pilot tone there is a pulse which is around 1.5
+of the size of the leader tone... 
+Here is a question: Is this pulse (half-cycle) VERY important for the loader,
+i.e. could it be the SAME size as the leader pulse ?
+If NOT, then not even the &#x27;Custom Loading&#x27; block can be used to describe these
+blocks, since there is basically an extra sync pulse here ... :(
+
+What I think that this will do is... Ensure that the next pulse read will be A
+LOT smaller than the leader pulse, and therefore much easier to recognise as
+SYNC pulse... I guess there is no way of testing this :( Oh well...
+
+[the rest snipped]
+
+<span class="qt">&gt;Now, because the fetching of the next byte occurs during the second pulse</span>
+<span class="qt">&gt;of the last bit of the previous byte, this means that after the last byte</span>
+<span class="qt">&gt;has been saved there is still one OUT instruction to go, to finish the</span>
+<span class="qt">&gt;current pulse.  It seems that rather than coding this directly, the ROM</span>
+<span class="qt">&gt;author decided to save another junk byte.  Hence there are an extra 7.5</span>
+<span class="qt">&gt;bits of junk after the XOR checksum byte.  I think these always represent</span>
+<span class="qt">&gt;the number 2, as it happens.</span>
+
+OH :) So this is why it happens :)
+
+Thanx for all the info ! I hope I can implement this stuff in VOC2TZX and
+PLAYTZX soon... but it seems noone will be able to test it :(
+
+Tomaz Kac                                             |\      _,,,---,,_
+^~&#x27;~^~&#x27;~^  University of Maribor , Computer Science   /,`.-&#x27;`&#x27;    -.  ;-;;,
+ E-Mail: …@… , Phone: ++602/20-546   |,4-  ) )-,_. ,\ (  `&#x27;::.
+ZX-Tape Homepage:  lizika.jump.org/~tomcat/ZXTape  &#x27;----&#x27;&#x27;(_/--&#x27;  `-&#x27;\_)   TC
+
+
+</pre></div><div class="post" id="p28603"><div class="ph"><a class="d" href="#p28603">1997-08-08</a> <span>…@…</span> <span>Re: SAM Coupe tape format</span></div><pre>
+On Thu, 07 Aug 1997 22:04:23 GMT, …@… (Tomaz Kac)
+wrote:
+
+.SNIP.
+<span class="qt">&gt;</span>
+<span class="qt">&gt;btw. I would think that some folks over at the comp.amstrad.8bit would atleast</span>
+<span class="qt">&gt;want to know about supporting their machines in TZX format, but for some reason</span>
+<span class="qt">&gt;I got &#x27;zilch&#x27; responses ... sheeesh :) (and the newest MultiMachine emulator by</span>
+<span class="qt">&gt;Mr. Paul Hodgson already supports it).</span>
+
+I do but I usually comment in email.
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Tomaz Kac                                             |\      _,,,---,,_</span>
+<span class="qt">&gt;^~&#x27;~^~&#x27;~^  University of Maribor , Computer Science   /,`.-&#x27;`&#x27;    -.  ;-;;,</span>
+<span class="qt">&gt; E-Mail: …@… , Phone: ++602/20-546   |,4-  ) )-,_. ,\ (  `&#x27;::.</span>
+<span class="qt">&gt;ZX-Tape Homepage:  lizika.jump.org/~tomcat/ZXTape  &#x27;----&#x27;&#x27;(_/--&#x27;  `-&#x27;\_)   TC</span>
+
+Not much response probably because not many of the alpha testers are
+CPC based. Once I get a few more CDT files (as I promised you) I&#x27;ll
+include them with the next rev of MTM and explain in the text file in
+a bit more detail about TZX/CDT format files. Its probably hard for
+the CPC group to comment on the format till they have seen how cool it
+is in action. Theres nothing quite like coloured bars in the border
+while loading.
+
+Anyway less blethering and back to work.
+
+Paul A. Hodgson.
+…@…
++-------------------------------------------------+
+<span class="qt">| Old machines never die, they just get emulated. |</span>
++-------------------------------------------------+
+
+
+</pre></div></main></body></html>

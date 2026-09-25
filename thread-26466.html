@@ -1,0 +1,1005 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operation Warm Puppy · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Operation Warm Puppy</h1><p class="facts">33 posts, 2002-10-27 – 2002-11-08</p><div class="post" id="p148888"><div class="ph"><a class="d" href="#p148888">2002-10-27 16:59:52</a> <span>Chris Young</span> </div><pre>I&#x27;ve been wondering about this for years.  In Theatre Europe, when you
+first activate the nuclear weapons computer, it asks you to phone and get
+an authorisation code.  Now, in the edition I had (which was probably
+the budget re-release or something), the code was printed in the
+inlay.  Did anybody ever call this number, and if so, what happened?  Was
+it just a recorded message?
+
+I imagine the following conversation:
+
+PH: Hello, Pizza Hut.
+
+CY: Hello, yes, I&#x27;d like the authorisation code please.
+
+PH: One anchovy pizza and a coke.  Can I take your name please?
+
+CY: No, no, I want the authorisation to release a nuclear missile.
+
+PH: Miss Aisle?  Is that for collection or delivery?
+
+CY: You don&#x27;t understand, I&#x27;m at war and I need urgent access to the
+nuclear weaponary computer.
+
+[pause]
+
+CY: Hello?
+
+PH: I think you&#x27;ve got the wrong number, you may want to call Directory
+Enquiries and get the number for the Prime Minister.
+
+CY: Bu....
+
+PH: Do you still want that pizza?
+
+CY: No, I think I&#x27;ll pass on that thanks. &lt;click&gt;
+
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+DISCLIAMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p148889"><div class="ph"><a class="d" href="#p148889">2002-10-27 17:11:40</a> <span>Frodo Morris</span> <span>Re: Operation Warm Puppy</span></div><pre>Chris Young wrote:
+<span class="qt">&gt; I&#x27;ve been wondering about this for years.  In Theatre Europe, when you</span>
+<span class="qt">&gt; first activate the nuclear weapons computer, it asks you to phone and get</span>
+<span class="qt">&gt; an authorisation code.  Now, in the edition I had (which was probably</span>
+<span class="qt">&gt; the budget re-release or something), the code was printed in the</span>
+<span class="qt">&gt; inlay.  Did anybody ever call this number, and if so, what happened?  Was</span>
+<span class="qt">&gt; it just a recorded message?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I imagine the following conversation:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; PH: Hello, Pizza Hut.</span>
+&lt;snip&gt;
+So no-one told you that Pizza Hut are the new front for UNCLE?
+-- 
+FM
+
+
+
+
+</pre></div><div class="post" id="p148906"><div class="ph"><a class="d" href="#p148906">2002-10-28 06:53:55</a> <span>Steve Leyland</span> <span>Re: Operation Warm Puppy</span></div><pre>Chris Young wrote:
+: I&#x27;ve been wondering about this for years.  In Theatre Europe, when you
+: first activate the nuclear weapons computer, it asks you to phone and
+: get an authorisation code.  Now, in the edition I had (which was
+: probably the budget re-release or something), the code was printed in
+: the inlay.  Did anybody ever call this number, and if so, what
+: happened?  Was it just a recorded message?
+:
+: I imagine the following conversation:
+:
+: PH: Hello, Pizza Hut.
+:
+: CY: Hello, yes, I&#x27;d like the authorisation code please.
+:
+: PH: One anchovy pizza and a coke.  Can I take your name please?
+:
+: CY: No, no, I want the authorisation to release a nuclear missile.
+:
+: PH: Miss Aisle?  Is that for collection or delivery?
+:
+: CY: You don&#x27;t understand, I&#x27;m at war and I need urgent access to the
+: nuclear weaponary computer.
+:
+: [pause]
+:
+: CY: Hello?
+:
+: PH: I think you&#x27;ve got the wrong number, you may want to call
+: Directory Enquiries and get the number for the Prime Minister.
+:
+: CY: Bu....
+:
+: PH: Do you still want that pizza?
+:
+: CY: No, I think I&#x27;ll pass on that thanks. &lt;click&gt;
+
+quite apart from the fact that after a pre-emptive nuclear strike by the
+*enemy*, the electro-magnetic-pulse effect would shirley have made
+telephone calls an impossiblity?
+
+-- 
+Steve Leyland
+mhm32x16  Smeeter#35
+flower: three 6 four 9 five 8 eight 9
+
+  =^/\/\E0\/\/ /\/\E0\/\/ ARMY^=
+
+Dilbert&#x27;s Words of Wisdom: I don&#x27;t suffer from stress.  I&#x27;m a carrier.
+
+======================================================================
+
+&quot;please find below with full headers several posts apparently from your
+user who is extensively trolling, extensively cross-posting, posting
+off-topic, abusing and generally doing everything wrong on USENET.&quot;
+
+&quot;Just in case it isn&#x27;t immediately obvious, there is nothing whatever
+good and decent about Steve Leyland or his trolling &#x27;pals&#x27;.&quot;
+
+Graham Stevenson aka Pooh Bear.
+Resident netkkkop of alt.redheads and alt.disasters.aviation
+
+======================================================================
+
+&quot;It&#x27;s a bigger shame that packs of idiots can&#x27;t keep their profanities
+and idiocies in groups where such is the norm, but instead have to go
+crying for attention in groups that don&#x27;t deal in heavy cross posting,
+cascades, profanity, abject stupidity, and every other moronic thing
+that Steve Leyland, Dean Humphries, and Eddie Bernard represent.&quot;
+
+Mike Soja, alt.bad.clams
+
+
+
+
+
+</pre></div><div class="post" id="p148915"><div class="ph"><a class="d" href="#p148915">2002-10-28 10:46:30</a> <span>Nick Fleming</span> <span>Re: Operation Warm Puppy</span></div><pre>
+&quot;Frodo Morris&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Chris Young wrote:</span>
+<span class="qt">&gt; &gt; I&#x27;ve been wondering about this for years.  In Theatre Europe, when you</span>
+<span class="qt">&gt; &gt; first activate the nuclear weapons computer, it asks you to phone and</span>
+get
+<span class="qt">&gt; &gt; an authorisation code.  Now, in the edition I had (which was probably</span>
+<span class="qt">&gt; &gt; the budget re-release or something), the code was printed in the</span>
+<span class="qt">&gt; &gt; inlay.  Did anybody ever call this number, and if so, what happened?</span>
+Was
+<span class="qt">&gt; &gt; it just a recorded message?</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; I imagine the following conversation:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; PH: Hello, Pizza Hut.</span>
+<span class="qt">&gt; &lt;snip&gt;</span>
+<span class="qt">&gt; So no-one told you that Pizza Hut are the new front for UNCLE?</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; FM</span>
+<span class="qt">&gt;</span>
+
+Hmm.. Pizza Hut.. Warm Puppy.
+Is that with or without the stuffed crust ?
+
+
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p148936"><div class="ph"><a class="d" href="#p148936">2002-10-28 19:59:16</a> <span>Chris Young</span> <span>Re: Operation Warm Puppy</span></div><pre>On Mon, 28 Oct 2002 10:46:30 -0000, Nick Fleming ate a Rolo, and turned into...
+Nick Fleming-Man!  A super-hero with the power to write complete crap
+to comp.sys.sinclair, such as this gem:
+
+<span class="qt">&gt; Hmm.. Pizza Hut.. Warm Puppy.</span>
+<span class="qt">&gt; Is that with or without the stuffed crust ?</span>
+
+I can do you a Stuffed Crust Warm Puppy Pizza for ï¿½13.99
+
+My question hasn&#x27;t been answered yet - can I assume that nobody was
+sufficiently curious enough to call the number in Theatre Europe?
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+DISCLIAMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p148939"><div class="ph"><a class="d" href="#p148939">2002-10-28 20:13:07</a> <span>Dave the Lurker</span> <span>Re: Operation Warm Puppy</span></div><pre>In article &lt;…@…&gt;, 
+…@… says...
+
+&lt;snippage about games I never knew existed and Pizza (Mmmmm, Pizza, 
+&lt;/ObHomer&gt;)&gt;
+
+<span class="qt">&gt; DISCLIAMER: I may be making all this stuff up again.</span>
+
+You are definitely making up the spellings :)
+
+cheers
+Dave
+
+
+
+</pre></div><div class="post" id="p149011"><div class="ph"><a class="d" href="#p149011">2002-10-29 20:43:11</a> <span>Chris Young</span> <span>Re: Operation Warm Puppy</span></div><pre>On Mon, 28 Oct 2002 20:13:07 -0000, Dave the Lurker ate a Rolo, and turned into...
+Dave the Lurker-Man!  A super-hero with the power to write complete crap
+to comp.sys.sinclair, such as this gem:
+
+<span class="qt">&gt; &gt; DISCLIAMER: I may be making all this stuff up again.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; You are definitely making up the spellings :)</span>
+
+Damn.  Erm, I mean, didn&#x27;t you know it is obligatory to have a spelling
+mistake in your sig?  By not doing so, you are contravening Section 4,
+Paragraph 27 of the Public Messages Act 1821.
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p149056"><div class="ph"><a class="d" href="#p149056">2002-10-30 11:44:51</a> <span>Tayles</span> <span>Re: Operation Warm Puppy</span></div><pre>&quot;Chris Young&quot; &lt;…@…&gt; wrote in message news:&lt;…@…&gt;...
+<span class="qt">&gt; I&#x27;ve been wondering about this for years.  In Theatre Europe, when you</span>
+<span class="qt">&gt; first activate the nuclear weapons computer, it asks you to phone and get</span>
+<span class="qt">&gt; an authorisation code.  Now, in the edition I had (which was probably</span>
+<span class="qt">&gt; the budget re-release or something), the code was printed in the</span>
+<span class="qt">&gt; inlay.  Did anybody ever call this number, and if so, what happened?  Was</span>
+<span class="qt">&gt; it just a recorded message?</span>
+
+Wow, am I the only one who rung the number. To start with you got this
+tone sound like a number being dialed. Since all our phones in those
+days were pulse dial, this sounded very American and high tech.  Then
+these siren sounds started followed by an official sounding voice that
+said something like, &quot;the nuclear authorisation code is midnight sun,
+repeat midnight sun&quot;. Then there was this slightly incongruous bit
+where you hear a baby crying and a woman pleading with you to consider
+the consequences of your actions. It was all very early-80s nuclear
+paranoia.  I actually taped it for some reason, but Christ alone knows
+where that tape is now.
+
+Oddly, I wondered a few months backs if there was a dusty office
+somewhere with an answerphone rigged up to it still playing that
+message.  Like the Carlsberg complaints office ad.
+
+Russ.
+
+
+
+</pre></div><div class="post" id="p149057"><div class="ph"><a class="d" href="#p149057">2002-10-30 11:57:04</a> <span>Tayles</span> <span>Re: Operation Warm Puppy</span></div><pre>&quot;Chris Young&quot; &lt;…@…&gt; wrote in message news:&lt;…@…&gt;...
+<span class="qt">&gt; I&#x27;ve been wondering about this for years.  In Theatre Europe, when you</span>
+<span class="qt">&gt; first activate the nuclear weapons computer, it asks you to phone and get</span>
+<span class="qt">&gt; an authorisation code.  Now, in the edition I had (which was probably</span>
+<span class="qt">&gt; the budget re-release or something), the code was printed in the</span>
+<span class="qt">&gt; inlay.  Did anybody ever call this number, and if so, what happened?  Was</span>
+<span class="qt">&gt; it just a recorded message?</span>
+<span class="qt">&gt; </span>
+
+Further to my last mail, the number was 0203 668405.  If anyone knows
+what area code 0203 used to be and can replace it with the new one,
+perhaps you can see if the message still plays!! (fat chance).
+
+Russ.
+
+
+
+</pre></div><div class="post" id="p149061"><div class="ph"><a class="d" href="#p149061">2002-10-30 14:24:24</a> <span>Adam D. Moss</span> <span>Re: Operation Warm Puppy</span></div><pre>Tayles wrote:
+<span class="qt">&gt; Further to my last mail, the number was 0203 668405.  If anyone knows</span>
+<span class="qt">&gt; what area code 0203 used to be and can replace it with the new one,</span>
+<span class="qt">&gt; perhaps you can see if the message still plays!! (fat chance).</span>
+
+*so tempted*
+
+-- 
+Adam D. Moss   . ,,^^   …@…   <a href="http://www.foxbox.org/" rel="noreferrer">http://www.foxbox.org/</a>   co:3
+&quot;You could make a mince pie mountain and
+carve yourself a lair inside to live in.&quot;
+
+
+
+</pre></div><div class="post" id="p149095"><div class="ph"><a class="d" href="#p149095">2002-10-30 22:23:59</a> <span>Robert J Baker</span> <span>Re: Operation Warm Puppy</span></div><pre>…@… (Tayles) wrote in message news:&lt;…@…&gt;...
+
+<span class="qt">&gt; Further to my last mail, the number was 0203 668405.  If anyone knows</span>
+<span class="qt">&gt; what area code 0203 used to be and can replace it with the new one,</span>
+<span class="qt">&gt; perhaps you can see if the message still plays!! (fat chance).</span>
+
+Presumably, the area code would now be 01203.
+
+Unless of course someone would like to try dialling 020 7366 8405, or
+020 8366 8405, and see what happens... no, forget I said that...
+
+
+
+</pre></div><div class="post" id="p149098"><div class="ph"><a class="d" href="#p149098">2002-10-30 22:39:38</a> <span>Shane Knight</span> <span>Re: Operation Warm Puppy</span></div><pre>…@… (Tayles) wrote in message news:&lt;…@…&gt;...
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Further to my last mail, the number was 0203 668405.  If anyone knows</span>
+<span class="qt">&gt; what area code 0203 used to be and can replace it with the new one,</span>
+<span class="qt">&gt; perhaps you can see if the message still plays!! (fat chance).</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Russ.</span>
+
+Man, I need to get a life.  Anyway, after searching a website of old
+UK dialling codes (which amazingly does exist), 0203 is the old
+dialling code for Coventry.
+
+An old OFTEL press release says that Coventry numbers have now changed
+from
+0203 xxx xxx to 024 76xx xxxx.
+
+So 0203 668405 is now 024 7666 8405.
+
+As it&#x27;s 10.30pm at night, I&#x27;m not ringing it as I&#x27;ll probably get some
+poor person out of bed.
+
+However, if anyone does want to ring it, please let us know what
+happens.
+
+
+
+</pre></div><div class="post" id="p149100"><div class="ph"><a class="d" href="#p149100">2002-10-30 22:53:02</a> <span>Chris Young</span> <span>Re: Operation Warm Puppy</span></div><pre>On 30 Oct 2002 03:57:04 -0800, Tayles ate a Rolo, and turned into...
+Tayles-Man!  A super-hero with the power to write complete crap
+to comp.sys.sinclair, such as this gem:
+
+<span class="qt">&gt; &quot;Chris Young&quot; &lt;…@…&gt; wrote in message news:&lt;…@…&gt;...</span>
+<span class="qt">&gt; &gt; I&#x27;ve been wondering about this for years.  In Theatre Europe, when you</span>
+<span class="qt">&gt; &gt; first activate the nuclear weapons computer, it asks you to phone and get</span>
+<span class="qt">&gt; &gt; an authorisation code.  Now, in the edition I had (which was probably</span>
+<span class="qt">&gt; &gt; the budget re-release or something), the code was printed in the</span>
+<span class="qt">&gt; &gt; inlay.  Did anybody ever call this number, and if so, what happened?  Was</span>
+<span class="qt">&gt; &gt; it just a recorded message?</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Further to my last mail, the number was 0203 668405.  If anyone knows</span>
+<span class="qt">&gt; what area code 0203 used to be and can replace it with the new one,</span>
+<span class="qt">&gt; perhaps you can see if the message still plays!! (fat chance).</span>
+
+02 used to be Birmingham, didn&#x27;t it?  Which is 0121 now.  So the new
+number would be 0121 03668405.  Cripes, that&#x27;s one digit too long. 
+Anybody got any better guesses?
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p149110"><div class="ph"><a class="d" href="#p149110">2002-10-30 23:52:28</a> <span>Peter THOMA$</span> <span>Re: Operation Warm Puppy</span></div><pre>On 30 Oct 2002 03:57:04 -0800, …@… (Tayles) wrote:
+
+<span class="qt">&gt;Further to my last mail, the number was 0203 668405.  If anyone knows</span>
+<span class="qt">&gt;what area code 0203 used to be and can replace it with the new one,</span>
+<span class="qt">&gt;perhaps you can see if the message still plays!! (fat chance).</span>
+
+I&#x27;d assume that you just bung in a 1 in after the nought, which was
+what happened to all UK landline phone numbers in 1993.
+
+A quick google on &quot;phone 01203&quot; shows that it&#x27;s Coventry. No, I&#x27;m not
+gonna phone it!
+
+-- 
+pete {at} horseshoe-inn . co . uk
+[New here? See <a href="http://faq.sinclairspectrum.com" rel="noreferrer">http://faq.sinclairspectrum.com</a> ]
+
+*/Christian/* *!Link!* appears to have a website...(*)
+<a href="http://www.spies.com/~gus/ran/0012/antiporn/" rel="noreferrer">http://www.spies.com/~gus/ran/0012/antiporn/</a>
+(* = Might not be true. Possibly.)
+
+&quot;Admittedly if some of the websites I have bookmarked are to be
+believed, I don&#x27;t think that the internet will be too popular with
+horses.&quot;
+ - Llama-Wax Len
+
+
+
+</pre></div><div class="post" id="p149126"><div class="ph"><a class="d" href="#p149126">2002-10-31 10:33:35</a> <span>Tayles</span> <span>Re: Operation Warm Puppy</span></div><pre>…@… (Shane Knight) wrote in message news:&lt;…@…&gt;...
+<span class="qt">&gt; …@… (Tayles) wrote in message news:&lt;…@…&gt;...</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Further to my last mail, the number was 0203 668405.  If anyone knows</span>
+<span class="qt">&gt; &gt; what area code 0203 used to be and can replace it with the new one,</span>
+<span class="qt">&gt; &gt; perhaps you can see if the message still plays!! (fat chance).</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Russ.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Man, I need to get a life.  Anyway, after searching a website of old</span>
+<span class="qt">&gt; UK dialling codes (which amazingly does exist), 0203 is the old</span>
+<span class="qt">&gt; dialling code for Coventry.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; An old OFTEL press release says that Coventry numbers have now changed</span>
+<span class="qt">&gt; from</span>
+<span class="qt">&gt; 0203 xxx xxx to 024 76xx xxxx.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; So 0203 668405 is now 024 7666 8405.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; As it&#x27;s 10.30pm at night, I&#x27;m not ringing it as I&#x27;ll probably get some</span>
+<span class="qt">&gt; poor person out of bed.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; However, if anyone does want to ring it, please let us know what</span>
+<span class="qt">&gt; happens.</span>
+
+Bah! It doesn&#x27;t work. I think you&#x27;re going to have to settle for my
+crap transcript of the old phone message until I dig out that tape -
+if it still exists.
+
+Russ.
+
+
+
+</pre></div><div class="post" id="p149144"><div class="ph"><a class="d" href="#p149144">2002-10-31 13:54:27</a> <span>jweatherley</span> <span>Re: Operation Warm Puppy</span></div><pre>In article &lt;…@…&gt;, see-my-
+…@… says...
+<span class="qt">&gt; On 30 Oct 2002 03:57:04 -0800, …@… (Tayles) wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;Further to my last mail, the number was 0203 668405.  If anyone knows</span>
+<span class="qt">&gt; &gt;what area code 0203 used to be and can replace it with the new one,</span>
+<span class="qt">&gt; &gt;perhaps you can see if the message still plays!! (fat chance).</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;d assume that you just bung in a 1 in after the nought, which was</span>
+<span class="qt">&gt; what happened to all UK landline phone numbers in 1993.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; A quick google on &quot;phone 01203&quot; shows that it&#x27;s Coventry. No, I&#x27;m not</span>
+<span class="qt">&gt; gonna phone it!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+Coventry&#x27;s phone numbers have changed since then. The latest format would 
+be 024 76668405 for those brave enought to try.
+
+
+
+</pre></div><div class="post" id="p149151"><div class="ph"><a class="d" href="#p149151">2002-10-31 16:30:38</a> <span>Tony Austin</span> <span>Re: Operation Warm Puppy</span></div><pre>
+&quot;Robert J Baker&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; …@… (Tayles) wrote in message</span>
+news:&lt;…@…&gt;...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Further to my last mail, the number was 0203 668405.  If anyone knows</span>
+<span class="qt">&gt; &gt; what area code 0203 used to be and can replace it with the new one,</span>
+<span class="qt">&gt; &gt; perhaps you can see if the message still plays!! (fat chance).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Presumably, the area code would now be 01203.</span>
+
+Oftel records show that numbers starting 01203 66 are protected from
+allocation by BT until 18/08/2002
+
+-tony
+
+
+
+
+
+</pre></div><div class="post" id="p149152"><div class="ph"><a class="d" href="#p149152">2002-10-31 16:32:12</a> <span>Tony Austin</span> <span>Re: Operation Warm Puppy</span></div><pre>
+&quot;Shane Knight&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; …@… (Tayles) wrote in message</span>
+news:&lt;…@…&gt;...
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Further to my last mail, the number was 0203 668405.  If anyone knows</span>
+<span class="qt">&gt; &gt; what area code 0203 used to be and can replace it with the new one,</span>
+<span class="qt">&gt; &gt; perhaps you can see if the message still plays!! (fat chance).</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Russ.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Man, I need to get a life.  Anyway, after searching a website of old</span>
+<span class="qt">&gt; UK dialling codes (which amazingly does exist), 0203 is the old</span>
+<span class="qt">&gt; dialling code for Coventry.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; An old OFTEL press release says that Coventry numbers have now changed</span>
+<span class="qt">&gt; from</span>
+<span class="qt">&gt; 0203 xxx xxx to 024 76xx xxxx.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; So 0203 668405 is now 024 7666 8405.</span>
+
+Area served by 02476
+Approximate location
+Grid ref: SP3683
+Latitude: 52ï¿½ 27&#x27; N
+Longitude: 1ï¿½ 28&#x27; W
+
+-tony
+
+
+
+
+
+</pre></div><div class="post" id="p149181"><div class="ph"><a class="d" href="#p149181">2002-11-01 01:49:12</a> <span>Duncan Snowden</span> <span>Re: Operation Warm Puppy</span></div><pre>Program: Tayles
+
+Bytes: Wednesday
+
+<span class="qt">&gt; Wow, am I the only one who rung the number. To start with you got this</span>
+<span class="qt">&gt; tone sound like a number being dialed. Since all our phones in those</span>
+<span class="qt">&gt; days were pulse dial, this sounded very American and high tech.  Then</span>
+<span class="qt">&gt; these siren sounds started followed by an official sounding voice that</span>
+<span class="qt">&gt; said something like, &quot;the nuclear authorisation code is midnight sun,</span>
+<span class="qt">&gt; repeat midnight sun&quot;. Then there was this slightly incongruous bit</span>
+<span class="qt">&gt; where you hear a baby crying and a woman pleading with you to consider</span>
+<span class="qt">&gt; the consequences of your actions. It was all very early-80s nuclear</span>
+<span class="qt">&gt; paranoia.  I actually taped it for some reason, but Christ alone knows</span>
+<span class="qt">&gt; where that tape is now.</span>
+
+God, I remember that now. I never had TE for the Speccy, but my C64
+owning mate and I used to spend hours playing it and I felt sure we must
+have called the number at some point. However, after the old brains drew
+a blank when Chris asked about it I decided we probably hadn&#x27;t. Or my
+mate did did and I never heard it. In fact, I think that *is* what
+happened, and then told me to call it again because it was so cool. Or
+something.
+
+-- 
+Duncan Snowden. 
+
+e File already exists, 1360:3 
+
+
+
+</pre></div><div class="post" id="p149191"><div class="ph"><a class="d" href="#p149191">2002-11-01 04:36:33</a> <span>Jeff Braine</span> <span>Re: Operation Warm Puppy</span></div><pre>
+On 30 Oct 2002, Robert J Baker wrote:
+
+<span class="qt">&gt; &gt; Further to my last mail, the number was 0203 668405.  If anyone knows</span>
+<span class="qt">&gt; &gt; what area code 0203 used to be and can replace it with the new one,</span>
+<span class="qt">&gt; &gt; perhaps you can see if the message still plays!! (fat chance).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Presumably, the area code would now be 01203.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Unless of course someone would like to try dialling 020 7366 8405, or</span>
+<span class="qt">&gt; 020 8366 8405, and see what happens... no, forget I said that...</span>
+
+Hmm, I&#x27;d have to remove that second 0 there, but it&#x27;d make it a number
+in Sydney here....
+
+One digit short...
+
+-- 
+Jeff
+
+Don&#x27;t email me at …@…
+Don&#x27;t email me at …@… either
+
+
+
+
+</pre></div><div class="post" id="p149200"><div class="ph"><a class="d" href="#p149200">2002-11-01 11:17:24</a> <span>Tayles</span> <span>Re: Operation Warm Puppy</span></div><pre>Duncan Snowden &lt;…@…&gt; wrote in message news:&lt;…@…&gt;...
+<span class="qt">&gt; Program: Tayles</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Bytes: Wednesday</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; Wow, am I the only one who rung the number. To start with you got this</span>
+<span class="qt">&gt; &gt; tone sound like a number being dialed. Since all our phones in those</span>
+<span class="qt">&gt; &gt; days were pulse dial, this sounded very American and high tech.  Then</span>
+<span class="qt">&gt; &gt; these siren sounds started followed by an official sounding voice that</span>
+<span class="qt">&gt; &gt; said something like, &quot;the nuclear authorisation code is midnight sun,</span>
+<span class="qt">&gt; &gt; repeat midnight sun&quot;. Then there was this slightly incongruous bit</span>
+<span class="qt">&gt; &gt; where you hear a baby crying and a woman pleading with you to consider</span>
+<span class="qt">&gt; &gt; the consequences of your actions. It was all very early-80s nuclear</span>
+<span class="qt">&gt; &gt; paranoia.  I actually taped it for some reason, but Christ alone knows</span>
+<span class="qt">&gt; &gt; where that tape is now.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; God, I remember that now. I never had TE for the Speccy, but my C64</span>
+<span class="qt">&gt; owning mate and I used to spend hours playing it and I felt sure we must</span>
+<span class="qt">&gt; have called the number at some point. However, after the old brains drew</span>
+<span class="qt">&gt; a blank when Chris asked about it I decided we probably hadn&#x27;t. Or my</span>
+<span class="qt">&gt; mate did did and I never heard it. In fact, I think that *is* what</span>
+<span class="qt">&gt; happened, and then told me to call it again because it was so cool. Or</span>
+<span class="qt">&gt; something.</span>
+
+I&#x27;ve never actually known anyone outside of me and my old Speccy
+playing pal Robert who ever owned or played TE, let alone listened to
+the phone message. It was actually quite professionally done and
+sounded appropriately official and chilling (apart from that bit with
+the woman maybe). Speaking on talky bits associated with games, what
+about the triffic phone messages that came with Valkyrie 17?  They
+were great.
+
+Russ
+
+
+
+</pre></div><div class="post" id="p149202"><div class="ph"><a class="d" href="#p149202">2002-11-01 11:53:13</a> <span>Adam D. Moss</span> <span>voicey extras [was: Operation Warm Puppy]</span></div><pre>Tayles wrote:
+<span class="qt">&gt; Speaking on talky bits associated with games, what</span>
+<span class="qt">&gt; about the triffic phone messages that came with Valkyrie 17?  They</span>
+<span class="qt">&gt; were great.</span>
+
+... or at least baffling, which was close enough.
+
+Mel Croucher&#x27;s old ZX81 compilations had amusing (or
+at least very odd) snippets of related dialogue or rambling
+between each 1K blip of game (come to think of it, does the
+much-loved &#x27;perfect&#x27; TZX format have the facility to preserve
+such vitals?).  The voicey stuff was half the fun.
+
+-- 
+Adam D. Moss   . ,,^^   …@…   <a href="http://www.foxbox.org/" rel="noreferrer">http://www.foxbox.org/</a>   co:3
+&quot;You could make a mince pie mountain and
+carve yourself a lair inside to live in.&quot;
+
+
+
+</pre></div><div class="post" id="p149300"><div class="ph"><a class="d" href="#p149300">2002-11-03 12:12:58</a> <span>Lee Prince</span> <span>Re: Operation Warm Puppy</span></div><pre>10 PRINT &quot;Chris Young woz &#x27;ere 30 Oct 2002&quot;
+20 GO TO 10
+ 
+<span class="qt">&gt; 02 used to be Birmingham, didn&#x27;t it? </span>
+
+No, 021. Unless Bedford used to be a part of Birmingham.
+
+-- 
+Lee Prince &lt;mailto:leee.prince[at]virgin.net&gt;
+
+
+
+</pre></div><div class="post" id="p149380"><div class="ph"><a class="d" href="#p149380">2002-11-04 19:04:32</a> <span>Robert J Baker</span> <span>Re: Operation Warm Puppy</span></div><pre>…@… (Peter THOMA$) wrote in message news:&lt;…@…&gt;...
+
+<span class="qt">&gt; I&#x27;d assume that you just bung in a 1 in after the nought, which was</span>
+<span class="qt">&gt; what happened to all UK landline phone numbers in 1993.</span>
+
+In 1995, actually (Easter Sunday)... :p
+
+
+
+</pre></div><div class="post" id="p149391"><div class="ph"><a class="d" href="#p149391">2002-11-04 20:14:13</a> <span>Andrew Owen</span> <span>Re: Operation Warm Puppy</span></div><pre>In article &lt;…@…&gt;,
+…@… (Robert J Baker) wrote:
+
+<span class="qt">&gt; …@… (Peter THOMA$) wrote in message</span>
+news:&lt;…@…&gt;...
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; I&#x27;d assume that you just bung in a 1 in after the nought, which was</span>
+<span class="qt">&gt; &gt; what happened to all UK landline phone numbers in 1993.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; In 1995, actually (Easter Sunday)... :p</span>
+
+How many times have the phone codes changed in Britain since I&#x27;ve been
+alive? Let&#x27;s see. First there was when London went from 01, to 071 and
+081, then there was when they added a 1 after the zero, so London changed
+to 0171 and 0181, then they changed all the codes for major cities
+rendering my entire contacts book useless. Cardiff went from 01222 to
+something completely unrelated. And then of course they changed all the
+mobile numbers for Cellnet customers from 0141 to 01791. And how many
+times have they added digits to existing numbers? I remember when people
+had three digit telephone numbers following a four digit code in some
+places. They&#x27;re up to six digits now and most people are up to eight. Ok,
+Here&#x27;s my point:
+
+If the x-xxx-xxx-xxxx format works for the whole of north America, why the
+hell can&#x27;t we impiment it in Britain and have done with it? AT&amp;T did a lot
+of research before choosing this system and they adopted it because the
+longest series of numbers most people can comfortably remember is seven,
+and groups of three are easier to remember. So you dial a 1 if you&#x27;re
+dialling outside your area, then a three digit area code (unless you&#x27;re
+dialling inside your area), and then the seven digit number (the first
+three digits of which will refer to an even localler exchange). This
+format has enough capacity for all the monbiles, faxes, computers, etc in
+the whole of north America, so it should be ample for Britain. And what
+does BT give us?
+
+variable length area code (so you don&#x27;t know if you have the right number
+of digits)
+
+followed by eight digit number (which cannot be committed to memory by
+half the population).
+
+#end rant
+
+-- 
+The ZX Spectrum SE is really here. You&#x27;re not imagining it.
+
+<a href="http://zxse.raww.net/" rel="noreferrer">http://zxse.raww.net/</a>
+
+
+
+</pre></div><div class="post" id="p149396"><div class="ph"><a class="d" href="#p149396">2002-11-04 20:59:17</a> <span>Lister</span> <span>Re: Operation Warm Puppy</span></div><pre>A long time ago (Mon, 04 Nov 2002 20:14:13 +0000, probably), in a pub
+far, far away, …@… (Andrew Owen) slammed a pint
+glass on the table and said :
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;variable length area code (so you don&#x27;t know if you have the right number</span>
+<span class="qt">&gt;of digits)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;followed by eight digit number (which cannot be committed to memory by</span>
+<span class="qt">&gt;half the population).</span>
+
+Really?  My number is only 7 digits, and when I lived down in Moffat
+it was only 5. this was only 10 years ago
+
+
+
+-- 
+And they said it would never happen
+
+www.fache.pwp.blueyonder.co.uk
+(not much there right now)
+
+
+
+</pre></div><div class="post" id="p149404"><div class="ph"><a class="d" href="#p149404">2002-11-04 21:49:37</a> <span>Andrew Owen</span> <span>Re: Operation Warm Puppy</span></div><pre>In article &lt;…@…&gt;,
+…@… wrote:
+
+<span class="qt">&gt; A long time ago (Mon, 04 Nov 2002 20:14:13 +0000, probably), in a pub</span>
+<span class="qt">&gt; far, far away, …@… (Andrew Owen) slammed a pint</span>
+<span class="qt">&gt; glass on the table and said :</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;variable length area code (so you don&#x27;t know if you have the right number</span>
+<span class="qt">&gt; &gt;of digits)</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;followed by eight digit number (which cannot be committed to memory by</span>
+<span class="qt">&gt; &gt;half the population).</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Really?  My number is only 7 digits, and when I lived down in Moffat</span>
+<span class="qt">&gt; it was only 5. this was only 10 years ago</span>
+
+A lot has changed in 10 years. Some stuff is still the same. Speccys are
+still great fun. BT is still crap and not in a funky-skillo kind of way.
+
+-- 
+The ZX Spectrum SE is really here. You&#x27;re not imagining it.
+
+<a href="http://zxse.raww.net/" rel="noreferrer">http://zxse.raww.net/</a>
+
+
+
+</pre></div><div class="post" id="p149411"><div class="ph"><a class="d" href="#p149411">2002-11-04 22:56:42</a> <span>Chris Young</span> <span>Re: Operation Warm Puppy</span></div><pre>On Mon, 04 Nov 2002 20:59:17 +0000, Lister ate a Rolo, and turned into...
+Lister-Man!  A super-hero with the power to write complete crap
+to comp.sys.sinclair, such as this gem:
+
+<span class="qt">&gt; A long time ago (Mon, 04 Nov 2002 20:14:13 +0000, probably), in a pub</span>
+<span class="qt">&gt; far, far away, …@… (Andrew Owen) slammed a pint</span>
+<span class="qt">&gt; glass on the table and said :</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;variable length area code (so you don&#x27;t know if you have the right number</span>
+<span class="qt">&gt; &gt;of digits)</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;followed by eight digit number (which cannot be committed to memory by</span>
+<span class="qt">&gt; &gt;half the population).</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Really?  My number is only 7 digits, and when I lived down in Moffat</span>
+<span class="qt">&gt; it was only 5. this was only 10 years ago</span>
+
+Mine is only six digits long, and most people living outside major cities
+should have one of the same length.
+
+However, I agree that the phone numbering system is rather stupid. 
+They&#x27;ve rationalised it a bit, so looking at Andrew&#x27;s US format string -
+UK version:
+
+(xxxx[x])-xxxxxx[xx]
+
+The first digit is a zero if you are dialling outside your local area. 
+The second digit identifies what you are dialling (1 and 2 are fixed line
+areas, 7 for mobiles, 8 for free or standard rate non-location specific
+and 9 for premium rate, no idea what 3-6 are), erm, and the rest is
+random digits.  Often the first digit or two of the number identifies
+the area more speicifically, where they have added a digit to the front
+of all numbers in the area, but then this doesn&#x27;t always follow when they
+allocate new numbers with completely different digits.
+
+If they fixed the length of the code and number it would makes it a lot
+simpler for everybody, even if this would involve splitting London into
+twenty-seven different area codes.
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p149413"><div class="ph"><a class="d" href="#p149413">2002-11-04 23:10:48</a> <span>Lister</span> <span>Re: Operation Warm Puppy</span></div><pre>A long time ago (Mon, 04 Nov 2002 21:49:37 +0000, probably), in a pub
+far, far away, …@… (Andrew Owen) slammed a pint
+glass on the table and said :
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;A lot has changed in 10 years. Some stuff is still the same. Speccys are</span>
+<span class="qt">&gt;still great fun. BT is still crap and not in a funky-skillo kind of way.</span>
+
+
+And I used to be 11 years old
+
+
+
+-- 
+And they said it would never happen
+
+www.fache.pwp.blueyonder.co.uk
+(not much there right now)
+
+
+
+</pre></div><div class="post" id="p149431"><div class="ph"><a class="d" href="#p149431">2002-11-05 01:01:15</a> <span>Duncan Snowden</span> <span>Re: Operation Warm Puppy</span></div><pre>Program: Andrew Owen
+
+Bytes: Monday
+
+<span class="qt">&gt; And then of course they changed all the mobile numbers for Cellnet </span>
+<span class="qt">&gt; customers from 0141 to 01791.</span>
+
+That&#x27;ll be because they changed Glasgow from 041 to 0141. And probably
+explains why I get so many wrong numbers.
+
+<span class="qt">&gt; If the x-xxx-xxx-xxxx format works for the whole of north America, why</span>
+<span class="qt">&gt; the hell can&#x27;t we impiment it in Britain and have done with it?</span>
+
+Beats me. The first change was supposed to give us more numbers than we
+could ever possibly use. And so was the next one. And the last one.
+
+FWIW, central Glasgow numbers have only changed once in the recent
+upheavals: as mentioned, from 041 nnn nnnn to 0141 nnn nnnn. I assume all
+the other former 0n1 numbers (apart from London, obv.) are the same.
+
+-- 
+Duncan Snowden. 
+
+d Too many brackets, 410:4 
+
+
+
+</pre></div><div class="post" id="p149445"><div class="ph"><a class="d" href="#p149445">2002-11-05 02:01:10</a> <span>Andrew Owen</span> <span>Re: Operation Warm Puppy</span></div><pre>In article &lt;…@…&gt;,
+Chris Cowley &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; On 05 Nov 2002 01:01:15, Duncan Snowden &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;Program: Andrew Owen</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Bytes: Monday</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;&gt; If the x-xxx-xxx-xxxx format works for the whole of north America, why</span>
+<span class="qt">&gt; &gt;&gt; the hell can&#x27;t we impiment it in Britain and have done with it?</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Beats me. The first change was supposed to give us more numbers than we</span>
+<span class="qt">&gt; &gt;could ever possibly use. And so was the next one. And the last one.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Unfortunately, the North American numbering system is just about as</span>
+<span class="qt">&gt; problematic as the UK system. Area codes were originally allocated one</span>
+<span class="qt">&gt; per state. The problem with that is that some states cover a vast area</span>
+<span class="qt">&gt; but have a small population (resulting in massive wastage of the number</span>
+<span class="qt">&gt; space) while other States have a comparatively large population (such as</span>
+<span class="qt">&gt; NY, which has have several reorganisations and now has more than one</span>
+<span class="qt">&gt; area code). You have the situation where dialling outside of your own</span>
+<span class="qt">&gt; area code might be a local call, or it might not.</span>
+
+Ok, but at least it&#x27;s logical. In NY there&#x27;s one area code for Manhattan,
+414 I seem to recall, one for Brooklyn, one for the Bronx etc.
+
+<span class="qt">&gt; I have read that NANP plans to introduce 4-digit area codes at some</span>
+<span class="qt">&gt; point, with an extra &#x27;9&#x27; inserted as the second digit of the area code</span>
+<span class="qt">&gt; so that +1 275 555 1000 becomes +1 2975 555 1000</span>
+
+That&#x27;s still a better solution than BT&#x27;s. 4-3-4 isn&#x27;t quite as good as
+3-3-4, but it&#x27;s better than 5-4-4, or any of the other combinations here.
+ 
+<span class="qt">&gt; See the North American Numbering Plan Administration site at</span>
+<span class="qt">&gt; www.nanp.com for information on the many number reorganisations that</span>
+<span class="qt">&gt; have taken place and are planned to take place in the USA. The USAn</span>
+<span class="qt">&gt; system is no panacea.</span>
+
+Nah, I&#x27;ll just take your word for it.
+
+-- 
+The ZX Spectrum SE is really here. You&#x27;re not imagining it.
+
+<a href="http://zxse.raww.net/" rel="noreferrer">http://zxse.raww.net/</a>
+
+
+
+</pre></div><div class="post" id="p149704"><div class="ph"><a class="d" href="#p149704">2002-11-07 16:23:50</a> <span>Derek Glen</span> <span>Re: Operation Warm Puppy</span></div><pre>I used to live in Coventry.  But not any more, thank goodness! :o)
+
+And it went to 01203 for a couple of years (after the April phONE day around
+1995).  I didn&#x27;t realise it had changed yet again.  Just goes to show how
+many friends I have who stayed in Coventry...
+
+--
+degsy. :o)
+Where are we going and why am I in this handbasket?
+
+
+&quot;Tony Austin&quot; &lt;…@…&gt; wrote in message
+news:3dc15b43$0$303$…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;Shane Knight&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt; &gt; …@… (Tayles) wrote in message</span>
+<span class="qt">&gt; news:&lt;…@…&gt;...</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; Further to my last mail, the number was 0203 668405.  If anyone knows</span>
+<span class="qt">&gt; &gt; &gt; what area code 0203 used to be and can replace it with the new one,</span>
+<span class="qt">&gt; &gt; &gt; perhaps you can see if the message still plays!! (fat chance).</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; Russ.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Man, I need to get a life.  Anyway, after searching a website of old</span>
+<span class="qt">&gt; &gt; UK dialling codes (which amazingly does exist), 0203 is the old</span>
+<span class="qt">&gt; &gt; dialling code for Coventry.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; An old OFTEL press release says that Coventry numbers have now changed</span>
+<span class="qt">&gt; &gt; from</span>
+<span class="qt">&gt; &gt; 0203 xxx xxx to 024 76xx xxxx.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; So 0203 668405 is now 024 7666 8405.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Area served by 02476</span>
+<span class="qt">&gt; Approximate location</span>
+<span class="qt">&gt; Grid ref: SP3683</span>
+<span class="qt">&gt; Latitude: 52ï¿½ 27&#x27; N</span>
+<span class="qt">&gt; Longitude: 1ï¿½ 28&#x27; W</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; -tony</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+
+
+
+</pre></div><div class="post" id="p149821"><div class="ph"><a class="d" href="#p149821">2002-11-08 20:19:24</a> <span>Robert J Baker</span> <span>Re: Operation Warm Puppy</span></div><pre>…@… (Andrew Owen) wrote in message news:&lt;…@…&gt;...
+
+<span class="qt">&gt; How many times have the phone codes changed in Britain since I&#x27;ve been</span>
+<span class="qt">&gt; alive?</span>
+
+The first one you detailed was on Easter Sunday 1990, the second on
+Easter Sunday 1995, and the third on Easter Sunday 2000.
+
+So expect the fourth in just over two years&#x27; time... :-)
+
+
+
+</pre></div></main></body></html>

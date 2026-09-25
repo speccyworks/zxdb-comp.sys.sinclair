@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Real names and handles checked against ZXDB · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Real names and handles checked against ZXDB</h1><details class="about"><summary>About this list</summary><p class="note">The group often shows that a handle and a real name are one person: the same address posting under both, a signature, or someone saying so. ZXDB records such links between its labels (a Person label, Nickname labels, linked by owner/from). On 25 Sep 2026, 145 candidate pairs from the group were checked against ZXDB&#x27;s labels. Only pairs that touch a ZXDB label, and that ZXDB doesn&#x27;t already connect, were kept as candidates. ZXDB copy: <code>~/projects/zx-spectrum/zxdb/zxdb.sqlite</code> of 18 Sep 2026. The same verdicts as data: <code>names-checked.tsv</code>.</p><p class="note">This list adds to the 20 contest authors in section 5 of <code>csscgc-vs-zxdb.md</code> (deKay = Andy Kavanagh, Woody = Mark Woodmass, Dr. Sputnik = Gavin Callard and others). Those are not repeated here.</p><table class="items"><thead><tr><th>Finding</th><th>Items</th></tr></thead><tbody><tr><td><b>Two ZXDB labels that are one person</b></td><td>2</td></tr><tr><td><b>Real names ZXDB lacks, for handles it has</b></td><td>2</td></tr><tr><td><b>Handles ZXDB lacks, for people it has</b></td><td>10</td></tr><tr><td>Not one person, a namesake, a shared or fake address, a joke name or a company</td><td>113 pairs</td></tr><tr><td>Already reported in the CSSCGC list</td><td>12 pairs</td></tr></tbody></table><p class="note">Pairs the posts could not settle, and warnings about labels that look alike but are different people, are left out of this list (25 Sep 2026); they are in <code>names-checked.tsv</code>.</p><p class="note">Most candidates were rejected, and for good reasons. Several addresses were shared placeholders used by many people (…@…, …@…, …@…), and university accounts were used under other students&#x27; names. A match to a ZXDB label was often a namesake: the 1995 York student posting as &quot;Dave Hughes&quot; is not the 2011 author Dave Hughes (R-Tape).</p></details><p class="filter"><input class="rowfilter" placeholder="Filter the rows on this page"> <span class="small rowcount"></span></p><p class="tabs"><a href="names-all.html">All</a> · <a href="names-1.html">Two ZXDB labels that are one person (2)</a> · <b>Real names ZXDB lacks (2)</b> · <a href="names-3.html">Handles ZXDB lacks (10)</a></p><table class="items"><thead><tr><th>Handle (ZXDB label)</th><th>Real name</th><th>How the posts show it</th><th>Post</th></tr></thead><tbody><tr><td>Guesser (<a href="https://spectrumcomputing.co.uk/list?label_id=5591">5591</a>), host of the 2009 CSSCGC</td><td>Alistair Cree</td><td>Posting as &quot;Alistair C&quot;: &quot;that&#x27;s me, Guesser btw... my secret identity is exposed&quot;. His York account posts as &quot;Alistair Cree&quot;, and when that name is quoted, Guesser answers &quot;the bloody things changed the name again&quot;.</td><td><a href="thread-33525.html#p214195">2007-10-18</a>, <a href="thread-34438.html#p220083">2009-05-19</a>, <a href="thread-34438.html#p220085">2009-05-20</a></td></tr><tr><td>Dave the Lurker (<a href="https://spectrumcomputing.co.uk/list?label_id=19782">19782</a>), host of the 2003 CSSCGC</td><td>Dave Mills</td><td>Posts as &quot;David Mills&quot; from …@…, the address he uses as Dave the Lurker. A meetup list by Matthew Westcott (gasman) names &quot;Dave Mills (dtl, Dave The Lurker)&quot;.</td><td><a href="thread-33460.html#p213729">2007-09-16</a>, <a href="thread-25033.html#p135511">2002-04-18</a></td></tr></tbody></table><details class="about"><summary>How this was checked</summary><table class="items list"><tbody><tr><td><b>Candidates</b> (145 pairs), from three sources:</td></tr><tr class=sub><td>names used on one address (the index&#x27;s <code>posters</code> table), skipping truncated usenetarchives.com addresses;</td></tr><tr class=sub><td>&quot;X aka Y&quot;, &quot;real name&quot; and &quot;Name (Handle)&quot; in post texts and From: lines;</td></tr><tr class=sub><td>the index&#x27;s poster-to-label matches from posted entries.</td></tr><tr><td><b>Filtering:</b> a pair was kept only if one name equals a ZXDB Person or Nickname label (a lone common first name only for nickname labels with entries), and ZXDB doesn&#x27;t already link the two.</td></tr><tr><td><b>Checking:</b> three helper agents judged about 48 pairs each. They read the posts and signatures in the index and checked ZXDB (both read-only), including whether the ZXDB label is the same person or a namesake.</td></tr><tr><td><b>Validation:</b> all 145 verdicts are present, and every cited post and label exists. Claude read the key sentence of every finding in its post, and confirmed in ZXDB that none of the handles and real names in sections 2 and 3 exists as a label, and that the pairs in section 1 are unlinked.</td></tr></tbody></table><p class="note">These are judgements, not rules; <code>build_index.py</code> doesn&#x27;t rebuild them. <code>names-checked.tsv</code> has all 145 pairs with Message-IDs and thread files.</p></details><p class="note">From names-vs-zxdb.md (25 Sep 2026).</p></main><script>
+(function () {
+  function fold(s) { return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); }
+  var box = document.querySelector('.rowfilter'), count = document.querySelector('.rowcount');
+  if (!box) return;
+  var rows = Array.prototype.slice.call(document.querySelectorAll('main > table tbody tr'));
+  rows.forEach(function (r) { r.dataset.text = fold(r.textContent); });
+  box.addEventListener('input', function () {
+    var words = fold(box.value).split(/\s+/).filter(Boolean), shown = 0;
+    rows.forEach(function (r) {
+      var ok = words.every(function (w) { return r.dataset.text.indexOf(w) >= 0; });
+      r.style.display = ok ? '' : 'none'; shown += ok;
+    });
+    document.querySelectorAll('main > table').forEach(function (t) {
+      var any = Array.prototype.some.call(t.querySelectorAll('tbody tr'), function (r) { return r.style.display !== 'none'; });
+      t.style.display = any ? '' : 'none';
+    });
+    count.textContent = words.length ? shown + ' of ' + rows.length + ' rows' : '';
+  });
+})();
+</script></body></html>

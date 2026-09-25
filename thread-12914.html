@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[CSSCGC] And the winner is... (long&#x27;ish) · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>[CSSCGC] And the winner is... (long&#x27;ish)</h1><p class="facts">17 posts, 1998-08-10 – 1998-08-14</p><div class="post" id="p40278"><div class="ph"><a class="d" href="#p40278">1998-08-10</a> <span>…@…</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30569">ZXDB: Back Of The Grid II - Advanced C5 Simulator</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30568">ZXDB: Back Of The Grid - The Sinclair C5 Simulator</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30570">ZXDB: Back Of The Grid III - Professional C5 Simulator</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30578">ZXDB: Escape From The... men in White Coats</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30571">ZXDB: The Best Thing Since Sliced Bread</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30566">ZXDB: Advanced W*nking Simulator</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30562">ZXDB: Advanced Illegal Parking Simulator</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30565">ZXDB: Advanced Windows 95 Simulator</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30559">ZXDB: 3D Advanced Marathon Simulator</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30560">ZXDB: Advanced Binary Simulator</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30561">ZXDB: Advanced Death Simulator</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30579">ZXDB: Horace Goes Snowboarding</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30600">ZXDB: That Pythonesque Foot</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30564">ZXDB: Advanced Wallpaper Simulator</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30567">ZXDB: Alien Abduction Simulator</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30563">ZXDB: Advanced Shoplifting Simulator</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30598">ZXDB: Spice Girls Manager</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30573">ZXDB: Coin Toss Simulator</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30587">ZXDB: Official Hearing Test</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30586">ZXDB: Off My Ed</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30599">ZXDB: Super Beam Riders</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30597">ZXDB: Software Piracy Simulator</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30605">ZXDB: World Cup Final</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30572">ZXDB: Cheese Magnate</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30575">ZXDB: Conway&#x27;s Death</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30558">ZXDB: 1D Tetris</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30604">ZXDB: World Cup</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30581">ZXDB: Jet Fighters</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30582">ZXDB: Magic Square</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30584">ZXDB: Mind Games</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30585">ZXDB: MYST Demo</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30593">ZXDB: RM380Z Emulator</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30603">ZXDB: Ultimate IRC</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30595">ZXDB: Skinhead</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30608">ZXDB: Yahtzee</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30607">ZXDB: Wurmer</a></div><pre>Hi everyone,
+
+Owing to the disappearance of my partner in crime , I&#x27;ll have to
+carry the can for this on my own ;-)
+
+The nominations are:
+
+Advanced Binary Simulator (Radovan Garabik)
+Advanced Death Simulator
+Poke Alex in the Eye (A.J. Moss) [3 versions!]
+Advanced W*nking Simulator (A.J. Moss) [RUN or GO TO 200]
+The Best Thing Since Sliced Bread
+Cheese Magnate (Sam)
+Trebuchet
+Conway&#x27;s Death (Sam)
+1D Tetris
+Purple Demon 3
+Quake (A.J. Moss)
+Reaction Tester (Jamie Percival)
+Horace goes Snowboarding
+Skinhead
+That Pythonesque Foot
+Advanced Wallpaper Simulator
+World Cup 1998
+World War 2.5
+Yahtzee
+Alien Abduction Simulator (Derek Jolly)
+Back of the Grid II - Advanced C5 Simulator (Chris Young)
+Advanced Illegal Parking Simulator (Chris Young)
+Advanced Shoplifting Simulator (Chris Young)
+Advanced Windows 95 Simulator (Chris Young)
+Back of the Grid - The Sinclair C5 Simulator (Chris Young)
+Darts, Catch 19, Monontris, Spice Girls Manager (Ian Collier) 4 on 1!
+CSSCGC - The game of the game! (Chris Young)
+Coin Toss Simulator (Derek Jolly)
+Escape from the...men in white coats? (Chris Young)
+Jet Fighters (Derek Jolly)
+3D Advanced Marathon Simulator (Tero Turtiainen)
+Magic Square (Derek Jolly)
+Mind Games (Derek Jolly)
+Myst Demo (Chris Young)
+Official Hearing Test (Chris Young)
+Off my Ed (Peter Thomas)
+PC Emulator (Derek Jolly)
+Crap Piano Simulator (A.J. Moss)
+Back of the Grid III - Professional C5 Simulator
+The Re-Tuners : The Game (Chris Young)
+RM380Z Emulator (Chris Young)
+Super Beam Riders (Derek Jolly)
+Sir Clive Sinclair : Entrepeneur Extraordinaire (Chris Young)
+Snake (Joakim Petrim)
+Software Piracy Simulator (Derek Jolly)
+Ultimate IRC (Chris Young)
+World Cup Final (Derek Jolly)
+Wurmer (Radovan Garabik)
+ZX Spectrum Emulator
+
+Deh management would like to apologise for games that are uncredited
+above...We&#x27;d like to, but we&#x27;re not going to because it&#x27;s your own fault
+for not including your name in the program somewhere 
+
+The three crappest games (in reverse order) are as follows:
+
+Mind Games
+RM380Z Emulator
+ZX Spectrum Emulator
+
+Congratulations(? - Ed) to our winners. Comiserations to the losers.
+Your games were crap, just not crap enough. ;)
+
+The complete collection will shortly be available for download from my
+Demon home page (www.salterg.demon.co.uk/csscgc/) in various formats
+(depending on what archivers I find here )...
+
+Cya,
+
+Barry
+
+-- 
+Barry K A Salter, …@…
+PGP key available from Key Servers. Key ID: 0xA9BEA591
+PGP Fingerprint: 95B5 B336 2148 2D08  2261 B8EC 45D9 A566
+
+
+</pre></div><div class="post" id="p40365"><div class="ph"><a class="d" href="#p40365">1998-08-11</a> <span>…@…</span> <span>Re: [CSSCGC] And the winner is... (long&#x27;ish)</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>On Mon, 10 Aug 1998 18:35:07 GMT, …@… (Barry K A
+Salter) wibbled on for an age;
+
+
+
+*crap, but in a funky skillo sort of way
+
+<span class="qt">&gt;Official Hearing Test (Chris Young)</span>
+
+Except I had simulators on the mind, so the filename is OHS.  Tch, eh?
+
+<span class="qt">&gt;The three crappest games (in reverse order) are as follows:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Mind Games</span>
+<span class="qt">&gt;RM380Z Emulator</span>
+<span class="qt">&gt;ZX Spectrum Emulator</span>
+
+Hurrah!  I came second!
+
+I knew that the Speccy emulator would win.  Really.
+
+Congrats to, er, whoever wrote it! :-)
+
+Chris
+
+--
+email: …@…
+Unsatisfactory Software: <a href="http://www.bigfoot.com/~unsatisfactory/" rel="noreferrer">http://www.bigfoot.com/~unsatisfactory/</a>
+Your Sinclair: A Celebration: <a href="http://www.bigfoot.com/~ysac/" rel="noreferrer">http://www.bigfoot.com/~ysac/</a>
+*** please update your links!!! ***
+
+
+</pre></div><div class="post" id="p40370"><div class="ph"><a class="d" href="#p40370">1998-08-11</a> <span>…@…</span> <span>Re: [CSSCGC] And the winner is... (long&#x27;ish)</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>On Mon, 10 Aug 1998 18:35:07 GMT, …@… (Barry K A
+Salter) wrote:
+
+<span class="qt">&gt;The complete collection will shortly be available for download from my</span>
+<span class="qt">&gt;Demon home page (www.salterg.demon.co.uk/csscgc/) in various formats</span>
+<span class="qt">&gt;(depending on what archivers I find here )...</span>
+
+UPDATE! The above page is now available and the archive formats
+available are:
+
+ACE (ordinary or MS-DOS compatible SFX)
+ARC (PKUNPAK/ARCE needed for DOS or Windoze)
+ARJ
+RAR (as for ACE)
+ZIP (ordinary, PKZIP v2.04g compatible, and Windoze based SFX)
+
+I&#x27;d recommend getting the ACE version if you can find a copy of UNACE
+for your computer (source code is freely available)
+
+Cya,
+
+Barry
+
+-- 
+Barry K A Salter, …@…
+PGP key available from Key Servers. Key ID: 0xA9BEA591
+PGP Fingerprint: 95B5 B336 2148 2D08  2261 B8EC 45D9 A566
+
+
+</pre></div><div class="post" id="p40371"><div class="ph"><a class="d" href="#p40371">1998-08-11</a> <span>…@…</span> <span>Re: [CSSCGC] And the winner is... (long&#x27;ish)</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>On Tue, 11 Aug 1998 10:55:29 GMT, …@… (Derek Jolly)
+wrote:
+
+<span class="qt">&gt;In article , Graham Goring  </span>
+<span class="qt">&gt;postulated the following theorem...</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Quoth the Raven in article &lt;902821060.7998.1.nnrp-</span>
+<span class="qt">&gt;&gt;…@…&gt;, Derek Jolly </span>
+<span class="qt">&gt;&gt;writes</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;Hey, I wrote the ZX Spectrum Emulator, but you&#x27;re right, there&#x27;s no mention</span>
+<span class="qt">&gt;&gt;&gt;of my name anywhere in it.</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;Just to prove it, the first line of code&#x27;s</span>
+<span class="qt">&gt;&gt;&gt;10 BORDER 0: PAPER 0: INK 7: BRIGHT 1: CLS</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;That&#x27;s the first line of practically every program I ever wrote on the</span>
+<span class="qt">&gt;&gt;Speccy... :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Yes, but if I&#x27;d showed any other line of the program it would have given</span>
+<span class="qt">&gt;away the true genius of the programming techniques used. :)</span>
+
+I see no true genius there. Now if it had said
+10 BORDER NOT PI... etc. :)
+-- 
+  //// Damien Burke (add &#x27;k&#x27; to end of address if replying)
+ //// Spectrum site: <a href="http://www.jetman.dircon.co.uk/speccy/" rel="noreferrer">http://www.jetman.dircon.co.uk/speccy/</a>
+//// New to this group? Read this: <a href="http://www.kendalls.demon.co.uk/cssfaq/" rel="noreferrer">http://www.kendalls.demon.co.uk/cssfaq/</a>
+
+
+</pre></div><div class="post" id="p40387"><div class="ph"><a class="d" href="#p40387">1998-08-11</a> <span>…@…</span> <span>Re: [CSSCGC] And the winner is... (long&#x27;ish)</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>In article &lt;…@…&gt;, Barry K A Salter postulated 
+the following theorem...
+
+
+<span class="qt">&gt;Mind Games</span>
+<span class="qt">&gt;RM380Z Emulator</span>
+<span class="qt">&gt;ZX Spectrum Emulator</span>
+
+Hey, I wrote the ZX Spectrum Emulator, but you&#x27;re right, there&#x27;s no mention
+of my name anywhere in it.
+
+Just to prove it, the first line of code&#x27;s
+10 BORDER 0: PAPER 0: INK 7: BRIGHT 1: CLS
+-- 
+Derek Jolly  (…@…)  (Remove the &#x27;x&#x27; for e-mail)
+Alcohol and calculus don&#x27;t mix. Never drink and derive.
+
+
+
+</pre></div><div class="post" id="p40390"><div class="ph"><a class="d" href="#p40390">1998-08-11</a> <span>…@…</span> <span>Re: [CSSCGC] And the winner is... (long&#x27;ish)</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>In article , Graham Goring  
+postulated the following theorem...
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Quoth the Raven in article &lt;902821060.7998.1.nnrp-</span>
+<span class="qt">&gt;…@…&gt;, Derek Jolly </span>
+<span class="qt">&gt;writes</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Hey, I wrote the ZX Spectrum Emulator, but you&#x27;re right, there&#x27;s no mention</span>
+<span class="qt">&gt;&gt;of my name anywhere in it.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Just to prove it, the first line of code&#x27;s</span>
+<span class="qt">&gt;&gt;10 BORDER 0: PAPER 0: INK 7: BRIGHT 1: CLS</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;That&#x27;s the first line of practically every program I ever wrote on the</span>
+<span class="qt">&gt;Speccy... :)</span>
+
+Yes, but if I&#x27;d showed any other line of the program it would have given
+away the true genius of the programming techniques used. :)
+-- 
+Derek Jolly  (…@…)  (Remove the &#x27;x&#x27; for e-mail)
+Alcohol and calculus don&#x27;t mix. Never drink and derive.
+
+
+
+</pre></div><div class="post" id="p40391"><div class="ph"><a class="d" href="#p40391">1998-08-11</a> <span>…@…</span> <span>Re: [CSSCGC] And the winner is... (long&#x27;ish)</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/30584">ZXDB: Mind Games</a></div><pre>In article &lt;…@…&gt;, Chris Young postulated the 
+following theorem...
+<span class="qt">&gt;</span>
+<span class="qt">&gt;On Mon, 10 Aug 1998 18:35:07 GMT, …@… (Barry K A</span>
+<span class="qt">&gt;Salter) wibbled on for an age;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;*crap, but in a funky skillo sort of way</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;Official Hearing Test (Chris Young)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Except I had simulators on the mind, so the filename is OHS.  Tch, eh?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;The three crappest games (in reverse order) are as follows:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Mind Games</span>
+<span class="qt">&gt;&gt;RM380Z Emulator</span>
+<span class="qt">&gt;&gt;ZX Spectrum Emulator</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Hurrah!  I came second!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I knew that the Speccy emulator would win.  Really.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Congrats to, er, whoever wrote it! :-)</span>
+
+Cheers, it was me.  And I wrote Mind Games as well, which is probably
+the best text adventure created with the PAW ever.
+-- 
+Derek Jolly  (…@…)  (Remove the &#x27;x&#x27; for e-mail)
+Alcohol and calculus don&#x27;t mix. Never drink and derive.
+
+
+
+</pre></div><div class="post" id="p40411"><div class="ph"><a class="d" href="#p40411">1998-08-12</a> <span>ritchie swann</span> <span>Re: [CSSCGC] And the winner is... (long&#x27;ish)</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>Graham Goring wrote:
+
+<span class="qt">&gt; Quoth the Raven in article &lt;902821060.7998.1.nnrp-</span>
+<span class="qt">&gt; …@…&gt;, Derek Jolly </span>
+<span class="qt">&gt; writes</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Hey, I wrote the ZX Spectrum Emulator, but you&#x27;re right, there&#x27;s no mention</span>
+<span class="qt">&gt; &gt;of my name anywhere in it.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Just to prove it, the first line of code&#x27;s</span>
+<span class="qt">&gt; &gt;10 BORDER 0: PAPER 0: INK 7: BRIGHT 1: CLS</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; That&#x27;s the first line of practically every program I ever wrote on the</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Speccy... :)</span>
+<span class="qt">&gt;</span>
+Or alternatively
+
+10 POKE 23693,71 : POKE 23624,71 : CLS
+
+or if you want to do it the more &quot;sophisticated way&quot;, stick a liberal amount of
+VALs and PIs in :)
+
+--
+Ritchie
+
+Graham Goring wrote:
+Quoth the Raven in article &lt;902821060.7998.1.nnrp-
+…@…&gt;, Derek Jolly &lt;…@…&gt;
+writes
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Hey, I wrote the ZX Spectrum Emulator, but you&#x27;re right, there&#x27;s no</span>
+mention
+<span class="qt">&gt;of my name anywhere in it.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Just to prove it, the first line of code&#x27;s</span>
+<span class="qt">&gt;10 BORDER 0: PAPER 0: INK 7: BRIGHT 1: CLS</span>
+
+That&#x27;s the first line of practically every program I ever wrote on the
+Speccy... :)
+
+Or alternatively
+
+10 POKE 23693,71 : POKE 23624,71 : CLS
+
+or if you want to do it the more &quot;sophisticated way&quot;, stick a liberal
+amount of VALs and PIs in :)
+
+--
+Ritchie
+
+</pre></div><div class="post" id="p40435"><div class="ph"><a class="d" href="#p40435">1998-08-12</a> <span>…@…</span> <span>Re: [CSSCGC] And the winner is... (long&#x27;ish)</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>In his obvious haste, Peter Thomas  babbled thusly:
+: It stars Gerard Sweeney, Gerard&#x27;s Ed, The Starglider and a
+: guy/business that used to post here!
+
+Oh, you mean that thieving, obnoxious rapscallion known as... errr...
+
+Missileboat... Nope, that wasn&#x27;t it...
+Fireworkyacht? Nope. That wasn&#x27;t it either...
+
+Hmmmm....
+
+Flyingsaucerturd.... That seems a little closer....
+I know I&#x27;ll get it eventually....
+-- 
+______________________________________________________________________________
+<span class="qt">|…@…| &quot;Are you pondering what I&#x27;m pondering Pinky?&quot;   |</span>
+<span class="qt">|     Andrew Halliwell     |                                                 |</span>
+<span class="qt">|       Finalist in:-      | &quot;I think so brain, but this time, you control   |</span>
+<span class="qt">|     Computer Science     |  the Encounter suit, and I&#x27;ll do the voice...&quot;  |</span>
+------------------------------------------------------------------------------
+<span class="qt">|GCv3.1 GCS/EL&gt;$ d---(dpu) s+/- a- C++ U N++ o+ K- w-- M+/++ PS+++ PE- Y t+  |</span>
+<span class="qt">|5++ X+/++ R+ tv+ b+ D G e&gt;PhD h/h+ !r! !y-|I can&#x27;t say F**K either now! :(  |</span>
+------------------------------------------------------------------------------
+
+
+</pre></div><div class="post" id="p40442"><div class="ph"><a class="d" href="#p40442">1998-08-12</a> <span>…@…</span> <span>Re: [CSSCGC] And the winner is... (long&#x27;ish)</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>In article &lt;…@…&gt;, Damien Burke postulated the 
+following theorem...
+<span class="qt">&gt;</span>
+<span class="qt">&gt;On Tue, 11 Aug 1998 10:55:29 GMT, …@… (Derek Jolly)</span>
+<span class="qt">&gt;wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;In article , Graham Goring  </span>
+<span class="qt">&gt;&gt;postulated the following theorem...</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;Quoth the Raven in article &lt;902821060.7998.1.nnrp-</span>
+<span class="qt">&gt;&gt;&gt;…@…&gt;, Derek Jolly </span>
+<span class="qt">&gt;&gt;&gt;writes</span>
+<span class="qt">&gt;&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;&gt;Hey, I wrote the ZX Spectrum Emulator, but you&#x27;re right, there&#x27;s no mention</span>
+<span class="qt">&gt;&gt;&gt;&gt;of my name anywhere in it.</span>
+<span class="qt">&gt;&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;&gt;Just to prove it, the first line of code&#x27;s</span>
+<span class="qt">&gt;&gt;&gt;&gt;10 BORDER 0: PAPER 0: INK 7: BRIGHT 1: CLS</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;That&#x27;s the first line of practically every program I ever wrote on the</span>
+<span class="qt">&gt;&gt;&gt;Speccy... :)</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Yes, but if I&#x27;d showed any other line of the program it would have given</span>
+<span class="qt">&gt;&gt;away the true genius of the programming techniques used. :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I see no true genius there. Now if it had said</span>
+<span class="qt">&gt;10 BORDER NOT PI... etc. :)</span>
+
+Ah, just wait &#x27;till you see the full program.  Then you&#x27;ll understand
+what I mean. ;)
+-- 
+Derek Jolly  (…@…)  (Remove the &#x27;x&#x27; for e-mail)
+Alcohol and calculus don&#x27;t mix. Never drink and derive.
+
+
+
+</pre></div><div class="post" id="p40446"><div class="ph"><a class="d" href="#p40446">1998-08-12</a> <span>…@…</span> <span>Re: [CSSCGC] And the winner is... (long&#x27;ish)</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>…@… (Barry K A Salter) wrote:
+
+
+<span class="qt">&gt;Off my Ed (Peter Thomas)</span>
+
+<span class="qt">&gt;The complete collection will shortly be available for download from my</span>
+<span class="qt">&gt;Demon home page (www.salterg.demon.co.uk/csscgc/) in various formats</span>
+<span class="qt">&gt;(depending on what archivers I find here )...</span>
+
+Just for those who want a look at my game before the whole collection
+goes up on Barry&#x27;s space, I&#x27;ve stuck it on
+
+www.prodge.demon.co.uk/ome.tap
+
+It stars Gerard Sweeney, Gerard&#x27;s Ed, The Starglider and a
+guy/business that used to post here!
+
+-- 
+Peter Thomas   pete {at} prodge.demon.co.uk  ICQ# 6692412
+Speccy website coming soon...
+NEW HERE? See the FAQ at www.kendalls.demon.co.uk/cssfaq/
+** DO NOT SEND BINARIES TO THIS NEWSGROUP**
+
+
+
+</pre></div><div class="post" id="p40456"><div class="ph"><a class="d" href="#p40456">1998-08-13</a> <span>…@…</span> <span>Re: [CSSCGC] And the winner is... (long&#x27;ish)</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>In article &lt;…@…&gt;, …@… (Barry K A Salter) wrote:
+<span class="qt">&gt;&gt;The complete collection will shortly be available for download from my</span>
+<span class="qt">&gt;&gt;Demon home page (www.salterg.demon.co.uk/csscgc/) in various formats</span>
+<span class="qt">&gt;&gt;(depending on what archivers I find here )...</span>
+
+<span class="qt">&gt;UPDATE! The above page is now available</span>
+
+So where are the instructions, eh?  I mean, anyone can have files sent
+to them and then zip them up and put them on the web but I thought we
+elected you to take over Blood&#x27;s job, which includes writing an over-hyped
+introduction to all the games to explain what they are and who wrote them.
+Sheesh...
+-- 
+---- Ian Collier : …@… : WWW page (including Spectrum section):
+------ <a href="http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html" rel="noreferrer">http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html</a>
+
+New to this group?  Answers to frequently-asked questions can be had from
+<a href="http://www.kendalls.demon.co.uk/cssfaq/index.html" rel="noreferrer">http://www.kendalls.demon.co.uk/cssfaq/index.html</a> .
+Sam Coupï¿½ FAQ: <a href="http://www.mono.org/~unc/Coupe/FAQ.txt" rel="noreferrer">http://www.mono.org/~unc/Coupe/FAQ.txt</a>
+
+
+</pre></div><div class="post" id="p40479"><div class="ph"><a class="d" href="#p40479">1998-08-13</a> <span>…@…</span> <span>Re: [CSSCGC] And the winner is... (long&#x27;ish)</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>On 13 Aug 1998 11:43:51 GMT, …@… (Ian Collier) wibbled
+on for an age;
+
+<span class="qt">&gt;In article &lt;…@…&gt;, …@… (Barry K A Salter) wrote:</span>
+<span class="qt">&gt;&gt;&gt;The complete collection will shortly be available for download from my</span>
+<span class="qt">&gt;&gt;&gt;Demon home page (www.salterg.demon.co.uk/csscgc/) in various formats</span>
+<span class="qt">&gt;&gt;&gt;(depending on what archivers I find here )...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;UPDATE! The above page is now available</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;So where are the instructions, eh?  I mean, anyone can have files sent</span>
+<span class="qt">&gt;to them and then zip them up and put them on the web but I thought we</span>
+<span class="qt">&gt;elected you to take over Blood&#x27;s job, which includes writing an over-hyped</span>
+<span class="qt">&gt;introduction to all the games to explain what they are and who wrote them.</span>
+<span class="qt">&gt;Sheesh...</span>
+
+I was wondering that as well...
+
+Chris
+
+--
+email: …@…
+Unsatisfactory Software: <a href="http://www.bigfoot.com/~unsatisfactory/" rel="noreferrer">http://www.bigfoot.com/~unsatisfactory/</a>
+Your Sinclair: A Celebration: <a href="http://www.bigfoot.com/~ysac/" rel="noreferrer">http://www.bigfoot.com/~ysac/</a>
+*** please update your links!!! ***
+
+
+</pre></div><div class="post" id="p40484"><div class="ph"><a class="d" href="#p40484">1998-08-13</a> <span>…@…</span> <span>Re: [CSSCGC] And the winner is... (long&#x27;ish)</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>On 12 Aug 1998 22:10:10 GMT, …@… wrote:
+
+<span class="qt">&gt;In his obvious haste, Peter Thomas  babbled thusly:</span>
+<span class="qt">&gt;: It stars Gerard Sweeney, Gerard&#x27;s Ed, The Starglider and a</span>
+<span class="qt">&gt;: guy/business that used to post here!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Oh, you mean that thieving, obnoxious rapscallion known as... errr...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Missileboat... Nope, that wasn&#x27;t it...</span>
+<span class="qt">&gt;Fireworkyacht? Nope. That wasn&#x27;t it either...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Hmmmm....</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Flyingsaucerturd.... That seems a little closer....</span>
+<span class="qt">&gt;I know I&#x27;ll get it eventually....</span>
+
+Now now. You know full well it was FartCanoe Services.
+-- 
+  //// Damien Burke (add &#x27;k&#x27; to end of address if replying)
+ //// Spectrum site: <a href="http://www.jetman.dircon.co.uk/speccy/" rel="noreferrer">http://www.jetman.dircon.co.uk/speccy/</a>
+//// New to this group? Read this: <a href="http://www.kendalls.demon.co.uk/cssfaq/" rel="noreferrer">http://www.kendalls.demon.co.uk/cssfaq/</a>
+
+
+</pre></div><div class="post" id="p40486"><div class="ph"><a class="d" href="#p40486">1998-08-13</a> <span>…@…</span> <span>Re: [CSSCGC] And the winner is... (long&#x27;ish)</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>On Thu, 13 Aug 1998 12:54:46 GMT, …@… (Chris
+Young) wrote:
+
+<span class="qt">&gt;&gt;So where are the instructions, eh?  I mean, anyone can have files sent</span>
+<span class="qt">&gt;&gt;to them and then zip them up and put them on the web but I thought we</span>
+<span class="qt">&gt;&gt;elected you to take over Blood&#x27;s job, which includes writing an over-hyped</span>
+<span class="qt">&gt;&gt;introduction to all the games to explain what they are and who wrote them.</span>
+<span class="qt">&gt;&gt;Sheesh...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I was wondering that as well...</span>
+
+Sheesh...I thought nobody actually read instructions nowadays anyway? ;)
+
+All of the instructions for Derek&#x27;s games are in the scrolly at the
+start and most of the others are too simple to need instructions. ;)
+
+You are aware that that&#x27;ll take me at least, ooh...3 minutes to do .
+As for names, that&#x27;d involve everyone resubmitting everything for the
+third time because I&#x27;ve deleted the original messages containing the
+games 
+
+Cya,
+
+Barry
+
+-- 
+Barry K A Salter, …@…
+PGP key available from Key Servers. Key ID: 0xA9BEA591
+PGP Fingerprint: 95B5 B336 2148 2D08  2261 B8EC 45D9 A566
+
+
+</pre></div><div class="post" id="p40507"><div class="ph"><a class="d" href="#p40507">1998-08-13</a> <span>…@…</span> <span>Re: [CSSCGC] And the winner is... (long&#x27;ish)</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>In article &lt;…@…&gt;, Ian Collier postulated the 
+following theorem...
+<span class="qt">&gt;</span>
+<span class="qt">&gt;In article &lt;…@…&gt;, …@… </span>
+(Bar
+<span class="qt">&gt;ry K A Salter) wrote:</span>
+<span class="qt">&gt;&gt;&gt;The complete collection will shortly be available for download from my</span>
+<span class="qt">&gt;&gt;&gt;Demon home page (www.salterg.demon.co.uk/csscgc/) in various formats</span>
+<span class="qt">&gt;&gt;&gt;(depending on what archivers I find here )...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;UPDATE! The above page is now available</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;So where are the instructions, eh?  I mean, anyone can have files sent</span>
+<span class="qt">&gt;to them and then zip them up and put them on the web but I thought we</span>
+<span class="qt">&gt;elected you to take over Blood&#x27;s job, which includes writing an over-hyped</span>
+<span class="qt">&gt;introduction to all the games to explain what they are and who wrote them.</span>
+<span class="qt">&gt;Sheesh...</span>
+
+
+You just can&#x27;t get the staff these days, can you? :)
+-- 
+Derek Jolly  (…@…)  (Remove the &#x27;x&#x27; for e-mail)
+Alcohol and calculus don&#x27;t mix. Never drink and derive.
+
+
+
+</pre></div><div class="post" id="p40525"><div class="ph"><a class="d" href="#p40525">1998-08-14</a> <span>…@…</span> <span>Re: [CSSCGC] And the winner is... (long&#x27;ish)</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>In article &lt;…@…&gt;, …@… (Barry K A Salter) wrote:
+<span class="qt">&gt;All of the instructions for Derek&#x27;s games are in the scrolly at the</span>
+<span class="qt">&gt;start and most of the others are too simple to need instructions. ;)</span>
+
+Most...  not all.  Anyway I might like to know what to do without waiting
+half an hour for the scrolly to finish.  And it still doesn&#x27;t tell me what
+the thing is and who it is from before I&#x27;ve loaded it.
+
+<span class="qt">&gt;You are aware that that&#x27;ll take me at least, ooh...3 minutes to do .</span>
+<span class="qt">&gt;As for names, that&#x27;d involve everyone resubmitting everything for the</span>
+<span class="qt">&gt;third time because I&#x27;ve deleted the original messages containing the</span>
+<span class="qt">&gt;games </span>
+
+Good heavens, didn&#x27;t you look at previous CSSCGCs to see how it was done then?
+-- 
+---- Ian Collier : …@… : WWW page (including Spectrum section):
+------ <a href="http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html" rel="noreferrer">http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html</a>
+
+New to this group?  Answers to frequently-asked questions can be had from
+<a href="http://www.kendalls.demon.co.uk/cssfaq/index.html" rel="noreferrer">http://www.kendalls.demon.co.uk/cssfaq/index.html</a> .
+Sam Coupï¿½ FAQ: <a href="http://www.mono.org/~unc/Coupe/FAQ.txt" rel="noreferrer">http://www.mono.org/~unc/Coupe/FAQ.txt</a>
+
+
+</pre></div></main></body></html>

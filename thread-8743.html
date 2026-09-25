@@ -1,0 +1,897 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Re: New ZX Tape format - new ideas · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Re: New ZX Tape format - new ideas</h1><p class="facts">11 posts, 1997-03-04 – 1997-03-08</p><div class="post" id="p24569"><div class="ph"><a class="d" href="#p24569">1997-03-04</a> <span>…@…</span> </div><pre>
+On 4 Mar 1997 11:13:26 GMT, gerton@PROBLEM_WITH_INEWS_GATEWAY_FILE () wrote:
+
+<span class="qt">&gt;I think information like &#x27;screen emulation mode&#x27; and &#x27;border emulation&#x27; and</span>
+<span class="qt">&gt;&#x27;custom interrupt frequency&#x27; have no place in a tape format.</span>
+
+But if such settings make the game more playable than it would have been
+otherwise, why not? This, of course, goes in the custom block that each emulator
+can choose to use or ignore.
+
+<span class="qt">&gt;  For example,</span>
+<span class="qt">&gt;many people don&#x27;t like the fact that Z80 stores the joystick type in .Z80</span>
+<span class="qt">&gt;snapshot files, because this means that their default joystick type setting</span>
+<span class="qt">&gt;is changed every time a snapshot is loaded.  I wouldn&#x27;t do such a thing</span>
+<span class="qt">&gt;now, if I had to design the .Z80 format again.</span>
+
+I quite like that; if one games uses Kempston and another only allows Sinclair
+or Protek, it&#x27;s handy not to have to fiddle, but to simply set it once, save the
+snapshot and forget about it.
+
+<span class="qt">&gt;About the extension.  Why not use &#x27;TAP&#x27;?  It is not so difficult to have</span>
+<span class="qt">&gt;the emulator check whether the file starts with &#x27;ZXTAPE!&#x27;...</span>
+
+But older emulators then fall over when they encounter a new TAP, with the
+resulting hundreds of posts from newbies saying &#x27;Why doesn&#x27;t this TAP file
+work?&#x27;. We got you to go for SLT in the end instead of Z80... now wasn&#x27;t that a
+good idea?
+--
+Damien Burke (remove nojunkmail part of my address to reply)
+Speccy pages: <a href="http://www.jetman.demon.co.uk/speccy/" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/</a>
+New to this group? Read the FAQ: <a href="http://as_above/speccy/faq/" rel="noreferrer">http://as_above/speccy/faq/</a>
+Opinions are mine alone and do not represent RNSETT
+
+
+</pre></div><div class="post" id="p24576"><div class="ph"><a class="d" href="#p24576">1997-03-04</a> <span>…@…</span> </div><pre>
+On 4 Mar 1997 15:35:20 GMT, gerton@PROBLEM_WITH_INEWS_GATEWAY_FILE () wrote:
+
+<span class="qt">&gt;That&#x27;s OK then.  I will probably choose to ignore it.  I do not like</span>
+<span class="qt">&gt;programs to do things &#x27;behind my back&#x27;, without letting me know about it.</span>
+
+But *your* program is the one putting the settings in there; it&#x27;s just the same
+as the settings Z80 saves now. If you don&#x27;t find a Z80 ID you ignore the info
+and write the current settings. If you do find a Z80 ID you can use the
+settings.
+-- 
+    //// Damien Burke (to reply, remove the &#x27;nojunkmail&#x27; part from my address)
+  //// Spectrum pages: <a href="http://www.jetman.demon.co.uk/speccy/" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/</a>
+//// New to this group? Read this: <a href="http://www.jetman.demon.co.uk/speccy/faq/" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/faq/</a>
+
+
+</pre></div><div class="post" id="p24582"><div class="ph"><a class="d" href="#p24582">1997-03-04</a> <span>…@…</span> </div><pre>
+On 4 Mar 1997 11:13:26 GMT, gerton@PROBLEM_WITH_INEWS_GATEWAY_FILE () wrote:
+
+<span class="qt">&gt;Dear Spectrum-lovers,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I have been thinking about the new tape format, and I have a few suggestions.</span>
+<span class="qt">&gt;I think the format is starting to become unnecessarily complicated and</span>
+<span class="qt">&gt;detailed.  Too many gadgets have been put in, in my opinion.</span>
+
+Well, I feel like that too, but since most of the suggestions are from emulator
+authors I had to put them in or otherwise the format would not be supported :(
+Anyway, it is easy to just skip the block that isn&#x27;t supported by the
+emulator...
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;The purpose of the new format is to create a versatile, general way of</span>
+<span class="qt">&gt;storing turbo-saved programs.  Let us stick to that idea as much as possible.</span>
+
+My toughts exactly ... :)
+
+<span class="qt">&gt;I think information like &#x27;screen emulation mode&#x27; and &#x27;border emulation&#x27; and</span>
+<span class="qt">&gt;&#x27;custom interrupt frequency&#x27; have no place in a tape format.  For example,</span>
+<span class="qt">&gt;many people don&#x27;t like the fact that Z80 stores the joystick type in .Z80</span>
+<span class="qt">&gt;snapshot files, because this means that their default joystick type setting</span>
+<span class="qt">&gt;is changed every time a snapshot is loaded.  I wouldn&#x27;t do such a thing</span>
+<span class="qt">&gt;now, if I had to design the .Z80 format again.</span>
+
+I know, but sometimes it is better if emulator can set some things
+automatically, I already took out the Hardware Mode and Joystick information out
+of the Emulation Info block, and put them in the &#x27;Hardware Type&#x27; Block, which is
+quite big now ... people are sending things to add constantly ... Ofcourse
+hardware info block is not ment to change any emulator settings, but you can
+ofcourse use it for that too ...
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;It is useful to have some information about the program stored in the tape</span>
+<span class="qt">&gt;file.  One important piece of information is the hardware type.  On the other</span>
+<span class="qt">&gt;hand, I don&#x27;t like a tape file to change the hardware mode: it should behave</span>
+<span class="qt">&gt;like a tape; I should be able to load a block into another program if I wanted</span>
+<span class="qt">&gt;to, and not have the hardware mode changed.  So I propose to let this</span>
+<span class="qt">&gt;&#x27;hardware type&#x27; block have an advisory function: when it is encountered,</span>
+<span class="qt">&gt;the emulator prompts the user whether or not to change the hardware according</span>
+<span class="qt">&gt;to the suggestion in the tape file.</span>
+
+Yes, this is a good way... the Hardware Type block only tells you on which
+machine that game (or program) works or what hardware it can use when you have
+that attached... it is of more informative nature ...
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I propose not to include any other information in the tape file.  Remarks</span>
+<span class="qt">&gt;can be included in a text form, such as &#x27;Won&#x27;t work without R register</span>
+<span class="qt">&gt;emulation&#x27;.</span>
+<span class="qt">&gt;</span>
+
+Well, as I said it is quite easy to skip all the un-important blocks :) I
+personally won&#x27;t like to see the &#x27;Snapshot Block&#x27; or &#x27;Custom Info&#x27; block, but
+they might be needed by someone sometime :) and I know I will skip those blocks
+in my utilities...
+
+<span class="qt">&gt;It is also not necessary to include a block telling whether or not normal</span>
+<span class="qt">&gt;tape blocks may be loaded using a &#x27;fast&#x27; ROM loading patch.  The emulator</span>
+<span class="qt">&gt;could start feeding leader pulses to the emulated program, and keep an eye</span>
+<span class="qt">&gt;on whether the ROM loading routine is entered or not.  If it is, it could</span>
+<span class="qt">&gt;then decide to load the whole block directly, which is always allowed at</span>
+<span class="qt">&gt;that point.  If it never enters the ROM loading routine, then the block was</span>
+<span class="qt">&gt;probably loaded by a custom load routine.</span>
+
+Yes, I know it is very easy to use it like that. But there were A LOT of
+comments from Radovan Garabik and other emulator authors and how they would like
+to use the tape format, so I had to put that in &#x27;Emulation Info&#x27; block. It can,
+ofcourse, be just overlooked if you don&#x27;t need it :)
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;The current format has a block that changes the timing constants of custom</span>
+<span class="qt">&gt;loading data blocks.  I think it is better to include the timing constants</span>
+<span class="qt">&gt;in these custom blocks themselves.  Otherwise, if the user &#x27;rewinds&#x27; the</span>
+<span class="qt">&gt;virtual tape partly, the emulator has to re-read all of the tape to find</span>
+<span class="qt">&gt;the timing constants for the particular block to which the user rewinds.</span>
+<span class="qt">&gt;The drawback is that files get a little larger, but only so slightly that</span>
+<span class="qt">&gt;I think we should not bother about it.  A clear, simple format is more</span>
+<span class="qt">&gt;important than a few dozen less bytes.</span>
+
+Hmm, you have a good point here, but.... I made a converter over the weekend and
+tried it on some 60 or so turbo loading tapes I have. I found out that ALL
+timing constants are changed at the same time VERY rarely (not even once)...
+normally the program changes only the constants of 0 and 1 bit and nothing else
+(this is in almost 90% of all tapes), some change the pilot signal too. So I
+have in almost 90% of all converted tapes ONLY ONE change of speed (for 0 and 1
+bit) and nothing else. Pauses are a different matter, since again 90% of loaders
+use normal pause for all the first blocks, which are loaded with normal speed
+and have a pause of about 0.2 seconds after the turbo loading blocks.
+
+Anyway, I would think that emulators would atleast go through the WHOLE file (or
+even load the whole file) when it was selected and while loading the file they
+could (as I am doing it in my HypraLoader) take notice of which timing has
+changed and write that information in separate array (or linked list, as I do)
+i.e. the emulator should keep the information about EACH timing used for the
+Custom Loading data blocks, in the start all the timings would be the same as
+standard ones  ... in this way you have ALL the information you need about each
+block stored in that new array and when you rewind to some position you have all
+the timings you need. So no need to store ALL the Timing information in the
+Custom block since most of it is the same through the whole file.
+
+<span class="qt">&gt;Also, I propose to include a &#x27;pause&#x27; to each (normal and custom) tape</span>
+<span class="qt">&gt;block, not only to those that are not followed up by an &#x27;extra pause&#x27;</span>
+<span class="qt">&gt;block.  It is awkward to have to check whether an &#x27;extra pause&#x27; block</span>
+<span class="qt">&gt;follows when the emulator has to decide whether to put in a standard pause</span>
+<span class="qt">&gt;or not.  With custom blocks it is possible to set the pause length to zero.</span>
+<span class="qt">&gt;Normal blocks are then always followed up by a 1 second pause.</span>
+
+Hmm... but I have MANY tapes which use Normal loading timings and have a
+different pause (like StarStrike II) after them. Would it really be so hard to
+look if the next block is a Pause and use that pause instead of Normal Pause ?
+Since next pause can be 0 and you have to keep loading without any T-states of
+pause. I put A LOT of tought into how these pauses should be handled and this
+works just fine for now... though it can be changed :) Also I think that adding
+up the pauses isn&#x27;t a good idea... 
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;On the other hand, I agree very much with having an &#x27;extra pause&#x27; block.</span>
+<span class="qt">&gt;I also like the message added to a pause block.</span>
+<span class="qt">&gt;</span>
+
+:) Oh man... you should see how many additions are in Revision 8 ... 
+I might just go out and shoot myself :))) 
+
+<span class="qt">&gt;About the extension.  Why not use &#x27;TAP&#x27;?  It is not so difficult to have</span>
+<span class="qt">&gt;the emulator check whether the file starts with &#x27;ZXTAPE!&#x27;...</span>
+<span class="qt">&gt;</span>
+
+I think this is a bad idea, since many emulators and utilities recognise the old
+.TAP files only by the extension (since they can&#x27;t recognise them by anything
+else :( ) ... and so they would attempt to load the new files and make a mess
+out of it :( I think a new extension should be better....
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;ID : 00  -  Pause (with an optional message)</span>
+<span class="qt">&gt;-------</span>
+<span class="qt">&gt;          Use this block to add a pause to the pause after each block (1 second</span>
+<span class="qt">&gt;            for standard blocks, variable for custom blocks.)  This block can</span>
+
+Hmm, I really don&#x27;t think this is a good idea... it is REALLY easy to see
+whether the next block is a Pause block and use that instead of a normal pause,
+don&#x27;t you think ? :)
+
+<span class="qt">&gt;            also be used to display messages.</span>
+<span class="qt">&gt;          If the Value is 255 then the pause is indefinite, and the emulator</span>
+<span class="qt">&gt;            should wait for a keypress to continue.</span>
+
+Here should be : ... and the emulator should STOP THE TAPE. :) Since I was wrong
+to put the keypress info here...
+
+<span class="qt">&gt;          If the message length is 0, no message is displayed.  If it is nonzero,</span>
+<span class="qt">&gt;            then a message is displayed for the duration of the pause.</span>
+<span class="qt">&gt;          When a message is displayed, the emulator stops emulating the program</span>
+<span class="qt">&gt;            for the duration of the pause.  Only pause blocks without messages</span>
+<span class="qt">&gt;            are actual pauses as far as the emulated program is concerned.</span>
+
+Added this comments.
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;00 1  Value of the pause in tenth of seconds (1s/10)</span>
+<span class="qt">&gt;01 1  Length of the message (if 0 then NO message)</span>
+<span class="qt">&gt;02 x  Message that should be displayed (in ASCII)  Suggested format: stick to</span>
+<span class="qt">&gt;        a maximum of 30 chars per line.  Use single 0x0D (13 decimal) to</span>
+<span class="qt">&gt;        separate lines.  Stick to a maximum of 8 lines.  If you do not obey</span>
+<span class="qt">&gt;        these rules, emulators may display your message in any way they like!</span>
+<span class="qt">&gt;</span>
+
+OKie, added the additonal info about the pause.
+
+<span class="qt">&gt;ID : 02  -  Hardware Type</span>
+<span class="qt">&gt;-------</span>
+<span class="qt">&gt;          This provides information on the hardware required/suggested to</span>
+<span class="qt">&gt;            run the tape.  It is not necessary to include such a block.  It</span>
+<span class="qt">&gt;            is suggested that emulators inform the user of a change in</span>
+<span class="qt">&gt;            hardware if a Hardware Type block is encountered, and leave the</span>
+<span class="qt">&gt;            possibility of not changing it.</span>
+<span class="qt">&gt;          Each field contains a byte which has the following meaning:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;            00 - Don&#x27;t know</span>
+<span class="qt">&gt;            01 - This hardware is sufficient</span>
+<span class="qt">&gt;            02 - This hardware is not sufficient, or program doesn&#x27;t run on it</span>
+<span class="qt">&gt;            03 - This hardware is suggested</span>
+
+I expanded this block (a little ;) ) since there was SO MUCH information added
+to it... I hope you like it this way too... I think this is of more informative
+nature, but ofcourse it can be used to ask the user whether it wants to use some
+of the hardware...
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;ID : 03  -  Custom Loading Data Block</span>
+<span class="qt">&gt;-------</span>
+<span class="qt">&gt;          This is the block with actual data. It is very similar to the normal</span>
+<span class="qt">&gt;          .TAP block but with some additional Info and will use all Loading</span>
+<span class="qt">&gt;          Speed changes from blocks with ID 01.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;00 2  Length of PILOT half-period                       [2168]</span>
+<span class="qt">&gt;02 2  Length of SYNC First half-period                  [667]</span>
+<span class="qt">&gt;04 2  Length of SYNC Second half-period                 [735]</span>
+<span class="qt">&gt;06 2  Length of ZERO bit half-period                    [855]</span>
+<span class="qt">&gt;08 2  Length of ONE bit half-period                     [1710]</span>
+
+here should be 0A ?
+
+<span class="qt">&gt;0C 2  Length of PILOT tone (in PILOT half periods)      [8064 Header, 3224 Data]</span>
+<span class="qt">&gt;0E 1  Pause After Block (frames, 1/50 second)           [50]</span>
+<span class="qt">&gt;0F 1  General Purpose Flag</span>
+<span class="qt">&gt;        Currently unused.</span>
+<span class="qt">&gt;10 2  Used bits in LAST Byte (other bits should be 0)   [8]</span>
+<span class="qt">&gt;      i.e. if this is 6 then the bits (x) used in LAST byte are: xxxxxx00</span>
+<span class="qt">&gt;12 2  Length of DATA that follows</span>
+<span class="qt">&gt;14 x  DATA, the bits are saved MSb (Most Significant bit) first</span>
+<span class="qt">&gt;</span>
+
+Well, I already commented on this block having ALL the possible timings in it...
+I really don&#x27;t think it is necessary :( I hope some more people can comment on
+this.
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Note that the PILOT tone length is given in half periods.</span>
+
+Yes, I did notice the mistake in the revision 6 and corrected it :)
+
+<span class="qt">&gt;If field 04 is zero, then the second SYNC pulse is absent, and the polarity</span>
+<span class="qt">&gt;  of the signal doesn&#x27;t change.</span>
+
+Are there ANY loaders with only ONE sync half-period ? 
+
+<span class="qt">&gt;Field 02 is never zero; if no SYNC pulse is present, put the value of field</span>
+<span class="qt">&gt;  00 in field 02 and 04 and decrease field 0C by two.</span>
+<span class="qt">&gt;If field 0E is zero, not a single T state pause should be inserted between</span>
+<span class="qt">&gt;  this block and a next one (if that is not a pause block).  This is to</span>
+<span class="qt">&gt;  be able to store formats with nonstandard leader tones (with gaps, for</span>
+<span class="qt">&gt;  example).</span>
+
+Yes, but I would really like to store all the PAUSES in separate blocks, if
+possible.. I don&#x27;t think it makes the usage harder... 
+
+<span class="qt">&gt;Field 10 contains a byte value between 1 and 8 inclusive.</span>
+
+Yep.
+
+Thank you for all the comments. 
+
+I believe this is gonna be a great format for storing all of those tapes that
+could not be stored with other formats and to keep some extra information about
+it too ... :)
+
+I would like to know your views on whether to use COMPRESSION on data blocks.
+This has been suggested many times, but I still am not sure if it would be a
+good idea. Anyway, it can be added later since it is easily expandable. (i.e. if
+the block should be compressed then its length should be 0000 ... simple ;) )
+... 
+And there were some suggestions to use a special signature before each block...
+so it can be easily restored when the file gets damaged ...
+
+Regards,
+  Tomaz
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div><div class="post" id="p24584"><div class="ph"><a class="d" href="#p24584">1997-03-04</a> <span>gerton@problem_WITH_INEWS_GATEWAY_FILE</span> <span>New ZX Tape format - new ideas</span></div><pre>
+Dear Spectrum-lovers,
+
+I have been thinking about the new tape format, and I have a few suggestions.
+I think the format is starting to become unnecessarily complicated and
+detailed.  Too many gadgets have been put in, in my opinion.
+
+The purpose of the new format is to create a versatile, general way of
+storing turbo-saved programs.  Let us stick to that idea as much as possible.
+I think information like &#x27;screen emulation mode&#x27; and &#x27;border emulation&#x27; and
+&#x27;custom interrupt frequency&#x27; have no place in a tape format.  For example,
+many people don&#x27;t like the fact that Z80 stores the joystick type in .Z80
+snapshot files, because this means that their default joystick type setting
+is changed every time a snapshot is loaded.  I wouldn&#x27;t do such a thing
+now, if I had to design the .Z80 format again.
+
+It is useful to have some information about the program stored in the tape
+file.  One important piece of information is the hardware type.  On the other
+hand, I don&#x27;t like a tape file to change the hardware mode: it should behave
+like a tape; I should be able to load a block into another program if I wanted
+to, and not have the hardware mode changed.  So I propose to let this
+&#x27;hardware type&#x27; block have an advisory function: when it is encountered,
+the emulator prompts the user whether or not to change the hardware according
+to the suggestion in the tape file.
+
+I propose not to include any other information in the tape file.  Remarks
+can be included in a text form, such as &#x27;Won&#x27;t work without R register
+emulation&#x27;.
+
+It is also not necessary to include a block telling whether or not normal
+tape blocks may be loaded using a &#x27;fast&#x27; ROM loading patch.  The emulator
+could start feeding leader pulses to the emulated program, and keep an eye
+on whether the ROM loading routine is entered or not.  If it is, it could
+then decide to load the whole block directly, which is always allowed at
+that point.  If it never enters the ROM loading routine, then the block was
+probably loaded by a custom load routine.
+
+The current format has a block that changes the timing constants of custom
+loading data blocks.  I think it is better to include the timing constants
+in these custom blocks themselves.  Otherwise, if the user &#x27;rewinds&#x27; the
+virtual tape partly, the emulator has to re-read all of the tape to find
+the timing constants for the particular block to which the user rewinds.
+The drawback is that files get a little larger, but only so slightly that
+I think we should not bother about it.  A clear, simple format is more
+important than a few dozen less bytes.
+
+Also, I propose to include a &#x27;pause&#x27; to each (normal and custom) tape
+block, not only to those that are not followed up by an &#x27;extra pause&#x27;
+block.  It is awkward to have to check whether an &#x27;extra pause&#x27; block
+follows when the emulator has to decide whether to put in a standard pause
+or not.  With custom blocks it is possible to set the pause length to zero.
+Normal blocks are then always followed up by a 1 second pause.
+
+On the other hand, I agree very much with having an &#x27;extra pause&#x27; block.
+I also like the message added to a pause block.
+
+About the extension.  Why not use &#x27;TAP&#x27;?  It is not so difficult to have
+the emulator check whether the file starts with &#x27;ZXTAPE!&#x27;...
+
+
+
+
+
+                         ZX Spectrum Tape file format
+                        ------------------------------
+                              Based on revision 5
+
+
+  The file is identified with the first 8 bytes being &#x27;ZXTape!&#x27; plus EndOfFile
+byte 26 (1A hex). Then the body follows which is devised from blocks. Each
+block is identified with its ID byte followed by its body. There are currently
+8 types of blocks.
+
+So the file structure is :  &#x27;ZXTape!&#x27; 0x1A ID1 Body1 ID2 Body2 ...
+                             0        7    8     ...
+
+- The Two-Byte values are always stored LSB (Least Significant Byte) First.
+- All unused bits should be 0.
+- The timings are given in Z80 clock ticks (T states) unless otherwise stated.
+  1 T state = 1/3500000 second.
+- The values in the tables mean : Offset (in HEX bytes), Length (1-byte, 2-word)
+- You might interpret full-period as one pulse (----____ or ____----) and
+  half-period as only one half of the pulse (---- or ____).
+- The values in brackets [] are the fefault values of Spectrum ROM load/save
+  routines - they should be used for all Standard loading blocks.
+  These values are in Decimal format. Please inform me if some are incorrect.
+
+
+These are the possible blocks :
+
+
+ID : 00  -  Pause (with an optional message)
+-------
+          Use this block to add a pause to the pause after each block (1 second
+            for standard blocks, variable for custom blocks.)  This block can
+            also be used to display messages.
+          If the Value is 255 then the pause is indefinite, and the emulator
+            should wait for a keypress to continue.
+          If the message length is 0, no message is displayed.  If it is nonzero,
+            then a message is displayed for the duration of the pause.
+          When a message is displayed, the emulator stops emulating the program
+            for the duration of the pause.  Only pause blocks without messages
+            are actual pauses as far as the emulated program is concerned.
+
+00 1  Value of the pause in tenth of seconds (1s/10)
+01 1  Length of the message (if 0 then NO message)
+02 x  Message that should be displayed (in ASCII)  Suggested format: stick to
+        a maximum of 30 chars per line.  Use single 0x0D (13 decimal) to
+        separate lines.  Stick to a maximum of 8 lines.  If you do not obey
+        these rules, emulators may display your message in any way they like!
+
+
+ID : 01  -  Text Description
+-------
+          The description can be up to 255 characters long but please keep
+            it down to about 30 so the programs can show it in one line !
+          This is meant to identify parts of the tape, so you know where
+            level 1 starts, where to rewind when you lose all the lives, etc.
+          Of course you can use it in the beginning to identify the name of
+            the game or program used in the file.
+          This description is not guaranteed to be shown during tape playing,
+            but can be read while browsing the tape or changing the tape
+            pointer.
+
+00 1  Length of the Text
+01 x  Text in ASCII
+
+
+
+ID : 02  -  Hardware Type
+-------
+          This provides information on the hardware required/suggested to
+            run the tape.  It is not necessary to include such a block.  It
+            is suggested that emulators inform the user of a change in
+            hardware if a Hardware Type block is encountered, and leave the
+            possibility of not changing it.
+          Each field contains a byte which has the following meaning:
+
+            00 - Don&#x27;t know
+            01 - This hardware is sufficient
+            02 - This hardware is not sufficient, or program doesn&#x27;t run on it
+            03 - This hardware is suggested
+
+00 1  ZX Spectrum 48k
+01 1  ZX Spectrum 128k
+02 1  ZX Spectrum 128k +2A, +3
+03 1  Sam Coupe
+04 1  ZX-81 with 1k RAM
+05 1  ZX-81 with 16k RAM
+06-0F Reserved (10 bytes)
+
+0B 5  Reserved (Should be 0)
+
+
+
+ID : 03  -  Custom Loading Data Block
+-------
+          This is the block with actual data. It is very similar to the normal
+          .TAP block but with some additional Info and will use all Loading
+          Speed changes from blocks with ID 01.
+
+00 2  Length of PILOT half-period                       [2168]
+02 2  Length of SYNC First half-period                  [667]
+04 2  Length of SYNC Second half-period                 [735]
+06 2  Length of ZERO bit half-period                    [855]
+08 2  Length of ONE bit half-period                     [1710]
+0C 2  Length of PILOT tone (in PILOT half periods)      [8064 Header, 3224 Data]
+0E 1  Pause After Block (frames, 1/50 second)           [50]
+0F 1  General Purpose Flag
+        Currently unused.
+10 2  Used bits in LAST Byte (other bits should be 0)   [8]
+      i.e. if this is 6 then the bits (x) used in LAST byte are: xxxxxx00
+12 2  Length of DATA that follows
+14 x  DATA, the bits are saved MSb (Most Significant bit) first
+
+
+
+Note that the PILOT tone length is given in half periods.
+If field 04 is zero, then the second SYNC pulse is absent, and the polarity
+  of the signal doesn&#x27;t change.
+Field 02 is never zero; if no SYNC pulse is present, put the value of field
+  00 in field 02 and 04 and decrease field 0C by two.
+If field 0E is zero, not a single T state pause should be inserted between
+  this block and a next one (if that is not a pause block).  This is to
+  be able to store formats with nonstandard leader tones (with gaps, for
+  example).
+Field 10 contains a byte value between 1 and 8 inclusive.
+
+
+
+ID : 04  -  Normal Speed Data Block (as in .TAP files)
+-------
+          This block must be replayed with the Standard ROM Values for all
+            Loading Speed variables, including a pause of 1 second.  (Values
+            are in brackets above)
+          If you know the default values for ZX-81 ROM save/load routine then
+            please email me.
+
+00 2  Length of DATA that follows
+02 x  DATA, as in .TAP File
+
+
+
+
+ID : 5A (90 dec, ASCII letter &#x27;Z&#x27;)
+-------
+          This is a block that would be generated if you merged two ZX Tape
+          files together. It is here so you can easily copy the files together
+          and use them. Ofcourse this  means that resulting file would be 8
+          bytes longer than if this block was not used. All you have to
+          do if you encounter this block ID is to skip next 7 bytes. Please, if
+          you can don&#x27;t merge two files together this way, use a utility that
+          will let you do that without having this extra block.
+
+00 7  &#x27;XTape!&#x27; 0x1A   Just skip these 7 bytes and you will end up on next ID.
+
+
+
+
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+
+
+</pre></div><div class="post" id="p24586"><div class="ph"><a class="d" href="#p24586">1997-03-04</a> <span>gerton@problem_WITH_INEWS_GATEWAY_FILE</span> </div><pre>
+Damien Burke (…@…) wrote:
+<span class="qt">&gt; On 4 Mar 1997 11:13:26 GMT, gerton@PROBLEM_WITH_INEWS_GATEWAY_FILE () wrote:</span>
+
+<span class="qt">&gt; &gt;I think information like &#x27;screen emulation mode&#x27; and &#x27;border emulation&#x27; and</span>
+<span class="qt">&gt; &gt;&#x27;custom interrupt frequency&#x27; have no place in a tape format.</span>
+
+<span class="qt">&gt; But if such settings make the game more playable than it would have been</span>
+<span class="qt">&gt; otherwise, why not? This, of course, goes in the custom block that each emulator</span>
+<span class="qt">&gt; can choose to use or ignore.</span>
+
+
+That&#x27;s OK then.  I will probably choose to ignore it.  I do not like
+programs to do things &#x27;behind my back&#x27;, without letting me know about it.
+
+
+<span class="qt">&gt; &gt;About the extension.  Why not use &#x27;TAP&#x27;?  It is not so difficult to have</span>
+<span class="qt">&gt; &gt;the emulator check whether the file starts with &#x27;ZXTAPE!&#x27;...</span>
+
+<span class="qt">&gt; But older emulators then fall over when they encounter a new TAP, with the</span>
+<span class="qt">&gt; resulting hundreds of posts from newbies saying &#x27;Why doesn&#x27;t this TAP file</span>
+<span class="qt">&gt; work?&#x27;. We got you to go for SLT in the end instead of Z80... now wasn&#x27;t </span>
+<span class="qt">&gt; that a good idea?</span>
+
+Hmmm, why are people always using the same arguments if I come up with 
+the same objections again? :-)  Okay, you got me on that one.
+
+I hope you do agree on those several other points I made.  I like to have
+file formats simple and non-redundant as much as possible.
+
+By the way, in the format I posted I suggested that when the sync2 value
+was zero it was to be ignored.  This behaviour can be emulated by putting
+the ordinary pilot half-period value in sync1, and putting the single
+sync edge length in sync2.  In this way no checking has to be done, and
+zero, one and two sync pulses can be handled.  Much better that way.
+
+Gerton.
+
+
+
+</pre></div><div class="post" id="p24605"><div class="ph"><a class="d" href="#p24605">1997-03-05</a> <span>…@…</span> </div><pre>
+On 4 Mar 1997 15:35:20 GMT, gerton@PROBLEM_WITH_INEWS_GATEWAY_FILE () wrote:
+
+<span class="qt">&gt;I hope you do agree on those several other points I made.  I like to have</span>
+<span class="qt">&gt;file formats simple and non-redundant as much as possible.</span>
+
+Hopefully we will :)
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;By the way, in the format I posted I suggested that when the sync2 value</span>
+<span class="qt">&gt;was zero it was to be ignored.  This behaviour can be emulated by putting</span>
+<span class="qt">&gt;the ordinary pilot half-period value in sync1, and putting the single</span>
+<span class="qt">&gt;sync edge length in sync2.  In this way no checking has to be done, and</span>
+<span class="qt">&gt;zero, one and two sync pulses can be handled.  Much better that way.</span>
+
+But what if the block should be TOTALY without PILOT tone and without SYNC (i.e.
+if it should follow with Data stream immediately after the block before) ? This
+is handy for the blocks with Length&gt;65535 bytes... because you must convert them
+using Two data blocks.... AND some games (apparently Robocop ?) change the Speed
+in the MIDDLE of the block... so, again, it would be necessary to have no Pilot
+and no Sync and just change the Timings and continue with Data ...
+
+Tomaz
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div><div class="post" id="p24608"><div class="ph"><a class="d" href="#p24608">1997-03-05</a> <span>…@…</span> </div><pre>
+Tomaz Kac (…@…) wrote:
+<span class="qt">&gt; Anyway, I would think that emulators would atleast go through the WHOLE file (or</span>
+<span class="qt">&gt; even load the whole file) when it was selected and while loading the file they</span>
+<span class="qt">&gt; could (as I am doing it in my HypraLoader) take notice of which timing has</span>
+<span class="qt">&gt; changed and write that information in separate array (or linked list, as I do)</span>
+<span class="qt">&gt; i.e. the emulator should keep the information about EACH timing used for the</span>
+<span class="qt">&gt; Custom Loading data blocks, in the start all the timings would be the same as</span>
+[...]
+
+As long as not every system supports memory-mapped files I say NO to that!
+Why don&#x27;t we keep it as simple as possible? I don&#x27;t want to &#x27;rewind&#x27; the tape
+and search for values. An emulator should always search forward and never
+back in the file (until the user rewinds the tape)!
+
+
+--
+…@…
+
+Maintainer of XZX, *THE* Spectrum 48/128/+3 emulator for UNIX/X11.
+XZX home page: <a href="http://www.philosys.de/~kunze/xzx/" rel="noreferrer">http://www.philosys.de/~kunze/xzx/</a>
+
+
+</pre></div><div class="post" id="p24670"><div class="ph"><a class="d" href="#p24670">1997-03-07</a> <span>…@…</span> </div><pre>
+On 5 Mar 1997 06:21:45 +0100, …@… (Erik Kunze)
+wrote:
+
+<span class="qt">&gt;As long as not every system supports memory-mapped files I say NO to that!</span>
+<span class="qt">&gt;Why don&#x27;t we keep it as simple as possible? I don&#x27;t want to &#x27;rewind&#x27; the tape</span>
+<span class="qt">&gt;and search for values. An emulator should always search forward and never</span>
+<span class="qt">&gt;back in the file (until the user rewinds the tape)!</span>
+<span class="qt">&gt;</span>
+
+OK, OK :) Put all the timings in the custom block... it is a bit bigger now, but
+simpler to handle :)
+
+I will post the Revision 8 today ...
+
+Tomaz
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div><div class="post" id="p24684"><div class="ph"><a class="d" href="#p24684">1997-03-07</a> <span>…@…</span> </div><pre>
+HI!
+
+I have been converting quite a few turbo loaders lately and I have a question
+for anyone that is at home in the turbo loaders area :
+
+Well, I did stumble at one problem today when I was finishing up the two
+utilities I am writing (VOC to TZX converter and  PlayTZX utility to play the
+TZX file to the real Spectrum via the SoundBlaster) ... the problem is HOW to
+END the block ? I looked at some 60 or so .VOC files of spectrum tapes and saw
+that there is a PULSE at the end that has first half-period around 2 times
+smaller than second half-period ... like this :
+
+--__----____--__-----__________-------------------------
+_______ _______|_______ _______|
+       V               V
+     DATA          THE-END pulse
+
+I wonder if this is ALWAYS the case ? I.e. What pulse should it be to end the
+loading of ALL blocks (even turbo loaded) ... or would it be a good idea if I
+included the timings of this THE-END pulse in the Custom Loading block ? This
+would be handy for atleast one reason :
+
+If a block was longer than 65535 bytes then it is needed to have it in TWO
+blocks (as I described last time) and there must NOT be this THE-END pulse in
+between of these two blocks.
+
+Now, if ALL the blocks use this THE-END pulse and this pulse can be standard for
+all blocks then it would be better idea to have the length of the DATA in 3
+bytes and therefore there would not be a need for the splitting in two blocks.
+If the THE-END pulse can be different in custom-loading loaders then it would be
+a better idea to include it in the &#x27;Custom Loading&#x27; block. 
+
+I hope someone can help me out with this one...
+btw. Update 8 of the zx format is on the way ! :)
+
+Regards,
+  Tomaz
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div><div class="post" id="p24690"><div class="ph"><a class="d" href="#p24690">1997-03-07</a> <span>gerton@problem_WITH_INEWS_GATEWAY_FILE</span> </div><pre>
+Tomaz Kac (…@…) wrote:
+
+<span class="qt">&gt; I have been converting quite a few turbo loaders lately and I have a question</span>
+<span class="qt">&gt; for anyone that is at home in the turbo loaders area :</span>
+
+<span class="qt">&gt; Well, I did stumble at one problem today when I was finishing up the two</span>
+<span class="qt">&gt; utilities I am writing (VOC to TZX converter and  PlayTZX utility to play the</span>
+<span class="qt">&gt; TZX file to the real Spectrum via the SoundBlaster) ... the problem is HOW to</span>
+<span class="qt">&gt; END the block ? I looked at some 60 or so .VOC files of spectrum tapes and saw</span>
+<span class="qt">&gt; that there is a PULSE at the end that has first half-period around 2 times</span>
+<span class="qt">&gt; smaller than second half-period ... like this :</span>
+
+<span class="qt">&gt; --__----____--__-----__________-------------------------</span>
+<span class="qt">&gt; _______ _______|_______ _______|</span>
+<span class="qt">&gt;        V               V</span>
+<span class="qt">&gt;      DATA          THE-END pulse</span>
+
+<span class="qt">&gt; I wonder if this is ALWAYS the case ? I.e. What pulse should it be to end the</span>
+<span class="qt">&gt; loading of ALL blocks (even turbo loaded) ... or would it be a good idea if I</span>
+<span class="qt">&gt; included the timings of this THE-END pulse in the Custom Loading block ? This</span>
+<span class="qt">&gt; would be handy for atleast one reason :</span>
+
+All loaders that use a tape format that can be described in the &#x27;tzx&#x27; format
+use an algorithm roughly like this, during loading:
+
+1. wait for an edge
+2. wait for another edge, add times
+3. if total times below certain treshold, it&#x27;s a zero, otherwise a one.
+   (or one/zero, doesn&#x27;t matter)
+
+So, it&#x27;s not the pulses but the edges that are important.  A one-byte block
+should look like
+
+____----_-__--__--__--__--__--__--__--__--______________
+   p   pss 0 0 1 1 2 2 3 3 4 4 5 5 6 6 7 7
+
+p=pilot edge, s=sync edge, number=edge associated to bit number number
+
+So it is important to have the last edge in place.  This could be actually
+part of a &#x27;pause&#x27; (as a separate block, or part of the data block itself),
+or the first pulse of the next pilot tone.
+
+So, it is important to have &#x27;pause&#x27; generate a zero, and have the pilot
+tone, sync pulse and data bits all start out at zero, then a high.
+
+The last edge a Spectrum generates during saving is part of an &#x27;infinite&#x27;
+pulse.  On your tape recorder this pulse is played back as an &#x27;up&#x27; pulse
+(ear=active), which, due to the fact that no DC levels can be recorded,
+levels off to zero (ear=inactive) after a certain time.  This would explain
+a pattern like
+
+__--________-------------------
+ 7 7       flip
+
+but not the one you saw.  I think it is due to the recording equipment you
+use.  Anyhow, it is not necessary to emulate this behaviour.
+
+Gerton.
+
+
+</pre></div><div class="post" id="p24709"><div class="ph"><a class="d" href="#p24709">1997-03-08</a> <span>…@…</span> </div><pre>
+On 7 Mar 1997 16:19:31 GMT, gerton@PROBLEM_WITH_INEWS_GATEWAY_FILE () wrote:
+
+[sum info snipped]
+<span class="qt">&gt;</span>
+<span class="qt">&gt;So, it&#x27;s not the pulses but the edges that are important.  A one-byte block</span>
+<span class="qt">&gt;should look like</span>
+<span class="qt">&gt;</span>
+
+Yes, I know :) I wrote pulses when I wanted to say edges ... :) my english sux
+...
+
+<span class="qt">&gt;____----_-__--__--__--__--__--__--__--__--______________</span>
+<span class="qt">&gt;   p   pss 0 0 1 1 2 2 3 3 4 4 5 5 6 6 7 7</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;p=pilot edge, s=sync edge, number=edge associated to bit number number</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;So it is important to have the last edge in place.  This could be actually</span>
+<span class="qt">&gt;part of a &#x27;pause&#x27; (as a separate block, or part of the data block itself),</span>
+<span class="qt">&gt;or the first pulse of the next pilot tone.</span>
+
+Yep... BUT lets say you have PAUSE 0 ... this means that next block should
+follow exactly after the current one (btw. I now expanded the DATA length in
+Custom Loading block to 3 bytes, so no need for that splitting block crap
+anymore ;) this is easier) ... As this is the case with StarStrike II which I
+(succesfully) converted to this new format. It has a 0 pause after the first
+block and then the pilot of the second one with only 123 half-periods (all the
+other timings are standard).This game WONT load when the PILOT of next block
+follows immediately after last BIT of current block ... so this doesn&#x27;t work :
+
+____----__--__--_____-----_____-----_____...
+_______ _______|____________ ____________
+       V                    V
+  First Block      Pilot of Second Block
+
+But it does load if you put in another pulse (or two edges) as I described
+earlier... so it works if it is like this :
+
+____----__--__--____--------_____-----_____-----...
+_______ _______|_____ _____|________ __________
+       V             V              V
+   First Block    The-End       Pilot of 2nd
+
+I tought a pause of 0.1 seconds would do the trick, which unfortunetly it didn&#x27;t
+:( Since it is also like that in the original Tape ...
+
+
+btw. What would be the best way to determine End-Of-Block in a converter ??? For
+now I get the best results when I compare the two half-periods I load in and if
+they differ above some treshold value (in %) then it is end-of-block... I tried
+many other ways but this one seems to be the best...
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;So, it is important to have &#x27;pause&#x27; generate a zero, and have the pilot</span>
+<span class="qt">&gt;tone, sync pulse and data bits all start out at zero, then a high.</span>
+
+Yes, I do that already and it works almost 100% :)
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;The last edge a Spectrum generates during saving is part of an &#x27;infinite&#x27;</span>
+<span class="qt">&gt;pulse.  On your tape recorder this pulse is played back as an &#x27;up&#x27; pulse</span>
+<span class="qt">&gt;(ear=active), which, due to the fact that no DC levels can be recorded,</span>
+<span class="qt">&gt;levels off to zero (ear=inactive) after a certain time.  This would explain</span>
+<span class="qt">&gt;a pattern like</span>
+
+Oh, that would then be the case :) I will try it this way then ... hopefully it
+will work :) but we might need a pause in miliseconds for the custom loading
+part and not 10th of a second after all :(
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;__--________-------------------</span>
+<span class="qt">&gt; 7 7       flip</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;but not the one you saw.  I think it is due to the recording equipment you</span>
+<span class="qt">&gt;use.  Anyhow, it is not necessary to emulate this behaviour.</span>
+
+OK, hopefully this will work :)
+
+Regards,
+  Tomaz
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div></main></body></html>

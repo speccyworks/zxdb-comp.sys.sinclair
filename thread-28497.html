@@ -1,0 +1,1155 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[ANN] EightyOne, another ZX81 emulator · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>[ANN] EightyOne, another ZX81 emulator</h1><p class="facts">45 posts, 2003-09-24 – 2003-10-07</p><div class="post" id="p169134"><div class="ph"><a class="d" href="#p169134">2003-09-24 10:48:40</a> <span>Mike Wynne</span> </div><pre>OK, for those of you who are interested, there&#x27;s a new version of EightyOne,
+my ZX81 emulator at:
+
+URL:<a href="http://www.chuntey.com/eightyone/" rel="noreferrer">http://www.chuntey.com/eightyone/</a>
+
+There&#x27;s one or two new features, and the accurate emulation is a tad better
+than last time.  However, it&#x27;s still not right and I plan to improve it over
+the next few weeks.
+
+Any feedback would be greatly appreciated as no-one replied to my last post
+(bwahhhhhh, everone hates me..)
+
+MikeW
+
+
+
+
+
+</pre></div><div class="post" id="p169139"><div class="ph"><a class="d" href="#p169139">2003-09-24 11:45:41</a> <span>Charles Richmond</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>Mike Wynne wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; OK, for those of you who are interested, there&#x27;s a new version of EightyOne,</span>
+<span class="qt">&gt; my ZX81 emulator at:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; URL:<a href="http://www.chuntey.com/eightyone/" rel="noreferrer">http://www.chuntey.com/eightyone/</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; There&#x27;s one or two new features, and the accurate emulation is a tad better</span>
+<span class="qt">&gt; than last time.  However, it&#x27;s still not right and I plan to improve it over</span>
+<span class="qt">&gt; the next few weeks.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Any feedback would be greatly appreciated as no-one replied to my last post</span>
+<span class="qt">&gt; (bwahhhhhh, everone hates me..)</span>
+<span class="qt">&gt; </span>
+How about a Macintosh OS/9 version...or at least release
+the source code???
+
+--
++----------------------------------------------------------------+
+<span class="qt">|   Charles and Francis Richmond     richmond at plano dot net   |</span>
++----------------------------------------------------------------+
+
+
+
+</pre></div><div class="post" id="p169140"><div class="ph"><a class="d" href="#p169140">2003-09-24 11:52:56</a> <span>Mike Wynne</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre><span class="qt">&gt; How about a Macintosh OS/9 version...or at least</span>
+<span class="qt">&gt; release the source code???</span>
+
+The source code is there - check the page again ;-)
+
+However, the code is currently a real mess.  It&#x27;s the culmination of 2 weeks
+worth of playing around seeing what effect changing things around has.  I
+plan on rewriting virtually all of it once I&#x27;m happy with things.
+
+MikeW
+
+
+
+
+
+</pre></div><div class="post" id="p169143"><div class="ph"><a class="d" href="#p169143">2003-09-24 11:59:32</a> <span>Chris Cowley</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>On Wed, 24 Sep 2003 11:48:40 +0100, &quot;Mike Wynne&quot; &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;OK, for those of you who are interested, there&#x27;s a new version of EightyOne,</span>
+<span class="qt">&gt;my ZX81 emulator at:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;URL:<a href="http://www.chuntey.com/eightyone/" rel="noreferrer">http://www.chuntey.com/eightyone/</a></span>
+
+Blimmin&#x27; marvelous! This is currently the best ZX81 emulator for Windows
+by far IMHO. FWIW, I didn&#x27;t see your original post so maybe it didn&#x27;t
+propagate outside of your ISP for some reason.
+
+One thing that would be a good idea I think is for you to use TZX files
+rather than your own custom tape file format. I understand completely
+the reasons for adding support for streaming tape files, but I believe
+TZX will do the job nicely without creating a yet another emulator file
+format.
+-- 
+Chris Cowley
+ccowley @ grok.co.uk
+
+
+
+</pre></div><div class="post" id="p169144"><div class="ph"><a class="d" href="#p169144">2003-09-24 12:01:50</a> <span>Chris Cowley</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>On Wed, 24 Sep 2003 11:45:41 GMT, Charles Richmond
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;How about a Macintosh OS/9 version...or at least release</span>
+<span class="qt">&gt;the source code???</span>
+
+The (GPL&#x27;d) source code is there on the site. I&#x27;m planning to have a
+look at it myself later (the source that is, not doing a OS/9 version)!
+
+
+
+</pre></div><div class="post" id="p169178"><div class="ph"><a class="d" href="#p169178">2003-09-24 21:24:18</a> <span>Woody</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>On Wed, 24 Sep 2003 11:48:40 +0100, &quot;Mike Wynne&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;There&#x27;s one or two new features, and the accurate emulation is a tad better</span>
+<span class="qt">&gt;than last time.  However, it&#x27;s still not right and I plan to improve it over</span>
+<span class="qt">&gt;the next few weeks.</span>
+
+After a couple of days attacking the accurate display emulation I&#x27;m
+just about there myself. That&#x27;s one really weird setup!
+
+However, you seem to be miles ahead of me in other features. Far more
+than I&#x27;d have thought considering you only started a few days before
+me. Guess I can&#x27;t compete on the amount of free time basis :-)
+
+Actually I think I&#x27;ll give up on my &#x27;81 emulator now. It was only
+really the display side of things that really got me interested. The
+rest of it all seems to be very much like writing a Spectrum emulator
+all over again and I&#x27;d rather not actually!
+
+EightyOne is starting to look like a very nice ZX81 emulator. It just
+needs a tool to convert WAV files to your chosen tape format now :)
+
+
+
+
+</pre></div><div class="post" id="p169186"><div class="ph"><a class="d" href="#p169186">2003-09-25 00:22:48</a> <span>Chris Cowley</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>On Wed, 24 Sep 2003 22:24:18 +0100, Woody &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;Actually I think I&#x27;ll give up on my &#x27;81 emulator now. It was only</span>
+<span class="qt">&gt;really the display side of things that really got me interested. The</span>
+<span class="qt">&gt;rest of it all seems to be very much like writing a Spectrum emulator</span>
+<span class="qt">&gt;all over again and I&#x27;d rather not actually!</span>
+
+Noooo! Don&#x27;t stop now that you&#x27;ve sorted out the difficult bit (the
+display). One great ZX81 emulator is fine, but frankly, two is more than
+twice as good as all emulator authors play off of each other when
+implementing new features. Prime example: if me and Dunny hadn&#x27;t
+implemented ZX printer support in vbSpec and SPIN then it probably would
+never have made it into other (arguably more popular) emu&#x27;s such
+Spectaculator. Same with the mouse support which seemed to happen across
+multiple Speccy emulators at almost the same time.
+
+If you&#x27;re not going to continue your ZX81 emulator (and I personally
+think you should, although that&#x27;s obviously easy for me to say) then at
+least release the source so others can have the option of developing it.
+
+A bit of &quot;competition&quot;, despite them all generally being free, works
+wonders for emulators! If you want help with such things as the ZX
+printer support and Memotech HRG/Memotext/Memocalc emulation then just
+let me know -- I have those bits of hardware here and can provide ROM
+dumps and so on. You give up far too easily!
+
+Chris.
+
+
+
+</pre></div><div class="post" id="p169189"><div class="ph"><a class="d" href="#p169189">2003-09-25 03:14:14</a> <span>Geoff Wearmouth</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>In article &lt;bkrsq9$4vurm$…@…&gt;, Mike Wynne
+&lt;…@…&gt; writes
+<span class="qt">&gt;OK, for those of you who are interested, there&#x27;s a new version of EightyOne,</span>
+<span class="qt">&gt;my ZX81 emulator at:</span>
+
+<span class="qt">&gt;URL:<a href="http://www.chuntey.com/eightyone/" rel="noreferrer">http://www.chuntey.com/eightyone/</a></span>
+
+<span class="qt">&gt;There&#x27;s one or two new features, and the accurate emulation is a tad better</span>
+<span class="qt">&gt;than last time.  However, it&#x27;s still not right and I plan to improve it over</span>
+<span class="qt">&gt;the next few weeks.</span>
+
+<span class="qt">&gt;Any feedback would be greatly appreciated as no-one replied to my last post</span>
+<span class="qt">&gt;(bwahhhhhh, everone hates me..)</span>
+
+Well it&#x27;s a brilliant debut ZX81 emulator and the Ace and ZX80 keyboard
+screens switch in great. Very atmospheric. I keep the keyboard map up
+all the time. This is going to help me through the winter.
+
+The ZX Printer is nicely done too.
+LPRINT .00001234 works as indicated in the ZX Printer manual.
+I fixed this in the &quot;Shoulders of Giants&quot; ZX81 ROM but this is the first
+time that I have seen the fix working.
+
+A ROM select switch would be nice as there were one or two ZX81 ROMS
+about. I remember seeing an Arab text one at Ally Pally.
+
+Thanks also to Phil and Chris for their contributions. This is just like
+the eighties when everyone shared.
+
+Your Website should have a voluntary Paypal button.
+I am sure that others, like me, would like to buy you a well-earned
+drink.
+
+Cheers,
+
+-- 
+Geoff Wearmouth
+The ZX ROM Files <a href="http://www.wearmouth.demon.co.uk" rel="noreferrer">http://www.wearmouth.demon.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p169202"><div class="ph"><a class="d" href="#p169202">2003-09-25 14:23:09</a> <span>Philip Kendall</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>In article &lt;…@…&gt;,
+Chris Cowley  &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;One thing that would be a good idea I think is for you to use TZX files</span>
+<span class="qt">&gt;rather than your own custom tape file format. I understand completely</span>
+<span class="qt">&gt;the reasons for adding support for streaming tape files, but I believe</span>
+<span class="qt">&gt;TZX will do the job nicely without creating a yet another emulator file</span>
+<span class="qt">&gt;format.</span>
+
+I remain... unconvinced by the value of using TZX for anything other
+than Spectrum tapes. The only real advantage I see to using TZX over a
+similarly designed format (which wouldn&#x27;t have to deal with all the
+legacy stuff which is in the TZX format) is that it might make code
+reuse slightly quicker for the programmer, and even then not very much.
+
+Cheers,
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p169203"><div class="ph"><a class="d" href="#p169203">2003-09-25 14:43:45</a> <span>Mike Wynne</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>
+&quot;Chris Cowley&quot; wrote...
+<span class="qt">&gt; One thing that would be a good idea I think is for you to use TZX files</span>
+<span class="qt">&gt; rather than your own custom tape file format. I understand completely</span>
+<span class="qt">&gt; the reasons for adding support for streaming tape files, but I believe</span>
+<span class="qt">&gt; TZX will do the job nicely without creating a yet another emulator file</span>
+<span class="qt">&gt; format.</span>
+
+I&#x27;m looking into this.  I can see the advantage of using tzx in that the
+same piece of code would then be able to handle all three different machines
+I&#x27;m emulating.  I think I&#x27;ll keep my current standard as well though for the
+same reason the speccy emulators keep .TAP as well as .TZX.  There doesn&#x27;t
+seem much point in an all singing, all dancing tape format if every program
+uses the standard ROM routines.
+
+I&#x27;d like to write some code to load wav files, but I feel a little ashamed
+that I don&#x27;t possess any ZX81 tapes to try it with any more...
+
+Mike Wynne
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p169204"><div class="ph"><a class="d" href="#p169204">2003-09-25 15:27:05</a> <span>Jonathan Needle</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>Hi Mike,
+
+&quot;Mike Wynne&quot; &lt;…@…&gt; wrote in message
+news:bkuuv1$6avsg$…@…...
+
+<span class="qt">&gt; I&#x27;d like to write some code to load wav files, but I feel a little ashamed</span>
+<span class="qt">&gt; that I don&#x27;t possess any ZX81 tapes to try it with any more...</span>
+
+Andy Barker (of WoS and TZX Vault fame) has a few here:
+
+<a href="http://www.specfreak.co.uk/ZX81/" rel="noreferrer">http://www.specfreak.co.uk/ZX81/</a>
+
+Probably quicker to download the CSW files and expand to WAV using the CSW
+utility on Ramsoft&#x27;s site url:<a href="http://www.ramsoft.bbk.org/" rel="noreferrer">http://www.ramsoft.bbk.org/</a>
+
+Cheers,
+
+Jon.
+--
+  Jonathan Needle
+  Spectaculator Creator
+  <a href="http://www.spectaculator.com/" rel="noreferrer">http://www.spectaculator.com/</a>
+
+
+
+
+
+</pre></div><div class="post" id="p169210"><div class="ph"><a class="d" href="#p169210">2003-09-25 19:43:14</a> <span>Jim Grimwood</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>On Wed, 24 Sep 2003 11:48:40 +0100, &quot;Mike Wynne&quot; &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;[...]</span>
+<span class="qt">&gt;Any feedback would be greatly appreciated as no-one replied to my last post</span>
+<span class="qt">&gt;(bwahhhhhh, everone hates me..)</span>
+
+I put your &quot;Please Help&quot; post on my keep list, as I was planning to reply
+to it. I know I&#x27;ve got some ZX-81 programs which crash some emulators, and
+I spent some time looking for them (they&#x27;re amongst those on my type-ins
+site), but I couldn&#x27;t remember the titles and I couldn&#x27;t find which ones
+they were. I was planning to have another go at some time.
+
+I remember that the problem was with programs which started off executing
+m/code in a line 1 REM, reset RAMTOP, copy themselves above RAMTOP, and
+then subsequently execute from there. I eventually found that the programs
+would work with Carlo Delhez&#x27;s Xtender emulator, so I know the programs
+themselves were OK. If I can track down which ones they were I&#x27;ll send you
+the info so that you can try them with yours.
+
+--
+Another Fine Product from:
+Jim Grimwood, Weardale, England (jg27paw4 at domain globalnet.co.uk)
+
+
+
+</pre></div><div class="post" id="p169226"><div class="ph"><a class="d" href="#p169226">2003-09-25 22:27:26</a> <span>Mike Wynne</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>
+&quot;Jim Grimwood&quot; wrote...
+<span class="qt">&gt; I put your &quot;Please Help&quot; post on my keep list, as I was planning to reply</span>
+<span class="qt">&gt; to it.</span>
+
+Thanks Jim.
+
+MikeW
+
+
+
+
+
+</pre></div><div class="post" id="p169228"><div class="ph"><a class="d" href="#p169228">2003-09-25 22:35:05</a> <span>Mike Wynne</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>
+&quot;Geoff Wearmouth&quot; wrote...
+<span class="qt">&gt; The ZX Printer is nicely done too.</span>
+<span class="qt">&gt; LPRINT .00001234 works as indicated in the ZX Printer manual.</span>
+<span class="qt">&gt; I fixed this in the &quot;Shoulders of Giants&quot; ZX81 ROM but this is the first</span>
+<span class="qt">&gt; time that I have seen the fix working.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; A ROM select switch would be nice as there were one or two ZX81 ROMS</span>
+<span class="qt">&gt; about. I remember seeing an Arab text one at Ally Pally.</span>
+
+OK, it&#x27;s in... I should really add an option to turn the load/save patches
+on and off now too, since they&#x27;ll only get in the way if someone uses a
+radically different ROM to the standard.  I&#x27;ll put that in when I get the
+normal tape routines working through the virtual tape deck.  I&#x27;d be
+interested in getting hold of as many different versions of the &#x27;81 ROM as I
+can though - an Arabic ZX81 sounds great.
+
+Oh and I&#x27;ve added basic support for interlaced images if anyone&#x27;s
+interested.  Try playing the puzzle game from the demo tape with interlace
+on and off and tell me what you think.
+
+MikeW
+
+
+
+
+
+
+</pre></div><div class="post" id="p169237"><div class="ph"><a class="d" href="#p169237">2003-09-26 03:44:57</a> <span>Geoff Wearmouth</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>In article &lt;bkvqip$6ejj9$…@…&gt;, Mike Wynne
+&lt;…@…&gt; writes
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&quot;Geoff Wearmouth&quot; wrote...</span>
+<span class="qt">&gt;&gt; The ZX Printer is nicely done too.</span>
+<span class="qt">&gt;&gt; LPRINT .00001234 works as indicated in the ZX Printer manual.</span>
+<span class="qt">&gt;&gt; I fixed this in the &quot;Shoulders of Giants&quot; ZX81 ROM but this is the first</span>
+<span class="qt">&gt;&gt; time that I have seen the fix working.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; A ROM select switch would be nice as there were one or two ZX81 ROMS</span>
+<span class="qt">&gt;&gt; about. I remember seeing an Arab text one at Ally Pally.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;OK, it&#x27;s in... I should really add an option to turn the load/save patches</span>
+<span class="qt">&gt;on and off now too, since they&#x27;ll only get in the way if someone uses a</span>
+<span class="qt">&gt;radically different ROM to the standard.  I&#x27;ll put that in when I get the</span>
+<span class="qt">&gt;normal tape routines working through the virtual tape deck.  I&#x27;d be</span>
+<span class="qt">&gt;interested in getting hold of as many different versions of the &#x27;81 ROM as I</span>
+<span class="qt">&gt;can though - an Arabic ZX81 sounds great.</span>
+
+Unfortunately, I had a new Spectrum at the time and looked down my nose
+at ZX81s and ZX80s.  I was so much older then.
+
+Thanks for the ROM select option.
+I noticed that there is also a hardware option to remove overwrite
+protection from the ROM.
+
+In that case,
+POKE 5820,251 will ensure that LPRINT .00001 works correctly by causing 
+the loop PF-ZRO-LP to begin by loading the accumulator with zero each
+time.
+POKE 5358,4 and POKE 5360,5 swaps the mult and div instructions in 
+NXT-DGT-1 so that 
+10 PRINT INT (.5+.5) gives the result 1 and not zero.
+
+The only other modification I made was to incorporate Sir Isaac Newton&#x27;s
+square roots.
+That involves too many POKEs but the ROM can be downloaded from here.
+
+<a href="http://www.wearmouth.demon.co.uk/sg81.rom" rel="noreferrer">http://www.wearmouth.demon.co.uk/sg81.rom</a>
+
+The square roots are faster and more accurate
+10 PRINT SQR 100  = INT SQR 100 
+evaluates as TRUE and not false as on the standard ZX81, Spectrum
+Commodore 64 etc.
+
+-- 
+Geoff Wearmouth
+The ZX ROM Files <a href="http://www.wearmouth.demon.co.uk" rel="noreferrer">http://www.wearmouth.demon.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p169247"><div class="ph"><a class="d" href="#p169247">2003-09-26 09:31:54</a> <span>deKay</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Wed, 24 Sep
+2003 11:48:40 +0100, sefini jorgo geanyet des mani yeof do comp.sys.sinclair,
+yawatina tan reek esk &quot;Mike Wynne&quot; &lt;…@…&gt; fornis do marikano
+es bono tan el:
+
+<span class="qt">&gt;OK, for those of you who are interested, there&#x27;s a new version of EightyOne,</span>
+<span class="qt">&gt;my ZX81 emulator at:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;URL:<a href="http://www.chuntey.com/eightyone/" rel="noreferrer">http://www.chuntey.com/eightyone/</a></span>
+
+ARGH!  It won&#x27;t compile!
+
+No, this is probably me being IdiotBoy, but I get the error:
+Cannot open include file: &#x27;vcl.h&#x27;: No such file or directory
+
+When using either VC++ or gcc.  What am I missing?  Apart from vcl.h :)
+
+deKay
+-- 
+ + Lofi Gaming - www.lofi-gaming.org.uk      
+<span class="qt"> |- ugvm Magazine - www.ugvm.org.uk          </span>
+<span class="qt"> |- My computer runs at 3.5MHz and I&#x27;m proud of that</span>
+
+
+
+</pre></div><div class="post" id="p169249"><div class="ph"><a class="d" href="#p169249">2003-09-26 09:54:57</a> <span>Mike Wynne</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>
+&quot;deKay&quot; wrote...
+<span class="qt">&gt; ARGH!  It won&#x27;t compile!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; No, this is probably me being IdiotBoy, but I get the error:</span>
+<span class="qt">&gt; Cannot open include file: &#x27;vcl.h&#x27;: No such file or directory</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; When using either VC++ or gcc.  What am I missing?  Apart from vcl.h :)</span>
+
+erm, Borland C++Builder 5 :)
+
+Maybe I should put some instructions in the zip...
+
+MikeW
+
+
+
+
+
+</pre></div><div class="post" id="p169252"><div class="ph"><a class="d" href="#p169252">2003-09-26 11:35:19</a> <span>deKay</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Fri, 26 Sep
+2003 10:54:57 +0100, sefini jorgo geanyet des mani yeof do comp.sys.sinclair,
+yawatina tan reek esk &quot;Mike Wynne&quot; &lt;…@…&gt; fornis do marikano
+es bono tan el:
+
+<span class="qt">&gt;&quot;deKay&quot; wrote...</span>
+<span class="qt">&gt;&gt; ARGH!  It won&#x27;t compile!</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; No, this is probably me being IdiotBoy, but I get the error:</span>
+<span class="qt">&gt;&gt; Cannot open include file: &#x27;vcl.h&#x27;: No such file or directory</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; When using either VC++ or gcc.  What am I missing?  Apart from vcl.h :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;erm, Borland C++Builder 5 :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Maybe I should put some instructions in the zip...</span>
+
+grumblemumblec++mumbleCROSSBLOODYCOMPATIBLEmumblerahrahrah
+
+:)
+
+deKay
+-- 
+ + Lofi Gaming - www.lofi-gaming.org.uk      
+<span class="qt"> |- ugvm Magazine - www.ugvm.org.uk          </span>
+<span class="qt"> |- My computer runs at 3.5MHz and I&#x27;m proud of that</span>
+
+
+
+</pre></div><div class="post" id="p169260"><div class="ph"><a class="d" href="#p169260">2003-09-26 13:14:46</a> <span>Mike Wynne</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>
+&quot;deKay&quot; wrote...
+<span class="qt">&gt; &gt;erm, Borland C++Builder 5 :)</span>
+<span class="qt">&gt; &gt;Maybe I should put some instructions in the zip...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; grumblemumblec++mumbleCROSSBLOODYCOMPATIBLEmumblerahrahrah</span>
+
+When the 1.0 rewrite is done, I&#x27;m going to have a go at an SDL version -
+that cross-compatible enough?
+
+MikeW
+
+
+
+
+
+</pre></div><div class="post" id="p169264"><div class="ph"><a class="d" href="#p169264">2003-09-26 14:40:06</a> <span>Woody</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>On Thu, 25 Sep 2003 01:22:48 +0100, Chris Cowley &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;Noooo! Don&#x27;t stop now that you&#x27;ve sorted out the difficult bit (the</span>
+<span class="qt">&gt;display).</span>
+
+Heh, not quite as good as I first thought. Most hires games display
+okay but I&#x27;ve discovered a problem with the bat in 1K Breakout. Think
+of several horizontal lines at totally different locations along the X
+axis!
+
+<span class="qt">&gt;If you&#x27;re not going to continue your ZX81 emulator (and I personally</span>
+<span class="qt">&gt;think you should, although that&#x27;s obviously easy for me to say) then at</span>
+<span class="qt">&gt;least release the source so others can have the option of developing it.</span>
+
+I&#x27;ll continue with it for a while and release the source when I get
+totally f*cked off with it :-)
+
+<span class="qt">&gt;A bit of &quot;competition&quot;, despite them all generally being free, works</span>
+<span class="qt">&gt;wonders for emulators!</span>
+
+I don&#x27;t normally rise to emulator &quot;competitions&quot;. And so I won&#x27;t :p
+
+It was purely the display that I wanted a bash at. And the fact that
+Mike said, &quot;You should. It&#x27;s fun!&quot; in #Spin the other day :)
+
+<span class="qt">&gt;If you want help with such things as the ZX</span>
+<span class="qt">&gt;printer support and Memotech HRG/Memotext/Memocalc emulation then just</span>
+<span class="qt">&gt;let me know -- I have those bits of hardware here and can provide ROM</span>
+<span class="qt">&gt;dumps and so on. You give up far too easily!</span>
+
+I think I&#x27;ll leave all that to others!
+
+
+
+
+</pre></div><div class="post" id="p169267"><div class="ph"><a class="d" href="#p169267">2003-09-26 15:05:54</a> <span>Woody</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>On Fri, 26 Sep 2003 10:31:54 +0100, deKay &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Wed, 24 Sep</span>
+<span class="qt">&gt;2003 11:48:40 +0100, sefini jorgo geanyet des mani yeof do comp.sys.sinclair,</span>
+<span class="qt">&gt;yawatina tan reek esk &quot;Mike Wynne&quot; &lt;…@…&gt; fornis do marikano</span>
+<span class="qt">&gt;es bono tan el:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;OK, for those of you who are interested, there&#x27;s a new version of EightyOne,</span>
+<span class="qt">&gt;&gt;my ZX81 emulator at:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;URL:<a href="http://www.chuntey.com/eightyone/" rel="noreferrer">http://www.chuntey.com/eightyone/</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;ARGH!  It won&#x27;t compile!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;No, this is probably me being IdiotBoy, but I get the error:</span>
+<span class="qt">&gt;Cannot open include file: &#x27;vcl.h&#x27;: No such file or directory</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;When using either VC++ or gcc.  What am I missing?  Apart from vcl.h :)</span>
+
+Use WinRAR :p
+
+
+
+
+</pre></div><div class="post" id="p169275"><div class="ph"><a class="d" href="#p169275">2003-09-26 16:50:11</a> <span>deKay</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Fri, 26 Sep
+2003 14:14:46 +0100, sefini jorgo geanyet des mani yeof do comp.sys.sinclair,
+yawatina tan reek esk &quot;Mike Wynne&quot; &lt;…@…&gt; fornis do marikano
+es bono tan el:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&quot;deKay&quot; wrote...</span>
+<span class="qt">&gt;&gt; &gt;erm, Borland C++Builder 5 :)</span>
+<span class="qt">&gt;&gt; &gt;Maybe I should put some instructions in the zip...</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; grumblemumblec++mumbleCROSSBLOODYCOMPATIBLEmumblerahrahrah</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;When the 1.0 rewrite is done, I&#x27;m going to have a go at an SDL version -</span>
+<span class="qt">&gt;that cross-compatible enough?</span>
+
+Yes ta :)
+
+I was only playing with it :P
+
+deKay
+-- 
+ + Lofi Gaming - www.lofi-gaming.org.uk  AC: deKay in Sponge
+<span class="qt"> |- ugvm Magazine - www.ugvm.org.uk      Gamertag: deKay 01</span>
+<span class="qt"> |- My computer runs at 3.5MHz and I&#x27;m proud of that</span>
+<span class="qt"> |- Fave game this week: Windows 2000 Server (PC)</span>
+
+
+
+</pre></div><div class="post" id="p169276"><div class="ph"><a class="d" href="#p169276">2003-09-26 16:50:38</a> <span>deKay</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Fri, 26 Sep
+2003 16:05:54 +0100, sefini jorgo geanyet des mani yeof do comp.sys.sinclair,
+yawatina tan reek esk Woody &lt;…@…&gt; fornis do marikano es
+bono tan el:
+
+<span class="qt">&gt;&gt;&gt;OK, for those of you who are interested, there&#x27;s a new version of EightyOne,</span>
+<span class="qt">&gt;&gt;&gt;my ZX81 emulator at:</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;URL:<a href="http://www.chuntey.com/eightyone/" rel="noreferrer">http://www.chuntey.com/eightyone/</a></span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;ARGH!  It won&#x27;t compile!</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;No, this is probably me being IdiotBoy, but I get the error:</span>
+<span class="qt">&gt;&gt;Cannot open include file: &#x27;vcl.h&#x27;: No such file or directory</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;When using either VC++ or gcc.  What am I missing?  Apart from vcl.h :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Use WinRAR :p</span>
+
+I did.  Should I try PowerArchiver?
+
+deKay
+-- 
+ + Lofi Gaming - www.lofi-gaming.org.uk  AC: deKay in Sponge
+<span class="qt"> |- ugvm Magazine - www.ugvm.org.uk      Gamertag: deKay 01</span>
+<span class="qt"> |- My computer runs at 3.5MHz and I&#x27;m proud of that</span>
+<span class="qt"> |- Fave game this week: Windows 2000 Server (PC)</span>
+
+
+
+</pre></div><div class="post" id="p169278"><div class="ph"><a class="d" href="#p169278">2003-09-26 17:18:50</a> <span>Mike Wynne</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>
+&quot;Woody&quot; wrote...
+<span class="qt">&gt; It was purely the display that I wanted a bash at. And the fact that</span>
+<span class="qt">&gt; Mike said, &quot;You should. It&#x27;s fun!&quot; in #Spin the other day :)</span>
+
+I retract that statement!
+
+MikeW
+
+
+
+
+
+</pre></div><div class="post" id="p169282"><div class="ph"><a class="d" href="#p169282">2003-09-26 18:45:22</a> <span>Woody</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>On Fri, 26 Sep 2003 17:50:38 +0100, deKay &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Fri, 26 Sep</span>
+<span class="qt">&gt;2003 16:05:54 +0100, sefini jorgo geanyet des mani yeof do comp.sys.sinclair,</span>
+<span class="qt">&gt;yawatina tan reek esk Woody &lt;…@…&gt; fornis do marikano es</span>
+<span class="qt">&gt;bono tan el:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;&gt;&gt;OK, for those of you who are interested, there&#x27;s a new version of EightyOne,</span>
+<span class="qt">&gt;&gt;&gt;&gt;my ZX81 emulator at:</span>
+<span class="qt">&gt;&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;&gt;URL:<a href="http://www.chuntey.com/eightyone/" rel="noreferrer">http://www.chuntey.com/eightyone/</a></span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;ARGH!  It won&#x27;t compile!</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;No, this is probably me being IdiotBoy, but I get the error:</span>
+<span class="qt">&gt;&gt;&gt;Cannot open include file: &#x27;vcl.h&#x27;: No such file or directory</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;When using either VC++ or gcc.  What am I missing?  Apart from vcl.h :)</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Use WinRAR :p</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I did.  Should I try PowerArchiver?</span>
+
+No. Your next stop is PKZIP.
+
+
+
+
+</pre></div><div class="post" id="p169306"><div class="ph"><a class="d" href="#p169306">2003-09-26 23:45:53</a> <span>Duncan Snowden</span> <span>Re: EightyOne, another ZX81 emulator</span></div><pre>deKay. Friday. comp.sys.sinclair. Tch, eh?
+
+<span class="qt">&gt; I was only playing with it :P</span>
+
+Yeah, that&#x27;s what they all say, sunshine...
+
+-- 
+Duncan Snowden. 
+
+N Statement lost, 1010:3 
+
+
+
+</pre></div><div class="post" id="p169307"><div class="ph"><a class="d" href="#p169307">2003-09-26 23:49:24</a> <span>Mike Wynne</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>Well, we&#x27;re now upto V0.12 available from the usual place:
+
+ URL:<a href="http://www.chuntey.com/eightyone/" rel="noreferrer">http://www.chuntey.com/eightyone/</a>
+
+Big change for this version?  - You can now load wav files directly into the
+emulator.  See the changes.txt file for details.  What&#x27;s more, you can then
+save them out as .p or .T81 if you so desire.  This bit&#x27;s still a bit rough
+around the edges and you definitely need a huge chunk of chuntey to load
+anything (Hey, this emulation is so real, it&#x27;s erm, unreal).  I swear, it
+got 3/4 of the way through loading summat then wife walked in with a cup of
+coffee... next thing the damn virtual 81 has reset itself...
+
+MikeW
+
+
+
+
+
+</pre></div><div class="post" id="p169320"><div class="ph"><a class="d" href="#p169320">2003-09-27 19:26:48</a> <span>…@…</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>Chris Cowley &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; On Wed, 24 Sep 2003 11:48:40 +0100, &quot;Mike Wynne&quot; &lt;…@…&gt;</span>
+<span class="qt">&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;OK, for those of you who are interested, there&#x27;s a new version of EightyOne,</span>
+<span class="qt">&gt;&gt;my ZX81 emulator at:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;URL:<a href="http://www.chuntey.com/eightyone/" rel="noreferrer">http://www.chuntey.com/eightyone/</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Blimmin&#x27; marvelous! This is currently the best ZX81 emulator for Windows</span>
+<span class="qt">&gt; by far IMHO. FWIW, I didn&#x27;t see your original post so maybe it didn&#x27;t</span>
+<span class="qt">&gt; propagate outside of your ISP for some reason.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; One thing that would be a good idea I think is for you to use TZX files</span>
+<span class="qt">&gt; rather than your own custom tape file format. I understand completely</span>
+<span class="qt">&gt; the reasons for adding support for streaming tape files, but I believe</span>
+<span class="qt">&gt; TZX will do the job nicely without creating a yet another emulator file</span>
+<span class="qt">&gt; format.</span>
+
+The ZX81 emulators already have their own fileformats anyway.
+.p and .81 files.
+
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   | &quot;I&#x27;m alive!!! I can touch! I can taste!         |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|  I can SMELL!!!  KRYTEN!!! Unpack Rachel and    |</span>
+<span class="qt">|            in            |  get out the puncture repair kit!&quot;              |</span>
+<span class="qt">|     Computer Science     |     Arnold Judas Rimmer- Red Dwarf              |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p169322"><div class="ph"><a class="d" href="#p169322">2003-09-27 19:51:00</a> <span>Mike Wynne</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>
+&quot;Mike Wynne&quot; wrote...
+<span class="qt">&gt; Well, we&#x27;re now upto V0.12 available from the usual place:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;  URL:<a href="http://www.chuntey.com/eightyone/" rel="noreferrer">http://www.chuntey.com/eightyone/</a></span>
+
+Well that&#x27;ll teach me to rush out a release before going to bed.  I forgot
+to take out a chunk of debugging code and the program would stop with a D/0
+error every time you loaded something... Still it&#x27;s given me the opportunity
+to finish off the WAV loader.
+
+MikeW
+
+
+
+
+
+</pre></div><div class="post" id="p169323"><div class="ph"><a class="d" href="#p169323">2003-09-27 20:01:45</a> <span>Mike Wynne</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>
+&quot;Woody&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Heh, not quite as good as I first thought. Most hires games display</span>
+<span class="qt">&gt; okay but I&#x27;ve discovered a problem with the bat in 1K Breakout. Think</span>
+<span class="qt">&gt; of several horizontal lines at totally different locations along the X</span>
+<span class="qt">&gt; axis!</span>
+
+Hmmm, just tried this little gem.
+
+If I try and load it with 1k of RAM it just resets.  However, it runs
+perfectly in EightyOne with 2k of RAM... strange.
+
+MikeW
+
+
+
+
+
+</pre></div><div class="post" id="p169325"><div class="ph"><a class="d" href="#p169325">2003-09-27 22:43:57</a> <span>Mike Wynne</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>
+&lt;…@…&gt; wrote...
+<span class="qt">&gt; The ZX81 emulators already have their own fileformats anyway.</span>
+<span class="qt">&gt; .p and .81 files.</span>
+
+Well .p and .81 are essentially the same format with a different extension.
+The problem with this format though is that it only allows one virtual file
+to be stored per host file.  So, if a tape had 4 files on it each of those
+files would have it&#x27;s own .p file on your hard drive.
+
+Obviously keeping track of which file goes with which program is tricky, and
+a complete nightmare if two programs happen to use the same name.
+
+At the moment, there is no standard file for holding an entire ZX81 tape in
+one file.
+
+MikeW
+
+
+
+
+
+</pre></div><div class="post" id="p169364"><div class="ph"><a class="d" href="#p169364">2003-09-28 20:08:19</a> <span>Woody</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>On Sat, 27 Sep 2003 21:01:45 +0100, &quot;Mike Wynne&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&quot;Woody&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt;news:…@…...</span>
+<span class="qt">&gt;&gt; Heh, not quite as good as I first thought. Most hires games display</span>
+<span class="qt">&gt;&gt; okay but I&#x27;ve discovered a problem with the bat in 1K Breakout. Think</span>
+<span class="qt">&gt;&gt; of several horizontal lines at totally different locations along the X</span>
+<span class="qt">&gt;&gt; axis!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Hmmm, just tried this little gem.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;If I try and load it with 1k of RAM it just resets.  However, it runs</span>
+<span class="qt">&gt;perfectly in EightyOne with 2k of RAM... strange.</span>
+
+But by calling it *1K* Breakout they&#x27;ll likely have got more sales :)
+
+Btw, on the scanlines with the bat there are 50 chars each in the
+DFILE. That, and the interrupt overhead, is pushing it just beyond
+64uS and so I&#x27;m getting my skewed bat. So what am I doing wrong?
+
+Or do I have to download your source and cheat (which would defeat the
+whole point of me having a bash at it) ? :)
+
+
+
+
+</pre></div><div class="post" id="p169367"><div class="ph"><a class="d" href="#p169367">2003-09-28 22:07:40</a> <span>Mike Wynne</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>
+&quot;Woody&quot; wrote...
+<span class="qt">&gt; Btw, on the scanlines with the bat there are 50 chars each in the</span>
+<span class="qt">&gt; DFILE. That, and the interrupt overhead, is pushing it just beyond</span>
+<span class="qt">&gt; 64uS and so I&#x27;m getting my skewed bat. So what am I doing wrong?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Or do I have to download your source and cheat (which would defeat the</span>
+<span class="qt">&gt; whole point of me having a bash at it) ? :)</span>
+
+That&#x27;s the fun of the ZX81 - being able to generate really weird
+non-standard outputs. TVs arn&#x27;t designed to accept a single fixed H/V Sync,
+else they&#x27;d hardly work with anything.  They&#x27;d accept the Hsync pulse say
+within 15% of what it should be.
+
+MikeW
+
+
+
+
+
+
+</pre></div><div class="post" id="p169369"><div class="ph"><a class="d" href="#p169369">2003-09-28 22:17:09</a> <span>Mike Wynne</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>
+&quot;Mike Wynne&quot; wrote...
+<span class="qt">&gt; &gt; Well, we&#x27;re now upto V0.12 available from the usual place:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;  URL:<a href="http://www.chuntey.com/eightyone/" rel="noreferrer">http://www.chuntey.com/eightyone/</a></span>
+
+And in todays release (0.14), we&#x27;ve got some form of debugger... it&#x27;s not
+much use &#x27;till I&#x27;ve added a breakpoint system and maybe a watch window or
+summat but still, it&#x27;s better than nothing.
+
+MikeW
+
+
+
+
+
+</pre></div><div class="post" id="p169389"><div class="ph"><a class="d" href="#p169389">2003-09-29 17:41:28</a> <span>Woody</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>On Sun, 28 Sep 2003 23:17:09 +0100, &quot;Mike Wynne&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&quot;Mike Wynne&quot; wrote...</span>
+<span class="qt">&gt;&gt; &gt; Well, we&#x27;re now upto V0.12 available from the usual place:</span>
+<span class="qt">&gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; &gt;  URL:<a href="http://www.chuntey.com/eightyone/" rel="noreferrer">http://www.chuntey.com/eightyone/</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;And in todays release (0.14), we&#x27;ve got some form of debugger... it&#x27;s not</span>
+<span class="qt">&gt;much use &#x27;till I&#x27;ve added a breakpoint system and maybe a watch window or</span>
+<span class="qt">&gt;summat but still, it&#x27;s better than nothing.</span>
+
+That&#x27;s what I was doing during Saturday. Adding a debugger to find the
+blasted bat problem!
+
+Now a rethink/recode is in order for my current display problems...
+
+
+
+
+</pre></div><div class="post" id="p169425"><div class="ph"><a class="d" href="#p169425">2003-09-29 23:16:06</a> <span>Mike Wynne</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>
+&quot;Woody&quot; wrote...
+<span class="qt">&gt; Now a rethink/recode is in order for my current display problems...</span>
+
+I&#x27;ve spent a good couple of hours getting this little bugger working:
+
+URL:<a href="http://www.chuntey.com/eightyone/Investigate/INTRUDER.p" rel="noreferrer">http://www.chuntey.com/eightyone/Investigate/INTRUDER.p</a>
+
+It&#x27;s a fun little space invaders game, originally written for the ZX80 so it
+effectively runs entirely in &quot;fast&quot; mode not using the NMI generator at
+all - all the timing is done by hand.  Still, EightyOne appears to run
+everything I throw at it now - apart from one, PLATEDI from
+
+URL:<a href="http://www.zx81.de/soft_e.htm" rel="noreferrer">http://www.zx81.de/soft_e.htm</a>
+
+That one just doesn&#x27;t appear to generate any form of Hsync pulse, I&#x27;m
+baffled.
+
+MikeW
+
+
+
+
+
+</pre></div><div class="post" id="p169525"><div class="ph"><a class="d" href="#p169525">2003-10-03 16:43:13</a> <span>Woody</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>On Tue, 30 Sep 2003 00:16:06 +0100, &quot;Mike Wynne&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&quot;Woody&quot; wrote...</span>
+<span class="qt">&gt;&gt; Now a rethink/recode is in order for my current display problems...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I&#x27;ve spent a good couple of hours getting this little bugger working:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;URL:<a href="http://www.chuntey.com/eightyone/Investigate/INTRUDER.p" rel="noreferrer">http://www.chuntey.com/eightyone/Investigate/INTRUDER.p</a></span>
+
+Doesn&#x27;t work here :)
+
+1K Breakout still doesn&#x27;t work here either. But that&#x27;s because I&#x27;m
+still in the &quot;rethink&quot; stage. And a little bored with the whole thing
+now...
+
+<span class="qt">&gt;It&#x27;s a fun little space invaders game, originally written for the ZX80 so it</span>
+<span class="qt">&gt;effectively runs entirely in &quot;fast&quot; mode not using the NMI generator at</span>
+<span class="qt">&gt;all - all the timing is done by hand.  Still, EightyOne appears to run</span>
+<span class="qt">&gt;everything I throw at it now - apart from one, PLATEDI from</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;URL:<a href="http://www.zx81.de/soft_e.htm" rel="noreferrer">http://www.zx81.de/soft_e.htm</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;That one just doesn&#x27;t appear to generate any form of Hsync pulse, I&#x27;m</span>
+<span class="qt">&gt;baffled.</span>
+
+How long will a TV wait for a Hsync pulse that obviously isn&#x27;t coming?
+
+
+
+
+</pre></div><div class="post" id="p169543"><div class="ph"><a class="d" href="#p169543">2003-10-04 08:03:57</a> <span>Richard Wilson</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>Woody wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; How long will a TV wait for a Hsync pulse that obviously isn&#x27;t coming?</span>
+
+It won&#x27;t. The TV (usually) contains what is known as a PLL (Phase Locked
+Loop) which generates the internal HSYNC signal used by the tube. The
+PLL synchronises itself to the HSYNC signal input from (int this case)
+the ZX display circuitry.
+
+If no HSYNC signal appears for a whole scan line, the PLL will continue
+to generate the internal signal at a frequency similar to that which it
+was generating the last time it had steady HSYNC inputs, but will
+probably increase the wavelength slightly to compensate for the lack of
+an input signal. It will continue to increase the wavelength until it
+reaches its minimum operating frequency (usually about 15kHz). Most
+modern TV circuits allow horizontal frequency ranges of about 15kHz to
+16.5kHz. Look for documentation on the LA7800 (used in the Amstrad
+CMT644). You should be able to find a PDF datasheet.
+
+I&#x27;ve found it very difficult on the net finding accurate, detailed
+information about the way a real TV operates, especially the horizontal
+deflection circuitry.
+
+Cheers,
+Richard
+
+
+
+</pre></div><div class="post" id="p169560"><div class="ph"><a class="d" href="#p169560">2003-10-04 22:25:33</a> <span>Woody</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>On Sat, 04 Oct 2003 08:03:57 GMT, Richard Wilson
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;If no HSYNC signal appears for a whole scan line, the PLL will continue</span>
+<span class="qt">&gt;to generate the internal signal at a frequency similar to that which it</span>
+<span class="qt">&gt;was generating the last time it had steady HSYNC inputs, but will</span>
+<span class="qt">&gt;probably increase the wavelength slightly to compensate for the lack of</span>
+<span class="qt">&gt;an input signal</span>
+
+Right then, I&#x27;m going to setup a maximum scanline length then and if
+it hits that point then I&#x27;ll just simply force the HSYNC. An
+additional 15%, as suggested by Mike, oughta do it then.
+
+<span class="qt">&gt;I&#x27;ve found it very difficult on the net finding accurate, detailed</span>
+<span class="qt">&gt;information about the way a real TV operates, especially the horizontal</span>
+<span class="qt">&gt;deflection circuitry.</span>
+
+Yeah, tell me about it! :(
+
+
+
+
+</pre></div><div class="post" id="p169567"><div class="ph"><a class="d" href="#p169567">2003-10-05 01:08:11</a> <span>Richard Wilson</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>Woody wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; On Sat, 04 Oct 2003 08:03:57 GMT, Richard Wilson</span>
+<span class="qt">&gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;If no HSYNC signal appears for a whole scan line, the PLL will continue</span>
+<span class="qt">&gt; &gt;to generate the internal signal at a frequency similar to that which it</span>
+<span class="qt">&gt; &gt;was generating the last time it had steady HSYNC inputs, but will</span>
+<span class="qt">&gt; &gt;probably increase the wavelength slightly to compensate for the lack of</span>
+<span class="qt">&gt; &gt;an input signal</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Right then, I&#x27;m going to setup a maximum scanline length then and if</span>
+<span class="qt">&gt; it hits that point then I&#x27;ll just simply force the HSYNC. An</span>
+<span class="qt">&gt; additional 15%, as suggested by Mike, oughta do it then.</span>
+
+Not sure you quite got the idea there, but here are some facts:
+
+If you have a HSYNC every 64us, and change it to 128us (i.e. skip every
+second scan line) the TV will provide a steady picture. It inserts its
+own internal HSYNC at approximately 64us. It would be nice to measure
+this with a CRO to see where the intermediate internal HSYNCS actually
+happen.
+
+If you have a HSYNC every 64us, and you move the HSYNC by 1us:
+
+ie. HSYNC ... 64us ... HSYNC ... 65us ... HSYNC ... 64us ... HSYNC (and
+64us from here on)
+
+The TV will take approximately 8 scan lines to move the position of the
+internal HSYNC by 1us.
+
+If you have a HSYNC every 64us, and you increase the wavelength to 65us:
+
+ie. HSYNC ... 64us ... HSYNC ... 65us ... HSYNC ... 65us ... HSYNC
+(etc.)
+
+The TV will take approximately two whole frames (1/25th of a second) to
+adjust its internal wavelength to 65us.
+
+I haven&#x27;t managed to test what actually happens when there is no HSYNC
+for a prolonged period. It could do one of two things:
+
+1. Adjust its frequency to its default free-running frequency (ie.
+15.734kHz for the LA7800).
+
+2. Adjust its frequency to its minimum operating frequency (ie.
+15.734kHz - .750kHz for the LA7800).
+
+The LA7800 is used in the Amstrad CPC CTM644 monitor, which is a
+modified Amstrad TV (ie. It has the receiver removed).
+
+
+If you (or anyone else here) can perform any tests, or write code which
+emulates a TV horizontal and/or vertical deflection circuits accurately,
+please let me know.
+
+Cheers,
+Richard
+
+
+
+</pre></div><div class="post" id="p169629"><div class="ph"><a class="d" href="#p169629">2003-10-05 20:16:15</a> <span>Woody</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>On Sun, 05 Oct 2003 01:08:11 GMT, Richard Wilson
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;If you (or anyone else here) can perform any tests, or write code which</span>
+<span class="qt">&gt;emulates a TV horizontal and/or vertical deflection circuits accurately,</span>
+<span class="qt">&gt;please let me know.</span>
+
+Certainly, though no guarantees that I&#x27;ll ever achieve anything like
+accurate deflection emulation :-)
+
+Thanks for the info.
+
+
+
+
+</pre></div><div class="post" id="p169646"><div class="ph"><a class="d" href="#p169646">2003-10-05 23:31:47</a> <span>Charles Richmond</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>Richard Wilson wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt;       [snip...]         [snip...]         [snip...]</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; If you (or anyone else here) can perform any tests, or write code which</span>
+<span class="qt">&gt; emulates a TV horizontal and/or vertical deflection circuits accurately,</span>
+<span class="qt">&gt; please let me know.</span>
+<span class="qt">&gt; </span>
+Are you going to need *two* modules...one for PAL video
+and one for NTSC video??? Because the ZX-81 was sold on
+the Left side of the Pond too...
+
+--
++----------------------------------------------------------------+
+<span class="qt">|   Charles and Francis Richmond     richmond at plano dot net   |</span>
++----------------------------------------------------------------+
+
+
+
+</pre></div><div class="post" id="p169696"><div class="ph"><a class="d" href="#p169696">2003-10-06 22:21:02</a> <span>Richard Wilson</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>Charles Richmond wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Are you going to need *two* modules...one for PAL video</span>
+<span class="qt">&gt; and one for NTSC video??? Because the ZX-81 was sold on</span>
+<span class="qt">&gt; the Left side of the Pond too...</span>
+
+AFAIK, NSTC and PAL horizontal timing are very similar, if not
+identical, the main difference being the vertical timing. It should not
+require a different module, simply some variables changed (e.g. Min/Max
+VSYNC pos etc).
+
+Richard
+
+
+
+</pre></div><div class="post" id="p169710"><div class="ph"><a class="d" href="#p169710">2003-10-07 09:08:53</a> <span>Chris Johnson</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>Quoted text is from &lt;…@…&gt;, by Richard 
+Wilson &lt;…@…&gt;
+
+<span class="qt">&gt;AFAIK, NSTC and PAL horizontal timing are very similar, if not </span>
+<span class="qt">&gt;identical, the main difference being the vertical timing. It should not </span>
+<span class="qt">&gt;require a different module, simply some variables changed (e.g. Min/Max </span>
+<span class="qt">&gt;VSYNC pos etc).</span>
+
+ From memory; since the line rates are effectively the same in Europe and 
+America the ZX81 wasted an input port bit to read a jumper setting, and 
+adjusted the frame line count accordingly. I do not remember that the 
+vertical blanking logic was any different for the two cases.
+
+Regards
+Chris
+
+-- 
+Chris Johnson  mobile:+44 (0)7785 302122
+EDIMatrix Ltd  work: 0845 126 0680 or +44 20 8559 2454
+                fax:  +44 (0)20 8559 2497
+EDI website    <a href="http://www.edimatrix.co.uk" rel="noreferrer">http://www.edimatrix.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p169715"><div class="ph"><a class="d" href="#p169715">2003-10-07 12:56:11</a> <span>Mike Wynne</span> <span>Re: [ANN] EightyOne, another ZX81 emulator</span></div><pre>
+&quot;Chris Johnson&quot; wrote...
+<span class="qt">&gt;  From memory; since the line rates are effectively the same in Europe and</span>
+<span class="qt">&gt; America the ZX81 wasted an input port bit to read a jumper setting, and</span>
+<span class="qt">&gt; adjusted the frame line count accordingly. I do not remember that the</span>
+<span class="qt">&gt; vertical blanking logic was any different for the two cases.</span>
+
+During the vertical retrace routine, the ZX81 ROM checks bit 6 of it&#x27;s port.
+Depending on this value it then writes either a 55 or a 31 to the system
+variable MARGIN.  The only consequence of this is that the NMI routines then
+counts either 55 or 31 scanlines above and below the central displayable 192
+lines.  This makes a complete frame of either 302 or 254 scanlines, plus the
+vertical retrace itself.  The vertical retrace and the timing of each
+scanline are identical for both PAL and NTSC &#x27;81s.
+
+MikeW
+
+
+
+
+
+</pre></div></main></body></html>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANN: SE BASIC 0.94B available for download · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANN: SE BASIC 0.94B available for download</h1><p class="facts">2 posts, 2004-12-16 – 2004-12-18</p><div class="post" id="p188453"><div class="ph"><a class="d" href="#p188453">2004-12-16 22:38:11</a> <span>Andrew Owen</span> </div><pre>Hi,
+
+As promised, here&#x27;s an early Xmas present. It&#x27;s available from the
+newly revised Sinclair Basic pages on WoS at:
+
+<a href="http://www.worldofspectrum.org/sinclairbasic/" rel="noreferrer">http://www.worldofspectrum.org/sinclairbasic/</a>
+
+There are instructions and stuff on-line but the main item of interest
+is probably this new command:
+
+   SOUND r1,d1[;r2,d2...]
+
+Gives you AY access from BASIC. Works the same as the Timex T/S 2000
+BASIC command. e.g.: you give it a string of register/data pairs, and
+then do a PAUSE (returning to the editor automatically shuts the sound
+off). Examples of how to use it can be found in the Timex 2068 User
+Guide available from here:
+
+<a href="http://www.timexsinclair.org/" rel="noreferrer">http://www.timexsinclair.org/</a>
+
+Enjoy!
+
+P.S. bug reports to the usual email thanks.
+
+P.P.S. This is also the first public release with working EDIT, DELETE
+and commands.
+
+
+
+</pre></div><div class="post" id="p188467"><div class="ph"><a class="d" href="#p188467">2004-12-18 21:09:04</a> <span>Geoff Wearmouth</span> <span>Re: ANN: SE BASIC 0.94B available for download</span></div><pre>In article &lt;…@…&gt;, Andrew 
+Owen &lt;…@…&gt; writes
+<span class="qt">&gt;Hi,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;As promised, here&#x27;s an early Xmas present. It&#x27;s available from the</span>
+<span class="qt">&gt;newly revised Sinclair Basic pages on WoS at:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;<a href="http://www.worldofspectrum.org/sinclairbasic/" rel="noreferrer">http://www.worldofspectrum.org/sinclairbasic/</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;There are instructions and stuff on-line</span>
+
+I read a review of this in last week&#x27;s Micro-mart (9-15 Dec 2004).
+It mentioned that you had &quot;researched Spectrum BASIC extremely 
+thoroughly, correcting every single bug&quot;.
+
+I too have found the BASIC of interest and have been writing about it 
+for twenty years. In 1986 I had a letter about &quot;the secret passageway&quot;
+printed in Popular Computing Weekly and the previous year I had a letter 
+published that explained the true nature of location 23681.
+
+Just a simple letter I thought and hardly expected that it would elevate 
+me to the status of Galileo. I wasn&#x27;t saying that the earth revolved 
+around the sun or was I?
+
+David Lawrence, who owned Popular, had given me a copy of his book for 
+an earlier longer letter that was rejected so, feeling guilty, I wrote a 
+shorter snappier letter that made it to print in September.  He&#x27;d 
+suggested that I contact Sinclair Research but I had already done that 
+and received a cock-and bull reply. A programmer would later explain 
+that Clive does not understand software. Neither it seems does Nigel.
+
+I was not the first to point out that 23681 was the high byte of PR-CC 
+but I was the first to contact Sinclair Research. I was the first to 
+explain its true nature and that it was not OK to carry on as before.
+
+Surprisingly the magazine continued to publish stuff from other 
+programmers that said the sun revolved around the earth. I wrote 
+corrections.
+
+When Amstrad printed the same mistake, I wrote to them but was told that 
+the sun revolved around the earth. Hundreds of ZX Spectrum books 
+repeated this claim. I was the only person to think the earth revolved 
+around the sun.
+
+When I started the zx82.txt file, I made sure that each quirk was 
+documented and drew attention to location 23681. I have written to every 
+one who displays an online, or embedded, manual advising of the need for 
+correction.
+
+The Sinclair Extended BASIC source however turns the clock right back to 
+1982 and says the following -
+
+P_POSN  equ     COORDS + 2      ; (IY+45)  23679  1
+PR_CC   equ     P_POSN + 1      ; (IY+46)  23680  1
+USER    equ     PR_CC + 1       ; (IY+47)  23681  1
+
+Furthermore, in a masterpiece of cut-and-paste I find that my statement 
+to the contrary appears in the very same document.
+
+There is no hair inside my hands nor scars upon my face and yet I fear I 
+may be burnt at the stake for stating that there are no system variables
+in the 48K ZX Spectrum that are not used by the ROM.
+
+It would seem that I know more about what is under the hood of even SE 
+BASIC than you do.
+
+
+-- 
+Geoff Wearmouth
+GOSH WONDERFUL BASIC ROM: <a href="http://www.wearmouth.demon.co.uk/zz/zz.htm" rel="noreferrer">http://www.wearmouth.demon.co.uk/zz/zz.htm</a>
+
+
+
+</pre></div></main></body></html>

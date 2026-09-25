@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unlike *some* CGC entries, this one&#x27;s actually crap! · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Unlike *some* CGC entries, this one&#x27;s actually crap!</h1><p class="facts">28 posts, 2004-03-07 – 2004-03-09</p><div class="post" id="p175231"><div class="ph"><a class="d" href="#p175231">2004-03-07 15:36:57</a> <span>leeg</span> </div><pre>I don&#x27;t know who&#x27;s hosting this year&#x27;s CGC, but here&#x27;s my obligatory
+completely rubbish entry:
+
+<a href="http://users.ox.ac.uk/~wadh1342/speccy/phewpong.z80" rel="noreferrer">http://users.ox.ac.uk/~wadh1342/speccy/phewpong.z80</a>
+
+Phew! What a Pong is a game of pong from a different perspective...
+-- 
+Graham Lee
+I am leeg, for we are many
+Designing pages in HTML is like having sex in a bathtub.  If you don&#x27;t know
+anything about having sex it won&#x27;t help you to know a lot about bathtubs.
+<a href="http://users.ox.ac.uk/~wadh1342" rel="noreferrer">http://users.ox.ac.uk/~wadh1342</a>
+
+
+
+
+</pre></div><div class="post" id="p175237"><div class="ph"><a class="d" href="#p175237">2004-03-07 20:09:18</a> <span>deKay</span> <span>Re: Unlike *some* CGC entries, this one&#x27;s actually crap!</span></div><pre>Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Sun, 07 Mar
+2004 15:36:57 +0000, sefini jorgo geanyet des mani yeof do comp.sys.sinclair,
+yawatina tan reek esk leeg &lt;…@…&gt; fornis do
+marikano es bono tan el:
+
+<span class="qt">&gt;I don&#x27;t know who&#x27;s hosting this year&#x27;s CGC, but here&#x27;s my obligatory</span>
+<span class="qt">&gt;completely rubbish entry:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;<a href="http://users.ox.ac.uk/~wadh1342/speccy/phewpong.z80" rel="noreferrer">http://users.ox.ac.uk/~wadh1342/speccy/phewpong.z80</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Phew! What a Pong is a game of pong from a different perspective...</span>
+
+THAT IS ACE.  GOLD STAR!
+
+deKay
+-- 
+ + Lofi Gaming - www.lofi-gaming.org.uk  AC: deKay in Sponge
+<span class="qt"> |- ugvm Magazine - www.ugvm.org.uk      Gamertag: deKay 01</span>
+<span class="qt"> |- My computer runs at 3.5MHz and I&#x27;m proud of that</span>
+<span class="qt"> |- &quot;SPIN ME SPIN ME!  HURRY UP AND SPIN ME!&quot;</span>
+
+
+
+</pre></div><div class="post" id="p175239"><div class="ph"><a class="d" href="#p175239">2004-03-07 20:31:48</a> <span>Lister</span> <span>Re: Unlike *some* CGC entries, this one&#x27;s actually crap!</span></div><pre>On Sun, 07 Mar 2004 20:09:18 +0000, deKay &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Sun, 07 Mar</span>
+<span class="qt">&gt;2004 15:36:57 +0000, sefini jorgo geanyet des mani yeof do comp.sys.sinclair,</span>
+<span class="qt">&gt;yawatina tan reek esk leeg &lt;…@…&gt; fornis do</span>
+<span class="qt">&gt;marikano es bono tan el:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;I don&#x27;t know who&#x27;s hosting this year&#x27;s CGC, but here&#x27;s my obligatory</span>
+<span class="qt">&gt;&gt;completely rubbish entry:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;<a href="http://users.ox.ac.uk/~wadh1342/speccy/phewpong.z80" rel="noreferrer">http://users.ox.ac.uk/~wadh1342/speccy/phewpong.z80</a></span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Phew! What a Pong is a game of pong from a different perspective...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;THAT IS ACE.  GOLD STAR!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;deKay</span>
+
+
+I tried it but can&#x27;t work out what you have to do, is it like side-on
+pong ?
+
+
+
+
+-- 
+email address *is* valid, but probably
+won&#x27;t get a reply.  Use the reply to header
+
+
+
+</pre></div><div class="post" id="p175240"><div class="ph"><a class="d" href="#p175240">2004-03-07 21:10:03</a> <span>deKay</span> <span>Re: Unlike *some* CGC entries, this one&#x27;s actually crap!</span></div><pre>Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Sun, 07 Mar
+2004 20:31:48 +0000, sefini jorgo geanyet des mani yeof do comp.sys.sinclair,
+yawatina tan reek esk Lister &lt;…@…&gt; fornis do marikano es
+bono tan el:
+
+<span class="qt">&gt;&gt;&gt;<a href="http://users.ox.ac.uk/~wadh1342/speccy/phewpong.z80" rel="noreferrer">http://users.ox.ac.uk/~wadh1342/speccy/phewpong.z80</a></span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;Phew! What a Pong is a game of pong from a different perspective...</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;THAT IS ACE.  GOLD STAR!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I tried it but can&#x27;t work out what you have to do, is it like side-on</span>
+<span class="qt">&gt;pong ?</span>
+
+And you wonder why, Lister.
+
+Sigh.
+
+deKay
+-- 
+ + Lofi Gaming - www.lofi-gaming.org.uk  AC: deKay in Sponge
+<span class="qt"> |- ugvm Magazine - www.ugvm.org.uk      Gamertag: deKay 01</span>
+<span class="qt"> |- My computer runs at 3.5MHz and I&#x27;m proud of that</span>
+<span class="qt"> |- &quot;SPIN ME SPIN ME!  HURRY UP AND SPIN ME!&quot;</span>
+
+
+
+</pre></div><div class="post" id="p175243"><div class="ph"><a class="d" href="#p175243">2004-03-07 21:51:51</a> <span>Chris Young</span> <span>Who&#x27;s hosting the CSSCGC 2004? [was: Re: Unlike *some* CGC entries, this one&#x27;s actually crap!]</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>On Sun, 07 Mar 2004 15:36:57 +0000 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC leeg:
+
+<span class="qt">&gt; I don&#x27;t know who&#x27;s hosting this year&#x27;s CGC</span>
+
+I don&#x27;t think anybody is yet.  Has anybody offered to do it?  Does
+anybody want to host it?  Otherwise I&#x27;ll do it.[1]
+
+Chris
+[1] Grits teeth and hopes that somebody else will jump in like they did
+last time I said this.
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p175250"><div class="ph"><a class="d" href="#p175250">2004-03-07 22:43:13</a> <span>Lister</span> <span>Re: Unlike *some* CGC entries, this one&#x27;s actually crap!</span></div><pre>On Sun, 07 Mar 2004 21:10:03 +0000, deKay &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;&gt;I tried it but can&#x27;t work out what you have to do, is it like side-on</span>
+<span class="qt">&gt;&gt;pong ?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;And you wonder why, Lister.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Sigh.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;deKay</span>
+
+
+Well at least it shows I played it
+
+
+
+
+-- 
+email address *is* valid, but probably
+won&#x27;t get a reply.  Use the reply to header
+
+
+
+</pre></div><div class="post" id="p175252"><div class="ph"><a class="d" href="#p175252">2004-03-07 22:45:49</a> <span>monkey</span> <span>Re: Unlike *some* CGC entries, this one&#x27;s actually crap!</span></div><pre>leeg wrote:
+<span class="qt">&gt; I don&#x27;t know who&#x27;s hosting this year&#x27;s CGC, but here&#x27;s my obligatory</span>
+<span class="qt">&gt; completely rubbish entry:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; <a href="http://users.ox.ac.uk/~wadh1342/speccy/phewpong.z80" rel="noreferrer">http://users.ox.ac.uk/~wadh1342/speccy/phewpong.z80</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Phew! What a Pong is a game of pong from a different perspective...</span>
+
+Surely the bat should have more surface to hit that the ball?
+
+
+
+</pre></div><div class="post" id="p175259"><div class="ph"><a class="d" href="#p175259">2004-03-07 23:57:57</a> <span>the.sentinel</span> <span>Re: Unlike *some* CGC entries, this one&#x27;s actually crap!</span></div><pre>
+
+&quot;leeg&quot; &lt;…@…&gt; wrote in message
+news:c2ffld$r5f$…@…...
+<span class="qt">&gt; I don&#x27;t know who&#x27;s hosting this year&#x27;s CGC, but here&#x27;s my obligatory</span>
+<span class="qt">&gt; completely rubbish entry:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; <a href="http://users.ox.ac.uk/~wadh1342/speccy/phewpong.z80" rel="noreferrer">http://users.ox.ac.uk/~wadh1342/speccy/phewpong.z80</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Phew! What a Pong is a game of pong from a different perspective...</span>
+
+
+:-) hehe, pretty cool. nice idea. maybe you should have udg women, maybe
+about 2 cells high is enough, 3 different poses like;   \ | /  .... dancing,
+looking like some silhouette, women behind some curtain like in some 007
+intro :) ... make a real cool ( okay, or moderate :) presentation to then go
+into the plain looking game area for contrast.
+
+( though I do like the game. but haven&#x27;t been able to hit the damn ball
+:))))) but i&#x27;ll take word that it works, or look at the listing )
+
+nice one!
+
+what&#x27;s really annoying is not getting any reward for actually doing
+something right, like in this case maybe nothing happens if you hit the ball
+or you get a really long annoying BEEP. but when you miss, you get showered
+with insults, an animated crowd and maybe some white noise you can pass off
+as booing and some dancing bond women. it&#x27;d be more fun losing than winning.
+hm, maybe i&#x27;ll enter this year.
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p175261"><div class="ph"><a class="d" href="#p175261">2004-03-08 02:00:41</a> <span>Jim</span> <span>Re: Who&#x27;s hosting the CSSCGC 2004? [was: Re: Unlike *some* CGC entries, this one&#x27;s actually crap!]</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>In article &lt;…@…&gt;, &quot;Chris Young&quot; 
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; On Sun, 07 Mar 2004 15:36:57 +0000 da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt; to MC leeg:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; I don&#x27;t know who&#x27;s hosting this year&#x27;s CGC</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I don&#x27;t think anybody is yet.  Has anybody offered to do it?</span>
+
+Erm, yes, me!   :)   I offered last Thursday in the &quot;CSSCGC2003 Results&quot;
+thread...
+
+<span class="qt">&gt; Does anybody want to host it?</span>
+
+YES! YES! ME ME! Perleeeeeeeeeeease!
+
+<span class="qt">&gt; Otherwise I&#x27;ll do it.[1]</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Chris</span>
+<span class="qt">&gt; [1] Grits teeth and hopes that somebody else will jump in like they did</span>
+<span class="qt">&gt; last time I said this.</span>
+
+/me jumps in.
+
+Formal statement: I am willing to host to the CSSCGC 2004! In fact, I want
+to!
+
+Anyway, isn&#x27;t it traditional for the winner of the previous year&#x27;s compo to
+host it? So by that reasoning, if Woody doesn&#x27;t want to do it, then I should
+get the chance  :)
+
+
+
+</pre></div><div class="post" id="p175267"><div class="ph"><a class="d" href="#p175267">2004-03-08 08:19:04</a> <span>leeg</span> <span>Re: Unlike *some* CGC entries, this one&#x27;s actually crap!</span></div><pre>monkey wrote:
+
+<span class="qt">&gt; leeg wrote:</span>
+<span class="qt">&gt;&gt; I don&#x27;t know who&#x27;s hosting this year&#x27;s CGC, but here&#x27;s my obligatory</span>
+<span class="qt">&gt;&gt; completely rubbish entry:</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; <a href="http://users.ox.ac.uk/~wadh1342/speccy/phewpong.z80" rel="noreferrer">http://users.ox.ac.uk/~wadh1342/speccy/phewpong.z80</a></span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Phew! What a Pong is a game of pong from a different perspective...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Surely the bat should have more surface to hit that the ball?</span>
+
+Unless there&#x27;s a serious bug in the code, the bat should be three times
+longer than the ball.  However it *is* likely that I forgot a &lt;= and made
+it a &lt; instead, in which case no, you&#x27;re right.  That&#x27;s a bit *crap*, isn&#x27;t
+it?  ;-)
+-- 
+Graham Lee
+I am leeg, for we are many
+&quot;I cannot imagine any condition which could cause this ship to founder,
+cannot conceive of any vital disaster happening to this vessel.&quot; - Captain
+E. J. Smith, RMS Titanic
+<a href="http://users.ox.ac.uk/~wadh1342" rel="noreferrer">http://users.ox.ac.uk/~wadh1342</a>
+
+
+
+
+</pre></div><div class="post" id="p175268"><div class="ph"><a class="d" href="#p175268">2004-03-08 08:21:06</a> <span>leeg</span> <span>Re: Unlike *some* CGC entries, this one&#x27;s actually crap!</span></div><pre>the.sentinel wrote:
+
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &quot;leeg&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:c2ffld$r5f$…@…...</span>
+<span class="qt">&gt;&gt; I don&#x27;t know who&#x27;s hosting this year&#x27;s CGC, but here&#x27;s my obligatory</span>
+<span class="qt">&gt;&gt; completely rubbish entry:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; <a href="http://users.ox.ac.uk/~wadh1342/speccy/phewpong.z80" rel="noreferrer">http://users.ox.ac.uk/~wadh1342/speccy/phewpong.z80</a></span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Phew! What a Pong is a game of pong from a different perspective...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; :-) hehe, pretty cool. nice idea. maybe you should have udg women, maybe</span>
+<span class="qt">&gt; about 2 cells high is enough, 3 different poses like;   \ | /  ....</span>
+<span class="qt">&gt; dancing, looking like some silhouette, women behind some curtain like in</span>
+<span class="qt">&gt; some 007 intro :) ... make a real cool ( okay, or moderate :) presentation</span>
+<span class="qt">&gt; to then go into the plain looking game area for contrast.</span>
+<span class="qt">&gt; </span>
+
+That would go against one of the key statements on the title page.
+
+<span class="qt">&gt; ( though I do like the game. but haven&#x27;t been able to hit the damn ball</span>
+<span class="qt">&gt; :))))) but i&#x27;ll take word that it works, or look at the listing )</span>
+<span class="qt">&gt; </span>
+
+I&#x27;ve managed to hit the ball twice.
+
+<span class="qt">&gt; nice one!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; what&#x27;s really annoying is not getting any reward for actually doing</span>
+<span class="qt">&gt; something right, like in this case maybe nothing happens if you hit the</span>
+<span class="qt">&gt; ball or you get a really long annoying BEEP. but when you miss, you get</span>
+<span class="qt">&gt; showered with insults, an animated crowd and maybe some white noise you</span>
+<span class="qt">&gt; can pass off as booing and some dancing bond women. it&#x27;d be more fun</span>
+<span class="qt">&gt; losing than winning. hm, maybe i&#x27;ll enter this year.</span>
+
+If you enter with a souped-up version of my program and win, then you owe me
+a dancing girl^W^Wpint.  Actually, make it a dancing girl ;-)
+
+-- 
+Graham Lee
+I am leeg, for we are many
+Real programmers don&#x27;t document.  If it was hard to write, it&#x27;s going to be
+hard to understand.
+<a href="http://users.ox.ac.uk/~wadh1342" rel="noreferrer">http://users.ox.ac.uk/~wadh1342</a>
+
+
+
+
+</pre></div><div class="post" id="p175269"><div class="ph"><a class="d" href="#p175269">2004-03-08 08:21:56</a> <span>leeg</span> <span>Re: Who&#x27;s hosting the CSSCGC 2004? [was: Re: Unlike *some* CGC entries, this one&#x27;s actually crap!]</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>Jim wrote:
+
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Formal statement: I am willing to host to the CSSCGC 2004! In fact, I want</span>
+<span class="qt">&gt; to!</span>
+<span class="qt">&gt; </span>
+
+/dcc send jim <a href="http://users.ox.ac.uk/~wadh1342/speccy/phewpong.z80" rel="noreferrer">http://users.ox.ac.uk/~wadh1342/speccy/phewpong.z80</a>
+-- 
+Graham Lee
+I am leeg, for we are many
+Progress: The process through which the Internet has evolved from smart
+people in front of dumb terminals, to dumb people in front of smart
+terminals.
+<a href="http://users.ox.ac.uk/~wadh1342" rel="noreferrer">http://users.ox.ac.uk/~wadh1342</a>
+
+
+
+
+</pre></div><div class="post" id="p175297"><div class="ph"><a class="d" href="#p175297">2004-03-08 21:28:07</a> <span>Chris Young</span> <span>Re: Who&#x27;s hosting the CSSCGC 2004? [was: Re: Unlike *some* CGC entries, this one&#x27;s actually crap!]</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>On Mon, 08 Mar 2004 02:00:41 +0000 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Jim:
+
+<span class="qt">&gt; Formal statement: I am willing to host to the CSSCGC 2004! In fact, I want</span>
+<span class="qt">&gt; to!</span>
+
+Excellent, well done.
+
+<span class="qt">&gt; Anyway, isn&#x27;t it traditional for the winner of the previous year&#x27;s compo to</span>
+<span class="qt">&gt; host it?</span>
+
+I don&#x27;t think so.  I&#x27;ve never noticed this before, and I&#x27;ve won at least
+twice.
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p175306"><div class="ph"><a class="d" href="#p175306">2004-03-08 22:38:46</a> <span>Woody</span> <span>Re: Who&#x27;s hosting the CSSCGC 2004? [was: Re: Unlike *some* CGC entries, this one&#x27;s actually crap!]</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2058">CSSCGC Crap Games Contest 2004</a></div><pre>On 8 Mar 2004 22:28:07 +0100, &quot;Chris Young&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;On Mon, 08 Mar 2004 02:00:41 +0000 da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt;to MC Jim:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Formal statement: I am willing to host to the CSSCGC 2004! In fact, I want</span>
+<span class="qt">&gt;&gt; to!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Excellent, well done.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Anyway, isn&#x27;t it traditional for the winner of the previous year&#x27;s compo to</span>
+<span class="qt">&gt;&gt; host it?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I don&#x27;t think so.  I&#x27;ve never noticed this before, and I&#x27;ve won at least</span>
+<span class="qt">&gt;twice.</span>
+
+I wasn&#x27;t interested in hosting it anyway :-)
+
+Heh, I might not even have a net connection come tomorrow.
+The incompetent bastards insist on receiving payments made fucking
+weeks ago and then come out with the typical payment deadlines before
+disconnection (which happens to be 9th March this time, and this has
+happened before, resulting in a 3 day disconnection before they got
+their fucking stupid arses into gear and realised just who had fucked
+up).
+
+So yeah, no net come the morning and they&#x27;ll be coming and getting
+their gear and they can go fucking whistle this time.
+
+&lt;/NTL advertisement&gt;
+
+
+
+
+</pre></div><div class="post" id="p175313"><div class="ph"><a class="d" href="#p175313">2004-03-09 00:38:04</a> <span>the.sentinel</span> <span>Re: Unlike *some* CGC entries, this one&#x27;s actually crap!</span></div><pre>
+
+&quot;leeg&quot; &lt;…@…&gt; wrote in message
+news:c2hagd$hj6$…@…...
+<span class="qt">&gt; the.sentinel wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; &quot;leeg&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; &gt; news:c2ffld$r5f$…@…...</span>
+<span class="qt">&gt; &gt;&gt; I don&#x27;t know who&#x27;s hosting this year&#x27;s CGC, but here&#x27;s my obligatory</span>
+<span class="qt">&gt; &gt;&gt; completely rubbish entry:</span>
+<span class="qt">&gt; &gt;&gt;</span>
+<span class="qt">&gt; &gt;&gt; <a href="http://users.ox.ac.uk/~wadh1342/speccy/phewpong.z80" rel="noreferrer">http://users.ox.ac.uk/~wadh1342/speccy/phewpong.z80</a></span>
+<span class="qt">&gt; &gt;&gt;</span>
+<span class="qt">&gt; &gt;&gt; Phew! What a Pong is a game of pong from a different perspective...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; :-) hehe, pretty cool. nice idea. maybe you should have udg women, maybe</span>
+<span class="qt">&gt; &gt; about 2 cells high is enough, 3 different poses like;   \ | /  ....</span>
+<span class="qt">&gt; &gt; dancing, looking like some silhouette, women behind some curtain like in</span>
+<span class="qt">&gt; &gt; some 007 intro :) ... make a real cool ( okay, or moderate :)</span>
+presentation
+<span class="qt">&gt; &gt; to then go into the plain looking game area for contrast.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; That would go against one of the key statements on the title page.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; ( though I do like the game. but haven&#x27;t been able to hit the damn ball</span>
+<span class="qt">&gt; &gt; :))))) but i&#x27;ll take word that it works, or look at the listing )</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;ve managed to hit the ball twice.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; nice one!</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; what&#x27;s really annoying is not getting any reward for actually doing</span>
+<span class="qt">&gt; &gt; something right, like in this case maybe nothing happens if you hit the</span>
+<span class="qt">&gt; &gt; ball or you get a really long annoying BEEP. but when you miss, you get</span>
+<span class="qt">&gt; &gt; showered with insults, an animated crowd and maybe some white noise you</span>
+<span class="qt">&gt; &gt; can pass off as booing and some dancing bond women. it&#x27;d be more fun</span>
+<span class="qt">&gt; &gt; losing than winning. hm, maybe i&#x27;ll enter this year.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; If you enter with a souped-up version of my program and win, then you owe</span>
+me
+<span class="qt">&gt; a dancing girl^W^Wpint.  Actually, make it a dancing girl ;-)</span>
+<span class="qt">&gt;</span>
+
+
+:-)
+
+
+
+
+
+</pre></div><div class="post" id="p175316"><div class="ph"><a class="d" href="#p175316">2004-03-09 01:12:26</a> <span>leeg</span> <span>Re: Unlike *some* CGC entries, this one&#x27;s actually crap!</span></div><pre>the.sentinel wrote:
+
+<span class="qt">&gt; </span>
+<span class="qt">&gt; :-)</span>
+
+BTW: <a href="http://users.ox.ac.uk/~wadh1342/speccy/pongvent.z80" rel="noreferrer">http://users.ox.ac.uk/~wadh1342/speccy/pongvent.z80</a>
+-- 
+Graham Lee
+I am leeg, for we are many
+Designing pages in HTML is like having sex in a bathtub.  If you don&#x27;t know
+anything about having sex it won&#x27;t help you to know a lot about bathtubs.
+<a href="http://users.ox.ac.uk/~wadh1342" rel="noreferrer">http://users.ox.ac.uk/~wadh1342</a>
+
+
+
+
+</pre></div><div class="post" id="p175321"><div class="ph"><a class="d" href="#p175321">2004-03-09 08:40:20</a> <span>deKay</span> <span>Re: Unlike *some* CGC entries, this one&#x27;s actually crap!</span></div><pre>Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Tue, 09 Mar
+2004 01:12:26 +0000, sefini jorgo geanyet des mani yeof do comp.sys.sinclair,
+yawatina tan reek esk leeg &lt;…@…&gt; fornis do
+marikano es bono tan el:
+
+<span class="qt">&gt;the.sentinel wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; :-)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;BTW: <a href="http://users.ox.ac.uk/~wadh1342/speccy/pongvent.z80" rel="noreferrer">http://users.ox.ac.uk/~wadh1342/speccy/pongvent.z80</a></span>
+
+I like the way it crashes Spin the second I load it.  ACE! :)
+
+deKay
+-- 
+ + Lofi Gaming - www.lofi-gaming.org.uk  AC: deKay in Sponge
+<span class="qt"> |- ugvm Magazine - www.ugvm.org.uk      Gamertag: deKay 01</span>
+<span class="qt"> |- My computer runs at 3.5MHz and I&#x27;m proud of that</span>
+<span class="qt"> |- &quot;SPIN ME SPIN ME!  HURRY UP AND SPIN ME!&quot;</span>
+
+
+
+</pre></div><div class="post" id="p175323"><div class="ph"><a class="d" href="#p175323">2004-03-09 09:43:56</a> <span>James Weatherley</span> <span>Re: Unlike *some* CGC entries, this one&#x27;s actually crap!</span></div><pre>In article &lt;c2j5os$ora$…@…&gt;, 
+…@… says...
+<span class="qt">&gt; the.sentinel wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; :-)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; BTW: <a href="http://users.ox.ac.uk/~wadh1342/speccy/pongvent.z80" rel="noreferrer">http://users.ox.ac.uk/~wadh1342/speccy/pongvent.z80</a></span>
+<span class="qt">&gt; </span>
+Er...
+
+Using vbSpec:
+
+vbSpec does not support the required hardware platform (Unknown hardware 
+platform) for this snapshot. This snapshot may not function correctly in 
+vbSpec.
+
+...Time Passes...
+
+Errors were encountered in the z80 file. Compressed memory block [11]has 
+an uncompressed length of more than 16384 bytes.
+
+...Time Passes...
+
+Speccy freezes.
+
+...Time Passes... and passes ... and passes ...
+
+Excellent adventure! I&#x27;ll just wait for daytime so the trolls turn to 
+stone, grab the key and I&#x27;ll be off!
+
+
+It&#x27;s less fun on spectaculator though:
+
+Spectaculator cannot open pongvent.z80.
+
+A Spectrum model or additional hardware that Spectaculator does not 
+emulate is required.
+
+
+
+
+</pre></div><div class="post" id="p175326"><div class="ph"><a class="d" href="#p175326">2004-03-09 10:13:50</a> <span>Philip Kendall</span> <span>Re: Unlike *some* CGC entries, this one&#x27;s actually crap!</span></div><pre>In article &lt;…@…&gt;,
+James Weatherley  &lt;…@…&gt; wrote:
+<span class="qt">&gt;In article &lt;c2j5os$ora$…@…&gt;, </span>
+<span class="qt">&gt;…@… says...</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; BTW: <a href="http://users.ox.ac.uk/~wadh1342/speccy/pongvent.z80" rel="noreferrer">http://users.ox.ac.uk/~wadh1342/speccy/pongvent.z80</a></span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;Er...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Using vbSpec:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;vbSpec does not support the required hardware platform (Unknown hardware </span>
+<span class="qt">&gt;platform) for this snapshot. This snapshot may not function correctly in </span>
+<span class="qt">&gt;vbSpec.</span>
+
+[ ... ]
+
+<span class="qt">&gt;It&#x27;s less fun on spectaculator though:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Spectaculator cannot open pongvent.z80.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;A Spectrum model or additional hardware that Spectaculator does not </span>
+<span class="qt">&gt;emulate is required.</span>
+
+Works fine on Fuse :-)
+
+Cheers,
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p175327"><div class="ph"><a class="d" href="#p175327">2004-03-09 10:33:33</a> <span>James Weatherley</span> <span>Re: Unlike *some* CGC entries, this one&#x27;s actually crap!</span></div><pre>In article &lt;c2k5cu$lf4$…@…&gt;, …@… 
+says...
+<span class="qt">&gt; In article &lt;…@…&gt;,</span>
+<span class="qt">&gt; James Weatherley  &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt;In article &lt;c2j5os$ora$…@…&gt;, </span>
+<span class="qt">&gt; &gt;…@… says...</span>
+<span class="qt">&gt; &gt;&gt; </span>
+<span class="qt">&gt; &gt;&gt; BTW: <a href="http://users.ox.ac.uk/~wadh1342/speccy/pongvent.z80" rel="noreferrer">http://users.ox.ac.uk/~wadh1342/speccy/pongvent.z80</a></span>
+<span class="qt">&gt; &gt;&gt; </span>
+<span class="qt">&gt; &gt;Er...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Works fine on Fuse :-)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Cheers,</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Phil</span>
+<span class="qt">&gt; </span>
+ I look forward to trying it out when I get home then. 
+
+
+
+</pre></div><div class="post" id="p175328"><div class="ph"><a class="d" href="#p175328">2004-03-09 11:22:43</a> <span>Chris Cowley</span> <span>Re: Unlike *some* CGC entries, this one&#x27;s actually crap!</span></div><pre>On 9 Mar 2004 10:13:50 -0000, …@… (Philip Kendall) wrote:
+
+<span class="qt">&gt;Works fine on Fuse :-)</span>
+
+That&#x27;s curious. Unless they&#x27;ve been changed in v1.8 of vbSpec, I thought
+the z80 compress/decompress routines were algorithmically exactly the
+same as FUSE&#x27;s (v0.5.1, I think I checked it against).
+-- 
+Chris Cowley
+
+
+
+</pre></div><div class="post" id="p175331"><div class="ph"><a class="d" href="#p175331">2004-03-09 12:40:44</a> <span>the.sentinel</span> <span>Re: Unlike *some* CGC entries, this one&#x27;s actually crap!</span></div><pre>
+
+&quot;James Weatherley&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; In article &lt;c2j5os$ora$…@…&gt;,</span>
+<span class="qt">&gt; …@… says...</span>
+<span class="qt">&gt; &gt; the.sentinel wrote:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; :-)</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; BTW: <a href="http://users.ox.ac.uk/~wadh1342/speccy/pongvent.z80" rel="noreferrer">http://users.ox.ac.uk/~wadh1342/speccy/pongvent.z80</a></span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; Er...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Using vbSpec:</span>
+<span class="qt">&gt;</span>
+
+dont know about vbSpec as i don&#x27;t have it
+
+
+<span class="qt">&gt;&gt;[dekay](crashes Spin)</span>
+
+same here
+
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Spectaculator cannot open pongvent.z80.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; A Spectrum model or additional hardware that Spectaculator does not</span>
+<span class="qt">&gt; emulate is required.</span>
+<span class="qt">&gt;</span>
+
+works fine in Spectaculator for me. ( version 5.3 )
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p175332"><div class="ph"><a class="d" href="#p175332">2004-03-09 12:52:40</a> <span>Philip Kendall</span> <span>Re: Unlike *some* CGC entries, this one&#x27;s actually crap!</span></div><pre>In article &lt;…@…&gt;,
+Chris Cowley  &lt;…@…&gt; wrote:
+<span class="qt">&gt;On 9 Mar 2004 10:13:50 -0000, …@… (Philip Kendall) wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;Works fine on Fuse :-)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;That&#x27;s curious. Unless they&#x27;ve been changed in v1.8 of vbSpec, I thought</span>
+<span class="qt">&gt;the z80 compress/decompress routines were algorithmically exactly the</span>
+<span class="qt">&gt;same as FUSE&#x27;s (v0.5.1, I think I checked it against).</span>
+
+It&#x27;s a +2A snap, which may explain the problems other emulators are
+having; a brief look at the source for v1.7 of vbSpec reveals that
+unknown machine types don&#x27;t get the b128k flag set -- could that explain
+what&#x27;s going on?
+
+Cheers,
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p175334"><div class="ph"><a class="d" href="#p175334">2004-03-09 13:05:29</a> <span>leeg</span> <span>Re: Unlike *some* CGC entries, this one&#x27;s actually crap!</span></div><pre>Philip Kendall wrote:
+
+<span class="qt">&gt; In article &lt;…@…&gt;,</span>
+<span class="qt">&gt; James Weatherley  &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;In article &lt;c2j5os$ora$…@…&gt;,</span>
+<span class="qt">&gt;&gt;…@… says...</span>
+<span class="qt">&gt;&gt;&gt; </span>
+<span class="qt">&gt;&gt;&gt; BTW: <a href="http://users.ox.ac.uk/~wadh1342/speccy/pongvent.z80" rel="noreferrer">http://users.ox.ac.uk/~wadh1342/speccy/pongvent.z80</a></span>
+<span class="qt">&gt;&gt;&gt; </span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;A Spectrum model or additional hardware that Spectaculator does not</span>
+<span class="qt">&gt;&gt;emulate is required.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Works fine on Fuse :-)</span>
+<span class="qt">&gt; </span>
+
+Of course it does, I created it on FUSE 0.6.1.1 or thereabout.  Although I
+created it in +2A mode (as I myself own a trusty +2A): if there are serious
+problems then I&#x27;ll recreate *sigh* in 48k/16k mode.
+-- 
+Graham Lee
+I am leeg, for we are many
+Progress: The process through which the Internet has evolved from smart
+people in front of dumb terminals, to dumb people in front of smart
+terminals.
+<a href="http://users.ox.ac.uk/~wadh1342" rel="noreferrer">http://users.ox.ac.uk/~wadh1342</a>
+
+
+
+
+</pre></div><div class="post" id="p175336"><div class="ph"><a class="d" href="#p175336">2004-03-09 13:12:13</a> <span>James Weatherley</span> <span>Re: Unlike *some* CGC entries, this one&#x27;s actually crap!</span></div><pre>In article &lt;…@…&gt;, …@… 
+says...
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Spectaculator cannot open pongvent.z80.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; A Spectrum model or additional hardware that Spectaculator does not</span>
+<span class="qt">&gt; &gt; emulate is required.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; works fine in Spectaculator for me. ( version 5.3 )</span>
+<span class="qt">&gt; </span>
+
+I was using Spectaculator 5.1.0336
+
+
+
+</pre></div><div class="post" id="p175337"><div class="ph"><a class="d" href="#p175337">2004-03-09 13:15:14</a> <span>Philip Kendall</span> <span>Re: Unlike *some* CGC entries, this one&#x27;s actually crap!</span></div><pre>In article &lt;…@…&gt;,
+James Weatherley  &lt;…@…&gt; wrote:
+<span class="qt">&gt;In article &lt;…@…&gt;, …@… </span>
+<span class="qt">&gt;says...</span>
+<span class="qt">&gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; &gt; Spectaculator cannot open pongvent.z80.</span>
+<span class="qt">&gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; &gt; A Spectrum model or additional hardware that Spectaculator does not</span>
+<span class="qt">&gt;&gt; &gt; emulate is required.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; works fine in Spectaculator for me. ( version 5.3 )</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I was using Spectaculator 5.1.0336</span>
+
+See the Changelog for Spectaculator 5.2 and note this is a +2A snapshot
+created by Fuse to explain all that...
+
+Cheers,
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p175344"><div class="ph"><a class="d" href="#p175344">2004-03-09 14:13:43</a> <span>Chris Cowley</span> <span>Re: Unlike *some* CGC entries, this one&#x27;s actually crap!</span></div><pre>On 9 Mar 2004 12:52:40 -0000, …@… (Philip Kendall) wrote:
+
+<span class="qt">&gt;In article &lt;…@…&gt;,</span>
+<span class="qt">&gt;Chris Cowley  &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;On 9 Mar 2004 10:13:50 -0000, …@… (Philip Kendall) wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;Works fine on Fuse :-)</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;That&#x27;s curious. Unless they&#x27;ve been changed in v1.8 of vbSpec, I thought</span>
+<span class="qt">&gt;&gt;the z80 compress/decompress routines were algorithmically exactly the</span>
+<span class="qt">&gt;&gt;same as FUSE&#x27;s (v0.5.1, I think I checked it against).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;It&#x27;s a +2A snap, which may explain the problems other emulators are</span>
+<span class="qt">&gt;having; a brief look at the source for v1.7 of vbSpec reveals that</span>
+<span class="qt">&gt;unknown machine types don&#x27;t get the b128k flag set -- could that explain</span>
+<span class="qt">&gt;what&#x27;s going on?</span>
+
+Ah, that sounds plausible. It&#x27;s probably defaulting to 48k mode and
+loading the 128K memory map into the wrong places. I&#x27;m not too sure why
+that would produce a &quot;decompressed block is &gt;16384 bytes&quot; error, but I&#x27;m
+sure it won&#x27;t be difficult to sort out.
+
+I&#x27;ll have a look and get a patch off to Miklos. Thanks. :)
+
+Chris.
+-- 
+Chris Cowley
+
+
+
+</pre></div><div class="post" id="p175363"><div class="ph"><a class="d" href="#p175363">2004-03-09 18:23:23</a> <span>Dunny</span> <span>Re: Unlike *some* CGC entries, this one&#x27;s actually crap!</span></div><pre><span class="qt">&gt;&gt;&gt; [dekay](crashes Spin)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; same here</span>
+
+Works fine in SPIN 0.5
+
+D.
+
+
+
+
+
+
+</pre></div></main></body></html>

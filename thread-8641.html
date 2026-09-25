@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZX Tape Format - revision 4 · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ZX Tape Format - revision 4</h1><p class="facts">1 posts, 1997-02-21 – 1997-02-21</p><div class="post" id="p24254"><div class="ph"><a class="d" href="#p24254">1997-02-21</a> <span>…@…</span> </div><pre>
+
+  Added a switch that changes BOTH Zero and One bit half-period (since in most
+of the loaders the One bit half-period is TWICE the size of Zero bit half-p.).
+  Added Hardware Type block. So you can find out what hardware the programs in
+the tape (following that block) use. If ZX-81 is selected then the values for
+Normal Speed Data block should be different from the ones for the Spectrum. Can
+someone please supply the values that ZX-81 uses to save programs to tape ?
+Also I need more info on some other Spectrum clones that have different
+hardware from 48k / 128k Spectrums so they could be included in this block.
+  Added Emulation Info block. This block should be saved by Emulators and should
+include what kind of Joystick was used, weather Hi-Res emulation was on,
+if you were in 48k or 128k emulation mode when you last used it, etc.I have done
+my best to put it together. Please comment on this as much as you can. Ofcourse
+additions by emulator authors are most welcome so this format would be usable
+on all of them.
+  Added a special &#x27;Z&#x27; block. This is for the case you merge or copy two ZX Tape
+files together... you should just skip next 7 bytes if you encounter this block.
+Ofcourse a better way of merging two files would be to delete the &#x27;signature&#x27;
+(ZXTape!) 8 bytes from the second file and merge them afterwards - you save 8
+bytes ;)
+
+
+PLEASE Do not use this format YET, since it is constantly changing !!! All
+additions/corrections are welcome and should be posted to comp.sys.sinclair AND
+directly to me on email: …@… .
+
+
+                         ZX Spectrum Tape file format
+                        ------------------------------
+                                  revision 4
+
+  This format lets you preserve all (hopefully) of the tapes with turbo or
+custom loading routines. Even though some of the newest and &#x27;smarter&#x27; emulators
+can find most of the info about the loader from the code itself, this cannot be
+possible if you want to replay the file to the good old real spectrum. And with
+all this information in the file the emulators don&#x27;t have to bother with finding
+out the baud rate and other things.
+
+  The preferred 3 letter filename extension is .SPT for SpectrumTape, since .ZXT
+is already used for another file type.
+
+  The file is identified with the first 8 bytes being &#x27;ZXTape!&#x27; plus EndOfFile
+byte 26 (1A hex). Then the body follows which is devised from blocks. Each
+block is identified with its ID byte followed by its body. There are currently
+8 types of blocks.
+
+So the file structure is :  &#x27;ZXTape!&#x27; 0x1A ID1 Body1 ID2 Body2 ...
+                             0        7    8     ...
+
+- The Two-Byte values are always stored LSB (Least Significant Byte) First.
+- The bit order in a byte is  : 7 6 5 4 3 2 1 0
+                and in a word : first  byte (LSB) :  7  6  5  4  3  2  1  0
+                                second byte (MSB) : 15 14 13 12 11 10  9  8
+  All unused bits should be Unset - 0 !
+- The timings are given in Z80 clock ticks (T states) unless otherwise stated.
+  1 T state = 1sec/3500000
+- The values in the tables mean : Offset (in HEX bytes), Length (1-byte, 2-word)
+- You might interpret full-period as one pulse (----____ or ____----) and
+  half-period as only one half of the pulse (---- or ____).
+- The values in brackets [] are the fefault values of Spectrum ROM load/save
+  routines - they should be used for all Standard loading blocks.
+  These values are in Decimal format. Please inform me if some are incorrect.
+
+These are the possible blocks :
+
+ID : 00  -  Loading Speed Change for Custom Loading Blocks
+-------     and Change of the Standard Pause
+
+          All custom loading blocks that follow this block use the applied
+          change ! The Standard Pause is applied after ALL Blocks that
+          don&#x27;t have a special Pause Block (ID=01) after them !!! Default
+          value for Standard Pause should be one second.
+
+00 1  Change which Value : 00 - Length of PILOT half-period            [2168]
+                           01 - Length of SYNC First half-period       [667]
+                           02 - Length of SYNC Second half-period      [735]
+                           03 - Length of ZERO bit half-period         [855]
+                           04 - Length of ONE bit half-period          [1710]
+                           05 - Length of BOTH 0 and 1 bit half-period
+                           FF - Standard Pause After Blocks            [10]
+
+                      When 05 is selected the Value holds Zero bit half-period,
+                      the One bit half-period is the Value multiplied by 2.
+
+01 2  Value : for 00-05 in Z80 T-States
+              for FF    First byte contains value in tenth of seconds (1s/10)
+                        Second byte should contain 0 !
+
+ID : 01  -  Pause
+-------
+          Use this block if the Pause should be different from the Standard one.
+          If the Value is 0   then there should be absolutely NO pause.
+          If the Value is 255 then the Pause should be Indefinite
+                              (Waiting for a keypress)
+
+00 1  Value of the pause in tenth of seconds (1s/10)
+
+ID : 02  -  Text Description
+-------
+          The description can be upto 255 characters long but please keep
+          it down to about 30 so the programs can show it in one line !
+          This is ment to identify parts of the tape, so you know where
+          level 1 starts, where to rewind when you lose all the lives, etc.
+          Of course you can use it in the beginning to identify the name of
+          the game or program used in the file.
+
+00 1  Length of the Text
+01 x  Text in ASCII
+
+ID : 03  -  Custom Loading Data Block
+-------
+          This is the block with actual data. It is very similar to the normal
+          .TAP block but with some additional Info and will use all Loading
+          Speed changes from blocks with ID 01.
+
+00 2  Length of PILOT tone (in PILOT full-periods)     [8064 Header, 3220 Data]
+02 1  General Purpose Flag :
+        Bit 0 : 1 If SYNC tone is present, 0 if NOT    [1]
+03 1  Used bits in LAST Byte (other bits should be 0)  [8]
+      i.e. if this is 6 then the bits (x) used in LAST byte are: xxxxxx00
+04 2  Length of DATA that follows
+06 x  DATA, the bits are saved MSb (Most Significant bit) first
+
+ID : 04  -  Normal Speed Data Block (as in .TAP files)
+-------
+          This block must be replayed with the Standard ROM Values for all
+          Loading Speed variables (values in brackets []). If you know the
+          default values for ZX-81 ROM save/load routine then please email me.
+
+00 2  Length of DATA that follows
+02 x  DATA, as in .TAP File
+
+ID : 05  -  Hardware Type
+-------
+          This selects what hardware the programs on this tape use. One program
+          can run on 48k and use AY sound and when run on 128k speccy use its
+          memory. Every Hardware Type has its own bit in the double-byte word.
+          All programs (blocks) that follow this block use this Hardware.
+          If this block is not used then hardware is Unknown.
+
+00 2  Hardware Type which the programs use
+        Bit  0 : ZX Spectrum 48k, Plus
+             1 : ZX Spectrum 128k, +2, +2A, +3
+             2 : AY Hardware with 48k Spectrum
+             3 : ZX-81 with  1k RAM
+             4 : ZX-81 with 16k RAM or more
+             5 : Pentagon 128
+             6 : Sam Coupe
+
+      Please tell me which Timex Sinclair models have so different hardware
+      than ZX Spectrum 48k, 128k and they will be included!
+      If you know of any more Spectrum clones with hardware other than this or
+      some other add-on hardware then please e-mail me ! I am not exactly sure
+      if it would be necessary to include things like Interface-I, joystics,
+      mice and other little add-ons in here or in the next block?
+
+ID : 06  -  Emulation Info
+-------
+          This is a special block that would be generated normally only by
+          Emulators. For now it contains info on everything I could find that
+          other formats support. Please inform me of any additions/corrections
+          since this is a very important part for emulators. Those bits that
+          are not used by the emulator that stored the info, should be 0 !
+
+00 2  Hardware Info
+        Bit  0 : 128k Emulation on
+             1 : AY Emulation on (for 48k programs)
+             2 : Interface 1 present
+             3 : Issue 2 emulation
+             4 : SamRam present
+             5 : Multiface 128 present
+01 1  Joystick Selection : 00 - Cursor/Protek/AGF
+                           01 - Kempston
+                           02 - Sinclair 2 Left  (keys 12345)
+                           03 - Sinclair 2 Right (keys 67890)
+02 2  General Emulation Flags
+        Bit  0 : R register emulation
+             1 : LDIR emulation
+             2 : Double Interrupt Frequency
+             3 : High Resolution Color emulation
+           4,5 : Video Synchronisation : 1=High, 2=Low, 0,2=Normal
+             6 : Fast Loading when ROM load routine is used
+
+ID : 5A (90 dec, ASCII letter &#x27;Z&#x27;)
+-------
+          This is a block that would be generated if you merged two ZX Tape
+          files together. It is here so you can easily copy the files together
+          and use them. Ofcourse this  means that resulting file would be 8
+          bytes longer than if this block was not used. All you have to
+          do if you encounter this block ID is to skip next 7 bytes. Please, if
+          you can don&#x27;t merge two files together this way, use a utility that
+          will let you do that without having this extra block.
+
+00 7  &#x27;XTape!&#x27; 0x1A   Just skip these 7 bytes and you will end up on next ID.
+
+
+Regards,
+  Tomaz
+
+
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div></main></body></html>

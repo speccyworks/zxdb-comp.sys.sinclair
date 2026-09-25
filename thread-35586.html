@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Does anyone remember the Spectrum SE project? · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Does anyone remember the Spectrum SE project?</h1><p class="facts">9 posts, 2014-06-01 – 2014-08-19</p><div class="post" id="p226614"><div class="ph"><a class="d" href="#p226614">2014-06-01 11:28:00</a> <span>Andrew Owen</span> </div><pre>Some Spanish guys are building an FPGA clone that will include Spectrum 
+SE support (<a href="http://zxuno.speccy.org" rel="noreferrer">http://zxuno.speccy.org</a>). Only it&#x27;s called the Chloe 280SE 
+now, for legal reasons, and includes ULAplus (the palette stuff that was 
+talked about 14 years ago but not included in the prototype). The SE 
+Basic project has been folded back in to the core project and SE Basic 
+IV (4.0.7) includes an 80x24 character text mode (480x192 pixels), and 
+support for esxDOS running on divMMC (a newer SD card based version of 
+divIDE that is built into the clone). When, ok if, a production version 
+of the zxuno is made avaialable I&#x27;ll be publishing a custom template so 
+folks can order an SE keyboard from WASD keyboards 
+(<a href="http://www.wasdkeyboards.com" rel="noreferrer">http://www.wasdkeyboards.com</a>). Not cheap, but Cherry MX blue mechanical 
+keyswitch, so should be good for a couple of decades of heavy abuse.
+
+I have one project on the back burner ... a custom ROM that uses Currah 
+Microspeech to say everything that gets passed through the screen and 
+keyboard channels. The idea is to make the majority of adventure games 
+accessible to blind users.
+
+I have one project under active development ... an advanced cRPG engine 
+for the Spectrum +2A. More details here (and no FB account required): 
+<a href="https://www.facebook.com/zxodus" rel="noreferrer">https://www.facebook.com/zxodus</a>
+
+
+</pre></div><div class="post" id="p226615"><div class="ph"><a class="d" href="#p226615">2014-06-01 11:33:27</a> <span>Brian Gaff</span> <span>Re: Does anyone remember the Spectrum SE project?</span></div><pre>Sounds interesting. The one issue with the currah of course whas that all 
+output had to be in the form of phonemes, ie regualr English would not work 
+very well.
+
+ Brian
+
+-- 
+Brian Gaff....Note, this account does not accept Bcc: email.
+ graphics are great, but the blind can&#x27;t hear them
+Email: …@…
+______________________________________________________________________________________________________________
+
+
+&quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message 
+news:lmf2nu$9qo$…@…...
+<span class="qt">&gt; Some Spanish guys are building an FPGA clone that will include Spectrum SE </span>
+<span class="qt">&gt; support (<a href="http://zxuno.speccy.org" rel="noreferrer">http://zxuno.speccy.org</a>). Only it&#x27;s called the Chloe 280SE now, </span>
+<span class="qt">&gt; for legal reasons, and includes ULAplus (the palette stuff that was talked </span>
+<span class="qt">&gt; about 14 years ago but not included in the prototype). The SE Basic </span>
+<span class="qt">&gt; project has been folded back in to the core project and SE Basic IV </span>
+<span class="qt">&gt; (4.0.7) includes an 80x24 character text mode (480x192 pixels), and </span>
+<span class="qt">&gt; support for esxDOS running on divMMC (a newer SD card based version of </span>
+<span class="qt">&gt; divIDE that is built into the clone). When, ok if, a production version of </span>
+<span class="qt">&gt; the zxuno is made avaialable I&#x27;ll be publishing a custom template so folks </span>
+<span class="qt">&gt; can order an SE keyboard from WASD keyboards </span>
+<span class="qt">&gt; (<a href="http://www.wasdkeyboards.com" rel="noreferrer">http://www.wasdkeyboards.com</a>). Not cheap, but Cherry MX blue mechanical </span>
+<span class="qt">&gt; keyswitch, so should be good for a couple of decades of heavy abuse.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I have one project on the back burner ... a custom ROM that uses Currah </span>
+<span class="qt">&gt; Microspeech to say everything that gets passed through the screen and </span>
+<span class="qt">&gt; keyboard channels. The idea is to make the majority of adventure games </span>
+<span class="qt">&gt; accessible to blind users.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I have one project under active development ... an advanced cRPG engine </span>
+<span class="qt">&gt; for the Spectrum +2A. More details here (and no FB account required): </span>
+<span class="qt">&gt; <a href="https://www.facebook.com/zxodus" rel="noreferrer">https://www.facebook.com/zxodus</a> </span>
+
+
+
+
+</pre></div><div class="post" id="p226622"><div class="ph"><a class="d" href="#p226622">2014-06-01 21:19:26</a> <span>Andrew Owen</span> <span>Re: Does anyone remember the Spectrum SE project?</span></div><pre>That&#x27;s why the project is on the back burner. I&#x27;ve been trying to think 
+of a way of making it sound better. The best I can come up with is to do 
+some pre-processing on the words to remove double consonants and replace 
+known problem mid-word phonems like o u g h with u f.
+
+On 01/06/2014 12:33, Brian Gaff wrote:
+<span class="qt">&gt; Sounds interesting. The one issue with the currah of course whas that all</span>
+<span class="qt">&gt; output had to be in the form of phonemes, ie regualr English would not work</span>
+<span class="qt">&gt; very well.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;   Brian</span>
+<span class="qt">&gt;</span>
+
+
+
+</pre></div><div class="post" id="p226658"><div class="ph"><a class="d" href="#p226658">2014-06-08 21:48:58</a> <span>greenaum</span> <span>Re: Does anyone remember the Spectrum SE project?</span></div><pre>On Sun, 01 Jun 2014 22:19:26 +0100, Andrew Owen
+&lt;…@…&gt; sprachen:
+
+<span class="qt">&gt;That&#x27;s why the project is on the back burner. I&#x27;ve been trying to think </span>
+<span class="qt">&gt;of a way of making it sound better. The best I can come up with is to do </span>
+<span class="qt">&gt;some pre-processing on the words to remove double consonants and replace </span>
+<span class="qt">&gt;known problem mid-word phonems like o u g h with u f.</span>
+
+I think for the niche audience, it doesn&#x27;t matter that much. We can
+all figure out what it meant to say, and it&#x27;s always cute and funny
+when computers get their pidgin-English wrong. Like foreigners.
+
+-- 
+
+--------------------------------------------------------------------------------
+&quot;There&#x27;s nothing like eating hay when you&#x27;re faint,&quot; the White King remarked to Alice, as he munched away. 
+&quot;I should think throwing cold water over you would be better,&quot; Alice suggested: &quot;--or some sal-volatile.&quot; 
+&quot;I didn&#x27;t say there was nothing better,&quot; the King replied. &quot;I said there was nothing like it.&quot;
+Which Alice did not venture to deny. 
+
+                    
+
+
+</pre></div><div class="post" id="p226826"><div class="ph"><a class="d" href="#p226826">2014-08-09 14:30:53</a> <span>david</span> <span>Re: Does anyone remember the Spectrum SE project?</span></div><pre>The speech would be a great feature. 
+
+
+</pre></div><div class="post" id="p226862"><div class="ph"><a class="d" href="#p226862">2014-08-14 15:20:02</a> <span>greenaum</span> <span>Re: Does anyone remember the Spectrum SE project?</span></div><pre>On Sun, 1 Jun 2014 12:33:27 +0100, &quot;Brian Gaff&quot;
+&lt;…@…&gt; sprachen:
+
+<span class="qt">&gt;Sounds interesting. The one issue with the currah of course whas that all </span>
+<span class="qt">&gt;output had to be in the form of phonemes, ie regualr English would not work </span>
+<span class="qt">&gt;very well.</span>
+
+Actually don&#x27;t think that&#x27;s completely true. Didn&#x27;t you just type 
+
+LET S$=&quot;I am great&quot;
+
+and then it&#x27;d speak it, as soon as the line was executed? I say S$,
+might be some other letter $. 
+
+The Currah patched into the ROM with it&#x27;s own onboard ROM to check for
+that, and from there ran it&#x27;s own little routine that turned English
+into phonemes. Same way the IF1 ROM patched in, or Multifaces, or the
+million other things constantly abusing the address bus. 
+
+---------------------------------------------------------------------
+
+&quot;hey let&#x27;s educate the brutes, we know we are superior to them anyway,
+just through genetics, we are gentically superior to the working
+class. They are a shaved monkey. If we educate them, they will be able
+to read instructions, turn up on time and man the conveyor belts,
+sorted.&quot;     #     
+
+
+</pre></div><div class="post" id="p226866"><div class="ph"><a class="d" href="#p226866">2014-08-14 17:50:45</a> <span>Paul E Collins</span> <span>Re: Does anyone remember the Spectrum SE project?</span></div><pre>On Thu, 14 Aug 2014 16:20:02 +0100, greenaum &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; On Sun, 1 Jun 2014 12:33:27 +0100, &quot;Brian Gaff&quot;  </span>
+<span class="qt">&gt; &lt;…@…&gt; sprachen:</span>
+<span class="qt">&gt;&gt; Sounds interesting. The one issue with the currah of course whas that  </span>
+<span class="qt">&gt; all output had to be in the form of phonemes, ie regualr English would  </span>
+<span class="qt">&gt; not work very well.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Actually don&#x27;t think that&#x27;s completely true. Didn&#x27;t you just type</span>
+<span class="qt">&gt; LET S$=&quot;I am great&quot;</span>
+<span class="qt">&gt; and then it&#x27;d speak it, as soon as the line was executed? I say S$,  </span>
+<span class="qt">&gt; might be some other letter $.</span>
+
+Yep, but the value of S$ was meant to be spelled out in Currah&#x27;s  
+phonemes... lots of brackets and things... at least if you wanted to  
+recognise what the heck it was saying.
+
+Eq.
+
+
+</pre></div><div class="post" id="p226871"><div class="ph"><a class="d" href="#p226871">2014-08-14 20:39:11</a> <span>greenaum</span> <span>Re: Does anyone remember the Spectrum SE project?</span></div><pre>On Thu, 14 Aug 2014 18:50:45 +0100, &quot;Paul E Collins&quot;
+&lt;…@…&gt; sprachen:
+
+<span class="qt">&gt;Yep, but the value of S$ was meant to be spelled out in Currah&#x27;s  </span>
+<span class="qt">&gt;phonemes... lots of brackets and things... at least if you wanted to  </span>
+<span class="qt">&gt;recognise what the heck it was saying.</span>
+
+Nope, you could feed it plain English. Worked very well, surprisingly
+well by the standards we&#x27;d expect of it. You could feed it
+daft-phoneme language if you wanted to. But you didn&#x27;t have to. Maybe
+useful in the odd case where it keeps getting a particular word wrong.
+
+I know this cos I&#x27;m remembering using one. Somebody dig up the manual
+if you don&#x27;t believe me.
+
+
+---------------------------------------------------------------------
+
+&quot;hey let&#x27;s educate the brutes, we know we are superior to them anyway,
+just through genetics, we are gentically superior to the working
+class. They are a shaved monkey. If we educate them, they will be able
+to read instructions, turn up on time and man the conveyor belts,
+sorted.&quot;     #     
+
+
+</pre></div><div class="post" id="p226888"><div class="ph"><a class="d" href="#p226888">2014-08-19 11:58:05</a> <span>…@…</span> <span>Re: Does anyone remember the Spectrum SE project?</span></div><pre>On Thursday, 14 August 2014 18:50:45 UTC+1, Paul E Collins  wrote:
+<span class="qt">&gt; Yep, but the value of S$ was meant to be spelled out in Currah&#x27;s  </span>
+<span class="qt">&gt; phonemes... lots of brackets and things... at least if you wanted to  </span>
+<span class="qt">&gt; recognise what the heck it was saying.</span>
+
+There was also keyvoice mode, which was great fun[*], especially since one key pressed as the previous one was still being voiced interrupted it. Pressing &quot;3 Q&quot; in rapid succession gave an... interesting result. :-)
+
+Wasn&#x27;t the SE ROM the one which used the fast, integer version of the standard ROM&#x27;s RND routine which was posted to c.s.s. many years ago?
+
+[*]For about five minutes, anyway.
+
+
+</pre></div></main></body></html>

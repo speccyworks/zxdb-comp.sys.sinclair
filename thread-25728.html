@@ -1,0 +1,935 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hacker&#x27;s Challenge! · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Hacker&#x27;s Challenge!</h1><p class="facts">28 posts, 2002-07-13 – 2002-08-04</p><div class="post" id="p142184"><div class="ph"><a class="d" href="#p142184">2002-07-13 18:45:16</a> <span>Woody</span> </div><pre>So how many here used to write code to break into protected loaders to
+put pokes in? Well, since I was taking a short break from SPIN
+development (and was bored!), I&#x27;ve spent the last couple of hours or
+so adding a (slightly) protected turboloading front-end to Manic
+Miner.
+So let&#x27;s see if anybody can come up with one of those old style
+type-in BASIC programs to break into it and enter a few pokes. I ain&#x27;t
+gone and made it ridiculous with encryption and stuff so don&#x27;t worry
+too much!
+
+The file is in (zipped) WAV format and can be downloaded from:
+<a href="http://homepage.ntlworld.com/mark.woodmass/ManicMiner.zip" rel="noreferrer">http://homepage.ntlworld.com/mark.woodmass/ManicMiner.zip</a>
+
+
+
+
+</pre></div><div class="post" id="p142297"><div class="ph"><a class="d" href="#p142297">2002-07-15 17:28:24</a> <span>Woody</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>On Sat, 13 Jul 2002 19:45:16 +0100, Woody &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;So how many here used to write code to break into protected loaders to</span>
+<span class="qt">&gt;put pokes in? Well, since I was taking a short break from SPIN</span>
+<span class="qt">&gt;development (and was bored!), I&#x27;ve spent the last couple of hours or</span>
+<span class="qt">&gt;so adding a (slightly) protected turboloading front-end to Manic</span>
+<span class="qt">&gt;Miner.</span>
+<span class="qt">&gt;So let&#x27;s see if anybody can come up with one of those old style</span>
+<span class="qt">&gt;type-in BASIC programs to break into it and enter a few pokes. I ain&#x27;t</span>
+<span class="qt">&gt;gone and made it ridiculous with encryption and stuff so don&#x27;t worry</span>
+<span class="qt">&gt;too much!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;The file is in (zipped) WAV format and can be downloaded from:</span>
+<span class="qt">&gt;<a href="http://homepage.ntlworld.com/mark.woodmass/ManicMiner.zip" rel="noreferrer">http://homepage.ntlworld.com/mark.woodmass/ManicMiner.zip</a></span>
+
+And congratulations to Darren Salt who came up with a very short and
+sweet BASIC program which totally rips apart this protection attempt
+of mine! Bah!
+
+
+
+
+</pre></div><div class="post" id="p142303"><div class="ph"><a class="d" href="#p142303">2002-07-15 18:48:44</a> <span>Dave the Lurker</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>In article &lt;…@…&gt;, 
+…@… says...
+<span class="qt">&gt; &gt;So how many here used to write code to break into protected loaders to</span>
+<span class="qt">&gt; &gt;put pokes in? Well, since I was taking a short break from SPIN</span>
+<span class="qt">&gt; &gt;development (and was bored!), I&#x27;ve spent the last couple of hours or</span>
+<span class="qt">&gt; &gt;so adding a (slightly) protected turboloading front-end to Manic</span>
+<span class="qt">&gt; &gt;Miner.</span>
+<span class="qt">&gt; &gt;So let&#x27;s see if anybody can come up with one of those old style</span>
+<span class="qt">&gt; &gt;type-in BASIC programs to break into it and enter a few pokes. I ain&#x27;t</span>
+<span class="qt">&gt; &gt;gone and made it ridiculous with encryption and stuff so don&#x27;t worry</span>
+<span class="qt">&gt; &gt;too much!</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;The file is in (zipped) WAV format and can be downloaded from:</span>
+<span class="qt">&gt; &gt;<a href="http://homepage.ntlworld.com/mark.woodmass/ManicMiner.zip" rel="noreferrer">http://homepage.ntlworld.com/mark.woodmass/ManicMiner.zip</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; And congratulations to Darren Salt who came up with a very short and</span>
+<span class="qt">&gt; sweet BASIC program which totally rips apart this protection attempt</span>
+<span class="qt">&gt; of mine! Bah!</span>
+
+Is there any chance of seeing a simple tutorial on this? Or seeing the 
+actual hack?  I&#x27;ve never had much luck hacking on the speccy, although 
+I&#x27;ve had no major problems on x86 arch.
+
+cheers
+Dave
+
+
+
+</pre></div><div class="post" id="p142318"><div class="ph"><a class="d" href="#p142318">2002-07-15 23:00:40</a> <span>Darren Salt</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>I demand that Dave the Lurker may or may not have written...
+
+<span class="qt">&gt; In article &lt;…@…&gt;,</span>
+<span class="qt">&gt; …@… says...</span>
+[snip]
+<span class="qt">&gt;&gt;&gt; let&#x27;s see if anybody can come up with one of those old style type-in</span>
+<span class="qt">&gt;&gt;&gt; BASIC programs to break into it and enter a few pokes. I ain&#x27;t gone and</span>
+<span class="qt">&gt;&gt;&gt; made it ridiculous with encryption and stuff so don&#x27;t worry too much!</span>
+[snip]
+<span class="qt">&gt;&gt; And congratulations to Darren Salt who came up with a very short and sweet</span>
+<span class="qt">&gt;&gt; BASIC program which totally rips apart this protection attempt of mine!</span>
+<span class="qt">&gt;&gt; Bah!</span>
+
+<span class="qt">&gt; Is there any chance of seeing a simple tutorial on this? Or seeing the</span>
+<span class="qt">&gt; actual hack? [...]</span>
+
+The latter, yes.
+
+Now, I could be somewhat literal and post just that, but...
+
+  10 CLEAR 28671
+  20 READ n
+  30 FOR n=n TO 65536
+  40 READ a: IF a&gt;255 THEN POKE n,a-256*INT (a/256): LET n=n+1: POKE n,INT (a/256): NEXT n
+  50 IF a&gt;=0 THEN POKE n,a: NEXT  n
+  60 READ n: IF n&gt;0 THEN GO TO 30
+  70 LOAD &quot;&quot;CODE
+  80 POKE 63108,128: POKE 63109,255
+  90 RANDOMIZE USR 63000
+ 100 DATA 65408,58,63121,254,221,202,63121,195,28672,-1
+ 110 DATA 28672,243,49,29970,33,62767,17,65535,1,32768,237,184
+ 120 REM Pokes go here
+ 130 DATA 175,50,35142: REM Lives
+ 200 REM End of pokes
+ 210 DATA 195,29985,-1
+ 220 DATA 0
+
+-- 
+<span class="qt">| Darren Salt  anti-UCE  | nr. Ashington, | d youmustbejoking,demon,co,uk</span>
+<span class="qt">| Spec+3, Risc PC, A3010 | Northumberland | s zap,tartarus,org</span>
+<span class="qt">| BBC M128, Linux PC     | Toon Army      | @</span>
+<span class="qt">|   Post HTML or binary =&gt; risk being reported to your ISP.</span>
+
+You like to form new friendships and make new acquaintances.
+
+
+
+</pre></div><div class="post" id="p142336"><div class="ph"><a class="d" href="#p142336">2002-07-16 09:17:30</a> <span>Hob</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>Back in the dim, dark and distant past, Woody waffled on about:
+
+<span class="qt">&gt; So how many here used to write code to break into protected loaders to</span>
+<span class="qt">&gt; put pokes in? Well, since I was taking a short break from SPIN</span>
+
+After a false start, and a couple of misfires, I got there. You&#x27;re a bit
+of a sneaky git, though!!
+
+10 CLEAR 24999
+20 LOAD&quot;&quot;CODE
+30 POKE 63001,0:POKE 63002,0:POKE 63003,0
+40 POKE 63108,0:POKE 63109,247
+50 FOR a=63232 TO 63241
+60 READ b:POKE a,b
+70 NEXT a
+80 RANDOMIZE USR 63000
+90 REM RANDOMIZE USR 29970
+1000 DATA 58,145,246,254,195,194,145,246,251,201
+ 
+-- 
+Hob
+
+Replace a with er!
+
+
+
+
+</pre></div><div class="post" id="p142344"><div class="ph"><a class="d" href="#p142344">2002-07-16 09:19:28</a> <span>Hob</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>Back in the dim, dark and distant past, Woody waffled on about:
+
+<span class="qt">&gt; And congratulations to Darren Salt who came up with a very short and</span>
+<span class="qt">&gt; sweet BASIC program which totally rips apart this protection attempt of</span>
+<span class="qt">&gt; mine! Bah!</span>
+
+Bah, I knew I wouldn&#x27;t be first. Mind you, mine&#x27;s shorter :-) 
+
+-- 
+Hob
+
+Replace a with er!
+
+
+
+</pre></div><div class="post" id="p142346"><div class="ph"><a class="d" href="#p142346">2002-07-16 09:27:29</a> <span>Derek Jolly</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>Hob &lt;…@…&gt; wrote in news:AyRY8.5739$XK7.39911621@news-
+text.cableinet.net:
+
+<span class="qt">&gt; Back in the dim, dark and distant past, Woody waffled on about:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; And congratulations to Darren Salt who came up with a very short and</span>
+<span class="qt">&gt;&gt; sweet BASIC program which totally rips apart this protection attempt of</span>
+<span class="qt">&gt;&gt; mine! Bah!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Bah, I knew I wouldn&#x27;t be first. Mind you, mine&#x27;s shorter :-) </span>
+
+F&#x27;nar!
+-- 
+Derek Jolly (…@…)  Web: <a href="http://rivet.50megs.com" rel="noreferrer">http://rivet.50megs.com</a>
+Change deadspam to sage in my e-mail address to contact me.
+comp.sys.sinclair folklore FAQ: <a href="http://rivet.50megs.com/cssfolk.html" rel="noreferrer">http://rivet.50megs.com/cssfolk.html</a>
+Currently listening to: Cowboy Junkies - Open Road
+
+
+
+</pre></div><div class="post" id="p142350"><div class="ph"><a class="d" href="#p142350">2002-07-16 10:13:03</a> <span>Andrew Barker</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>Hmm interesting,
+
+Do you know how to examine other loaders and possibly come up with some
+decoder
+routines for VOC2TZX or MakeTZX ?
+
+We have many tapes available as WAV/CSW which have yet to be decoded
+correctly.
+There are even some that don&#x27;t exist as TZX because we don&#x27;t have the
+tools to decode them
+yet.
+
+<a href="http://www.sunderland.ac.uk/~as0aba/Schemes/schemes.html" rel="noreferrer">http://www.sunderland.ac.uk/~as0aba/Schemes/schemes.html</a>
+
+Maybe when you&#x27;re bored again you might want to dissasemble the loader and
+see if you
+can figure anything out ;-).
+
+Loaders that I&#x27;d like to see implemented buy Ramsoft are two busy at the
+moment would be:
+Excelerator Loader, The (or System), Microsphere, Jet Load 48k,
+Injectaload, Novaload 48 ....
+Well anything that might need a decoder ;-),  I think some could be
+similar to Powerload-48
+that Ramsoft figured out.  I&#x27;d do it myself but I just don&#x27;t have the
+knowledge to implement them.
+
+Any ideas ?
+
+Regards
+
+Andy Barker (ZX STP Maintainer - <a href="http://www.worldofspectrum.org/stp/" rel="noreferrer">http://www.worldofspectrum.org/stp/</a>)
+
+Woody wrote:
+
+<span class="qt">&gt; So how many here used to write code to break into protected loaders to</span>
+<span class="qt">&gt; put pokes in? Well, since I was taking a short break from SPIN</span>
+<span class="qt">&gt; development (and was bored!), I&#x27;ve spent the last couple of hours or</span>
+<span class="qt">&gt; so adding a (slightly) protected turboloading front-end to Manic</span>
+<span class="qt">&gt; Miner.</span>
+<span class="qt">&gt; So let&#x27;s see if anybody can come up with one of those old style</span>
+<span class="qt">&gt; type-in BASIC programs to break into it and enter a few pokes. I ain&#x27;t</span>
+<span class="qt">&gt; gone and made it ridiculous with encryption and stuff so don&#x27;t worry</span>
+<span class="qt">&gt; too much!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The file is in (zipped) WAV format and can be downloaded from:</span>
+<span class="qt">&gt; <a href="http://homepage.ntlworld.com/mark.woodmass/ManicMiner.zip" rel="noreferrer">http://homepage.ntlworld.com/mark.woodmass/ManicMiner.zip</a></span>
+
+
+
+
+</pre></div><div class="post" id="p142355"><div class="ph"><a class="d" href="#p142355">2002-07-16 10:54:57</a> <span>Hob</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>Back in the dim, dark and distant past, Dave the Lurker waffled on about:
+
+<span class="qt">&gt; Is there any chance of seeing a simple tutorial on this? Or seeing the</span>
+<span class="qt">&gt; actual hack?  I&#x27;ve never had much luck hacking on the speccy, although</span>
+<span class="qt">&gt; I&#x27;ve had no major problems on x86 arch.</span>
+
+Well, I started by looking for an appearance of a loading routine. In
+fact, the short &quot;loader&quot; routine is mostly that. There are a few sneaky
+bits in it - it loads bits of itself throughout the loading process, for
+example.
+
+The loading routine is very similar to the one in the ROM - can&#x27;t
+remember the address offhand - but the first 9 bytes of each &quot;block&quot;
+contain the start and length of the following one:
+
+F630 LD IX,#F691   &lt;- first nine bytes dest are set by the code
+F634 LD DE,09      &lt;- here
+...
+F681 RRC (HL)
+F683 JP C,#F691    &lt;- the Carry is set when the loading is done for that block
+F686 LD IX,#F691   &lt;- first nine bytes contain our future dest and len
+F68A LD DE,09      &lt;- but these two are the dest and len of those bytes
+F68D XOR A
+F68E JP #F69A
+F691 NOP           &lt;- here is where we jump to from above
+F692 NOP           &lt;- and is where the LD IX above points to
+...
+
+Now each block has another 9 bytes at the start which are placed at F691,
+and then executed. The first one, for example has:
+
+F691 LD IX,#5900
+F695 LD DE,#0100
+F698 LD A,#00
+
+(Dunno what&#x27;s at #5900 though, can&#x27;t remember). The loop starts again,
+and it then loads #0100 bytes at #5900. The very last bit is JP #7512,
+which starts the game. (The RANDOMIZE USR 29970 in the original BASIC
+loader) I don&#x27;t think the LD A,0 was needed, but I might be wrong. 
+
+All I did was change that JP C,#F691 to JP C,#F700. At #F700, I put a
+little routine to see when the JP #7512 was loaded:
+
+F700 LD A,(F691)
+F703 CP #C3
+F705 JP NZ,#F691
+F708 EI
+F709 RET
+
+Once the code for JP #7512 is loaded, my code notices it, and instead of
+running it like normal, it just returns to BASIC. 
+
+This wouldn&#x27;t work if the loading routine had blitzed the BASIC area or
+the system vars, but luckily, it doesn&#x27;t.
+
+There was also a LD SP,&lt;something&gt; which I just NOP&#x27;d out. Note that I
+had to EI before the RET to BASIC. If you&#x27;ve not got interrupts enabled
+when you return, the Speccy is running fine, but is useless as the
+keyboard won&#x27;t work..! (How many times have I done that?)
+
+Woo.. long post! Hope some of it is useful...!
+
+-- 
+Hob
+
+Replace a with er!
+
+
+
+</pre></div><div class="post" id="p142396"><div class="ph"><a class="d" href="#p142396">2002-07-16 21:33:21</a> <span>Woody</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>On Tue, 16 Jul 2002 11:13:03 +0100, Andrew Barker
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Hmm interesting,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Do you know how to examine other loaders and possibly come up with some</span>
+<span class="qt">&gt;decoder</span>
+<span class="qt">&gt;routines for VOC2TZX or MakeTZX ?</span>
+
+How about putting the whole of the WAV or CSW file into a TZX Direct
+Recording Block? :-)
+
+Seriously though, Dunny and I were talking about having a go at this a
+few weeks back. From what we could tell there&#x27;s currently enough TZX
+blocks available to describe any type of tape signal in a WAV file. In
+theory you should be able to just analyse the signal looking for
+certain patterns and selecting the correct block type for it. Doing
+this of course wouldn&#x27;t create a TZX as nice as a decoder written for
+any particular loading scheme but at least it would be in the TZX
+format rather than just a WAV or CSW. In practice, with background
+noise etc, this may not be as easy as it seems!
+
+We will be looking at this some more later though :-)
+
+Anybody else have any idea of how exactly to do this?
+Or how exactly to differentiate between the true signal and background
+noise?
+
+
+
+
+</pre></div><div class="post" id="p142402"><div class="ph"><a class="d" href="#p142402">2002-07-16 21:48:16</a> <span>Woody</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>On Tue, 16 Jul 2002 10:54:57 GMT, Hob &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Back in the dim, dark and distant past, Dave the Lurker waffled on about:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Is there any chance of seeing a simple tutorial on this? Or seeing the</span>
+<span class="qt">&gt;&gt; actual hack?  I&#x27;ve never had much luck hacking on the speccy, although</span>
+<span class="qt">&gt;&gt; I&#x27;ve had no major problems on x86 arch.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Well, I started by looking for an appearance of a loading routine. In</span>
+<span class="qt">&gt;fact, the short &quot;loader&quot; routine is mostly that. There are a few sneaky</span>
+<span class="qt">&gt;bits in it - it loads bits of itself throughout the loading process, for</span>
+<span class="qt">&gt;example.</span>
+
+Shall we do one more sometime soon with a little more of a challenge
+to it or just let it rest now?
+
+It was a refreshing change though wasn&#x27;t it? :-)
+
+
+
+
+</pre></div><div class="post" id="p142403"><div class="ph"><a class="d" href="#p142403">2002-07-16 21:52:22</a> <span>Hob</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>Back in the dim, dark and distant past, Woody waffled on about:
+
+<span class="qt">&gt; Shall we do one more sometime soon with a little more of a challenge to</span>
+<span class="qt">&gt; it or just let it rest now?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; It was a refreshing change though wasn&#x27;t it? :-)</span>
+
+More, more! I thoroughly enjoyed going back to Z80 and realising that
+I&#x27;ve not forgotten any of it, and I can recognise the loading routine
+purely by its &quot;feel&quot; .. and the sheer &quot;YES. I&#x27;ve done it - beaten the
+bugger.&quot; feeling. 
+
+Back in the 80s, I wasn&#x27;t good enough as a teenager to crack these
+things; obviously with the advent of emus and snapshots, and multiple
+Speccys running at once, it&#x27;s much easier. 
+
+Thanks for the fun :-)
+
+-- 
+Hob
+
+Replace a with er!
+
+
+
+</pre></div><div class="post" id="p142404"><div class="ph"><a class="d" href="#p142404">2002-07-16 21:52:40</a> <span>Woody</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>On Tue, 16 Jul 2002 10:54:57 GMT, Hob &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; I don&#x27;t think the LD A,0 was needed, but I might be wrong. </span>
+
+It was only needed because of the following OUT opcode which actually
+doesn&#x27;t play any part in the loader. It&#x27;s only there if the loader
+were to also be loading into the 128K RAM pages. As you know, if the
+loader were to be loading into those extra banks then it would have
+had to have been below 49152 in memory.
+
+
+
+
+</pre></div><div class="post" id="p142406"><div class="ph"><a class="d" href="#p142406">2002-07-16 21:56:40</a> <span>Hob</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>Back in the dim, dark and distant past, Woody waffled on about:
+
+<span class="qt">&gt; On Tue, 16 Jul 2002 10:54:57 GMT, Hob &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; I don&#x27;t think the LD A,0 was needed, but I might be wrong.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; It was only needed because of the following OUT opcode which actually</span>
+<span class="qt">&gt; doesn&#x27;t play any part in the loader. It&#x27;s only there if the loader were</span>
+<span class="qt">&gt; to also be loading into the 128K RAM pages. As you know, if the loader</span>
+<span class="qt">&gt; were to be loading into those extra banks then it would have had to have</span>
+<span class="qt">&gt; been below 49152 in memory.</span>
+
+Actually, I didn&#x27;t know that - and I still don&#x27;t understand why. (Yes,
+alright, Philip, I&#x27;ll read the FAQ).
+
+-- 
+Hob
+
+Replace a with er!
+
+
+
+</pre></div><div class="post" id="p142416"><div class="ph"><a class="d" href="#p142416">2002-07-17 06:27:41</a> <span>Geoff Wearmouth</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>In article &lt;sE0Z8.6759$…@…&gt;, Hob
+&lt;…@…&gt; writes
+<span class="qt">&gt;Back in the dim, dark and distant past, Woody waffled on about:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; On Tue, 16 Jul 2002 10:54:57 GMT, Hob &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt;&gt; I don&#x27;t think the LD A,0 was needed, but I might be wrong.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; It was only needed because of the following OUT opcode which actually</span>
+<span class="qt">&gt;&gt; doesn&#x27;t play any part in the loader. It&#x27;s only there if the loader were</span>
+<span class="qt">&gt;&gt; to also be loading into the 128K RAM pages. As you know, if the loader</span>
+<span class="qt">&gt;&gt; were to be loading into those extra banks then it would have had to have</span>
+<span class="qt">&gt;&gt; been below 49152 in memory.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Actually, I didn&#x27;t know that - and I still don&#x27;t understand why. (Yes,</span>
+<span class="qt">&gt;alright, Philip, I&#x27;ll read the FAQ).</span>
+
+Matthew Wilson has produced a good Assembly File of the 128K ROM 0
+
+<a href="http://www.mjwilson.demon.co.uk/rom/" rel="noreferrer">http://www.mjwilson.demon.co.uk/rom/</a>
+
+During initialization it puts the 8 possible RAM pages at $C000 - $FFFF
+finishing with the normal arrangement. If a 16K RAM section should fail
+then the BORDER turns the colour, 0 - 7, of the page it was testing.
+
+A loader could cycle through the pages in a similar way.
+ 
+-- 
+Geoff Wearmouth
+The ZX ROM Files <a href="http://www.wearmouth.demon.co.uk" rel="noreferrer">http://www.wearmouth.demon.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p142454"><div class="ph"><a class="d" href="#p142454">2002-07-17 22:04:48</a> <span>Dave the Lurker</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>In article &lt;…@…&gt;, 
+…@… says...
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; Is there any chance of seeing a simple tutorial on this? Or seeing the</span>
+<span class="qt">&gt; &gt; actual hack? [...]</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The latter, yes.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Now, I could be somewhat literal and post just that, but...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;   10 CLEAR 28671</span>
+<span class="qt">&gt;   20 READ n</span>
+<span class="qt">&gt;   30 FOR n=n TO 65536</span>
+<span class="qt">&gt;   40 READ a: IF a&gt;255 THEN POKE n,a-256*INT (a/256): LET n=n+1: POKE n,INT (a/256): NEXT n</span>
+<span class="qt">&gt;   50 IF a&gt;=0 THEN POKE n,a: NEXT  n</span>
+<span class="qt">&gt;   60 READ n: IF n&gt;0 THEN GO TO 30</span>
+<span class="qt">&gt;   70 LOAD &quot;&quot;CODE</span>
+<span class="qt">&gt;   80 POKE 63108,128: POKE 63109,255</span>
+<span class="qt">&gt;   90 RANDOMIZE USR 63000</span>
+<span class="qt">&gt;  100 DATA 65408,58,63121,254,221,202,63121,195,28672,-1</span>
+<span class="qt">&gt;  110 DATA 28672,243,49,29970,33,62767,17,65535,1,32768,237,184</span>
+<span class="qt">&gt;  120 REM Pokes go here</span>
+<span class="qt">&gt;  130 DATA 175,50,35142: REM Lives</span>
+<span class="qt">&gt;  200 REM End of pokes</span>
+<span class="qt">&gt;  210 DATA 195,29985,-1</span>
+<span class="qt">&gt;  220 DATA 0</span>
+
+Many thanks,
+
+Now to start digging around and find out what this actually does.
+
+cheers
+Dave
+
+
+
+</pre></div><div class="post" id="p142455"><div class="ph"><a class="d" href="#p142455">2002-07-17 22:06:21</a> <span>Dave the Lurker</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>In article &lt;qA0Z8.6749$…@…&gt;, 
+…@… says...
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; It was a refreshing change though wasn&#x27;t it? :-)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; More, more! I thoroughly enjoyed going back to Z80 and realising that</span>
+<span class="qt">&gt; I&#x27;ve not forgotten any of it, and I can recognise the loading routine</span>
+<span class="qt">&gt; purely by its &quot;feel&quot; .. and the sheer &quot;YES. I&#x27;ve done it - beaten the</span>
+<span class="qt">&gt; bugger.&quot; feeling. </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Back in the 80s, I wasn&#x27;t good enough as a teenager to crack these</span>
+<span class="qt">&gt; things; obviously with the advent of emus and snapshots, and multiple</span>
+<span class="qt">&gt; Speccys running at once, it&#x27;s much easier. </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Thanks for the fun :-)</span>
+
+I&#x27;m just trying to get into it having misspent my teenage years cracking 
+PC games.
+
+cheers
+Dave
+
+
+
+</pre></div><div class="post" id="p142528"><div class="ph"><a class="d" href="#p142528">2002-07-19 01:03:54</a> <span>philicorda</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>Woody wrote:
+
+<span class="qt">&gt; On Tue, 16 Jul 2002 11:13:03 +0100, Andrew Barker</span>
+<span class="qt">&gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;Hmm interesting,</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Do you know how to examine other loaders and possibly come up with some</span>
+<span class="qt">&gt;&gt;decoder</span>
+<span class="qt">&gt;&gt;routines for VOC2TZX or MakeTZX ?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; How about putting the whole of the WAV or CSW file into a TZX Direct</span>
+<span class="qt">&gt; Recording Block? :-)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Seriously though, Dunny and I were talking about having a go at this a</span>
+<span class="qt">&gt; few weeks back. From what we could tell there&#x27;s currently enough TZX</span>
+<span class="qt">&gt; blocks available to describe any type of tape signal in a WAV file. In</span>
+<span class="qt">&gt; theory you should be able to just analyse the signal looking for</span>
+<span class="qt">&gt; certain patterns and selecting the correct block type for it. Doing</span>
+<span class="qt">&gt; this of course wouldn&#x27;t create a TZX as nice as a decoder written for</span>
+<span class="qt">&gt; any particular loading scheme but at least it would be in the TZX</span>
+<span class="qt">&gt; format rather than just a WAV or CSW. In practice, with background</span>
+<span class="qt">&gt; noise etc, this may not be as easy as it seems!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; We will be looking at this some more later though :-)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Anybody else have any idea of how exactly to do this?</span>
+<span class="qt">&gt; Or how exactly to differentiate between the true signal and background</span>
+<span class="qt">&gt; noise?</span>
+
+There is a great free program that could help. It&#x27;s called &#x27;pure data&#x27; and 
+is at www.pure-data.org. It&#x27;s a kind of modular signal processing 
+environment.
+It has an example patch for de-noising that could be modified, this patch 
+splits a signal into signal and noise components with variable masking and 
+windowing. You could write an external to output the data in any form.
+
+
+
+
+
+
+</pre></div><div class="post" id="p142570"><div class="ph"><a class="d" href="#p142570">2002-07-19 20:21:46</a> <span>Woody</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>On Tue, 16 Jul 2002 21:52:22 GMT, Hob &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;More, more! I thoroughly enjoyed going back to Z80 and realising that</span>
+<span class="qt">&gt;I&#x27;ve not forgotten any of it, and I can recognise the loading routine</span>
+<span class="qt">&gt;purely by its &quot;feel&quot; .. and the sheer &quot;YES. I&#x27;ve done it - beaten the</span>
+<span class="qt">&gt;bugger.&quot; feeling. </span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Back in the 80s, I wasn&#x27;t good enough as a teenager to crack these</span>
+<span class="qt">&gt;things; obviously with the advent of emus and snapshots, and multiple</span>
+<span class="qt">&gt;Speccys running at once, it&#x27;s much easier. </span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Thanks for the fun :-)</span>
+
+Okay, Scooby Doo this time and it&#x27;s in WAV format again.
+
+This one might just be a touch harder to crack!
+
+<a href="http://homepage.ntlworld.com/mark.woodmass/ScoobyDoo.zip" rel="noreferrer">http://homepage.ntlworld.com/mark.woodmass/ScoobyDoo.zip</a>
+
+
+
+
+</pre></div><div class="post" id="p142576"><div class="ph"><a class="d" href="#p142576">2002-07-19 22:34:15</a> <span>Woody</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>On Fri, 19 Jul 2002 02:03:54 +0100, philicorda
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;There is a great free program that could help. It&#x27;s called &#x27;pure data&#x27; and </span>
+<span class="qt">&gt;is at www.pure-data.org. It&#x27;s a kind of modular signal processing </span>
+<span class="qt">&gt;environment.</span>
+<span class="qt">&gt;It has an example patch for de-noising that could be modified, this patch </span>
+<span class="qt">&gt;splits a signal into signal and noise components with variable masking and </span>
+<span class="qt">&gt;windowing. You could write an external to output the data in any form.</span>
+
+That&#x27;s worth taking a look at. Thanks :)
+
+
+
+
+</pre></div><div class="post" id="p142687"><div class="ph"><a class="d" href="#p142687">2002-07-22 20:44:02</a> <span>Woody</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>On Fri, 19 Jul 2002 21:21:46 +0100, Woody &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;Okay, Scooby Doo this time and it&#x27;s in WAV format again.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;This one might just be a touch harder to crack!</span>
+
+Got anywhere with this yet Marko? :-)
+
+
+
+
+</pre></div><div class="post" id="p142755"><div class="ph"><a class="d" href="#p142755">2002-07-24 13:10:53</a> <span>Hob</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>Back in the dim, dark and distant past, Woody waffled on about:
+
+<span class="qt">&gt; Okay, Scooby Doo this time and it&#x27;s in WAV format again.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; This one might just be a touch harder to crack!</span>
+
+You&#x27;re not kidding. Still working on it. Got the bloody loading routine
+sussed, but it keeps loading itself over the top of itself. Bast!
+
+Will crack it soon :-)
+ 
+-- 
+Hob
+
+Replace a with er!
+
+
+
+</pre></div><div class="post" id="p142775"><div class="ph"><a class="d" href="#p142775">2002-07-24 20:13:01</a> <span>Woody</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>On Wed, 24 Jul 2002 13:10:53 GMT, Hob &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Back in the dim, dark and distant past, Woody waffled on about:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Okay, Scooby Doo this time and it&#x27;s in WAV format again.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; This one might just be a touch harder to crack!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;You&#x27;re not kidding. Still working on it. Got the bloody loading routine</span>
+<span class="qt">&gt;sussed, but it keeps loading itself over the top of itself. Bast!</span>
+
+Erm, sorry about that :-)
+
+<span class="qt">&gt;Will crack it soon :-)</span>
+
+Of course. I don&#x27;t believe there&#x27;s such thing as a hack-proof
+protection system. I do believe that somebody is working on a much
+harder one just to get me back though!
+
+
+
+
+</pre></div><div class="post" id="p142887"><div class="ph"><a class="d" href="#p142887">2002-07-26 16:24:55</a> <span>Woody</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>On Wed, 24 Jul 2002 13:10:53 GMT, Hob &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Back in the dim, dark and distant past, Woody waffled on about:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Okay, Scooby Doo this time and it&#x27;s in WAV format again.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; This one might just be a touch harder to crack!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;You&#x27;re not kidding. Still working on it. Got the bloody loading routine</span>
+<span class="qt">&gt;sussed, but it keeps loading itself over the top of itself. Bast!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Will crack it soon :-)</span>
+
+I can post a working crack I just made to ABCS if you&#x27;ve given up!
+It was a little easier for me I suppose, having written the thing :-)
+
+
+
+
+</pre></div><div class="post" id="p143031"><div class="ph"><a class="d" href="#p143031">2002-07-28 15:08:19</a> <span>Hob</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>Back in the dim, dark and distant past, Woody waffled on about:
+
+<span class="qt">&gt;&gt;Will crack it soon :-)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I can post a working crack I just made to ABCS if you&#x27;ve given up! It</span>
+<span class="qt">&gt; was a little easier for me I suppose, having written the thing :-)</span>
+
+This is much longer than I originally intended, but anyway:
+
+10 CLEAR 32767: LOAD &quot;&quot;CODE
+20 LET B$=&quot;ED5FAE77230B78B120F6&quot;
+30 LET A$=&quot;F33E4DED4F21E9FE010B017EAC85 L77230B78B120F621F9FE01FB00&quot;
+40 LET A$=A$+B$+&quot;2109FF01EB00&quot;+B$+&quot;FBC9&quot;
+50 LET B=32768:GO SUB 1000
+60 RANDOMIZE USR 32768
+70 CLS
+80 LET A$=&quot;E5F5DDE5E13AFDFFCB7F280A7CFEFF280BA7FE583806F1DD77001801F1E1C34FFF&quot;
+90 LET B=16384:GO SUB 1000
+100 LET A$=&quot;CB0ED26EFF3A78FFFEDDCA78FF31FFFFFD213A5C&quot;
+110 LET A$=A$+&quot;21AE733600&quot;: REM INFINITE LIVES
+120 LET A$=A$+&quot;21E8863600&quot;: REM NASTY IMMUNITY
+130 LET A$=A$+&quot;21ED863600&quot;: REM NO GHOSTS
+140 LET B=20480:GO SUB 1000
+150 LET A$=&quot;C30040&quot;: LET B=65356:GO SUB 1000
+160 LET A$=&quot;C3005000&quot;: LET B=65386:GO SUB 1000
+170 LET A$=&quot;FE31FF57C30AFF&quot;: LET B=32768:GO SUB 1000
+180 RANDOMIZE USR 32768
+1000 FOR A=0 TO LEN A$-2 STEP 2
+1010 LET HI=CODE A$(A+1)-48:IF HI&gt;15 THEN LET HI=HI-7
+1020 LET LO=CODE A$(A+2)-48:IF LO&gt;15 THEN LET LO=LO-7
+1030 POKE B,HI*16+LO
+1040 NEXT A
+1050 RETURN
+
+You&#x27;ll note (if anyone bothers to type it in) that it modifies the loading
+routine to ignore loading anything in the range 4000 - 57FF hex, so you 
+get the attributes loaded on screen, but not the pixels. 
+
+I had a lot of trouble with this because I was not really thinking
+straight. I got this routine written last week, but because it uses PUSH
+and POP, the loading would USR 0 half way through - because I&#x27;d forgotten
+about the stack. In the end I had to put the stack on the screen - so
+you&#x27;ll see it flickering away to itself on the bottom.
+
+The first RANDOMIZE USR 32768 actually decodes the loading routine; the
+second starts the loading. You&#x27;ll have to pause the &quot;tape&quot; between the
+&quot;loader&quot; code and the speedload bit because the BASIC isn&#x27;t quick enough
+to do it all in the short space. 
+
+I think I&#x27;ll post the .Z80 to ABCS..
+
+-- 
+Hob
+
+Replace a with er!
+
+
+
+</pre></div><div class="post" id="p143042"><div class="ph"><a class="d" href="#p143042">2002-07-28 19:19:45</a> <span>Woody</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>On Sun, 28 Jul 2002 15:08:19 GMT, Hob &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Back in the dim, dark and distant past, Woody waffled on about:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;&gt;Will crack it soon :-)</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; I can post a working crack I just made to ABCS if you&#x27;ve given up! It</span>
+<span class="qt">&gt;&gt; was a little easier for me I suppose, having written the thing :-)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;This is much longer than I originally intended, but anyway:</span>
+
+I can&#x27;t get this to work and Agent can&#x27;t decode your z80 posted to
+ABCS :(
+
+<span class="qt">&gt;30 LET A$=&quot;F33E4DED4F21E9FE010B017EAC85 L77230B78B120F621F9FE01FB00&quot;</span>
+
+I removed the &quot; L&quot; from line 30...
+
+<span class="qt">&gt;1000 FOR A=0 TO LEN A$-2 STEP 2</span>
+<span class="qt">&gt;1010 LET HI=CODE A$(A+1)-48:IF HI&gt;15 THEN LET HI=HI-7</span>
+<span class="qt">&gt;1020 LET LO=CODE A$(A+2)-48:IF LO&gt;15 THEN LET LO=LO-7</span>
+<span class="qt">&gt;1030 POKE B,HI*16+LO</span>
+
+and added here:
+1035 LET B=B+1
+
+<span class="qt">&gt;1040 NEXT A</span>
+<span class="qt">&gt;1050 RETURN</span>
+
+That makes it correct, yes?
+
+Either there&#x27;s some more errors in there or there&#x27;s a timing
+difference between the emulator you tested it on and SPIN.
+
+[snip]
+
+<span class="qt">&gt;I think I&#x27;ll post the .Z80 to ABCS..</span>
+
+Repost? :)
+
+My hack follows:
+
+10 CLEAR 32767
+20 LOAD &quot;&quot;CODE 
+30 FOR n=32768 TO 1e9: READ a: IF a&lt;&gt;999 THEN POKE n,a: NEXT n
+40 RANDOMIZE USR 32768
+100 DATA 62,135,50,12,255,62,195,33,19,128
+110 DATA 50,253,255,34,254,255,195,195,254
+120 DATA 50,253,255,33,40,128,17,0,254
+130 DATA 237,83,70,255,1,44,0,237,176
+140 DATA 195,15,255,58,120,255,254,195,40,23
+150 DATA 221,124,254,254,56,10,221,125
+160 DATA 254,120,48,4,125,195,79,255
+170 DATA 221,117,0,125,195,79,255
+180 DATA 49,255,255,253,33,58,92
+190 DATA 175,50,174,115: REM inf lives
+200 DATA 195,168,97
+210 DATA 999
+
+Source code:
+
+org 32768
+ld a,&amp;87
+ld (&amp;ff0c),a
+
+; after the decryption that &amp;87 becomes &amp;C3
+; so at &amp;ff0c we&#x27;ll have JP &amp;fffd
+
+; so put a JP at &amp;fffd back to &#x27;trap1&#x27;
+ld a,195
+ld hl,trap1
+ld (&amp;fffd),a
+ld (&amp;fffe),hl
+jp &amp;fec3  ; run the decryption loops
+
+trap1:
+ld (&amp;fffd),a  ;execute the op we originally altered
+
+; copy the code at &#x27;trap2&#x27; to &amp;fe00 replacing what was the decryption
+loops.
+
+ld hl,trap2
+ld de,&amp;fe00
+ld (&amp;ff46),de  ; the code at &#x27;trap2&#x27; will run after loading every byte
+ld bc,trap2end-trap2
+ldir
+jp &amp;ff0f  ; now run the loader
+
+trap2:
+
+; l=loaded byte on entry
+ld a,(&amp;ff78)
+cp 195   ; have we finished loading?
+jr z,rungame
+
+; write the loaded bytes except when:
+
+IX &gt;= fe00 and &lt;= fe78 or
+IX &gt;= ff00 and &lt;= ff78
+
+ld a,ixh
+cp &amp;fe
+jr c,writeandcont
+ld a,ixl
+cp &amp;78
+jr nc,writeandcont
+
+ld a,l
+jp &amp;ff4f	; continue with no byte write
+
+writeandcont:
+ld (ix+0),l  ; write the loaded byte
+ld a,l
+jp &amp;ff4f
+
+rungame:
+ld sp,&amp;ffff
+ld iy,&amp;5c3a
+xor a
+ld (29614),a	; infinite lives
+jp &amp;61a8
+
+trap2end:
+
+
+Sorry for the rather large post...
+
+
+
+
+</pre></div><div class="post" id="p143279"><div class="ph"><a class="d" href="#p143279">2002-07-31 14:57:09</a> <span>Hob</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre>Back in the dim, dark and distant past, Woody waffled on about:
+
+<span class="qt">&gt; I can&#x27;t get this to work and Agent can&#x27;t decode your z80 posted to ABCS</span>
+<span class="qt">&gt; :(</span>
+
+Bah.
+
+Try 
+
+<a href="http://www.thehobbitsburrow.org.uk/ScoobyHack.z80" rel="noreferrer">http://www.thehobbitsburrow.org.uk/ScoobyHack.z80</a>
+
+My code is similar, but more convoluted due to me trying about 15
+different solutions..
+ 
+-- 
+Hob
+
+Replace a with er!
+
+
+
+</pre></div><div class="post" id="p143566"><div class="ph"><a class="d" href="#p143566">2002-08-04 11:54:30</a> <span>scooby snacks</span> <span>Re: Hacker&#x27;s Challenge!</span></div><pre><span class="qt">&gt;</span>
+<span class="qt">&gt; Try</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; <a href="http://www.thehobbitsburrow.org.uk/ScoobyHack.z80" rel="noreferrer">http://www.thehobbitsburrow.org.uk/ScoobyHack.z80</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; My code is similar, but more convoluted due to me trying about 15</span>
+<span class="qt">&gt; different solutions..</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; Hob</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Replace a with er!</span>
+
+
+Hmm...   don&#x27;t like the sound of scoobyhacking
+
++scoobysnacks
+
+
+
+
+
+</pre></div></main></body></html>

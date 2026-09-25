@@ -1,0 +1,1306 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANN: Open81 ROM · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANN: Open81 ROM</h1><p class="facts">49 posts, 2010-10-10 – 2011-06-25</p><div class="post" id="p222940"><div class="ph"><a class="d" href="#p222940">2010-10-10 17:06:32</a> <span>Andrew Owen</span> </div><pre>Having secured permission to distribute the TS1000 / ZX81 improved ROM
+under the GPL a while back I thought I really should put up a binary
+and source code. I spent the weekend getting the source to compile and
+it now produces an identical binary to the original (improved) ROM.
+The source isn&#x27;t commented (Logan and O&#x27;Hara do a better job than I
+could) but I&#x27;ve used sensible labels in place of all the &#x27;magic
+numbers&#x27;. It should make it a lot easier to follow. Here it is:
+
+<a href="https://sites.google.com/site/open81rom/" rel="noreferrer">https://sites.google.com/site/open81rom/</a>
+
+Cheers!
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p222941"><div class="ph"><a class="d" href="#p222941">2010-10-10 18:57:43</a> <span>M.O.B. i L.</span> <span>Re: ANN: Open81 ROM</span></div><pre>Andrew Owen wrote:
+<span class="qt">&gt; Having secured permission to distribute the TS1000 / ZX81 improved ROM</span>
+<span class="qt">&gt; under the GPL a while back I thought I really should put up a binary</span>
+<span class="qt">&gt; and source code. I spent the weekend getting the source to compile and</span>
+<span class="qt">&gt; it now produces an identical binary to the original (improved) ROM.</span>
+<span class="qt">&gt; The source isn&#x27;t commented (Logan and O&#x27;Hara do a better job than I</span>
+<span class="qt">&gt; could) but I&#x27;ve used sensible labels in place of all the &#x27;magic</span>
+<span class="qt">&gt; numbers&#x27;. It should make it a lot easier to follow. Here it is:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; <a href="https://sites.google.com/site/open81rom/" rel="noreferrer">https://sites.google.com/site/open81rom/</a></span>
+
+Great! What commandline did you use to compile it?
+
+
+
+</pre></div><div class="post" id="p222942"><div class="ph"><a class="d" href="#p222942">2010-10-10 19:52:15</a> <span>Chris Young</span> <span>Re: ANN: Open81 ROM</span></div><pre>On Sun, 10 Oct 2010 10:06:32 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Andrew Owen:
+
+<span class="qt">&gt; Having secured permission to distribute the TS1000 / ZX81 improved ROM</span>
+<span class="qt">&gt; under the GPL a while back I thought I really should put up a binary</span>
+<span class="qt">&gt; and source code.</span>
+
+What are the differences between this and a normal ZX81 ROM?
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p222943"><div class="ph"><a class="d" href="#p222943">2010-10-10 22:18:46</a> <span>M.O.B. i L.</span> <span>Re: ANN: Open81 ROM</span></div><pre>Chris Young wrote:
+<span class="qt">&gt; On Sun, 10 Oct 2010 10:06:32 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt; to MC Andrew Owen:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Having secured permission to distribute the TS1000 / ZX81 improved ROM</span>
+<span class="qt">&gt;&gt; under the GPL a while back I thought I really should put up a binary</span>
+<span class="qt">&gt;&gt; and source code.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; What are the differences between this and a normal ZX81 ROM?</span>
+
+The improved is the most common. The unimproved could crash during PAUSE 
+and had a serious bug in SQR. My ZX81 has the unimproved ROM. :-(
+
+
+
+</pre></div><div class="post" id="p222944"><div class="ph"><a class="d" href="#p222944">2010-10-11 07:18:23</a> <span>Andrew Owen</span> <span>Re: ANN: Open81 ROM</span></div><pre>On Oct 10, 8:52 pm, &quot;Chris Young&quot; &lt;…@…&gt;
+wrote:
+<span class="qt">&gt; On Sun, 10 Oct 2010 10:06:32 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt; to MC Andrew Owen:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Having secured permission to distribute the TS1000 / ZX81 improved ROM</span>
+<span class="qt">&gt; &gt; under the GPL a while back I thought I really should put up a binary</span>
+<span class="qt">&gt; &gt; and source code.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; What are the differences between this and a normal ZX81 ROM?</span>
+
+The binary is 100% the same as the TS1000 / ZX81 improved (the most
+common one). But this is the first time the source has been presented
+under this license.
+
+
+
+</pre></div><div class="post" id="p222945"><div class="ph"><a class="d" href="#p222945">2010-10-11 07:19:28</a> <span>Andrew Owen</span> <span>Re: ANN: Open81 ROM</span></div><pre>On Oct 10, 7:57 pm, &quot;M.O.B. i L.&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Great! What commandline did you use to compile it?</span>
+
+I compiled it with Pasmo but it should compile with any standard cross-
+assembler. If it&#x27;s causing you problems with your cross-assembler of
+choice let me know and I&#x27;ll see if I can fix it.
+
+
+
+</pre></div><div class="post" id="p222946"><div class="ph"><a class="d" href="#p222946">2010-10-11 09:41:44</a> <span>Brian Gaff</span> <span>Re: ANN: Open81 ROM</span></div><pre>There have been some  oddball ones over the years built by others though. I 
+have a dim distant memory of Microfairs with roms that had toolkits and all 
+sorts built in. Not sure how they crammed it all in though.
+Brian
+
+-- 
+Brian Gaff - …@…
+Note:- In order to reduce spam, any email without &#x27;Brian Gaff&#x27;
+in the display name may be lost.
+Blind user, so no pictures please!
+&quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+On Oct 10, 8:52 pm, &quot;Chris Young&quot; &lt;…@…&gt;
+wrote:
+<span class="qt">&gt; On Sun, 10 Oct 2010 10:06:32 -0700 (PDT) da kidz on comp.sys.sinclair were </span>
+<span class="qt">&gt; rappin&#x27;</span>
+<span class="qt">&gt; to MC Andrew Owen:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Having secured permission to distribute the TS1000 / ZX81 improved ROM</span>
+<span class="qt">&gt; &gt; under the GPL a while back I thought I really should put up a binary</span>
+<span class="qt">&gt; &gt; and source code.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; What are the differences between this and a normal ZX81 ROM?</span>
+
+The binary is 100% the same as the TS1000 / ZX81 improved (the most
+common one). But this is the first time the source has been presented
+under this license. 
+
+
+
+
+
+</pre></div><div class="post" id="p222948"><div class="ph"><a class="d" href="#p222948">2010-10-11 12:41:24</a> <span>Andrew Owen</span> <span>Re: ANN: Open81 ROM</span></div><pre>As I understand it, the usual trick was to use a 16K ROM. RAM in the
+ZX81 starts at 16384 and the 8K ROM is normally mirrored at 8912. I
+gather that&#x27;s how some of the &#x27;hi-res&#x27; add-ons worked.
+
+On Oct 11, 10:41 am, &quot;Brian Gaff&quot; &lt;…@…&gt; wrote:
+<span class="qt">&gt; There have been some  oddball ones over the years built by others though. I</span>
+<span class="qt">&gt; have a dim distant memory of Microfairs with roms that had toolkits and all</span>
+<span class="qt">&gt; sorts built in. Not sure how they crammed it all in though.</span>
+<span class="qt">&gt; Brian</span>
+
+
+
+</pre></div><div class="post" id="p222950"><div class="ph"><a class="d" href="#p222950">2010-10-11 18:48:03</a> <span>dott.Piergiorgio</span> <span>Re: ANN: Open81 ROM</span></div><pre>Il 10/10/2010 20:57, M.O.B. i L. ha scritto:
+<span class="qt">&gt; Andrew Owen wrote:</span>
+<span class="qt">&gt;&gt; Having secured permission to distribute the TS1000 / ZX81 improved ROM</span>
+<span class="qt">&gt;&gt; under the GPL a while back I thought I really should put up a binary</span>
+<span class="qt">&gt;&gt; and source code. I spent the weekend getting the source to compile and</span>
+<span class="qt">&gt;&gt; it now produces an identical binary to the original (improved) ROM.</span>
+<span class="qt">&gt;&gt; The source isn&#x27;t commented (Logan and O&#x27;Hara do a better job than I</span>
+<span class="qt">&gt;&gt; could) but I&#x27;ve used sensible labels in place of all the &#x27;magic</span>
+<span class="qt">&gt;&gt; numbers&#x27;. It should make it a lot easier to follow. Here it is:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; <a href="https://sites.google.com/site/open81rom/" rel="noreferrer">https://sites.google.com/site/open81rom/</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Great! What commandline did you use to compile it?</span>
+
+I second the question, what assembler you have used ?
+
+Another question, you plan to do the same for the ZX80 ROM ?
+
+Best regards from Italy,
+dott. Piergiorgio.
+
+
+
+
+</pre></div><div class="post" id="p222951"><div class="ph"><a class="d" href="#p222951">2010-10-11 19:29:10</a> <span>Brian Gaff</span> <span>Re: ANN: Open81 ROM</span></div><pre>Yes, this half baked address decoding confused the heck out of me. There 
+were those huge rampacks that had pages, I guess but I never really found 
+them that useful.
+ Having said all of that, at the time the computer was easy to use and learn 
+to program, and could do a lot of stuff nobody ever thought of. Shame nobody 
+makes a pc with a basic so simple to use built in.. Hey, maybe its a great 
+idea for a new product, just don&#x27;t let Microsoft write it.
+
+Brian
+
+-- 
+Brian Gaff....Note, this account does not accept Bcc: email.
+ graphics are great, but the blind can&#x27;t hear them
+Email: …@…
+______________________________________________________________________________________________________________
+
+
+&quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+As I understand it, the usual trick was to use a 16K ROM. RAM in the
+ZX81 starts at 16384 and the 8K ROM is normally mirrored at 8912. I
+gather that&#x27;s how some of the &#x27;hi-res&#x27; add-ons worked.
+
+On Oct 11, 10:41 am, &quot;Brian Gaff&quot; &lt;…@…&gt; wrote:
+<span class="qt">&gt; There have been some oddball ones over the years built by others though. I</span>
+<span class="qt">&gt; have a dim distant memory of Microfairs with roms that had toolkits and </span>
+<span class="qt">&gt; all</span>
+<span class="qt">&gt; sorts built in. Not sure how they crammed it all in though.</span>
+<span class="qt">&gt; Brian </span>
+
+
+
+
+
+</pre></div><div class="post" id="p222952"><div class="ph"><a class="d" href="#p222952">2010-10-11 21:06:17</a> <span>Andrew Owen</span> <span>Re: ANN: Open81 ROM</span></div><pre>On Oct 11, 7:48 pm, &quot;dott.Piergiorgio&quot;
+&lt;…@…&gt; wrote:
+<span class="qt">&gt; Il 10/10/2010 20:57, M.O.B. i L. ha scritto:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Andrew Owen wrote:</span>
+<span class="qt">&gt; &gt;&gt; Having secured permission to distribute the TS1000 / ZX81 improved ROM</span>
+<span class="qt">&gt; &gt;&gt; under the GPL a while back I thought I really should put up a binary</span>
+<span class="qt">&gt; &gt;&gt; and source code. I spent the weekend getting the source to compile and</span>
+<span class="qt">&gt; &gt;&gt; it now produces an identical binary to the original (improved) ROM.</span>
+<span class="qt">&gt; &gt;&gt; The source isn&#x27;t commented (Logan and O&#x27;Hara do a better job than I</span>
+<span class="qt">&gt; &gt;&gt; could) but I&#x27;ve used sensible labels in place of all the &#x27;magic</span>
+<span class="qt">&gt; &gt;&gt; numbers&#x27;. It should make it a lot easier to follow. Here it is:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;&gt;<a href="https://sites.google.com/site/open81rom/" rel="noreferrer">https://sites.google.com/site/open81rom/</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Great! What commandline did you use to compile it?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I second the question, what assembler you have used ?</span>
+
+As I already said ... Pasmo.
+
+<span class="qt">&gt; Another question, you plan to do the same for the ZX80 ROM ?</span>
+
+Wasn&#x27;t planning to, but I could if it would be useful. Would it?
+
+
+
+</pre></div><div class="post" id="p222954"><div class="ph"><a class="d" href="#p222954">2010-10-12 07:29:18</a> <span>Paddy</span> <span>Re: ANN: Open81 ROM</span></div><pre>On 11 Oct, 20:29, &quot;Brian Gaff&quot; &lt;…@…&gt; wrote:
+<span class="qt">&gt; Yes, this half baked address decoding confused the heck out of me. There</span>
+<span class="qt">&gt; were those huge rampacks that had pages, I guess but I never really found</span>
+<span class="qt">&gt; them that useful.</span>
+<span class="qt">&gt;  Having said all of that, at the time the computer was easy to use and learn</span>
+<span class="qt">&gt; to program, and could do a lot of stuff nobody ever thought of. Shame nobody</span>
+<span class="qt">&gt; makes a pc with a basic so simple to use built in.. Hey, maybe its a great</span>
+<span class="qt">&gt; idea for a new product, just don&#x27;t let Microsoft write it.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Brian</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; Brian Gaff....Note, this account does not accept Bcc: email.</span>
+<span class="qt">&gt;  graphics are great, but the blind can&#x27;t hear them</span>
+<span class="qt">&gt; Email: …@…</span>
+<span class="qt">&gt; ___________________________________________________________________________­___________________________________</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt; As I understand it, the usual trick was to use a 16K ROM. RAM in the</span>
+<span class="qt">&gt; ZX81 starts at 16384 and the 8K ROM is normally mirrored at 8912. I</span>
+<span class="qt">&gt; gather that&#x27;s how some of the &#x27;hi-res&#x27; add-ons worked.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; On Oct 11, 10:41 am, &quot;Brian Gaff&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; There have been some oddball ones over the years built by others though. I</span>
+<span class="qt">&gt; &gt; have a dim distant memory of Microfairs with roms that had toolkits and</span>
+<span class="qt">&gt; &gt; all</span>
+<span class="qt">&gt; &gt; sorts built in. Not sure how they crammed it all in though.</span>
+<span class="qt">&gt; &gt; Brian- Hide quoted text -</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; - Show quoted text -</span>
+
+Hi Brian,
+
+There is a project underway called SpecOS which is attempting to do
+exactly what you say i.e. a simple OS with an enhanced version of
+Sinclair BASIC that runs on the native hardware i.e. no Windows in the
+way.  You can find out more at:
+
+<a href="http://www.zxspectrum4.net/forum/viewforum.php?f=6" rel="noreferrer">http://www.zxspectrum4.net/forum/viewforum.php?f=6</a>
+
+Hope this helps.
+
+Paddy
+
+
+
+
+</pre></div><div class="post" id="p222955"><div class="ph"><a class="d" href="#p222955">2010-10-12 07:43:00</a> <span>dott.Piergiorgio</span> <span>Re: ANN: Open81 ROM</span></div><pre>Il 11/10/2010 23:06, Andrew Owen ha scritto:
+
+<span class="qt">&gt;&gt; Another question, you plan to do the same for the ZX80 ROM ?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Wasn&#x27;t planning to, but I could if it would be useful. Would it?</span>
+
+Aside the historical value, I think that the usefulness of ZX80 rom 
+source as starting codebase for new project lies in the size, 4k instead 
+of 8k (and incidentally, 12k for rom extensions).
+
+But I&#x27;m perhaps too used to this Occam&#x27;s razor ;)
+
+Best regards from Italy,
+dott. Piergiorgio.
+
+
+
+</pre></div><div class="post" id="p222956"><div class="ph"><a class="d" href="#p222956">2010-10-12 17:39:31</a> <span>Chris Young</span> <span>Re: ANN: Open81 ROM</span></div><pre>On Mon, 11 Oct 2010 00:18:23 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Andrew Owen:
+
+<span class="qt">&gt; On Oct 10, 8:52ï¿½pm, &quot;Chris Young&quot; &lt;…@…&gt;</span>
+<span class="qt">&gt; wrote:</span>
+<span class="qt">&gt; &gt; On Sun, 10 Oct 2010 10:06:32 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt; &gt; to MC Andrew Owen:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; Having secured permission to distribute the TS1000 / ZX81 improved ROM</span>
+<span class="qt">&gt; &gt; &gt; under the GPL a while back I thought I really should put up a binary</span>
+<span class="qt">&gt; &gt; &gt; and source code.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; What are the differences between this and a normal ZX81 ROM?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The binary is 100% the same as the TS1000 / ZX81 improved (the most</span>
+<span class="qt">&gt; common one). But this is the first time the source has been presented</span>
+<span class="qt">&gt; under this license.</span>
+
+Hmm, so that means it can be 100% legally distributed, so if I chuck a
+copy of it (and the source of course) into sz81&#x27;s SVN there won&#x27;t be
+any problems?
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p222957"><div class="ph"><a class="d" href="#p222957">2010-10-12 18:06:42</a> <span>Andrew Owen</span> <span>Re: ANN: Open81 ROM</span></div><pre>On 12 Oct, 08:43, &quot;dott.Piergiorgio&quot;
+&lt;…@…&gt; wrote:
+<span class="qt">&gt; Il 11/10/2010 23:06, Andrew Owen ha scritto:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;&gt; Another question, you plan to do the same for the ZX80 ROM ?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Wasn&#x27;t planning to, but I could if it would be useful. Would it?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Aside the historical value, I think that the usefulness of ZX80 rom</span>
+<span class="qt">&gt; source as starting codebase for new project lies in the size, 4k instead</span>
+<span class="qt">&gt; of 8k (and incidentally, 12k for rom extensions).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; But I&#x27;m perhaps too used to this Occam&#x27;s razor ;)</span>
+
+Well the trouble with the ZX80 ROM is that it&#x27;s an integer BASIC.
+However, I think other people have managed to do floating-point BASICs
+in 4K.
+
+
+
+</pre></div><div class="post" id="p222958"><div class="ph"><a class="d" href="#p222958">2010-10-12 18:07:44</a> <span>Andrew Owen</span> <span>Re: ANN: Open81 ROM</span></div><pre>On 12 Oct, 18:39, &quot;Chris Young&quot; &lt;…@…&gt; wrote:
+<span class="qt">&gt; On Mon, 11 Oct 2010 00:18:23 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt; to MC Andrew Owen:</span>
+
+<span class="qt">&gt; &gt; The binary is 100% the same as the TS1000 / ZX81 improved (the most</span>
+<span class="qt">&gt; &gt; common one). But this is the first time the source has been presented</span>
+<span class="qt">&gt; &gt; under this license.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Hmm, so that means it can be 100% legally distributed, so if I chuck a</span>
+<span class="qt">&gt; copy of it (and the source of course) into sz81&#x27;s SVN there won&#x27;t be</span>
+<span class="qt">&gt; any problems?</span>
+
+So long as sz81&#x27;s license is compatible with using a GPL v2
+distribution of the ZX81 ROM you&#x27;re good to go.
+
+
+
+</pre></div><div class="post" id="p222959"><div class="ph"><a class="d" href="#p222959">2010-10-12 19:58:50</a> <span>Chris Young</span> <span>Re: ANN: Open81 ROM</span></div><pre>On Tue, 12 Oct 2010 11:07:44 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Andrew Owen:
+
+<span class="qt">&gt; On 12 Oct, 18:39, &quot;Chris Young&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt; On Mon, 11 Oct 2010 00:18:23 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt; &gt; to MC Andrew Owen:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; &gt; The binary is 100% the same as the TS1000 / ZX81 improved (the most</span>
+<span class="qt">&gt; &gt; &gt; common one). But this is the first time the source has been presented</span>
+<span class="qt">&gt; &gt; &gt; under this license.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Hmm, so that means it can be 100% legally distributed, so if I chuck a</span>
+<span class="qt">&gt; &gt; copy of it (and the source of course) into sz81&#x27;s SVN there won&#x27;t be</span>
+<span class="qt">&gt; &gt; any problems?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; So long as sz81&#x27;s license is compatible with using a GPL v2</span>
+<span class="qt">&gt; distribution of the ZX81 ROM you&#x27;re good to go.</span>
+
+Yes, it&#x27;s GPL v2 itself.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p222960"><div class="ph"><a class="d" href="#p222960">2010-10-12 20:50:50</a> <span>Andrew Owen</span> <span>Re: ANN: Open81 ROM</span></div><pre>On Oct 12, 8:58 pm, &quot;Chris Young&quot; &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt; &gt; &gt; &gt; The binary is 100% the same as the TS1000 / ZX81 improved (the most</span>
+<span class="qt">&gt; &gt; &gt; &gt; common one). But this is the first time the source has been presented</span>
+<span class="qt">&gt; &gt; &gt; &gt; under this license.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; Hmm, so that means it can be 100% legally distributed, so if I chuck a</span>
+<span class="qt">&gt; &gt; &gt; copy of it (and the source of course) into sz81&#x27;s SVN there won&#x27;t be</span>
+<span class="qt">&gt; &gt; &gt; any problems?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; So long as sz81&#x27;s license is compatible with using a GPL v2</span>
+<span class="qt">&gt; &gt; distribution of the ZX81 ROM you&#x27;re good to go.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Yes, it&#x27;s GPL v2 itself.</span>
+
+Excellent. Let me know when it&#x27;s updated :)
+
+
+
+</pre></div><div class="post" id="p222961"><div class="ph"><a class="d" href="#p222961">2010-10-12 22:26:44</a> <span>Andrew Owen</span> <span>Re: ANN: Open81 ROM</span></div><pre>On Oct 12, 11:59 pm, &quot;Chris Young&quot; &lt;…@…&gt;
+wrote:
+<span class="qt">&gt; On Tue, 12 Oct 2010 13:50:50 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt; to MC Andrew Owen:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; &gt; &gt; &gt; The binary is 100% the same as the TS1000 / ZX81 improved (the most</span>
+<span class="qt">&gt; &gt; &gt; &gt; &gt; &gt; common one). But this is the first time the source has been presented</span>
+<span class="qt">&gt; &gt; &gt; &gt; &gt; &gt; under this license.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; &gt; &gt; Hmm, so that means it can be 100% legally distributed, so if I chuck a</span>
+<span class="qt">&gt; &gt; &gt; &gt; &gt; copy of it (and the source of course) into sz81&#x27;s SVN there won&#x27;t be</span>
+<span class="qt">&gt; &gt; &gt; &gt; &gt; any problems?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; &gt; So long as sz81&#x27;s license is compatible with using a GPL v2</span>
+<span class="qt">&gt; &gt; &gt; &gt; distribution of the ZX81 ROM you&#x27;re good to go.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; Yes, it&#x27;s GPL v2 itself.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Excellent. Let me know when it&#x27;s updated :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Done, r118</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;ve added a readme for it, but it probably needs a mention in the</span>
+<span class="qt">&gt; other docs, as well as being a target in the makefile.  Jobs for later</span>
+<span class="qt">&gt; methinks.  The readme might be lacking a bit of je ne sais quoi :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; We could do with the ZX80 ROM under the same licence...</span>
+
+Well I have permission to distribute but I don&#x27;t have a version of the
+ZX80 source right now. Did Dr Logan do a disassembly of that one? I&#x27;d
+need something to work with, at least for the labels and system
+variable names.
+
+
+
+</pre></div><div class="post" id="p222962"><div class="ph"><a class="d" href="#p222962">2010-10-12 22:50:09</a> <span>Andrew Owen</span> <span>Re: ANN: Open81 ROM</span></div><pre>On Oct 13, 12:37 am, &quot;Chris Young&quot; &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt; Geoff has a version:<a href="http://www.wearmouth.demon.co.uk/zx80.htm" rel="noreferrer">http://www.wearmouth.demon.co.uk/zx80.htm</a></span>
+
+You&#x27;d better ask him then.
+
+<span class="qt">&gt; Comments state that the ZX80 ROM disassembly has been published, but I</span>
+<span class="qt">&gt; suspect getting hold of a copy may prove tricky.</span>
+
+Yes. I tried tracking down the other versions but no luck. I&#x27;d like to
+help, but under the circumstances there&#x27;s nothing I can do. Sorry.
+
+
+
+</pre></div><div class="post" id="p222963"><div class="ph"><a class="d" href="#p222963">2010-10-12 22:59:09</a> <span>Chris Young</span> <span>Re: ANN: Open81 ROM</span></div><pre>On Tue, 12 Oct 2010 13:50:50 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Andrew Owen:
+
+<span class="qt">&gt; &gt; &gt; &gt; &gt; The binary is 100% the same as the TS1000 / ZX81 improved (the most</span>
+<span class="qt">&gt; &gt; &gt; &gt; &gt; common one). But this is the first time the source has been presented</span>
+<span class="qt">&gt; &gt; &gt; &gt; &gt; under this license.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; &gt; Hmm, so that means it can be 100% legally distributed, so if I chuck a</span>
+<span class="qt">&gt; &gt; &gt; &gt; copy of it (and the source of course) into sz81&#x27;s SVN there won&#x27;t be</span>
+<span class="qt">&gt; &gt; &gt; &gt; any problems?</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; So long as sz81&#x27;s license is compatible with using a GPL v2</span>
+<span class="qt">&gt; &gt; &gt; distribution of the ZX81 ROM you&#x27;re good to go.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Yes, it&#x27;s GPL v2 itself.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Excellent. Let me know when it&#x27;s updated :)</span>
+
+Done, r118
+
+I&#x27;ve added a readme for it, but it probably needs a mention in the
+other docs, as well as being a target in the makefile.  Jobs for later
+methinks.  The readme might be lacking a bit of je ne sais quoi :)
+
+We could do with the ZX80 ROM under the same licence...
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p222964"><div class="ph"><a class="d" href="#p222964">2010-10-12 23:37:24</a> <span>Chris Young</span> <span>Re: ANN: Open81 ROM</span></div><pre>On Tue, 12 Oct 2010 15:26:44 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Andrew Owen:
+
+<span class="qt">&gt; &gt; We could do with the ZX80 ROM under the same licence...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Well I have permission to distribute but I don&#x27;t have a version of the</span>
+<span class="qt">&gt; ZX80 source right now. Did Dr Logan do a disassembly of that one? I&#x27;d</span>
+<span class="qt">&gt; need something to work with, at least for the labels and system</span>
+<span class="qt">&gt; variable names.</span>
+
+Geoff has a version: <a href="http://www.wearmouth.demon.co.uk/zx80.htm" rel="noreferrer">http://www.wearmouth.demon.co.uk/zx80.htm</a>
+Comments state that the ZX80 ROM disassembly has been published, but I
+suspect getting hold of a copy may prove tricky.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p222965"><div class="ph"><a class="d" href="#p222965">2010-10-12 23:49:55</a> <span>Chris Young</span> <span>Re: ANN: Open81 ROM</span></div><pre>On Mon, 11 Oct 2010 00:19:28 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Andrew Owen:
+
+<span class="qt">&gt; On Oct 10, 7:57ï¿½pm, &quot;M.O.B. i L.&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; Great! What commandline did you use to compile it?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I compiled it with Pasmo but it should compile with any standard cross-</span>
+<span class="qt">&gt; assembler. If it&#x27;s causing you problems with your cross-assembler of</span>
+<span class="qt">&gt; choice let me know and I&#x27;ll see if I can fix it.</span>
+
+Doesn&#x27;t build with caz(m)
+
+Parse 1
+ 290:   out     (nmigen), a
+     ^ No start adress specified (use &#x27;ORG&#x27;)
+ 291:   ld      bc, 0x7fff
+     ^ No start adress specified (use &#x27;ORG&#x27;)
+ 292:   jp      ram_check
+     ^ No start adress specified (use &#x27;ORG&#x27;)
+ 297:   ld      hl, (ch_add)
+     ^ No start adress specified (use &#x27;ORG&#x27;)
+ 298:   ld      (x_ptr), hl
+     ^ No start adress specified (use &#x27;ORG&#x27;)
+ 299:   jr      error_2
+     ^ No start adress specified (use &#x27;ORG&#x27;)
+ 304:   and     a
+     ^ No start adress specified (use &#x27;ORG&#x27;)
+ 305:   jp      nz,  print_ch
+     ^ No start adress specified (use &#x27;ORG&#x27;)
+ 306:   jp      print_sp
+     ^ No start adress specified (use &#x27;ORG&#x27;)
+ 307:   defb    0xff
+     ^ No start adress specified (use &#x27;ORG&#x27;)
+
+
+Assembling failed.
+Found 10 errors.
+
+
+I don&#x27;t have the first clue about assembler, so what &#x27;ORG&#x27; is supposed
+to do is a mystery (it doesn&#x27;t help that caz&#x27;s docs are in German; if
+I knew what a Befehlszï¿½hler was I&#x27;d be laughing).
+
+I might be able to hack that requirement out of the source, this is
+the cross-assembler I was playing with many years ago, tweaking to get
+the SE ROM compiling with it.
+
+Sadly it looks like I (had to?) use Dice C back then but hopefully
+it&#x27;ll compile with something sensible like gcc.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p222966"><div class="ph"><a class="d" href="#p222966">2010-10-13 07:41:43</a> <span>Andrew Owen</span> <span>Re: ANN: Open81 ROM</span></div><pre>On Oct 13, 12:49 am, &quot;Chris Young&quot; &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt; &gt; I compiled it with Pasmo but it should compile with any standard cross-</span>
+<span class="qt">&gt; &gt; assembler. If it&#x27;s causing you problems with your cross-assembler of</span>
+<span class="qt">&gt; &gt; choice let me know and I&#x27;ll see if I can fix it.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Doesn&#x27;t build with caz(m)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Parse 1</span>
+<span class="qt">&gt;  290:   out     (nmigen), a</span>
+<span class="qt">&gt;      ^ No start adress specified (use &#x27;ORG&#x27;)</span>
+
+I see. cazm won&#x27;t build a file without an ORG in it by the looks of
+it. Sticking an ORG 0x0000 right before the first real instruction
+should fix that.
+
+
+
+</pre></div><div class="post" id="p222967"><div class="ph"><a class="d" href="#p222967">2010-10-13 07:47:07</a> <span>Andrew Owen</span> <span>Re: ANN: Open81 ROM</span></div><pre>On Oct 12, 8:29 am, Paddy &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; There is a project underway called SpecOS which is attempting to do</span>
+<span class="qt">&gt; exactly what you say i.e. a simple OS with an enhanced version of</span>
+<span class="qt">&gt; Sinclair BASIC that runs on the native hardware i.e. no Windows in the</span>
+<span class="qt">&gt; way.  You can find out more at:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; <a href="http://www.zxspectrum4.net/forum/viewforum.php?f=6" rel="noreferrer">http://www.zxspectrum4.net/forum/viewforum.php?f=6</a></span>
+
+Well, assuming the forum software and SpecOS itself work with screen
+readers, which I rather suspect they don&#x27;t. You did read Brian&#x27;s sig,
+right? I wonder if there&#x27;s something to be said for doing an
+accessible emulator that scans the screen and converts text in the
+standard font into a standard text display that screen readers can
+deal with. It might be possible to do one that can cope with different
+text widths and specify a font file, but I suspect you&#x27;d end up with a
+lot of repetition of room descriptions.
+
+
+
+</pre></div><div class="post" id="p222968"><div class="ph"><a class="d" href="#p222968">2010-10-13 08:02:31</a> <span>dott.Piergiorgio</span> <span>Re: ANN: Open81 ROM</span></div><pre>Il 12/10/2010 20:06, Andrew Owen ha scritto:
+
+<span class="qt">&gt; Well the trouble with the ZX80 ROM is that it&#x27;s an integer BASIC.</span>
+<span class="qt">&gt; However, I think other people have managed to do floating-point BASICs</span>
+<span class="qt">&gt; in 4K.</span>
+
+my current toying &amp; fooling with asm is centered on firmware monitor 
+development ;)
+
+ZX80 &amp; 81 has a rather unconventional screen handling, here the main 
+difficulty in development of monitor firmware, at least for me. (I 
+suspect that a D command can be an ugly beast because of the &quot;dynamic 
+screen memory&quot; whose sooner or later collide with E-LINE)
+
+ZX80 &amp; 81 at their times was most economical &amp; readily available micro, 
+and even available in kit form, so they was perfect for control &amp; 
+industrial systems &amp; like apps, and was feasible replacing the ROM with 
+an EPROM with the appropriate firmware, and perhaps also a monitor for 
+on-field diagnostic &amp; setup...
+
+The same apply for the spectrum, for sure I knew of a field use of the 
+speccy by amateur astronomers as calculator for pointing the scopes &amp; 
+other on-the spot calculations (all needed support was a 4&quot; 5&quot; B/W TV 
+and car batteries or even the car itself, with the engine in idle 
+(fitting for a UK comp, at least once the car involved was a Morris Mini...)
+
+side question, no one has tried to rebuild the .pdf of the ZX81 service 
+manual and assembler instructions, whose after a certain page is 
+unreadable to the point to be useless ?
+
+Best regards from Italy,
+dott. Piergiorgio.
+
+
+
+</pre></div><div class="post" id="p222969"><div class="ph"><a class="d" href="#p222969">2010-10-13 08:09:18</a> <span>dott.Piergiorgio</span> <span>Re: ANN: Open81 ROM</span></div><pre>Il 13/10/2010 00:59, Chris Young ha scritto:
+
+<span class="qt">&gt; I&#x27;ve added a readme for it, but it probably needs a mention in the</span>
+<span class="qt">&gt; other docs, as well as being a target in the makefile.  Jobs for later</span>
+<span class="qt">&gt; methinks.  The readme might be lacking a bit of je ne sais quoi :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; We could do with the ZX80 ROM under the same licence...</span>
+
+whose should be a good thing; perhaps I contribuite the quick on-the-fly 
+&quot;loader&quot; but is a thing everyone can write in bash or other 
+scripting/shell language, being simply &quot;copy the zx80 .p to a temporary 
+file with the requisite filename, and after the use, remove the 
+temporary file&quot;
+
+Best regards from Italy,
+dott. Piergiorgio.
+
+
+
+</pre></div><div class="post" id="p222970"><div class="ph"><a class="d" href="#p222970">2010-10-13 10:55:43</a> <span>dott.Piergiorgio</span> <span>Re: ANN: Open81 ROM</span></div><pre>Il 13/10/2010 01:37, Chris Young ha scritto:
+
+<span class="qt">&gt; Geoff has a version: <a href="http://www.wearmouth.demon.co.uk/zx80.htm" rel="noreferrer">http://www.wearmouth.demon.co.uk/zx80.htm</a></span>
+<span class="qt">&gt; Comments state that the ZX80 ROM disassembly has been published, but I</span>
+<span class="qt">&gt; suspect getting hold of a copy may prove tricky.</span>
+
+For the record, Geoff&#x27;s zx80.txt assemble successfully with pasmo 5 and 
+6. with really few mods. I still don&#x27;t have tested the resulting 
+binaries, nor done a bdiff with the actual ROM image, anyway (today is 
+my old father&#x27;s namesday...)
+
+Here the (tiny) diff:
+
+&lt; #define DEFB .BYTE              ; TASM cross-assembler definitions
+&lt; #define DEFW .WORD
+&lt; #define EQU .EQU
+---
+<span class="qt"> &gt; ; #define DEFB .BYTE              ; TASM cross-assembler definitions</span>
+<span class="qt"> &gt; ; #define DEFW .WORD</span>
+<span class="qt"> &gt; ; #define EQU .EQU</span>
+54c54
+&lt; .ORG     $0000
+---
+<span class="qt"> &gt; ORG     $0000</span>
+
+Best regards and happy hacking,
+Dott. Piergiorgio.
+
+
+
+</pre></div><div class="post" id="p222971"><div class="ph"><a class="d" href="#p222971">2010-10-13 12:00:56</a> <span>Paul E Collins</span> <span>Re: ANN: Open81 ROM</span></div><pre>&quot;Andrew Owen&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;&gt; &gt; The binary is 100% the same as the TS1000 / ZX81 improved (the most</span>
+<span class="qt">&gt;&gt; &gt; common one). But this is the first time the source has been presented</span>
+<span class="qt">&gt;&gt; &gt; under this license.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Hmm, so that means it can be 100% legally distributed, so if I chuck a</span>
+<span class="qt">&gt;&gt; copy of it (and the source of course) into sz81&#x27;s SVN there won&#x27;t be</span>
+<span class="qt">&gt;&gt; any problems?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; So long as sz81&#x27;s license is compatible with using a GPL v2</span>
+<span class="qt">&gt; distribution of the ZX81 ROM you&#x27;re good to go.</span>
+
+Is that true? Isn&#x27;t your ROM a &quot;derivative work&quot; in some way, even if it 
+doesn&#x27;t share source code?
+
+Eq.
+ 
+
+
+
+
+</pre></div><div class="post" id="p222972"><div class="ph"><a class="d" href="#p222972">2010-10-13 13:01:05</a> <span>Guesser</span> <span>Re: ANN: Open81 ROM</span></div><pre>On 13/10/2010 13:00, Paul E Collins wrote:
+<span class="qt">&gt; Is that true? Isn&#x27;t your ROM a &quot;derivative work&quot; in some way, even if it</span>
+<span class="qt">&gt; doesn&#x27;t share source code?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Eq.</span>
+<span class="qt">&gt;</span>
+
+the ZX81 rom has been released under the GPL. It is not one of the roms 
+owned by Amstrad PLC
+
+
+
+</pre></div><div class="post" id="p222974"><div class="ph"><a class="d" href="#p222974">2010-10-13 15:51:26</a> <span>GzavSnap</span> <span>Re: ANN: Open81 ROM</span></div><pre>Hi Chris Young,
+
+<span class="qt">|  The binary is 100% the same as the TS1000 / ZX81 improved (the most</span>
+<span class="qt">|  common one). But this is the first time the source has been presented</span>
+<span class="qt">|  under this license.</span>
+<span class="qt">|  Hmm, so that means it can be 100% legally distributed, so if I chuck a</span>
+<span class="qt">|  copy of it (and the source of course) into sz81&#x27;s SVN there won&#x27;t be</span>
+<span class="qt">| &gt; &gt; &gt; &gt; any problems?</span>
+<span class="qt">| &gt; &gt; &gt; So long as sz81&#x27;s license is compatible with using a GPL v2</span>
+<span class="qt">| &gt; &gt; &gt; distribution of the ZX81 ROM you&#x27;re good to go.</span>
+<span class="qt">| &gt; &gt; Yes, it&#x27;s GPL v2 itself.</span>
+
+<span class="qt">| &gt; Excellent. Let me know when it&#x27;s updated :)</span>
+
+<span class="qt">| Done, r118</span>
+<span class="qt">| I&#x27;ve added a readme for it, but it probably needs a mention in the</span>
+<span class="qt">| other docs, as well as being a target in the makefile.  Jobs for later</span>
+<span class="qt">| methinks.  The readme might be lacking a bit of je ne sais quoi :)</span>
+<span class="qt">| We could do with the ZX80 ROM under the same licence...</span>
+
+If you had to add something in the sZ81 docs., let me know!
+I had to update my sz81 PDF docs.
+<a href="http://zx81.ordi5.free.fr/sZ81_WIN32/" rel="noreferrer">http://zx81.ordi5.free.fr/sZ81_WIN32/</a>
+;-)
+
+Just mail me your text file...
+
+
+
+
+
+</pre></div><div class="post" id="p222975"><div class="ph"><a class="d" href="#p222975">2010-10-13 16:36:26</a> <span>Andrew Owen</span> <span>Re: ANN: Open81 ROM</span></div><pre>On 13 Oct, 13:00, &quot;Paul E Collins&quot; &lt;…@…&gt;
+wrote:
+<span class="qt">&gt; &quot;Andrew Owen&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt;&gt; &gt; The binary is 100% the same as the TS1000 / ZX81 improved (the most</span>
+<span class="qt">&gt; &gt;&gt; &gt; common one). But this is the first time the source has been presented</span>
+<span class="qt">&gt; &gt;&gt; &gt; under this license.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;&gt; Hmm, so that means it can be 100% legally distributed, so if I chuck a</span>
+<span class="qt">&gt; &gt;&gt; copy of it (and the source of course) into sz81&#x27;s SVN there won&#x27;t be</span>
+<span class="qt">&gt; &gt;&gt; any problems?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; So long as sz81&#x27;s license is compatible with using a GPL v2</span>
+<span class="qt">&gt; &gt; distribution of the ZX81 ROM you&#x27;re good to go.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Is that true? Isn&#x27;t your ROM a &quot;derivative work&quot; in some way, even if it doesn&#x27;t share source code?</span>
+
+It&#x27;s not a derivative work, it&#x27;s the same work. The difference is the
+license and the fact that this source (which I created myself) is
+explicitly distributed under the GPL. I was given permission to do
+this by John Grant of Nine Tiles Networks Ltd (the copyright holder).
+This is referenced in the source file.
+
+
+
+</pre></div><div class="post" id="p222976"><div class="ph"><a class="d" href="#p222976">2010-10-13 22:25:36</a> <span>Chris Young</span> <span>Re: ANN: Open81 ROM</span></div><pre>On Wed, 13 Oct 2010 17:51:26 +0200 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC GzavSnap:
+
+<span class="qt">&gt; If you had to add something in the sZ81 docs., let me know!</span>
+<span class="qt">&gt; I had to update my sz81 PDF docs.</span>
+<span class="qt">&gt; <a href="http://zx81.ordi5.free.fr/sZ81_WIN32/" rel="noreferrer">http://zx81.ordi5.free.fr/sZ81_WIN32/</a></span>
+<span class="qt">&gt; ;-)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Just mail me your text file...</span>
+
+I&#x27;ll most likely have forgotten by the next time I update them, it&#x27;s
+probably best for you to keep an eye on the SVN (which I guess you do
+anyway to keep your Win32 build up-to-date)
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p222977"><div class="ph"><a class="d" href="#p222977">2010-10-13 22:40:08</a> <span>Chris Young</span> <span>Re: ANN: Open81 ROM</span></div><pre>On Wed, 13 Oct 2010 00:41:43 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Andrew Owen:
+
+<span class="qt">&gt; On Oct 13, 12:49ï¿½am, &quot;Chris Young&quot; &lt;…@…&gt;</span>
+<span class="qt">&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; &gt; I compiled it with Pasmo but it should compile with any standard cross-</span>
+<span class="qt">&gt; &gt; &gt; assembler. If it&#x27;s causing you problems with your cross-assembler of</span>
+<span class="qt">&gt; &gt; &gt; choice let me know and I&#x27;ll see if I can fix it.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Doesn&#x27;t build with caz(m)</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Parse 1</span>
+<span class="qt">&gt; &gt; ï¿½290: ï¿½ out ï¿½ ï¿½ (nmigen), a</span>
+<span class="qt">&gt; &gt; ï¿½ ï¿½ ï¿½^ No start adress specified (use &#x27;ORG&#x27;)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I see. cazm won&#x27;t build a file without an ORG in it by the looks of</span>
+<span class="qt">&gt; it. Sticking an ORG 0x0000 right before the first real instruction</span>
+<span class="qt">&gt; should fix that.</span>
+
+It does... well, I get other more curious errors.  At the risk of
+boring everybody else, I&#x27;ll send you an email.
+
+On the plus side, I&#x27;ve modified cazm so it defaults to a start address
+of 0, and it compiles fine with gcc.  Of course, I could opt for
+another assembler, but I sort of want to get cazm into a state where
+it is actually useful.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p222978"><div class="ph"><a class="d" href="#p222978">2010-10-13 22:45:22</a> <span>Chris Young</span> <span>Re: ANN: Open81 ROM</span></div><pre>On Tue, 12 Oct 2010 15:50:09 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Andrew Owen:
+
+<span class="qt">&gt; &gt; Geoff has a version:<a href="http://www.wearmouth.demon.co.uk/zx80.htm" rel="noreferrer">http://www.wearmouth.demon.co.uk/zx80.htm</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; You&#x27;d better ask him then.</span>
+
+Given that he&#x27;s probably reading, I&#x27;ll give him a chance to respond
+here first.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p222979"><div class="ph"><a class="d" href="#p222979">2010-10-14 07:07:29</a> <span>Andrew Owen</span> <span>Re: ANN: Open81 ROM</span></div><pre>On Oct 13, 11:40 pm, &quot;Chris Young&quot; &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt; &gt; I see. cazm won&#x27;t build a file without an ORG in it by the looks of</span>
+<span class="qt">&gt; &gt; it. Sticking an ORG 0x0000 right before the first real instruction</span>
+<span class="qt">&gt; &gt; should fix that.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; It does... well, I get other more curious errors.  At the risk of</span>
+<span class="qt">&gt; boring everybody else, I&#x27;ll send you an email.</span>
+
+which I&#x27;ll quote from as it may be useful for people to know what&#x27;s
+going on:
+
+<span class="qt">&gt; 375:ch_add_inc</span>
+<span class="qt">&gt;    ^ Unknown Command</span>
+
+This is because the label isn&#x27;t terminated by a colon. All of the
+labels are now colon terminated and I&#x27;ve uploaded a new version of the
+source. I&#x27;ve also made the source available for viewing online:
+
+<a href="https://sites.google.com/site/open81rom/home/source" rel="noreferrer">https://sites.google.com/site/open81rom/home/source</a>
+
+<span class="qt">&gt; On the plus side, I&#x27;ve modified cazm so it defaults to a start address</span>
+<span class="qt">&gt; of 0, and it compiles fine with gcc.  Of course, I could opt for</span>
+<span class="qt">&gt; another assembler, but I sort of want to get cazm into a state where</span>
+<span class="qt">&gt; it is actually useful.</span>
+
+If you&#x27;ve got gcc you&#x27;ve probably got binutils and if you&#x27;ve got those
+you&#x27;ve got a gnu Z80 cross-assembler. Just sayin&#x27; is all. :)
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p222980"><div class="ph"><a class="d" href="#p222980">2010-10-15 15:40:57</a> <span>GzavSnap</span> <span>Re: ANN: Open81 ROM</span></div><pre>
+Hi Chris Young,
+<span class="qt">| &gt; If you had to add something in the sZ81 docs., let me know!</span>
+<span class="qt">| &gt; I had to update my sz81 PDF docs.</span>
+<span class="qt">| &gt; <a href="http://zx81.ordi5.free.fr/sZ81_WIN32/" rel="noreferrer">http://zx81.ordi5.free.fr/sZ81_WIN32/</a></span>
+<span class="qt">| &gt; Just mail me your text file...</span>
+<span class="qt">| I&#x27;ll most likely have forgotten by the next time I update them, it&#x27;s</span>
+<span class="qt">| probably best for you to keep an eye on the SVN (which I guess you do</span>
+<span class="qt">| anyway to keep your Win32 build up-to-date)</span>
+
+Ok Chris, i will have a look to your readme file to update my PDF file.
+Thanks.
+Xav.
+
+Note: ??? SVN ???
+
+
+
+
+
+</pre></div><div class="post" id="p222982"><div class="ph"><a class="d" href="#p222982">2010-10-16 10:55:46</a> <span>Chris Young</span> <span>Re: ANN: Open81 ROM</span></div><pre>On Fri, 15 Oct 2010 17:40:57 +0200 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC GzavSnap:
+
+<span class="qt">&gt; Note: ??? SVN ???</span>
+
+<a href="http://sz81.svn.sourceforge.net/viewvc/sz81/sz81/" rel="noreferrer">http://sz81.svn.sourceforge.net/viewvc/sz81/sz81/</a>
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p222990"><div class="ph"><a class="d" href="#p222990">2010-10-18 16:51:32</a> <span>Geoff Wearmouth</span> <span>Re: ANN: Open81 ROM</span></div><pre>On 13 Oct, 23:45, &quot;Chris Young&quot; &lt;…@…&gt; wrote:
+<span class="qt">&gt; On Tue, 12 Oct 2010 15:50:09 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt; to MC Andrew Owen:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; Geoff has a version:<a href="http://www.wearmouth.demon.co.uk/zx80.htm" rel="noreferrer">http://www.wearmouth.demon.co.uk/zx80.htm</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; You&#x27;d better ask him then.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Given that he&#x27;s probably reading, I&#x27;ll give him a chance to respond</span>
+<span class="qt">&gt; here first.</span>
+
+Yes this is a full assembly listing with navigation via hyperlinks.
+Dr Ian Logan produced a Monitor Listing which sorted the tables from
+instructions and labelled section headings. e.g.
+
+<a href="http://dl.dropbox.com/u/5048073/monitor.jpg" rel="noreferrer">http://dl.dropbox.com/u/5048073/monitor.jpg</a>
+
+I must scan it and upload it to WOS when I get a break.
+
+I notice that open81.asm is derived from my zx81.txt and I don&#x27;t see
+why the same techniques could not be applied to my zx80.txt - to
+remove the comments and magic numbers and change the case
+
+Geoff.
+
+
+
+</pre></div><div class="post" id="p222998"><div class="ph"><a class="d" href="#p222998">2010-10-19 09:07:35</a> <span>Andrew Owen</span> <span>Re: ANN: Open81 ROM</span></div><pre>On Oct 18, 5:51 pm, Geoff Wearmouth &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; I notice that open81.asm is derived from my zx81.txt</span>
+
+Actually it isn&#x27;t. It&#x27;s derived from the Logan and O&#x27;Hara disassembly
+or I&#x27;d have credited you.
+
+<span class="qt">&gt; and I don&#x27;t see</span>
+<span class="qt">&gt; why the same techniques could not be applied to my zx80.txt - to</span>
+<span class="qt">&gt; remove the comments and magic numbers and change the case</span>
+
+I don&#x27;t know why you persist in making unfounded allegations against
+me. Frankly it&#x27;s getting very tiring. I have tried in vain to square
+things with you. What is it you want from me?
+
+
+
+</pre></div><div class="post" id="p223000"><div class="ph"><a class="d" href="#p223000">2010-10-19 10:32:34</a> <span>dott.Piergiorgio</span> <span>Re: ANN: Open81 ROM</span></div><pre>Il 19/10/2010 11:07, Andrew Owen ha scritto:
+<span class="qt">&gt; On Oct 18, 5:51 pm, Geoff Wearmouth&lt;…@…&gt;  wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; I notice that open81.asm is derived from my zx81.txt</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Actually it isn&#x27;t. It&#x27;s derived from the Logan and O&#x27;Hara disassembly</span>
+<span class="qt">&gt; or I&#x27;d have credited you.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; and I don&#x27;t see</span>
+<span class="qt">&gt;&gt; why the same techniques could not be applied to my zx80.txt - to</span>
+<span class="qt">&gt;&gt; remove the comments and magic numbers and change the case</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I don&#x27;t know why you persist in making unfounded allegations against</span>
+<span class="qt">&gt; me. Frankly it&#x27;s getting very tiring. I have tried in vain to square</span>
+<span class="qt">&gt; things with you. What is it you want from me?</span>
+
+I&#x27;m wrong or this was an exchange of PM ?
+
+Anyway, being a historian by formation &amp; training, I should point that 
+exist a historiographic branch called &quot;study of text transmission&quot;, that 
+is, analysis of how texts we have evolves during centuries, if not 
+millennia, between the original author and us, and the variations during 
+the pre-Gutenberg days done by copysts.
+
+All three disassemblies involved are still available on the &#x27;Net and for 
+the zx81 disassembly books surely someone has still it in his/her 
+library, so isn&#x27;t impossible to put things straight...
+
+Best regards from Italy,
+dott. Piergiorgio.
+
+
+
+</pre></div><div class="post" id="p223001"><div class="ph"><a class="d" href="#p223001">2010-10-19 10:43:59</a> <span>Andrew Owen</span> <span>Re: ANN: Open81 ROM</span></div><pre>On Oct 19, 11:32 am, &quot;dott.Piergiorgio&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt"> &gt; I&#x27;m wrong or this was an exchange of PM ?</span>
+
+No. It wasn&#x27;t an exchange of PM. Geoff keeps on publicly accusing me
+of plagiarism and therefore I must keep on publicly refuting his false
+allegations. I can demonstrate that the Open81.asm file is not based
+on the ZX81.txt file if anyone seriously thinks I&#x27;d be stupid enough
+to use any of Geoff&#x27;s work without crediting him after the string of
+malicious things he has written about me. Geoff was very helpful and
+generous in the early days of SE Basic, so I am willing to let the
+past be the past ... if he would just stop libelling me.
+
+
+
+</pre></div><div class="post" id="p223004"><div class="ph"><a class="d" href="#p223004">2010-10-19 15:46:59</a> <span>GzavSnap</span> <span>Re: ANN: Open81 ROM</span></div><pre>
+Hi Chris,
+<span class="qt">| &gt; Note: ??? SVN ???</span>
+<span class="qt">| <a href="http://sz81.svn.sourceforge.net/viewvc/sz81/sz81/" rel="noreferrer">http://sz81.svn.sourceforge.net/viewvc/sz81/sz81/</a></span>
+Ok.
+Thanks.
+
+
+
+
+
+</pre></div><div class="post" id="p223104"><div class="ph"><a class="d" href="#p223104">2010-10-31 18:08:08</a> <span>Geoff Wearmouth</span> <span>Re: ANN: Open81 ROM</span></div><pre>On 19 Oct, 09:07, Andrew Owen &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; &gt; I notice that open81.asm is derived from my zx81.txt</span>
+<span class="qt">&gt; &gt; Actually it isn&#x27;t. It&#x27;s derived from the Logan and O&#x27;Hara disassembly</span>
+<span class="qt">&gt; or I&#x27;d have credited you.</span>
+
+That&#x27;s as it should be and I always try to use the Logan/O&#x27;Hara labels
+where possible.
+At the time ZX80.txt was written I had never seen Part B so I
+disassembled it myself. There are only 3 or four
+labels that have carried through (Shall we say X marks the spot) so I
+would not require credit at all and under no circumstances can you be
+accused of anything untoward. It was only necessary that we understood
+&quot;no comments&quot;. Other people have noticed that you are &#x27;slippery&#x27; under
+such negotiations.
+
+<span class="qt">&gt; I don&#x27;t know why you persist in making unfounded allegations against</span>
+<span class="qt">&gt; me. Frankly it&#x27;s getting very tiring. I have tried in vain to square</span>
+<span class="qt">&gt; things with you. What is it you want from me?</span>
+
+Read the thread again. I think you will find that It is you who wants
+something from me. I have graciously given you it and now
+you throw a hissy fit and look a gift horse in the mouth.
+
+
+
+</pre></div><div class="post" id="p223105"><div class="ph"><a class="d" href="#p223105">2010-10-31 18:20:31</a> <span>Geoff Wearmouth</span> <span>Re: ANN: Open81 ROM</span></div><pre>On 19 Oct, 10:43, Andrew Owen &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; No. It wasn&#x27;t an exchange of PM. Geoff keeps on publicly accusing me</span>
+<span class="qt">&gt; of plagiarism and therefore I must keep on publicly refuting his false</span>
+<span class="qt">&gt; allegations.</span>
+
+Please indicate when and where I have done so.
+
+<span class="qt">&gt; I can demonstrate that the Open81.asm file is not based</span>
+<span class="qt">&gt; on the ZX81.txt file if anyone seriously thinks I&#x27;d be stupid enough</span>
+<span class="qt">&gt; to use any of Geoff&#x27;s work without crediting him after the string of</span>
+<span class="qt">&gt; malicious things he has written about me.</span>
+
+Have I ever written anything malicious about you?
+An example please.
+
+<span class="qt">&gt; Geoff was very helpful and</span>
+<span class="qt">&gt; generous in the early days of SE Basic, so I am willing to let the</span>
+<span class="qt">&gt; past be the past ... if he would just stop libelling me.</span>
+
+The accusation of libel is very serious.
+Please provide and example.
+
+Geoff
+
+
+
+</pre></div><div class="post" id="p223921"><div class="ph"><a class="d" href="#p223921">2011-06-24 21:43:47</a> <span>Johny B Good</span> <span>Re: ANN: Open81 ROM</span></div><pre>On Mon, 11 Oct 2010 20:29:10 +0100, Brian Gaff &lt;…@…&gt;  
+wrote:
+
+<span class="qt">&gt; Yes, this half baked address decoding confused the heck out of me. There</span>
+<span class="qt">&gt; were those huge rampacks that had pages, I guess but I never really found</span>
+<span class="qt">&gt; them that useful.</span>
+<span class="qt">&gt;  Having said all of that, at the time the computer was easy to use and  </span>
+<span class="qt">&gt; learn</span>
+<span class="qt">&gt; to program, and could do a lot of stuff nobody ever thought of. Shame  </span>
+<span class="qt">&gt; nobody</span>
+<span class="qt">&gt; makes a pc with a basic so simple to use built in.. Hey, maybe its a  </span>
+<span class="qt">&gt; great</span>
+<span class="qt">&gt; idea for a new product, just don&#x27;t let Microsoft write it.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Brian</span>
+<span class="qt">&gt;</span>
+
+  Just to keep you up to date (better late than never, even if it&#x27;s 30  
+years late ;-), the original IBM PC _was_ supplied with a ROM BASIC (which  
+explains why there were _two_ 5 pin DIN sockets on the back edge of the PC  
+MoBo, one for the keyboard, the other for a tape recorder).
+
+  Another clue to the existence of an actual IBM PC ROM BASIC being the  
+error message &quot;No ROM BASIC&quot; whenever a Clone MoBo was unable to find  
+anything to boot from (IBM ROM BASIC was copyrighted so could not be  
+included in a clone MoBo&#x27;s BIOS rom).
+
+HTH &amp; HAND
+
+-- 
+Regards JB Good
+
+
+
+</pre></div><div class="post" id="p223923"><div class="ph"><a class="d" href="#p223923">2011-06-25 05:48:16</a> <span>Ian B</span> <span>Re: ANN: Open81 ROM</span></div><pre>Johny B Good wrote:
+<span class="qt">&gt; On Mon, 11 Oct 2010 20:29:10 +0100, Brian Gaff</span>
+<span class="qt">&gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Yes, this half baked address decoding confused the heck out of me.</span>
+<span class="qt">&gt;&gt; There were those huge rampacks that had pages, I guess but I never</span>
+<span class="qt">&gt;&gt; really found them that useful.</span>
+<span class="qt">&gt;&gt;  Having said all of that, at the time the computer was easy to use</span>
+<span class="qt">&gt;&gt; and learn</span>
+<span class="qt">&gt;&gt; to program, and could do a lot of stuff nobody ever thought of. Shame</span>
+<span class="qt">&gt;&gt; nobody</span>
+<span class="qt">&gt;&gt; makes a pc with a basic so simple to use built in.. Hey, maybe its a</span>
+<span class="qt">&gt;&gt; great</span>
+<span class="qt">&gt;&gt; idea for a new product, just don&#x27;t let Microsoft write it.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Brian</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;  Just to keep you up to date (better late than never, even if it&#x27;s 30</span>
+<span class="qt">&gt; years late ;-), the original IBM PC _was_ supplied with a ROM BASIC</span>
+<span class="qt">&gt; (which explains why there were _two_ 5 pin DIN sockets on the back</span>
+<span class="qt">&gt; edge of the PC MoBo, one for the keyboard, the other for a tape</span>
+<span class="qt">&gt; recorder).</span>
+<span class="qt">&gt;  Another clue to the existence of an actual IBM PC ROM BASIC being the</span>
+<span class="qt">&gt; error message &quot;No ROM BASIC&quot; whenever a Clone MoBo was unable to find</span>
+<span class="qt">&gt; anything to boot from (IBM ROM BASIC was copyrighted so could not be</span>
+<span class="qt">&gt; included in a clone MoBo&#x27;s BIOS rom).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; HTH &amp; HAND</span>
+
+
+I have an IBM PS/2 Model 60 (giant tower, 1MB RAM, 42MB HD, VGA, 286 
+processor, a real power machine) and that has the ROM Basic on it. I got 
+into it once, but can&#x27;t remember how. But it&#x27;s definitely there.
+
+I powered it up a few months ago to see if it was working, and it wasn&#x27;t. 
+Had to get the FDD going again, so I could use a reference disk to set 
+everything back up, but there was no joy from the HD. So, gave it a gentle 
+spin left and right to unstick the heads... and off it went. It&#x27;s a gigantic 
+heavy thing, not like a modern HD. You can actually feel the inertia of the 
+disk platters. Comfortingly primitive technology by today&#x27;s standards. Also 
+by today&#x27;s standards totally useless. But I can&#x27;t bear to get rid of it.
+
+Anyway, the Model 60 is from 1987, and it has the ROM basic. Same year as I 
+bought a Spectrum +2, if memory serves. (I bought the PS/2  as a cheap 
+second hand first IBM PC in the early 90s). I&#x27;ve still got the +2 too, but I 
+don&#x27;t know if that still works because I cannibalised the PSU for something 
+else once in an emergency of the &quot;need low voltage DC NOW&quot; type.
+
+1987. Saying that year feels like talking about &quot;during the war&quot; like old 
+people used to. A different world.
+
+
+Ian 
+
+
+
+
+
+</pre></div><div class="post" id="p223924"><div class="ph"><a class="d" href="#p223924">2011-06-25 08:22:51</a> <span>dott.Piergiorgio</span> <span>Re: ANN: Open81 ROM</span></div><pre>Il 25/06/2011 07:48, Ian B ha scritto:
+
+<span class="qt">&gt; 1987. Saying that year feels like talking about &quot;during the war&quot; like old</span>
+<span class="qt">&gt; people used to. A different world.</span>
+
+well, 1987 was two years prior of the end of the cold war.....
+
+Best regards from Italy,
+dott. Piergiorgio.
+
+
+
+</pre></div><div class="post" id="p223929"><div class="ph"><a class="d" href="#p223929">2011-06-25 18:29:37</a> <span>GzavSnap</span> <span>Re: ANN: Open81 ROM</span></div><pre>Hi,
+
+<a href="https://sites.google.com/site/open81rom" rel="noreferrer">https://sites.google.com/site/open81rom</a> is dead ?
+
+
+
+
+
+</pre></div></main></body></html>

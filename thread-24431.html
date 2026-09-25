@@ -1,0 +1,1505 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSS Non-Crap Games Competition · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>CSS Non-Crap Games Competition</h1><p class="facts">51 posts, 2002-02-06 – 2002-02-13</p><div class="post" id="p130010"><div class="ph"><a class="d" href="#p130010">2002-02-06 17:30:48</a> <span>Chris Cowley</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>Inspired by some of the CSSCGC2001 entries which, frankly, are verging
+on being not-crap-at-all (Eq Tetrachloride and Mike Wynne, you should be
+ashamed of yourselves!), I thought it might be a good idea to have a CSS
+Non-Crap Games Competition.
+
+I propose that the rules should simply be:-
+
+  1. No machine code! You can use any BASIC keyword you like, including
+     POKE, PEEK, IN and OUT, but the only use of &quot;USR&quot; must be related
+     to UDGs rather than calling machine code or ROM routines.
+
+  2. You can use BREAK protection if you really want to, but there must
+     be an easy way of turning it off (so the judge(s) can verify that
+     the game is entirely BASIC).
+
+  Errmm... That`s all the rules there needs to be I think.
+
+So, what do people think? If there`s any interest, I`ll set up a
+web-site and write a game or two to get the ball rolling (although I`ll
+be excluded from the actual competition unless anyone else wants to
+judge it).
+
+I will even stump up suitable 1st, 2nd and 3rd prizes if I`m allowed to
+have `sponsored by Grok Developments Ltd` logo on the site.
+
+Opinions? How many of you would be willing to have a go?
+-- 
+Chris Cowley
+
+
+
+</pre></div><div class="post" id="p130027"><div class="ph"><a class="d" href="#p130027">2002-02-06 20:35:06</a> <span>Andrew Owen</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>In article &lt;…@…&gt;,
+Chris Cowley &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Inspired by some of the CSSCGC2001 entries which, frankly, are verging</span>
+<span class="qt">&gt; on being not-crap-at-all (Eq Tetrachloride and Mike Wynne, you should be</span>
+<span class="qt">&gt; ashamed of yourselves!), I thought it might be a good idea to have a CSS</span>
+<span class="qt">&gt; Non-Crap Games Competition.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I propose that the rules should simply be:-</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;   1. No machine code! You can use any BASIC keyword you like, including</span>
+<span class="qt">&gt;      POKE, PEEK, IN and OUT, but the only use of &quot;USR&quot; must be related</span>
+<span class="qt">&gt;      to UDGs rather than calling machine code or ROM routines.</span>
+
+But using BASIC calls the ROM routines. And what about compiled BASIC?
+Surely that should be allowed or the games are going to be a bit slow.
+Proof that the game was written in BASIC could be provided by including
+the original listing on .TAP. And with these particular restrictions I&#x27;d
+suggest CSSBGC (BASIC games competition).
+
+<span class="qt">&gt;   2. You can use BREAK protection if you really want to, but there must</span>
+<span class="qt">&gt;      be an easy way of turning it off (so the judge(s) can verify that</span>
+<span class="qt">&gt;      the game is entirely BASIC).</span>
+
+Providing the source code would seem to be the logical solution.
+
+<span class="qt">&gt;   Errmm... That`s all the rules there needs to be I think.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; So, what do people think? If there`s any interest, I`ll set up a</span>
+<span class="qt">&gt; web-site and write a game or two to get the ball rolling (although I`ll</span>
+<span class="qt">&gt; be excluded from the actual competition unless anyone else wants to</span>
+<span class="qt">&gt; judge it).</span>
+
+Great idea, but I hope you get more entries than LCD did for his proper
+Spectrum Games coding compo. I think he got two entries, and he was
+offering a cash prize.
+
+<span class="qt">&gt; I will even stump up suitable 1st, 2nd and 3rd prizes if I`m allowed to</span>
+<span class="qt">&gt; have `sponsored by Grok Developments Ltd` logo on the site.</span>
+
+It would help.
+
+<span class="qt">&gt; Opinions? How many of you would be willing to have a go?</span>
+
+I&#x27;d love to, but I&#x27;m too short on time to do anything until September and
+the temptation for me to try and sneak some machine code in would probably
+be too much. :)
+
+-- 
+I&#x27;m leaving CSS again soon. I will be away from
+my machine for about six months from the end of
+February. You can still email if you want, just
+don&#x27;t expect a quick response.
+
+
+
+</pre></div><div class="post" id="p130034"><div class="ph"><a class="d" href="#p130034">2002-02-06 20:55:04</a> <span>Woody</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>On Wed, 6 Feb 2002 20:35:06 +0000 (UTC), …@…
+(Andrew Owen) wrote:
+
+<span class="qt">&gt;In article &lt;…@…&gt;,</span>
+<span class="qt">&gt;Chris Cowley &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Opinions? How many of you would be willing to have a go?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I&#x27;d love to, but I&#x27;m too short on time to do anything until September and</span>
+<span class="qt">&gt;the temptation for me to try and sneak some machine code in would probably</span>
+<span class="qt">&gt;be too much. :)</span>
+
+That was my main concern. BASIC only is a little too restrictive.
+I&#x27;ll maybe still give it a go though.
+
+
+
+
+</pre></div><div class="post" id="p130035"><div class="ph"><a class="d" href="#p130035">2002-02-06 20:55:22</a> <span>Matthew Clemson</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>
+&quot;Chris Cowley&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+
+<span class="qt">&gt; Inspired by some of the CSSCGC2001 entries which, frankly, are</span>
+<span class="qt">&gt; verging on being not-crap-at-all (Eq Tetrachloride and Mike Wynne,</span>
+<span class="qt">&gt; you should be ashamed of yourselves!), I thought it might be a good</span>
+<span class="qt">&gt; idea to have a CSS Non-Crap Games Competition.</span>
+
+Well, if I ever get around to putting my ideas into practice...
+
+<span class="qt">&gt;   1. No machine code! You can use any BASIC keyword you like,</span>
+<span class="qt">&gt;      including POKE, PEEK, IN and OUT, but the only use of &quot;USR&quot;</span>
+<span class="qt">&gt;      must be related to UDGs rather than calling machine code</span>
+<span class="qt">&gt;      or ROM routines.</span>
+
+This could be a problem, though; I have a three-part idea. Part 1 could a
+CSSCGC entry, extremely silly and just a throwaway gag. Part 2 could
+potentially be a ThisComp entry, only I think I&#x27;d need to use machine code
+to actually code the idea up effectively. And Part 3 would be Part 1 done
+properly; still extremely silly, and no-one would really play it - heck, I
+wouldn&#x27;t even be able to test it! - yet, as a concept, it just feels so
+right.
+
+The idea&#x27;s so tempting, I&#x27;d probably do it anyway - eventually! - but I just
+thought I&#x27;d say how the comp would affect me.
+
+-Matt
+
+
+
+
+
+
+</pre></div><div class="post" id="p130037"><div class="ph"><a class="d" href="#p130037">2002-02-06 21:06:36</a> <span>Philip Bee</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>Woody wrote:
+
+<span class="qt">&gt; &gt;I&#x27;d love to, but I&#x27;m too short on time to do anything until September and</span>
+<span class="qt">&gt; &gt;the temptation for me to try and sneak some machine code in would</span>
+probably
+<span class="qt">&gt; &gt;be too much. :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; That was my main concern. BASIC only is a little too restrictive.</span>
+<span class="qt">&gt; I&#x27;ll maybe still give it a go though.</span>
+
+Why not have BASIC *and* machine code competitions?
+
+Phil
+
+
+
+
+
+
+</pre></div><div class="post" id="p130041"><div class="ph"><a class="d" href="#p130041">2002-02-06 21:31:46</a> <span>&quot;Equinox Tetrachloride&quot; &lt;eq@@cl4.org&gt;</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>&quot;Chris Cowley&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Inspired by some of the CSSCGC2001 entries which, frankly, are verging</span>
+<span class="qt">&gt; on being not-crap-at-all (Eq Tetrachloride and Mike Wynne, you should be</span>
+<span class="qt">&gt; ashamed of yourselves!), I thought it might be a good idea to have a CSS</span>
+<span class="qt">&gt; Non-Crap Games Competition.</span>
+
+I&#x27;d be tempted to create something for such a competition, but given my lack
+of energy and concentration I don&#x27;t know whether I&#x27;d be able to finish it.
+Even my quasi-good CGC entries relied somewhat on code from old floppies. I
+think I&#x27;d have a go, though.
+
+<span class="qt">&gt; 1. No machine code!</span>
+<span class="qt">&gt; [...]</span>
+<span class="qt">&gt; 2. You can use BREAK protection if you really want to,</span>
+
+That could be tricky without machine code. Unless you use that annoying poke
+that makes Break crash the machine.
+
+Eq.
+
+--
+
+Equinox Tetrachloride
+Not sociophobic, just avoiding you.
+www.cl4.org - www.insecurities.org
+
+
+
+
+
+</pre></div><div class="post" id="p130053"><div class="ph"><a class="d" href="#p130053">2002-02-06 22:57:55</a> <span>Jeff Braine</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>On Wed, 6 Feb 2002, Chris Cowley wrote:
+
+<span class="qt">&gt; Inspired by some of the CSSCGC2001 entries which, frankly, are verging</span>
+<span class="qt">&gt; on being not-crap-at-all (Eq Tetrachloride and Mike Wynne, you should be</span>
+<span class="qt">&gt; ashamed of yourselves!), I thought it might be a good idea to have a CSS</span>
+<span class="qt">&gt; Non-Crap Games Competition.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I propose that the rules should simply be:-</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;   1. No machine code! You can use any BASIC keyword you like, including</span>
+<span class="qt">&gt;      POKE, PEEK, IN and OUT, but the only use of &quot;USR&quot; must be related</span>
+<span class="qt">&gt;      to UDGs rather than calling machine code or ROM routines.</span>
+
+If it&#x27;s a non-crap game competition, then why limit it to BASIC? Really -
+a non-crap game competition could be a breath of fresh air and see a few
+&#x27;new classics&#x27; pop up -- there&#x27;s still some darned good Spectrum coders
+out there who are either inactive or aren&#x27;t working on games right now,
+and this could be just the thing to wake &#x27;em up.
+
+Imagine getting entries from Jon, Matt and Joffa?!
+
+<span class="qt">&gt; So, what do people think? If there`s any interest, I`ll set up a</span>
+<span class="qt">&gt; web-site and write a game or two to get the ball rolling (although I`ll</span>
+<span class="qt">&gt; be excluded from the actual competition unless anyone else wants to</span>
+<span class="qt">&gt; judge it).</span>
+
+I think it&#x27;s a great idea, but limiting the competition to BASIC is
+totally unnecessary if the idea is to stimulate the production of some
+decent new software.
+
+<span class="qt">&gt; I will even stump up suitable 1st, 2nd and 3rd prizes if I`m allowed to</span>
+<span class="qt">&gt; have `sponsored by Grok Developments Ltd` logo on the site.</span>
+
+I&#x27;d say that if you were hosting the competition that your logo ought
+to be most definately allowed.
+
+<span class="qt">&gt; Opinions? How many of you would be willing to have a go?</span>
+
+I&#x27;d give it a go, but I&#x27;d be more likely to come up with a crap games
+competition entry ;)
+
+-- 
+Jeff Braine
+Unix System Engineer
+Griffith University
+
+
+
+
+</pre></div><div class="post" id="p130067"><div class="ph"><a class="d" href="#p130067">2002-02-07 01:32:24</a> <span>Duncan Snowden</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>On Wednesday, Chris Cowley wrote:
+
+<span class="qt">&gt; Opinions? How many of you would be willing to have a go?</span>
+
+Good idea. I don&#x27;t think I&#x27;ll be taking part though, for two (and a bit)
+reasons:
+
+1) I&#x27;m crap at programming.
+ 1b) And at thinking up ideas for games.
+
+2) I&#x27;m even more crap at entering competitions - I wrote a Crap Game
+   about 18 months ago and I still haven&#x27;t entered it into the CGC.
+
+-- 
+Duncan Snowden. 
+
+9 STOP statement, 950:3 
+
+
+
+</pre></div><div class="post" id="p130070"><div class="ph"><a class="d" href="#p130070">2002-02-07 01:32:33</a> <span>Duncan Snowden</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>On Wednesday, Jeff Braine wrote:
+
+<span class="qt">&gt; If it&#x27;s a non-crap game competition, then why limit it to BASIC? Really</span>
+<span class="qt">&gt; - a non-crap game competition could be a breath of fresh air and see a</span>
+<span class="qt">&gt; few &#x27;new classics&#x27; pop up -- there&#x27;s still some darned good Spectrum</span>
+<span class="qt">&gt; coders out there who are either inactive or aren&#x27;t working on games</span>
+<span class="qt">&gt; right now, and this could be just the thing to wake &#x27;em up.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Imagine getting entries from Jon, Matt and Joffa?!</span>
+
+You know, you&#x27;ve just changed my mind? I was all for the BASIC-only idea,
+in that it would emphasize the quality of the game over the quality of
+the programming/graphics/sound, etc. (maybe allowing compiled BASIC for
+stuff that would otherwise be too slow). But that&#x27;s made me think. How
+cool would that be? Crumbs.
+
+-- 
+Duncan Snowden. 
+
+D BREAK - CONT repeats, 870:2 
+
+
+
+</pre></div><div class="post" id="p130073"><div class="ph"><a class="d" href="#p130073">2002-02-07 01:52:37</a> <span>Chris Cowley</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>On Wed, 6 Feb 2002 21:06:36 -0000, &quot;Philip Bee&quot; &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;Woody wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; &gt;I`d love to, but I`m too short on time to do anything until September and</span>
+<span class="qt">&gt;&gt; &gt;the temptation for me to try and sneak some machine code in would</span>
+<span class="qt">&gt;probably</span>
+<span class="qt">&gt;&gt; &gt;be too much. :)</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; That was my main concern. BASIC only is a little too restrictive.</span>
+<span class="qt">&gt;&gt; I`ll maybe still give it a go though.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Why not have BASIC *and* machine code competitions?</span>
+
+Okay. If enough people want to do machine code or hybrid
+machine-code/BASIC games then we can have two categories; a &quot;pure BASIC&quot;
+category and a &quot;uses machine code&quot; category.
+
+The thinking behind saying `no machine code` was mainly to keep a level
+playing field and to encourage the non-Z80-coders to have a go, but also
+to recapture some of the inventiveness of the better magazine type-in
+games of the spectrums early years. I actually have one or two vague
+ideas for what I hope will be reasonably playable small games that
+should work okay in pure BASIC and I think trying to make them work in
+BASIC will add to the challenge a little bit.
+
+So to recap... There`ll be two categories; &quot;BASIC only&quot; and &quot;Machine
+Code&quot;. I propose that BASIC programs that call machine code routines,
+and compiled BASIC programs, should be included in the Machine Code
+category.
+
+The prizes will be:-
+
+  1. Best pure BASIC game: 75p and a packet of Rolos, plus a tacky
+     laser-printed certificate.
+
+  2. Best machine code game: 75p and a packet of Rolos, plus a tacky
+     laser-printed certificate.
+
+And the best overall game (i.e the best one of the above) will also win
+a packet of Golden Wonder Nice`N`Spicy Nik Naks (in addition to untold
+levels of glory and appreciation, obviously). I will try to work out an
+online voting system so that even non-competitors can take part by
+submitting ratings for each game (I`m thinking along the lines of marks
+out of 5 for playability, looks, sounds, inventiveness, originality
+etc.).
+
+Everyone happy with that? If so I`ll knock up a website in the next few
+days and get the ball rolling...
+-- 
+Chris Cowley
+                           vbSpec and vb81
+          Spectrum and ZX81 emulators in native VB (with source)
+                     <a href="http://freestuff.grok.co.uk/" rel="noreferrer">http://freestuff.grok.co.uk/</a>
+
+
+
+</pre></div><div class="post" id="p130082"><div class="ph"><a class="d" href="#p130082">2002-02-07 09:03:34</a> <span>Derek Jolly</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>Previously, on comp.sys.sinclair, Chris Cowley said
+
+<span class="qt">&gt; So to recap... There`ll be two categories; &quot;BASIC only&quot; and &quot;Machine</span>
+<span class="qt">&gt; Code&quot;. I propose that BASIC programs that call machine code routines,</span>
+<span class="qt">&gt; and compiled BASIC programs, should be included in the Machine Code</span>
+<span class="qt">&gt; category.</span>
+
+Sounds like a cracking idea.  My machine code skills are virtually
+non-existant, so I&#x27;ll be entering the pure BASIC one.  I&#x27;ve got a few
+ideas for decent games that should work OK like that, so I&#x27;ll be
+entering.
+-- 
+Derek Jolly  (…@…)  Web: <a href="http://rivet.50megs.com/" rel="noreferrer">http://rivet.50megs.com/</a>
+comp.sys.sinclair folklore FAQ: <a href="http://rivet.50megs.com/cssfolk.html" rel="noreferrer">http://rivet.50megs.com/cssfolk.html</a>
+Top Shelf Challenge:  <a href="http://www.geocities.com/derekjolly2001/" rel="noreferrer">http://www.geocities.com/derekjolly2001/</a>
+Change &#x27;deadspam&#x27; to &#x27;sage&#x27; in my e-mail address to contact me.
+
+
+
+</pre></div><div class="post" id="p130095"><div class="ph"><a class="d" href="#p130095">2002-02-07 10:48:11</a> <span>Steve Anderson</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>
+&quot;Chris Cowley&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Inspired by some of the CSSCGC2001 entries which, frankly, are verging</span>
+<span class="qt">&gt; on being not-crap-at-all (Eq Tetrachloride and Mike Wynne, you should be</span>
+<span class="qt">&gt; ashamed of yourselves!), I thought it might be a good idea to have a CSS</span>
+<span class="qt">&gt; Non-Crap Games Competition.</span>
+
+I think the notion is great, but as everyone else has said here, it&#x27;d be a
+good idea to allow machine code and Basic to co-exist. I guess you could
+convince people to supply any source code to machine code routines as
+well...
+
+Me, I know the game I&#x27;d supply already, and it could be done in pure Basic
+because it&#x27;s an infuritatingly good puzzle game. But action games and Basic
+are a bit of a no-no.
+
+Steve
+
+
+
+
+
+</pre></div><div class="post" id="p130098"><div class="ph"><a class="d" href="#p130098">2002-02-07 11:19:18</a> <span>Chris Cowley</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>On Wed, 6 Feb 2002 21:31:46 +0000 (UTC), &quot;Equinox Tetrachloride&quot;
+&lt;eq@@cl4.org&gt; wrote:
+
+<span class="qt">&gt;Even my quasi-good CGC entries relied somewhat on code from old floppies. I</span>
+<span class="qt">&gt;think I&#x27;d have a go, though.</span>
+
+Well, your &quot;crap&quot; games seem to turn out better than my attempts at
+writing decent games. So you&#x27;re in with a good chance, I&#x27;d say.
+
+<span class="qt">&gt;&gt; 1. No machine code!</span>
+<span class="qt">&gt;&gt; [...]</span>
+<span class="qt">&gt;&gt; 2. You can use BREAK protection if you really want to,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;That could be tricky without machine code. Unless you use that annoying poke</span>
+<span class="qt">&gt;that makes Break crash the machine.</span>
+
+Ah fair enough, I&#x27;ll have to bow to your greater knowledge on that. I
+thought I vaguely remembered reading about a POKE you could use to
+disable BASIC error trapping and a related PEEK that you could use to
+get the last error code (effectively giving you an ON ERROR RESUME NEXT
+type of thing), but maybe that doesn&#x27;t work for trapping break.
+-- 
+Chris Cowley
+
+
+
+</pre></div><div class="post" id="p130102"><div class="ph"><a class="d" href="#p130102">2002-02-07 12:11:49</a> <span>Anders Carlsson</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>&quot;Philip Bee&quot; &lt;…@…&gt; writes:
+
+<span class="qt">&gt; Why not have BASIC *and* machine code competitions?</span>
+
+Maybe two categories:
+
+1. Only BASIC, but no size restriction.
+2. Language of your choice, but at most X KB size total, including
+   any graphics and sounds. I&#x27;m not sure what X is.. 16K as it&#x27;s the
+   smallest ZX Sinclair machine?
+
+-- 
+Anders Carlsson
+
+
+
+</pre></div><div class="post" id="p130104"><div class="ph"><a class="d" href="#p130104">2002-02-07 12:59:08</a> <span>Orinoco</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>Chris Cowley&#x27;s bullets cannot harm me, my wings are like a shield of
+steel 
+
+<span class="qt">&gt; On Wed, 6 Feb 2002 21:31:46 +0000 (UTC), &quot;Equinox Tetrachloride&quot;</span>
+<span class="qt">&gt; &lt;eq@@cl4.org&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;Even my quasi-good CGC entries relied somewhat on code from old</span>
+<span class="qt">&gt;&gt;floppies. I think I&#x27;d have a go, though. </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Well, your &quot;crap&quot; games seem to turn out better than my attempts at</span>
+<span class="qt">&gt; writing decent games. So you&#x27;re in with a good chance, I&#x27;d say.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;&gt; 1. No machine code!</span>
+<span class="qt">&gt;&gt;&gt; [...]</span>
+<span class="qt">&gt;&gt;&gt; 2. You can use BREAK protection if you really want to,</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;That could be tricky without machine code. Unless you use that annoying</span>
+<span class="qt">&gt;&gt;poke that makes Break crash the machine. </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Ah fair enough, I&#x27;ll have to bow to your greater knowledge on that. I</span>
+<span class="qt">&gt; thought I vaguely remembered reading about a POKE you could use to</span>
+<span class="qt">&gt; disable BASIC error trapping and a related PEEK that you could use to</span>
+<span class="qt">&gt; get the last error code (effectively giving you an ON ERROR RESUME NEXT</span>
+<span class="qt">&gt; type of thing), but maybe that doesn&#x27;t work for trapping break.</span>
+
+There was a way to stop people breaking into a BASIC program and IIRC it 
+did involve a POKE. Buggered if I can remember what it was though. I used 
+it several times and I&#x27;m sure it never crashed the machine. Incidentally is 
+there a site anywhere with details of all these little tricks that I&#x27;ve 
+long since forgotten? I seem to remember there was a way to force your 
+program to start on line 0 as well, but I can&#x27;t remember why that was 
+considered desirable.
+
+-- 
+Adam Short
+…@…
+
+Expand your vocubulary:
+
+IPING (participial vb.)
+
+The increasingly anxious shifting from leg to leg you go through when you 
+are desperate to go to the lavatory and the person you are talking to keeps 
+on remembering a few final things he want to mention.
+
+
+
+</pre></div><div class="post" id="p130112"><div class="ph"><a class="d" href="#p130112">2002-02-07 14:32:26</a> <span>Matthew Westcott</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>…@… (Anders Carlsson) wrote in 
+&lt;…@…&gt;:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Maybe two categories:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;1. Only BASIC, but no size restriction.</span>
+<span class="qt">&gt;2. Language of your choice, but at most X KB size total, including</span>
+<span class="qt">&gt;   any graphics and sounds. I&#x27;m not sure what X is.. 16K as it&#x27;s the</span>
+<span class="qt">&gt;   smallest ZX Sinclair machine?</span>
+
+I like this idea. I expect other people might be against any &#x27;artificial&#x27; 
+restrictions like a 16K limit, but I think it&#x27;s well worth having a rule 
+like this - otherwise, people will be discouraged from entering because 
+they assume the competition&#x27;s aimed at people with more talent and free 
+time than them. I thought about entering LCD&#x27;s game competition (which 
+Andrew Owen mentioned earlier in the thread), and I probably could have 
+hacked something up quickly, but in that case the prizes on offer were so 
+darned big that I wouldn&#x27;t have been at all happy competing on the 
+strengths of a half-arsed production.
+
+16K is a good limit, I think - it&#x27;s not so big that people will be put off 
+by the thought of competing against epic masterpieces, but big enough to 
+allow for some creativity rather than just &#x27;toys&#x27; and &#x27;experiments&#x27; like in 
+the Minigame compo.
+
+-- 
+Matthew Westcott - CSSfiance to Nattie
+<a href="http://www.zxdemo.org/" rel="noreferrer">http://www.zxdemo.org/</a> - the home of the Spectrum demo scene
+&quot;there&#x27;s a breach in security, a disturbance in the chuntey&quot;
+
+
+
+</pre></div><div class="post" id="p130113"><div class="ph"><a class="d" href="#p130113">2002-02-07 14:36:48</a> <span>Derek Jolly</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>Previously, on comp.sys.sinclair, …@…
+(Matthew Westcott) decided it&#x27;d be a good idea to say: 
+
+<span class="qt">&gt; 16K is a good limit, I think - it&#x27;s not so big that people will be put</span>
+<span class="qt">&gt; off by the thought of competing against epic masterpieces, but big</span>
+<span class="qt">&gt; enough to allow for some creativity rather than just &#x27;toys&#x27; and</span>
+<span class="qt">&gt; &#x27;experiments&#x27; like in the Minigame compo.</span>
+
+How about three categories then:
+1) Pure BASIC
+2) Any language but &lt; 16K.
+3) Unlimited.
+-- 
+Derek Jolly  (…@…)  Web: <a href="http://rivet.50megs.com/" rel="noreferrer">http://rivet.50megs.com/</a>
+comp.sys.sinclair folklore FAQ: <a href="http://rivet.50megs.com/cssfolk.html" rel="noreferrer">http://rivet.50megs.com/cssfolk.html</a>
+Top Shelf Challenge:  <a href="http://www.geocities.com/derekjolly2001/" rel="noreferrer">http://www.geocities.com/derekjolly2001/</a>
+Change &#x27;deadspam&#x27; to &#x27;sage&#x27; in my e-mail address to contact me.
+
+
+
+</pre></div><div class="post" id="p130114"><div class="ph"><a class="d" href="#p130114">2002-02-07 14:41:04</a> <span>Matthew Westcott</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>…@… (Matthew Westcott) wrote in
+&lt;…@…&gt;: 
+
+<span class="qt">&gt;I expect other people might be against any</span>
+<span class="qt">&gt;&#x27;artificial&#x27; restrictions like a 16K limit, but I think it&#x27;s well worth</span>
+<span class="qt">&gt;having a rule like this - otherwise, people will be discouraged from</span>
+<span class="qt">&gt;entering because they assume the competition&#x27;s aimed at people with more</span>
+<span class="qt">&gt;talent and free time than them.</span>
+
+Oh, and if there&#x27;s anyone who *does* have a &gt;16K masterpiece that 
+desperately needs to go into a competition, they can always enter it in 
+this other compo: 
+<a href="http://groups.google.com/groups?selm=918AFB483gasmanrawworg%40127.0.0.1" rel="noreferrer">http://groups.google.com/groups?selm=918AFB483gasmanrawworg%40127.0.0.1</a>
+
+-- 
+Matthew Westcott - CSSfiance to Nattie
+<a href="http://www.zxdemo.org/" rel="noreferrer">http://www.zxdemo.org/</a> - the home of the Spectrum demo scene
+&quot;there&#x27;s a breach in security, a disturbance in the chuntey&quot;
+
+
+
+</pre></div><div class="post" id="p130119"><div class="ph"><a class="d" href="#p130119">2002-02-07 15:25:00</a> <span>&quot;Equinox Tetrachloride&quot; &lt;eq@@cl4.org&gt;</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>&quot;Orinoco&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; [system POKEs etc.]</span>
+<span class="qt">&gt; is there a site anywhere with details of all these little tricks that I&#x27;ve</span>
+<span class="qt">&gt; long since forgotten?</span>
+
+You can find a transcribed copy of the Speccy manual online, which contains
+information on the system variables. You have to know what you&#x27;re looking
+for, though.
+
+<span class="qt">&gt; I seem to remember there was a way to force your program to start</span>
+<span class="qt">&gt; on line 0 as well, but I can&#x27;t remember why that was considered</span>
+<span class="qt">&gt; desirable.</span>
+
+It was good for copyright messages and control codes (black ink on black
+paper, etc.), because line 0 couldn&#x27;t be edited in 48k mode and did evil
+things to the display in 128k mode.
+
+Eq.
+
+--
+
+Equinox Tetrachloride
+Not sociophobic, just avoiding you.
+www.cl4.org - www.insecurities.org
+
+
+
+
+
+</pre></div><div class="post" id="p130130"><div class="ph"><a class="d" href="#p130130">2002-02-07 16:31:27</a> <span>Chris Cowley</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>On Thu, 7 Feb 2002 14:32:26 +0000 (UTC),
+…@… (Matthew Westcott) wrote:
+
+<span class="qt">&gt;I like this idea. I expect other people might be against any &#x27;artificial&#x27; </span>
+<span class="qt">&gt;restrictions like a 16K limit, but I think it&#x27;s well worth having a rule </span>
+<span class="qt">&gt;like this - otherwise, people will be discouraged from entering because </span>
+<span class="qt">&gt;they assume the competition&#x27;s aimed at people with more talent and free </span>
+<span class="qt">&gt;time than them.</span>
+
+Do you think will people take it that seriously?! My only aim is to
+harness some of the energy and enthusiasm that goes into so many of the
+CSSCGC entries, and put it to use making games that people might
+actually want to play for fun rather than just a few minutes of novelty
+value.
+
+I was originally thinking of making more of a publicity stunt out of it,
+and providing some reasonable prizes, but the more I think about that
+the more it seems that that would encourage the wrong approach. Hence
+the &quot;75p and a packet of Rolos&quot; prizes, which are completely genuine
+(Tight? Who me?)!
+
+I don&#x27;t like the idea of a 16K limit because, if someone wants to
+produce a little game that happens to have some big graphical
+backgrounds in it, or that has a sampled sounds or whatever, then I
+wouldn&#x27;t want to say &quot;Sorry, that&#x27;s too big. Strip it down and resubmit
+it with fewer features, or fewer graphics&quot; or whatever.
+
+Being into the demo scene and all, you might have a better idea than me
+about this, but I really think you&#x27;re needn&#x27;t worry about having to
+compete with the next Uridium or Head of Heels or whatever. It&#x27;s just a
+bit of fun!
+
+I&#x27;ve decided that the competition will run until the end of November,
+and the outcome will be decided by an online voting system. Votes won&#x27;t
+start to be accepted until 1st November and people can submit improved
+versions of existing games up-until the voting starts.
+
+Web site to be announced soon (but probably after the CSSCGC2K1 winner
+has been announced, as I don&#x27;t want to steal anyone&#x27;s thunder)!
+
+Cheers,
+Chris.
+-- 
+Chris Cowley
+                           vbSpec and vb81
+          Spectrum and ZX81 emulators in native VB (with source)
+                     <a href="http://freestuff.grok.co.uk/" rel="noreferrer">http://freestuff.grok.co.uk/</a>
+
+
+
+</pre></div><div class="post" id="p130165"><div class="ph"><a class="d" href="#p130165">2002-02-07 20:46:43</a> <span>Llama-Wax Len</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>
+&quot;Chris Cowley&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Opinions? How many of you would be willing to have a go?</span>
+
+Given that I&#x27;m too crap even for the Crap Games Competition, I certainly
+wouldn&#x27;t enter. But I&#x27;d be interested in seeing it all the same.
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+DISCLAIMER: By replying to this message, you hereby acknowledge
+that the ZX Spectrum game &quot;Robocop&quot; was too difficult.
+
+
+
+
+
+</pre></div><div class="post" id="p130254"><div class="ph"><a class="d" href="#p130254">2002-02-08 11:39:17</a> <span>Adam D. Moss</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>I think that this is a great idea actually -- without
+the two &#x27;rules&#x27; given, at least!
+
+Note that there is, or was, already a &#x27;super games
+competition&#x27; run by that guy (are you here?) who wrote
+one of the bmp2scr variants.  There were even cash
+prizes.  I don&#x27;t think he got a single entry though!
+
+--Adam
+
+
+
+</pre></div><div class="post" id="p130256"><div class="ph"><a class="d" href="#p130256">2002-02-08 11:48:41</a> <span>Anders Carlsson</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>&quot;Adam D. Moss&quot; &lt;…@…&gt; writes:
+
+<span class="qt">&gt; I don&#x27;t think he got a single entry though!</span>
+
+About 1.5 years ago, some bloke in comp.sys.cbm issued a VIC-20
+competition, but his rules were somewhat hard to follow, since
+it included that any entry should be placed in the public domain,
+should be runnable on inferior emulators (which eliminates any
+advanced entry utilizing the machine to the max) and so on. He
+offered quite a lot of cash though. I don&#x27;t think he received a
+single entry, although the VIMM demo was finished about then.
+
+Last time I looked, the guy had left home computing and was totally
+focused on motorcycles instead. Hm.
+
+-- 
+Anders Carlsson
+
+
+
+</pre></div><div class="post" id="p130263"><div class="ph"><a class="d" href="#p130263">2002-02-08 12:22:29</a> <span>Santiago Romero</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>El Wed, 06 Feb 2002 17:30:48 +0000, Chris Cowley escribiï¿½:
+<span class="qt">&gt; I propose that the rules should simply be:-</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;   1. No machine code! You can use any BASIC keyword you like, including</span>
+<span class="qt">&gt;      POKE, PEEK, IN and OUT, but the only use of &quot;USR&quot; must be related</span>
+<span class="qt">&gt;      to UDGs rather than calling machine code or ROM routines.</span>
+
+ I dont understand this rule :-? If you don&#x27;t want to create crap games
+ you should be capable of using whatever language you want to. Including
+ Java JDK 1.4 for Speccy.
+
+ Bye!
+
+-- 
+Santiago Romero
+Departamento de Sistemas
+…@…
+
+C/ Primado Reig, 189 entlo
+46020 Valencia - Spain
+Tel. (+34) 96 332 12 00
+Fax. (+34) 96 332 12 01
+<a href="http://www.servicom2000.com" rel="noreferrer">http://www.servicom2000.com</a>
+
+
+
+
+</pre></div><div class="post" id="p130264"><div class="ph"><a class="d" href="#p130264">2002-02-08 12:30:31</a> <span>Chris Cowley</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>On Fri, 08 Feb 2002 11:39:17 +0000, &quot;Adam D. Moss&quot; &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;I think that this is a great idea actually -- without</span>
+<span class="qt">&gt;the two &#x27;rules&#x27; given, at least!</span>
+
+Actually, I&#x27;m quite glad people convinced me to drop the &quot;BASIC only&quot;
+rule. I&#x27;ve just started writing my first entry and I&#x27;d completely
+forgotten how slow BASIC is. My great idea currently has all the
+hallmarks of a CSSCGC entry :/  I will persevere though!
+-- 
+Chris Cowley
+                           vbSpec and vb81
+          Spectrum and ZX81 emulators in native VB (with source)
+                     <a href="http://freestuff.grok.co.uk/" rel="noreferrer">http://freestuff.grok.co.uk/</a>
+
+
+
+</pre></div><div class="post" id="p130271"><div class="ph"><a class="d" href="#p130271">2002-02-08 12:52:34</a> <span>Derek Jolly</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>Previously, on comp.sys.sinclair, Chris Cowley &lt;…@…&gt; 
+decided it&#x27;d be a good idea to say:
+
+<span class="qt">&gt; Actually, I&#x27;m quite glad people convinced me to drop the &quot;BASIC only&quot;</span>
+<span class="qt">&gt; rule. I&#x27;ve just started writing my first entry and I&#x27;d completely</span>
+<span class="qt">&gt; forgotten how slow BASIC is. My great idea currently has all the</span>
+<span class="qt">&gt; hallmarks of a CSSCGC entry :/  I will persevere though!</span>
+
+I think what I&#x27;ve got planned is going to end up using some
+simple machine code too for animating screens.  I&#x27;ll get
+started this weekend I think.
+-- 
+Derek Jolly  (…@…)  Web: <a href="http://rivet.50megs.com/" rel="noreferrer">http://rivet.50megs.com/</a>
+comp.sys.sinclair folklore FAQ: <a href="http://rivet.50megs.com/cssfolk.html" rel="noreferrer">http://rivet.50megs.com/cssfolk.html</a>
+Top Shelf Challenge:  <a href="http://www.geocities.com/derekjolly2001/" rel="noreferrer">http://www.geocities.com/derekjolly2001/</a>
+Change &#x27;deadspam&#x27; to &#x27;sage&#x27; in my e-mail address to contact me.
+
+
+
+</pre></div><div class="post" id="p130276"><div class="ph"><a class="d" href="#p130276">2002-02-08 13:13:54</a> <span>Chris Cowley</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>On Fri, 8 Feb 2002 13:22:29 +0100, Santiago Romero
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;El Wed, 06 Feb 2002 17:30:48 +0000, Chris Cowley escribiï¿½:</span>
+<span class="qt">&gt;&gt; I propose that the rules should simply be:-</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt;   1. No machine code! You can use any BASIC keyword you like, including</span>
+<span class="qt">&gt;&gt;      POKE, PEEK, IN and OUT, but the only use of &quot;USR&quot; must be related</span>
+<span class="qt">&gt;&gt;      to UDGs rather than calling machine code or ROM routines.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I dont understand this rule :-? If you don&#x27;t want to create crap games</span>
+<span class="qt">&gt; you should be capable of using whatever language you want to. Including</span>
+<span class="qt">&gt; Java JDK 1.4 for Speccy.</span>
+
+That rule was/is there to allow people who only know Sinclair BASIC (of
+which there are quite a few in this group I think) to compete on an even
+footing.
+
+Now that there are two categories, you can pick which &#x27;level&#x27; you want
+to compete at. For those that know Z80 machine code as well as BASIC, I
+would say the BASIC-only category is still the more challenging because
+it requires a lot of skill to produce something playable in such an
+inefficient language.
+-- 
+Chris Cowley
+
+
+
+</pre></div><div class="post" id="p130278"><div class="ph"><a class="d" href="#p130278">2002-02-08 13:17:43</a> <span>Tayles</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>&quot;Llama-Wax Len&quot; &lt;…@…&gt; wrote in message news:&lt;a3ur61$aff$…@…&gt;...
+<span class="qt">&gt; &quot;Chris Cowley&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Opinions? How many of you would be willing to have a go?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Given that I&#x27;m too crap even for the Crap Games Competition, I certainly</span>
+<span class="qt">&gt; wouldn&#x27;t enter. But I&#x27;d be interested in seeing it all the same.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Len</span>
+
+Hmmm...wonder if I should resubmit Professional Coat Getting
+Simulator? Mind you, judging by some of the OTT graphics that people
+submitted to the crap games competition angling for praise, p&#x27;raps
+not.
+
+Regards,
+Russ
+
+
+
+</pre></div><div class="post" id="p130310"><div class="ph"><a class="d" href="#p130310">2002-02-08 16:54:20</a> <span>Philip Bee</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>An idea: how about having a further catagory that deals with edited games?
+People could create their own versions of Manic Miner, Jet Set Willy,
+Champion Sprint 3D Games Maker (erm... maybe not!), Freescape, Molecule Man
+(hmm...) Lords Of Midnight, etc.
+
+Phil
+
+
+
+
+
+
+</pre></div><div class="post" id="p130319"><div class="ph"><a class="d" href="#p130319">2002-02-08 17:46:09</a> <span>Andrew Owen</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>In article &lt;MsT88.9067$…@…&gt;, &quot;Philip
+Bee&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; An idea: how about having a further catagory that deals with edited games?</span>
+<span class="qt">&gt; People could create their own versions of Manic Miner, Jet Set Willy,</span>
+<span class="qt">&gt; Champion Sprint 3D Games Maker (erm... maybe not!), Freescape, Molecule Man</span>
+<span class="qt">&gt; (hmm...) Lords Of Midnight, etc.</span>
+
+The problem with that is the judge has to be good at/like the game in
+question. I&#x27;ve written some of the meanest levels ever designed for
+Riptoff, but if the judge isn&#x27;t a fan of Repton/Boulderdash type games,
+I&#x27;m not going to win. And if its a public vote, then I&#x27;m going to get
+beaten by a JSW entry.
+
+-- 
+I&#x27;m leaving CSS again soon. I will be away from
+my machine for about six months from the end of
+February. You can still email if you want, just
+don&#x27;t expect a quick response.
+
+
+
+</pre></div><div class="post" id="p130324"><div class="ph"><a class="d" href="#p130324">2002-02-08 17:58:35</a> <span>Philip Bee</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>Andrew Owen wrote:
+
+<span class="qt">&gt; &gt; An idea: how about having a further catagory that deals with edited</span>
+games?
+<span class="qt">&gt; &gt; People could create their own versions of Manic Miner, Jet Set Willy,</span>
+<span class="qt">&gt; &gt; Champion Sprint 3D Games Maker (erm... maybe not!), Freescape, Molecule</span>
+Man
+<span class="qt">&gt; &gt; (hmm...) Lords Of Midnight, etc.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The problem with that is the judge has to be good at/like the game in</span>
+<span class="qt">&gt; question. I&#x27;ve written some of the meanest levels ever designed for</span>
+<span class="qt">&gt; Riptoff, but if the judge isn&#x27;t a fan of Repton/Boulderdash type games,</span>
+<span class="qt">&gt; I&#x27;m not going to win. And if its a public vote, then I&#x27;m going to get</span>
+<span class="qt">&gt; beaten by a JSW entry.</span>
+
+Make it a public vote, but by game catagories?  If only one entry for (say)
+Freescape, then that game wins the (in this example) Freescape catagory.
+Then a &#x27;panel&#x27; of judges can vote on the best overall use of the game
+editors and announce the &#x27;grand prize&#x27; winner.
+
+Phil
+
+
+
+
+
+
+</pre></div><div class="post" id="p130351"><div class="ph"><a class="d" href="#p130351">2002-02-08 20:03:47</a> <span>Chris Young</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>On 8 Feb 2002 05:17:43 -0800, Tayles (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; Hmmm...wonder if I should resubmit Professional Coat Getting</span>
+<span class="qt">&gt; Simulator? Mind you, judging by some of the OTT graphics that people</span>
+<span class="qt">&gt; submitted to the crap games competition angling for praise</span>
+                                          ^^^^^^^^^^^^^^^^^^
+Praise is something you shouldn&#x27;t be angling for as far as te CGC i
+concerned.
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p130360"><div class="ph"><a class="d" href="#p130360">2002-02-08 20:30:00</a> <span>Neil Campbell</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>Santiago Romero wrote:
+
+<span class="qt">&gt;  I dont understand this rule :-? If you don&#x27;t want to create crap games</span>
+<span class="qt">&gt;  you should be capable of using whatever language you want to. Including</span>
+<span class="qt">&gt;  Java JDK 1.4 for Speccy.</span>
+<span class="qt">&gt; </span>
+
+
+Has anyone ported the Java VM to the Speccy yet?  And if not [slams fist 
+on table] - why not?
+
+
+-- 
+Neil Campbell
+
+batneil[AT]lineone[DOT]net
+
+
+
+
+</pre></div><div class="post" id="p130366"><div class="ph"><a class="d" href="#p130366">2002-02-08 20:39:05</a> <span>Andrew Owen</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>In article &lt;…@…&gt;, Neil Campbell &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Santiago Romero wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;  I dont understand this rule :-? If you don&#x27;t want to create crap games</span>
+<span class="qt">&gt; &gt;  you should be capable of using whatever language you want to. Including</span>
+<span class="qt">&gt; &gt;  Java JDK 1.4 for Speccy.</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Has anyone ported the Java VM to the Speccy yet?  And if not [slams fist </span>
+<span class="qt">&gt; on table] - why not?</span>
+
+Because since ZZ Spectrum can save data and play sound it&#x27;s easier to
+write a Spectrum program which will run under Java than a Java program
+which will run on a Spectrum.
+
+-- 
+I&#x27;m leaving CSS again soon. I will be away from
+my machine for about six months from the end of
+February. You can still email if you want, just
+don&#x27;t expect a quick response.
+
+
+
+</pre></div><div class="post" id="p130388"><div class="ph"><a class="d" href="#p130388">2002-02-08 21:42:14</a> <span>Neil Campbell</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>Andrew Owen wrote:
+
+<span class="qt"> &gt; In article &lt;…@…&gt;, Neil Campbell</span>
+<span class="qt"> &gt; &lt;…@…&gt; wrote:</span>
+<span class="qt"> &gt;&gt; Has anyone ported the Java VM to the Speccy yet?  And if not</span>
+<span class="qt"> &gt;&gt; [slams fist  on table] - why not?</span>
+<span class="qt"> &gt;&gt;</span>
+<span class="qt"> &gt; Because since ZZ Spectrum can save data and play sound it&#x27;s easier to </span>
+write a Spectrum program which will run under Java than a Java program
+<span class="qt"> &gt; which will run on a Spectrum.</span>
+<span class="qt"> &gt;</span>
+
+
+But imagine all the software which could suddenly be used on the speccy!
+   A whole (albeit small) universe of games and applciations suddenly
+Speccy compatible!
+
+
+
+-- 
+Neil Campbell
+
+batneil[AT]lineone[DOT]net
+
+<span class="qt"> &gt; &gt; write a Spectrum program which will run under Java than a Java</span>
+<span class="qt"> &gt; program which will run on a Spectrum.</span>
+<span class="qt"> &gt;</span>
+
+
+But imagine all the software which could suddenly be used on the Speccy!
+A whole (albeit small) universe of games and applciations suddenly
+Speccy compatible!
+
+
+
+-- 
+Neil Campbell
+
+batneil[AT]lineone[DOT]net
+
+
+
+
+</pre></div><div class="post" id="p130393"><div class="ph"><a class="d" href="#p130393">2002-02-08 22:50:14</a> <span>philicorda</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>Philip Bee wrote:
+
+<span class="qt">&gt; Andrew Owen wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; &gt; An idea: how about having a further catagory that deals with edited</span>
+<span class="qt">&gt; games?</span>
+<span class="qt">&gt;&gt; &gt; People could create their own versions of Manic Miner, Jet Set Willy,</span>
+<span class="qt">&gt;&gt; &gt; Champion Sprint 3D Games Maker (erm... maybe not!), Freescape, Molecule</span>
+<span class="qt">&gt; Man</span>
+<span class="qt">&gt;&gt; &gt; (hmm...) Lords Of Midnight, etc.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; The problem with that is the judge has to be good at/like the game in</span>
+<span class="qt">&gt;&gt; question. I&#x27;ve written some of the meanest levels ever designed for</span>
+<span class="qt">&gt;&gt; Riptoff, but if the judge isn&#x27;t a fan of Repton/Boulderdash type games,</span>
+<span class="qt">&gt;&gt; I&#x27;m not going to win. And if its a public vote, then I&#x27;m going to get</span>
+<span class="qt">&gt;&gt; beaten by a JSW entry.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Make it a public vote, but by game catagories?  If only one entry for</span>
+<span class="qt">&gt; (say) Freescape, then that game wins the (in this example) Freescape</span>
+<span class="qt">&gt; catagory. Then a &#x27;panel&#x27; of judges can vote on the best overall use of the</span>
+<span class="qt">&gt; game editors and announce the &#x27;grand prize&#x27; winner.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Phil</span>
+
+Mmmmm... Freescape..
+
+I&#x27;ve been wondering recently if it would be possible to slow down the game 
+time clock in a freescape game, and then speed up the spectrum emulator, 
+for Driller at 60fps! 
+
+
+
+</pre></div><div class="post" id="p130499"><div class="ph"><a class="d" href="#p130499">2002-02-09 20:41:23</a> <span>Llama-Wax Len</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>
+&quot;Philip Bee&quot; &lt;…@…&gt; wrote in message
+news:MsT88.9067$…@…...
+<span class="qt">&gt; An idea: how about having a further catagory that deals with edited games?</span>
+<span class="qt">&gt; People could create their own versions of Manic Miner, Jet Set Willy,</span>
+<span class="qt">&gt; Champion Sprint 3D Games Maker (erm... maybe not!), Freescape, Molecule</span>
+Man
+<span class="qt">&gt; (hmm...) Lords Of Midnight, etc.</span>
+
+If anyone creates 26 entirely new courses for Kikstart II they deserve a
+prize. I could never get past redesigning about five or six before I ran out
+of patience and went back to playing the others.
+
+Come to think of it, a set of custom tracks on Championship Sprint that
+don&#x27;t crash the game probably merit a prize too.
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+DISCLAIMER: By replying to this message, you hereby acknowledge
+that the ZX Spectrum game &quot;Robocop&quot; was too difficult.
+
+
+
+
+
+</pre></div><div class="post" id="p130538"><div class="ph"><a class="d" href="#p130538">2002-02-10 00:09:01</a> <span>A. J. Moss</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>Chris Cowley &lt;…@…&gt; wrote:
+<span class="qt">&gt;Inspired by some of the CSSCGC2001 entries which, frankly, are verging</span>
+<span class="qt">&gt;on being not-crap-at-all (Eq Tetrachloride and Mike Wynne, you should be</span>
+<span class="qt">&gt;ashamed of yourselves!), I thought it might be a good idea to have a CSS</span>
+<span class="qt">&gt;Non-Crap Games Competition.</span>
+
+What about if the game is optimised for modern hardware (emulators)?
+For instance, a game that redraws the entire screen (like Jet Set
+Willy does, and a Spectrum port of Repton has to do), might:
+
+1. use the page-flipping capability of the Spectrum 128K.
+2. use the superfast LDIR capability of some emulators.
+3. use the fact that most emulators update the screen instantaneously.
+
+instead of farting about to minimise a non-existant screen flicker.
+
+
+
+</pre></div><div class="post" id="p130572"><div class="ph"><a class="d" href="#p130572">2002-02-10 14:51:14</a> <span>/|ndy |&lt;avanagh</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Fri,
+8 Feb 2002 16:54:20 -0000, sefini jorgo geanyet des mani yeof do
+comp.sys.sinclair, yawatina tan reek esk &quot;Philip Bee&quot;
+&lt;…@…&gt; fornis do marikano es bono tan el:
+
+<span class="qt">&gt;An idea: how about having a further catagory that deals with edited games?</span>
+<span class="qt">&gt;People could create their own versions of Manic Miner, Jet Set Willy,</span>
+<span class="qt">&gt;Champion Sprint 3D Games Maker (erm... maybe not!), Freescape, Molecule Man</span>
+<span class="qt">&gt;(hmm...) Lords Of Midnight, etc.</span>
+
+<a href="http://www.lofi-gaming.org.uk/speccy/depository.shtml" rel="noreferrer">http://www.lofi-gaming.org.uk/speccy/depository.shtml</a>
+
+
+deKay
+-- 
+  o   /|ndy&#x27;s Lofi Gaming -- www.lofi-gaming.org.uk   o
+ /    Emulation * News * Reviews * Museum * Speccy     \
+-[  My computer runs at 3.5MHz and I&#x27;m proud of that   ]-
+ \  Fave game this week: Golden Sun (Gameboy Advance)  /
+  o           May the chuntey be with you!            o
+
+
+
+</pre></div><div class="post" id="p130574"><div class="ph"><a class="d" href="#p130574">2002-02-10 15:10:30</a> <span>Philip Bee</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>/|ndy |&lt;avanagh wrote:
+
+<span class="qt">&gt; &gt;An idea: how about having a further catagory that deals with edited</span>
+games?
+<span class="qt">&gt; &gt;People could create their own versions of Manic Miner, Jet Set Willy,</span>
+<span class="qt">&gt; &gt;Champion Sprint 3D Games Maker (erm... maybe not!), Freescape, Molecule</span>
+Man
+<span class="qt">&gt; &gt;(hmm...) Lords Of Midnight, etc.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; <a href="http://www.lofi-gaming.org.uk/speccy/depository.shtml" rel="noreferrer">http://www.lofi-gaming.org.uk/speccy/depository.shtml</a></span>
+
+That&#x27;s the sort of thing I&#x27;m talking about.  I personally wouldn&#x27;t limit the
+competition to games that have an in-built level designer..
+
+Phil
+
+
+
+
+
+
+</pre></div><div class="post" id="p130593"><div class="ph"><a class="d" href="#p130593">2002-02-10 18:34:35</a> <span>Chris Cowley</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>On Sun, 10 Feb 2002 00:09:01 GMT, …@… (A.
+J. Moss) wrote:
+
+<span class="qt">&gt;What about if the game is optimised for modern hardware (emulators)?</span>
+<span class="qt">&gt;For instance, a game that redraws the entire screen (like Jet Set</span>
+<span class="qt">&gt;Willy does, and a Spectrum port of Repton has to do), might:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;1. use the page-flipping capability of the Spectrum 128K.</span>
+<span class="qt">&gt;2. use the superfast LDIR capability of some emulators.</span>
+<span class="qt">&gt;3. use the fact that most emulators update the screen instantaneously.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;instead of farting about to minimise a non-existant screen flicker.</span>
+
+I&#x27;m not 100% sure I understand the question but as far as what I have
+planned for this compo goes, the rules that will be on the imminent web
+site will say something along the lines of &quot;Your submission must be
+playable on one or more of: Standard 48K Speccy, Std 128K Speccy, a +2,
+or a Timex TC2048&quot;.
+
+As long as it actually runs on one of the above, I don&#x27;t see that
+there&#x27;s any real problem with someone saying &quot;you really need emulator
+XYZ with the Flirble-Wurzel feature enabled for this to be usable&quot;, but
+as the winner will be voted for by the public you would probably
+seriously reduce the number of people able to play the game how it was
+intended, so many either wouldn&#x27;t vote on it or would rate it low
+because it was too slow.
+
+If you think you have a submission that can win in spite of this, or if
+you&#x27;re not too bothered about winning and just want to submit a cool
+game, then that&#x27;s fine by me!
+
+I hope that answers your question. :)
+-- 
+Chris Cowley
+                           vbSpec and vb81
+          Spectrum and ZX81 emulators in native VB (with source)
+                     <a href="http://freestuff.grok.co.uk/" rel="noreferrer">http://freestuff.grok.co.uk/</a>
+
+
+
+</pre></div><div class="post" id="p130596"><div class="ph"><a class="d" href="#p130596">2002-02-10 19:05:04</a> <span>Chris Cowley</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>On Sun, 10 Feb 2002 15:10:30 -0000, &quot;Philip Bee&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;That&#x27;s the sort of thing I&#x27;m talking about.  I personally wouldn&#x27;t limit the</span>
+<span class="qt">&gt;competition to games that have an in-built level designer..</span>
+
+As far as this particular competition goes, I&#x27;d like to restrict it to
+original BASIC and/or machine code[1] games rather than new levels for
+existing games. I&#x27;ve already stretched the original idea to add machine
+code as well as BASIC and I fear things will start to get too
+complicated if I start adding more categories and more complicated
+rules.
+
+Maybe a level designer competition could be held as a separate event?
+
+[1] For machine code games, it doesn&#x27;t matter how the code is produced:
+assembly language, a BASIC compiler, z88dk or anything else that
+produces machine code are all fine.
+-- 
+Chris Cowley
+                           vbSpec and vb81
+          Spectrum and ZX81 emulators in native VB (with source)
+                     <a href="http://freestuff.grok.co.uk/" rel="noreferrer">http://freestuff.grok.co.uk/</a>
+
+
+
+</pre></div><div class="post" id="p130625"><div class="ph"><a class="d" href="#p130625">2002-02-10 22:51:21</a> <span>Andrew Owen</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>In article &lt;…@…&gt;, &quot;/|ndy |&lt;avanagh&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Fri,</span>
+<span class="qt">&gt; 8 Feb 2002 16:54:20 -0000, sefini jorgo geanyet des mani yeof do</span>
+<span class="qt">&gt; comp.sys.sinclair, yawatina tan reek esk &quot;Philip Bee&quot;</span>
+<span class="qt">&gt; &lt;…@…&gt; fornis do marikano es bono tan el:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;An idea: how about having a further catagory that deals with edited games?</span>
+<span class="qt">&gt; &gt;People could create their own versions of Manic Miner, Jet Set Willy,</span>
+<span class="qt">&gt; &gt;Champion Sprint 3D Games Maker (erm... maybe not!), Freescape, Molecule Man</span>
+<span class="qt">&gt; &gt;(hmm...) Lords Of Midnight, etc.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; <a href="http://www.lofi-gaming.org.uk/speccy/depository.shtml" rel="noreferrer">http://www.lofi-gaming.org.uk/speccy/depository.shtml</a></span>
+
+I see you don&#x27;t have my 15 levels from Riptoff II. All original by me,
+available in .SNA or .TAP format. You may prefer to have .TAP format which
+will load in any version of Riptoff, because the version in the .SNA is
+the original Your Spectrum release, which most people think is crap, but I
+like because it was the first version I had.
+
+-- 
+I&#x27;m leaving CSS again soon. I will be away from
+my machine for about six months from the end of
+February. You can still email if you want, just
+don&#x27;t expect a quick response.
+
+
+
+</pre></div><div class="post" id="p130724"><div class="ph"><a class="d" href="#p130724">2002-02-11 17:01:40</a> <span>Noel R. Nihill</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>Orinoco &lt;…@…&gt; wrote in message news:&lt;…@…&gt;...
+<span class="qt">&gt; Chris Cowley&#x27;s bullets cannot harm me, my wings are like a shield of</span>
+<span class="qt">&gt; steel </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; On Wed, 6 Feb 2002 21:31:46 +0000 (UTC), &quot;Equinox Tetrachloride&quot;</span>
+<span class="qt">&gt; &gt; &lt;eq@@cl4.org&gt; wrote:</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt;&gt;Even my quasi-good CGC entries relied somewhat on code from old</span>
+<span class="qt">&gt; &gt;&gt;floppies. I think I&#x27;d have a go, though. </span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Well, your &quot;crap&quot; games seem to turn out better than my attempts at</span>
+<span class="qt">&gt; &gt; writing decent games. So you&#x27;re in with a good chance, I&#x27;d say.</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt;&gt;&gt; 1. No machine code!</span>
+<span class="qt">&gt; &gt;&gt;&gt; [...]</span>
+<span class="qt">&gt; &gt;&gt;&gt; 2. You can use BREAK protection if you really want to,</span>
+<span class="qt">&gt; &gt;&gt;</span>
+<span class="qt">&gt; &gt;&gt;That could be tricky without machine code. Unless you use that annoying</span>
+<span class="qt">&gt; &gt;&gt;poke that makes Break crash the machine. </span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Ah fair enough, I&#x27;ll have to bow to your greater knowledge on that. I</span>
+<span class="qt">&gt; &gt; thought I vaguely remembered reading about a POKE you could use to</span>
+<span class="qt">&gt; &gt; disable BASIC error trapping and a related PEEK that you could use to</span>
+<span class="qt">&gt; &gt; get the last error code (effectively giving you an ON ERROR RESUME NEXT</span>
+<span class="qt">&gt; &gt; type of thing), but maybe that doesn&#x27;t work for trapping break.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; There was a way to stop people breaking into a BASIC program and IIRC it </span>
+<span class="qt">&gt; did involve a POKE. Buggered if I can remember what it was though. I used </span>
+<span class="qt">&gt; it several times and I&#x27;m sure it never crashed the machine. Incidentally is </span>
+<span class="qt">&gt; there a site anywhere with details of all these little tricks that I&#x27;ve </span>
+<span class="qt">&gt; long since forgotten? I seem to remember there was a way to force your </span>
+<span class="qt">&gt; program to start on line 0 as well, but I can&#x27;t remember why that was </span>
+<span class="qt">&gt; considered desirable.</span>
+
+Yep, &#x27;POKE 23659,0&#x27; would do it. IIRC, that memory location
+specified the number of lines at the bottom of the screen
+that were reserved for system messages. If that&#x27;s 0, then
+the Spec would go titsup.com when it tried to display
+&#x27;L: BREAK into program&#x27;.
+
+<span class="qt">&gt; -- </span>
+<span class="qt">&gt; Adam Short</span>
+<span class="qt">&gt; …@…</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Expand your vocubulary:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; IPING (participial vb.)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The increasingly anxious shifting from leg to leg you go through when you </span>
+<span class="qt">&gt; are desperate to go to the lavatory and the person you are talking to keeps </span>
+<span class="qt">&gt; on remembering a few final things he want to mention.</span>
+
+I love that book :-)
+
+
+_________________________
+Noel R. Nihill
+Unix platform development
+Motorola NSS.
+_________________________
+
+
+
+</pre></div><div class="post" id="p130725"><div class="ph"><a class="d" href="#p130725">2002-02-11 17:01:46</a> <span>Noel R. Nihill</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>Orinoco &lt;…@…&gt; wrote in message news:&lt;…@…&gt;...
+<span class="qt">&gt; Chris Cowley&#x27;s bullets cannot harm me, my wings are like a shield of</span>
+<span class="qt">&gt; steel </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; On Wed, 6 Feb 2002 21:31:46 +0000 (UTC), &quot;Equinox Tetrachloride&quot;</span>
+<span class="qt">&gt; &gt; &lt;eq@@cl4.org&gt; wrote:</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt;&gt;Even my quasi-good CGC entries relied somewhat on code from old</span>
+<span class="qt">&gt; &gt;&gt;floppies. I think I&#x27;d have a go, though. </span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Well, your &quot;crap&quot; games seem to turn out better than my attempts at</span>
+<span class="qt">&gt; &gt; writing decent games. So you&#x27;re in with a good chance, I&#x27;d say.</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt;&gt;&gt; 1. No machine code!</span>
+<span class="qt">&gt; &gt;&gt;&gt; [...]</span>
+<span class="qt">&gt; &gt;&gt;&gt; 2. You can use BREAK protection if you really want to,</span>
+<span class="qt">&gt; &gt;&gt;</span>
+<span class="qt">&gt; &gt;&gt;That could be tricky without machine code. Unless you use that annoying</span>
+<span class="qt">&gt; &gt;&gt;poke that makes Break crash the machine. </span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Ah fair enough, I&#x27;ll have to bow to your greater knowledge on that. I</span>
+<span class="qt">&gt; &gt; thought I vaguely remembered reading about a POKE you could use to</span>
+<span class="qt">&gt; &gt; disable BASIC error trapping and a related PEEK that you could use to</span>
+<span class="qt">&gt; &gt; get the last error code (effectively giving you an ON ERROR RESUME NEXT</span>
+<span class="qt">&gt; &gt; type of thing), but maybe that doesn&#x27;t work for trapping break.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; There was a way to stop people breaking into a BASIC program and IIRC it </span>
+<span class="qt">&gt; did involve a POKE. Buggered if I can remember what it was though. I used </span>
+<span class="qt">&gt; it several times and I&#x27;m sure it never crashed the machine. Incidentally is </span>
+<span class="qt">&gt; there a site anywhere with details of all these little tricks that I&#x27;ve </span>
+<span class="qt">&gt; long since forgotten? I seem to remember there was a way to force your </span>
+<span class="qt">&gt; program to start on line 0 as well, but I can&#x27;t remember why that was </span>
+<span class="qt">&gt; considered desirable.</span>
+
+Yep, &#x27;POKE 23659,0&#x27; would do it. IIRC, that memory location
+specified the number of lines at the bottom of the screen
+that were reserved for system messages. If that&#x27;s 0, then
+the Spec would go titsup.com when it tried to display
+&#x27;L: BREAK into program&#x27;.
+
+<span class="qt">&gt; -- </span>
+<span class="qt">&gt; Adam Short</span>
+<span class="qt">&gt; …@…</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Expand your vocubulary:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; IPING (participial vb.)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The increasingly anxious shifting from leg to leg you go through when you </span>
+<span class="qt">&gt; are desperate to go to the lavatory and the person you are talking to keeps </span>
+<span class="qt">&gt; on remembering a few final things he want to mention.</span>
+
+I love that book :-)
+
+
+_________________________
+Noel R. Nihill
+Unix platform development
+Motorola NSS.
+_________________________
+
+
+
+</pre></div><div class="post" id="p130805"><div class="ph"><a class="d" href="#p130805">2002-02-12 01:24:35</a> <span>Biggo</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>Noel R. Nihill &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Orinoco &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:&lt;…@…&gt;...</span>
+<span class="qt">&gt; &gt; Expand your vocubulary:</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; IPING (participial vb.)</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; The increasingly anxious shifting from leg to leg you go through when you</span>
+<span class="qt">&gt; &gt; are desperate to go to the lavatory and the person you are talking to keeps</span>
+<span class="qt">&gt; &gt; on remembering a few final things he want to mention.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I love that book :-)</span>
+
+Yep, can you tell me the author, title, that kind of things?
+Sure, I could collect Adam&#x27;s signatures, but, eh.
+
+-- 
+Biggo. &lt;mailto:…@…&gt; (remove the hyphen-spambusters @ work)
+listen to aaria (two and a Mac): <a href="http://www.mp3.com/aaria" rel="noreferrer">http://www.mp3.com/aaria</a>
+*** I vecchi computer fanno ognuno qualcosa di diverso;
+    quelli nuovi fanno tutti le stesse cose. (Leonardo)
+
+
+
+</pre></div><div class="post" id="p130825"><div class="ph"><a class="d" href="#p130825">2002-02-12 09:25:29</a> <span>Orinoco</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>Biggo&#x27;s bullets cannot harm me, my wings are like a shield of steel
+
+<span class="qt">&gt; Noel R. Nihill &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Orinoco &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt;&gt; news:&lt;…@…&gt;... </span>
+<span class="qt">&gt;&gt; &gt; Expand your vocubulary:</span>
+<span class="qt">&gt;&gt; &gt; </span>
+<span class="qt">&gt;&gt; &gt; IPING (participial vb.)</span>
+<span class="qt">&gt;&gt; &gt; </span>
+<span class="qt">&gt;&gt; &gt; The increasingly anxious shifting from leg to leg you go through</span>
+<span class="qt">&gt;&gt; &gt; when you are desperate to go to the lavatory and the person you are</span>
+<span class="qt">&gt;&gt; &gt; talking to keeps on remembering a few final things he want to</span>
+<span class="qt">&gt;&gt; &gt; mention. </span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; I love that book :-)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Yep, can you tell me the author, title, that kind of things?</span>
+<span class="qt">&gt; Sure, I could collect Adam&#x27;s signatures, but, eh.</span>
+<span class="qt">&gt; </span>
+
+It&#x27;s the Meaning of Liff, by Douglas Adams. I&#x27;ve got a random sig generator 
+which sticks a new quote in my sig every time I reboot my machine. If you 
+want the book I can email it to you.
+
+-- 
+Adam Short
+…@…
+
+Expand your vocubulary:
+
+BURLINGJOBB
+
+A seventeenth-century crime by which excrement is thrown into the street 
+from a ground-floor window.
+
+
+
+</pre></div><div class="post" id="p130888"><div class="ph"><a class="d" href="#p130888">2002-02-12 21:30:33</a> <span>Biggo</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>Orinoco &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Biggo&#x27;s bullets cannot harm me, my wings are like a shield of steel</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Yep, can you tell me the author, title, that kind of things?</span>
+<span class="qt">&gt; &gt; Sure, I could collect Adam&#x27;s signatures, but, eh.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; It&#x27;s the Meaning of Liff, by Douglas Adams. </span>
+
+Being a D.A. fan, I&#x27;m shocked about my ignorance.
+
+<span class="qt">&gt; I&#x27;ve got a random sig generator </span>
+<span class="qt">&gt; which sticks a new quote in my sig every time I reboot my machine.</span>
+
+I have one, too. But I didn&#x27;t reboot my machine in the last 3 months or
+so :-)))
+
+<span class="qt">&gt; If you want the book I can email it to you.</span>
+
+Is it legally redistributable on the &#x27;net? I&#x27;d prefer to buy a copy of
+the book, but I don&#x27;t know if I&#x27;m going to find one here in Switzerland.
+
+-- 
+Biggo. &lt;mailto:…@…&gt; (remove the hyphen-spambusters @ work)
+listen to aaria (two and a Mac): <a href="http://www.mp3.com/aaria" rel="noreferrer">http://www.mp3.com/aaria</a>
+*** I vecchi computer fanno ognuno qualcosa di diverso;
+    quelli nuovi fanno tutti le stesse cose. (Leonardo)
+
+
+
+</pre></div><div class="post" id="p130920"><div class="ph"><a class="d" href="#p130920">2002-02-13 09:22:34</a> <span>Orinoco</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>Biggo&#x27;s bullets cannot harm me, my wings are like a shield of steel
+
+<span class="qt">&gt;&gt; If you want the book I can email it to you.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Is it legally redistributable on the &#x27;net? I&#x27;d prefer to buy a copy of</span>
+<span class="qt">&gt; the book, but I don&#x27;t know if I&#x27;m going to find one here in Switzerland.</span>
+<span class="qt">&gt; </span>
+
+Dunno, but actually I doubt it. I think your best bet for getting hold of 
+it is likely to be somewhere like Amazon or BOL or summat. 
+
+-- 
+Adam Short
+…@…
+
+Expand your vocubulary:
+
+GLUTT LODGE (n.)
+
+The place where food can be stored after having a tooth extracted. Some 
+Arabs can go without sustenance for up to six weeks on a full glutt lodge, 
+hence the expression &#x27;the shit of the dessert&#x27;.
+
+
+
+</pre></div><div class="post" id="p130976"><div class="ph"><a class="d" href="#p130976">2002-02-13 22:13:56</a> <span>Adam D. Moss</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>philicorda wrote:
+<span class="qt">&gt; Mmmmm... Freescape..</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;ve been wondering recently if it would be possible to slow down the game</span>
+<span class="qt">&gt; time clock in a freescape game, and then speed up the spectrum emulator,</span>
+<span class="qt">&gt; for Driller at 60fps!</span>
+
+Great question -- wondered the same myself.
+
+
+
+</pre></div><div class="post" id="p130980"><div class="ph"><a class="d" href="#p130980">2002-02-13 23:13:34</a> <span>Matthew Westcott</span> <span>Re: CSS Non-Crap Games Competition</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2056">CSSCGC Crap Games Contest 2002</a></div><pre>…@… (Adam D. Moss) wrote in &lt;…@…&gt;: 
+
+<span class="qt">&gt;philicorda wrote:</span>
+<span class="qt">&gt;&gt; I&#x27;ve been wondering recently if it would be possible to slow down the</span>
+<span class="qt">&gt;&gt; game time clock in a freescape game, and then speed up the spectrum</span>
+<span class="qt">&gt;&gt; emulator, for Driller at 60fps!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Great question -- wondered the same myself.</span>
+
+Presumably the game time clock works in interrupts, in which case you could 
+look for an emulator which allows you to speed up the processor while 
+keeping interrupts at 50Hz. I know the emulator by Nikolay Shalaev can do 
+this, because I&#x27;ve tried the same trick with various recent demos which 
+have the same philosophy of &quot;really complicated 3D stuff, conveniently 
+ignoring the fact that it runs at 1 frame every 3 seconds&quot;.
+
+-- 
+Matthew Westcott - CSSfiance to Nattie
+<a href="http://www.zxdemo.org/" rel="noreferrer">http://www.zxdemo.org/</a> - the home of the Spectrum demo scene
+&quot;there&#x27;s a breach in security, a disturbance in the chuntey&quot;
+
+
+
+</pre></div></main></body></html>

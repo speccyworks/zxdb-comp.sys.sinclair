@@ -1,0 +1,940 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CGC 2001 · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>CGC 2001</h1><p class="facts">46 posts, 2001-09-21 – 2001-09-29</p><div class="post" id="p115911"><div class="ph"><a class="d" href="#p115911">2001-09-21 12:27:56</a> <span>&quot;Equinox Tetrachloride&quot; &lt;eq@@cl4.org&gt;</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>It&#x27;s been a while since the CGC page was updated, and I think it was almost
+a month ago that I submitted my two latest efforts[1]. Did Adam go on
+holiday and decide not to come back?
+
+Eq.
+
+[1] if that&#x27;s not too strong a term.
+
+--
+
+<a href="http://insecurities.org" rel="noreferrer">http://insecurities.org</a>
+
+
+
+
+
+</pre></div><div class="post" id="p115982"><div class="ph"><a class="d" href="#p115982">2001-09-21 21:39:22</a> <span>Natalie Mayer</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>In article &lt;9ofbp0$ene$…@…&gt;,
+Equinox Tetrachloride &lt;eq@@cl4.org&gt; wrote:
+
+<span class="qt">&gt;Did Adam go on holiday and decide not to come back?</span>
+
+Speaking as Adam&#x27;s owner [1], I think he&#x27;s busy [2] or something.  I&#x27;m
+sure he&#x27;ll eventually come back.  
+
+nattie
+[1] As declared by Spike a few days back, I now own all the Adams on this
+newsgroup.  They are, so far, not aware of this.  
+[2] Alas, not with me.
+-- 
+comp.sys.sinclair&#x27;s official SCG (ask Matt)
+Shepherdess to the Flock (see x-headers)
+Meet Veteran - I have now seen a Speccy (f&#x27;nar!)
+<a href="http://soubrette.decadentplace.org.uk/" rel="noreferrer">http://soubrette.decadentplace.org.uk/</a>
+
+
+
+</pre></div><div class="post" id="p115987"><div class="ph"><a class="d" href="#p115987">2001-09-21 22:14:16</a> <span>Adam Short</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>Natalie Mayer wrote:
+
+<span class="qt">&gt; [1] As declared by Spike a few days back, I now own all the Adams on this</span>
+<span class="qt">&gt; newsgroup.  They are, so far, not aware of this.</span>
+
+Erk!
+
+
+
+
+</pre></div><div class="post" id="p116029"><div class="ph"><a class="d" href="#p116029">2001-09-22 11:09:22</a> <span>Chris Young</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>On 21 Sep 2001 21:39:22 GMT, Natalie Mayer (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; &gt;Did Adam go on holiday and decide not to come back?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Speaking as Adam&#x27;s owner [1], I think he&#x27;s busy [2] or something.  I&#x27;m</span>
+<span class="qt">&gt; sure he&#x27;ll eventually come back.  </span>
+
+He posted a week or so ago saying he had been too busy to update the
+site, but will do soon.
+
+Chris
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p116049"><div class="ph"><a class="d" href="#p116049">2001-09-22 13:44:59</a> <span>Lee Prince</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>On 21 Sep 2001, in comp.sys.sinclair, Natalie Mayer ejaculated...
+
+<span class="qt">&gt;&gt;Did Adam go on holiday and decide not to come back?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Speaking as Adam&#x27;s owner [1], I think he&#x27;s busy [2] or something.  I&#x27;m</span>
+<span class="qt">&gt; sure he&#x27;ll eventually come back.  </span>
+
+I saw him in alt.food.vegan (one of the rapidly expanding groups in which I 
+lurk) yesterday, so as you say he should be back soon.
+
+Lee
+-- 
+Replace shithotmail with btinternet to reply
+
+
+
+
+</pre></div><div class="post" id="p116087"><div class="ph"><a class="d" href="#p116087">2001-09-22 18:06:09</a> <span>&quot;Equinox Tetrachloride&quot; &lt;eq@@cl4.org&gt;</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>&quot;Lee Prince&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; I saw [Adam] in alt.food.vegan</span>
+
+Food isn&#x27;t vegan. People are.
+
+Eq.
+
+-- 
+
+<a href="http://insecurities.org" rel="noreferrer">http://insecurities.org</a>
+
+
+
+
+
+</pre></div><div class="post" id="p116101"><div class="ph"><a class="d" href="#p116101">2001-09-22 18:59:15</a> <span>/|ndy |&lt;avanagh</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Sat,
+22 Sep 2001 19:06:09 +0100, sefini jorgo geanyet des mani yeof do
+comp.sys.sinclair, yawatina tan reek esk &quot;Equinox Tetrachloride&quot;
+&lt;eq@@cl4.org&gt; fornis do marikano es bono tan el:
+
+<span class="qt">&gt;&quot;Lee Prince&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; I saw [Adam] in alt.food.vegan</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Food isn&#x27;t vegan. People are.</span>
+
+Maybe they talk about eating vegans?
+
+
+/|ndy|&lt; / deKay
+-- 
+  o   /|ndy&#x27;s Lofi Gaming -- www.lofi-gaming.org.uk   o
+ /    Emulation * News * Reviews * Museum * Speccy     \
+-[  My computer runs at 3.5MHz and I&#x27;m proud of that   ]-
+ \ Fave game this week: Sonic Adventure 2 (Dreamcast)  /
+  o           May the chuntey be with you!            o
+
+
+
+</pre></div><div class="post" id="p116108"><div class="ph"><a class="d" href="#p116108">2001-09-22 19:54:37</a> <span>Jacqui</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>Equinox Tetrachloride wrote 
+<span class="qt">&gt; Lee Prince wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; I saw [Adam] in alt.food.vegan</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Food isn&#x27;t vegan. People are.</span>
+
+Cows should be vegan. Cows are food. ;)
+
+Jac
+
+
+
+
+
+</pre></div><div class="post" id="p116126"><div class="ph"><a class="d" href="#p116126">2001-09-22 22:07:37</a> <span>/|ndy |&lt;avanagh</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Sat,
+22 Sep 2001 20:54:37 +0100, sefini jorgo geanyet des mani yeof do
+comp.sys.sinclair, yawatina tan reek esk &quot;Jacqui&quot;
+&lt;…@…&gt; fornis do marikano es bono tan el:
+
+<span class="qt">&gt;Equinox Tetrachloride wrote </span>
+<span class="qt">&gt;&gt; Lee Prince wrote:</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; &gt; I saw [Adam] in alt.food.vegan</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Food isn&#x27;t vegan. People are.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Cows should be vegan. </span>
+
+No - cows drink milk :)
+
+
+/|ndy|&lt; / deKay
+-- 
+  o   /|ndy&#x27;s Lofi Gaming -- www.lofi-gaming.org.uk   o
+ /    Emulation * News * Reviews * Museum * Speccy     \
+-[  My computer runs at 3.5MHz and I&#x27;m proud of that   ]-
+ \ Fave game this week: Sonic Adventure 2 (Dreamcast)  /
+  o           May the chuntey be with you!            o
+
+
+
+</pre></div><div class="post" id="p116132"><div class="ph"><a class="d" href="#p116132">2001-09-22 23:14:02</a> <span>Jacqui</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>/|ndy |&lt;avanagh wrote
+<span class="qt">&gt; Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Sat,</span>
+<span class="qt">&gt; 22 Sep 2001 20:54:37 +0100, sefini jorgo geanyet des mani yeof do</span>
+<span class="qt">&gt; comp.sys.sinclair, yawatina tan reek esk &quot;Jacqui&quot;</span>
+<span class="qt">&gt; &lt;…@…&gt; fornis do marikano es bono tan el:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;Equinox Tetrachloride wrote</span>
+<span class="qt">&gt; &gt;&gt; Lee Prince wrote:</span>
+<span class="qt">&gt; &gt;&gt;</span>
+<span class="qt">&gt; &gt;&gt; &gt; I saw [Adam] in alt.food.vegan</span>
+<span class="qt">&gt; &gt;&gt;</span>
+<span class="qt">&gt; &gt;&gt; Food isn&#x27;t vegan. People are.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Cows should be vegan.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; No - cows drink milk :)</span>
+
+Only baby cows drink milk. Baby people-wot-grow-up-to-be-vegan drink milk
+too.
+
+Jac
+
+
+
+
+</pre></div><div class="post" id="p116133"><div class="ph"><a class="d" href="#p116133">2001-09-22 23:15:22</a> <span>rachel walmsley</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>&quot;/|ndy |&lt;avanagh&quot; &lt;…@…&gt; wrote:
+[Jacqui wrote]
+
+<span class="qt">&gt;&gt;Cows should be vegan. </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; No - cows drink milk :)</span>
+
+Only with consent of the producer of the milk though, so that&#x27;s
+ok...
+
+r&quot;unwanted mental images &#x27;ya&#x27; us&quot;w.
+
+-- 
+   \\\\\            <a href="http://www.quoth.org.uk/" rel="noreferrer">http://www.quoth.org.uk/</a> - Quoth the Rachel...
+  \\\\\\\__o  ,     Bringing giant hedgehogs to the
+__\\\\\\\`/__O=O    common steamroller since 2K1
+
+
+
+</pre></div><div class="post" id="p116138"><div class="ph"><a class="d" href="#p116138">2001-09-23 00:13:52</a> <span>Natalie Mayer</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>In article &lt;…@…&gt;,
+Lee Prince &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;On 21 Sep 2001, in comp.sys.sinclair, Natalie Mayer ejaculated...</span>
+
+I most certainly did not!
+
+<span class="qt">&gt;I saw him in alt.food.vegan (one of the rapidly expanding groups in which I </span>
+<span class="qt">&gt;lurk) yesterday, so as you say he should be back soon.</span>
+
+Not you as well??  Stalker! ;-)
+
+nattie
+
+
+
+</pre></div><div class="post" id="p116139"><div class="ph"><a class="d" href="#p116139">2001-09-23 00:16:15</a> <span>&quot;Equinox Tetrachloride&quot; &lt;eq@@cl4.org&gt;</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>&quot;/|ndy |&lt;avanagh&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; &gt; &gt; I saw [Adam] in alt.food.vegan</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Food isn&#x27;t vegan. People are.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Maybe they talk about eating vegans?</span>
+
+As opposed to non-eating vegans, who would rapidly starve...?
+
+Eq.
+
+-- 
+
+<a href="http://insecurities.org" rel="noreferrer">http://insecurities.org</a>
+
+
+
+
+
+</pre></div><div class="post" id="p116153"><div class="ph"><a class="d" href="#p116153">2001-09-23 05:00:45</a> <span>Jon Janssen</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>
+&quot;Equinox Tetrachloride&quot; &lt;eq@@cl4.org&gt; wrote in message
+news:9oj9l5$rop$…@…...
+<span class="qt">&gt; &quot;/|ndy |&lt;avanagh&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; &gt; I saw [Adam] in alt.food.vegan</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; Food isn&#x27;t vegan. People are.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Maybe they talk about eating vegans?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; As opposed to non-eating vegans, who would rapidly starve...?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Eq.</span>
+
+
+lol   talk about the specifics of language :- )
+<span class="qt">&gt;</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; <a href="http://insecurities.org" rel="noreferrer">http://insecurities.org</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+
+
+
+</pre></div><div class="post" id="p116175"><div class="ph"><a class="d" href="#p116175">2001-09-23 12:02:19</a> <span>/|ndy |&lt;avanagh</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Sun,
+23 Sep 2001 05:00:45 GMT, sefini jorgo geanyet des mani yeof do
+comp.sys.sinclair, yawatina tan reek esk &quot;Jon Janssen&quot;
+&lt;…@…&gt; fornis do marikano es bono tan el:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&quot;Equinox Tetrachloride&quot; &lt;eq@@cl4.org&gt; wrote in message</span>
+<span class="qt">&gt;news:9oj9l5$rop$…@…...</span>
+<span class="qt">&gt;&gt; &quot;/|ndy |&lt;avanagh&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; &gt; &gt; &gt; I saw [Adam] in alt.food.vegan</span>
+<span class="qt">&gt;&gt; &gt; &gt;</span>
+<span class="qt">&gt;&gt; &gt; &gt; Food isn&#x27;t vegan. People are.</span>
+<span class="qt">&gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; &gt; Maybe they talk about eating vegans?</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; As opposed to non-eating vegans, who would rapidly starve...?</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Eq.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;lol   talk about the specifics of language :- )</span>
+
+We were.  Hadn&#x27;t you noticed?
+
+
+/|ndy|&lt; / deKay
+-- 
+  o   /|ndy&#x27;s Lofi Gaming -- www.lofi-gaming.org.uk   o
+ /    Emulation * News * Reviews * Museum * Speccy     \
+-[  My computer runs at 3.5MHz and I&#x27;m proud of that   ]-
+ \ Fave game this week: Sonic Adventure 2 (Dreamcast)  /
+  o           May the chuntey be with you!            o
+
+
+
+</pre></div><div class="post" id="p116227"><div class="ph"><a class="d" href="#p116227">2001-09-23 18:22:04</a> <span>Lee Prince</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>On 23 Sep 2001, in comp.sys.sinclair, Natalie Mayer ejaculated...
+
+<span class="qt">&gt;&gt;On 21 Sep 2001, in comp.sys.sinclair, Natalie Mayer ejaculated...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I most certainly did not!</span>
+
+&lt;lister&gt;
+hehehe
+&lt;/lister&gt;
+ 
+<span class="qt">&gt;&gt;I saw him in alt.food.vegan (one of the rapidly expanding groups in</span>
+<span class="qt">&gt;&gt;which I lurk) yesterday, so as you say he should be back soon.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Not you as well??  Stalker! ;-)</span>
+
+You may think that, but it&#x27;s been on my subscribe list for a few weeks now - 
+my girlfriend&#x27;s vegan (and I&#x27;m vegetarian), and I use it to obtain recipes. 
+I must say I was quite surprised to see any spec-chums posting in there.
+
+Lee
+-- 
+Replace shithotmail with btinternet to reply
+
+
+
+
+</pre></div><div class="post" id="p116229"><div class="ph"><a class="d" href="#p116229">2001-09-23 18:24:23</a> <span>Lee Prince</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>On 22 Sep 2001, in comp.sys.sinclair, /|ndy |&lt;avanagh ejaculated...
+
+<span class="qt">&gt;&gt;Food isn&#x27;t vegan. People are.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Maybe they talk about eating vegans?</span>
+
+Well, you know Linda McCartney Sausages.....?
+
+Lee
+-- 
+Replace shithotmail with btinternet to reply
+
+
+
+
+</pre></div><div class="post" id="p116234"><div class="ph"><a class="d" href="#p116234">2001-09-23 18:34:57</a> <span>Natalie Mayer</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>In article &lt;…@…&gt;,
+Lee Prince &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;You may think that, but it&#x27;s been on my subscribe list for a few weeks now - </span>
+<span class="qt">&gt;my girlfriend&#x27;s vegan (and I&#x27;m vegetarian), and I use it to obtain recipes. </span>
+<span class="qt">&gt;I must say I was quite surprised to see any spec-chums posting in there.</span>
+
+*nod* Understood.  I lurk on there, partly for the recipes, partly because
+I thought I&#x27;d read up on it because the LSOH is thinking of going
+nearly-vegan and I guess I&#x27;m along for the ride.  Haven&#x27;t posted there
+yet, but might do sometime as I think of questions.  And no, I didn&#x27;t
+expect to see any of you lot there either.  Then again, we all know Usenet
+is about thirty people who keep running into each other on different
+groups :)  (Or following each other!)
+
+nattie
+
+
+
+</pre></div><div class="post" id="p116239"><div class="ph"><a class="d" href="#p116239">2001-09-23 19:33:20</a> <span>Jacqui</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>Natalie Mayer wrote
+
+<span class="qt">&gt; And no, I didn&#x27;t</span>
+<span class="qt">&gt; expect to see any of you lot there either.  Then again, we all know Usenet</span>
+<span class="qt">&gt; is about thirty people who keep running into each other on different</span>
+<span class="qt">&gt; groups :)  (Or following each other!)</span>
+
+Can&#x27;t think what you mean.
+
+(But I claim AFP for my own, was there YEARS before you)
+
+Jac
+
+
+
+
+
+</pre></div><div class="post" id="p116240"><div class="ph"><a class="d" href="#p116240">2001-09-23 19:45:12</a> <span>/|ndy |&lt;avanagh</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>Soni tempori elseu romani yeof helsforo nisson ol sefini ill des 23
+Sep 2001 18:24:23 GMT, sefini jorgo geanyet des mani yeof do
+comp.sys.sinclair, yawatina tan reek esk …@… (Lee
+Prince) fornis do marikano es bono tan el:
+
+<span class="qt">&gt;On 22 Sep 2001, in comp.sys.sinclair, /|ndy |&lt;avanagh ejaculated...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;&gt;Food isn&#x27;t vegan. People are.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Maybe they talk about eating vegans?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Well, you know Linda McCartney Sausages.....?</span>
+
+Made from real Linda McCartney?
+
+
+/|ndy|&lt; / deKay
+-- 
+  o   /|ndy&#x27;s Lofi Gaming -- www.lofi-gaming.org.uk   o
+ /    Emulation * News * Reviews * Museum * Speccy     \
+-[  My computer runs at 3.5MHz and I&#x27;m proud of that   ]-
+ \ Fave game this week: Sonic Adventure 2 (Dreamcast)  /
+  o           May the chuntey be with you!            o
+
+
+
+</pre></div><div class="post" id="p116245"><div class="ph"><a class="d" href="#p116245">2001-09-23 20:59:06</a> <span>rachel walmsley</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>Natalie Mayer &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;  Then again, we all know Usenet</span>
+<span class="qt">&gt; is about thirty people who keep running into each other on different</span>
+<span class="qt">&gt; groups :)  (Or following each other!)</span>
+
+...and at least three of them are Ian Collier.
+
+rw
+
+-- 
+   \\\\\            <a href="http://www.quoth.org.uk/" rel="noreferrer">http://www.quoth.org.uk/</a> - Quoth the Rachel...
+  \\\\\\\__o  ,     Bringing giant hedgehogs to the
+__\\\\\\\`/__O=O    common steamroller since 2K1
+
+
+
+</pre></div><div class="post" id="p116246"><div class="ph"><a class="d" href="#p116246">2001-09-23 21:07:51</a> <span>Steve Farrell</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>At some point in the past (Sun, 23 Sep 2001 20:59:06 GMT, as it happens), 
+somebody called rachel walmsley made the following views known to all at 
+comp.sys.sinclair:
+
+<span class="qt">&gt;Natalie Mayer &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;  Then again, we all know Usenet</span>
+<span class="qt">&gt;&gt; is about thirty people who keep running into each other on different</span>
+<span class="qt">&gt;&gt; groups :)  (Or following each other!)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;...and at least three of them are Ian Collier.</span>
+<span class="qt">&gt;</span>
+
+THERE IS NO IAN COLLIER.
+
+Steve
+-- 
+I&#x27;ve been accused of a great many things in my time, but paranoia isn&#x27;t one 
+of them. Unless people have been saying it behind my back.
+
+
+
+</pre></div><div class="post" id="p116249"><div class="ph"><a class="d" href="#p116249">2001-09-23 21:26:26</a> <span>Jacqui</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>Steve Farrell wrote
+<span class="qt">&gt; At some point in the past (Sun, 23 Sep 2001 20:59:06 GMT, as it happens),</span>
+<span class="qt">&gt; somebody called rachel walmsley made the following views known to all at</span>
+<span class="qt">&gt; comp.sys.sinclair:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;Natalie Mayer wrote:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;&gt;  Then again, we all know Usenet</span>
+<span class="qt">&gt; &gt;&gt; is about thirty people who keep running into each other on different</span>
+<span class="qt">&gt; &gt;&gt; groups :)  (Or following each other!)</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;...and at least three of them are Ian Collier.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; THERE IS NO IAN COLLIER.</span>
+
+/me looks around - there&#x27;s an illusion sitting behind me then.
+
+Jac
+
+
+
+
+</pre></div><div class="post" id="p116273"><div class="ph"><a class="d" href="#p116273">2001-09-24 08:16:01</a> <span>Natalie Mayer</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>In article &lt;%Mqr7.10587$…@…&gt;,
+Jacqui &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Can&#x27;t think what you mean.</span>
+
+No, I can&#x27;t either.  Neither of us follows people to other unrelated
+newsgroups.  
+
+<span class="qt">&gt;(But I claim AFP for my own, was there YEARS before you)</span>
+
+Only cos you&#x27;re ancient^W^W^W^WBut I discovered it independently!  Well,
+for values of independently that include being AFProposed to before having
+ever read any Pterry.  
+
+natts
+
+
+
+</pre></div><div class="post" id="p116275"><div class="ph"><a class="d" href="#p116275">2001-09-24 08:17:01</a> <span>Natalie Mayer</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>In article &lt;…@…&gt;,
+rachel walmsley  &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;...and at least three of them are Ian Collier.</span>
+
+He&#x27;s not tall enough to be three people!
+
+nattie (taller than the good doctor in the correct shoes)
+
+
+
+</pre></div><div class="post" id="p116281"><div class="ph"><a class="d" href="#p116281">2001-09-24 09:20:34</a> <span>Natalie Mayer</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>In article &lt;…@…&gt;, Adam D. Moss &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Hey you kids -- get off my lawn!</span>
+
+Awwww, do we have to?  *sob* Just cos you&#x27;re taller than me...!  (Look
+boys, he&#x27;s alive!  Let&#x27;s drag him back to CSS before he gives us the slip
+again!)
+
+nattie
+absolutely not delurking on AFV, oh no.  I&#x27;m as good a lurker as Dave, me.
+
+
+
+</pre></div><div class="post" id="p116288"><div class="ph"><a class="d" href="#p116288">2001-09-24 09:48:49</a> <span>Lee Prince</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>On Sun, 23 Sep 2001, in comp.sys.sinclair, /|ndy |&lt;avanagh ejaculated...
+
+<span class="qt">&gt;&gt;&gt;&gt; Food isn&#x27;t vegan. People are.</span>
+<span class="qt">&gt;&gt;&gt; </span>
+<span class="qt">&gt;&gt;&gt; Maybe they talk about eating vegans?</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Well, you know Linda McCartney Sausages.....?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Made from real Linda McCartney?</span>
+
+Exactly. Very environmentally friendly, was Linda.
+
+Lee
+-- 
+Replace &quot;shithotmail&quot; with &quot;btinternet&quot; to reply.
+
+
+
+</pre></div><div class="post" id="p116292"><div class="ph"><a class="d" href="#p116292">2001-09-24 10:05:43</a> <span>Adam D. Moss</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>&quot;/|ndy |
+<span class="qt">&gt; &gt;&quot;Equinox Tetrachloride&quot; &lt;eq@@cl4.org&gt; wrote in message</span>
+<span class="qt">&gt; &gt;news:9oj9l5$rop$…@…...</span>
+<span class="qt">&gt; &gt;&gt; &quot;/|ndy |&lt;avanagh&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt;&gt;</span>
+<span class="qt">&gt; &gt;&gt; &gt; &gt; &gt; I saw [Adam] in alt.food.vegan</span>
+<span class="qt">&gt; &gt;&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt;&gt; &gt; &gt; Food isn&#x27;t vegan. People are.</span>
+<span class="qt">&gt; &gt;&gt; &gt;</span>
+<span class="qt">&gt; &gt;&gt; &gt; Maybe they talk about eating vegans?</span>
+<span class="qt">&gt; &gt;&gt;</span>
+<span class="qt">&gt; &gt;&gt; As opposed to non-eating vegans, who would rapidly starve...?</span>
+<span class="qt">&gt; &gt;&gt;</span>
+<span class="qt">&gt; &gt;&gt; Eq.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;lol   talk about the specifics of language :- )</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; We were.  Hadn&#x27;t you noticed?</span>
+
+Hey you kids -- get off my lawn!
+
+
+
+</pre></div><div class="post" id="p116303"><div class="ph"><a class="d" href="#p116303">2001-09-24 11:29:55</a> <span>Adam D. Moss</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>Natalie Mayer wrote:
+<span class="qt">&gt; I now own all the Adams on this</span>
+<span class="qt">&gt; newsgroup.  They are, so far, not aware of this.</span>
+
+*blink*
+
+
+
+</pre></div><div class="post" id="p116304"><div class="ph"><a class="d" href="#p116304">2001-09-24 11:31:16</a> <span>Natalie Mayer</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>In article &lt;…@…&gt;, Adam D. Moss &lt;…@…&gt; wrote:
+<span class="qt">&gt;Natalie Mayer wrote:</span>
+<span class="qt">&gt;&gt; I now own all the Adams on this</span>
+<span class="qt">&gt;&gt; newsgroup.  They are, so far, not aware of this.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;*blink*</span>
+
+As mentioned earlier, not my decision, but Spike&#x27;s.  And as he lives in my
+brain, I can&#x27;t contradict him too much or he&#x27;ll give me migraine.
+Confused?  Well, you&#x27;ll just have to drop by #speccy sometime.  (Yeah, I
+know, you&#x27;re busy...)  
+
+love
+nattie
+
+
+
+</pre></div><div class="post" id="p116310"><div class="ph"><a class="d" href="#p116310">2001-09-24 12:21:11</a> <span>Lee Prince</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>On 23 Sep 2001, in comp.sys.sinclair, Natalie Mayer ejaculated...
+
+<span class="qt">&gt;&gt;You may think that, but it&#x27;s been on my subscribe list for a few weeks now - </span>
+<span class="qt">&gt;&gt;my girlfriend&#x27;s vegan (and I&#x27;m vegetarian), and I use it to obtain recipes. </span>
+<span class="qt">&gt;&gt;I must say I was quite surprised to see any spec-chums posting in there.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;*nod* Understood.  I lurk on there, partly for the recipes, partly because</span>
+<span class="qt">&gt;I thought I&#x27;d read up on it because the LSOH is thinking of going</span>
+<span class="qt">&gt;nearly-vegan and I guess I&#x27;m along for the ride.  </span>
+
+Nearly-vegan? Is that when you make yourself a cheese sandwich and a
+glass of milk, but decide against consuming it at the last minute?
+
+Lee
+-- 
+Replace &quot;shithotmail&quot; with &quot;btinternet&quot; to reply.
+
+
+
+</pre></div><div class="post" id="p116312"><div class="ph"><a class="d" href="#p116312">2001-09-24 12:42:21</a> <span>/|ndy |&lt;avanagh</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Mon,
+24 Sep 2001 10:05:43 +0000, sefini jorgo geanyet des mani yeof do
+comp.sys.sinclair, yawatina tan reek esk &quot;Adam D. Moss&quot;
+&lt;…@…&gt; fornis do marikano es bono tan el:
+
+<span class="qt">&gt;&gt; &gt;&gt; &gt; &gt; &gt; I saw [Adam] in alt.food.vegan</span>
+<span class="qt">&gt;&gt; &gt;&gt; &gt; &gt;</span>
+<span class="qt">&gt;&gt; &gt;&gt; &gt; &gt; Food isn&#x27;t vegan. People are.</span>
+<span class="qt">&gt;&gt; &gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; &gt;&gt; &gt; Maybe they talk about eating vegans?</span>
+<span class="qt">&gt;&gt; &gt;&gt;</span>
+<span class="qt">&gt;&gt; &gt;&gt; As opposed to non-eating vegans, who would rapidly starve...?</span>
+<span class="qt">&gt;&gt; &gt;&gt;</span>
+<span class="qt">&gt;&gt; &gt;&gt; Eq.</span>
+<span class="qt">&gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; &gt;lol   talk about the specifics of language :- )</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; We were.  Hadn&#x27;t you noticed?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Hey you kids -- get off my lawn!</span>
+
+*Your* lawn!?  It&#x27;s *my* lawn!
+
+
+/|ndy|&lt; / deKay
+-- 
+  o   /|ndy&#x27;s Lofi Gaming -- www.lofi-gaming.org.uk   o
+ /    Emulation * News * Reviews * Museum * Speccy     \
+-[  My computer runs at 3.5MHz and I&#x27;m proud of that   ]-
+ \ Fave game this week: Sonic Adventure 2 (Dreamcast)  /
+  o           May the chuntey be with you!            o
+
+
+
+</pre></div><div class="post" id="p116314"><div class="ph"><a class="d" href="#p116314">2001-09-24 12:43:45</a> <span>/|ndy |&lt;avanagh</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Mon,
+24 Sep 2001 09:48:49 GMT, sefini jorgo geanyet des mani yeof do
+comp.sys.sinclair, yawatina tan reek esk Lee
+Prince&lt;…@…&gt; fornis do marikano es bono tan el:
+
+<span class="qt">&gt;On Sun, 23 Sep 2001, in comp.sys.sinclair, /|ndy |&lt;avanagh ejaculated...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;&gt;&gt;&gt; Food isn&#x27;t vegan. People are.</span>
+<span class="qt">&gt;&gt;&gt;&gt; </span>
+<span class="qt">&gt;&gt;&gt;&gt; Maybe they talk about eating vegans?</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; Well, you know Linda McCartney Sausages.....?</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Made from real Linda McCartney?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Exactly. Very environmentally friendly, was Linda.</span>
+
+Mmmm, LindaburgerTM :)
+
+
+/|ndy|&lt; / deKay
+-- 
+  o   /|ndy&#x27;s Lofi Gaming -- www.lofi-gaming.org.uk   o
+ /    Emulation * News * Reviews * Museum * Speccy     \
+-[  My computer runs at 3.5MHz and I&#x27;m proud of that   ]-
+ \ Fave game this week: Sonic Adventure 2 (Dreamcast)  /
+  o           May the chuntey be with you!            o
+
+
+
+</pre></div><div class="post" id="p116320"><div class="ph"><a class="d" href="#p116320">2001-09-24 13:30:10</a> <span>/|ndy |&lt;avanagh</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Mon,
+24 Sep 2001 13:32:48 +0000, sefini jorgo geanyet des mani yeof do
+comp.sys.sinclair, yawatina tan reek esk &quot;Adam D. Moss&quot;
+&lt;…@…&gt; fornis do marikano es bono tan el:
+
+<span class="qt">&gt;&quot;/|ndy |</span>
+<span class="qt">&gt;&gt; &gt;Hey you kids -- get off my lawn!</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; *Your* lawn!?  It&#x27;s *my* lawn!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Eep!  So terribly sorry!  *sheepishly shuffles off your lawn, takes out</span>
+<span class="qt">&gt;his aggression on an old lady walking her dog*</span>
+
+That was *my* old lady!  And *my* dog!
+
+Y&#x27;bast!
+
+
+/|ndy|&lt; / deKay
+-- 
+  o   /|ndy&#x27;s Lofi Gaming -- www.lofi-gaming.org.uk   o
+ /    Emulation * News * Reviews * Museum * Speccy     \
+-[  My computer runs at 3.5MHz and I&#x27;m proud of that   ]-
+ \ Fave game this week: Sonic Adventure 2 (Dreamcast)  /
+  o           May the chuntey be with you!            o
+
+
+
+</pre></div><div class="post" id="p116322"><div class="ph"><a class="d" href="#p116322">2001-09-24 13:32:48</a> <span>Adam D. Moss</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>&quot;/|ndy |
+<span class="qt">&gt; &gt;Hey you kids -- get off my lawn!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; *Your* lawn!?  It&#x27;s *my* lawn!</span>
+
+Eep!  So terribly sorry!  *sheepishly shuffles off your lawn, takes out
+his aggression on an old lady walking her dog*
+
+
+
+</pre></div><div class="post" id="p116323"><div class="ph"><a class="d" href="#p116323">2001-09-24 13:34:06</a> <span>Adam D. Moss</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>&quot;/|ndy |
+<span class="qt">&gt; &gt;&gt;&gt; Well, you know Linda McCartney Sausages.....?</span>
+<span class="qt">&gt; &gt;&gt;</span>
+<span class="qt">&gt; &gt;&gt; Made from real Linda McCartney?</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Exactly. Very environmentally friendly, was Linda.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Mmmm, LindaburgerTM :)</span>
+
+Made from 100% (mechanically-reclaimed) &#x27;long pig&#x27;!  The
+original white meat!
+
+
+
+</pre></div><div class="post" id="p116330"><div class="ph"><a class="d" href="#p116330">2001-09-24 14:22:05</a> <span>Adam D. Moss</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>&quot;/|ndy |
+<span class="qt">&gt; That was *my* old lady!</span>
+
+So I thought.  I&#x27;ve had better.
+
+
+
+</pre></div><div class="post" id="p116348"><div class="ph"><a class="d" href="#p116348">2001-09-24 18:22:03</a> <span>/|ndy |&lt;avanagh</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Mon,
+24 Sep 2001 14:22:05 +0000, sefini jorgo geanyet des mani yeof do
+comp.sys.sinclair, yawatina tan reek esk &quot;Adam D. Moss&quot;
+&lt;…@…&gt; fornis do marikano es bono tan el:
+
+<span class="qt">&gt;&quot;/|ndy |</span>
+<span class="qt">&gt;&gt; That was *my* old lady!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;So I thought.  I&#x27;ve had better.</span>
+
+Y&#x27;bast!
+
+
+/|ndy|&lt; / deKay
+-- 
+  o   /|ndy&#x27;s Lofi Gaming -- www.lofi-gaming.org.uk   o
+ /    Emulation * News * Reviews * Museum * Speccy     \
+-[  My computer runs at 3.5MHz and I&#x27;m proud of that   ]-
+ \ Fave game this week: Sonic Adventure 2 (Dreamcast)  /
+  o           May the chuntey be with you!            o
+
+
+
+</pre></div><div class="post" id="p116524"><div class="ph"><a class="d" href="#p116524">2001-09-26 11:19:49</a> <span>Ian Collier</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>In a previous episode of comp.sys.sinclair, Steve Farrell was heard to
+say:
+<span class="qt">&gt;THERE IS NO IAN COLLIER.</span>
+
+I think Ian Collier is on permanent holiday from this newsgroup.
+-- 
+---- Ian Collier : CSSfiancï¿½ to Nattie : WWW page (including Spectrum section):
+------ <a href="http://users.comlab.ox.ac.uk/ian.collier/imc.shtml" rel="noreferrer">http://users.comlab.ox.ac.uk/ian.collier/imc.shtml</a>
+
+New to this group?  Answers to frequently-asked questions can be had from
+<a href="http://www.srcf.ucam.org/~pak21/cssfaq/index.html" rel="noreferrer">http://www.srcf.ucam.org/~pak21/cssfaq/index.html</a> .
+Sam Coupï¿½ FAQ: <a href="http://www.mono.org/~unc/Coupe/FAQ.txt" rel="noreferrer">http://www.mono.org/~unc/Coupe/FAQ.txt</a>
+
+
+
+</pre></div><div class="post" id="p116535"><div class="ph"><a class="d" href="#p116535">2001-09-26 12:16:16</a> <span>Lee Prince</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>On Wed, 26 Sep 2001, in comp.sys.sinclair, Ian Collier ejaculated...
+
+<span class="qt">&gt;&gt;THERE IS NO IAN COLLIER.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I think Ian Collier is on permanent holiday from this newsgroup.</span>
+
+Ian who? Never heard of him.
+
+Lee
+-- 
+Replace &quot;shithotmail&quot; with &quot;btinternet&quot; to reply.
+
+
+
+</pre></div><div class="post" id="p116552"><div class="ph"><a class="d" href="#p116552">2001-09-26 16:59:09</a> <span>Natalie Mayer</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>In article &lt;…@…&gt;,
+Ian Collier &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;I think Ian Collier is on permanent holiday from this newsgroup.</span>
+
+I think Ian Collier just doesn&#x27;t like us anymore.  
+
+nm
+
+
+
+</pre></div><div class="post" id="p116555"><div class="ph"><a class="d" href="#p116555">2001-09-26 17:25:34</a> <span>Jacqui</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>Natalie Mayer wrote 
+<span class="qt">&gt; Ian Collier wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;I think Ian Collier is on permanent holiday from this newsgroup.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I think Ian Collier just doesn&#x27;t like us anymore.  </span>
+
+Speak for yourself. ;)
+
+Jac
+
+
+
+
+</pre></div><div class="post" id="p116567"><div class="ph"><a class="d" href="#p116567">2001-09-26 18:36:23</a> <span>Matthew Clemson</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre><span class="qt">&gt; &gt; &gt; THERE IS NO IAN COLLIER.</span>
+
+<span class="qt">&gt; &gt; I think Ian Collier is on permanent holiday from this newsgroup.</span>
+
+<span class="qt">&gt; Ian who? Never heard of him.</span>
+
+And certainly not sat on the same bed as him. [1]
+
+-Matt
+
+[1] No, I&#x27;m not stalking him. Not deliberately, anyway.
+
+
+
+
+
+</pre></div><div class="post" id="p116568"><div class="ph"><a class="d" href="#p116568">2001-09-26 18:45:04</a> <span>Jacqui</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>Matthew Clemson wrote 
+<span class="qt">&gt; &gt; &gt; &gt; THERE IS NO IAN COLLIER.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; &gt; I think Ian Collier is on permanent holiday from this newsgroup.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; Ian who? Never heard of him.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; And certainly not sat on the same bed as him. [1]</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; [1] No, I&#x27;m not stalking him. Not deliberately, anyway.</span>
+
+Yes, right. So who *was* hiding behind the hedge earlier?
+
+Jac
+
+
+
+
+</pre></div><div class="post" id="p116895"><div class="ph"><a class="d" href="#p116895">2001-09-29 14:25:41</a> <span>The Machine</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>5 PRINT &quot;&quot;Jacqui&quot; &lt;…@…&gt; woz &#x27;ere&quot; : GOTO 5
+
+<span class="qt">&gt;Matthew Clemson wrote </span>
+<span class="qt">&gt;&gt; &gt; &gt; &gt; THERE IS NO IAN COLLIER.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; &gt; &gt; I think Ian Collier is on permanent holiday from this newsgroup.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; &gt; Ian who? Never heard of him.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; And certainly not sat on the same bed as him. [1]</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; [1] No, I&#x27;m not stalking him. Not deliberately, anyway.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Yes, right. So who *was* hiding behind the hedge earlier?</span>
+
+That was you.
+
+
+
+-- 
+The Machine
+
+T YS without JSW, 10:1
+
+(Take out the turrets to e-mail)
+
+
+
+</pre></div><div class="post" id="p116911"><div class="ph"><a class="d" href="#p116911">2001-09-29 15:04:03</a> <span>Jacqui</span> <span>Re: CGC 2001</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2055">CSSCGC Crap Games Contest 2001</a></div><pre>The Machine wrote 
+<span class="qt">&gt; 5 PRINT &quot;Jacquiwoz &#x27;ere&quot; : GOTO 5</span>
+<span class="qt">&gt; &gt;Matthew Clemson wrote </span>
+<span class="qt">&gt; &gt;&gt; &gt; &gt; &gt; THERE IS NO IAN COLLIER.</span>
+<span class="qt">&gt; &gt;&gt; </span>
+<span class="qt">&gt; &gt;&gt; &gt; &gt; I think Ian Collier is on permanent holiday from this newsgroup.</span>
+<span class="qt">&gt; &gt;&gt; </span>
+<span class="qt">&gt; &gt;&gt; &gt; Ian who? Never heard of him.</span>
+<span class="qt">&gt; &gt;&gt; </span>
+<span class="qt">&gt; &gt;&gt; And certainly not sat on the same bed as him. [1]</span>
+<span class="qt">&gt; &gt;&gt; </span>
+<span class="qt">&gt; &gt;&gt; [1] No, I&#x27;m not stalking him. Not deliberately, anyway.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Yes, right. So who *was* hiding behind the hedge earlier?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; That was you.</span>
+
+No, the *other* side of the hedge.
+
+Jac (never knowingly hidden in a hedge)
+
+
+
+
+</pre></div></main></body></html>

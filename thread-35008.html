@@ -1,0 +1,2054 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ATARI and Spectrum are rubbish - The C64 is the king of home-computers! · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</h1><p class="facts">71 posts, 2011-01-16 – 2011-02-17</p><div class="post" id="p223391"><div class="ph"><a class="d" href="#p223391">2011-01-16 13:51:33</a> <span>Lloyd Hearsewave</span> </div><pre>I don&#x27;t understand why people are still using crappy doorstoppers like the 
+Sinclair Spectrum and ugly black and white heaps of trash like the ATARI 800 
+XL.
+
+Both of these computers failed in the 80s and look at the graphics of the 
+Spectrum - ugly, monochrome, no scrolling and no sprites.
+
+The ATARI has only 3 ugly colors, ugly sprites and bad scrolling. 99% of 
+ATARI games are crap.
+
+All the games are MUCH superior on the C64 and the C64 truly is the king of 
+home computers!
+
+So please throw away your ATARIs and Spectrums and buy a C64 on ebay!
+
+
+
+
+
+
+</pre></div><div class="post" id="p223392"><div class="ph"><a class="d" href="#p223392">2011-01-16 14:31:03</a> <span>…@…</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>And verily, didst Lloyd Hearsewave &lt;…@…&gt; hastily babble thusly:
+<span class="qt">&gt; I don&#x27;t understand why people are still using crappy doorstoppers like the </span>
+<span class="qt">&gt; Sinclair Spectrum and ugly black and white heaps of trash like the ATARI 800 </span>
+<span class="qt">&gt; XL.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Both of these computers failed in the 80s and look at the graphics of the </span>
+<span class="qt">&gt; Spectrum - ugly, monochrome, no scrolling and no sprites.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The ATARI has only 3 ugly colors, ugly sprites and bad scrolling. 99% of </span>
+<span class="qt">&gt; ATARI games are crap.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; All the games are MUCH superior on the C64 and the C64 truly is the king of </span>
+<span class="qt">&gt; home computers!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; So please throw away your ATARIs and Spectrums and buy a C64 on ebay!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+Very poor, 1/10.
+Hints on improving your trollery...
+1: restrict your trolling to a single computer and group. Including both
+atari and sinclair in a single post just smacks of laziness.
+2: Stick to the facts. Lies never did the trick.
+3: on second thoughts, just give up, you&#x27;ve not got the nack and you never
+will...
+
+-- 
+<span class="qt">|   …@…   | &quot;I&#x27;m alive!!! I can touch! I can taste!         |</span>
+<span class="qt">|   Andrew Halliwell BSc   |  I can SMELL!!!  KRYTEN!!! Unpack Rachel and    |</span>
+<span class="qt">|            in            |  get out the puncture repair kit!&quot;              |</span>
+<span class="qt">|     Computer Science     |     Arnold Judas Rimmer- Red Dwarf              |</span>
+
+
+
+</pre></div><div class="post" id="p223393"><div class="ph"><a class="d" href="#p223393">2011-01-16 14:32:06</a> <span>Guesser</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On 16/01/2011 13:51, Lloyd Hearsewave wrote:
+<span class="qt">&gt; I&#x27;m a moron and I can&#x27;t even be bothered to troll properly</span>
+
+yawn.
+
+
+
+</pre></div><div class="post" id="p223394"><div class="ph"><a class="d" href="#p223394">2011-01-16 17:58:57</a> <span>Bill Kendrick</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>In comp.sys.atari.8bit Lloyd Hearsewave &lt;…@…&gt; wrote:
+<span class="qt">&gt; The ATARI has only 3 ugly colors, ugly sprites and bad scrolling.</span>
+
+Considering the Atari 8-bits can do 9 paletted colors (or 5 paletted via
+sprites, plus 16 shades) per scanline, you must be confusing it with
+Atari Pong. ;)
+
+I admit, I&#x27;ve been jealous of the C=64 for the sheer number of games
+that kept coming out long after the 16-bits showed up, but honestly,
+if I were to &#x27;upgrade&#x27; from my 800XL and 1200XL, it&#x27;d be an Amiga of
+some sort.  I could never stand the C=64 BASIC &amp; OS... so clunky.
+(Being an Atari guy made the switch to Unix/Linux easy ;) )
+
+-- 
+-bill!
+Sent from my computer
+
+
+
+</pre></div><div class="post" id="p223395"><div class="ph"><a class="d" href="#p223395">2011-01-16 22:07:17</a> <span>Chris Young</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On Sun, 16 Jan 2011 15:53:47 -0800 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Angry Dove:
+
+<span class="qt">&gt; You can&#x27;t play Star Raiders on Commodore!!!!!!!!!!!</span>
+
+You can&#x27;t EAT Star Raiders on a commode.  No, hold on, I&#x27;m thinking of
+Space Raiders.  And you can, but it perhaps isn&#x27;t &quot;socially
+acceptable&quot;.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p223396"><div class="ph"><a class="d" href="#p223396">2011-01-16 22:43:49</a> <span>Thorsten Günther</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>Am 16.01.2011 23:07, schrieb Chris Young:
+<span class="qt">&gt; On Sun, 16 Jan 2011 15:53:47 -0800 da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt; to MC Angry Dove:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; You can&#x27;t play Star Raiders on Commodore!!!!!!!!!!!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; You can&#x27;t EAT Star Raiders on a commode.  No, hold on, I&#x27;m thinking of</span>
+<span class="qt">&gt; Space Raiders.  And you can, but it perhaps isn&#x27;t &quot;socially</span>
+<span class="qt">&gt; acceptable&quot;.</span>
+
+There were times when trolls bothered and at least tried to get their 
+facts straight (well, except for Sinclap, that is) when starting a flame 
+war.
+
+But this one is way too late, as all thes obsolete computers are dirt 
+cheap nowadays and can easily be tested on emulators as well as Youtube 
+videos.
+
+The C64 has a very good sprite engine for it&#x27;s time (best of the three), 
+and good sound (also presumably the best of the three).
+
+The A8 had less freely distributable colours (usually just 4 per line 
+except for mode 10 with only 80 pixels horizontal resolution and 9 
+colours and mode 12/13 - multi-colour text modes with the inverted bit 
+generating a fifth colour - mode 9 and 11 each have 16 colours), but can 
+change graphics modes, colour and player/missile registers between lines 
+(a capability inherited from the VCS, but relegated to ANTIC) and has 
+great scrolling and overscan capabilities. The sound isn&#x27;t too bad also, 
+but good results apparently require more CPU cycles than than the C64 
+needs to achive good sound with the SID. It also has a significantly 
+faster CPU, which helps a lot in games like Rescue on Fractalus.
+
+Depending on the programmers&#x27; talents and game type, either one may have 
+the better version of a game, but the C64 has the much larger library 
+due to it&#x27;s greater success.
+
+The Sinclair has no sprites, bad sound, only two colours on any 8x8 
+pixel grid, yet it is astounding what programmers achieved on such 
+humble hardware (the Speccy version of Starglider e.g. looks incredibly 
+fast for an 8-bit computer). One should also not forget that the Speccy 
+was created as a no-frills, entry-level computer for a bargain price, 
+while the A8 were very expensive when first published in 1979 and the 
+C64 had the advantage of vertical integration with MOS - resulting in 
+the better price/performance ratio.
+
+Thorsten
+
+
+
+</pre></div><div class="post" id="p223397"><div class="ph"><a class="d" href="#p223397">2011-01-16 22:49:17</a> <span>david lightman</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>This is how war begins...
+
+Am 16.01.2011 18:58, schrieb Bill Kendrick:
+<span class="qt">&gt; In comp.sys.atari.8bit Lloyd Hearsewave&lt;…@…&gt;  wrote:</span>
+<span class="qt">&gt;&gt; The ATARI has only 3 ugly colors, ugly sprites and bad scrolling.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Considering the Atari 8-bits can do 9 paletted colors (or 5 paletted via</span>
+<span class="qt">&gt; sprites, plus 16 shades) per scanline, you must be confusing it with</span>
+<span class="qt">&gt; Atari Pong. ;)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I admit, I&#x27;ve been jealous of the C=64 for the sheer number of games</span>
+<span class="qt">&gt; that kept coming out long after the 16-bits showed up, but honestly,</span>
+<span class="qt">&gt; if I were to &#x27;upgrade&#x27; from my 800XL and 1200XL, it&#x27;d be an Amiga of</span>
+<span class="qt">&gt; some sort.  I could never stand the C=64 BASIC&amp;  OS... so clunky.</span>
+<span class="qt">&gt; (Being an Atari guy made the switch to Unix/Linux easy ;) )</span>
+<span class="qt">&gt;</span>
+
+
+
+</pre></div><div class="post" id="p223398"><div class="ph"><a class="d" href="#p223398">2011-01-16 23:53:47</a> <span>Angry Dove</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>In article &lt;4d3331e1$0$44026$…@…&gt;, 
+…@… says...
+<span class="qt">&gt; In comp.sys.atari.8bit Lloyd Hearsewave &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt; The ATARI has only 3 ugly colors, ugly sprites and bad scrolling.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Considering the Atari 8-bits can do 9 paletted colors (or 5 paletted via</span>
+<span class="qt">&gt; sprites, plus 16 shades) per scanline, you must be confusing it with</span>
+<span class="qt">&gt; Atari Pong. ;)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I admit, I&#x27;ve been jealous of the C=64 for the sheer number of games</span>
+<span class="qt">&gt; that kept coming out long after the 16-bits showed up, but honestly,</span>
+<span class="qt">&gt; if I were to &#x27;upgrade&#x27; from my 800XL and 1200XL, it&#x27;d be an Amiga of</span>
+<span class="qt">&gt; some sort.  I could never stand the C=64 BASIC &amp; OS... so clunky.</span>
+<span class="qt">&gt; (Being an Atari guy made the switch to Unix/Linux easy ;) )</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+You can&#x27;t play Star Raiders on Commodore!!!!!!!!!!!
+
+
+
+</pre></div><div class="post" id="p223399"><div class="ph"><a class="d" href="#p223399">2011-01-17 03:34:29</a> <span>Daniel Mandic</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>Thorsten Gï¿½nther wrote:
+
+<span class="qt">&gt; But this one is way too late, as all thes obsolete computers are dirt</span>
+<span class="qt">&gt; cheap nowadays and can easily be tested on emulators as well as</span>
+<span class="qt">&gt; Youtube videos.</span>
+
+A scroller of the speccy (e.g. from &#x27;digital brains&#x27; software) is
+scrolling as smooth as a scroller of the amiga (e.g. from any intro),
+when using emulators on PC.
+I have that another way within my recollection ;-)
+
+Emulators.... tsk 
+ 
+<span class="qt">&gt; The C64 has a very good sprite engine for it&#x27;s time (best of the</span>
+<span class="qt">&gt; three), and good sound (also presumably the best of the three).</span>
+
+Big sprites
+
+and (also presumably) no shift-s!
+
+<span class="qt">&gt; The Sinclair has no sprites, bad sound, only two colours on any 8x8</span>
+<span class="qt">&gt; pixel grid, yet it is astounding what programmers achieved on such</span>
+<span class="qt">&gt; humble hardware (the Speccy version of Starglider e.g. looks</span>
+<span class="qt">&gt; incredibly fast for an 8-bit computer).</span>
+
+I was impressed by the XL and the C64 at that time, too.
+
+With an one year timeout from my &#x27;m.i.a.&#x27; Atari VCS, it became a Speccy
+48K plus 8 Cassettes ~1983. Always like/d its high-res...
+
+Spellbound, Jet-Pac, Dragons Bane and many more... Manic Miner, Knight
+Lore, Cascade Cassette 50 etc.
+
+The atmosphere in many games is unique to me. Sound-FX are ok and
+differentiable.
+
+
+-- 
+Daniel Mandic
+
+
+
+</pre></div><div class="post" id="p223400"><div class="ph"><a class="d" href="#p223400">2011-01-17 09:31:55</a> <span>Brian Gaff</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>I don&#x27;t understand why people still fall for troll posts like this one when 
+they could be out there learning how to create denial of service attacks 
+andreally screwing up the internet.
+
+ grin
+Brian
+
+-- 
+Brian Gaff - …@…
+Note:- In order to reduce spam, any email without &#x27;Brian Gaff&#x27;
+in the display name may be lost.
+Blind user, so no pictures please!
+&quot;Lloyd Hearsewave&quot; &lt;…@…&gt; wrote in message 
+news:igut59$4e2$…@…...
+<span class="qt">&gt;I don&#x27;t understand why people are still using crappy doorstoppers like the </span>
+<span class="qt">&gt;Sinclair Spectrum and ugly black and white heaps of trash like the ATARI </span>
+<span class="qt">&gt;800 XL.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Both of these computers failed in the 80s and look at the graphics of the </span>
+<span class="qt">&gt; Spectrum - ugly, monochrome, no scrolling and no sprites.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The ATARI has only 3 ugly colors, ugly sprites and bad scrolling. 99% of </span>
+<span class="qt">&gt; ATARI games are crap.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; All the games are MUCH superior on the C64 and the C64 truly is the king </span>
+<span class="qt">&gt; of home computers!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; So please throw away your ATARIs and Spectrums and buy a C64 on ebay!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; </span>
+
+
+
+
+
+</pre></div><div class="post" id="p223401"><div class="ph"><a class="d" href="#p223401">2011-01-17 10:31:30</a> <span>ec429</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On 17/01/11 09:31, Brian Gaff wrote:
+<span class="qt">&gt; I don&#x27;t understand why people still fall for troll posts like this one when</span>
+<span class="qt">&gt; they could be out there learning how to create denial of service attacks</span>
+<span class="qt">&gt; andreally screwing up the internet.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;   grin</span>
+<span class="qt">&gt; Brian</span>
+Surely troll posts are distributed denial of service attacks in a broad 
+sense - the more people feed the troll, the more crap piles up in 
+people&#x27;s spools thus slowing down the process of reading Usenet.
+   also grin
+-Edward
+
+-- 
+&#x27;sane&#x27;, adj.: see &#x27;unimaginative&#x27;
+   on the web - <a href="http://jttlov.no-ip.org" rel="noreferrer">http://jttlov.no-ip.org</a>
+
+
+
+</pre></div><div class="post" id="p223402"><div class="ph"><a class="d" href="#p223402">2011-01-17 11:09:27</a> <span>Brian Gaff</span> <span>denial of service and crap posts wasRe: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>Well I suppose if we all changed the sub line and made it clear then people 
+would not actually bother to read stuff which is both off topic and rubbish.
+ I would advise anyone reading via a web interface to get themselves a news 
+reader, Even  Microsofts clients are better then web interfaces. One can 
+just move down a line and look at what interests them and the rubbish simply 
+does not matter if its here or not.
+
+
+Brian
+
+-- 
+Brian Gaff....Note, this account does not accept Bcc: email.
+ graphics are great, but the blind can&#x27;t hear them
+Email: …@…
+______________________________________________________________________________________________________________
+
+
+&quot;ec429&quot; &lt;…@…&gt; wrote in message 
+news:ih15q0$p6a$…@…...
+<span class="qt">&gt; On 17/01/11 09:31, Brian Gaff wrote:</span>
+<span class="qt">&gt;&gt; I don&#x27;t understand why people still fall for troll posts like this one </span>
+<span class="qt">&gt;&gt; when</span>
+<span class="qt">&gt;&gt; they could be out there learning how to create denial of service attacks</span>
+<span class="qt">&gt;&gt; andreally screwing up the internet.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;   grin</span>
+<span class="qt">&gt;&gt; Brian</span>
+<span class="qt">&gt; Surely troll posts are distributed denial of service attacks in a broad </span>
+<span class="qt">&gt; sense - the more people feed the troll, the more crap piles up in people&#x27;s </span>
+<span class="qt">&gt; spools thus slowing down the process of reading Usenet.</span>
+<span class="qt">&gt;   also grin</span>
+<span class="qt">&gt; -Edward</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; -- </span>
+<span class="qt">&gt; &#x27;sane&#x27;, adj.: see &#x27;unimaginative&#x27;</span>
+<span class="qt">&gt;   on the web - <a href="http://jttlov.no-ip.org" rel="noreferrer">http://jttlov.no-ip.org</a> </span>
+
+
+
+
+
+</pre></div><div class="post" id="p223403"><div class="ph"><a class="d" href="#p223403">2011-01-17 15:07:34</a> <span>Clocky</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>Daniel Mandic wrote:
+<span class="qt">&gt; Thorsten Gï¿½nther wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; But this one is way too late, as all thes obsolete computers are dirt</span>
+<span class="qt">&gt;&gt; cheap nowadays and can easily be tested on emulators as well as</span>
+<span class="qt">&gt;&gt; Youtube videos.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; A scroller of the speccy (e.g. from &#x27;digital brains&#x27; software) is</span>
+<span class="qt">&gt; scrolling as smooth as a scroller of the amiga (e.g. from any intro),</span>
+<span class="qt">&gt; when using emulators on PC.</span>
+<span class="qt">&gt; I have that another way within my recollection ;-)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Emulators.... tsk</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; The C64 has a very good sprite engine for it&#x27;s time (best of the</span>
+<span class="qt">&gt;&gt; three), and good sound (also presumably the best of the three).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Big sprites</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; and (also presumably) no shift-s!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; The Sinclair has no sprites, bad sound, only two colours on any 8x8</span>
+<span class="qt">&gt;&gt; pixel grid, yet it is astounding what programmers achieved on such</span>
+<span class="qt">&gt;&gt; humble hardware (the Speccy version of Starglider e.g. looks</span>
+<span class="qt">&gt;&gt; incredibly fast for an 8-bit computer).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I was impressed by the XL and the C64 at that time, too.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; With an one year timeout from my &#x27;m.i.a.&#x27; Atari VCS, it became a</span>
+<span class="qt">&gt; Speccy 48K plus 8 Cassettes ~1983. Always like/d its high-res...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Spellbound, Jet-Pac, Dragons Bane and many more... Manic Miner, Knight</span>
+<span class="qt">&gt; Lore, Cascade Cassette 50 etc.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The atmosphere in many games is unique to me. Sound-FX are ok and</span>
+<span class="qt">&gt; differentiable.</span>
+
+I like the ZX, because it took little space in my bin and left plenty for 
+the STfm that followed it.
+
+
+
+
+
+</pre></div><div class="post" id="p223404"><div class="ph"><a class="d" href="#p223404">2011-01-17 17:03:33</a> <span>BruceMcF</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On Jan 16, 12:58 pm, …@… (Bill Kendrick) wrote:
+&quot;I am bored. I would like y&#x27;all to engage in a flamewar for my
+amusement.&quot;
+
+Sadly, to get a full-on Atari-vs-C64 flame war, its necessary to got
+into the archives.
+
+
+
+</pre></div><div class="post" id="p223405"><div class="ph"><a class="d" href="#p223405">2011-01-17 17:23:31</a> <span>Kjmann&#x27;s Atari Sales and Service</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>This Guy (Lloyd Hearsewave) Apparently has nothing better to do while
+he sits in his parents basement and dreams about the day that he wont
+be a 35 year old virgin anymore.
+
+I suggest that we all report his post as &quot;Abuse&quot; and get the post
+removed. In my opinion, It&#x27;s abusive to enter a discussion area about
+a specific things, just to bash them and the people that use them.
+
+Sal (kjmann)
+
+
+
+
+</pre></div><div class="post" id="p223406"><div class="ph"><a class="d" href="#p223406">2011-01-17 17:47:34</a> <span>…@…</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>And verily, didst BruceMcF &lt;…@…&gt; hastily babble thusly:
+<span class="qt">&gt; On Jan 16, 12:58ï¿œpm, …@… (Bill Kendrick) wrote:</span>
+<span class="qt">&gt; &quot;I am bored. I would like y&#x27;all to engage in a flamewar for my</span>
+<span class="qt">&gt; amusement.&quot;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Sadly, to get a full-on Atari-vs-C64 flame war, its necessary to got</span>
+<span class="qt">&gt; into the archives.</span>
+
+So atarians and commodes have flamewars too eh?
+Seem to be a thoroughly disagreeable lot, the commode users.
+Speccy users have never had any beef with the atari users.
+:)
+-- 
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|   Andrew Halliwell BSc   | &quot;ARSE! GERLS!! DRINK! DRINK! DRINK!!!&quot;          |</span>
+<span class="qt">|            in            | &quot;THAT WOULD BE AN ECUMENICAL MATTER!...FECK!!!! |</span>
+<span class="qt">|     Computer Science     | - Father Jack in &quot;Father Ted&quot;                   |</span>
+
+
+
+</pre></div><div class="post" id="p223407"><div class="ph"><a class="d" href="#p223407">2011-01-17 17:50:15</a> <span>BruceMcF</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On Jan 17, 10:07 am, &quot;Clocky&quot; &lt;…@…&gt; wrote:
+<span class="qt">&gt; I like the ZX, because it took little space in my bin and left plenty for</span>
+<span class="qt">&gt; the STfm that followed it.</span>
+
+I would agree that the Timex-Sinclair 1000 (the slightly modified
+ZX-81 sold in the US) was the only entirely closet-compatible computer
+I ever owned.
+
+
+
+</pre></div><div class="post" id="p223408"><div class="ph"><a class="d" href="#p223408">2011-01-17 18:18:29</a> <span>BruceMcF</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On Jan 17, 12:47 pm, …@… wrote:
+<span class="qt">&gt; So atarians and commies have flamewars too eh?</span>
+
+Wrong tense ~ had flamewars. It&#x27;s Usenet after all, everyone had
+flamewars. But that is decades in the past.
+
+
+
+</pre></div><div class="post" id="p223409"><div class="ph"><a class="d" href="#p223409">2011-01-17 18:35:28</a> <span>Vidar Olavesen</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>&quot;Lloyd Hearsewave&quot; &lt;…@…&gt; skrev i melding 
+news:igut59$4e2$…@…...
+<span class="qt">&gt;I don&#x27;t understand why people are still using crappy doorstoppers like the </span>
+<span class="qt">&gt;Sinclair Spectrum and ugly black and white heaps of trash like the ATARI </span>
+<span class="qt">&gt;800 XL.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Both of these computers failed in the 80s and look at the graphics of the </span>
+<span class="qt">&gt; Spectrum - ugly, monochrome, no scrolling and no sprites.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The ATARI has only 3 ugly colors, ugly sprites and bad scrolling. 99% of </span>
+<span class="qt">&gt; ATARI games are crap.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; All the games are MUCH superior on the C64 and the C64 truly is the king </span>
+<span class="qt">&gt; of home computers!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; So please throw away your ATARIs and Spectrums and buy a C64 on ebay!</span>
+
+Yeah, like Rescue on Fractalus, Star Raiders, Bounty Bob Strikes Back (ok, 
+C64 version was okay, but I think the Atari one is better) and Ballblazer 
+... And M.U.L.E. (4 port Atari 800 rules) ... And Dropzone ... Oh, hell, 
+most of my favourite games are superior on the Atari. I do have C64, C128, 
+Vic20, +4, C16, but they are not the same to me.
+
+One thing that is better on the C64 is George Feil&#x27;s Synth Sample 3 (the 
+spacey tune) ... That&#x27;s brilliant, but strangely enough, I don&#x27;t play many 
+games on the C64
+
+For me, it&#x27;s Atari, always (old Atari, not the crappy company they are now)
+
+
+
+
+
+
+</pre></div><div class="post" id="p223410"><div class="ph"><a class="d" href="#p223410">2011-01-17 20:02:22</a> <span>lizardb0y</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On Jan 18, 6:47 am, …@… wrote:
+<span class="qt">&gt; And verily, didst BruceMcF &lt;…@…&gt; hastily babble thusly:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; On Jan 16, 12:58 pm, …@… (Bill Kendrick) wrote:</span>
+<span class="qt">&gt; &gt; &quot;I am bored. I would like y&#x27;all to engage in a flamewar for my</span>
+<span class="qt">&gt; &gt; amusement.&quot;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Sadly, to get a full-on Atari-vs-C64 flame war, its necessary to got</span>
+<span class="qt">&gt; &gt; into the archives.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; So atarians and commodes have flamewars too eh?</span>
+
+You call this a flamewar?  Pah!
+
+<span class="qt">&gt; Seem to be a thoroughly disagreeable lot, the commode users.</span>
+
+Actually, I quite like the Commode.  It had a good version of
+Ghostbusters - well, the theme music was cool.  In fact, I might just
+go fire up one of the C64s now...
+
+hang on...
+
+Damn.  It&#x27;s not working - it looks like the power supply failed.
+Wait, I&#x27;ll find another PSU. ...
+
+Nope.  I think that one fried too.  I&#x27;m sure I&#x27;ve got another one...
+
+Damn.  That one seems to be fried.
+
+Oh well.  Back the the +2.
+
+--
+Andrew
+
+
+
+</pre></div><div class="post" id="p223411"><div class="ph"><a class="d" href="#p223411">2011-01-17 20:18:58</a> <span>BruceMcF</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On Jan 17, 3:02 pm, lizardb0y &lt;…@…&gt; wrote:
+<span class="qt">&gt; You call this a flamewar?  Pah!</span>
+
+I said he *wanted* a flamewar, I didn&#x27;t say he had the slightest hope
+of getting his wish.
+
+Why, back in the day, that inability to decipher my opaque statement
+could in and of itself have been enough to get a flamewar started.
+
+Ah, the eighties. Usenet flamewars and girl bands with eighties hair.
+*sigh*
+
+<a href="http://www.youtube.com/watch?v=FGYNvx9lqDQ" rel="noreferrer">http://www.youtube.com/watch?v=FGYNvx9lqDQ</a>
+
+
+
+</pre></div><div class="post" id="p223415"><div class="ph"><a class="d" href="#p223415">2011-01-17 23:24:05</a> <span>Daniel Mandic</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>lizardb0y wrote:
+
+<span class="qt">&gt; Actually, I quite like the Commode.  It had a good version of</span>
+<span class="qt">&gt; Ghostbusters - well, the theme music was cool.  In fact, I might just</span>
+<span class="qt">&gt; go fire up one of the C64s now...</span>
+
+Hmmm, bad choice... Not that the commodoe didn&#x27;t have any good
+conversions, but Ghostbusters is better with the XL Version by miles.
+Even the sound is, in that case, more atmospheric (funky). M.U.L.E. is
+an other game (also with better sound) and many more games.
+Four channels is definetely more than three ;-)
+
+Spending CPU time for sound can deliver fantastic effects (e.g. Hall),
+not to forget the vacuum-cleaner like out of phase (standard) sound.
+
+Nice computer! Expensive though...
+ 
+<span class="qt">&gt; Oh well.  Back the the +2.</span>
+
+Have fun!
+
+
+-- 
+Daniel Mandic
+
+
+
+</pre></div><div class="post" id="p223422"><div class="ph"><a class="d" href="#p223422">2011-01-18 18:19:04</a> <span>Bill Kendrick</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>In comp.sys.atari.8bit Thorsten Gï¿½nther &lt;…@…&gt; wrote:
+<span class="qt">&gt; the C64 had the advantage of vertical integration with MOS - resulting in </span>
+<span class="qt">&gt; the better price/performance ratio.</span>
+
+I don&#x27;t know much about the history of C=64, so I didn&#x27;t know that.
+Thanks for sharing! :)  (That reminds me, I have a book on the 64
+on my Amazon wishlist that I should finally just go ahead and purchase.)
+
+My brother had the C=64 (and lots of games).  I had the Atari (and few
+games, but a powerful BASIC to keep me busy writing my own ;) )
+
+-- 
+-bill!
+Sent from my computer
+
+
+
+</pre></div><div class="post" id="p223429"><div class="ph"><a class="d" href="#p223429">2011-01-20 00:16:50</a> <span>Sean Huxter</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>Sounds like someone trying to get cheap Ataris and Spectrums on eBay.
+
+Sean.
+
+&quot;Lloyd Hearsewave&quot; &lt;…@…&gt; wrote in message 
+news:igut59$4e2$…@…...
+<span class="qt">&gt;I don&#x27;t understand why people are still using crappy doorstoppers like the </span>
+<span class="qt">&gt;Sinclair Spectrum and ugly black and white heaps of trash like the ATARI </span>
+<span class="qt">&gt;800 XL.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Both of these computers failed in the 80s and look at the graphics of the </span>
+<span class="qt">&gt; Spectrum - ugly, monochrome, no scrolling and no sprites.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The ATARI has only 3 ugly colors, ugly sprites and bad scrolling. 99% of </span>
+<span class="qt">&gt; ATARI games are crap.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; All the games are MUCH superior on the C64 and the C64 truly is the king </span>
+<span class="qt">&gt; of home computers!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; So please throw away your ATARIs and Spectrums and buy a C64 on ebay!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; </span>
+
+
+
+
+
+</pre></div><div class="post" id="p223430"><div class="ph"><a class="d" href="#p223430">2011-01-20 19:58:37</a> <span>BruceMcF</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On Jan 19, 7:16 pm, &quot;Sean Huxter&quot; &lt;…@…&gt; wrote:
+<span class="qt">&gt; Sounds like someone trying to get cheap Ataris and Spectrums on eBay.</span>
+
+It does, doesn&#x27;t it? I wouldn&#x27;t mind picking up a Spectrum if it was
+available cheap. Does that mean I shouldn&#x27;t have been so quick to
+observe that the attempt to start an Atari / Spectrum vs Commie
+flamewar on Usenet in the 21st century is absurd (though a bit
+quaint)?
+
+<span class="qt">&gt; &quot;Lloyd Hearsewave&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:igut59$4e2$…@…...</span>
+<span class="qt">&gt; &gt; So please throw away your ATARIs and Spectrums and buy a C64 on ebay!</span>
+
+
+
+
+</pre></div><div class="post" id="p223452"><div class="ph"><a class="d" href="#p223452">2011-01-24 21:46:20</a> <span>greenaum</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On Mon, 17 Jan 2011 09:23:31 -0800 (PST), &quot;Kjmann&#x27;s Atari Sales and
+Service&quot; &lt;…@…&gt; sprachen:
+
+<span class="qt">&gt;I suggest that we all report his post as &quot;Abuse&quot; and get the post</span>
+<span class="qt">&gt;removed</span>
+
+Is anyone even looking after Usenet any more?
+
+Never mind him. I used all sorts of 8-bits. This thread is an
+opportunity for us to come together, and finish arguments we had in
+the playground 25 years ago. Or at the very least, carry them on.
+
+---------------------------------------------------------------------
+
+&quot;hey let&#x27;s educate the brutes, we know we are superior to them anyway,
+just through genetics, we are gentically superior to the working
+class. They are a shaved monkey. If we educate them, they will be able
+to read instructions, turn up on time and man the conveyor belts,
+sorted.&quot;     #     
+
+
+</pre></div><div class="post" id="p223453"><div class="ph"><a class="d" href="#p223453">2011-01-24 21:46:21</a> <span>greenaum</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On 18 Jan 2011 18:19:04 GMT, …@… (Bill Kendrick)
+sprachen:
+
+<span class="qt">&gt;My brother had the C=64 (and lots of games).  I had the Atari (and few</span>
+<span class="qt">&gt;games, but a powerful BASIC to keep me busy writing my own ;) )</span>
+
+Where did you get the powerful BASIC from? No sprite or sound support,
+and it couldn&#x27;t even draw bloody circles! And wait, it didn&#x27;t even
+have proper strings! I loved the graphics and fast CPU, and Star
+Raiders is legendary, but the BASIC on the Atari 8-bits was AWFUL. 
+
+I&#x27;ve used several BASICs, BBC BASIC on the Z88 being a favourite, 
+nicely tied in with the OS and it&#x27;s channel-based control commands. I
+suppose it wasn&#x27;t bad on the BBC either. But Atari BASIC was matched
+only by Commodore for being bloody useless. If you have to enter POKEs
+to get anything done, then it&#x27;s not BASIC it&#x27;s slightly easier
+assembly. That doesn&#x27;t actually assemble, now I think of it.
+
+The Designer&#x27;s Pencil was nice tho.
+
+---------------------------------------------------------------------
+
+&quot;hey let&#x27;s educate the brutes, we know we are superior to them anyway,
+just through genetics, we are gentically superior to the working
+class. They are a shaved monkey. If we educate them, they will be able
+to read instructions, turn up on time and man the conveyor belts,
+sorted.&quot;     #     
+
+
+</pre></div><div class="post" id="p223454"><div class="ph"><a class="d" href="#p223454">2011-01-24 22:35:11</a> <span>Bill Garber</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>
+&quot;greenaum&quot; &lt;…@…&gt; wrote in message news:…@…...
+<span class="qt">&gt; On Mon, 17 Jan 2011 09:23:31 -0800 (PST), &quot;Kjmann&#x27;s Atari Sales and</span>
+<span class="qt">&gt; Service&quot; &lt;…@…&gt; sprachen:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;I suggest that we all report his post as &quot;Abuse&quot; and get the post</span>
+<span class="qt">&gt;&gt;removed</span>
+
+I think of them more as &quot;amuse&quot; than &#x27;Abuse&#x27;. They make me laugh. 
+
+<span class="qt">&gt; Is anyone even looking after Usenet any more? </span>
+
+AFAIK, Usenet never was a moderated system. Had it been moderated, 
+I doubt all the flaming would have had a chance to even exist. 
+
+<span class="qt">&gt; Never mind him. I used all sorts of 8-bits. This thread is an </span>
+<span class="qt">&gt; opportunity for us to come together, and finish arguments we </span>
+<span class="qt">&gt; had in the playground 25 years ago. Or at the very least, </span>
+<span class="qt">&gt; carry them on. </span>
+
+How about we just carry them on and forget about those losers. 
+
+<span class="qt">&gt; &quot;hey let&#x27;s educate the brutes, we know we are superior to them </span>
+<span class="qt">&gt; anyway, just through genetics, we are gentically superior to the </span>
+<span class="qt">&gt; working class. They are a shaved monkey. If we educate them, they </span>
+<span class="qt">&gt; will be able to read instructions, turn up on time and man the </span>
+<span class="qt">&gt; conveyor belts, sorted.&quot;     # </span>
+
+Let them be, as this petty thing they do keeps them busy enough so 
+they don&#x27;t indulge in escalated activity such as: rape and murder. 
+
+Bill 
+
+
+
+
+
+</pre></div><div class="post" id="p223455"><div class="ph"><a class="d" href="#p223455">2011-01-24 23:15:49</a> <span>Thorsten Günther</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>Am 24.01.2011 22:46, schrieb greenaum:
+<span class="qt">&gt; On 18 Jan 2011 18:19:04 GMT, …@… (Bill Kendrick)</span>
+<span class="qt">&gt; sprachen:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; My brother had the C=64 (and lots of games).  I had the Atari (and few</span>
+<span class="qt">&gt;&gt; games, but a powerful BASIC to keep me busy writing my own ;) )</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Where did you get the powerful BASIC from?</span>
+
+Well, I got mine from an issue of the magazine &quot;Happy Computer&quot;, it was 
+named &quot;Turbo-BASIC XL 1.5&quot; 
+&lt;<a href="http://en.wikipedia.org/wiki/Turbo-Basic_XL&gt;." rel="noreferrer">http://en.wikipedia.org/wiki/Turbo-Basic_XL&gt;.</a> Had to type it in, 
+though. Other good BASIC dialects for the A8 usually came from OSS, but 
+were way too expensive this side of the pond.
+
+If you aim for power, though, nothing except 6502 assembly matches 
+ACTION! &lt;<a href="http://en.wikipedia.org/wiki/Action!&gt;" rel="noreferrer">http://en.wikipedia.org/wiki/Action!&gt;</a> - sadly, this language 
+was never ported to any other system (e.g. the C=64 or Apple II).
+
+<span class="qt">&gt;But Atari BASIC was matched</span>
+<span class="qt">&gt; only by Commodore for being bloody useless.</span>
+
+ACK, the Atari BASIC wasn&#x27;t good at all: slow, having a strange string 
+handling and only few commands for graphics and sound, But what was 
+important for Atari at the time: it only needed an 8K cartridge, and it 
+was finished in time. You have to remember ROM and RAM were very 
+expensive back in 1978 and MS BASIC needed more than 8K ROM on the 6502.
+
+There is only one thing I liked about Atari BASIC, now that I think of 
+it: the ability to use shortcuts (e.g. &quot;G.&quot; for &quot;GOTO&quot; and &quot;L.&quot; for &quot;LIST&quot;).
+
+
+Thorsten
+
+
+
+</pre></div><div class="post" id="p223456"><div class="ph"><a class="d" href="#p223456">2011-01-24 23:41:27</a> <span>Hp</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On 1/24/2011 4:46 PM, greenaum wrote:
+
+snip
+
+<span class="qt">&gt; Never mind him. I used all sorts of 8-bits. This thread is an</span>
+<span class="qt">&gt; opportunity for us to come together, and finish arguments we had in</span>
+<span class="qt">&gt; the playground 25 years ago. Or at the very least, carry them on.</span>
+
+<span class="qt">&gt; ---------------------------------------------------------------------</span>
+
+
+I never partyipate in these tirates, for all it does is rankle someones 
+blood pressure.
+
+But:  I can add this, all the machines made in the early days had their 
+pluses and minisus, strong points and weak points.
+
+the commiedoors sure sold a lot!
+
+As long as stores had units on display that allowed one to explore a 
+little I used to like going in and entering a small short program and 
+let it run on the commiedoors.
+
+5 let z=.01
+10 for a = 1 to 100000
+15 let z=z+.01
+20 Print z
+25 next a
+30 goto 5
+
+if this was let run to its conclusion shortly after the commiedoor hit a 
+value of 2 (I think, after all its been many a year since these were 
+store found items) errors in the math would surface and be evidenced by 
+the print statement, whereas other machines might never hickup on this 
+example of simple math.
+
+
+
+</pre></div><div class="post" id="p223461"><div class="ph"><a class="d" href="#p223461">2011-01-25 04:32:12</a> <span>RobertB</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On Jan 24, 2:35 pm, &quot;Bill Garber&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; AFAIK, Usenet never was a moderated system.</span>
+
+rec.arts.sf.tv.babylon5.moderated  :)
+
+And that group works very well,
+Robert Bernardo
+Fresno Commodore User Group
+<a href="http://videocam.net.au/fcug" rel="noreferrer">http://videocam.net.au/fcug</a>
+The Other Group of Amigoids
+<a href="http://www.calweb.com/~rabel1/" rel="noreferrer">http://www.calweb.com/~rabel1/</a>
+Southern California Commodore &amp; Amiga Network
+<a href="http://www.sccaners.org" rel="noreferrer">http://www.sccaners.org</a>
+
+
+
+</pre></div><div class="post" id="p223463"><div class="ph"><a class="d" href="#p223463">2011-01-25 08:42:24</a> <span>…@…</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>ZX81 is the king of 8-bits for sure ;-)
+
+Regards,
+
+Shaun.
+
+
+
+</pre></div><div class="post" id="p223465"><div class="ph"><a class="d" href="#p223465">2011-01-25 10:48:47</a> <span>Peter Liebert-Adelt</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>…@… wrote:
+<span class="qt">&gt; ZX81 is the king of 8-bits for sure ;-)</span>
+
+Nothing to add to these true words!
+
+See what ZX-TEAM has made possible with the old black doorstopper at 
+15th ZX-TEAM-meeting: <a href="http://www.zx81.de" rel="noreferrer">http://www.zx81.de</a>
+
+Sinclairly yours
+
+Peter
+
+
+
+</pre></div><div class="post" id="p223471"><div class="ph"><a class="d" href="#p223471">2011-01-25 17:11:30</a> <span>Trevor Holyoak</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On 1/25/2011 1:42 AM, …@… wrote:
+<span class="qt">&gt; ZX81 is the king of 8-bits for sure ;-)</span>
+
+It was what I got started on. :)
+
+- Trevor
+
+
+
+</pre></div><div class="post" id="p223472"><div class="ph"><a class="d" href="#p223472">2011-01-25 17:39:24</a> <span>…@…</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On Jan 25, 10:48 am, Peter Liebert-Adelt &lt;…@…&gt; wrote:
+<span class="qt">&gt; …@… wrote:</span>
+<span class="qt">&gt; &gt; ZX81 is the king of 8-bits for sure ;-)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Nothing to add to these true words!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; See what ZX-TEAM has made possible with the old black doorstopper at</span>
+<span class="qt">&gt; 15th ZX-TEAM-meeting:<a href="http://www.zx81.de" rel="noreferrer">http://www.zx81.de</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Sinclairly yours</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Peter</span>
+
+3D Monster Maze, Mazogs and more recent additions like PipePanic,
+Virus, MazezaM, Q-Frogger and the amazing Boulder Logic is all you
+need as a gamer, and those are just a few titles, there are many more
+to mention for sure!
+
+Regards,
+
+Shaun.
+
+
+
+</pre></div><div class="post" id="p223473"><div class="ph"><a class="d" href="#p223473">2011-01-25 20:03:12</a> <span>Bill Kendrick</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>In comp.sys.atari.8bit greenaum &lt;…@…&gt; wrote:
+<span class="qt">&gt; Where did you get the powerful BASIC from? No sprite or sound support,</span>
+<span class="qt">&gt; and it couldn&#x27;t even draw bloody circles! And wait, it didn&#x27;t even</span>
+<span class="qt">&gt; have proper strings! I loved the graphics and fast CPU, and Star</span>
+<span class="qt">&gt; Raiders is legendary, but the BASIC on the Atari 8-bits was AWFUL. </span>
+
+Well, compared to what I saw on the Apple II (which I basically considered
+to be a joke of a system, as a kid ;) ) and C=64 (which had no pixel graphics
+or sound commands in BASIC).
+
+Eventually, yes, the slowness and lack of a number of useful functions
+(more graphics, sprites, etc.) caused me to switch to TurboBASIC XL once
+I discovered it.  It still lacked sprites, but by then I had some books
+that explained how to set them up (via POKEs), and TBXL had some memory
+move functions.
+
+
+<span class="qt">&gt; I&#x27;ve used several BASICs, BBC BASIC on the Z88 being a favourite, </span>
+<span class="qt">&gt; nicely tied in with the OS and it&#x27;s channel-based control commands. I</span>
+<span class="qt">&gt; suppose it wasn&#x27;t bad on the BBC either. But Atari BASIC was matched</span>
+<span class="qt">&gt; only by Commodore for being bloody useless. If you have to enter POKEs</span>
+<span class="qt">&gt; to get anything done, then it&#x27;s not BASIC it&#x27;s slightly easier</span>
+<span class="qt">&gt; assembly. That doesn&#x27;t actually assemble, now I think of it.</span>
+
+Nah nah nah. :)
+
+10 GRAPHICS 8
+20 SETCOLOR 2,0,0
+30 SETCOLOR 1,0,15
+40 COLOR 1
+50 FOR X=0 TO 359 STEP 3
+60 PLOT X,0
+70 DRAWTO 359-X,191
+80 SOUND 0,X/2,10,8
+90 NEXT X
+100 SOUND 0,0,0,0
+
+
+C=64 BASIC did not make that kind of functionality accessible, from what
+I remember.  It all had to be done with POKEs and SYS calls, no?
+
+-- 
+-bill!
+Sent from my computer
+
+
+
+</pre></div><div class="post" id="p223474"><div class="ph"><a class="d" href="#p223474">2011-01-25 20:05:39</a> <span>Bill Kendrick</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>In comp.sys.atari.8bit Thorsten Gï¿½nther &lt;…@…&gt; wrote:
+<span class="qt">&gt; There is only one thing I liked about Atari BASIC, now that I think of </span>
+<span class="qt">&gt; it: the ability to use shortcuts (e.g. &quot;G.&quot; for &quot;GOTO&quot; and &quot;L.&quot; for &quot;LIST&quot;).</span>
+
+It also provided feedback on syntax errors immediately.
+
+10250 REM SOME SUBROUTINE THAT RARELY GETS GOSUB&#x27;D
+10260 PRONT &quot;HELLO&quot;
+10270 RETURN
+
+would result in an error the moment you entered line 10260.
+
+I remember being uber-frustrated by Apple II&#x27;s BASIC because
+it would only check syntax as the program ran.  So if you have
+a 1-in-a-million chance of ever landing on a line of code,
+you had that much chance of knowing you made a typo. :^(
+
+Also, I seem to recall C=64 BASIC had 2-character limits on
+variable names.  e.g.
+
+10 CARS=10
+20 CAT=0
+30 PRINT CARS
+
+oops :(
+
+
+
+-- 
+-bill!
+Sent from my computer
+
+
+
+</pre></div><div class="post" id="p223476"><div class="ph"><a class="d" href="#p223476">2011-01-25 20:38:49</a> <span>Joel Koltner</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>&quot;Bill Kendrick&quot; &lt;…@…&gt; wrote in message 
+news:4d3f2c80$0$43976$…@…...
+<span class="qt">&gt; C=64 BASIC did not make that kind of functionality accessible, from what</span>
+<span class="qt">&gt; I remember.  It all had to be done with POKEs and SYS calls, no?</span>
+
+Correct.  There were many later add-ons to expand BASIC with lots of useful 
+new keywords, but they never really caught on that much.  Commodore themselves 
+distributed Simon&#x27;s BASIC, which added a lot of much-needed commands: 
+<a href="http://en.wikipedia.org/wiki/Simon%27s_BASIC" rel="noreferrer">http://en.wikipedia.org/wiki/Simon%27s_BASIC</a> .  (A lot of utility cartridges 
+also added commands that were meant more for use in immediate mode than in a 
+BASIC program itself; I had a Final Cartridge III --  
+<a href="http://en.wikipedia.org/wiki/Final_Cartridge" rel="noreferrer">http://en.wikipedia.org/wiki/Final_Cartridge</a> -- that was truly spectacular 
+back in its day.)
+
+<span class="qt">&gt; Also, I seem to recall C=64 BASIC had 2-character limits on</span>
+<span class="qt">&gt; variable names.  e.g.</span>
+
+This was true of many BASICs of the day -- Apple had the same limitation.
+
+---Joel
+
+
+
+
+</pre></div><div class="post" id="p223477"><div class="ph"><a class="d" href="#p223477">2011-01-26 03:01:27</a> <span>RobertB</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On Jan 25, 12:03 pm, …@… (Bill Kendrick) wrote:
+
+<span class="qt">&gt; 10 GRAPHICS 8</span>
+<span class="qt">&gt; 20 SETCOLOR 2,0,0</span>
+<span class="qt">&gt; 30 SETCOLOR 1,0,15</span>
+<span class="qt">&gt; 40 COLOR 1</span>
+<span class="qt">&gt; 50 FOR X=0 TO 359 STEP 3</span>
+<span class="qt">&gt; 60 PLOT X,0</span>
+<span class="qt">&gt; 70 DRAWTO 359-X,191</span>
+<span class="qt">&gt; 80 SOUND 0,X/2,10,8</span>
+<span class="qt">&gt; 90 NEXT X</span>
+<span class="qt">&gt; 100 SOUND 0,0,0,0</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; C=64 BASIC did not make that kind of functionality accessible, from what</span>
+<span class="qt">&gt; I remember.  It all had to be done with POKEs and SYS calls, no?</span>
+
+True.  More functionality came with BASIC 3.5 in the
+Commodore Plus/4 and BASIC 7.0 in the Commodore 128.
+
+See you at the May Atari Party,
+Robert Bernardo
+Fresno Commodore User Group
+<a href="http://videocam.net.au/fcug" rel="noreferrer">http://videocam.net.au/fcug</a>
+The Other Group of Amigoids
+<a href="http://www.calweb.com/~rabel1/" rel="noreferrer">http://www.calweb.com/~rabel1/</a>
+Southern California Commodore &amp; Amiga Network
+<a href="http://www.sccaners.org" rel="noreferrer">http://www.sccaners.org</a>
+
+
+
+</pre></div><div class="post" id="p223478"><div class="ph"><a class="d" href="#p223478">2011-01-26 13:29:51</a> <span>Clocky</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>Bill Kendrick wrote:
+<span class="qt">&gt; In comp.sys.atari.8bit greenaum &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; Where did you get the powerful BASIC from? No sprite or sound</span>
+<span class="qt">&gt;&gt; support, and it couldn&#x27;t even draw bloody circles! And wait, it</span>
+<span class="qt">&gt;&gt; didn&#x27;t even have proper strings! I loved the graphics and fast CPU,</span>
+<span class="qt">&gt;&gt; and Star Raiders is legendary, but the BASIC on the Atari 8-bits was</span>
+<span class="qt">&gt;&gt; AWFUL.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Well, compared to what I saw on the Apple II (which I basically</span>
+<span class="qt">&gt; considered to be a joke of a system, as a kid ;) ) and C=64 (which</span>
+<span class="qt">&gt; had no pixel graphics or sound commands in BASIC).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Eventually, yes, the slowness and lack of a number of useful functions</span>
+<span class="qt">&gt; (more graphics, sprites, etc.) caused me to switch to TurboBASIC XL</span>
+<span class="qt">&gt; once</span>
+<span class="qt">&gt; I discovered it.  It still lacked sprites, but by then I had some</span>
+<span class="qt">&gt; books</span>
+<span class="qt">&gt; that explained how to set them up (via POKEs), and TBXL had some</span>
+<span class="qt">&gt; memory</span>
+<span class="qt">&gt; move functions.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; I&#x27;ve used several BASICs, BBC BASIC on the Z88 being a favourite,</span>
+<span class="qt">&gt;&gt; nicely tied in with the OS and it&#x27;s channel-based control commands. I</span>
+<span class="qt">&gt;&gt; suppose it wasn&#x27;t bad on the BBC either. But Atari BASIC was matched</span>
+<span class="qt">&gt;&gt; only by Commodore for being bloody useless. If you have to enter</span>
+<span class="qt">&gt;&gt; POKEs to get anything done, then it&#x27;s not BASIC it&#x27;s slightly easier</span>
+<span class="qt">&gt;&gt; assembly. That doesn&#x27;t actually assemble, now I think of it.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Nah nah nah. :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; 10 GRAPHICS 8</span>
+<span class="qt">&gt; 20 SETCOLOR 2,0,0</span>
+<span class="qt">&gt; 30 SETCOLOR 1,0,15</span>
+<span class="qt">&gt; 40 COLOR 1</span>
+<span class="qt">&gt; 50 FOR X=0 TO 359 STEP 3</span>
+<span class="qt">&gt; 60 PLOT X,0</span>
+<span class="qt">&gt; 70 DRAWTO 359-X,191</span>
+<span class="qt">&gt; 80 SOUND 0,X/2,10,8</span>
+<span class="qt">&gt; 90 NEXT X</span>
+<span class="qt">&gt; 100 SOUND 0,0,0,0</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; C=64 BASIC did not make that kind of functionality accessible, from</span>
+<span class="qt">&gt; what</span>
+<span class="qt">&gt; I remember.</span>
+
+True, but neither did the stock Atari BASIC. There where BASIC enhancements 
+like Simon&#x27;s BASIC that added similar commands to C= BASIC. Ofcourse, then 
+there was the problem that your programs would only work for people who had 
+the same enhanced BASIC.
+
+  It all had to be done with POKEs and SYS calls, no?
+
+ML is really the only way to make use of graphics and sound on the old 8 
+bitters anyway, if you&#x27;re talking games and programs that required any kind 
+of speed.
+
+I was spoilt in that I had a CoCo2 with Extended Colour BASIC which had a 
+decent BASIC but it was still hampered by it&#x27;s lack of speed.
+
+
+
+
+
+
+</pre></div><div class="post" id="p223479"><div class="ph"><a class="d" href="#p223479">2011-01-27 07:02:40</a> <span>…@…</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On Jan 26, 8:29 am, &quot;Clocky&quot; &lt;…@…&gt; wrote:
+<span class="qt">&gt; Bill Kendrick wrote:</span>
+<span class="qt">&gt; &gt; In comp.sys.atari.8bit greenaum &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt;&gt; Where did you get the powerful BASIC from? No sprite or sound</span>
+<span class="qt">&gt; &gt;&gt; support, and it couldn&#x27;t even draw bloody circles! And wait, it</span>
+<span class="qt">&gt; &gt;&gt; didn&#x27;t even have proper strings! I loved the graphics and fast CPU,</span>
+<span class="qt">&gt; &gt;&gt; and Star Raiders is legendary, but the BASIC on the Atari 8-bits was</span>
+<span class="qt">&gt; &gt;&gt; AWFUL.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Well, compared to what I saw on the Apple II (which I basically</span>
+<span class="qt">&gt; &gt; considered to be a joke of a system, as a kid ;) ) and C=64 (which</span>
+<span class="qt">&gt; &gt; had no pixel graphics or sound commands in BASIC).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Eventually, yes, the slowness and lack of a number of useful functions</span>
+<span class="qt">&gt; &gt; (more graphics, sprites, etc.) caused me to switch to TurboBASIC XL</span>
+<span class="qt">&gt; &gt; once</span>
+<span class="qt">&gt; &gt; I discovered it.  It still lacked sprites, but by then I had some</span>
+<span class="qt">&gt; &gt; books</span>
+<span class="qt">&gt; &gt; that explained how to set them up (via POKEs), and TBXL had some</span>
+<span class="qt">&gt; &gt; memory</span>
+<span class="qt">&gt; &gt; move functions.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;&gt; I&#x27;ve used several BASICs, BBC BASIC on the Z88 being a favourite,</span>
+<span class="qt">&gt; &gt;&gt; nicely tied in with the OS and it&#x27;s channel-based control commands. I</span>
+<span class="qt">&gt; &gt;&gt; suppose it wasn&#x27;t bad on the BBC either. But Atari BASIC was matched</span>
+<span class="qt">&gt; &gt;&gt; only by Commodore for being bloody useless. If you have to enter</span>
+<span class="qt">&gt; &gt;&gt; POKEs to get anything done, then it&#x27;s not BASIC it&#x27;s slightly easier</span>
+<span class="qt">&gt; &gt;&gt; assembly. That doesn&#x27;t actually assemble, now I think of it.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Nah nah nah. :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; 10 GRAPHICS 8</span>
+<span class="qt">&gt; &gt; 20 SETCOLOR 2,0,0</span>
+<span class="qt">&gt; &gt; 30 SETCOLOR 1,0,15</span>
+<span class="qt">&gt; &gt; 40 COLOR 1</span>
+<span class="qt">&gt; &gt; 50 FOR X=0 TO 359 STEP 3</span>
+<span class="qt">&gt; &gt; 60 PLOT X,0</span>
+<span class="qt">&gt; &gt; 70 DRAWTO 359-X,191</span>
+<span class="qt">&gt; &gt; 80 SOUND 0,X/2,10,8</span>
+<span class="qt">&gt; &gt; 90 NEXT X</span>
+<span class="qt">&gt; &gt; 100 SOUND 0,0,0,0</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; C=64 BASIC did not make that kind of functionality accessible, from</span>
+<span class="qt">&gt; &gt; what</span>
+<span class="qt">&gt; &gt; I remember.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; True, but neither did the stock Atari BASIC. There where BASIC enhancements</span>
+<span class="qt">&gt; like Simon&#x27;s BASIC that added similar commands to C= BASIC. Ofcourse, then</span>
+<span class="qt">&gt; there was the problem that your programs would only work for people who had</span>
+<span class="qt">&gt; the same enhanced BASIC.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;   It all had to be done with POKEs and SYS calls, no?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; ML is really the only way to make use of graphics and sound on the old 8</span>
+<span class="qt">&gt; bitters anyway, if you&#x27;re talking games and programs that required any kind</span>
+<span class="qt">&gt; of speed.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I was spoilt in that I had a CoCo2 with Extended Colour BASIC which had a</span>
+<span class="qt">&gt; decent BASIC but it was still hampered by it&#x27;s lack of speed.</span>
+
+CoCo2&#x27;s Extended Colour BASIC sounds like what I grew up on - TI
+Extended BASIC... had an excellent set of statements and commands, but
+was pretty slow...
+It did not support line-graphics, being that the graphics chip
+originally used on the 99/4 had no bitmap mode - the 99/4A added
+bitmap. It was a character-based graphics system, even the bitmap
+mode...
+
+But the sprite statements and sound statements were most awesome. So
+were the user-defined subprograms with local variables. Too bad BASIC
+was too slow to do much in...
+
+
+
+</pre></div><div class="post" id="p223480"><div class="ph"><a class="d" href="#p223480">2011-01-27 14:48:20</a> <span>Jer</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On Jan 27, 2:02 am, &quot;…@…&quot;
+&lt;…@…&gt; wrote:
+<span class="qt">&gt; On Jan 26, 8:29 am, &quot;Clocky&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Bill Kendrick wrote:</span>
+<span class="qt">&gt; &gt; &gt; In comp.sys.atari.8bit greenaum &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt; &gt;&gt; Where did you get the powerful BASIC from? No sprite or sound</span>
+<span class="qt">&gt; &gt; &gt;&gt; support, and it couldn&#x27;t even draw bloody circles! And wait, it</span>
+<span class="qt">&gt; &gt; &gt;&gt; didn&#x27;t even have proper strings! I loved the graphics and fast CPU,</span>
+<span class="qt">&gt; &gt; &gt;&gt; and Star Raiders is legendary, but the BASIC on the Atari 8-bits was</span>
+<span class="qt">&gt; &gt; &gt;&gt; AWFUL.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; Well, compared to what I saw on the Apple II (which I basically</span>
+<span class="qt">&gt; &gt; &gt; considered to be a joke of a system, as a kid ;) ) and C=64 (which</span>
+<span class="qt">&gt; &gt; &gt; had no pixel graphics or sound commands in BASIC).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; Eventually, yes, the slowness and lack of a number of useful functions</span>
+<span class="qt">&gt; &gt; &gt; (more graphics, sprites, etc.) caused me to switch to TurboBASIC XL</span>
+<span class="qt">&gt; &gt; &gt; once</span>
+<span class="qt">&gt; &gt; &gt; I discovered it.  It still lacked sprites, but by then I had some</span>
+<span class="qt">&gt; &gt; &gt; books</span>
+<span class="qt">&gt; &gt; &gt; that explained how to set them up (via POKEs), and TBXL had some</span>
+<span class="qt">&gt; &gt; &gt; memory</span>
+<span class="qt">&gt; &gt; &gt; move functions.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt;&gt; I&#x27;ve used several BASICs, BBC BASIC on the Z88 being a favourite,</span>
+<span class="qt">&gt; &gt; &gt;&gt; nicely tied in with the OS and it&#x27;s channel-based control commands. I</span>
+<span class="qt">&gt; &gt; &gt;&gt; suppose it wasn&#x27;t bad on the BBC either. But Atari BASIC was matched</span>
+<span class="qt">&gt; &gt; &gt;&gt; only by Commodore for being bloody useless. If you have to enter</span>
+<span class="qt">&gt; &gt; &gt;&gt; POKEs to get anything done, then it&#x27;s not BASIC it&#x27;s slightly easier</span>
+<span class="qt">&gt; &gt; &gt;&gt; assembly. That doesn&#x27;t actually assemble, now I think of it.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; Nah nah nah. :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; 10 GRAPHICS 8</span>
+<span class="qt">&gt; &gt; &gt; 20 SETCOLOR 2,0,0</span>
+<span class="qt">&gt; &gt; &gt; 30 SETCOLOR 1,0,15</span>
+<span class="qt">&gt; &gt; &gt; 40 COLOR 1</span>
+<span class="qt">&gt; &gt; &gt; 50 FOR X=0 TO 359 STEP 3</span>
+<span class="qt">&gt; &gt; &gt; 60 PLOT X,0</span>
+<span class="qt">&gt; &gt; &gt; 70 DRAWTO 359-X,191</span>
+<span class="qt">&gt; &gt; &gt; 80 SOUND 0,X/2,10,8</span>
+<span class="qt">&gt; &gt; &gt; 90 NEXT X</span>
+<span class="qt">&gt; &gt; &gt; 100 SOUND 0,0,0,0</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; C=64 BASIC did not make that kind of functionality accessible, from</span>
+<span class="qt">&gt; &gt; &gt; what</span>
+<span class="qt">&gt; &gt; &gt; I remember.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; True, but neither did the stock Atari BASIC. There where BASIC enhancements</span>
+<span class="qt">&gt; &gt; like Simon&#x27;s BASIC that added similar commands to C= BASIC. Ofcourse, then</span>
+<span class="qt">&gt; &gt; there was the problem that your programs would only work for people who had</span>
+<span class="qt">&gt; &gt; the same enhanced BASIC.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;   It all had to be done with POKEs and SYS calls, no?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; ML is really the only way to make use of graphics and sound on the old 8</span>
+<span class="qt">&gt; &gt; bitters anyway, if you&#x27;re talking games and programs that required any kind</span>
+<span class="qt">&gt; &gt; of speed.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; I was spoilt in that I had a CoCo2 with Extended Colour BASIC which had a</span>
+<span class="qt">&gt; &gt; decent BASIC but it was still hampered by it&#x27;s lack of speed.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; CoCo2&#x27;s Extended Colour BASIC sounds like what I grew up on - TI</span>
+<span class="qt">&gt; Extended BASIC... had an excellent set of statements and commands, but</span>
+<span class="qt">&gt; was pretty slow...</span>
+<span class="qt">&gt; It did not support line-graphics, being that the graphics chip</span>
+<span class="qt">&gt; originally used on the 99/4 had no bitmap mode - the 99/4A added</span>
+<span class="qt">&gt; bitmap. It was a character-based graphics system, even the bitmap</span>
+<span class="qt">&gt; mode...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; But the sprite statements and sound statements were most awesome. So</span>
+<span class="qt">&gt; were the user-defined subprograms with local variables. Too bad BASIC</span>
+<span class="qt">&gt; was too slow to do much in...</span>
+
+I started programming on a Timex-Sinclar 1000(that I still have but
+doesn&#x27;t fully work, and then TI99-4a), which I wrote for and had no
+way of saving the programs at first but learned a bunch about basic
+before I got my Atari 800 with 410 recorder(still have but upgraded to
+a 130xe).  I still like to play with basic programming on the 130xe
+and would like to try and convert some of my Flash games I have made
+to the Atari 8 bit machines.  Here is a link to some my Flash games on
+my Flash gaming site.  <a href="http://www.thepixelcastle.com/cat/4/Originals/newest-1.html" rel="noreferrer">http://www.thepixelcastle.com/cat/4/Originals/newest-1.html</a>
+I am sure some I can do easily and some might take little more work,
+but the challenge should be fun.
+
+
+
+</pre></div><div class="post" id="p223481"><div class="ph"><a class="d" href="#p223481">2011-01-27 17:36:17</a> <span>Bill Kendrick</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>In comp.sys.atari.8bit Clocky &lt;…@…&gt; wrote:
+<span class="qt">&gt; Bill Kendrick wrote:</span>
+&lt;snip&gt;
+<span class="qt">&gt; &gt; 10 GRAPHICS 8</span>
+<span class="qt">&gt; &gt; 20 SETCOLOR 2,0,0</span>
+<span class="qt">&gt; &gt; 30 SETCOLOR 1,0,15</span>
+<span class="qt">&gt; &gt; 40 COLOR 1</span>
+<span class="qt">&gt; &gt; 50 FOR X=0 TO 359 STEP 3</span>
+<span class="qt">&gt; &gt; 60 PLOT X,0</span>
+<span class="qt">&gt; &gt; 70 DRAWTO 359-X,191</span>
+<span class="qt">&gt; &gt; 80 SOUND 0,X/2,10,8</span>
+<span class="qt">&gt; &gt; 90 NEXT X</span>
+<span class="qt">&gt; &gt; 100 SOUND 0,0,0,0</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; C=64 BASIC did not make that kind of functionality accessible, from</span>
+<span class="qt">&gt; &gt; what</span>
+<span class="qt">&gt; &gt; I remember.</span>
+
+<span class="qt">&gt; True, but neither did the stock Atari BASIC.</span>
+
+That, right up there, is stock Atari BASIC code.  (The kind you&#x27;d get
+on cartridge for the 400, 800 and 1200XL, or which was built-in on
+the alter models: 600XL, 800XL, 65XE, 130XE, XEGS.)
+
+
+&lt;snip&gt;
+<span class="qt">&gt; ML is really the only way to make use of graphics and sound on the old 8 </span>
+<span class="qt">&gt; bitters anyway, if you&#x27;re talking games and programs that required any kind </span>
+<span class="qt">&gt; of speed.</span>
+
+Yes, truly.  On the other hand, as a young kid (I was about 7 or 8 when
+I got my Atari 1200XL), BASIC was _incredibly_ accessible as a programming
+language, and I have hundreds of 5.25&quot; floppies rotting in my closet with
+old games and other programs I wrote for myself in BASIC.
+
+I would have loved to known 6502 assembly, but I never ended up with any
+of the books or magazines that explained it.  On the other hand, I was able
+to take the ML-less BASIC code from computer magazines about the C=64 and
+&#x27;port&#x27; them to the Atari, to play with them.  (I learned a little about
+AI by programming an inference engine and Dr. Eliza game.)  I could also
+sit down on a C=64, Apple II, or IBM PC with BASIC and crank out little
+programs pretty easily. ;)
+
+As crappy as BASIC is compared to most high level languages, and as slow
+as BASIC is on the old 8-bit systems, it really gave me a leg-up into the
+programming career that I&#x27;ve had since before I even finished college.
+
+And like I said, TurboBASIC XL was a nice crutch later on.  (Ah, finally,
+I can easily blit text onto a bitmap screen. ;) )
+
+
+-- 
+-bill!
+Sent from my computer
+
+
+
+</pre></div><div class="post" id="p223482"><div class="ph"><a class="d" href="#p223482">2011-01-27 17:54:55</a> <span>Joel Koltner</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>&lt;…@…&gt; wrote in message 
+news:…@…...
+On Jan 26, 8:29 am, &quot;Clocky&quot; &lt;…@…&gt; wrote:
+<span class="qt">&gt;Extended BASIC... had an excellent set of statements and commands, but</span>
+<span class="qt">&gt;was pretty slow...</span>
+
+...largely due to that truly bizarre graphics chip they used; like, e.g., the 
+one in the C-128, it took a lot of machincations to actually transfer data to 
+it...
+
+
+
+
+</pre></div><div class="post" id="p223483"><div class="ph"><a class="d" href="#p223483">2011-01-27 18:23:02</a> <span>ricortes</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On Jan 27, 9:54 am, &quot;Joel Koltner&quot; &lt;…@…&gt;
+wrote:
+<span class="qt">&gt; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt; On Jan 26, 8:29 am, &quot;Clocky&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;Extended BASIC... had an excellent set of statements and commands, but</span>
+<span class="qt">&gt; &gt;was pretty slow...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; ...largely due to that truly bizarre graphics chip they used; like, e.g., the</span>
+<span class="qt">&gt; one in the C-128, it took a lot of machincations to actually transfer data to</span>
+<span class="qt">&gt; it...</span>
+
+Just a POV but if I imagine a world where there was only one low cost
+entry level computer, whatever it was it would have been the greatest
+thing since sliced bread. Doesn&#x27;t matter if it was a Sinclair, Atari,
+or Jupiter Ace, I would have still embraced it.
+
+I grew up before the advent of pocket calculators and personal
+computers. I still remember using slide rules and log tables when I
+was taking tests in college. Even when I started work I thought a
+~Wang 700 programable calculator the size of a bread box that anyone
+in the building could use was an incredible tool.
+
+Hmmm, next thing you know I&#x27;ll start talking about how I walked
+barefoot in the snow, uphill both ways, to school. :)
+
+Rick
+
+
+
+</pre></div><div class="post" id="p223484"><div class="ph"><a class="d" href="#p223484">2011-01-27 19:46:26</a> <span>winston19842005</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On 1/27/11 12:54 PM, in article
+Qji0p.737758$…@…, &quot;Joel Koltner&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt; On Jan 26, 8:29 am, &quot;Clocky&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; Extended BASIC... had an excellent set of statements and commands, but</span>
+<span class="qt">&gt;&gt; was pretty slow...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; ...largely due to that truly bizarre graphics chip they used; like, e.g., the</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; one in the C-128, it took a lot of machincations to actually transfer data to</span>
+<span class="qt">&gt; it...</span>
+<span class="qt">&gt; </span>
+
+That, plus the BASIC was written in another interpreted language. TI
+Extended Basic had some written in assembly, but still a lot was in GPL -
+there was a GPL interpreter in ROM.
+
+
+
+
+</pre></div><div class="post" id="p223485"><div class="ph"><a class="d" href="#p223485">2011-01-28 03:35:41</a> <span>Ronald J. Hall</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On Thu, 27 Jan 2011 10:23:02 -0800, ricortes wrote:
+
+&lt;snip&gt;
+
+<span class="qt">&gt; Hmmm, next thing you know I&#x27;ll start talking about how I walked</span>
+<span class="qt">&gt; barefoot in the snow, uphill both ways, to school. :)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Rick</span>
+
+I&#x27;m with ya Rick - we were so far up in the head of a &quot;holler&quot; that our
+Saturday morning cartoons came in on Sunday!  :)
+
+-- 
+Welcome To DarkForce! www.darkforce.org &quot;The Fuji Lives.!&quot;
+An Atari SW/HW based BBS - Telnet:darkforce-bbs.dyndns.org
+
+
+
+
+</pre></div><div class="post" id="p223486"><div class="ph"><a class="d" href="#p223486">2011-01-28 07:31:23</a> <span>Bill Garber</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>
+&quot;Ronald J. Hall&quot; &lt;…@…&gt; wrote in message news:…@…... 
+<span class="qt">&gt; On Thu, 27 Jan 2011 10:23:02 -0800, ricortes wrote: </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &lt;snip&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Hmmm, next thing you know I&#x27;ll start talking about how I walked </span>
+<span class="qt">&gt;&gt; barefoot in the snow, uphill both ways, to school. :) </span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Rick</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;m with ya Rick - we were so far up in the head of a &quot;holler&quot; </span>
+<span class="qt">&gt; that our Saturday morning cartoons came in on Sunday!  :) </span>
+
+HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+
+
+
+
+
+</pre></div><div class="post" id="p223487"><div class="ph"><a class="d" href="#p223487">2011-01-28 09:06:17</a> <span>Clocky</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>Bill Kendrick wrote:
+<span class="qt">&gt; In comp.sys.atari.8bit Clocky &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; Bill Kendrick wrote:</span>
+<span class="qt">&gt; &lt;snip&gt;</span>
+<span class="qt">&gt;&gt;&gt; 10 GRAPHICS 8</span>
+<span class="qt">&gt;&gt;&gt; 20 SETCOLOR 2,0,0</span>
+<span class="qt">&gt;&gt;&gt; 30 SETCOLOR 1,0,15</span>
+<span class="qt">&gt;&gt;&gt; 40 COLOR 1</span>
+<span class="qt">&gt;&gt;&gt; 50 FOR X=0 TO 359 STEP 3</span>
+<span class="qt">&gt;&gt;&gt; 60 PLOT X,0</span>
+<span class="qt">&gt;&gt;&gt; 70 DRAWTO 359-X,191</span>
+<span class="qt">&gt;&gt;&gt; 80 SOUND 0,X/2,10,8</span>
+<span class="qt">&gt;&gt;&gt; 90 NEXT X</span>
+<span class="qt">&gt;&gt;&gt; 100 SOUND 0,0,0,0</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; C=64 BASIC did not make that kind of functionality accessible, from</span>
+<span class="qt">&gt;&gt;&gt; what</span>
+<span class="qt">&gt;&gt;&gt; I remember.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; True, but neither did the stock Atari BASIC.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; That, right up there, is stock Atari BASIC code.  (The kind you&#x27;d get</span>
+<span class="qt">&gt; on cartridge for the 400, 800 and 1200XL, or which was built-in on</span>
+<span class="qt">&gt; the alter models: 600XL, 800XL, 65XE, 130XE, XEGS.)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &lt;snip&gt;</span>
+<span class="qt">&gt;&gt; ML is really the only way to make use of graphics and sound on the</span>
+<span class="qt">&gt;&gt; old 8 bitters anyway, if you&#x27;re talking games and programs that</span>
+<span class="qt">&gt;&gt; required any kind of speed.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Yes, truly.  On the other hand, as a young kid (I was about 7 or 8</span>
+<span class="qt">&gt; when</span>
+<span class="qt">&gt; I got my Atari 1200XL), BASIC was _incredibly_ accessible as a</span>
+<span class="qt">&gt; programming language, and I have hundreds of 5.25&quot; floppies rotting</span>
+<span class="qt">&gt; in my closet with old games and other programs I wrote for myself in</span>
+<span class="qt">&gt; BASIC.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I would have loved to known 6502 assembly, but I never ended up with</span>
+<span class="qt">&gt; any of the books or magazines that explained it.  On the other hand,</span>
+<span class="qt">&gt; I was able to take the ML-less BASIC code from computer magazines</span>
+<span class="qt">&gt; about the C=64 and &#x27;port&#x27; them to the Atari, to play with them.  (I</span>
+<span class="qt">&gt; learned a little about</span>
+<span class="qt">&gt; AI by programming an inference engine and Dr. Eliza game.)  I could</span>
+<span class="qt">&gt; also sit down on a C=64, Apple II, or IBM PC with BASIC and crank out</span>
+<span class="qt">&gt; little programs pretty easily. ;)</span>
+<span class="qt">&gt;</span>
+
+I had a lot of fun programming, and as long as you were aware of the 
+constraints you could still produce some interesting stuff.
+
+<span class="qt">&gt; As crappy as BASIC is compared to most high level languages, and as</span>
+<span class="qt">&gt; slow as BASIC is on the old 8-bit systems, it really gave me a leg-up</span>
+<span class="qt">&gt; into the programming career that I&#x27;ve had since before I even</span>
+<span class="qt">&gt; finished college.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; And like I said, TurboBASIC XL was a nice crutch later on.  (Ah,</span>
+<span class="qt">&gt; finally, I can easily blit text onto a bitmap screen. ;) )</span>
+
+Unfortunately my programming didn&#x27;t progress much past my &quot;Shoot the Cabbage 
+Patch Kid&quot; for the CoCo (which I still have a copy of) and a rather 
+excellent Cricket game which was just under 16K which unfortunately has been 
+lost. Both were written in extended BASIC.
+
+I really only started dabbling in ML towards the end before other 
+distractions came along, and then again when I got into Commodore computers 
+a bit later.
+
+
+
+
+
+
+</pre></div><div class="post" id="p223488"><div class="ph"><a class="d" href="#p223488">2011-01-28 09:50:00</a> <span>PM7500</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On Jan 16, 8:51 am, &quot;Lloyd Hearsewave&quot; &lt;…@…&gt; wrote:
+<span class="qt">&gt; I don&#x27;t understand why people are still using crappy doorstoppers like the</span>
+<span class="qt">&gt; Sinclair Spectrum and ugly black and white heaps of trash like the ATARI 800</span>
+<span class="qt">&gt; XL.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Both of these computers failed in the 80s and look at the graphics of the</span>
+<span class="qt">&gt; Spectrum - ugly, monochrome, no scrolling and no sprites.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The ATARI has only 3 ugly colors, ugly sprites and bad scrolling. 99% of</span>
+<span class="qt">&gt; ATARI games are crap.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; All the games are MUCH superior on the C64 and the C64 truly is the king of</span>
+<span class="qt">&gt; home computers!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; So please throw away your ATARIs and Spectrums and buy a C64 on ebay!</span>
+
+Then go the C64 newsgroups and shut the hell up you troll.
+
+
+
+</pre></div><div class="post" id="p223493"><div class="ph"><a class="d" href="#p223493">2011-01-31 13:40:17</a> <span>Guesser</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On 16/01/2011 13:51, Lloyd Hearsewave wrote:
+<span class="qt">&gt; So please throw away your ATARIs and Spectrums and buy a C64 on ebay!</span>
+
+what a rubbish flame war, dead already...
+
+first lets annoy ATARI and speccy owners: I agree, they are rubbish... 
+but then they are decades out of date.
+and now for the c64 owners: The C64 is also rubbish, really, it&#x27;s pants.
+
+Now for everyone: The king of home computers is clearly the IBM PC 
+compatible. Sure it was more expensive back in the day, and only took 
+hold in the business market at first, but which machine is on 
+everybody&#x27;s desk/lap? An IBM PC AT derivative.
+
+:p
+
+
+
+
+</pre></div><div class="post" id="p223502"><div class="ph"><a class="d" href="#p223502">2011-02-02 17:01:38</a> <span>TJ</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On 01/19/2011 07:16 PM, Sean Huxter wrote:
+<span class="qt">&gt; Sounds like someone trying to get cheap Ataris and Spectrums on eBay.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Sean.</span>
+<span class="qt">&gt;</span>
+More like he&#x27;s got a stack of C64s that he&#x27;s trying to unload on 
+unsuspecting victims.
+
+TJ
+
+<span class="qt">&gt; &quot;Lloyd Hearsewave&quot;&lt;…@…&gt;  wrote in message</span>
+<span class="qt">&gt; news:igut59$4e2$…@…...</span>
+<span class="qt">&gt;&gt; I don&#x27;t understand why people are still using crappy doorstoppers like the</span>
+<span class="qt">&gt;&gt; Sinclair Spectrum and ugly black and white heaps of trash like the ATARI</span>
+<span class="qt">&gt;&gt; 800 XL.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Both of these computers failed in the 80s and look at the graphics of the</span>
+<span class="qt">&gt;&gt; Spectrum - ugly, monochrome, no scrolling and no sprites.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; The ATARI has only 3 ugly colors, ugly sprites and bad scrolling. 99% of</span>
+<span class="qt">&gt;&gt; ATARI games are crap.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; All the games are MUCH superior on the C64 and the C64 truly is the king</span>
+<span class="qt">&gt;&gt; of home computers!</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; So please throw away your ATARIs and Spectrums and buy a C64 on ebay!</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+
+
+</pre></div><div class="post" id="p223527"><div class="ph"><a class="d" href="#p223527">2011-02-07 13:14:16</a> <span>Thorsten Günther</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>Am 31.01.2011 14:40, schrieb Guesser:
+<span class="qt">&gt; Now for everyone: The king of home computers is clearly the IBM PC</span>
+<span class="qt">&gt; compatible. Sure it was more expensive back in the day, and only took</span>
+<span class="qt">&gt; hold in the business market at first, but which machine is on</span>
+<span class="qt">&gt; everybody&#x27;s desk/lap? An IBM PC AT derivative.</span>
+
+IBTD. The original IBM PC and its clone army threw back computer 
+development for several years. These ugly, clunky, low-tech machines 
+flooded the market and customers chose them instead of buying better, 
+but &quot;incompatible&quot; systems like those great 68K and ARM based machines 
+from the mid 1980s, e.g. in too many cases (well, the Atari ST had a 
+strong base in the SOHO and music market in Europe and the Commodore 
+Amiga was great for games and video/graphics - e.g. the first seasons&#x27; 
+CGI in both Seaquest DSV and Babylon 5 were created using Amigas, but in 
+the end both these systems were washed away by the flood of cheap IBM 
+clones - the only survivor being the overpriced Macintosh).
+
+
+Thorsten
+
+
+
+</pre></div><div class="post" id="p223528"><div class="ph"><a class="d" href="#p223528">2011-02-07 13:54:37</a> <span>Guesser</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On 07/02/2011 13:14, Thorsten Gï¿½nther wrote:
+<span class="qt">&gt; Am 31.01.2011 14:40, schrieb Guesser:</span>
+<span class="qt">&gt;&gt; Now for everyone: The king of home computers is clearly the IBM PC</span>
+<span class="qt">&gt;&gt; compatible. Sure it was more expensive back in the day, and only took</span>
+<span class="qt">&gt;&gt; hold in the business market at first, but which machine is on</span>
+<span class="qt">&gt;&gt; everybody&#x27;s desk/lap? An IBM PC AT derivative.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; IBTD</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &lt;snip&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; but in the end both these systems were washed away by the flood of cheap IBM</span>
+<span class="qt">&gt; clones - the only survivor being the overpriced Macintosh).</span>
+
+sounds like you agree to me :)
+
+(don&#x27;t forget macs are now intel machines too!)
+
+Guesser
+
+
+
+
+</pre></div><div class="post" id="p223531"><div class="ph"><a class="d" href="#p223531">2011-02-07 20:22:54</a> <span>Dombo</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>Op 07-Feb-11 14:14, Thorsten Gï¿½nther schreef:
+<span class="qt">&gt; Am 31.01.2011 14:40, schrieb Guesser:</span>
+<span class="qt">&gt;&gt; Now for everyone: The king of home computers is clearly the IBM PC</span>
+<span class="qt">&gt;&gt; compatible. Sure it was more expensive back in the day, and only took</span>
+<span class="qt">&gt;&gt; hold in the business market at first, but which machine is on</span>
+<span class="qt">&gt;&gt; everybody&#x27;s desk/lap? An IBM PC AT derivative.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; IBTD. The original IBM PC and its clone army threw back computer</span>
+<span class="qt">&gt; development for several years. These ugly, clunky, low-tech machines</span>
+<span class="qt">&gt; flooded the market and customers chose them instead of buying better,</span>
+<span class="qt">&gt; but &quot;incompatible&quot; systems like those great 68K and ARM based machines</span>
+<span class="qt">&gt; from the mid 1980s, e.g. in too many cases (well, the Atari ST had a</span>
+<span class="qt">&gt; strong base in the SOHO and music market in Europe and the Commodore</span>
+<span class="qt">&gt; Amiga was great for games and video/graphics - e.g. the first seasons&#x27;</span>
+<span class="qt">&gt; CGI in both Seaquest DSV and Babylon 5 were created using Amigas, but in</span>
+<span class="qt">&gt; the end both these systems were washed away by the flood of cheap IBM</span>
+<span class="qt">&gt; clones - the only survivor being the overpriced Macintosh).</span>
+
+Which is nowadays also a PC clone.
+
+
+
+</pre></div><div class="post" id="p223532"><div class="ph"><a class="d" href="#p223532">2011-02-07 20:35:11</a> <span>winston19842005</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On 2/7/11 3:22 PM, in article 4d5054a7$0$30714$…@…,
+&quot;Dombo&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Op 07-Feb-11 14:14, Thorsten Gï¿½nther schreef:</span>
+<span class="qt">&gt;&gt; Am 31.01.2011 14:40, schrieb Guesser:</span>
+<span class="qt">&gt;&gt;&gt; Now for everyone: The king of home computers is clearly the IBM PC</span>
+<span class="qt">&gt;&gt;&gt; compatible. Sure it was more expensive back in the day, and only took</span>
+<span class="qt">&gt;&gt;&gt; hold in the business market at first, but which machine is on</span>
+<span class="qt">&gt;&gt;&gt; everybody&#x27;s desk/lap? An IBM PC AT derivative.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; IBTD. The original IBM PC and its clone army threw back computer</span>
+<span class="qt">&gt;&gt; development for several years. These ugly, clunky, low-tech machines</span>
+<span class="qt">&gt;&gt; flooded the market and customers chose them instead of buying better,</span>
+<span class="qt">&gt;&gt; but &quot;incompatible&quot; systems like those great 68K and ARM based machines</span>
+<span class="qt">&gt;&gt; from the mid 1980s, e.g. in too many cases (well, the Atari ST had a</span>
+<span class="qt">&gt;&gt; strong base in the SOHO and music market in Europe and the Commodore</span>
+<span class="qt">&gt;&gt; Amiga was great for games and video/graphics - e.g. the first seasons&#x27;</span>
+<span class="qt">&gt;&gt; CGI in both Seaquest DSV and Babylon 5 were created using Amigas, but in</span>
+<span class="qt">&gt;&gt; the end both these systems were washed away by the flood of cheap IBM</span>
+<span class="qt">&gt;&gt; clones - the only survivor being the overpriced Macintosh).</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Which is nowadays also a PC clone.</span>
+
+Well, I&#x27;m still using my &quot;overpriced&quot; &quot;PC clone&quot;, a Mac mini I bought in
+&#x27;06. Runs as good today as it did back then, and has outlasted many other
+computers I&#x27;ve had. Only my Gateway in 2001 lasted 5 years, but it had gone
+through several hard drives, several reinstalls of the OS, a processor
+upgrade and was way too slow at the end (like having Abe Lincoln&#x27;s hammer,
+having replaced the head twice and the handle 5 times).
+
+So for me, it was worth the $$$.
+
+
+
+
+</pre></div><div class="post" id="p223563"><div class="ph"><a class="d" href="#p223563">2011-02-15 02:38:13</a> <span>Lloyd Hearsewave</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On Mon, 07 Feb 2011 15:35:11 -0500, winston19842005 wrote:
+
+<span class="qt">&gt; On 2/7/11 3:22 PM, in article 4d5054a7$0$30714$…@…,</span>
+<span class="qt">&gt; &quot;Dombo&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Op 07-Feb-11 14:14, Thorsten Gï¿½nther schreef:</span>
+<span class="qt">&gt;&gt;&gt; Am 31.01.2011 14:40, schrieb Guesser:</span>
+<span class="qt">&gt;&gt;&gt;&gt; Now for everyone: The king of home computers is clearly the IBM PC</span>
+<span class="qt">&gt;&gt;&gt;&gt; compatible. Sure it was more expensive back in the day, and only took</span>
+<span class="qt">&gt;&gt;&gt;&gt; hold in the business market at first, but which machine is on</span>
+<span class="qt">&gt;&gt;&gt;&gt; everybody&#x27;s desk/lap? An IBM PC AT derivative.</span>
+<span class="qt">&gt;&gt;&gt; </span>
+
+
+Bump
+
+
+
+</pre></div><div class="post" id="p223564"><div class="ph"><a class="d" href="#p223564">2011-02-15 09:51:07</a> <span>Matthew Westcott</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On 15/02/2011 02:38, Lloyd Hearsewave wrote:
+
+<span class="qt">&gt; Bump</span>
+
+Oh, put some bloody effort into it. What&#x27;s Usenet coming to when even 
+the trolls can&#x27;t be arsed to do it properly?
+
+
+
+</pre></div><div class="post" id="p223565"><div class="ph"><a class="d" href="#p223565">2011-02-15 10:30:54</a> <span>WinstonSmith6079</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On Jan 16, 8:51 am, &quot;Lloyd Hearsewave&quot; &lt;…@…&gt; wrote:
+<span class="qt">&gt; [Blah, blah, blah, yadda, yadda, sloppy and lazy trolling crapola]</span>
+
+Aw, Christ!  Why don&#x27;t you give it a rest, would ya!
+
+
+
+</pre></div><div class="post" id="p223566"><div class="ph"><a class="d" href="#p223566">2011-02-15 16:22:39</a> <span>Matt Rudge</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On Tue, 15 Feb 2011 09:51:07 +0000, Matthew Westcott wibbled:
+
+<span class="qt">&gt; On 15/02/2011 02:38, Lloyd Hearsewave wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Bump</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Oh, put some bloody effort into it. What&#x27;s Usenet coming to when even</span>
+<span class="qt">&gt; the trolls can&#x27;t be arsed to do it properly?</span>
+
+And everyone knows that &quot;bump&quot; puts you right at the top of everyone&#x27;s 
+newsreader!
+
+-- 
+Matt
+<a href="http://www.mattrudge.net" rel="noreferrer">http://www.mattrudge.net</a> for wibble and guff
+<a href="http://blog.mattrudge.net" rel="noreferrer">http://blog.mattrudge.net</a> for Linuxy goodness
+
+
+
+</pre></div><div class="post" id="p223567"><div class="ph"><a class="d" href="#p223567">2011-02-15 20:14:07</a> <span>Bill Kendrick</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>In comp.sys.atari.8bit Bill Kendrick &lt;…@…&gt; wrote:
+<span class="qt">&gt; &gt; True, but neither did the stock Atari BASIC.</span>
+
+<span class="qt">&gt; That, right up there, is stock Atari BASIC code.  (The kind you&#x27;d get</span>
+<span class="qt">&gt; on cartridge for the 400, 800 and 1200XL, or which was built-in on</span>
+<span class="qt">&gt; the alter models: 600XL, 800XL, 65XE, 130XE, XEGS.)</span>
+
+BTW, that reminds me, the Atari OS _itself_ included things like
+line drawing routines, trigonometric functions, and even an admittedly
+odd, kind of hard-to-use flood fill routine.
+
+So really, BASIC just happened to make these routines available using simple
+BASIC commands (PLOT, DRAWTO, COS(), SIN(), etc.), but it was, I imagine,
+trivial for other languages or straight machine-language games &amp; apps to
+utilize them.
+
+
+Atari BASIC&#x27;s:
+
+10 GRAPHICS 7:COLOR 1:PLOT 0,0:DRAWTO 159,95
+
+and Action!&#x27;s:
+
+Proc Main()
+  Graphics(7)
+  Color(1)
+  Plot(0,0)
+  Drawto(159,95)
+Return
+
+are both just wrappers to the OS routines.  Things like the OS&#x27;s
+&quot;S:&quot; (screen), &quot;E:&quot; (editor) and &quot;P:&quot; (printer) device were nice
+abstractions.
+
+You can &quot;LIST&quot; your program source in BASIC to the screen, but you
+could also do &#x27;LIST &quot;D:SOURCE.LST&quot;&#x27; to save the BASIC program as
+plain-text (not tokenized, like when you do &#x27;SAVE &quot;D:PROGRAM.BAS&quot;&#x27;),
+or &#x27;LIST &quot;P:&quot;&#x27; to print your BASIC source out to the printer.
+
+Under DOSes, you could, for example, copy &quot;D:MEMO.TXT&quot; to &quot;S:&quot; to view
+it on the screen, or to &quot;P:&quot; to get a hard copy.  And since additional
+devices could be added to the OS (&quot;D:&quot; driver is usually bootloaded off
+of a boot disk, though there were cartridges like SpartaDOS, too), 3rd
+parties could invent new devices that could be talked to using the
+standard I/O functions (e.g., what BASIC provided via wrappers:
+&quot;OPEN&quot;, &quot;GET&quot;, &quot;PUT&quot;, &quot;PRINT&quot;, &quot;INPUT&quot;, &quot;CLOSE&quot;, &quot;LOAD&quot;, &quot;SAVE&quot;,
+&quot;ENTER&quot;, &quot;LIST&quot;, &quot;NOTE&quot;, &quot;POINT&quot; and &quot;XIO&quot;).  The &quot;R-Time 8&quot; battery-backed-up
+realtime clock cartridge was an example... or special printer drivers.
+
+
+Ugh, I&#x27;m reminiscing &amp; bragging too much. :)  Basically, Atari&#x27;s
+device abstractions are cool, and it&#x27;s kind of the same way in Linux
+with /dev, /proc, etc. :)
+
+-bill!
+
+
+
+</pre></div><div class="post" id="p223568"><div class="ph"><a class="d" href="#p223568">2011-02-15 22:32:18</a> <span>John Harbl</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On 1/16/11 8:51 AM, Lloyd Hearsewave wrote:
+<span class="qt">&gt; I don&#x27;t understand why people are still using crappy doorstoppers like the </span>
+<span class="qt">&gt; Sinclair Spectrum and ugly black and white heaps of trash like the ATARI 800 </span>
+<span class="qt">&gt; XL.</span>
+
+I know, right?  Anyone who knew their shit when it came to computers had
+a Mattel Aquarius, naturally.
+
+- J.
+
+
+
+</pre></div><div class="post" id="p223569"><div class="ph"><a class="d" href="#p223569">2011-02-16 05:32:45</a> <span>…@…</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On Feb 15, 5:32 pm, John Harbl &lt;…@…&gt; wrote:
+<span class="qt">&gt; On 1/16/11 8:51 AM, Lloyd Hearsewave wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; I don&#x27;t understand why people are still using crappy doorstoppers like the</span>
+<span class="qt">&gt; &gt; Sinclair Spectrum and ugly black and white heaps of trash like the ATARI 800</span>
+<span class="qt">&gt; &gt; XL.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I know, right?  Anyone who knew their shit when it came to computers had</span>
+<span class="qt">&gt; a Mattel Aquarius, naturally.</span>
+<span class="qt">&gt;</span>
+
+And most likely had just bought part in a timeshare! ;)
+
+
+
+</pre></div><div class="post" id="p223570"><div class="ph"><a class="d" href="#p223570">2011-02-16 05:43:46</a> <span>…@…</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On Feb 15, 3:14 pm, …@… (Bill Kendrick) wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Ugh, I&#x27;m reminiscing &amp; bragging too much. :)  Basically, Atari&#x27;s</span>
+<span class="qt">&gt; device abstractions are cool, and it&#x27;s kind of the same way in Linux</span>
+<span class="qt">&gt; with /dev, /proc, etc. :)</span>
+<span class="qt">&gt;</span>
+
+
+Probably - even the TI-99 had abstractions - everything was treated as
+a file. You open a file to disk devices, serial ports, parallel ports,
+everything is communicated to by records. Even the screen and keyboard
+was treated as a file in BASIC (but this was only in BASIC).
+
+Devices were easily added using Device Service Routines (DSR&#x27;s) in add-
+on cards or command modules (cartridges in TI-speak). Subprograms
+could be added similarly. The CALL FILES routine, for specifying # of
+open files allowed at once, was a subprogram in the disk controller
+card, for example.
+
+The ROM/GROM had trig routines, floating point math, cassette I/O,
+keyboard scan (with support for multiple mappings, including &quot;split
+keyboard&quot; for games), an interrupt-driven sound list routine, an
+interrupt-driven sprite movement routine, and tucked in the ROM was a
+subroutine that moved a small assembly program to hi-speed RAM that
+rotated characters around the y-axis... always thought that was weird.
+
+LIST could write to the screen, to a device (printer, disk), even to a
+DSR added by the TE-II cartridge - so you could do a LIST &quot;SPEECH&quot; and
+have it speak your program to you...
+
+
+
+
+</pre></div><div class="post" id="p223571"><div class="ph"><a class="d" href="#p223571">2011-02-16 06:09:08</a> <span>John Harbl</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On 2/16/11 12:32 AM, …@… wrote:
+<span class="qt">&gt; On Feb 15, 5:32 pm, John Harbl &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; On 1/16/11 8:51 AM, Lloyd Hearsewave wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; I don&#x27;t understand why people are still using crappy doorstoppers like the</span>
+<span class="qt">&gt;&gt;&gt; Sinclair Spectrum and ugly black and white heaps of trash like the ATARI 800</span>
+<span class="qt">&gt;&gt;&gt; XL.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; I know, right?  Anyone who knew their shit when it came to computers had</span>
+<span class="qt">&gt;&gt; a Mattel Aquarius, naturally.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; And most likely had just bought part in a timeshare! ;)</span>
+
+Oddly enough, that was actually how I got mine.  More accurately, my
+parents sat in on the timeshare presentation to get the computer but
+never actually bought into the timeshare.
+
+Thankfully, they subsequently realised their mistake and I ended up with
+an 800XL 18 months or so later.  About the best thing the Aquarius was
+capable of was using FOR/NEXT loops to bog down the CPU in such a way
+that the RFI with an AM radio placed next to the computer would make
+&#x27;music&#x27;.
+
+- J.
+
+
+
+</pre></div><div class="post" id="p223572"><div class="ph"><a class="d" href="#p223572">2011-02-16 06:31:42</a> <span>…@…</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On Feb 16, 1:09 am, John Harbl &lt;…@…&gt; wrote:
+<span class="qt">&gt; On 2/16/11 12:32 AM, …@… wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; On Feb 15, 5:32 pm, John Harbl &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt;&gt; On 1/16/11 8:51 AM, Lloyd Hearsewave wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;&gt;&gt; I don&#x27;t understand why people are still using crappy doorstoppers like the</span>
+<span class="qt">&gt; &gt;&gt;&gt; Sinclair Spectrum and ugly black and white heaps of trash like the ATARI 800</span>
+<span class="qt">&gt; &gt;&gt;&gt; XL.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;&gt; I know, right?  Anyone who knew their shit when it came to computers had</span>
+<span class="qt">&gt; &gt;&gt; a Mattel Aquarius, naturally.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; And most likely had just bought part in a timeshare! ;)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Oddly enough, that was actually how I got mine.  More accurately, my</span>
+<span class="qt">&gt; parents sat in on the timeshare presentation to get the computer but</span>
+<span class="qt">&gt; never actually bought into the timeshare.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Thankfully, they subsequently realised their mistake and I ended up with</span>
+<span class="qt">&gt; an 800XL 18 months or so later.  About the best thing the Aquarius was</span>
+<span class="qt">&gt; capable of was using FOR/NEXT loops to bog down the CPU in such a way</span>
+<span class="qt">&gt; that the RFI with an AM radio placed next to the computer would make</span>
+<span class="qt">&gt; &#x27;music&#x27;.</span>
+<span class="qt">&gt;</span>
+
+Yes, I remember the ad for the &#x27;free computer&#x27;. I asked my parents to
+go, but they somehow found out it was a gimmick for the timeshare...
+
+Another good one was a promotion Texas Instruments did where you&#x27;d get
+a free TI-99 if you bought carpet and had it installed...
+
+
+
+</pre></div><div class="post" id="p223576"><div class="ph"><a class="d" href="#p223576">2011-02-17 02:15:52</a> <span>Bill Kendrick</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>In comp.sys.atari.8bit …@… &lt;…@…&gt; wrote:
+<span class="qt">&gt; Probably - even the TI-99 had abstractions - everything was treated as</span>
+<span class="qt">&gt; a file. You open a file to disk devices, serial ports, parallel ports,</span>
+<span class="qt">&gt; everything is communicated to by records. Even the screen and keyboard</span>
+<span class="qt">&gt; was treated as a file in BASIC (but this was only in BASIC).</span>
+&lt;snip&gt;
+<span class="qt">&gt; LIST could write to the screen, to a device (printer, disk), even to a</span>
+<span class="qt">&gt; DSR added by the TE-II cartridge - so you could do a LIST &quot;SPEECH&quot; and</span>
+<span class="qt">&gt; have it speak your program to you...</span>
+
+Cool!  I know practically nothing about the TI-99, so that was
+fascinating.
+
+-- 
+-bill!
+Sent from my computer
+
+
+
+</pre></div><div class="post" id="p223577"><div class="ph"><a class="d" href="#p223577">2011-02-17 03:22:46</a> <span>John Harbl</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On 2/16/11 9:15 PM, Bill Kendrick wrote:
+<span class="qt">&gt; In comp.sys.atari.8bit …@… &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; Probably - even the TI-99 had abstractions - everything was treated as</span>
+<span class="qt">&gt;&gt; a file. You open a file to disk devices, serial ports, parallel ports,</span>
+<span class="qt">&gt;&gt; everything is communicated to by records. Even the screen and keyboard</span>
+<span class="qt">&gt;&gt; was treated as a file in BASIC (but this was only in BASIC).</span>
+<span class="qt">&gt; &lt;snip&gt;</span>
+<span class="qt">&gt;&gt; LIST could write to the screen, to a device (printer, disk), even to a</span>
+<span class="qt">&gt;&gt; DSR added by the TE-II cartridge - so you could do a LIST &quot;SPEECH&quot; and</span>
+<span class="qt">&gt;&gt; have it speak your program to you...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Cool!  I know practically nothing about the TI-99, so that was</span>
+<span class="qt">&gt; fascinating.</span>
+
+IIRC, much of this could also be done with Atari Basic using the OPEN
+command.  It&#x27;s been a *long* time since I&#x27;ve used it, but my
+recollection is that devices other than disks, cassette drives,
+printers, etc. could be accessed that way.  I don&#x27;t believe it applied
+to audio, though; that could only be done via the SOUND command.
+
+- J.
+
+
+
+</pre></div><div class="post" id="p223578"><div class="ph"><a class="d" href="#p223578">2011-02-17 14:32:58</a> <span>greenaum</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On Wed, 16 Feb 2011 22:22:46 -0500, John Harbl &lt;…@…&gt;
+sprachen:
+
+<span class="qt">&gt;IIRC, much of this could also be done with Atari Basic using the OPEN</span>
+<span class="qt">&gt;command. </span>
+
+And on the Spectrum, which had a system of streams and channels. I
+think you connected a channel to a stream, or something. Channels were
+#1 - #15, and channels were the screen, the edit-line, microdrives,
+serial port etc. So you could do the same sort of thing on that, if
+you had the hardware.
+
+Which most people didn&#x27;t, just having cassette tape. But loading 48K
+in 3 1/2 minutes from cassette tape was fast enough for most people.
+
+You could write your own stream drivers easily enough, poke a couple
+of bytes somewhere, and they&#x27;d fit into the system fine.
+
+So this just leaves the C64 with *truly* useless BASIC. What did they
+put in that ROM chip anyway?
+
+---------------------------------------------------------------------
+
+&quot;hey let&#x27;s educate the brutes, we know we are superior to them anyway,
+just through genetics, we are gentically superior to the working
+class. They are a shaved monkey. If we educate them, they will be able
+to read instructions, turn up on time and man the conveyor belts,
+sorted.&quot;     #     
+
+
+</pre></div><div class="post" id="p223579"><div class="ph"><a class="d" href="#p223579">2011-02-17 17:22:40</a> <span>Joel Koltner</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>&lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt;Yes, I remember the ad for the &#x27;free computer&#x27;. I asked my parents to</span>
+<span class="qt">&gt;go, but they somehow found out it was a gimmick for the timeshare...</span>
+
+There&#x27;s still a VIC-20 at my parents&#x27; house that we got from attending a 
+timeshare.  We already have a C-64 at the time, so while we did plug it into a 
+TV and play with it a bit, I doubt it was used for more than 10 hours in its 
+entire life.
+
+My mother came to actually start enjoying dickering with the timeshare 
+salesmen -- she must have gone to at least a half-dozen of them, collecting 
+those 5&quot; black &amp; white TVs that were also a popular giveaway, a cheezy &quot;boat&quot; 
+(rubber raft with a small electric trolling motor), the VIC-20, and a few 
+other things. 
+
+
+
+
+</pre></div><div class="post" id="p223580"><div class="ph"><a class="d" href="#p223580">2011-02-17 19:20:28</a> <span>VanessaE</span> <span>Re: ATARI and Spectrum are rubbish - The C64 is the king of home-computers!</span></div><pre>On Thu, 17 Feb 2011 14:32:58 GMT
+…@… (greenaum) wrote:
+
+<span class="qt">&gt; On Wed, 16 Feb 2011 22:22:46 -0500, John Harbl &lt;…@…&gt;</span>
+<span class="qt">&gt; sprachen:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;IIRC, much of this could also be done with Atari Basic using the OPEN</span>
+<span class="qt">&gt; &gt;command. </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; And on the Spectrum, which had a system of streams and channels. I</span>
+<span class="qt">&gt; think you connected a channel to a stream, or something. Channels were</span>
+<span class="qt">&gt; #1 - #15, and channels were the screen, the edit-line, microdrives,</span>
+<span class="qt">&gt; serial port etc. So you could do the same sort of thing on that, if</span>
+<span class="qt">&gt; you had the hardware.</span>
+
+The C64 has a similar facility.  One usually accesses tape, IEC bus devices
+(disk, printer, some memory card devices), and Expansion Port storage devices
+through BASIC&#x27;s I/O normal commands.  The stock RS232 code works that way
+too, though few use it anymore.  I seem to remember that the screen and
+keyboard are accessible through that method also, though obviously most would
+rather use the regular non-file PRINT/INPUT/GET commands.
+
+It opens/closes files and does I/O in a pretty common way, and has the &quot;CMD&quot;
+command to redirect LIST, PRINT, etc. to a stream (as long as it has already
+been opened for writing).
+
+<span class="qt">&gt; Which most people didn&#x27;t, just having cassette tape. But loading 48K in</span>
+<span class="qt">&gt; 3 1/2 minutes from cassette tape was fast enough for most people.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; You could write your own stream drivers easily enough, poke a couple of</span>
+<span class="qt">&gt; bytes somewhere, and they&#x27;d fit into the system fine.</span>
+
+Vectors are provided in the C64&#x27;s &quot;system&quot; RAM area to allow supplemental
+drivers and command extensions to insert themselves in ahead of the stock
+Kernel or BASIC code.  The 1541 drive came with such a driver on disk that
+one could load, which added a set of drive command shortcuts, the so-called
+&quot;DOS Wedge&quot;.  The 17xx RAM Expansion Units came with a similar driver that
+would set those devices up as RAM disks, in addition to adding the
+aforementioned shortcuts.
+
+-- 
+&quot;There are some things in life worth obsessing over.  Most
+things aren&#x27;t, and when you learn that, life improves.&quot;
+<a href="http://starbase.globalpc.net/~ezekowitz" rel="noreferrer">http://starbase.globalpc.net/~ezekowitz</a>
+Vanessa E &lt;…@…&gt;
+
+
+
+
+</pre></div></main></body></html>

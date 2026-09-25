@@ -1,0 +1,2340 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timex Software · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Timex Software</h1><p class="facts">65 posts, 2003-01-07 – 2003-01-18</p><div class="post" id="p152890"><div class="ph"><a class="d" href="#p152890">2003-01-07 04:35:51</a> <span>Bethany Carlton</span> </div><pre>Hello,
+
+I was curious to know if there would be any value in, or even any need to,
+catalogue and collect the software released on cassette and cartridge for
+the Timex machines (TS-1000/1500 TS-2068, TC-2048, etc.) that may not be
+part of any archive (i.e. WoS, the &#x27;MIA&#x27; or &#x27;STP&#x27; projects)? It appears to
+me that a lot of software was released for these machines either isn&#x27;t
+available elsewhere, or when it apparently is, it turns out there is at
+least a slight difference between the UK and US versions (for example) At a
+minimum, the inlays are often different.
+
+The Timex-branded software should be quite easy to list since there are
+already quite a few sites that have these titles documented, and there are
+some quite active user-groups that could be contacted to see if they can
+help list the more obscure or less well-known ones.
+
+Also, some of the software originally available for the Spectrum won&#x27;t work
+on the TS-2068 (less true of the TC-2048, but still true), so either noting
+the specially-produced versions, or trying to list which titles *don&#x27;t*
+work - a much shorter list than those that do - seems like it would be of
+value.
+
+Having some &#x27;known&#x27; software available may help emulator authors (say) add
+TS-2068 emulation to their products; I&#x27;m only aware of 2 emulators that
+explicitly support this machine (Warajevo and M.E.S.S.), at least on the PC.
+I believe emulation of the Timex ROM cartridges is planned for one of the
+&#x27;SE&#x27; projects Andrew Owen is working on, with the lack of ROM images being a
+bit of a problem. Hopefully, Andrew will be along shortly to correct me if
+I&#x27;ve misunderstood :)
+
+So, thoughts?
+
+Bethany
+
+
+
+
+
+</pre></div><div class="post" id="p152901"><div class="ph"><a class="d" href="#p152901">2003-01-07 09:04:44</a> <span>Andrew Owen</span> <span>Re: Timex Software</span></div><pre>In article &lt;avdlfd$e211r$…@…&gt;, &quot;Bethany Carlton&quot;
+&lt;…@…&gt; wrote:
+ 
+<span class="qt">&gt; I was curious to know if there would be any value in, or even any need to,</span>
+<span class="qt">&gt; catalogue and collect the software released on cassette and cartridge for</span>
+<span class="qt">&gt; the Timex machines (TS-1000/1500 TS-2068, TC-2048, etc.) that may not be</span>
+<span class="qt">&gt; part of any archive</span>
+
+In my arrogant opinion, at the very least the 2048/68 software should be
+on WoS. Probably best to submit the list to the &#x27;MIA&#x27; and &#x27;STP&#x27; projects
+directly.
+ 
+<span class="qt">&gt; Having some &#x27;known&#x27; software available may help emulator authors (say) add</span>
+<span class="qt">&gt; TS-2068 emulation to their products; I&#x27;m only aware of 2 emulators that</span>
+<span class="qt">&gt; explicitly support this machine (Warajevo and M.E.S.S.), at least on the PC.</span>
+
+I think MultiMachine does 2068 emulation as well, although it may just be 2048.
+
+<span class="qt">&gt; I believe emulation of the Timex ROM cartridges is planned for one of the</span>
+<span class="qt">&gt; &#x27;SE&#x27; projects Andrew Owen is working on, with the lack of ROM images being a</span>
+<span class="qt">&gt; bit of a problem. Hopefully, Andrew will be along shortly to correct me if</span>
+<span class="qt">&gt; I&#x27;ve misunderstood :)</span>
+
+No misunderstanding. Alvin Albrecht and I have written a TS2068 emulator
+for the ZX Spectrum SE which allows it to run all the TS2068 software. ROM
+carts are a bit trickier because the 2068 emulation is done by sticking a
+copy of the EX-ROM in the EX-BANK, and a copy of the HOME-ROM in the
+DOCK-BANK and making a few changes to the HOME ROM. For some reason the
+EX-ROM always selects the DOCK bank when it pages-out so it wasn&#x27;t that
+hard to do. I already have the OS64 cart working, but that&#x27;s essentially a
+modified version of the HOME-ROM and it works in pretty much the same way
+as my modified HOME-ROM. So more cart images would be a big bonus as I
+only have the ones from the Warajevo site to work with.
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p153038"><div class="ph"><a class="d" href="#p153038">2003-01-09 01:15:11</a> <span>Bethany Carlton</span> <span>Re: Timex Software</span></div><pre>&quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; In article &lt;avdlfd$e211r$…@…&gt;, &quot;Bethany Carlton&quot;</span>
+<span class="qt">&gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I think MultiMachine does 2068 emulation as well, although it may just be</span>
+2048.
+<span class="qt">&gt;</span>
+
+I read this, but wasn&#x27;t sure if it was an implimentation of the Warajevo
+code, or a completely different development. But you&#x27;re right in any case,
+so that makes 3.
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt; For some reason the EX-ROM always selects the DOCK bank when it</span>
+<span class="qt">&gt; pages-out so it wasn&#x27;t that hard to do.</span>
+<span class="qt">&gt;</span>
+
+I *think* I&#x27;ve seen an explanation for this somewhere, and will have another
+look.
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt; So more cart images would be a big bonus as I</span>
+<span class="qt">&gt; only have the ones from the Warajevo site to work with.</span>
+<span class="qt">&gt;</span>
+
+It was these files that got me thinking about it. The Warajevo .dck format
+seems to be fine, but the .tap format is a little different from the norm.
+Both are very well documented, but my understanding of the concepts isn&#x27;t
+good enough for me to spot any &#x27;errors&#x27; No need to spend time checking if
+you&#x27;re busy, but is there any reason you are aware of that these would
+*need* to be different to standard .tap or .tzx files? If so, maybe an
+enterprising emulator author could support a new file type (.tmx?) which is
+actually a .tzx file internally but wouldn&#x27;t confuse the emulator into
+thinking it was supposed to run in 48/128K mode, and wouldn&#x27;t confuse people
+either? Or is this nonsense?
+
+Bethany
+
+
+
+
+
+</pre></div><div class="post" id="p153040"><div class="ph"><a class="d" href="#p153040">2003-01-09 01:44:45</a> <span>Andrew Owen</span> <span>Re: Timex Software</span></div><pre>In article &lt;aviif2$g5b2u$…@…&gt;, &quot;Bethany Carlton&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; &gt; So more cart images would be a big bonus as I</span>
+<span class="qt">&gt; &gt; only have the ones from the Warajevo site to work with.</span>
+
+<span class="qt">&gt; It was these files that got me thinking about it. The Warajevo .dck format</span>
+<span class="qt">&gt; seems to be fine,</span>
+
+It is, but not all other emulators (MESS) support it properly. The format
+should allow you to specify the entire 192K memory map, but this only
+seems to work in Warajevo.
+
+<span class="qt">&gt; but the .tap format is a little different from the norm.</span>
+<span class="qt">&gt; Both are very well documented, but my understanding of the concepts isn&#x27;t</span>
+<span class="qt">&gt; good enough for me to spot any &#x27;errors&#x27; No need to spend time checking if</span>
+<span class="qt">&gt; you&#x27;re busy, but is there any reason you are aware of that these would</span>
+<span class="qt">&gt; *need* to be different to standard .tap or .tzx files? If so, maybe an</span>
+<span class="qt">&gt; enterprising emulator author could support a new file type (.tmx?) which is</span>
+<span class="qt">&gt; actually a .tzx file internally but wouldn&#x27;t confuse the emulator into</span>
+<span class="qt">&gt; thinking it was supposed to run in 48/128K mode, and wouldn&#x27;t confuse people</span>
+<span class="qt">&gt; either? Or is this nonsense?</span>
+
+AFAIK Warajevo doesn&#x27;t use ROM traps to provide tape support so it needs
+to store more info in the .TAP file. I hate Warajevo .TAP files because I
+haven&#x27;t been able to find anything that can convert them to a normal .TAP
+file that I can convert to a .TZX and try out on my machine. AFAIK .TZX
+files do not contain any data about what model they are supposed to run
+on.
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p153043"><div class="ph"><a class="d" href="#p153043">2003-01-09 03:27:13</a> <span>Bethany Carlton</span> <span>Re: Timex Software</span></div><pre>&quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message
+news:…@….
+..
+<span class="qt">&gt; In article &lt;aviif2$g5b2u$…@…&gt;, &quot;Bethany Carlton&quot;</span>
+<span class="qt">&gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+
+[.dck]
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt; It is, but not all other emulators (MESS) support it properly. The format</span>
+<span class="qt">&gt; should allow you to specify the entire 192K memory map, but this only</span>
+<span class="qt">&gt; seems to work in Warajevo.</span>
+<span class="qt">&gt;</span>
+
+Interesting. Is this a case of breadth (MESS) vs. depth (Warajevo)?
+
+Perhaps something completely different is required, with .dck as the
+foundation? Since there aren&#x27;t many titles available in an existing format,
+would creating a new &#x27;standard&#x27; be necessary or worthwhile do you think? I
+guess any practical limitations of the .dck format would only become
+apparent when more ROMs are available to work with, so there&#x27;s probably no
+way to know for sure until we get some :(
+
+<span class="qt">&gt; &gt; but the .tap format is a little different from the norm.</span>
+<span class="qt">&gt; &gt; Both are very well documented, but my understanding of the concepts</span>
+isn&#x27;t
+<span class="qt">&gt; &gt; good enough for me to spot any &#x27;errors&#x27; No need to spend time checking</span>
+if
+<span class="qt">&gt; &gt; you&#x27;re busy, but is there any reason you are aware of that these would</span>
+<span class="qt">&gt; &gt; *need* to be different to standard .tap or .tzx files? If so, maybe an</span>
+<span class="qt">&gt; &gt; enterprising emulator author could support a new file type (.tmx?) which</span>
+is
+<span class="qt">&gt; &gt; actually a .tzx file internally but wouldn&#x27;t confuse the emulator into</span>
+<span class="qt">&gt; &gt; thinking it was supposed to run in 48/128K mode, and wouldn&#x27;t confuse</span>
+people
+<span class="qt">&gt; &gt; either? Or is this nonsense?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; AFAIK Warajevo doesn&#x27;t use ROM traps to provide tape support so it needs</span>
+<span class="qt">&gt; to store more info in the .TAP file. I hate Warajevo .TAP files because I</span>
+<span class="qt">&gt; haven&#x27;t been able to find anything that can convert them to a normal .TAP</span>
+<span class="qt">&gt; file that I can convert to a .TZX and try out on my machine. AFAIK .TZX</span>
+<span class="qt">&gt; files do not contain any data about what model they are supposed</span>
+<span class="qt">&gt; to run on.</span>
+<span class="qt">&gt;</span>
+
+I think I phrased the .tzx bit badly. Sorry.
+
+What I meant was that a Timex tape would actually be structured like a .tzx
+file to allow &#x27;real&#x27; tapes to be produced, but with a different extension so
+it would only &#x27;show up&#x27; if you were emulating a Timex machine. If a .tzx
+would do, that would be easiest though - my only reasoning behind having a
+different extension being that without it, it might be confusing for people
+to tell it was meant for a Timex-compatible emulator and not just one that
+supports .tzx&#x27;s
+
+Hope that makes sense (?)
+
+Bethany
+
+
+
+
+
+</pre></div><div class="post" id="p153048"><div class="ph"><a class="d" href="#p153048">2003-01-09 09:20:14</a> <span>Stanley</span> <span>Re: Timex Software</span></div><pre>&quot;Bethany Carlton&quot; &lt;…@…&gt; wrote in message news:&lt;avdlfd$e211r$…@…&gt;...
+[snip]
+<span class="qt">&gt; the Timex machines (TS-1000/1500 TS-2068, TC-2048, etc.) that may not be</span>
+<span class="qt">&gt; part of any archive (i.e. WoS, the &#x27;MIA&#x27; or &#x27;STP&#x27; projects)? It appears to</span>
+<span class="qt">&gt; me that a lot of software was released for these machines either isn&#x27;t</span>
+<span class="qt">&gt; available elsewhere, or when it apparently is, it turns out there is at</span>
+
+Can you recommend please some TS 2068 specific programs to test Timex
+mode of Warajewo emulator? Will I find them on WOS? Tell me exact
+names of packages please. Or give me specific URL please for Timex
+related download section. I&#x27;ve not found any Timex featured
+application to this moment on the web [except some screenshosts shown
+on Warajewo home page - but unfortunately without download option].
+
+Thanks.
+
+Stanley
+
+
+
+</pre></div><div class="post" id="p153054"><div class="ph"><a class="d" href="#p153054">2003-01-09 10:33:47</a> <span>Philip Kendall</span> <span>Re: Timex Software</span></div><pre>In article &lt;aviif2$g5b2u$…@…&gt;,
+Bethany Carlton &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;It was these files that got me thinking about it. The Warajevo .dck format</span>
+<span class="qt">&gt;seems to be fine, but the .tap format is a little different from the norm.</span>
+<span class="qt">&gt;Both are very well documented, but my understanding of the concepts isn&#x27;t</span>
+<span class="qt">&gt;good enough for me to spot any &#x27;errors&#x27; No need to spend time checking if</span>
+<span class="qt">&gt;you&#x27;re busy, but is there any reason you are aware of that these would</span>
+<span class="qt">&gt;*need* to be different to standard .tap or .tzx files?</span>
+
+Yes. They&#x27;re more functional; Warajevo .tap files can support at least
+some turbo-loaders. A guess very few of these were ever made; the only
+one I know of is /pub/sinclair/tapes/warajevo/deviants.zip on NVG, and
+that&#x27;s because I made it :-)
+
+<span class="qt">&gt;If so, maybe an enterprising emulator author could support a new file</span>
+<span class="qt">&gt;type (.tmx?) which is actually a .tzx file internally but wouldn&#x27;t</span>
+<span class="qt">&gt;confuse the emulator into thinking it was supposed to run in 48/128K</span>
+<span class="qt">&gt;mode, and wouldn&#x27;t confuse people either?</span>
+
+IMO, identifying files based on their extension is a stupid idea. Given
+that the TZX format already has a facility for doing this (the Hardware
+Type Block, 0x33) why not use that?
+
+Cheers,
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p153055"><div class="ph"><a class="d" href="#p153055">2003-01-09 10:39:17</a> <span>Philip Kendall</span> <span>Re: Timex Software</span></div><pre>In article &lt;…@…&gt;,
+Andrew Owen &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;AFAIK Warajevo doesn&#x27;t use ROM traps to provide tape support so it needs</span>
+<span class="qt">&gt;to store more info in the .TAP file.</span>
+
+1) Warajevo does (optionally) use ROM traps.
+2) You don&#x27;t need any more information even if you don&#x27;t use ROM traps.
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p153058"><div class="ph"><a class="d" href="#p153058">2003-01-09 10:51:54</a> <span>Andrew Owen</span> <span>Re: Timex Software</span></div><pre>In article &lt;…@…&gt;,
+…@… (Stanley) wrote:
+ 
+<span class="qt">&gt; Can you recommend please some TS 2068 specific programs to test Timex</span>
+<span class="qt">&gt; mode of Warajewo emulator? Will I find them on WOS? Tell me exact</span>
+<span class="qt">&gt; names of packages please. Or give me specific URL please for Timex</span>
+<span class="qt">&gt; related download section. I&#x27;ve not found any Timex featured</span>
+<span class="qt">&gt; application to this moment on the web [except some screenshosts shown</span>
+<span class="qt">&gt; on Warajewo home page - but unfortunately without download option].</span>
+
+There are some titles downloadable on the Warajevo page. And that&#x27;s all
+I&#x27;ve found.
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p153060"><div class="ph"><a class="d" href="#p153060">2003-01-09 11:02:07</a> <span>Andrew Owen</span> <span>Re: Timex Software</span></div><pre>In article &lt;aviq6j$fvaa3$…@…&gt;, &quot;Bethany Carlton&quot;
+&lt;…@…&gt; wrote:
+
+[.dck]
+
+<span class="qt">&gt; &gt; It is, but not all other emulators (MESS) support it properly. The format</span>
+<span class="qt">&gt; &gt; should allow you to specify the entire 192K memory map, but this only</span>
+<span class="qt">&gt; &gt; seems to work in Warajevo.</span>
+
+<span class="qt">&gt; Interesting. Is this a case of breadth (MESS) vs. depth (Warajevo)?</span>
+
+I think it&#x27;s a case of MESS not expecting you to specify more than 64K of
+the memory map. In other words, yes.
+ 
+<span class="qt">&gt; Perhaps something completely different is required, with .dck as the</span>
+<span class="qt">&gt; foundation? Since there aren&#x27;t many titles available in an existing format,</span>
+<span class="qt">&gt; would creating a new &#x27;standard&#x27; be necessary or worthwhile do you think? I</span>
+<span class="qt">&gt; guess any practical limitations of the .dck format would only become</span>
+<span class="qt">&gt; apparent when more ROMs are available to work with, so there&#x27;s probably no</span>
+<span class="qt">&gt; way to know for sure until we get some :(</span>
+
+The .DCK format doesn&#x27;t need any modification. It allows you to define the
+entire 192K memory map of the Timex machines. You can set which pages are
+RAM and which are ROM and you can provide data for any pages you want. You
+can define the data for only one or two banks (DOCK, EX, HOME) so the
+files are no longer than they have to be. Whatever banks you don&#x27;t define
+default to the standard setting for that bank.
+
+<span class="qt">&gt; I think I phrased the .tzx bit badly. Sorry.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; What I meant was that a Timex tape would actually be structured like a .tzx</span>
+<span class="qt">&gt; file to allow &#x27;real&#x27; tapes to be produced, but with a different extension so</span>
+<span class="qt">&gt; it would only &#x27;show up&#x27; if you were emulating a Timex machine. If a .tzx</span>
+<span class="qt">&gt; would do, that would be easiest though - my only reasoning behind having a</span>
+<span class="qt">&gt; different extension being that without it, it might be confusing for people</span>
+<span class="qt">&gt; to tell it was meant for a Timex-compatible emulator and not just one that</span>
+<span class="qt">&gt; supports .tzx&#x27;s</span>
+
+I think it would be bad to have a new Timex specific format. At present
+there&#x27;s no way to tell if a .tzx file is for a 128 machine just by
+examining the file, but its easy enough to inlcude documentation. And if
+you did have a Timex specific tape format, how would you distinguish
+between 2068 and 2048 programs, which would be almost completely
+incompatible?
+
+Actually, having had a think, while the DCK format is fine for cartridges,
+what we really need is a new snapshot format that includes the ROM, and
+all the possible RAM options, possibly based on the DCK format. You&#x27;d have
+to use the a .DCK and a 128K .Z80 snapshot to save a snapshot of the ZX
+Spectrum SE&#x27;s memory map. And AFAIK, Warajevo doesn&#x27;t write to .DCK files.
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p153062"><div class="ph"><a class="d" href="#p153062">2003-01-09 11:17:27</a> <span>Andrew Owen</span> <span>Re: Timex Software</span></div><pre>In article &lt;avjj6b$ihd$…@…&gt;, …@…
+(Philip Kendall) wrote:
+
+<span class="qt">&gt; IMO, identifying files based on their extension is a stupid idea. Given</span>
+<span class="qt">&gt; that the TZX format already has a facility for doing this (the Hardware</span>
+<span class="qt">&gt; Type Block, 0x33) why not use that?</span>
+
+I didn&#x27;t realise that was in there. I presume it doesn&#x27;t force a hardware
+mode though?
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p153063"><div class="ph"><a class="d" href="#p153063">2003-01-09 11:18:34</a> <span>Andrew Owen</span> <span>Re: Timex Software</span></div><pre>In article &lt;avjjgl$irs$…@…&gt;, …@…
+(Philip Kendall) wrote:
+
+<span class="qt">&gt; In article</span>
+&lt;…@…&gt;,
+<span class="qt">&gt; Andrew Owen &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;AFAIK Warajevo doesn&#x27;t use ROM traps to provide tape support so it needs</span>
+<span class="qt">&gt; &gt;to store more info in the .TAP file.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; 1) Warajevo does (optionally) use ROM traps.</span>
+<span class="qt">&gt; 2) You don&#x27;t need any more information even if you don&#x27;t use ROM traps.</span>
+
+I was just guessing since I&#x27;ve never really got Warajevo to work on my PC
+emulator, and I haven&#x27;t found a way of converting Warajevo .TAPs to normal
+.TAPs.
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p153064"><div class="ph"><a class="d" href="#p153064">2003-01-09 11:25:15</a> <span>Philip Kendall</span> <span>Re: Timex Software</span></div><pre>In article &lt;…@…&gt;,
+Andrew Owen &lt;…@…&gt; wrote:
+<span class="qt">&gt;In article &lt;avjj6b$ihd$…@…&gt;, …@…</span>
+<span class="qt">&gt;(Philip Kendall) wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; IMO, identifying files based on their extension is a stupid idea. Given</span>
+<span class="qt">&gt;&gt; that the TZX format already has a facility for doing this (the Hardware</span>
+<span class="qt">&gt;&gt; Type Block, 0x33) why not use that?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I didn&#x27;t realise that was in there. I presume it doesn&#x27;t force a hardware</span>
+<span class="qt">&gt;mode though?</span>
+
+Depends on your emulator. What Fuse does with it could pretty accurately
+be described as &quot;zilch&quot; (apart from copy it from input to output).
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p153069"><div class="ph"><a class="d" href="#p153069">2003-01-09 14:36:06</a> <span>Dunny</span> <span>Re: Timex Software</span></div><pre>
+&quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; In article &lt;aviq6j$fvaa3$…@…&gt;, &quot;Bethany Carlton&quot;</span>
+<span class="qt">&gt; &lt;…@…&gt; wrote:</span>
+
+<span class="qt">&gt; &gt; I think I phrased the .tzx bit badly. Sorry.</span>
+
+<span class="qt">&gt; &gt; What I meant was that a Timex tape would actually be structured like a</span>
+.tzx
+<span class="qt">&gt; &gt; file to allow &#x27;real&#x27; tapes to be produced, but with a different</span>
+extension so
+<span class="qt">&gt; &gt; it would only &#x27;show up&#x27; if you were emulating a Timex machine. If a .tzx</span>
+<span class="qt">&gt; &gt; would do, that would be easiest though - my only reasoning behind having</span>
+a
+<span class="qt">&gt; &gt; different extension being that without it, it might be confusing for</span>
+people
+<span class="qt">&gt; &gt; to tell it was meant for a Timex-compatible emulator and not just one</span>
+that
+<span class="qt">&gt; &gt; supports .tzx&#x27;s</span>
+
+<span class="qt">&gt; I think it would be bad to have a new Timex specific format. At present</span>
+<span class="qt">&gt; there&#x27;s no way to tell if a .tzx file is for a 128 machine just by</span>
+<span class="qt">&gt; examining the file, but its easy enough to inlcude documentation. And if</span>
+<span class="qt">&gt; you did have a Timex specific tape format, how would you distinguish</span>
+<span class="qt">&gt; between 2068 and 2048 programs, which would be almost completely</span>
+<span class="qt">&gt; incompatible?</span>
+
+I assume that you could play a timex tape through a speccy? Ie, it was still
+your standard audio cassette. In which case, the tape couldn&#x27;t be
+distinguished between the 128k/48k/timex without actually reading the inlay
+or label (or actually playing it).
+
+The tzx format simply reproduces the square waves found on a cassette - I
+see no reason to &quot;flag&quot; the file according to the machine it was intended
+for, just give it an appropriate filename. A lot of people seem to think
+that .tzx is a magical format that stores games - it&#x27;s not; it stores wave
+data in a similar manner to .wav/.voc/.csw, but with neat compression tricks
+and the ability to store info in there too.
+
+Any emulator worth its&#x27; salt should take a tzx and start piping audio data
+to the ear port, regardless of whether or not the emulated hardware can
+understand it.
+
+D.
+
+
+
+
+
+
+</pre></div><div class="post" id="p153071"><div class="ph"><a class="d" href="#p153071">2003-01-09 16:48:09</a> <span>Bethany Carlton</span> <span>Re: Timex Software</span></div><pre>&quot;Dunny&quot; &lt;…@…&gt; wrote in message
+news:avk1cj$g9ml7$…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt;</span>
+news:…@…...
+<span class="qt">&gt; &gt; In article &lt;aviq6j$fvaa3$…@…&gt;, &quot;Bethany Carlton&quot;</span>
+<span class="qt">&gt; &gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I assume that you could play a timex tape through a speccy? Ie, it was</span>
+still
+<span class="qt">&gt; your standard audio cassette. In which case, the tape couldn&#x27;t be</span>
+<span class="qt">&gt; distinguished between the 128k/48k/timex without actually reading the</span>
+inlay
+<span class="qt">&gt; or label (or actually playing it).</span>
+<span class="qt">&gt;</span>
+
+I believe so, yes. Since I don&#x27;t have either, I don&#x27;t know and was hoping
+someone that was familiar with the peculiarities of the machines and
+software could keep me straight.
+
+As I understand it, the Timex-branded software may or may not be different
+to the &quot;original&quot;, depending on the title. In either case, the inlays are
+often different, so even if the software *is* apparently the same, the
+inlays should be preserved. In the process, and since there&#x27;s no certain way
+to know what will work on a Timex and what won&#x27;t (without trying it, and I
+doubt going through 10,000 files on WoS is viable) then the tape should be
+imaged as well. If this can be done as a .tzx using existing utilities,
+that&#x27;s ideal. I&#x27;m not familiar enough with either the format, the tools or
+the tapes to say this is possible, which is why I asked for some guidance.
+
+<span class="qt">&gt; The tzx format simply reproduces the square waves found on a cassette - I</span>
+<span class="qt">&gt; see no reason to &quot;flag&quot; the file according to the machine it was intended</span>
+<span class="qt">&gt; for, just give it an appropriate filename. A lot of people seem to think</span>
+<span class="qt">&gt; that .tzx is a magical format that stores games - it&#x27;s not; it stores wave</span>
+<span class="qt">&gt; data in a similar manner to .wav/.voc/.csw, but with neat compression</span>
+tricks
+<span class="qt">&gt; and the ability to store info in there too.</span>
+<span class="qt">&gt;</span>
+
+My only thought was that for a user with a folder full of .tzx files, they
+wouldn&#x27;t be able to tell which was which. My assumption is that .tzx is the
+preferred format for reproducing tapes from, so would be the one to use for
+any new preservation projects if it would work without internal
+modification. I believe it is a valid point though, that having a different
+extension - *not* to help the emulator figure out what mode to run in, but
+to aid the *user* in quickly identifying tapes for the Timex would be of
+benefit.
+
+This way, .tmx files would be correctly listed as tapes rather than
+snapshots in supporting emulators, and would not appear at all in the File
+Selector of emulators that don&#x27;t support Timex emulation, since their
+extension isn&#x27;t in the list of supported formats. This means you wouldn&#x27;t
+waste time trying to load a tape intended for hardware that your emulator
+didn&#x27;t necessarily support, and wouldn&#x27;t spend ages trying to figure out why
+it wouldn&#x27;t work before giving up and deciding it was a &#x27;bad&#x27; .tzx image.
+
+Of course, if it isn&#x27;t a valid point, that&#x27;s fine too; you guys know better
+than I do what needs to be done, so it&#x27;s your call.
+
+<span class="qt">&gt; Any emulator worth its&#x27; salt should take a tzx and start piping audio data</span>
+<span class="qt">&gt; to the ear port, regardless of whether or not the emulated hardware can</span>
+<span class="qt">&gt; understand it.</span>
+<span class="qt">&gt;</span>
+
+Understood, but *if* the file *is* Timex specific and it&#x27;s just saved as a
+plain .tzx, I guess you have no obvious way to know why it keeps failing.
+Since so many emulators support .tzx, very few support Timex machines, and
+the majority of people will have little or no interest in them (compared to
+the Spectrum) I think this could be a common &#x27;complaint&#x27; that can be easily
+prevented by calling the file something different to begin with. There
+aren&#x27;t that many tapes to begin with, apparently, and I haven&#x27;t found any
+&#x27;clean&#x27; ones yet that can be tested or examined closely enough to determine
+exactly what&#x27;s in there that may be abnormal.
+
+I reckon the formats and emulators are smart, but that most users just grab
+files, double-click them, and wait for it to work. Maybe they&#x27;ll read the
+instructions first, but likely not. If the emulator can &#x27;fail&#x27; gracefully if
+the hardware isn&#x27;t supported, that&#x27;s good, but I&#x27;m not sure how possible
+this is.
+
+Bethany
+
+
+
+
+
+</pre></div><div class="post" id="p153072"><div class="ph"><a class="d" href="#p153072">2003-01-09 16:56:40</a> <span>Bethany Carlton</span> <span>Re: Timex Software</span></div><pre>&quot;Philip Kendall&quot; &lt;…@…&gt; wrote in message
+news:avjj6b$ihd$…@…...
+<span class="qt">&gt; In article &lt;aviif2$g5b2u$…@…&gt;,</span>
+<span class="qt">&gt; Bethany Carlton &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;If so, maybe an enterprising emulator author could support a new file</span>
+<span class="qt">&gt; &gt;type (.tmx?) which is actually a .tzx file internally but wouldn&#x27;t</span>
+<span class="qt">&gt; &gt;confuse the emulator into thinking it was supposed to run in 48/128K</span>
+<span class="qt">&gt; &gt;mode, and wouldn&#x27;t confuse people either?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; IMO, identifying files based on their extension is a stupid idea. Given</span>
+<span class="qt">&gt; that the TZX format already has a facility for doing this (the Hardware</span>
+<span class="qt">&gt; Type Block, 0x33) why not use that?</span>
+<span class="qt">&gt;</span>
+
+Not identifying them, per se, but filtering files by type is a perfectly
+normal practice in the File Selector dialog. I made reference to the file
+containing the intended hardware model that the emulator would need to
+switch to the correct mode. If the Timex models are already accommodated
+there then more&#x27;s the better. If they aren&#x27;t, what will be there instead? Is
+&#x27;nothing&#x27; allowed, and how is it handled if so?
+
+Bethany
+
+
+
+
+
+</pre></div><div class="post" id="p153073"><div class="ph"><a class="d" href="#p153073">2003-01-09 17:08:07</a> <span>Andrew Owen</span> <span>Re: Timex Software</span></div><pre>In article &lt;avk1cj$g9ml7$…@…&gt;, &quot;Dunny&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; I assume that you could play a timex tape through a speccy? Ie, it was still</span>
+<span class="qt">&gt; your standard audio cassette. In which case, the tape couldn&#x27;t be</span>
+<span class="qt">&gt; distinguished between the 128k/48k/timex without actually reading the inlay</span>
+<span class="qt">&gt; or label (or actually playing it).</span>
+
+The load/save routines are exactly the same. The timing is a little out
+because of different processor speeds but there&#x27;s a great deal of
+flexibility in the original ROM routines to allow for slight differences
+in pitch and speed.
+
+<span class="qt">&gt; The tzx format simply reproduces the square waves found on a cassette - I</span>
+<span class="qt">&gt; see no reason to &quot;flag&quot; the file according to the machine it was intended</span>
+<span class="qt">&gt; for, just give it an appropriate filename.</span>
+
+If Philip says it has an info block that can store this info then there&#x27;s
+no reason not to specify the intended format, but I don&#x27;t think emulators
+should auto-switch to that mode on loading a TZX. I&#x27;m not much of a fan of
+emulators which default to auto-tape load either since I mostly use tapes
+for storing data. I find the .tap format is still far more convenient for
+working with data than .tzx, particularly since it&#x27;s a raw data format and
+you can edit the data in situ. I&#x27;d like to see more legacy support for
+.tap files as a useful development tool.
+
+<span class="qt">&gt; A lot of people seem to think</span>
+<span class="qt">&gt; that .tzx is a magical format that stores games - it&#x27;s not; it stores wave</span>
+<span class="qt">&gt; data in a similar manner to .wav/.voc/.csw, but with neat compression tricks</span>
+<span class="qt">&gt; and the ability to store info in there too.</span>
+
+Which is great for most purposes, but not as good as a plain .tap file for
+software development.
+ 
+<span class="qt">&gt; Any emulator worth its&#x27; salt should take a tzx and start piping audio data</span>
+<span class="qt">&gt; to the ear port, regardless of whether or not the emulated hardware can</span>
+<span class="qt">&gt; understand it.</span>
+
+Agreed, but only after the user does the equivalent of pressing play.
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p153077"><div class="ph"><a class="d" href="#p153077">2003-01-09 17:21:09</a> <span>Philip Kendall</span> <span>Re: Timex Software</span></div><pre>In article &lt;avk976$fmv36$…@…&gt;,
+Bethany Carlton &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I reckon the formats and emulators are smart, but that most users just grab</span>
+<span class="qt">&gt;files, double-click them, and wait for it to work. Maybe they&#x27;ll read the</span>
+<span class="qt">&gt;instructions first, but likely not. If the emulator can &#x27;fail&#x27; gracefully if</span>
+<span class="qt">&gt;the hardware isn&#x27;t supported, that&#x27;s good, but I&#x27;m not sure how possible</span>
+<span class="qt">&gt;this is.</span>
+
+Trivial. If the emulator encounters a hardware information block saying
+that the program doesn&#x27;t run on whatever hardware is currently being
+emulated, tell this to the user.
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p153079"><div class="ph"><a class="d" href="#p153079">2003-01-09 17:32:13</a> <span>Andrew Owen</span> <span>Re: Timex Software</span></div><pre>In article &lt;avk976$fmv36$…@…&gt;, &quot;Bethany Carlton&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; As I understand it, the Timex-branded software may or may not be different</span>
+<span class="qt">&gt; to the &quot;original&quot;, depending on the title. In either case, the inlays are</span>
+<span class="qt">&gt; often different, so even if the software *is* apparently the same, the</span>
+<span class="qt">&gt; inlays should be preserved. In the process, and since there&#x27;s no certain way</span>
+<span class="qt">&gt; to know what will work on a Timex and what won&#x27;t (without trying it, and I</span>
+<span class="qt">&gt; doubt going through 10,000 files on WoS is viable) then the tape should be</span>
+<span class="qt">&gt; imaged as well. If this can be done as a .tzx using existing utilities,</span>
+<span class="qt">&gt; that&#x27;s ideal. I&#x27;m not familiar enough with either the format, the tools or</span>
+<span class="qt">&gt; the tapes to say this is possible, which is why I asked for some guidance.</span>
+
+When dealing with Timexes it&#x27;s best to talk about the two different
+machines separately. The TC2048 was close enough to the original 48K
+Spectrum that it will run most software intended for that machine. It has
+an almost exactly identical version of the original ROM but there are a
+handful of programs that use the extra video modes of this machine
+including Basic 64 (TC2048).
+
+Then you have the TS2068/TC2068/UK2086. These machines have a different
+ROM and will not be able to run any Spectrum or Timex 2048 program that
+relies on ROM routines appearing at a specific location (without using an
+emulator). The result is that, with the exception of a very few games
+which use no ROM code, like the early 16K releases and JSW and MM,
+virtually no Spectrum games or other software will work on this machine
+without a rewrite. Some Spectrum games were recompiled to work, and there
+are also some TS2068 specific programs which will not work on any other
+system (except for an expanded TC2048 with a TS2068 emulator). These
+included monitors, disassemblers, a few office programs, a version of the
+HiSoft Basic compiler with support for the extended 2068 command set. Most
+TS2068 titles seemed to be released in cartridge format though, which
+would run on the TC2048 with a bit of hacking if it had a cartridge port.
+ 
+<span class="qt">&gt; My only thought was that for a user with a folder full of .tzx files, they</span>
+<span class="qt">&gt; wouldn&#x27;t be able to tell which was which. My assumption is that .tzx is the</span>
+<span class="qt">&gt; preferred format for reproducing tapes from, so would be the one to use for</span>
+<span class="qt">&gt; any new preservation projects if it would work without internal</span>
+<span class="qt">&gt; modification. I believe it is a valid point though, that having a different</span>
+<span class="qt">&gt; extension - *not* to help the emulator figure out what mode to run in, but</span>
+<span class="qt">&gt; to aid the *user* in quickly identifying tapes for the Timex would be of</span>
+<span class="qt">&gt; benefit.</span>
+
+I can&#x27;t see the point. I just use sub-directories for machine specific versions:
+
+Spectrum Software
+<span class="qt">|</span>
++---Games
+<span class="qt">|   |</span>
+.   +---TZX
+.   |   |
+.   |   +---16K
+<span class="qt">    |   |</span>
+<span class="qt">    |   +---48K</span>
+<span class="qt">    |   |</span>
+<span class="qt">    |   +---128K</span>
+<span class="qt">    |   |</span>
+<span class="qt">    |   +---TC2048</span>
+<span class="qt">    |   |</span>
+<span class="qt">    |   +---TS2068</span>
+<span class="qt">    |</span>
+    +---ROM
+<span class="qt">    |</span>
+    .
+    .
+    .
+
+And so on.
+
+<span class="qt">&gt; This way, .tmx files would be correctly listed as tapes rather than</span>
+<span class="qt">&gt; snapshots in supporting emulators, and would not appear at all in the File</span>
+<span class="qt">&gt; Selector of emulators that don&#x27;t support Timex emulation, since their</span>
+<span class="qt">&gt; extension isn&#x27;t in the list of supported formats. This means you wouldn&#x27;t</span>
+<span class="qt">&gt; waste time trying to load a tape intended for hardware that your emulator</span>
+<span class="qt">&gt; didn&#x27;t necessarily support, and wouldn&#x27;t spend ages trying to figure out why</span>
+<span class="qt">&gt; it wouldn&#x27;t work before giving up and deciding it was a &#x27;bad&#x27; .tzx image.</span>
+
+I see your point, but I really think this level of dumbing down is going
+too far. I mean it should be obvious enough that a 128K games is not going
+to run under 48K and a 48K game is not going to run under 16K and so on.
+Other wise you&#x27;d end up with too many file formats.
+
+Anyway, .tmx is already in use by ZXVGS, and I have a specification of an
+extended .scr format which I was going to call .tmz
+
+<span class="qt">&gt; Understood, but *if* the file *is* Timex specific</span>
+
+But it isn&#x27;t is it. TZXs are just a way of storing data. Even if you can&#x27;t
+run the application there may still be data on the file that you want to
+use with an incompatible machine, in order to make a compatible version
+for instance, say by emulating 512x192 mode on a normal Spectrum.
+
+<span class="qt">&gt; Since so many emulators support .tzx, very few support Timex machines, and</span>
+<span class="qt">&gt; the majority of people will have little or no interest in them (compared to</span>
+<span class="qt">&gt; the Spectrum) I think this could be a common &#x27;complaint&#x27; that can be easily</span>
+<span class="qt">&gt; prevented by calling the file something different to begin with.</span>
+
+Hardly anyone in Europe owned Pentagons, and yet they are supported by
+most emulators now because of the wide range of software available. I
+think interest in the Timex machines would increase if more software was
+available. And .tzx support is still thin on the ground outside of the PC
+environment. It&#x27;s not a mature format yet in the way that .tap and .z80
+are (which is why they are showing their age).
+
+<span class="qt">&gt; There</span>
+<span class="qt">&gt; aren&#x27;t that many tapes to begin with, apparently, and I haven&#x27;t found any</span>
+<span class="qt">&gt; &#x27;clean&#x27; ones yet that can be tested or examined closely enough to determine</span>
+<span class="qt">&gt; exactly what&#x27;s in there that may be abnormal.</span>
+
+Nothing. The data is held in exactly the same way.
+
+<span class="qt">&gt; I reckon the formats and emulators are smart, but that most users just grab</span>
+<span class="qt">&gt; files, double-click them, and wait for it to work. Maybe they&#x27;ll read the</span>
+<span class="qt">&gt; instructions first, but likely not. If the emulator can &#x27;fail&#x27; gracefully if</span>
+<span class="qt">&gt; the hardware isn&#x27;t supported, that&#x27;s good, but I&#x27;m not sure how possible</span>
+<span class="qt">&gt; this is.</span>
+
+Check for a write to hardware specific ports. If a program writes to the
+AY-chip at the TS2068 address or attempts to page in the EX-ROM it&#x27;s a
+fair bet you&#x27;ve got a TS2068 program on your hands. Checking for a write
+to the video port will identify a Timex program, but not whether it&#x27;s a
+&#x27;48 or a &#x27;68 program. There is no way to tell a 48K program from a 16K
+program though.
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p153080"><div class="ph"><a class="d" href="#p153080">2003-01-09 17:32:45</a> <span>Bethany Carlton</span> <span>Re: Timex Software</span></div><pre>&quot;Philip Kendall&quot; &lt;…@…&gt; wrote in message
+news:avkb25$lu3$…@…...
+<span class="qt">&gt; In article &lt;avk976$fmv36$…@…&gt;,</span>
+<span class="qt">&gt; Bethany Carlton &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;I reckon the formats and emulators are smart, but that most users just</span>
+grab
+<span class="qt">&gt; &gt;files, double-click them, and wait for it to work. Maybe they&#x27;ll read the</span>
+<span class="qt">&gt; &gt;instructions first, but likely not. If the emulator can &#x27;fail&#x27; gracefully</span>
+if
+<span class="qt">&gt; &gt;the hardware isn&#x27;t supported, that&#x27;s good, but I&#x27;m not sure how possible</span>
+<span class="qt">&gt; &gt;this is.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Trivial. If the emulator encounters a hardware information block saying</span>
+<span class="qt">&gt; that the program doesn&#x27;t run on whatever hardware is currently being</span>
+<span class="qt">&gt; emulated, tell this to the user.</span>
+<span class="qt">&gt;</span>
+
+Great! Does this actually happen? I don&#x27;t remember ever having encountered a
+message with any I&#x27;ve tried, but might not have tried the right ones.
+
+Bethany
+
+
+
+
+
+</pre></div><div class="post" id="p153081"><div class="ph"><a class="d" href="#p153081">2003-01-09 17:32:57</a> <span>Philip Kendall</span> <span>Re: Timex Software</span></div><pre>In article &lt;…@…&gt;,
+Andrew Owen &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I find the .tap format is still far more convenient for working with data</span>
+<span class="qt">&gt;than .tzx, particularly since it&#x27;s a raw data format and you can edit</span>
+<span class="qt">&gt;the data in situ.</span>
+
+So is .tzx, at least for ROM-saved blocks (which is all you can put in a
+.tap file, after all). The difference is what? 10 bytes of header at the
+start and 3 bytes (id, pause lsb, pause msb) before each block. I really
+don&#x27;t see that as significant.
+
+<span class="qt">&gt;&gt; Any emulator worth its&#x27; salt should take a tzx and start piping audio data</span>
+<span class="qt">&gt;&gt; to the ear port, regardless of whether or not the emulated hardware can</span>
+<span class="qt">&gt;&gt; understand it.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Agreed, but only after the user does the equivalent of pressing play.</span>
+
+To be honest, I think what most people want is to double-click on a tape
+file and for the game to magically start playing. They don&#x27;t want to mess
+about with having to find out which key they have to press to start the
+tape playing. Hence the default for a lot of emulators is always going
+to be to auto-play tapes, and maybe even to auto-switch hardware. I
+guess they&#x27;ll always have options not to though (as it&#x27;s easier to
+program :-) )
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p153082"><div class="ph"><a class="d" href="#p153082">2003-01-09 17:40:19</a> <span>Philip Kendall</span> <span>Re: Timex Software</span></div><pre>In article &lt;avkboc$gi7st$…@…&gt;,
+Bethany Carlton &lt;…@…&gt; wrote:
+<span class="qt">&gt;&quot;Philip Kendall&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt;news:avkb25$lu3$…@…...</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Trivial. If the emulator encounters a hardware information block saying</span>
+<span class="qt">&gt;&gt; that the program doesn&#x27;t run on whatever hardware is currently being</span>
+<span class="qt">&gt;&gt; emulated, tell this to the user.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Great! Does this actually happen? I don&#x27;t remember ever having encountered a</span>
+<span class="qt">&gt;message with any I&#x27;ve tried, but might not have tried the right ones.</span>
+
+Very few (if any[1]) .tzx files currently have hardware information
+blocks in[2], so I haven&#x27;t bothered writing the code to do this in Fuse.
+I suspect the situation will be much the same for other emulators.
+
+[1] I think there&#x27;ll probably be one or two out there as I didn&#x27;t even
+    write the code to be able to read the block types I&#x27;ve never seen
+    for libspectrum.
+
+[2] I guess because this really only becomes an issue when you&#x27;ve got
+    programs which _don&#x27;t_ work on the standard machines, hence it
+    hasn&#x27;t been worth it up to now.
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p153083"><div class="ph"><a class="d" href="#p153083">2003-01-09 17:53:23</a> <span>Woody</span> <span>Re: Timex Software</span></div><pre>On 9 Jan 2003 17:40:19 -0000, …@… (Philip Kendall) wrote:
+
+<span class="qt">&gt;Very few (if any[1]) .tzx files currently have hardware information</span>
+<span class="qt">&gt;blocks in[2], so I haven&#x27;t bothered writing the code to do this in Fuse.</span>
+<span class="qt">&gt;I suspect the situation will be much the same for other emulators.</span>
+
+Certainly the case for SPIN at the moment. But with Timex emulation
+(and a special mode for somebody&#x27;s[1] personal project), fast
+approaching the top of the to-do list it looks like that may change.
+
+[1] Hmm, wonder if this &quot;somebody&quot; thinks it&#x27;s been forgotten. It&#x27;s
+been a while...
+
+
+
+
+</pre></div><div class="post" id="p153084"><div class="ph"><a class="d" href="#p153084">2003-01-09 18:19:13</a> <span>Andrew Owen</span> <span>Re: Timex Software</span></div><pre>In article &lt;avkbo9$mp6$…@…&gt;, …@…
+(Philip Kendall) wrote:
+
+<span class="qt">&gt; In article</span>
+&lt;…@…&gt;,
+<span class="qt">&gt; Andrew Owen &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;I find the .tap format is still far more convenient for working with data</span>
+<span class="qt">&gt; &gt;than .tzx, particularly since it&#x27;s a raw data format and you can edit</span>
+<span class="qt">&gt; &gt;the data in situ.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; So is .tzx, at least for ROM-saved blocks (which is all you can put in a</span>
+<span class="qt">&gt; .tap file, after all). The difference is what? 10 bytes of header at the</span>
+<span class="qt">&gt; start and 3 bytes (id, pause lsb, pause msb) before each block. I really</span>
+<span class="qt">&gt; don&#x27;t see that as significant.</span>
+
+Oh. I didn&#x27;t realise ROM saved blocks were stored that way. Don&#x27;t forget
+I&#x27;ve only been using TZXs since MacFUSE came out.
+
+<span class="qt">&gt; &gt;&gt; Any emulator worth its&#x27; salt should take a tzx and start piping audio data</span>
+<span class="qt">&gt; &gt;&gt; to the ear port, regardless of whether or not the emulated hardware can</span>
+<span class="qt">&gt; &gt;&gt; understand it.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Agreed, but only after the user does the equivalent of pressing play.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; To be honest, I think what most people want is to double-click on a tape</span>
+<span class="qt">&gt; file and for the game to magically start playing. They don&#x27;t want to mess</span>
+<span class="qt">&gt; about with having to find out which key they have to press to start the</span>
+<span class="qt">&gt; tape playing. Hence the default for a lot of emulators is always going</span>
+<span class="qt">&gt; to be to auto-play tapes, and maybe even to auto-switch hardware. I</span>
+<span class="qt">&gt; guess they&#x27;ll always have options not to though (as it&#x27;s easier to</span>
+<span class="qt">&gt; program :-) )</span>
+
+Then may I press the case for emulators like vbSpec which remember your
+config settings when you start them up. MacFUSE always starts in 48K mode
+with autoplay switched on and the first thing I have to do before I can
+start doing things is select the Timex machine and turn off auto-load
+tapes. Which is arguably more annoying for me than having to type LOAD &quot;&quot;
+is to load a game. Anyway, if you want games to load instantly that&#x27;s what
+snapshots are for! TZX is great for multiloads, and the authentic
+preservation of original tapes, but if it becomes a substitute for a
+snapshot format then that&#x27;s probably a bad thing.
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p153085"><div class="ph"><a class="d" href="#p153085">2003-01-09 18:22:43</a> <span>Andrew Owen</span> <span>Re: Timex Software</span></div><pre>In article &lt;avkc63$n8j$…@…&gt;, …@…
+(Philip Kendall) wrote:
+
+<span class="qt">&gt; [2] I guess because this really only becomes an issue when you&#x27;ve got</span>
+<span class="qt">&gt;     programs which _don&#x27;t_ work on the standard machines, hence it</span>
+<span class="qt">&gt;     hasn&#x27;t been worth it up to now.</span>
+
+Since the library of software is so small it might make more sense to add
+a test program to the begining of any Timex .tzxs to check the hardware
+and report if the wrong machine is being used. I could write a program in
+a few lines of code to check for a TS2068 or a TC2048. You only need to
+test for the extra video to see if it&#x27;s a Timex and then the non-standard
+AY to tell which Timex it is.
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p153086"><div class="ph"><a class="d" href="#p153086">2003-01-09 18:26:09</a> <span>Andrew Owen</span> <span>Re: Timex Software</span></div><pre>In article &lt;…@…&gt;, Woody
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; On 9 Jan 2003 17:40:19 -0000, …@… (Philip Kendall) wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;Very few (if any[1]) .tzx files currently have hardware information</span>
+<span class="qt">&gt; &gt;blocks in[2], so I haven&#x27;t bothered writing the code to do this in Fuse.</span>
+<span class="qt">&gt; &gt;I suspect the situation will be much the same for other emulators.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Certainly the case for SPIN at the moment. But with Timex emulation</span>
+<span class="qt">&gt; (and a special mode for somebody&#x27;s[1] personal project), fast</span>
+<span class="qt">&gt; approaching the top of the to-do list it looks like that may change.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; [1] Hmm, wonder if this &quot;somebody&quot; thinks it&#x27;s been forgotten. It&#x27;s</span>
+<span class="qt">&gt; been a while...</span>
+
+Well I was in contact with that somebody recently and he mentioned it to
+me so I don&#x27;t think so. Meanwhile I&#x27;m hopeful that a certain Mac based
+emulator will eventually include support for my personal project - the ZX
+Spectrum SE.
+
+One thing I would like to see in emulators is an agreement over an unused
+I/O address to use to change the color palette. Quite a few emulators
+already offer you the option of changing the palette and I think giving
+the user control of this from the Spectrum environment would be a fun way
+of expanding the hardware. Ok, so no genuine machines do this, but then no
+genuine machines have scalar rendered displays of 512x384 pixels either.
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p153112"><div class="ph"><a class="d" href="#p153112">2003-01-09 22:54:48</a> <span>Fred</span> <span>Re: Timex Software</span></div><pre>Andrew Owen wrote:
+<span class="qt"> &gt; Then may I press the case for emulators like vbSpec which remember</span>
+<span class="qt"> &gt; your config settings when you start them up. MacFUSE always starts in</span>
+<span class="qt"> &gt; 48K mode with autoplay switched on and the first thing I have to do</span>
+<span class="qt"> &gt; before I can start doing things is select the Timex machine and turn</span>
+<span class="qt"> &gt; off auto-load tapes. Which is arguably more annoying for me than</span>
+<span class="qt"> &gt; having to type LOAD &quot;&quot; is to load a game.</span>
+
+If you set up fuse the way you want you should be able to choose 
+options-&gt;save to set those as your startup defaults. What it doesn&#x27;t do 
+right now is save the machine and the scaler setting, but these should 
+be in the next beta.
+
+Fred
+
+
+
+
+</pre></div><div class="post" id="p153114"><div class="ph"><a class="d" href="#p153114">2003-01-09 23:12:36</a> <span>Andrew Owen</span> <span>Re: Timex Software</span></div><pre>In article &lt;avkuip$gui0n$…@…&gt;, Fred
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Andrew Owen wrote:</span>
+<span class="qt">&gt;  &gt; Then may I press the case for emulators like vbSpec which remember</span>
+<span class="qt">&gt;  &gt; your config settings when you start them up. MacFUSE always starts in</span>
+<span class="qt">&gt;  &gt; 48K mode with autoplay switched on and the first thing I have to do</span>
+<span class="qt">&gt;  &gt; before I can start doing things is select the Timex machine and turn</span>
+<span class="qt">&gt;  &gt; off auto-load tapes. Which is arguably more annoying for me than</span>
+<span class="qt">&gt;  &gt; having to type LOAD &quot;&quot; is to load a game.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; If you set up fuse the way you want you should be able to choose </span>
+<span class="qt">&gt; options-&gt;save to set those as your startup defaults. What it doesn&#x27;t do </span>
+<span class="qt">&gt; right now is save the machine and the scaler setting, but these should </span>
+<span class="qt">&gt; be in the next beta.</span>
+
+Cheers. Another feature I&#x27;m looking forward to is being able to double
+click on tapes and snapshots and have them open in FUSE, but I guess that
+requires new code rather than adapting code from the original version. I&#x27;m
+using MacFUSE about 50% of the time, and the rest of the time still using
+a custom version of MacSpectacle. I haven&#x27;t used ZXSP in weeks. Any chance
+of incorporating the model specific keyboards from ZXSP?
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p153117"><div class="ph"><a class="d" href="#p153117">2003-01-09 23:47:58</a> <span>Fred</span> <span>Re: Timex Software</span></div><pre>Andrew Owen wrote:
+<span class="qt">&gt; Cheers. Another feature I&#x27;m looking forward to is being able to double</span>
+<span class="qt">&gt; click on tapes and snapshots and have them open in FUSE, but I guess that</span>
+<span class="qt">&gt; requires new code rather than adapting code from the original version.</span>
+
+Actually, this is an easy addition - I was just waiting till I 
+uninstalled zxsp so they wouldn&#x27;t argue about control of speccy 
+snapshots etc. Expect it in the next beta.
+
+<span class="qt"> &gt; I&#x27;m using MacFUSE about 50% of the time, and the rest of the time still</span>
+<span class="qt"> &gt; using a custom version of MacSpectacle. I haven&#x27;t used ZXSP in weeks.</span>
+
+What features keep you coming back to MacSpectacle?
+
+<span class="qt"> &gt; Any chance of incorporating the model specific keyboards from ZXSP?</span>
+
+No technical reason not to...
+
+Fred
+
+
+
+
+</pre></div><div class="post" id="p153123"><div class="ph"><a class="d" href="#p153123">2003-01-10 00:34:46</a> <span>Andrew Owen</span> <span>Re: Timex Software</span></div><pre>In article &lt;avl1ms$h2o3d$…@…&gt;, Fred
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Andrew Owen wrote:</span>
+<span class="qt">&gt; &gt; Cheers. Another feature I&#x27;m looking forward to is being able to double</span>
+<span class="qt">&gt; &gt; click on tapes and snapshots and have them open in FUSE, but I guess that</span>
+<span class="qt">&gt; &gt; requires new code rather than adapting code from the original version.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Actually, this is an easy addition - I was just waiting till I </span>
+<span class="qt">&gt; uninstalled zxsp so they wouldn&#x27;t argue about control of speccy </span>
+<span class="qt">&gt; snapshots etc. Expect it in the next beta.</span>
+
+Oh goody. Any improvements in the sound support on the way?
+<span class="qt">&gt; </span>
+<span class="qt">&gt;  &gt; I&#x27;m using MacFUSE about 50% of the time, and the rest of the time still</span>
+<span class="qt">&gt;  &gt; using a custom version of MacSpectacle. I haven&#x27;t used ZXSP in weeks.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; What features keep you coming back to MacSpectacle?</span>
+
+The tape browser which allows you to create named blank tapes, and delete
+blocks. The perfect scanline support (for Color Draw, FUSE is off by just
+enough to make a difference. Now it may be that FUSE is 100% accurate,
+because MacSpectacle doesn&#x27;t emulate contended memory, but Color Draw
+doesn&#x27;t display correctly on FUSE). The ability to load ROM images. The
+ability to make the ROM writeable (very important in testing SE Basic,
+since it runs in RAM on the ZXSE). Having a selection of two different
+128K models (I keep one of them as a copy of the ZXSE ROM and the other
+for experimental uses). The ability to load and save .SCR files. The
+ability to set the volume level. The ability to trigger NMIs, interrupts
+and resets. The ability to generate a log file of the Z80. Support for the
+full Mac keyboard.
+
+There are also some features in ZXSP which mean I will use it again at
+some point. These are:
+
+16K Spectrum emulation, setting the CPU speed and Frames rate, load from
+real tape save to real tape via audio (never got it to work, but I used to
+do this in PowerSpectrum - and you could set a CD as the audio source and
+load from an audio CD of Spectrum games), the CPU and AY consoles - very
+handy.
+
+<span class="qt">&gt;  &gt; Any chance of incorporating the model specific keyboards from ZXSP?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; No technical reason not to...</span>
+
+Oh goody. If you&#x27;re removing ZXSP, can I expect to see the Mac OS X icons
+in the next version of FUSE?
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p153127"><div class="ph"><a class="d" href="#p153127">2003-01-10 04:35:34</a> <span>Jeff Braine</span> <span>Re: Timex Software</span></div><pre>On Thu, 9 Jan 2003, Woody wrote:
+
+<span class="qt">&gt; Certainly the case for SPIN at the moment. But with Timex emulation</span>
+<span class="qt">&gt; (and a special mode for somebody&#x27;s[1] personal project), fast</span>
+<span class="qt">&gt; approaching the top of the to-do list it looks like that may change.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; [1] Hmm, wonder if this &quot;somebody&quot; thinks it&#x27;s been forgotten. It&#x27;s</span>
+<span class="qt">&gt; been a while...</span>
+
+Somebody tells me they&#x27;re not in a big hurry, having been busy with
+other stuff recently.
+
+-- 
+Jeff
+There is no snooze button on a cat who wants breakfast.
+
+
+
+
+
+</pre></div><div class="post" id="p153143"><div class="ph"><a class="d" href="#p153143">2003-01-10 12:04:06</a> <span>Philip Kendall</span> <span>Re: Timex Software</span></div><pre>In article &lt;avkuip$gui0n$…@…&gt;,
+Fred  &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;If you set up fuse the way you want you should be able to choose </span>
+<span class="qt">&gt;options-&gt;save to set those as your startup defaults. What it doesn&#x27;t do </span>
+<span class="qt">&gt;right now is save the machine</span>
+
+which it was sort of meant to do. The following patch (actually against
+my dev version, but I think it will apply against 0.5.1) will fix that
+for anyone interested.
+
+Phil
+
+--- machine.c   1 Nov 2002 15:57:22 -0000       1.40
++++ machine.c   10 Jan 2003 11:57:50 -0000      1.42
+@@ -30,6 +30,7 @@
+ #include &lt;errno.h&gt;
+ #include &lt;stdio.h&gt;
+ #include &lt;fcntl.h&gt;
++#include &lt;settings.h&gt;
+ #include &lt;string.h&gt;
+ #include &lt;sys/mman.h&gt;
+ #include &lt;sys/stat.h&gt;
+@@ -165,6 +166,13 @@
+ {
+   machine_current = machine;
+ 
++  if( settings_current.start_machine ) free( settings_current.start_machine );
++  settings_current.start_machine = strdup( machine_current-&gt;id );
++  if( !settings_current.start_machine ) {
++    ui_error( UI_ERROR_ERROR, &quot;out of memory at %s:%d&quot;, __FILE__, __LINE__ );
++    return 1;
++  }
++
+   tstates = 0;
+ 
+   /* Reset the event stack */
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p153145"><div class="ph"><a class="d" href="#p153145">2003-01-10 12:25:15</a> <span>Philip Kendall</span> <span>Re: Timex Software</span></div><pre>In article &lt;…@…&gt;,
+Andrew Owen &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Since the library of software is so small it might make more sense to add</span>
+<span class="qt">&gt;a test program to the begining of any Timex .tzxs to check the hardware</span>
+<span class="qt">&gt;and report if the wrong machine is being used.</span>
+
+Whilst this is cute, I don&#x27;t think it&#x27;s the right way to be doing things.
+I&#x27;d much rather solve this problem by using something which is obviously
+metadata (ie a Hardware Information Block), rather than modifying the
+data on the tape, as this maintains the clear distinction between the
+original data and the stuff added becasuse we want/need it for emulation
+purposes.
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p153155"><div class="ph"><a class="d" href="#p153155">2003-01-10 13:33:02</a> <span>Jonathan Needle</span> <span>Re: Timex Software</span></div><pre>
+&quot;Bethany Carlton&quot; &lt;…@…&gt; wrote in message
+news:avk9qb$goech$…@…...
+
+<span class="qt">&gt; Not identifying them, per se, but filtering files by type is a perfectly</span>
+<span class="qt">&gt; normal practice in the File Selector dialog. I made reference to the file</span>
+<span class="qt">&gt; containing the intended hardware model that the emulator would need to</span>
+<span class="qt">&gt; switch to the correct mode. If the Timex models are already accommodated</span>
+<span class="qt">&gt; there then more&#x27;s the better. If they aren&#x27;t, what will be there instead?</span>
+Is
+<span class="qt">&gt; &#x27;nothing&#x27; allowed, and how is it handled if so?</span>
+
+I&#x27;m with you on this one, Bethany. It&#x27;s far more user friendly for users not
+be able to see unsupported file types. That&#x27;s why the CPC also has .tzx
+files but named .cdt to avoid confusion.
+
+Regards,
+
+Jon.
+--
+  Jonathan Needle
+  Spectaculator Creator
+  <a href="http://www.spectaculator.com/" rel="noreferrer">http://www.spectaculator.com/</a>
+
+
+
+
+
+</pre></div><div class="post" id="p153191"><div class="ph"><a class="d" href="#p153191">2003-01-10 23:16:01</a> <span>Darren Salt</span> <span>Re: Timex Software</span></div><pre>I demand that Philip Kendall may or may not have written...
+
+<span class="qt">&gt; In article &lt;avkuip$gui0n$…@…&gt;, Fred </span>
+<span class="qt">&gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; If you set up fuse the way you want you should be able to choose</span>
+<span class="qt">&gt;&gt; options-&gt;save to set those as your startup defaults. What it doesn&#x27;t do</span>
+<span class="qt">&gt;&gt; right now is save the machine</span>
+
+<span class="qt">&gt; which it was sort of meant to do. The following patch (actually against my</span>
+<span class="qt">&gt; dev version, but I think it will apply against 0.5.1) will fix that for</span>
+<span class="qt">&gt; anyone interested.</span>
+[snip]
+
+It does, although I&#x27;ve applied it manually.
+
+Speaking of FUSE, I&#x27;ve been playing with 0.5.1 recently (a bit later than I&#x27;d
+planned!) and I&#x27;ve found that while the framebuffer code works well with the
+Matrox Millennium[1] in my Deskpro (which is understandable, since that&#x27;s
+what I originally got it working with), it doesn&#x27;t get along very well with
+the Radeon VE in my new machine - I get a blank screen while the emulator
+thinks otherwise (dumping /dev/fb0 says as much).
+
+Ideas/patches, anybody?
+
+
+[1] Well... the code as supplied works. I&#x27;ve yet to try my palette-handling
+    changes, though...
+
+-- 
+<span class="qt">| Darren Salt | nr. Ashington, | d youmustbejoking,demon,co,uk</span>
+<span class="qt">| RISC OS,    | Northumberland | s zap,tartarus,org</span>
+<span class="qt">| Linux       | Toon Army      | @</span>
+<span class="qt">|   When replying: &quot;news&quot;-&gt;&quot;ds&quot;, &quot;cu&quot;-&gt;&quot;co.uk&quot;, and validate</span>
+
+Everyone is born a king, and most people die in exile.
+
+
+
+</pre></div><div class="post" id="p153196"><div class="ph"><a class="d" href="#p153196">2003-01-11 00:28:11</a> <span>Fred</span> <span>FUSE wishlist [was Re: Timex Software]</span></div><pre>Andrew Owen wrote:
+<span class="qt"> &gt;&gt;Fred wrote:</span>
+<span class="qt">&gt; Oh goody. Any improvements in the sound support on the way?</span>
+
+The FUSE sound man is Russell Marks, he is the best guy to ask about 
+this stuff...
+
+<span class="qt">&gt;&gt;What features keep you coming back to MacSpectacle?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The tape browser which allows you to create named blank tapes, and delete</span>
+<span class="qt">&gt; blocks.</span>
+
+[ZXSP]
+<span class="qt"> &gt; load from real tape save to real tape via audio (never got it to work,</span>
+<span class="qt"> &gt; but I used to do this in PowerSpectrum - and you could set a CD as the</span>
+<span class="qt"> &gt; audio source and load from an audio CD of Spectrum games)</span>
+
+Yep, better tape mangement would be good. I was hoping to get time to do 
+a cocoa port of taper for this type of stuff - maybe Phil will improve 
+the FUSE tape support before I get around to it :)
+
+<span class="qt"> &gt; The perfect scanline support (for Color Draw, FUSE is off by just</span>
+<span class="qt">&gt; enough to make a difference. Now it may be that FUSE is 100% accurate,</span>
+<span class="qt">&gt; because MacSpectacle doesn&#x27;t emulate contended memory, but Color Draw</span>
+<span class="qt">&gt; doesn&#x27;t display correctly on FUSE).</span>
+
+I don&#x27;t think that FUSE is 100% accurate yet...
+
+<span class="qt"> &gt; The ability to load ROM images.</span>
+
+This would be nice, slightly compilcated by FUSE being one of those 
+emulators with seperate 16kb ROM files though...
+
+<span class="qt">&gt; The ability to make the ROM writeable (very important in testing SE Basic,</span>
+<span class="qt">&gt; since it runs in RAM on the ZXSE).</span>
+
+Couldn&#x27;t this be tested using the +3 all RAM modes, or would it still be 
+handy despite this?
+
+<span class="qt">&gt; Having a selection of two different 128K models (I keep one of them as a</span>
+<span class="qt"> &gt; copy of the ZXSE ROM and the other for experimental uses).</span>
+
+I&#x27;ll have a think about how this could be done generally...
+
+<span class="qt"> &gt; The ability to load and save .SCR files.</span>
+
+Doable.
+
+<span class="qt"> &gt; The ability to set the volume level.</span>
+
+Ditto.
+
+<span class="qt"> &gt; The ability to trigger NMIs, interrupts and resets.</span>
+[ZXSP]
+<span class="qt"> &gt; the CPU and AY consoles - very handy.</span>
+
+Phil: debugger potential?
+
+<span class="qt"> &gt; The ability to generate a log file of the Z80.</span>
+
+What would this contain exactly?
+
+<span class="qt">&gt; Support for the full Mac keyboard.</span>
+
+I am not sure what this would entail?
+
+<span class="qt">&gt; There are also some features in ZXSP which mean I will use it again at</span>
+<span class="qt">&gt; some point. These are:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; 16K Spectrum emulation</span>
+
+This was trivial so I added it - look for it in the next beta.
+
+<span class="qt"> &gt; setting the CPU speed and Frames rate,</span>
+
+CPU speed is there, frame rate could happen...
+
+<span class="qt">&gt; If you&#x27;re removing ZXSP, can I expect to see the Mac OS X icons</span>
+<span class="qt">&gt; in the next version of FUSE?</span>
+
+Yep, they&#x27;re part and parcel of the file association stuff...
+
+Fred
+
+
+
+
+</pre></div><div class="post" id="p153200"><div class="ph"><a class="d" href="#p153200">2003-01-11 01:47:59</a> <span>Darren Salt</span> <span>Re: FUSE wishlist [was Re: Timex Software]</span></div><pre>I demand that Fred may or may not have written...
+
+<span class="qt">&gt; Andrew Owen wrote:</span>
+[snip]
+<span class="qt">&gt;&gt; The ability to load ROM images.</span>
+
+<span class="qt">&gt; This would be nice, slightly compilcated by FUSE being one of those</span>
+<span class="qt">&gt; emulators with seperate 16kb ROM files though...</span>
+
+Doable; I have some patches for this, mixed in with lots of other patches for
+0.5.0 (I&#x27;ve mostly omitted them from my 0.5.1 build for now). It could do
+with some work, though; fuse-roms is in need of a rewrite, specifically to
+put the contents of each ROM archive into its own subdirectory.
+
+[snip]
+
+-- 
+<span class="qt">| Darren Salt | nr. Ashington, | d youmustbejoking,demon,co,uk</span>
+<span class="qt">| RISC OS,    | Northumberland | s zap,tartarus,org</span>
+<span class="qt">| Linux       | Toon Army      | @</span>
+<span class="qt">|   The RISC OS version of Mindtrap.</span>
+
+7 RETURN without GOSUB, 0:1
+
+
+
+</pre></div><div class="post" id="p153205"><div class="ph"><a class="d" href="#p153205">2003-01-11 03:12:45</a> <span>Andrew Owen</span> <span>Re: FUSE wishlist [was Re: Timex Software]</span></div><pre>In article &lt;avnodu$hhsc1$…@…&gt;, Fred
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; &gt; Oh goody. Any improvements in the sound support on the way?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The FUSE sound man is Russell Marks, he is the best guy to ask about </span>
+<span class="qt">&gt; this stuff...</span>
+
+I thought the horrible clicking noise in Fairlight was a MacFUSE problem. Sorry.
+
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;&gt;What features keep you coming back to MacSpectacle?</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; The tape browser which allows you to create named blank tapes, and delete</span>
+<span class="qt">&gt; &gt; blocks.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; [ZXSP]</span>
+<span class="qt">&gt;  &gt; load from real tape save to real tape via audio (never got it to work,</span>
+<span class="qt">&gt;  &gt; but I used to do this in PowerSpectrum - and you could set a CD as the</span>
+<span class="qt">&gt;  &gt; audio source and load from an audio CD of Spectrum games)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Yep, better tape mangement would be good. I was hoping to get time to do </span>
+<span class="qt">&gt; a cocoa port of taper for this type of stuff - maybe Phil will improve </span>
+<span class="qt">&gt; the FUSE tape support before I get around to it :)</span>
+
+I&#x27;d rather have this in the emulator than external.
+
+<span class="qt">&gt; &gt; The perfect scanline support (for Color Draw, FUSE is off by just</span>
+<span class="qt">&gt; &gt; enough to make a difference. Now it may be that FUSE is 100% accurate,</span>
+<span class="qt">&gt; &gt; because MacSpectacle doesn&#x27;t emulate contended memory, but Color Draw</span>
+<span class="qt">&gt; &gt; doesn&#x27;t display correctly on FUSE).</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I don&#x27;t think that FUSE is 100% accurate yet...</span>
+
+I wish I could give you a copy of color draw, but it&#x27;s still in copyright.
+I can send you screenshots though if that&#x27;s any help.
+
+<span class="qt">&gt; &gt; The ability to load ROM images.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; This would be nice, slightly compilcated by FUSE being one of those </span>
+<span class="qt">&gt; emulators with seperate 16kb ROM files though...</span>
+
+WinZ80 uses 16K ROM files and it can load different images.
+
+<span class="qt">&gt; &gt; The ability to make the ROM writeable (very important in testing SE Basic,</span>
+<span class="qt">&gt; &gt; since it runs in RAM on the ZXSE).</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Couldn&#x27;t this be tested using the +3 all RAM modes, or would it still be </span>
+<span class="qt">&gt; handy despite this?</span>
+
+That would only allow testing in RAM on the +3 hardware. It would be
+useful for me to have it available as an option on all hardware. In
+fairness I doubt anyone else would use it. If you use a bugfixed ROM that
+doesn&#x27;t overwrite itself you get an extra 1K+ of RAM to play with on a 48K
+machine this way.
+
+<span class="qt">&gt; &gt; Having a selection of two different 128K models (I keep one of them as a</span>
+<span class="qt">&gt;  &gt; copy of the ZXSE ROM and the other for experimental uses).</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;ll have a think about how this could be done generally...</span>
+
+For some reason I thought only the 128K machine was available in FUSE. I
+see that&#x27;s not the case and I wonder if I just imagined it or if there was
+a change between the first and second beta.
+
+<span class="qt">&gt;  &gt; The ability to load and save .SCR files.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Doable.</span>
+
+But if you do implement it, compatibility with the extended .SCR format
+used by vbSpec to load/save Timex screens would be very handy.
+
+<span class="qt">&gt;  &gt; The ability to set the volume level.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Ditto.</span>
+
+:)
+
+<span class="qt">&gt;  &gt; The ability to trigger NMIs, interrupts and resets.</span>
+<span class="qt">&gt; [ZXSP]</span>
+<span class="qt">&gt;  &gt; the CPU and AY consoles - very handy.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Phil: debugger potential?</span>
+
+This stuff would be covered by a debugger. The NMI, interrupt and reset
+stuff is also only available on the &#x27;expert&#x27; version of MacSpectacle, but
+I use it all the time. Also, adding NMI support is the first step to
+adding Multiface support.
+
+<span class="qt">&gt;  &gt; The ability to generate a log file of the Z80.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; What would this contain exactly?</span>
+
+Exceptions - things like HALT with interrupts disabled.
+
+<span class="qt">&gt; &gt; Support for the full Mac keyboard.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I am not sure what this would entail?</span>
+
+Well at the moment if you type &quot;[&quot; it doesn&#x27;t do anything. You would need
+to map key sequences to the characters. Also it should be possible to
+switch the top row of the number keys to operate normally. The normal
+shifted-number functions need to be available elsewhere, but there are
+sufficient available keys.
+
+<span class="qt">&gt; &gt; There are also some features in ZXSP which mean I will use it again at</span>
+<span class="qt">&gt; &gt; some point. These are:</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; 16K Spectrum emulation</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; This was trivial so I added it - look for it in the next beta.</span>
+
+Cheers. I doubt anyone with a 16K machine is going to install SE Basic,
+but it&#x27;s nice to know they could if they wanted to, unlike certain other
+ROMs with modified reset routines.
+
+<span class="qt">&gt;  &gt; setting the CPU speed and Frames rate,</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; CPU speed is there, frame rate could happen...</span>
+
+I didn&#x27;t even notice the CPU speed at first. Some numbers on the
+calibration scale would be helpful.
+
+<span class="qt">&gt; &gt; If you&#x27;re removing ZXSP, can I expect to see the Mac OS X icons</span>
+<span class="qt">&gt; &gt; in the next version of FUSE?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Yep, they&#x27;re part and parcel of the file association stuff...</span>
+
+Woo hoo!
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p153210"><div class="ph"><a class="d" href="#p153210">2003-01-11 06:51:03</a> <span>…@…</span> <span>Re: Timex Software</span></div><pre>
+<span class="qt">&gt; I was just guessing since I&#x27;ve never really got Warajevo to work on my PC</span>
+<span class="qt">&gt; emulator, and I haven&#x27;t found a way of converting Warajevo .TAPs to normal</span>
+<span class="qt">&gt; .TAPs.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; -Andrew</span>
+
+That would explain it then.  Warajevo&#x27;s front-end contains
+all the necessary conversion facilities :)
+
+Alvin
+
+
+
+</pre></div><div class="post" id="p153211"><div class="ph"><a class="d" href="#p153211">2003-01-11 06:59:27</a> <span>…@…</span> <span>Re: Timex Software</span></div><pre>
+<span class="qt">&gt; Can you recommend please some TS 2068 specific programs to test Timex</span>
+<span class="qt">&gt; mode of Warajewo emulator? Will I find them on WOS? Tell me exact</span>
+<span class="qt">&gt; names of packages please. Or give me specific URL please for Timex</span>
+<span class="qt">&gt; related download section. I&#x27;ve not found any Timex featured</span>
+<span class="qt">&gt; application to this moment on the web [except some screenshosts shown</span>
+<span class="qt">&gt; on Warajewo home page - but unfortunately without download option].</span>
+
+Unfortunately no one&#x27;s really uploaded anything.  The MSCRIPT
+snapshot you see was provided by me to the Warajevo authors
+for testing purposes on condition they didn&#x27;t make it available
+on the web.  At the time, it was still being sold.
+
+I don&#x27;t think it&#x27;s being sold anymore, so I wouldn&#x27;t have any
+qualms with sharing it now.  If I could only find that
+snapshot....
+
+I&#x27;ll put a copy of the only thing I have at hand now: 
+an issue of a tape based magazine for the TS2068 and
+Spectrum.  It was a monthly published out of Toronto
+by the Boisvert brothers for a couple of years.  They
+produced some truly excellent software over the years,
+including a basic compiler (Time Machine, I think, it
+appeared much better than anything available for the
+Spectrum), an expert system, an artist program, spelling
+checker, etc.
+
+As for specific software written to take advantage of
+the TS2068&#x27;s special video modes, not much appeared.
+MSCRIPT was one example -- an excellent word processor
+that I made great use of in the early years.  MSCRIPT
+was also released on the IBM PC, incidentally.
+
+Long story short, look in abcs for a copy of Byte Power
+February 87 (?).  The tap conversion wasn&#x27;t perfect --
+a few programs didn&#x27;t make it.
+
+
+Alvin
+
+
+
+</pre></div><div class="post" id="p153224"><div class="ph"><a class="d" href="#p153224">2003-01-11 14:37:53</a> <span>Darren Salt</span> <span>Re: FUSE wishlist [was Re: Timex Software]</span></div><pre>I demand that Andrew Owen may or may not have written...
+
+<span class="qt">&gt; In article &lt;avnodu$hhsc1$…@…&gt;, Fred</span>
+<span class="qt">&gt; &lt;…@…&gt; wrote:</span>
+[snip]
+<span class="qt">&gt;&gt;&gt; The ability to trigger NMIs, interrupts and resets. [ZXSP] the CPU and AY</span>
+<span class="qt">&gt;&gt;&gt; consoles - very handy.</span>
+<span class="qt">&gt;&gt; Phil: debugger potential?</span>
+
+<span class="qt">&gt; This stuff would be covered by a debugger. The NMI, interrupt and reset</span>
+<span class="qt">&gt; stuff is also only available on the &#x27;expert&#x27; version of MacSpectacle, but I</span>
+<span class="qt">&gt; use it all the time. Also, adding NMI support is the first step to adding</span>
+<span class="qt">&gt; Multiface support.</span>
+
+Suffice it to say that my patches include Multiface support. (It also
+includes some changes to the memory handling since for this it&#x27;s easier to
+deal with an 8K page size.)
+
+&lt;URL:<a href="http://www.youmustbejoking.demon.co.uk/progs/linux/dists/ds/main/source/otherosfs/&gt;" rel="noreferrer">http://www.youmustbejoking.demon.co.uk/progs/linux/dists/ds/main/source/otherosfs/&gt;</a>
+
+-- 
+<span class="qt">| Darren Salt | nr. Ashington, | d youmustbejoking,demon,co,uk</span>
+<span class="qt">| RISC OS,    | Northumberland | s zap,tartarus,org</span>
+<span class="qt">| Linux       | Toon Army      | @</span>
+<span class="qt">|   The RISC OS version of Mindtrap.</span>
+
+You have taken yourself too seriously.
+
+
+
+</pre></div><div class="post" id="p153236"><div class="ph"><a class="d" href="#p153236">2003-01-11 18:59:58</a> <span>Andrew Owen</span> <span>Re: FUSE wishlist [was Re: Timex Software]</span></div><pre>In article &lt;…@…&gt;, Darren Salt
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Suffice it to say that my patches include Multiface support. (It also</span>
+<span class="qt">&gt; includes some changes to the memory handling since for this it&#x27;s easier to</span>
+<span class="qt">&gt; deal with an 8K page size.)</span>
+
+That will be useful for implementing Timex MMU emulation, which has a 64K
+memory map in 8K pages, although on the TS2068 only one page is actually
+used, for the extended ROM. The total memory map on the Timex machines is
+192K. The ZX Spectrum SE uses both the Timex memory map and an extended
+Spectrum 128K memory map to give a total of 272K of memory. Since you&#x27;ve
+managed to add multiface support I suspect you could probably add TS2068
+and ZX Spectrum SE support without too much difficulty as long as you had
+all the necessary info available. I can provide said info if you&#x27;re
+interested.
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p153239"><div class="ph"><a class="d" href="#p153239">2003-01-11 20:39:21</a> <span>Matthew Westcott</span> <span>Re: FUSE wishlist [was Re: Timex Software]</span></div><pre>Andrew Owen wrote in
+&lt;…@…&gt;: 
+
+<span class="qt">&gt;&gt; &gt; Color Draw doesn&#x27;t display correctly on FUSE</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; I don&#x27;t think that FUSE is 100% accurate yet...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I wish I could give you a copy of color draw, but it&#x27;s still in</span>
+<span class="qt">&gt;copyright. I can send you screenshots though if that&#x27;s any help.</span>
+
+Created images can be freely distributed complete with the multicolour 
+routine, though. I must admit I don&#x27;t recall FUSE having any problems with 
+the multicolour in Pondlife Megademo, which uses that routine - is it just 
+the Color Draw program itself that has problems?
+
+<span class="qt">&gt;For some reason I thought only the 128K machine was available in FUSE. I</span>
+<span class="qt">&gt;see that&#x27;s not the case and I wonder if I just imagined it or if there</span>
+<span class="qt">&gt;was a change between the first and second beta.</span>
+
+I&#x27;m pretty sure Fuse started out 48K only.
+
+-- 
+<a href="http://www.zxdemo.org/" rel="noreferrer">http://www.zxdemo.org/</a> - the home of the Spectrum demo scene
+&quot;there&#x27;s a breach in security, a disturbance in the chuntey&quot;
+
+
+
+</pre></div><div class="post" id="p153240"><div class="ph"><a class="d" href="#p153240">2003-01-11 20:43:20</a> <span>Philip Kendall</span> <span>Re: FUSE wishlist [was Re: Timex Software]</span></div><pre>In article &lt;…@…&gt;,
+Matthew Westcott &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I&#x27;m pretty sure Fuse started out 48K only.</span>
+
+I&#x27;m pretty sure no released version was ever 48K only :-)
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p153243"><div class="ph"><a class="d" href="#p153243">2003-01-11 22:01:42</a> <span>Andrew Owen</span> <span>Re: FUSE wishlist [was Re: Timex Software]</span></div><pre>In article &lt;…@…&gt;, …@… (Matthew
+Westcott) wrote:
+
+<span class="qt">&gt; Andrew Owen wrote in</span>
+<span class="qt">&gt; &lt;…@…&gt;: </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;&gt; &gt; Color Draw doesn&#x27;t display correctly on FUSE</span>
+<span class="qt">&gt; &gt;&gt; </span>
+<span class="qt">&gt; &gt;&gt; I don&#x27;t think that FUSE is 100% accurate yet...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;I wish I could give you a copy of color draw, but it&#x27;s still in</span>
+<span class="qt">&gt; &gt;copyright. I can send you screenshots though if that&#x27;s any help.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Created images can be freely distributed complete with the multicolour </span>
+<span class="qt">&gt; routine, though. I must admit I don&#x27;t recall FUSE having any problems with </span>
+<span class="qt">&gt; the multicolour in Pondlife Megademo, which uses that routine - is it just </span>
+<span class="qt">&gt; the Color Draw program itself that has problems?</span>
+
+If you look at the images that come with the Sintech distribution of Color
+Draw, one or two of the colour bytes are slightly out. It may be a Mac
+specific issue though.
+
+<span class="qt">&gt; &gt;For some reason I thought only the 128K machine was available in FUSE. I</span>
+<span class="qt">&gt; &gt;see that&#x27;s not the case and I wonder if I just imagined it or if there</span>
+<span class="qt">&gt; &gt;was a change between the first and second beta.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;m pretty sure Fuse started out 48K only.</span>
+
+No, I meant rather than 128K, and +2. Of course I&#x27;d like to see the
+Spanish version of the ROM available as a machine selection as well (or at
+least my Enlish translation of it), since it pre-dates the UK 128 ROM.
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p153249"><div class="ph"><a class="d" href="#p153249">2003-01-11 23:34:34</a> <span>Philip Kendall</span> <span>Re: Timex Software</span></div><pre>In article &lt;…@…&gt;,
+Andrew Owen &lt;…@…&gt; wrote:
+<span class="qt">&gt;In article &lt;avl1ms$h2o3d$…@…&gt;, Fred</span>
+<span class="qt">&gt;&lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; What features keep you coming back to MacSpectacle?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;The tape browser which allows you to create named blank tapes,</span>
+
+Tape/Clear, Tape/Write. Or even just &#x27;touch &lt;filename&gt;&#x27; (or whatever
+your favourite mechanism for creating zero-byte files is) as a zero-byte
+file is a perfectly valid empty .tap file.
+
+(It should be noted here that Fuse 0.5.1 barfs on empty .tap files, but
+ that&#x27;s been fixed for the next release).
+
+<span class="qt">&gt;and delete blocks.</span>
+
+Pretty easy, I think.
+
+<span class="qt">&gt;The perfect scanline support (for Color Draw, FUSE is off by just</span>
+<span class="qt">&gt;enough to make a difference. Now it may be that FUSE is 100% accurate,</span>
+<span class="qt">&gt;because MacSpectacle doesn&#x27;t emulate contended memory, but Color Draw</span>
+<span class="qt">&gt;doesn&#x27;t display correctly on FUSE).</span>
+
+Fuse certainly isn&#x27;t correct on its timings, but I don&#x27;t actually know
+what they should be, given that the timings in the FAQ are inconsistent
+with Ramsoft&#x27;s floating bus info.
+
+<span class="qt">&gt;There are also some features in ZXSP which mean I will use it again at</span>
+<span class="qt">&gt;some point. These are:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;load from real tape save to real tape via audio</span>
+
+IMO, that shouldn&#x27;t be an emulator function. There are plenty of utilities
+perfectly capable of reading/writing random chunks of audio from/to sound
+cards, so why reinvent the wheel by doing it in an emulator? It&#x27;s not
+like the disk space needed to store the sound file is going to be a
+problem these days.
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p153253"><div class="ph"><a class="d" href="#p153253">2003-01-11 23:54:05</a> <span>Philip Kendall</span> <span>Re: FUSE wishlist [was Re: Timex Software]</span></div><pre>In article &lt;…@…&gt;,
+Andrew Owen &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Also, adding NMI support is the first step to adding Multiface support.</span>
+
+What features would you want from the Multiface that a decently
+functional debugger couldn&#x27;t do?
+
+Cheers,
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p153254"><div class="ph"><a class="d" href="#p153254">2003-01-11 23:54:59</a> <span>Andrew Owen</span> <span>Re: Timex Software</span></div><pre>In article &lt;avq9ma$7rp$…@…&gt;, …@…
+(Philip Kendall) wrote:
+
+<span class="qt">&gt; (It should be noted here that Fuse 0.5.1 barfs on empty .tap files, but</span>
+<span class="qt">&gt;  that&#x27;s been fixed for the next release).</span>
+
+Ok, that explains the problem I was having.
+
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;and delete blocks.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Pretty easy, I think.</span>
+
+Good. I find it very handy for creating a header with the filename and
+address of the data I want to use. Then I save a copy of the file with the
+data in it at the address it&#x27;s stored at. Delete the second header. Now a
+simple LOAD &quot;&quot; CODE will load it to the correct address, because that&#x27;s
+stored in the old header.
+
+<span class="qt">&gt; &gt;load from real tape save to real tape via audio</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; IMO, that shouldn&#x27;t be an emulator function. There are plenty of utilities</span>
+<span class="qt">&gt; perfectly capable of reading/writing random chunks of audio from/to sound</span>
+<span class="qt">&gt; cards, so why reinvent the wheel by doing it in an emulator? It&#x27;s not</span>
+<span class="qt">&gt; like the disk space needed to store the sound file is going to be a</span>
+<span class="qt">&gt; problem these days.</span>
+
+Speech System III. This creates sound samples using the beeper from the
+audio input. Now if there&#x27;s a way to create a TZX from a 16-bit 44Khz
+stereo .AIFF file and play it back so that the input goes to the audio
+port then I guess this feature isn&#x27;t strictly necessary. However I like
+the fact that in PowerSpectrum you can load up Speech System III, stick an
+audio CD in the CD drive. Set the sound to input. Set the sound device to
+CD and sample into the Spectrum direct from CD. Or set it to use the built
+in mic or line in. I&#x27;ve gotten better samples that way than I ever could
+with the real hardware since there&#x27;s no signal degredation. Speech is much
+more understandable and if you plug an electric guitar into the Mac, the
+low sample quality gives you the equivalent of a distortion effects
+processor which sounds pretty cool. Until someone comes up with an AY
+based sample system that&#x27;s as easy to use as Speech System III I&#x27;ll still
+be using it for all my samples.
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p153268"><div class="ph"><a class="d" href="#p153268">2003-01-12 00:56:15</a> <span>Andrew Owen</span> <span>Re: FUSE wishlist [was Re: Timex Software]</span></div><pre>In article &lt;avqaqt$8ub$…@…&gt;, …@…
+(Philip Kendall) wrote:
+
+<span class="qt">&gt; In article</span>
+&lt;…@…&gt;,
+<span class="qt">&gt; Andrew Owen &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Also, adding NMI support is the first step to adding Multiface support.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; What features would you want from the Multiface that a decently</span>
+<span class="qt">&gt; functional debugger couldn&#x27;t do?</span>
+
+Test environment for creating 8K programs for the real thing.
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p153269"><div class="ph"><a class="d" href="#p153269">2003-01-12 00:58:26</a> <span>Matthew Westcott</span> <span>Re: FUSE wishlist [was Re: Timex Software]</span></div><pre>Philip Kendall wrote in &lt;avpvl8$rvt$…@…&gt;:
+
+<span class="qt">&gt;In article &lt;…@…&gt;,</span>
+<span class="qt">&gt;Matthew Westcott &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;I&#x27;m pretty sure Fuse started out 48K only.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I&#x27;m pretty sure no released version was ever 48K only :-)</span>
+<span class="qt">&gt;</span>
+Rather unsurprisingly, you&#x27;re right. I just recalled the lack of AY sound, 
+which is after all the most important bit of the 128...
+
+-- 
+<a href="http://www.zxdemo.org/" rel="noreferrer">http://www.zxdemo.org/</a> - the home of the Spectrum demo scene
+&quot;there&#x27;s a breach in security, a disturbance in the chuntey&quot;
+
+
+
+</pre></div><div class="post" id="p153271"><div class="ph"><a class="d" href="#p153271">2003-01-12 01:23:54</a> <span>Fred</span> <span>Re: FUSE wishlist [was Re: Timex Software]</span></div><pre>Andrew Owen wrote:
+<span class="qt">&gt; In article &lt;avnodu$hhsc1$…@…&gt;, Fred</span>
+<span class="qt">&gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;The FUSE sound man is Russell Marks, he is the best guy to ask about </span>
+<span class="qt">&gt;&gt;this stuff...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I thought the horrible clicking noise in Fairlight was a MacFUSE problem. Sorry.</span>
+
+Well, it may be a FUSE problem that only arises on your machine, I only 
+warrant that it sounds the same on Mac OS and Linux on my machine :) 
+I&#x27;ll check it out on a slower Mac...
+
+<span class="qt">&gt; I wish I could give you a copy of color draw, but it&#x27;s still in copyright.</span>
+<span class="qt">&gt; I can send you screenshots though if that&#x27;s any help.</span>
+
+Well I am sure that Phil could use a created screenshot that shows the 
+problem as described by Matthew Westcott...
+
+<span class="qt">&gt; That would only allow testing in RAM on the +3 hardware. It would be</span>
+<span class="qt">&gt; useful for me to have it available as an option on all hardware. In</span>
+<span class="qt">&gt; fairness I doubt anyone else would use it. If you use a bugfixed ROM that</span>
+<span class="qt">&gt; doesn&#x27;t overwrite itself you get an extra 1K+ of RAM to play with on a 48K</span>
+<span class="qt">&gt; machine this way.</span>
+
+It&#x27;s easy to have another option - I can do a custom version with that 
+as a feature if you like...
+
+<span class="qt">&gt; For some reason I thought only the 128K machine was available in FUSE. I</span>
+<span class="qt">&gt; see that&#x27;s not the case and I wonder if I just imagined it or if there was</span>
+<span class="qt">&gt; a change between the first and second beta.</span>
+
+The second beta has +3 support which the first didn&#x27;t...
+
+[a log file of the Z80]
+<span class="qt">&gt; Exceptions - things like HALT with interrupts disabled.</span>
+
+Sounds debuggerish to me, Phil may want to have a look at it...
+
+<span class="qt">&gt; Well at the moment if you type &quot;[&quot; it doesn&#x27;t do anything. You would need</span>
+<span class="qt">&gt; to map key sequences to the characters. Also it should be possible to</span>
+<span class="qt">&gt; switch the top row of the number keys to operate normally. The normal</span>
+<span class="qt">&gt; shifted-number functions need to be available elsewhere, but there are</span>
+<span class="qt">&gt; sufficient available keys.</span>
+
+Hmm I see, I&#x27;ll probably just follow what goes on in standard Fuse at 
+the moment here, though I may map the keys like &quot;[&quot; that don&#x27;t conflict 
+with the Speccy keyboard.
+
+<span class="qt">&gt; I didn&#x27;t even notice the CPU speed at first. Some numbers on the</span>
+<span class="qt">&gt; calibration scale would be helpful.</span>
+
+Yep, I agree. I think that I&#x27;ll replace it with a simple text box anyway...
+
+Fred
+
+
+
+
+</pre></div><div class="post" id="p153275"><div class="ph"><a class="d" href="#p153275">2003-01-12 01:30:58</a> <span>Fred</span> <span>Re: FUSE wishlist [was Re: Timex Software]</span></div><pre>Andrew Owen wrote:
+<span class="qt">&gt; If you look at the images that come with the Sintech distribution of Color</span>
+<span class="qt">&gt; Draw, one or two of the colour bytes are slightly out. It may be a Mac</span>
+<span class="qt">&gt; specific issue though.</span>
+
+If you can send me a standalone image with viewer I can verify whether 
+this is a mac specific issue.
+
+Fred
+
+
+
+
+</pre></div><div class="post" id="p153276"><div class="ph"><a class="d" href="#p153276">2003-01-12 01:38:16</a> <span>Fred</span> <span>Re: FUSE wishlist [was Re: Timex Software]</span></div><pre>Philip Kendall wrote:
+<span class="qt">&gt; What features would you want from the Multiface that a decently</span>
+<span class="qt">&gt; functional debugger couldn&#x27;t do?</span>
+
+There was that lifeguard utility that would scan for cheats that loaded 
+into the muliface ram, I guess you could write programs that took 
+advantage of the extra ram and still run them on original hardware...
+
+Fred
+
+
+
+
+</pre></div><div class="post" id="p153277"><div class="ph"><a class="d" href="#p153277">2003-01-12 01:42:22</a> <span>Philip Kendall</span> <span>Re: Timex Software</span></div><pre>In article &lt;…@…&gt;,
+Jonathan Needle &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I&#x27;m with you on this one, Bethany. It&#x27;s far more user friendly for users not</span>
+<span class="qt">&gt;be able to see unsupported file types. That&#x27;s why the CPC also has .tzx</span>
+<span class="qt">&gt;files but named .cdt to avoid confusion.</span>
+
+As Andrew&#x27;s said, directories solve this problem. If you&#x27;re going to put
+Timex-specific tapes in the same place as normal tapes, you deserve
+everything you get ;-)
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p153280"><div class="ph"><a class="d" href="#p153280">2003-01-12 01:49:49</a> <span>Andrew Owen</span> <span>Re: FUSE wishlist [was Re: Timex Software]</span></div><pre>In article &lt;avqg26$i7isu$…@…&gt;, Fred
+&lt;…@…&gt; wrote:
+
+
+<span class="qt">&gt; &gt;&gt;The FUSE sound man is Russell Marks, he is the best guy to ask about </span>
+<span class="qt">&gt; &gt;&gt;this stuff...</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; I thought the horrible clicking noise in Fairlight was a MacFUSE problem.</span>
+
+<span class="qt">&gt; Well, it may be a FUSE problem that only arises on your machine, I only </span>
+<span class="qt">&gt; warrant that it sounds the same on Mac OS and Linux on my machine :) </span>
+<span class="qt">&gt; I&#x27;ll check it out on a slower Mac...</span>
+
+Compare it to the sound from ZXSP. There are discordant tones being played
+which you don&#x27;t hear on a real machine or ZXSP. It&#x27;s to do with how the
+routine used by Fairlight modulates the beeper to produce two-channel
+sound.
+
+[Make ROM writeable]
+
+<span class="qt">&gt; It&#x27;s easy to have another option - I can do a custom version with that </span>
+<span class="qt">&gt; as a feature if you like...</span>
+
+Yes please!
+
+<span class="qt">&gt; The second beta has +3 support which the first didn&#x27;t...</span>
+
+Even the pre-release you sent me had +3 support.
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p153365"><div class="ph"><a class="d" href="#p153365">2003-01-13 11:17:11</a> <span>Russell Marks</span> <span>Re: FUSE wishlist [was Re: Timex Software]</span></div><pre>…@… (Andrew Owen) wrote:
+
+<span class="qt">&gt; In article &lt;avqg26$i7isu$…@…&gt;, Fred</span>
+<span class="qt">&gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; &gt;&gt;The FUSE sound man is Russell Marks, he is the best guy to ask about </span>
+<span class="qt">&gt; &gt; &gt;&gt;this stuff...</span>
+<span class="qt">&gt; &gt; &gt; </span>
+<span class="qt">&gt; &gt; &gt; I thought the horrible clicking noise in Fairlight was a MacFUSE problem.</span>
+
+A clicking noise usually (but not always) suggests a problem with the
+sound output code rather than the sound emulation itself.
+
+<span class="qt">&gt; &gt; Well, it may be a FUSE problem that only arises on your machine, I only </span>
+<span class="qt">&gt; &gt; warrant that it sounds the same on Mac OS and Linux on my machine :) </span>
+<span class="qt">&gt; &gt; I&#x27;ll check it out on a slower Mac...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Compare it to the sound from ZXSP. There are discordant tones being played</span>
+<span class="qt">&gt; which you don&#x27;t hear on a real machine or ZXSP. It&#x27;s to do with how the</span>
+<span class="qt">&gt; routine used by Fairlight modulates the beeper to produce two-channel</span>
+<span class="qt">&gt; sound.</span>
+
+Fuse subsamples the beeper output about as well as is possible (at
+least in theory), so I don&#x27;t think this is a problem at the emulation
+level. If it is, the only thing it can be is differing frequency
+response, which is non-trivial to properly compensate for.
+
+FWIW, I doubt any emulator correctly reproduces the frequency response
+of a speccy beeper (though many have crude low-pass-filters of one
+form or another, which probably overemphasise the bass). Also, a *lot*
+of real speccys [1] put the beeper output through the TV which would
+have an unpredictable frequency response of its own - and apart from
+early games predating the 128&#x27;s release, you can&#x27;t really know which
+the author intended as the `real&#x27; version...
+
+-Rus.
+
+[1] I was tempted to say &quot;most&quot;, but I don&#x27;t really know how well the
+various 128s sold as compared with the 48/+.
+
+
+
+</pre></div><div class="post" id="p153367"><div class="ph"><a class="d" href="#p153367">2003-01-13 11:24:57</a> <span>Andrew Owen</span> <span>Re: FUSE wishlist [was Re: Timex Software]</span></div><pre>In article &lt;avu77t$jg5mk$…@…&gt;, Russell Marks
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; A clicking noise usually (but not always) suggests a problem with the</span>
+<span class="qt">&gt; sound output code rather than the sound emulation itself.</span>
+
+It&#x27;s not *that* kind of clicking sound. You can produce it by loading
+Wham! The Music Box and entering some note data on one channel only (it
+doesn&#x27;t occur when both channels are used).
+
+<span class="qt">&gt; &gt; &gt; Well, it may be a FUSE problem that only arises on your machine, I only </span>
+<span class="qt">&gt; &gt; &gt; warrant that it sounds the same on Mac OS and Linux on my machine :) </span>
+<span class="qt">&gt; &gt; &gt; I&#x27;ll check it out on a slower Mac...</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Compare it to the sound from ZXSP. There are discordant tones being played</span>
+<span class="qt">&gt; &gt; which you don&#x27;t hear on a real machine or ZXSP. It&#x27;s to do with how the</span>
+<span class="qt">&gt; &gt; routine used by Fairlight modulates the beeper to produce two-channel</span>
+<span class="qt">&gt; &gt; sound.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Fuse subsamples the beeper output about as well as is possible (at</span>
+<span class="qt">&gt; least in theory), so I don&#x27;t think this is a problem at the emulation</span>
+<span class="qt">&gt; level. If it is, the only thing it can be is differing frequency</span>
+<span class="qt">&gt; response, which is non-trivial to properly compensate for.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; FWIW, I doubt any emulator correctly reproduces the frequency response</span>
+<span class="qt">&gt; of a speccy beeper (though many have crude low-pass-filters of one</span>
+<span class="qt">&gt; form or another, which probably overemphasise the bass). Also, a *lot*</span>
+<span class="qt">&gt; of real speccys [1] put the beeper output through the TV which would</span>
+<span class="qt">&gt; have an unpredictable frequency response of its own - and apart from</span>
+<span class="qt">&gt; early games predating the 128&#x27;s release, you can&#x27;t really know which</span>
+<span class="qt">&gt; the author intended as the `real&#x27; version...</span>
+
+Fair enough, but I&#x27;ve tested Wham The Music box on my real Timex (which
+has an amplified loud speaker but is otherwise the same as the original 48
+musically speaking) and compared ZXSP, and ZXSP has the best beeper sound
+of any Spectrum emulator IMHO. You can also save to a real Spectrum if you
+bypass the tape traps, although I guess there&#x27;s a lot of room for
+fluctuations in the ROM routines.
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p153377"><div class="ph"><a class="d" href="#p153377">2003-01-13 14:11:14</a> <span>Jonathan Needle</span> <span>Re: FUSE wishlist [was Re: Timex Software]</span></div><pre>
+&quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; In article &lt;avu77t$jg5mk$…@…&gt;, Russell Marks</span>
+<span class="qt">&gt; &lt;…@…&gt; wrote:</span>
+
+[snip[
+
+<span class="qt">&gt; Fair enough, but I&#x27;ve tested Wham The Music box on my real Timex (which</span>
+<span class="qt">&gt; has an amplified loud speaker but is otherwise the same as the original 48</span>
+<span class="qt">&gt; musically speaking) and compared ZXSP, and ZXSP has the best beeper sound</span>
+<span class="qt">&gt; of any Spectrum emulator IMHO.</span>
+
+Pretty bold statement to make if you&#x27;ve never heard the output from
+Spectaculator or SPIN :)
+
+<span class="qt">&gt; -Andrew</span>
+
+Regards,
+
+Jon.
+--
+  Jonathan Needle
+  Spectaculator Creator
+  <a href="http://www.spectaculator.com/" rel="noreferrer">http://www.spectaculator.com/</a>
+
+
+
+
+
+</pre></div><div class="post" id="p153378"><div class="ph"><a class="d" href="#p153378">2003-01-13 16:23:23</a> <span>Andrew Owen</span> <span>Re: FUSE wishlist [was Re: Timex Software]</span></div><pre>In article &lt;…@…&gt;, &quot;Jonathan Needle&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; &quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt; &gt; In article &lt;avu77t$jg5mk$…@…&gt;, Russell Marks</span>
+<span class="qt">&gt; &gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; [snip[</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; Fair enough, but I&#x27;ve tested Wham The Music box on my real Timex (which</span>
+<span class="qt">&gt; &gt; has an amplified loud speaker but is otherwise the same as the original 48</span>
+<span class="qt">&gt; &gt; musically speaking) and compared ZXSP, and ZXSP has the best beeper sound</span>
+<span class="qt">&gt; &gt; of any Spectrum emulator IMHO.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Pretty bold statement to make if you&#x27;ve never heard the output from</span>
+<span class="qt">&gt; Spectaculator or SPIN :)</span>
+
+True, I&#x27;ve only heard the output from Spectaculator and SPIN under
+emulation - which makes it creaky. But ZXSP for MacOS X really does have
+some very good sound routines.
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p153400"><div class="ph"><a class="d" href="#p153400">2003-01-14 01:02:15</a> <span>Fred</span> <span>Re: FUSE wishlist [was Re: Timex Software]</span></div><pre>Hi Russell,
+
+Russell Marks wrote:
+<span class="qt">&gt; A clicking noise usually (but not always) suggests a problem with the</span>
+<span class="qt">&gt; sound output code rather than the sound emulation itself.</span>
+
+[Andrew Owen]
+<span class="qt">&gt;&gt;Compare it to the sound from ZXSP. There are discordant tones being played</span>
+<span class="qt">&gt;&gt;which you don&#x27;t hear on a real machine or ZXSP. It&#x27;s to do with how the</span>
+<span class="qt">&gt;&gt;routine used by Fairlight modulates the beeper to produce two-channel</span>
+<span class="qt">&gt;&gt;sound.</span>
+
+[Russell Marks]
+<span class="qt">&gt; Fuse subsamples the beeper output about as well as is possible (at</span>
+<span class="qt">&gt; least in theory), so I don&#x27;t think this is a problem at the emulation</span>
+<span class="qt">&gt; level. If it is, the only thing it can be is differing frequency</span>
+<span class="qt">&gt; response, which is non-trivial to properly compensate for.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; FWIW, I doubt any emulator correctly reproduces the frequency response</span>
+<span class="qt">&gt; of a speccy beeper (though many have crude low-pass-filters of one</span>
+<span class="qt">&gt; form or another, which probably overemphasise the bass). Also, a *lot*</span>
+<span class="qt">&gt; of real speccys [1] put the beeper output through the TV which would</span>
+<span class="qt">&gt; have an unpredictable frequency response of its own - and apart from</span>
+<span class="qt">&gt; early games predating the 128&#x27;s release, you can&#x27;t really know which</span>
+<span class="qt">&gt; the author intended as the `real&#x27; version...</span>
+
+I can&#x27;t check Fairlight on original hardware at the moment, but I can 
+confirm Andrew&#x27;s observation holds true for Fuse on OS X and Linux 
+(using SDL on OS X and OSS on Linux), and that zxsp seems to have less 
+high pitched noise over the tune (aliasing noise?). I don&#x27;t know if it 
+uses a low pass filter or not.
+
+Fred
+
+
+
+
+</pre></div><div class="post" id="p153513"><div class="ph"><a class="d" href="#p153513">2003-01-16 11:09:59</a> <span>Russell Marks</span> <span>Re: FUSE wishlist [was Re: Timex Software]</span></div><pre>…@… (Andrew Owen) wrote:
+
+<span class="qt">&gt; Fair enough, but I&#x27;ve tested Wham The Music box on my real Timex (which</span>
+<span class="qt">&gt; has an amplified loud speaker but is otherwise the same as the original 48</span>
+<span class="qt">&gt; musically speaking) and compared ZXSP, and ZXSP has the best beeper sound</span>
+<span class="qt">&gt; of any Spectrum emulator IMHO. You can also save to a real Spectrum if you</span>
+<span class="qt">&gt; bypass the tape traps, although I guess there&#x27;s a lot of room for</span>
+<span class="qt">&gt; fluctuations in the ROM routines.</span>
+
+Tape-loading is based on edge-detection, making it almost the worst
+conceivable test of accurate beeper emulation. Even a shockingly bad
+emulation is likely to be good enough to load from (when amplified
+sufficiently).
+
+I&#x27;ll check out that Wham thing though.
+
+-Rus.
+
+
+
+</pre></div><div class="post" id="p153514"><div class="ph"><a class="d" href="#p153514">2003-01-16 11:10:04</a> <span>Russell Marks</span> <span>Re: FUSE wishlist [was Re: Timex Software]</span></div><pre>Fred &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; [Russell Marks]</span>
+[...]
+<span class="qt">&gt; &gt; FWIW, I doubt any emulator correctly reproduces the frequency</span>
+<span class="qt">&gt; &gt; response</span>
+<span class="qt">&gt; &gt; of a speccy beeper (though many have crude low-pass-filters of one</span>
+<span class="qt">&gt; &gt; form or another, which probably overemphasise the bass). Also, a *lot*</span>
+<span class="qt">&gt; &gt; of real speccys [1] put the beeper output through the TV which would</span>
+<span class="qt">&gt; &gt; have an unpredictable frequency response of its own - and apart from</span>
+<span class="qt">&gt; &gt; early games predating the 128&#x27;s release, you can&#x27;t really know which</span>
+<span class="qt">&gt; &gt; the author intended as the `real&#x27; version...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I can&#x27;t check Fairlight on original hardware at the moment, but I can</span>
+<span class="qt">&gt; confirm Andrew&#x27;s observation holds true for Fuse on OS X and Linux</span>
+<span class="qt">&gt; (using SDL on OS X and OSS on Linux), and that zxsp seems to have less</span>
+<span class="qt">&gt; high pitched noise over the tune (aliasing noise?). I don&#x27;t know if it</span>
+
+Hmm. I remember comparing this with samples of Spectaculator and not
+hearing too much difference.
+
+<span class="qt">&gt; uses a low pass filter or not.</span>
+
+If Phil doesn&#x27;t mind, I wouldn&#x27;t be terribly opposed to adding some
+sort of crude LPF for the beeper output. Though probably as an option
+disabled by default, as I&#x27;m still not all that convinced it&#x27;s a good
+idea.
+
+-Rus.
+
+
+
+</pre></div><div class="post" id="p153536"><div class="ph"><a class="d" href="#p153536">2003-01-16 20:32:14</a> <span>Fred</span> <span>Re: FUSE wishlist [was Re: Timex Software]</span></div><pre>Hi Russell,
+
+Russell Marks wrote:
+<span class="qt">&gt; Hmm. I remember comparing this with samples of Spectaculator and not</span>
+<span class="qt">&gt; hearing too much difference.</span>
+
+If anyone can tell me how to capture a programs sound output in OS X I 
+can send you a sample of zxsp playing Fairlight...
+
+<span class="qt">&gt;&gt;uses a low pass filter or not.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; If Phil doesn&#x27;t mind, I wouldn&#x27;t be terribly opposed to adding some</span>
+<span class="qt">&gt; sort of crude LPF for the beeper output. Though probably as an option</span>
+<span class="qt">&gt; disabled by default, as I&#x27;m still not all that convinced it&#x27;s a good</span>
+<span class="qt">&gt; idea.</span>
+
+Fair enough, I should also point out that I generally like Fuse&#x27;s sound 
+emulation, though rapid decrepitude and years of loud nightclubs have 
+surely taken their toll on my hearing :) [1]
+
+Do any other emulator authors have an opinion on what you need to do to 
+achieve perfect Wham! style tune emulation?
+
+Fred
+
+[1] The worst time left my ears ringing for three days and I thought I&#x27;d 
+never hear properly again!
+
+
+
+
+</pre></div><div class="post" id="p153602"><div class="ph"><a class="d" href="#p153602">2003-01-18 11:54:04</a> <span>Russell Marks</span> <span>Re: FUSE wishlist [was Re: Timex Software]</span></div><pre>Russell Marks &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; I&#x27;ll check out that Wham thing though.</span>
+
+I haven&#x27;t checked that yet, but I did try Fairlight again, and I could
+hear the problem. There&#x27;s definitely some aliasing noise, but it&#x27;s
+hard to know what to do about it - it&#x27;d need an *extremely* aggressive
+low-pass filter to compensate, which would probably just end up making
+things sound worse.
+
+What it *seems* to be trying to do is treating the beeper as a 3-level
+device, toggling the beeper very fast to fake the `middle&#x27; level. This
+generates a 36.5kHz tone (!), or it would if the frequency response of
+everything involved was up to the task (not that you&#x27;d be able to hear
+it even if it were).
+
+Fuse effectively takes the average of the beeper output over the
+length of each output sample, so in theory it should cope with this
+ok... except that it&#x27;s more complicated than that. The phase of the
+36.5kHz tone `slips&#x27; relative to the sample rate over time, so you get
+rather small amplitude (but still audible) aliasing noise. With Fuse&#x27;s
+usual 32kHz output this seems to be at 4kHz or so. At 44.1kHz it moves
+to nearer 8kHz (maybe 7.5kHz? I haven&#x27;t checked it too closely).
+
+I suppose what&#x27;s really required to do the job properly is to generate
+a beeper-output sample at 3.5MHz, then resample that very carefully
+(with appropriate filtering) to the actual sample rate you want to
+write. Maybe that isn&#x27;t as crazy as it sounds these days, but for the
+sort of filtering I think would be required it would take truly evil
+amounts of CPU time.
+
+I really wonder, am I missing some obviously better approach here?
+
+-Rus.
+
+
+
+</pre></div><div class="post" id="p153613"><div class="ph"><a class="d" href="#p153613">2003-01-18 17:44:03</a> <span>Andrew Owen</span> <span>Re: FUSE wishlist [was Re: Timex Software]</span></div><pre>In article &lt;b0bf91$nckvl$…@…&gt;, Russell Marks
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; I really wonder, am I missing some obviously better approach here?</span>
+
+Well whatever approach ZXSP takes, it works well and it doesn&#x27;t eat up
+much system time (I used the resource profiler to check). I&#x27;d email kio
+and ask him, but I can&#x27;t get through to him via email these days.
+
+-Andrew
+
+
+
+</pre></div></main></body></html>

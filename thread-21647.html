@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Announce: TE2 · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Announce: TE2</h1><p class="facts">8 posts, 2001-04-23 – 2001-04-30</p><div class="post" id="p98173"><div class="ph"><a class="d" href="#p98173">2001-04-23 12:03:28</a> <span>Mike Wynne</span> </div><pre>Well, here it is (Not here obviously, but you&#x27;ll find a copy in ABCS),....
+2001:Tunnel Escape 2 - a really crap game.
+
+Pushing the frontiers of Spectrum programming, Multi colour high speed
+horizontal scrolling.  Extravagent sound effects throughout the game...
+Truely awe inspiring depth of gameplay.. And to top it all, it&#x27;s harder than
+Robocop and Army Moves put together.
+
+Mike W
+
+PS. Since it&#x27;s only 700 or so bytes long it&#x27;ll run quite happily on a 16K
+speccy too.
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p98176"><div class="ph"><a class="d" href="#p98176">2001-04-23 13:12:32</a> <span>Matthew Clemson</span> <span>Re: Announce: TE2</span></div><pre><span class="qt">&gt; Pushing the frontiers of Spectrum programming, Multi colour high</span>
+<span class="qt">&gt; speed horizontal scrolling.</span>
+
+...and don&#x27;t I know it. *shudder*.
+
+<span class="qt">&gt; Extravagent sound effects throughout</span>
+<span class="qt">&gt; the game...</span>
+<span class="qt">&gt; Truely awe inspiring depth of gameplay.. And to top it all, it&#x27;s</span>
+<span class="qt">&gt; harder than Robocop and Army Moves put together.</span>
+
+Yep, that&#x27;s true, at least. My average lifespan in this is
+considerably less than Army Moves, since in that I can occasionally
+manage entire seconds.
+
+Okay, I *think* I&#x27;ve found the control for down (By pure luck), but it
+moves so speedily I&#x27;ve not noticed when I&#x27;ve found the control for up.
+And is &#x27;space&#x27; really intended to act as suicide?
+
+Full marks for coding, nil points for documentation. Oh, okay, one.
+You did make the title clear. Yet, nevertheless, it&#x27;s addictive. I
+*will* get thirty points on it if it kills me, and it will.
+Frequently.
+
+Now, is there any way to slow it down a tad? I&#x27;m proud of twenty-four
+points, but even that was more luck than judgement. And it got messy
+when the tunnel took a turn upwards.
+
+Footnote: This wouldn&#x27;t have a hope in the CSSCGC. It&#x27;s (a) too
+addictive, and (b) it&#x27;s got machine code in it. It *must* be good.
+
+-- 
+---------|---------|---------|---------|---------|---------|---------|
+-Matt
+
+
+
+
+
+</pre></div><div class="post" id="p98177"><div class="ph"><a class="d" href="#p98177">2001-04-23 13:21:29</a> <span>Mike Wynne</span> <span>Re: Announce: TE2</span></div><pre>
+&quot;Matthew Clemson&quot; &lt;…@…&gt; wrote in message
+news:9c19or$93b$…@…...
+<span class="qt">&gt; &gt; Pushing the frontiers of Spectrum programming, Multi colour high</span>
+<span class="qt">&gt; &gt; speed horizontal scrolling.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; ...and don&#x27;t I know it. *shudder*.</span>
+
+heh...
+
+<span class="qt">&gt; Okay, I *think* I&#x27;ve found the control for down (By pure luck), but it</span>
+<span class="qt">&gt; moves so speedily I&#x27;ve not noticed when I&#x27;ve found the control for up.</span>
+<span class="qt">&gt; And is &#x27;space&#x27; really intended to act as suicide?</span>
+
+Hmmm controls... would it make any difference if you knew what they were?
+
+Oh OK... Top row of the keyboard = up, Bottom Row of the keyboard = Down....
+
+<span class="qt">&gt; Now, is there any way to slow it down a tad? I&#x27;m proud of twenty-four</span>
+<span class="qt">&gt; points, but even that was more luck than judgement. And it got messy</span>
+<span class="qt">&gt; when the tunnel took a turn upwards.</span>
+
+Check out ABCS for the fully playable version..
+<span class="qt">&gt; Footnote: This wouldn&#x27;t have a hope in the CSSCGC. It&#x27;s (a) too</span>
+<span class="qt">&gt; addictive, and (b) it&#x27;s got machine code in it. It *must* be good.</span>
+
+Ahhh, if you&#x27;re really interested in the BASIC version you&#x27;ll have to dig
+out Tunnel Escape 1...
+
+Mike W
+
+
+
+
+
+
+</pre></div><div class="post" id="p98179"><div class="ph"><a class="d" href="#p98179">2001-04-23 13:26:47</a> <span>Matthew Clemson</span> <span>Re: Announce: TE2</span></div><pre><span class="qt">&gt; &gt; Now, is there any way to slow it down a tad? I&#x27;m proud of</span>
+<span class="qt">&gt; &gt; twenty-four points, but even that was more luck than judgement.</span>
+<span class="qt">&gt; &gt; And it got messy when the tunnel took a turn upwards.</span>
+
+<span class="qt">&gt; Check out ABCS for the fully playable version..</span>
+
+Not sure I need it now. Just got 45 points on the speedy version.
+Woohoo!
+(And, scarily, I&#x27;ve not yet got that many points on the slower
+version, which is, er, worrying. Based on the same principle, I should
+be able to complete Army Moves blindfold, since I&#x27;m utterly inept
+usually.
+
+-- 
+---------|---------|---------|---------|---------|---------|---------|
+-Matt
+
+
+
+
+
+</pre></div><div class="post" id="p98187"><div class="ph"><a class="d" href="#p98187">2001-04-23 15:46:13</a> <span>Matthew Westcott</span> <span>Re: Announce: TE2</span></div><pre>…@… (Matthew Clemson) wrote in 
+&lt;9c19or$93b$…@…&gt;:
+
+<span class="qt">&gt;Footnote: This wouldn&#x27;t have a hope in the CSSCGC. It&#x27;s (a) too</span>
+<span class="qt">&gt;addictive, and (b) it&#x27;s got machine code in it. It *must* be good.</span>
+
+On the other hand, it would be a fine entry for the CSS/CSC minimalist 
+games competition that was suggested a while back. I&#x27;ve also done a 1K 
+version of a certain well-known game, but I&#x27;ve entered it into a different 
+competition &lt;<a href="http://nuotrauka.boom.ru/&gt;" rel="noreferrer">http://nuotrauka.boom.ru/&gt;</a> and the organisers might not be too 
+happy to have it released over here before their compo&#x27;s got going.
+
+-- 
+Matthew Westcott - CSSfiance to Nattie
+<a href="http://www.demo.op.nu/" rel="noreferrer">http://www.demo.op.nu/</a> - the home of the Spectrum demo scene
+
+
+
+</pre></div><div class="post" id="p98188"><div class="ph"><a class="d" href="#p98188">2001-04-23 16:56:48</a> <span>Mike Wynne</span> <span>Re: Announce: TE2</span></div><pre>
+&quot;Matthew Westcott&quot; &lt;…@…&gt; wrote in message
+news:9c1io5$edo$…@…...
+<span class="qt">&gt; On the other hand, it would be a fine entry for the CSS/CSC minimalist</span>
+<span class="qt">&gt; games competition that was suggested a while back. I&#x27;ve also done a 1K</span>
+
+I&#x27;ve never heard of that one (Mental note: Must pay more attention to CSS),
+but it sounds a great idea.  I&#x27;m already working on another mimimal
+masterpiece. &quot;Attack of the mutant green slime from Venus&quot;  will be
+appearing shortly.
+
+Mike W
+
+
+
+
+
+
+</pre></div><div class="post" id="p98668"><div class="ph"><a class="d" href="#p98668">2001-04-27 19:20:29</a> <span>Llama-Wax Len</span> <span>Re: Announce: TE2</span></div><pre>Mike, can you repost your game to ABCS please (both versions if you&#x27;ve still
+got them)? I, er, &quot;misplaced&quot; them.
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+LEGAL DISCLAIMER: By replying to this message, you hereby
+acknowledge that the ZX Spectrum game &quot;Robocop&quot; was too hard.
+
+
+
+
+
+</pre></div><div class="post" id="p98930"><div class="ph"><a class="d" href="#p98930">2001-04-30 09:54:33</a> <span>Mike Wynne</span> <span>Re: Announce: TE2</span></div><pre>
+&quot;Llama-Wax Len&quot; &lt;…@…&gt; wrote in message
+news:9cchqg$pmc$…@…...
+<span class="qt">&gt; Mike, can you repost your game to ABCS please (both versions if you&#x27;ve</span>
+still
+<span class="qt">&gt; got them)? I, er, &quot;misplaced&quot; them.</span>
+
+Oh, alright then...
+
+Mike W
+
+
+
+
+
+
+</pre></div></main></body></html>

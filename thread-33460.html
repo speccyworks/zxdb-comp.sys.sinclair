@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oxford ZX meetup: Saturday 20th October 2007 · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Oxford ZX meetup: Saturday 20th October 2007</h1><p class="facts">17 posts, 2007-09-16 – 2007-10-23</p><div class="post" id="p213729"><div class="ph"><a class="d" href="#p213729">2007-09-16 01:52:55</a> <span>Matthew Westcott</span> </div><pre>Looks like we&#x27;ve got plenty of enthusiasm for the Oxford meet, and the 
+20th has decisively emerged as the best date for it. So let&#x27;s go ahead 
+with that, before someone spoils it all by saying they can&#x27;t make it then...
+
+What: The Oxford Speccy Pubmeet Reunion Tour 2007
+When: From 2pm, Saturday 20th October 2007
+Where: The Gloucester Arms
+How to get there: 
+<a href="http://matt.west.co.tt/spectrum/oxford-spectrum-meet-oct-2007/" rel="noreferrer">http://matt.west.co.tt/spectrum/oxford-spectrum-meet-oct-2007/</a>
+What to bring: Geek toys and interesting confectionery. If you want to.
+
+People who have made positive noises so far:
+Matthew Westcott (gasman); Scottie_uk; icabod; karingal; Philip Kendall; 
+Nathan Cross (natxcross); csmith; fogartylee; Paul E Collins (Equinox); 
+Andrew Owen (Owenbot); Dave Mills (dtl, Dave The Lurker); Graham Lee 
+(leeg); Pete Thomas; Tyrone C; Vincent Lynch; juice. Non-specific maybes 
+also received from DEATH, ADJB and mile.
+
+Looks like this is going to be a good &#x27;un...
+
+
+
+</pre></div><div class="post" id="p213734"><div class="ph"><a class="d" href="#p213734">2007-09-16 10:01:10</a> <span>Derek Jolly</span> <span>Re: Oxford ZX meetup: Saturday 20th October 2007</span></div><pre>On Sun, 16 Sep 2007 02:52:55 +0100, Matthew Westcott wrote:
+
+<span class="qt">&gt; Looks like we&#x27;ve got plenty of enthusiasm for the Oxford meet, and the </span>
+<span class="qt">&gt; 20th has decisively emerged as the best date for it. So let&#x27;s go ahead </span>
+<span class="qt">&gt; with that, before someone spoils it all by saying they can&#x27;t make it then...</span>
+
+I can&#x27;t make it...
+
+Only joking, of course I can.  I&#x27;ll be there.  Should be a good laugh as
+usual.
+-- 
+Derek Jolly (css at jollyd dot ukfsn dot org)
+
+
+
+</pre></div><div class="post" id="p213735"><div class="ph"><a class="d" href="#p213735">2007-09-16 11:11:08</a> <span>Lister</span> <span>Re: Oxford ZX meetup: Saturday 20th October 2007</span></div><pre>On 16 Sep 2007 10:01:10 GMT, Derek Jolly &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;On Sun, 16 Sep 2007 02:52:55 +0100, Matthew Westcott wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Looks like we&#x27;ve got plenty of enthusiasm for the Oxford meet, and the </span>
+<span class="qt">&gt;&gt; 20th has decisively emerged as the best date for it. So let&#x27;s go ahead </span>
+<span class="qt">&gt;&gt; with that, before someone spoils it all by saying they can&#x27;t make it then...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I can&#x27;t make it...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Only joking, of course I can.  I&#x27;ll be there.  Should be a good laugh as</span>
+<span class="qt">&gt;usual.</span>
+
+
+Maybe an outside chance that I can be there :)
+
+
+
+</pre></div><div class="post" id="p213743"><div class="ph"><a class="d" href="#p213743">2007-09-17 03:47:48</a> <span>A. J. Moss</span> <span>Re: Oxford ZX meetup: Saturday 20th October 2007</span></div><pre>On 16 Sep, 02:52, Matthew Westcott &lt;…@…&gt; wrote:
+<span class="qt">&gt; Looks like we&#x27;ve got plenty of enthusiasm for the Oxford meet, and the</span>
+<span class="qt">&gt; 20th has decisively emerged as the best date for it. So let&#x27;s go ahead</span>
+<span class="qt">&gt; with that, before someone spoils it all by saying they can&#x27;t make it then...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; People who have made positive noises so far:</span>
+<span class="qt">&gt; Matthew Westcott (gasman); Scottie_uk; icabod; karingal; Philip Kendall;</span>
+<span class="qt">&gt; Nathan Cross (natxcross); csmith; fogartylee; Paul E Collins (Equinox);</span>
+<span class="qt">&gt; Andrew Owen (Owenbot); Dave Mills (dtl, Dave The Lurker); Graham Lee</span>
+<span class="qt">&gt; (leeg); Pete Thomas; Tyrone C; Vincent Lynch; juice. Non-specific maybes</span>
+<span class="qt">&gt; also received from DEATH, ADJB and mile.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Looks like this is going to be a good &#x27;un...</span>
+
+Phone me as soon as the fifth person turns up, and I&#x27;ll come rushing
+to Oxford by teleport.
+
+
+
+
+</pre></div><div class="post" id="p213747"><div class="ph"><a class="d" href="#p213747">2007-09-17 10:11:30</a> <span>Paul E Collins</span> <span>Re: Oxford ZX meetup: Saturday 20th October 2007</span></div><pre>&quot;A. J. Moss&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Phone me as soon as the fifth person turns up, and</span>
+<span class="qt">&gt; I&#x27;ll come rushing to Oxford by teleport.</span>
+
+Those further north may want to consider using the glitch where going 
+up the rope in Huddersfield takes you directly to Didcot Parkway. 
+Watch out for the pirouetting rabbit.
+
+Eq.
+
+
+
+
+
+</pre></div><div class="post" id="p213750"><div class="ph"><a class="d" href="#p213750">2007-09-17 20:24:46</a> <span>A. J. Moss</span> <span>Re: Oxford ZX meetup: Saturday 20th October 2007</span></div><pre>On 17 Sep, 11:11, &quot;Paul E Collins&quot; &lt;…@…&gt;
+wrote:
+<span class="qt">&gt; &quot;A. J. Moss&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Phone me as soon as the fifth person turns up, and</span>
+<span class="qt">&gt; &gt; I&#x27;ll come rushing to Oxford by teleport.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Those further north may want to consider using the glitch where going</span>
+<span class="qt">&gt; up the rope in Huddersfield takes you directly to Didcot Parkway.</span>
+<span class="qt">&gt; Watch out for the pirouetting rabbit.</span>
+
+I&#x27;m sorry, but I&#x27;m going to have to put my foot down at this point.
+
+Aside, does anyone have an original Chaos tape that they could bring
+to the meet? I&#x27;d quite like to see the inlay artwork in the flesh.
+
+
+
+
+</pre></div><div class="post" id="p213754"><div class="ph"><a class="d" href="#p213754">2007-09-17 21:18:58</a> <span>Ian Rawlings</span> <span>Re: Oxford ZX meetup: Saturday 20th October 2007</span></div><pre>On 2007-09-17, A. J. Moss &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Aside, does anyone have an original Chaos tape that they could bring</span>
+<span class="qt">&gt; to the meet? I&#x27;d quite like to see the inlay artwork in the flesh.</span>
+
+I think it would be better if you wore *some* clothing, at least
+underpants.  Think of the children, or is that the wrong thing to say.
+
+-- 
+Blast off and strike the evil Bydo empire!
+
+
+
+</pre></div><div class="post" id="p213757"><div class="ph"><a class="d" href="#p213757">2007-09-18 07:03:48</a> <span>Graham J Lee</span> <span>Re: Oxford ZX meetup: Saturday 20th October 2007</span></div><pre>Ian Rawlings wrote:
+<span class="qt">&gt; On 2007-09-17, A. J. Moss &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Aside, does anyone have an original Chaos tape that they could bring</span>
+<span class="qt">&gt;&gt; to the meet? I&#x27;d quite like to see the inlay artwork in the flesh.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I think it would be better if you wore *some* clothing, at least</span>
+<span class="qt">&gt; underpants.  Think of the children, or is that the wrong thing to say.</span>
+<span class="qt">&gt; </span>
+&quot;Im in ur pubs.  defyin ur kort ordurz.&quot;
+
+
+
+</pre></div><div class="post" id="p214049"><div class="ph"><a class="d" href="#p214049">2007-10-09 22:34:18</a> <span>Matthew Westcott</span> <span>Re: Oxford ZX meetup: Saturday 20th October 2007</span></div><pre>Matthew Westcott wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; What: The Oxford Speccy Pubmeet Reunion Tour 2007</span>
+<span class="qt">&gt; When: From 2pm, Saturday 20th October 2007</span>
+<span class="qt">&gt; Where: The Gloucester Arms</span>
+<span class="qt">&gt; How to get there: </span>
+<span class="qt">&gt; <a href="http://matt.west.co.tt/spectrum/oxford-spectrum-meet-oct-2007/" rel="noreferrer">http://matt.west.co.tt/spectrum/oxford-spectrum-meet-oct-2007/</a></span>
+<span class="qt">&gt; What to bring: Geek toys and interesting confectionery. If you want to.</span>
+
+This is your a-bit-more-than-a-week-and-a-half reminder.
+
+Now would be a good time to persuade Significant Others that they don&#x27;t 
+have any plans on that weekend, so wouldn&#x27;t it be nice to go down to 
+Oxford, there&#x27;s so much to see there, ooh look, there&#x27;s a shoe shop over 
+there, why don&#x27;t you have a look in there while I, um, search for my 
+contact lenses, I think they rolled into this pub...
+
+Space is still available at my place for anyone needing a roof for the 
+night (reserve your place now, and get an actual bed and everything!) so 
+drop me a line if interested.
+
+By my count there are 20 people down as a &#x27;probably&#x27; or &#x27;definitely&#x27; 
+now, and I&#x27;m completely hyped up just reading the list of names and 
+seeing a whole bunch of people that I&#x27;m really looking forward to 
+meeting for the first time, and a whole other bunch of people that I 
+have met but who haven&#x27;t met each other, and clearly Exciting Stuff will 
+happen when they do. Yep, this is going to be good. I&#x27;m half expecting 
+us to emerge from the pub in the evening with complete plans for a 
+Spectrum SE-powered particle accelerator. Or maybe we&#x27;ll just spend the 
+whole time swearing at Army Moves and debating who would win in a 
+catfight between Buffy and Leela from Futurama. *shrug*
+
+(Oh, and since I&#x27;ve just spotted that the Rugby World Cup final is 
+happening on that day, I&#x27;d like to reassure everyone that the Gloucester 
+Arms *doesn&#x27;t* have a 96in projector TV and will therefore not be packed 
+to the rafters. As far as I know.)
+
+
+
+</pre></div><div class="post" id="p214050"><div class="ph"><a class="d" href="#p214050">2007-10-10 19:29:22</a> <span>OwenBot</span> <span>Re: Oxford ZX meetup: Saturday 20th October 2007</span></div><pre>On Oct 9, 11:34 pm, Matthew Westcott &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Yep, this is going to be good. I&#x27;m half expecting</span>
+<span class="qt">&gt; us to emerge from the pub in the evening with complete plans for a</span>
+<span class="qt">&gt; Spectrum SE-powered particle accelerator.</span>
+
+Provisionally, I will be there with the Spectrum SE. And whoever is
+the most technically minded can take it away with them since it&#x27;s
+currently non-functional. I don&#x27;t think it would take much to get it
+working again though.
+
+
+
+
+</pre></div><div class="post" id="p214189"><div class="ph"><a class="d" href="#p214189">2007-10-18 15:57:18</a> <span>…@…</span> <span>Re: Oxford ZX meetup: Saturday 20th October 2007</span></div><pre>On 9 Oct, 23:34, Matthew Westcott &lt;…@…&gt; wrote:
+<span class="qt">&gt; Matthew Westcott wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; What: The Oxford Speccy Pubmeet Reunion Tour 2007</span>
+<span class="qt">&gt; &gt; When: From 2pm, Saturday 20th October 2007</span>
+<span class="qt">&gt; &gt; Where: The Gloucester Arms</span>
+<span class="qt">&gt; &gt; How to get there:</span>
+<span class="qt">&gt; &gt;<a href="http://matt.west.co.tt/spectrum/oxford-spectrum-meet-oct-2007/" rel="noreferrer">http://matt.west.co.tt/spectrum/oxford-spectrum-meet-oct-2007/</a></span>
+<span class="qt">&gt; &gt; What to bring: Geek toys and interesting confectionery. If you want to.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; This is your a-bit-more-than-a-week-and-a-half reminder.</span>
+
+*sob*
+Sad to say, I won&#x27;t be able to make it down (which includes cancelling
+a trip to the Hogshead brewery and a stay at a nice little country
+pub).
+
+*mutter*mutter*mutter*
+
+Have a beer or three for me!
+
+
+
+
+</pre></div><div class="post" id="p214206"><div class="ph"><a class="d" href="#p214206">2007-10-19 22:45:34</a> <span>Matthew Westcott</span> <span>Re: Oxford ZX meetup: Saturday 20th October 2007</span></div><pre>Final reminder, for disorganised people and last-minute lurkers...
+
+<span class="qt">&gt; What: The Oxford Speccy Pubmeet Reunion Tour 2007</span>
+<span class="qt">&gt; When: From 2pm, Saturday 20th October 2007</span>
+<span class="qt">&gt; Where: The Gloucester Arms</span>
+<span class="qt">&gt; How to get there: </span>
+<span class="qt">&gt; <a href="http://matt.west.co.tt/spectrum/oxford-spectrum-meet-oct-2007/" rel="noreferrer">http://matt.west.co.tt/spectrum/oxford-spectrum-meet-oct-2007/</a></span>
+
+24-ish people coming at the last count, so come and join us. Be there, 
+or be in an entirely different pub watching some big blokes throwing a 
+funny shaped ball around.
+
+See you all tomorrow!
+
+
+
+</pre></div><div class="post" id="p214207"><div class="ph"><a class="d" href="#p214207">2007-10-20 07:39:27</a> <span>Derek Jolly</span> <span>Re: Oxford ZX meetup: Saturday 20th October 2007</span></div><pre>On Fri, 19 Oct 2007 23:45:34 +0100, Matthew Westcott wrote:
+
+<span class="qt">&gt; Final reminder, for disorganised people and last-minute lurkers...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; What: The Oxford Speccy Pubmeet Reunion Tour 2007 When: From 2pm,</span>
+<span class="qt">&gt;&gt; Saturday 20th October 2007 Where: The Gloucester Arms</span>
+<span class="qt">&gt;&gt; How to get there:</span>
+<span class="qt">&gt;&gt; <a href="http://matt.west.co.tt/spectrum/oxford-spectrum-meet-oct-2007/" rel="noreferrer">http://matt.west.co.tt/spectrum/oxford-spectrum-meet-oct-2007/</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; 24-ish people coming at the last count, so come and join us. Be there,</span>
+<span class="qt">&gt; or be in an entirely different pub watching some big blokes throwing a</span>
+<span class="qt">&gt; funny shaped ball around.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; See you all tomorrow!</span>
+
+I&#x27;m not going to be able to make it unfortunately.  I&#x27;m financially 
+challenged until pay day this month.
+-- 
+Derek Jolly (css at jollyd dot ukfsn dot org)
+
+
+
+
+</pre></div><div class="post" id="p214208"><div class="ph"><a class="d" href="#p214208">2007-10-20 08:04:21</a> <span>OwenBot</span> <span>Re: Oxford ZX meetup: Saturday 20th October 2007</span></div><pre>On Oct 20, 8:39 am, Derek Jolly &lt;…@…&gt;
+wrote:
+<span class="qt">&gt; On Fri, 19 Oct 2007 23:45:34 +0100, Matthew Westcott wrote:</span>
+<span class="qt">&gt; &gt; Final reminder, for disorganised people and last-minute lurkers...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;&gt; What: The Oxford Speccy Pubmeet Reunion Tour 2007 When: From 2pm,</span>
+<span class="qt">&gt; &gt;&gt; Saturday 20th October 2007 Where: The Gloucester Arms</span>
+<span class="qt">&gt; &gt;&gt; How to get there:</span>
+<span class="qt">&gt; &gt;&gt;<a href="http://matt.west.co.tt/spectrum/oxford-spectrum-meet-oct-2007/" rel="noreferrer">http://matt.west.co.tt/spectrum/oxford-spectrum-meet-oct-2007/</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; 24-ish people coming at the last count, so come and join us. Be there,</span>
+<span class="qt">&gt; &gt; or be in an entirely different pub watching some big blokes throwing a</span>
+<span class="qt">&gt; &gt; funny shaped ball around.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; See you all tomorrow!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;m not going to be able to make it unfortunately.  I&#x27;m financially</span>
+<span class="qt">&gt; challenged until pay day this month.</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; Derek Jolly (css at jollyd dot ukfsn dot org)</span>
+
+If you&#x27;re reading this this morning Derek, I&#x27;ll stand you a few drinks
+if you change your mind about dropping by.
+
+
+
+
+</pre></div><div class="post" id="p214209"><div class="ph"><a class="d" href="#p214209">2007-10-20 09:10:09</a> <span>Derek Jolly</span> <span>Re: Oxford ZX meetup: Saturday 20th October 2007</span></div><pre>On Sat, 20 Oct 2007 08:04:21 +0000, OwenBot wrote:
+
+<span class="qt">&gt; If you&#x27;re reading this this morning Derek, I&#x27;ll stand you a few drinks</span>
+<span class="qt">&gt; if you change your mind about dropping by.</span>
+
+Actually my bank balance is looking better than I thought, so I will be 
+there with enough cash for drinks, so that&#x27;s fine.
+-- 
+Derek Jolly (css at jollyd dot ukfsn dot org)
+
+
+
+
+</pre></div><div class="post" id="p214214"><div class="ph"><a class="d" href="#p214214">2007-10-20 18:55:44</a> <span>OwenBot</span> <span>Re: Oxford ZX meetup: Saturday 20th October 2007</span></div><pre>Well that was fun. Sorry I couldn&#x27;t stay very long but I&#x27;m somewhat
+short on free time these days. It was great to meet everyone and see
+some of the things people have been working on.
+
+
+
+
+</pre></div><div class="post" id="p214228"><div class="ph"><a class="d" href="#p214228">2007-10-23 10:30:09</a> <span>Nomen Nescio</span> </div><pre><span class="qt">&gt;Well that was fun. Sorry I couldn&#x27;t stay very long but I&#x27;m somewhat</span>
+<span class="qt">&gt;short on free time these days. It was great to meet everyone and see</span>
+<span class="qt">&gt;some of the things people have been working on. </span>
+
+Well, only missed the copu de grace: Peter Thomas; a rubber chicken; and a large tube of
+Vaseline Petroleum Jelly!
+
+The only bird that he&#x27;s managed to stuff for years... cluckin&#x27; &#x27;ell! I do apologise for my poultry
+attempt at humour...
+
+Anyway, breast foot forward...
+
+
+
+
+
+
+
+
+</pre></div></main></body></html>

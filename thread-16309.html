@@ -1,0 +1,815 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANNOUNCE: New JSW Remixes · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANNOUNCE: New JSW Remixes</h1><p class="facts">34 posts, 1999-10-01 – 1999-10-28</p><div class="post" id="p54854"><div class="ph"><a class="d" href="#p54854">1999-10-01</a> <span>andrew broad</span> </div><pre>I&#x27;ve just updated my list of JSW games to mention of a couple of JSW projects I&#x27;ve recently heard of:
+
+* Rob Moseley has written six new rooms for his JSW1 Remix. He doesn&#x27;t know if or when he will finish it, but he told me to offer the latest version for downloading, which you can do at my website.
+
+* Paul Howard has written a partially complete game called JSW &#x27;96 Remix, which also gets a mention on my list.
+
+--
+Andrew Broad
+<a href="http://www.cs.man.ac.uk/~broada/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/willy/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/willy/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/willy/list.html" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/willy/list.html</a>
+
+
+</pre></div><div class="post" id="p54907"><div class="ph"><a class="d" href="#p54907">1999-10-02</a> <span>…@…</span> <span>Re: ANNOUNCE: New JSW Remixes</span></div><pre><span class="qt">&gt; The text on the site sums the whole thing up nicely. Just a word about the</span>
+<span class="qt">&gt; plot. Willy was supposed to have travelled in time to 1996 (hence the</span>
+<span class="qt">&gt; screen Dr Who Would Never Believe This) and found the Spectrum scene</span>
+<span class="qt">&gt; almost dead. He had to visit all the remaining demo groups and magazines</span>
+<span class="qt">&gt; to persuade them to carry on their great work. After collecting all the</span>
+<span class="qt">&gt; objects, the &#x27;Maria&#x27; room was to be a kind of Tardis to take him back</span>
+<span class="qt">&gt; home.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The map is about half-finished as I recall, but I only got around</span>
+<span class="qt">&gt; to putting in a handful of enemies. Obviously, a lot of organisations have</span>
+<span class="qt">&gt; folded since the game was in progress, so it will never be relevant.</span>
+<span class="qt">&gt; Anyone is welcome to rip rooms/graphics from it and use them elsewhere.</span>
+
+This sounds superb. I&#x27;m definetly downloading this, even if it is
+unfinished - sounds like a superb idea. Pitty that even in 1999 the ZX
+scene is fully alive and kicking ;-)
+
+....I only hope now that this isn&#x27;t one of those PC rewrite games and
+that it is actually a Spectrum game! (I hate those - probably because I
+own an Apple iMac!!) :-)
+
+Steve
+
+-- 
+<a href="http://web.ukonline.co.uk/macgamer/" rel="noreferrer">http://web.ukonline.co.uk/macgamer/</a>
+----------------------------------------
+Apple iMac | Atari TT + Falcon + Mega ST
+
+
+</pre></div><div class="post" id="p54908"><div class="ph"><a class="d" href="#p54908">1999-10-02</a> <span>…@…</span> <span>Re: ANNOUNCE: New JSW Remixes</span></div><pre><span class="qt">&gt; &gt;....I only hope now that this isn&#x27;t one of those PC rewrite games and</span>
+<span class="qt">&gt; &gt;that it is actually a Spectrum game! (I hate those - probably because I</span>
+<span class="qt">&gt; &gt;own an Apple iMac!!) :-)</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Steve</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Ouch!! Again!! :(</span>
+<span class="qt">&gt; Is it get at the remakes time? :(</span>
+
+Nope. Not at all. But look at it from an Apple users point of view ;-{
+
+Steve
+
+-- 
+<a href="http://web.ukonline.co.uk/macgamer/" rel="noreferrer">http://web.ukonline.co.uk/macgamer/</a>
+----------------------------------------
+Apple iMac | Atari TT + Falcon + Mega ST
+
+
+</pre></div><div class="post" id="p54910"><div class="ph"><a class="d" href="#p54910">1999-10-02</a> <span>thomas harte</span> <span>Re: ANNOUNCE: New JSW Remixes</span></div><pre><span class="qt">&gt; to putting in a handful of enemies. Obviously, a lot of organisations have</span>
+<span class="qt">&gt; folded since the game was in progress, so it will never be relevant.</span>
+
+	*gasp* Miner Willy was un-successful then?
+
+		-Thomas
+
+
+</pre></div><div class="post" id="p54912"><div class="ph"><a class="d" href="#p54912">1999-10-02</a> <span>thomas harte</span> <span>Re: ANNOUNCE: New JSW Remixes</span></div><pre><span class="qt">&gt; Nope. Not at all. But look at it from an Apple users point of view ;-{</span>
+
+	Is there anyone about who is likely to port code given an opportunity?
+
+		-Thomas
+
+
+</pre></div><div class="post" id="p54951"><div class="ph"><a class="d" href="#p54951">1999-10-03</a> <span>…@…</span> <span>Re: ANNOUNCE: New JSW Remixes</span></div><pre><span class="qt">&gt; Which reminds me:  I have managed to get WSpecEm running on VirtualPC.</span>
+<span class="qt">&gt; (Works around the speed of a 90MHz Pentium on our G3 at work.)  I just</span>
+<span class="qt">&gt; *had* to see Manic Miner on an emulated Spectrum on an emulated PC.  </span>
+<span class="qt">&gt; (Wohoo! Two levels of emulation!) :)  </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Dare I say it, but the JSW remix should run at a good speed.  </span>
+<span class="qt">&gt; ...Hmmm.  I just might have to try that tomorrow.  (*grin* of the </span>
+<span class="qt">&gt; kind only an emulation-nutter can acheive.)  I&#x27;ll get back to y&#x27;all </span>
+<span class="qt">&gt; about it.</span>
+
+You do that! :)
+
+<span class="qt">&gt; PS:  MacMAME is just awesome when you start using the bilinear </span>
+<span class="qt">&gt;      filtering options of the 3d card.  (Did I mention &quot;emulaton </span>
+<span class="qt">&gt;      nutter&quot; already?) :)  </span>
+
+I know exactly what you mean - PSX, MacMAME, Atari ST, Commie Amiga,
+Sega Megadrive, SNES, oh the list goes on and on! Nutters, completely:)
+
+Steve
+
+-- 
+<a href="http://web.ukonline.co.uk/macgamer/" rel="noreferrer">http://web.ukonline.co.uk/macgamer/</a>
+----------------------------------------
+Apple iMac | Atari TT + Falcon + Mega ST
+
+
+</pre></div><div class="post" id="p54952"><div class="ph"><a class="d" href="#p54952">1999-10-03</a> <span>…@…</span> <span>Re: ANNOUNCE: New JSW Remixes</span></div><pre><span class="qt">&gt; I have about 30 emulators that I use most the time (Acorn, Amiga, CPC, MAME,</span>
+<span class="qt">&gt; NeoGeo, Callus, Juno First, Atari 800/5200, Atari 2600, Atari 7800, Atari</span>
+<span class="qt">&gt; Lynx, Atari ST, Beeb, Colecovision, C64, Gameboy, Gameboy Colour, Master</span>
+<span class="qt">&gt; System/SG1000/SG3000/Game Gear, Megadrive, Nes, SNES, Odyssey2, PalmOS, PC</span>
+<span class="qt">&gt; Engine/TurboGrafx, Playstation, Speak and Spell (no, really), Speccy,</span>
+<span class="qt">&gt; Vectrex, z88 and zx81), loads of game and watch simulators, and plenty of</span>
+<span class="qt">&gt; other emus I only use sometimes, like the Mac and Virtual Boy emus.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Now who&#x27;s the emu freak?</span>
+
+I didn&#x27;t list all mine... but still, I admit that you&#x27;ve got more. You
+are the freak, no denying it!! ;-))))
+
+Steve
+
+-- 
+<a href="http://web.ukonline.co.uk/macgamer/" rel="noreferrer">http://web.ukonline.co.uk/macgamer/</a>
+----------------------------------------
+Apple iMac | Atari TT + Falcon + Mega ST
+
+
+</pre></div><div class="post" id="p54953"><div class="ph"><a class="d" href="#p54953">1999-10-03</a> <span>thomas harte</span> <span>Re: ANNOUNCE: New JSW Remixes</span></div><pre><span class="qt">&gt; Gavin Smith?</span>
+<span class="qt">&gt; (Regular on Sam-users)</span>
+
+	Grrr! Just after I quit that mailing list too!
+
+	Maybe I&#x27;ll speak to him some time in the future when I have my thought
+together more.
+
+		-Thomas
+
+
+</pre></div><div class="post" id="p54964"><div class="ph"><a class="d" href="#p54964">1999-10-03</a> <span>…@…</span> <span>Re: Remakes</span></div><pre><span class="qt">&gt;IMHO, it just seems a bit silly for people to write software for free,</span>
+<span class="qt">&gt;any then keep the source.</span>
+
+Silly?  I put nearly a years worth of my own free time into KO99 and
+wanting to keep hold of the code is certainly not silly.
+
+Rich.
+
+
+
+** Klass of 99, go to:
+** <a href="http://www.retrospec.co.uk/rjordan/klass/index.htm" rel="noreferrer">http://www.retrospec.co.uk/rjordan/klass/index.htm</a>
+
+** SGE - Spectrum Graphics Editor
+** WWW.SPIDER-MAN.DEMON.CO.UK
+
+
+</pre></div><div class="post" id="p54967"><div class="ph"><a class="d" href="#p54967">1999-10-03</a> <span>andy noble</span> <span>Re: ANNOUNCE: New JSW Remixes</span></div><pre>In article &lt;…@…&gt;, Thomas Harte
+ writes
+<span class="qt">&gt;&gt; Nope. Not at all. But look at it from an Apple users point of view ;-{</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;       Is there anyone about who is likely to port code given an opportunity?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;               -Thomas</span>
+It&#x27;s been done as we speak :)
+
+Andy Noble      email: …@…
+                www  :  www.andyn.NdOeSmPoAnM.co.uk
+                Remove            ^ ^ ^ ^ ^ ^
+
+
+</pre></div><div class="post" id="p54971"><div class="ph"><a class="d" href="#p54971">1999-10-03 00:45:02</a> <span>david l</span> <span>Re: ANNOUNCE: New JSW Remixes</span></div><pre>
+Thomas Harte  wrote in message
+news:…@…...
+<span class="qt">&gt; &gt; Nope. Not at all. But look at it from an Apple users point of view ;-{</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Is there anyone about who is likely to port code given an opportunity?</span>
+
+Gavin Smith?
+(Regular on Sam-users)
+
+
+
+
+</pre></div><div class="post" id="p54976"><div class="ph"><a class="d" href="#p54976">1999-10-03 20:02:12</a> <span>…@…</span> <span>Re: Remakes</span></div><pre>On Sun, 3 Oct 1999 19:30:03 +0100, Stuart Brady 
+wrote:
+
+<span class="qt">&gt;IMHO, it just seems a bit silly for people to write software for free,</span>
+<span class="qt">&gt;any then keep the source. But I&#x27;m not complaining -- closed source</span>
+<span class="qt">&gt;remakes are _way_ better than no remakes at all. :-)</span>
+
+Not silly at all. Consider this: I write Head Over Heels 2000 for DOS (but
+runnable from Windows). It gets released, and it get&#x27;s roughly the same
+reaction as KO99 got (i.e. HUGE, and deservedly so). I then release the source
+code. Someone takes the source code, improves it no end, adding extra features
+and the like, releases it, and suddenly all the praise for HoH2000 goes to
+this new guy who didn&#x27;t neccessarily do much more to it. Recognition of my
+work becomes only a side issue, and when MY new version comes out, perhaps
+extending that, the response might be &quot;been there, done that&quot;. I certainly
+wouldn&#x27;t like that to happen to me, and certainly wouldn&#x27;t encourage me to
+work on any more stuff.
+
+But then that&#x27;s just me (and a lot of others) - I know for sure that people
+think the direct opposite and believe in &quot;the general good&quot; rather than
+getting all the credit.
+
+There&#x27;s also the risk of open scrutiny of your code and it being tactlessly
+commented about by complete strangers. Would _you_ want to be called a crap
+coder based on a single program that did what it did rather well and after
+putting a few hundred hours into it?
+
+<span class="qt">&gt;Even though I don&#x27;t care much for operating systems other than Linux,</span>
+<span class="qt">&gt;it&#x27;s nice to see cross-platform programs being written, such as AbiWord</span>
+<span class="qt">&gt;and Netscape. I like to think that you should be able to run all</span>
+<span class="qt">&gt;software, regardless of the operating system that you&#x27;re using.</span>
+
+Which is why all the games I have planned are either based around Java or VRML
+- if you have the right viewer and a powerful enough machine, then it doesn&#x27;t
+matter what the O/S is, and no porting is needed. And I certainly WON&#x27;T
+release my Java code - if you want a new feature, _ask_ me for it to be
+included in the next version, if there is to be one. Otherwise, write your
+own. Selfish? Yes, but it keeps me in control of all my own work, and any
+botch-ups done by other people won&#x27;t be attributed to me.
+
+<span class="qt">&gt;But would anyone port the code? -- Why don&#x27;t you release it and see?</span>
+
+There&#x27;s also the possible ego-crushing blow of nobody _wanting_ to port the
+program.
+
+Feel free to _ask_ for open sources, though. Just never _demand_ them. ISTR
+that you once posted here that you NEEDED a Linux port of KO99. Nobody NEEDS a
+port of any program. You made it sound as if it was a matter of life and
+death. Get some perspective - it&#x27;s just a game, albeit a very good one.
+
+-- 
+-----------------------------------------------------------
+----      Nick Humphries - …@…      ----
+-----------------------------------------------------------
+------      The Your Sinclair Rock&#x27;n&#x27;Roll Years      ------
+-------  <a href="http://www.the-den.clara.net/ys/cover.htm" rel="noreferrer">http://www.the-den.clara.net/ys/cover.htm</a>  -------
+-----------------------------------------------------------
+
+
+</pre></div><div class="post" id="p54977"><div class="ph"><a class="d" href="#p54977">1999-10-03 21:58:42</a> <span>david l</span> <span>Re: ANNOUNCE: New JSW Remixes</span></div><pre>
+Steve  wrote in message
+news:…@…...
+<span class="qt">&gt; I didn&#x27;t list all mine... but still, I admit that you&#x27;ve got more. You</span>
+<span class="qt">&gt; are the freak, no denying it!! ;-))))</span>
+
+Nope - that&#x27;s Joan Ferguson!
+
+
+
+
+
+</pre></div><div class="post" id="p54978"><div class="ph"><a class="d" href="#p54978">1999-10-03 22:01:46</a> <span>david l</span> <span>Re: Remakes</span></div><pre>
+Rich J  wrote in message
+news:…@…...
+<span class="qt">&gt; &gt;IMHO, it just seems a bit silly for people to write software for free,</span>
+<span class="qt">&gt; &gt;any then keep the source.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Silly?  I put nearly a years worth of my own free time into KO99 and</span>
+<span class="qt">&gt; wanting to keep hold of the code is certainly not silly.</span>
+
+Ignore them!
+
+It&#x27;s a masterpiece - and keep the code if you want to! (&#x27;Specially if it&#x27;s
+modified for a sequel!!! ;)
+
+
+
+
+
+
+</pre></div><div class="post" id="p54979"><div class="ph"><a class="d" href="#p54979">1999-10-03 22:21:56</a> <span>…@…</span> <span>Re: ANNOUNCE: New JSW Remixes</span></div><pre>On Sun, 03 Oct 1999 20:01:19 GMT, &quot;/|ndy | wrote:
+
+<span class="qt">&gt;Once upon a time (on Sun, 3 Oct 1999 11:34:01 +0100), in a newsgroup known</span>
+<span class="qt">&gt;as comp.sys.sinclair, someone one calling themselves the dubious name of</span>
+<span class="qt">&gt;Steve spake forth the following gibberish:</span>
+<span class="qt">&gt;&gt;Nathan Wain  wrote:</span>
+<span class="qt">&gt;&gt;&gt; PS:  MacMAME is just awesome when you start using the bilinear </span>
+<span class="qt">&gt;&gt;&gt;      filtering options of the 3d card.  (Did I mention &quot;emulaton </span>
+<span class="qt">&gt;&gt;&gt;      nutter&quot; already?) :)  </span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;I know exactly what you mean - PSX, MacMAME, Atari ST, Commie Amiga,</span>
+<span class="qt">&gt;&gt;Sega Megadrive, SNES, oh the list goes on and on! Nutters, completely:)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I have about 30 emulators that I use most the time (Acorn, Amiga, CPC, MAME,</span>
+<span class="qt">&gt;NeoGeo, Callus, Juno First, Atari 800/5200, Atari 2600, Atari 7800, Atari</span>
+<span class="qt">&gt;Lynx, Atari ST, Beeb, Colecovision, C64, Gameboy, Gameboy Colour, Master</span>
+<span class="qt">&gt;System/SG1000/SG3000/Game Gear, Megadrive, Nes, SNES, Odyssey2, PalmOS, PC</span>
+<span class="qt">&gt;Engine/TurboGrafx, Playstation, Speak and Spell (no, really), Speccy,</span>
+<span class="qt">&gt;Vectrex, z88 and zx81), loads of game and watch simulators, and plenty of</span>
+<span class="qt">&gt;other emus I only use sometimes, like the Mac and Virtual Boy emus.</span>
+
+Where can I find the Colecovision emulator?
+
+<span class="qt">&gt;Now who&#x27;s the emu freak?</span>
+
+You are :-)
+
+Bye.
+
+
+-- 
+Michael Bruhn
+E-Mail: …@…             
+Editor Of The Spectrum Fanzine &#x27;Desert Island Disks&#x27;
+Homepage (Desert Island Disks): <a href="http://www.image.dk/~frankie/" rel="noreferrer">http://www.image.dk/~frankie/</a>
+Address: Petersborg 23, 6200 Aabenraa, Denmark
+
+
+
+</pre></div><div class="post" id="p54986"><div class="ph"><a class="d" href="#p54986">1999-10-04</a> <span>…@…</span> <span>Re: Remakes</span></div><pre><span class="qt">&gt;To the other (polite) replies, I see your point about people stealing</span>
+<span class="qt">&gt;your code, although I don&#x27;t entirely agree with it. But I&#x27;m not</span>
+<span class="qt">&gt;demanding anything, and I don&#x27;t understand why anyone would want to</span>
+<span class="qt">&gt;accuse me of doing so.</span>
+
+Oo-er folks!  Let&#x27;s not turn this thread into slanging match.  Like I
+said Stu, I won&#x27;t be releasing my code for KO99 but I can certainly
+see both sides of the argument.  It&#x27;s a shame that I have to resort to
+what I feel is the only option for protecting my code because I know
+that it&#x27;s not fair to the majority of honest users who would like to
+see these remakes on other platforms.  I guess it&#x27;s just a fact of
+life that the minority so often spoil it for everyone else :o(
+
+Rich.
+
+
+
+** Klass of 99, go to:
+** <a href="http://www.retrospec.co.uk/rjordan/klass/index.htm" rel="noreferrer">http://www.retrospec.co.uk/rjordan/klass/index.htm</a>
+
+** SGE - Spectrum Graphics Editor
+** WWW.SPIDER-MAN.DEMON.CO.UK
+
+
+</pre></div><div class="post" id="p54988"><div class="ph"><a class="d" href="#p54988">1999-10-04</a> <span>darren salt</span> <span>Re: Remakes</span></div><pre>In message 
+          Andy Noble  wrote:
+
+<span class="qt">&gt; In article , Stuart Brady</span>
+<span class="qt">&gt;  writes</span>
+<span class="qt">&gt;&gt; IMHO, it just seems a bit silly for people to write software for free, any</span>
+<span class="qt">&gt;&gt; then keep the source. But I&#x27;m not complaining -- closed source remakes are</span>
+<span class="qt">&gt;&gt; _way_ better than no remakes at all. :-)</span>
+
+<span class="qt">&gt; Take Manic Miner. Some twat took my PC source, converted it to the n64.</span>
+
+That in itself isn&#x27;t a bad thing.
+
+<span class="qt">&gt; Took out all mention of me and Matt Smith.</span>
+
+That *is*.
+
+<span class="qt">&gt; Put some shite in the read me about how he was going to write JSW and all</span>
+<span class="qt">&gt; the rest but couldn&#x27;t be bothered. Yeah right. Didn&#x27;t write the others</span>
+<span class="qt">&gt; cause I didn&#x27;t release the source!!</span>
+
+There are games out there which I&#x27;d happily port but, since the source isn&#x27;t
+available, will happily not play or even download.
+
+<span class="qt">&gt; Credit where credit is due.</span>
+
+Agreed, as anybody who has my port of Manic Miner (or has looked at my
+downloadable games page) can see for themselves.
+
+<span class="qt">&gt; Not one thanks for the gfx, not one thanks for the tables, not one</span>
+<span class="qt">&gt; thanks for anything!</span>
+
+:-|
+
+<span class="qt">&gt; There are people converting MM to Mac and hopefully JSW.</span>
+
+Why would they want to convert MM to JSW? ;-)
+
+<span class="qt">&gt; The guy who is doing it is rather busy (I know how he feels!) so its just</span>
+<span class="qt">&gt; taking a bit of time. I will release the source to most anybody after the</span>
+<span class="qt">&gt; game has reached V1.0 just write and ask.</span>
+
+IMO, this sort of thing works that much better if those to whom source has
+been released fix any nasty bugs (I had to do this for Pssst!, but for a game
+which was written very quickly, that&#x27;s quite understandable) and send back
+the modifications to the source. &#x27;diff&#x27; and &#x27;patch --ifdef&#x27; are useful here
+:-)
+
+That way, if the &#x27;original&#x27; version is modified, then you&#x27;re in a position to
+distribute modified source to those same people and have the various ports
+updated relatively quickly, hopefully requiring nothing more than a
+recompile.
+
+-- 
+<span class="qt">| Darren Salt  anti-UCE | d youmustbejoking,demon,co,uk | nr. Ashington,</span>
+<span class="qt">| Spectrum +3, Risc PC, | s zap,uk,eu,org   ** anti-UBE | Northumberland</span>
+<span class="qt">| A3010, BBC Master 128 | @ retrospec,co,uk             | Toon Army</span>
+<span class="qt">|   How many recently-released games fit in 16K?</span>
+
+An ulcer is what you get when mountain climbing over molehills.
+
+
+</pre></div><div class="post" id="p55005"><div class="ph"><a class="d" href="#p55005">1999-10-04 16:07:24</a> <span>…@…</span> <span>Re: ANNOUNCE: New JSW Remixes</span></div><pre>On Sat, 2 Oct 1999 20:01:59 +0100, in comp.sys.sinclair, Andy Noble
+ spake thus about &quot;Re: ANNOUNCE: New JSW Remixes&quot;:
+
+<span class="qt">&gt;Ouch!! Again!! :(</span>
+<span class="qt">&gt;Is it get at the remakes time? :(</span>
+
+RFD for alt.flame.remakes anyone?
+
+I seem to be floating a lot of crap RFDs these days...  ;&lt;)
+
+
+
+</pre></div><div class="post" id="p55020"><div class="ph"><a class="d" href="#p55020">1999-10-04 22:46:31</a> <span>/|ndy |</span> <span>Re: ANNOUNCE: New JSW Remixes</span></div><pre>Once upon a time (on Mon, 4 Oct 1999 11:13:11 +1000), in a newsgroup known
+as comp.sys.sinclair, someone one calling themselves the dubious name of
+Jeff Braine spake forth the following gibberish:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;On Sun, 3 Oct 1999, /|ndy |</span>
+<span class="qt">&gt;&gt; Now who&#x27;s the emu freak?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Since Rod Hull adjusted his arial, I have no idea.</span>
+
+He he.  You sick puppy... :)
+
+
+/\ndy
+-- 
+
+*&#x27;^&#x27;*.,.*&#x27;^&#x27;*.,.*&#x27;^&#x27;*.,.*&#x27;^&#x27;*.,.*&#x27;^&#x27;*.,.*&#x27;^&#x27;*.,.*&#x27;^&#x27;*
+(       My Webpage: <a href="http://andyk.spedia.net/" rel="noreferrer">http://andyk.spedia.net/</a>        )
+ )Please read the FAQ before posting to this group!(
+(      <a href="http://www.kendalls.demon.co.uk/cssfaq/" rel="noreferrer">http://www.kendalls.demon.co.uk/cssfaq/</a>      )
+ ) Want to earn money while you surf?  Try these!  (
+(       <a href="http://www.sendmoreinfo.com/id/62987" rel="noreferrer">http://www.sendmoreinfo.com/id/62987</a>        )
+ ) <a href="http://www.alladvantage.com/go.asp?refid=DXA342" rel="noreferrer">http://www.alladvantage.com/go.asp?refid=DXA342</a> (
+*.,.*&#x27;^&#x27;*.,.*&#x27;^&#x27;*.,.*&#x27;^&#x27;*.,.*&#x27;^&#x27;*.,.*&#x27;^&#x27;*.,.*&#x27;^&#x27;*.,.*
+
+
+</pre></div><div class="post" id="p55031"><div class="ph"><a class="d" href="#p55031">1999-10-05</a> <span>…@…</span> <span>Re: Remakes</span></div><pre><span class="qt">&gt;Rich J wrote:</span>
+<span class="qt">&gt;&gt; Like I</span>
+<span class="qt">&gt;&gt; said Stu, I won&#x27;t be releasing my code for KO99 but I can certainly</span>
+<span class="qt">&gt;&gt; see both sides of the argument.  It&#x27;s a shame that I have to resort to</span>
+<span class="qt">&gt;&gt; what I feel is the only option for protecting my code because I know</span>
+<span class="qt">&gt;&gt; that it&#x27;s not fair to the majority of honest users who would like to</span>
+<span class="qt">&gt;&gt; see these remakes on other platforms.</span>
+
+<span class="qt">&gt;Hello,</span>
+<span class="qt">&gt;And of course, it&#x27;s got nothing to do with those goto statements ;-)</span>
+
+Sssshh.
+
+** Klass of 99, go to:
+** <a href="http://www.retrospec.co.uk/rjordan/klass/index.htm" rel="noreferrer">http://www.retrospec.co.uk/rjordan/klass/index.htm</a>
+
+** SGE - Spectrum Graphics Editor
+** WWW.SPIDER-MAN.DEMON.CO.UK
+
+
+</pre></div><div class="post" id="p55036"><div class="ph"><a class="d" href="#p55036">1999-10-05</a> <span>stuart brady</span> <span>Re: Remakes</span></div><pre>On Tue, 5 Oct 1999, Nick Humphries wrote:
+
+<span class="qt">&gt;A quick search through DejaNews has shown that you didn&#x27;t say that</span>
+<span class="qt">&gt;about KO99, but you did say this about JSW PC v0.89:</span>
+
+<span class="qt">&gt;&quot;Okay, but I still _need_ a Linux port, and I&#x27;m not good enough to</span>
+<span class="qt">&gt;write one. Yet. :-(&quot;</span>
+
+Translation: I want a Linux version. I don&#x27;t think that I&#x27;m good enough
+to do port it, but when I *am*, I might ask Andy for the code.
+
+Btw, I _DO_ need Jet Set Willy. In this case, it _IS_ a matter of life
+or death. Honest. ;-)
+
+<span class="qt">&gt;As for the tone... well, I&#x27;m just responding as I would do to anyone</span>
+<span class="qt">&gt;who puts undue pressure on programmers to release their source code.</span>
+<span class="qt">&gt;It&#x27;s the programmer&#x27;s call, not yours, and once they say &quot;no&quot;, don&#x27;t</span>
+<span class="qt">&gt;keep asking.</span>
+
+I&#x27;m sorry, but it takes more than one person to start a flame war.
+-- 
+Stuart Brady
+
+
+</pre></div><div class="post" id="p55049"><div class="ph"><a class="d" href="#p55049">1999-10-05 11:49:05</a> <span>nick humphries</span> <span>Re: Remakes</span></div><pre>In article ,
+  Stuart Brady  wrote:
+<span class="qt">&gt; On Sun, 3 Oct 1999, Nick Humphries wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;Feel free to _ask_ for open sources, though. Just never _demand_</span>
+them. ISTR
+<span class="qt">&gt; &gt;that you once posted here that you NEEDED a Linux port of KO99.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Why the tone? I don&#x27;t remember demanding it.</span>
+
+A quick search through DejaNews has shown that you didn&#x27;t say that
+about KO99, but you did say this about JSW PC v0.89:
+
+&quot;Okay, but I still _need_ a Linux port, and I&#x27;m not good enough to
+write one. Yet. :-(&quot;
+   (Message-ID: )
+
+As for the tone... well, I&#x27;m just responding as I would do to anyone
+who puts undue pressure on programmers to release their source code.
+It&#x27;s the programmer&#x27;s call, not yours, and once they say &quot;no&quot;, don&#x27;t
+keep asking.
+
+--
+-       Nick Humphries, via DejaNews        -
+-    (Home email …@…)    -
+-    The Your Sinclair Rock&#x27;n&#x27;Roll Years    -
+- <a href="http://www.the-den.clara.net/ys/cover.htm" rel="noreferrer">http://www.the-den.clara.net/ys/cover.htm</a> -
+
+
+Sent via Deja.com <a href="http://www.deja.com/" rel="noreferrer">http://www.deja.com/</a>
+Before you buy.
+
+
+</pre></div><div class="post" id="p55052"><div class="ph"><a class="d" href="#p55052">1999-10-05 16:01:42</a> <span>nw</span> <span>Re: Remakes</span></div><pre>Hello,
+And of course, it&#x27;s got nothing to do with those goto statements ;-)
+
+Neil.
+
+Rich J wrote:
+<span class="qt">&gt; Like I</span>
+<span class="qt">&gt; said Stu, I won&#x27;t be releasing my code for KO99 but I can certainly</span>
+<span class="qt">&gt; see both sides of the argument.  It&#x27;s a shame that I have to resort to</span>
+<span class="qt">&gt; what I feel is the only option for protecting my code because I know</span>
+<span class="qt">&gt; that it&#x27;s not fair to the majority of honest users who would like to</span>
+<span class="qt">&gt; see these remakes on other platforms.</span>
+
+
+</pre></div><div class="post" id="p55054"><div class="ph"><a class="d" href="#p55054">1999-10-05 16:31:47</a> <span>nw</span> <span>Re: ANNOUNCE: New JSW Remixes</span></div><pre>Hello,
+You do realise that all an email spambot has to do is read the 
+NNTP-Posting-Host from the mime header to get your e-mail address :)
+
+Neil.
+
+<span class="qt">&gt; Andy Noble      email: …@…</span>
+<span class="qt">&gt;                 www  :  www.andyn.NdOeSmPoAnM.co.uk</span>
+<span class="qt">&gt;                 Remove            ^ ^ ^ ^ ^ ^</span>
+
+
+</pre></div><div class="post" id="p55057"><div class="ph"><a class="d" href="#p55057">1999-10-05 19:37:38</a> <span>&amp;y</span> <span>Re: ANNOUNCE: New JSW Remixes</span></div><pre>Yep!
+Damn! Thought I had fixed that :(
+
+NW wrote in message &lt;…@…&gt;...
+<span class="qt">&gt;Hello,</span>
+<span class="qt">&gt;You do realise that all an email spambot has to do is read the</span>
+<span class="qt">&gt;NNTP-Posting-Host from the mime header to get your e-mail address :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Neil.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Andy Noble      email: …@…</span>
+<span class="qt">&gt;&gt;                 www  :  www.andyn.NdOeSmPoAnM.co.uk</span>
+<span class="qt">&gt;&gt;                 Remove            ^ ^ ^ ^ ^ ^</span>
+
+
+
+
+</pre></div><div class="post" id="p55071"><div class="ph"><a class="d" href="#p55071">1999-10-06</a> <span>…@…</span> <span>Re: Remakes</span></div><pre>On Tue, 5 Oct 1999 18:18:54 +0100, Stuart Brady
+ scribed:
+
+<span class="qt">&gt;Btw, I _DO_ need Jet Set Willy. In this case, it _IS_ a matter of life</span>
+<span class="qt">&gt;or death. Honest. ;-)</span>
+
+I&#x27;ve just been told off for installing Andy Noble&#x27;s JSW on my machien
+at work.  I hid it away in the Windows folder, so nobody could find
+it.
+
+Then I took a paint screen grab of the impossible triangle start
+screen, blew it up to twice the size, and turned it into the waving
+banner for the flying objects screensaver.  Oops.
+
+
+Outta here,
+
+Russ Juckes - Atari Jaguar, Jamma Cabinet &amp; Sinclair ZX Spectrum Owner
+-- 
+&quot;Do you *really* want to play?&quot;        <a href="http://www.raiden.demon.co.uk" rel="noreferrer">http://www.raiden.demon.co.uk</a>
+
+
+</pre></div><div class="post" id="p55083"><div class="ph"><a class="d" href="#p55083">1999-10-06 10:06:01</a> <span>nick humphries</span> <span>Re: Remakes</span></div><pre>In article &lt;…@…&gt;,
+  Stuart Brady  wrote:
+<span class="qt">&gt; On Tue, 5 Oct 1999, Nick Humphries wrote:</span>
+<span class="qt">&gt; &gt;As for the tone... well, I&#x27;m just responding as I would do to anyone</span>
+<span class="qt">&gt; &gt;who puts undue pressure on programmers to release their source code.</span>
+<span class="qt">&gt; &gt;It&#x27;s the programmer&#x27;s call, not yours, and once they say &quot;no&quot;, don&#x27;t</span>
+<span class="qt">&gt; &gt;keep asking.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;m sorry, but it takes more than one person to start a flame war.</span>
+
+Someone putting forward a different view to your own and backing it up
+with reasonable arguments is flaming? Whatever.
+
+
+--
+-       Nick Humphries, via DejaNews        -
+-    (Home email …@…)    -
+-    The Your Sinclair Rock&#x27;n&#x27;Roll Years    -
+- <a href="http://www.the-den.clara.net/ys/cover.htm" rel="noreferrer">http://www.the-den.clara.net/ys/cover.htm</a> -
+
+
+Sent via Deja.com <a href="http://www.deja.com/" rel="noreferrer">http://www.deja.com/</a>
+Before you buy.
+
+
+</pre></div><div class="post" id="p55085"><div class="ph"><a class="d" href="#p55085">1999-10-06 16:54:39</a> <span>…@…</span> <span>Re: Remakes</span></div><pre>Stuart Brady (…@…) wrote:
+: On Tue, 5 Oct 1999, Nick Humphries wrote:
+
+: &gt;A quick search through DejaNews has shown that you didn&#x27;t say that
+: &gt;about KO99, but you did say this about JSW PC v0.89:
+
+: &gt;&quot;Okay, but I still _need_ a Linux port, and I&#x27;m not good enough to
+: &gt;write one. Yet. :-(&quot;
+
+: Translation: I want a Linux version. I don&#x27;t think that I&#x27;m good enough
+: to do port it, but when I *am*, I might ask Andy for the code.
+
+Surely you _are_ a good enough coder. He wrote it using Allegro, so it
+should be directly recompilable. If he just sent you the source and
+you donwload the Allegro libraries for X or the console you could just
+run it through gcc, surely?
+
+: Btw, I _DO_ need Jet Set Willy. In this case, it _IS_ a matter of life
+: or death. Honest. ;-)
+
+Don&#x27;t Imitate, Emulate (R).
+
+(NB: I like remakes - I just liked the above sentence better... :)
+
+: &gt;As for the tone... well, I&#x27;m just responding as I would do to anyone
+: &gt;who puts undue pressure on programmers to release their source code.
+: &gt;It&#x27;s the programmer&#x27;s call, not yours, and once they say &quot;no&quot;, don&#x27;t
+: &gt;keep asking.
+
+: I&#x27;m sorry, but it takes more than one person to start a flame war.
+
+Don&#x27;t you mean:
+
+&quot;I&#x27;m sorry, but it takes more than one brainless twonk to start a
+flame war.&quot;
+
+..?
+
+--
+NT    As long as but a hundred of us remain alive, never will we on any
+\ \/ /conditions be brought under English rule. It is in truth not for
+ \  / glory, nor riches, nor honours that we are fighting, but for
+ /  \ freedom -- for that alone, which no honest man gives up but with
+/ /\ \life itself.                                    -- Arbroath, 1320
+   
+     
+    
+
+
+</pre></div><div class="post" id="p55303"><div class="ph"><a class="d" href="#p55303">1999-10-15</a> <span>…@…</span> <span>Re: Remakes</span></div><pre><span class="qt">&gt;&gt;&gt;And of course, it&#x27;s got nothing to do with those goto statements ;-)</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;GOTO??</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Let&#x27;s have less of these obscene four-letter words on this NG...   ;&lt;)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I just love the GOTO command, although I did somewhat over use it one</span>
+<span class="qt">&gt;program causing a stack overload. :)</span>
+
+GOTO doesn&#x27;t use the stack does it?  Are you sure it wasn&#x27;t GOSUB?
+
+Oh heck, why did I bother pointing that out.  Have I nothing better to
+do like cleaning up that loaf of bread that the moggies demolished all
+over the kitchen floor :o(
+
+Rich.
+
+
+
+** Klass of 99, go to:
+** <a href="http://www.retrospec.co.uk/rjordan/klass/index.htm" rel="noreferrer">http://www.retrospec.co.uk/rjordan/klass/index.htm</a>
+
+** SGE - Spectrum Graphics Editor
+** WWW.SPIDER-MAN.DEMON.CO.UK
+
+
+</pre></div><div class="post" id="p55321"><div class="ph"><a class="d" href="#p55321">1999-10-15 10:59:54</a> <span>…@…</span> <span>Re: Remakes</span></div><pre>On Tue, 05 Oct 1999 17:01:26 +0100, in comp.sys.sinclair, NW
+ spake thus about &quot;Re: Remakes&quot;:
+
+<span class="qt">&gt;And of course, it&#x27;s got nothing to do with those goto statements ;-)</span>
+
+GOTO??
+
+Let&#x27;s have less of these obscene four-letter words on this NG...   ;&lt;)
+
+
+
+</pre></div><div class="post" id="p55391"><div class="ph"><a class="d" href="#p55391">1999-10-19 17:15:57</a> <span>…@…</span> <span>Re: Remakes</span></div><pre>On Wed, 06 Oct 1999 21:58:58 GMT, in comp.sys.sinclair,
+…@… (russ juckes) spake thus about &quot;Re: Remakes&quot;:
+
+<span class="qt">&gt;I&#x27;ve just been told off for installing Andy Noble&#x27;s JSW on my machien</span>
+<span class="qt">&gt;at work.  I hid it away in the Windows folder, so nobody could find</span>
+<span class="qt">&gt;it.</span>
+
+I&#x27;m a lot luckier in that respect -- I&#x27;ve installed a lot of stuff which I&#x27;ve
+(mostly) not been flamed for.
+
+But then, I *am* the nearest thing they&#x27;ve got to a DP manager...   ;&lt;)
+
+-- 
+--------------------------------------------------
+Regards, Robert the Eboreg
+New?  Read the FAQ:  <a href="http://www.kendalls.demon.co.uk/cssfaq/" rel="noreferrer">http://www.kendalls.demon.co.uk/cssfaq/</a>
+Got a binary file to post?  Go to alt.binaries.emulators.misc
+Americanise the Abominable Snowman to reply.
+
+
+</pre></div><div class="post" id="p55692"><div class="ph"><a class="d" href="#p55692">1999-10-27</a> <span>darren salt</span> <span>Re: Remakes</span></div><pre>In message &lt;7v6t6n$j2$…@…&gt;
+          …@… (Farlie A) wrote:
+
+[snip]
+<span class="qt">&gt; A full reason why GOTO should NEVER be used is in  &quot;GOTO&#x27;s considered</span>
+<span class="qt">&gt; harmful&quot; by Dijkistra.- And if you CompSci&#x27;s out there  don&#x27;t know of this</span>
+<span class="qt">&gt; work then you need study long and hard.&lt; Strictly  speeking I don&#x27;t really</span>
+<span class="qt">&gt; know about him. but hey let stoke the fire!!&gt;</span>
+
+So what about COME FROM? ;-)
+
+[snip quoted .sig]
+
+-- 
+<span class="qt">| Darren Salt  anti-UCE | nr. Ashington, | d youmustbejoking,demon,co,uk</span>
+<span class="qt">| Spectrum +3, Risc PC, | Northumberland | s zap,uk,eu,org</span>
+<span class="qt">| A3010, BBC Master 128 | Toon Army      | @ retrospec,co,uk</span>
+<span class="qt">|   The RISC OS version of Mindtrap.</span>
+
+Everybody lies, but it doesn&#x27;t matter since nobody listens.
+
+
+</pre></div><div class="post" id="p55737"><div class="ph"><a class="d" href="#p55737">1999-10-28</a> <span>darren salt</span> <span>Re: Remakes</span></div><pre>In message 
+          &quot;/|ndy | wrote:
+
+<span class="qt">&gt; Darren Salt wrote:</span>
+<span class="qt">&gt;&gt; So what about COME FROM? ;-)</span>
+
+<span class="qt">&gt; Remember that article in April 82(I think) in BBC Micro User?  About a new</span>
+<span class="qt">&gt; programming language Splurge?  That had COME FROM and all sorts.  It was an</span>
+<span class="qt">&gt; April Fool tho&#x27;.</span>
+
+Er, no. I was referring to INTERCAL...
+
+-- 
+<span class="qt">| Darren Salt  anti-UCE | nr. Ashington, | d youmustbejoking,demon,co,uk</span>
+<span class="qt">| Spectrum +3, Risc PC, | Northumberland | s zap,uk,eu,org</span>
+<span class="qt">| A3010, BBC Master 128 | Toon Army      | @ retrospec,co,uk</span>
+<span class="qt">|   The second RISC OS version of JSW.</span>
+
+t all comes down to treating others as you want to be treated.
+
+
+</pre></div><div class="post" id="p55749"><div class="ph"><a class="d" href="#p55749">1999-10-28</a> <span>…@…</span> <span>Re: Remakes</span></div><pre>In the harsh, fetid plains of comp.sys.sinclair, a voice was faintly heard.  
+That voice was Darren Salt&#x27;s and this is what was said.
+
+<span class="qt">&gt;So what about COME FROM? ;-)</span>
+
+What about COME BY?  I&#x27;ve a sneaking suspicion Ian used that for his
+winning entry in this year&#x27;s CSSCGC. :)
+-- 
+* Derek Jolly  (…@…)  (Remove the &#x27;x&#x27; for e-mail)  *
+* PAL-&gt;NTSC AR codes etc.: <a href="http://members2.easyspace.com/rivet" rel="noreferrer">http://members2.easyspace.com/rivet</a>       *
+* |GCv3.12 GCS$ d+(dpu) s+:++ a- C++ UH+$ P L E- W++ N++ K w-- V-|   *
+* |PS+ PE Y+ PGP t+ 5++ X- tv+ b++ DI++ D+ G e++ h+ r- y?        |   *
+
+
+</pre></div></main></body></html>

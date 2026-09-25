@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Update 2 of the New ZX Tape format · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Update 2 of the New ZX Tape format</h1><p class="facts">1 posts, 1997-02-19 – 1997-02-19</p><div class="post" id="p24193"><div class="ph"><a class="d" href="#p24193">1997-02-19</a> <span>…@…</span> </div><pre>
+
+  This update contains all suggestions and corrections from Z80 emulator author
+Gerton Lunter and one from Damien. Hopefully soon every emulator author will
+comment/suggest on this format. I have changed the PAUSE block to what it was in
+the first version, just the value is ONE BYTE - if this is 0 then there should
+be NO pause at all, with the value at 255 there should be an indefinite
+(keypress) pause. The value is now in 1s/10, NOT in miliseconds. Change of
+Standard Pause is now moved to a new Loading Speed and Standard Pause change
+block.
+
+PLEASE Do not use this format YET, since it is constantly changing !!! All
+additions/corrections are welcome and should be posted to comp.sys.sinclair or
+directly to me on email: …@….
+
+
+                         ZX Spectrum Tape file format
+                        ------------------------------
+                                   v 0.2
+
+  This format lets you preserve all (hopefully) of the tapes with turbo or
+custom loading routines. Even though some of the newest and &#x27;smarter&#x27; emulators
+can find most of the info about the loader from the code itself, this cannot be
+possible if you want to replay the file to the good old real spectrum. And with
+all this information in the file the emulators don&#x27;t have to bother with finding
+out the baud rate and other things.
+
+  The Preferred 3 letter filename extension is .SPT for SpectrumTape, since .ZXT
+is already used for another file type.
+
+  The file is identified with the first 8 bytes being &#x27;ZXTape!&#x27; plus EndOfFile
+byte 26 (1A hex). Then the body follows which is devised from blocks. Each
+block is identified with its ID byte followed by its body. There are currently
+5 types of blocks.
+
+So the file structure is :  &#x27;ZXTape!&#x27; 0x1A ID1 Body1 ID2 Body2 ...
+                             0        7    8     ...
+
+  The Two-Byte (Word) values are always stored LSB (Least Significant Byte)
+First.
+  The timings are given in Z80 clock ticks (or T states) unless otherwise
+stated.   1 T state=1sec/3500000   !
+  The values in the tables mean : Offset (in bytes), Length (in bytes
+(i.e. 1 - byte, 2 - word)) and then the description.
+  You might interpret full-period as one pulse (----____ or ____----) and
+half-period as only one half of the pulse (---- or ____).
+  The values in brackets [] are the Default values for Spectrum ROM loading/
+saving routines.
+
+These are the possible blocks :
+
+ID : 00  -  Loading Speed Change for Custom Loading Blocks
+-------     and Change of the Standard Pause
+
+          If this block is never present then all blocks are saved with normal
+          speed. The Default values are supplied by Gerton and should be correct
+          NOTE: ALL CUSTOM LOADING blocks that follow this block use the
+          applied change ! The Standard Pause is applied after ALL Blocks that
+          don&#x27;t have a special Pause Block (ID=01) After them !!!
+
+00 1  Change which Value : 00 - Length of PILOT half-period        [2168]
+                           01 - Length of SYNC First half-period   [667]
+                           02 - Length of SYNC Second half-period  [735]
+                           03 - Length of ZERO-bit half-period     [855]
+                           04 - Length of ONE-bit half-period      [1710]
+                           05 - Standard Pause After Blocks        [10]
+
+01 2  Value : for 00-04 in Z80 T-States
+              for 05    First byte contains value in tenth of seconds (1s/10)
+                        Second byte should contain 0 !
+
+ID : 01  -  Pause
+-------
+          If there should be a longer (or shorter) Pause then a Standard pause
+          then this block should be used.
+          If the Value is 0   then there should be absolutely NO pause.
+          If the Value is 255 then the Pause should be Indefinite
+                                   (Waiting for a keypress)
+
+00 1  Value of the pause in tenth of seconds (1s/10)
+
+ID : 02  -  Text Description
+-------
+          The description can be upto 255 characters long but please keep
+          it down to about 30 so the programs can show it in one line !
+          This is ment to identify parts of the tape, so you know where
+          level 1 starts, where to rewind when you lose all the lives, etc.
+          Of course you can use it in the beginning to identify the name of
+          the game or program used in the file.
+
+00 1  Length of the Text
+01 x  Text in ASCII
+
+ID : 03  -  Custom Loading Data Block
+-------
+          This is the block with actual data. It is very similar to the normal
+          .TAP block but with some additional Info. This block will use all
+          the Loading speed changes from blocks with ID 01.
+
+00 2  Length of PILOT tone (in PILOT full-periods)     [8064 Header, 3220 Data]
+02 1  General Purpose Flag Byte , Bits are in this order : 76543210
+      Bit 0 : 1 If SYNC tone is present, 0 if NOT      [1]
+      All Other Bits should be 0 !
+03 1  Used bits in LAST Byte (other bits should be 0)  [8]
+      i.e. if this is 6 then the bits (x) used in LAST byte are: xxxxxx00
+04 2  Length of DATA that follows
+06 x  DATA, the bits are saved MSb (Most Significant bit) first
+
+ID : 04  -  Normal Speed Data Block (as in .TAP files)
+-------
+          This block should be replayed with the Standard ROM Values for all
+          pulses and lengths of PILOT and SYNC tones. NO Loading Speed changes
+          should be applied to this block !
+
+00 2  Length of DATA that follows
+02 x  DATA, as in .TAP File
+
+
+Regards,
+  Tomaz
+
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div></main></body></html>

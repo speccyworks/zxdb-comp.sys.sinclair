@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZX Tape (TZX) format additions · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ZX Tape (TZX) format additions</h1><p class="facts">3 posts, 1998-07-18 – 1998-07-20</p><div class="post" id="p39224"><div class="ph"><a class="d" href="#p39224">1998-07-18</a> <span>…@…</span> </div><pre>
+For some reason this posting didn&#x27;t show up on the news... anyway, I hope it
+reaches the group now... (using other news server)...
+
+  I think it is time to make some additions to the TZX format (well, people here
+and on TAPER mailing list reminded me...) ... These are not too drastical
+changes (100% compatible ofcourse ;) ) and they don&#x27;t introduce some new
+functionality (only for archiving purposes) ...
+
+The propsed additions were:
+
+Four new extensions to the &#x27;Archive info&#x27; block:
+
+05 - Type
+     (Arcade Adventure, Text Adventure, Puzzle, Word Processor, Drawing  
+      Program, etc.)
+06 - Price
+     (at the time of release ofcourse, including the currency !)
+07 - Protection Scheme / Loader
+     (Speedlock 1, Alkatraz, BleepLoad, etc.)
+08 - Origin
+     (Original, Budget re-release, etc.)
+
+Two new extensions to the &#x27;Custom info&#x27; block:
+
+- ZX-Edit document block
+ ------------------------
+  This  block  can  hold  files  created with the new utility called ZX-Editor.
+This utility gives documents the look and feel of ZX-Spectrum and its documents
+can contain text, graphics  (with  spectrum  attributes), different type faces,
+colours, etc. Normally these files use extension .ZED . Also the description is
+added,  in case you want to use it for something else than &#x27;Instructions&#x27; - you
+can use it for MAPs, etc.
+  Please check on the official TZX format site for the .ZED format description.
+(hopefully it will be available soon)
+
+ 0 10  &#x27;ZX-Edit document&#x27;  -  Custom Block ID
+10  4  Length of the following Data
+14  1  Description Length (if this is 0 then handle it as &#x27;Instructions&#x27;)
+15  x  Description of the Document in ASCII format
+    x  The ZX-Editor document (.ZED file)
+
+- Picture block
+ ---------------
+  Finally you can include ANY picture (in supported formats) in  the  TZX  file
+too.   So  Cover  pictures,  maps, etc.  can now be included in full colour (or
+whatever the formats support).
+  The best way for utilities to use  this block is to spawn an external viewer,
+or the authors can write their own viewers (yeah, right ;) ).
+  For Inlay Cards and other pictures that have zillions of colours use the JPEG
+format, for more simple pictures (drawings, maps, etc.) use the GIF format.
+
+ 0 10  &#x27;Picture         &#x27;  -  Custom Block ID
+10  4  Length of the following Data
+14  1  Picture format:
+          00 - GIF
+          01 - JPEG
+15  1  Description Length (if this is 0 then handle it as &#x27;Inlay Card&#x27;)
+16  x  Description of the Picture in ASCII format
+    x  The picture itself
+
+Is this OK ? :) Anything else I should add while we are at it ? The release 1.12
+of the TZX format will probably be finalized next week ...
+
+Regards,
+
+Tomaz Kac                                             |\      _,,,---,,_
+---------  University of Maribor , Computer Science   /,`.-&#x27;`&#x27;    -.  ;-;;,
+ E-Mail: …@… , Phone: ++602/20-546   |,4-  ) )-,_. ,\ (  `&#x27;::.
+ZX-Corner Home Page: <a href="http://warez.sd.uni-mb.si/zx" rel="noreferrer">http://warez.sd.uni-mb.si/zx</a>  &#x27;----&#x27;&#x27;(_/--&#x27;  `-&#x27;\_)   TC
+
+
+</pre></div><div class="post" id="p39283"><div class="ph"><a class="d" href="#p39283">1998-07-19</a> <span>…@…</span> <span>Re: ZX Tape (TZX) format additions</span></div><pre>Hmm.. Perhaps you mihjt like to add the age of the autor, their
+indide leg measurement... :-)
+
+Really, do we REALLY need to know the price? In which country
+was the price charhed?
+
+Are e not going a little overboard?
+
+Brian
+
+
+-- 
+…@…
+Brian Gaff AKA B G Services - Still supporting Z80
+                              The Spectrum Emulator
+
+
+
+</pre></div><div class="post" id="p39297"><div class="ph"><a class="d" href="#p39297">1998-07-20</a> <span>kac tomaz</span> <span>Re: ZX Tape (TZX) format additions</span></div><pre>Brian Gaff wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Hmm.. Perhaps you mihjt like to add the age of the autor, their</span>
+<span class="qt">&gt; indide leg measurement... :-)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Really, do we REALLY need to know the price? In which country</span>
+<span class="qt">&gt; was the price charhed?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Are e not going a little overboard?</span>
+
+Hey... it is NOT requiered to write it in you know... but if you like you can :)
+                 ^^^^^^^^^
+            probably a typo ... hell :)
+
+OK, 09 - Age of the author(s)
+
+*BANG* :)
+
+-- 
+Tomaz Kac                                             |\      _,,,---,,_
+---------  University of Maribor , Computer Science   /,`.-&#x27;`&#x27;    -.  ;-;;,
+ E-Mail: …@… , Phone: ++602/20-546   |,4-  ) )-,_. ,\ (  `&#x27;::.
+ZX-Corner Home Page: <a href="http://warez.sd.uni-mb.si/zx" rel="noreferrer">http://warez.sd.uni-mb.si/zx</a>  &#x27;----&#x27;&#x27;(_/--&#x27;  `-&#x27;\_)   TC
+
+
+</pre></div></main></body></html>

@@ -1,0 +1,2457 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANN: Sinclair Extended Basic v0.58 public beta release 1.0 · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANN: Sinclair Extended Basic v0.58 public beta release 1.0</h1><p class="facts">63 posts, 2002-01-01 – 2002-01-08</p><div class="post" id="p126048"><div class="ph"><a class="d" href="#p126048">2002-01-01 15:04:25</a> <span>Andrew Owen</span> </div><pre>Hi, I&#x27;m pleased to announce that the version of BASIC being developed for
+the ZX Spectrum SE has now reached the stage where I feel I can let you have
+a look at it. I&#x27;m posting it on alt.binaries.comp.sinclair right now, but it
+should also be available to download from the ZX Spectrum SE site
+(zxse.raww.net) later this week. If you can&#x27;t get ABCS and you can&#x27;t wait,
+email me and I&#x27;ll send you a copy. Here&#x27;s the documentation:
+
+Sinclair Extended Basic version 0.58 - public beta release 1.0 - 01/01/2002
+---------------------------------------------------------------------------
+The ZX Spectrum ROM is copyright 1982 Amstrad plc, distributed and modified
+with its kind permission for non-profit use with ZX Spectrum emulators.
+The additional code in this ROM, developed by Andrew Owen and others, is
+covered by the GNU public licence allowing non-profit use, modification and
+distribution. Under no circumstances may you change or remove the copyright
+message in this ROM. No public liability will be accepted for any damages
+resulting from the use of this ROM.
+
+What&#x27;s in the package?
+     
+---------------------------------------------------------------------------
+There should be three files:
+
+README58.TXT - This file
+BAS0_58B.ROM - SE Basic v0.58b1.0
+128PATCH.ROM - The 128 editor ROM, patched for use with SE Basic.
+SE42DEMO.SCR - A screenshot of the new font in 42 column mode.
+
+If you wish to distribute SE Basic, you must include all these files!
+
+Should I report bugs?
+     
+---------------------------------------------------------------------------
+SE Basic is a development of the original Spectrum BASIC by Steven Vickers.
+I have attempted to debug it, while adding functionality without breaking
+any existing software. Please send bug reports to …@….
+So far, there are only two known issues; The menu screen on Auf Wiedersehn
+Monty is slightly corrupted due to the new font, and Travel With Trashman
+refuses to load because it tests to make sure you are using the original
+ROM (a snapshot made after loading will with the original ROM will work).
+
+What&#x27;s new?
+     
+---------------------------------------------------------------------------
+The keyboard works differently in Basic
+
+Added a tokenizer, doing away with keyword entry.
+Shortcuts are still available for LOAD, RUN &amp; STOP (SYMBOL + Q, W, &amp; E).
+Removed EXTEND MODE for everything except control codes.
+All SYMBOLS now available via two-key combination.
+Allowed the cursor to move up and down while editing a line.
+
+Some commands are different
+
+Replaced CAT, CONTINUE GO TO &amp; GO SUB with DIR, CONT, GOTO &amp; GOSUB.
+Extended the NEW command; NEW or NEW 0 = Warm Reset, NEW 1 = Cold Reset.
+Modified the PAUSE command; PAUSE is equivalent to PAUSE 0.
+
+Basic has been extended
+
+Increased the line number range to 16383.
+A new font; Geneva-6, which supports 42 column text.
+A more efficient initialisation routine.
+
+There are some background changes you might not notice
+
+Changed the characters produced by [G] mode + V to Z.
+Implemented a 16K test (needed because of the new initialisation).
+Speeded up the pilot signal syncronization by four times.
+Made the cursor inverse (only visible in extended screen modes).
+Changed the RASP duration.
+
+Every known bug that can be fixed has been fixed
+
+Fixed the -65536 bug.
+Fixed the CHR$ 8 bug.
+Fixed the CHR$ 9 bug.
+Fixed the CLEAR-PRB bug.
+Fixed the CLOSE #4 bug.
+Fixed the colour commands bug.
+Fixed the DEC-TO-FP division bug.
+Fixed the double store bug.
+Fixed the EDIT bug.
+Fixed the leading space bug.
+Fixed the LIST bug.
+Fixed the MAIN-4 bugs.
+Fixed the MOD-DIV bug.
+Fixed the NMI bug.
+Fixed the PLOT bug.
+Fixed the PR-CC bug.
+Fixed the PO-FETCH bug.
+Fixed the RESTORE bug.
+Fixed the ROM overwrite bug.
+Fixed the ROM scroll bug.
+Fixed the RUN/GOTO/GOSUB bug.
+Fixed the stack bug.
+Fixed the WAIT-KEY bug.
+
+What&#x27;s planned?
+     
+---------------------------------------------------------------------------
+This is the first version of SE Basic where all the bug-fixes are working.
+It&#x27;s taken nearly two years to get to this stage. Since there are no-more
+bugs to fix I can now get on with extending BASIC further. I have several
+ideas of things I&#x27;d like to do but I&#x27;m severely constrained by the
+available memory. I will probably end up shortening the error messages to
+make a bit more room. The additions I am considering are as follows:
+
+21 new characters available via the UDGs; the Euro symbol, various
+accents, a few mathematical characters etc.
+
+Built in support for 42 column text.
+
+Built in support for 512x192 mode on Timex and Pentagon.
+
+A faster CIRCLE routine.
+
+A default NMI routine allowing LOAD/SAVE snapshots and POKE memory.
+
+If you have any suggestions for other improvements you would like to see
+please send them to …@….
+
+-Andrew Owen, January 1, 2002.
+
+
+
+
+</pre></div><div class="post" id="p126062"><div class="ph"><a class="d" href="#p126062">2002-01-01 17:05:53</a> <span>Russell Marks</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>(Note that I&#x27;m not really commenting here on the &quot;Extended Basic&quot;
+itself. I&#x27;m sure it&#x27;s very nice, and stuff. With that out of the
+way...)
+
+Andrew Owen &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Sinclair Extended Basic version 0.58 - public beta release 1.0 - 01/01/2002</span>
+<span class="qt">&gt; ---------------------------------------------------------------------------</span>
+<span class="qt">&gt; The ZX Spectrum ROM is copyright 1982 Amstrad plc, distributed and modified</span>
+<span class="qt">&gt; with its kind permission for non-profit use with ZX Spectrum emulators.</span>
+<span class="qt">&gt; The additional code in this ROM, developed by Andrew Owen and others, is</span>
+<span class="qt">&gt; covered by the GNU public licence allowing non-profit use, modification and</span>
+<span class="qt">&gt; distribution. Under no circumstances may you change or remove the copyright</span>
+<span class="qt">&gt; message in this ROM. No public liability will be accepted for any damages</span>
+<span class="qt">&gt; resulting from the use of this ROM.</span>
+
+If this is what I think it is, i.e. essentially a hacked ROM, your
+licence is insane. There&#x27;s absolutely no way the GPL is compatible
+with Amstrad&#x27;s `free for use with emulators, but still copyrighted&#x27;
+ROM permission. Besides which, unless I missed something, Amstrad
+never gave permission for the ROMs to be *modified*.
+
+IMHO, if you&#x27;re going to modify some old code without permission, you
+should at least make your changes public domain. Imposing a licence on
+code you&#x27;ve grafted onto someone else&#x27;s without permission seems more
+than a little hypocritical. (And the GPL doesn&#x27;t impose the
+&quot;non-profit&quot; restriction you claim, in any case.)
+
+But even if it magically is GPL somehow, where&#x27;s the source? You have
+to be able to provide the source to all of it, not just your bit,
+since all parts of the ROM are `linked&#x27;. Though I notice that you
+didn&#x27;t include any source *at all* in your post on ABCS.
+
+I really think you need to read the GPL.
+
+-Rus.
+
+
+
+</pre></div><div class="post" id="p126090"><div class="ph"><a class="d" href="#p126090">2002-01-01 20:36:11</a> <span>Andrew Owen</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>in article o0mY7.23643$…@…, Russell Marks
+at …@… wrote on 1/1/02 5:05 PM:
+
+<span class="qt">&gt; If this is what I think it is, i.e. essentially a hacked ROM,</span>
+
+I resent your use of the phrase &#x27;hacked ROM&#x27;. This extension of BASIC comes
+from a close study of the original program and is a development thereof, in
+keeping as close as possible with the spirit of the original. It has also
+been thoroughly tested for compatiblity with existing software. If you want
+to call my earlier attempts at modifying the ROM hacks, that&#x27;s fine, but I
+worked bloody hard on this and I think it is unfair to label it in this way.
+
+<span class="qt">&gt; your</span>
+<span class="qt">&gt; licence is insane. There&#x27;s absolutely no way the GPL is compatible</span>
+<span class="qt">&gt; with Amstrad&#x27;s `free for use with emulators, but still copyrighted&#x27;</span>
+<span class="qt">&gt; ROM permission.</span>
+
+If you read the licence carefully you&#x27;ll see that only the new code is
+covered by the GPL. The original code is covered by Amstrad&#x27;s licence.
+
+<span class="qt">&gt; Besides which, unless I missed something, Amstrad</span>
+<span class="qt">&gt; never gave permission for the ROMs to be *modified*.</span>
+
+Originally they didn&#x27;t but subsequently they did, and further more, I have
+personally been given permission by Amstrad to modify the ROM for non-profit
+purposes. 
+ 
+<span class="qt">&gt; IMHO, if you&#x27;re going to modify some old code without permission, you</span>
+<span class="qt">&gt; should at least make your changes public domain.</span>
+
+Ok, first I have permission, second, my changes are in the public domain
+since they are covered by the GPL.
+
+<span class="qt">&gt; Imposing a licence on</span>
+<span class="qt">&gt; code you&#x27;ve grafted onto someone else&#x27;s without permission seems more</span>
+<span class="qt">&gt; than a little hypocritical. (And the GPL doesn&#x27;t impose the</span>
+<span class="qt">&gt; &quot;non-profit&quot; restriction you claim, in any case.)</span>
+
+The non-profit restriction applies only to the Amstrad code. It&#x27;s their code
+and they are entitled to put whatever restrictions on it they wish. There is
+no such restriction on the new code.
+
+<span class="qt">&gt; But even if it magically is GPL somehow, where&#x27;s the source? You have</span>
+<span class="qt">&gt; to be able to provide the source to all of it, not just your bit,</span>
+<span class="qt">&gt; since all parts of the ROM are `linked&#x27;. Though I notice that you</span>
+<span class="qt">&gt; didn&#x27;t include any source *at all* in your post on ABCS.</span>
+
+This is a public beta. That means it isn&#x27;t finished. When it is finished the
+source will of course be made available. Geoff Wearmouth and others have
+already documented the original ROM and I have a file detailing all the
+changes which I will be providing with the final release.
+
+<span class="qt">&gt; I really think you need to read the GPL.</span>
+
+No, I have read the GPL, I understand it, and I am simply looking to
+increase the number of people testing the ROM from one; Chris Young (who has
+worked very hard to make this ROM as good as it is), to the wider Spectrum
+community.
+
+I hope that answers your criticisms but if you have any more, please let me
+know either here or by email.
+
+-Andrew
+
+
+
+
+</pre></div><div class="post" id="p126105"><div class="ph"><a class="d" href="#p126105">2002-01-01 21:14:26</a> <span>Adam D. Moss</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>Andrew Owen wrote:
+<span class="qt">&gt; &gt; IMHO, if you&#x27;re going to modify some old code without permission, you</span>
+<span class="qt">&gt; &gt; should at least make your changes public domain.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Ok, first I have permission, second, my changes are in the public domain</span>
+<span class="qt">&gt; since they are covered by the GPL.</span>
+
+And our survey says...
+
+
+
+</pre></div><div class="post" id="p126107"><div class="ph"><a class="d" href="#p126107">2002-01-01 21:30:20</a> <span>Dave</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>
+&quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+
+Certain people moaning aside - it all sounds very impressive!
+
+As a former SAM owner... is there anyway the roms will work on SAM?
+
+David
+
+
+
+
+
+
+</pre></div><div class="post" id="p126118"><div class="ph"><a class="d" href="#p126118">2002-01-01 23:11:43</a> <span>Andrew Owen</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>Since it has been pointed out to me that the source must be available for
+GNU GPL cover, here it is:
+
+     Sinclair Extended Basic version 0.58 beta source
+
+     Addr   Bytes         Mnemonics              Function
+     
+---------------------------------------------------------------------------
+
+     0000   F3            DI                     Disable interrupts.
+     0001   AF            XOR A                  00h for start (FFh for
+NEW).
+     0002   11 FF FF      LD DE,FFFFh            Top of possible RAM.
+     0003   12            LD (DE),A              Set the top of RAM to 00h.
+     0004   18 1D         JR 0025h               Jump forward to 0025h.
+
+     0014   ...           4 bytes                Reserved for 128-SWAP
+bugfix.
+
+     0025   C3 01 3C      JP 3C01h               Jump to START/NEW
+
+     002B   3E FE         LD A,FEh               Fixed the COLOUR COMMANDS
+bug. 
+            C3 01 16      JP 1601h,CHAN-OPEN
+
+     005F   ED 5B 65 5C   LD DE,(5C65h)          Fixed the ROM WRITE bug.
+            C3 C8 33      JP 33C8h,STK-CONST     Jump forward to STK-CONST.
+
+     006D   28 01         JR Z,0070h,NO-RESET    Fixed the NMI bug.
+
+
+     011F   44 49 D2      DIR                    Replaced CAT with DIR.
+
+     019B   43 4F 4E D4   CONT                   Changed the TOKEN table to
+     019F   44 49 CD      DIM                    replace CONTINUE, GO TO and
+     01A2   52 45 CD      REM                    GO SUB with CONT, GOTO and
+     01A6   46 4F D2      FOR                    GOSUB.
+     01A8   47 4F 54 CF   GOTO
+     01AC   47 4F 53 55   GOSUB
+            C2
+     01B1   49 4E 50 55   INPUT
+            D4
+     01B6   4C 4F 41 C4   LOAD
+     01BA   4C 49 53 D4   LIST
+     01BE   4C 45 D4      LET
+     01C1   50 41 55 53   PAUSE
+            C5
+     01C6   4E 45 58 D4   NEXT
+     01CA   50 4F 4B C5   POKE
+     01CE   50 52 49 4E   PRINT
+            D4
+     01D3   50 4C 4F D4   PLOT
+     01D7   52 55 CE      RUN
+     01DA   53 41 56 C5   SAVE
+     01DE   52 41 4E 44   RANDOMIZE
+            4F 4D 49 5A
+            C5
+     01E7   49 C6         IN
+     01E9   43 4C D3      CLS
+     01EC   44 52 41 D7   DRAW
+     01F0   43 4C 45 41   CLEAR
+            D2
+     01F5   52 45 54 55   RETURN
+            52 CE
+     01FB   43 4F 50 D9   COPY
+
+     01FF   21 3B 5C      LD HL,5C3Bh            Fixed the WAIT-KEY bug.
+            76            HALT
+            CB 6E         BIT 5,(HL)
+            28 FB         JR Z,-05h
+            CB AE         RES 5,(HL)
+            2C            INC L
+            CB 6E         BIT 5,(HL)
+            C4 6E 0D      CALL NZ,0D6Eh
+            3A 08 5C         LD A,(5C08h)
+            C9            RET
+
+     0213   21 3B 5C      LD HL,5C3Bh            The LEADING SPACE bugfix.
+            CB C6            SET 0,(HL)
+            C3 AF 0D      JP 0DAFh,CL-ALL
+
+     021B   CD 99 1E      CALL 1E99h,FIND-INT2   Fixed the RESTORE bug.
+
+     021E   78            LD A,B                 Fixed the LIST bug.
+            FE 40         CP 40
+            D8            RET C
+            CF            RST 08h
+            0A            DEFB 0Ah
+
+     0224   CD 1B 2D      CALL 2D1Bh,NUMERIC     Read the digits of the line
+            F5            PUSH AF                number.
+            CD 3B 2D         CALL 2D3Bh,INT-TO-FP
+            F1            POP AF
+            D0            RET NC
+            C1            POP BC
+            CD A2 2D      CALL 2DA2h,FP-TO-BC
+            37            SCF
+            C3 C5 16      JP 16C5h,SET-STK
+
+     0235   CD 07 23      CALL 2307h,STK-TO-BC   Fixed the PLOT bug.
+            7A            LD A,D
+            B3            OR E
+            3D            DEC A
+            C8            RET Z
+            CF            RST 08h
+            0A            DEFB 0Ah
+
+     023E   90 91 92 93   V W X Y                Special table for GRAPHICS
+            94            Z                      characters &#x27;V&#x27; to &#x27;Z&#x27;.
+
+     0243   42 48 59 36   B H Y 6                Moved the main key table
+from
+            35 54 47 56   5 T G V                0205h to create a longer
+            4E 4A 55 37   N J U 7                continuous free space.
+            34 52 46 43   4 R F C
+            4D 4B 49 38   M K I 8
+            33 45 44 58   3 E D X
+            0E 4C 4F 39     L O 9                OE is SYMBOL SHIFT
+            32 57 53 5A   2 W S Z                20 is SPACE
+            20 0D 50 30       P 0                0D is ENTER
+            31 51 41      1 Q A
+
+     026A   7E 2A 3F 5C   ~     *     ?     \    Changed the SYMBOL table to
+            E2 7B 7D 5E   STOP  {     }     ^    make all the
+non-alphanumeric
+            7F 2D 2B 3D   (c)   -     +     =    characters available via
+symbol
+            2E 2C 3B 22   .     ,     ;     &quot;    shift, based on the
+character
+            EF 3C 7C 3E   LOAD  &lt;     |     &gt;    associated with that key
+            5D 2F F7 60   ]     /     RUN   ï¿½    (except for the &#x27;(c)&#x27;
+symbol
+            5B 3A         [     :                which is on the &#x27;I&#x27; key).
+                                                 STOP is necessary to break
+out
+                                                 of an INPUT, and LOAD and
+RUN
+                                                 are provided for
+convenience.
+
+     0284   0C            Delete                 Moved table &#x27;d&#x27; from 0260h
+so
+            07            Edit                   all three remaining tables
+are
+            06            Caps lock              next to each other,
+immediately
+            04            True video             before the KEY-SCAN
+routine.
+            05            Inverse video
+            08            Cursor left
+            0A            Cursor down
+            0B            Cursor up
+            09            Cursor right
+            0F            Graphics
+
+     032C   21 43 02      LD HL,0243h            Location of main key table.
+
+     033C   28 11         JR Z,034Fh,K-KLC-LET   Ignore &#x27;E&#x27; mode for
+letters.
+            FE 56         CP 56h                 Only &#x27;G&#x27; mode is left. Is
+it in  
+            30 05         JP NC,0347h            the range &#x27;V&#x27; to &#x27;Z&#x27;? If
+not
+            C6 4F         ADD A,4Fh              add the offset then return
+with
+            C9            RET                    the final code.
+            00            NOP                    If it is then use the
+special
+            00            NOP                    lookup table at 023Eh.
+Carries
+            21 01 E8      LD HL,01E8h            on into K-LOOK-UP.
+
+     0370   00            NOP                    Ignore &#x27;E&#x27; mode for numbers
+            00            NOP                    with symbol shift.
+            CB 68         BIT 5,B
+            CA D9 03      JP Z,039Dh,K-KLC-DGT
+
+     0389   21 54 02      LD HL,0254h            Location of table &#x27;d&#x27;-30h
+
+     03A1   21 54 02      LD HL,0254h            Location of table &#x27;d&#x27;-30h
+
+     04AA   FD CB 01 AE   RES 5,(IY+01h)         Fixed the MAIN-4 bug.
+            FD CB 01 CE   SET 1,(IY+01h)
+            C9            RET
+
+     04B3   FD CB 02 66   BIT 4,(IY+02h)         Fixed the EDIT bug.
+            28 04         JR Z,+04h
+            F6 20         OR 20h
+            D7            RST 10h
+            C9            RET
+            33            INC SP
+            33            INC SP
+            C3 81 18      JP 1881h,OUT-LINE-3
+
+     0571   21 15 01      LD HL,0115h            Speeded up pilot signal
+sync.
+
+     077A   FD 36 52 FF                          Set the scroll counter to
+FFh.
+
+     0981   CD FF 01      CALL 01FFh,WAIT-K-X    Calls the WAIT-KEY bugfix.
+
+     0A32   3E 19         LD A,19                Fixed the CHR$ 8 bug.
+
+     0A47   CD D9 0A      CALL 0AD9h,PO-ABLE     Fixed the CHR$ 9 bug.
+
+     0AFF   FD 75 46      LD (IY+46),L           Fixed the PR-CC bug.
+
+     0B20   C3 36 30      CALL 3036h,PO-F-X      Call the PO-FETCH bugfix.
+
+     0B23   20            DEFB 20h               Spare byte.
+
+     0CB2   00            NOP                    No longer swaps the
+registers.
+            CD FF 01      CALL 01FFh,WAIT-K-X    Calls the WAIT-KEY bugfix.
+            00            NOP
+
+     0D2B   06 17         LD B,17                Fixed the ROM SCROLL bug.
+
+     0D6B   CD 13 02      CALL 0213h,CLS-X       Call the LEADING SPACE
+bugfix.
+
+     0EDF   3E 5A         LD A,5Ah               Fixed the CLEAR-PRB bug.
+            94            SUB H
+            D0            RET NC
+            AF            XOR A
+            6F            LD L,A
+            00            NOP
+            00            NOP
+            77            LD (HL),A
+            2C            INC L
+            20 FC         JR NZ,-04h
+            FD CB 30 8E   ADC A(IY+30h)
+            0E 21         LD C,21h
+            C3 DC 0A      JP 0ADCh,PO-STORE
+
+     0FFA   C3 6E 38      JP 386Eh               Jump to the CURSOR DOWN
+code.
+
+     105E   C3 7E 38      JP 387Eh               Jump to the CURSOR UP code.
+
+     108E   21 90 01      LD HL,0190h            Changed the RASP duration.
+
+     116C   21 90 01      LD HL,0190h            Changed the RASP duration.
+
+     11B7   CD 94 1E      CALL 1E94h,FIND-INT1   Get parameter of NEW
+command.
+            FE    02         CP 02h                 Test against 02h.
+            38 02         JR C,11C0h             Jump if it less than 02h.
+               CF            RST 08h                Give the error message
+&#x27;B
+            0A            DEFB 0Ah               Integer out of range&#x27;.
+     11C0   FE 00            CP 00h                 Test agains 00h.
+            28 01            JR Z,11C5h             Jump if it is 00h
+(default).
+            C7            RST 00h                Cold start. Jump to 0000h.
+     11C5      F3            DI                     Disable interrupts.
+            3E FF         LD A,FFh               Signal warm start.
+            ED 5B B2 5C   LD DE,(5CB2h)          Save the value of RAMTOP.
+            D9            EXX                    Load the alternate
+registers
+            ED 4B B4 5C   LD BC,(5CB4h)          with the system variables
+            ED 5B 38 5C   LD DE,(5C38h)          P-RAMT, RASP/PIP and UDG.
+            2A 7B 5C      LD HL,(5C7Bh)          Then switch to the other
+            D9            EXX                    register set.
+            C3 09 3C      JP 3C09h,INIT          Call the initialisation
+code.
+
+     11DC   ...           13 bytes               Spare.
+
+     11E9   ...           185 bytes              Tokenizer.
+
+     12B1   CD E9 11      CALL 11E9h,TOKENIZER   Call the tokenizer.
+
+     1303   00            NOP                    Call the MAIN-4 bugfix.
+            CD AA 04      CALL 04AAh,MAIN-X
+            00            NOP
+
+     1539   ...           8 bytes                Spare.
+
+10   1541   CD 1E 17      CALL 171Eh,STR-DATA    Fixed the CLOSE #4 bug.
+            57            LD D,A
+            78            LD A,B
+            B1            OR C
+            7A            LD A,D
+            C0            RET NZ
+            F1            POP AF
+            C9            RET
+
+10   154B   01 F0 D8      LD BC,D8F0h            OUT-NUM-3 can now handle
+            CD 2A 19      CALL 192Ah,OUT-SP-NO   numbers up to 16383.
+            01 18 FC      LD BC,FC18h
+            C9            RET
+
+     16E5   CD 41 15      CALL 1541h,CLOSE-X     Call the CLOSE #4 bugfix.
+
+     1828   CD 1E 02      CALL 021Eh,LINE-X-1    Call the LIST bugfix.
+
+     187A   CD B3 04      CALL 04B3h,EDIT-X      Call the EDIT bugfix.
+
+     18D2   36 0C                                Make the cursor inverse
+(only
+                                                 visible in 512x192 mode).
+
+     18ED   28 08         JR Z,18F7h,OUT-C-1     Jump forward unless &#x27;E&#x27; or
+&#x27;G&#x27;
+            FE 02         CP 02h                 mode. Is it &#x27;E&#x27; mode? Jump
+            28 04         JR Z,18F7h,OUT-C-1     forward if &#x27;E&#x27; mode. Add
+the 
+            C6 43         ADD A,43h              offset (could just set it).
+            18 12         JR 1909h,OUT-C-2       Jump forward to print it.
+     18F7   21 3B 5C      LD HL,5C3Bh            This is FLAGS.
+            00            NOP                    There is no &#x27;K&#x27; mode so the
+            00            NOP                    code is removed.
+            00            NOP
+            CB DE         SET 3,(HL)             Signal &#x27;L&#x27; mode.
+            3E 4C         LD A,4Ch               Set A to character &#x27;L&#x27;.
+
+     1A09   CD 24 02      CALL 0224h             Read digits of line number
+up
+                                                 to 16384.
+
+     1A11   21 00 C0      LD HL,C000h            Test line against 16384.
+
+     1A30   CD 4B 15      CALL 154B,OUT-N-3-X    Call the OUT-NUM-3
+extension.
+
+     1AA8   03            DEFB 03h               CLASS-03.
+            B7 11         DEFW 11B7h             NEW,11B7.
+
+     1AC5   03            DEFB 03h               CLASS-03.
+            3A 1F         DEFW 1F3Ah             PAUSE,1F3A.
+            00            DEFB 00h               Spare.
+
+     1C9E   C4 2B 00      CALL NZ,002Bh,CHAN-S   Call the COLOUR COMMANDS
+                                                 bugfix if doing a &#x27;run&#x27;.
+
+     1CC7   CD 2B 00      CALL 002Bh,CHAN-S      Call the COLOUR COMMANDS
+                                                 bugfix.
+
+     1E42   CD 1B 02      CALL 021Bh,LINE-X      Call the RESTORE bugfix.
+
+     1E6F   FE 40         CP 40h                 Fixed the RUN/GOTO/GOSUB
+bug.
+
+     22CB   CD 35 02      CALL 0235h,PLOT-X      Call the PLOT bugfix.
+
+     22DC   CD 35 02      CALL 0235h,PLOT-X      Call the PLOT bugfix.
+
+     257D   C9            RET                    Fixed the DOUBLE STORE bug.
+
+     257E   41 4F         DEFW 4F41h             2 spare bytes (my
+initials).
+
+     2CE3   04            division               Fixed the DEC-TO-FP bug.
+            C0            st-mem-0
+            05            multiply
+
+     2E14   A7            AND A                  Fixed the STACK bug.
+            20 06         JR NZ,2E1D             Removed the unneccesary LD
+A,D
+            B3            OR E                   instruction to make room.
+            28 09         JR Z,2E23
+            53            LD D,E
+            06 08         LD B,08h
+     2E1D   D5            PUSH DE
+            D9            EXX
+            D1            POP DE
+            D9            EXX
+            18 58         JR 2E7B
+     2E23   EF            RST 28h                Delete the extra item on
+the
+            02            DEFB 02h               stack.
+
+     3032   F5            PUSH AF                Save the sign byte in A.
+            C3 25 32      JP 3225h               Jump to the -65536 bugfix.
+
+     3036   FD 6E 46      LD L,(IY+46)           The PO-FETCH bugfix.
+            26 5B         LD H,5Bh
+            C9            RET
+
+     3223   18 1A         JR 323F,T-SMALL        Jump regardless.
+
+     3225   3C            INC A                  Make any FF in A into 00.
+            B3            OR E                   Test all 3 bytes now for
+zero.
+            B2            OR D
+            20 08         JR NZ,3233h,ADD-STOR   Jump if not -65536.
+            F1            POP AF                 Clear the stack. Prepare to
+            3E 80         LD A,80h               enter 80h into second byte.
+            2B            DEC HL                 Point to the first byte
+            36 91         LD (HL),91h            Enter 91h into first byte.
+            F5            PUSH AF                Put the 80 on the stack.
+                                                 Note: DE still holds zero
+so
+                                                 the third and fourth bytes
+will
+                                                 be cleared.
+            23            INC HL                 Restore HL pointer.
+     3233   F1            POP AF                 Restore the sign byte in A.
+            77            LD (HL),A              Store it on the stack.
+            23            INC HL                 Point to the next location.
+            73            LD (HL),E              Store low byte of the
+result.
+            23            INC HL                 Point to the next location.
+            72            LD (HL),D              Store high byte of the
+result.
+            2B            DEC HL                 Move the pointer back to
+            2B            DEC HL                 address the first byte of
+the
+            2B            DEC HL                 result.
+            D1            POP DE                 Restore STKEND to DE.
+            C9            RET                    Finished.
+
+     33FE   CD 5F 00      CALL 005Fh,ROM-X       Call the ROM WRITE bugfix.
+
+     36A0   EF C1 02 31                          Fixed the MOD-DIV bug.
+            E1 05 27 E1                          Now uses st-mem-1 instead
+of
+            01 C1 04 03                          st-mem-0.
+            E1 38 C9
+
+     386E   CD 90 38         CALL 3890h
+            21 49 5C      LD HL,5C49h
+            CA FC 0F      JP Z,0FFCh
+            EB            EX DE,HL
+            CD 0C 10      CALL 100Ch
+            10 FB         DJNZ -05h
+            C9               RET
+
+     387E   CD 90 38         CALL 3890h
+            2A 49 5C      LD HL,(5C49h)
+            CA 61 10         JP Z,1061h
+            EB            EX DE,HL
+            C5            PUSH BC
+            CD 07 10         CALL 1007h
+            C1               POP BC
+            10 F9         DJNZ -07h
+            C9            RET
+
+     3890   2A 59 5C         LD HL,(5C59h)
+            ED 5B 5B 5C      LD DE,(5C5Bh)
+            A7               AND A
+            ED 52            SBC HL,DE
+            06 20         LD B,20h
+            C9            RET
+
+     38B7   ...           73 bytes               Copyright message.
+
+     3900   ...           257 bytes              Interrupt vector table.
+
+     3A00   ...           257 bytes              Interrupt vector table.
+
+     3A9C   FF FF FF FF   8 bytes                Used as a sprite by the
+game
+            FF FF FF FF                          Roller Coaster.
+
+     3B00   ...           257 bytes              Interrupt vector table.
+
+     3C01   1A            LD A,(DE)              16K-TEST
+            FE 00         CP 00h
+            18 03         JR Z,+03h
+            AF            XOR A
+            16 7F         LD D,7Fh
+
+     3C09   47            LD B,A                 Save the flag for later.
+            3E 3F         LD A,3Fh               Set the I register to hold
+the                
+            ED 47         LD I,A                 value 3Fh.
+            FD 62         LD IYh,D               Copy the contents of the DE
+            FD 6B         LD IYl,E               register into the IY
+register.
+            EB            EX DE,HL               Swap the contents of DE and
+HL.
+            11 FF 5A      LD DE,5AFFh            The address of the last
+byte of
+                                                 attributes in screen 0.
+            36 00         LD (HL),00h            Wipe memory location in HL.
+            2B            DEC HL                 Move down in memory.
+            ED 52            SBC HL,DE              Test to see if screen-0
+has
+            28 04         JR Z,+04h              been reached.
+            ED 5A         ADC HL,DE              If not restore the values
+and
+            18 F5         JR -0Bh                continue wiping memory.
+            FD 54            LD D,IYh               Restore the contents of
+the DE
+            FD 5D            LD E,IYl               register from the IY
+register.
+            62               LD H,D                 Copy the contents of the
+DE
+            6B               LD L,E                 register into the HL
+register.
+            D9               EXX                    Switch registers and
+restore
+            ED 43 B4 5C      LD (5CB4h),BC          the preserved system
+variables
+            ED 53 38 5C      LD (5C38h),DE          P-RAMT, RASP/PIP and
+UDG. Then
+            22 7B 5C      LD (5C7Bh),HL          switch back. (Meaningless
+when
+            D9            EXX                    coming from START.)
+            04            INC B                  Test the START/NEW flag.
+            28 19         JR Z,+19h              Jump forward if coming from
+the
+                                                 NEW command routine.
+            22 B4 5C         LD (5CB4h),HL          Top of physical RAM.
+            11 AF 3E         LD DE,3EAFh            Last byte of new
+characters.
+            01 A8 00         LD BC,00A8h            21 letters make 168
+bytes.
+            EB               EX DE,HL               Switch the pointers.
+            ED B8            LDDR                   Copy new characters into
+the
+            EB               EX DE,HL               UDG area. Switch the
+pointers.
+            23               INC HL                 Point to the first byte.
+            22 7B 5C         LD (5C7Bh),HL          Set the UDG system
+variable.
+            2B               DEC HL                 Down one byte in memory.
+            01 40 00         LD BC,0040h            Set the system variables
+RASP
+            ED 43 38 5C      LD (5C38h),BC          and PIP.
+            22 B2 5C         LD (5CB2h),HL          Set the RAMTOP system
+variable.
+            21 00 3C         LD HL,3C00h            Set the CHARS system
+variable
+            22 36 5C         LD (5C36h),HL          256 bytes below the
+font.
+            2A B2 5C         LD HL,(5CB2h)          The last byte available
+to
+            36 3E            LD (HL),3Eh            BASIC is set to 3Eh.
+            2B               DEC HL                 This location is left at
+zero.
+            F9               LD SP,HL               This is the &#x27;last
+entry&#x27;.
+            2B               DEC HL                 Step down two locations
+to find
+            2B               DEC HL                 the correct value for
+ERR-SP.
+            22 3D 5C         LD (5C3Dh),HL          Set the sytem variable
+ERR-SP.
+            ED 56            IM 1                   Select interrupt mode 1.
+            FD 21 3A 5C      LD IY,5C3Ah            IY holds ERR-NR always.
+            FB               EI                     Enable interrupts.
+            21 B6 5C         LD HL,5CB6h            The base address of the
+channel
+            22 4F 5C         LD (5C4Fh),HL          information area.
+            11 AF 15         LD DE,15AFh            The initial channel data
+is
+            01 15 00         LD BC,0015h            moved from the table
+(15AFh) to
+            EB               EX DE,HL               the channel information
+area.
+            ED B0            LDIR
+            EB               EX DE,HL               The system variable
+DATADD is
+            2B               DEC HL                 made to point to the
+last
+            22 57 5C         LD (5C57h),HL          location of the channel
+data.
+            23               INC HL                 And PROG and VARS to the
+            22 53 5C         LD (5C53h),HL          location after that.
+            22 4B 5C         LD (5C4Bh),HL
+            36 80            LD (HL),80h            Variables area end
+marker.
+            23               INC HL                 Up one location to find
+the
+            22 59 5C         LD (5C59h),HL          value for E-LINE.
+            36 0D            LD (HL),0Dh            Make the edit-line be a
+single
+            23               INC HL                 &#x27;carriage return&#x27;
+character.
+            36 80            LD (HL),80h            Now enter an end marker.
+            23               INC HL                 Up one location to find
+the
+            22 61 5C         LD (5C61h),HL          values for WORKSP,
+STKBOT and
+            22 63 5C         LD (5C63h),HL          STKEND.
+            22 65 5C         LD (5C65h),HL
+            3E 38            LD A,38h               Set the permanent
+attributes
+            32 8D 5C         LD (5C8Dh),A           and the border to black
+on
+            32 48 5C         LD (5C48h),A           white, BRIGHT and FLASH
+off.
+            21 19 02         LD HL,0219h            Set the system variables
+            22 09 5C         LD (5C09h),HL          REPDEL and REPPER.
+            FD 35 C6         DEC (IY+C6h)           Initialise K-STATE-0.
+            FD 35 CA         DEC (IY+CAh)           Initialise K-STATE-4.
+            21 C6 15         LD HL,15C6h            Move the initial stream
+data
+            11 10 5C         LD DE,5C10h            from its table to the
+streams
+            01 0E 00         LD BC,000Eh            area.
+            ED B0            LDIR
+            3E 21         LD A,21h               Printer buffer is already
+clear
+            32 7F 5C      LD (5C7Fh),A           so just set print position.
+            FD 36 31 02      LD (IY+31h),02h        Set the lower display.
+            AF               XOR A                  Reset the Timex video
+hardware.
+            D3 FF            OUTA (FFh)
+            3E 07            LD A,07h               Make the border white.
+            D3 FE            OUTA (FEh)
+            CD 6B 0D         CALL 0D6Bh,CLS         Clear the whole display.
+            AF               XOR A                  Print the copyright
+message
+            11 B7 38         LD DE,38B7h
+            CD 0A 0C         CALL 0C0Ah
+            FD CB 02 EE      SET 5,(IY+02h)         Signal &#x27;clear lower
+display&#x27;.
+            C3 A9 12         JP 12A9h,MAIN-1        Jump to main execution.
+
+     3CDC   ...           20 bytes               Spare.
+
+     3CF0   21 C0 00      LD HL,00C0h            This routine is included
+for
+            18 03         JR +03h                Sprinter compatibility.
+            00            NOP
+            00            NOP
+            00            NOP
+            E5            PUSH HL
+            F5            PUSH AF
+            3E 00         LD A,00h
+            D3 7C         OUTA (7Ch)
+            F1            POP AF
+            C9            RET
+
+     3D00   ...           768 bytes              Replaced the font with
+Geneva-6
+                                                 which is designed to
+support 42
+                                                 column and 85 column text
+and 
+                                                 is compatible with the
+TC2048
+                                                 version of BASIC 64.
+
+
+
+
+</pre></div><div class="post" id="p126120"><div class="ph"><a class="d" href="#p126120">2002-01-01 23:14:12</a> <span>Andrew Owen</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>in article a0t9pb$lh9$…@…, Dave at
+…@… wrote on 1/1/02 9:30 PM:
+
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Certain people moaning aside - it all sounds very impressive!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; As a former SAM owner... is there anyway the roms will work on SAM?</span>
+
+Yes. Simply substitute the new ROM for the original Spectrum ROM in your SAM
+based Spectrum emulator. I have tested my new ROM on Sim Coupe and it seems
+to work fine. If someone can explain the SAM DFS to me I may be able to
+build support into the ROM, which would obviously make life easier for
+running Speccy software on the SAM and Sim Coupe.
+
+-Andrew
+
+
+
+
+
+</pre></div><div class="post" id="p126129"><div class="ph"><a class="d" href="#p126129">2002-01-02 00:07:52</a> <span>Dave</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>
+&quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; in article a0t9pb$lh9$…@…, Dave at</span>
+<span class="qt">&gt; …@… wrote on 1/1/02 9:30 PM:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; &quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; &gt; news:…@…...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Certain people moaning aside - it all sounds very impressive!</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; As a former SAM owner... is there anyway the roms will work on SAM?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Yes. Simply substitute the new ROM for the original Spectrum ROM in your</span>
+SAM
+<span class="qt">&gt; based Spectrum emulator. I have tested my new ROM on Sim Coupe and it</span>
+seems
+<span class="qt">&gt; to work fine. If someone can explain the SAM DFS to me I may be able to</span>
+<span class="qt">&gt; build support into the ROM, which would obviously make life easier for</span>
+<span class="qt">&gt; running Speccy software on the SAM and Sim Coupe.</span>
+
+I&#x27;m not the best person to ask - but Robert, who hangs around here, is in
+contact with Martin Green - the clever person who updates the new free Dos
+(B-DOS) which supports the SAM hard drive interface - the Atom. (Edwin
+Blink&#x27;s interface).
+
+I cant recall the BDOS site - but there&#x27;s loads of info on there for the
+hook codes etc.
+
+
+
+
+
+
+</pre></div><div class="post" id="p126152"><div class="ph"><a class="d" href="#p126152">2002-01-02 09:56:36</a> <span>Andrew Owen</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>Right, enough is enough, I hereby relinquish all claim to any cover by the
+GNU GPL and I hereby deny distribution of this ROM. I&#x27;ll try and sort out a
+legal version when I&#x27;m in a better mood.
+
+-Andrew
+
+
+
+
+</pre></div><div class="post" id="p126241"><div class="ph"><a class="d" href="#p126241">2002-01-02 22:47:10</a> <span>Dave</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>
+&quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Right, enough is enough, I hereby relinquish all claim to any cover by the</span>
+<span class="qt">&gt; GNU GPL and I hereby deny distribution of this ROM. I&#x27;ll try and sort out</span>
+a
+<span class="qt">&gt; legal version when I&#x27;m in a better mood.</span>
+
+:(
+
+
+
+
+
+
+</pre></div><div class="post" id="p126244"><div class="ph"><a class="d" href="#p126244">2002-01-02 23:02:04</a> <span>Andrew Ryals</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>And another very exciting development gets thrown into turmoil, cheers to
+the individual that started this argument.
+
+
+
+
+
+</pre></div><div class="post" id="p126258"><div class="ph"><a class="d" href="#p126258">2002-01-03 00:49:48</a> <span>Dave</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>
+&quot;Andrew Ryals&quot; &lt;…@…&gt; wrote in message
+news:a103cj$3c9$…@…...
+<span class="qt">&gt; And another very exciting development gets thrown into turmoil, cheers to</span>
+<span class="qt">&gt; the individual that started this argument.</span>
+<span class="qt">&gt;</span>
+
+Come on Andrew - ignore the winging pomme!
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p126260"><div class="ph"><a class="d" href="#p126260">2002-01-03 01:48:10</a> <span>Andrew Owen</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>I&#x27;ve looked at the GNU GPL again and I&#x27;m afraid I was in the wrong. I&#x27;ll try
+and sort something out soon, but I think I&#x27;m probably going to assign my
+copyright in the ROM to Amstrad so it will all be covered by one licence.
+
+-Andrew
+
+
+
+
+</pre></div><div class="post" id="p126273"><div class="ph"><a class="d" href="#p126273">2002-01-03 02:19:06</a> <span>Philip Kendall</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>In article &lt;a103cj$3c9$…@…&gt;,
+Andrew Ryals &lt;…@…&gt; wrote:
+<span class="qt">&gt;And another very exciting development gets thrown into turmoil, cheers to</span>
+<span class="qt">&gt;the individual that started this argument.</span>
+
+And yet another css person goes off on a rant without having a clue
+about the facts. Andrew&#x27;s release of the ROM under the GPL was
+*illegal*, actually for at least two reasons (he and I had a long e-mail
+conversation about all this last night).
+
+Or do you think it is a bad thing that Andrew is trying not to break the
+law?
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p126284"><div class="ph"><a class="d" href="#p126284">2002-01-03 02:40:33</a> <span>Andrew Owen</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>Come on, we&#x27;re all friends here. I will be continuing development and
+releasing a legal version when I find a suitable way of doing it. Lets not
+have an argument over nothing. There are more important things to worry
+about.
+
+-Andrew
+
+
+
+
+</pre></div><div class="post" id="p126299"><div class="ph"><a class="d" href="#p126299">2002-01-03 08:47:12</a> <span>Dunny</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>
+Andrew Owen &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Following all the legal wranglings I have an announcement to make: There</span>
+<span class="qt">&gt; will be no more binaries of Sinclair Extended Basic.</span>
+
+Well, thank the stars you&#x27;ve got enough sense to keep on with something
+that&#x27;s worthwhile. Well done, by the way, you&#x27;ve built  real gem here.
+
+Oh, and what license is the +3E ROM distributed under?
+
+D.
+
+
+
+
+
+
+</pre></div><div class="post" id="p126313"><div class="ph"><a class="d" href="#p126313">2002-01-03 10:44:40</a> <span>Form@C</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>Andrew Owen &lt;…@…&gt; wrote in news:…@…:
+
+<span class="qt">&gt; I&#x27;ve looked at the GNU GPL again and I&#x27;m afraid I was in the wrong.</span>
+<span class="qt">&gt; I&#x27;ll try and sort something out soon, but I think I&#x27;m probably going to</span>
+<span class="qt">&gt; assign my copyright in the ROM to Amstrad so it will all be covered by</span>
+<span class="qt">&gt; one licence. </span>
+<span class="qt">&gt; </span>
+
+Perhaps GNU was the wrong approach, but I can&#x27;t see where the problems lie 
+providing that you have the necessary permission from Amstrad to modify 
+their ROM for non-profit purposes. It should be possible to solve this.
+
+The modifications to the ROM code itself (including any code added to 
+allow extensions) can only really be either public domain (with 
+Amstrad&#x27;s permission) or given to Amstrad as these are integral to the 
+existing code. Any extensions to the ROM could be licenced any way you 
+choose as far as I can see. They could even be proprietory closed-source. 
+Things like disk interface ROMS have always done this.
+
+-- 
+Mick
+Olde Nascom Computers - <a href="http://www.mixtel.co.uk" rel="noreferrer">http://www.mixtel.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p126315"><div class="ph"><a class="d" href="#p126315">2002-01-03 11:07:03</a> <span>Andrew McGuinness</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>Form@C wrote:
+
+<span class="qt">&gt; Andrew Owen &lt;…@…&gt; wrote in news:…@…:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;I&#x27;ve looked at the GNU GPL again and I&#x27;m afraid I was in the wrong.</span>
+<span class="qt">&gt;&gt;I&#x27;ll try and sort something out soon, but I think I&#x27;m probably going to</span>
+<span class="qt">&gt;&gt;assign my copyright in the ROM to Amstrad so it will all be covered by</span>
+<span class="qt">&gt;&gt;one licence. </span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Perhaps GNU was the wrong approach, but I can&#x27;t see where the problems lie </span>
+<span class="qt">&gt; providing that you have the necessary permission from Amstrad to modify </span>
+<span class="qt">&gt; their ROM for non-profit purposes. It should be possible to solve this.</span>
+<span class="qt">&gt; </span>
+
+
+The problems are that the GPL requires that licensees allow the code,
+along with whatever other software is needed to make it work (except
+the operating system it will run on) to be freely distributed without
+restriction.
+
+The restriction that derived works of the Amstrad ROM can only be used
+for non-commercial purposes contradicts this.  If Andrew is the sole
+author (except for the Amstrad bits), he can distribute it how he likes,
+but if he puts the GPL on it, no-one who gets it can then distribute it,
+as they would be breaking either the GPL or Amstrad&#x27;s copyright.
+
+The solution is for Andrew to use another license - LGPL, BSD, whatever.
+
+If Andrew&#x27;s work contains or is derived from other work which he has
+obtained under the GPL, he can&#x27;t do that, and will have to replace those
+bits in order to distribute his work.  That is the point of the GPL.
+
+It might be possible to work it somehow using the &quot;operating system and
+components normally distributed with it&quot; exception.  Andrew&#x27;s product
+would have to be packaged as an enhancement to run on actual Sinclair
+computers, and be distributed without Amstrad&#x27;s code in it - e.g. as
+a package that copies the system ROM and patches it.  If the package
+is intended to run on an actual Sinclair, the original ROM is clearly
+part of the operating system, and does not need to be included in his
+distribution or available under the GPL.  If the package can also run
+on a Sinclair emulator, that&#x27;s no big deal - the point for GPL purposes
+is that the package is useful without any restricted third-party code.
+
+I&#x27;m not 100% on that, and it feels a bit like cheating, and I haven&#x27;t
+gone back to the exact wording of the Operating System exception clause
+in the GPL to check it, but it seems like a possibility.
+
+
+<span class="qt">&gt; The modifications to the ROM code itself (including any code added to </span>
+<span class="qt">&gt; allow extensions) can only really be either public domain (with </span>
+<span class="qt">&gt; Amstrad&#x27;s permission) or given to Amstrad as these are integral to the </span>
+<span class="qt">&gt; existing code. Any extensions to the ROM could be licenced any way you </span>
+<span class="qt">&gt; choose as far as I can see. They could even be proprietory closed-source. </span>
+<span class="qt">&gt; Things like disk interface ROMS have always done this.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+
+-- 
+Andrew McGuinness     Luton, UK        …@…
+
+
+
+
+</pre></div><div class="post" id="p126324"><div class="ph"><a class="d" href="#p126324">2002-01-03 11:40:43</a> <span>Philip Kendall</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>In article &lt;…@…&gt;,
+Andrew McGuinness  &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Andrew Owen &lt;…@…&gt; wrote in news:…@…:</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt;&gt;I&#x27;ve looked at the GNU GPL again and I&#x27;m afraid I was in the wrong.</span>
+<span class="qt">&gt;&gt;&gt;I&#x27;ll try and sort something out soon, but I think I&#x27;m probably going to</span>
+<span class="qt">&gt;&gt;&gt;assign my copyright in the ROM to Amstrad so it will all be covered by</span>
+<span class="qt">&gt;&gt;&gt;one licence. </span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;The problems are that the GPL requires that licensees allow the code,</span>
+<span class="qt">&gt;along with whatever other software is needed to make it work (except</span>
+<span class="qt">&gt;the operating system it will run on) to be freely distributed without</span>
+<span class="qt">&gt;restriction.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;The restriction that derived works of the Amstrad ROM can only be used</span>
+<span class="qt">&gt;for non-commercial purposes contradicts this.</span>
+
+Where did Amstrad make that statement?
+
+<span class="qt">&gt; If Andrew is the sole author (except for the Amstrad bits)</span>
+
+That&#x27;s the main problem here; whilst Andrew has written the majority of
+the new code, some bits have be obtained from other sources, so the
+permission of all the authors is needed before it can be distributed
+under any licence.
+
+<span class="qt">&gt;It might be possible to work it somehow using the &quot;operating system and</span>
+<span class="qt">&gt;components normally distributed with it&quot; exception.</span>
+
+I really don&#x27;t think you can use that exception when you are writing the
+operating system itself.
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p126325"><div class="ph"><a class="d" href="#p126325">2002-01-03 11:57:40</a> <span>Andrew McGuinness</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>Philip Kendall wrote:
+
+<span class="qt">&gt; In article &lt;…@…&gt;,</span>
+<span class="qt">&gt; Andrew McGuinness  &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;&gt;Andrew Owen &lt;…@…&gt; wrote in news:…@…:</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;&gt;I&#x27;ve looked at the GNU GPL again and I&#x27;m afraid I was in the wrong.</span>
+<span class="qt">&gt;&gt;&gt;&gt;I&#x27;ll try and sort something out soon, but I think I&#x27;m probably going to</span>
+<span class="qt">&gt;&gt;&gt;&gt;assign my copyright in the ROM to Amstrad so it will all be covered by</span>
+<span class="qt">&gt;&gt;&gt;&gt;one licence. </span>
+<span class="qt">&gt;&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;The problems are that the GPL requires that licensees allow the code,</span>
+<span class="qt">&gt;&gt;along with whatever other software is needed to make it work (except</span>
+<span class="qt">&gt;&gt;the operating system it will run on) to be freely distributed without</span>
+<span class="qt">&gt;&gt;restriction.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;The restriction that derived works of the Amstrad ROM can only be used</span>
+<span class="qt">&gt;&gt;for non-commercial purposes contradicts this.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Where did Amstrad make that statement?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+
+According to Andrew Owen&#x27;s original announcement:
+
+Sinclair Extended Basic version 0.58 - public beta release 1.0 - 01/01/2002
+---------------------------------------------------------------------------
+The ZX Spectrum ROM is copyright 1982 Amstrad plc, distributed and modified
+with its kind permission for non-profit use with ZX Spectrum emulators.
+
+
+
+<span class="qt">&gt;&gt;If Andrew is the sole author (except for the Amstrad bits)</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; That&#x27;s the main problem here; whilst Andrew has written the majority of</span>
+<span class="qt">&gt; the new code, some bits have be obtained from other sources, so the</span>
+<span class="qt">&gt; permission of all the authors is needed before it can be distributed</span>
+<span class="qt">&gt; under any licence.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;It might be possible to work it somehow using the &quot;operating system and</span>
+<span class="qt">&gt;&gt;components normally distributed with it&quot; exception.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I really don&#x27;t think you can use that exception when you are writing the</span>
+<span class="qt">&gt; operating system itself.</span>
+<span class="qt">&gt; </span>
+
+
+Well, I&#x27;m not sure.  Like I said, you would have to distribute it
+effectively as a patch to the original.
+
+
+<span class="qt">&gt; Phil</span>
+<span class="qt">&gt; </span>
+ 
+-- 
+
+Andrew McGuinness     Luton, UK        …@…
+
+
+
+
+</pre></div><div class="post" id="p126326"><div class="ph"><a class="d" href="#p126326">2002-01-03 12:11:30</a> <span>Philip Kendall</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>In article &lt;…@…&gt;,
+Andrew McGuinness  &lt;…@…&gt; wrote:
+<span class="qt">&gt;&gt;&gt;The restriction that derived works of the Amstrad ROM can only be used</span>
+<span class="qt">&gt;&gt;&gt;for non-commercial purposes contradicts this.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Where did Amstrad make that statement?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;According to Andrew Owen&#x27;s original announcement:</span>
+
+Last time I checked, Andrew was not Amstrad. Cliff Lawson&#x27;s statement on
+the subject (as linked from Q5 of the FAQ) says that noone may charge
+for the bits of the code which are copyright Amstrad, but makes no
+comment on other code.
+
+<span class="qt">&gt;&gt;&gt;It might be possible to work it somehow using the &quot;operating system and</span>
+<span class="qt">&gt;&gt;&gt;components normally distributed with it&quot; exception.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; I really don&#x27;t think you can use that exception when you are writing the</span>
+<span class="qt">&gt;&gt; operating system itself.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Well, I&#x27;m not sure.  Like I said, you would have to distribute it</span>
+<span class="qt">&gt;effectively as a patch to the original.</span>
+
+The FSF&#x27;s legal advice on this sort of trick is that, given that the
+only way the patch can be used is illegally, you would probably be
+breaking copyright law by distributing the patch.
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p126332"><div class="ph"><a class="d" href="#p126332">2002-01-03 13:19:04</a> <span>Form@C</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>…@… (Philip Kendall) wrote in
+news:a11hpi$h3o$…@…: 
+
+&lt;snip&gt;
+<span class="qt">&gt; The FSF&#x27;s legal advice on this sort of trick is that, given that the</span>
+<span class="qt">&gt; only way the patch can be used is illegally, you would probably be</span>
+<span class="qt">&gt; breaking copyright law by distributing the patch.</span>
+<span class="qt">&gt; </span>
+
+From Andrew&#x27;s follow-up:
+&quot;I have personally been given permission by Amstrad to modify the ROM for 
+non-profit purposes.&quot; 
+I assume that he has contacted Amstrad on this &amp; has recieved permission. 
+In this case, why can&#x27;t he release the mods *to the actual ROM* with the 
+rider that he has had to obtain permission from Amstrad and that further 
+modifications would also require this permission to be obtained?
+
+Perhaps the best approach is to produce an Amstrad-approved patch to the 
+ROM which allows it to be extended. Then any extension code can be 
+produced under any convenient licence!
+
+-- 
+Mick
+Olde Nascom Computers - <a href="http://www.mixtel.co.uk" rel="noreferrer">http://www.mixtel.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p126334"><div class="ph"><a class="d" href="#p126334">2002-01-03 14:09:28</a> <span>Philip Kendall</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>In article &lt;…@…&gt;,
+Form@C &lt;…@…&gt; wrote:
+<span class="qt">&gt;I assume that he has contacted Amstrad on this &amp; has recieved permission. </span>
+<span class="qt">&gt;In this case, why can&#x27;t he release the mods *to the actual ROM* with the </span>
+<span class="qt">&gt;rider that he has had to obtain permission from Amstrad and that further </span>
+<span class="qt">&gt;modifications would also require this permission to be obtained?</span>
+
+See Message-ID: &lt;a11fvr$g2t$…@…&gt;,
+specifically the bit about who wrote what.
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p126338"><div class="ph"><a class="d" href="#p126338">2002-01-03 15:17:19</a> <span>Russell Marks</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>Andrew Owen &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; in article o0mY7.23643$…@…, Russell Marks</span>
+<span class="qt">&gt; at …@… wrote on 1/1/02 5:05 PM:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; If this is what I think it is, i.e. essentially a hacked ROM,</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I resent your use of the phrase &#x27;hacked ROM&#x27;. This extension of BASIC comes</span>
+
+It wasn&#x27;t a value judgement. Please read the first three lines of my
+previous post.
+
+<span class="qt">&gt; &gt; your</span>
+<span class="qt">&gt; &gt; licence is insane. There&#x27;s absolutely no way the GPL is compatible</span>
+<span class="qt">&gt; &gt; with Amstrad&#x27;s `free for use with emulators, but still copyrighted&#x27;</span>
+<span class="qt">&gt; &gt; ROM permission.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; If you read the licence carefully you&#x27;ll see that only the new code is</span>
+<span class="qt">&gt; covered by the GPL. The original code is covered by Amstrad&#x27;s licence.</span>
+
+I don&#x27;t believe this combination is possible.
+
+<span class="qt">&gt; &gt; Besides which, unless I missed something, Amstrad</span>
+<span class="qt">&gt; &gt; never gave permission for the ROMs to be *modified*.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Originally they didn&#x27;t but subsequently they did, and further more, I have</span>
+
+Ok, I did get this one wrong, sorry.
+
+<span class="qt">&gt; &gt; IMHO, if you&#x27;re going to modify some old code without permission, you</span>
+<span class="qt">&gt; &gt; should at least make your changes public domain.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Ok, first I have permission, second, my changes are in the public domain</span>
+<span class="qt">&gt; since they are covered by the GPL.</span>
+
+&quot;Public domain&quot; has a specific legal meaning, that you explicitly
+forego your copyright. The GPL is *based* on copyright.
+
+(The colloquial meaning of &quot;public domain&quot; just has a vague
+`accessible by the general public&#x27; meaning which is really not the
+same thing at all.)
+
+<span class="qt">&gt; The non-profit restriction applies only to the Amstrad code. It&#x27;s their code</span>
+<span class="qt">&gt; and they are entitled to put whatever restrictions on it they wish. There is</span>
+<span class="qt">&gt; no such restriction on the new code.</span>
+
+But the new code doesn&#x27;t work without the old code, presumably.
+
+<span class="qt">&gt; &gt; But even if it magically is GPL somehow, where&#x27;s the source? You have</span>
+<span class="qt">&gt; &gt; to be able to provide the source to all of it, not just your bit,</span>
+<span class="qt">&gt; &gt; since all parts of the ROM are `linked&#x27;. Though I notice that you</span>
+<span class="qt">&gt; &gt; didn&#x27;t include any source *at all* in your post on ABCS.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; This is a public beta. That means it isn&#x27;t finished. When it is finished the</span>
+<span class="qt">&gt; source will of course be made available. Geoff Wearmouth and others have</span>
+
+The GPL makes no provision for sourceless betas.
+
+(I realise you&#x27;ve since posted `source&#x27;, though it looks more like a
+disassembly to me. I&#x27;m not sure this really counts as &quot;the preferred
+form of the work for making modifications to it.&quot;)
+
+-Rus.
+
+
+
+</pre></div><div class="post" id="p126339"><div class="ph"><a class="d" href="#p126339">2002-01-03 15:20:05</a> <span>Russell Marks</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>Russell Marks &lt;…@…&gt; writes:
+
+[a delayed response due to reading/posting news once a day]
+
+Looking at the rest of the thread written since I drafted this post
+yesterday, it all seems a bit redundant now. Sorry about that.
+
+-Rus.
+
+
+
+</pre></div><div class="post" id="p126343"><div class="ph"><a class="d" href="#p126343">2002-01-03 16:42:39</a> <span>Andrew Owen</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>in article EC_Y7.33428$…@…, Russell Marks
+at …@… wrote on 3/1/02 3:17 PM:
+ 
+<span class="qt">&gt;&gt; The non-profit restriction applies only to the Amstrad code. It&#x27;s their code</span>
+<span class="qt">&gt;&gt; and they are entitled to put whatever restrictions on it they wish. There is</span>
+<span class="qt">&gt;&gt; no such restriction on the new code.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; But the new code doesn&#x27;t work without the old code, presumably.</span>
+
+Actually, it does. Quite a bit of the new code replaces the old code
+entirely, and as such, could be used without the ROM in someone else&#x27;s
+machine code program.
+
+<span class="qt">&gt; The GPL makes no provision for sourceless betas.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; (I realise you&#x27;ve since posted `source&#x27;, though it looks more like a</span>
+<span class="qt">&gt; disassembly to me. I&#x27;m not sure this really counts as &quot;the preferred</span>
+<span class="qt">&gt; form of the work for making modifications to it.&quot;)</span>
+
+It is the source. It&#x27;s what I work from. I assemble it by hand. If you get a
+copy of Geoff Wearmouth&#x27;s excellent Spectrum ROM Assembly, and apply the
+changes listed in my source, you&#x27;ll be able to assemble the new ROM using
+TASM. Actually, that&#x27;s not a bad idea. I think I&#x27;ll work on producing a
+compilable source which can legally be distributed. That gets around some of
+the other legal problems. The only downside is, it will need converting for
+other cross compilers. In fact, as long as I don&#x27;t include any of Geoff&#x27;s
+comments, I could reasonably claim copyright of the source document, and use
+that to ensure that people don&#x27;t go off making improvements without telling
+me about them, which is my main concern in all this. I&#x27;ll get back to you
+once I&#x27;ve had a go at getting it to compile.
+
+-Andrew
+
+
+
+
+</pre></div><div class="post" id="p126352"><div class="ph"><a class="d" href="#p126352">2002-01-03 17:18:15</a> <span>Darren Salt</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>I demand that Andrew Owen may or may not have written...
+
+<span class="qt">&gt; Come on, we&#x27;re all friends here. I will be continuing development and</span>
+<span class="qt">&gt; releasing a legal version when I find a suitable way of doing it. [...]</span>
+
+There&#x27;s a very simple way: release a 16K XOR mask which, when applied to the
+standard ROM image, produces your modified ROM image.
+
+-- 
+<span class="qt">| Darren Salt  anti-UCE  | d youmustbejoking,demon,co,uk | nr. Ashington,</span>
+<span class="qt">| Spec+3, Risc PC, A3010 | s zap,tartarus,org            | Northumberland</span>
+<span class="qt">| BBC M128, Linux PC     | @ retrospec,co,uk             | Toon Army</span>
+<span class="qt">|   Retrocomputing: a PC card in a Risc PC</span>
+
+&quot;You mean you can&#x27;t take less; it&#x27;s very easy to take more than nothing.&quot;
+
+
+
+</pre></div><div class="post" id="p126355"><div class="ph"><a class="d" href="#p126355">2002-01-03 17:32:16</a> <span>…@…</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>Form@C &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; Andrew Owen &lt;…@…&gt; wrote in news:…@…:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; I&#x27;ve looked at the GNU GPL again and I&#x27;m afraid I was in the wrong.</span>
+<span class="qt">&gt;&gt; I&#x27;ll try and sort something out soon, but I think I&#x27;m probably going to</span>
+<span class="qt">&gt;&gt; assign my copyright in the ROM to Amstrad so it will all be covered by</span>
+<span class="qt">&gt;&gt; one licence. </span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Perhaps GNU was the wrong approach, but I can&#x27;t see where the problems lie </span>
+<span class="qt">&gt; providing that you have the necessary permission from Amstrad to modify </span>
+<span class="qt">&gt; their ROM for non-profit purposes. It should be possible to solve this.</span>
+
+Perhaps you could take bits of the GPL that&#x27;re relevant to you and other
+bits from the BSD license that&#x27;re relevant to you... It won&#x27;t be GPL, but it
+will be &quot;free&quot;. The full BSD license is incompatible because it allows use
+of the code by anyone for anything with no restrictions... Including using
+your code in commercial apps with only an &quot;Andrew Owen did this bit&quot;
+acknoledgment.
+
+-- 
+<span class="qt">|                          |What to do if you find yourself stuck in a crack|</span>
+<span class="qt">|  …@…    |in the ground beneath a giant boulder, which you|</span>
+<span class="qt">|                          |can&#x27;t move, with no hope of rescue.             |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|Consider how lucky you are that life has been   |</span>
+<span class="qt">|           in             |good to you so far...                           |</span>
+<span class="qt">|    Computer Science      |   -The BOOK, Hitch-hiker&#x27;s guide to the galaxy.|</span>
+
+
+
+</pre></div><div class="post" id="p126391"><div class="ph"><a class="d" href="#p126391">2002-01-03 22:50:41</a> <span>Andrew Owen</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>in article …@…, Darren Salt at
+…@… wrote on 3/1/02 5:18 PM:
+
+<span class="qt">&gt; I demand that Andrew Owen may or may not have written...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Come on, we&#x27;re all friends here. I will be continuing development and</span>
+<span class="qt">&gt;&gt; releasing a legal version when I find a suitable way of doing it. [...]</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; There&#x27;s a very simple way: release a 16K XOR mask which, when applied to the</span>
+<span class="qt">&gt; standard ROM image, produces your modified ROM image.</span>
+
+Yeah, but that&#x27;s probably more of a hassle for people than parsing a source
+file with TASM. I can probably do a CAZ version for Amiga users and a ZASM
+version for Mac users.
+
+-Andrew
+
+
+
+
+</pre></div><div class="post" id="p126403"><div class="ph"><a class="d" href="#p126403">2002-01-04 01:02:29</a> <span>Andrew Owen</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>Following all the legal wranglings I have an announcement to make: There
+will be no more binaries of Sinclair Extended Basic. To avoid any legal
+issues the next release will be a source only distribution which you will
+have to compile yourself. Since I&#x27;m working on a Mac, this will be in the
+form of a source file for Gï¿½nter Woijk&#x27;s ZASM (score one for Mac users).
+However, it will compile under TASM for the PC or UNIX with only a few
+changes (you have to add some compiler instructions and change a few &#x27;DEFM&#x27;s
+to &#x27;DEFB&#x27;s). As yet I cannot get it to compile under CAZ, but I am using a
+Macintosh based beta port of the Amiga code so it may compile on the Amiga
+without problems. If you are using another machine, you&#x27;ll have to find a
+different Z80 cross assembler and make any necessary changes yourself. If
+you can&#x27;t find one, the easiest solution may be to use a CP/M based
+assembler with a suitable emulator.
+
+-Andrew  
+
+
+
+
+</pre></div><div class="post" id="p126423"><div class="ph"><a class="d" href="#p126423">2002-01-04 12:26:05</a> <span>Form@C</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>…@… (Philip Kendall) wrote in
+news:a11omo$mfe$…@…: 
+
+<span class="qt">&gt; In article &lt;…@…&gt;,</span>
+<span class="qt">&gt; Form@C &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;I assume that he has contacted Amstrad on this &amp; has recieved</span>
+<span class="qt">&gt;&gt;permission. In this case, why can&#x27;t he release the mods *to the actual</span>
+<span class="qt">&gt;&gt;ROM* with the rider that he has had to obtain permission from Amstrad</span>
+<span class="qt">&gt;&gt;and that further modifications would also require this permission to be</span>
+<span class="qt">&gt;&gt;obtained? </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; See Message-ID: &lt;a11fvr$g2t$…@…&gt;,</span>
+<span class="qt">&gt; specifically the bit about who wrote what.</span>
+<span class="qt">&gt; </span>
+
+Amstrad&#x27;s view
+ This is a ling to the original posting from Amstrad on this group:
+
+<a href="http://www.worldofspectrum.org/permits/amstrad-roms.txt" rel="noreferrer">http://www.worldofspectrum.org/permits/amstrad-roms.txt</a>
+
+From this it looks ok to distribute modified ROMs (paras 1&amp;3), but not 
+under the GPL as this isn&#x27;t really consistant with leaving Amstrad&#x27;s (c) 
+messages intact as requested. They could be distributed free without any 
+problem providing that Amstrad are credited as necessary (paras 2&amp;4).
+
+Basically it looks like it is ok to mod and distribute the ROM but not to 
+make any money out of it. Seems fair enough.
+
+-- 
+Mick
+Olde Nascom Computers - <a href="http://www.mixtel.co.uk" rel="noreferrer">http://www.mixtel.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p126425"><div class="ph"><a class="d" href="#p126425">2002-01-04 12:53:27</a> <span>Form@C</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>&quot;Form@C&quot; &lt;…@…&gt; wrote in
+news:…@…: 
+
+I know I shouldn&#x27;t follow-up to my own post but....
+
+The post from Amstrad specifically states that an author is allowed to 
+make his modifications shareware &amp; make money from them providing that he 
+makes it clear that he is not charging for the parts of the code which are 
+(c)Amstrad or (c)Sinclair. How about a &quot;postcardware&quot; release if you arn&#x27;t 
+bothered about the cash, Andrew? You can even keep the (c) on it - there 
+doesn&#x27;t appear to be a problem.
+
+As Andrew pointed out originally, the post from Amstrad was actually a 
+reply to him, personally. I can&#x27;t see anything wrong with his original 
+release of the code apart from using the GPL inappropriately.
+
+-- 
+Mick
+Olde Nascom Computers - <a href="http://www.mixtel.co.uk" rel="noreferrer">http://www.mixtel.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p126499"><div class="ph"><a class="d" href="#p126499">2002-01-04 23:19:25</a> <span>Darren Salt</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>I demand that Andrew Owen may or may not have written...
+
+<span class="qt">&gt; in article …@…, Darren Salt at</span>
+<span class="qt">&gt; …@… wrote on 3/1/02 5:18 PM:</span>
+<span class="qt">&gt;&gt; I demand that Andrew Owen may or may not have written...</span>
+<span class="qt">&gt;&gt;&gt; Come on, we&#x27;re all friends here. I will be continuing development and</span>
+<span class="qt">&gt;&gt;&gt; releasing a legal version when I find a suitable way of doing it. [...]</span>
+<span class="qt">&gt;&gt; There&#x27;s a very simple way: release a 16K XOR mask which, when applied to</span>
+<span class="qt">&gt;&gt; the standard ROM image, produces your modified ROM image.</span>
+
+<span class="qt">&gt; Yeah, but that&#x27;s probably more of a hassle for people than parsing a source</span>
+<span class="qt">&gt; file with TASM.</span>
+
+I&#x27;m not so sure... Z80Em already supports this for two other ROM images, and
+it wouldn&#x27;t be difficult to add this one. And it would be fairly easy, I
+think, to add support for these to Fuse.
+
+<span class="qt">&gt; I can probably do a CAZ version for Amiga users and a ZASM version for Mac</span>
+<span class="qt">&gt; users.</span>
+
+Probably...
+
+-- 
+<span class="qt">| Darren Salt  anti-UCE  | nr. Ashington, | d youmustbejoking,demon,co,uk</span>
+<span class="qt">| Spec+3, Risc PC, A3010 | Northumberland | s zap,tartarus,org</span>
+<span class="qt">| BBC M128, Linux PC     | Toon Army      | @ retrospec,co,uk</span>
+<span class="qt">|   &lt;URL:<a href="http://www.youmustbejoking.demon.co.uk/&gt;" rel="noreferrer">http://www.youmustbejoking.demon.co.uk/&gt;</a> (PGP 2.6, GPG keys)</span>
+
+Any man who hates dogs and babies can&#x27;t be all bad.
+
+
+
+</pre></div><div class="post" id="p126514"><div class="ph"><a class="d" href="#p126514">2002-01-05 01:50:19</a> <span>Andrew Owen</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>in article …@…, Darren Salt at
+…@… wrote on 4/1/02 11:19 PM:
+
+<span class="qt">&gt;&gt;&gt; There&#x27;s a very simple way: release a 16K XOR mask which, when applied to</span>
+<span class="qt">&gt;&gt;&gt; the standard ROM image, produces your modified ROM image.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Yeah, but that&#x27;s probably more of a hassle for people than parsing a source</span>
+<span class="qt">&gt;&gt; file with TASM.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;m not so sure... Z80Em already supports this for two other ROM images, and</span>
+<span class="qt">&gt; it wouldn&#x27;t be difficult to add this one. And it would be fairly easy, I</span>
+<span class="qt">&gt; think, to add support for these to Fuse.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; I can probably do a CAZ version for Amiga users and a ZASM version for Mac</span>
+<span class="qt">&gt;&gt; users.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Probably...</span>
+
+Ok, I&#x27;ve managed to make a version that will compile under TASM on PC or
+Unix and ZASM on Macintosh (you just have to add four comment markers at the
+start of the file). I&#x27;m sure a CAZ version can be done, and I&#x27;ve got my
+trusty test department working on it as we speak. Legally speaking, I think
+XOR mask has possiblities, so if you can tell me how to create one
+automatically, I&#x27;ll think about also releasing the ROM in that format.
+
+-Andrew
+
+
+
+
+</pre></div><div class="post" id="p126543"><div class="ph"><a class="d" href="#p126543">2002-01-05 11:36:55</a> <span>Andrew Owen</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>in article a16ku0$okike$…@…, Dunny at
+…@… wrote on 3/1/02 8:47 AM:
+
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Andrew Owen &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt;&gt; Following all the legal wranglings I have an announcement to make: There</span>
+<span class="qt">&gt;&gt; will be no more binaries of Sinclair Extended Basic.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Well, thank the stars you&#x27;ve got enough sense to keep on with something</span>
+<span class="qt">&gt; that&#x27;s worthwhile. Well done, by the way, you&#x27;ve built  real gem here.</span>
+
+Thanks.
+
+<span class="qt">&gt; Oh, and what license is the +3E ROM distributed under?</span>
+
+Not sure, Garry Lancaster got permission direct from Amstrad for that
+project.
+
+-Andrew
+
+
+
+
+</pre></div><div class="post" id="p126550"><div class="ph"><a class="d" href="#p126550">2002-01-05 11:53:16</a> <span>Geoff Wearmouth</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>In article &lt;…@…&gt;, Andrew Owen &lt;…@…&gt;
+writes
+<span class="qt">&gt;Ok, I&#x27;ve managed to make a version that will compile under TASM on PC or</span>
+<span class="qt">&gt;Unix and ZASM on Macintosh (you just have to add four comment markers at the</span>
+<span class="qt">&gt;start of the file).</span>
+
+Andrew&#x27;s generic version of the STANDARD Spectrum  ROM assembly file has
+been uploaded to the usual &quot;Incomplete Spectrum ROM Assembly&quot; site and
+is available for download for cross-assembling under DOS, UNIX and
+MacOs. (see my sig.)
+
+&quot;Incomplete&quot; for three reasons -
+
+1) A play on the title of the more famous and more thorough work of the
+1980s.
+
+2) Something John Grant said in a 1985 interview reproduced on Planet
+Sinclair.
+        
+3) The file will never be considered complete as improvements and new
+insights such as Andrew&#x27;s will always be welcome. 
+
+The same philosophy applies also to the files for the ZX80 and ZX81
+ROMS.
+
+-- 
+Geoff Wearmouth
+The Incomplete Spectrum ROM Assembly <a href="http://www.wearmouth.demon.co.uk" rel="noreferrer">http://www.wearmouth.demon.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p126561"><div class="ph"><a class="d" href="#p126561">2002-01-05 15:10:13</a> <span>Andrew Owen</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>in article …@…, Geoff Wearmouth at
+…@… wrote on 5/1/02 11:53 AM:
+
+<span class="qt">&gt; In article &lt;…@…&gt;, Andrew Owen &lt;…@…&gt;</span>
+<span class="qt">&gt; writes</span>
+<span class="qt">&gt;&gt; Ok, I&#x27;ve managed to make a version that will compile under TASM on PC or</span>
+<span class="qt">&gt;&gt; Unix and ZASM on Macintosh (you just have to add four comment markers at the</span>
+<span class="qt">&gt;&gt; start of the file).</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Andrew&#x27;s generic version of the STANDARD Spectrum  ROM assembly file has</span>
+<span class="qt">&gt; been uploaded to the usual &quot;Incomplete Spectrum ROM Assembly&quot; site and</span>
+<span class="qt">&gt; is available for download for cross-assembling under DOS, UNIX and</span>
+<span class="qt">&gt; MacOs. (see my sig.)</span>
+
+Um, I&#x27;ve just noticed the &quot;Also see note at L1CA5&quot; comment. There&#x27;s one
+other location in the ROM where I had to change the new code back to the
+original ROM code to get it to compile under ZASM, somewhere around the
+L1AEx area I think. I am now working with Chris Young on getting the generic
+file to compile under CAZ on the Amiga. To this end, Chris has modified CAZ
+to use the same format for hex as the assembly, but a few more changes will
+be necessary before it will work.
+
+-Andrew
+
+
+
+
+</pre></div><div class="post" id="p126585"><div class="ph"><a class="d" href="#p126585">2002-01-05 20:29:36</a> <span>Halo-</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>On Fri, 4 Jan 2002 01:02:29 +0000 (UTC), Andrew Owen &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Following all the legal wranglings I have an announcement to make: There</span>
+<span class="qt">&gt;will be no more binaries of Sinclair Extended Basic. To avoid any legal</span>
+<span class="qt">&gt;issues the next release will be a source only distribution which you will</span>
+<span class="qt">&gt;have to compile yourself. Since I&#x27;m working on a Mac, this will be in the</span>
+<span class="qt">&gt;form of a source file for Gï¿½nter Woijk&#x27;s ZASM (score one for Mac users).</span>
+<span class="qt">&gt;However, it will compile under TASM for the PC or UNIX with only a few</span>
+<span class="qt">&gt;changes (you have to add some compiler instructions and change a few &#x27;DEFM&#x27;s</span>
+<span class="qt">&gt;to &#x27;DEFB&#x27;s). As yet I cannot get it to compile under CAZ, but I am using a</span>
+<span class="qt">&gt;Macintosh based beta port of the Amiga code so it may compile on the Amiga</span>
+<span class="qt">&gt;without problems. If you are using another machine, you&#x27;ll have to find a</span>
+<span class="qt">&gt;different Z80 cross assembler and make any necessary changes yourself. If</span>
+<span class="qt">&gt;you can&#x27;t find one, the easiest solution may be to use a CP/M based</span>
+<span class="qt">&gt;assembler with a suitable emulator.</span>
+
+Could you release a IPS file? These are avaliable on every platform and its a
+lot easier then having to compile.  <a href="http://www.dextrose.com/dx_section_b6t.htm" rel="noreferrer">http://www.dextrose.com/dx_section_b6t.htm</a>
+has dozens of IPS tools for Unix, Windows, Amiga and DOS and I&#x27;m for one would
+prefer it :/
+
+
+
+</pre></div><div class="post" id="p126590"><div class="ph"><a class="d" href="#p126590">2002-01-05 21:26:27</a> <span>Geoff Wearmouth</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>In article &lt;…@…&gt;, Simon Thornton
+&lt;…@…&gt; writes
+<span class="qt">&gt;Andrew Owen &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Um, I&#x27;ve just noticed the &quot;Also see note at L1CA5&quot; comment. There&#x27;s one</span>
+<span class="qt">&gt;&gt; other location in the ROM where I had to change the new code back to the</span>
+<span class="qt">&gt;&gt; original ROM code to get it to compile under ZASM, somewhere around the</span>
+<span class="qt">&gt;&gt; L1AEx area I think.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;L0609 actually. Bizarre, cos I was playing with this only 30 mins</span>
+ago...
+<span class="qt">&gt;Also, it should perhaps be mentioned somewhere near the top that the</span>
+ORG
+<span class="qt">&gt;should be commented out too?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Simon.</span>
+
+Thanks Simon,
+
+I have made the alterations and commented out the ORGs which aren&#x27;t
+strictly necessary.
+
+-- 
+Geoff Wearmouth
+The Incomplete Spectrum ROM Assembly <a href="http://www.wearmouth.demon.co.uk" rel="noreferrer">http://www.wearmouth.demon.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p126618"><div class="ph"><a class="d" href="#p126618">2002-01-06 08:50:34</a> <span>Jeff Braine</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>
+On Sat, 5 Jan 2002, Simon Thornton wrote:
+
+<span class="qt">&gt; L0609 actually. Bizarre, cos I was playing with this only 30 mins ago...</span>
+<span class="qt">&gt; Also, it should perhaps be mentioned somewhere near the top that the ORG</span>
+<span class="qt">&gt; should be commented out to?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Simon.</span>
+
+It&#x27;s that Simon bloke again! 
+
+Mmmm, Philippa Forrester :)
+
+-- 
+Jeff Braine
+Coincidentaly currently bopping to Fat Boy Slim vs Steppenwolf - Magic
+Carpet Ride....
+
+
+
+</pre></div><div class="post" id="p126631"><div class="ph"><a class="d" href="#p126631">2002-01-06 14:54:13</a> <span>Darren Salt</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>I demand that Andrew Owen may or may not have written...
+
+[snip]
+<span class="qt">&gt; Legally speaking, I think XOR mask has possiblities, so if you can tell me</span>
+<span class="qt">&gt; how to create one automatically, I&#x27;ll think about also releasing the ROM in</span>
+<span class="qt">&gt; that format.</span>
+
+The following will do the job in either direction:
+
+#! /usr/bin/perl -w
+
+die &quot;$0: usage: $0 &lt;ROM image&gt; &lt;ROM/EOR image&gt; &lt;output EOR/ROM image&gt;\n&quot;
+  if $#ARGV != 2;
+
+undef $/;
+
+sub readrom ($)
+{
+  my $file = shift;
+  open ROM, &#x27;&lt;&#x27;.$file or die &quot;$0: can&#x27;t read $file: $!\n&quot;;
+  my $rom;
+  defined ($rom = &lt;ROM&gt;) or die &quot;$0: can&#x27;t read $file: $!\n&quot;;
+  close ROM;
+  return $rom;
+}
+
+my $rom1 = readrom ($ARGV[0]);
+my $rom2 = readrom ($ARGV[1]);
+
+die &quot;$0: ROM images&#x27; sizes don&#x27;t match\n&quot;
+  if length ($rom1) !=  length ($rom2);
+
+$rom1 ^= $rom2;
+
+open ROM, &#x27;&gt;&#x27;.$ARGV[2] or die &quot;$0: can&#x27;t write $ARGV[2]: $!\n&quot;;
+print ROM $rom1 or die &quot;$0: can&#x27;t write $ARGV[2]: $!\n&quot;;
+close ROM or die &quot;$0: can&#x27;t write $ARGV[2]: $!\n&quot;;
+
+exit 0;
+
+-- 
+<span class="qt">| Darren Salt  anti-UCE  | nr. Ashington, | d youmustbejoking,demon,co,uk</span>
+<span class="qt">| Spec+3, Risc PC, A3010 | Northumberland | s zap,tartarus,org</span>
+<span class="qt">| BBC M128, Linux PC     | Toon Army      | @ retrospec,co,uk</span>
+<span class="qt">|   CSS FAQ: &lt;URL:<a href="http://www.srcf.ucam.org/~pak21/cssfaq/&gt;" rel="noreferrer">http://www.srcf.ucam.org/~pak21/cssfaq/&gt;</a></span>
+
+consciousness: n. Annoying time between naps.
+
+
+
+</pre></div><div class="post" id="p126676"><div class="ph"><a class="d" href="#p126676">2002-01-06 23:04:43</a> <span>Jeff Braine</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>
+On Sun, 6 Jan 2002, Simon Thornton wrote:
+
+<span class="qt">&gt; Jeff Braine &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; Coincidentaly currently bopping to Fat Boy Slim vs Steppenwolf - Magic</span>
+<span class="qt">&gt; &gt; Carpet Ride....</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; as you&#x27;ve mentioned it....that mix is nothing to do with us. one of the</span>
+<span class="qt">&gt; many mis-attributed mixes out there...</span>
+
+Crikey! Well at least I know now... It&#x27;s a good one anyway...
+
+<span class="qt">&gt; to drag this on topic again...it&#x27;s very cool that it&#x27;s now so easy to</span>
+<span class="qt">&gt; compile your own spectrum rom. all those things i always wanted to</span>
+<span class="qt">&gt; change in it but it always seemed like too much effort...now it&#x27;s just</span>
+<span class="qt">&gt; mouse clicks away...ahhh progress :-)</span>
+
+Yup! As of about October I&#x27;ve had a &quot;silly.rom&quot; 48K replacement which 
+basically was just me seeing what I could do - all the error messages
+have been re-worded (including R - Chunty Disrupted), white on black 
+startup screen, my own copyright message (don&#x27;t worry chaps I&#x27;m not
+ever going to distribute it, and I replaced it with &quot;Loki: 48k BASIC&quot; or
+something anyway). Custom loading border colours... That sorta thing.
+
+I was planning on being a bit trickier and replacing the load routine
+entirely so that it used a disk drive, but I didn&#x27;t get round to it.
+
+-- 
+Jeff Braine
+Senior Unix System Engineer
+Griffith University, Nathan Campus
+
+
+
+
+</pre></div><div class="post" id="p126744"><div class="ph"><a class="d" href="#p126744">2002-01-07 18:52:58</a> <span>Andrew Owen</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>in article …@…, Simon Thornton at
+…@… wrote on 5/1/02 7:44 PM:
+
+<span class="qt">&gt; Andrew Owen &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Um, I&#x27;ve just noticed the &quot;Also see note at L1CA5&quot; comment. There&#x27;s one</span>
+<span class="qt">&gt;&gt; other location in the ROM where I had to change the new code back to the</span>
+<span class="qt">&gt;&gt; original ROM code to get it to compile under ZASM, somewhere around the</span>
+<span class="qt">&gt;&gt; L1AEx area I think.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; L0609 actually. Bizarre, cos I was playing with this only 30 mins ago...</span>
+<span class="qt">&gt; Also, it should perhaps be mentioned somewhere near the top that the ORG</span>
+<span class="qt">&gt; should be commented out to?</span>
+
+I don&#x27;t remember an ORG. I know I had to put a #define ORG .ORG for TASM to
+use an ORG command I put in there for CAZ but I took it out again because
+the file would need massive changes to compile under CAZ so Chris Young is
+modifying CAZ instead.
+
+-Andrew
+
+
+
+
+</pre></div><div class="post" id="p126745"><div class="ph"><a class="d" href="#p126745">2002-01-07 18:54:07</a> <span>Andrew Owen</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>in article …@…, Halo- at
+…@… wrote on 5/1/02 8:29 PM:
+
+<span class="qt">&gt; Could you release a IPS file? These are avaliable on every platform and its a</span>
+<span class="qt">&gt; lot easier then having to compile.  <a href="http://www.dextrose.com/dx_section_b6t.htm" rel="noreferrer">http://www.dextrose.com/dx_section_b6t.htm</a></span>
+<span class="qt">&gt; has dozens of IPS tools for Unix, Windows, Amiga and DOS and I&#x27;m for one would</span>
+<span class="qt">&gt; prefer it :/</span>
+
+What&#x27;s an IPS file? You didn&#x27;t mention Macintosh and if it doesn&#x27;t support
+Macintosh I can&#x27;t do it because that&#x27;s what I&#x27;ve got.
+
+-Andrew
+
+
+
+
+</pre></div><div class="post" id="p126746"><div class="ph"><a class="d" href="#p126746">2002-01-07 18:55:47</a> <span>Andrew Owen</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>in article …@…, Darren Salt at
+…@… wrote on 6/1/02 2:54 PM:
+
+<span class="qt">&gt; The following will do the job in either direction:</span>
+
+I presume that was a perl script. I&#x27;ll have to see if I can get it to work
+with MacPerl, since I&#x27;m not using MacOS X.
+
+-Andrew
+
+
+
+
+</pre></div><div class="post" id="p126775"><div class="ph"><a class="d" href="#p126775">2002-01-07 19:55:52</a> <span>Suzanne Archibald</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>Andrew Owen wrote:
+
+<span class="qt">&gt; in article …@…, Halo- at</span>
+<span class="qt">&gt; …@… wrote on 5/1/02 8:29 PM:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Could you release a IPS file? These are avaliable on every platform and</span>
+<span class="qt">&gt;&gt; its a</span>
+<span class="qt">&gt;&gt; lot easier then having to compile. </span>
+<span class="qt">&gt;&gt; <a href="http://www.dextrose.com/dx_section_b6t.htm" rel="noreferrer">http://www.dextrose.com/dx_section_b6t.htm</a> has dozens of IPS tools for</span>
+<span class="qt">&gt;&gt; Unix, Windows, Amiga and DOS and I&#x27;m for one would prefer it :/</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; What&#x27;s an IPS file? You didn&#x27;t mention Macintosh and if it doesn&#x27;t support</span>
+<span class="qt">&gt; Macintosh I can&#x27;t do it because that&#x27;s what I&#x27;ve got.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; -Andrew</span>
+
+Fairly sure there are IPS tools for macs, IPS is used a lot for emulation 
+rom translations, so check on www.emulation.net.
+
+(I&#x27;m fairly sure one of my SNES/Genesis rom tools I use has an IPS option)
+-- 
+Listen to my music at :
+<a href="http://www.MP3.com/Suzanne_Archibald" rel="noreferrer">http://www.MP3.com/Suzanne_Archibald</a>
+
+
+
+</pre></div><div class="post" id="p126777"><div class="ph"><a class="d" href="#p126777">2002-01-07 20:04:42</a> <span>Chris Young</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>On Mon, 7 Jan 2002 18:54:07 +0000 (UTC), Andrew Owen (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; &gt; Could you release a IPS file? These are avaliable on every platform and its a</span>
+<span class="qt">&gt; &gt; lot easier then having to compile.  <a href="http://www.dextrose.com/dx_section_b6t.htm" rel="noreferrer">http://www.dextrose.com/dx_section_b6t.htm</a></span>
+<span class="qt">&gt; &gt; has dozens of IPS tools for Unix, Windows, Amiga and DOS and I&#x27;m for one would</span>
+<span class="qt">&gt; &gt; prefer it :/</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; What&#x27;s an IPS file? You didn&#x27;t mention Macintosh and if it doesn&#x27;t support</span>
+<span class="qt">&gt; Macintosh I can&#x27;t do it because that&#x27;s what I&#x27;ve got.</span>
+
+I don&#x27;t actually know what an IPS file is (I&#x27;m not responding to that
+bit anyway), but you could release a patch file for the original ROM
+which brings it up to your version (you can also get it to patch
+previous versions of your ROM).  There&#x27;s a program on Aminet called
+gpatch that does this, and it has been ported to UNIX and Dos IIRC. 
+Not sure about Mac though.  This way you release a file which explains
+how to modify the original ROM, but doesn&#x27;t actually contain any code
+(per se).  I would imagine an IPS file is the same sort of thing, but
+this is a guess.
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p126789"><div class="ph"><a class="d" href="#p126789">2002-01-07 20:31:16</a> <span>Suzanne Archibald</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>Chris Young wrote:
+
+<span class="qt">&gt; On Mon, 7 Jan 2002 18:54:07 +0000 (UTC), Andrew Owen (of comp.sys.sinclair</span>
+<span class="qt">&gt; &quot;fame&quot;) wibbled on for an age:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; &gt; Could you release a IPS file? These are avaliable on every platform and</span>
+<span class="qt">&gt;&gt; &gt; its a</span>
+<span class="qt">&gt;&gt; &gt; lot easier then having to compile. </span>
+<span class="qt">&gt;&gt; &gt; <a href="http://www.dextrose.com/dx_section_b6t.htm" rel="noreferrer">http://www.dextrose.com/dx_section_b6t.htm</a> has dozens of IPS tools for</span>
+<span class="qt">&gt;&gt; &gt; Unix, Windows, Amiga and DOS and I&#x27;m for one would prefer it :/</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; What&#x27;s an IPS file? You didn&#x27;t mention Macintosh and if it doesn&#x27;t</span>
+<span class="qt">&gt;&gt; support Macintosh I can&#x27;t do it because that&#x27;s what I&#x27;ve got.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I don&#x27;t actually know what an IPS file is (I&#x27;m not responding to that</span>
+<span class="qt">&gt; bit anyway), but you could release a patch file for the original ROM</span>
+<span class="qt">&gt; which brings it up to your version (you can also get it to patch</span>
+<span class="qt">&gt; previous versions of your ROM).</span>
+
+Thats exactly what an IPS is :)
+
+its designed as a generic patching system, thats gotten used mostly for 
+emulation ROMs, where people want to do translations, its basically just a 
+difference of the ROM and the new ROM.
+
+There are IPS patchers for just about every system where emulation is used, 
+so it makes for a fairly generic patch system.
+
+-- 
+Listen to my music at :
+<a href="http://www.MP3.com/Suzanne_Archibald" rel="noreferrer">http://www.MP3.com/Suzanne_Archibald</a>
+
+
+
+</pre></div><div class="post" id="p126794"><div class="ph"><a class="d" href="#p126794">2002-01-07 20:57:21</a> <span>Andrew Owen</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>in article nguc1a.t3v.ln@g3serv, Suzanne Archibald at …@…
+wrote on 7/1/02 7:55 PM:
+
+<span class="qt">&gt; Fairly sure there are IPS tools for macs, IPS is used a lot for emulation</span>
+<span class="qt">&gt; rom translations, so check on www.emulation.net.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; (I&#x27;m fairly sure one of my SNES/Genesis rom tools I use has an IPS option)</span>
+
+I found two tools for applying patches. None for creating them, and no IPS
+files so I can try and figure out the format.
+
+-Andrew
+
+
+
+
+</pre></div><div class="post" id="p126796"><div class="ph"><a class="d" href="#p126796">2002-01-07 20:59:29</a> <span>Andrew Owen</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>in article 2j0d1a.o5v.ln@g3serv, Suzanne Archibald at …@…
+wrote on 7/1/02 8:31 PM:
+
+<span class="qt">&gt; Chris Young wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; On Mon, 7 Jan 2002 18:54:07 +0000 (UTC), Andrew Owen (of comp.sys.sinclair</span>
+<span class="qt">&gt;&gt; &quot;fame&quot;) wibbled on for an age:</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt;&gt;&gt; Could you release a IPS file? These are avaliable on every platform and</span>
+<span class="qt">&gt;&gt;&gt;&gt; its a</span>
+<span class="qt">&gt;&gt;&gt;&gt; lot easier then having to compile.</span>
+<span class="qt">&gt;&gt;&gt;&gt; <a href="http://www.dextrose.com/dx_section_b6t.htm" rel="noreferrer">http://www.dextrose.com/dx_section_b6t.htm</a> has dozens of IPS tools for</span>
+<span class="qt">&gt;&gt;&gt;&gt; Unix, Windows, Amiga and DOS and I&#x27;m for one would prefer it :/</span>
+<span class="qt">&gt;&gt;&gt; </span>
+<span class="qt">&gt;&gt;&gt; What&#x27;s an IPS file? You didn&#x27;t mention Macintosh and if it doesn&#x27;t</span>
+<span class="qt">&gt;&gt;&gt; support Macintosh I can&#x27;t do it because that&#x27;s what I&#x27;ve got.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; I don&#x27;t actually know what an IPS file is (I&#x27;m not responding to that</span>
+<span class="qt">&gt;&gt; bit anyway), but you could release a patch file for the original ROM</span>
+<span class="qt">&gt;&gt; which brings it up to your version (you can also get it to patch</span>
+<span class="qt">&gt;&gt; previous versions of your ROM).</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Thats exactly what an IPS is :)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; its designed as a generic patching system, thats gotten used mostly for</span>
+<span class="qt">&gt; emulation ROMs, where people want to do translations, its basically just a</span>
+<span class="qt">&gt; difference of the ROM and the new ROM.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; There are IPS patchers for just about every system where emulation is used,</span>
+<span class="qt">&gt; so it makes for a fairly generic patch system.</span>
+
+But not IPS patch creation tools it seems.
+
+-Andrew
+
+
+
+
+</pre></div><div class="post" id="p126801"><div class="ph"><a class="d" href="#p126801">2002-01-07 21:14:03</a> <span>Suzanne Archibald</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>Andrew Owen wrote:
+
+<span class="qt">&gt; in article nguc1a.t3v.ln@g3serv, Suzanne Archibald at …@…</span>
+<span class="qt">&gt; wrote on 7/1/02 7:55 PM:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Fairly sure there are IPS tools for macs, IPS is used a lot for emulation</span>
+<span class="qt">&gt;&gt; rom translations, so check on www.emulation.net.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; (I&#x27;m fairly sure one of my SNES/Genesis rom tools I use has an IPS</span>
+<span class="qt">&gt;&gt; option)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I found two tools for applying patches. None for creating them, and no IPS</span>
+<span class="qt">&gt; files so I can try and figure out the format.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; -Andrew</span>
+
+<a href="http://www.dextrose.com/info/1230diaps1.htm" rel="noreferrer">http://www.dextrose.com/info/1230diaps1.htm</a>
+<a href="http://www.dextrose.com/info/1116dx!sips.htm" rel="noreferrer">http://www.dextrose.com/info/1116dx!sips.htm</a>
+<a href="http://www.dextrose.com/info/0705eur-li10.htm" rel="noreferrer">http://www.dextrose.com/info/0705eur-li10.htm</a>
+
+Didn&#x27;t look too hard, did you ? :)
+
+-- 
+Listen to my music at :
+<a href="http://www.MP3.com/Suzanne_Archibald" rel="noreferrer">http://www.MP3.com/Suzanne_Archibald</a>
+
+
+
+</pre></div><div class="post" id="p126803"><div class="ph"><a class="d" href="#p126803">2002-01-07 21:22:23</a> <span>Suzanne Archibald</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre><span class="qt">&gt; Andrew Owen wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; I found two tools for applying patches. None for creating them, and no</span>
+<span class="qt">&gt;&gt; IPS files so I can try and figure out the format.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; -Andrew</span>
+
+
+Oh, and if you want to write your own:
+
+<a href="http://zerosoft.zophar.net/ips.htm" rel="noreferrer">http://zerosoft.zophar.net/ips.htm</a>
+
+-- 
+Listen to my music at :
+<a href="http://www.MP3.com/Suzanne_Archibald" rel="noreferrer">http://www.MP3.com/Suzanne_Archibald</a>
+
+
+
+</pre></div><div class="post" id="p126807"><div class="ph"><a class="d" href="#p126807">2002-01-07 22:01:41</a> <span>Geoff Wearmouth</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>In article &lt;…@…&gt;, Andrew Owen &lt;…@…&gt;
+writes
+<span class="qt">&gt;I don&#x27;t remember an ORG. I know I had to put a #define ORG .ORG for TASM to</span>
+<span class="qt">&gt;use an ORG command I put in there for CAZ but I took it out again because</span>
+<span class="qt">&gt;the file would need massive changes to compile under CAZ so Chris Young is</span>
+<span class="qt">&gt;modifying CAZ instead.</span>
+
+I put the ORG in as I saw it referred to in the ZASM documentation but,
+as it is optional with both assemblers, it is commented out now.
+ 
+-- 
+Geoff Wearmouth
+
+
+
+</pre></div><div class="post" id="p126810"><div class="ph"><a class="d" href="#p126810">2002-01-07 22:10:00</a> <span>Chris Young</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>On Mon, 7 Jan 2002 18:52:58 +0000 (UTC), Andrew Owen (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; I don&#x27;t remember an ORG. I know I had to put a #define ORG .ORG for TASM to</span>
+<span class="qt">&gt; use an ORG command I put in there for CAZ but I took it out again because</span>
+<span class="qt">&gt; the file would need massive changes to compile under CAZ so Chris Young is</span>
+<span class="qt">&gt; modifying CAZ instead.</span>
+
+It may still need the ORG in it.  I&#x27;ll see if I can make it optional
+and default it to a sensible value (such as $0000)
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p126821"><div class="ph"><a class="d" href="#p126821">2002-01-07 22:23:30</a> <span>Andrew Owen</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>in article a33d1a.5gv.ln@g3serv, Suzanne Archibald at …@…
+wrote on 7/1/02 9:14 PM:
+
+<span class="qt">&gt; Andrew Owen wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; in article nguc1a.t3v.ln@g3serv, Suzanne Archibald at …@…</span>
+<span class="qt">&gt;&gt; wrote on 7/1/02 7:55 PM:</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt;&gt; Fairly sure there are IPS tools for macs, IPS is used a lot for emulation</span>
+<span class="qt">&gt;&gt;&gt; rom translations, so check on www.emulation.net.</span>
+<span class="qt">&gt;&gt;&gt; </span>
+<span class="qt">&gt;&gt;&gt; (I&#x27;m fairly sure one of my SNES/Genesis rom tools I use has an IPS</span>
+<span class="qt">&gt;&gt;&gt; option)</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; I found two tools for applying patches. None for creating them, and no IPS</span>
+<span class="qt">&gt;&gt; files so I can try and figure out the format.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; -Andrew</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; <a href="http://www.dextrose.com/info/1230diaps1.htm" rel="noreferrer">http://www.dextrose.com/info/1230diaps1.htm</a></span>
+<span class="qt">&gt; <a href="http://www.dextrose.com/info/1116dx!sips.htm" rel="noreferrer">http://www.dextrose.com/info/1116dx!sips.htm</a></span>
+<span class="qt">&gt; <a href="http://www.dextrose.com/info/0705eur-li10.htm" rel="noreferrer">http://www.dextrose.com/info/0705eur-li10.htm</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Didn&#x27;t look too hard, did you ? :)</span>
+
+All those links are for DOS/Windows so are of no use to me.
+
+-Andrew
+
+
+
+
+</pre></div><div class="post" id="p126823"><div class="ph"><a class="d" href="#p126823">2002-01-07 22:24:07</a> <span>Chris Young</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>On Mon, 7 Jan 2002 20:59:29 +0000 (UTC), Andrew Owen (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; &gt; Thats exactly what an IPS is :)</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; its designed as a generic patching system, thats gotten used mostly for</span>
+<span class="qt">&gt; &gt; emulation ROMs, where people want to do translations, its basically just a</span>
+<span class="qt">&gt; &gt; difference of the ROM and the new ROM.</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; There are IPS patchers for just about every system where emulation is used,</span>
+<span class="qt">&gt; &gt; so it makes for a fairly generic patch system.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; But not IPS patch creation tools it seems.</span>
+
+Try this:
+
+<a href="http://www.megagames.com/psx/psx_ppf.shtml" rel="noreferrer">http://www.megagames.com/psx/psx_ppf.shtml</a>
+
+PPF-O-Matic.  It isn&#x27;t IPF, but it&#x27;s basically the same thing and
+should work on things other than ISO files (unless it is particulary
+fussy).  There&#x27;s a Mac version too.  I should probably have downloaded
+the Amiga version to see whether it was any good before pointing
+anybody towards it, oh well.
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p126828"><div class="ph"><a class="d" href="#p126828">2002-01-07 22:27:32</a> <span>Andrew Owen</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>in article ti3d1a.1iv.ln@g3serv, Suzanne Archibald at …@…
+wrote on 7/1/02 9:22 PM:
+
+[IPS]
+
+<span class="qt">&gt; Oh, and if you want to write your own:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; <a href="http://zerosoft.zophar.net/ips.htm" rel="noreferrer">http://zerosoft.zophar.net/ips.htm</a></span>
+
+Well I searched Zophar for the ips file format and it didn&#x27;t turn up that
+document. However, given what a dumb (not bad, just not intelligent) file
+format ips is, I think I can write a Z80 machine code program that will
+create IPS files using the Spectrum itself. Load the 16K ROM into say $8000
+and create the patch file at $C000. Save as a .SNA and do a cut and paste
+job. Still, it would be easier if someone wrote a Mac based IPS creator.
+
+-Andrew
+
+
+
+
+</pre></div><div class="post" id="p126830"><div class="ph"><a class="d" href="#p126830">2002-01-07 22:29:05</a> <span>Andrew Owen</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>in article …@…, Geoff Wearmouth at
+…@… wrote on 7/1/02 10:01 PM:
+
+<span class="qt">&gt; In article &lt;…@…&gt;, Andrew Owen &lt;…@…&gt;</span>
+<span class="qt">&gt; writes</span>
+<span class="qt">&gt;&gt; I don&#x27;t remember an ORG. I know I had to put a #define ORG .ORG for TASM to</span>
+<span class="qt">&gt;&gt; use an ORG command I put in there for CAZ but I took it out again because</span>
+<span class="qt">&gt;&gt; the file would need massive changes to compile under CAZ so Chris Young is</span>
+<span class="qt">&gt;&gt; modifying CAZ instead.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I put the ORG in as I saw it referred to in the ZASM documentation but,</span>
+<span class="qt">&gt; as it is optional with both assemblers, it is commented out now.</span>
+
+It is necessary in CAZ and it takes the form ORG 0000. If you want to do me
+a huge favour you could add a &#x27;:&#x27; after each of the labels. This will not
+affect compilation in TASM or ZASM but should allow CAZM (Chris Young&#x27;s
+modified version of CAZ) to compile it.
+
+-Andrew
+
+
+
+
+</pre></div><div class="post" id="p126834"><div class="ph"><a class="d" href="#p126834">2002-01-07 22:31:06</a> <span>Andrew Owen</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>Further to my search for an IPS creator I&#x27;ve downloaded UIPS which will run
+under DOS. It&#x27;s not ideal since I have to emulate a run SoftWindows 98
+(using about 40MBs to execute a 48K program) but it will work until I write
+a Spectrum based IPS creator.
+
+-Andrew
+
+
+
+
+</pre></div><div class="post" id="p126839"><div class="ph"><a class="d" href="#p126839">2002-01-07 22:41:28</a> <span>Andrew Owen</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>in article …@…, Chris Young at
+…@… wrote on 7/1/02 10:24 PM:
+
+<span class="qt">&gt; On Mon, 7 Jan 2002 20:59:29 +0000 (UTC), Andrew Owen (of comp.sys.sinclair</span>
+<span class="qt">&gt; &quot;fame&quot;)</span>
+<span class="qt">&gt; wibbled on for an age:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;&gt; Thats exactly what an IPS is :)</span>
+<span class="qt">&gt;&gt;&gt; </span>
+<span class="qt">&gt;&gt;&gt; its designed as a generic patching system, thats gotten used mostly for</span>
+<span class="qt">&gt;&gt;&gt; emulation ROMs, where people want to do translations, its basically just a</span>
+<span class="qt">&gt;&gt;&gt; difference of the ROM and the new ROM.</span>
+<span class="qt">&gt;&gt;&gt; </span>
+<span class="qt">&gt;&gt;&gt; There are IPS patchers for just about every system where emulation is used,</span>
+<span class="qt">&gt;&gt;&gt; so it makes for a fairly generic patch system.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; But not IPS patch creation tools it seems.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Try this:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; <a href="http://www.megagames.com/psx/psx_ppf.shtml" rel="noreferrer">http://www.megagames.com/psx/psx_ppf.shtml</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; PPF-O-Matic.  It isn&#x27;t IPF, but it&#x27;s basically the same thing and</span>
+<span class="qt">&gt; should work on things other than ISO files (unless it is particulary</span>
+<span class="qt">&gt; fussy).  There&#x27;s a Mac version too.  I should probably have downloaded</span>
+<span class="qt">&gt; the Amiga version to see whether it was any good before pointing</span>
+<span class="qt">&gt; anybody towards it, oh well.</span>
+
+No Unix support though. I&#x27;ll stick with IPS since I can create a ZX based
+IPS maker if needs be, by modifying my ROM compare program.
+
+-Andrew
+
+
+
+
+</pre></div><div class="post" id="p126852"><div class="ph"><a class="d" href="#p126852">2002-01-07 23:07:11</a> <span>Chris Young</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>On Mon, 7 Jan 2002 22:41:28 +0000 (UTC), Andrew Owen (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; &gt; Try this:</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; <a href="http://www.megagames.com/psx/psx_ppf.shtml" rel="noreferrer">http://www.megagames.com/psx/psx_ppf.shtml</a></span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; PPF-O-Matic.  It isn&#x27;t IPF, but it&#x27;s basically the same thing and</span>
+<span class="qt">&gt; &gt; should work on things other than ISO files (unless it is particulary</span>
+<span class="qt">&gt; &gt; fussy).  There&#x27;s a Mac version too.  I should probably have downloaded</span>
+<span class="qt">&gt; &gt; the Amiga version to see whether it was any good before pointing</span>
+<span class="qt">&gt; &gt; anybody towards it, oh well.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; No Unix support though.</span>
+
+Erm, yes there is.  There isn&#x27;t a PPF-O-Matic, but there is a PPF
+patcher (PPFApply) and creator (I think) later down the page.
+
+<span class="qt">&gt; I&#x27;ll stick with IPS since I can create a ZX based</span>
+<span class="qt">&gt; IPS maker if needs be, by modifying my ROM compare program.</span>
+
+True.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p126859"><div class="ph"><a class="d" href="#p126859">2002-01-07 23:27:38</a> <span>Geoff Wearmouth</span> <span>Re: ANN: Sinclair Extended Basic v0.58 public beta release 1.0</span></div><pre>In article &lt;…@…&gt;, Andrew Owen &lt;…@…&gt;
+writes
+
+<span class="qt">&gt;It is necessary in CAZ and it takes the form ORG 0000. If you want to do me</span>
+<span class="qt">&gt;a huge favour you could add a &#x27;:&#x27; after each of the labels. This will not</span>
+<span class="qt">&gt;affect compilation in TASM or ZASM but should allow CAZM (Chris Young&#x27;s</span>
+<span class="qt">&gt;modified version of CAZ) to compile it.</span>
+
+Done. Any other suggestions for a more generic file are welcome.
+
+The download option now downloads a zipfile containing the latest
+version of all three ZX ROM files.
+
+As usual, if you can improve on the documentation then cut out a section
+and send it for inclusion at the above address.
+
+-- 
+Geoff Wearmouth
+
+
+
+</pre></div><div class="post" id="p126863"><div class="ph"><a class="d" href="#p126863">2002-01-08 00:18:46</a> <span>Andrew Owen</span> <span>ANN: Sinclair Extended Basic v0.58 public beta release 1 (attempt 2)</span></div><pre>Hi,
+
+Just posted a legal distribution to ABCS. I will try and get it online at
+zxse.raww.net when I have time. Sorry about the restrictive licence.
+
+-Andrew
+
+
+
+
+</pre></div></main></body></html>

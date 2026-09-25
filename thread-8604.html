@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Update of the ZXTape format · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Update of the ZXTape format</h1><p class="facts">7 posts, 1997-02-18 – 1997-02-24</p><div class="post" id="p24165"><div class="ph"><a class="d" href="#p24165">1997-02-18</a> <span>…@…</span> </div><pre>
+
+  It seemed necessary to include a Standard PAUSE after Data block. By default
+Spectrum ROM Save routine would make a 1s pause between Header and Data block.
+So there is now no need to put a Pause block (01) after each and every Data
+block in the tape. The Pause block should only be used if the pause should be
+significantly bigger or very small or the standard pause is to be changed for
+all blocks. You can ofcourse change the standard pause in the beginning to
+gain some seconds from loading time. If there is no pause block following a
+data block then the standard pause is used.
+
+PLEASE Don&#x27;t use this format until it has been approved by most of the emulator
+writers and it proves to be OK for everyone ... :)
+
+
+                             ZX Tape file format
+                            ---------------------
+                                   v 0.1
+
+  This format lets you preserve all (hopefully) of the tapes with turbo or
+custom loading routines. Even though some of the newest and &#x27;smarter&#x27; emulators
+can find most of the info about the loader from the code itself, this cannot be
+possible if you want to replay the file to the good old real spectrum. And with
+all this information in the file the emulators don&#x27;t have to bother with finding
+out the baud rate and other things.
+
+  Please suggest a extension for this format (3 letters) , since .ZXT is already
+taken by some other tape format with +3DOS info.
+
+  The file is identified with the first 6 bytes being &#x27;ZXTape&#x27;. Then the body
+follows which is devised from blocks. Each block is identified with its ID
+byte followed by its body. There are currently 4 types of blocks.
+
+So the file structure is :  &#x27;ZXTape&#x27; ID1 Body1 ID2 Body2 ...
+                             0       6   7     ...
+
+  The Two-Byte (Word) values are always stored LSB (Least Significant Byte)
+First.
+  The timings are given in Z80 clock ticks (or T states) unless otherwise
+stated.   1 T state=1sec/3500000   !
+  The values in the tables mean : Offset (in bytes), Length (in bytes
+(i.e. 1 - byte, 2 - word)) and then the description.
+  You might interpret full-period as one pulse (----____ or ____----) and
+half-period as only one half of the pulse (---- or ____).
+  The values in brackets [] are the Default values for Spectrum ROM loading/
+saving routines.
+
+These are the possible blocks :
+
+ID : 00  -  Change of Loading Speed
+-------     If this block is never present then all blocks are saved with normal
+            speed. If my default values are incorrect then please inform me !
+
+00 2  Length of PILOT half-period     [2100]
+02 2  Length of SYNC  half-period     [700]
+04 2  Length of 0-bit half-period     [800]
+06 2  Length of 1-bit half-period     [1600]
+
+ID : 01  -  Pause
+-------     With this block you can change the Standard Pause which is used
+            after ALL Data blocks in the tape or you can change the pause
+            only for this one time. If the tape should be stopped at this
+            point then use the Indefinite Pause and the program will wait for
+            you to tell it to continue loading. The Pause of 0 miliseconds
+            will immediately start loading next block.
+
+00 1  Type of Pause :  00 - Change Standard Pause after Blocks   [1000]
+                       01 - Use this Pause only for this Block
+                       02 - Indefinite Pause (i.e. waiting for a key press)
+01 2  Value in miliseconds (ms)  -  if Type is 02 then value should be 0000
+
+ID : 02  -  Text Description
+-------     The description can be upto 255 characters long but please keep
+            it down to about 30 so the programs can show it in one line !
+            This is ment to identify parts of the tape, so you know where
+            level 1 starts, where to rewind when you lose all the lives, etc.
+            Of course you can use it in the beginning to identify the name of
+            the game or program used in the file.
+
+00 1  Length of the Text
+01 x  Text in ASCII
+
+ID : 03  -  DATA Block
+-------     This is the block with actual data. It is very similar to the .TAP
+            block but with some additional Info.
+
+00 2  Length of PILOT tone (in PILOT full-periods)     [4000 Header, 2000 Data]
+02 1  Length of SYNC tone (in SYNC full-periods)       [1]
+03 1  Used bits in LAST Byte (other bits should be 0)  [8]
+      i.e. if this is 6 then the bits (x) used in LAST byte are: xxxxxx00
+04 1  Starting wave (the Amplutude of FIRST half-period):   00=Low  FF=High
+      i.e. if the first pulse of PILOT starts with ____ (00) or ---- (FF)
+05 1  Reserved
+06 2  Length of DATA that follows
+08 x  DATA, the bits are saved MSb (Most Significant Bit) first
+
+
+Regards,
+  Tomaz
+
+
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div><div class="post" id="p24219"><div class="ph"><a class="d" href="#p24219">1997-02-20</a> <span>…@…</span> <span>Re: Update of the ZXTape format</span></div><pre>
+On 20 Feb 1997 10:48:44 GMT, …@… (Radovan Garabik)
+wrote:
+
+<span class="qt">&gt;Where has gone that wonderful idea that text ends with char with </span>
+<span class="qt">&gt;first byte 1 ? :-)</span>
+
+That smiley should be much bigger. I remember a long argument with someone about
+text like that; he was convinced it was some odd packing routine, despite me
+repeatedly showing him only the last char of each phrase was &#x27;gone&#x27;. Doh!
+
+<span class="qt">&gt;  ID : 04 - Type of machine</span>
+<span class="qt">&gt;            If this ID is not found, the type of machine is not known - </span>
+
+Why not assume Spectrum?
+
+[snip stuff on what type of machine is ideal to run the tape]
+
+<span class="qt">&gt;And when we are doing this, why not to include ZX80/ZX81 tapes? It always</span>
+<span class="qt">&gt;surprised me that ZX81 emulators do not use virtual tapes.</span>
+
+So, basically sticking all the extra settings in the tape file in the same way
+that Z80 and other emualtors do with snapshots. Marvellous idea, as is the
+ZX80/81 suggestion!
+
+
+--
+Damien Burke (remove nojunkmail part of my address to reply)
+Speccy pages: <a href="http://www.jetman.demon.co.uk/speccy/" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/</a>
+New to this group? Read the FAQ: <a href="http://as_above/speccy/faq/" rel="noreferrer">http://as_above/speccy/faq/</a>
+Opinions are mine alone and do not represent RNSETT
+
+
+</pre></div><div class="post" id="p24223"><div class="ph"><a class="d" href="#p24223">1997-02-20</a> <span>…@…</span> <span>Re: Update of the ZXTape format</span></div><pre>
+On Thu, 20 Feb 1997 13:07:16 GMT, …@… (Damien
+Burke) wrote:
+
+<span class="qt">&gt;On 20 Feb 1997 10:48:44 GMT, …@… (Radovan Garabik)</span>
+<span class="qt">&gt;wrote:</span>
+
+I am sorry, but I didn&#x27;t get this Message to my news server :((( It normally
+gets them in the right order so I am afraid it might be lost. Could Radovan or
+Damien please send me the orignal message so I can look at what changes he
+proposes to the format.
+In the future please send the propositions to comp.sys.sinclair AND to me ...
+hopefully one of them arrives ;) and all the people at c.s.s can suggest on it
+too !
+
+Thanx you !
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;  ID : 04 - Type of machine</span>
+<span class="qt">&gt;&gt;            If this ID is not found, the type of machine is not known - </span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Why not assume Spectrum?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;[snip stuff on what type of machine is ideal to run the tape]</span>
+<span class="qt">&gt;</span>
+
+Nice Idea indeed. Though ID 04 is already taken for the Normal Speed Block...
+but there are around 250 of them left ;)
+
+<span class="qt">&gt;&gt;And when we are doing this, why not to include ZX80/ZX81 tapes? It always</span>
+<span class="qt">&gt;&gt;surprised me that ZX81 emulators do not use virtual tapes.</span>
+<span class="qt">&gt;</span>
+
+Uhm... I have NO idea on how the ZX81 writes stuff to the tape... I suppose it
+is generally the same as Spectrum does ???? Then we could use the new proposed
+ID byte to identify ZX-81 and Load all the Standard Loading Blocks (id=04) with
+the values for ZX-81 loader ??? That way no specific zx-81 blocks would be
+needed.
+
+<span class="qt">&gt;So, basically sticking all the extra settings in the tape file in the same way</span>
+<span class="qt">&gt;that Z80 and other emualtors do with snapshots. Marvellous idea, as is the</span>
+<span class="qt">&gt;ZX80/81 suggestion!</span>
+<span class="qt">&gt;</span>
+
+Yep... I hope I can get hold of the original posting though :)
+
+Tomaz
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div><div class="post" id="p24229"><div class="ph"><a class="d" href="#p24229">1997-02-20</a> <span>…@…</span> <span>Re: Update of the ZXTape format</span></div><pre>
+In &lt;…@…&gt; Tomaz Kac (…@…) wrote:
+: 
+
+
+
+: 
+: 
+:                              ZX Tape file format
+:                             ---------------------
+:                                    v 0.1
+: 
+:   This format lets you preserve all (hopefully) of the tapes with turbo or
+: custom loading routines. Even though some of the newest and &#x27;smarter&#x27; emulators
+: can find most of the info about the loader from the code itself, this cannot be
+: possible if you want to replay the file to the good old real spectrum. And with
+: all this information in the file the emulators don&#x27;t have to bother with finding
+: out the baud rate and other things.
+
+You don&#x27;t need any additional information for custom loading routines -
+remember, the tapes are just standard Speccy tapes.
+
+: 
+:   Please suggest a extension for this format (3 letters) , since .ZXT is already
+: taken by some other tape format with +3DOS info.
+: 
+
+What about TZX? (Tape of/from ZX) 
+
+:   The file is identified with the first 6 bytes being &#x27;ZXTape&#x27;. Then the body
+: follows which is devised from blocks. Each block is identified with its ID
+: byte followed by its body. There are currently 4 types of blocks.
+: 
+: So the file structure is :  &#x27;ZXTape&#x27; ID1 Body1 ID2 Body2 ...
+:                              0       6   7     ...
+: 
+:   The Two-Byte (Word) values are always stored LSB (Least Significant Byte)
+: First.
+:   The timings are given in Z80 clock ticks (or T states) unless otherwise
+: stated.   1 T state=1sec/3500000   !
+:   The values in the tables mean : Offset (in bytes), Length (in bytes
+: (i.e. 1 - byte, 2 - word)) and then the description.
+:   You might interpret full-period as one pulse (----____ or ____----) and
+: half-period as only one half of the pulse (---- or ____).
+:   The values in brackets [] are the Default values for Spectrum ROM loading/
+: saving routines.
+: 
+: These are the possible blocks :
+: 
+: ID : 00  -  Change of Loading Speed
+: -------     If this block is never present then all blocks are saved with normal
+:             speed. If my default values are incorrect then please inform me !
+: 
+: 00 2  Length of PILOT half-period     [2100]   
+: 02 2  Length of SYNC  half-period     [700]    
+: 04 2  Length of 0-bit half-period     [800]     
+: 06 2  Length of 1-bit half-period     [1600]   
+: 
+: ID : 01  -  Pause
+: -------     With this block you can change the Standard Pause which is used
+:             after ALL Data blocks in the tape or you can change the pause
+:             only for this one time. If the tape should be stopped at this
+:             point then use the Indefinite Pause and the program will wait for
+:             you to tell it to continue loading. The Pause of 0 miliseconds
+:             will immediately start loading next block.
+: 
+: 00 1  Type of Pause :  00 - Change Standard Pause after Blocks   [1000]
+:                        01 - Use this Pause only for this Block
+:                        02 - Indefinite Pause (i.e. waiting for a key press)
+: 01 2  Value in miliseconds (ms)  -  if Type is 02 then value should be 0000
+:         
+
+Maybe the emulator should be able to display message that it&#x27;s waiting for a
+key. I suggest following:
+
+  00 1 Type of Pause:    03 - Indefinite pause with message
+
+
+We then skip one byte, so that there are always two bytes of info after
+Pause.
+In this case the next byte would be the length of text, which would follow.
+Of course, the &quot;purists&quot; will be able to switch displaying messages off from
+the emulator&#x27;s menu :-)
+
+Alternatively, if type of Pause is 02, then the length of the message is
+in the (second) next byte, with xx00 for no message. (xx-reserved for future
+use)
+
+This is not the same as following - Text D. would by default NOT
+be displayed when loading program, only when browsing tape.
+
+
+: ID : 02  -  Text Description  
+: -------     The description can be upto 255 characters long but please keep
+:             it down to about 30 so the programs can show it in one line !
+:             This is ment to identify parts of the tape, so you know where
+:             level 1 starts, where to rewind when you lose all the lives, etc.
+:             Of course you can use it in the beginning to identify the name of
+:             the game or program used in the file.
+: 
+: 00 1  Length of the Text
+: 01 x  Text in ASCII
+
+Where has gone that wonderful idea that text ends with char with 
+first bit 1 ? :-)
+
+: 
+: ID : 03  -  DATA Block
+: -------     This is the block with actual data. It is very similar to the .TAP
+:             block but with some additional Info.
+: 
+
+Somewhere here we should tell the emulator whether it can patch ROM load
+routines or should switch to non-standard loading (in my emulator you
+have to press F4 in the latter case - it could be automatised)
+
+  00 1  00 - not known
+        01 - loading is via ROM routines, then the following data are not
+        important (except length of DATA), and should be switched to default
+        values (so that Sentimental mode in my emulator worked :-))  
+        02 - custom loader
+Or we could introduce a new ID...
+
+  
+: 00 2  Length of PILOT tone (in PILOT full-periods)     [4000 Header, 2000 Data]
+: 02 1  Length of SYNC tone (in SYNC full-periods)       [1]
+: 03 1  Used bits in LAST Byte (other bits should be 0)  [8]
+:       i.e. if this is 6 then the bits (x) used in LAST byte are: xxxxxx00
+: 04 1  Starting wave (the Amplutude of FIRST half-period):   00=Low  FF=High
+:       i.e. if the first pulse of PILOT starts with ____ (00) or ---- (FF)
+: 05 1  Reserved
+: 06 2  Length of DATA that follows
+: 08 x  DATA, the bits are saved MSb (Most Significant Bit) first
+: 
+
+
+ 
+  ID : &#x27;Z&#x27; - signature
+        following bytes should be &#x27;xTape&#x27;, then follow other IDs...
+        This should be ignored and will enable to join multiple
+        files into one tape, as it is in TAP or LTP formats. (Maybe a
+        slightly longer pause should be added, to mark the beginning
+        of a next program)
+
+A good thing would be to be able to distinguish if the tape is for 
+48K/128K/+2/+3 or other ...
+I suggest something like this:
+   
+  ID : 04 - Type of machine
+            If this ID is not found, the type of machine is not known - 
+            this will allow to convert &quot;wild&quot; TAP files automatically
+            But better it would be to include it anyway, so that after
+            determining the type you could change it manually (with
+            hexadecimal editor if nothing else is available) 
+  00 1  Type :  00 - unknown
+                01 - Any ZX Spectrum  (48/128/+2/+3) is suitable
+                02 - ZX spectrum 48 K 
+                03 - ZX spectrum 128 K
+                04 - ZX spectrum +2
+                05 - ZX spectrum +3
+                06 - Sam Coupe  (why not?)
+                07 - Timex Sinclair
+                FF - Other clone
+
+   01 1 Subtype:
+                00 - unknown
+                01 - does not matter
+                02 - if Type was 02, Issue 2
+                03 - if Type was 02 (or 01), Issue 3
+                06 - 16 kB machine (only Issue 2, am I correct ?)
+                07 - Issue 2 with 48 KB  (or was it Issue 1 vs. Issue 2? I
+                                          am not sure)
+                
+And when we are doing this, why not to include ZX81 tapes? It always
+surprised me that ZX81 emulators do not use virtual tapes.
+Then the type would be modified  by:
+  00 1 Type:  08 - ZX81
+  01 1 Subtype:
+              00 - unknown
+              05 - 1 KB machine
+              06 - 16 KB machine
+              07 - 48 KB machine  - or whatever types there were, I do not
+                    know much about it.
+                    
+The type should always come at the beginning of tape file (it would not be
+very wise if the emulator switched itself into 128K mode in the middle of
+loading). Of course you can join more files together, then it could appear
+anywhere.
+
+And to add info about the necessity of R-register emulator or Hi-Res....
+But this post is getting a bit long... 
+I feel sorry for an emulator&#x27;s author trying to implement all of this :-)
+
+At least the turbo loading should be not so difficult in my emulator (in
+fact, I was thinking about implementing it, using ZXS files), but currently
+I don&#x27;t have much time to program :-((   
+
+Tomaz, would you watch out for all suggestion about the file format?
+We need to settle down on one standard, so that Z80 will not use one format,
+XZX other etc. And emulator&#x27;s authors should implement this only after 
+the definite format is approved by Tomaz....
+
+-- 
+ ---------------------------------------------------------------------
+<span class="qt">| Radovan Garabik       <a href="http://kepler.fmph.uniba.sk/~garabik2/zx.html" rel="noreferrer">http://kepler.fmph.uniba.sk/~garabik2/zx.html</a> |</span>
+<span class="qt">| __..--^^^--..__       …@…                 |</span>
+ ---------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p24246"><div class="ph"><a class="d" href="#p24246">1997-02-21</a> <span>andrew barker</span> <span>Re: Update of the ZXTape format</span></div><pre>
+The zxs description is very interesting.  How about .TPE (TAPE) for the
+new format name (Just a suggestions) ?
+
+So am I to assume that when as new format arrives, which is unevitable
+it will be able to handle the strange tones as found in those crazy
+loaders such as Enduro racer/Combat School (I think).
+This is where it beeps a lot at you just before it begins loading the
+main block of code ?
+Usually red/black for the pilot tone then blue/black at high tones ?
+
+Does anyone know of a speccy utility that will allow me to load in hyper
+loads and save them into a tape file, I have only been sucessful with a
+few games such as cybernoid and not much else (check my misc.html page
+under protected loaders in .tap or .voc format).
+I just simply can&#x27;t get the blocks of data into the copiers and save
+them back to a tape file.  Only Mr Copy 3 works and usually it spools
+loads of 0 byte blocks into a tape file (well in Z80 for the Pee Cee it
+does, not on the amiga version), but you will find that there is nothing
+actually saved withing the data block and it consists of the file length
+that you saved but every value is 0 (ie no data has been saves).
+
+Questions:
+
+Is it possible to use z80 to save these blocks out to disk or whatever ?
+
+Are there any guides as to rip AY-Music from speccy games.
+
+How do I hack the ROM loading routines ?  I tried automania using that
+hack guide already available but dont understand how to write a new
+loader that will tell the emulator to load ???? bits of data in and then
+execute it.
+
+Well gotta go, enjoy the uploads to NVG when Lee Tonks returns from his
+holls....
+
+-----------------------------------------------------------------------------
+A1200, Viper 030 - 42.6 Mhz,50 Mhz FPU, 4 MB Fast RAM, 170 MB Hard
+Drive,
+SyQuest EZ135Mb Drive, External Drive, Power CD-ROM Drive, CD-32
+      __
+     /// Andrew Barker - …@…
+__  ///  Web Page      - <a href="http://osiris.sund.ac.uk/~ca4aba/home.html" rel="noreferrer">http://osiris.sund.ac.uk/~ca4aba/home.html</a>
+\\\///                                                or /index.html
+ \///   Amiga Lives On !
+-----------------------------------------------------------------------------
+And A Lame PeeCee - P133, 16Mb, 1.1GB HD, 8xCD-ROM, 14&quot; SVGA Monitor,
+                    2Mb S3Trio 64V+ Graphics Card
+Still Lame !
+-----------------------------------------------------------------------------
+
+
+</pre></div><div class="post" id="p24248"><div class="ph"><a class="d" href="#p24248">1997-02-21</a> <span>…@…</span> <span>Re: Update of the ZXTape format</span></div><pre>
+
+OK, I got the posting now ... :) it seems the news server screwed up but it did
+get it later... So here is my reply :
+
+On 20 Feb 1997 14:48:22 GMT, …@… (Radovan Garabik)
+wrote:
+
+<span class="qt">&gt;In &lt;…@…&gt; Tomaz Kac (…@…) wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;You don&#x27;t need any additional information for custom loading routines -</span>
+<span class="qt">&gt;remember, the tapes are just standard Speccy tapes.</span>
+<span class="qt">&gt;</span>
+
+Well, I ment for the loaders that use different coding on the tape ... not the
+custom loaders that use fancy screen output but the coding on the tape is
+standard.
+
+<span class="qt">&gt;: </span>
+<span class="qt">&gt;:   Please suggest a extension for this format (3 letters) , since .ZXT is already</span>
+<span class="qt">&gt;: taken by some other tape format with +3DOS info.</span>
+<span class="qt">&gt;: </span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;What about TZX? (Tape of/from ZX) </span>
+<span class="qt">&gt;</span>
+
+OK, nice suggestion :) I will put it as one of the suggested extensions and
+after the format is finished we will vote on the extension :)
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Maybe the emulator should be able to display message that it&#x27;s waiting for a</span>
+<span class="qt">&gt;key. I suggest following:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;  00 1 Type of Pause:    03 - Indefinite pause with message</span>
+<span class="qt">&gt;</span>
+
+Well, I didnt mean exactly waiting for a key. I ment more like Indefinite
+Pause... one example is when program finishes loading LEVEL ONE it should wait
+until you go either to level 2 or back to the main screen. So if you are using
+it in the emulator the emulator will just stop loading and after you finish the
+level and want to continue loading you will select either block with Level 2 or
+block with Main screen. Ofcourse if you are replaying it to the real spectrum
+then the program used for replay would know it has to finish loading until you
+press a key ... So you would put the TEXT block right after the indefinite pause
+desribing what the next part is.
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;This is not the same as following - Text D. would by default NOT</span>
+<span class="qt">&gt;be displayed when loading program, only when browsing tape.</span>
+
+Yes, I see your point. But normally when there should be an indefinite pause the
+spectrum would start a level or whatever and you would not need additional info
+on this. Ofcourse You can write a text block ( 02 ) saying &quot;Level 2 starts here&quot;
+or something similar. Please comment on this since I want to know in which cases
+the message on the screen would be needed and if they are needed then i will
+include it in the format.
+
+<span class="qt">&gt;: 00 1  Length of the Text</span>
+<span class="qt">&gt;: 01 x  Text in ASCII</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Where has gone that wonderful idea that text ends with char with </span>
+<span class="qt">&gt;first bit 1 ? :-)</span>
+
+Uhm :) U sure we should do that ? This way (with the length) you can easily skip
+this block just by seeing the length of the text... you dont have to do bit
+comparisons over the whole text ...
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;: </span>
+<span class="qt">&gt;: ID : 03  -  DATA Block</span>
+<span class="qt">&gt;: -------     This is the block with actual data. It is very similar to the .TAP</span>
+<span class="qt">&gt;:             block but with some additional Info.</span>
+<span class="qt">&gt;: </span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Somewhere here we should tell the emulator whether it can patch ROM load</span>
+<span class="qt">&gt;routines or should switch to non-standard loading (in my emulator you</span>
+<span class="qt">&gt;have to press F4 in the latter case - it could be automatised)</span>
+<span class="qt">&gt;</span>
+
+Ofcourse... thats why we have now 2 DATA blocks... One for custom loading
+routines which uses all the changes of the speed, and one for Standard loading,
+which doesnt have all the info about loader - hopefully it is OK this way ? And
+I added a flag in the new &#x27;emulation info&#x27; block which when set will enable the
+rom patching (fast loading when rom routine is used).Please check the latest
+revision of the file ... sent after this message.
+
+<span class="qt">&gt; </span>
+<span class="qt">&gt;  ID : &#x27;Z&#x27; - signature</span>
+<span class="qt">&gt;        following bytes should be &#x27;xTape&#x27;, then follow other IDs...</span>
+<span class="qt">&gt;        This should be ignored and will enable to join multiple</span>
+<span class="qt">&gt;        files into one tape, as it is in TAP or LTP formats. (Maybe a</span>
+<span class="qt">&gt;        slightly longer pause should be added, to mark the beginning</span>
+<span class="qt">&gt;        of a next program)</span>
+
+A Good idea... I will add this to the file format just incase someone wants to
+&#x27;quickly&#x27; add two files together (the file would be 8 bytes longer though) ... 
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;A good thing would be to be able to distinguish if the tape is for </span>
+<span class="qt">&gt;48K/128K/+2/+3 or other ...</span>
+
+Yes, this is a great idea...
+
+[all the types snipped]
+
+OK, since this is a must I was thinking of doing it this way : (feel free to
+comment) ... I was thinking of doing two new block types. Since the people that
+will make these files will only know if this program runs on normal 48k
+spectrum, zx 81, have AY sound , use 128k memory, etc. the first block type
+should be a pure Hardware Type block. It would be easyly created by users since
+this is all the information they are (probably) aware of. In this block you
+would select which hardware the program uses.... So if this is only a 48k
+program you would select 48k spectrum. If the program has also AY sound then you
+would select 48k and AY sound (note: this will ofcourse ALSO work on 128k
+spectrums but it will not use its memory banking) ... you should select 128k
+spectrum if the memory banking is also supported (for example if one program is
+multiload in 48k and loads whole into memory of 128k then both 48k and 128k
+should be selected) :
+
+ID : 05  -  Hardware Type
+-------
+          This selects what hardware the programs on this tape use. One program
+          can run on 48k and use AY sound and when run on 128k speccy use its
+          memory. Every Hardware Type has its own bit in the double-byte word.
+          All programs (blocks) that follow this block use this Hardware.
+          If this block is not used then hardware is Unknown.
+
+00 2  Hardware Type which the programs use (this is in TWO bytes)
+        Bit  0 : ZX Spectrum 48k, Plus
+             1 : ZX Spectrum 128k, +2, +2A, +3
+             2 : AY Hardware with 48k Spectrum
+             3 : ZX-81 with  1k RAM
+             4 : ZX-81 with 16k RAM or more
+             5 : Pentagon 128
+             6 : Sam Coupe
+
+      Please tell me which Timex Sinclair models have so different hardware
+      than ZX Spectrum 48k, 128k and they will be included!
+      If you know of any more Spectrum clones with hardware other than this or
+      some other add-on hardware then please e-mail me ! I am not exactly sure
+      if it would be necessary to include things like Interface-I, joystics,
+      mice and other little add-ons in here too ?
+
+The second new block should be &#x27;Emulation Info&#x27; block. In this block should be
+more specific hardware type (emulation used when the tape was last used in the
+emulator) and other features that would be saved only by emulators. In my
+opinion this block would not be necessary, but I had two suggestions for
+something similar so I will try and do my best ...
+Please give me more info on what this block should contain ... this is what I
+think would be in this block, I took the information only from Z80 emulator,
+Radovan please tell me which flags should be added for your emulator, infact all
+emulator authors should do that :
+
+ID : 06  -  Emulation Info
+-------
+          This is a special block that would be generated normally only by
+          Emulators. For now it contains info on everything I could find that
+          other formats support. Please inform me of any additions/corrections
+          since this is a very important part for emulators. Those bits that
+          are not used by the emulator that stored the info, should be 0 !
+
+00 2  Hardware Info
+        Bit  0 : 128k Emulation on
+             1 : AY Emulation on (for 48k programs)
+             2 : Interface 1 present
+             3 : Issue 2 emulation
+             4 : SamRam present
+             5 : Multiface 128 present
+01 1  Joystick Selection : 00 - Cursor/Protek/AGF
+                           01 - Kempston
+                           02 - Sinclair 2 Left  (keys 12345)
+                           03 - Sinclair 2 Right (keys 67890)
+02 2  General Emulation Flags
+        Bit  0 : R register emulation
+             1 : LDIR emulation
+             2 : Double Interrupt Frequency
+             3 : High Resolution Color emulation
+           4,5 : Video Synchronisation : 1=High, 2=Low, 0,2=Normal
+             6 : Fast Loading when ROM load routine is used
+<span class="qt">&gt;                    </span>
+<span class="qt">&gt;The type should always come at the beginning of tape file (it would not be</span>
+<span class="qt">&gt;very wise if the emulator switched itself into 128K mode in the middle of</span>
+<span class="qt">&gt;loading). Of course you can join more files together, then it could appear</span>
+<span class="qt">&gt;anywhere.</span>
+
+ofcourse...
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;And to add info about the necessity of R-register emulator or Hi-Res....</span>
+<span class="qt">&gt;But this post is getting a bit long... </span>
+<span class="qt">&gt;I feel sorry for an emulator&#x27;s author trying to implement all of this :-)</span>
+
+This should be included in &#x27;emulation info&#x27; block. And should be added to the
+file by the emulator.  (I am not 100% sure about this block, if it is needed and
+how it should finally look... I think Radovan , Rui, Gerton, Erik and all other
+emulator writers should give ideas on this )
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;At least the turbo loading should be not so difficult in my emulator (in</span>
+<span class="qt">&gt;fact, I was thinking about implementing it, using ZXS files), but currently</span>
+<span class="qt">&gt;I don&#x27;t have much time to program :-((   </span>
+
+:(( I hope you find some time soon, since it is a very good emulator !
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Tomaz, would you watch out for all suggestion about the file format?</span>
+<span class="qt">&gt;We need to settle down on one standard, so that Z80 will not use one format,</span>
+<span class="qt">&gt;XZX other etc. And emulator&#x27;s authors should implement this only after </span>
+<span class="qt">&gt;the definite format is approved by Tomaz....</span>
+
+Yes, I will do all necessary things about this, just email and post the
+suggestions and additions :) Ofcourse if there is something you don&#x27;t like in
+the format now i will remove it too ..
+
+The next posting will contain revision 4 of the file format.
+
+Regards,
+Tomaz
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div><div class="post" id="p24305"><div class="ph"><a class="d" href="#p24305">1997-02-24</a> <span>…@…</span> <span>Re: Update of the ZXTape format</span></div><pre>
+On Fri, 21 Feb 1997 17:09:55 -0800, Andrew Barker 
+wrote:
+
+<span class="qt">&gt;The zxs description is very interesting.  How about .TPE (TAPE) for the</span>
+<span class="qt">&gt;new format name (Just a suggestions) ?</span>
+
+OK, it is put in the info as one of the suggestions :) There are three of them
+so far :  .SPT  (Spectrum Tape) ,   TZX (Tape for/of ZX) and .TPE (TAPE).
+Anyone can mail me which one they fancy most (or suggest some other one).
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;So am I to assume that when as new format arrives, which is unevitable</span>
+<span class="qt">&gt;it will be able to handle the strange tones as found in those crazy</span>
+<span class="qt">&gt;loaders such as Enduro racer/Combat School (I think).</span>
+<span class="qt">&gt;This is where it beeps a lot at you just before it begins loading the</span>
+<span class="qt">&gt;main block of code ?</span>
+<span class="qt">&gt;Usually red/black for the pilot tone then blue/black at high tones ?</span>
+
+If the tones are generated in a standard fashion (i.e. half periods of one pulse
+are the same) then it can be done with the current revision... if they are
+something completely different then we will have to put some more effort in the
+format so they can be reproduced. If you send me (or tell me where I could find)
+the games in question (in .VOC format) then I can find out if they can be
+converted using this revision of the new format.
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Does anyone know of a speccy utility that will allow me to load in hyper</span>
+<span class="qt">&gt;loads and save them into a tape file, I have only been sucessful with a</span>
+<span class="qt">&gt;few games such as cybernoid and not much else (check my misc.html page</span>
+<span class="qt">&gt;under protected loaders in .tap or .voc format).</span>
+
+Did you try the TURBO COPY that comes with Warajevo emulator ? I found it works
+pretty fine on most turbo loaders. 
+
+<span class="qt">&gt;I just simply can&#x27;t get the blocks of data into the copiers and save</span>
+<span class="qt">&gt;them back to a tape file.  Only Mr Copy 3 works and usually it spools</span>
+<span class="qt">&gt;loads of 0 byte blocks into a tape file (well in Z80 for the Pee Cee it</span>
+<span class="qt">&gt;does, not on the amiga version), but you will find that there is nothing</span>
+<span class="qt">&gt;actually saved withing the data block and it consists of the file length</span>
+<span class="qt">&gt;that you saved but every value is 0 (ie no data has been saves).</span>
+
+Well, the best way is to make a utility for PC (like I am making) or Amiga that
+will enable you to directly extract the blocks from digital sample files (like
+.VOC) ... since there are so many different loaders used it can be a pain in the
+a*s to code this :(((
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Questions:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Is it possible to use z80 to save these blocks out to disk or whatever ?</span>
+<span class="qt">&gt;</span>
+
+I believe YES.
+
+<span class="qt">&gt;Are there any guides as to rip AY-Music from speccy games.</span>
+
+Dunno.
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;How do I hack the ROM loading routines ?</span>
+
+??? Hmm why would you hack rom loading routines ? Normally you hack the game
+with the custom loading routines so that it loads with the ROM loading routine
+after the hack :) 
+
+Regards,
+ Tomaz
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div></main></body></html>

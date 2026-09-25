@@ -1,0 +1,1887 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where is everyone? · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Where is everyone?</h1><p class="facts">85 posts, 2009-05-19 – 2009-05-28</p><div class="post" id="p220059"><div class="ph"><a class="d" href="#p220059">2009-05-19 09:38:01</a> <span>Phil Cave</span> </div><pre>I have seen no activity here for some time. Have you all gone?
+
+
+
+</pre></div><div class="post" id="p220060"><div class="ph"><a class="d" href="#p220060">2009-05-19 09:49:44</a> <span>Nama</span> <span>Re: Where is everyone?</span></div><pre>On May 19, 6:38 pm, Phil Cave &lt;…@…&gt; wrote:
+<span class="qt">&gt; I have seen no activity here for some time. Have you all gone?</span>
+
+I was thinking the same thing.
+Weird thing is I&#x27;ve also noticed a slow down on comp.sys.apple2
+recently too.
+
+Something in the tap water maybe...
+
+
+
+
+</pre></div><div class="post" id="p220061"><div class="ph"><a class="d" href="#p220061">2009-05-19 10:02:06</a> <span>Ian Rawlings</span> <span>Re: Where is everyone?</span></div><pre>On 2009-05-19, Phil Cave &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; I have seen no activity here for some time. Have you all gone?</span>
+
+I have been replaced by a z80-based floor robot.
+
+-- 
+Blast off and strike the evil Bydo empire!
+<a href="http://youtube.com/tarcus69" rel="noreferrer">http://youtube.com/tarcus69</a>
+<a href="http://www.flickr.com/photos/tarcus/sets/" rel="noreferrer">http://www.flickr.com/photos/tarcus/sets/</a>
+
+
+
+</pre></div><div class="post" id="p220062"><div class="ph"><a class="d" href="#p220062">2009-05-19 10:03:06</a> <span>Brian Gaff</span> <span>Re: Where is everyone?</span></div><pre>Gone, gone where?
+I&#x27;ve been listening to the Shuttle, but as for the rest of em..
+
+Brian
+
+-- 
+Brian Gaff....Note, this account does not accept Bcc: email.
+ graphics are great, but the blind can&#x27;t hear them
+Email: …@…
+______________________________________________________________________________________________________________
+
+
+&quot;Phil Cave&quot; &lt;…@…&gt; wrote in message 
+news:Z5vQl.47728$…@…...
+<span class="qt">&gt;I have seen no activity here for some time. Have you all gone? </span>
+
+
+
+
+
+</pre></div><div class="post" id="p220063"><div class="ph"><a class="d" href="#p220063">2009-05-19 10:05:01</a> <span>Brian Gaff</span> <span>Re: Where is everyone?</span></div><pre>No its yet another uk isp stopped doing newsgroups and google&#x27;s interface 
+was designed by a demented Commode user.
+
+It will be worse when Win 7 comes along as by default it has no news client 
+at all.
+Brian
+
+-- 
+Brian Gaff....Note, this account does not accept Bcc: email.
+ graphics are great, but the blind can&#x27;t hear them
+Email: …@…
+______________________________________________________________________________________________________________
+
+
+&quot;Nama&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+On May 19, 6:38 pm, Phil Cave &lt;…@…&gt; wrote:
+<span class="qt">&gt; I have seen no activity here for some time. Have you all gone?</span>
+
+I was thinking the same thing.
+Weird thing is I&#x27;ve also noticed a slow down on comp.sys.apple2
+recently too.
+
+Something in the tap water maybe...
+
+
+
+
+
+</pre></div><div class="post" id="p220064"><div class="ph"><a class="d" href="#p220064">2009-05-19 10:08:30</a> <span>Lister</span> <span>Re: Where is everyone?</span></div><pre>On Tue, 19 May 2009 10:38:01 +0100, Phil Cave &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;I have seen no activity here for some time. Have you all gone?</span>
+
+
+They&#x27;re deadd, Dave
+
+
+
+
+-- 
+Lister
+
+Posting from his new flat
+
+
+
+</pre></div><div class="post" id="p220065"><div class="ph"><a class="d" href="#p220065">2009-05-19 10:24:19</a> <span>Andrew Halliwell</span> <span>Re: Where is everyone?</span></div><pre>Phil Cave &lt;…@…&gt; wrote:
+<span class="qt">&gt; I have seen no activity here for some time. Have you all gone?</span>
+
+I&#x27;m still here...
+-- 
+<span class="qt">|   …@…   |   Windows95 (noun): 32 bit extensions and a    |</span>
+<span class="qt">|                          | graphical shell for a 16 bit patch to an 8 bit |</span>
+<span class="qt">|   Andrew Halliwell BSc   | operating system originally  coded for a 4 bit |</span>
+<span class="qt">|            in            |microprocessor, written by a 2 bit company, that|</span>
+<span class="qt">|     Computer Science     |        can&#x27;t stand 1 bit of competition.       |</span>
+
+
+
+</pre></div><div class="post" id="p220066"><div class="ph"><a class="d" href="#p220066">2009-05-19 10:55:41</a> <span>Tim Fardell</span> <span>Re: Where is everyone?</span></div><pre>On Tue, 19 May 2009, Phil Cave wrote:
+
+<span class="qt">&gt; I have seen no activity here for some time. Have you all gone?</span>
+
+Shoosh! For goodness sake, I was trying to sleep. 
+
+
+-- 
+Please remove all-your-clothes before replying. 
+
+
+
+
+</pre></div><div class="post" id="p220067"><div class="ph"><a class="d" href="#p220067">2009-05-19 11:56:41</a> <span>LCD &lt;retrozx@[nospam]gmail.com&gt;</span> <span>Re: Where is everyone?</span></div><pre>Phil Cave schrieb:
+<span class="qt">&gt; I have seen no activity here for some time. Have you all gone?</span>
+
+Mr. James Everyone is very busy at moment. Do not disturb. ;-)
+
+
+
+</pre></div><div class="post" id="p220069"><div class="ph"><a class="d" href="#p220069">2009-05-19 15:28:00</a> <span>Duncan Snowden</span> <span>Re: Where is everyone?</span></div><pre>Phil Cave wrote:
+
+<span class="qt">&gt; I have seen no activity here for some time. Have you all gone?</span>
+
+I think I&#x27;ve got swine flu. Or consumption.
+
+-- 
+Duncan Snowden.
+
+
+
+</pre></div><div class="post" id="p220070"><div class="ph"><a class="d" href="#p220070">2009-05-19 15:57:57</a> <span>Ian Rawlings</span> <span>Re: Where is everyone?</span></div><pre>On 2009-05-19, Duncan Snowden &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; I think I&#x27;ve got swine flu. Or consumption.</span>
+
+Or wine flu, that can be really bad for a day or two.
+
+-- 
+Blast off and strike the evil Bydo empire!
+<a href="http://youtube.com/tarcus69" rel="noreferrer">http://youtube.com/tarcus69</a>
+<a href="http://www.flickr.com/photos/tarcus/sets/" rel="noreferrer">http://www.flickr.com/photos/tarcus/sets/</a>
+
+
+
+</pre></div><div class="post" id="p220071"><div class="ph"><a class="d" href="#p220071">2009-05-19 16:42:22</a> <span>Bohus Král</span> <span>Re: Where is everyone?</span></div><pre>
+&quot;LCD&quot; &lt;retrozx@[nospam]gmail.com&gt; napï¿½sal v sprï¿½ve 
+news:71139$4a129e69$557ffa07$…@…...
+<span class="qt">&gt; Phil Cave schrieb:</span>
+<span class="qt">&gt;&gt; I have seen no activity here for some time. Have you all gone?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Mr. James Everyone is very busy at moment. Do not disturb. ;-)</span>
+
+Mr. Everyone is lost somewhere in Pacific (if the rumours are correct) :)
+
+B 
+
+
+__________ Informacia od ESET NOD32 Antivirus, verzia databazy 4087 (20090519) __________
+
+Tuto spravu preveril ESET NOD32 Antivirus.
+
+<a href="http://www.eset.sk" rel="noreferrer">http://www.eset.sk</a>
+
+
+
+
+
+
+</pre></div><div class="post" id="p220072"><div class="ph"><a class="d" href="#p220072">2009-05-19 17:05:15</a> <span>Andrew Halliwell</span> <span>Re: Where is everyone?</span></div><pre>Bohus Krï¿œl &lt;…@…&gt; wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &quot;LCD&quot; &lt;retrozx@[nospam]gmail.com&gt; napï¿œsal v sprï¿œve </span>
+<span class="qt">&gt; news:71139$4a129e69$557ffa07$…@…...</span>
+<span class="qt">&gt;&gt; Phil Cave schrieb:</span>
+<span class="qt">&gt;&gt;&gt; I have seen no activity here for some time. Have you all gone?</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Mr. James Everyone is very busy at moment. Do not disturb. ;-)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Mr. Everyone is lost somewhere in Pacific (if the rumours are correct) :)</span>
+
+Ahhh, but is he in 2009 or 1977?
+-- 
+<span class="qt">|   …@…   | &quot;I&#x27;m alive!!! I can touch! I can taste!         |</span>
+<span class="qt">|   Andrew Halliwell BSc   |  I can SMELL!!!  KRYTEN!!! Unpack Rachel and    |</span>
+<span class="qt">|            in            |  get out the puncture repair kit!&quot;              |</span>
+<span class="qt">|     Computer Science     |     Arnold Judas Rimmer- Red Dwarf              |</span>
+
+
+
+</pre></div><div class="post" id="p220073"><div class="ph"><a class="d" href="#p220073">2009-05-19 17:34:53</a> <span>Chris Young</span> <span>Re: Where is everyone?</span></div><pre>On Tue, 19 May 2009 10:38:01 +0100 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Phil Cave:
+
+<span class="qt">&gt; I have seen no activity here for some time. Have you all gone?</span>
+
+I got lost down the back of the sofa.  On the plus side, I did find
+ï¿½100 in loose change, the TV remote and a couple of furry Rolos.
+
+Oh, and I&#x27;m not sure who this Great Giana Sisters tape belongs to.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p220074"><div class="ph"><a class="d" href="#p220074">2009-05-19 17:39:44</a> <span>Andrew Halliwell</span> <span>Re: Where is everyone?</span></div><pre>Chris Young &lt;…@…&gt; wrote:
+<span class="qt">&gt; I got lost down the back of the sofa.  On the plus side, I did find</span>
+<span class="qt">&gt; ï¿œ100 in loose change, the TV remote and a couple of furry Rolos.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Oh, and I&#x27;m not sure who this Great Giana Sisters tape belongs to.</span>
+
+Ah, that&#x27;ll be mine...
+I wondered where that&#x27;d gone.
+-- 
+<span class="qt">|   …@…   | &quot;I&#x27;m alive!!! I can touch! I can taste!         |</span>
+<span class="qt">|   Andrew Halliwell BSc   |  I can SMELL!!!  KRYTEN!!! Unpack Rachel and    |</span>
+<span class="qt">|            in            |  get out the puncture repair kit!&quot;              |</span>
+<span class="qt">|     Computer Science     |     Arnold Judas Rimmer- Red Dwarf              |</span>
+
+
+
+</pre></div><div class="post" id="p220075"><div class="ph"><a class="d" href="#p220075">2009-05-19 18:14:10</a> <span>Zedex Dragon</span> <span>Re: Where is everyone?</span></div><pre>I&#x27;ve been converting my hi-colour printing routine to run on joefish&#x27;s
+PUSH based rainbow generator on the bog-standard speccy. In plain
+English -- you can now use up to 256 UDGs in BASIC and in the middle
+bit of the screen they can be in hi-color (8x1 attributes) with no
+additional hardware. I&#x27;ve emailed Martijn, but it hasn&#x27;t been uploaded
+to WoS yet. The source is on the forum.
+
+
+
+</pre></div><div class="post" id="p220076"><div class="ph"><a class="d" href="#p220076">2009-05-19 19:07:54</a> <span>Phil Cave</span> <span>Re: Where is everyone?</span></div><pre>Glad I&#x27;m using a Mac then.
+
+Brian Gaff wrote:
+<span class="qt">&gt; No its yet another uk isp stopped doing newsgroups and google&#x27;s interface </span>
+<span class="qt">&gt; was designed by a demented Commode user.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; It will be worse when Win 7 comes along as by default it has no news client </span>
+<span class="qt">&gt; at all.</span>
+<span class="qt">&gt; Brian</span>
+<span class="qt">&gt; </span>
+
+
+
+</pre></div><div class="post" id="p220077"><div class="ph"><a class="d" href="#p220077">2009-05-19 21:37:40</a> <span>Calum</span> <span>Re: Where is everyone?</span></div><pre>Phil Cave wrote:
+<span class="qt">&gt; Glad I&#x27;m using a Mac then.</span>
+
+Which doesn&#x27;t have one either...
+
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Brian Gaff wrote:</span>
+<span class="qt">&gt;&gt; No its yet another uk isp stopped doing newsgroups and google&#x27;s </span>
+<span class="qt">&gt;&gt; interface was designed by a demented Commode user.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; It will be worse when Win 7 comes along as by default it has no news </span>
+<span class="qt">&gt;&gt; client at all.</span>
+<span class="qt">&gt;&gt; Brian</span>
+<span class="qt">&gt;&gt;</span>
+
+
+
+</pre></div><div class="post" id="p220078"><div class="ph"><a class="d" href="#p220078">2009-05-19 21:41:18</a> <span>Bohus Král</span> <span>Re: Where is everyone?</span></div><pre>
+&quot;Andrew Halliwell&quot; &lt;…@…&gt; napï¿œsal
+
+<span class="qt">&gt;&gt;&gt;&gt; I have seen no activity here for some time. Have you all gone?</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; Mr. James Everyone is very busy at moment. Do not disturb. ;-)</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Mr. Everyone is lost somewhere in Pacific (if the rumours are correct) :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Ahhh, but is he in 2009 or 1977?</span>
+
+What is so special on 1977 ?
+
+B 
+
+
+__________ Informacia od ESET NOD32 Antivirus, verzia databazy 4088 (20090519) __________
+
+Tuto spravu preveril ESET NOD32 Antivirus.
+
+<a href="http://www.eset.sk" rel="noreferrer">http://www.eset.sk</a>
+
+
+
+
+
+
+</pre></div><div class="post" id="p220079"><div class="ph"><a class="d" href="#p220079">2009-05-19 21:47:51</a> <span>Ian Rawlings</span> <span>Re: Where is everyone?</span></div><pre>On 2009-05-19, Calum &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Phil Cave wrote:</span>
+<span class="qt">&gt;&gt; Glad I&#x27;m using a Mac then.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Which doesn&#x27;t have one either...</span>
+
+Macs can do everything brilliantly without any extra software and come
+with a free USB vibrating butt-plug.
+
+-- 
+Blast off and strike the evil Bydo empire!
+<a href="http://youtube.com/tarcus69" rel="noreferrer">http://youtube.com/tarcus69</a>
+<a href="http://www.flickr.com/photos/tarcus/sets/" rel="noreferrer">http://www.flickr.com/photos/tarcus/sets/</a>
+
+
+
+</pre></div><div class="post" id="p220080"><div class="ph"><a class="d" href="#p220080">2009-05-19 22:06:50</a> <span>Andrew Halliwell</span> <span>Re: Where is everyone?</span></div><pre>Bohus Krï¿œl &lt;…@…&gt; wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &quot;Andrew Halliwell&quot; &lt;…@…&gt; napï¿œsal</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;&gt;&gt;&gt; I have seen no activity here for some time. Have you all gone?</span>
+<span class="qt">&gt;&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;&gt; Mr. James Everyone is very busy at moment. Do not disturb. ;-)</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; Mr. Everyone is lost somewhere in Pacific (if the rumours are correct) :)</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Ahhh, but is he in 2009 or 1977?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; What is so special on 1977 ?</span>
+
+Well, that is where most of the people in Lost are, the others being in
+2009.
+-- 
+<span class="qt">|   …@…   | &quot;I&#x27;m alive!!! I can touch! I can taste!         |</span>
+<span class="qt">|   Andrew Halliwell BSc   |  I can SMELL!!!  KRYTEN!!! Unpack Rachel and    |</span>
+<span class="qt">|            in            |  get out the puncture repair kit!&quot;              |</span>
+<span class="qt">|     Computer Science     |     Arnold Judas Rimmer- Red Dwarf              |</span>
+
+
+
+</pre></div><div class="post" id="p220081"><div class="ph"><a class="d" href="#p220081">2009-05-19 22:24:39</a> <span>Zedex Dragon</span> <span>Re: Where is everyone?</span></div><pre>On May 19, 10:47 pm, Ian Rawlings &lt;…@…&gt; wrote:
+<span class="qt">&gt; On 2009-05-19, Calum &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Phil Cave wrote:</span>
+<span class="qt">&gt; &gt;&gt; Glad I&#x27;m using a Mac then.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Which doesn&#x27;t have one either...</span>
+
+What&#x27;s wrong with Thunderbird?
+
+
+
+</pre></div><div class="post" id="p220082"><div class="ph"><a class="d" href="#p220082">2009-05-19 22:53:20</a> <span>Ian Rawlings</span> <span>Re: Where is everyone?</span></div><pre>On 2009-05-19, Zedex Dragon &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; On May 19, 10:47ï¿½pm, Ian Rawlings &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; On 2009-05-19, Calum &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; &gt; Phil Cave wrote:</span>
+<span class="qt">&gt;&gt; &gt;&gt; Glad I&#x27;m using a Mac then.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; &gt; Which doesn&#x27;t have one either...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; What&#x27;s wrong with Thunderbird?</span>
+
+The context was OSes coming without a supplied news reader, although I
+don&#x27;t recall seeing one in Windows either, not that I&#x27;ve ever looked
+much!
+
+-- 
+Blast off and strike the evil Bydo empire!
+<a href="http://youtube.com/tarcus69" rel="noreferrer">http://youtube.com/tarcus69</a>
+<a href="http://www.flickr.com/photos/tarcus/sets/" rel="noreferrer">http://www.flickr.com/photos/tarcus/sets/</a>
+
+
+
+</pre></div><div class="post" id="p220083"><div class="ph"><a class="d" href="#p220083">2009-05-19 23:01:25</a> <span>Alistair Cree</span> <span>Re: Where is everyone?</span></div><pre>Ian Rawlings wrote:
+<span class="qt">&gt; On 2009-05-19, Zedex Dragon &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; On May 19, 10:47 pm, Ian Rawlings &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;&gt; On 2009-05-19, Calum &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;&gt; Phil Cave wrote:</span>
+<span class="qt">&gt;&gt;&gt;&gt;&gt; Glad I&#x27;m using a Mac then.</span>
+<span class="qt">&gt;&gt;&gt;&gt; Which doesn&#x27;t have one either...</span>
+<span class="qt">&gt;&gt; What&#x27;s wrong with Thunderbird?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The context was OSes coming without a supplied news reader, although I</span>
+<span class="qt">&gt; don&#x27;t recall seeing one in Windows either, not that I&#x27;ve ever looked</span>
+<span class="qt">&gt; much!</span>
+<span class="qt">&gt; </span>
+
+XP had outlook express bundled, I don&#x27;t know about vista.
+
+However I&#x27;d hardly call outlook express a news reader, I&#x27;d rather 
+microsoft didn&#x27;t fill up my computer with crappy low quality software 
+that I will have to install decent alternatives for as soon as I have 
+finished installing the os!
+
+
+
+</pre></div><div class="post" id="p220084"><div class="ph"><a class="d" href="#p220084">2009-05-19 23:12:37</a> <span>Chris Young</span> <span>Re: Where is everyone?</span></div><pre>On Wed, 20 May 2009 00:01:25 +0100 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Alistair Cree:
+
+<span class="qt">&gt; However I&#x27;d hardly call outlook express a news reader, I&#x27;d rather </span>
+<span class="qt">&gt; microsoft didn&#x27;t fill up my computer with crappy low quality software </span>
+<span class="qt">&gt; that I will have to install decent alternatives for as soon as I have </span>
+<span class="qt">&gt; finished installing the os!</span>
+
+The first thing you should use Internet Explorer for is to obtain a
+replacement for it.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p220085"><div class="ph"><a class="d" href="#p220085">2009-05-20 00:02:26</a> <span>Guesser</span> <span>Re: Where is everyone?</span></div><pre>Chris Young wrote:
+<span class="qt">&gt; On Wed, 20 May 2009 00:01:25 +0100 da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt; to MC Alistair Cree:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; However I&#x27;d hardly call outlook express a news reader, I&#x27;d rather </span>
+<span class="qt">&gt;&gt; microsoft didn&#x27;t fill up my computer with crappy low quality software </span>
+<span class="qt">&gt;&gt; that I will have to install decent alternatives for as soon as I have </span>
+<span class="qt">&gt;&gt; finished installing the os!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The first thing you should use Internet Explorer for is to obtain a</span>
+<span class="qt">&gt; replacement for it.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Chris</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+ah crap, the bloody things changed the name again, grrr.
+
+
+
+</pre></div><div class="post" id="p220087"><div class="ph"><a class="d" href="#p220087">2009-05-20 04:58:09</a> <span>Sam Gillett</span> <span>Re: Where is everyone?</span></div><pre>
+&quot;Andrew Halliwell&quot; &lt;…@…&gt; wrote ...
+
+<span class="qt">&gt; Bohus Kral &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; &quot;LCD&quot; &lt;retrozx@[nospam]gmail.com&gt; napmsal v sprave</span>
+<span class="qt">&gt;&gt; news:71139$4a129e69$557ffa07$…@…...</span>
+<span class="qt">&gt;&gt;&gt; Phil Cave schrieb:</span>
+<span class="qt">&gt;&gt;&gt;&gt; I have seen no activity here for some time. Have you all gone?</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; Mr. James Everyone is very busy at moment. Do not disturb. ;-)</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Mr. Everyone is lost somewhere in Pacific (if the rumours are correct) :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Ahhh, but is he in 2009 or 1977?</span>
+
+Really don&#x27;t know what year he is in.  I am in another alternate universe
+where the year is 2022.
+
+In this alternate universe IBM went belly up before Bill Gates could sell
+them an operating system.
+
+Commodore 64 and 128-bit computers sit on almost every desk.
+
+Sinclair computers are still used as doorstops in the Commodore Research and
+Development Laboratory.  They are scheduled to be replaced with Macs next
+year.
+-- 
+Best regards,
+
+Sam Gillett
+
+UFO&#x27;s are real.
+It&#x27;s the Air Force that doesn&#x27;t exist!
+
+
+
+
+
+
+</pre></div><div class="post" id="p220088"><div class="ph"><a class="d" href="#p220088">2009-05-20 06:28:00</a> <span>Zedex Dragon</span> <span>Re: Where is everyone?</span></div><pre>On May 20, 5:58 am, &quot;Sam Gillett&quot; &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt; Commodore 64 and 128-bit computers sit on almost every desk.</span>
+
+Fortunately all the desks were thrown into landfill some years
+previously when it was finally discovered how bad they are for your
+posture.
+
+
+
+</pre></div><div class="post" id="p220089"><div class="ph"><a class="d" href="#p220089">2009-05-20 06:42:29</a> <span>Nama</span> <span>Re: Where is everyone?</span></div><pre>On May 20, 3:28 pm, Zedex Dragon &lt;…@…&gt; wrote:
+<span class="qt">&gt; On May 20, 5:58 am, &quot;Sam Gillett&quot; &lt;…@…&gt;</span>
+<span class="qt">&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Commodore 64 and 128-bit computers sit on almost every desk.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Fortunately all the desks were thrown into landfill some years</span>
+<span class="qt">&gt; previously when it was finally discovered how bad they are for your</span>
+<span class="qt">&gt; posture.</span>
+
+See. I told you it was something in the tap water
+
+
+
+</pre></div><div class="post" id="p220091"><div class="ph"><a class="d" href="#p220091">2009-05-20 08:01:40</a> <span>David Mills</span> <span>Re: Where is everyone?</span></div><pre>Lister &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; On Tue, 19 May 2009 10:38:01 +0100, Phil Cave &lt;…@…&gt;</span>
+<span class="qt">&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;I have seen no activity here for some time. Have you all gone?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; They&#x27;re deadd, Dave</span>
+
+What, Captain Hollister?
+
+
+
+
+</pre></div><div class="post" id="p220092"><div class="ph"><a class="d" href="#p220092">2009-05-20 10:29:53</a> <span>…@…</span> <span>Re: Where is everyone?</span></div><pre>On May 19, 10:38 am, Phil Cave &lt;…@…&gt; wrote:
+<span class="qt">&gt; I have seen no activity here for some time. Have you all gone?</span>
+
+I thought I&#x27;d killed the ng with my sparkling (like cheap cider)
+double post on May 11th. Turns out I only got those threads.
+
+
+
+</pre></div><div class="post" id="p220093"><div class="ph"><a class="d" href="#p220093">2009-05-20 10:49:49</a> <span>Andrew Halliwell</span> <span>Re: Where is everyone?</span></div><pre>Sam Gillett &lt;…@…&gt; wrote:
+<span class="qt">&gt; Commodore 64 and 128-bit computers sit on almost every desk.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Sinclair computers are still used as doorstops in the Commodore Research and</span>
+<span class="qt">&gt; Development Laboratory.  They are scheduled to be replaced with Macs next</span>
+<span class="qt">&gt; year.</span>
+
+So... What crime did you commit that caused you to be damned to hell?
+-- 
+<span class="qt">|   …@…   |   Windows95 (noun): 32 bit extensions and a    |</span>
+<span class="qt">|                          | graphical shell for a 16 bit patch to an 8 bit |</span>
+<span class="qt">|   Andrew Halliwell BSc   | operating system originally  coded for a 4 bit |</span>
+<span class="qt">|            in            |microprocessor, written by a 2 bit company, that|</span>
+<span class="qt">|     Computer Science     |        can&#x27;t stand 1 bit of competition.       |</span>
+
+
+
+</pre></div><div class="post" id="p220094"><div class="ph"><a class="d" href="#p220094">2009-05-20 11:35:52</a> <span>Tim Fardell</span> <span>Re: Where is everyone?</span></div><pre>On Wed, 20 May 2009, Alistair Cree wrote:
+
+<span class="qt">&gt; Ian Rawlings wrote:</span>
+<span class="qt">&gt; &gt; On 2009-05-19, Zedex Dragon &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt;&gt; On May 19, 10:47 pm, Ian Rawlings &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt;&gt;&gt; On 2009-05-19, Calum &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt;&gt;&gt;</span>
+<span class="qt">&gt; &gt;&gt;&gt;&gt; Phil Cave wrote:</span>
+<span class="qt">&gt; &gt;&gt;&gt;&gt;&gt; Glad I&#x27;m using a Mac then.</span>
+<span class="qt">&gt; &gt;&gt;&gt;&gt; Which doesn&#x27;t have one either...</span>
+<span class="qt">&gt; &gt;&gt; What&#x27;s wrong with Thunderbird?</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; The context was OSes coming without a supplied news reader, although I</span>
+<span class="qt">&gt; &gt; don&#x27;t recall seeing one in Windows either, not that I&#x27;ve ever looked</span>
+<span class="qt">&gt; &gt; much!</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; XP had outlook express bundled, I don&#x27;t know about vista.</span>
+
+Vista comes with something called &#x27;Windows Mail&#x27; which, despite its name, 
+also supports Newsgroups. 
+
+But it&#x27;s crap and I wouldn&#x27;t use it personally. I wouldn&#x27;t use &#x27;Windows 
+Mail&#x27; either. 
+
+-- 
+Please remove all-your-clothes before replying. 
+
+
+
+
+</pre></div><div class="post" id="p220096"><div class="ph"><a class="d" href="#p220096">2009-05-20 13:11:57</a> <span>Carlo Ponzi</span> <span>Re: Where is everyone?</span></div><pre>On Tue, 19 May 2009 10:38:01 +0100, Phil Cave &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;I have seen no activity here for some time. Have you all gone?</span>
+
+They&#x27;ve all slipped off to make money online? :-)
+
+
+
+</pre></div><div class="post" id="p220098"><div class="ph"><a class="d" href="#p220098">2009-05-20 15:32:32</a> <span>KLP2</span> <span>Re: Where is everyone?</span></div><pre>On 19 Maio, 10:38, Phil Cave &lt;…@…&gt; wrote:
+<span class="qt">&gt; I have seen no activity here for some time. Have you all gone?</span>
+
+My guess: everyone is busy twittering on about their favorite brand of
+toilet paper or something. I hear it&#x27;s what kids do nowadays. Bah. Hey
+you, gerroff my lawn!
+
+--
+KLP2
+
+
+
+</pre></div><div class="post" id="p220100"><div class="ph"><a class="d" href="#p220100">2009-05-20 17:21:31</a> <span>Brian Gaff</span> <span>Re: Where is everyone?</span></div><pre>Oh really, is this the only computer for those who are anally retentive 
+then?
+Brian
+
+-- 
+Brian Gaff....Note, this account does not accept Bcc: email.
+ graphics are great, but the blind can&#x27;t hear them
+Email: …@…
+______________________________________________________________________________________________________________
+
+
+&quot;Ian Rawlings&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; On 2009-05-19, Calum &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Phil Cave wrote:</span>
+<span class="qt">&gt;&gt;&gt; Glad I&#x27;m using a Mac then.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Which doesn&#x27;t have one either...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Macs can do everything brilliantly without any extra software and come</span>
+<span class="qt">&gt; with a free USB vibrating butt-plug.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; -- </span>
+<span class="qt">&gt; Blast off and strike the evil Bydo empire!</span>
+<span class="qt">&gt; <a href="http://youtube.com/tarcus69" rel="noreferrer">http://youtube.com/tarcus69</a></span>
+<span class="qt">&gt; <a href="http://www.flickr.com/photos/tarcus/sets/" rel="noreferrer">http://www.flickr.com/photos/tarcus/sets/</a> </span>
+
+
+
+
+
+</pre></div><div class="post" id="p220101"><div class="ph"><a class="d" href="#p220101">2009-05-20 17:23:28</a> <span>Brian Gaff</span> <span>Re: Where is everyone?</span></div><pre>You miss the point. I was meaning that windoze 7 does not have one bundled 
+with it.
+I can only use Thunderbird 3 and as its not a stable release yet I&#x27;m not 
+biting till it is. I know these things are not often blind friendly when 
+they fall over. T2 has no screenreader hooks.
+
+Brian
+
+-- 
+Brian Gaff....Note, this account does not accept Bcc: email.
+ graphics are great, but the blind can&#x27;t hear them
+Email: …@…
+______________________________________________________________________________________________________________
+
+
+&quot;Zedex Dragon&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+On May 19, 10:47 pm, Ian Rawlings &lt;…@…&gt; wrote:
+<span class="qt">&gt; On 2009-05-19, Calum &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Phil Cave wrote:</span>
+<span class="qt">&gt; &gt;&gt; Glad I&#x27;m using a Mac then.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Which doesn&#x27;t have one either...</span>
+
+What&#x27;s wrong with Thunderbird? 
+
+
+
+
+
+</pre></div><div class="post" id="p220102"><div class="ph"><a class="d" href="#p220102">2009-05-20 17:26:56</a> <span>Brian Gaff</span> <span>Re: Where is everyone?</span></div><pre>The problem is, just look at what is in use and you will see its OE and this 
+means hat newsgroups will die off if nobody knows they exist. already people 
+think they are owned by google.
+
+Spit.
+
+Brian
+
+-- 
+Brian Gaff....Note, this account does not accept Bcc: email.
+ graphics are great, but the blind can&#x27;t hear them
+Email: …@…
+______________________________________________________________________________________________________________
+
+
+&quot;Alistair Cree&quot; &lt;…@…&gt; wrote in message 
+news:guvdo7$jh8$…@…...
+<span class="qt">&gt; Ian Rawlings wrote:</span>
+<span class="qt">&gt;&gt; On 2009-05-19, Zedex Dragon &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; On May 19, 10:47 pm, Ian Rawlings &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;&gt;&gt; On 2009-05-19, Calum &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;&gt;&gt; Phil Cave wrote:</span>
+<span class="qt">&gt;&gt;&gt;&gt;&gt;&gt; Glad I&#x27;m using a Mac then.</span>
+<span class="qt">&gt;&gt;&gt;&gt;&gt; Which doesn&#x27;t have one either...</span>
+<span class="qt">&gt;&gt;&gt; What&#x27;s wrong with Thunderbird?</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; The context was OSes coming without a supplied news reader, although I</span>
+<span class="qt">&gt;&gt; don&#x27;t recall seeing one in Windows either, not that I&#x27;ve ever looked</span>
+<span class="qt">&gt;&gt; much!</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; XP had outlook express bundled, I don&#x27;t know about vista.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; However I&#x27;d hardly call outlook express a news reader, I&#x27;d rather </span>
+<span class="qt">&gt; microsoft didn&#x27;t fill up my computer with crappy low quality software that </span>
+<span class="qt">&gt; I will have to install decent alternatives for as soon as I have finished </span>
+<span class="qt">&gt; installing the os! </span>
+
+
+
+
+
+</pre></div><div class="post" id="p220103"><div class="ph"><a class="d" href="#p220103">2009-05-20 17:29:40</a> <span>Brian Gaff</span> <span>Re: Where is everyone?</span></div><pre>Might I point out here that from my perspective, the criteria is a program 
+blind folk can use via speech. Until very recently this has meant OE and IE 
+and that was that, thankfully some people are now waking up to the fact that 
+many people cannot see well enough to use a mouse and are getting a bit 
+better at making keyboard shortcuts and stuff for screenreaders in their 
+software.
+
+Brian
+
+-- 
+Brian Gaff....Note, this account does not accept Bcc: email.
+ graphics are great, but the blind can&#x27;t hear them
+Email: …@…
+______________________________________________________________________________________________________________
+
+
+&quot;Chris Young&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; On Wed, 20 May 2009 00:01:25 +0100 da kidz on comp.sys.sinclair were </span>
+<span class="qt">&gt; rappin&#x27;</span>
+<span class="qt">&gt; to MC Alistair Cree:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; However I&#x27;d hardly call outlook express a news reader, I&#x27;d rather</span>
+<span class="qt">&gt;&gt; microsoft didn&#x27;t fill up my computer with crappy low quality software</span>
+<span class="qt">&gt;&gt; that I will have to install decent alternatives for as soon as I have</span>
+<span class="qt">&gt;&gt; finished installing the os!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The first thing you should use Internet Explorer for is to obtain a</span>
+<span class="qt">&gt; replacement for it.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Chris</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; -- </span>
+<span class="qt">&gt; +-------------------------------------------+</span>
+<span class="qt">&gt; | Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">&gt; |  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">&gt; | Your Sinclair: A Celebration              |</span>
+<span class="qt">&gt; +- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; DISCLAIMER: I may be making all this stuff up again. </span>
+
+
+
+
+
+</pre></div><div class="post" id="p220106"><div class="ph"><a class="d" href="#p220106">2009-05-20 18:32:39</a> <span>Ian Rawlings</span> <span>Re: Where is everyone?</span></div><pre>On 2009-05-20, Brian Gaff &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Oh really, is this the only computer for those who are anally retentive </span>
+<span class="qt">&gt; then?</span>
+<span class="qt">&gt; Brian</span>
+
+Oh I think they do it more often than that!
+
+-- 
+Blast off and strike the evil Bydo empire!
+<a href="http://youtube.com/tarcus69" rel="noreferrer">http://youtube.com/tarcus69</a>
+<a href="http://www.flickr.com/photos/tarcus/sets/" rel="noreferrer">http://www.flickr.com/photos/tarcus/sets/</a>
+
+
+
+</pre></div><div class="post" id="p220107"><div class="ph"><a class="d" href="#p220107">2009-05-20 19:21:14</a> <span>Sam Gillett</span> <span>Re: Where is everyone?</span></div><pre>
+&quot;Andrew Halliwell&quot; &lt;…@…&gt; wrote ...
+
+<span class="qt">&gt; Sam Gillett &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; Commodore 64 and 128-bit computers sit on almost every desk.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Sinclair computers are still used as doorstops in the Commodore Research</span>
+<span class="qt">&gt;&gt; and</span>
+<span class="qt">&gt;&gt; Development Laboratory.  They are scheduled to be replaced with Macs next</span>
+<span class="qt">&gt;&gt; year.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; So... What crime did you commit that caused you to be damned to hell?</span>
+
+In this alternate universe the devil is named Clive.  Clive makes bad boys
+like you type on rubber keyboards.    :-)
+-- 
+Best regards,
+
+Sam Gillett
+
+I saw Sir Clive making crop circles,
+But they turned out square!!
+
+
+
+
+
+
+</pre></div><div class="post" id="p220117"><div class="ph"><a class="d" href="#p220117">2009-05-21 07:55:18</a> <span>KLP2</span> <span>Re: Where is everyone?</span></div><pre>On 20 Maio, 18:21, &quot;Brian Gaff&quot; &lt;…@…&gt; wrote:
+<span class="qt">&gt; Oh really, is this the only computer for those who are anally retentive</span>
+<span class="qt">&gt; then?</span>
+<span class="qt">&gt; Brian</span>
+
+Quite the opposite. I hear twitter is for people who are verbally
+incontinent.
+
+--
+KLP2
+
+
+
+</pre></div><div class="post" id="p220120"><div class="ph"><a class="d" href="#p220120">2009-05-21 19:44:28</a> <span>Paul E Collins</span> <span>Re: Where is everyone?</span></div><pre>&quot;Chris Young&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; I got lost down the back of the sofa.  On the plus side, I did find ï¿½100 </span>
+<span class="qt">&gt; in loose change, the TV remote and a couple of furry Rolos.</span>
+<span class="qt">&gt; Oh, and I&#x27;m not sure who this Great Giana Sisters tape belongs to.</span>
+
+I think one of the Rolos is mine.
+
+Eq.
+
+
+
+
+
+</pre></div><div class="post" id="p220124"><div class="ph"><a class="d" href="#p220124">2009-05-22 06:32:32</a> <span>Zedex Dragon</span> <span>Re: Where is everyone?</span></div><pre>Well, there is the possibility that you could use a Spectrum. The
+Spectranet ethernet interface already has an IRC client. It probably
+wouldn&#x27;t take that much effort to hook it up to a Currah uSpeech unit
+for screen reading. I guess a newsgroup program is going to need a
+slightly (vastly) larger cache, but I think a +2A with a divIDE+ could
+probably handle it. On the downside I don&#x27;t know how long you could
+stand to listen to the Currah. I suppose some post processing could be
+done to get better allophone matches, but it would still get on my
+nerves after about 10 minutes. There&#x27;s also the issue of whether you
+need speech-to-text (which is never going to work on the Speccy).
+
+
+
+</pre></div><div class="post" id="p220127"><div class="ph"><a class="d" href="#p220127">2009-05-22 11:05:39</a> <span>Lister</span> <span>Re: Where is everyone?</span></div><pre>On Thu, 21 May 2009 20:44:28 +0100, &quot;Paul E Collins&quot; 00
+
+
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;&quot;Chris Young&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; I got lost down the back of the sofa.  On the plus side, I did find ï¿½100 </span>
+<span class="qt">&gt;&gt; in loose change, the TV remote and a couple of furry Rolos.</span>
+<span class="qt">&gt;&gt; Oh, and I&#x27;m not sure who this Great Giana Sisters tape belongs to.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I think one of the Rolos is mine.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Eq.</span>
+<span class="qt">&gt;</span>
+Damn, now  I fancy a Rolo, not had one in  ages
+
+
+
+
+-- 
+Lister
+
+Posting from his new flat
+
+
+
+</pre></div><div class="post" id="p220130"><div class="ph"><a class="d" href="#p220130">2009-05-22 18:48:48</a> <span>Chris Young</span> <span>Re: Where is everyone?</span></div><pre>On Fri, 22 May 2009 12:05:39 +0100 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Lister:
+
+<span class="qt">&gt; &gt;&gt; I got lost down the back of the sofa.  On the plus side, I did find ï¿½100 </span>
+<span class="qt">&gt; &gt;&gt; in loose change, the TV remote and a couple of furry Rolos.</span>
+<span class="qt">&gt; &gt;&gt; Oh, and I&#x27;m not sure who this Great Giana Sisters tape belongs to.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;I think one of the Rolos is mine.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; Damn, now  I fancy a Rolo, not had one in  ages</span>
+
+There&#x27;s one unclaimed.  I think it&#x27;ll be OK to eat if you scrape the
+furry bits off first (preferably move them to a new container as they
+might be useful for the development of science and creation of new
+life forms).  Don&#x27;t let Health &amp; Safety catch you though, they&#x27;ll shut
+us down.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p220133"><div class="ph"><a class="d" href="#p220133">2009-05-22 19:57:58</a> <span>Andrew Halliwell</span> <span>Re: Where is everyone?</span></div><pre>Chris Young &lt;…@…&gt; wrote:
+<span class="qt">&gt; There&#x27;s one unclaimed.  I think it&#x27;ll be OK to eat if you scrape the</span>
+<span class="qt">&gt; furry bits off first (preferably move them to a new container as they</span>
+<span class="qt">&gt; might be useful for the development of science and creation of new</span>
+<span class="qt">&gt; life forms).  Don&#x27;t let Health &amp; Safety catch you though, they&#x27;ll shut</span>
+<span class="qt">&gt; us down.</span>
+
+A brand new rolo based life form...
+-- 
+<span class="qt">|   …@…   |   Windows95 (noun): 32 bit extensions and a    |</span>
+<span class="qt">|                          | graphical shell for a 16 bit patch to an 8 bit |</span>
+<span class="qt">|   Andrew Halliwell BSc   | operating system originally  coded for a 4 bit |</span>
+<span class="qt">|            in            |microprocessor, written by a 2 bit company, that|</span>
+<span class="qt">|     Computer Science     |        can&#x27;t stand 1 bit of competition.       |</span>
+
+
+
+</pre></div><div class="post" id="p220136"><div class="ph"><a class="d" href="#p220136">2009-05-24 11:32:33</a> <span>Ian Rawlings</span> <span>Re: Where is everyone?</span></div><pre>On 2009-05-22, Andrew Halliwell &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; A brand new rolo based life form...</span>
+
+Hmm, what does a rolo-based life-form eat?  And how do they reproduce?
+That could get sticky.
+
+-- 
+Blast off and strike the evil Bydo empire!
+<a href="http://youtube.com/tarcus69" rel="noreferrer">http://youtube.com/tarcus69</a>
+<a href="http://www.flickr.com/photos/tarcus/sets/" rel="noreferrer">http://www.flickr.com/photos/tarcus/sets/</a>
+
+
+
+</pre></div><div class="post" id="p220137"><div class="ph"><a class="d" href="#p220137">2009-05-25 02:00:03</a> <span>Sam Gillett</span> <span>Re: Where is everyone?</span></div><pre>
+&quot;Ian Rawlings&quot; &lt;…@…&gt; wrote ...
+
+<span class="qt">&gt; On 2009-05-22, Andrew Halliwell &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; A brand new rolo based life form...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Hmm, what does a rolo-based life-form eat?</span>
+
+Just as a carbohydrate based life-form eats carbohydrates, a Rolo based
+life-form would, of necessity, eat Rolos.  Could that be where all the Rolos 
+have gone?
+
+<span class="qt">&gt; And how do they reproduce?</span>
+
+I do not care to comment on that.    :-)
+
+<span class="qt">&gt; That could get sticky.</span>
+
+That is why I did not care top comment on the above subject.  It could get 
+very sticky, and maybe illegal too!
+-- 
+Best regards,
+
+Sam Gillett
+
+I saw Elvis eating Rolos,
+then he farted.
+
+
+
+
+
+</pre></div><div class="post" id="p220138"><div class="ph"><a class="d" href="#p220138">2009-05-25 05:44:56</a> <span>Ian Rawlings</span> <span>Re: Where is everyone?</span></div><pre>On 2009-05-25, Sam Gillett &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Just as a carbohydrate based life-form eats carbohydrates, a Rolo</span>
+<span class="qt">&gt; based life-form would, of necessity, eat Rolos.  Could that be where</span>
+<span class="qt">&gt; all the Rolos have gone?</span>
+
+And what would a self-confessed Commodore user know of the finer
+things of life such as crisps and rolos?  If we need to know about
+slugs, headaches and poo, we&#x27;ll know who to ask.
+
+-- 
+Blast off and strike the evil Bydo empire!
+<a href="http://youtube.com/tarcus69" rel="noreferrer">http://youtube.com/tarcus69</a>
+<a href="http://www.flickr.com/photos/tarcus/sets/" rel="noreferrer">http://www.flickr.com/photos/tarcus/sets/</a>
+
+
+
+</pre></div><div class="post" id="p220139"><div class="ph"><a class="d" href="#p220139">2009-05-25 07:06:51</a> <span>Sam Gillett</span> <span>Re: Where is everyone?</span></div><pre>
+&quot;Ian Rawlings&quot; &lt;…@…&gt; wrote ...
+
+<span class="qt">&gt; On 2009-05-25, Sam Gillett &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Just as a carbohydrate based life-form eats carbohydrates, a Rolo</span>
+<span class="qt">&gt;&gt; based life-form would, of necessity, eat Rolos.  Could that be where</span>
+<span class="qt">&gt;&gt; all the Rolos have gone?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; And what would a self-confessed Commodore user know of the finer</span>
+<span class="qt">&gt; things of life such as crisps and rolos?</span>
+
+Want to know about crisps do you?  Try this link:
+
+<a href="http://www.ideafinder.com/history/inventions/potatochips.htm" rel="noreferrer">http://www.ideafinder.com/history/inventions/potatochips.htm</a>
+
+What is known as crisps in the UK is known as potato chips in the US.  Potato 
+chips were invented in America by an American in 1853.  The potato chip did 
+not leave the United States as a food item until 1921 when they were 
+introduced in England.  Since the words chips was already in use for what we 
+in the US call french fries, the word crisps was used.
+
+And about Rolos, the brand is currently owned by an American company.  Check 
+Hershey&#x27;s website for more information:
+
+<a href="http://www.hersheys.com/products/details/rolo.asp" rel="noreferrer">http://www.hersheys.com/products/details/rolo.asp</a>
+
+<span class="qt">&gt; If we need to know about slugs, headaches and poo, we&#x27;ll know who to ask.</span>
+
+You have several resident experts on all three of those subjects in this 
+newsgroup.    :-)
+-- 
+Best regards,
+
+Sam Gillett
+
+I saw Elvis eating Rolos,
+then he farted! 
+
+
+
+
+
+</pre></div><div class="post" id="p220140"><div class="ph"><a class="d" href="#p220140">2009-05-25 07:16:48</a> <span>Ian Rawlings</span> <span>Re: Where is everyone?</span></div><pre>On 2009-05-25, Sam Gillett &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Want to know about crisps do you?  Try this link:</span>
+
+My my, a Commdore abuser who can read!  Whatever next!
+
+There&#x27;s reading about Crisps and Rolos, and there&#x27;s being in communion
+with them, I can see that you weren&#x27;t aware of this..  It&#x27;s not
+something that can be taught I&#x27;m afraid..
+
+-- 
+Blast off and strike the evil Bydo empire!
+<a href="http://youtube.com/tarcus69" rel="noreferrer">http://youtube.com/tarcus69</a>
+<a href="http://www.flickr.com/photos/tarcus/sets/" rel="noreferrer">http://www.flickr.com/photos/tarcus/sets/</a>
+
+
+
+</pre></div><div class="post" id="p220141"><div class="ph"><a class="d" href="#p220141">2009-05-25 08:58:27</a> <span>Andrew Halliwell</span> <span>Re: Where is everyone?</span></div><pre>Sam Gillett &lt;…@…&gt; wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &quot;Ian Rawlings&quot; &lt;…@…&gt; wrote ...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; On 2009-05-22, Andrew Halliwell &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; A brand new rolo based life form...</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Hmm, what does a rolo-based life-form eat?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Just as a carbohydrate based life-form eats carbohydrates, a Rolo based</span>
+<span class="qt">&gt; life-form would, of necessity, eat Rolos.  Could that be where all the Rolos </span>
+<span class="qt">&gt; have gone?</span>
+
+What do you mean, gone?
+The shelves are still well stocked in the shops near here.
+-- 
+<span class="qt">|   …@…   |   Windows95 (noun): 32 bit extensions and a    |</span>
+<span class="qt">|                          | graphical shell for a 16 bit patch to an 8 bit |</span>
+<span class="qt">|   Andrew Halliwell BSc   | operating system originally  coded for a 4 bit |</span>
+<span class="qt">|            in            |microprocessor, written by a 2 bit company, that|</span>
+<span class="qt">|     Computer Science     |        can&#x27;t stand 1 bit of competition.       |</span>
+
+
+
+</pre></div><div class="post" id="p220142"><div class="ph"><a class="d" href="#p220142">2009-05-25 09:01:06</a> <span>Andrew Halliwell</span> <span>Re: Where is everyone?</span></div><pre>Sam Gillett &lt;…@…&gt; wrote:
+<span class="qt">&gt; And about Rolos, the brand is currently owned by an American company.  Check </span>
+<span class="qt">&gt; Hershey&#x27;s website for more information:</span>
+
+Doesn&#x27;t matter. They&#x27;re the genius invention of rowntrees. A UK company.
+Trouble is your american conglomerates buy up anything that threatens your
+bottom line. We&#x27;ve lost some of our favourite brands to your sharks.
+Thank you walkers for taking smiths and golden wonder away from us and
+screwing up the package colouring. Thank you very much.
+
+-- 
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|   Andrew Halliwell BSc   | &quot;ARSE! GERLS!! DRINK! DRINK! DRINK!!!&quot;          |</span>
+<span class="qt">|            in            | &quot;THAT WOULD BE AN ECUMENICAL MATTER!...FECK!!!! |</span>
+<span class="qt">|     Computer Science     | - Father Jack in &quot;Father Ted&quot;                   |</span>
+
+
+
+</pre></div><div class="post" id="p220144"><div class="ph"><a class="d" href="#p220144">2009-05-25 17:00:54</a> <span>Duncan Snowden</span> <span>Re: Where is everyone?</span></div><pre>Sam Gillett wrote:
+
+<span class="qt">&gt; And about Rolos, the brand is currently owned by an American company.  Check </span>
+<span class="qt">&gt; Hershey&#x27;s website for more information:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; <a href="http://www.hersheys.com/products/details/rolo.asp" rel="noreferrer">http://www.hersheys.com/products/details/rolo.asp</a></span>
+
+Ahem:
+
+ï¿½ROLO is a licensed brand from Societe Des Produits Nestle S.A. The 
+original licensing agreement was executed with Rowntree Products[1] in 
+1969. In 1988, Nestle purchased Rowntree.ï¿½
+
+[1] Of York. The old one.
+
+-- 
+Duncan Snowden.
+
+
+
+</pre></div><div class="post" id="p220145"><div class="ph"><a class="d" href="#p220145">2009-05-25 19:57:04</a> <span>Calum</span> <span>Re: Where is everyone?</span></div><pre>Sam Gillett wrote:
+
+<span class="qt">&gt; What is known as crisps in the UK is known as potato chips in the US.  Potato </span>
+<span class="qt">&gt; chips were invented in America by an American in 1853.  The potato chip did </span>
+<span class="qt">&gt; not leave the United States as a food item until 1921 when they were </span>
+<span class="qt">&gt; introduced in England.</span>
+
+However, both countries forgot to invent any way to flavour them, which 
+was left to the Irish some years later.
+
+
+
+</pre></div><div class="post" id="p220146"><div class="ph"><a class="d" href="#p220146">2009-05-25 23:54:49</a> <span>Sam Gillett</span> <span>Re: Where is everyone?</span></div><pre>
+&quot;Andrew Halliwell&quot; &lt;…@…&gt; wrote ...
+
+<span class="qt">&gt; Sam Gillett &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; &quot;Ian Rawlings&quot; &lt;…@…&gt; wrote ...</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; On 2009-05-22, Andrew Halliwell &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;&gt; A brand new rolo based life form...</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; Hmm, what does a rolo-based life-form eat?</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Just as a carbohydrate based life-form eats carbohydrates, a Rolo based</span>
+<span class="qt">&gt;&gt; life-form would, of necessity, eat Rolos.  Could that be where all the</span>
+<span class="qt">&gt;&gt; Rolos have gone?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; What do you mean, gone?</span>
+<span class="qt">&gt; The shelves are still well stocked in the shops near here.</span>
+
+The Wal-Mart store where I shop no longer has them.  I would guess that
+Hershey still sells them, because they have them on their website.  Maybe an 
+underground Spectrum movement is hoarding them?    ;-)
+-- 
+Best regards,
+
+Sam Gillett
+
+Change is inevitable,
+except from vending machines!
+
+
+
+
+
+
+</pre></div><div class="post" id="p220147"><div class="ph"><a class="d" href="#p220147">2009-05-26 00:24:36</a> <span>Andrew Halliwell</span> <span>Re: Where is everyone?</span></div><pre>Sam Gillett &lt;…@…&gt; wrote:
+<span class="qt">&gt;&gt; What do you mean, gone?</span>
+<span class="qt">&gt;&gt; The shelves are still well stocked in the shops near here.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The Wal-Mart store where I shop no longer has them.  I would guess that</span>
+<span class="qt">&gt; Hershey still sells them, because they have them on their website.  Maybe an </span>
+<span class="qt">&gt; underground Spectrum movement is hoarding them?    ;-)</span>
+
+Well, hershey might not make them anymore in america.
+But then, they don&#x27;t belong to hershey, it must be a sublicensing deal with
+nestles. Cos it&#x27;s nestles who own them.
+(I refuse to call them nestle with the accented e, it was nestles when I was
+a kid, so it remains that. Just as marathon is marathon and opal fruits are
+opal fruits. I&#x27;m not being bullied by marketting idiots)
+:)
+-- 
+<span class="qt">|                          |What to do if you find yourself stuck in a crack|</span>
+<span class="qt">|  …@…    |in the ground beneath a giant boulder, which you|</span>
+<span class="qt">|                          |can&#x27;t move, with no hope of rescue.             |</span>
+<span class="qt">|  Andrew Halliwell BSc    |Consider how lucky you are that life has been   |</span>
+<span class="qt">|           in             |good to you so far...                           |</span>
+<span class="qt">|    Computer Science      |   -The BOOK, Hitch-hiker&#x27;s guide to the galaxy.|</span>
+
+
+
+</pre></div><div class="post" id="p220148"><div class="ph"><a class="d" href="#p220148">2009-05-26 00:28:45</a> <span>Sam Gillett</span> <span>Re: Where is everyone?</span></div><pre>
+&quot;Calum&quot; &lt;…@…&gt; wrote ...
+
+<span class="qt">&gt; Sam Gillett wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; What is known as crisps in the UK is known as potato chips in the US. </span>
+<span class="qt">&gt;&gt; Potato chips were invented in America by an American in 1853.  The potato </span>
+<span class="qt">&gt;&gt; chip did not leave the United States as a food item until 1921 when they </span>
+<span class="qt">&gt;&gt; were introduced in England.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; However, both countries forgot to invent any way to flavour them, which was </span>
+<span class="qt">&gt; left to the Irish some years later.</span>
+
+Ireland is still one of the British Isles isn&#x27;t it?  And what flavor did they 
+invent?
+
+Don&#x27;t really have any idea where the Sour Cream and Onion flavor was 
+invented.  However, it is one of my favorites.
+
+I think the Barbeque flavor was invented by a Texas company (Lays).  They are 
+good too.
+-- 
+Best regards,
+
+Sam Gillett
+
+Why is the third hand on a watch
+called the second hand?
+
+
+
+
+
+</pre></div><div class="post" id="p220149"><div class="ph"><a class="d" href="#p220149">2009-05-26 00:28:46</a> <span>Sam Gillett</span> <span>Re: Where is everyone?</span></div><pre>
+&quot;Duncan Snowden&quot; &lt;…@…&gt; wrote in message
+news:gvej0v$62v$…@…...
+<span class="qt">&gt; Sam Gillett wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; And about Rolos, the brand is currently owned by an American company.</span>
+<span class="qt">&gt;&gt; Check Hershey&#x27;s website for more information:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; <a href="http://www.hersheys.com/products/details/rolo.asp" rel="noreferrer">http://www.hersheys.com/products/details/rolo.asp</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Ahem:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; ROLO is a licensed brand from Societe Des Produits Nestle S.A. The</span>
+<span class="qt">&gt; original licensing agreement was executed with Rowntree Products[1] in</span>
+<span class="qt">&gt; 1969. In 1988, Nestle purchased Rowntree.</span>
+
+Not sure of the year, but more recently Hershey&#x27;s purchased Nestle&#x27;s
+chocolate division, thus acquiring the Rolo brand name.
+-- 
+Best regards,
+
+Sam Gillett
+
+UFO&#x27;s are real.
+It&#x27;s the Air Force that doesn&#x27;t exist!
+
+
+
+
+
+
+</pre></div><div class="post" id="p220150"><div class="ph"><a class="d" href="#p220150">2009-05-26 00:28:46</a> <span>Sam Gillett</span> <span>Re: Where is everyone?</span></div><pre>
+&quot;Ian Rawlings&quot; &lt;…@…&gt; wrote ...
+
+<span class="qt">&gt; On 2009-05-25, Sam Gillett &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Want to know about crisps do you?  Try this link:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; My my, a Commdore abuser who can read!  Whatever next!</span>
+
+Perhaps a Spectrum user who can count past ten?
+
+<span class="qt">&gt; There&#x27;s reading about Crisps and Rolos, and there&#x27;s being in communion</span>
+<span class="qt">&gt; with them, I can see that you weren&#x27;t aware of this..  It&#x27;s not</span>
+<span class="qt">&gt; something that can be taught I&#x27;m afraid..</span>
+
+I am thankful that communion with crisps and Rolos can&#x27;t be taught.  I would 
+hate to see the minds of neighborhood children screwed up with such medieval 
+witchcraft.
+-- 
+Best regards,
+
+Sam Gillett
+
+If you don&#x27;t pay your exorcist,
+will you become repossessed? 
+
+
+
+
+
+</pre></div><div class="post" id="p220151"><div class="ph"><a class="d" href="#p220151">2009-05-26 00:32:07</a> <span>Andrew Halliwell</span> <span>Re: Where is everyone?</span></div><pre>Sam Gillett &lt;…@…&gt; wrote:
+<span class="qt">&gt; Ireland is still one of the British Isles isn&#x27;t it?  And what flavor did they </span>
+<span class="qt">&gt; invent?</span>
+
+It&#x27;s not part of great britain or the united kingdom though...
+Ireland is called the republic of ireland for a very simple reason.
+It&#x27;s independent and has been for many many years.
+
+Only northern ireland is still part of the UK.
+-- 
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|   Andrew Halliwell BSc   | &quot;ARSE! GERLS!! DRINK! DRINK! DRINK!!!&quot;          |</span>
+<span class="qt">|            in            | &quot;THAT WOULD BE AN ECUMENICAL MATTER!...FECK!!!! |</span>
+<span class="qt">|     Computer Science     | - Father Jack in &quot;Father Ted&quot;                   |</span>
+
+
+
+</pre></div><div class="post" id="p220152"><div class="ph"><a class="d" href="#p220152">2009-05-26 00:55:53</a> <span>Sam Gillett</span> <span>Re: Where is everyone?</span></div><pre>
+&quot;Andrew Halliwell&quot; &lt;…@…&gt; wrote ...
+
+<span class="qt">&gt; Sam Gillett &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; Ireland is still one of the British Isles isn&#x27;t it?  And what flavor did</span>
+<span class="qt">&gt;&gt; they</span>
+<span class="qt">&gt;&gt; invent?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; It&#x27;s not part of great britain or the united kingdom though...</span>
+<span class="qt">&gt; Ireland is called the republic of ireland for a very simple reason.</span>
+<span class="qt">&gt; It&#x27;s independent and has been for many many years.</span>
+
+The Island of Ireland is still one of the British Isles.  Let me clarify
+that:
+
+The British Isles are a group of islands off the northwest coast of
+continental Europe that include Great Britain and Ireland, and numerous
+smaller islands.  There are two sovereign states located on the islands: the
+United Kingdom of Great Britain and Northern Ireland, and Ireland.
+
+<span class="qt">&gt; Only northern ireland is still part of the UK.</span>
+
+But the entire island is one of the British Isles.
+
+Have a good day.    :-)
+-- 
+Best regards,
+
+Sam Gillett
+
+Change is inevitable,
+except from vending machines!
+
+
+
+
+
+
+</pre></div><div class="post" id="p220153"><div class="ph"><a class="d" href="#p220153">2009-05-26 04:31:27</a> <span>Sam Gillett</span> <span>Re: Where is everyone?</span></div><pre>
+&quot;Andrew Halliwell&quot; &lt;…@…&gt; wrote ...
+
+<span class="qt">&gt; Sam Gillett &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;&gt; What do you mean, gone?</span>
+<span class="qt">&gt;&gt;&gt; The shelves are still well stocked in the shops near here.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; The Wal-Mart store where I shop no longer has them.  I would guess that</span>
+<span class="qt">&gt;&gt; Hershey still sells them, because they have them on their website.  Maybe</span>
+<span class="qt">&gt;&gt; an underground Spectrum movement is hoarding them?    ;-)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Well, hershey might not make them anymore in america.</span>
+<span class="qt">&gt; But then, they don&#x27;t belong to hershey, it must be a sublicensing deal with</span>
+<span class="qt">&gt; nestles. Cos it&#x27;s nestles who own them.</span>
+<span class="qt">&gt; (I refuse to call them nestle with the accented e, it was nestles when I</span>
+<span class="qt">&gt; was a kid, so it remains that. Just as marathon is marathon and opal fruits </span>
+<span class="qt">&gt; are opal fruits. I&#x27;m not being bullied by marketting idiots)</span>
+<span class="qt">&gt; :)</span>
+
+Update:
+
+Wal-Mart has Rolos again.  They are no longer in the familiar, pocket sized
+pack, but in a 12 ounce (340 g) bag.  The bag contains approximately 56
+Rolos, each wrapped in a gold colored foil.  Although they do not have the
+same &quot;look and feel&quot; they do taste the same as the original Rolos.
+
+I will quote from the bag.
+
+Mfd. by The Hershey Company
+Hershey, Pennsylvania 17033-0825, U.S.A.
+Under License from Societe des Produits Nestle S.A.
+Vevey, Switzerland, Trademark Owners
+
+I hope this clears up the current status of Rolos.  BTW the price of a bag is
+$2.50 US.
+-- 
+Best regards,
+
+Sam Gillett
+
+Change is inevitable,
+except from vending machines!
+
+
+
+
+
+
+</pre></div><div class="post" id="p220155"><div class="ph"><a class="d" href="#p220155">2009-05-26 10:54:04</a> <span>Ian Rawlings</span> <span>Re: Where is everyone?</span></div><pre>On 2009-05-26, Sam Gillett &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; I am thankful that communion with crisps and Rolos can&#x27;t be taught.  I would </span>
+<span class="qt">&gt; hate to see the minds of neighborhood children screwed up with such medieval </span>
+<span class="qt">&gt; witchcraft.</span>
+
+Here in the UK, Medieval Witchcraft is taught in the schools, along
+with jousting and knavery, depending on your parentage.  Some of the
+more progressive types go in for Witchfinding, which is lucrative and
+great fun as can be seen from the Hammer documentaries, involving lots
+of naked women.
+
+-- 
+Blast off and strike the evil Bydo empire!
+<a href="http://youtube.com/tarcus69" rel="noreferrer">http://youtube.com/tarcus69</a>
+<a href="http://www.flickr.com/photos/tarcus/sets/" rel="noreferrer">http://www.flickr.com/photos/tarcus/sets/</a>
+
+
+
+</pre></div><div class="post" id="p220156"><div class="ph"><a class="d" href="#p220156">2009-05-26 12:05:06</a> <span>Andrew Halliwell</span> <span>Re: Where is everyone?</span></div><pre>Ian Rawlings &lt;…@…&gt; wrote:
+<span class="qt">&gt; On 2009-05-26, Sam Gillett &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; I am thankful that communion with crisps and Rolos can&#x27;t be taught.  I would </span>
+<span class="qt">&gt;&gt; hate to see the minds of neighborhood children screwed up with such medieval </span>
+<span class="qt">&gt;&gt; witchcraft.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Here in the UK, Medieval Witchcraft is taught in the schools, along</span>
+<span class="qt">&gt; with jousting and knavery, depending on your parentage.  Some of the</span>
+<span class="qt">&gt; more progressive types go in for Witchfinding, which is lucrative and</span>
+<span class="qt">&gt; great fun as can be seen from the Hammer documentaries, involving lots</span>
+<span class="qt">&gt; of naked women.</span>
+ 
+Personally, alchemy was my favourite subject at school. 
+-- 
+<span class="qt">|                          |What to do if you find yourself stuck in a crack|</span>
+<span class="qt">|  …@…    |in the ground beneath a giant boulder, which you|</span>
+<span class="qt">|                          |can&#x27;t move, with no hope of rescue.             |</span>
+<span class="qt">|  Andrew Halliwell BSc    |Consider how lucky you are that life has been   |</span>
+<span class="qt">|           in             |good to you so far...                           |</span>
+<span class="qt">|    Computer Science      |   -The BOOK, Hitch-hiker&#x27;s guide to the galaxy.|</span>
+
+
+
+</pre></div><div class="post" id="p220158"><div class="ph"><a class="d" href="#p220158">2009-05-26 14:28:42</a> <span>deKay</span> <span>Re: Where is everyone?</span></div><pre>On Wed, 20 May 2009, Carlo Ponzi wrote:
+
+<span class="qt">&gt; On Tue, 19 May 2009 10:38:01 +0100, Phil Cave &lt;…@…&gt;</span>
+<span class="qt">&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; I have seen no activity here for some time. Have you all gone?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; They&#x27;ve all slipped off to make money online? :-)</span>
+<span class="qt">&gt;</span>
+
+I&#x27;m here. A bit.
+
+deKay
+-- 
+  Lofi Gaming - <a href="http://lofi-gaming.org.uk" rel="noreferrer">http://lofi-gaming.org.uk</a>
+  Gaming Diary - <a href="http://lofi-gaming.org.uk/diary" rel="noreferrer">http://lofi-gaming.org.uk/diary</a>
+  Blog - <a href="http://lofi-gaming.org.uk/blog" rel="noreferrer">http://lofi-gaming.org.uk/blog</a>
+  My computer runs at 3.5MHz and I&#x27;m proud of that
+
+
+
+</pre></div><div class="post" id="p220159"><div class="ph"><a class="d" href="#p220159">2009-05-26 17:22:35</a> <span>Ian Rawlings</span> <span>Re: Where is everyone?</span></div><pre>On 2009-05-26, Andrew Halliwell &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Personally, alchemy was my favourite subject at school. </span>
+
+Mine was Knight Lore..
+
+-- 
+Blast off and strike the evil Bydo empire!
+<a href="http://youtube.com/tarcus69" rel="noreferrer">http://youtube.com/tarcus69</a>
+<a href="http://www.flickr.com/photos/tarcus/sets/" rel="noreferrer">http://www.flickr.com/photos/tarcus/sets/</a>
+
+
+
+</pre></div><div class="post" id="p220164"><div class="ph"><a class="d" href="#p220164">2009-05-26 20:32:52</a> <span>Sam Gillett</span> <span>Re: Where is everyone?</span></div><pre>
+&quot;Ian Rawlings&quot; &lt;…@…&gt; wrote ...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Here in the UK, Medieval Witchcraft is taught in the schools, along</span>
+<span class="qt">&gt; with jousting and knavery, depending on your parentage.  Some of the</span>
+<span class="qt">&gt; more progressive types go in for Witchfinding, which is lucrative and</span>
+<span class="qt">&gt; great fun as can be seen from the Hammer documentaries, involving lots</span>
+<span class="qt">&gt; of naked women.</span>
+
+What do you do with the witches when you find them?  Do you still toast them 
+on a bonfire until they are well done?  How do you determine just when a 
+roasted witch is well done?
+-- 
+Best regards,
+
+Sam Gillett
+
+Out of my mind.  Back in 5 minutes! 
+
+
+
+
+
+</pre></div><div class="post" id="p220165"><div class="ph"><a class="d" href="#p220165">2009-05-26 20:52:00</a> <span>Ian Rawlings</span> <span>Re: Where is everyone?</span></div><pre>On 2009-05-26, Sam Gillett &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; What do you do with the witches when you find them?</span>
+
+Oh my.
+
+<span class="qt">&gt; Do you still toast them on a bonfire until they are well done?</span>
+
+Well sometimes we spitroast them a few times first, depends on what
+they&#x27;re like.
+
+<span class="qt">&gt; How do you determine just when a roasted witch is well done?</span>
+
+When the juices run clear.
+
+-- 
+Blast off and strike the evil Bydo empire!
+<a href="http://youtube.com/tarcus69" rel="noreferrer">http://youtube.com/tarcus69</a>
+<a href="http://www.flickr.com/photos/tarcus/sets/" rel="noreferrer">http://www.flickr.com/photos/tarcus/sets/</a>
+
+
+
+</pre></div><div class="post" id="p220166"><div class="ph"><a class="d" href="#p220166">2009-05-26 21:01:55</a> <span>Andrew Halliwell</span> <span>Re: Where is everyone?</span></div><pre>Sam Gillett &lt;…@…&gt; wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &quot;Duncan Snowden&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:gvej0v$62v$…@…...</span>
+<span class="qt">&gt;&gt; Sam Gillett wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; And about Rolos, the brand is currently owned by an American company.</span>
+<span class="qt">&gt;&gt;&gt; Check Hershey&#x27;s website for more information:</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; <a href="http://www.hersheys.com/products/details/rolo.asp" rel="noreferrer">http://www.hersheys.com/products/details/rolo.asp</a></span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Ahem:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; ROLO is a licensed brand from Societe Des Produits Nestle S.A. The</span>
+<span class="qt">&gt;&gt; original licensing agreement was executed with Rowntree Products[1] in</span>
+<span class="qt">&gt;&gt; 1969. In 1988, Nestle purchased Rowntree.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Not sure of the year, but more recently Hershey&#x27;s purchased Nestle&#x27;s</span>
+<span class="qt">&gt; chocolate division, thus acquiring the Rolo brand name.</span>
+
+If they did, why do rolos still have the nestle logo on them?
+-- 
+<span class="qt">|   …@…,uk   | &quot;Are you pondering what I&#x27;m pondering Pinky?&quot;   |</span>
+<span class="qt">|   Andrew Halliwell BSc   |                                                 |</span>
+<span class="qt">|            in            | &quot;I think so brain, but this time, you control   |</span>
+<span class="qt">|     Computer Science     |  the Encounter suit, and I&#x27;ll do the voice...&quot;  |</span>
+
+
+
+</pre></div><div class="post" id="p220168"><div class="ph"><a class="d" href="#p220168">2009-05-26 22:39:21</a> <span>Calum</span> <span>Re: Where is everyone?</span></div><pre>Sam Gillett wrote:
+<span class="qt">&gt; &quot;Calum&quot; &lt;…@…&gt; wrote ...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Sam Gillett wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; What is known as crisps in the UK is known as potato chips in the US. </span>
+<span class="qt">&gt;&gt;&gt; Potato chips were invented in America by an American in 1853.  The potato </span>
+<span class="qt">&gt;&gt;&gt; chip did not leave the United States as a food item until 1921 when they </span>
+<span class="qt">&gt;&gt;&gt; were introduced in England.</span>
+<span class="qt">&gt;&gt; However, both countries forgot to invent any way to flavour them, which was </span>
+<span class="qt">&gt;&gt; left to the Irish some years later.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Ireland is still one of the British Isles isn&#x27;t it? </span>
+
+Geographically yes (although you&#x27;d do well to whisper that if there are 
+any Irishmen around)... but it&#x27;s still not part of the UK.
+
+<span class="qt">&gt; And what flavor did they invent?</span>
+
+Cheese and onion, patenting the flavouring method in the process.  It 
+still hugely outsells every other flavour here on the Emerald Isle, 
+although personally I don&#x27;t see the attraction...
+
+
+
+</pre></div><div class="post" id="p220169"><div class="ph"><a class="d" href="#p220169">2009-05-27 02:27:11</a> <span>Paul E Collins</span> <span>Re: Where is everyone?</span></div><pre>&quot;Ian Rawlings&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; &gt; How do you determine just when a roasted witch is well done?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; When the juices run clear.</span>
+
+How can you distinguish between this and a witch who is merely aroused?
+
+Eq.
+
+
+
+
+
+</pre></div><div class="post" id="p220170"><div class="ph"><a class="d" href="#p220170">2009-05-27 02:28:07</a> <span>Paul E Collins</span> <span>Re: Where is everyone?</span></div><pre>&quot;Sam Gillett&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; &gt; However, both countries forgot to invent any way to flavour [crisps], </span>
+<span class="qt">&gt; &gt; which was left to the Irish some years later.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Ireland is still one of the British Isles isn&#x27;t it?  And what flavor did </span>
+<span class="qt">&gt; they invent?</span>
+
+Guinness.
+
+Eq.
+
+
+
+
+
+</pre></div><div class="post" id="p220171"><div class="ph"><a class="d" href="#p220171">2009-05-27 02:29:03</a> <span>Paul E Collins</span> <span>Re: Where is everyone?</span></div><pre>&quot;Andrew Halliwell&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; (I refuse to call them nestle with the accented e, it was nestles when I </span>
+<span class="qt">&gt; was a kid, so it remains that. Just as marathon is marathon and opal </span>
+<span class="qt">&gt; fruits are opal fruits. I&#x27;m not being bullied by marketting idiots)</span>
+
+Spike also refers to the Blu-ray Disc format as &quot;VHS&quot; and the Internet as 
+&quot;Fireview&quot;.
+
+Eq.
+
+
+
+
+
+</pre></div><div class="post" id="p220172"><div class="ph"><a class="d" href="#p220172">2009-05-27 04:30:18</a> <span>Andrew Halliwell</span> <span>Re: Where is everyone?</span></div><pre>Paul E Collins &lt;…@…&gt; wrote:
+<span class="qt">&gt; &quot;Andrew Halliwell&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; (I refuse to call them nestle with the accented e, it was nestles when I </span>
+<span class="qt">&gt;&gt; was a kid, so it remains that. Just as marathon is marathon and opal </span>
+<span class="qt">&gt;&gt; fruits are opal fruits. I&#x27;m not being bullied by marketting idiots)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Spike also refers to the Blu-ray Disc format as &quot;VHS&quot; and the Internet as </span>
+<span class="qt">&gt; &quot;Fireview&quot;.</span>
+
+Silly, those are new things, not just renamed things.
+WTF is fireview though
+
+-- 
+<span class="qt">|   …@…   | &quot;I&#x27;m alive!!! I can touch! I can taste!         |</span>
+<span class="qt">|   Andrew Halliwell BSc   |  I can SMELL!!!  KRYTEN!!! Unpack Rachel and    |</span>
+<span class="qt">|            in            |  get out the puncture repair kit!&quot;              |</span>
+<span class="qt">|     Computer Science     |     Arnold Judas Rimmer- Red Dwarf              |</span>
+
+
+
+</pre></div><div class="post" id="p220174"><div class="ph"><a class="d" href="#p220174">2009-05-27 09:35:09</a> <span>Ian Rawlings</span> <span>Re: Where is everyone?</span></div><pre>On 2009-05-27, Paul E Collins &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; How can you distinguish between this and a witch who is merely aroused?</span>
+
+What&#x27;s wrong with good old-fashioned conversation man!
+
+-- 
+Blast off and strike the evil Bydo empire!
+<a href="http://youtube.com/tarcus69" rel="noreferrer">http://youtube.com/tarcus69</a>
+<a href="http://www.flickr.com/photos/tarcus/sets/" rel="noreferrer">http://www.flickr.com/photos/tarcus/sets/</a>
+
+
+
+</pre></div><div class="post" id="p220180"><div class="ph"><a class="d" href="#p220180">2009-05-28 02:00:00</a> <span>Sam Gillett</span> <span>Re: Where is everyone?</span></div><pre>
+&quot;Andrew Halliwell&quot; &lt;…@…&gt; wrote ...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; If they did, why do rolos still have the nestle logo on them?</span>
+
+The bag of Rolos I purchased recently does not have the Nestle logo anywhere 
+on it.  Best I can determine, from what information is on the bag, Rolo is a 
+trademark owned by Nestle, and Hershey has a license to manufacture and sell 
+candy using the Rolo trademark.
+-- 
+Best regards,
+
+Sam Gillett
+
+Change is inevitable,
+except from vending machines! 
+
+
+
+
+
+</pre></div><div class="post" id="p220181"><div class="ph"><a class="d" href="#p220181">2009-05-28 02:12:37</a> <span>Sam Gillett</span> <span>Re: Where is everyone?</span></div><pre>
+&quot;Calum&quot; &lt;…@…&gt; wrote ...
+
+<span class="qt">&gt; Sam Gillett wrote:</span>
+<span class="qt">&gt;&gt; &quot;Calum&quot; &lt;…@…&gt; wrote ...</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; Sam Gillett wrote:</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;&gt; What is known as crisps in the UK is known as potato chips in the US. </span>
+<span class="qt">&gt;&gt;&gt;&gt; Potato chips were invented in America by an American in 1853.  The </span>
+<span class="qt">&gt;&gt;&gt;&gt; potato chip did not leave the United States as a food item until 1921 </span>
+<span class="qt">&gt;&gt;&gt;&gt; when they were introduced in England.</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; However, both countries forgot to invent any way to flavour them, which </span>
+<span class="qt">&gt;&gt;&gt; was left to the Irish some years later.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Ireland is still one of the British Isles isn&#x27;t it?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Geographically yes (although you&#x27;d do well to whisper that if there are any </span>
+<span class="qt">&gt; Irishmen around)... but it&#x27;s still not part of the UK.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; And what flavor did they invent?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Cheese and onion, patenting the flavouring method in the process.  It still </span>
+<span class="qt">&gt; hugely outsells every other flavour here on the Emerald Isle, although </span>
+<span class="qt">&gt; personally I don&#x27;t see the attraction...</span>
+
+I can&#x27;t think of anything that is popular in a cheese and onion flavor over 
+here.  However, sour cream and onion is a popular flavor.  In potato chips, 
+barbeque is the most popular flavor.
+-- 
+Best regards,
+
+Sam Gillett
+
+Change is inevitable,
+except from vending machines! 
+
+
+
+
+
+</pre></div><div class="post" id="p220185"><div class="ph"><a class="d" href="#p220185">2009-05-28 08:35:05</a> <span>Andrew Halliwell</span> <span>Re: Where is everyone?</span></div><pre>Sam Gillett &lt;…@…&gt; wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &quot;Andrew Halliwell&quot; &lt;…@…&gt; wrote ...</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; If they did, why do rolos still have the nestle logo on them?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The bag of Rolos I purchased recently does not have the Nestle logo anywhere </span>
+<span class="qt">&gt; on it.  Best I can determine, from what information is on the bag, Rolo is a </span>
+<span class="qt">&gt; trademark owned by Nestle, and Hershey has a license to manufacture and sell </span>
+<span class="qt">&gt; candy using the Rolo trademark.</span>
+
+But only in the USA, most likely. I think they&#x27;re still owened by nestles
+over here. Hershey doesn&#x27;t really have a european market.
+-- 
+<span class="qt">|   …@…   |   Windows95 (noun): 32 bit extensions and a    |</span>
+<span class="qt">|                          | graphical shell for a 16 bit patch to an 8 bit |</span>
+<span class="qt">|   Andrew Halliwell BSc   | operating system originally  coded for a 4 bit |</span>
+<span class="qt">|            in            |microprocessor, written by a 2 bit company, that|</span>
+<span class="qt">|     Computer Science     |        can&#x27;t stand 1 bit of competition.       |</span>
+
+
+
+</pre></div><div class="post" id="p220186"><div class="ph"><a class="d" href="#p220186">2009-05-28 10:12:51</a> <span>Guesser</span> <span>Re: Where is everyone?</span></div><pre>Andrew Halliwell wrote:
+<span class="qt">&gt; Sam Gillett &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; &quot;Andrew Halliwell&quot; &lt;…@…&gt; wrote ...</span>
+<span class="qt">&gt;&gt;&gt; If they did, why do rolos still have the nestle logo on them?</span>
+<span class="qt">&gt;&gt; The bag of Rolos I purchased recently does not have the Nestle logo anywhere </span>
+<span class="qt">&gt;&gt; on it.  Best I can determine, from what information is on the bag, Rolo is a </span>
+<span class="qt">&gt;&gt; trademark owned by Nestle, and Hershey has a license to manufacture and sell </span>
+<span class="qt">&gt;&gt; candy using the Rolo trademark.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; But only in the USA, most likely. I think they&#x27;re still owened by nestles</span>
+<span class="qt">&gt; over here. Hershey doesn&#x27;t really have a european market.</span>
+
+On the grounds that Europeans actually know what chocolate is so 
+wouldn&#x27;t eat that American muck anyway! :)
+
+-- 
+link my boring website <a href="http://alistairsserver.no-ip.org/" rel="noreferrer">http://alistairsserver.no-ip.org/</a>
+
+
+
+</pre></div><div class="post" id="p220187"><div class="ph"><a class="d" href="#p220187">2009-05-28 10:44:38</a> <span>Tim Fardell</span> <span>Re: Where is everyone?</span></div><pre>On Thu, 28 May 2009, Guesser wrote:
+
+<span class="qt">&gt; Andrew Halliwell wrote:</span>
+<span class="qt">&gt; &gt; Sam Gillett &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt;&gt; &quot;Andrew Halliwell&quot; &lt;…@…&gt; wrote ...</span>
+<span class="qt">&gt; &gt;&gt;&gt; If they did, why do rolos still have the nestle logo on them?</span>
+<span class="qt">&gt; &gt;&gt; The bag of Rolos I purchased recently does not have the Nestle logo anywhere </span>
+<span class="qt">&gt; &gt;&gt; on it.  Best I can determine, from what information is on the bag, Rolo is a </span>
+<span class="qt">&gt; &gt;&gt; trademark owned by Nestle, and Hershey has a license to manufacture and sell </span>
+<span class="qt">&gt; &gt;&gt; candy using the Rolo trademark.</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; But only in the USA, most likely. I think they&#x27;re still owened by nestles</span>
+<span class="qt">&gt; &gt; over here. Hershey doesn&#x27;t really have a european market.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; On the grounds that Europeans actually know what chocolate is so </span>
+<span class="qt">&gt; wouldn&#x27;t eat that American muck anyway! :)</span>
+
+I don&#x27;t know. Hershey bars are quite nice. I prefer Cadbury&#x27;s Fruit&amp;Nut 
+though. I pick out all the nuts and make a Fruit&amp;Fruit bar. Very tasty. 
+
+-- 
+Please remove all-your-clothes before replying. 
+
+
+
+
+</pre></div><div class="post" id="p220188"><div class="ph"><a class="d" href="#p220188">2009-05-28 12:30:05</a> <span>Matthew Westcott</span> <span>Re: Where is everyone?</span></div><pre>Tim Fardell wrote:
+
+<span class="qt">&gt; I don&#x27;t know. Hershey bars are quite nice. I prefer Cadbury&#x27;s Fruit&amp;Nut </span>
+<span class="qt">&gt; though. I pick out all the nuts and make a Fruit&amp;Fruit bar. Very tasty. </span>
+
+I could have sworn that they existed, and were called Whole Fruit. But 
+only one other person on the internet has mentioned them 
+(<a href="http://www.flickr.com/photos/hwayoungjung/3264766000/" rel="noreferrer">http://www.flickr.com/photos/hwayoungjung/3264766000/</a>), so maybe I just 
+dreamt it.
+
+
+
+</pre></div><div class="post" id="p220189"><div class="ph"><a class="d" href="#p220189">2009-05-28 16:11:14</a> <span>Tim Fardell</span> <span>Re: Where is everyone?</span></div><pre>On Thu, 28 May 2009, Matthew Westcott wrote:
+
+<span class="qt">&gt; Tim Fardell wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; I don&#x27;t know. Hershey bars are quite nice. I prefer Cadbury&#x27;s Fruit&amp;Nut </span>
+<span class="qt">&gt; &gt; though. I pick out all the nuts and make a Fruit&amp;Fruit bar. Very tasty. </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I could have sworn that they existed, and were called Whole Fruit. But </span>
+<span class="qt">&gt; only one other person on the internet has mentioned them </span>
+<span class="qt">&gt; (<a href="http://www.flickr.com/photos/hwayoungjung/3264766000/" rel="noreferrer">http://www.flickr.com/photos/hwayoungjung/3264766000/</a>), so maybe I just </span>
+<span class="qt">&gt; dreamt it.</span>
+
+No, it&#x27;s true, it did exist. 
+
+I e-mailed Cadbury&#x27;s a few years ago to ask them why they didn&#x27;t make such 
+a bar, and they replied that, in fact, they had made &quot;Fruit Only&quot; bars 
+twice in their history. But they had no plans at that time to re-introduce 
+them :-(
+
+Anyway, Lidl in the UK sell a product called &quot;Choco Fruits&quot; which is 
+basically chocolate-coated raisins and tastes very similar to a Fruit&amp;Nut 
+bar with the Nuts removed (oo-er). 
+
+-- 
+Please remove all-your-clothes before replying. 
+
+
+
+
+</pre></div><div class="post" id="p220190"><div class="ph"><a class="d" href="#p220190">2009-05-28 16:24:01</a> <span>Guesser</span> <span>Re: Where is everyone?</span></div><pre>Tim Fardell wrote:
+<span class="qt">&gt; On Thu, 28 May 2009, Matthew Westcott wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Tim Fardell wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; I don&#x27;t know. Hershey bars are quite nice. I prefer Cadbury&#x27;s Fruit&amp;Nut </span>
+<span class="qt">&gt;&gt;&gt; though. I pick out all the nuts and make a Fruit&amp;Fruit bar. Very tasty. </span>
+<span class="qt">&gt;&gt; I could have sworn that they existed, and were called Whole Fruit. But </span>
+<span class="qt">&gt;&gt; only one other person on the internet has mentioned them </span>
+<span class="qt">&gt;&gt; (<a href="http://www.flickr.com/photos/hwayoungjung/3264766000/" rel="noreferrer">http://www.flickr.com/photos/hwayoungjung/3264766000/</a>), so maybe I just </span>
+<span class="qt">&gt;&gt; dreamt it.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; No, it&#x27;s true, it did exist. </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I e-mailed Cadbury&#x27;s a few years ago to ask them why they didn&#x27;t make such </span>
+<span class="qt">&gt; a bar, and they replied that, in fact, they had made &quot;Fruit Only&quot; bars </span>
+<span class="qt">&gt; twice in their history. But they had no plans at that time to re-introduce </span>
+<span class="qt">&gt; them :-(</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Anyway, Lidl in the UK sell a product called &quot;Choco Fruits&quot; which is </span>
+<span class="qt">&gt; basically chocolate-coated raisins and tastes very similar to a Fruit&amp;Nut </span>
+<span class="qt">&gt; bar with the Nuts removed (oo-er). </span>
+<span class="qt">&gt; </span>
+
+Bourneville Old Jamaica is nice, dark chocolate, rum and raisin.
+
+Om nom nom :)
+
+-- 
+link my boring website <a href="http://alistairsserver.no-ip.org/" rel="noreferrer">http://alistairsserver.no-ip.org/</a>
+
+
+
+</pre></div></main></body></html>

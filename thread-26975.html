@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANN: Sprite Pack C Library for the Z88dk Compiler · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANN: Sprite Pack C Library for the Z88dk Compiler</h1><p class="facts">2 posts, 2003-01-20 – 2003-01-20</p><div class="post" id="p153652"><div class="ph"><a class="d" href="#p153652">2003-01-20 02:06:37</a> <span>Alvin</span> </div><pre>
+The sprite pack C library for the z88dk C cross compiler is now
+available from:
+
+<a href="http://justme895.tripod.com/main.htm" rel="noreferrer">http://justme895.tripod.com/main.htm</a>
+
+Now you can write games for the spectrum in C!  The process is
+simple: 
+
+ 1. Write C program.
+ 2. Run batch prog to create a tap file.
+
+Five demos in tap format can be downloaded from the site, with
+C source available.  Two you&#x27;ve seen already (a pattern fill
+and ten windows floating around).  The third is a C version
+of the test program bundled with the assembly API for speed
+comparison.  The fourth is an experiment in registering a C
+interrupt service routine.  The final one tests reading from
+stdin and writing to stdout.
+
+The z88dk C compiler seems to me to be a nearly complete
+ANSI-C compiler.  You can get it from:
+
+<a href="http://z88dk.sourceforge.net/" rel="noreferrer">http://z88dk.sourceforge.net/</a>
+
+
+Enjoy,
+Alvin
+
+
+
+</pre></div><div class="post" id="p153676"><div class="ph"><a class="d" href="#p153676">2003-01-20 19:23:25</a> <span>Alvin</span> <span>Re: ANN: Sprite Pack C Library for the Z88dk Compiler</span></div><pre>
+Hi Chris,
+
+<span class="qt">&gt; &gt;The sprite pack C library for the z88dk C cross compiler is now</span>
+<span class="qt">&gt; &gt;available from:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;<a href="http://justme895.tripod.com/main.htm" rel="noreferrer">http://justme895.tripod.com/main.htm</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; By the way, I&#x27;m curious to know what the &quot;Sprite Pack Display List&quot;</span>
+<span class="qt">&gt; structure is and why it consumes 24K of RAM!</span>
+
+It doesn&#x27;t actually occupy the full 24k, there are free holes
+scattered around inside it.
+
+The display list contains 4 bytes per character square: a pointer
+to a background tile and a pointer to a linked list of sprite
+char structs.  So it really occupes 4*768=3072 bytes
+(see &quot;Internal Details-&gt;Display list&quot; and &quot;Memory maps-&gt;spectrum&quot;
+for more details).
+
+The display list actually occupies the following addresses (hex):
+8000-801f
+8100-811f
+8200-821f
+...
+df00-df1f
+
+And available memory can be found at (not the *** here):
+8020-80ff
+8120-81ff
+8220-82ff
+...
+df20 and up
+
+The reason that it&#x27;s scattered all over the place is because
+it&#x27;s very quick to calculate the address corresponding to a
+particular character coordinate.  This is one of the compromises
+I made to improve performance.  I found that writing this kind
+of code for the spectrum was very stressful -- I was always
+sweating about whether what I was doing was going to be
+fast enough :).
+
+*** Not all of that memory is actually free.  I put a dirty
+chars map in there (actual size = 96 bytes, marks which characters
+need to be updated), which means the free memory actually runs from
+0x??39 to 0x??ff.
+
+I took some of that and added it to queue #0 (dynamic block memory
+allocator) in 14-byte chunks.  These chunks are used to allocate
+sprite structures and char structs that make up the sprites.
+(Around 250 blocks in total, mentioned in the programmer&#x27;s intro).
+
+So I left the following for users to harvest:
+
+9439..94ff
+9539..95ff
+9639..96ff
+...
+de39..deff
+
+which amounts to a sizeable 14925 bytes free inside the display
+list.  One of the reasons I included the block memory allocator
+is to help to organize that memory and I used it a couple of times
+in the demo programs.
+
+So there you go, the full story!
+
+<span class="qt">&gt; 9035 bytes of memory for</span>
+<span class="qt">&gt; the compiled C code may be a tad limiting in some circumstances.</span>
+
+Yeah, I know :)  I did my best at the time.  You can feel
+better about a couple of things:
+
+Calls to sprite pack take up almost no memory because the binary
+is already in place and the C compiler doesn&#x27;t have to append
+the code to the C program.
+
+When you use the z88dk libraries, you receive a one-time hit
+to append the library code.  stdio is especially big: if you
+touch the printf / scanf stuff, your program size will
+jump about 2k to get the stdio library code.  But thereafter
+multiple calls to stdio are practically free.
+
+<span class="qt">&gt; Will</span>
+<span class="qt">&gt; this overhead be reduced when a version of Sprite Pack that fits in with</span>
+<span class="qt">&gt; z88dk&#x27;s linker is available?</span>
+
+Yes.  The next version is going to do away with data structures
+in fixed memory locations and convert them to tables (at a small --
+I hope! -- performance cost).  This will do two things: there will
+no longer be an artificial constraint on where the C code can go and
+free memory will no longer be scattered all over the place since the
+table, well being a table, will be compact and will be incorporated
+into the C binary.
+
+I&#x27;ll also be adding full support for the ay chip and I&#x27;m thinking
+hard about removing colour information from background tiles and
+making colour a property of the character square.  Possibly a
+pointer to a colour in a pallette table.  That would improve
+compatibility with the Hi-Colour version...
+
+
+Well, that was long and dry!  Anyway, I&#x27;m glad I&#x27;ve sparked your
+interest.  I have to admit, the prospect of programming in C for
+the spectrum gets me all wound up as well :)
+
+
+Alvin
+
+
+
+</pre></div></main></body></html>

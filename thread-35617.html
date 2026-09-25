@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Today I learned: Cassette timings · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Today I learned: Cassette timings</h1><p class="facts">8 posts, 2014-08-15 – 2014-09-03</p><div class="post" id="p226874"><div class="ph"><a class="d" href="#p226874">2014-08-15 23:34:06</a> <span>John Elliott</span> </div><pre>  The cassette timings for the IBM PC 5150 are close enough to the
+Spectrum ones that it will load &#x27;normal speed&#x27; blocks from a TZX played back
+by PlayTZX.
+
+  To get technical:
+
+                Spectrum         5150
+   Pilot tone   2168T / 2168T    1750T / 1750T    
+   Sync pulse    667T /  735T     875T /  875T
+   Zero bit      855T /  855T     875T /  875T
+   One bit      1710T / 1710T    1750T / 1750T
+
+  There&#x27;s an example TZX of a 5150 BASIC program at 
+&lt;<a href="http://www.seasip.demon.co.uk/ZX/Haunted/hauntx.tzx&gt;." rel="noreferrer">http://www.seasip.demon.co.uk/ZX/Haunted/hauntx.tzx&gt;.</a> It contains four
+blocks:
+
+&#x27;Turbo&#x27; block giving a leadin tone.
+&#x27;Normal&#x27; block containing the BASIC header:   263 bytes 
+&#x27;Normal&#x27; block containing the BASIC program: 8519 bytes
+&#x27;Turbo&#x27; block giving the leadin tone again.
+
+The first three blocks were generated by VOC2TZX. I found I had to add the 
+last block manually (it&#x27;s a duplicate of the first) or the load would fail.
+
+-- 
+John Elliott
+
+Thinks: This is what a nice clean life leads to. Hmm, why did I ever lead one?
+		-- Bluebottle, in the Goon Show
+
+
+</pre></div><div class="post" id="p226876"><div class="ph"><a class="d" href="#p226876">2014-08-16 10:12:56</a> <span>Brian Gaff</span> <span>Re: Today I learned: Cassette timings</span></div><pre>And what would be the ultimate goal of this?
+ We used to load tapes in vie the parallel port in the good ol days.
+ Brian
+
+-- 
+From the Sofa of Brian Gaff Reply address is  active
+&quot;John Elliott&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt;  The cassette timings for the IBM PC 5150 are close enough to the</span>
+<span class="qt">&gt; Spectrum ones that it will load &#x27;normal speed&#x27; blocks from a TZX played </span>
+<span class="qt">&gt; back</span>
+<span class="qt">&gt; by PlayTZX.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;  To get technical:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;                Spectrum         5150</span>
+<span class="qt">&gt;   Pilot tone   2168T / 2168T    1750T / 1750T</span>
+<span class="qt">&gt;   Sync pulse    667T /  735T     875T /  875T</span>
+<span class="qt">&gt;   Zero bit      855T /  855T     875T /  875T</span>
+<span class="qt">&gt;   One bit      1710T / 1710T    1750T / 1750T</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;  There&#x27;s an example TZX of a 5150 BASIC program at</span>
+<span class="qt">&gt; &lt;<a href="http://www.seasip.demon.co.uk/ZX/Haunted/hauntx.tzx&gt;." rel="noreferrer">http://www.seasip.demon.co.uk/ZX/Haunted/hauntx.tzx&gt;.</a> It contains four</span>
+<span class="qt">&gt; blocks:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &#x27;Turbo&#x27; block giving a leadin tone.</span>
+<span class="qt">&gt; &#x27;Normal&#x27; block containing the BASIC header:   263 bytes</span>
+<span class="qt">&gt; &#x27;Normal&#x27; block containing the BASIC program: 8519 bytes</span>
+<span class="qt">&gt; &#x27;Turbo&#x27; block giving the leadin tone again.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The first three blocks were generated by VOC2TZX. I found I had to add the</span>
+<span class="qt">&gt; last block manually (it&#x27;s a duplicate of the first) or the load would </span>
+<span class="qt">&gt; fail.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; -- </span>
+<span class="qt">&gt; John Elliott</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Thinks: This is what a nice clean life leads to. Hmm, why did I ever lead </span>
+<span class="qt">&gt; one?</span>
+<span class="qt">&gt; -- Bluebottle, in the Goon Show </span>
+
+
+
+
+</pre></div><div class="post" id="p226878"><div class="ph"><a class="d" href="#p226878">2014-08-16 18:56:35</a> <span>John Elliott</span> <span>Re: Today I learned: Cassette timings</span></div><pre>Brian Gaff &lt;…@…&gt; wrote:
+<span class="qt">&gt; And what would be the ultimate goal of this?</span>
+
+  A more convenient way of distributing or archiving such cassette software 
+for the PC as exists.
+
+-- 
+John Elliott
+
+Thinks: This is what a nice clean life leads to. Hmm, why did I ever lead one?
+		-- Bluebottle, in the Goon Show
+
+
+</pre></div><div class="post" id="p226891"><div class="ph"><a class="d" href="#p226891">2014-08-19 14:59:52</a> <span>leespoons</span> <span>Re: Today I learned: Cassette timings</span></div><pre>John Elliott &lt;…@…&gt; wrote in
+news:…@…: 
+
+<span class="qt">&gt;   The cassette timings for the IBM PC 5150 are close enough to the</span>
+<span class="qt">&gt; Spectrum ones that it will load &#x27;normal speed&#x27; blocks from a TZX</span>
+<span class="qt">&gt; played back by PlayTZX.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;   To get technical:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;                 Spectrum         5150</span>
+<span class="qt">&gt;    Pilot tone   2168T / 2168T    1750T / 1750T    </span>
+<span class="qt">&gt;    Sync pulse    667T /  735T     875T /  875T</span>
+<span class="qt">&gt;    Zero bit      855T /  855T     875T /  875T</span>
+<span class="qt">&gt;    One bit      1710T / 1710T    1750T / 1750T</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;   There&#x27;s an example TZX of a 5150 BASIC program at </span>
+<span class="qt">&gt; &lt;<a href="http://www.seasip.demon.co.uk/ZX/Haunted/hauntx.tzx&gt;." rel="noreferrer">http://www.seasip.demon.co.uk/ZX/Haunted/hauntx.tzx&gt;.</a> It contains</span>
+<span class="qt">&gt; four blocks:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &#x27;Turbo&#x27; block giving a leadin tone.</span>
+<span class="qt">&gt; &#x27;Normal&#x27; block containing the BASIC header:   263 bytes </span>
+<span class="qt">&gt; &#x27;Normal&#x27; block containing the BASIC program: 8519 bytes</span>
+<span class="qt">&gt; &#x27;Turbo&#x27; block giving the leadin tone again.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The first three blocks were generated by VOC2TZX. I found I had to add</span>
+<span class="qt">&gt; the last block manually (it&#x27;s a duplicate of the first) or the load</span>
+<span class="qt">&gt; would fail. </span>
+<span class="qt">&gt; </span>
+
+Interesting. I found out recently that the Apple-II uses very similar 
+timings to the Spectrum, including the leader:
+
+<a href="http://www.brutaldeluxe.fr/projects/cassettes/" rel="noreferrer">http://www.brutaldeluxe.fr/projects/cassettes/</a>
+
+Not sure if there&#x27;s a way of loading this into a real Speccy, but it 
+certainly sounds like one! (10-second leader instead of 5 for the 
+Speccy)
+
+AFAIK this was 4 years before the IBM PC (and 5 before the Speccy) - 
+makes me wonder why it wasn&#x27;t more widely used given the slow baud rates 
+of (say) the ZX81 or C64...
+
+
+</pre></div><div class="post" id="p226896"><div class="ph"><a class="d" href="#p226896">2014-08-23 22:38:42</a> <span>John Elliott</span> <span>Re: Today I learned: Cassette timings</span></div><pre>John Elliott &lt;…@…&gt; wrote:
+<span class="qt">&gt; Brian Gaff &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; And what would be the ultimate goal of this?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;  A more convenient way of distributing or archiving such cassette software </span>
+<span class="qt">&gt; for the PC as exists.</span>
+
+  I&#x27;ve now updated the taptools at &lt;<a href="http://www.seasip.info/ZX/unix.html&gt;" rel="noreferrer">http://www.seasip.info/ZX/unix.html&gt;</a> so
+that they can generate and manipulate files with IBM PC headers rather than 
+Spectrum ones. This means it&#x27;s possible to get an ASCII listing into a
+cassette-only 5150 by doing this:
+
+mkibmtap -n orient.tzx -a orient.bas
+playtzx orient.tzx
+
+-- 
+John Elliott
+
+Thinks: This is what a nice clean life leads to. Hmm, why did I ever lead one?
+		-- Bluebottle, in the Goon Show
+
+
+</pre></div><div class="post" id="p226923"><div class="ph"><a class="d" href="#p226923">2014-09-03 01:44:55</a> <span>greenaum</span> <span>Re: Today I learned: Cassette timings</span></div><pre>I&#x27;ll just add &quot;Kansas City Standard&quot; here. Dunno if it applies, but
+the easiest way to explain would be for anyone interested to look it
+up. It&#x27;s a standard for cassette tape data storage.
+
+---------------------------------------------------------------------
+
+&quot;hey let&#x27;s educate the brutes, we know we are superior to them anyway,
+just through genetics, we are gentically superior to the working
+class. They are a shaved monkey. If we educate them, they will be able
+to read instructions, turn up on time and man the conveyor belts,
+sorted.&quot;     #     
+
+
+</pre></div><div class="post" id="p226924"><div class="ph"><a class="d" href="#p226924">2014-09-03 01:46:14</a> <span>greenaum</span> <span>Re: Today I learned: Cassette timings</span></div><pre>I can&#x27;t think of much less convenient than finding an IBM 5150 with a
+tape interface! Did they sell many? Even in the early days, if you
+were gonna waste money on an IBM, you&#x27;d have enough to burn buying a
+5.25&quot; floppy drive or two. Even if those drives were 400 quid!
+
+---------------------------------------------------------------------
+
+&quot;hey let&#x27;s educate the brutes, we know we are superior to them anyway,
+just through genetics, we are gentically superior to the working
+class. They are a shaved monkey. If we educate them, they will be able
+to read instructions, turn up on time and man the conveyor belts,
+sorted.&quot;     #     
+
+
+</pre></div><div class="post" id="p226926"><div class="ph"><a class="d" href="#p226926">2014-09-03 20:59:52</a> <span>John Elliott</span> <span>Re: Today I learned: Cassette timings</span></div><pre>greenaum &lt;…@…&gt; wrote:
+<span class="qt">&gt; I can&#x27;t think of much less convenient than finding an IBM 5150 with a</span>
+<span class="qt">&gt; tape interface! Did they sell many? Even in the early days, if you</span>
+<span class="qt">&gt; were gonna waste money on an IBM, you&#x27;d have enough to burn buying a</span>
+<span class="qt">&gt; 5.25&quot; floppy drive or two. Even if those drives were 400 quid!</span>
+
+  All 5150s have the cassette interface, whether or not they also have 
+floppy drives.
+
+-- 
+John Elliott
+
+Thinks: This is what a nice clean life leads to. Hmm, why did I ever lead one?
+		-- Bluebottle, in the Goon Show
+
+
+</pre></div></main></body></html>

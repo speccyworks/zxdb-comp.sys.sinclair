@@ -1,0 +1,958 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I&#x27;m all for realism, but this is ridiculous... · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>I&#x27;m all for realism, but this is ridiculous...</h1><p class="facts">29 posts, 2001-02-04 – 2001-02-26</p><div class="post" id="p87357"><div class="ph"><a class="d" href="#p87357">2001-02-04 23:57:01</a> <span>Chris Young</span> </div><pre>Is it really necessary to emulate loading games at Spectrum speed,
+complete with authentic coloured stripes and loading noise?  It&#x27;s
+emulation gone mad.  Next they&#x27;ll be adding in an option to adjust the
+volume of the simulated tape, thus ensuring tape loading errors until
+you get it to exactly the right volume.
+
+What am I talking about?  TZX files.  Yes, I appreciate that this is a
+good way of keeping a copy of a Spectrum tape in a digital format. 
+Yes, I appreciate that sometimes it is the only way of storing
+Spectrum games.  But, I don&#x27;t see why they need to load into an
+emulator and exactly the right speed.  It&#x27;s an *emulated* tape.  It
+isn&#x27;t restricted by the speed the tape recorder runs at.  It&#x27;s an
+*emulated* computer.  It isn&#x27;t restricted by the speed of the original
+processor.  Surely it must be possible to speed up this loading
+process?[1]
+
+Chris
+[1] Actually, I&#x27;ve just remembered that x128 has a loading speed
+setting, which may do exactly this.  Perhaps I should check these
+things before moaning about them, eh?
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p87358"><div class="ph"><a class="d" href="#p87358">2001-02-05 00:16:01</a> <span>Joe Mackay</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>Chris Young &lt;…@…&gt; wrote:
+<span class="qt">&gt; Is it really necessary to emulate loading games at Spectrum speed,</span>
+<span class="qt">&gt; complete with authentic coloured stripes and loading noise?</span>
+
+With TZX files, well, basically, yes. But with exceptions.
+
+To make the emulation of custom loaders as accurate as possible, the
+emulated Speccy has to be perfectly in sync with data from the &#x27;tape&#x27;.
+So, unlike .TAP files, it&#x27;s not simply a matter of intercepting the
+ROM&#x27;s load routine and blamming the data into memory quickly. To
+speed up the loading you have to speed up the whole emulation.
+
+If the TZX file only contains &quot;normal&quot; blocks, though, some emulators
+can treat them like TAP file blocks and load them quickly. There&#x27;s
+also one or two emulators (I think) that can cope with some custom
+loaders, but I don&#x27;t know how well they work.
+
+<span class="qt">&gt; [1] Actually, I&#x27;ve just remembered that x128 has a loading speed</span>
+<span class="qt">&gt; setting, which may do exactly this.  Perhaps I should check these</span>
+<span class="qt">&gt; things before moaning about them, eh?</span>
+
+Yes. But X128&#x27;s setting just adjusts the speed of the whole emulation
+while things load. It can still take ages.
+
+
+Joe.
+
+
+
+</pre></div><div class="post" id="p87429"><div class="ph"><a class="d" href="#p87429">2001-02-05 15:46:58</a> <span>…@…</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>Chris Young &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; Is it really necessary to emulate loading games at Spectrum speed,</span>
+<span class="qt">&gt; complete with authentic coloured stripes and loading noise?  It&#x27;s</span>
+<span class="qt">&gt; emulation gone mad.  Next they&#x27;ll be adding in an option to adjust the</span>
+<span class="qt">&gt; volume of the simulated tape, thus ensuring tape loading errors until</span>
+<span class="qt">&gt; you get it to exactly the right volume.</span>
+
+HEY! That&#x27;s not a bad idea!
+:)
+
+<span class="qt">&gt; What am I talking about?  TZX files.  Yes, I appreciate that this is a</span>
+<span class="qt">&gt; good way of keeping a copy of a Spectrum tape in a digital format. </span>
+
+Many emulators DO actually offer the option of loading most TZZ files
+quickly, y&#x27;know... A few custom loaders may cause problems with that, but
+that&#x27;s the custom loaders fault, not the TZX.
+
+<span class="qt">&gt; Yes, I appreciate that sometimes it is the only way of storing</span>
+<span class="qt">&gt; Spectrum games.  But, I don&#x27;t see why they need to load into an</span>
+<span class="qt">&gt; emulator and exactly the right speed.  It&#x27;s an *emulated* tape.  It</span>
+<span class="qt">&gt; isn&#x27;t restricted by the speed the tape recorder runs at.  </span>
+
+But it is restricted to the speed the custom loader runs at. 
+If you get bored waiting for it to load from TXZ, make a snapshot.
+
+<span class="qt">&gt; *emulated* computer.  It isn&#x27;t restricted by the speed of the original</span>
+<span class="qt">&gt; processor.  Surely it must be possible to speed up this loading</span>
+<span class="qt">&gt; process?[1]</span>
+
+<span class="qt">&gt; Chris</span>
+<span class="qt">&gt; [1] Actually, I&#x27;ve just remembered that x128 has a loading speed</span>
+<span class="qt">&gt; setting, which may do exactly this.  Perhaps I should check these</span>
+<span class="qt">&gt; things before moaning about them, eh?</span>
+
+Perhaps...
+
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   | &quot;I&#x27;m alive!!! I can touch! I can taste!         |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|  I can SMELL!!!  KRYTEN!!! Unpack Rachel and    |</span>
+<span class="qt">|            in            |  get out the puncture repair kit!&quot;              |</span>
+<span class="qt">|     Computer Science     |     Arnold Judas Rimmer- Red Dwarf              |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p87433"><div class="ph"><a class="d" href="#p87433">2001-02-05 16:08:43</a> <span>Suzanne Archibald</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>&quot;Chris Young&quot; &lt;…@…&gt; wrote in &lt;3A7DEC4D.MD-
+…@…&gt;:
+
+<span class="qt">&gt;Is it really necessary to emulate loading games at Spectrum speed,</span>
+<span class="qt">&gt;complete with authentic coloured stripes and loading noise?  It&#x27;s</span>
+<span class="qt">&gt;emulation gone mad.  Next they&#x27;ll be adding in an option to adjust the</span>
+<span class="qt">&gt;volume of the simulated tape, thus ensuring tape loading errors until</span>
+<span class="qt">&gt;you get it to exactly the right volume.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;What am I talking about?  TZX files.  Yes, I appreciate that this is a</span>
+<span class="qt">&gt;good way of keeping a copy of a Spectrum tape in a digital format. </span>
+<span class="qt">&gt;Yes, I appreciate that sometimes it is the only way of storing</span>
+<span class="qt">&gt;Spectrum games.  But, I don&#x27;t see why they need to load into an</span>
+<span class="qt">&gt;emulator and exactly the right speed.  It&#x27;s an *emulated* tape.  It</span>
+<span class="qt">&gt;isn&#x27;t restricted by the speed the tape recorder runs at.  It&#x27;s an</span>
+<span class="qt">&gt;*emulated* computer.  It isn&#x27;t restricted by the speed of the original</span>
+<span class="qt">&gt;processor.  Surely it must be possible to speed up this loading</span>
+<span class="qt">&gt;process?[1]</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Chris</span>
+<span class="qt">&gt;[1] Actually, I&#x27;ve just remembered that x128 has a loading speed</span>
+<span class="qt">&gt;setting, which may do exactly this.  Perhaps I should check these</span>
+<span class="qt">&gt;things before moaning about them, eh?</span>
+
+Since emulation is claimed as being as form of preservation, I believe its 
+important that things like TZX allow us to preserve the tapes as close to 
+how they were as possible.
+
+If you don&#x27;t like it, noone&#x27;s stopping you from a) downloading a 
+snapshot/tap version, b) snaping a snapshot yourself, c) converting it to 
+.tap (if possible) yourself.
+
+I don&#x27;t get the point of moaning about load times personally, yes, its an 
+emulated machine, it emulates the EXPERIENCE of the spectrum, and that 
+includes the loading time. If we start saying &#x27;yeah, but we can fix this 
+problem with a modern machine&#x27;, where do we draw the line? do we try and 
+guess at removing colour-clash ? do we write an emulation that tries to 
+avoid slowdown on certain 3d games ? etc etc... why not just play remakes 
+in that situation? why bother with the spectrum at all...
+
+
+
+</pre></div><div class="post" id="p87444"><div class="ph"><a class="d" href="#p87444">2001-02-05 17:44:33</a> <span>Matthew Wilson</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>On 4 Feb 2001 23:57:01 +0000, &quot;Chris Young&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Is it really necessary to emulate loading games at Spectrum speed,</span>
+<span class="qt">&gt;complete with authentic coloured stripes and loading noise?</span>
+
+See a preceding thread, where loading Rigel&#x27;s Revenge from a TZX file
+would allow the game to be started with relative ease, whereas loading
+from a snapshot or TAP would make it almost unplayable.
+
+Matthew
+
+
+
+</pre></div><div class="post" id="p87445"><div class="ph"><a class="d" href="#p87445">2001-02-05 17:44:54</a> <span>Vincent Lynch</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>Suzanne Archibald &lt;…@…&gt; wrote:
+<span class="qt">&gt; Since emulation is claimed as being as form of preservation, I believe its </span>
+<span class="qt">&gt; important that things like TZX allow us to preserve the tapes as close to </span>
+<span class="qt">&gt; how they were as possible.</span>
+
+Hmm.  I agree that these things should probably be preserved.  But from the
+point of view of someone who just plays the games, I&#x27;d be much happier just
+playing a version that loads quickly; generally there&#x27;s no reason not to have
+both a TZX and a TAP available.  If it&#x27;s somehow a question of getting more
+people to allow their games to be distributed, I might be persuaded.
+
+<span class="qt">&gt; If you don&#x27;t like it, noone&#x27;s stopping you from a) downloading a </span>
+<span class="qt">&gt; snapshot/tap version, b) snaping a snapshot yourself, c) converting it to </span>
+<span class="qt">&gt; .tap (if possible) yourself.</span>
+
+I&#x27;d be interested to know how to do (c).  Is it generally straightforward
+(using Specconv or something?) or is it more tricky than this?
+
+<span class="qt">&gt; I don&#x27;t get the point of moaning about load times personally, yes, its an </span>
+<span class="qt">&gt; emulated machine, it emulates the EXPERIENCE of the spectrum, and that </span>
+<span class="qt">&gt; includes the loading time. If we start saying &#x27;yeah, but we can fix this </span>
+<span class="qt">&gt; problem with a modern machine&#x27;, where do we draw the line? do we try and </span>
+<span class="qt">&gt; guess at removing colour-clash ? do we write an emulation that tries to </span>
+<span class="qt">&gt; avoid slowdown on certain 3d games ? etc etc... why not just play remakes </span>
+<span class="qt">&gt; in that situation? why bother with the spectrum at all...</span>
+
+If anyone&#x27;s got the time to remake all the TZXs I&#x27;ve got, then fine. ;-)
+Seriously, if there were any way of eliminating colour clash, say, (I assume
+it&#x27;s impossible in general) I&#x27;d be very happy to see it done.  I&#x27;m interested
+because I think some of the old spectrum games were good, not because I&#x27;m
+nostalgic for games that run slowly and take ages to load.
+
+-Vincent
+
+
+
+
+</pre></div><div class="post" id="p87452"><div class="ph"><a class="d" href="#p87452">2001-02-05 18:18:12</a> <span>Matthew Wilson</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>On 5 Feb 2001 17:44:54 GMT, Vincent Lynch
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Suzanne Archibald &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; Since emulation is claimed as being as form of preservation, I believe its </span>
+<span class="qt">&gt;&gt; important that things like TZX allow us to preserve the tapes as close to </span>
+<span class="qt">&gt;&gt; how they were as possible.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Hmm.  I agree that these things should probably be preserved.  But from the</span>
+<span class="qt">&gt;point of view of someone who just plays the games, I&#x27;d be much happier just</span>
+<span class="qt">&gt;playing a version that loads quickly; generally there&#x27;s no reason not to have</span>
+<span class="qt">&gt;both a TZX and a TAP available.  If it&#x27;s somehow a question of getting more</span>
+<span class="qt">&gt;people to allow their games to be distributed, I might be persuaded.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; If you don&#x27;t like it, noone&#x27;s stopping you from a) downloading a </span>
+<span class="qt">&gt;&gt; snapshot/tap version, b) snaping a snapshot yourself, c) converting it to </span>
+<span class="qt">&gt;&gt; .tap (if possible) yourself.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I&#x27;d be interested to know how to do (c).  Is it generally straightforward</span>
+<span class="qt">&gt;(using Specconv or something?) or is it more tricky than this?</span>
+
+Converting to snaps is obviously easy; converting to TAPs depends on
+the difficulty of the loader, eg things like Speedlock and Alkataz,
+which could be quite complex.
+
+Matthew
+
+
+
+</pre></div><div class="post" id="p87462"><div class="ph"><a class="d" href="#p87462">2001-02-05 19:10:49</a> <span>Suzanne Archibald</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>…@… (Matthew Wilson) wrote in
+&lt;…@…&gt;: 
+
+<span class="qt">&gt;On 5 Feb 2001 17:44:54 GMT, Vincent Lynch</span>
+<span class="qt">&gt;&lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;Suzanne Archibald &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;&gt; Since emulation is claimed as being as form of preservation, I</span>
+<span class="qt">&gt;&gt;&gt; believe its important that things like TZX allow us to preserve the</span>
+<span class="qt">&gt;&gt;&gt; tapes as close to how they were as possible.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Hmm.  I agree that these things should probably be preserved.  But from</span>
+<span class="qt">&gt;&gt;the point of view of someone who just plays the games, I&#x27;d be much</span>
+<span class="qt">&gt;&gt;happier just playing a version that loads quickly; generally there&#x27;s no</span>
+<span class="qt">&gt;&gt;reason not to have both a TZX and a TAP available.  If it&#x27;s somehow a</span>
+<span class="qt">&gt;&gt;question of getting more people to allow their games to be distributed,</span>
+<span class="qt">&gt;&gt;I might be persuaded. </span>
+
+I agree both versions should exist, but if it is either/or, I&#x27;d prefer TZX 
+- making a snapshot or TAP can be trivial from then on, if you so desire, 
+but recreating the loading screen, or in the case of later hewson and 
+firebird games, the snazzy loader, from those snaps/tap&#x27;s is impossible, 
+and it is a loss to the community to see those miracles of programming 
+disappear.
+
+Thankfully, from the way the speccy emu. scene has evolved, snaps came 
+first, and so almost every game is in snap format (barring the MIA&#x27;s), and 
+the goal now seems to be to re-&#x27;grab&#x27; them back into the preservation of 
+TZX. The problem is, I&#x27;m sure that in the 8 or so years since the speccy 
+emu scene emerged, some of those games that were snapped, have long since 
+degraded beyond being able to be TZX&#x27;ed - as witnessed perhaps by the fact 
+that the MIA is shorter than the list of games not in a true preservation 
+format (.TAP/.TZX).
+
+
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; If you don&#x27;t like it, noone&#x27;s stopping you from a) downloading a </span>
+<span class="qt">&gt;&gt;&gt; snapshot/tap version, b) snaping a snapshot yourself, c) converting</span>
+<span class="qt">&gt;&gt;&gt; it to .tap (if possible) yourself.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;I&#x27;d be interested to know how to do (c).  Is it generally</span>
+<span class="qt">&gt;&gt;straightforward (using Specconv or something?) or is it more tricky</span>
+<span class="qt">&gt;&gt;than this? </span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Converting to snaps is obviously easy; converting to TAPs depends on</span>
+<span class="qt">&gt;the difficulty of the loader, eg things like Speedlock and Alkataz,</span>
+<span class="qt">&gt;which could be quite complex.</span>
+<span class="qt">&gt;</span>
+
+As far as I remember, .TAP has block types for most MAJOR protection 
+loaders these days, its just the oddball ones that you&#x27;ll have trouble 
+with.
+
+I know there are tools to convert to .TAP, but I couldn&#x27;t tell you which.
+
+OTOH, one thing I meant to add to my original reply to the post, was that 
+back in the day when I started with speccy emulation (with Z80 v2.1 i 
+believe), The ONLY way I had to get speccy games (I had no home internet 
+connection, and couldn&#x27;t download to disk at university), was to use the 
+Z80 LPT interface and load the games manually from tape myself. Now THAT 
+was a nostalgic experience, not just the speed of TZX, but the noise, 
+frustration (of vol/tone levels), and the &#x27;R Tape Loading error&#x27;s :)
+
+One thing that annoys me about emulation (I suspect it does to many others 
+too, though maybe they haven&#x27;t noticed yet :) is that no matter which 
+platform is being emulated, I seem to have less patience when dealing with 
+emulation than the real thing. I&#x27;m more tempted to load up a ROM/Snap/Disk-
+Image and play for 30 seconds, then move on to something else, whereas with 
+the real thing, I&#x27;d tend to play for a serious amount of time, even if it 
+wasn&#x27;t my favorite game. This is the reason why I&#x27;m starting to seek out 
+the REAL systems rather than emulate - so far I&#x27;ve gotten myself a A1200 
+and 520ST which covers the 16bit computer bases. As expected, when I loaded 
+up Populous on the A1200, I played it for about 4 hours, compared to 45 
+minutes being my longest duration of Populous play on UAE (and yes, I did 
+say i prefer pop. on the ST, but my ST won&#x27;t arrive til tomorrow thanks to 
+UPS :/ But then I&#x27;ll probably spend all my time playing Deuteros :)
+
+I&#x27;ve been saying this since the start of the emulation days, but perhaps 
+the load times encourage more persistance with a game, rather than just 
+tossing it aside and trying something else.
+
+The bottom line is that I still believe that while Emulation is pretty much 
+100% accurate these days, it still doesn&#x27;t match the experience of the real 
+hardware. There&#x27;s just &#x27;something&#x27; different that makes the real thing more 
+enjoyable. I&#x27;m sure many people on the group that still own a real spectrum 
+agree, after all, if Emulation was the best solution, they probably 
+wouldn&#x27;t bother owning a speccy, and just make a killing on ebay like so 
+many others :)
+
+One day, I&#x27;m sure we&#x27;ll be holding the same argument of old-style emulators 
+vs complete-hardware emulators, where the hardware-spec type emulators are 
+based on a generic emulation of the physical chips, and the latter offering 
+a preservation format for the actual hardware (ie, it being physically 
+possible to rebuild an 80s computer from its hardware definition :) But 
+then it&#x27;ll probably be &#x27;why must people use the hardware format, when a 
+soft-emulator can fix X bug in Y machine&#x27; *grin*
+
+
+
+</pre></div><div class="post" id="p87469"><div class="ph"><a class="d" href="#p87469">2001-02-05 20:02:14</a> <span>Philip Kendall</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>In article &lt;…@…&gt;,
+Suzanne Archibald &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;As far as I remember, .TAP has block types for most MAJOR protection </span>
+<span class="qt">&gt;loaders these days, its just the oddball ones that you&#x27;ll have trouble </span>
+<span class="qt">&gt;with.</span>
+
+You remember wrong. .tap handles only the standard ROM loader -- see the
+FAQ. (Assuming we&#x27;re not talking about Warajevo&#x27;s .tap format, which
+never really took off. AFAIK, there was only ever one uploaded to
+NVG/WoS, and that was by me :-) ).
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+  New? Read the FAQ: <a href="http://www.srcf.ucam.org/~pak21/cssfaq/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/cssfaq/</a>
+
+
+
+</pre></div><div class="post" id="p87497"><div class="ph"><a class="d" href="#p87497">2001-02-05 23:33:26</a> <span>Chris Young</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>On Mon, 05 Feb 2001 19:10:49 -0000, Suzanne Archibald (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; &gt;&gt;Suzanne Archibald &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt;&gt;&gt; Since emulation is claimed as being as form of preservation, I</span>
+<span class="qt">&gt; &gt;&gt;&gt; believe its important that things like TZX allow us to preserve the</span>
+<span class="qt">&gt; &gt;&gt;&gt; tapes as close to how they were as possible.</span>
+
+I have no problem with that.
+
+Thinking about this, maybe the loading gets to me because I had a +3
+and so most of the stuff I played had been snapped onto disk.  But
+then, I also made great use of a 48K Speccy so I was used to tape
+loading too.  I think it didn&#x27;t really bother me back then and it
+really isn&#x27;t a very long amount of time to wait.
+
+<span class="qt">&gt; One thing that annoys me about emulation (I suspect it does to many others </span>
+<span class="qt">&gt; too, though maybe they haven&#x27;t noticed yet :) is that no matter which </span>
+<span class="qt">&gt; platform is being emulated, I seem to have less patience when dealing with </span>
+<span class="qt">&gt; emulation than the real thing. I&#x27;m more tempted to load up a ROM/Snap/Disk-</span>
+<span class="qt">&gt; Image and play for 30 seconds, then move on to something else, whereas with </span>
+<span class="qt">&gt; the real thing, I&#x27;d tend to play for a serious amount of time, even if it </span>
+<span class="qt">&gt; wasn&#x27;t my favorite game.</span>
+[...]
+<span class="qt">&gt; I&#x27;ve been saying this since the start of the emulation days, but perhaps </span>
+<span class="qt">&gt; the load times encourage more persistance with a game, rather than just </span>
+<span class="qt">&gt; tossing it aside and trying something else.</span>
+
+This is *so* true.
+
+Chris
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p87557"><div class="ph"><a class="d" href="#p87557">2001-02-06 11:37:57</a> <span>Hob</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>Many eons ago,  in the dim, dark and distant past, Philip Kendall once waffled 
+on about:
+
+<span class="qt">&gt; You remember wrong. .tap handles only the standard ROM loader -- see the</span>
+<span class="qt">&gt; FAQ. (Assuming we&#x27;re not talking about Warajevo&#x27;s .tap format, which</span>
+<span class="qt">&gt; never really took off. AFAIK, there was only ever one uploaded to</span>
+<span class="qt">&gt; NVG/WoS, and that was by me :-) ).</span>
+
+.TAP does indeed only handle types 0 - 3.. I wrote a little C program recently 
+which took a binary file (say an assembled program from TASM..) and created a 
+.TAP from it, based on the parameters passed. (It also handled BASIC progs that 
+I&#x27;d squirted across to the PC using SAVE *&quot;b&quot; ..
+
+-- 
+Hob.
+
+Replace a with er. 
+Visit the amazingly dull site! <a href="http://www.thehobbitsburrow.org.uk" rel="noreferrer">http://www.thehobbitsburrow.org.uk</a> 
+Use the apostrophe correctly! <a href="http://www.angryflower.com/bobsqu.gif" rel="noreferrer">http://www.angryflower.com/bobsqu.gif</a>
+
+
+
+</pre></div><div class="post" id="p87590"><div class="ph"><a class="d" href="#p87590">2001-02-07 13:16:22</a> <span>Joe Mackay</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>Suzanne Archibald &lt;…@…&gt; wrote:
+
+: [1] Not that I ever used that trick after screwing my ZX81 up permanently 
+: by doing such things [2], oh no, not me...
+
+: [2] how did plugging something in while the ZX81 was turned on corrupt the 
+: *ROM* character set anyway ?
+
+The I register points to the page where the charset is found, it probably
+changed that instead.
+
+-- 
+Joe Mackay - Department of Computer Science, QMW
+E-mail     - …@…
+(mobile)   - …@…
+
+
+
+</pre></div><div class="post" id="p87611"><div class="ph"><a class="d" href="#p87611">2001-02-07 14:13:22</a> <span>Matt Barber</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>Joe Mackay &lt;…@…&gt; writes:
+<span class="qt">&gt; Suzanne Archibald &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; : [2] how did plugging something in while the ZX81 was turned on corrupt the </span>
+<span class="qt">&gt; : *ROM* character set anyway ?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The I register points to the page where the charset is found, it probably</span>
+<span class="qt">&gt; changed that instead.</span>
+
+Possible, but unlikely, as that&#x27;s part of the Z80 and any serious
+damage to it would most likely stop the computer running at all let
+alone just corrupting the character set.
+
+More likely would be that it blew up some of the logic in the ULA that
+decodes the characters when they are displayed. Given the various
+fiddles that could be done with it to get hi-res graphics, it would
+explain that sort of behaviour.
+
+Bye,
+Matt
+
+
+
+</pre></div><div class="post" id="p87815"><div class="ph"><a class="d" href="#p87815">2001-02-08 13:22:29</a> <span>…@…</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>Llama-Wax Len &lt;…@…&gt; did eloquently scribble:
+
+<span class="qt">&gt; Suzanne Archibald wrote in message ...</span>
+<span class="qt">&gt;&gt;I don&#x27;t get the point of moaning about load times personally, yes, its an</span>
+<span class="qt">&gt;&gt;emulated machine, it emulates the EXPERIENCE of the spectrum, and that</span>
+<span class="qt">&gt;&gt;includes the loading time. If we start saying &#x27;yeah, but we can fix this</span>
+<span class="qt">&gt;&gt;problem with a modern machine&#x27;, where do we draw the line? do we try and</span>
+<span class="qt">&gt;&gt;guess at removing colour-clash ?</span>
+
+<span class="qt">&gt; You should see the modifications I&#x27;ve made to my speccy emulator. I nicked a</span>
+<span class="qt">&gt; few sensors from a local physics lab and wired them up to my PC. Now, if I&#x27;m</span>
+<span class="qt">&gt; loading a game on an emulator and someone enters the room, it crashes</span>
+<span class="qt">&gt; instantly. Full emulation of the &quot;R Tape Loading error &#x27;cos your mum&#x27;s just</span>
+<span class="qt">&gt; walked in and upset the magical loading aura&quot; sensation.</span>
+
+LEN!!! You need to emulate Azimuth head adjustment and volume fiddling!
+(Each tap or tzx file must have a different azimuth alignment and optimum
+volume setting...)
+
+
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)| &quot;ARSE! GERLS!! DRINK! DRINK! DRINK!!!&quot;          |</span>
+<span class="qt">|            in            | &quot;THAT WOULD BE AN ECUMENICAL MATTER!...FECK!!!! |</span>
+<span class="qt">|     Computer Science     | - Father Jack in &quot;Father Ted&quot;                   |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p88031"><div class="ph"><a class="d" href="#p88031">2001-02-09 12:17:13</a> <span>Hob</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>Many eons ago,  in the dim, dark and distant past, Chris Young once waffled on 
+about:
+
+<span class="qt">&gt; What am I talking about?  TZX files.  Yes, I appreciate that this is a</span>
+<span class="qt">&gt; good way of keeping a copy of a Spectrum tape in a digital format. </span>
+<span class="qt">&gt; Yes, I appreciate that sometimes it is the only way of storing</span>
+<span class="qt">&gt; Spectrum games.  But, I don&#x27;t see why they need to load into an</span>
+<span class="qt">&gt; emulator and exactly the right speed.  It&#x27;s an *emulated* tape.  It</span>
+<span class="qt">&gt; isn&#x27;t restricted by the speed the tape recorder runs at.  It&#x27;s an</span>
+<span class="qt">&gt; *emulated* computer.  It isn&#x27;t restricted by the speed of the original</span>
+<span class="qt">&gt; processor.  Surely it must be possible to speed up this loading</span>
+<span class="qt">&gt; process?[1]</span>
+
+I&#x27;ve had trouble with some games loading at full speed - I wondered if it had 
+anything to do with timings in the cassette routines that the games then checked 
+afterwards to make sure they weren&#x27;t hacked.. 
+
+-- 
+Hob.
+
+Replace a with er. 
+Visit the amazingly dull site! <a href="http://www.thehobbitsburrow.org.uk" rel="noreferrer">http://www.thehobbitsburrow.org.uk</a> 
+Use the apostrophe correctly! <a href="http://www.angryflower.com/bobsqu.gif" rel="noreferrer">http://www.angryflower.com/bobsqu.gif</a>
+
+
+
+</pre></div><div class="post" id="p89364"><div class="ph"><a class="d" href="#p89364">2001-02-16 11:33:51</a> <span>Tomaz Cedilnik</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>Chris Young wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Is it really necessary to emulate loading games at Spectrum speed,</span>
+<span class="qt">&gt; complete with authentic coloured stripes and loading noise?  It&#x27;s</span>
+<span class="qt">&gt; emulation gone mad.  Next they&#x27;ll be adding in an option to adjust the</span>
+<span class="qt">&gt; volume of the simulated tape, thus ensuring tape loading errors until</span>
+<span class="qt">&gt; you get it to exactly the right volume.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; What am I talking about?  TZX files. ...</span>
+
+Well, you missed the point a bit. .VOC files are the ones that would
+have the volume setting since they are the actual sound from the tape.
+Speccy&#x27;s hardware actually converts the sound into pulses (correct me if
+I&#x27;m wrong, please), then the software measures the length of pulses and
+decides what they mean (leader/pilot, bits, rubbish...). Therefore, if
+you want to keep &quot;everything&quot; you can save the pulses instead of the
+actual sound for the emulation since the software on the Speccy (loader)
+can&#x27;t read beyond pulses. However, if you save pulses and their lengths,
+you make sure that they are timed acurately and save a lot of space. And
+that&#x27;s what .TZX is for. It can, of course, store the whole blocks with
+the info which loader it is for, actually the info tells how long the
+pulses in the leader and in the bits are. But it also allows pure
+leader, a block of bits without leader, or even a raw sequence of
+pulses[1], so it reaches the full generality. But it saves a lot of
+space comparing to .VOC even if you actually use raw pulses for some
+pervert purpose[1]. :-) That means no matter what kind of pervert loader
+someone wrote and it worked on a Speccy, it will work on the emulator
+that supports .tzx.
+
+<span class="qt">&gt; ... Yes, I appreciate that this is a</span>
+<span class="qt">&gt; good way of keeping a copy of a Spectrum tape in a digital format.</span>
+
+... as you can read above.
+
+<span class="qt">&gt; Yes, I appreciate that sometimes it is the only way of storing</span>
+...
+<span class="qt">&gt; processor.  Surely it must be possible to speed up this loading</span>
+<span class="qt">&gt; process?[1]</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Chris</span>
+<span class="qt">&gt; [1] Actually, I&#x27;ve just remembered that x128 has a loading speed</span>
+<span class="qt">&gt; setting, which may do exactly this.  Perhaps I should check these</span>
+<span class="qt">&gt; things before moaning about them, eh?</span>
+
+That&#x27;s exactly what I would have told you. :-) In fact, I do use high
+speed loading unless when I want to experience the whole thing.
+
+Tom
+
+----------------
+[1] I actually did it once. I&#x27;ve written a custom loader that would be
+as fast as the routine could manage to follow the pulses. But ROM
+loaders and custom loaders always asumed 2 pulses for a bit and that&#x27;s
+what .TZX format asumes, too, when you want a block. I, of course,
+wanted only 1 pulse per bit since I double the loading speed limit. I
+went even further, I suppressed the colour stripes while loading (but
+kept them when detecting the leader), and (yes, you&#x27;ll say I&#x27;m crazy) I
+made every non-first bit in a byte shorter than first since the first
+bit in every byte requires extra CPU work (writing the previously built
+byte into memory, increasing address, ...). Since I didn&#x27;t show colour
+stripes while loading I saved registeres which made it possible to use
+HL instead of IX for addressing - which also sped it up.
+The leader was only something like 0.2 second long. To actually test the
+loader, I couldn&#x27;t put a custom block into a .tzx file (since they don&#x27;t
+allow &lt;&gt;2 pulses per bit and variable bit timing during loading) so I
+had to put a raw sequence of pulses. However, noone would like to enter
+a row of 6912*8 pulses manually so I&#x27;ve written a program that read the
+.scr file and made a .tzx containing only the pure leader block and raw
+sequence of pulses, apropriate for my loader. On X128 it actually
+worked! :-) The whole picture was loaded in something like 2 seconds, I
+think. But other emus didn&#x27;t like it. Also, 44kHz sampling is not good
+enough for the speed I reached so it didn&#x27;t work at all if I converted
+that .tzx to .voc. It would never work on the real Speccy. :-)
+
+Right now I&#x27;m not home and I&#x27;m using another computer so I can&#x27;t send
+you that loader&#x27;s listing, but if anybody is interested I can send it
+when I get home (in a little more than a month.
+
+
+
+</pre></div><div class="post" id="p89370"><div class="ph"><a class="d" href="#p89370">2001-02-16 11:44:02</a> <span>Tomaz Cedilnik</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre><span class="qt">&gt; That&#x27;s exactly what I would have told you. :-) In fact, I do use high</span>
+<span class="qt">&gt; speed loading unless when I want to experience the whole thing.</span>
+
+Forgot to mention - for the purpose of Speccy Tour 2000, I made
+snapshots of all games (to skip also the LOAD &quot;&quot; and setting the right
+options) so that I just loaded the snapshot and played.
+
+Otherwise I always try to get the a .tzx.
+
+Tom
+
+
+
+</pre></div><div class="post" id="p89376"><div class="ph"><a class="d" href="#p89376">2001-02-16 11:56:55</a> <span>Tomaz Cedilnik</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>…@… wrote:
+
+<span class="qt">&gt; &gt; You should see the modifications I&#x27;ve made to my speccy emulator. I nicked a</span>
+<span class="qt">&gt; &gt; few sensors from a local physics lab and wired them up to my PC. Now, if I&#x27;m</span>
+<span class="qt">&gt; &gt; loading a game on an emulator and someone enters the room, it crashes</span>
+<span class="qt">&gt; &gt; instantly. Full emulation of the &quot;R Tape Loading error &#x27;cos your mum&#x27;s just</span>
+<span class="qt">&gt; &gt; walked in and upset the magical loading aura&quot; sensation.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; LEN!!! You need to emulate Azimuth head adjustment and volume fiddling!</span>
+<span class="qt">&gt; (Each tap or tzx file must have a different azimuth alignment and optimum</span>
+<span class="qt">&gt; volume setting...)</span>
+
+Hahaha! What about stereo sounds? My cousin actually had once 2 programs
+recorded on the same part of the same tape, each on one stereo channel.
+
+Tom
+
+
+
+</pre></div><div class="post" id="p89383"><div class="ph"><a class="d" href="#p89383">2001-02-16 12:26:03</a> <span>Stef Robb</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>
+&lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Llama-Wax Len &lt;…@…&gt; did</span>
+eloquently scribble:
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Suzanne Archibald wrote in message ...</span>
+<span class="qt">&gt; &gt;&gt;I don&#x27;t get the point of moaning about load times personally, yes,</span>
+its an
+<span class="qt">&gt; &gt;&gt;emulated machine, it emulates the EXPERIENCE of the spectrum, and</span>
+that
+<span class="qt">&gt; &gt;&gt;includes the loading time. If we start saying &#x27;yeah, but we can fix</span>
+this
+<span class="qt">&gt; &gt;&gt;problem with a modern machine&#x27;, where do we draw the line? do we try</span>
+and
+<span class="qt">&gt; &gt;&gt;guess at removing colour-clash ?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; You should see the modifications I&#x27;ve made to my speccy emulator. I</span>
+nicked a
+<span class="qt">&gt; &gt; few sensors from a local physics lab and wired them up to my PC.</span>
+Now, if I&#x27;m
+<span class="qt">&gt; &gt; loading a game on an emulator and someone enters the room, it</span>
+crashes
+<span class="qt">&gt; &gt; instantly. Full emulation of the &quot;R Tape Loading error &#x27;cos your</span>
+mum&#x27;s just
+<span class="qt">&gt; &gt; walked in and upset the magical loading aura&quot; sensation.</span>
+<span class="qt">&gt;</span>
+
+Ah, the chuntey!
+
+-Stef
+
+<span class="qt">&gt; LEN!!! You need to emulate Azimuth head adjustment and volume</span>
+fiddling!
+<span class="qt">&gt; (Each tap or tzx file must have a different azimuth alignment and</span>
+optimum
+<span class="qt">&gt; volume setting...)</span>
+<span class="qt">&gt;</span>
+
+
+
+
+
+
+</pre></div><div class="post" id="p89498"><div class="ph"><a class="d" href="#p89498">2001-02-16 23:12:42</a> <span>Mark B</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>
+Tomaz Cedilnik &lt;…@…&gt; wrote in message
+news:…@…..
+
+-snip-
+.
+<span class="qt">&gt; I&#x27;ve written a custom loader that would be</span>
+<span class="qt">&gt; as fast as the routine could manage to follow the pulses. But ROM</span>
+<span class="qt">&gt; loaders and custom loaders always asumed 2 pulses for a bit and that&#x27;s</span>
+<span class="qt">&gt; what .TZX format asumes, too, when you want a block. I, of course,</span>
+<span class="qt">&gt; wanted only 1 pulse per bit since I double the loading speed limit. I</span>
+<span class="qt">&gt; went even further, I suppressed the colour stripes while loading (but</span>
+<span class="qt">&gt; kept them when detecting the leader), and (yes, you&#x27;ll say I&#x27;m crazy) I</span>
+<span class="qt">&gt; made every non-first bit in a byte shorter than first since the first</span>
+<span class="qt">&gt; bit in every byte requires extra CPU work (writing the previously built</span>
+<span class="qt">&gt; byte into memory, increasing address, ...). Since I didn&#x27;t show colour</span>
+<span class="qt">&gt; stripes while loading I saved registeres which made it possible to use</span>
+<span class="qt">&gt; HL instead of IX for addressing - which also sped it up.</span>
+<span class="qt">&gt; The leader was only something like 0.2 second long. To actually test the</span>
+<span class="qt">&gt; loader, I couldn&#x27;t put a custom block into a .tzx file (since they don&#x27;t</span>
+<span class="qt">&gt; allow &lt;&gt;2 pulses per bit and variable bit timing during loading) so I</span>
+<span class="qt">&gt; had to put a raw sequence of pulses. However, noone would like to enter</span>
+<span class="qt">&gt; a row of 6912*8 pulses manually so I&#x27;ve written a program that read the</span>
+<span class="qt">&gt; .scr file and made a .tzx containing only the pure leader block and raw</span>
+<span class="qt">&gt; sequence of pulses, apropriate for my loader. On X128 it actually</span>
+<span class="qt">&gt; worked! :-) The whole picture was loaded in something like 2 seconds, I</span>
+<span class="qt">&gt; think. But other emus didn&#x27;t like it. Also, 44kHz sampling is not good</span>
+<span class="qt">&gt; enough for the speed I reached so it didn&#x27;t work at all if I converted</span>
+<span class="qt">&gt; that .tzx to .voc. It would never work on the real Speccy. :-)</span>
+
+I tried the single pulse trick on a real speccy many moons ago (about 12-13
+years) but I couldn&#x27;t get it to load reliably no matter what speed I used...
+I &#x27;spose somebody will correct me on this (it&#x27;s just a wild guess) but maybe
+it had something to do with the polarity of the particles on the tape?
+
+Mark
+
+
+
+
+
+</pre></div><div class="post" id="p89583"><div class="ph"><a class="d" href="#p89583">2001-02-17 13:35:22</a> <span>Llama-Wax Len</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>
+Stef Robb wrote in message ...
+<span class="qt">&gt;&gt; &gt; walked in and upset the magical loading aura&quot; sensation.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Ah, the chuntey!</span>
+
+
+Woo-hoo! It&#x27;s catching on!
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+LEGAL DISCLAIMER: By replying to this message, you hereby
+acknowledge that the ZX Spectrum game &quot;Robocop&quot; was too hard.
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p90206"><div class="ph"><a class="d" href="#p90206">2001-02-20 12:19:21</a> <span>Derek Jolly</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>&quot;Llama-Wax Len&quot; &lt;…@…&gt;, in message 
+&lt;96mc8k$q74$…@…&gt;, wrote
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Stef Robb wrote in message ...</span>
+<span class="qt">&gt;&gt;&gt; &gt; walked in and upset the magical loading aura&quot; sensation.</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Ah, the chuntey!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Woo-hoo! It&#x27;s catching on!</span>
+
+It&#x27;s official now.  I&#x27;ve updated the folklore FAQ with it.
+-- 
+* Derek Jolly  (…@…) Web: <a href="http://www.redrival.com/rivet" rel="noreferrer">http://www.redrival.com/rivet</a> *
+* Bemused by the jargon in comp.sys.sinclair?  Check out the CSS         *
+* folklore FAQ at <a href="http://www.redrival.com/rivet/cssfolk.html" rel="noreferrer">http://www.redrival.com/rivet/cssfolk.html</a>             *
+* Registered Linux User (<a href="http://counter.li.org/" rel="noreferrer">http://counter.li.org/</a>) No. 176120              *
+
+
+
+</pre></div><div class="post" id="p90211"><div class="ph"><a class="d" href="#p90211">2001-02-20 12:42:02</a> <span>mitch</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>On 20 Feb 2001 12:19:21 GMT, …@… (Derek Jolly) wrote:
+
+<span class="qt">&gt;&quot;Llama-Wax Len&quot; &lt;…@…&gt;, in message </span>
+<span class="qt">&gt;&lt;96mc8k$q74$…@…&gt;, wrote</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Stef Robb wrote in message ...</span>
+<span class="qt">&gt;&gt;&gt;&gt; &gt; walked in and upset the magical loading aura&quot; sensation.</span>
+<span class="qt">&gt;&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;Ah, the chuntey!</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Woo-hoo! It&#x27;s catching on!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;It&#x27;s official now.  I&#x27;ve updated the folklore FAQ with it.</span>
+
+I even use it when not referring to the speccy loading aura...
+
+eg.  When my PC was going through a crashing-all-the-time phase, I
+took to holding my breath and not moving the mouse so as not to
+disrupt the chuntey.
+-- 
+Smileys are nothing but conceptual wheelchair ramps for the humor impaired.
+ - Geoff Miller
+
+
+
+</pre></div><div class="post" id="p90212"><div class="ph"><a class="d" href="#p90212">2001-02-20 12:43:39</a> <span>la haine</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>On 20 Feb 2001, Derek Jolly (…@…) wrote this message 
+&lt;96tnc8$mjp08$…@…&gt;:
+
+<span class="qt">&gt;&gt;Woo-hoo! It&#x27;s catching on!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;It&#x27;s official now.  I&#x27;ve updated the folklore FAQ with it.</span>
+
+Hey! I&#x27;m in there. Bugger, my geekcode was out of date as well.
+
+-- 
+-----BEGIN GEEK CODE BLOCK-----
+Version: 3.1
+GH d- s: a-- C++ U P+ L+ E W+++$ N+ o? K- w M V? PS+ PE Y+ PGP t+ 5+ X- R- 
+tv- b++ DI D G e++ h- r++ y+
+------END GEEK CODE BLOCK------
+
+
+
+</pre></div><div class="post" id="p90217"><div class="ph"><a class="d" href="#p90217">2001-02-20 12:51:06</a> <span>la haine</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>On 20 Feb 2001, mitch (…@…) 
+wrote this message &lt;3a9265ce.940929376@news&gt;:
+
+<span class="qt">&gt;eg.  When my PC was going through a crashing-all-the-time phase, I</span>
+<span class="qt">&gt;took to holding my breath and not moving the mouse so as not to</span>
+<span class="qt">&gt;disrupt the chuntey.</span>
+
+My PC went through about a year of hardware problems[1], and I know what 
+you mean. I&#x27;d be installing Windows for the 1000th time and navigating 
+around setup only using the tab key, for fear that the mouse would upset 
+the chuntey. Why the mouse, eh? Why is that the first thing that screws up 
+your computer when you have a hardware problem? Oh dear, sound card 
+problem, best manifest myself by freezing the computer when the mouse 
+moves.
+
+[1] With hindsight, I should have just bought a new computer.
+
+-- 
+I had a linguistics professor who said that it&#x27;s man&#x27;s ability to use 
+language that makes him the dominant species on the planet. That may be. 
+But I think there&#x27;s one other thing that separates us from animals. We 
+aren&#x27;t afraid of vacuum cleaners. 
+- Jeff Stilson
+
+
+
+</pre></div><div class="post" id="p90423"><div class="ph"><a class="d" href="#p90423">2001-02-21 02:20:38</a> <span>Duncan Snowden</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>On Tuesday, la haine wrote:
+
+<span class="qt">&gt; [1] With hindsight, I should have just bought a new computer.</span>
+
+Yes. Your old one had clearly become dechuntified.
+
+-- 
+Duncan Snowden. 
+
+e File already exists, 650:3 
+
+
+
+</pre></div><div class="post" id="p90640"><div class="ph"><a class="d" href="#p90640">2001-02-21 23:20:50</a> <span>Llama-Wax Len</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>
+Duncan Snowden wrote in message ...
+<span class="qt">&gt;On Tuesday, la haine wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; [1] With hindsight, I should have just bought a new computer.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Yes. Your old one had clearly become dechuntified.</span>
+
+Heheheheheheheheh.
+
+What a great word. I&#x27;m genuinely touched that this terminology has become so
+widespread already.
+
+In fact, I now want a T-shirt with &quot;48&quot; and &quot;CHUNTEY&quot; printed on the back.
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+LEGAL DISCLAIMER: By replying to this message, you hereby
+acknowledge that the ZX Spectrum game &quot;Robocop&quot; was too hard.
+
+
+
+
+
+</pre></div><div class="post" id="p90951"><div class="ph"><a class="d" href="#p90951">2001-02-23 00:40:44</a> <span>Duncan Snowden</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>On Wednesday, Llama-Wax Len wrote:
+
+<span class="qt">&gt; Duncan Snowden wrote in message ...</span>
+<span class="qt">&gt;&gt; On Tuesday, la haine wrote:</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt;&gt; [1] With hindsight, I should have just bought a new computer.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Yes. Your old one had clearly become dechuntified.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Heheheheheheheheh.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; What a great word. I&#x27;m genuinely touched that this terminology has</span>
+<span class="qt">&gt; become so widespread already.</span>
+
+Fulfilling a need, Len.
+
+I&#x27;ve been thinking (Run for your lives! Ed.)... we could start a new
+Speccy-based religion with this, and if that Link bloke ever turns up
+again we can threaten him with bad chuntey unless he repents his heathen
+ways.
+
+<span class="qt">&gt; In fact, I now want a T-shirt with &quot;48&quot; and &quot;CHUNTEY&quot; printed on the</span>
+<span class="qt">&gt; back.</span>
+
+Nice.
+
+-- 
+Duncan Snowden. 
+
+F Invalid file name, 1180:3 
+
+
+
+</pre></div><div class="post" id="p91616"><div class="ph"><a class="d" href="#p91616">2001-02-26 16:17:13</a> <span>…@…</span> <span>Re: I&#x27;m all for realism, but this is ridiculous...</span></div><pre>Duncan Snowden &lt;…@…&gt; wrote:
+
+Oh!
+
+You&#x27;ve ta&#x27;en that too far!
+
+-- 
+Serious, business-type email for life:          …@…
+ NB: I will be not be using …@… in future as I have 
+     been experiencing difficulties with their service.
+Slightly less businessy email address:          …@…
+Email address that&#x27;ll be out of date next year: …@…
+
+
+
+</pre></div></main></body></html>

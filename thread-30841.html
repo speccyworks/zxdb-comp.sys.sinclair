@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANN: ZX Spectrum SE/CF · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANN: ZX Spectrum SE/CF</h1><p class="facts">15 posts, 2005-03-09 – 2005-03-19</p><div class="post" id="p190468"><div class="ph"><a class="d" href="#p190468">2005-03-09 11:09:32</a> <span>…@…</span> </div><pre>First some numbers:
+
+    2: years since the ZX Spectrum SE was released
+    1: ZX Spectrum SE&#x27;s built including the original prototype
+    1: emulators with ZX Spectrum SE support (FUSE)
+    3: authors of ZX Spectrum SE specific software
+    5: ZX Spectrum SE specific software releases
+
+Given the relative lack of popularity of the ZX Spectrum SE you may
+well be asking why the ZX Spectrum SE/CF should be any more successful.
+
+Despite the fact that people have been talking about making a new
+Spectrum since this newsgroup began, only a few dedicated hobbyists
+have the technical know-how to do it, and because most people are not
+willing to fork out the large amount a short-run machine would cost a
+new physical Spectrum remains unviable.
+
+Emulator authors as a rule, for their own reasons, are unwilling to
+emulate non-existent hardware, which precludes the creation of a
+virtual &#x27;Super-Spectrum&#x27;. The exception to this rule is the Spec256
+emulator - which proved what a waste of the emulator author&#x27;s time
+adding such support was when hardly anyone used the extra colour
+feature.
+
+The ZX Spectrum SE/CF is different. It is available as real hardware:
+(ZX Spectrum SE + ZXCF interface), which is sufficiently documented to
+allow consistent support across emulators. It is available in
+emulation: FUSE emulates the ZX Spectrum SE/CF now. Just select the
+Spectrum SE model and activate the ZXCF interface and you have a
+working ZX Spectrum SE/CF environment.
+
+Sounds too good to be true - it is. At present you still have to
+install ResiDOS and set up the IDE file yourself, and unless you save a
+snapshot you have to do this every time you start FUSE (unless I&#x27;ve
+missed an option somewhere - which I may well have).
+
+So here&#x27;s the news - I am fixing the ZX Spectrum SE specification to be
+exactly the same as the FUSE implimentation. This uses a 32K ROM, and
+there is no 8K PRAM on the AY chip, but is otherwise as documented
+here:
+
+    <a href="http://www.sinclairfaq.com/cssfaq/reference/sereference.htm" rel="noreferrer">http://www.sinclairfaq.com/cssfaq/reference/sereference.htm</a>
+
+The ZX Spectrum SE/CF requires a conforming ZX Spectrum SE and ZXCF
+emulation. ZXCF is currently emulated by FUSE and RealSpectrum. Further
+details here:
+
+    <a href="http://user.tninet.se/~vjz762w/ZX_SPECTRUM_DIY_PROJECTS/zxcf.html" rel="noreferrer">http://user.tninet.se/~vjz762w/ZX_SPECTRUM_DIY_PROJECTS/zxcf.html</a>
+
+FUSE supports the new .SZX snapshot format, and the new .HDF hard disk
+format. In order to make using the ZX Spectrum SE/CF as painless as
+possible I intend to provide a BOOT image in .SZX format and a default
+.HDF file as soon as I am able. These will be available from the ZX
+Spectrum SE site:
+
+    <a href="http://zxse.raww.net/" rel="noreferrer">http://zxse.raww.net/</a>
+
+In the meantime here is the specification:
+
+    Codename:  Jenny
+    I/N:       TC31296
+    CPU:       Z80A @ 3.528Mhz
+    IDE:       ZXCF
+    DOS:       ResiDOS (currently v1.84)
+               <a href="http://www.zxplus3e.plus.com/residos/" rel="noreferrer">http://www.zxplus3e.plus.com/residos/</a>
+    ROM:       32K
+               ROM-0: 128 EDITOR (patched)
+               ROM-1: 48 BASIC (original)
+    Total RAM: 1,296K
+               1MB ZXCF-RAM, 144K 128-RAM, 128K Timex-RAM
+    Video RAM: 27K
+               Lo-res: 256x192 (8x8 attr) - each screen uses 6.25k
+               Hi-col: 256x192 (8x1 attr) - each screen uses 12.5k
+               Hi-res: 512x192 (mono)     - each screen uses 12.5k
+    Sound:     AY-3-8912
+
+The ZX Spectrum SE currently supports software written for the
+following machines:
+
+    ZX80, ZX81, ZX Spectrum, Interface II, Timex 2068, ZX Spectrum 128,
+BBC Basic (Z80)
+
+One aim of the ZX Spectrum SE/CF is to allow IDE access in all these
+modes, initially for BASIC programs only (ResiDOS currently only
+supports 48K snapshot files).
+
+If anyone would like to contribute to the project, particularly
+converting the emulators to work under ResiDOS, I&#x27;d love to hear from
+them. I&#x27;ll read any comments posted here and take them onboard.
+
+
+
+
+</pre></div><div class="post" id="p190470"><div class="ph"><a class="d" href="#p190470">2005-03-09 11:37:15</a> <span>Matthew Westcott</span> <span>Re: ANN: ZX Spectrum SE/CF</span></div><pre>…@… wrote:
+
+<span class="qt">&gt; Emulator authors as a rule, for their own reasons, are unwilling to</span>
+<span class="qt">&gt; emulate non-existent hardware, which precludes the creation of a</span>
+<span class="qt">&gt; virtual &#x27;Super-Spectrum&#x27;. The exception to this rule is the Spec256</span>
+<span class="qt">&gt; emulator - which proved what a waste of the emulator author&#x27;s time</span>
+<span class="qt">&gt; adding such support was when hardly anyone used the extra colour</span>
+<span class="qt">&gt; feature.</span>
+
+I think that was more to do with the fact that nobody could be bothered 
+to reverse-engineer a completely undocumented, closed file format.
+
+
+
+</pre></div><div class="post" id="p190471"><div class="ph"><a class="d" href="#p190471">2005-03-09 17:53:04</a> <span>Andrew Owen</span> <span>Re: ANN: ZX Spectrum SE/CF</span></div><pre>Matthew Westcott &lt;…@…&gt; wrote in message news:&lt;…@…&gt;...
+
+[Spec256 emulator]
+
+<span class="qt">&gt; &gt; hardly anyone used the extra colour feature.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I think that was more to do with the fact that nobody could be bothered </span>
+<span class="qt">&gt; to reverse-engineer a completely undocumented, closed file format.</span>
+
+Perhaps. I gather there&#x27;s another 256 colour Speccy Emulator available
+now so I&#x27;ll be interested to see how much support that gets. I have a
+much more modest idea for a boost to the Speccy&#x27;s colour which would
+not require much in the way of rewriting code. It also requires no
+extra resource files as all the CLUTs are set via the eSpectrum&#x27;s own
+I/O. If any emulator authors are interested in including this feature
+then please email me and I&#x27;ll send details.
+
+
+
+</pre></div><div class="post" id="p190474"><div class="ph"><a class="d" href="#p190474">2005-03-10 00:59:56</a> <span>Philip Kendall</span> <span>Re: ANN: ZX Spectrum SE/CF</span></div><pre>In article &lt;…@…&gt;,
+Andrew Owen &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Perhaps. I gather there&#x27;s another 256 colour Speccy Emulator available</span>
+<span class="qt">&gt;now so I&#x27;ll be interested to see how much support that gets. </span>
+
+Cynical summary:
+
+* A whole load of people said &quot;This is the greatest thing ever to
+  happen to the Spectrum&quot;.
+* Approximately three of those people ever bothered to even try
+  recolouring a game.
+* Interest died.
+ 
+<span class="qt">&gt;I have a much more modest idea for a boost to the Speccy&#x27;s colour which</span>
+<span class="qt">&gt;would not require much in the way of rewriting code. It also requires no</span>
+<span class="qt">&gt;extra resource files as all the CLUTs are set via the eSpectrum&#x27;s own</span>
+<span class="qt">&gt;I/O. If any emulator authors are interested in including this feature</span>
+<span class="qt">&gt;then please email me and I&#x27;ll send details.</span>
+
+Why not just publish it here?
+
+Cheers,
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p190477"><div class="ph"><a class="d" href="#p190477">2005-03-10 09:30:09</a> <span>Andrew Owen</span> <span>Re: ANN: ZX Spectrum SE/CF</span></div><pre>…@… (Philip Kendall) wrote in message news:&lt;d0o66c$ufj$…@…&gt;...
+
+<span class="qt">&gt; &gt;I have a much more modest idea for a boost to the Speccy&#x27;s colour which</span>
+<span class="qt">&gt; &gt;would not require much in the way of rewriting code. It also requires no</span>
+<span class="qt">&gt; &gt;extra resource files as all the CLUTs are set via the eSpectrum&#x27;s own</span>
+<span class="qt">&gt; &gt;I/O. If any emulator authors are interested in including this feature</span>
+<span class="qt">&gt; &gt;then please email me and I&#x27;ll send details.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Why not just publish it here?</span>
+
+Well there&#x27;s a summary here:
+
+<a href="http://www.worldofspectrum.org/forums/viewtopic.php?topic=6720&forum=1" rel="noreferrer">http://www.worldofspectrum.org/forums/viewtopic.php?topic=6720&amp;forum=1</a>
+
+Somewhere I have some notes I made which fully describe the I/O
+needed. If you&#x27;d like to add support to FUSE I&#x27;d be happy to have a
+look for them.
+
+
+
+</pre></div><div class="post" id="p190480"><div class="ph"><a class="d" href="#p190480">2005-03-10 17:38:02</a> <span>Steve Anderson</span> <span>Re: ANN: ZX Spectrum SE/CF</span></div><pre>Philip Kendall wrote:
+
+<span class="qt">&gt; * Approximately three of those people ever bothered to even try</span>
+<span class="qt">&gt;   recolouring a game.</span>
+
+I was one of those three. I settled down to recolour Dan Dare because I 
+always thought the graphics were smashing, and after that I was going to 
+recolour Rex, because hey - it can&#x27;t be that hard can it?
+
+Two hours of swearing later I came to the conclusion that some things 
+are better left alone, and what&#x27;s the point, and if I do this incredibly 
+labour-intensive conversion how many people are really going to care? So 
+I gave up and just played the originals instead.
+
+I&#x27;m used to hacking code and using homebrew utilities - I do it all day. 
+But hacking somebody else&#x27;s code with somebody else&#x27;s homebrew utilities 
+to create a game file that won&#x27;t work on any Spectrum emulator bar two 
+(I don&#x27;t care if there&#x27;s more now) didn&#x27;t seem like a good use of my 
+time in the end.
+
+Steve
+
+
+
+</pre></div><div class="post" id="p190490"><div class="ph"><a class="d" href="#p190490">2005-03-11 11:27:12</a> <span>Andrew Owen</span> <span>Re: ANN: ZX Spectrum SE/CF</span></div><pre>Steve Anderson &lt;…@…&gt; wrote in message news:&lt;d0q0lp$t0v$…@…&gt;...
+
+<span class="qt">&gt; I&#x27;m used to hacking code and using homebrew utilities - I do it all day. </span>
+<span class="qt">&gt; But hacking somebody else&#x27;s code with somebody else&#x27;s homebrew utilities </span>
+<span class="qt">&gt; to create a game file that won&#x27;t work on any Spectrum emulator bar two </span>
+<span class="qt">&gt; (I don&#x27;t care if there&#x27;s more now) didn&#x27;t seem like a good use of my </span>
+<span class="qt">&gt; time in the end.</span>
+
+Good point. One of the ideas behind the ZX Spectrum SE was to create a
+new standard. After all there&#x27;s not much incentive to develop software
+that will only run on one emulator. To succeed where Spec256 failed,
+any new graphics standard would need to be adopted by at least these
+emulators:
+
+    FUSE, RealSpectrum, Spectaculator, SPIN, vbSpec.  
+
+The authors of these emulators have all been forthcoming in sharing
+information which has lead to some useful new features and standards,
+notably:
+
+    Built in SE Basic support
+    ZX Printer support
+    Timex TC2048 emulation
+    Extended .SCR format for Timex screens
+    New .SZX snapshot format
+    ZX Spectrum SE emulation
+    ZXCF, ZXATASP and +3e emulation
+    New .HDF format[1] for IDE images 
+
+Not all of these emulators impliment all of these features, and other
+emulator authors have also shared information, but I think where they
+lead others may follow. So, as I said, if anyone wants to discuss a
+new graphics standard with me, drop me a line.
+
+[1] An unfortunate choice of letters given that there is a
+Hierarchical Definition File format that is *apparently* sometimes
+used to contain hard drive images. Perhaps HZX would have been better.
+
+
+
+</pre></div><div class="post" id="p190495"><div class="ph"><a class="d" href="#p190495">2005-03-12 04:12:59</a> <span>Lemmiwinks, The Gerbil King</span> <span>Re: ANN: ZX Spectrum SE/CF</span></div><pre>On 11 Mar 2005 03:27:12 -0800, …@… (Andrew Owen)
+wrote:
+
+<span class="qt">&gt;Steve Anderson &lt;…@…&gt; wrote in message news:&lt;d0q0lp$t0v$…@…&gt;...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; I&#x27;m used to hacking code and using homebrew utilities - I do it all day. </span>
+<span class="qt">&gt;&gt; But hacking somebody else&#x27;s code with somebody else&#x27;s homebrew utilities </span>
+<span class="qt">&gt;&gt; to create a game file that won&#x27;t work on any Spectrum emulator bar two </span>
+<span class="qt">&gt;&gt; (I don&#x27;t care if there&#x27;s more now) didn&#x27;t seem like a good use of my </span>
+<span class="qt">&gt;&gt; time in the end.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Good point. One of the ideas behind the ZX Spectrum SE was to create a</span>
+<span class="qt">&gt;new standard. After all there&#x27;s not much incentive to develop software</span>
+<span class="qt">&gt;that will only run on one emulator. To succeed where Spec256 failed,</span>
+<span class="qt">&gt;any new graphics standard would need to be adopted by at least these</span>
+<span class="qt">&gt;emulators:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;    FUSE, RealSpectrum, Spectaculator, SPIN, vbSpec.  </span>
+                                              ^^^^^^
+The current maintainer of vbSpec has done an altogether worse job than
+yours truly (the original author) of maintaining it.  In many respects I
+wish I&#x27;d never passed on the mantle to someone else, as I expect I might
+have found time for at least a *couple* of updates over the past couple
+of the years.
+
+So, as much as it pains me to say it, I think vbSpec should effectively
+now be regarded as a &quot;dead&quot; product with little more than curiosity
+value and TC2048 emulation in its favour.
+
+If SPIN or Spectaculator were to implement TC2048 emulation (hint,
+hint!) then there&#x27;d be little point in anyone using vbSpec any more.
+
+
+
+</pre></div><div class="post" id="p190499"><div class="ph"><a class="d" href="#p190499">2005-03-12 18:34:26</a> <span>Andrew Owen</span> <span>Re: ANN: ZX Spectrum SE/CF</span></div><pre><span class="qt">&gt; So, as much as it pains me to say it, I think vbSpec should effectively</span>
+<span class="qt">&gt; now be regarded as a &quot;dead&quot; product with little more than curiosity</span>
+<span class="qt">&gt; value and TC2048 emulation in its favour.</span>
+
+Ok, but I think the presence of TC2048 and ZX Printer emulation in
+FUSE is at least partly due to your inclusion of those features in
+vbSpec, for which I thank you. I must admit I haven&#x27;t used vbSpec in a
+while since I&#x27;m basically a Mac bod, and FUSE does almost everything I
+want.
+ 
+<span class="qt">&gt; If SPIN or Spectaculator were to implement TC2048 emulation (hint,</span>
+<span class="qt">&gt; hint!) then there&#x27;d be little point in anyone using vbSpec any more.</span>
+
+vbSpec is dead, long live vb81!
+
+
+
+</pre></div><div class="post" id="p190503"><div class="ph"><a class="d" href="#p190503">2005-03-12 22:03:31</a> <span>Dunny</span> <span>Re: ANN: ZX Spectrum SE/CF</span></div><pre>
+&quot;Lemmiwinks, The Gerbil King&quot; &lt;…@…&gt; wrote in 
+message news:…@…...
+
+<span class="qt">&gt; If SPIN or Spectaculator were to implement TC2048 emulation (hint,</span>
+<span class="qt">&gt; hint!) then there&#x27;d be little point in anyone using vbSpec any more.</span>
+
+/me crosses it off the to-do list.
+
+D.
+
+
+
+
+
+</pre></div><div class="post" id="p190508"><div class="ph"><a class="d" href="#p190508">2005-03-13 18:43:48</a> <span>Woody</span> <span>Re: ANN: ZX Spectrum SE/CF</span></div><pre>On Sat, 12 Mar 2005 22:03:31 -0000, &quot;Dunny&quot; &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&quot;Lemmiwinks, The Gerbil King&quot; &lt;…@…&gt; wrote in </span>
+<span class="qt">&gt;message news:…@…...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; If SPIN or Spectaculator were to implement TC2048 emulation (hint,</span>
+<span class="qt">&gt;&gt; hint!) then there&#x27;d be little point in anyone using vbSpec any more.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;/me crosses it off the to-do list.</span>
+
+Agreed. vbSpec must live!
+
+
+
+
+</pre></div><div class="post" id="p190634"><div class="ph"><a class="d" href="#p190634">2005-03-18 02:24:18</a> <span>Lemmiwinks, The Gerbil King</span> <span>Re: ANN: ZX Spectrum SE/CF</span></div><pre>On Sun, 13 Mar 2005 18:43:48 +0000, Woody &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;On Sat, 12 Mar 2005 22:03:31 -0000, &quot;Dunny&quot; &lt;…@…&gt;</span>
+<span class="qt">&gt;wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&quot;Lemmiwinks, The Gerbil King&quot; &lt;…@…&gt; wrote in </span>
+<span class="qt">&gt;&gt;message news:…@…...</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; If SPIN or Spectaculator were to implement TC2048 emulation (hint,</span>
+<span class="qt">&gt;&gt;&gt; hint!) then there&#x27;d be little point in anyone using vbSpec any more.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;/me crosses it off the to-do list.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Agreed. vbSpec must live!</span>
+
+No! Do it! Kill the bugger!
+
+
+
+</pre></div><div class="post" id="p190635"><div class="ph"><a class="d" href="#p190635">2005-03-18 02:37:29</a> <span>Lemmiwinks, The Gerbil King</span> <span>Re: ANN: ZX Spectrum SE/CF</span></div><pre>On 12 Mar 2005 10:34:26 -0800, …@… (Andrew Owen)
+wrote:
+
+<span class="qt">&gt;&gt; So, as much as it pains me to say it, I think vbSpec should effectively</span>
+<span class="qt">&gt;&gt; now be regarded as a &quot;dead&quot; product with little more than curiosity</span>
+<span class="qt">&gt;&gt; value and TC2048 emulation in its favour.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Ok, but I think the presence of TC2048 and ZX Printer emulation in</span>
+<span class="qt">&gt;FUSE is at least partly due to your inclusion of those features in</span>
+<span class="qt">&gt;vbSpec, for which I thank you.</span>
+
+Well, you&#x27;re very welcome -- I seem to remember you had a not
+inconsiderable part in vbSpec&#x27;s TC2048 emulation yourself though!
+
+<span class="qt">&gt;I must admit I haven&#x27;t used vbSpec in a</span>
+<span class="qt">&gt;while since I&#x27;m basically a Mac bod, and FUSE does almost everything I</span>
+<span class="qt">&gt;want.</span>
+
+Yeah, I would use FUSE if I had ready access to a machine to run it on.
+What happened with the Windows port of FUSE I read about yonks ago? That
+would suit me down to the ground, that would.
+
+
+
+</pre></div><div class="post" id="p190637"><div class="ph"><a class="d" href="#p190637">2005-03-18 10:32:15</a> <span>Andrew Owen</span> <span>Re: ANN: ZX Spectrum SE/CF</span></div><pre>&quot;Lemmiwinks, The Gerbil King&quot; &lt;…@…&gt; wrote in message news:&lt;…@…&gt;...
+<span class="qt">&gt; On 12 Mar 2005 10:34:26 -0800, …@… (Andrew Owen)</span>
+<span class="qt">&gt; wrote:</span>
+
+<span class="qt">&gt; &gt;Ok, but I think the presence of TC2048 and ZX Printer emulation in</span>
+<span class="qt">&gt; &gt;FUSE is at least partly due to your inclusion of those features in</span>
+<span class="qt">&gt; &gt;vbSpec, for which I thank you.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Well, you&#x27;re very welcome -- I seem to remember you had a not</span>
+<span class="qt">&gt; inconsiderable part in vbSpec&#x27;s TC2048 emulation yourself though!</span>
+
+You mean I nagged you to do it and provided semi-accurate techincal
+details. Well, I guess that counts! :)
+
+<span class="qt">&gt; &gt;I must admit I haven&#x27;t used vbSpec in a</span>
+<span class="qt">&gt; &gt;while since I&#x27;m basically a Mac bod, and FUSE does almost everything I</span>
+<span class="qt">&gt; &gt;want.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Yeah, I would use FUSE if I had ready access to a machine to run it on.</span>
+<span class="qt">&gt; What happened with the Windows port of FUSE I read about yonks ago? That</span>
+<span class="qt">&gt; would suit me down to the ground, that would.</span>
+
+I know you&#x27;re a Windows user, but have you considered using Virtual PC
+to emulate a self-contained x86 Linux system capable of running FUSE?
+Not an ideal solution, but the Windows port of FUSE is of an earlier
+version and doesn&#x27;t support ZX Spectrum SE emulation.
+
+
+
+</pre></div><div class="post" id="p190644"><div class="ph"><a class="d" href="#p190644">2005-03-19 00:53:08</a> <span>Fred</span> <span>Re: ANN: ZX Spectrum SE/CF</span></div><pre>Lemmiwinks, The Gerbil King wrote:
+<span class="qt">&gt; Yeah, I would use FUSE if I had ready access to a machine to run it on.</span>
+<span class="qt">&gt; What happened with the Windows port of FUSE I read about yonks ago? That</span>
+<span class="qt">&gt; would suit me down to the ground, that would.</span>
+
+There haven&#x27;t been any public updates of the Windows Fuse version, I did 
+an incredibly rough-and-ready port of a recent development SDL version 
+to Windows, drop me a mail or check out the Fuse mailing list for details.
+
+It probably won&#x27;t load any files outside of it&#x27;s directory, but it would 
+be easy for anyone so inclined to get that sorted out. OTOH it doesn&#x27;t 
+seem to suffer from the speed problems the earlier Win32 version did.
+
+It uses the &quot;widget&quot; Speccy-style user interface, press F1 for menus.
+
+Oh, and it has SE support.
+
+Fred
+
+
+
+</pre></div></main></body></html>

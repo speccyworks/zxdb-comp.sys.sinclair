@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANN: open82 · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANN: open82</h1><p class="facts">16 posts, 2008-08-23 – 2008-09-12</p><div class="post" id="p217948"><div class="ph"><a class="d" href="#p217948">2008-08-23 13:31:51</a> <span>OwenBot</span> </div><pre>open82 is a fully open source replacement for the ZX Spectrum
+firmware.
+
+It is currently about 50% complete, but you can use a copy of the
+original ROM during assembly to produce a fully functional ROM. The
+project is hosted in a subversion repository on sourceforge. Email me
+if you want to get involved.
+
+Before anyone starts screaming blue murder again:
+
+open82 is copyright (c) 1981 Nine Tiles Networks Ltd.
+
+I have reorganized John Grant, Steve Vickers and Andrew Wright&#x27;s code
+around the framework provided by Ian Logan and Frank O&#x27;Hara&#x27;s
+&#x27;Complete Spectrum ROM Disassembly&#x27;. The assembly file is based on the
+&#x27;uncommented spectrum rom assembly&#x27; which I put into the public domain
+earlier this month. All code is used with permission and distributed
+under the GPL.
+
+
+
+</pre></div><div class="post" id="p217962"><div class="ph"><a class="d" href="#p217962">2008-08-25 07:13:06</a> <span>Brian Gaff</span> <span>Re: open82</span></div><pre>Well thanks, I did not understand a word of it, but thanks anyway!
+
+Brian
+
+-- 
+Brian Gaff....Note, this account does not accept Bcc: email.
+ graphics are great, but the blind can&#x27;t hear them
+Email: …@…
+______________________________________________________________________________________________________________
+
+
+&quot;OwenBot&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; open82 is a fully open source replacement for the ZX Spectrum</span>
+<span class="qt">&gt; firmware.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; It is currently about 50% complete, but you can use a copy of the</span>
+<span class="qt">&gt; original ROM during assembly to produce a fully functional ROM. The</span>
+<span class="qt">&gt; project is hosted in a subversion repository on sourceforge. Email me</span>
+<span class="qt">&gt; if you want to get involved.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Before anyone starts screaming blue murder again:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; open82 is copyright (c) 1981 Nine Tiles Networks Ltd.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I have reorganized John Grant, Steve Vickers and Andrew Wright&#x27;s code</span>
+<span class="qt">&gt; around the framework provided by Ian Logan and Frank O&#x27;Hara&#x27;s</span>
+<span class="qt">&gt; &#x27;Complete Spectrum ROM Disassembly&#x27;. The assembly file is based on the</span>
+<span class="qt">&gt; &#x27;uncommented spectrum rom assembly&#x27; which I put into the public domain</span>
+<span class="qt">&gt; earlier this month. All code is used with permission and distributed</span>
+<span class="qt">&gt; under the GPL. </span>
+
+
+
+
+
+</pre></div><div class="post" id="p217972"><div class="ph"><a class="d" href="#p217972">2008-08-25 17:20:10</a> <span>OwenBot</span> <span>Re: open82</span></div><pre>Does this help? Because Amstrad imposes restrictions on the use of the
+Spectrum ROM there is a need for a replacement that is unencumbered by
+those restrictions. This is the second attempt at such a ROM, the
+first being Matt Westcott&#x27;s OpenZXRom project. The practical upshot of
+either project being finished (and it really doesn&#x27;t matter which is
+first to be completed) is that you will be able to sell home-brew
+Spectrum clones with a built-in Sinclair BASIC compatible ROM.
+
+
+
+</pre></div><div class="post" id="p218030"><div class="ph"><a class="d" href="#p218030">2008-09-03 21:29:11</a> <span>Simon Brattel</span> <span>Re: open82</span></div><pre><span class="qt">&gt; The practical upshot of either project being finished [..]</span>
+<span class="qt"> &gt; is that you will be able to sell home-brew Spectrum clones</span>
+
+Sell? It would amaze me if you could give them away.
+
+
+
+
+</pre></div><div class="post" id="p218031"><div class="ph"><a class="d" href="#p218031">2008-09-03 21:35:40</a> <span>Simon Brattel</span> <span>Re: open82</span></div><pre>Simon Brattel wrote:
+<span class="qt">&gt;&gt; The practical upshot of either project being finished [..]</span>
+<span class="qt">&gt;&gt; is that you will be able to sell home-brew Spectrum clones</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Sell? It would amaze me if you could give them away.</span>
+
+Sorry, didn&#x27;t mean to rain on anyone&#x27;s parade. Don&#x27;t even know what made 
+  me write that, let alone post it... [dozes off again]
+
+
+
+
+</pre></div><div class="post" id="p218061"><div class="ph"><a class="d" href="#p218061">2008-09-08 08:51:00</a> <span>OwenBot</span> <span>Re: open82</span></div><pre>On Sep 3, 10:35 pm, Simon Brattel &lt;…@…&gt; wrote:
+<span class="qt">&gt; Simon Brattel wrote:</span>
+<span class="qt">&gt; &gt;&gt; The practical upshot of either project being finished [..]</span>
+<span class="qt">&gt; &gt;&gt; is that you will be able to sell home-brew Spectrum clones</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Sell? It would amaze me if you could give them away.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Sorry, didn&#x27;t mean to rain on anyone&#x27;s parade. Don&#x27;t even know what made</span>
+<span class="qt">&gt;   me write that, let alone post it... [dozes off again]</span>
+
+Not at all. It&#x27;s a fair comment. However, I&#x27;ve investigated the market
+and while there is no margin in manufacturing Spectrum clones, there
+is a very tiny market for selling kit based retro-computers to
+electronics enthusiasts (although it would be hard to do much more
+than break even). It helps if the computer you build is able to draw
+on a large software base. One advantage of the clone that is the
+reason behind me starting this project is that it in addition to
+running the majority of Spectrum software, it can also emulate a large
+number of other 8-bit systems.
+
+
+
+</pre></div><div class="post" id="p218063"><div class="ph"><a class="d" href="#p218063">2008-09-08 09:00:38</a> <span>Andrew Halliwell</span> <span>Re: open82</span></div><pre>OwenBot &lt;…@…&gt; wrote:
+<span class="qt">&gt; On Sep 3, 10:35ï¿œpm, Simon Brattel &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; Simon Brattel wrote:</span>
+<span class="qt">&gt;&gt; &gt;&gt; The practical upshot of either project being finished [..]</span>
+<span class="qt">&gt;&gt; &gt;&gt; is that you will be able to sell home-brew Spectrum clones</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; &gt; Sell? It would amaze me if you could give them away.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Sorry, didn&#x27;t mean to rain on anyone&#x27;s parade. Don&#x27;t even know what made</span>
+<span class="qt">&gt;&gt; ï¿œ me write that, let alone post it... [dozes off again]</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Not at all. It&#x27;s a fair comment. However, I&#x27;ve investigated the market</span>
+<span class="qt">&gt; and while there is no margin in manufacturing Spectrum clones, there</span>
+<span class="qt">&gt; is a very tiny market for selling kit based retro-computers to</span>
+<span class="qt">&gt; electronics enthusiasts (although it would be hard to do much more</span>
+<span class="qt">&gt; than break even). It helps if the computer you build is able to draw</span>
+<span class="qt">&gt; on a large software base. One advantage of the clone that is the</span>
+<span class="qt">&gt; reason behind me starting this project is that it in addition to</span>
+<span class="qt">&gt; running the majority of Spectrum software, it can also emulate a large</span>
+<span class="qt">&gt; number of other 8-bit systems.</span>
+
+With the new ROM... there is one major problem with rewriting routines...
+How about compatibility? Lots of games make calls to very odd places in the
+rom where hidden code (maybe even code not meant to be access from the
+outside) can reduce the size of a program.
+-- 
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|   Andrew Halliwell BSc   | &quot;The day Microsoft makes something that doesn&#x27;t |</span>
+<span class="qt">|            in            |  suck is probably the day they start making     |</span>
+<span class="qt">|     Computer science     |  vacuum cleaners&quot; - Ernst Jan Plugge            |</span>
+
+
+
+</pre></div><div class="post" id="p218065"><div class="ph"><a class="d" href="#p218065">2008-09-08 09:46:26</a> <span>Matthew Westcott</span> <span>Re: open82</span></div><pre>Andrew Halliwell wrote:
+<span class="qt">&gt; With the new ROM... there is one major problem with rewriting routines...</span>
+<span class="qt">&gt; How about compatibility? Lots of games make calls to very odd places in the</span>
+<span class="qt">&gt; rom where hidden code (maybe even code not meant to be access from the</span>
+<span class="qt">&gt; outside) can reduce the size of a program.</span>
+
+Ah, that&#x27;s where OpenZXRom comes in: <a href="http://matt.west.co.tt/openzxrom/" rel="noreferrer">http://matt.west.co.tt/openzxrom/</a>
+Aiming to match every entry point likely to be used by games (on the 
+basis that there probably aren&#x27;t that many: what sort of game is going 
+to hook into the ROM code for syntax checking, or shuffling the Gosub 
+stack around, or...?), but unlike open82, not particularly oriented 
+towards building a nice Basic programming environment.
+
+I imagine the OwenBot also has some ideas about loading/paging in the 
+original ROM from software, to get around the sticking points in the 
+licence.
+
+
+
+</pre></div><div class="post" id="p218071"><div class="ph"><a class="d" href="#p218071">2008-09-09 00:25:20</a> <span>Simon Brattel</span> <span>Re: open82</span></div><pre><span class="qt">&gt; Not at all. It&#x27;s a fair comment. However, I&#x27;ve investigated the market</span>
+<span class="qt">&gt; and while there is no margin in manufacturing Spectrum clones, there</span>
+<span class="qt">&gt; is a very tiny market for selling kit based retro-computers to</span>
+<span class="qt">&gt; electronics enthusiasts (although it would be hard to do much more</span>
+<span class="qt">&gt; than break even).</span>
+
+Well, good luck with it (not meant sarcastically)...
+
+I share Andrew&#x27;s misgivings about compatibility, there were some really 
+dodgy programmers out there (when are there not) and it wouldn&#x27;t 
+surprise me at all to find some of &#x27;em had relied on the ROM contents 
+being fixed. Mind you, I don&#x27;t suppose it really matters too much if the 
+odd few neolithic applications fail ;)
+
+
+
+</pre></div><div class="post" id="p218073"><div class="ph"><a class="d" href="#p218073">2008-09-09 06:16:29</a> <span>Chris Young</span> <span>Re: open82</span></div><pre>On Tue, 09 Sep 2008 01:25:20 +0100 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Simon Brattel:
+
+<span class="qt">&gt; I share Andrew&#x27;s misgivings about compatibility, there were some really </span>
+<span class="qt">&gt; dodgy programmers out there (when are there not) and it wouldn&#x27;t </span>
+<span class="qt">&gt; surprise me at all to find some of &#x27;em had relied on the ROM contents </span>
+<span class="qt">&gt; being fixed.</span>
+
+When I was helping Andrew (OwenBot) test his SE Basic ROM, we
+discovered that Theme Park used a sequence of bytes from the ROM for
+one of the graphics.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p218074"><div class="ph"><a class="d" href="#p218074">2008-09-09 07:07:42</a> <span>Digital Prawn</span> <span>Re: open82</span></div><pre>One I remember is the game &quot;The Penetrator&quot; (not &quot;Penetrator&quot;).
+
+This relies on a table of bytes at offset 59 into the standard ROM to
+check against as a kind of primitive copy protection. It asks the user
+to enter a selected byte from that area before the game will start.
+
+The game would still start on a modified ROM, but the list of copy-
+protection numbers would be different. (or this scheme could be simply
+bypassed).
+
+
+
+</pre></div><div class="post" id="p218096"><div class="ph"><a class="d" href="#p218096">2008-09-12 08:40:49</a> <span>OwenBot</span> <span>Re: open82</span></div><pre>Sorry for the lateness of the reply.
+
+As far as compatibility is concerned, open82 is only aiming for
+compatibility with BASIC, i.e. a program written using the original
+ROM should run, unmodified, under open82.
+
+Matthew is quite correct, my solution for games compatibility is -
+load OpenZX, or the original ROM in software. Certain games, e.g.
+Travel With Trashman, will not load with anything other than the
+original ROM because they checksum it as a copy-prevention measure.
+Digital Prawn mentions &quot;The Penetrator&quot; and I&#x27;m sure there are other
+games that do this as well.
+
+I think Chris is actually thinking of &quot;Roller Coaster&quot; which naughtily
+uses a series of #FFs near the end of the ROM for one of its sprites.
+There are also games that use a sequence of 257 #FFs as IM2 tables,
+however only the first two bytes are really necessary providing you
+don&#x27;t have floating-bus issues (as demonstrated by GW03).
+
+
+
+</pre></div><div class="post" id="p218100"><div class="ph"><a class="d" href="#p218100">2008-09-12 15:24:00</a> <span>Geoff Wearmouth</span> <span>Re: open82</span></div><pre>On 12 Sep, 09:40, OwenBot &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; There are also games that use a sequence of 257 #FFs as IM2 tables,</span>
+<span class="qt">&gt; however only the first two bytes are really necessary providing you</span>
+<span class="qt">&gt; don&#x27;t have floating-bus issues (as demonstrated by GW03).</span>
+
+It was Matthew Westcott that first mentioned on css that the Sinclair
+machines did this. In fact I have checked online ROMs and it seems
+that all 128K 48K Basic ROMs including the Spanish one, have two $FF
+bytes at $38FF, $39FF, $3AFF, and $3BFF.
+The two ROMs for the Amstrad +3 (also used by the Plus2b) only have
+$FF bytes at $3BFF.
+
+I haven&#x27;t checked real hardware but all pukka 128K Spectrums should
+return 255 with PRINT PEEK 15359 and PRINT PEEK 15360.
+
+Printing the contents of the memory locations 14591, 14592, 14847,
+14848, 15103 and 15104 should return 255 on all machines except the
+Plus 3 derivatives.
+
+Amstrad of course got it only part right some of the time.
+
+
+
+
+</pre></div><div class="post" id="p218101"><div class="ph"><a class="d" href="#p218101">2008-09-12 18:37:46</a> <span>Chris Young</span> <span>Re: open82</span></div><pre>On Fri, 12 Sep 2008 08:24:00 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Geoff Wearmouth:
+
+<span class="qt">&gt; Amstrad of course got it only part right some of the time.</span>
+
+Hence the oddness in things like Lemmings, where you get 128K sound
+only under certain models/ROMs.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p218102"><div class="ph"><a class="d" href="#p218102">2008-09-12 18:38:16</a> <span>Chris Young</span> <span>Re: open82</span></div><pre>On Fri, 12 Sep 2008 01:40:49 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC OwenBot:
+
+<span class="qt">&gt; I think Chris is actually thinking of &quot;Roller Coaster&quot;</span>
+
+Oops, that&#x27;s what I meant.  Theme Park of course wasn&#x27;t released for
+the Spectrum.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p218103"><div class="ph"><a class="d" href="#p218103">2008-09-12 19:32:43</a> <span>Lister</span> <span>Re: open82</span></div><pre>On 12 Sep 2008 19:38:16 +0100, &quot;Chris Young&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;On Fri, 12 Sep 2008 01:40:49 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt;to MC OwenBot:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; I think Chris is actually thinking of &quot;Roller Coaster&quot;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Oops, that&#x27;s what I meant.  Theme Park of course wasn&#x27;t released for</span>
+<span class="qt">&gt;the Spectrum.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Chris</span>
+
+
+Rolo coaster?
+
+
+
+</pre></div></main></body></html>

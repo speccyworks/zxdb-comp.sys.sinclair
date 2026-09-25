@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EMULATE!! ISSUE 1 IS NOW AVAILABLE! · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>EMULATE!! ISSUE 1 IS NOW AVAILABLE!</h1><p class="facts">10 posts, 1995-08-31 – 1995-09-11</p><div class="post" id="p11519"><div class="ph"><a class="d" href="#p11519">1995-08-31 15:23:52</a> <span>Barry Plewa</span>  <a class="badge" href="https://spectrumcomputing.co.uk/entry/7387">ZXDB: Emulate</a></div><pre>
+*************************************************
+*                                               *
+*        EMULATE! ISSUE 1   -  Out Now!!        *
+*                                               *
+*************************************************
+
+Yes, at last after weeks of work, EMULATE! No.1 is ready for
+release. This is a disk magazine covering all aspects of Spectrum
+Emulation. It is in plain text format so is readable by all 
+computers.
+
+No.1 features articles on History of Spectrum, A-Z of POKES, a massive
+article on Dizzy (including solutions for all the games), the complete
+REBELSTAR reviews, A-Z of Spectrum Games Part 1....plus loads more.
+
+I will be releasing two parts of the magazine:
+TEXT ONLY - The text only mag is 150k (About 50k when zipped)
+SNAPSHOTS - All the snapshots mentioned in the main mag (About 400k)
+			
+The snapshots included with Issue 1 are TWICE SHY, WAR IN MIDDLE EARTH (The
+English edition), 16/48 ISSUE 20 (TAP only), PYJAMARAMA, SPLIT PERSONALITIES,
+JET SET WILLY 3, plus EDITORS for JET SET WILLY and CHAOS.
+Also included are GIFs of some loading screens for the above, as well as 
+some end screens for certain games.
+
+I will send the text mag directly to anyone who sends me a personal 
+request, but the snapshots version will only be available from
+the FTP sites. (due to it&#x27;s size.)
+
+I will make it available on the main FTP sites from the 1st September.
+Archive names: EMULATE1.ZIP (Text mag)    EMULSNA1.ZIP (Text and snaps)
+
+Any feedback and articles for future issues would be greatly appreciated.
+
+Finally thanks to all those who helped out on the first issue.
+If I get a positive enough response from this issue I will be sure to 
+produce more....!
+
+Thanks,
+
+-- 
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&gt;
+<span class="qt">&gt;BARRY PLEWA		      EMULATE! No.1   September 1995 &lt;</span>
+&lt;E-Mail address:-	      Contributions needed please !! &gt;
+<span class="qt">&gt;…@…  ISSUE 1 out now !!             &lt;</span>
+&lt;			      Spectrum is alive &amp; kicking!!  &gt;
+&lt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&lt;
+
+
+</pre></div><div class="post" id="p11551"><div class="ph"><a class="d" href="#p11551">1995-09-02 16:20:12</a> <span>Steve Horn</span> <span>Re: EMULATE!! ISSUE 1 IS NOW AVAILABLE!</span></div><pre>In article: &lt;…@…&gt;  Barry Plewa 
+&lt;…@…&gt; writes:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; *************************************************</span>
+<span class="qt">&gt; *                                               *</span>
+<span class="qt">&gt; *        EMULATE! ISSUE 1   -  Out Now!!        *</span>
+<span class="qt">&gt; *                                               *</span>
+<span class="qt">&gt; *************************************************</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Yes, at last after weeks of work, EMULATE! No.1 is ready for</span>
+<span class="qt">&gt; release. This is a disk magazine covering all aspects of Spectrum</span>
+<span class="qt">&gt; Emulation. It is in plain text format so is readable by all </span>
+<span class="qt">&gt; computers.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; No.1 features articles on History of Spectrum, A-Z of POKES, a massive</span>
+<span class="qt">&gt; article on Dizzy (including solutions for all the games), the complete</span>
+<span class="qt">&gt; REBELSTAR reviews, A-Z of Spectrum Games Part 1....plus loads more.</span>
+<span class="qt">&gt; </span>
+
+WOW!!  I&#x27;ve just downloaded from the nvg site, unzipped and started to browse 
+through it, and I can only say you&#x27;ve done a _magnificent_ job.  I can&#x27;t wait 
+to get back to it...
+
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I will make it available on the main FTP sites from the 1st September.</span>
+<span class="qt">&gt; Archive names: EMULATE1.ZIP (Text mag)    EMULSNA1.ZIP (Text and snaps)</span>
+
+One slightly confusing point for downloaders--I noticed that there were three 
+zips in the nvg site.  They were: Emulate1.zip, Emulsnp1.zip, and 
+Emulsna1.zip.  Of course I dl&#x27;d all three :-) and the first two seem to be 
+the relevant ones.  The third didn&#x27;t want to unzip without being pkzipfixed, 
+and seemed to consist of the TAP file included in Emulsnp1.zip
+
+
+Now &#x27;scuse me while I get back to some serious reading--I&#x27;ve got an issue of 
+Emulate! to wallow in :-)
+
+Cheers...
+
+Carolyn
+
+</pre></div><div class="post" id="p11553"><div class="ph"><a class="d" href="#p11553">1995-09-03 09:13:44</a> <span>Barry Plewa</span> <span>Re: EMULATE!! ISSUE 1 IS NOW AVAILABLE!</span></div><pre>In article: &lt;…@…&gt;  Steve Horn &lt;…@…&gt; writes:
+
+<span class="qt">&gt; One slightly confusing point for downloaders--I noticed that there were three </span>
+<span class="qt">&gt; zips in the nvg site.  They were: Emulate1.zip, Emulsnp1.zip, and </span>
+<span class="qt">&gt; Emulsna1.zip.  Of course I dl&#x27;d all three :-) and the first two seem to be </span>
+<span class="qt">&gt; the relevant ones.  The third didn&#x27;t want to unzip without being pkzipfixed, </span>
+<span class="qt">&gt; and seemed to consist of the TAP file included in Emulsnp1.zip</span>
+
+Yes sorry about this. The file entitled &quot;EMULSNA1.ZIP&quot; is where I started uploading the snaps 
+file, and then NVG decided to &quot;switch off!&quot; I waited for ten minutes with no response, so I gave 
+up and reloaded the file at a later time....Sorry about this.
+-- 
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&gt;
+<span class="qt">&gt;BARRY PLEWA		      EMULATE! No.1   September 1995 &lt;</span>
+&lt;E-Mail address:-	      Contributions needed please !! &gt;
+<span class="qt">&gt;…@…  ISSUE 1 out now !!             &lt;</span>
+&lt;			      Spectrum is alive &amp; kicking!!  &gt;
+&lt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&lt;
+
+
+</pre></div><div class="post" id="p11600"><div class="ph"><a class="d" href="#p11600">1995-09-04 18:01:50</a> <span>Ian Cull</span> <span>Re: EMULATE!! ISSUE 1 IS NOW AVAILABLE!</span></div><pre>In article &lt;…@…&gt;
+           …@… &quot;Steve Horn&quot; writes:
+<span class="qt">&gt; In article: &lt;…@…&gt;  Barry Plewa </span>
+<span class="qt">&gt; &lt;…@…&gt; writes:</span>
+<span class="qt">&gt; &gt; Yes, at last after weeks of work, EMULATE! No.1 is ready for</span>
+<span class="qt">&gt; &gt; release.</span>
+<span class="qt">&gt; WOW!!  I&#x27;ve just downloaded from the nvg site,</span>
+Maybe I am being stupid but I failed to find it - please can someone point
+me at the directory to look in ?
+
+-- 
+Ian Cull, Gateshead, UK
+
+</pre></div><div class="post" id="p11604"><div class="ph"><a class="d" href="#p11604">1995-09-04 22:51:18</a> <span>Chris Paul Billows</span> <span>Re: EMULATE!! ISSUE 1 IS NOW AVAILABLE!</span></div><pre>Barry Plewa &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;*************************************************</span>
+<span class="qt">&gt;*                                               *</span>
+<span class="qt">&gt;*        EMULATE! ISSUE 1   -  Out Now!!        *</span>
+<span class="qt">&gt;*                                               *</span>
+<span class="qt">&gt;*************************************************</span>
+
+An excellent effort!!! Thanks very much for the work!
+*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
+%  Chris Paul Billows           EMAIL:…@…  %
+*		The Digital Tree Home Page		*
+%	     URL:<a href="http://www.gatewest.net/~cpb/" rel="noreferrer">http://www.gatewest.net/~cpb/</a>		%
+*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*
+%  Ultima Storyline FAQ * Lords of Midnight PBEM Games	%
+*  	 Canadian Politcs * Buddhist Discussion 	* %*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%*%
+
+&quot;Bother&quot;, said Pooh as he ran the red light and struck an 
+ambulance.
+
+
+</pre></div><div class="post" id="p11615"><div class="ph"><a class="d" href="#p11615">1995-09-05 11:04:38</a> <span>Steve Horn</span> <span>Re: EMULATE!! ISSUE 1 IS NOW AVAILABLE!</span></div><pre>In article: &lt;…@…&gt;  Barry Plewa 
+&lt;…@…&gt; writes:
+
+<span class="qt">&gt; In article: &lt;…@…&gt;  Steve Horn </span>
+&lt;…@…&gt; writes:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; One slightly confusing point for downloaders--I noticed that there were </span>
+three 
+<span class="qt">&gt; &gt; zips in the nvg site.  They were: Emulate1.zip, Emulsnp1.zip, and </span>
+<span class="qt">&gt; &gt; Emulsna1.zip.  Of course I dl&#x27;d all three :-) and the first two seem to </span>
+be 
+<span class="qt">&gt; &gt; the relevant ones.  The third didn&#x27;t want to unzip without being </span>
+pkzipfixed, 
+<span class="qt">&gt; &gt; and seemed to consist of the TAP file included in Emulsnp1.zip</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Yes sorry about this. The file entitled &quot;EMULSNA1.ZIP&quot; is where I started </span>
+uploading the snaps 
+<span class="qt">&gt; file, and then NVG decided to &quot;switch off!&quot; I waited for ten minutes with </span>
+no response, so I gave 
+<span class="qt">&gt; up and reloaded the file at a later time....Sorry about this.</span>
+<span class="qt">&gt; -- </span>
+
+Hey, no problem!  I was just a bit puzzled about it.  It wasn&#x27;t too big an 
+extra to download, and the magazine itself is just tremendous.  I&#x27;m _still_ 
+exploring all this wonderful material... Ain&#x27;t getting no work done, but who 
+cares? :-)
+
+Cheers!
+
+Carolyn
+
+
+
+</pre></div><div class="post" id="p11617"><div class="ph"><a class="d" href="#p11617">1995-09-05 12:44:46</a> <span>Steve Horn</span> <span>Re: EMULATE!! ISSUE 1 IS NOW AVAILABLE!</span></div><pre>In article: &lt;…@…&gt;  Ian Cull 
+&lt;…@…&gt; writes:
+
+
+<span class="qt">&gt; Maybe I am being stupid but I failed to find it - please can someone point</span>
+<span class="qt">&gt; me at the directory to look in ?</span>
+
+
+I found it at <a href="ftp://ftp.nvg.unit.no/pub/spectrum/incoming/Emulate/" rel="noreferrer">ftp://ftp.nvg.unit.no/pub/spectrum/incoming/Emulate/</a>
+
+I don&#x27;t know what other sites have it.
+
+Happy Emulating
+
+Carolyn :-)
+
+
+
+
+
+</pre></div><div class="post" id="p11647"><div class="ph"><a class="d" href="#p11647">1995-09-06 10:37:13</a> <span>Fredrik Ekman</span> <span>Re: EMULATE!! ISSUE 1 IS NOW AVAILABLE!</span></div><pre>In article &lt;…@…&gt; Barry Plewa &lt;…@…&gt; writes:
+   I will make it available on the main FTP sites from the 1st September.
+   Archive names: EMULATE1.ZIP (Text mag)    EMULSNA1.ZIP (Text and snaps)
+
+Rrright! But... In what directory do I find it? According to a previous
+message, at least SOMEONE managed to get it from unit.no.
+
+  /F
+
+</pre></div><div class="post" id="p11662"><div class="ph"><a class="d" href="#p11662">1995-09-06 16:37:00</a> <span>Paolo &quot;Nusco&quot; Perrotta</span> <span>Re: EMULATE!! ISSUE 1 IS NOW AVAILABLE!</span></div><pre>Barry Plewa &lt;…@…&gt; wrote:
+
+
+<span class="qt">&gt;*************************************************</span>
+<span class="qt">&gt;*                                               *</span>
+<span class="qt">&gt;*        EMULATE! ISSUE 1   -  Out Now!!        *</span>
+<span class="qt">&gt;*                                               *</span>
+<span class="qt">&gt;*************************************************</span>
+
+<span class="qt">&gt;Yes, at last after weeks of work, EMULATE! No.1 is ready for</span>
+<span class="qt">&gt;release. This is a disk magazine covering all aspects of Spectrum</span>
+<span class="qt">&gt;Emulation. It is in plain text format so is readable by all </span>
+<span class="qt">&gt;computers.</span>
+
+I downloaded it and read most of it. It&#x27;s surely one of the best
+Spectrum-related things I&#x27;ve seen in many, many years.
+
+I suggest everyone interested in Sinclair Computers to download this
+little gem ASAP. Besides, the section on Spectrum news should warm any
+Sinclair user&#x27;s hart - there *are* news after all, and important ones
+too.
+
+
+*****************************
+*       Paolo Perrotta      *
+* …@… *
+*****************************
+
+
+</pre></div><div class="post" id="p11769"><div class="ph"><a class="d" href="#p11769">1995-09-11 15:27:00</a> <span>Barry Plewa</span> <span>Re: EMULATE!! ISSUE 1 IS NOW AVAILABLE!</span></div><pre>Thanks to everyone who has given me such a positive response! There 
+will definitely be an Issue 2 to look out for!!
+
+I must apologise to anyone who has requested the mag but have had to 
+wait a while for it. My computer exploded (honest!) last week and I 
+only got it repaired today (Monday).
+I hope I have sent all the mags that were requested, but if you still 
+have not received your magazine, drop me a line and Ill send it 
+straight away.
+
+Those who are still searching for the mag, it has now been put in a 
+permanent directory at nvg. You can find it at:
+
+FTP.NVG.UNIT.NO/PUB/SINCLAIR/SNAPS/DISCMAG/EMULATE
+
+The corrupted file has been deleted, so there should be no problems 
+with that.
+I may upload it to other FTP sites if requested, but I believe some of 
+the others are unreliable to say the least! :)
+
+Thanks to all those who have sent me letters. I have NOT ignored them! 
+I am saving them to answer in Issue 2 of the mag!
+
+Don&#x27;t forget that if you would like to contribute ANYTHING even if it 
+is just a small letter saying what you think of the mag, everything is 
+greatly appreciated!!
+
+Thanks again!
+-- 
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&gt;
+<span class="qt">&gt;BARRY PLEWA		      EMULATE! No.1   September 1995 &lt;</span>
+&lt;E-Mail address:-	      Contributions needed please !! &gt;
+<span class="qt">&gt;…@…  ISSUE 1 out now !!             &lt;</span>
+&lt;			      Spectrum is alive &amp; kicking!!  &gt;
+&lt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&lt;
+
+
+</pre></div></main></body></html>

@@ -1,0 +1,1459 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZXZVM v1.11 released · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ZXZVM v1.11 released</h1><p class="facts">59 posts, 2006-05-29 – 2016-05-15</p><div class="post" id="p203126"><div class="ph"><a class="d" href="#p203126">2006-05-29 13:43:30</a> <span>John Elliott</span> </div><pre>Newsgroups: comp.sys.sinclair,comp.sys.amstrad.8bit,rec.arts.int-fiction
+
+  A new version of ZXZVM (a Z-code interpreter for the Sinclair Spectrum and
+Amstrad PCW) has been released. New features include:
+
+- The Spectrum version now supports ResiDOS.
+- The Spectrum version can now operate in 32-column mode, as well as
+ 64-column.
+- The Spectrum version allows the screen colours to be changed during play 
+ (using cursor up / cursor down).
+- The interpreter core can now start Beyond Zork without crashing.
+- The text formatting in the MST3K games has been improved.
+
+  My thanks to Garry Lancaster for the Spectrum-specific improvements.
+
+ZXZVM can be downloaded from its homepage
+  &lt;<a href="http://www.seasip.info/ZX/zxzvm.html&gt;" rel="noreferrer">http://www.seasip.info/ZX/zxzvm.html&gt;</a>
+or from the IF-archive
+  &lt;<a href="http://www.ifarchive.org/indexes/if-archiveXinfocomXinterpretersXzxzvm.html&gt;" rel="noreferrer">http://www.ifarchive.org/indexes/if-archiveXinfocomXinterpretersXzxzvm.html&gt;</a>
+
+-- 
+------------- <a href="http://www.seasip.demon.co.uk/index.html" rel="noreferrer">http://www.seasip.demon.co.uk/index.html</a> --------------------
+John Elliott           |BLOODNOK: &quot;But why have you got such a long face?&quot;
+<span class="qt">                       |SEAGOON: &quot;Heavy dentures, Sir!&quot;    - The Goon Show </span>
+:-------------------------------------------------------------------------)
+
+
+
+</pre></div><div class="post" id="p203134"><div class="ph"><a class="d" href="#p203134">2006-05-29 18:10:43</a> <span>…@…</span> <span>Re: ZXZVM v1.11 released</span></div><pre>I note in the &#x27;unsupported features&#x27; section you note that a Z80 won&#x27;t
+be fast enough to play unblorbed games generated with Inform 7. Could
+you elaborate? What is it that Inform 7 does differently than Inform 6
+that creates the CPU overhead?
+
+Also I&#x27;d love to port ZXZVM to the Timex TC2128. I&#x27;ve written an 80
+column display driver for the hi-res mode. However I&#x27;m guessing true
+random access is required to read the data - so tape is out and I&#x27;m not
+sure what the &#x27;standard&#x27; disk format is. +D perhaps?
+
+
+
+
+</pre></div><div class="post" id="p203138"><div class="ph"><a class="d" href="#p203138">2006-05-29 20:50:07</a> <span>…@…</span> <span>Re: ZXZVM v1.11 released</span></div><pre>Is there much of a market for a Sinclair z-code interpreter? Let me get
+this straight, you put weeks into a project that 3 people will use?
+
+
+
+
+</pre></div><div class="post" id="p203139"><div class="ph"><a class="d" href="#p203139">2006-05-29 21:47:16</a> <span>John Elliott</span> <span>Re: ZXZVM v1.11 released</span></div><pre>In comp.sys.sinclair …@… &lt;…@…&gt; wrote:
+: I note in the &#x27;unsupported features&#x27; section you note that a Z80 won&#x27;t
+: be fast enough to play unblorbed games generated with Inform 7. Could
+: you elaborate? What is it that Inform 7 does differently than Inform 6
+: that creates the CPU overhead?
+
+  That&#x27;s mostly guesswork. I7 has larger stack requirements, and that
+would imply that the code&#x27;s more involved.
+  The only I7 game I tried on ZXZVM was The Reliques Of Tolti-Aph, which 
+took six minutes from startup to display the introduction, and an hour after
+that still hadn&#x27;t reached the first location.
+
+-- 
+------------- <a href="http://www.seasip.demon.co.uk/index.html" rel="noreferrer">http://www.seasip.demon.co.uk/index.html</a> --------------------
+John Elliott           |BLOODNOK: &quot;But why have you got such a long face?&quot;
+<span class="qt">                       |SEAGOON: &quot;Heavy dentures, Sir!&quot;    - The Goon Show </span>
+:-------------------------------------------------------------------------)
+
+
+
+</pre></div><div class="post" id="p203140"><div class="ph"><a class="d" href="#p203140">2006-05-29 22:14:25</a> <span>Carlos Sanchez</span> <span>Re: ZXZVM v1.11 released</span></div><pre>…@… escribiï¿½:
+<span class="qt">&gt; Is there much of a market for a Sinclair z-code interpreter? Let me get</span>
+<span class="qt">&gt; this straight, you put weeks into a project that 3 people will use?</span>
+
+I love ZXZVM, even when I only use it on emulated machines and only to 
+see it work, and I&#x27;m so happy about the new version :)
+
+Of course, there&#x27;s no so much market, but I&#x27;m pretty sure John does it 
+just for fun, and me and other Sinclair+IF lovers are so happy because 
+of that, even when we don&#x27;t use it so much :D
+
+
+
+
+</pre></div><div class="post" id="p203142"><div class="ph"><a class="d" href="#p203142">2006-05-29 22:38:40</a> <span>Rockersuke Moroboshi</span> <span>Re: ZXZVM v1.11 released</span></div><pre>
+&quot;Carlos Sanchez&quot; &lt;…@…&gt; escribiï¿½ en el mensaje 
+news:e5froa$1ue$…@…...
+<span class="qt">&gt; …@… escribiï¿½:</span>
+<span class="qt">&gt;&gt; Is there much of a market for a Sinclair z-code interpreter? Let me get</span>
+<span class="qt">&gt;&gt; this straight, you put weeks into a project that 3 people will use?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I love ZXZVM, even when I only use it on emulated machines and only to see </span>
+<span class="qt">&gt; it work, and I&#x27;m so happy about the new version :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Of course, there&#x27;s no so much market, but I&#x27;m pretty sure John does it </span>
+<span class="qt">&gt; just for fun, and me and other Sinclair+IF lovers are so happy because of </span>
+<span class="qt">&gt; that, even when we don&#x27;t use it so much :D</span>
+<span class="qt">&gt;</span>
+
+Sure, and there&#x27;s a whole directory in &quot;World of Spectrum&quot; ftp archive 
+dedicated to Z machine games to play with ZXZVM in Spectrum format 3&#x27;&#x27; 
+disks. Most of them, though, claim to be there just as a &quot;curiosity&quot;, cause 
+its slow performance make them almost unplayable.
+
+Contrary to popular speculations (at least in spanish IF forums) It&#x27;s not a 
+matter of poor programming in the ZXZVM side. Some games (as Z-Machine ports 
+of Scott Adams&#x27; adventures) work almost as fast as their original native 
+Spectrum counterparts from the early 80&#x27;s, so I guess It&#x27;s all about the 
+Inform library, wich is certainly more than what a 3&#x27;5 MHz little beast can 
+handle :-)
+
+
+
+
+
+
+</pre></div><div class="post" id="p203148"><div class="ph"><a class="d" href="#p203148">2006-05-29 23:18:58</a> <span>…@…</span> <span>Re: ZXZVM v1.11 released</span></div><pre>I suspected it might be the stack that was doing it. I wonder if
+there&#x27;s anything that can be done about it as I really would like to do
+a ZXZVM compatible version of the game I&#x27;m working on. I suppose in
+part it depends on what the z-machine is actually being asked to do.
+There may be some constructs in Inform 7 which are less CPU intensive.
+Ultimately I suppose it would always be possible to hand optimise the
+Inform 6 code, but I don&#x27;t relish the idea.
+
+As for the power of the Speccy, as John may have mentioned before,
+ZXZVM identifies itself as a Commodore 128. I imagine the performance
+would be somewhat better than the actual Commodore 128 since its Z80
+was effectively limited to 1Mhz, although it was actually clocked at
+2Mhz. The only thing ZXZVM doesn&#x27;t do that I would like to see is
+support for the Timex Hi-Res screen, which could give you a slightly
+more legible 80 column display. I&#x27;ll happily donate my 80 column screen
+driver code (which is reasonable short and written in Z80 assembly) if
+there&#x27;s room to add it to the ZXZVM distribution. You would be able to
+use it with a combination of Speccy SE and ResiDOS emulation under FUSE.
+
+
+
+
+</pre></div><div class="post" id="p203149"><div class="ph"><a class="d" href="#p203149">2006-05-30 00:22:48</a> <span>Paul E Collins</span> <span>Re: ZXZVM v1.11 released</span></div><pre>Carlos Sanchez wrote:
+
+<span class="qt">&gt; &gt; Is there much of a market for a Sinclair z-code interpreter?</span>
+<span class="qt">&gt; &gt; Let me get this straight, you put weeks into a project that 3</span>
+<span class="qt">&gt; &gt; people will use?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I love ZXZVM, even when I only use it on emulated machines</span>
+<span class="qt">&gt; and only to see it work, and I&#x27;m so happy about the new</span>
+<span class="qt">&gt; version :)</span>
+<span class="qt">&gt; Of course, there&#x27;s no so much market, but I&#x27;m pretty sure John</span>
+<span class="qt">&gt; does it just for fun, and me and other Sinclair+IF lovers are so</span>
+<span class="qt">&gt; happy because of that, even when we don&#x27;t use it so much :D</span>
+
+Agreed. I like Spectrum stuff and IF, but rarely combine them. 
+However, it&#x27;s both satisfying and technically impressive to have 
+Inform running on this platform.
+
+Eq.
+
+
+
+
+
+</pre></div><div class="post" id="p203150"><div class="ph"><a class="d" href="#p203150">2006-05-30 00:50:22</a> <span>…@…</span> <span>Re: ZXZVM v1.11 released</span></div><pre>I just think it&#x27;s wild that people are still developing for a 25 year
+old computer.
+
+
+
+
+</pre></div><div class="post" id="p203156"><div class="ph"><a class="d" href="#p203156">2006-05-30 09:04:42</a> <span>…@…</span> <span>Re: ZXZVM v1.11 released</span></div><pre>Paul E Collins &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; Carlos Sanchez wrote:</span>
+
+<span class="qt">&gt;&gt; &gt; Is there much of a market for a Sinclair z-code interpreter?</span>
+<span class="qt">&gt;&gt; &gt; Let me get this straight, you put weeks into a project that 3</span>
+<span class="qt">&gt;&gt; &gt; people will use?</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; I love ZXZVM, even when I only use it on emulated machines</span>
+<span class="qt">&gt;&gt; and only to see it work, and I&#x27;m so happy about the new</span>
+<span class="qt">&gt;&gt; version :)</span>
+<span class="qt">&gt;&gt; Of course, there&#x27;s no so much market, but I&#x27;m pretty sure John</span>
+<span class="qt">&gt;&gt; does it just for fun, and me and other Sinclair+IF lovers are so</span>
+<span class="qt">&gt;&gt; happy because of that, even when we don&#x27;t use it so much :D</span>
+
+<span class="qt">&gt; Agreed. I like Spectrum stuff and IF, but rarely combine them. </span>
+<span class="qt">&gt; However, it&#x27;s both satisfying and technically impressive to have </span>
+<span class="qt">&gt; Inform running on this platform.</span>
+
+Well, now that inform is working on the speccy, what next?
+POV?
+:)
+(That&#x27;s persistence of vision, the 3D renderer)
+Of course, it&#x27;d have to render and save each small graphical part of a
+picture seperately cos a whole pic wouldn&#x27;t fit in RAM and it wouldn&#x27;t be 
+able to display it... but what the hell?
+:)
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   | &quot;I&#x27;m alive!!! I can touch! I can taste!         |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|  I can SMELL!!!  KRYTEN!!! Unpack Rachel and    |</span>
+<span class="qt">|            in            |  get out the puncture repair kit!&quot;              |</span>
+<span class="qt">|     Computer Science     |     Arnold Judas Rimmer- Red Dwarf              |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p203159"><div class="ph"><a class="d" href="#p203159">2006-05-30 09:21:15</a> <span>Steve Farrell</span> <span>Re: ZXZVM v1.11 released</span></div><pre>
+&lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt;I just think it&#x27;s wild that people are still developing for a 25 year</span>
+<span class="qt">&gt; old computer.</span>
+
+The scene is surprisingly thriving; there are even new games. Retrogaming is 
+in; the computer might have &#x27;died&#x27; commercially fifteen years ago, but there 
+will always be hobbyists who just write software for the fun of it, and not 
+for profit. There are people who write for computers much more ancient than 
+the Speccy or the Amstrad.
+
+Pity none of those people seem to write PC software, eh?
+
+Steve 
+
+
+
+
+
+</pre></div><div class="post" id="p203160"><div class="ph"><a class="d" href="#p203160">2006-05-30 09:36:54</a> <span>…@…</span> <span>Re: ZXZVM v1.11 released</span></div><pre>Two things about the Spectrum.
+
+1) It probably has more adventure games available for it than any other
+platform (probably due in part to its shortcomings in the graphics
+department).
+
+2) These are text adventures we&#x27;re talking about, not the latest
+graphics intensive PC stuff. I see no reason why modern IF shouldn&#x27;t
+run on ancient computers.
+
+There is a certain authenticity to using one of the computers Infocom
+originally developed for (ok, I know they didn&#x27;t write for the
+Spectrum) to play IF.
+
+On the other hand I think Inform 7&#x27;s adoption of blorb as the standard
+build format is probably a good thing for increasing the appeal of IF
+to new players.
+
+
+
+
+</pre></div><div class="post" id="p203161"><div class="ph"><a class="d" href="#p203161">2006-05-30 10:02:38</a> <span>…@…</span> <span>Re: ZXZVM v1.11 released</span></div><pre>Hey!  Give the guy some credit.  I helped someone debug a new v3
+Z-machine for the RCA 1802 processor last year, and I think the
+world-wide market (outside of emulation) of 1802 machines running ElfOS
+with a mass storage device numbers in the dozens.
+
+I think it&#x27;s great to see new Z-machine platforms, even if they aren&#x27;t
+commercially &quot;interesting&quot;. One of these days, I need to put the
+finishing touches on my C= PET Z-machine.  :-)
+
+-ethan
+
+
+
+
+</pre></div><div class="post" id="p203162"><div class="ph"><a class="d" href="#p203162">2006-05-30 10:24:54</a> <span>Daniel Mandic</span> <span>Re: ZXZVM v1.11 released</span></div><pre>…@… wrote:
+
+<span class="qt">&gt; Two things about the Spectrum.</span>
+
+<span class="qt">&gt; 2) These are text adventures we&#x27;re talking about, not the latest</span>
+<span class="qt">&gt; graphics intensive PC stuff. I see no reason why modern IF shouldn&#x27;t</span>
+<span class="qt">&gt; run on ancient computers.</span>
+
+
+Hi cheveron!
+
+
+
+A pocket calculator is also ancient and the best business men do have
+them.
+
+
+
+Kind Regards,
+
+Daniel Mandic 
+
+
+
+</pre></div><div class="post" id="p203173"><div class="ph"><a class="d" href="#p203173">2006-05-30 11:44:41</a> <span>The Starglider</span> <span>Re: ZXZVM v1.11 released</span></div><pre>On 30 May 2006 02:36:54 -0700, …@… wrote:
+
+<span class="qt">&gt;Two things about the Spectrum.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;1) It probably has more adventure games available for it than any other</span>
+<span class="qt">&gt;platform (probably due in part to its shortcomings in the graphics</span>
+<span class="qt">&gt;department).</span>
+<span class="qt">&gt;</span>
+
+Hmmmm, now you&#x27;ve shown yourself up as someone who knows nothing of the spectrum
+platform.
+
+In WoS&#x27;s database (which is in no way complete):
+
+Games (anything not adventure related) - 6324
+Adventure Games - 1645
+
+The only shortcomings was the more than two colours per 8x8 pixel block, which
+many games got around, and with some fancy programming, defeated too.
+
+Please don&#x27;t make wild accusations without actually having actually read up on
+the subject.
+-- 
+        **************The Starglider***************  Public E-Mail. 
+        *  <a href="http://www.starglider.dynu.com/radio" rel="noreferrer">http://www.starglider.dynu.com/radio</a>   * Ask for private
+        *  Starglider Radio - listen and enjoy!   *    address.
+        * E-Mail:…@…  *     _WW_
+        *     CHANGE WIBBLE TO YAHOO TO REPLY     *    /_  _\
+        *******************************************   | O  O |
+_____________________________________________________oOO_\/_OOo_____
+
+
+
+</pre></div><div class="post" id="p203185"><div class="ph"><a class="d" href="#p203185">2006-05-30 12:37:24</a> <span>Matthew Westcott</span> <span>Re: ZXZVM v1.11 released</span></div><pre>The Starglider wrote:
+<span class="qt">&gt; On 30 May 2006 02:36:54 -0700, …@… wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;Two things about the Spectrum.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;1) It probably has more adventure games available for it than any other</span>
+<span class="qt">&gt;&gt;platform (probably due in part to its shortcomings in the graphics</span>
+<span class="qt">&gt;&gt;department).</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Hmmmm, now you&#x27;ve shown yourself up as someone who knows nothing of the spectrum</span>
+<span class="qt">&gt; platform.</span>
+
+If cheveron is who I think it is, you&#x27;re quite spectacularly wrong...
+
+<span class="qt">&gt; In WoS&#x27;s database (which is in no way complete):</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Games (anything not adventure related) - 6324</span>
+<span class="qt">&gt; Adventure Games - 1645</span>
+
+That doesn&#x27;t disprove his point - he said more adventure games than any 
+other platform, not any other genre. (Although I would still be quite 
+surprised if that is true. At the very least it depends on your 
+definition of &#x27;platform&#x27;.)
+
+
+
+</pre></div><div class="post" id="p203199"><div class="ph"><a class="d" href="#p203199">2006-05-30 16:13:00</a> <span>Darren Salt</span> <span>Re: ZXZVM v1.11 released</span></div><pre>I demand that …@… may or may not have written...
+
+<span class="qt">&gt; I just think it&#x27;s wild that people are still developing for a 25 year old</span>
+<span class="qt">&gt; computer.</span>
+
+You&#x27;re a year early. Were you thinking of the ZX81?
+
+-- 
+<span class="qt">| Darren Salt    | d @ youmustbejoking,demon,co,uk | nr. Ashington, | Toon</span>
+<span class="qt">| RISC OS, Linux | s   zap,tartarus,org            | Northumberland | Army</span>
+<span class="qt">| + Travel less. Share transport more.           PRODUCE LESS CARBON DIOXIDE.</span>
+
+Lemon curry?
+
+
+
+</pre></div><div class="post" id="p203215"><div class="ph"><a class="d" href="#p203215">2006-05-30 18:21:09</a> <span>Shadow Wolf</span> <span>Re: ZXZVM v1.11 released</span></div><pre>&quot;…@…&quot; &lt;…@…&gt; wrote in 
+news:…@…:
+
+<span class="qt">&gt; I note in the &#x27;unsupported features&#x27; section you note that a Z80 won&#x27;t</span>
+<span class="qt">&gt; be fast enough to play unblorbed games generated with Inform 7. Could</span>
+<span class="qt">&gt; you elaborate? What is it that Inform 7 does differently than Inform 6</span>
+<span class="qt">&gt; that creates the CPU overhead?</span>
+
+It runs through a *massive* number of functions each turn - every rule is a 
+function, and many of them have to be checked at least once every turn, and 
+sometimes multiple times, to see if they apply (and procedural rules are 
+even worse!
+
+I&#x27;ve been building a layered clothing extension, and one of the actions 
+available is to take off all currently worn clothes (which basically loops 
+through worn garments and issues the &quot;taking off&quot; action). Even with only 4 
+to 5 worn garments, there&#x27;s a *noticeable* pause - about 5 seconds - and 
+this is on a fairly fast PC!
+
+The standard I6 world model doesn&#x27;t have all these rule checks - you check 
+the before function for the noun (a single function call), the after 
+function, and possibly a couple of react_* functions.
+
+
+-- 
+Shadow Wolf
+shadowolf3400 at yahoo dot com
+Stories at <a href="http://www.asstr.org/~Shadow_Wolf" rel="noreferrer">http://www.asstr.org/~Shadow_Wolf</a>
+AIF at <a href="http://www.geocities.com/shadowolf3400" rel="noreferrer">http://www.geocities.com/shadowolf3400</a>
+
+----== Posted via Newsfeeds.Com - Unlimited-Unrestricted-Secure Usenet News==----
+<a href="http://www.newsfeeds.com" rel="noreferrer">http://www.newsfeeds.com</a> The #1 Newsgroup Service in the World! 120,000+ Newsgroups
+----= East and West-Coast Server Farms - Total Privacy via Encryption =----
+
+
+
+</pre></div><div class="post" id="p203216"><div class="ph"><a class="d" href="#p203216">2006-05-30 19:20:10</a> <span>Andrew Plotkin</span> <span>Re: ZXZVM v1.11 released</span></div><pre>In rec.arts.int-fiction, Shadow Wolf &lt;…@…&gt; wrote:
+<span class="qt">&gt; &quot;…@…&quot; &lt;…@…&gt; wrote in </span>
+<span class="qt">&gt; news:…@…:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; I note in the &#x27;unsupported features&#x27; section you note that a Z80 won&#x27;t</span>
+<span class="qt">&gt; &gt; be fast enough to play unblorbed games generated with Inform 7. Could</span>
+<span class="qt">&gt; &gt; you elaborate? What is it that Inform 7 does differently than Inform 6</span>
+<span class="qt">&gt; &gt; that creates the CPU overhead?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; It runs through a *massive* number of functions each turn - every rule is a </span>
+<span class="qt">&gt; function, and many of them have to be checked at least once every turn, and </span>
+<span class="qt">&gt; sometimes multiple times, to see if they apply (and procedural rules are </span>
+<span class="qt">&gt; even worse!</span>
+
+I have not analyzed the generated code in detail, but my sense is that
+most I7 features are only a constant-factor worse than an equivalent
+I6 feature. Roughly the same number of things are happening. The
+difference is that instead of a single attribute check, property
+check, or function call, you get a rulebook or activity check. (Which
+are still function calls -- they&#x27;re just heftier functions.)
+
+Now, as you say, procedural rules are worse. They have a relatively
+heavier impact than most I6 customizations, because every procedural
+rule is run on every rule check. (Their actions are expensive, too.)
+So I am not happy that the most common kinds of library-message
+modifications require procedural rules in I7, and I&#x27;ve been putting in
+feature requests to be able do that sort of thing at compile time.
+(Ideally, you shouldn&#x27;t need a procedural rule unless you want the
+system behavior to change *during* the game.)
+
+Another particularly bad hit is I7 object specifications. Don&#x27;t get me
+wrong, I like them and I don&#x27;t want to think about &quot;objectloop&quot;
+statements ever again. But a lot of the things I did with I6
+objectloops &quot;in&quot; or &quot;near&quot; something -- loops which iterated only over
+the contents of a single container or room -- wind up in I7 code as
+iterations over the entire game world. A scope search in I6 may wind
+up (in I7) as an iteration over the game world with a scope search at
+*each* step.
+
+It is possible that more optimization will go into the compiler as it
+evolves. But considering the number of bug reports I&#x27;m still sending
+in, I don&#x27;t demand optimization this week. :)
+
+<span class="qt">&gt; The standard I6 world model doesn&#x27;t have all these rule checks - you check </span>
+<span class="qt">&gt; the before function for the noun (a single function call), the after </span>
+<span class="qt">&gt; function, and possibly a couple of react_* functions.</span>
+
+That&#x27;s misleading. The &quot;couple of react_* functions&quot; are handled by
+doing a complete scope search at &quot;before&quot; time, and then another at
+&quot;after&quot; time. The cost of the search usually outweighs the cost of the
+customizations. 
+
+I7 actually saves this effort in the simple case -- it doesn&#x27;t do such
+a search unless there&#x27;s a rule with a &quot;visible&quot; condition. On the
+other hand, if there are several such rules, I think it does several
+scope searches. (Not sure of that, however.)
+
+--Z
+
+-- 
+&quot;And Aholibamah bare Jeush, and Jaalam, and Korah: these were the borogoves...&quot;
+*
+Just because you vote for the Republicans, doesn&#x27;t mean they let you be one.
+
+
+
+</pre></div><div class="post" id="p203218"><div class="ph"><a class="d" href="#p203218">2006-05-30 19:48:40</a> <span>Mantar, Feyelno nek dusa</span> <span>Re: ZXZVM v1.11 released</span></div><pre>On Tue, 30 May 2006 13:37:24 +0100, Matthew Westcott wrote:
+
+<span class="qt">&gt; The Starglider wrote:</span>
+<span class="qt">&gt;&gt; Games (anything not adventure related) - 6324 Adventure Games - 1645</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; That doesn&#x27;t disprove his point - he said more adventure games than any</span>
+<span class="qt">&gt; other platform, not any other genre. (Although I would still be quite</span>
+<span class="qt">&gt; surprised if that is true. At the very least it depends on your</span>
+<span class="qt">&gt; definition of &#x27;platform&#x27;.)</span>
+
+ If those numbers are correct, that means a really hefty 26 percent of all
+Speccy games are adventure games. I think that&#x27;s more than any other
+platform. I&#x27;m mostly familiar with the C64, and less so with the Atari
+machines, but they easily had a greater percentage of non-text games than
+that.
+
+
+
+</pre></div><div class="post" id="p203219"><div class="ph"><a class="d" href="#p203219">2006-05-30 20:40:31</a> <span>Paul E Collins</span> <span>Re: ZXZVM v1.11 released</span></div><pre>Mantar, Feyelno nek dusa wrote:
+
+<span class="qt">&gt; If those numbers are correct, that means a really hefty 26</span>
+<span class="qt">&gt; percent of all Speccy games are adventure games. I think</span>
+<span class="qt">&gt; that&#x27;s more than any other platform.</span>
+
+The original statement was that &quot;it probably has more adventure games 
+available for it than any other platform&quot; - i.e. not just that it has 
+a higher ratio of adventures to other games, but that it has more 
+adventure games *in total*. I don&#x27;t think that&#x27;s true.
+
+Eq.
+
+
+
+
+
+</pre></div><div class="post" id="p203233"><div class="ph"><a class="d" href="#p203233">2006-05-31 10:42:19</a> <span>deKay</span> <span>Re: ZXZVM v1.11 released</span></div><pre>Soni tempori elseu romani yeof helsforo nisson ol sefini ill des Tue, 30 May
+2006 19:48:40 GMT, sefini jorgo geanyet des mani yeof do comp.sys.sinclair,
+yawatina tan reek esk &quot;Mantar, Feyelno nek dusa&quot;
+&lt;…@…&gt; fornis do marikano es
+bono tan el:
+
+<span class="qt">&gt; If those numbers are correct, that means a really hefty 26 percent of all</span>
+<span class="qt">&gt;Speccy games are adventure games. I think that&#x27;s more than any other</span>
+<span class="qt">&gt;platform.</span>
+
+I&#x27;m pretty sure the Amstrad PCW 6128 has a higher ratio of
+adventure-to-non-adventure games... :)
+
+deKay
+-- 
+ Lofi Gaming - www.lofi-gaming.org.uk      
+ My computer runs at 3.5MHz and I&#x27;m proud of that
+ &quot;It&#x27;s like a cross between SSX, The Magic Roundabout, Homestar Runner, 
+ Seanbaby and Dude, Where&#x27;s My Car?&quot;
+
+
+
+</pre></div><div class="post" id="p203237"><div class="ph"><a class="d" href="#p203237">2006-05-31 13:45:28</a> <span>Carlos Sanchez</span> <span>Re: ZXZVM v1.11 released</span></div><pre><span class="qt">&gt; ZXZVM can be downloaded from its homepage</span>
+<span class="qt">&gt;   &lt;<a href="http://www.seasip.info/ZX/zxzvm.html&gt;" rel="noreferrer">http://www.seasip.info/ZX/zxzvm.html&gt;</a></span>
+<span class="qt">&gt; or from the IF-archive</span>
+<span class="qt">&gt;   &lt;<a href="http://www.ifarchive.org/indexes/if-archiveXinfocomXinterpretersXzxzvm.html&gt;" rel="noreferrer">http://www.ifarchive.org/indexes/if-archiveXinfocomXinterpretersXzxzvm.html&gt;</a></span>
+
+
+John,
+
+about the ZXZVM slowness... some disussion at es.comp.sistemas.sinclair 
+(spanish speccy news) try to identify the problem with that, and there 
+are some theories about that.
+
+One suggests that Inform 6 library is a heavy load, and that it is 
+already slow, and that this slowness may not be noticed in a moderm 
+machine interpreter but it is noticeable in a slow machine. Rockershuke 
+Moroboshi remarks that Scott Adam&#x27;s adventures converted to Z-machine 
+are not so slow, and they are usign Z-code, but not Inform or at least 
+not the Inform 6 library.
+
+The other one says that cpc6128 and +3 games those days where actually 
+reading data all the time from disk, and even that way they were faster 
+than ZXZVM, so the only explanation the poster (Baltasar) finds is that 
+object search on ZXZVM are done sequentially, but he says he is just 
+guessing.
+
+I did myself an article for a spanish specy related e-zine about ZXZVM 
+explaining how to get games working on a +3, but finally I had to 
+realize that on a real +3, playing IF is hard.
+
+What do you think? Could this be solved easily?
+
+
+
+</pre></div><div class="post" id="p203241"><div class="ph"><a class="d" href="#p203241">2006-05-31 15:58:49</a> <span>Andrew Plotkin</span> <span>Re: ZXZVM v1.11 released</span></div><pre>In rec.arts.int-fiction, Carlos Sanchez &lt;…@…&gt; wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; about the ZXZVM slowness... some disussion at es.comp.sistemas.sinclair </span>
+<span class="qt">&gt; (spanish speccy news) try to identify the problem with that, and there </span>
+<span class="qt">&gt; are some theories about that.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; One suggests that Inform 6 library is a heavy load, and that it is </span>
+<span class="qt">&gt; already slow, and that this slowness may not be noticed in a moderm </span>
+<span class="qt">&gt; machine interpreter but it is noticeable in a slow machine.</span>
+
+This is definitely true.
+
+<span class="qt">&gt; The other one says that cpc6128 and +3 games those days where actually </span>
+<span class="qt">&gt; reading data all the time from disk, and even that way they were faster </span>
+<span class="qt">&gt; than ZXZVM, so the only explanation the poster (Baltasar) finds is that </span>
+<span class="qt">&gt; object search on ZXZVM are done sequentially, but he says he is just </span>
+<span class="qt">&gt; guessing.</span>
+
+The opcodes of the Z-machine are pretty tightly specified. Object or
+property access is going to be implemented about the same way in all
+interpreters. 
+
+--Z
+
+-- 
+&quot;And Aholibamah bare Jeush, and Jaalam, and Korah: these were the borogoves...&quot;
+*
+If the Bush administration hasn&#x27;t subjected you to searches without a warrant,
+it&#x27;s for one reason: they don&#x27;t feel like it. Not because you&#x27;re an American.
+
+
+
+</pre></div><div class="post" id="p203244"><div class="ph"><a class="d" href="#p203244">2006-05-31 16:47:25</a> <span>Wei-ju Wu</span> <span>Re: ZXZVM v1.11 released</span></div><pre>Hi John,
+
+when I tried to run the first I7 examples, I also noticed the slowdown.
+I had taken some measurements with different profiling tools, which I
+unfortunately did not keep or document. The biggest differences I had
+noticed from the profiler runs were as I remember:
+
+- many more instruction executions between turns in &quot;Bronze&quot; and at the
+start of &quot;ROTA&quot;, older games usually only execute a couple of
+instructions
+- a huge increase in access to object properties
+
+To solve this, I focused on the reported hotspots object and stack
+access as well as the instruction decoding step which led to a
+significant speedup.
+
+Wei-ju
+
+
+
+
+</pre></div><div class="post" id="p203248"><div class="ph"><a class="d" href="#p203248">2006-05-31 17:56:35</a> <span>…@…</span> <span>Re: ZXZVM v1.11 released</span></div><pre>
+Wei-ju Wu wrote:
+<span class="qt">&gt; Hi John,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; when I tried to run the first I7 examples, I also noticed the slowdown.</span>
+<span class="qt">&gt; I had taken some measurements with different profiling tools, which I</span>
+<span class="qt">&gt; unfortunately did not keep or document. The biggest differences I had</span>
+<span class="qt">&gt; noticed from the profiler runs were as I remember:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; - many more instruction executions between turns in &quot;Bronze&quot; and at the</span>
+<span class="qt">&gt; start of &quot;ROTA&quot;, older games usually only execute a couple of</span>
+<span class="qt">&gt; instructions</span>
+<span class="qt">&gt; - a huge increase in access to object properties</span>
+
+For what it&#x27;s worth, I suspect these may not be representative of what
+would happen with all I7 games. ROTA does a lot of computational setup,
+and Bronze relies heavily on pathfinding throughout -- even when the
+player is not actually moving from room to room, it is doing a little
+pathfinding to determine whether adjacent rooms are visited or not,
+correctly name doors, and so on. So it is probably possible to write an
+I7 game that does not run quite so sluggishly if one avoids some of the
+newer and more intensive features. (But having a faster interpreter is
+still unquestionably better.)
+
+
+
+
+</pre></div><div class="post" id="p203253"><div class="ph"><a class="d" href="#p203253">2006-05-31 20:31:48</a> <span>Jacob Nevins</span> <span>Re: ZXZVM v1.11 released</span></div><pre>[followups set to csa8, as I doubt anyone else is interested]
+
+John Elliott &lt;…@…&gt; writes:
+<span class="qt">&gt;  A new version of ZXZVM (a Z-code interpreter for the Sinclair Spectrum and</span>
+<span class="qt">&gt;Amstrad PCW) has been released.</span>
+
+&quot;zxzvm.zip&quot; does not appear to directly contain &quot;zxzvm.bin&quot;, required
+for running on traditional PCWs along with &quot;pcwzvm.com&quot;.
+
+However, I extracted &quot;pcw000.bin&quot; from &quot;disc16.raw&quot; and renamed it, and
+that seems to work fine (in Joyce).
+
+
+
+</pre></div><div class="post" id="p203265"><div class="ph"><a class="d" href="#p203265">2006-05-31 23:13:14</a> <span>Duncan Snowden</span> <span>Re: ZXZVM v1.11 released</span></div><pre>Matthew Westcott wrote:
+
+<span class="qt">&gt; The Starglider wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Hmmmm, now you&#x27;ve shown yourself up as someone who knows nothing of </span>
+<span class="qt">&gt;&gt; the spectrum platform.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; If cheveron is who I think it is, you&#x27;re quite spectacularly wrong...</span>
+
+I know who it is, having just received an email from him (on a related 
+subject, spookily enough), and Stargy couldn&#x27;t be more wrong if he said 
+the C64 was the most fantastic computer in the entire history of 
+everything ever.
+
+I won&#x27;t name him in case there&#x27;s a good reason for his anonymity, but I 
+will say that this bloke probably knows more about the Speccy than the 
+rest of us put together. Well, if you don&#x27;t include Brian. Or you, Matt. 
+And maybe count Lister twice to bring the average down a bit.
+
+The point is, he definitely knows whereof he speaks.
+
+-- 
+Duncan Snowden.
+
+
+
+
+</pre></div><div class="post" id="p203268"><div class="ph"><a class="d" href="#p203268">2006-06-01 01:14:58</a> <span>…@…</span> <span>Re: ZXZVM v1.11 released</span></div><pre><span class="qt">&gt; I know who it is, having just received an email from him (on a related</span>
+<span class="qt">&gt; subject, spookily enough), and Stargy couldn&#x27;t be more wrong if he said</span>
+<span class="qt">&gt; the C64 was the most fantastic computer in the entire history of</span>
+<span class="qt">&gt; everything ever.</span>
+
+Hey! The C64 *was* the most fantastic computer in the entire history of
+everything ever!
+
+On second thought, you&#x27;re right. That title rightfully belongs to the
+BBC Micro.
+
+
+
+
+</pre></div><div class="post" id="p203271"><div class="ph"><a class="d" href="#p203271">2006-06-01 08:28:06</a> <span>…@…</span> <span>Re: ZXZVM v1.11 released</span></div><pre>…@… did eloquently scribble:
+
+
+<span class="qt">&gt;&gt; I know who it is, having just received an email from him (on a related</span>
+<span class="qt">&gt;&gt; subject, spookily enough), and Stargy couldn&#x27;t be more wrong if he said</span>
+<span class="qt">&gt;&gt; the C64 was the most fantastic computer in the entire history of</span>
+<span class="qt">&gt;&gt; everything ever.</span>
+
+<span class="qt">&gt; Hey! The C64 *was* the most fantastic computer in the entire history of</span>
+<span class="qt">&gt; everything ever!</span>
+
+BURN THE HERETIC!!! BURN THE BLASPHEMER!!!
+etc
+
+<span class="qt">&gt; On second thought, you&#x27;re right. That title rightfully belongs to the</span>
+<span class="qt">&gt; BBC Micro.</span>
+
+Better, but the speccy still wins hands down for price, simplicity and the
+excellent Z80 cpu.
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   | &quot;Are you pondering what I&#x27;m pondering Pinky?&quot;   |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|                                                 |</span>
+<span class="qt">|            in            | &quot;I think so brain, but this time, you control   |</span>
+<span class="qt">|     Computer Science     |  the Encounter suit, and I&#x27;ll do the voice...&quot;  |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p203279"><div class="ph"><a class="d" href="#p203279">2006-06-01 11:17:16</a> <span>Duncan Harvey</span> <span>Re: ZXZVM v1.11 released</span></div><pre>Duncan Snowden &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Matthew Westcott wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; If cheveron is who I think it is, you&#x27;re [Starglider] quite</span>
+<span class="qt">&gt; &gt; spectacularly wrong...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; [...]</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I won&#x27;t name him in case there&#x27;s a good reason for his anonymity,</span>
+
+That doesn&#x27;t appear to be important to him:
+  Message-ID: &lt;…@…&gt;
+
+-- 
+Duncan Harvey
+
+
+
+</pre></div><div class="post" id="p203330"><div class="ph"><a class="d" href="#p203330">2006-06-02 11:51:44</a> <span>…@…</span> <span>Re: ZXZVM v1.11 released</span></div><pre>
+Paul E Collins ha escrito:
+
+<span class="qt">&gt; Mantar, Feyelno nek dusa wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; If those numbers are correct, that means a really hefty 26</span>
+<span class="qt">&gt; &gt; percent of all Speccy games are adventure games. I think</span>
+<span class="qt">&gt; &gt; that&#x27;s more than any other platform.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The original statement was that &quot;it probably has more adventure games</span>
+<span class="qt">&gt; available for it than any other platform&quot; - i.e. not just that it has</span>
+<span class="qt">&gt; a higher ratio of adventures to other games, but that it has more</span>
+<span class="qt">&gt; adventure games *in total*. I don&#x27;t think that&#x27;s true.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Eq.</span>
+
+Asuming that Speccy was the most prolific computer in terms of games
+published in that era, you can assure that having the higher ratio of
+IF is the same that having more adventures in total than any other
+computer.
+
+
+
+
+</pre></div><div class="post" id="p203345"><div class="ph"><a class="d" href="#p203345">2006-06-02 23:54:48</a> <span>Mantar, Feyelno nek dusa</span> <span>Re: ZXZVM v1.11 released</span></div><pre>On Fri, 02 Jun 2006 04:51:44 -0700, Stagrovin wrote:
+
+<span class="qt">&gt; Asuming that Speccy was the most prolific computer in terms of games</span>
+<span class="qt">&gt; published in that era, you can assure that having the higher ratio of</span>
+<span class="qt">&gt; IF is the same that having more adventures in total than any other</span>
+<span class="qt">&gt; computer.</span>
+
+ I believe the C64 has the &quot;most prolific&quot; title, with somewhere around
+15-17 thousand games in existence, but it&#x27;s ratio of text/non-text
+games is less than 10%. According to Gamebase64, the total number of C64
+text adventures known (including text/graphic adventures) is 1331.
+Perhaps a few less if you count seperate language releases, which I
+believe GB64 does. That&#x27;s still less than the Spectrum&#x27;s 1645 posted above.
+
+
+-- 
+ - Mantar  --- Drop YourPantiesSirWilliam to email me.
+
+
+
+
+</pre></div><div class="post" id="p203347"><div class="ph"><a class="d" href="#p203347">2006-06-03 00:14:49</a> <span>Richard Bos</span> <span>Re: ZXZVM v1.11 released</span></div><pre>…@… wrote:
+
+<span class="qt">&gt; &gt; I know who it is, having just received an email from him (on a related</span>
+<span class="qt">&gt; &gt; subject, spookily enough), and Stargy couldn&#x27;t be more wrong if he said</span>
+<span class="qt">&gt; &gt; the C64 was the most fantastic computer in the entire history of</span>
+<span class="qt">&gt; &gt; everything ever.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Hey! The C64 *was* the most fantastic computer in the entire history of</span>
+<span class="qt">&gt; everything ever!</span>
+
+Pfffff... silly little games machine.
+
+Richard
+
+
+
+</pre></div><div class="post" id="p203358"><div class="ph"><a class="d" href="#p203358">2006-06-03 10:20:43</a> <span>Steve Farrell</span> <span>Re: ZXZVM v1.11 released</span></div><pre>
+&quot;Richard Bos&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; …@… wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; &gt; I know who it is, having just received an email from him (on a related</span>
+<span class="qt">&gt;&gt; &gt; subject, spookily enough), and Stargy couldn&#x27;t be more wrong if he said</span>
+<span class="qt">&gt;&gt; &gt; the C64 was the most fantastic computer in the entire history of</span>
+<span class="qt">&gt;&gt; &gt; everything ever.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Hey! The C64 *was* the most fantastic computer in the entire history of</span>
+<span class="qt">&gt;&gt; everything ever!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Pfffff... silly little games machine.</span>
+
+I see it like this: The C64 was a bit like Microsoft Windows; colourful and 
+nice to look at but overall a bit unsatisfying, while the Speccy was a bit 
+like Linux; interesting to use and program on but some stuff just doesn&#x27;t 
+work.
+
+Steve 
+
+
+
+
+
+</pre></div><div class="post" id="p203359"><div class="ph"><a class="d" href="#p203359">2006-06-03 11:41:48</a> <span>Chris Cowley</span> <span>Re: ZXZVM v1.11 released</span></div><pre>On Sat, 03 Jun 2006 10:20:43 GMT, &quot;Steve Farrell&quot;
+&lt;…@…&gt; wrote:
+
+
+<span class="qt">&gt;The C64 was a bit like Microsoft Windows;</span>
+...
+<span class="qt">&gt;while the Speccy was a bit like Linux;</span>
+
+&lt;marks thread: ignore&gt;
+
+A good effort, mind. But I hope nobody bites.
+
+
+
+</pre></div><div class="post" id="p203360"><div class="ph"><a class="d" href="#p203360">2006-06-03 11:57:22</a> <span>Daniel Mandic</span> <span>Re: ZXZVM v1.11 released</span></div><pre>Chris Cowley wrote:
+
+<span class="qt">&gt; On Sat, 03 Jun 2006 10:20:43 GMT, &quot;Steve Farrell&quot;</span>
+<span class="qt">&gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; The C64 was a bit like Microsoft Windows;</span>
+<span class="qt">&gt; ...</span>
+<span class="qt">&gt; &gt; while the Speccy was a bit like Linux;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &lt;marks thread: ignore&gt;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; A good effort, mind. But I hope nobody bites.</span>
+
+
+Hmmm, a little seldom.
+
+
+I see the Speccy as one of the High-End HC in that time, in conjunction
+and/or with and without XL, C64, C16 (compareable in Basic, IMO),
+CPC464-6128, with some advantages like many Basic-RAM free, Circle,
+Fast TAPE and a fair price. Not to mention the cute design (Colours on
+Black...cosmically)!
+
+
+
+Kind Regards,
+
+Daniel Mandic
+
+
+
+</pre></div><div class="post" id="p203361"><div class="ph"><a class="d" href="#p203361">2006-06-03 13:02:26</a> <span>…@…</span> <span>Re: ZXZVM v1.11 released</span></div><pre>Daniel Mandic &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; I see the Speccy as one of the High-End HC in that time, in conjunction</span>
+<span class="qt">&gt; and/or with and without XL, C64, C16 (compareable in Basic, IMO),</span>
+<span class="qt">&gt; CPC464-6128, with some advantages like many Basic-RAM free, Circle,</span>
+<span class="qt">&gt; Fast TAPE and a fair price. Not to mention the cute design (Colours on</span>
+<span class="qt">&gt; Black...cosmically)!</span>
+
+Wow...
+That was one of mr mandic&#x27;s worst yet.
+Talk about a jumble of pseudorandom words glued together into a meaningless
+mess.
+
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)| &quot;The day Microsoft makes something that doesn&#x27;t |</span>
+<span class="qt">|            in            |  suck is probably the day they start making     |</span>
+<span class="qt">|     Computer science     |  vacuum cleaners&quot; - Ernst Jan Plugge            |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p203362"><div class="ph"><a class="d" href="#p203362">2006-06-03 13:48:27</a> <span>Daniel Mandic</span> <span>Re: ZXZVM v1.11 released</span></div><pre>…@… wrote:
+
+<span class="qt">&gt; Wow...</span>
+<span class="qt">&gt; That was one of mr mandic&#x27;s worst yet.</span>
+<span class="qt">&gt; Talk about a jumble of pseudorandom words glued together into a</span>
+<span class="qt">&gt; meaningless mess.</span>
+
+
+Hi Spike!
+
+
+
+Not bad. Not really meaningless but, posted to the wrong groups.
+
+Well.
+
+
+
+
+Best Regards,
+
+Daniel Mandic
+
+
+
+</pre></div><div class="post" id="p203363"><div class="ph"><a class="d" href="#p203363">2006-06-03 15:43:13</a> <span>…@…</span> <span>Re: ZXZVM v1.11 released</span></div><pre>Daniel Mandic &lt;…@…&gt; did eloquently scribble:
+
+
+<span class="qt">&gt; …@… wrote:</span>
+
+<span class="qt">&gt;&gt; Wow...</span>
+<span class="qt">&gt;&gt; That was one of mr mandic&#x27;s worst yet.</span>
+<span class="qt">&gt;&gt; Talk about a jumble of pseudorandom words glued together into a</span>
+<span class="qt">&gt;&gt; meaningless mess.</span>
+
+
+<span class="qt">&gt; Hi Spike!</span>
+
+<span class="qt">&gt; Not bad. Not really meaningless but, posted to the wrong groups.</span>
+
+No, no...
+It was meaningless...
+The only meaning I could derive from it was you think C64 and speccy basic
+are &quot;Comparable&quot;... Which in itself is meaningless because commode BASIC is
+one of if not THE worst BASICs out there.
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)| &quot;ARSE! GERLS!! DRINK! DRINK! DRINK!!!&quot;          |</span>
+<span class="qt">|            in            | &quot;THAT WOULD BE AN ECUMENICAL MATTER!...FECK!!!! |</span>
+<span class="qt">|     Computer Science     | - Father Jack in &quot;Father Ted&quot;                   |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p203364"><div class="ph"><a class="d" href="#p203364">2006-06-03 15:53:30</a> <span>Steve Farrell</span> <span>Re: ZXZVM v1.11 released</span></div><pre>
+&quot;Chris Cowley&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; On Sat, 03 Jun 2006 10:20:43 GMT, &quot;Steve Farrell&quot;</span>
+<span class="qt">&gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;The C64 was a bit like Microsoft Windows;</span>
+<span class="qt">&gt; ...</span>
+<span class="qt">&gt;&gt;while the Speccy was a bit like Linux;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &lt;marks thread: ignore&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; A good effort, mind. But I hope nobody bites.</span>
+
+Nah. It&#x27;s not crossposted to csc. And it&#x27;s not going to be either.
+
+Steve 
+
+
+
+
+
+</pre></div><div class="post" id="p203365"><div class="ph"><a class="d" href="#p203365">2006-06-03 19:48:26</a> <span>Daniel Mandic</span> <span>Re: ZXZVM v1.11 released</span></div><pre>…@… wrote:
+
+<span class="qt">&gt; No, no...</span>
+<span class="qt">&gt; It was meaningless...</span>
+<span class="qt">&gt; The only meaning I could derive from it was you think C64 and speccy</span>
+<span class="qt">&gt; basic are &quot;Comparable&quot;... Which in itself is meaningless because</span>
+<span class="qt">&gt; commode BASIC is one of if not THE worst BASICs out there.</span>
+
+
+I would like to disagree, but you are quite right in so much
+oppositions, I haven&#x27;t defended so far. I know the C-64 is crap and my
+first choice HC at that time is the Speccy 48K.
+
+
+
+Kind Regards,
+
+Daniel Mandic
+
+
+
+
+
+</pre></div><div class="post" id="p203366"><div class="ph"><a class="d" href="#p203366">2006-06-03 19:52:17</a> <span>John Elliott</span> <span>Re: ZXZVM v1.11 released</span></div><pre>In comp.sys.sinclair John Elliott &lt;…@…&gt; wrote:
+:   That&#x27;s mostly guesswork. I7 has larger stack requirements, and that
+: would imply that the code&#x27;s more involved.
+:   The only I7 game I tried on ZXZVM was The Reliques Of Tolti-Aph, which 
+: took six minutes from startup to display the introduction, and an hour after
+: that still hadn&#x27;t reached the first location.
+
+  I obviously didn&#x27;t wait long enough. It takes an emulated Spectrum roughly 
+seven hours from launch to display the description of Longwall Street. 
+
+-- 
+John Elliott
+
+
+
+</pre></div><div class="post" id="p203369"><div class="ph"><a class="d" href="#p203369">2006-06-03 22:52:11</a> <span>Anders Carlsson</span> <span>Re: ZXZVM v1.11 released</span></div><pre>…@… writes:
+
+<span class="qt">&gt; Daniel Mandic &lt;…@…&gt; did eloquently scribble:</span>
+<span class="qt">&gt;&gt; I see the Speccy as one of the High-End HC in that time, in conjunction</span>
+<span class="qt">&gt;&gt; and/or with and without XL, C64, C16 (compareable in Basic, IMO),</span>
+<span class="qt">&gt;&gt; CPC464-6128, with some advantages like many Basic-RAM free, Circle,</span>
+<span class="qt">&gt;&gt; Fast TAPE and a fair price. Not to mention the cute design (Colours on</span>
+<span class="qt">&gt;&gt; Black...cosmically)!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Wow...</span>
+<span class="qt">&gt; That was one of mr mandic&#x27;s worst yet.</span>
+<span class="qt">&gt; Talk about a jumble of pseudorandom words glued together into a</span>
+<span class="qt">&gt; meaningless mess.</span>
+
+Let&#x27;s try to consult a Mandic translator:
+
+&lt; I think the Speccy was one of the best home computers of its day,
+&lt; compared to the (Atari?) XL, C64, C16 (which I think had a Basic
+&lt; comparable to Spectrum Basic), CPC464 to 6128. Some of the Speccy&#x27;s
+&lt; advantages were a lot of memory available in Basic, a command to
+&lt; draw circles, fast tape routines and a fair price. It also had a
+&lt; estethically attractive design, with a rainbow of colour bars on
+&lt; black background.
+
+Personally, I&#x27;m not so sure Commodore Basic 3.5 is comparable with
+Spectrum Basic, even if both contain commands to handle graphics
+and sounds. Further, I&#x27;m not so sure Sinclair sold many Spectrums
+thanks to the fact it has a built-in command to draw circles, but
+it depends on which kind of applications you want to make.
+
+In the days of Macintosh development, one developer had come up
+with an ultra-fast way to draw circles, but Steve Jobs was more
+concerned with rounded rectangles and convinced the developer to
+improve his routine to draw ultra-fast roundrects instead. Maybe
+if the ZX Spectrum (or at least QL) had a built-in command to draw
+round rects, Sir Clive would never had run short of money and had
+the need to divest the computer part to Amstrad... :-)
+
+-- 
+Anders Carlsson
+
+
+
+</pre></div><div class="post" id="p203370"><div class="ph"><a class="d" href="#p203370">2006-06-03 23:25:51</a> <span>…@…</span> <span>Re: ZXZVM v1.11 released</span></div><pre>Anders Carlsson &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; &lt; I think the Speccy was one of the best home computers of its day,</span>
+<span class="qt">&gt; &lt; compared to the (Atari?) XL, C64, C16 (which I think had a Basic</span>
+<span class="qt">&gt; &lt; comparable to Spectrum Basic), CPC464 to 6128. Some of the Speccy&#x27;s</span>
+<span class="qt">&gt; &lt; advantages were a lot of memory available in Basic, a command to</span>
+<span class="qt">&gt; &lt; draw circles, fast tape routines and a fair price. It also had a</span>
+<span class="qt">&gt; &lt; estethically attractive design, with a rainbow of colour bars on</span>
+<span class="qt">&gt; &lt; black background.</span>
+
+Wow!!!
+You speak fluent mandic?
+-- 
+-----------------------------------------------------------------------------
+<span class="qt">|   …@…   |   Windows95 (noun): 32 bit extensions and a    |</span>
+<span class="qt">|                          | graphical shell for a 16 bit patch to an 8 bit |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)| operating system originally  coded for a 4 bit |</span>
+<span class="qt">|            in            |microprocessor, written by a 2 bit company, that|</span>
+<span class="qt">|     Computer Science     |        can&#x27;t stand 1 bit of competition.       |</span>
+-----------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p203371"><div class="ph"><a class="d" href="#p203371">2006-06-03 23:49:49</a> <span>Anders Carlsson</span> <span>Re: ZXZVM v1.11 released</span></div><pre>…@… writes:
+
+<span class="qt">&gt; You speak fluent mandic?</span>
+
+Not really fluent, more like intermediate. Maybe GCSE level?
+Most of the time the mandic language is deterministic once you
+have dechiffered the syntax, but indeed there are cases when
+you need a licentiate degree or better to get the full meaning.
+
+-- 
+Anders Carlsson
+
+
+
+</pre></div><div class="post" id="p203372"><div class="ph"><a class="d" href="#p203372">2006-06-03 23:53:19</a> <span>…@…</span> <span>Re: ZXZVM v1.11 released</span></div><pre>Anders Carlsson &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; …@… writes:</span>
+
+<span class="qt">&gt;&gt; You speak fluent mandic?</span>
+
+<span class="qt">&gt; Not really fluent, more like intermediate. Maybe GCSE level?</span>
+<span class="qt">&gt; Most of the time the mandic language is deterministic once you</span>
+<span class="qt">&gt; have dechiffered the syntax, but indeed there are cases when</span>
+<span class="qt">&gt; you need a licentiate degree or better to get the full meaning.</span>
+
+Must have something to do with swedish sentence structure perhaps?
+:)
+-- 
+-----------------------------------------------------------------------------
+<span class="qt">|   …@…   |   Windows95 (noun): 32 bit extensions and a    |</span>
+<span class="qt">|                          | graphical shell for a 16 bit patch to an 8 bit |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)| operating system originally  coded for a 4 bit |</span>
+<span class="qt">|            in            |microprocessor, written by a 2 bit company, that|</span>
+<span class="qt">|     Computer Science     |        can&#x27;t stand 1 bit of competition.       |</span>
+-----------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p203373"><div class="ph"><a class="d" href="#p203373">2006-06-04 01:02:31</a> <span>Steve Farrell</span> <span>Re: ZXZVM v1.11 released</span></div><pre>
+&lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; Anders Carlsson &lt;…@…&gt; did eloquently scribble:</span>
+<span class="qt">&gt;&gt; …@… writes:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;&gt; You speak fluent mandic?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Not really fluent, more like intermediate. Maybe GCSE level?</span>
+<span class="qt">&gt;&gt; Most of the time the mandic language is deterministic once you</span>
+<span class="qt">&gt;&gt; have dechiffered the syntax, but indeed there are cases when</span>
+<span class="qt">&gt;&gt; you need a licentiate degree or better to get the full meaning.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Must have something to do with swedish sentence structure perhaps?</span>
+<span class="qt">&gt; :)</span>
+
+Daniel Mandic is all the least decipherable letters in &#x27;Wonderful World of 
+Speccy&#x27; all rolled into one.
+
+Steve 
+
+
+
+
+
+</pre></div><div class="post" id="p203374"><div class="ph"><a class="d" href="#p203374">2006-06-04 02:19:08</a> <span>Anders Carlsson</span> <span>Re: ZXZVM v1.11 released</span></div><pre>…@… writes:
+
+<span class="qt">&gt;&gt;&gt; You speak fluent mandic?</span>
+<span class="qt">&gt;&gt; Not really fluent, more like intermediate. Maybe GCSE level?</span>
+<span class="qt">&gt; Must have something to do with swedish sentence structure perhaps?</span>
+
+Knowing a foreign language you study uses a different word order
+than your own one can be devastating in some cases, when the two
+languages actually use the same word order. People tend to always
+put words in reverse order because it is the general case. Not
+to mention when you mix up two languages and make constructs like
+&quot;you have right&quot;.
+
+-- 
+Anders Carlsson
+
+
+
+</pre></div><div class="post" id="p203375"><div class="ph"><a class="d" href="#p203375">2006-06-04 03:18:40</a> <span>Daniel Mandic</span> <span>Re: ZXZVM v1.11 released</span></div><pre>Steve Farrell wrote:
+
+<span class="qt">&gt; Daniel Mandic is all the least decipherable letters in &#x27;Wonderful</span>
+<span class="qt">&gt; World of Speccy&#x27; all rolled into one.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Steve</span>
+
+
+Hi Steve!
+
+
+My score in history of the ZX Spectrum and impact on the world, is
+about 100.00%.
+
+Playing games sometimes with one hand. Left or Right, it does not
+matter. 56780, of course.
+
+
+
+
+One?.... You need at least three (plum-quickie), to get a slight
+insight into Sinclair Computing.
+
+
+
+
+
+Best Regards,
+
+Daniel Mandic
+
+
+
+</pre></div><div class="post" id="p203376"><div class="ph"><a class="d" href="#p203376">2006-06-04 10:03:07</a> <span>Steve Farrell</span> <span>Re: ZXZVM v1.11 released</span></div><pre>
+&quot;Daniel Mandic&quot; &lt;…@…&gt; wrote in message 
+news:44825110$0$3878$…@…...
+<span class="qt">&gt; Steve Farrell wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Daniel Mandic is all the least decipherable letters in &#x27;Wonderful</span>
+<span class="qt">&gt;&gt; World of Speccy&#x27; all rolled into one.</span>
+
+<span class="qt">&gt; My score in history of the ZX Spectrum and impact on the world, is</span>
+<span class="qt">&gt; about 100.00%.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Playing games sometimes with one hand. Left or Right, it does not</span>
+<span class="qt">&gt; matter. 56780, of course.</span>
+<span class="qt">&gt; One?.... You need at least three (plum-quickie), to get a slight</span>
+<span class="qt">&gt; insight into Sinclair Computing.</span>
+
+See? Now we know how Matt Bielby must have felt.
+
+Steve 
+
+
+
+
+
+</pre></div><div class="post" id="p203379"><div class="ph"><a class="d" href="#p203379">2006-06-04 15:11:44</a> <span>Lister</span> <span>Re: ZXZVM v1.11 released</span></div><pre>On Sun, 04 Jun 2006 10:03:07 GMT, &quot;Steve Farrell&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&quot;Daniel Mandic&quot; &lt;…@…&gt; wrote in message </span>
+<span class="qt">&gt;news:44825110$0$3878$…@…...</span>
+<span class="qt">&gt;&gt; Steve Farrell wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; Daniel Mandic is all the least decipherable letters in &#x27;Wonderful</span>
+<span class="qt">&gt;&gt;&gt; World of Speccy&#x27; all rolled into one.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; My score in history of the ZX Spectrum and impact on the world, is</span>
+<span class="qt">&gt;&gt; about 100.00%.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Playing games sometimes with one hand. Left or Right, it does not</span>
+<span class="qt">&gt;&gt; matter. 56780, of course.</span>
+<span class="qt">&gt;&gt; One?.... You need at least three (plum-quickie), to get a slight</span>
+<span class="qt">&gt;&gt; insight into Sinclair Computing.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;See? Now we know how Matt Bielby must have felt.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Steve </span>
+<span class="qt">&gt;</span>
+
+
+Anyone know what Matt is doing these days?
+
+
+
+</pre></div><div class="post" id="p203566"><div class="ph"><a class="d" href="#p203566">2006-06-15 14:50:04</a> <span>Julián Albo</span> <span>Re: ZXZVM v1.11 released</span></div><pre>John Elliott wrote:
+
+<span class="qt">&gt;   A new version of ZXZVM (a Z-code interpreter for the Sinclair Spectrum</span>
+
+I&#x27;m working with the zxzvm sources, with the combined goal of testing the
+linker features of the next version of Pasmo and port it to some other cp/m
+plus machines.
+
+For a good test of the linker, I&#x27;m trying to build an exact copy of the
+current version by separated assembly of each zsm file, instead of INCLUDE
+some of them in the others, and comparing the result with the build of the
+original version.
+
+I found that the p3bas.tap and resibas.tap files are missing, and there are
+no rules to build him. Also, the version of zmakebas I use, that seems to
+be current, does not accept the -p option used to build &#x27;disk&#x27;.
+
+-- 
+Salu2
+
+Inviato da X-Privat.Org - Registrazione gratuita <a href="http://www.x-privat.org/join.php" rel="noreferrer">http://www.x-privat.org/join.php</a>
+
+
+
+</pre></div><div class="post" id="p203589"><div class="ph"><a class="d" href="#p203589">2006-06-15 23:00:10</a> <span>John Elliott</span> <span>Re: ZXZVM v1.11 released</span></div><pre>Sinclair PC200 512k (V1.5) on 15 June 2006
+Loading Julian Albo &lt;…@…&gt;.SYS.....
+: I found that the p3bas.tap and resibas.tap files are missing, and there are
+: no rules to build him.
+
+  They&#x27;re in &lt;<a href="http://www.seasip.info/ZX/zxzvm_src.zip&gt;." rel="noreferrer">http://www.seasip.info/ZX/zxzvm_src.zip&gt;.</a>
+
+: Also, the version of zmakebas I use, that seems to
+: be current, does not accept the -p option used to build &#x27;disk&#x27;.
+
+  True. This is a patched version I use (with -p meaning &#x27;+3DOS header&#x27;). I 
+sent the patch to Russell last year but he seemed to prefer the idea of a
+separate TAP-to-+3DOS converter.
+
+  While we&#x27;re on the subject of ZXZVM, I&#x27;ve been experimenting with speeding
+up the +3DOS version by adding a couple of 256-byte caches. The effect on
+ROTA was quite dramatic (it only took four hours to start rather than
+seven). I6 games don&#x27;t get that level of improvement, but it shaves a second
+or two off the couple of commands I tried in sherbet.z5. So there may be a
+1.12 in the near future.
+
+-- 
+---------------------------       ,@@.o  ,@@.           SPELL SUCCEEDS   
+John Elliott              |       @@@@   @@@@                 n     \_O_
+CHAOS in a sig...         |       &#x27;||`   &#x27;||`                 Hr     \I `
+---------------------------        JL     JL                  I\     /\\
+
+
+
+</pre></div><div class="post" id="p203616"><div class="ph"><a class="d" href="#p203616">2006-06-16 14:29:47</a> <span>Julián Albo</span> <span>Re: ZXZVM v1.11 released</span></div><pre>John Elliott wrote:
+
+<span class="qt">&gt; : I found that the p3bas.tap and resibas.tap files are missing, and there</span>
+<span class="qt">&gt; : are no rules to build him.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;   They&#x27;re in &lt;<a href="http://www.seasip.info/ZX/zxzvm_src.zip&gt;." rel="noreferrer">http://www.seasip.info/ZX/zxzvm_src.zip&gt;.</a></span>
+
+Yes, they are. I think I tried my mistake to do the build in the directory
+of my modified version instead of the original, sorry.
+
+<span class="qt">&gt; : Also, the version of zmakebas I use, that seems to</span>
+<span class="qt">&gt; : be current, does not accept the -p option used to build &#x27;disk&#x27;.</span>
+<span class="qt">&gt;   True. This is a patched version I use (with -p meaning &#x27;+3DOS header&#x27;).</span>
+
+Do you have it, or the patch, available on some site?
+
+<span class="qt">&gt; While we&#x27;re on the subject of ZXZVM, I&#x27;ve been experimenting with</span>
+<span class="qt">&gt; speeding up the +3DOS version by adding a couple of 256-byte caches.</span>
+
+I don&#x27;t try to optimize nothing yet, just trying to make it run and to let
+the Pasmo linker well tested in the process.
+
+-- 
+Salu2
+
+Inviato da X-Privat.Org - Registrazione gratuita <a href="http://www.x-privat.org/join.php" rel="noreferrer">http://www.x-privat.org/join.php</a>
+
+
+
+</pre></div><div class="post" id="p203638"><div class="ph"><a class="d" href="#p203638">2006-06-17 07:33:26</a> <span>Garry Lancaster</span> <span>Re: ZXZVM v1.11 released</span></div><pre>John Elliott wrote:
+<span class="qt">&gt;   While we&#x27;re on the subject of ZXZVM, I&#x27;ve been experimenting with speeding</span>
+<span class="qt">&gt; up the +3DOS version by adding a couple of 256-byte caches. The effect on</span>
+<span class="qt">&gt; ROTA was quite dramatic (it only took four hours to start rather than</span>
+<span class="qt">&gt; seven). I6 games don&#x27;t get that level of improvement, but it shaves a second</span>
+<span class="qt">&gt; or two off the couple of commands I tried in sherbet.z5. So there may be a</span>
+<span class="qt">&gt; 1.12 in the near future.</span>
+
+The +3DOS overhead is certainly pretty significant, so adding your own
+caches can only be a good thing. However, don&#x27;t expect to be able to
+run ROTA at a playable speed with just that change... I tried running
+ROTA under ZXZVM v1.11 on ResiDOS with a 512K ZXCF interface - this has
+enough memory to load the entire story, so the +3DOS routines are never
+called during play. It &quot;only&quot; took 1m30s to display the intro, and a
+further 1h 18m 45s to get to the first prompt. Typical responses to
+inputs were 3m30s (inventory) and 3m45s (north).
+
+However, Inform6 games are (just about) playable. Vespers (approx the
+same size as ROTA) takes 48s to get to the first prompt; typical
+responses were 19s (inventory) and 39s (west).
+
+Similarly, a smaller/older game, Edifice, took 20s to the first prompt,
+8s for an inventory and 23s for &quot;examine rock&quot;.
+
+As a point of note, ROTA is also pretty slow on my Palm (running
+CliFrotz). It takes 2m50s to get to the first prompt, and then about
+9-10s for typical responses (inventory/north).
+
+
+
+
+</pre></div><div class="post" id="p203696"><div class="ph"><a class="d" href="#p203696">2006-06-18 10:52:55</a> <span>John Elliott</span> <span>Re: ZXZVM v1.11 released</span></div><pre>Sinclair PC200 512k (V1.5) on 18 June 2006
+Loading  Julian Albo &lt;…@…&gt;.SYS.....
+: Do you have it, or the patch, available on some site?
+
+  I&#x27;ve just uploaded it to &lt;<a href="http://www.seasip.demon.co.uk/ZX/unix.html&gt;." rel="noreferrer">http://www.seasip.demon.co.uk/ZX/unix.html&gt;.</a>
+
+-- 
+---------------------------       ,@@.o  ,@@.           SPELL SUCCEEDS   
+John Elliott              |       @@@@   @@@@                 n     \_O_
+CHAOS in a sig...         |       &#x27;||`   &#x27;||`                 Hr     \I `
+---------------------------        JL     JL                  I\     /\\
+
+
+
+</pre></div><div class="post" id="p203903"><div class="ph"><a class="d" href="#p203903">2006-06-21 19:49:03</a> <span>Julián Albo</span> <span>Re: ZXZVM v1.11 released</span></div><pre>John Elliott wrote:
+
+<span class="qt">&gt; : Do you have it, or the patch, available on some site?</span>
+<span class="qt">&gt;   I&#x27;ve just uploaded it to &lt;<a href="http://www.seasip.demon.co.uk/ZX/unix.html&gt;." rel="noreferrer">http://www.seasip.demon.co.uk/ZX/unix.html&gt;.</a></span>
+
+Thanks. Now I have finished the code modifications and started a modified
+copy of the pcw version that can run in Aliados, my cp/m emulator, after
+modifying it to work with the OUT instructions used in PCW to switch memory
+banks. For the moment, it can load an adventure file and show a ugly
+version of the text in the first room. Looks promising, and is a good tool
+to test and enhance both Pasmo and Aliados.
+
+To return to on-topic, I don&#x27;t tested yet the rebuild of the Spectrum
+version, but is unnecessary because the binary files are identical.
+
+If someone has interest in test this version, and the post-last version of
+Pasmo, I&#x27;ll upload both in a few days, after some cleaning.
+
+-- 
+Salu2
+
+Inviato da X-Privat.Org - Registrazione gratuita <a href="http://www.x-privat.org/join.php" rel="noreferrer">http://www.x-privat.org/join.php</a>
+
+
+
+</pre></div><div class="post" id="p227909"><div class="ph"><a class="d" href="#p227909">2016-05-15 21:04:23</a> <span>…@…</span> <span>Re: ZXZVM v1.11 released</span></div><pre>On Friday, June 16, 2006 at 12:00:10 AM UTC+1, John Elliott wrote:
+<span class="qt">&gt;   While we&#x27;re on the subject of ZXZVM, I&#x27;ve been experimenting with speeding</span>
+<span class="qt">&gt; up the +3DOS version by adding a couple of 256-byte caches. The effect on</span>
+<span class="qt">&gt; ROTA was quite dramatic (it only took four hours to start rather than</span>
+<span class="qt">&gt; seven). I6 games don&#x27;t get that level of improvement, but it shaves a second</span>
+<span class="qt">&gt; or two off the couple of commands I tried in sherbet.z5. So there may be a</span>
+<span class="qt">&gt; 1.12 in the near future.</span>
+
+OK, that was 10 years ago, but there now really is a ZXZVM 1.12. As well as the performance boost from caching data and code pages, it also fixes a bug in the @call_vn opcode with a zero argument (If you&#x27;re interested, older versions treat it like @call_vs, which means the instruction stream gets out of sync).
+The problem&#x27;s easily reproducible with release 31 of The Hitchhiker&#x27;s Guide to the Galaxy (release 871119):
+
+GET UP
+LIGHT
+TAKE GOWN
+WEAR GOWN
+LOOK IN POCKET
+EAT ANALGESIC
+S
+
+Versions 1.11 and earlier will abort with an &#x27;Illegal instruction&#x27; error. Version 1.12 will (I hope) work normally.
+
+You can download the new version at <a href="http://www.seasip.info/ZX/zxzvm.html" rel="noreferrer">http://www.seasip.info/ZX/zxzvm.html</a>
+
+</pre></div></main></body></html>

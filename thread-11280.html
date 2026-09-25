@@ -1,0 +1,1523 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Re: Help Snapshot loading screens · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Re: Help Snapshot loading screens</h1><p class="facts">46 posts, 1998-02-04 – 1998-02-17</p><div class="post" id="p33643"><div class="ph"><a class="d" href="#p33643">1998-02-04</a> <span>gerard sweeney</span> </div><pre>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; How do i add loading screens to snapshots</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Fairly simple (at least in principle):</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Store the original screen somewhere in memory, put the loading screen</span>
+<span class="qt">&gt; in screen memory and write a very short bit of code to wait for a key,</span>
+<span class="qt">&gt; put the original screen back again and then jump to the original</span>
+<span class="qt">&gt; PC. In practice, can be very boring...</span>
+
+Hiya...
+
+I do it slightly differently (but the same erm kind of)... Here goes to get
+laughed at for being such an incompetent boob...
+
+I either hack the tape loader, and stick a JR-1 (erm, 24,254 if I recall)
+in place of the original JP position. This puts it in an infinite loop.
+Save this off as a snapshot in case I make a mess of the next step. Then
+change the PC to whatever the JP was and save that before running it. And
+that should be it.
+
+I use another system as well involving a hex editor, but it&#x27;s after 5pm so
+I&#x27;ll leave that till later..
+
+Ta ta!
+Gerard
+-- 
+Gerard Sweeney
+Hackers Anonymous/Team Amiga
+Go visit the official Hack Attack III WWW page at
+<a href="http://www.geocities.com/SiliconValley/Lakes/4871" rel="noreferrer">http://www.geocities.com/SiliconValley/Lakes/4871</a>
+where you&#x27;re always likely to get a good POKE (fnar!)
+Or look for speccy games using the NVG catalogue at:
+<a href="http://www.fortunecity.com/skyscraper/tyrell/95/index.html" rel="noreferrer">http://www.fortunecity.com/skyscraper/tyrell/95/index.html</a>
+
+
+</pre></div><div class="post" id="p33646"><div class="ph"><a class="d" href="#p33646">1998-02-04</a> <span>…@…</span> <span>Help Snapshot loading screens</span></div><pre>
+How do i add loading screens to snapshots
+
+
+</pre></div><div class="post" id="p33656"><div class="ph"><a class="d" href="#p33656">1998-02-04</a> <span>john garner</span> </div><pre>
+
+Andy Davis wrote in message
+&lt;…@…&gt;...
+<span class="qt">&gt;on 04 Feb 98, Ben wrote...</span>
+
+
+<span class="qt">&gt;Now follows a list of supporters of the &#x27;BAN SNAPSHOTS IN FAVOUR OF TAP</span>
+FILES&#x27;
+<span class="qt">&gt;campaign:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Andy Davis.</span>
+John Garner, aka Datasoft of United Minds
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;List ends. :-)</span>
+No it doesn&#x27;t.
+
+
+
+</pre></div><div class="post" id="p33662"><div class="ph"><a class="d" href="#p33662">1998-02-05</a> <span>gerard sweeney</span> </div><pre>
+Martijn said
+
+<span class="qt">&gt; I agree completely! In fact, that&#x27;s exactly what I do at WOS (see</span>
+<span class="qt">&gt; <a href="http://www.void.demon.nl/mission.html" rel="noreferrer">http://www.void.demon.nl/mission.html</a>)....</span>
+<span class="qt">&gt; TZX is even better, as the games don&#x27;t have to be hacked and can be</span>
+<span class="qt">&gt; converted (decoded) straight from the original tapes.</span>
+
+Ermm... OK, I&#x27;m going to look pig ignorant and stupid here (so what&#x27;s new?
+Ed),
+but is there a way of speeding up the loading of a TZX file... Perhaps I&#x27;ve
+grasped the wrong end of the wooden twiggy thing, but to me I thought the
+beauty of using snapshots/TAPs was that you could have a game loaded in no
+time at all. Whereas TZX takes the same time to load the files as normal.
+Or at least, it did when I tried it.
+
+I realise that it is a pant-wettingly, sock-sniffingly brilliant format
+which looks and sounds exactly like a real speccy loading, but I prefer
+(lazy sod that I am) to be able to load the game in a second (or however
+long)
+
+Plus, for those wishing to ban snapshots, can I just remind you that
+utilities already exist to allow the reloading of snapshots to a real
+speccy.. Dunno the name of the PC proggies, but Toot does a rather spiffy
+job on the Miggy...
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Of course there&#x27;s nothing wrong with snaps, but it&#x27;s not suitable for</span>
+<span class="qt">&gt; archiving purposes.</span>
+
+I dunno, we&#x27;ve managed pretty well in the past (witness WOS and NVG)
+
+Gerard
+-- 
+Gerard Sweeney
+Hackers Anonymous/Team Amiga
+Go visit the official Hack Attack III WWW page at
+<a href="http://www.geocities.com/SiliconValley/Lakes/4871" rel="noreferrer">http://www.geocities.com/SiliconValley/Lakes/4871</a>
+where you&#x27;re always likely to get a good POKE (fnar!)
+Or look for speccy games using the NVG catalogue at:
+<a href="http://www.fortunecity.com/skyscraper/tyrell/95/index.html" rel="noreferrer">http://www.fortunecity.com/skyscraper/tyrell/95/index.html</a>
+
+
+
+</pre></div><div class="post" id="p33666"><div class="ph"><a class="d" href="#p33666">1998-02-05</a> <span>andrew broad</span> <span>Should snapshots be banned?</span></div><pre>
+Andy Davis wrote:
+
+<span class="qt">&gt; You don&#x27;t. Instead, you OUTLAW THE USE OF SNAPSHOTS AND START SAVING FILES IN</span>
+<span class="qt">&gt; TAP FORMAT! That way I can easily convert the files back to original BASIC and</span>
+<span class="qt">&gt; CODE files so that original Spectrum owners can use the programs!  Join the</span>
+<span class="qt">&gt; growing campaign NOW and let&#x27;s try and get snapshots banned.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Now follows a list of supporters of the &#x27;BAN SNAPSHOTS IN FAVOUR OF TAP FILES&#x27;</span>
+<span class="qt">&gt; campaign:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Andy Davis.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; List ends. :-)</span>
+
+
+Is Andy Davis alone in this view, or are there others out there who
+would prefer TAP files to snapshots (or vice versa)?
+
+I released Manic Miner 4 as a snapshot, and was planning to do likewise
+for We Pretty and the other games I will be releasing in the future. But
+if there is a popular demand for TAP files, I might be inclined to use
+this format instead, even though there are significant technical
+difficulties that I would have to overcome (for a fuller discussion of
+this issue, see
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/download/format.html" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/download/format.html</a>).
+
+I personally have no strong preference, in as much as my emulator can
+/read/ both snapshots and TAP files, and either way, the only way I can
+get them into my Spectrum is to type them in! (which I have done for all
+the Manic Miner and Jet Set Willy rewrites to date). However, my
+emulator can only /write/ snapshots, not TAP files, so I would have to
+develop a method of converting my snapshots to TAP files.
+
+Do any emulators lack the ability to read one or the other format?
+
+What are your opinions? Should games be released as TAP files in
+preference to snapshots? Should snapshots be banned?
+
+
+Andrew Broad
+<a href="http://www.cs.man.ac.uk/~broada" rel="noreferrer">http://www.cs.man.ac.uk/~broada</a>
+
+
+</pre></div><div class="post" id="p33667"><div class="ph"><a class="d" href="#p33667">1998-02-05</a> <span>martijn van der heide</span> </div><pre>
+Andy Davis wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; on 04 Feb 98, Ben wrote...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;How do i add loading screens to snapshots</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; You don&#x27;t. Instead, you OUTLAW THE USE OF SNAPSHOTS AND START SAVING FILES IN</span>
+<span class="qt">&gt; TAP FORMAT! That way I can easily convert the files back to original BASIC and</span>
+<span class="qt">&gt; CODE files so that original Spectrum owners can use the programs!  Join the</span>
+<span class="qt">&gt; growing campaign NOW and let&#x27;s try and get snapshots banned.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Now follows a list of supporters of the &#x27;BAN SNAPSHOTS IN FAVOUR OF TAP FILES&#x27;</span>
+<span class="qt">&gt; campaign:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Andy Davis.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; List ends. :-)</span>
+
+I agree completely! In fact, that&#x27;s exactly what I do at WOS (see
+<a href="http://www.void.demon.nl/mission.html" rel="noreferrer">http://www.void.demon.nl/mission.html</a>)....
+TZX is even better, as the games don&#x27;t have to be hacked and can be
+converted (decoded) straight from the original tapes.
+
+One reason is indeed that all data is preserved (also the intros and
+loading screens), but another reason is that you can do much more with a
+TAP file (with programs like TAPER), such as - indeed - run them on your
+real Spectrum.
+
+And if people insist on compressed files, let them either use the
+Warajevo Spectrum emulator (compressed TAP) or emulators like ZX-32 that
+can load games from a ZIP file.
+
+Of course there&#x27;s nothing wrong with snaps, but it&#x27;s not suitable for
+archiving purposes.
+
+Cheers,
+
+Martijn.
+
+
+</pre></div><div class="post" id="p33675"><div class="ph"><a class="d" href="#p33675">1998-02-05</a> <span>…@…</span> <span>Re: Should snapshots be banned?</span></div><pre>
+Andrew Broad  wrote:
+
+<span class="qt">&gt;What are your opinions? Should games be released as TAP files in</span>
+<span class="qt">&gt;preference to snapshots? Should snapshots be banned?</span>
+
+I use snapshots only when I don&#x27;t have a game in TAP/TZX format. There
+is something that annoys me about snaps: they include information
+about the hardware they are supposed to run on.
+Let&#x27;s take for instance, the Enlight &#x27;97 demos. The snaps I got load
+in 128K mode. However, most effects are lost if you use this mode,
+because they were designed to run on a russian Pentagon clone (which
+x128 emulates). This means I have to load the snap, pause it, change
+the hardware, unpause it, and pray that the program didn&#x27;t notice the
+change. And you thought TAP/TZXs were fiddly?
+
+
+-- 
+<span class="qt">||// \\//      	        Gilberto Gaudencio</span>
+ //   \\           quazatron @ geocities com
+//|| //\\                  ICQ 1614980
+
+
+</pre></div><div class="post" id="p33676"><div class="ph"><a class="d" href="#p33676">1998-02-05</a> <span>…@…</span> <span>Re: Should snapshots be banned?</span></div><pre>
+On Thu, 05 Feb 1998 14:04:10 +0000, Richard G. Hallas
+ wrote:
+
+<span class="qt">&gt;Now don&#x27;t get me wrong. I&#x27;m all in favour of both TAP and TZX files.</span>
+<span class="qt">&gt;However, I also like perfect snapshots: ones that display the loading</span>
+<span class="qt">&gt;screen at the start, until you press a key, and then begin as though</span>
+<span class="qt">&gt;you&#x27;d just loaded them.</span>
+
+Hear, hear. I&#x27;m not about to make life difficult for myself when
+loading a game into an emulator so snapshots win every time
+unless there really is something lost in the snapshot (and even
+then most of the time I won&#x27;t care if I just want to play the
+game).
+-- 
+  //// Damien Burke (add k to end of address if replying)
+ //// Spectrum pages: <a href="http://www.jetman.demon.co.uk/speccy/" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/</a>
+//// New to this group? Read this: <a href="http://www.kendalls.demon.co.uk/cssfaq/" rel="noreferrer">http://www.kendalls.demon.co.uk/cssfaq/</a>
+
+
+</pre></div><div class="post" id="p33677"><div class="ph"><a class="d" href="#p33677">1998-02-05</a> <span>…@…</span> </div><pre>
+…@… wrote:
+
+<span class="qt">&gt;Agreed that TAP files are good, but let&#x27;s not get rid of snaps altogether! I</span>
+<span class="qt">&gt;prefer to have a perfect snapshot (with loading screen intact) of a</span>
+<span class="qt">&gt;single-load game to a TAP file if only because it&#x27;s more compact and I</span>
+<span class="qt">&gt;don&#x27;t have infinite disk space. Either that or someone please invent a</span>
+<span class="qt">&gt;compressed TAP format! :-)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;And remember - most things still have to be hacked to get them into TAP format</span>
+<span class="qt">&gt;anyway. If you demand perfection then you should be putting everything into</span>
+<span class="qt">&gt;TZXs.....</span>
+
+How about compressed TZX files? Is it possible to add compression to
+the format? Tomaz?
+
+
+-- 
+<span class="qt">||// \\//      	        Gilberto Gaudencio</span>
+ //   \\           quazatron @ geocities com
+//|| //\\                  ICQ 1614980
+
+
+</pre></div><div class="post" id="p33679"><div class="ph"><a class="d" href="#p33679">1998-02-05</a> <span>richard g.hallas</span> <span>Re: Should snapshots be banned?</span></div><pre>
+In message &lt;…@…&gt;
+          Andrew Broad  wrote:
+
+<span class="qt">&gt; Andy Davis wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; OUTLAW THE USE OF SNAPSHOTS AND START SAVING FILES IN TAP FORMAT!</span>
+<span class="qt">&gt; &gt; That way I can easily convert the files back to original BASIC and</span>
+<span class="qt">&gt; &gt; CODE files so that original Spectrum owners can use the programs! </span>
+<span class="qt">&gt; &gt; Join the growing campaign NOW and let&#x27;s try and get snapshots</span>
+<span class="qt">&gt; &gt; banned.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Is Andy Davis alone in this view, or are there others out there who</span>
+<span class="qt">&gt; would prefer TAP files to snapshots (or vice versa)?</span>
+
+My position is as follows.
+
+1. Although I do still have a real Spectrum, I never use it. As the
+years go by, fewer and fewer people will use real Spectrums, as the
+poor old things will eventually break and it won&#x27;t be possible to
+repair them. In fact, avoiding using your old Spectrum is proabably a
+good idea for the same reason. For this reason, and because the
+emulators are getting very good, there will be less and less need to
+transfer TAPs for use on old machines.
+
+2. If you use a TAP file, you usually have fiddle with the emulator
+sligthly to get it to work - e.g. possibly select the tape mode, and
+select whether you want the emulator to be in 48K or 128K mode. Then
+you have to type the command - or press Enter! ;-) - to load the TAP.
+With a snapshot, you can just load it and it starts. It&#x27;s therefore
+more convenient.
+
+3. With a large number of TAPs, the loading screen flashes by so
+quickly that you don&#x27;t have a chance to look at it.
+
+Now don&#x27;t get me wrong. I&#x27;m all in favour of both TAP and TZX files.
+However, I also like perfect snapshots: ones that display the loading
+screen at the start, until you press a key, and then begin as though
+you&#x27;d just loaded them.
+
+&#x27;Perfect snaps&#x27;
+---------------
+
+In their favour:
+
+(a) They let you look at the loading screen
+(b) They&#x27;re convenient, because you don&#x27;t have to select emulator
+    hardware
+(c) They&#x27;re efficient, because TAPs aren&#x27;t compressed on disc and Z80
+    snapshots are
+
+Against them:
+
+(a) They don&#x27;t preserve the tape&#x27;s original contents exactly (though
+    it may be possible to reconstruct the TAP from the snapshot)
+(b) You need two of them if the game behaves differently in 48K and
+    128K modes
+
+TAP files
+---------
+
+In their favour:
+
+(a) They preserve tapes in their original form
+(b) They often serve both 48K and 128K versions of a game in one file
+
+Against them:
+
+(a) They require you to fiddle with emulator settings
+(b) They don&#x27;t load as quickly as snapshots
+(c) You don&#x27;t usually get to look at the loading screen properly
+
+TZX files of course address some of the problems of TAP files, and are
+ideal for preserving tapes perfectly; but they take ages to load, and
+therefore lead us back, full circle, to the perfect snapshot!
+
+My position is that I want TAPs if making a perfect snapshot causes
+anything to be lost; for example Nonterraqueous has two loading
+screens, and of course a snap will only let you see one of them.
+However, for &#x27;simple&#x27; tapes, of the sort where there&#x27;s a Basic loader
+followed by a SCREEN$ followed by some code, I want a perfect snap
+rather than a TAP.
+
+TAPs and TZXs are great, but they don&#x27;t cater ideally for all
+circumstances. For me, I&#x27;d like archives such as WOS to include both
+a perfect TAP or TZX and a perfect Z80-format snapshot as well. All
+three formats have their place.
+
+I do dislike the use of &#x27;imperfect&#x27; snapshots, of course - ones that
+start part-way through a tune, or have someone&#x27;s name in the high-
+score table or something... but they&#x27;re a different case.
+
+-- 
+Richard
+-=-=-=-
+Richard G. Hallas          -oOo-          Editor of RISC User magazine
+Proprietor of KeyNote:  Music Typesetting &amp; General Desktop Publishing
+E-mail: …@… * Telephone/Facsimile: 01484 460280
+
+
+
+</pre></div><div class="post" id="p33687"><div class="ph"><a class="d" href="#p33687">1998-02-05 09:15:38</a> <span>…@…</span> </div><pre>
+In article ,
+  Chris Miller  wrote:
+<span class="qt">&gt; &gt; You don&#x27;t. Instead, you OUTLAW THE USE OF SNAPSHOTS AND START SAVING FILES</span>
+IN
+<span class="qt">&gt; &gt; TAP FORMAT! That way I can easily convert the files back to original BASIC</span>
+and
+<span class="qt">&gt; &gt; CODE files so that original Spectrum owners can use the programs!  Join</span>
+the
+<span class="qt">&gt; &gt; growing campaign NOW and let&#x27;s try and get snapshots banned.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I quite agree. Half of the programs I have for my emulator written in</span>
+<span class="qt">&gt; BASIC can&#x27;t be hacked liked the original could be. It makes no sense at</span>
+<span class="qt">&gt; all.</span>
+
+Agreed that TAP files are good, but let&#x27;s not get rid of snaps altogether! I
+prefer to have a perfect snapshot (with loading screen intact) of a
+single-load game to a TAP file if only because it&#x27;s more compact and I
+don&#x27;t have infinite disk space. Either that or someone please invent a
+compressed TAP format! :-)
+
+And remember - most things still have to be hacked to get them into TAP format
+anyway. If you demand perfection then you should be putting everything into
+TZXs.....
+
+
+Blood.
+
+
+-----== Posted via Deja News, The Leader in Internet Discussion ==-----
+<a href="http://www.dejanews.com/" rel="noreferrer">http://www.dejanews.com/</a>   Now offering spam-free web-based newsreading
+
+
+</pre></div><div class="post" id="p33709"><div class="ph"><a class="d" href="#p33709">1998-02-06</a> <span>…@…</span> <span>Re: Should snapshots be banned?</span></div><pre>
+
+Whatever you do snaps will always be aropund as there are so
+many and they are easy to load for the wallies... :-)
+
+Brian
+
+-- 
+…@…
+Brian Gaff AKA B G Services - Still supporting Z80
+                              The Spectrum Emulator
+
+
+
+</pre></div><div class="post" id="p33713"><div class="ph"><a class="d" href="#p33713">1998-02-06</a> <span>…@…</span> <span>Re: Should snapshots be banned?</span></div><pre>
+Andrew Broad (…@…) wrote:
+
+: I released Manic Miner 4 as a snapshot, and was planning to do likewise
+: for We Pretty and the other games I will be releasing in the future. But
+: if there is a popular demand for TAP files, I might be inclined to use
+: this format instead, even though there are significant technical
+: difficulties that I would have to overcome (for a fuller discussion of
+: this issue, see
+: <a href="http://www.cs.man.ac.uk/â€¾broada/spectrum/download/format.html" rel="noreferrer">http://www.cs.man.ac.uk/â€¾broada/spectrum/download/format.html</a>).
+
+  My preferred format for Spectrum files is +3DOS binaries, because of the
+transfer software I use (MSODBALL converts 720k +3DOS discs &lt;--&gt; 720k PCDOS
+discs). This format (together with SNA for 48k files) allows me the best
+access to the data within the files from the host computer, with as little 
+fiddling as possible. The separate files give me the ability to vary the 
+file sizes, which isn&#x27;t very easy in a TAP. These two formats also have the
+very great benefit of absolute position - given any byte in the file, it is
+very easy to work out where it belongs in Spectrum memory (or vice versa). 
+
+  JSW128, for example, is a set of +3DOS files; it is supplied with TAPCAT,
+which combines them all into a .TAP file for emulators. Its PC-hosted editor
+(JSWED) manipulates the +3DOS files, and can import data from a .SNA.
+  The other programs I&#x27;ve written which manipulate Spectrum data are
+UnQuill, which decompiles Quill games, and SceptEdit, which edits the 
+shapes of characters&#x27; heads in Dark Sceptre. Both of these work on
+.SNA files.
+
+------------- <a href="http://www.seasip.demon.co.uk/index.html" rel="noreferrer">http://www.seasip.demon.co.uk/index.html</a> --------------------
+John Elliott           |BLOODNOK: &quot;But why have you got such a long face?&quot;
+<span class="qt">                       |SEAGOON: &quot;Heavy dentures, Sir!&quot;    - The Goon Show </span>
+:-------------------------------------------------------------------------)
+
+
+</pre></div><div class="post" id="p33715"><div class="ph"><a class="d" href="#p33715">1998-02-07</a> <span>unknown</span> <span>Re: Who are you calling a Wally?</span></div><pre>
+
+
+Brian Gaff  wrote in article
+&lt;…@…&gt;...
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Whatever you do snaps will always be aropund as there are so</span>
+<span class="qt">&gt; many and they are easy to load for the wallies... :-)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Brian</span>
+<span class="qt">&gt; </span>
+As a non programmer and PC owner, I conclude that I am one of the wallies
+described by Brian Gaff. Since I have been on this group I have noticed a
+sneering attitude from some people towards others who might not fit their
+speccy interlects. For instance, people who own PC&#x27;s, particurlarly ones
+who use WIN95, are seen as second class compared say to Amiga owners. I own
+an Amiga &amp; agree that it is a very good machine &amp; also easy to use,
+certainly compared to the PC. But unfortunately as I live in the real world
+I had to get a PC to run the latest games &amp; also software like Microsoft
+Office for my studies. Though Win95 has faults, it is a damn sight easier
+than using DOS, &amp; as such makes life for ordinary users a lot easier. 
+What the techno nerds cant seem to get in their head is without us ordinary
+thickos there wouldn&#x27;t have been any Spectrum scene or any computer scene
+to reminisce about. The reason the Spectrum became so successful was when
+it came out it gave the buyer a machine with graphics, colour, sound(okay
+limited), friendly to use at a good price, &amp; most importantly at the right
+time. It wasn&#x27;t the best at anything it did, but put together it was the
+best machine available &amp; people took it to their hearts. If the Spectrum or
+any other machine was only of use to some programming genius, computers
+would still be in the dark ages, and the games of today would only be in
+our dreams.
+There is also a tendancy to write sarcastic comments about people who might
+be asking simple questions about things they are not sure about or
+something they are looking for. The recent fiasco over the person looking
+for a list of emulators was a case in point. Many people might be new to
+the internet, let alone your Newsgroup, &amp; as such might be confused by the
+amount of information that confronts them. I myself would much rather hear
+questions like that which at least was relevent than a lot of the gibberish
+that gets bandied about. How many times do you see letters of 50+ lines
+repeating what has already been said, with a line added at the bottom,
+which in most cases adds nothing. Surely the newsgroup should be more about
+issues surrounding the sinclair machines(software, programmers, things
+going on, software houses, mags etc). Recent themes like computer
+programmes, guild of thieves, great gianna sisters, david jones, best
+emulators, etc have led to lively debate and are good fun. Unfortunately
+they sometimes go on to long and of track, not a bad thing in itself,  but
+usually end up irrelevent. 
+I am not trying to knock this newsgroup &amp; the people in it, because I know
+that a lot of you have put immense effort &amp; resourses into the sites that
+you have got scattered around the web, including many of you that my
+comments are directed at. Looking at these sites, convinces me how much you
+care about the sinclair computers &amp; making sure others are able to sample
+the knowledge as easily as possible. But try to take account that thousands
+of people are joining the net each day, many coming to your group, who may
+have not much knowledge of programming and many years since they last owned
+a spectrum, but neverthless want to sample the delights of something that
+they had many happy memories of. 
+No doubt I will be attacked by many for my comments and views, but if it
+can lead to an exciting debate and a bit more tolerence to others it will
+be worth it.
+
+From a speccy fan
+
+…@…
+
+
+
+</pre></div><div class="post" id="p33721"><div class="ph"><a class="d" href="#p33721">1998-02-07</a> <span>martijn van der heide</span> <span>Re: Should snapshots be banned?</span></div><pre>
+Graham Goring wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Quoth the Raven in article &lt;…@…&gt;,</span>
+<span class="qt">&gt; &quot;Richard G. Hallas&quot;  writes</span>
+<span class="qt">&gt; &gt;My position is as follows.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; [BIG FAT SNIP]</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;d like to say that I agree with Richard&#x27;s standpoint in it&#x27;s entirety.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; If there was some way of altering TAP&#x27;s so that between load-blocks it</span>
+<span class="qt">&gt; could pause for a keypress (if you enabled that option in the emulator)</span>
+<span class="qt">&gt; then that&#x27;d be superb, and address most of my anti-TAP issues. I imagine</span>
+<span class="qt">&gt; that it&#x27;d just be a case of altering the emulator as opposed to the TAP</span>
+<span class="qt">&gt; standard, as well.</span>
+
+&#x27;Z80&#x27; can do that (I believe switch -xt) and I believe that &#x27;X128&#x27; is
+gonna do this in the future as well. Should be easy enough to implement
+I suppose...
+
+Cheers,
+
+Martijn.
+
+
+</pre></div><div class="post" id="p33722"><div class="ph"><a class="d" href="#p33722">1998-02-07</a> <span>martijn van der heide</span> </div><pre>
+Gerard Sweeney wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Martijn said</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; I agree completely! In fact, that&#x27;s exactly what I do at WOS (see</span>
+<span class="qt">&gt; &gt; <a href="http://www.void.demon.nl/mission.html" rel="noreferrer">http://www.void.demon.nl/mission.html</a>)....</span>
+<span class="qt">&gt; &gt; TZX is even better, as the games don&#x27;t have to be hacked and can be</span>
+<span class="qt">&gt; &gt; converted (decoded) straight from the original tapes.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Ermm... OK, I&#x27;m going to look pig ignorant and stupid here (so what&#x27;s new?</span>
+<span class="qt">&gt; Ed),</span>
+<span class="qt">&gt; but is there a way of speeding up the loading of a TZX file... Perhaps I&#x27;ve</span>
+<span class="qt">&gt; grasped the wrong end of the wooden twiggy thing, but to me I thought the</span>
+<span class="qt">&gt; beauty of using snapshots/TAPs was that you could have a game loaded in no</span>
+<span class="qt">&gt; time at all. Whereas TZX takes the same time to load the files as normal.</span>
+<span class="qt">&gt; Or at least, it did when I tried it.</span>
+
+And that&#x27;s why I don&#x27;t &#x27;favor TZXs over TAPs&#x27; :-)
+At WOS, I keep TAPs where possible, snaps otherwise.
+TZX files are an addition to that set, not a replacement.
+
+The new Warajevo 2.0 is the first step to turbo loading TZX files (have
+a look, it&#x27;s good!). X128 is probably to follow (in the next version or
+so).
+
+<span class="qt">&gt; I realise that it is a pant-wettingly, sock-sniffingly brilliant format</span>
+<span class="qt">&gt; which looks and sounds exactly like a real speccy loading, but I prefer</span>
+<span class="qt">&gt; (lazy sod that I am) to be able to load the game in a second (or however</span>
+<span class="qt">&gt; long)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Plus, for those wishing to ban snapshots, can I just remind you that</span>
+<span class="qt">&gt; utilities already exist to allow the reloading of snapshots to a real</span>
+<span class="qt">&gt; speccy.. Dunno the name of the PC proggies, but Toot does a rather spiffy</span>
+<span class="qt">&gt; job on the Miggy...</span>
+
+For the PC, that would be Hypralader.
+In a future version of TAPER, I plan to support snaps as well, which
+will on-the-fly convert to tapes internally (and can be saved out as
+such).
+
+<span class="qt">&gt; &gt; Of course there&#x27;s nothing wrong with snaps, but it&#x27;s not suitable for</span>
+<span class="qt">&gt; &gt; archiving purposes.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I dunno, we&#x27;ve managed pretty well in the past (witness WOS and NVG)</span>
+
+You should notice that snaps are steadily replaced by TAP versions at
+WOS. I think the current stats would be something like 60% TAP, 40%
+snaps.
+
+Cheers,
+
+Martijn.
+
+
+</pre></div><div class="post" id="p33750"><div class="ph"><a class="d" href="#p33750">1998-02-08</a> <span>…@…</span> </div><pre>
+On Thu, 05 Feb 1998 14:36:03 GMT,
+…@… (Gilberto Gaudencio) wrote:
+
+
+<span class="qt">&gt;How about compressed TZX files? Is it possible to add compression to</span>
+<span class="qt">&gt;the format? Tomaz?</span>
+
+Currently unavailable due to being drafted!
+
+Rob.
+
+
+
+</pre></div><div class="post" id="p33752"><div class="ph"><a class="d" href="#p33752">1998-02-08</a> <span>…@…</span> <span>Re: Should snapshots be banned?</span></div><pre>
+On Thu, 5 Feb 1998 17:13:46 +0000, Niall Tracey 
+wrote:
+
+<span class="qt">&gt;I don&#x27;t have the money to buy myself a PC to run Spectrum games on. I DO</span>
+<span class="qt">&gt;have access to PCs though, so I can convert across TAP files to tape.</span>
+<span class="qt">&gt;Please please please please please please please please please please</span>
+<span class="qt">&gt;please please please please... [etc.] .TAP files! I can&#x27;t use snapshots!</span>
+
+So why not use Hypraloader on the PC to convert the snaps to TAPS and
+save them onto tape?, the PC will need a SB card and you obvioulsy
+need a tape recorder...
+
+Rob.
+
+
+</pre></div><div class="post" id="p33755"><div class="ph"><a class="d" href="#p33755">1998-02-08</a> <span>darren salt</span> <span>Re: Should snapshots be banned?</span></div><pre>
+In message &lt;…@…&gt;
+          Richard G. Hallas  wrote:
+
+[snip]
+<span class="qt">&gt; My position is that I want TAPs if making a perfect snapshot causes</span>
+<span class="qt">&gt; anything to be lost; for example Nonterraqueous has two loading screens,</span>
+<span class="qt">&gt; and of course a snap will only let you see one of them.</span>
+
+SLT.
+
+-- 
+<span class="qt">| Darren Salt     anti-UCE | 01268 515441    | Toon Army     | Spec+3, A3010,</span>
+<span class="qt">| arcsalt@spuddy,mew,co,uk | free mail, news | Season ticket | Acorn Risc PC,</span>
+<span class="qt">| darren,salt@unn,ac,uk    | nr Ashington, Northumberland    | BBC Master</span>
+<span class="qt">|   Nothing much, coming your way *soon*...</span>
+
+Reality is something invented to keep the non-computer people happy.
+
+
+</pre></div><div class="post" id="p33774"><div class="ph"><a class="d" href="#p33774">1998-02-09</a> <span>martijn van der heide</span> <span>TZX update needed?</span></div><pre>
+Philip Kendall wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; …@… writes:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; On Thu, 05 Feb 1998 14:36:03 GMT,</span>
+<span class="qt">&gt; &gt; …@… (Gilberto Gaudencio) wrote:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt;How about compressed TZX files? Is it possible to add compression to</span>
+<span class="qt">&gt; &gt; &gt;the format? Tomaz?</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Currently unavailable due to being drafted!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Martijn van der Heide is looking after the TZX format though, so</span>
+<span class="qt">&gt; that&#x27;s OK.</span>
+
+This could be an interesting addition.
+What do other people think about this? Should compression be an option?
+And is there any preference for the algorithm?
+
+Cheers,
+
+Martijn.
+
+
+</pre></div><div class="post" id="p33776"><div class="ph"><a class="d" href="#p33776">1998-02-09</a> <span>martijn van der heide</span> <span>Re: TZX update needed?</span></div><pre>
+Paul A. Hodgson wrote:
+
+<span class="qt">&gt; &gt;&gt; &gt; &gt;How about compressed TZX files? Is it possible to add compression to</span>
+<span class="qt">&gt; &gt;&gt; &gt; &gt;the format? Tomaz?</span>
+<span class="qt">&gt; &gt;&gt; &gt;</span>
+<span class="qt">&gt; &gt;&gt; &gt; Currently unavailable due to being drafted!</span>
+<span class="qt">&gt; &gt;&gt;</span>
+<span class="qt">&gt; &gt;&gt; Martijn van der Heide is looking after the TZX format though, so</span>
+<span class="qt">&gt; &gt;&gt; that&#x27;s OK.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;This could be an interesting addition.</span>
+<span class="qt">&gt; &gt;What do other people think about this? Should compression be an option?</span>
+<span class="qt">&gt; &gt;And is there any preference for the algorithm?</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Cheers,</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Martijn.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Using the for/next and gosub sections you can allready impliment</span>
+<span class="qt">&gt; compression without any extra decompression code. This was one of the</span>
+<span class="qt">&gt; reasons that I asked Tomaz to add this just before he went of (well</span>
+<span class="qt">&gt; also the fact that it made ZX81 encoding easier).</span>
+
+This will only remove duplicate blocks, such as the tick-loader in a
+SpeedLock 1/2 - which isn&#x27;t much bytes anyway - or duplicate loading
+screens if multiple parts of a game are in one file.
+I haven&#x27;t seen many tapes that have duplicate blocks.
+
+Maybe I didn&#x27;t look right, but I have never seen ANY TZX file so far
+that used any of these blocks.
+
+Perhaps the (publicly available) compression scheme that Warajevo
+Spectrum Emulator uses in its proprietary TAP-format is a good idea.
+
+Apart from an algorithm, we should also decided whether compression must
+be an option selectable per block (so THE ENTIRE format needs to change)
+or a global option e.g. in the TZX header.
+
+Cheers,
+
+Martijn.
+
+
+</pre></div><div class="post" id="p33786"><div class="ph"><a class="d" href="#p33786">1998-02-09</a> <span>martijn van der heide</span> <span>Re: TZX update needed?</span></div><pre>
+Paul A. Hodgson wrote:
+
+<span class="qt">&gt; &gt;&gt; Using the for/next and gosub sections you can allready impliment</span>
+<span class="qt">&gt; &gt;&gt; compression without any extra decompression code. This was one of the</span>
+<span class="qt">&gt; &gt;&gt; reasons that I asked Tomaz to add this just before he went of (well</span>
+<span class="qt">&gt; &gt;&gt; also the fact that it made ZX81 encoding easier).</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;This will only remove duplicate blocks, such as the tick-loader in a</span>
+<span class="qt">&gt; &gt;SpeedLock 1/2 - which isn&#x27;t much bytes anyway - or duplicate loading</span>
+<span class="qt">&gt; &gt;screens if multiple parts of a game are in one file.</span>
+<span class="qt">&gt; &gt;I haven&#x27;t seen many tapes that have duplicate blocks.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; True in its usual form but consider breaking the blocks up into</span>
+<span class="qt">&gt; smaller headerless sections in the data and you get far more room for</span>
+<span class="qt">&gt; compression to occur, admitedly not as great as other compressors but</span>
+<span class="qt">&gt; it is for free in terms of decompression code.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; E.G.</span>
+<span class="qt">&gt;         TZXBLK_STANDARD_SPEED_DATA(0,10),255,0,255,0,255,0,255,0,255,0</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Could be replaced by</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;         TZXBLK_STANDARD_SPEED_DATA(0,2),255,0</span>
+<span class="qt">&gt;         TZXBLK_LOOP_START 4</span>
+<span class="qt">&gt;         BLK_STANDARD_SPEED_DATA(standard values),255,0</span>
+<span class="qt">&gt;         TZXBLK_LOOP_END</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Ok that example might not save any space because its compressing such</span>
+<span class="qt">&gt; a small amount of data. However on a larger data-set you could achieve</span>
+<span class="qt">&gt; some acceptable compression whilst still retaining the original</span>
+<span class="qt">&gt; format.</span>
+
+Well, to do this, you need to tear the blocks part, making it impossible
+to do anything with the tape except load it in an emulator or to audio
+(ok, this _is_ the basic idea...)
+I like to view screens, list BASIC listings and such.
+And in the future, I&#x27;d like to send blocks to the network option in
+TAPER. That can&#x27;t possibly be done in any decent fashion if the blocks
+are broken up.
+
+Also, the TZX block headers take up their space as well. In other words,
+to make the above idea useful, the repetition needs to be substantial.
+This probably holds true for loading screens, but hardly for the main
+code or extra levels.
+
+Please don&#x27;t think I&#x27;m trying to say it&#x27;s a terrible idea - it&#x27;s just
+not what I&#x27;d do....
+
+There are several compressions schemes out there that can do a much
+compression and will hardly need any hassle at all. Blocks are still the
+same blocks and the result is far better.
+
+<span class="qt">&gt; &gt;Maybe I didn&#x27;t look right, but I have never seen ANY TZX file so far</span>
+<span class="qt">&gt; &gt;that used any of these blocks.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Just wait!</span>
+
+None of the TZX creations tools currently available make use of them
+(and TAPER is just as bad :-)
+
+<span class="qt">&gt; &gt;Perhaps the (publicly available) compression scheme that Warajevo</span>
+<span class="qt">&gt; &gt;Spectrum Emulator uses in its proprietary TAP-format is a good idea.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Its not to bad but a little bit of a head basher to get started on.</span>
+
+Well, maybe it just needs to be converted to C and/or assembler.
+Once we decided  scheme, the scheme should be publicly
+available in source code - both the compress and uncompress part.
+One simple function that (un)compresses a block, which can easily
+included in anybody&#x27;s program. We don&#x27;t want to keep re-inventing the
+wheel :-)
+
+<span class="qt">&gt; &gt;Apart from an algorithm, we should also decided whether compression must</span>
+<span class="qt">&gt; &gt;be an option selectable per block (so THE ENTIRE format needs to change)</span>
+<span class="qt">&gt; &gt;or a global option e.g. in the TZX header.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; If another compression scheme is required it should be flaged in the</span>
+<span class="qt">&gt; TZX header. Also some publicly available source for any new</span>
+<span class="qt">&gt; compression scheme would help authors out immensely.</span>
+
+Yes, this is actually _required_ to make it work in the first place!
+And I agree that I&#x27;d stick the flag somewhere in the header too.
+
+<span class="qt">&gt; BTW. Sorry I&#x27;ve not got around to sending you those CPC things but we</span>
+<span class="qt">&gt; have had a killer of a dev schedule to meet. I&#x27;ll get them of to you</span>
+<span class="qt">&gt; ASAP.</span>
+
+Please don&#x27;t feel bad :-)
+I didn&#x27;t have much time lately either... that&#x27;s why it takes so long
+&#x27;till the next releases of SGD (this wednesday!) and TAPER are done.
+
+Cheers,
+
+Martijn.
+
+
+</pre></div><div class="post" id="p33787"><div class="ph"><a class="d" href="#p33787">1998-02-09</a> <span>…@…</span> <span>Re: TZX update needed?</span></div><pre>
+If I remember correctly on Mon, 09 Feb 1998 09:47:17 +0100, Martijn
+van der Heide  had something to say like:
+
+<span class="qt">&gt;Philip Kendall wrote:</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; …@… writes:</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; &gt; On Thu, 05 Feb 1998 14:36:03 GMT,</span>
+<span class="qt">&gt;&gt; &gt; …@… (Gilberto Gaudencio) wrote:</span>
+<span class="qt">&gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; &gt; &gt;How about compressed TZX files? Is it possible to add compression to</span>
+<span class="qt">&gt;&gt; &gt; &gt;the format? Tomaz?</span>
+<span class="qt">&gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; &gt; Currently unavailable due to being drafted!</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Martijn van der Heide is looking after the TZX format though, so</span>
+<span class="qt">&gt;&gt; that&#x27;s OK.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;This could be an interesting addition.</span>
+<span class="qt">&gt;What do other people think about this? Should compression be an option?</span>
+<span class="qt">&gt;And is there any preference for the algorithm?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Cheers,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Martijn.</span>
+
+
+Using the for/next and gosub sections you can allready impliment
+compression without any extra decompression code. This was one of the
+reasons that I asked Tomaz to add this just before he went of (well
+also the fact that it made ZX81 encoding easier).
+
+
+
+Paul A. Hodgson.
+…@…
++-------------------------------------------------+
+<span class="qt">| Old machines never die, they just get emulated. |</span>
++-------------------------------------------------+
+
+
+</pre></div><div class="post" id="p33790"><div class="ph"><a class="d" href="#p33790">1998-02-09</a> <span>…@…</span> <span>Re: TZX update needed?</span></div><pre>
+If I remember correctly on Mon, 09 Feb 1998 12:44:58 +0100, Martijn
+van der Heide  had something to say like:
+
+<span class="qt">&gt;Paul A. Hodgson wrote:</span>
+<span class="qt">&gt;</span>
+.SNIP
+<span class="qt">&gt;&gt; Using the for/next and gosub sections you can allready impliment</span>
+<span class="qt">&gt;&gt; compression without any extra decompression code. This was one of the</span>
+<span class="qt">&gt;&gt; reasons that I asked Tomaz to add this just before he went of (well</span>
+<span class="qt">&gt;&gt; also the fact that it made ZX81 encoding easier).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;This will only remove duplicate blocks, such as the tick-loader in a</span>
+<span class="qt">&gt;SpeedLock 1/2 - which isn&#x27;t much bytes anyway - or duplicate loading</span>
+<span class="qt">&gt;screens if multiple parts of a game are in one file.</span>
+<span class="qt">&gt;I haven&#x27;t seen many tapes that have duplicate blocks.</span>
+<span class="qt">&gt;</span>
+
+True in its usual form but consider breaking the blocks up into
+smaller headerless sections in the data and you get far more room for
+compression to occur, admitedly not as great as other compressors but
+it is for free in terms of decompression code.
+
+E.G.
+	TZXBLK_STANDARD_SPEED_DATA(0,10),255,0,255,0,255,0,255,0,255,0
+
+Could be replaced by
+
+	TZXBLK_STANDARD_SPEED_DATA(0,2),255,0
+	TZXBLK_LOOP_START 4
+	BLK_STANDARD_SPEED_DATA(standard values),255,0
+	TZXBLK_LOOP_END
+
+Ok that example might not save any space because its compressing such
+a small amount of data. However on a larger data-set you could achieve
+some acceptable compression whilst still retaining the original
+format.
+
+
+<span class="qt">&gt;Maybe I didn&#x27;t look right, but I have never seen ANY TZX file so far</span>
+<span class="qt">&gt;that used any of these blocks.</span>
+<span class="qt">&gt;</span>
+
+Just wait!
+
+<span class="qt">&gt;Perhaps the (publicly available) compression scheme that Warajevo</span>
+<span class="qt">&gt;Spectrum Emulator uses in its proprietary TAP-format is a good idea.</span>
+<span class="qt">&gt;</span>
+
+Its not to bad but a little bit of a head basher to get started on.
+
+<span class="qt">&gt;Apart from an algorithm, we should also decided whether compression must</span>
+<span class="qt">&gt;be an option selectable per block (so THE ENTIRE format needs to change)</span>
+<span class="qt">&gt;or a global option e.g. in the TZX header.</span>
+<span class="qt">&gt;</span>
+
+If another compression scheme is required it should be flaged in the
+TZX header. Also some publicly available source for any new
+compression scheme would help authors out immensely.
+
+BTW. Sorry I&#x27;ve not got around to sending you those CPC things but we
+have had a killer of a dev schedule to meet. I&#x27;ll get them of to you
+ASAP.
+
+
+
+Paul A. Hodgson.
+…@…
++-------------------------------------------------+
+<span class="qt">| Old machines never die, they just get emulated. |</span>
++-------------------------------------------------+
+
+
+</pre></div><div class="post" id="p33801"><div class="ph"><a class="d" href="#p33801">1998-02-09</a> <span>…@…</span> <span>Re: Who are you calling a Wally?</span></div><pre>
+&quot;Steve Young&quot;  wrote:
+
+<span class="qt">&gt;As a non programmer and PC owner, I conclude that I am one of the wallies</span>
+<span class="qt">&gt;described by Brian Gaff. Since I have been on this group I have noticed a</span>
+<span class="qt">&gt;sneering attitude from some people towards others who might not fit their</span>
+<span class="qt">&gt;speccy interlects. For instance, people who own PC&#x27;s, particurlarly ones</span>
+<span class="qt">&gt;who use WIN95, are seen as second class compared say to Amiga owners.</span>
+
+I own a PC, complete with Win95. Therefore I am a wally. It&#x27;s a fact
+of life, matey, you just have to learn to live with it. I know I have.
+:)
+
+
+-- 
+<span class="qt">||// \\//      	        Gilberto Gaudencio</span>
+ //   \\           quazatron @ geocities com
+//|| //\\                  ICQ 1614980
+
+
+</pre></div><div class="post" id="p33804"><div class="ph"><a class="d" href="#p33804">1998-02-09</a> <span>…@…</span> </div><pre>
+…@… wrote:
+
+<span class="qt">&gt;On Thu, 05 Feb 1998 14:36:03 GMT,</span>
+<span class="qt">&gt;…@… (Gilberto Gaudencio) wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;How about compressed TZX files? Is it possible to add compression to</span>
+<span class="qt">&gt;&gt;the format? Tomaz?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Currently unavailable due to being drafted!</span>
+
+Yes, I know, but he posted here a few days ago, so I figured he has
+usenet access, even if only occasionally.
+
+
+-- 
+<span class="qt">||// \\//      	        Gilberto Gaudencio</span>
+ //   \\           quazatron @ geocities com
+//|| //\\                  ICQ 1614980
+
+
+</pre></div><div class="post" id="p33805"><div class="ph"><a class="d" href="#p33805">1998-02-09</a> <span>…@…</span> <span>Re: TZX update needed?</span></div><pre>
+Martijn van der Heide  wrote:
+
+[compressed TZX]
+
+<span class="qt">&gt;This could be an interesting addition.</span>
+<span class="qt">&gt;What do other people think about this? Should compression be an option?</span>
+<span class="qt">&gt;And is there any preference for the algorithm?</span>
+
+Is it possible to implement compression into the TZX format while
+maintaining backward compatibility? If not, is there an easy to
+implement algorithm with good compression?
+I guess there&#x27;s not much use for an update if it&#x27;s going to make life
+harder for everybody. I can see it now:
+
+repeat
+Q: &quot;Help! My emulator refuses to read WHATEVER.TZX. What&#x27;s wrong?&quot;
+A: &quot;The emulator you&#x27;re using does not support TZX 1.2. Read the FAQ.&quot;
+until 0=1
+
+For best effect, compression should be applied to the entire file, but
+for compatibility, maybe a &quot;compressed block&quot; ID could be used. Or
+maybe we should stick with ZIP files and forget about all of this. :)
+
+-- 
+<span class="qt">||// \\//      	        Gilberto Gaudencio</span>
+ //   \\           quazatron @ geocities com
+//|| //\\                  ICQ 1614980
+
+
+</pre></div><div class="post" id="p33808"><div class="ph"><a class="d" href="#p33808">1998-02-09</a> <span>…@…</span> <span>Re: TZX update needed?</span></div><pre>
+On Mon, 09 Feb 1998 12:35:24 GMT, …@… (Paul
+A. Hodgson) wrote:
+
+<span class="qt">&gt;True in its usual form but consider breaking the blocks up into</span>
+<span class="qt">&gt;smaller headerless sections in the data and you get far more room for</span>
+<span class="qt">&gt;compression to occur, admitedly not as great as other compressors but</span>
+<span class="qt">&gt;it is for free in terms of decompression code.</span>
+
+Nah. You need to take a load of existing TZX files, analyse them
+for common patterns (breaking the sequences down into waveform
+equations of course rather than just sequences of numbers - FFT
+maybe?), then you could apply the new-found knowledge to
+representing many of the patterns by a single byte signifying
+the waveform combo used.
+
+Or how about fractal compression, taking it a step further?
+
+Or... I&#x27;ll stop right now.
+-- 
+  //// Damien Burke (add k to end of address if replying)
+ //// Spectrum pages: <a href="http://www.jetman.demon.co.uk/speccy/" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/</a>
+//// New to this group? Read this: <a href="http://www.kendalls.demon.co.uk/cssfaq/" rel="noreferrer">http://www.kendalls.demon.co.uk/cssfaq/</a>
+
+
+</pre></div><div class="post" id="p33815"><div class="ph"><a class="d" href="#p33815">1998-02-09</a> <span>…@…</span> <span>Re: TZX update needed?</span></div><pre>
+Martijn van der Heide (…@…) wrote:
+<span class="qt">&gt; Philip Kendall wrote:</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; …@… writes:</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; &gt; On Thu, 05 Feb 1998 14:36:03 GMT,</span>
+<span class="qt">&gt; &gt; &gt; …@… (Gilberto Gaudencio) wrote:</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; &gt;How about compressed TZX files? Is it possible to add compression to</span>
+<span class="qt">&gt; &gt; &gt; &gt;the format? Tomaz?</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; Currently unavailable due to being drafted!</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Martijn van der Heide is looking after the TZX format though, so</span>
+<span class="qt">&gt; &gt; that&#x27;s OK.</span>
+
+<span class="qt">&gt; This could be an interesting addition.</span>
+<span class="qt">&gt; What do other people think about this? Should compression be an option?</span>
+<span class="qt">&gt; And is there any preference for the algorithm?</span>
+
+It may be interesting for emulator users but a pain for emulator authors.
+My vote: NO
+
+Can anyone explain why should one compress TZX files? I have gigabytes of
+disk space so what? And never forget that decompressing will slow down
+emulators.... at least a little bit more.
+
+
+Erik
+--
+…@…
+
+Maintainer of XZX, *THE* Spectrum 48/128/+3 emulator for UNIX/X11.
+XZX home page: <a href="http://www.philosys.de/~kunze/xzx/" rel="noreferrer">http://www.philosys.de/~kunze/xzx/</a>
+
+
+</pre></div><div class="post" id="p33829"><div class="ph"><a class="d" href="#p33829">1998-02-10</a> <span>martijn van der heide</span> <span>Re: TZX update needed?</span></div><pre>
+Erik Kunze wrote:
+
+[ Compression of TZX files ]
+<span class="qt">&gt; &gt; This could be an interesting addition.</span>
+<span class="qt">&gt; &gt; What do other people think about this? Should compression be an option?</span>
+<span class="qt">&gt; &gt; And is there any preference for the algorithm?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; It may be interesting for emulator users but a pain for emulator authors.</span>
+<span class="qt">&gt; My vote: NO</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Can anyone explain why should one compress TZX files? I have gigabytes of</span>
+<span class="qt">&gt; disk space so what? And never forget that decompressing will slow down</span>
+<span class="qt">&gt; emulators.... at least a little bit more.</span>
+
+If the compression scheme is well defined, it should (in my opinion)
+simply be a level between the harddisk and the utility.
+In other words, the affacted file should be spooled through some buffer
+(just like &#x27;stdio.h&#x27; routines do). The spooling routine, which takes
+care of decompressing, should then be made public.
+An emulator/utility author could simply insert that code and it will
+work.
+
+Decompressing doesn&#x27;t take a whole lot of time if the used algorithm
+makes any sense (e.g. do you see any significant time lag when
+decompressing a Z80 file? If so, consider rewriting your decompression
+routine.)
+
+I have 12Gb diskspace at home, but for example CDs cannot be expanded in
+size. You can simply stick more software on 1 CD while emulators could
+still use the software directly.
+
+Why would anyone compress _anything_? To save storage space.
+
+Cheers,
+
+Martijn.
+
+
+</pre></div><div class="post" id="p33839"><div class="ph"><a class="d" href="#p33839">1998-02-10</a> <span>…@…</span> </div><pre>
+<span class="qt">&gt;&gt;And remember - most things still have to be hacked to get them into TAP format</span>
+<span class="qt">&gt;&gt;anyway. If you demand perfection then you should be putting everything into</span>
+<span class="qt">&gt;&gt;TZXs.....</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;How about compressed TZX files? Is it possible to add compression to</span>
+<span class="qt">&gt;the format? Tomaz?</span>
+
+Well, it has been discussed a lot when the format was developed, I was
+willing to do it (some generic LZW compression would be great and not
+too hard for anyone to implement) but most of the people disagreed :(
+I guess the best thing is to add the LZW compression to the emulators
+(it is free to use in pd stuff) and compress the TZX (or whatever)
+files with LHA ... (the same process is used with the ST music
+player...)
+
+Tomaz Kac                                             |\      _,,,---,,_
+---------  University of Maribor , Computer Science   /,`.-&#x27;`&#x27;    -.  ;-;;,
+ E-Mail: …@… , Phone: ++602/20-546   |,4-  ) )-,_. ,\ (  `&#x27;::.
+ZXTape Homepage:  www.uni-mb.si/~uel047r1a/ZXTape  &#x27;----&#x27;&#x27;(_/--&#x27;  `-&#x27;\_)   TC
+
+
+</pre></div><div class="post" id="p33840"><div class="ph"><a class="d" href="#p33840">1998-02-10</a> <span>…@…</span> </div><pre>
+
+HI!
+
+<span class="qt">&gt;&gt;How about compressed TZX files? Is it possible to add compression to</span>
+<span class="qt">&gt;&gt;the format? Tomaz?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Currently unavailable due to being drafted!</span>
+
+Since some 2 weeks or so I can read news/mail even in the army :)
+Isn&#x27;t life good ? :) (could be better though)
+
+<span class="qt"> &gt;&gt;73&lt;&lt; days left and counting :)</span>
+
+Tomaz Kac                                             |\      _,,,---,,_
+---------  University of Maribor , Computer Science   /,`.-&#x27;`&#x27;    -.  ;-;;,
+ E-Mail: …@… , Phone: ++602/20-546   |,4-  ) )-,_. ,\ (  `&#x27;::.
+ZXTape Homepage:  www.uni-mb.si/~uel047r1a/ZXTape  &#x27;----&#x27;&#x27;(_/--&#x27;  `-&#x27;\_)   TC
+
+
+</pre></div><div class="post" id="p33841"><div class="ph"><a class="d" href="#p33841">1998-02-10</a> <span>…@…</span> </div><pre>
+Adam Lounds  wrote:
+
+<span class="qt">&gt;But I thought .tzx files were supposed to rekindle nostalgic feelings...</span>
+<span class="qt">&gt;Like waiting for Gryzor to load on a 128...</span>
+
+I agree, but sometimes you actually want to play the game (as oposed
+to watching the fancy loader), and you don&#x27;t want to clutter your HD
+with snapshots when you have a perfectly good TZX file instead. Fast
+loading would be useful, even if it was only implemented for standard
+blocks, just like TAP files.
+
+
+-- 
+<span class="qt">||// \\//      	        Gilberto Gaudencio</span>
+ //   \\           quazatron @ geocities com
+//|| //\\                  ICQ 1614980
+
+
+</pre></div><div class="post" id="p33848"><div class="ph"><a class="d" href="#p33848">1998-02-10</a> <span>…@…</span> <span>Re: TZX update needed?</span></div><pre>
+[compressed TZX]
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;This could be an interesting addition.</span>
+<span class="qt">&gt;&gt;What do other people think about this? Should compression be an option?</span>
+<span class="qt">&gt;&gt;And is there any preference for the algorithm?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Is it possible to implement compression into the TZX format while</span>
+<span class="qt">&gt;maintaining backward compatibility? If not, is there an easy to</span>
+<span class="qt">&gt;implement algorithm with good compression?</span>
+
+There could be a very EASY way to do it ... i.e. a special block which
+would mean &#x27;all DATA blocks from now on are compressed&#x27; or something
+like that... 
+
+<span class="qt">&gt;I guess there&#x27;s not much use for an update if it&#x27;s going to make life</span>
+<span class="qt">&gt;harder for everybody. I can see it now:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;repeat</span>
+<span class="qt">&gt;Q: &quot;Help! My emulator refuses to read WHATEVER.TZX. What&#x27;s wrong?&quot;</span>
+<span class="qt">&gt;A: &quot;The emulator you&#x27;re using does not support TZX 1.2. Read the FAQ.&quot;</span>
+<span class="qt">&gt;until 0=1</span>
+
+Unfortunetly this will probbaly happen no matter what way it is
+implemented (unless you compress the WHOLE TZX file with some generic
+algorythm (like LZH which is used in LHA) and let the emulator use
+that files...
+
+<span class="qt">&gt;For best effect, compression should be applied to the entire file, but</span>
+<span class="qt">&gt;for compatibility, maybe a &quot;compressed block&quot; ID could be used. Or</span>
+<span class="qt">&gt;maybe we should stick with ZIP files and forget about all of this. :)</span>
+
+I think we should stick with something easier to support directly in
+emulators/utilities... like LZH :)
+
+Tomaz Kac                                             |\      _,,,---,,_
+---------  University of Maribor , Computer Science   /,`.-&#x27;`&#x27;    -.  ;-;;,
+ E-Mail: …@… , Phone: ++602/20-546   |,4-  ) )-,_. ,\ (  `&#x27;::.
+ZXTape Homepage:  www.uni-mb.si/~uel047r1a/ZXTape  &#x27;----&#x27;&#x27;(_/--&#x27;  `-&#x27;\_)   TC
+
+
+</pre></div><div class="post" id="p33849"><div class="ph"><a class="d" href="#p33849">1998-02-10</a> <span>…@…</span> <span>Re: TZX update needed?</span></div><pre>
+…@… (Tomaz Kac) wrote:
+
+[compressed TZX]
+<span class="qt">&gt;There could be a very EASY way to do it ... i.e. a special block which</span>
+<span class="qt">&gt;would mean &#x27;all DATA blocks from now on are compressed&#x27; or something</span>
+<span class="qt">&gt;like that... </span>
+
+Yes, that&#x27;s one way of doing it. It&#x27;s probably more complicated to
+code into emulators and TZX utilities than the &#x27;compress the whole
+file&#x27; approach.
+
+[compatibility issues]
+<span class="qt">&gt;Unfortunetly this will probbaly happen no matter what way it is</span>
+<span class="qt">&gt;implemented (unless you compress the WHOLE TZX file with some generic</span>
+<span class="qt">&gt;algorythm (like LZH which is used in LHA) and let the emulator use</span>
+<span class="qt">&gt;that files...</span>
+
+In this case, all it takes is some standard compress/decompress
+algorithm,and probably a diferent extension to keep people from
+loading compressed TZXs into emulators that don&#x27;t support the format. 
+
+<span class="qt">&gt;I think we should stick with something easier to support directly in</span>
+<span class="qt">&gt;emulators/utilities... like LZH :)</span>
+
+I don&#x27;t really know much about LZH, but I guess something standard,
+with good compression would do.
+
+
+-- 
+<span class="qt">||// \\//      	        Gilberto Gaudencio</span>
+ //   \\           quazatron @ geocities com
+//|| //\\                  ICQ 1614980
+
+
+</pre></div><div class="post" id="p33855"><div class="ph"><a class="d" href="#p33855">1998-02-10</a> <span>adam lounds</span> <span>Re: Should snapshots be banned?</span></div><pre>
+In  Graham Goring  writes:
+
+<span class="qt">&gt;Quoth the Raven in article &lt;…@…&gt;,</span>
+<span class="qt">&gt;&quot;Richard G. Hallas&quot;  writes</span>
+<span class="qt">&gt;&gt;My position is as follows.</span>
+
+<span class="qt">&gt;[BIG FAT SNIP]</span>
+
+<span class="qt">&gt;I&#x27;d like to say that I agree with Richard&#x27;s standpoint in it&#x27;s entirety.</span>
+
+<span class="qt">&gt;If there was some way of altering TAP&#x27;s so that between load-blocks it</span>
+<span class="qt">&gt;could pause for a keypress (if you enabled that option in the emulator)</span>
+<span class="qt">&gt;then that&#x27;d be superb, and address most of my anti-TAP issues. I imagine</span>
+<span class="qt">&gt;that it&#x27;d just be a case of altering the emulator as opposed to the TAP</span>
+<span class="qt">&gt;standard, as well.</span>
+
+Use an Amiga speccy emulator. You can load the headers, bytes etc as you 
+want to. It&#x27;s all controlled with ARexx.
+-- 
+Adam Lounds                     | Email: …@…
+Network Assistant               | Tel: +44 1703 571300
+Total Connectivity Providers    | WWW: <a href="http://www.tcp.co.uk/" rel="noreferrer">http://www.tcp.co.uk/</a>
+
+
+</pre></div><div class="post" id="p33857"><div class="ph"><a class="d" href="#p33857">1998-02-10</a> <span>adam lounds</span> </div><pre>
+In  Philip Kendall  writes:
+
+<span class="qt">&gt;Graham Goring  writes:</span>
+
+<span class="qt">&gt;&gt; Quoth the Raven in article ,</span>
+<span class="qt">&gt;&gt; Philip Kendall  writes</span>
+<span class="qt">&gt;&gt; &gt;&quot;Gerard Sweeney&quot;  writes:</span>
+
+<span class="qt">&gt;[speeding up loading of .tzx files]</span>
+
+<span class="qt">&gt;&gt; &gt;Well, assuming you&#x27;re using x128, try the &#x27;TZX loading speed&#x27; option</span>
+<span class="qt">&gt;&gt; &gt;from the F1 menu (IIRC, this exists only on v0.8 -- on lower versions</span>
+<span class="qt">&gt;&gt; &gt;just up the emulation speed).</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Oh yeah. Do this. Then you&#x27;ll only have to wait 2 minutes to load 48K</span>
+<span class="qt">&gt;&gt; instead of 4.</span>
+
+<span class="qt">&gt;Or get Warajevo 2.0 or wait for z80 v4 (currently in Beta test) both</span>
+<span class="qt">&gt;of which support nice quick loading of .tzx files.</span>
+
+But I thought .tzx files were supposed to rekindle nostalgic feelings...
+Like waiting for Gryzor to load on a 128...
+-- 
+Adam Lounds                     | Email: …@…
+Network Assistant               | Tel: +44 1703 571300
+Total Connectivity Providers    | WWW: <a href="http://www.tcp.co.uk/" rel="noreferrer">http://www.tcp.co.uk/</a>
+
+
+</pre></div><div class="post" id="p33858"><div class="ph"><a class="d" href="#p33858">1998-02-10</a> <span>adam lounds</span> <span>Re: Who are you calling a Wally?</span></div><pre>
+In &lt;…@…&gt; …@… (Gilberto Gaudencio) writes:
+
+<span class="qt">&gt;&quot;Steve Young&quot;  wrote:</span>
+
+<span class="qt">&gt;&gt;As a non programmer and PC owner, I conclude that I am one of the wallies</span>
+<span class="qt">&gt;&gt;described by Brian Gaff. Since I have been on this group I have noticed a</span>
+<span class="qt">&gt;&gt;sneering attitude from some people towards others who might not fit their</span>
+<span class="qt">&gt;&gt;speccy interlects. For instance, people who own PC&#x27;s, particurlarly ones</span>
+<span class="qt">&gt;&gt;who use WIN95, are seen as second class compared say to Amiga owners.</span>
+
+<span class="qt">&gt;I own a PC, complete with Win95. Therefore I am a wally. It&#x27;s a fact</span>
+<span class="qt">&gt;of life, matey, you just have to learn to live with it. I know I have.</span>
+<span class="qt">&gt;:)</span>
+
+I&#x27;ve got both. I&#x27;m a wally for believing that the grass was greener, and
+now I&#x27;ve got a very expensive PAL &gt; SVGA convertor...
+
+Anyway, IIRC, &quot;Everyone&#x27;s A Wally&quot;.....
+-- 
+Adam Lounds                     | Email: …@…
+Network Assistant               | Tel: +44 1703 571300
+Total Connectivity Providers    | WWW: <a href="http://www.tcp.co.uk/" rel="noreferrer">http://www.tcp.co.uk/</a>
+
+
+</pre></div><div class="post" id="p33872"><div class="ph"><a class="d" href="#p33872">1998-02-10 10:27:24</a> <span>…@…</span> <span>Re: TZX update needed?</span></div><pre>
+In article &lt;6bnq3s$b5m$…@…&gt;,
+  …@… (Erik Kunze) wrote:
+<span class="qt">&gt; It may be interesting for emulator users but a pain for emulator authors.</span>
+<span class="qt">&gt; My vote: NO</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Can anyone explain why should one compress TZX files? I have gigabytes of</span>
+<span class="qt">&gt; disk space so what? And never forget that decompressing will slow down</span>
+<span class="qt">&gt; emulators.... at least a little bit more.</span>
+
+You might have Gigabytes of disk space, Erik, but I don&#x27;t. I don&#x27;t even have
+one Gig! Not everyone has up-to-date PCs....
+
+Slowdown shouldn&#x27;t be a major problem - decompress the TZX into a temporary
+memory area or disk file before you start loading, throw it away when you&#x27;ve
+finished.... A very small delay when you first select the file at most.
+
+
+Blood.
+
+-----== Posted via Deja News, The Leader in Internet Discussion ==-----
+<a href="http://www.dejanews.com/" rel="noreferrer">http://www.dejanews.com/</a>   Now offering spam-free web-based newsreading
+
+
+</pre></div><div class="post" id="p33892"><div class="ph"><a class="d" href="#p33892">1998-02-11</a> <span>andy kavanagh</span> <span>Re: Should snapshots be banned?</span></div><pre>
+Adam Lounds wrote:
+<span class="qt">&gt; Use an Amiga speccy emulator. You can load the headers, bytes etc as you</span>
+<span class="qt">&gt; want to. It&#x27;s all controlled with ARexx.</span>
+
+Is there a decent ARexx script that will load TAP files so that you can
+actually see them load?  ZXAM at the mo just keeps flashing between the
+speccy and workbench screens. (or should that be SCREEN$... hohoho)
+-- 
+Andy
+-- 
+My computer runs at 3.5MHz and I&#x27;m proud of that.
+…@… * <a href="http://www.uea.ac.uk/~w9643451/index.htm" rel="noreferrer">http://www.uea.ac.uk/~w9643451/index.htm</a>
+                       Most Recent Update - 6th Feb &#x27;98
+10 PRINT INK 7; PAPER 7;&quot;I CAN&#x27;T SEE!&quot;
+
+
+</pre></div><div class="post" id="p33936"><div class="ph"><a class="d" href="#p33936">1998-02-12</a> <span>…@…</span> <span>Re: Should snapshots be banned?</span></div><pre>
+On 10 Feb 1998 12:34:22 -0000, Adam Lounds  wrote:
+
+
+<span class="qt">&gt;Use an Amiga speccy emulator. You can load the headers, bytes etc as you </span>
+<span class="qt">&gt;want to. It&#x27;s all controlled with ARexx.</span>
+
+Out of interest, is there anyway to get an old Amiga (600) to read PC
+disks?, I want to give a friend an spectrum emulator.
+
+Rob.
+ 
+
+
+
+</pre></div><div class="post" id="p33940"><div class="ph"><a class="d" href="#p33940">1998-02-12</a> <span>…@…</span> </div><pre>
+On Tue, 10 Feb 1998 08:45:09 GMT, …@… (Tomaz Kac)
+wrote:
+
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Since some 2 weeks or so I can read news/mail even in the army :)</span>
+<span class="qt">&gt;Isn&#x27;t life good ? :) (could be better though)</span>
+
+So how is the army life?
+
+
+<span class="qt">&gt; &gt;&gt;73&lt;&lt; days left and counting :)</span>
+
+Hmmm..maybe you should ignore the previous question!
+
+Rob.
+
+
+
+</pre></div><div class="post" id="p34040"><div class="ph"><a class="d" href="#p34040">1998-02-15</a> <span>…@…</span> <span>Re: Should snapshots be banned?</span></div><pre>
+On Fri, 13 Feb 1998 02:02:55 +0000, Graham Goring
+ wrote:
+
+<span class="qt">&gt;&gt;Out of interest, is there anyway to get an old Amiga (600) to read PC</span>
+<span class="qt">&gt;&gt;disks?, I want to give a friend an spectrum emulator.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;It&#x27;s the gift that keeps on giving. :)</span>
+
+He has two spectrum, but the membranes are buggered...I thought an
+emulator would be an easier alternative than trying to find keyboard
+membranes....
+
+Rob.
+
+
+
+</pre></div><div class="post" id="p34125"><div class="ph"><a class="d" href="#p34125">1998-02-16</a> <span>…@…</span> <span>Re: Should snapshots be banned?</span></div><pre>
+&quot;Eifion Bedford&quot;  wrote:
+
+<span class="qt">&gt;&gt;&gt;&gt;Out of interest, is there anyway to get an old Amiga (600) to read PC</span>
+<span class="qt">&gt;&gt;&gt;&gt;disks?, I want to give a friend an spectrum emulator.</span>
+<span class="qt">&gt;If there&#x27;s a PC0 icon in the Storage/DOS Drivers drawer of Workbench, then</span>
+<span class="qt">&gt;typing mount pc0: should let the Miggy read PC disks. Remember that the 600</span>
+<span class="qt">&gt;can only read double-density disks and that a 600 is too slow for decent</span>
+<span class="qt">&gt;Speccy emulation anyway (which is why I bought an Amiga4000)</span>
+
+Yeah, using this set up only lets you read and write to 720K PC disks,
+not the common or garden 1.44mb PC disk. *
+
+If you&#x27;re setting up these disks on a PC, remember to format them as
+720k and not the default 1.44mb.
+
+(* = Unless you get a special 1.44mb disk drive for the Amiga that
+does that kind of thing....)
+
+-- 
+Fnar. Oo-er. Hatstand. Wibble. Wagga-wagga. &lt;- Just for Gerard!
+Peter Thomas, retro games anorak
+pete [at] prodge.demon.co.uk  ICQ# 6692412
+New to Speccy emulation? see www.kendalls.demon.co.uk/cssfaq
+
+
+
+</pre></div><div class="post" id="p34128"><div class="ph"><a class="d" href="#p34128">1998-02-16 09:14:41</a> <span>eifion bedford</span> <span>Re: Should snapshots be banned?</span></div><pre>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;&gt;Out of interest, is there anyway to get an old Amiga (600) to read PC</span>
+<span class="qt">&gt;&gt;&gt;disks?, I want to give a friend an spectrum emulator.</span>
+
+
+If there&#x27;s a PC0 icon in the Storage/DOS Drivers drawer of Workbench, then
+typing mount pc0: should let the Miggy read PC disks. Remember that the 600
+can only read double-density disks and that a 600 is too slow for decent
+Speccy emulation anyway (which is why I bought an Amiga4000)
+
+Eifion - Teletubbies web-site at <a href="http://www.thenet.co.uk/~eifs" rel="noreferrer">http://www.thenet.co.uk/~eifs</a>
+
+
+
+
+</pre></div><div class="post" id="p34159"><div class="ph"><a class="d" href="#p34159">1998-02-17</a> <span>…@…</span> </div><pre>
+On Thu, 12 Feb 1998 18:04:01 GMT, …@… wrote:
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Since some 2 weeks or so I can read news/mail even in the army :)</span>
+<span class="qt">&gt;&gt;Isn&#x27;t life good ? :) (could be better though)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;So how is the army life?</span>
+
+Well, now it is pretty normal, I guess... like having a job that pays
+$20 per month :) the only thing I HAVE to do is the exercise in the
+morning, show up to breakfast, lunch and dinner (and when they put
+up/down the flag) ... otherwise I work as the computer engineer... or
+whatever it is called here :) Sometimes we go to some gun practice or
+something similar ... and sometimes we have some physical tests, etc. 
+First three months, though, were classical training.. which I would
+rather forget :)
+
+<span class="qt">&gt;&gt; &gt;&gt;73&lt;&lt; days left and counting :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Hmmm..maybe you should ignore the previous question!</span>
+
+Hehe... well, it is 66 now... how time flies when you are on the
+weekend away from the army :)
+
+
+</pre></div></main></body></html>

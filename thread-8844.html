@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Update 10 of the New ZX Tape Format · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Update 10 of the New ZX Tape Format</h1><p class="facts">7 posts, 1997-03-16 – 1997-03-23</p><div class="post" id="p24961"><div class="ph"><a class="d" href="#p24961">1997-03-16</a> <span>…@…</span> </div><pre>
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ - If anyone has ANY more info on ANY Protection Schemes (Speedlock and any
+   others) then please contact me... (…@…)
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+- As of release 10 the format description and some other goodies are availiable
+  on its Homepage :   <a href="http://www.uni-mb.si/~uel047r1a/ZXTape" rel="noreferrer">http://www.uni-mb.si/~uel047r1a/ZXTape</a>
+  You will also find some sample .VOC files which use very nice or unknown
+  Protection Schemes ... worth checking out ! :)
+- Added three new blocks, which will succesfully describe ALL possible
+  Protection schemes. The Pure Tone block will be used for Pilot signals, the
+  Row of Pulses can be used for SYNC tone and the Pure Data can be used for
+  Data. Ofcourse the blocks which have DATA written in totally non-standard way
+  must be saved with the &#x27;Direct Recording&#x27; block.
+- Renamed &#x27;Custom Loading Block&#x27; to &#x27;Turbo Loading Block&#x27; ... since it is not
+  so much custom loading , since normally the timings are a little lower and
+  it is really Turbo Loading... all other Custom Loading blocks can be described
+  with the new 3 blocks.
+- Deleted BEEP block, since the same effect can be achieved with the Pure Tone
+  block.
+- Split Pause with Mesage block into two Blocks. First one is PAUSE block which
+  will stop the tape (make a silence) for the given value in milliseconds or
+  Stop the Tape until the user or emulator wants it to start again. The Second
+  block is Message block, which will Stop the Emulation (not the tape) for given
+  time and display a textual message in this time. If the time value is 0 then
+  the emulator should wait for user to press any key to stop displaying it.
+- Added &#x27;Group Start&#x27; and &#x27;Group End&#x27; blocks which will enable to group some
+  blocks together, so the user will only see the Group Name and not all the
+  blocks inside. This is handy for Speedlocked blocks (Pilot tone is made of
+  64 Pure Tone blocks) or for BleepLoad blocks (MANY Custom loading blocks).
+  Ofcourse you can even use it to Group whole levels (if they consist of more
+  blocks) or whole programs.... everything is possible :) A group of blocks is
+  considered as ONE block for the &#x27;Jump to Block&#x27; ...
+- Added some more info to the start of the format about how the Pause blocks
+  should be handled...
+
+
+PLEASE Do not use this format YET, since it is constantly changing !!! All
+additions/corrections are welcome and should be posted to comp.sys.sinclair AND
+directly to me on email: …@… .
+
+
+                         ZX Spectrum Tape file format
+                        ------------------------------
+                                revision 0.10
+                       Still in Development - version 10
+
+  This format lets you preserve all (hopefully) of the tapes with turbo or
+custom loading routines. Even though some of the newest and &#x27;smarter&#x27; emulators
+can find most of the info about the loader from the code itself, this cannot be
+possible if you want to replay the file to the good old real spectrum. And with
+all this information in the file the emulators don&#x27;t have to bother with finding
+out the baud rate and other things.
+
+  If you would like to be in the mailing list for this format, i.e. if you would
+like to recieve all future updates of the format in the e-mail then please
+e-mail me and I will add you to the list.
+
+  Also the format and some other things associated with it are availiable at its
+HopePage:   <a href="http://www.uni-mb.si/~uel047r1a/ZXTape" rel="noreferrer">http://www.uni-mb.si/~uel047r1a/ZXTape</a>
+
+  My E-Mail is …@…. Of course ALL comments/suggestions are still
+welcome and every mail will get answered! Please E-mail me if your Emulator or
+Utility will support this format, and if you would like to see that utility on
+the formats HomePage.
+
+  I think no more voting is needed on the default format Extension... the
+winner (by far) is :  .TZX . Hopefully this won&#x27;t have to change in the future.
+
+                                  -----------
+
+  The file is identified with the first 8 bytes being &#x27;ZXTape!&#x27; plus EndOfFile
+byte 26 (1A hex).
+  After these 8 bytes the two bytes with the Major and Minor Revision number
+follow.
+- First byte is Major revision number - the program must be able to handle
+at least this revision number to use the file.
+- Second byte is Minor revison number - if the program can handle only formats
+with lower Minor revision number than the one in the file then some information
+could not be interpreted (but that info should not be so important...).
+
+  Then the body follows which is devised from blocks. Each block is identified
+with its ID byte followed by its body. There are currently 18 types of blocks.
+
+So the file structure is :  &#x27;ZXTape!&#x27; 0x1A MajR MinR ID1 Body1 ID2 Body2 ...
+                             0        7    8    9    A   ...
+
+  Relevant rules and definitions important for the Emulator/Utility authors that
+will support the format :
+
+- The Two-Byte values are always stored LSB (Least Significant Byte) First.
+- The bit order in a byte is  : 7 6 5 4 3 2 1 0
+                and in a word : first  byte (LSB) :  7  6  5  4  3  2  1  0
+   (word == short == 2 bytes) : second byte (MSB) : 15 14 13 12 11 10  9  8
+- All unused bits should be Unset - 0 !
+- The timings are given in Z80 clock ticks (T states) unless otherwise stated.
+  1 T state = 1sec/3500000
+- The values in the tables mean : Offset (in HEX bytes), Length (1-byte, 2-word)
+  Also the ID numbers are in HEX format too.
+- You might interpret full-period as  ----____  or  ____----  and half-period as
+  only  ----  or  ____  , One Half-Period will also be reffered to as a PULSE.
+- The values in brackets [] are the default values of Spectrum ROM load/save
+  routines - they should be used for all Standard loading blocks.
+  These values are in Decimal format.
+- If there is NO pause between two data blocks then the second one should
+  follow immediately after first one (no T-states should be between them).
+- The amplitude of the signal must flip for each pulse played. This is relevant
+  for ALL data blocks (10-14) except the Direct recording block.
+- The Pause amplitude level is always LOW (0). First Pulse played should also be
+  LOW. When the LAST Pulse of a DATA block (NOT the Direct Recording Block)
+  is finished playing then the program must make sure that the last pulse played
+  is finished (i.e. if there is a Pause after a data block then the program must
+  ensure the Oposite Pulse to be played for atleast 1 ms, after which the
+  silence should start for the pause-1 ms time). This is the same as the Real
+  Spectrum does it (or atleast it appears so).
+- ALL blocks that will be added after the revision 1.0 will have the Length of
+  the whole block in first 4 bytes (double-word) after the ID. This should
+  enable programs that can only handle older revisions to skip that block!
+
+These are the possible blocks :
+
+ID : 10  -  Standard Speed Data Block (as in .TAP files)
+-------
+          This block must be replayed with the Standard ROM Values for all
+          Loading Speed variables (values in brackets []). If you know the
+          default values for ZX-81 ROM save/load routine then please email me.
+          This block can be used for the ROM loading routines AND for custom
+          loading routines that use the same timings as ROM ones do.
+
+00 2  Pause After this block in milliseconds (ms)                        [1000]
+03 2  Length of DATA that follows
+04 x  DATA, as in .TAP File
+
+ID : 11  -  Turbo Loading Data Block
+-------
+          This block is very similar to the normal .TAP block but with some
+          additional Info on the timings and other important differences.
+          Note: this block uses the same tape encoding as the Standard Speed
+          Data block, only the timings can be different. If a block should use
+          some non-standard SYNC or PILOT tones (i.e. all sorts of Protection
+          Schemes) then use the next three blocks to describe it.
+
+00 2  Length of PILOT pulse                                              [2168]
+02 2  Length of SYNC First pulse                                          [735]
+04 2  Length of SYNC Second pulse                                         [667]
+06 2  Length of ZERO bit pulse                                            [855]
+08 2  Length of ONE bit pulse                                            [1710]
+0A 2  Length of PILOT tone (in PILOT pulses)           [8064 Header, 3220 Data]
+0C 1  Used bits in LAST Byte (other bits should be 0)                       [8]
+      i.e. if this is 6 then the bits (x) used in LAST byte are: xxxxxx00
+0E 2  Pause After this block in milliseconds (ms)                        [1000]
+10 3  Length of DATA that follows (Least Significant Byte First)
+13 x  DATA, the bits are saved MSb (Most Significant bit) first - as in Real ZX
+
+ID : 12  -  Pure Tone
+-------
+          This will reproduce a tone which is basically the same as the PILOT
+          tone in the first two data blocks. You can define how long the
+          Pulse is and How Many pulses are in the tone.
+
+00 2  Length of pulse in T-States
+02 2  Number of Pulses
+
+ID : 13  -  Row of Pulses with Different Timings
+-------
+          This will reproduce n-pulses, each having its own timing. Upto 255
+          different pulses can be reproduced with this block. This is usefull
+          for non-standard SYNC tones with the Protection Schemes.
+
+00 1  Number of Pulses that follow
+01 2  Length of pulse in T-States
+....  Length of the next pulse ...
+
+ID : 14  -  Pure Data Block
+-------
+          This is the same as in Custom Data Block, only with the difference
+          that it doesn&#x27;t have ANY PILOT or SYNC tones preciding it.
+
+00 2  Length of ZERO bit pulse
+02 2  Length of ONE bit pulse
+04 1  Used bits in LAST Byte
+05 2  Pause After this block in milliseconds (ms)
+07 3  Length of DATA that follows
+09 x  DATA
+
+ID : 15  -  Direct Recording
+-------
+          This block is used for tapes which have some parts in such format that
+          the Custom Loading block cannot be used. This is NOT like the .VOC
+          file, since the information is much more compact. Each Sample value is
+          represented by One BIT only (0 if it is LOW  and  1 if it is HIGH)
+          which means that the block will be atleast 8 times smaller as the .VOC
+          file would be. PLEASE use this block ONLY if you cannot use the
+          Custom block!!!
+
+00 2  Number of T-States per sample (per bit of Data)
+02 2  Pause After this block in milliseconds (ms)
+04 4  Data Length (Least Significant Byte First)
+08 x  Data... each BIT represents a state on the EAR port (i.e. one Sample),
+      Most Significant Bit is played First !
+
+ID : 20  -  Pause (Silence) or Stop the Tape command
+-------
+          This will make a silence (Low amplitude level (0)) for a given time
+          in milliseconds.
+          If the Value is 0 then the Emulator or Utility should STOP THE TAPE.
+          (i.e. not continue loading until the user or emulator requests it)
+
+00 2  Value of the pause in milliseconds (ms)
+
+ID : 21  -  Group Start
+-------
+          This block will Enable Grouping of more blocks to be treated as ONE
+          block. This is VERY handy for tapes that use Protected blocks like
+          Speedlock 1 (which has around 64 Pure Tone blocks) or Bleeploads
+          (which has over 160 Custom Loading blocks). You can also give the
+          group a name (example &#x27;Speedlock 1 Block&#x27;). The Group End is detected
+          with the next block. This will ensure that these blocks will be easily
+          supported by Emulators/Utilities. Nesting of the groups is NOT allowed
+          i.e. one group should follow another and NOT be inside another.
+
+00 1  Length of the Group Name
+01 x  Group Name in ASCII (please keep it under 30 characers long)
+
+ID : 22  -  Group End
+-------
+          This indicates End of the Group. This ID has NO Body !
+
+ID : 23  -  Jump To Block
+-------
+          This block will enable you to jump from one block to another block in
+          the file. i.e. if you want to skip some blocks or go back some blocks
+          then this is now possible. The value is 2-byte SIGNED RELATIVE offset.
+          Which means if the value is 2 then you jump 2 blocks ahead. If it is
+          -3 you jump 3 blocks back. Simple as possible :)
+
+          NOTE: A GROUP of blocks is regarded as ONE block !
+
+00 2  Relative Offset : In Binary Complement, MSbit is the sign (FFFF = -1)
+      (this is Offset in BLOCKS, NOT Bytes)
+
+ID : 30  -  Text Description
+-------
+          The description can be upto 255 characters long but please keep
+          it down to about 30 so the programs can show it in one line !
+          This is ment to identify parts of the tape, so you know where
+          level 1 starts, where to rewind when you lose all the lives, etc.
+          Please use &#x27;Archive Info&#x27; block for Title, Authors, Publisher,...
+          This description is not guaranteed to be shown during tape playing,
+          but can be read while browsing the tape or changing the tape pointer.
+
+00 1  Length of the Text
+01 x  Text in ASCII
+
+ID : 31  -  Message Block
+-------
+          This will enable the Emulators to DISPLAY a message for a given time.
+          This should NOT stop the tape and it should NOT make silence.
+          If the time for the Message display is 0 then the Emulator should
+          wait for a Keypress to continue Emulating.
+
+00 1  Time for which the Message should be displayed in seconds (s)
+01 1  Length of the message
+02 x  Message that should be displayed (in ASCII)  Suggested format: Stick to
+      a maximum of 30 chars per line.  Use single 0x0D (13 decimal) to
+      separate lines.  Stick to a maximum of 8 lines.  If you do not obey
+      these rules, emulators may display your message in any way they like!
+
+ID : 32  -  Archive Info
+-------
+          Use this block in the beginning of the tape to identify the Title of
+          the game, Author, Publisher, Year of publication, etc. This block is
+          build in a way that future expansions are easily possible. The block
+          consists of Texts. Each text has its Identification Number (which
+          tells us what the text means) and then the ASCII text. To make it
+          possible to skip this block, if needed, the length of the WHOLE block
+          is on the start of it. Note: The information about what hardware the
+          tape uses is in the &#x27;Hardware Type&#x27; block, so no need for it here.
+
+00 2  Length of the block (without this two bytes)
+02 1  Number of Texts
+03 x  Here are all the texts in the format:
+        00 1  Text Identification byte:  00 - Full Title
+                                         01 - Software House / Publisher
+                                         02 - Author(s)
+                                         03 - Year of Publication
+                                         FF - Comment(s)
+        01 1  Length of the Text
+        02 x  Text in ASCII format
+        ....  Next Text
+
+ID : 33  -  Hardware Type
+-------
+          This selects what hardware the programs on this tape use.
+          Please include only Machines/Hardware for which you are 100% sure that
+          it either runs (or not runs) on that machine/hardware or you know it
+          uses (or not uses) the hardware or special features of that machine!
+          NOTE: If the tape runs only on ZX-81 then there is no need to put all
+                the other Machines to DOESN&#x27;T RUN (and vice versa)! I think
+                the emulators and utilities can be so smart to detect that :)
+      2nd NOTE: If you are not sure or you haven&#x27;t tested a tape on some
+                particular machine/hardware then DON&#x27;T include it in the list!
+
+00 1  Number of Machines/Hardware for which Info exists
+01 x  List of Machines/Hardware :
+      00 1  Hardware TYPE
+      01 1  Identification ID of Machine/Hardware
+
+             The list of all Hardware Types and Identifications is getting
+             quite Large and it is moved to the end of the format description!
+
+      02 1  Value : 00 - The tape RUNS on this machine (or with this Hardware),
+                         but it is not sure whether it uses the hardware or
+                         special features of the machine.
+                    01 - The tape USES the hardware or special features of the
+                         machine. (like 128k Memory or AY Sound on 128k ZXs)
+                    02 - The tape RUNS but it DOESN&#x27;T use the hardware or
+                         special features of the machine.
+                    03 - The tape DOESN&#x27;T RUN on this machine
+                         (or with this Hardware)
+      ....  Next Machine/Hardware Info (if any)
+
+ID : 34  -  Emulation Info
+-------
+          This is a special block that would normally be generated only by
+          Emulators. For now it contains info on everything I could find that
+          other formats support. Please inform me of any additions/corrections
+          since this is a very important part for emulators. Those bits that
+          are not used by the emulator that stored the info, should be left at
+          the DEFAULT values.
+
+00 2  General Emulation Flags
+        Bit  0 : R-register emulation                                       [1]
+             1 : LDIR emulation                                             [1]
+             2 : High Resolution Color emulation with True Interrupt Freq.  [1]
+           3,4 : Video Synchronisation : 1=High, 3=Low, 0,2=Normal          [0]
+             5 : Fast Loading when ROM load routine is used                 [1]
+             6 : Border emulation                                           [1]
+             7 : Screen Refresh mode (1: ON, 0: OFF)                        [1]
+             8 : Start Playing the tape Immediately                         [0]
+                 If this is 0 then the emulator should only load the info
+                 blocks and WAIT when it encounters first DATA block
+             9 : Auto type LOAD&quot;&quot; or press  when in 128k mode [0]
+02 1  Screen Refresh Delay : 1 - 255 (Interrupts between refreshes)         [1]
+      (used when Screen Refresh Mode in General Emul. Flags is ON)
+03 2  Interrupt Frequency  : 0 - 999 Hz                                    [50]
+
+05 3  Reserved for future expansion (Should be 0)
+
+ID : 35  -  Custom Info block
+-------
+          This block can be used to save ANY information you want. i.e. if some
+          utility desires to write some stuff into the tape file then this block
+          should be used. it can be upto 65535 bytes long and it can contain
+          ANYTHING ... for instance : If the emulator has some settings that
+          are not described in the &#x27;Emulation Info&#x27; or someone wants to make
+          a block containing POKEs or whatever then they can use this for it.
+          Ofcourse some of these blocks can be standardised in the future ...
+
+00 F  Identification String (in ASCII)
+10 2  Length of the info that follows
+12 x  Custom Info
+
+ID : 40  -  Snapshot Block
+-------
+          This would enable one to snapshot the game at the start and still
+          have all the TAPE blocks (for next levels, etc.) in the SAME file.
+          I don&#x27;t know if this is a good idea or not, it was suggested and I
+          have to put it in to see what you mean. The preffered formats are
+          Z80 and SNA since they are widely used. Please use ONLY these two
+          types if you intend to spread the file to a wider audience ;)
+
+00 1  Snapshot Type : 00 - Z80      (Z80 Emulator, Warajevo,...)
+                      01 - SNA      (JPP, Amiga Spectrum Emulator,...)
+                      02 - SNP      (Didaktik disk snapshot)
+                      03 - SIT      (Sinclair 2.0 by Pedro Salaz)
+                      04 - SP       (Sinclair 0.99 by Pedro Gimeno)
+                      05 - PRG      (Irish SPECEM emulator)
+                      06 - SEM      (German SPCEMU-G)
+                      07 - SNA-128  (Russian SP-UKV)
+                      08 - RAW      (SAVE &quot;FILE&quot; CODE 16384,49152)
+                      09 - SNX      (from Atari)
+                      0A - ACH      (from Archimedes and Risc PC)
+01 3  Snapshot Length (Least Significant Byte First)
+04 x  Snapshot itself
+
+ID : 5A (90 dec, ASCII letter &#x27;Z&#x27;)
+-------
+          This is a block that would be generated if you merged two ZX Tape
+          files together. It is here so you can easily copy the files together
+          and use them. Ofcourse this  means that resulting file would be 8
+          bytes longer than if this block was not used. All you have to
+          do if you encounter this block ID is to skip next 9 bytes. Please, if
+          you can don&#x27;t merge two files together this way, use a utility that
+          will let you do that without having this extra block.
+
+00 9  &#x27;XTape!&#x27; 0x1A MajR MinR  Just skip these 9 bytes and you will end up on
+                               the next ID.
+
+
+                           HARDWARE INFORMATION
+                          ----------------------
+
+  This is the List of all Hardware Types and Hardware Identification ID&#x27;s that
+are used in the &#x27;Hardware Info&#x27; Block. Please send any additions you might have
+to me so they can be included.
+
+Hardware Type                  Hardware ID
+--------------------------------------------------------------------------------
+00 - Computers:                00 - ZX Spectrum 16k
+                               01 - ZX Spectrum 48k, Plus
+                               02 - ZX Spectrum 48k ISSUE 1
+                               03 - ZX Spectrum 128k (Sinclair)
+                               04 - ZX Spectrum 128k +2 (Grey case)
+                               05 - ZX Spectrum 128k +2A, +3
+                               06 - Timex Sinclair TC-2048
+                               07 - Timex Sinclair TS-2068
+                               08 - Pentagon 128
+                               09 - Sam Coupe
+                               0A - Didaktik M
+                               0B - Didaktik Gama
+                           ?   0C - ZX-81 with  1k RAM
+                           ?   0D - ZX-81 with 16k RAM or more
+                               0E - ZX Spectrum 128k Spanish version
+                               0F - ZX Spectrum Arabic version
+                               10 - TK 90-X
+                               11 - TK 95
+                               12 - Byte
+                               13 - Elwro
+                               14 - ZS Scorpion
+
+01 - External Storage Devices: 00 - Microdrive
+                               01 - Opus Discovery
+                               02 - Disciple
+                               03 - Plus-D
+                               04 - Rotronics Wafadrive
+                               05 - TR-DOS
+                               06 - Byte Drive
+                               07 - Watsford
+                               08 - FIZ
+                               09 - Radofin
+                               0A - Didaktik disk drives
+                               0B - BetaDisk  (Is this the same as TR-DOS ?)
+                               0C - ZX Spectrum +3 disk drive
+                               0D - JLO (Oliger) disk interface
+                               0E - FDD3000
+                               0F - Zebra disk drive
+                               10 - Ramex Millenia
+                               11 - Larken
+
+02 - ROM/RAM Type Add-Ons:     00 - Sam Ram
+                               01 - Multiface
+                               02 - Multiface 128k
+                               03 - Multiface +3
+                               04 - ZX Interface 2
+
+03 - Sound Devices:            00 - AY Sound Hardware (Compatible with 128k ZXs)
+                               01 - Fuller Box AY Sound Hardware / Melodik
+                               02 - Currah microSpeech
+                               03 - SpecDrum
+
+04 - Joysticks:                00 - Kempston
+                               01 - Cursor/Protek/AGF
+                               02 - Sinclair 2 Left  (12345)
+                               03 - Sinclair 1 Right (67890)
+                               04 - Fuller
+
+05 - Mice (Mouses ;):          00 - AMX mouse
+                               01 - AMS mouse (is this the same as AMX ?)
+                               02 - Kempston mouse
+
+06 - Other Controllers:        00 - Trickstick
+                               01 - ZX Light Gun
+                               02 - Zebra Graphics Tablet
+
+07 - Serial Ports:             00 - ZX Interface 1
+                               01 - ZX Spectrum 128k
+
+08 - Parallel Ports:           00 - Kempston S
+                               01 - Kempston E
+                               02 - ZX Spectrum +3 (Did a +3 have this one ?)
+                               03 - Tasman
+                               04 - DK&#x27;Tronics
+                               05 - Hilderbay
+                               06 - INES Printerface (anyone with info on this?)
+                               07 - ZX LPrint Interface 3
+                               08 - MultiPrint
+                               09 - Opus Discovery
+
+09 - Printers:                 00 - ZX Printer
+                               01 - Generic Printer
+                               02 - EPSON Compatible
+                               03 - T/S 2040 or Alphacom 32
+
+0A - Modems:                   00 - VTX 5000
+                               01 - T/S 2050 or Westridge 2050
+
+0B - Digitizers:               00 - RD Digital Tracer
+                               01 - DK&#x27;Tronics Light Pen
+                               02 - British MicroGraph Pad
+
+0C - Network Adapters:         00 - ZX Interface 1
+
+0D - Keyboards and Keypads:    00 - Keypad for ZX Spectrum 128k
+
+0E - AD/DA Convertors:         00 - Harley Systems ADC 8.2
+                               01 - Blackboard Electronics
+
+0F - EPROM Programators:       00 - Orme Electronics
+
+
+                              PROTECTION SCHEMES
+                             --------------------
+
+01 - SPEEDLOCK Type 1
+    ------------------
+
+  You can identify this protection scheme by its &#x27;clicking&#x27; Pilot tone. If you
+look into the loader you will see this message: &#x27;Protected by SPEEDLOCK&#x27; and
+some bytes later: &#x27;SPEEDLOCK Protection System. DJL Software &amp; D. Aubrey Jones
+1984 - Tel: 0793 72317 * Government Health Warning - Attempting to crack
+SPEEDLOCK can damage your sanity!&#x27;.
+  Basically speedlock is protected with the clicking Pilot tone, non-standard
+SYNC pulse and higher loading speed. Normally there are two Speedlocked blocks
+in the file. If you try to convert them with the normal algorythm you will get
+a block with a very small pilot tone (around 216 half-periods), almost standard
+SYNC and the data full of Zeroes. But since I haven&#x27;t got it working yet this
+information might be WRONG.
+
+  The PILOT tone starts off with 219 half-periods with normal timing then the
+&#x27;click&#x27; signal appears, which is 3 half-periods of half the size of Pilot HP
+and then this is repeated 30 times. After this there are 216 normal HPs and
+then the SYNC tone which is built from 3 half-periods, first one is 1.8* length
+of Pilot HP, second one is the same length, third one is half the length of
+Pilot HP. After this the data follows (turbo saved). This is how it looks like:
+
+___---___--- ... ___---_-_ ... ---___--- ... ___---___-----___-__--__--_-_- ...
+<span class="qt">|_________ ___________|_ _|____________ _____________|____ ____|________ __ ...</span>
+          V             V              V                  V             V
+   219 * [2168]    3 * [984]       216 * [2168]         SYNC :	       DATA
+<span class="qt">|____________ ____________|                    [3852],[2168],[1084]</span>
+             V
+          31 Times
+<span class="qt">|________________________ ___________________________|____ ____|________ __ ...</span>
+                         V                                V             V
+                    PILOT Tone                          SYNC           DATA
+
+  I am not sure if the Loading speed is always the same, so it should be read
+from the Bit-0 and Bit-1 half-periods in the file. Other values seem to be OK.
+(these values were gathered with experimenting, they are NOT gathered from the
+code... if someone has more accurate values for any of the protection schemes
+then please contact me).
+  I could convert the Speedlock 1 blocks succesfully. Unfortunetly I could not
+replay them properly back. This is VERY odd since the resulting block is almost
+100% the same as the original :( The problem might be that the block is not
+properly finished... but whatever I tried didn&#x27;t work :(
+
+
+Regards,
+  Tomaz
+
+
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div><div class="post" id="p25015"><div class="ph"><a class="d" href="#p25015">1997-03-18</a> <span>…@…</span> <span>Re: Update 10 of the New ZX Tape Format</span></div><pre>
+In article &lt;…@…&gt;, …@… wrote:
+<span class="qt">&gt;                 This is handy for Speedlocked blocks (Pilot tone is made of</span>
+<span class="qt">&gt;  64 Pure Tone blocks)</span>
+
+Then you might want a &quot;the following n items are repeated m times&quot; to make
+the speedlock header a bit shorter.
+-- 
+---- Ian Collier : …@… : WWW page (including Spectrum section):
+------ <a href="http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html" rel="noreferrer">http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html</a>
+
+New to this group?  Answers to frequently-asked questions can be had from
+<a href="http://www.jetman.demon.co.uk/speccy/faq/index.html" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/faq/index.html</a> .
+Sam Coupï¿½ FAQ: <a href="http://www.mono.org/~unc/Coupe/FAQ.txt" rel="noreferrer">http://www.mono.org/~unc/Coupe/FAQ.txt</a>
+
+
+</pre></div><div class="post" id="p25063"><div class="ph"><a class="d" href="#p25063">1997-03-19</a> <span>…@…</span> <span>Re: Update 10 of the New ZX Tape Format</span></div><pre>
+On 18 Mar 1997 17:22:55 GMT, …@… (Ian Collier) wrote:
+
+<span class="qt">&gt;In article &lt;…@…&gt;, …@… wrote:</span>
+<span class="qt">&gt;&gt;                 This is handy for Speedlocked blocks (Pilot tone is made of</span>
+<span class="qt">&gt;&gt;  64 Pure Tone blocks)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Then you might want a &quot;the following n items are repeated m times&quot; to make</span>
+<span class="qt">&gt;the speedlock header a bit shorter.</span>
+
+Hmm :) this is actually a good idea :) What do others think ? (Although I got
+information that the speedlock pilot doesn&#x27;t have to have the clicks in it... it
+loads just the same without them ...)
+
+Tomaz
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div><div class="post" id="p25127"><div class="ph"><a class="d" href="#p25127">1997-03-21</a> <span>…@…</span> <span>Re: Update 10 of the New ZX Tape Format</span></div><pre>
+On 21 Mar 1997 12:43:33 GMT, …@… (Mr Benjamin  Supper) wrote:
+
+<span class="qt">&gt;Tomaz Kac (…@…) wrote:</span>
+<span class="qt">&gt;&gt; Hmm :) this is actually a good idea :) What do others think ? (Although I got</span>
+<span class="qt">&gt;&gt; information that the speedlock pilot doesn&#x27;t have to have the clicks in it...</span>
+<span class="qt">&gt;&gt; it loads just the same without them ...)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Maybe, but isn&#x27;t the idea to represent the tapes ACCURATELY so that as well</span>
+<span class="qt">&gt;as being loaded, they can be played and archived? If we&#x27;re just interested in</span>
+<span class="qt">&gt;the game, we may as well just pack it in now and resort to hacked TAP files.</span>
+
+Ofcourse :) ... well, I am for the ACCURATE description of the tapes... I just
+wanted to share the info on speedlock not NEEDING the clicks to load ;) Anyway,
+the idea about the block which repeats next n blocks m times wasn&#x27;t so well
+accepted, so I won&#x27;t include it in the tape... Anyway, the 64 block SpeedLock 1
+pilot would ONLY waste (well, not waste, but take) 320 bytes of the file... :)
+So I think I will leave things as they are now... 
+Ofcourse the GROUP block can be used to nicely group the whole 66 blocks that
+SpeedLock 1 block would take ... 
+
+btw. I am not getting many suggestions/comments any more so I tought to make
+next release the Pre-Final one and then wait for a week for the final comments
+and corrections to the format and then release the Final version ?
+
+<span class="qt">&gt;Umm ... I didn&#x27;t mean that in any offensive, demeaning sense or anything ... </span>
+<span class="qt">&gt;Just trying to illustrate a point, that&#x27;s all!</span>
+
+Hehe :) And it was a good point too... I just hope noone will go and put the
+SIDE B of a game in the Direct recording block just because it had nice music on
+it ;)))
+
+Regards,
+  Tomaz
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div><div class="post" id="p25133"><div class="ph"><a class="d" href="#p25133">1997-03-21</a> <span>…@…</span> <span>Re: Update 10 of the New ZX Tape Format</span></div><pre>
+Tomaz Kac (…@…) wrote:
+<span class="qt">&gt; Hmm :) this is actually a good idea :) What do others think ? (Although I got</span>
+<span class="qt">&gt; information that the speedlock pilot doesn&#x27;t have to have the clicks in it...</span>
+<span class="qt">&gt; it loads just the same without them ...)</span>
+
+Maybe, but isn&#x27;t the idea to represent the tapes ACCURATELY so that as well
+as being loaded, they can be played and archived? If we&#x27;re just interested in
+the game, we may as well just pack it in now and resort to hacked TAP files.
+
+
+Umm ... I didn&#x27;t mean that in any offensive, demeaning sense or anything ... 
+Just trying to illustrate a point, that&#x27;s all!
+
+
+-- 
+Ben Supper 
+`vi is the product of a twisted mind.&#x27;
+
+
+</pre></div><div class="post" id="p25149"><div class="ph"><a class="d" href="#p25149">1997-03-22</a> <span>…@…</span> <span>Re: Update 10 of the New ZX Tape Format</span></div><pre>
+Tomaz Kac (…@…) wrote:
+
+: &gt;In article &lt;…@…&gt;, …@… wrote:
+: &gt;&gt;                 This is handy for Speedlocked blocks (Pilot tone is made of
+: &gt;&gt;  64 Pure Tone blocks)
+: &gt;
+: &gt;Then you might want a &quot;the following n items are repeated m times&quot; to make
+: &gt;the speedlock header a bit shorter.
+
+: Hmm :) this is actually a good idea :) What do others think ? (Although I got
+: information that the speedlock pilot doesn&#x27;t have to have the clicks in it... it
+: loads just the same without them ...)
+
+But it would be a bit difficult to implement in an emulator... besides,
+you would save only about 300 bytes... it&#x27;s not worth the effort 
+
+--
+ ---------------------------------------------------------------------
+<span class="qt">| Radovan Garabik       <a href="http://kepler.fmph.uniba.sk/â€¾garabik2/zx.html" rel="noreferrer">http://kepler.fmph.uniba.sk/â€¾garabik2/zx.html</a> |</span>
+<span class="qt">| __..--^^^--..__       …@…                 |</span>
+ ---------------------------------------------------------------------
+
+
+</pre></div><div class="post" id="p25157"><div class="ph"><a class="d" href="#p25157">1997-03-23</a> <span>…@…</span> <span>Re: Update 10 of the New ZX Tape Format</span></div><pre>
+On 22 Mar 1997 17:23:45 GMT, …@… (Radovan Garabik) wrote:
+
+<span class="qt">&gt;: &gt;Then you might want a &quot;the following n items are repeated m times&quot; to make</span>
+<span class="qt">&gt;: &gt;the speedlock header a bit shorter.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;: Hmm :) this is actually a good idea :) What do others think ? (Although I got</span>
+<span class="qt">&gt;: information that the speedlock pilot doesn&#x27;t have to have the clicks in it... it</span>
+<span class="qt">&gt;: loads just the same without them ...)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;But it would be a bit difficult to implement in an emulator... besides,</span>
+<span class="qt">&gt;you would save only about 300 bytes... it&#x27;s not worth the effort </span>
+
+Yes, after I tought a little about it I dropped the idea (see my previous
+posting ;) ) ... 
+
+Tomaz
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div></main></body></html>

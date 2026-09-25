@@ -1,0 +1,1275 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The official CSSCGC 2014 thread · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>The official CSSCGC 2014 thread</h1><p class="facts">136 posts, 2014-01-14 – 2015-01-19</p><div class="post" id="p226446"><div class="ph"><a class="d" href="#p226446">2014-01-14 01:52:00</a> <span>Myke-P</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Just to announce that the comp.sys.sinclair Crap Games Competition 2014 is now open.
+
+It&#x27;s home for the year will be; <a href="http://www.mykeweb.co.uk/csscgc2014" rel="noreferrer">http://www.mykeweb.co.uk/csscgc2014</a>
+
+If there&#x27;s anything you need to point out (atrocious spellings, php bugs etc) please feel free to contact me, either here, or via the submission email address.
+
+In the meantime I&#x27;m looking forward to another year of (low) quality software. :)
+
+
+</pre></div><div class="post" id="p226447"><div class="ph"><a class="d" href="#p226447">2014-01-17 21:04:34</a> <span>Myke-P</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>I&#x27;ve received the first entries today so we&#x27;re officially on the road to some form of competition. :)
+
+Reviews on the site as soon as possible.
+
+Myke
+
+
+</pre></div><div class="post" id="p226448"><div class="ph"><a class="d" href="#p226448">2014-01-18 17:18:41</a> <span>Paul E Collins</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Tue, 14 Jan 2014 01:52:00 -0000, Myke-P &lt;…@…&gt;  
+wrote:
+
+<span class="qt">&gt; Just to announce that the comp.sys.sinclair Crap Games Competition 2014  </span>
+<span class="qt">&gt; is now open.</span>
+<span class="qt">&gt; It&#x27;s home for the year will be; <a href="http://www.mykeweb.co.uk/csscgc2014" rel="noreferrer">http://www.mykeweb.co.uk/csscgc2014</a></span>
+
+Nice site. I love the Cassette 50 &quot;loading screen&quot;. They should have had  
+that on the original tape, to make the actual games even more of a  
+let-down!
+
+Eq.
+
+
+</pre></div><div class="post" id="p226449"><div class="ph"><a class="d" href="#p226449">2014-01-18 20:38:24</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Saturday, January 18, 2014 5:18:41 PM UTC, Paul E Collins wrote:
+<span class="qt">&gt; Nice site. I love the Cassette 50 &quot;loading screen&quot;. They should have had  </span>
+<span class="qt">&gt; that on the original tape, to make the actual games even more of a  </span>
+<span class="qt">&gt; let-down!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Eq.</span>
+
+Haha, yes, or maybe a Sinclair User Megatape-style machine code &#x27;game selector&#x27; screen complete with Kamikaze Bear and scrolly message - just to search for the specific three-letter Program: XYZ block.
+
+
+</pre></div><div class="post" id="p226455"><div class="ph"><a class="d" href="#p226455">2014-01-21 10:51:53</a> <span>Andrew J Green</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>The icing on the cake of the loading screen is the R-Tape error. Of course, this would have spared us much pain, had it come up originally...
+
+On Saturday, January 18, 2014 8:38:24 PM UTC, Myke-P wrote:
+<span class="qt">&gt; On Saturday, January 18, 2014 5:18:41 PM UTC, Paul E Collins wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; Nice site. I love the Cassette 50 &quot;loading screen&quot;. They should have had  </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; that on the original tape, to make the actual games even more of a  </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; let-down!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; Eq.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Haha, yes, or maybe a Sinclair User Megatape-style machine code &#x27;game selector&#x27; screen complete with Kamikaze Bear and scrolly message - just to search for the specific three-letter Program: XYZ block.</span>
+
+
+
+</pre></div><div class="post" id="p226457"><div class="ph"><a class="d" href="#p226457">2014-01-21 15:04:13</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Ah... But then would we still have the CSSCGC? :-O
+
+Myke
+
+
+</pre></div><div class="post" id="p226460"><div class="ph"><a class="d" href="#p226460">2014-01-22 01:54:43</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>The first review is up; &quot;Advanced Cricket Simulator.&quot;
+
+Thanks for kicking things off Andrew. 3 more in the queue.
+
+
+</pre></div><div class="post" id="p226461"><div class="ph"><a class="d" href="#p226461">2014-01-22 18:06:15</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>The second review is up; &quot;The Forest of Doom&quot; by R Tape. 
+
+
+</pre></div><div class="post" id="p226467"><div class="ph"><a class="d" href="#p226467">2014-01-24 02:19:43</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Another R Tape special; &quot;Another drink, Reverend?&quot;
+
+
+</pre></div><div class="post" id="p226468"><div class="ph"><a class="d" href="#p226468">2014-01-24 11:16:15</a> <span>R-Tape</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Friday, January 24, 2014 2:19:43 AM UTC, Myke-P wrote:
+<span class="qt">&gt; Another R Tape special; &quot;Another drink, Reverend?&quot;</span>
+
+Heh thanks for the excellent review.
+
+That photo you found makes me want to dig out my icewash jeans and, if didn&#x27;t have an advancing forehead, grow a quiffmullet.
+
+
+</pre></div><div class="post" id="p226474"><div class="ph"><a class="d" href="#p226474">2014-01-26 19:24:37</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Yoshiatom&#x27;s &quot;Dongee Con&quot; is now up on the site. Apologies for the delay.
+
+
+</pre></div><div class="post" id="p226475"><div class="ph"><a class="d" href="#p226475">2014-01-26 20:10:26</a> <span>Paul E Collins</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Sun, 26 Jan 2014 19:24:37 -0000, Myke-P &lt;…@…&gt;  
+wrote:
+
+<span class="qt">&gt; Yoshiatom&#x27;s &quot;Dongee Con&quot; is now up on the site. Apologies for the delay.</span>
+
+Any chance of an RSS feed so we can receive updates automatically?
+
+Eq.
+
+
+</pre></div><div class="post" id="p226477"><div class="ph"><a class="d" href="#p226477">2014-01-26 22:37:37</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Paul,
+
+This also came up on WoS earlier so I&#x27;ve done a bit of experimenting tonight and there&#x27;s now a basic RSS feed of the news page.
+
+<a href="http://www.mykeweb.co.uk/csscgc2014/rss/csscgc2014.xml" rel="noreferrer">http://www.mykeweb.co.uk/csscgc2014/rss/csscgc2014.xml</a>
+
+Hope that does the trick?
+
+Myke-P
+
+
+</pre></div><div class="post" id="p226480"><div class="ph"><a class="d" href="#p226480">2014-02-01 01:19:48</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Steve McCrea is back with &quot;Advanced Space Scarper Simulator&quot; - up on the site now.
+
+
+</pre></div><div class="post" id="p226482"><div class="ph"><a class="d" href="#p226482">2014-02-06 01:29:24</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Steve&#x27;s at it again! &quot;SpecTriv #17&quot; is our 6th entry.
+
+
+</pre></div><div class="post" id="p226484"><div class="ph"><a class="d" href="#p226484">2014-02-09 01:40:40</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>&quot;Remove The Logo&quot; by leespoons
+
+
+</pre></div><div class="post" id="p226490"><div class="ph"><a class="d" href="#p226490">2014-02-10 00:21:23</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Our first challenge; &quot;Attribute Flash FX&quot; is now on. Get your thinking caps on.
+
+
+</pre></div><div class="post" id="p226494"><div class="ph"><a class="d" href="#p226494">2014-02-11 12:24:24</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Yoshiatom&#x27;s back with &quot;Quest for ye Flask&quot;
+
+
+</pre></div><div class="post" id="p226495"><div class="ph"><a class="d" href="#p226495">2014-02-11 23:47:56</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>2 in one day? &quot;Hobohemia&quot; by Steve McCrea.
+
+Roguelike(rs) will want to check this out. :D
+
+
+</pre></div><div class="post" id="p226504"><div class="ph"><a class="d" href="#p226504">2014-02-20 19:03:09</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Dr.Sputnik (AKA Gavin Callard) pushes us into double figures with &quot;Rocks&quot; (or possibly; &quot;Rocks: Count Them!&quot;)
+
+
+</pre></div><div class="post" id="p226505"><div class="ph"><a class="d" href="#p226505">2014-02-20 23:08:03</a> <span>Chris Young</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Thu, 20 Feb 2014 11:03:09 -0800 (PST) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Myke-P:
+
+<span class="qt">&gt; &quot;Rocks&quot; (or possibly; &quot;Rocks: Count Them!&quot;)</span>
+
+True sign of a crap title when you&#x27;re not entirely sure what it is. 
+The best ones were when the title on the packaging didn&#x27;t match that
+in the game itself - I&#x27;m sure there are real life examples of this
+(although I can&#x27;t think of any).
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+</pre></div><div class="post" id="p226512"><div class="ph"><a class="d" href="#p226512">2014-02-22 02:28:51</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>&quot;Choppy Bird&quot; is cleared for take off.
+
+
+</pre></div><div class="post" id="p226514"><div class="ph"><a class="d" href="#p226514">2014-02-22 20:53:59</a> <span>R-Tape</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Saturday, February 22, 2014 2:28:51 AM UTC, Myke-P wrote:
+<span class="qt">&gt; &quot;Choppy Bird&quot; is cleared for take off.</span>
+
+What a pile of crap.  I&#x27;ll start the Hi-Score challenge off at 1 (when the game seemed to end for no apparent reason!).
+
+And just who is this promising noob, &#x27;Chris Young&#x27; as you call him?
+
+
+</pre></div><div class="post" id="p226515"><div class="ph"><a class="d" href="#p226515">2014-02-22 21:45:25</a> <span>R-Tape</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre><span class="qt">&gt; </span>
+<span class="qt">&gt; What a pile of crap.  I&#x27;ll start the Hi-Score challenge off at 1 (when the game seemed to end for no apparent reason!).</span>
+<span class="qt">&gt; </span>
+
+Make that 3.  Oh yeah!
+
+
+
+</pre></div><div class="post" id="p226516"><div class="ph"><a class="d" href="#p226516">2014-02-23 01:21:06</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>@R Tape: Is that with or without my suggested &#x27;playability&#x27; modifications?
+
+Now online; &quot;PIXBIT and the maze of deadly monsters&quot; by... um... R Tape. :)
+
+
+</pre></div><div class="post" id="p226517"><div class="ph"><a class="d" href="#p226517">2014-02-23 10:37:15</a> <span>R-Tape</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Sunday, February 23, 2014 1:21:06 AM UTC, Myke-P wrote:
+<span class="qt">&gt; @R Tape: Is that with or without my suggested &#x27;playability&#x27; modifications?</span>
+<span class="qt">&gt; </span>
+
+Without.  You won&#x27;t find me hacking games thankyouverymuch.  Tsk.
+
+
+</pre></div><div class="post" id="p226520"><div class="ph"><a class="d" href="#p226520">2014-02-27 00:51:21</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>&quot;Twister for Two&quot; combines Currah uSpeech with Twister with hilarious consequences.
+
+
+</pre></div><div class="post" id="p226522"><div class="ph"><a class="d" href="#p226522">2014-03-03 00:17:15</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>leespoons in &quot;Flappy Bird(s): The Text Adventure&quot; - see it before he mysteriously demands the download links removed next week!
+
+
+</pre></div><div class="post" id="p226523"><div class="ph"><a class="d" href="#p226523">2014-03-04 20:46:56</a> <span>Paul E Collins</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Mon, 03 Mar 2014 00:17:15 -0000, Myke-P &lt;…@…&gt;  
+wrote:
+
+<span class="qt">&gt; leespoons in &quot;Flappy Bird(s): The Text Adventure&quot; - see it before he  </span>
+<span class="qt">&gt; mysteriously demands the download links removed next week!</span>
+
+Good grief -- if he doesn&#x27;t, I will!
+
+Eq.
+
+
+</pre></div><div class="post" id="p226524"><div class="ph"><a class="d" href="#p226524">2014-03-06 13:00:28</a> <span>Duncan Snowden</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Tue, 04 Mar 2014 20:46:56 -0000
+&quot;Paul E Collins&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; On Mon, 03 Mar 2014 00:17:15 -0000, Myke-P</span>
+<span class="qt">&gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; leespoons in &quot;Flappy Bird(s): The Text Adventure&quot; - see it before</span>
+<span class="qt">&gt; &gt; he mysteriously demands the download links removed next week!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Good grief -- if he doesn&#x27;t, I will!</span>
+
+Scared of the competition, Eq? A crap implementation of an already crap
+game... it can&#x27;t lose.
+
+... Or *can* it? Dan-dan-DAAAAAAAAAN! [Who&#x27;s Dan? - Confused Ed.]
+
+-- 
+Duncan Snowden.
+
+
+</pre></div><div class="post" id="p226525"><div class="ph"><a class="d" href="#p226525">2014-03-07 01:00:27</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>R Tape goes off on quite a tangent this time; &quot;The Blind Spritemaker&quot;
+
+(although, strictly speaking, 8x8 isn&#x27;t traditionally a very sprite-y size)
+
+
+</pre></div><div class="post" id="p226526"><div class="ph"><a class="d" href="#p226526">2014-03-09 13:57:15</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Rebelstar Without a Cause&#x27;s &quot;Advanced David Moyes Simulator&quot; is now available for your &#x27;enjoyment.&#x27;
+
+
+</pre></div><div class="post" id="p226527"><div class="ph"><a class="d" href="#p226527">2014-03-12 19:43:32</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Two new entries tonight:-
+Andrew Green returns with &quot;Good Nights Sleep Simulator&quot; and we have an anonymous entry entitled; &quot;Advanced Putin Simulator&quot;
+
+
+</pre></div><div class="post" id="p226536"><div class="ph"><a class="d" href="#p226536">2014-03-24 23:35:59</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Another from Andrew Green; &quot;Hangman for Idiots&quot;
+
+Charming!
+
+
+</pre></div><div class="post" id="p226544"><div class="ph"><a class="d" href="#p226544">2014-04-03 00:28:07</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>A second entry from Dr.Sputnik; &quot;Gerbil Space Program&quot; - surprisingly interesting stuff!
+
+
+</pre></div><div class="post" id="p226545"><div class="ph"><a class="d" href="#p226545">2014-04-03 22:54:55</a> <span>…@…</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Thursday, April 3, 2014 1:28:07 AM UTC+1, Myke-P wrote:
+<span class="qt">&gt; A second entry from Dr.Sputnik; &quot;Gerbil Space Program&quot; - surprisingly interesting stuff!</span>
+
+I kind of got carried away with this one. It turned out much less crap than planned, though I do think the immense time wasted while it does its thing adds a certain boredom factor.
+
+I must try harder.
+
+Also, the loading system works differently on 128k models!
+
+
+Dr.Sputnik*
+
+
+
+*Not a Doctor. Or an early Russian Satellite. 
+
+
+</pre></div><div class="post" id="p226549"><div class="ph"><a class="d" href="#p226549">2014-04-06 18:52:03</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Our very own Paul E Collins submits a well observed entry about shopping with &#x27;the wife&#x27; - &quot;Yes Dear&quot; - superbly crud.
+
+
+</pre></div><div class="post" id="p226562"><div class="ph"><a class="d" href="#p226562">2014-04-09 14:44:28</a> <span>Paul E Collins</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Sun, 06 Apr 2014 19:52:03 +0100, Myke-P &lt;…@…&gt;  
+wrote:
+
+<span class="qt">&gt; Our very own Paul E Collins submits a well observed entry about shopping  </span>
+<span class="qt">&gt; with &#x27;the wife&#x27; - &quot;Yes Dear&quot; - superbly crud.</span>
+
+Argh, I can&#x27;t believe you posted a cheat sheet! It&#x27;s given me a whole new  
+idea for a protection system for Jet Set Willy, though.
+
+Did you get my other game (sent on 5 April)? It&#x27;s a bit more fun...  
+maybe... allegedly.
+
+Eq.
+
+
+</pre></div><div class="post" id="p226563"><div class="ph"><a class="d" href="#p226563">2014-04-09 17:00:42</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Paul,
+
+Cheats, ZX81 conversions and rubbish &#x27;guest reviewers&#x27; appear to have become a bit of a theme this year. :)
+
+I did get SOTB and hope to have a review up by Saturday, maybe Sunday? For some reason I can&#x27;t send email at the moment so I&#x27;ll have to look into that that when I get back from my current trip away.
+
+Myke-P
+
+
+</pre></div><div class="post" id="p226569"><div class="ph"><a class="d" href="#p226569">2014-04-11 23:06:30</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Another one from Eq.; &quot;Shadow of the Beef&quot;
+
+No cheats this time.
+
+
+</pre></div><div class="post" id="p226572"><div class="ph"><a class="d" href="#p226572">2014-04-13 09:41:22</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Yoshiatom is back with &quot;Swim B****** Swim&quot; - an aquatic themed modification of Run Baby Run. Utter dross, natch.
+
+
+</pre></div><div class="post" id="p226573"><div class="ph"><a class="d" href="#p226573">2014-04-13 19:14:49</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Another leespoons topical special; &quot;Advanced London Marathon Simulator Challenge.&quot;
+
+Wrist-breaking button-mashing crud.
+
+
+</pre></div><div class="post" id="p226574"><div class="ph"><a class="d" href="#p226574">2014-04-13 20:00:16</a> <span>Chris Young</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>And, in last year&#x27;s news, I&#x27;ve updated the CSSCGC crap game finder
+thing with scantily-clad girlies for 2013&#x27;s compo competition.
+
+Did I say scantily-clad girlies?  I don&#x27;t think that&#x27;s what I meant.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+</pre></div><div class="post" id="p226575"><div class="ph"><a class="d" href="#p226575">2014-04-13 20:15:25</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Looks like you&#x27;re missing about 20 &#x27;girlies&#x27; and pictures of all 126 &#x27;page 3 lovelies?&#x27;
+
+
+</pre></div><div class="post" id="p226576"><div class="ph"><a class="d" href="#p226576">2014-04-13 21:56:47</a> <span>Chris Young</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Sun, 13 Apr 2014 13:15:25 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Myke-P:
+
+<span class="qt">&gt; Looks like you&#x27;re missing about 20 &#x27;girlies&#x27;</span>
+
+Hmm, says 102 here, and says 102 on R-Tape&#x27;s site.  Which &#x27;girlies&#x27; do
+you think &#x27;dropped out of the beauty pageant&#x27;?
+
+<span class="qt">&gt; and pictures of all 126 &#x27;page 3 lovelies?&#x27;</span>
+
+Yes, scantily-clad, as I said.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+</pre></div><div class="post" id="p226577"><div class="ph"><a class="d" href="#p226577">2014-04-13 22:24:43</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Chris,
+
+You&#x27;re forgetting the 24 entries I&#x27;ve clearly imagined! Don&#x27;t worry, I&#x27;ve obviously been on the gin! :D
+
+
+</pre></div><div class="post" id="p226580"><div class="ph"><a class="d" href="#p226580">2014-04-15 09:16:32</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Announcing the &#x27;Demakes Challenge&#x27;
+<a href="http://www.mykeweb.co.uk/csscgc2014/misc.php" rel="noreferrer">http://www.mykeweb.co.uk/csscgc2014/misc.php</a>
+
+(Crap) conversions of modern software!
+
+
+</pre></div><div class="post" id="p226581"><div class="ph"><a class="d" href="#p226581">2014-04-15 16:53:44</a> <span>Chris Young</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Tue, 15 Apr 2014 02:16:32 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Myke-P:
+
+<span class="qt">&gt; Announcing the &#x27;Demakes Challenge&#x27;</span>
+<span class="qt">&gt; <a href="http://www.mykeweb.co.uk/csscgc2014/misc.php" rel="noreferrer">http://www.mykeweb.co.uk/csscgc2014/misc.php</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; (Crap) conversions of modern software!</span>
+
+Hmm... that gives me an idea, although I&#x27;m not sure I can be bothered
+to put the effort in.  And I&#x27;m concerned about the copyright lawyers
+knocking on the door.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+</pre></div><div class="post" id="p226582"><div class="ph"><a class="d" href="#p226582">2014-04-15 17:25:49</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>You could always go for the spoonerism rename approach like I did with Burndown ZX Takeout last year?
+
+Regardless I like to think that the developers would appreciate the joke and even IP lawyers wouldn&#x27;t consider a crap games competition to be worth pursuit.
+
+
+</pre></div><div class="post" id="p226583"><div class="ph"><a class="d" href="#p226583">2014-04-15 17:28:32</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Unless, of course, you&#x27;ve been beating off Microsoft&#x27;s lawyers since Advanced Windows 95/2000 Simulator? :-O
+
+
+</pre></div><div class="post" id="p226585"><div class="ph"><a class="d" href="#p226585">2014-04-15 19:35:22</a> <span>Chris Young</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Tue, 15 Apr 2014 10:28:32 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Myke-P:
+
+<span class="qt">&gt; Unless, of course, you&#x27;ve been beating off Microsoft&#x27;s lawyers since Advanced Windows 95/2000 Simulator? :-O</span>
+
+Yes, I have.  That&#x27;s why AWSXP never launched...
+
+Anyway, I have a great sort-of-alternative name for my idea.  And it&#x27;s
+Easter soon, so I&#x27;ll probably have a ridiculous amount of time to
+waste.  Even though it&#x27;ll probably only take an hour to write (I
+figure if I spend longer than an hour, it&#x27;s too polished for a crap
+game).
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+</pre></div><div class="post" id="p226586"><div class="ph"><a class="d" href="#p226586">2014-04-15 20:41:00</a> <span>Chris Young</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On 15 Apr 2014 20:35:22 +0100 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Chris Young:
+
+<span class="qt">&gt; Anyway, I have a great sort-of-alternative name for my idea.  And it&#x27;s</span>
+<span class="qt">&gt; Easter soon, so I&#x27;ll probably have a ridiculous amount of time to</span>
+<span class="qt">&gt; waste.  Even though it&#x27;ll probably only take an hour to write (I</span>
+<span class="qt">&gt; figure if I spend longer than an hour, it&#x27;s too polished for a crap</span>
+<span class="qt">&gt; game).</span>
+
+I&#x27;ve just spent about half of that hour on &quot;research&quot;[1] and the
+loading screen.
+
+The game is guaranteed to be a crock of shite (or something).
+
+Chris
+[1] Read: titting about on the Internet looking at stuff which has
+nothing to do with this game.
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+</pre></div><div class="post" id="p226598"><div class="ph"><a class="d" href="#p226598">2014-05-11 21:59:42</a> <span>Shaun Bebbington</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>As it&#x27;s BASIC&#x27;s 50th anniversary this year (1st May according to an article on Time.com) I really should do some real BASIC programming and enter another super advanced game. Just need some inspiration... hmm...
+
+Regards,
+
+Shaun.
+
+
+</pre></div><div class="post" id="p226600"><div class="ph"><a class="d" href="#p226600">2014-05-11 22:36:52</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>It&#x27;s not &quot;Super Advanced,&quot; however, how about a UDG version of GBA real-time strategy classic; &quot;Advanced Wars&quot;? 
+
+Wait.. You could call it BASIC Wars! That&#x27;s CSSCGC gold right there! :D
+
+
+</pre></div><div class="post" id="p226603"><div class="ph"><a class="d" href="#p226603">2014-05-12 12:58:26</a> <span>Shaun Bebbington</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Sunday, 11 May 2014 23:36:52 UTC+1, Myke-P  wrote:
+<span class="qt">&gt; It&#x27;s not &quot;Super Advanced,&quot; however, how about a UDG version of GBA real-time</span>
+<span class="qt">&gt; strategy classic; &quot;Advanced Wars&quot;? </span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Wait.. You could call it BASIC Wars! That&#x27;s CSSCGC gold right there! :D</span>
+
+For shame, I have not played Advanced Wars on the GBA, so I don&#x27;t know how the
+game mechanic works to make a new version of it.
+
+I&#x27;ll think of something.
+
+Regards,
+
+Shaun.
+
+
+</pre></div><div class="post" id="p226604"><div class="ph"><a class="d" href="#p226604">2014-05-12 22:12:21</a> <span>dott.Piergiorgio</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Il 12/05/2014 14:58, Shaun Bebbington ha scritto:
+<span class="qt">&gt; On Sunday, 11 May 2014 23:36:52 UTC+1, Myke-P  wrote:</span>
+<span class="qt">&gt;&gt; It&#x27;s not &quot;Super Advanced,&quot; however, how about a UDG version of GBA real-time</span>
+<span class="qt">&gt;&gt; strategy classic; &quot;Advanced Wars&quot;?</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Wait.. You could call it BASIC Wars! That&#x27;s CSSCGC gold right there! :D</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; For shame, I have not played Advanced Wars on the GBA, so I don&#x27;t know how the</span>
+<span class="qt">&gt; game mechanic works to make a new version of it.</span>
+
+Here is the complete (I think) list of the wars series:
+
+<span class="qt">&gt; <a href="http://www.mobygames.com/game-group/famicom-wars-series" rel="noreferrer">http://www.mobygames.com/game-group/famicom-wars-series</a></span>
+
+try to feed these names to the internal search engines of gaming FAQ 
+sites, I known for sure that not few of these FAQs are or have also 
+detail &amp; info on the game mechanics....
+
+HTH, and
+
+Best regards from Italy,
+dott. Piergiorgio.
+
+
+
+</pre></div><div class="post" id="p226632"><div class="ph"><a class="d" href="#p226632">2014-06-03 08:52:37</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>MatGubbins returns with an interesting take on a classic; Zero Invaders.
+
+
+</pre></div><div class="post" id="p226644"><div class="ph"><a class="d" href="#p226644">2014-06-07 06:58:02</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>... and again with Zero Asteroids...
+
+
+</pre></div><div class="post" id="p226648"><div class="ph"><a class="d" href="#p226648">2014-06-07 22:45:20</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>... and one last time with Zero Breakout...
+
+
+</pre></div><div class="post" id="p226650"><div class="ph"><a class="d" href="#p226650">2014-06-08 10:51:36</a> <span>Paul E Collins</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Sat, 07 Jun 2014 23:45:20 +0100, Myke-P &lt;…@…&gt;  
+wrote:
+
+<span class="qt">&gt; ... and one last time with Zero Breakout...</span>
+
+*cough* I did Brickless Arkanoid in 2001. It did have a ball, though.
+
+Eq.
+
+
+</pre></div><div class="post" id="p226666"><div class="ph"><a class="d" href="#p226666">2014-06-12 19:12:20</a> <span>R-Tape</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Sunday, June 8, 2014 11:51:36 AM UTC+1, Paul E Collins wrote:
+<span class="qt">&gt; On Sat, 07 Jun 2014 23:45:20 +0100, Myke-P &lt;…@…&gt;  </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; ... and one last time with Zero Breakout...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; *cough* I did Brickless Arkanoid in 2001. It did have a ball, though.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Eq.</span>
+
+Tsk, a ball?  That&#x27;s just overegging the pudding.
+
+
+</pre></div><div class="post" id="p226668"><div class="ph"><a class="d" href="#p226668">2014-06-12 21:42:10</a> <span>Paul E Collins</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Thu, 12 Jun 2014 20:12:20 +0100, R-Tape  
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; &gt; *cough* I did Brickless Arkanoid in 2001. It did have a ball, though.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Tsk, a ball?  That&#x27;s just overegging the pudding.</span>
+
+Speaking of Arkanoid, and balls, and eggs, who else has played Krypton  
+Egg? (originally on the Atari, and later remade for MS-DOS / Windows,  
+though that&#x27;s also ancient history by now.)  Definitely the best breakout  
+/ ball-brick-smash game ever. The sound effects, and the ridiculously  
+powerful power-ups, and the fact that you can have about 50 balls on  
+screen at once if you get lucky. Excellent game. Much more fun than  
+hitting one solitary ball 1000 times until it finally strikes that one  
+metal brick you have been failing to reach.
+
+Lurve,
+
+Eq.
+
+
+</pre></div><div class="post" id="p226686"><div class="ph"><a class="d" href="#p226686">2014-06-15 20:21:05</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Ooo-eck! Forgot to post catmeows &#x27;Haiku&#x27; on CSS from last Tuesday - sorry everyone.
+
+Oh well, that&#x27;s two to check out then as tonight sees MatGubbin&#x27;s return with &#x27;Zero Asteroids II&#x27; - now with (some) playability!
+
+
+</pre></div><div class="post" id="p226701"><div class="ph"><a class="d" href="#p226701">2014-06-25 12:40:08</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Andrew Green is back with his &quot;Ultimate Horse Racing Simulator&quot; - impressively awful stuff.
+
+
+</pre></div><div class="post" id="p226702"><div class="ph"><a class="d" href="#p226702">2014-06-25 18:31:00</a> <span>R-Tape</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Haha that is superb.
+
+1 and 176 look a very bad bet!
+
+It&#x27;s very cruel that Andrew doesn&#x27;t let you out of the game at the end though.
+
+
+</pre></div><div class="post" id="p226704"><div class="ph"><a class="d" href="#p226704">2014-06-28 09:07:37</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Wednesday, June 25, 2014 7:31:00 PM UTC+1, R-Tape wrote:
+<span class="qt">&gt; It&#x27;s very cruel that Andrew doesn&#x27;t let you out of the game at the end though.</span>
+
+Actually Andrew&#x27;s code does have an end message proceeded by a NEW reset, however, a pesky GOTO checking for the &quot;Y&quot; INKEY$ means it&#x27;s never seen. :-(
+
+
+
+</pre></div><div class="post" id="p226710"><div class="ph"><a class="d" href="#p226710">2014-06-30 21:11:08</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>R Tape is back with &quot;Arty Pants&quot; - a sort of Etch-a-Sketch experience but with any sense of fun surgically removed.
+
+
+</pre></div><div class="post" id="p226712"><div class="ph"><a class="d" href="#p226712">2014-06-30 23:07:15</a> <span>The Starglider</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Mon, 13 Jan 2014 17:52:00 -0800 (PST), Myke-P &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;Just to announce that the comp.sys.sinclair Crap Games Competition 2014 is now open.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;It&#x27;s home for the year will be; <a href="http://www.mykeweb.co.uk/csscgc2014" rel="noreferrer">http://www.mykeweb.co.uk/csscgc2014</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;If there&#x27;s anything you need to point out (atrocious spellings, php bugs etc) please feel free to contact me, either here, or via the submission email address.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;In the meantime I&#x27;m looking forward to another year of (low) quality software. :)</span>
+
+Dammit, I must pull my finger out of my arse and actually get around to writing
+a game for it!
+-- 
+        **************The Starglider***************  Public E-Mail. 
+        *                                         * Ask for private
+        *  E-Mail:…@… *    address.
+        *                                         *     _WW_
+        *    CHANGE WIBBLE TO .CO.UK TO REPLY     *    /_  _\
+        *******************************************   | O  O |
+_____________________________________________________oOO_\/_OOo_____
+
+---
+This email is free from viruses and malware because avast! Antivirus protection is active.
+<a href="http://www.avast.com" rel="noreferrer">http://www.avast.com</a>
+
+
+
+</pre></div><div class="post" id="p226714"><div class="ph"><a class="d" href="#p226714">2014-07-01 10:25:45</a> <span>Duncan Snowden</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Tue, 01 Jul 2014 00:07:15 +0100
+The Starglider &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Dammit, I must pull my finger out of my arse and actually get around</span>
+<span class="qt">&gt; to writing a game for it!</span>
+
+What you get up to in the privacy of your own home is your own affair,
+but I think I speak for the whole of CSS when I say that we have
+absolutely no interest in playing any games on your arse. You perv.
+
+-- 
+Duncan Snowden.
+
+
+</pre></div><div class="post" id="p226721"><div class="ph"><a class="d" href="#p226721">2014-07-02 09:12:28</a> <span>dott.Piergiorgio</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Il 01/07/2014 12:25, Duncan Snowden ha scritto:
+<span class="qt">&gt; On Tue, 01 Jul 2014 00:07:15 +0100</span>
+<span class="qt">&gt; The Starglider &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Dammit, I must pull my finger out of my arse and actually get around</span>
+<span class="qt">&gt;&gt; to writing a game for it!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; What you get up to in the privacy of your own home is your own affair,</span>
+<span class="qt">&gt; but I think I speak for the whole of CSS when I say that we have</span>
+<span class="qt">&gt; absolutely no interest in playing any games on your arse. You perv.</span>
+
+I guess there&#x27;s a major misunderstanding; I parse &quot;starglider&quot; as a 
+mildly unrefined saying, meaning  &quot;stopping being idle and starting to 
+actually doing something&quot;.
+
+Indeed here in Italy, a common swearing to idlers/gawking people doing 
+nothing around is &quot;Alza/alzate il culo !&quot;, literally &quot;get your arse up 
+!&quot; the notational image being of idlers being sit around (perhaps 
+because coding is normally actually done sit, has a role in this 
+misunderstanding...)
+
+Hope this helps in avoiding disagreement, and
+
+Best regards from Italy,
+dott. Piergiorgio.
+
+
+
+
+</pre></div><div class="post" id="p226722"><div class="ph"><a class="d" href="#p226722">2014-07-02 10:45:53</a> <span>Johny B Good</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Wed, 02 Jul 2014 11:12:28 +0200, &quot;dott.Piergiorgio&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Il 01/07/2014 12:25, Duncan Snowden ha scritto:</span>
+<span class="qt">&gt;&gt; On Tue, 01 Jul 2014 00:07:15 +0100</span>
+<span class="qt">&gt;&gt; The Starglider &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; Dammit, I must pull my finger out of my arse and actually get around</span>
+<span class="qt">&gt;&gt;&gt; to writing a game for it!</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; What you get up to in the privacy of your own home is your own affair,</span>
+<span class="qt">&gt;&gt; but I think I speak for the whole of CSS when I say that we have</span>
+<span class="qt">&gt;&gt; absolutely no interest in playing any games on your arse. You perv.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I guess there&#x27;s a major misunderstanding; I parse &quot;starglider&quot; as a </span>
+<span class="qt">&gt;mildly unrefined saying, meaning  &quot;stopping being idle and starting to </span>
+<span class="qt">&gt;actually doing something&quot;.</span>
+
+ We have exactly the same saying which translates to the phrase &quot;Stop
+being so idle and actually do something!&quot;
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Indeed here in Italy, a common swearing to idlers/gawking people doing </span>
+<span class="qt">&gt;nothing around is &quot;Alza/alzate il culo !&quot;, literally &quot;get your arse up!&quot;</span>
+
+ The actual wording used in english goes &quot;Get up off your arse!&quot; or,
+for more emphasis, &quot;Get up off your fat arse!&quot; or even &quot;Get up off
+your big fat arse!&quot;, the word &quot;up&quot; is often omitted in the interest of
+brevity to make the phrase even &#x27;sharper&#x27;.
+
+ A more polite form would be &quot;Get up off your backside!&quot;. The word
+&quot;arse&quot; is considered by &#x27;Polite Society&#x27; (and mothers addressing their
+offspring) to be rather vulgar, prefering to use the word &quot;backside&quot;
+(or &quot;bottom&quot;) in the place of the word &quot;arse&quot;. Again, the word &quot;up&quot; is
+often regarded as &#x27;optional&#x27; even in this politer form of the phrase.
+
+<span class="qt">&gt; the notational image being of idlers being sit around (perhaps </span>
+<span class="qt">&gt;because coding is normally actually done sit, has a role in this </span>
+<span class="qt">&gt;misunderstanding...)</span>
+
+ This would be more accurately translated as &quot;the notional image being
+one of idlers sitting down (the misunderstanding is perhaps because
+coding is usually done whilst seated...)&quot;
+
+ Although the literal translations you offered were not strictly
+idiomatically correct, your meaning was unambiguously clear enough.
+:-)
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Hope this helps in avoiding disagreement</span>
+
+ I suspect a more idiomatically appropriate version of the above would
+be, &quot;I hope this avoids any misunderstanding.&quot; or, &quot;I hope this avoids
+any future misunderstandings.&quot; or even maybe,  &quot;I hope this avoids any
+misunderstandings in the future.&quot;.
+
+ Sorry, I couldn&#x27;t resist! :-\
+
+<span class="qt">&gt;, and...</span>
+<span class="qt">&gt;Best regards from Italy,</span>
+<span class="qt">&gt;dott. Piergiorgio.</span>
+<span class="qt">&gt;</span>
+-- 
+J B Good
+
+
+</pre></div><div class="post" id="p226723"><div class="ph"><a class="d" href="#p226723">2014-07-02 12:24:15</a> <span>dott.Piergiorgio</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Il 02/07/2014 12:45, Johny B Good ha scritto:
+<span class="qt">&gt;   Sorry, I couldn&#x27;t resist! :-\</span>
+
+LOL, I stand corrected ! :D ;)
+
+Best regards from Italy,
+dott. Piergiorgio.
+
+
+
+</pre></div><div class="post" id="p226726"><div class="ph"><a class="d" href="#p226726">2014-07-04 19:18:17</a> <span>R-Tape</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Chortles.
+
+I&#x27;m glad it&#x27;s been clarified that Starglider is indeed not walking around with his finger inserted into his *btm* (as we actually call it in polite society) and he meant that he wants to stir himself out of idleness.
+
+Shame though, as a CSSCGC entry, &#x27;Starglider&#x27;s Arse&#x27; had a nice ring to it.
+
+
+</pre></div><div class="post" id="p226727"><div class="ph"><a class="d" href="#p226727">2014-07-04 22:45:05</a> <span>Paul E Collins</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Fri, 04 Jul 2014 20:18:17 +0100, R-Tape  
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Shame though, as a CSSCGC entry, &#x27;Starglider&#x27;s Arse&#x27; had a nice ring to  </span>
+<span class="qt">&gt; it.</span>
+
+Arse-Type
+Bum Jack
+Lord of the &quot;Rings&quot;
+Ant Buttock [Attack]
+Space Derrière [Harrier]
+
+I&#x27;ve got more. Send SSAE for full list.
+
+Eq.
+
+
+</pre></div><div class="post" id="p226728"><div class="ph"><a class="d" href="#p226728">2014-07-04 23:19:27</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Bellend Software presents; &quot;Bob&#x27;s New Kidney&quot;
+
+
+</pre></div><div class="post" id="p226729"><div class="ph"><a class="d" href="#p226729">2014-07-04 23:23:54</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Friday, July 4, 2014 11:45:05 PM UTC+1, Paul E Collins wrote:
+<span class="qt">&gt; I&#x27;ve got more. Send SSAE for full list.</span>
+
+Dear Mr Collins,
+
+I look forward to receivening the full list having also chortled slightly at your cheeky(!) references.
+
+Yours sincerely,
+Michael &#x27;C.&#x27; Pickstock
+
+
+</pre></div><div class="post" id="p226737"><div class="ph"><a class="d" href="#p226737">2014-07-09 22:30:35</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Anders Carlsson presents; &quot;Battle Cows&quot;
+
+Don&#x27;t let this one past-your-eyes without a good look. Or something. (Good grief - Ed)
+
+
+</pre></div><div class="post" id="p226739"><div class="ph"><a class="d" href="#p226739">2014-07-10 12:30:08</a> <span>R-Tape</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Udderly good.
+
+Two cow based games in one year?  Almost enough for a subcategory (or diagnose some weird perversion in Eq and carlsson).
+
+
+</pre></div><div class="post" id="p226741"><div class="ph"><a class="d" href="#p226741">2014-07-10 19:53:30</a> <span>Paul E Collins</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Thu, 10 Jul 2014 13:30:08 +0100, R-Tape  
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Udderly good.</span>
+<span class="qt">&gt; Two cow based games in one year?  Almost enough for a subcategory (or  </span>
+<span class="qt">&gt; diagnose some weird perversion in Eq and carlsson).</span>
+
+Well, the &quot;Shadow of the Beef&quot; pun came from somebody else -- actually a  
+guy I knew at school, way back when the real SOTB was still rather recent.  
+I had always wanted to do something with it.
+
+I mean I do have weird perversions but they aren&#x27;t about cows!
+
+Eq.
+
+
+</pre></div><div class="post" id="p226742"><div class="ph"><a class="d" href="#p226742">2014-07-10 22:56:38</a> <span>Duncan Snowden</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Thu, 10 Jul 2014 05:30:08 -0700 (PDT)
+R-Tape &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Udderly good.</span>
+
+So are cow puns the new fish puns? It&#x27;s a moo-t point; could go heiffer
+way.
+
+-- 
+Duncan Snowden.
+
+
+</pre></div><div class="post" id="p226786"><div class="ph"><a class="d" href="#p226786">2014-07-26 09:14:53</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>&quot;Ed Raven&quot; recycles (ha ha!) the arcade classic in; &quot;Sh*te Cycles.&quot;
+
+
+</pre></div><div class="post" id="p226849"><div class="ph"><a class="d" href="#p226849">2014-08-11 08:42:05</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>R Tape has the makings of a functional Sokoban game here, however, has chosen to use his powers for evil once more. Presenting; Sokomath!
+
+
+</pre></div><div class="post" id="p226855"><div class="ph"><a class="d" href="#p226855">2014-08-13 17:40:05</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Paul &#x27;Eq.&#x27; Collins is back with his ZX Spec-tacular conversion of online Choose-Your-Own-Adventure-A-Like &quot;Brad: The Game.&quot;
+
+
+</pre></div><div class="post" id="p226856"><div class="ph"><a class="d" href="#p226856">2014-08-13 18:57:21</a> <span>Paul E Collins</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Wed, 13 Aug 2014 18:40:05 +0100, Myke-P &lt;…@…&gt;  
+wrote:
+
+<span class="qt">&gt; Paul &#x27;Eq.&#x27; Collins is back with his ZX Spec-tacular conversion of online  </span>
+<span class="qt">&gt; Choose-Your-Own-Adventure-A-Like &quot;Brad: The Game.&quot;</span>
+
+&quot;a lovely proportional font&quot; you say? but it&#x27;s fixed-width in 64 columns!
+
+I claim my Trainspotter Award,
+
+Eq.
+
+
+</pre></div><div class="post" id="p226857"><div class="ph"><a class="d" href="#p226857">2014-08-14 07:01:23</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Wednesday, August 13, 2014 7:57:21 PM UTC+1, Paul E Collins wrote:
+<span class="qt">&gt; &quot;a lovely proportional font&quot; you say? but it&#x27;s fixed-width in 64 columns!</span>
+<span class="qt">&gt; I claim my Trainspotter Award,</span>
+
+I was convinced otherwise, however, on inspection you are quite correct.
+
+A bottle of weak lemon drink is in the post.
+
+
+</pre></div><div class="post" id="p226859"><div class="ph"><a class="d" href="#p226859">2014-08-14 10:09:54</a> <span>R-Tape</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Congratulations Eq.
+
+It&#x27;s so crap I can&#x27;t even be arsed to try it.
+
+
+</pre></div><div class="post" id="p226867"><div class="ph"><a class="d" href="#p226867">2014-08-14 18:30:19</a> <span>Chris Young</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Thu, 14 Aug 2014 03:09:54 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC R-Tape:
+
+<span class="qt">&gt; It&#x27;s so crap I can&#x27;t even be arsed to try it.</span>
+
+Unfortunately that applies to most things these days.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+</pre></div><div class="post" id="p226880"><div class="ph"><a class="d" href="#p226880">2014-08-17 02:16:51</a> <span>Paul E Collins</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Thu, 14 Aug 2014 08:01:23 +0100, Myke-P &lt;…@…&gt;  
+wrote:
+
+<span class="qt">&gt; A bottle of weak lemon drink is in the post.</span>
+
+BTW, you complained that I didn&#x27;t use the full 128K, but it&#x27;s still a  
+choose-your-own-adventure game, so even if I loaded all of the next  
+(maximum of five) options into memory, I&#x27;d still have to load those five  
+every time you made a choice. So it would involve even *more* loading.
+
+So shut up and be thankful.
+
+Love,
+
+Eq.
+
+
+</pre></div><div class="post" id="p226899"><div class="ph"><a class="d" href="#p226899">2014-08-24 19:25:30</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Sunday, August 17, 2014 3:16:51 AM UTC+1, Paul E Collins wrote:
+<span class="qt">&gt; I&#x27;d still have to load those five every time you made a choice. So it would involve even *more* loading. </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; So shut up and be thankful.</span>
+
+How appropriate. You fight like a cow.
+
+
+</pre></div><div class="post" id="p226900"><div class="ph"><a class="d" href="#p226900">2014-08-24 19:26:50</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Pgyuri, and WSS, have come up with a piece of hardware for the CSSCGC! Get yours before they sell out!
+
+
+</pre></div><div class="post" id="p226928"><div class="ph"><a class="d" href="#p226928">2014-09-07 19:22:01</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>I&#x27;ve added a new feature in which I pay homage to Sinclair User&#x27;s &quot;The Worst Game in the World!&quot; competition.
+
+
+</pre></div><div class="post" id="p226931"><div class="ph"><a class="d" href="#p226931">2014-09-08 18:26:46</a> <span>Chris Young</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Sun, 7 Sep 2014 12:22:01 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Myke-P:
+
+<span class="qt">&gt; I&#x27;ve added a new feature in which I pay homage to Sinclair User&#x27;s &quot;The Worst Game in the World!&quot; competition.</span>
+
+I thought of an excellent idea for a crap game a week or so ago, but
+didn&#x27;t write it.  I&#x27;ve now forgotten what it was.  IIRC it was
+(probably slightly out of date) topical, and a parody of some sort.
+
+Oh well, it would&#x27;ve been crap anyway. (I think that&#x27;s the point - Ed)
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+</pre></div><div class="post" id="p226942"><div class="ph"><a class="d" href="#p226942">2014-09-17 23:26:15</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Monday, September 8, 2014 7:26:46 PM UTC+1, Chris Young wrote:
+<span class="qt">&gt; On Sun, 7 Sep 2014 12:22:01 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt; I thought of an excellent idea for a crap game a week or so ago, but</span>
+<span class="qt">&gt; didn&#x27;t write it.  I&#x27;ve now forgotten what it was.  IIRC it was</span>
+<span class="qt">&gt; (probably slightly out of date) topical, and a parody of some sort.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Oh well, it would&#x27;ve been crap anyway. (I think that&#x27;s the point - Ed)</span>
+
+Sorry Chris but I&#x27;ve been studying the CSSCGC rulebook and it definitely says something about imaginary games not counting? :P
+
+
+</pre></div><div class="post" id="p226943"><div class="ph"><a class="d" href="#p226943">2014-09-17 23:27:21</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>New game from R Tape; &quot;Wild West SpecDRAW!&quot;
+
+
+</pre></div><div class="post" id="p226944"><div class="ph"><a class="d" href="#p226944">2014-09-18 10:07:44</a> <span>R-Tape</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Thursday, September 18, 2014 12:27:21 AM UTC+1, Myke-P wrote:
+<span class="qt">&gt; New game from R Tape; &quot;Wild West SpecDRAW!&quot;</span>
+
+Cheers Myke.
+
+Try as I might I can&#x27;t beat Wild Myke Hiccup&#x27;s quick-draw of 0.6 seconds.
+
+
+</pre></div><div class="post" id="p226945"><div class="ph"><a class="d" href="#p226945">2014-09-18 11:56:09</a> <span>Duncan Snowden</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Wed, 17 Sep 2014 16:26:15 -0700 (PDT)
+Myke-P &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Sorry Chris but I&#x27;ve been studying the CSSCGC rulebook and it</span>
+<span class="qt">&gt; definitely says something about imaginary games not counting? :P</span>
+
+Ah, so *that&#x27;s* why I&#x27;ve never won.
+
+-- 
+Duncan Snowden.
+
+
+</pre></div><div class="post" id="p226951"><div class="ph"><a class="d" href="#p226951">2014-09-24 23:27:09</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>&quot;Crap, Tapir, Slippers&quot; by R Tape - think Klax in BASIC with cuter UDGs.
+
+
+</pre></div><div class="post" id="p226956"><div class="ph"><a class="d" href="#p226956">2014-10-04 23:01:45</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Warning: &quot;Trapped!&quot; by Ed Raven may not be suitable for those of a nervous disposition.
+
+
+</pre></div><div class="post" id="p226958"><div class="ph"><a class="d" href="#p226958">2014-10-13 23:02:50</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Following our recent features on Sinclair User&#x27;s 1988 compo; &quot;The Worst Game in the World!&quot; comes a new challenge to recreate some of those entries for this generation to... erm... enjoy?
+
+
+</pre></div><div class="post" id="p226960"><div class="ph"><a class="d" href="#p226960">2014-10-16 13:19:48</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>First out of the gate is MatGubbins with a marvellous version of &quot;Dillon&#x27;s Cap Caper.&quot;
+
+Grand Prix will take about 30 minutes if anyone&#x27;s stuck on a train or similar? :)
+
+
+</pre></div><div class="post" id="p226988"><div class="ph"><a class="d" href="#p226988">2014-11-01 16:58:11</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Andrew Green&#x27;s &quot;Ultimate ZX Spectrum Games Designer&quot; enables you to create *any game you can imagine* and, best of all, it&#x27;s completely free!
+
+</pre></div><div class="post" id="p226990"><div class="ph"><a class="d" href="#p226990">2014-11-01 17:34:49</a> <span>R-Tape</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Oooh that&#x27;s brilliant, I think I&#x27;ll have a go at an old school (small) machine code program using this.  Anyone else tempted?
+
+</pre></div><div class="post" id="p226992"><div class="ph"><a class="d" href="#p226992">2014-11-02 10:12:04</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Saturday, November 1, 2014 5:34:49 PM UTC, R-Tape wrote:
+<span class="qt">&gt; Oooh that&#x27;s brilliant, I think I&#x27;ll have a go at an old school (small) machine code program using this.  Anyone else tempted?</span>
+
+In all seriousness it&#x27;s incredible to me that, back in the day, you&#x27;d have entered your machine code (whether hard-core like this, or in an Assembler/Compiler,) saved data blocks to an *actual C60*, written a BASIC loader with some kind of RANDOMIZE USR to test it, only to discover a bug and have to &#x27;rinse and repeat.&#x27;
+
+If anyone has any smallish, but complete, machine code examples that would be runnable in U.Z.X.S.G.D. then I&#x27;d be happy to do the &#x27;data entry.&#x27;
+
+</pre></div><div class="post" id="p226994"><div class="ph"><a class="d" href="#p226994">2014-11-02 13:00:07</a> <span>Chris Young</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Sun, 2 Nov 2014 02:12:04 -0800 (PST) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Myke-P:
+
+<span class="qt">&gt; On Saturday, November 1, 2014 5:34:49 PM UTC, R-Tape wrote:</span>
+<span class="qt">&gt; &gt; Oooh that&#x27;s brilliant, I think I&#x27;ll have a go at an old school (small) machine code program using this.  Anyone else tempted?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; In all seriousness it&#x27;s incredible to me that, back in the day,</span>
+<span class="qt">&gt; you&#x27;d have entered your machine code (whether hard-core like this,</span>
+<span class="qt">&gt; or in an Assembler/Compiler,) saved data blocks to an *actual C60*,</span>
+<span class="qt">&gt; written a BASIC loader with some kind of RANDOMIZE USR to test it,</span>
+<span class="qt">&gt; only to discover a bug and have to &#x27;rinse and repeat.&#x27;</span>
+
+You&#x27;d have to save it in case anything went wrong, however you
+wouldn&#x27;t need to write a BASIC loader.  Presumably you&#x27;d be poking the
+bytes into the desired memory location as you went along, so it&#x27;d just
+be RANDOMIZE USR 30000 or whatever.
+
+If you separate out your memory blocks to give enough space for
+modifications without having to move things around (you *could* do a
+BASIC PEEK/POKE loop to move data but it&#x27;d be slow), you could POKE in
+the modifications.
+
+Quite frankly it still sounds horredous, but if you don&#x27;t have a
+proper machine code editor that&#x27;s all you can do.
+
+I hate to say it, but the C16 had a big advantage here, with a
+built-in machine code and hex editor, which IIRC was accessed with a
+RUN STOP + RESET combo.
+
+Searching for C16 MONITOR on Google isn&#x27;t terribly helpful, although
+this page came up: <a href="http://www.c64-wiki.com/index.php/Machine_Code_Monitor" rel="noreferrer">http://www.c64-wiki.com/index.php/Machine_Code_Monitor</a>
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+</pre></div><div class="post" id="p226995"><div class="ph"><a class="d" href="#p226995">2014-11-02 17:34:23</a> <span>Volker Bartheld</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Hi!
+
+<span class="qt">&gt; On Sun, 2 Nov 2014 02:12:04 -0800 (PST) da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt; to MC Myke-P:</span>
+<span class="qt">&gt;&gt; In all seriousness it&#x27;s incredible to me that, back in the day,</span>
+<span class="qt">&gt;&gt; you&#x27;d have entered your machine code [...] RANDOMIZE USR to test it,</span>
+<span class="qt">&gt;&gt; only to discover a bug and have to &#x27;rinse and repeat.&#x27;</span>
+
+On 2 Nov 2014 13:00:07 +0000, Chris Young wrote:
+<span class="qt">&gt; [...] Presumably you&#x27;d be poking the</span>
+<span class="qt">&gt; bytes into the desired memory location as you went along, so it&#x27;d just</span>
+<span class="qt">&gt; be RANDOMIZE USR 30000 or whatever.</span>
+<span class="qt">&gt; If you separate out your memory blocks to give enough space for</span>
+<span class="qt">&gt; modifications without having to move things around (you *could* do a</span>
+<span class="qt">&gt; BASIC PEEK/POKE loop to move data but it&#x27;d be slow), you could POKE in</span>
+<span class="qt">&gt; the modifications.</span>
+
+Of course, Sinclair Spectrum nerds all used GENS/MONS (aka. &quot;HiSoft Devpac&quot;
+[1]) back then, modded their Spectrums to have at least 4164 RAM chips (or
+even 41256) instead of 4116 and either replaced the wire jumper with a
+switch or had software-enabled bank switching [2].
+
+After a quick CLEAR 32767, there were &gt;=2 32kB &quot;banks&quot; in the upper half of
+the address space and you could host the assembler/source code in bank 1
+and the machine code in bank 2. I normally used the screen buffer for
+swapping over when there wasn&#x27;t enough space ontop of BASIC. No need to
+save to tape or microdrive between test sessions, just reset, CLEAR,
+switch back, ready to go again.
+
+No in-circuit-debugging, no single stepping, of course. Bonus points for
+IF-1 development [3], where you not even had the character printing option
+of the main ROM.
+
+Cheers,
+Volker
+
+[1] <a href="http://www.worldofspectrum.org/infoseekid.cgi?id=0008091" rel="noreferrer">http://www.worldofspectrum.org/infoseekid.cgi?id=0008091</a>
+[2] <a href="http://8bit.yarek.pl/upgrade/zx.eniac/index-de.html" rel="noreferrer">http://8bit.yarek.pl/upgrade/zx.eniac/index-de.html</a>
+    <a href="http://www.youtube.com/watch?v=TXlyJcYShJU" rel="noreferrer">http://www.youtube.com/watch?v=TXlyJcYShJU</a>
+    <a href="ftp://worldofspectrum.org/pub/sinclair/hardware-info/LECMemoryExtension.pdf" rel="noreferrer">ftp://worldofspectrum.org/pub/sinclair/hardware-info/LECMemoryExtension.pdf</a>
+[3] <a href="http://blogs.msdn.com/b/andypennell/archive/2009/04/27/you-know-you-re-old-when-the-copyright-on-your-first-book-expires.aspx" rel="noreferrer">http://blogs.msdn.com/b/andypennell/archive/2009/04/27/you-know-you-re-old-when-the-copyright-on-your-first-book-expires.aspx</a>
+
+-- 
+@:  I N F O at B A R T H E L D dot N E T
+3W: www.bartheld.net
+
+</pre></div><div class="post" id="p227000"><div class="ph"><a class="d" href="#p227000">2014-11-13 23:03:13</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Ed Raven again - this time with &quot;Jump Off a Cliff Simulator&quot; - which is based on the title of an &#x27;88 game by Kieron Gillen of Stafford.
+
+</pre></div><div class="post" id="p227001"><div class="ph"><a class="d" href="#p227001">2014-11-18 11:03:25</a> <span>Brian Gaff</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Really, strange concept.
+ Still I guess its better than Serial killer simulator, or DIY butcher 
+simulator etc.
+ I suppose today we would get a drone pilot  program, or maybe   base jump 
+simulator?
+ Brian
+
+-- 
+From the Sofa of Brian Gaff Reply address is  active
+&quot;Myke-P&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; Ed Raven again - this time with &quot;Jump Off a Cliff Simulator&quot; - which is </span>
+<span class="qt">&gt; based on the title of an &#x27;88 game by Kieron Gillen of Stafford. </span>
+
+
+
+</pre></div><div class="post" id="p227002"><div class="ph"><a class="d" href="#p227002">2014-11-21 09:29:57</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Tuesday, November 18, 2014 11:03:24 AM UTC, Brian Gaff wrote:
+<span class="qt">&gt; Really, strange concept.</span>
+<span class="qt">&gt;  Still I guess its better than Serial killer simulator, or DIY butcher </span>
+<span class="qt">&gt; simulator etc.</span>
+
+It&#x27;s also better than the brilliantly accurate but woefully dull RS232: Serial Simulator! (b&#x27;dum t&#x27;sh.)
+
+</pre></div><div class="post" id="p227003"><div class="ph"><a class="d" href="#p227003">2014-11-21 09:31:34</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>R Tape obliges with not one, but two Machine Code Type-Ins! #1 is &quot;Inside the Box.&quot;
+
+#2 coming soon...
+
+</pre></div><div class="post" id="p227004"><div class="ph"><a class="d" href="#p227004">2014-11-21 12:01:18</a> <span>Brian Gaff</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Well since the Spectrum designers never came up with a real serial interface 
+its hardly surprising. Both the implementations stopped when the processor 
+halt was found and lost characters.
+ Brian
+
+-- 
+From the Sofa of Brian Gaff Reply address is  active
+&quot;Myke-P&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; On Tuesday, November 18, 2014 11:03:24 AM UTC, Brian Gaff wrote:</span>
+<span class="qt">&gt;&gt; Really, strange concept.</span>
+<span class="qt">&gt;&gt;  Still I guess its better than Serial killer simulator, or DIY butcher</span>
+<span class="qt">&gt;&gt; simulator etc.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; It&#x27;s also better than the brilliantly accurate but woefully dull RS232: </span>
+<span class="qt">&gt; Serial Simulator! (b&#x27;dum t&#x27;sh.) </span>
+
+
+
+</pre></div><div class="post" id="p227005"><div class="ph"><a class="d" href="#p227005">2014-11-21 20:33:55</a> <span>R-Tape</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Received my beautiful &#x27;Sadistic Bastard Award&#x27; badge yesterday!  Thanks Myke, I&#x27;ll wear it with pride, it makes me immensely happy to know that I made you suffer.
+
+And as an exercise in self flaggelation, I&#x27;d recommend trying a short machine code program on paper (no assemblers, calculating &#x27;jrs&#x27; and &#x27;jps&#x27; yourself) to all programmers, and unless you&#x27;re David Reidy, it&#x27;s almost guaranteed to be crap - so perfect CGC material!
+
+</pre></div><div class="post" id="p227006"><div class="ph"><a class="d" href="#p227006">2014-11-21 22:46:30</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>&quot;The Display File of Sisyphus&quot; is R Tape&#x27;s #2. (Chortle - Ed.)
+
+</pre></div><div class="post" id="p227011"><div class="ph"><a class="d" href="#p227011">2014-12-01 01:59:28</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>If you thought the ZX Spectrum had escaped the deluge of Endless Runner games then MatGubbins is here to ruin your day with; &quot;Run Ferret.&quot; 
+
+</pre></div><div class="post" id="p227047"><div class="ph"><a class="d" href="#p227047">2014-12-09 23:45:47</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Pete returns to the compo with &quot;Mr Money!&quot;
+
+See if you can beat my personal best: Screen 2.
+
+</pre></div><div class="post" id="p227052"><div class="ph"><a class="d" href="#p227052">2014-12-15 11:46:43</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>We&#x27;re down to the final 2 weeks of the compo so, after receiving details of a couple of withdrawn/aborted entries, I&#x27;m now putting together an end-of-year feature called; &quot;Look at what (you) could&#x27;ve won*.&quot;
+
+Screenshots and descriptions of what could&#x27;ve been** are welcome to the usual address.
+
+* Subject to change if I think of something wittier!
+** Unless you&#x27;re just out of time and might finish it for next year&#x27;s compo instead, in which case, hold on to it; I&#x27;m sure we&#x27;d all rather see the finished thing?
+
+</pre></div><div class="post" id="p227053"><div class="ph"><a class="d" href="#p227053">2014-12-15 12:27:28</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Chris Young never wants to see &quot;Carbon Dating Simulator&quot; ever again and, once you&#x27;ve played it, neither will you.
+
+
+</pre></div><div class="post" id="p227054"><div class="ph"><a class="d" href="#p227054">2014-12-15 12:56:44</a> <span>Chris Young</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>On Mon, 15 Dec 2014 04:27:28 -0800 (PST) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Myke-P:
+
+<span class="qt">&gt; Chris Young never wants to see &quot;Carbon Dating Simulator&quot; ever again</span>
+<span class="qt">&gt; and, once you&#x27;ve played it, neither will you.</span>
+
+Truer words have never been spoken.
+
+Also, that picture is a lump of carbon.  Obviously.*
+
+Chris
+* Actually even the original picture wasn&#x27;t that obvious, but I
+thought it was less clichéd than using a cut diamond.
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+</pre></div><div class="post" id="p227057"><div class="ph"><a class="d" href="#p227057">2014-12-19 00:35:02</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>WGitW Restoration #4; &quot;Harry the Baby Saves the World With His Amazing Water Pistol&quot; by Andrew Green.
+
+</pre></div><div class="post" id="p227058"><div class="ph"><a class="d" href="#p227058">2014-12-22 12:55:12</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Ed Raven Bump(s) Up the Numbers (and letters) with his final entry for the year.
+
+</pre></div><div class="post" id="p227060"><div class="ph"><a class="d" href="#p227060">2014-12-24 21:23:27</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>We&#x27;re nearly there! Just time for a quick Xmas break. :)
+
+As per &quot;The Rules&quot; the deadline will be 10:25 GMT on 31/12/2014 and I&#x27;m hoping to have the reviews, features and results up by January 18th.
+
+In the meantime feel free to email:
+a) Screenshots of your abandoned projects for the End of Year Feature
+b) Any entries for the Demakes, Attribute Flash FX or WGitW Restoration challenges
+
+</pre></div><div class="post" id="p227061"><div class="ph"><a class="d" href="#p227061">2014-12-27 09:21:44</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>&quot;A high-octane coordinate-typing rollercoaster of a game&quot; - A Crash Smash
+
+Sponsored by the publishers of Crash magazine; &quot;Pudding Chase&quot; by R Tape.
+
+</pre></div><div class="post" id="p227063"><div class="ph"><a class="d" href="#p227063">2014-12-29 23:18:50</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>&quot;Horace Goes Peeing&quot; by our very own Lee Tonks. Huzzah!
+
+</pre></div><div class="post" id="p227065"><div class="ph"><a class="d" href="#p227065">2014-12-30 22:51:12</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>absinthe_boy sneaks one in under the wire; &quot;Sochi Advanced Downhill Tea Tray Simulator.&quot;
+
+</pre></div><div class="post" id="p227066"><div class="ph"><a class="d" href="#p227066">2014-12-30 22:52:36</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Just over 11.5 hours to go...
+
+</pre></div><div class="post" id="p227067"><div class="ph"><a class="d" href="#p227067">2014-12-31 09:27:59</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>This is your one hour warning...
+
+</pre></div><div class="post" id="p227068"><div class="ph"><a class="d" href="#p227068">2014-12-31 10:27:14</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>The compo is now closed...
+
+</pre></div><div class="post" id="p227069"><div class="ph"><a class="d" href="#p227069">2014-12-31 10:32:16</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Save the customary deadline extension... You have until midnight! :D
+
+</pre></div><div class="post" id="p227071"><div class="ph"><a class="d" href="#p227071">2014-12-31 22:05:25</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>&quot;Divide&quot; by Anders Carlsson is, erm... mathematically challenging?
+
+</pre></div><div class="post" id="p227072"><div class="ph"><a class="d" href="#p227072">2014-12-31 22:40:34</a> <span>R-Tape</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Very much looking forward to the results in 1 hour and twenty minutes.
+
+</pre></div><div class="post" id="p227073"><div class="ph"><a class="d" href="#p227073">2015-01-01 09:19:08</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>The comp.sys.sinclair Crap Games Competition 2014 is now officially closed.
+
+There are 2 more games to review bringing our grand total up to 57 - give me a couple of days.
+
+We&#x27;re moving house next Friday so that will probably delay things a bit, however, my goal is to have the results and end of year feature up by the 18th.
+
+In the meantime take a well deserved rest from Crap Games.
+
+</pre></div><div class="post" id="p227076"><div class="ph"><a class="d" href="#p227076">2015-01-03 23:35:33</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>&quot;Jet Set Willy v0.1&quot; by Spud. Only one more to go!
+
+</pre></div><div class="post" id="p227079"><div class="ph"><a class="d" href="#p227079">2015-01-07 18:19:13</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>leespoons is last through the gate with &quot;Advanced Last Minute CSSCGC Simulator..&quot;
+
+</pre></div><div class="post" id="p227080"><div class="ph"><a class="d" href="#p227080">2015-01-07 19:29:21</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Announcing &quot;The BIG End-of-Year Feature&quot; - Enjoy!
+
+Over the next week or so I&#x27;ll be playing through all 57 entries, looking at the stats for UDG-O-METER, BEEPER ABUSE, IMAGINATION and CRAP FACTOR and whatever else I can think of to make a reasonable stab at judging this year&#x27;s competition fairly.
+
+Coming Soon... The Results.
+
+</pre></div><div class="post" id="p227082"><div class="ph"><a class="d" href="#p227082">2015-01-18 01:02:01</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>The Results are in! Head on over to the site to see who won what and, more importantly, whether you agree!
+
+</pre></div><div class="post" id="p227084"><div class="ph"><a class="d" href="#p227084">2015-01-18 09:19:26</a> <span>R-Tape</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>Congratulations Spoons.  What a pile of crap.
+
+Commiserations Eq.  I&#x27;ve actually been playing Shadow of the Beef for fun today.  Hosting will be a fitting punishment for making such a playable game.
+
+Thanks for being a top host Myke.
+
+(free, FREE, FREEEEEE!!!!)
+
+</pre></div><div class="post" id="p227086"><div class="ph"><a class="d" href="#p227086">2015-01-19 19:25:59</a> <span>Myke-P</span> <span>Re: The official CSSCGC 2014 thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2068">CSSCGC Crap Games Contest 2014</a></div><pre>&#x27;The Download Collection&#x27; added to the site containing all the entries plus a few goodies (see comments.doc.)
+
+</pre></div></main></body></html>

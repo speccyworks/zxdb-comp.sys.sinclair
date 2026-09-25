@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>+3 ROM Disassembly · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>+3 ROM Disassembly</h1><p class="facts">5 posts, 1997-07-12 – 1997-07-16</p><div class="post" id="p27959"><div class="ph"><a class="d" href="#p27959">1997-07-12</a> <span>…@…</span> </div><pre>
+Does anybody know of a disassembly of the various +3 ROMs on the
+net somewhere (preferably commented)?
+
+Alternatively, if someone has a hard copy &amp; was willing to lend it
+to me, I&#x27;ll scan it in and upload to NVG for all to see!
+
+What I&#x27;m most interested in at the moment is exactly what +3DOS uses
+in page 7 - the manual says it stores &quot;some variables&quot; there, but 
+goes into no further detail :(
+
+-- 
+Garry Lancaster
+Z88 Forever! Homepage: <a href="http://www.netforward.com/deathsdoor/?dharkhig" rel="noreferrer">http://www.netforward.com/deathsdoor/?dharkhig</a>
+Email: dharkhig at deathsdoor.com (replace &quot; at &quot; with &quot;@&quot;)
+
+
+
+</pre></div><div class="post" id="p28043"><div class="ph"><a class="d" href="#p28043">1997-07-15</a> <span>…@…</span> <span>Re: +3 ROM Disassembly</span></div><pre>
+In article &lt;…@…&gt;, …@… wrote:
+<span class="qt">&gt;Does anybody know of a disassembly of the various +3 ROMs</span>
+
+I have one in my house somewhere...
+
+<span class="qt">&gt;                                                          on the</span>
+<span class="qt">&gt;net somewhere (preferably commented)?</span>
+
+Nope, sorry.
+
+<span class="qt">&gt;Alternatively, if someone has a hard copy &amp; was willing to lend it</span>
+<span class="qt">&gt;to me, I&#x27;ll scan it in and upload to NVG for all to see!</span>
+
+It&#x27;s in handwriting so scanning isn&#x27;t an option.
+
+<span class="qt">&gt;What I&#x27;m most interested in at the moment is exactly what +3DOS uses</span>
+<span class="qt">&gt;in page 7 - the manual says it stores &quot;some variables&quot; there, but </span>
+<span class="qt">&gt;goes into no further detail :(</span>
+
+And unfortunately, the +3DOS ROM is the only one I didn&#x27;t do...
+-- 
+---- Ian Collier : …@… : WWW page (including Spectrum section):
+------ <a href="http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html" rel="noreferrer">http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html</a>
+
+New to this group?  Answers to frequently-asked questions can be had from
+<a href="http://www.jetman.demon.co.uk/speccy/faq/index.html" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/faq/index.html</a> .
+Sam Coupï¿½ FAQ: <a href="http://www.mono.org/~unc/Coupe/FAQ.txt" rel="noreferrer">http://www.mono.org/~unc/Coupe/FAQ.txt</a>
+
+
+</pre></div><div class="post" id="p28072"><div class="ph"><a class="d" href="#p28072">1997-07-15</a> <span>alvin r. albrecht</span> <span>Re: +3 ROM Disassembly</span></div><pre>
+
+
+On 15 Jul 1997, Ian Collier wrote:
+
+<span class="qt">&gt; &gt;What I&#x27;m most interested in at the moment is exactly what +3DOS uses</span>
+<span class="qt">&gt; &gt;in page 7 - the manual says it stores &quot;some variables&quot; there, but </span>
+<span class="qt">&gt; &gt;goes into no further detail :(</span>
+
+<span class="qt">&gt; And unfortunately, the +3DOS ROM is the only one I didn&#x27;t do...</span>
+
+
+You must have been some glutton for punishment.  You also posted that
+recursion-less Towers of Hanoi thing a while back (I wasn&#x27;t seriously
+challenging anyone :-).  I don&#x27;t have it handy now, but it looked like it
+was traversing the nodes of a recursion tree - was it written from scratch
+or did you use the recursion model?
+
+
+Alvin
+
+
+
+
+</pre></div><div class="post" id="p28076"><div class="ph"><a class="d" href="#p28076">1997-07-15</a> <span>…@…</span> <span>Re: +3 ROM Disassembly</span></div><pre>
+Ian Collier (…@…) wrote:
+: In article &lt;…@…&gt;, …@… wrote:
+: &gt;What I&#x27;m most interested in at the moment is exactly what +3DOS uses
+: &gt;in page 7 - the manual says it stores &quot;some variables&quot; there, but 
+: &gt;goes into no further detail :(
+
+: And unfortunately, the +3DOS ROM is the only one I didn&#x27;t do...
+
+  I&#x27;ve made a partially-commented disassembly of +3DOS; email me for 
+details.
+
+------------- <a href="http://www.seasip.demon.co.uk/index.html" rel="noreferrer">http://www.seasip.demon.co.uk/index.html</a> --------------------
+John Elliott           |BLOODNOK: &quot;But why have you got such a long face?&quot;
+<span class="qt">                       |SEAGOON: &quot;Heavy dentures, Sir!&quot;    - The Goon Show </span>
+:-------------------------------------------------------------------------)
+
+
+</pre></div><div class="post" id="p28080"><div class="ph"><a class="d" href="#p28080">1997-07-16</a> <span>…@…</span> <span>Re: +3 ROM Disassembly</span></div><pre>
+In article &lt;5qhf68$…@…&gt;, &quot;Alvin R. Albrecht&quot;  wrote:
+<span class="qt">&gt;You must have been some glutton for punishment.</span>
+
+Hmm... :-)
+
+Well, things I have disassembled in my time include:
+ - the Interface 1 ROM (which I typed on a manual typewriter, so scanning
+   in is a possibility if/when I get a computer)
+ - the Currah ï¿½Speech ROM
+ - JSW, Chequered Flag and Doomdark&#x27;s Revenge
+ - +3 ROMs 0 and 1 (plus the bits of 3 which are different from the normal
+   48K ROM)
+and I started doing the Sam ROMs but never finished them.
+
+The games, obviously, I did so I could cheat by knowing how they worked
+and/or by poking them; I also defined new levels for JSW and Chequered
+Flag.  The Interface 1 Rom was rather useful - it made it possible to
+write lots of programs that deal with microdrives and so on at a low
+level.  The other ROMs were similarly done in order find out how they
+worked and how to use them (and why the +3 editor is so full of bugs!).
+
+I didn&#x27;t have to do the +3ROM because it is pretty well documented in
+the +3 manual, and anyway at the time I wouldn&#x27;t have had a clue how
+the disk hardware worked.
+
+<span class="qt">&gt;                                                 You also posted that</span>
+<span class="qt">&gt;recursion-less Towers of Hanoi thing a while back (I wasn&#x27;t seriously</span>
+<span class="qt">&gt;challenging anyone :-).  I don&#x27;t have it handy now, but it looked like it</span>
+<span class="qt">&gt;was traversing the nodes of a recursion tree - was it written from scratch</span>
+<span class="qt">&gt;or did you use the recursion model?</span>
+
+It was written from scratch, using properties that I have observed about
+the solution.  Nodes of a recursion tree?  Nah - I don&#x27;t even know what
+they are. :-)  It is very tricky - like I said it would probably make
+a good entry for the Obfuscated C Code Contest.  (And don&#x27;t anyone steal
+it! (-: )
+-- 
+---- Ian Collier : …@… : WWW page (including Spectrum section):
+------ <a href="http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html" rel="noreferrer">http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html</a>
+
+New to this group?  Answers to frequently-asked questions can be had from
+<a href="http://www.jetman.demon.co.uk/speccy/faq/index.html" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/faq/index.html</a> .
+Sam Coupï¿½ FAQ: <a href="http://www.mono.org/~unc/Coupe/FAQ.txt" rel="noreferrer">http://www.mono.org/~unc/Coupe/FAQ.txt</a>
+
+
+</pre></div></main></body></html>

@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>signal extension news · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>signal extension news</h1><p class="facts">5 posts, 1996-05-08 – 1996-05-10</p><div class="post" id="p17081"><div class="ph"><a class="d" href="#p17081">1996-05-08</a> <span>…@…</span> </div><pre>
+Hello,
+
+I am now heavily working on version 0.30 of the signal extension.
+
+In addition to the add-ons that became necessary to handle emulated
+system calls like read(), write() there will also be some changes to
+to simplify interfacing with the signal extension that will make it 
+better usable from threads. 
+As a side effect these changes will also reduce the amount of global 
+variables which could help the shared libraries.
+
+
+The conclusion is that: if you are currently trying to figure out how
+to init and install &#x27;%CSG&#x27; handlers for use with threads or from assembly,
+you should probably wait for the 0.30 version where this can be done
+automatically.
+
+Bye
+Richard
+
+
+</pre></div><div class="post" id="p17136"><div class="ph"><a class="d" href="#p17136">1996-05-09</a> <span>…@…</span> <span>Re: signal extension news</span></div><pre>
+Brian Gaff  writes:
+
+<span class="qt">&gt;What he talking about? If its a competition, whats the prize?</span>
+
+sorry, the big draw has been cancelled.
+
+The signal extension is something entirely QL specific as you could
+find out by taking a closer look at the header of the original message.
+
+The signal extension is an extension [what else?] for the QDOS operating 
+system to implement unix like signal handling. It is not considered to be
+usefull to mere mortals though.
+
+If you like more info, the extension with sources and docs is at
+ftp.nvg.unit.no:/pub/sinclair/ql/c68/sigext*.zip
+You will need quill or quill_reader from mirrors/maya/... to read
+the .doc file.
+
+
+Bye
+Richard
+
+PS think twice before crossposting followups to maus.* groups
+
+
+</pre></div><div class="post" id="p17139"><div class="ph"><a class="d" href="#p17139">1996-05-09</a> <span>…@…</span> <span>Re: signal extension news</span></div><pre>
+Richard Zidlicky (…@…) wrote:
+: Brian Gaff  writes:
+: The signal extension is an extension [what else?] for the QDOS operating 
+: system to implement unix like signal handling. It is not considered to be
+: usefull to mere mortals though.
+
+As a mere mortal who&#x27;s a bit of a tinkerer, could you say what exactly the
+signal extension *does* do?
+I think I tried looking it up, but it seemed to take into account that you
+already knew what it was. I had a similar problem with the &#x27;C&#x27; curses
+library. It expects you to know things that in my case, I don&#x27;t... Yet.
+
+: If you like more info, the extension with sources and docs is at
+: ftp.nvg.unit.no:/pub/sinclair/ql/c68/sigext*.zip
+: You will need quill or quill_reader from mirrors/maya/... to read
+: the .doc file.
+: 
+: 
+: Bye
+: Richard
+: 
+: PS think twice before crossposting followups to maus.* groups
+
+-- 
+______________________________________________________________________________
+<span class="qt">|…@…   |It has been widely reported in the newspapers, that |</span>
+<span class="qt">|Andrew Halliwell       |  a so called &quot;puppet&quot; of the queen mother, would   |</span>
+<span class="qt">|Principal subjects in:-|  appear on this weeks program. To the press, the   |</span>
+<span class="qt">|Comp Sci &amp; Visual Arts |public, and the many members of parlaiment who have |</span>
+<span class="qt">|-----------------------|so kindly rung in to complain,we would like to admit|</span>
+<span class="qt">| that this is an outragious and contemptable untruth perpatrated by us, to  |</span>
+<span class="qt">|   bring the program into line with current government policy guidelines    |</span>
+<span class="qt">|  Spitting Image have never made such a puppet, and were on holiday at the  |</span>
+<span class="qt">|time it wasn&#x27;t made.... Thank you. (Spitting Image, when it was still funny)|</span>
+------------------------------------------------------------------------------
+<span class="qt">|GCv3.1 GCS/FA&gt;$ d---(dpu) s+/- a- C++ U N++ K- w-- M+/++ PS+++ PE- Y t+ 5++ |</span>
+<span class="qt">|X+/++ R+ tv+ b+ D G e&gt;PhD h/h+ !r! !y-|I can still say FUCK! Americans can&#x27;t|</span>
+------------------------------------------------------------------------------
+
+
+</pre></div><div class="post" id="p17157"><div class="ph"><a class="d" href="#p17157">1996-05-09</a> <span>brian gaff</span> <span>Re: signal extension news</span></div><pre>
+What he talking about? If its a competition, whats the prize?
+
+Brian
+-- 
+…@…
+Brian Gaff AKA B G Services - Still supporting Z80
+                              The Spectrum Emulator
+
+
+</pre></div><div class="post" id="p17181"><div class="ph"><a class="d" href="#p17181">1996-05-10</a> <span>…@…</span> <span>Re: signal extension news</span></div><pre>
+…@… (A Halliwell) writes:
+
+<span class="qt">&gt;Richard Zidlicky (…@…) wrote:</span>
+<span class="qt">&gt;: Brian Gaff  writes:</span>
+<span class="qt">&gt;: The signal extension is an extension [what else?] for the QDOS operating </span>
+<span class="qt">&gt;: system to implement unix like signal handling. It is not considered to be</span>
+<span class="qt">&gt;: usefull to mere mortals though.</span>
+
+<span class="qt">&gt;As a mere mortal who&#x27;s a bit of a tinkerer, could you say what exactly the</span>
+<span class="qt">&gt;signal extension *does* do?</span>
+<span class="qt">&gt;I think I tried looking it up, but it seemed to take into account that you</span>
+<span class="qt">&gt;already knew what it was. I had a similar problem with the &#x27;C&#x27; curses</span>
+<span class="qt">&gt;library. It expects you to know things that in my case, I don&#x27;t... Yet.</span>
+
+well, once upon a time there was on operating system called UNIX...
+[cut]
+The explanation of what the signal extension does is quite simple if you
+know what signals do - it just implements them for QDOS.
+
+Signals in turn are used for nearly anything you can imagine, beginning
+with trapping exceptions like BUS errors, SEGViolation, division by zero
+and FPU exceptions,...
+then they are also used for comunication between processes, asynchronous io,
+timers, debugging, window managment...
+and lust not least just to kill processes.
+
+How do signals work? Well the process that wishes to handle a signal
+defines a handler for it by calling sigaction().
+Some signals are trigered by the OS, others may be sent by some process
+using kill().
+Once the signal is trigered (and is not blocked or ignored) it acts
+[strongly simplified] like an hardware interrupt: the process gets
+interrupted, its context is saved on the stack, and the handler routine
+previously defined by sigaction is called.
+
+The nice thing with signals is that they can also interrupt many system
+calls that would otherwise hang forever or they can be used to escape
+endless loops - many interpreter use them implement some kind of &#x27;break&#x27;
+
+
+Bye
+Richard
+
+
+
+</pre></div></main></body></html>

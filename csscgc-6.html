@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSSCGC entries checked against ZXDB · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>CSSCGC entries checked against ZXDB</h1><details class="about"><summary>About this list</summary><p class="note">The comp.sys.sinclair Crap Games Competition (CSSCGC) ran in the newsgroup from 1996, and ZXDB has one tag per contest year listing its entries (1996–2026; none for 2019). On 25 Sep 2026 every post about the contest (2,453 posts, 1996–2026) was read and compared with those ZXDB lists. The goal: find entries, authors, real names and hosts that the group shows but ZXDB lacks. Nine helper agents each read a few contest years, and Claude validated and spot-checked the results (see &quot;How this was checked&quot; at the end). ZXDB copy: <code>~/projects/zx-spectrum/zxdb/zxdb.sqlite</code> of 18 Sep 2026. The same findings as data: <code>csscgc-checked.tsv</code>.</p><p><b>In short:</b> ZXDB&#x27;s contest lists are very complete for most years. Where an organiser posted a full list (1996, 1997, 1999, 2007–2010, 2014), every entry is in ZXDB. The real gaps:</p><table class="items"><thead><tr><th>Finding</th><th>Items</th></tr></thead><tbody><tr><td><b>Entries ZXDB lacks</b>, mostly 2021 (22) and 1998 (10)</td><td>35</td></tr><tr><td>Entries in ZXDB but without the contest tag</td><td>2</td></tr><tr><td><b>Entries with no author in ZXDB, where the posts name one</b></td><td>44</td></tr><tr><td>Entries whose ZXDB author looks wrong or incomplete</td><td>9</td></tr><tr><td>Handles and real names the posts connect but ZXDB does not</td><td>20</td></tr><tr><td>Hosts</td><td>2</td></tr><tr><td>Possible alternative titles and duplicates</td><td>7</td></tr></tbody></table></details><p class="filter"><input class="rowfilter" placeholder="Filter the rows on this page"> <span class="small rowcount"></span></p><p class="tabs"><a href="csscgc-all.html">All</a> · <a href="csscgc-1.html">Entries ZXDB lacks (35)</a> · <a href="csscgc-2.html">In ZXDB, but without the contest tag (2)</a> · <a href="csscgc-3.html">Entries with no author in ZXDB, where the posts name one (44)</a> · <a href="csscgc-4.html">ZXDB author looks wrong or incomplete (9)</a> · <a href="csscgc-5.html">Handles and real names (20)</a> · <b>Hosts (2)</b> · <a href="csscgc-7.html">Possible alternative titles and duplicates (7)</a></p><table class="items"><thead><tr><th>Year</th><th>ZXDB says</th><th>The posts show</th><th>Post</th></tr></thead><tbody><tr><td>2005</td><td>&quot;Hosted by Starglider&quot;</td><td>deKay (Andy Kavanagh) ran and hosted the 2005 contest on lofi-gaming.org.uk (&quot;I merely upload those games entered&quot;). The Starglider only joined as co-judge in February 2006, answering &quot;Judge required!&quot;.</td><td><a href="thread-31078.html#p192079">2005-06-06</a>, <a href="thread-31939.html#p200257">2006-02-02</a></td></tr><tr><td>2024</td><td>&quot;Hosted by Ed Toovey&quot;</td><td>Ed Toovey started it. From August 2024, Jbizzel&#x27;s blog (&quot;CSSCGC24 part deux&quot;) took over, reposted in the group by Mpk: &quot;Hopefully EdToo is okay and returns to the helm soon&quot;.</td><td><a href="thread-38355.html#p231256">2024-08-08</a></td></tr></tbody></table><p class="note">Minor: in 1998 Barry Salter had a co-judge, Alistair Nelson, who later dropped out (<a href="thread-11591.html#p35023">1998-03-09</a>). <b>2019:</b> no contest was held, so ZXDB is right to have no 2019 tag. The 2018 winner MonkZy says it lapsed because he never took it on (<a href="thread-36199.html#p228797">2020-03-12</a>).</p><details class="about"><summary>How this was checked</summary><table class="items list"><tbody><tr><td><b>Posts:</b> the index&#x27;s contest posts, plus 156 opening posts that mention the contest only in their text, 2,453 in all. Only each post&#x27;s own text was used (quotes removed). They were grouped by contest year and given to nine helper agents, each with ZXDB&#x27;s list for its years and read-only access to ZXDB.</td></tr><tr><td><b>What each agent did:</b> listed every game the posts show as entered, matched it loosely against ZXDB&#x27;s list, searched all of ZXDB for anything not found, and noted authors, real names and hosts.</td></tr><tr><td><b>Validation:</b> all 162 result rows were checked. Every cited post, entry and label exists, and for 155 of them the quoted evidence was found word for word in the cited post. The other 7 cite From: addresses or combine two quotes.</td></tr><tr><td><b>Re-checked by Claude, independently:</b> every &quot;missing&quot; title was searched again in ZXDB. The near misses are other programs: <i>Mazeman</i>, a 1985 <i>Ladron</i>, the book type-in <i>Old Bones</i>, and ZX80 <i>Mastermind</i> entries by other authors. The key posts were read again: the 1998 May list, the 2006 ZX80 Mastermind, the 2012 diving game, the 2005 host and the 2021 final list. Every &quot;no author&quot; claim matches ZXDB. Every handle pair was looked up in ZXDB&#x27;s label links; four the agents reported as new were already linked, and are left out.</td></tr></tbody></table><p class="note">The verdicts are judgements, not rules: <code>build_index.py</code> does not rebuild them. <code>csscgc-checked.tsv</code> keeps all 162 rows with their Message-IDs and thread files.</p></details><p class="note">From csscgc-vs-zxdb.md (25 Sep 2026).</p></main><script>
+(function () {
+  function fold(s) { return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); }
+  var box = document.querySelector('.rowfilter'), count = document.querySelector('.rowcount');
+  if (!box) return;
+  var rows = Array.prototype.slice.call(document.querySelectorAll('main > table tbody tr'));
+  rows.forEach(function (r) { r.dataset.text = fold(r.textContent); });
+  box.addEventListener('input', function () {
+    var words = fold(box.value).split(/\s+/).filter(Boolean), shown = 0;
+    rows.forEach(function (r) {
+      var ok = words.every(function (w) { return r.dataset.text.indexOf(w) >= 0; });
+      r.style.display = ok ? '' : 'none'; shown += ok;
+    });
+    document.querySelectorAll('main > table').forEach(function (t) {
+      var any = Array.prototype.some.call(t.querySelectorAll('tbody tr'), function (r) { return r.style.display !== 'none'; });
+      t.style.display = any ? '' : 'none';
+    });
+    count.textContent = words.length ? shown + ' of ' + rows.length + ' rows' : '';
+  });
+})();
+</script></body></html>

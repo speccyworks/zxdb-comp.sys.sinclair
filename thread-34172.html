@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANN: ColorPRINT beta · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANN: ColorPRINT beta</h1><p class="facts">11 posts, 2008-09-20 – 2008-09-23</p><div class="post" id="p218210"><div class="ph"><a class="d" href="#p218210">2008-09-20 08:21:55</a> <span>OwenBot</span>  <a class="badge" href="https://spectrumcomputing.co.uk/entry/4000131">ZXDB: ColorPRINT</a></div><pre>I&#x27;ve submitted the preliminary version of my multi-colour UDG utility
+for the Timex TC2048 to this year&#x27;s crap games compo. I expect it will
+get uploaded at some point today. What it does is to give you 256
+fully definable UDGs. As well as the bitmap, you can set the colour
+attributes for each byte, so each UDG can contain up to 16 colours (if
+you have bright black available).
+
+
+
+</pre></div><div class="post" id="p218211"><div class="ph"><a class="d" href="#p218211">2008-09-20 08:28:36</a> <span>Andrew Halliwell</span> <span>Re: ANN: ColorPRINT beta</span></div><pre>OwenBot &lt;…@…&gt; wrote:
+<span class="qt">&gt; I&#x27;ve submitted the preliminary version of my multi-colour UDG utility</span>
+<span class="qt">&gt; for the Timex TC2048 to this year&#x27;s crap games compo. I expect it will</span>
+<span class="qt">&gt; get uploaded at some point today. What it does is to give you 256</span>
+<span class="qt">&gt; fully definable UDGs. As well as the bitmap, you can set the colour</span>
+<span class="qt">&gt; attributes for each byte, so each UDG can contain up to 16 colours (if</span>
+<span class="qt">&gt; you have bright black available).</span>
+
+You submitted THAT to the CGC?
+Why? 
+1: It doesn&#x27;t sound crap
+2: It&#x27;s not a game
+so
+3: It&#x27;ll be disqualified...
+
+If you want to start a good utilities compo...
+-- 
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|   Andrew Halliwell BSc   | &quot;ARSE! GERLS!! DRINK! DRINK! DRINK!!!&quot;          |</span>
+<span class="qt">|            in            | &quot;THAT WOULD BE AN ECUMENICAL MATTER!...FECK!!!! |</span>
+<span class="qt">|     Computer Science     | - Father Jack in &quot;Father Ted&quot;                   |</span>
+
+
+
+</pre></div><div class="post" id="p218212"><div class="ph"><a class="d" href="#p218212">2008-09-20 11:26:36</a> <span>OwenBot</span> <span>Re: ANN: ColorPRINT beta</span></div><pre>It&#x27;s part of my cunning plan to make sure every Spectrum user has a
+copy. ;)
+
+I&#x27;ve just finished the full version 1.0 release. This one adds support
+for the Spectrum SE. Now you can use Mode-2 colour in 128 BASIC. Maybe
+this is the SE killer app? After all, who can say no to multi-colour
+UDG goodness? I don&#x27;t know when it will get uploaded to the site but
+if anyone wants to try it I can email them a copy. It comes with the
+source and a sample 256 character font.
+
+
+
+</pre></div><div class="post" id="p218213"><div class="ph"><a class="d" href="#p218213">2008-09-20 12:07:22</a> <span>Andrew Halliwell</span> <span>Re: ANN: ColorPRINT beta</span></div><pre>OwenBot &lt;…@…&gt; wrote:
+<span class="qt">&gt; It&#x27;s part of my cunning plan to make sure every Spectrum user has a</span>
+<span class="qt">&gt; copy. ;)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;ve just finished the full version 1.0 release. This one adds support</span>
+<span class="qt">&gt; for the Spectrum SE. Now you can use Mode-2 colour in 128 BASIC. Maybe</span>
+<span class="qt">&gt; this is the SE killer app? After all, who can say no to multi-colour</span>
+<span class="qt">&gt; UDG goodness? I don&#x27;t know when it will get uploaded to the site but</span>
+<span class="qt">&gt; if anyone wants to try it I can email them a copy. It comes with the</span>
+<span class="qt">&gt; source and a sample 256 character font.</span>
+
+Why not just submit it to WOS&#x27;s utilities section?
+That&#x27;d be more reliable and accessable than the CGC.
+-- 
+<span class="qt">|   …@…   |   Windows95 (noun): 32 bit extensions and a    |</span>
+<span class="qt">|                          | graphical shell for a 16 bit patch to an 8 bit |</span>
+<span class="qt">|   Andrew Halliwell BSc   | operating system originally  coded for a 4 bit |</span>
+<span class="qt">|            in            |microprocessor, written by a 2 bit company, that|</span>
+<span class="qt">|     Computer Science     |        can&#x27;t stand 1 bit of competition.       |</span>
+
+
+
+</pre></div><div class="post" id="p218214"><div class="ph"><a class="d" href="#p218214">2008-09-20 14:20:55</a> <span>OwenBot</span> <span>Re: ANN: ColorPRINT beta</span></div><pre><span class="qt">&gt; Why not just submit it to WOS&#x27;s utilities section?</span>
+<span class="qt">&gt; That&#x27;d be more reliable and accessable than the CGC.</span>
+
+How? There&#x27;s no obvious process beyond uploading it to the FTP area
+and it can take Martijn months to sort through all that stuff. I&#x27;m
+quite happy to do that eventually, but I&#x27;d like to tweak it a bit
+first.
+
+
+
+</pre></div><div class="post" id="p218215"><div class="ph"><a class="d" href="#p218215">2008-09-20 15:17:03</a> <span>OwenBot</span> <span>Re: ANN: ColorPRINT beta</span></div><pre>Anyhoo, you can download it here:
+
+<a href="http://www.mediafire.com/?yxwxi3zmeyx" rel="noreferrer">http://www.mediafire.com/?yxwxi3zmeyx</a>
+
+
+
+</pre></div><div class="post" id="p218217"><div class="ph"><a class="d" href="#p218217">2008-09-20 17:12:52</a> <span>Digital Prawn</span> <span>Re: ANN: ColorPRINT beta</span></div><pre>On Sep 20, 9:28 am, Andrew Halliwell &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt; You submitted THAT to the CGC?</span>
+<span class="qt">&gt; Why?</span>
+<span class="qt">&gt; 1: It doesn&#x27;t sound crap</span>
+<span class="qt">&gt; 2: It&#x27;s not a game</span>
+<span class="qt">&gt; so</span>
+<span class="qt">&gt; 3: It&#x27;ll be disqualified...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; If you want to start a good utilities compo...</span>
+<span class="qt">&gt; --</span>
+
+I&#x27;ve let this one into the compo as admittedly I let the &quot;non-game&quot;
+rot set in after accepting &quot;Virtual ZX Spectrum&quot; by James Smith. (The
+real ZX Spectrum emulator for the ZX Spectrum). I was glad to accept
+it though as it is such a &quot;clever&quot; yet bizzare entry. Subsequently, it
+became a bit of a &quot;real emulator&quot;/&quot;fake emulator&quot;/&quot;any utility you
+like&quot; free-for-all this year.
+
+Game entries are still by far in the majority in CSSCGC 2008 and
+rightly so, but it wouldn&#x27;t surprise me if we have more non-game
+entries than ever before in this year&#x27;s compo.
+
+Indeed, arguably non-game entries have no place whatsover in the CGC
+(with &#x27;G&#x27; standing for &#x27;G&#x27;ame and all), but they have nevertheless
+been quite interesting this year. I did notice a few &quot;emulators&quot; creep
+in to CGC competitions, in previous years which partially led me to
+decide to accept the above title in the first place.
+
+We are also hoping that Andrew&#x27;s entry may also spur on some
+multicolour Timex TC2048 game entries, of which he intends to submit
+one himself. Should be interesting.
+
+
+
+
+
+</pre></div><div class="post" id="p218218"><div class="ph"><a class="d" href="#p218218">2008-09-20 20:53:46</a> <span>Chris Young</span> <span>Re: ANN: ColorPRINT beta</span></div><pre>On Sat, 20 Sep 2008 10:12:52 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Digital Prawn:
+
+<span class="qt">&gt; Indeed, arguably non-game entries have no place whatsover in the CGC</span>
+<span class="qt">&gt; (with &#x27;G&#x27; standing for &#x27;G&#x27;ame and all), but they have nevertheless</span>
+<span class="qt">&gt; been quite interesting this year. I did notice a few &quot;emulators&quot; creep</span>
+<span class="qt">&gt; in to CGC competitions, in previous years which partially led me to</span>
+<span class="qt">&gt; decide to accept the above title in the first place.</span>
+
+There&#x27;s always at least one non-game entry submitted.  I&#x27;m not sure
+whether people don&#x27;t understand the rules or whether they submit them
+as a bit of a joke.  Last year we had some bizarre AY sound effect
+generator, apart from having no idea whatsoever how it worked (the
+author helpfully didn&#x27;t provide any instructions, I doubt he had any
+idea either), we couldn&#x27;t get it to do much other than play the
+included sample sounds and wasn&#x27;t entirely sure what it was supposed
+to do anyway.  &quot;It won&#x27;t just crap, or will it?&quot; indeed.
+
+There&#x27;s a tradition of accepting non-game entries regardless,
+sometimes they even win (one year had &quot;game&quot; and &quot;utility&quot; winners). 
+Officially they should be disqualified immediately, but as they say in
+Pirates of the Caribbean, they&#x27;re not really rules, more like
+guidelines.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p218219"><div class="ph"><a class="d" href="#p218219">2008-09-20 20:56:46</a> <span>Chris Young</span> <span>Re: ANN: ColorPRINT beta</span></div><pre>On Sat, 20 Sep 2008 07:20:55 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC OwenBot:
+
+<span class="qt">&gt; &gt; Why not just submit it to WOS&#x27;s utilities section?</span>
+<span class="qt">&gt; &gt; That&#x27;d be more reliable and accessable than the CGC.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; How? There&#x27;s no obvious process beyond uploading it to the FTP area</span>
+<span class="qt">&gt; and it can take Martijn months to sort through all that stuff. I&#x27;m</span>
+<span class="qt">&gt; quite happy to do that eventually, but I&#x27;d like to tweak it a bit</span>
+<span class="qt">&gt; first.</span>
+
+The process is to upload it to the FTP area and email Martijn. 
+Actually I think there&#x27;s a web upload form as well but I&#x27;ve had little
+luck with that and prefer the FTP/email system.
+
+It&#x27;ll be put in the correct palce within a couple of days if you do
+that.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p218222"><div class="ph"><a class="d" href="#p218222">2008-09-21 06:37:08</a> <span>Brian Gaff</span> <span>Re: ANN: ColorPRINT beta</span></div><pre>Talking of bizarre games..
+How about this. you have a one liner which simply counts on the screen. You 
+connect up a +D interface.
+Switch on and load the program
+Each user has a guess  for a number. Each is given a rubber hammer.
+Each hits the spectrum  in order until it freezes, at which time, the winner 
+is the nearest to the on screen number. The losers pay for the repairs..
+:-)
+
+Brian
+
+-- 
+Brian Gaff - …@…
+Note:- In order to reduce spam, any email without &#x27;Brian Gaff&#x27;
+in the display name may be lost.
+Blind user, so no pictures please!
+&quot;Digital Prawn&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+On Sep 20, 9:28 am, Andrew Halliwell &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt; You submitted THAT to the CGC?</span>
+<span class="qt">&gt; Why?</span>
+<span class="qt">&gt; 1: It doesn&#x27;t sound crap</span>
+<span class="qt">&gt; 2: It&#x27;s not a game</span>
+<span class="qt">&gt; so</span>
+<span class="qt">&gt; 3: It&#x27;ll be disqualified...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; If you want to start a good utilities compo...</span>
+<span class="qt">&gt; --</span>
+
+I&#x27;ve let this one into the compo as admittedly I let the &quot;non-game&quot;
+rot set in after accepting &quot;Virtual ZX Spectrum&quot; by James Smith. (The
+real ZX Spectrum emulator for the ZX Spectrum). I was glad to accept
+it though as it is such a &quot;clever&quot; yet bizzare entry. Subsequently, it
+became a bit of a &quot;real emulator&quot;/&quot;fake emulator&quot;/&quot;any utility you
+like&quot; free-for-all this year.
+
+Game entries are still by far in the majority in CSSCGC 2008 and
+rightly so, but it wouldn&#x27;t surprise me if we have more non-game
+entries than ever before in this year&#x27;s compo.
+
+Indeed, arguably non-game entries have no place whatsover in the CGC
+(with &#x27;G&#x27; standing for &#x27;G&#x27;ame and all), but they have nevertheless
+been quite interesting this year. I did notice a few &quot;emulators&quot; creep
+in to CGC competitions, in previous years which partially led me to
+decide to accept the above title in the first place.
+
+We are also hoping that Andrew&#x27;s entry may also spur on some
+multicolour Timex TC2048 game entries, of which he intends to submit
+one himself. Should be interesting.
+
+
+
+
+
+
+</pre></div><div class="post" id="p218237"><div class="ph"><a class="d" href="#p218237">2008-09-23 07:51:46</a> <span>OwenBot</span> <span>Re: ANN: ColorPRINT beta</span></div><pre><span class="qt">&gt; We are also hoping that Andrew&#x27;s entry may also spur on some</span>
+<span class="qt">&gt; multicolour Timex TC2048 game entries, of which he intends to submit</span>
+<span class="qt">&gt; one himself. Should be interesting.</span>
+
+Well, I&#x27;ve got as far as defining the new UDGs. The ability to use
+POKE USR &quot;A&quot;+2048 to set the attributes is certainly handy. Now I just
+have to edit all of the print statements and add the new hi-colour
+title screen.
+
+
+
+</pre></div></main></body></html>

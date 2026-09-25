@@ -1,0 +1,1333 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>.tzx vault updated 22/06/2002 · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>.tzx vault updated 22/06/2002</h1><p class="facts">39 posts, 2002-06-23 – 2002-06-29</p><div class="post" id="p140279"><div class="ph"><a class="d" href="#p140279">2002-06-23 08:18:38</a> <span>Steve Brown</span> </div><pre>Morning!
+
+After a 2 month break spent acquiring and dumping more tapes, the latest
+update has been completed. As well as nearly 200 new ZX Spectrum tape dumps,
+the site is now multi-platform.
+
+With the help of Andy Barker, Martijn van der Heide and Kev Thacker, the
+.tzx vault now also hosts tape and disk dumps for the Amstrad, C64 and Vic
+20 computers.
+
+There are lots more dumps  to be added in the coming  months.
+
+Cheers,
+
+Steve
+<a href="http://tzxvault.retrogames.com" rel="noreferrer">http://tzxvault.retrogames.com</a>
+
+__________________________________________________________________ Steve
+ICQ#: 46586401 Current ICQ status: + More ways to contact me
+__________________________________________________________________
+
+
+
+
+
+</pre></div><div class="post" id="p140281"><div class="ph"><a class="d" href="#p140281">2002-06-23 08:43:17</a> <span>tommy pereira</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>
+&quot;Steve Brown&quot; &lt;…@…&gt; wrote in message
+news:af408u$6ei$…@…...
+<span class="qt">&gt; Morning!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; After a 2 month break spent acquiring and dumping more tapes, the latest</span>
+<span class="qt">&gt; update has been completed. As well as nearly 200 new ZX Spectrum tape</span>
+dumps,
+<span class="qt">&gt; the site is now multi-platform.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; With the help of Andy Barker, Martijn van der Heide and Kev Thacker, the</span>
+<span class="qt">&gt; .tzx vault now also hosts tape and disk dumps for the Amstrad, C64 and Vic</span>
+<span class="qt">&gt; 20 computers.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; There are lots more dumps  to be added in the coming  months.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Cheers,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Steve</span>
+<span class="qt">&gt; <a href="http://tzxvault.retrogames.com" rel="noreferrer">http://tzxvault.retrogames.com</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; __________________________________________________________________ Steve</span>
+<span class="qt">&gt; ICQ#: 46586401 Current ICQ status: + More ways to contact me</span>
+<span class="qt">&gt; __________________________________________________________________</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+Steve thats great!
+
+ive contributed to the vault before and still plan to do more, now i can
+also share my C64 tapes, ( however small in number compared to my spectrum
+tapes ;)
+
+ill have to look up how to make tape files for C64, theers a project for the
+weekend :)
+
+tommy
+
+
+
+
+
+</pre></div><div class="post" id="p140283"><div class="ph"><a class="d" href="#p140283">2002-06-23 08:49:13</a> <span>tommy pereira</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>
+&quot;tommy pereira&quot; &lt;…@…&gt; wrote in message
+news:FSfR8.20803$…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;Steve Brown&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:af408u$6ei$…@…...</span>
+<span class="qt">&gt; &gt; Morning!</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; After a 2 month break spent acquiring and dumping more tapes, the latest</span>
+<span class="qt">&gt; &gt; update has been completed. As well as nearly 200 new ZX Spectrum tape</span>
+<span class="qt">&gt; dumps,</span>
+<span class="qt">&gt; &gt; the site is now multi-platform.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; With the help of Andy Barker, Martijn van der Heide and Kev Thacker, the</span>
+<span class="qt">&gt; &gt; .tzx vault now also hosts tape and disk dumps for the Amstrad, C64 and</span>
+Vic
+<span class="qt">&gt; &gt; 20 computers.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; There are lots more dumps  to be added in the coming  months.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Cheers,</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Steve</span>
+<span class="qt">&gt; &gt; <a href="http://tzxvault.retrogames.com" rel="noreferrer">http://tzxvault.retrogames.com</a></span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; __________________________________________________________________ Steve</span>
+<span class="qt">&gt; &gt; ICQ#: 46586401 Current ICQ status: + More ways to contact me</span>
+<span class="qt">&gt; &gt; __________________________________________________________________</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Steve thats great!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; ive contributed to the vault before and still plan to do more, now i can</span>
+<span class="qt">&gt; also share my C64 tapes, ( however small in number compared to my spectrum</span>
+<span class="qt">&gt; tapes ;)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; ill have to look up how to make tape files for C64, theers a project for</span>
+the
+<span class="qt">&gt; weekend :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; tommy</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+by the way, ive made a new post at lemon64 announcing this so that hopefully
+the guys over there will contribute to the vault.
+
+
+
+
+
+</pre></div><div class="post" id="p140291"><div class="ph"><a class="d" href="#p140291">2002-06-23 13:27:14</a> <span>david</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>
+&quot;tommy pereira&quot; &lt;…@…&gt; wrote in message
+news:dYfR8.20814$…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; by the way, ive made a new post at lemon64 announcing this so that</span>
+hopefully
+<span class="qt">&gt; the guys over there will contribute to the vault.</span>
+<span class="qt">&gt;</span>
+
+Perhaps some of them have Spectrum tapes they can contribute as well :)
+
+You never know!
+
+
+
+
+
+</pre></div><div class="post" id="p140314"><div class="ph"><a class="d" href="#p140314">2002-06-23 17:25:48</a> <span>Daren</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>&quot;Steve Brown&quot; &lt;…@…&gt; wrote in message
+news:af408u$6ei$…@…...
+<span class="qt">&gt; Morning!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; After a 2 month break spent acquiring and dumping more tapes, the latest</span>
+<span class="qt">&gt; update has been completed. As well as nearly 200 new ZX Spectrum tape</span>
+dumps,
+<span class="qt">&gt; the site is now multi-platform.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; With the help of Andy Barker, Martijn van der Heide and Kev Thacker, the</span>
+<span class="qt">&gt; .tzx vault now also hosts tape and disk dumps for the Amstrad, C64 and Vic</span>
+<span class="qt">&gt; 20 computers.</span>
+
+I have updated my ftp mirror of the site:
+
+<a href="ftp://darenp.co.uk" rel="noreferrer">ftp://darenp.co.uk</a>
+
+Daren
+
+
+
+
+
+</pre></div><div class="post" id="p140323"><div class="ph"><a class="d" href="#p140323">2002-06-23 18:39:16</a> <span>Llama-Wax Len</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>
+&quot;Steve Brown&quot; &lt;…@…&gt; wrote in message
+news:af408u$6ei$…@…...
+<span class="qt">&gt; With the help of Andy Barker, Martijn van der Heide and Kev Thacker, the</span>
+<span class="qt">&gt; .tzx vault now also hosts tape and disk dumps for the Amstrad, C64 and Vic</span>
+<span class="qt">&gt; 20 computers.</span>
+
+Hmmm. I wonder if this pile of C64 games in my bedroom[1] might be of use
+for something other than burning then. Is there a C64 equivalent of the MIA
+list?[2]
+
+Len
+[1] Got them in a bundle with some Speccy games, I am not endorsing the C64
+in any way.
+[2] Urgh... the thought of doing something for the C64 community... it makes
+me feel all dirty.
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+DISCLAIMER: By replying to this message, you hereby acknowledge
+that the ZX Spectrum game &quot;Robocop&quot; was too difficult.
+
+
+
+
+
+</pre></div><div class="post" id="p140355"><div class="ph"><a class="d" href="#p140355">2002-06-23 21:59:46</a> <span>tommy pereira</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>
+&quot;Llama-Wax Len&quot; &lt;…@…&gt; wrote in message
+news:af55t7$ebd$…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;Steve Brown&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:af408u$6ei$…@…...</span>
+<span class="qt">&gt; &gt; With the help of Andy Barker, Martijn van der Heide and Kev Thacker, the</span>
+<span class="qt">&gt; &gt; .tzx vault now also hosts tape and disk dumps for the Amstrad, C64 and</span>
+Vic
+<span class="qt">&gt; &gt; 20 computers.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Hmmm. I wonder if this pile of C64 games in my bedroom[1] might be of use</span>
+<span class="qt">&gt; for something other than burning then. Is there a C64 equivalent of the</span>
+MIA
+<span class="qt">&gt; list?[2]</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Len</span>
+<span class="qt">&gt; [1] Got them in a bundle with some Speccy games, I am not endorsing the</span>
+C64
+<span class="qt">&gt; in any way.</span>
+<span class="qt">&gt; [2] Urgh... the thought of doing something for the C64 community... it</span>
+makes
+<span class="qt">&gt; me feel all dirty.</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; Remove SPAMOFF to reply</span>
+<span class="qt">&gt; &quot;Oh, the nobility of the almost human porpoise!&quot;</span>
+<span class="qt">&gt; DISCLAIMER: By replying to this message, you hereby acknowledge</span>
+<span class="qt">&gt; that the ZX Spectrum game &quot;Robocop&quot; was too difficult.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+i guess it makes them feel dirty too cause i posted about it at lemon and no
+one but one person gave a crap,  about 65 views and 1 reply, . ah sod them
+then, aside from the 1 reply if they thinks its so bad that a spectrums
+preservation page is also holding c64 games like its some kind of blasphemy
+then let them have their shit tape files and a bunch of crappy dodgy disk
+images and let them finally fall into oblivion.
+
+( actually i didnt quite mean that im just a little pissed )
+
+
+
+
+
+</pre></div><div class="post" id="p140356"><div class="ph"><a class="d" href="#p140356">2002-06-23 22:03:14</a> <span>tommy pereira</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>
+&quot;david&quot; &lt;…@…&gt; wrote in message
+news:af4ibf$9v4$…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;tommy pereira&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:dYfR8.20814$…@…...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; by the way, ive made a new post at lemon64 announcing this so that</span>
+<span class="qt">&gt; hopefully</span>
+<span class="qt">&gt; &gt; the guys over there will contribute to the vault.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Perhaps some of them have Spectrum tapes they can contribute as well :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; You never know!</span>
+<span class="qt">&gt;</span>
+
+ some of them there do actually, surprisingly its not very anti spectrum
+over there, most arent.
+
+ive found that many there have spectrums and have tapes to go along with
+them!!!! how about that????
+
+
+
+
+
+</pre></div><div class="post" id="p140359"><div class="ph"><a class="d" href="#p140359">2002-06-23 23:22:04</a> <span>Steve Orr</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>I might get shouted down for this, BUT a lot of C64 owners don&#x27;t hate Speccy
+owners at all. They never did. With myself and my friends from school, there
+was a lot of banter both ways but we always agreed that playing games on
+either format was fun, and there were plenty of games for each that you
+couldn&#x27;t get on the other. All the C64 peeps from the newsgroups are just
+carrying on that banter in a slightly older way :) Do you really think
+anyone is going to burn a 20-year old computer, no matter how much they hate
+it? I certainly wouldn&#x27;t, it&#x27;d be too much like deliberately setting fire to
+a Van Gogh original or something.
+
+Steve
+
+&quot;tommy pereira&quot; &lt;…@…&gt; wrote in message
+news:CArR8.25257$…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;david&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:af4ibf$9v4$…@…...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; &quot;tommy pereira&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; &gt; news:dYfR8.20814$…@…...</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; by the way, ive made a new post at lemon64 announcing this so that</span>
+<span class="qt">&gt; &gt; hopefully</span>
+<span class="qt">&gt; &gt; &gt; the guys over there will contribute to the vault.</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Perhaps some of them have Spectrum tapes they can contribute as well :)</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; You never know!</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;  some of them there do actually, surprisingly its not very anti spectrum</span>
+<span class="qt">&gt; over there, most arent.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; ive found that many there have spectrums and have tapes to go along with</span>
+<span class="qt">&gt; them!!!! how about that????</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+
+
+
+</pre></div><div class="post" id="p140360"><div class="ph"><a class="d" href="#p140360">2002-06-23 23:22:42</a> <span>Steve Orr</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>&quot;tommy pereira&quot; &lt;…@…&gt; wrote in message
+news:mxrR8.25238$…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;Llama-Wax Len&quot; &lt;…@…&gt; wrote in</span>
+message
+<span class="qt">&gt; news:af55t7$ebd$…@…...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; &quot;Steve Brown&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; &gt; news:af408u$6ei$…@…...</span>
+<span class="qt">&gt; &gt; &gt; With the help of Andy Barker, Martijn van der Heide and Kev Thacker,</span>
+the
+<span class="qt">&gt; &gt; &gt; .tzx vault now also hosts tape and disk dumps for the Amstrad, C64 and</span>
+<span class="qt">&gt; Vic</span>
+<span class="qt">&gt; &gt; &gt; 20 computers.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Hmmm. I wonder if this pile of C64 games in my bedroom[1] might be of</span>
+use
+<span class="qt">&gt; &gt; for something other than burning then. Is there a C64 equivalent of the</span>
+<span class="qt">&gt; MIA</span>
+<span class="qt">&gt; &gt; list?[2]</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Len</span>
+<span class="qt">&gt; &gt; [1] Got them in a bundle with some Speccy games, I am not endorsing the</span>
+<span class="qt">&gt; C64</span>
+<span class="qt">&gt; &gt; in any way.</span>
+<span class="qt">&gt; &gt; [2] Urgh... the thought of doing something for the C64 community... it</span>
+<span class="qt">&gt; makes</span>
+<span class="qt">&gt; &gt; me feel all dirty.</span>
+<span class="qt">&gt; &gt; --</span>
+<span class="qt">&gt; &gt; Remove SPAMOFF to reply</span>
+<span class="qt">&gt; &gt; &quot;Oh, the nobility of the almost human porpoise!&quot;</span>
+<span class="qt">&gt; &gt; DISCLAIMER: By replying to this message, you hereby acknowledge</span>
+<span class="qt">&gt; &gt; that the ZX Spectrum game &quot;Robocop&quot; was too difficult.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; i guess it makes them feel dirty too cause i posted about it at lemon and</span>
+no
+<span class="qt">&gt; one but one person gave a crap,  about 65 views and 1 reply, . ah sod them</span>
+<span class="qt">&gt; then, aside from the 1 reply if they thinks its so bad that a spectrums</span>
+<span class="qt">&gt; preservation page is also holding c64 games like its some kind of</span>
+blasphemy
+<span class="qt">&gt; then let them have their shit tape files and a bunch of crappy dodgy disk</span>
+<span class="qt">&gt; images and let them finally fall into oblivion.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; ( actually i didnt quite mean that im just a little pissed )</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+Burn the bastards. It&#x27;s their loss.
+
+Steve
+
+
+
+
+
+
+</pre></div><div class="post" id="p140365"><div class="ph"><a class="d" href="#p140365">2002-06-24 02:37:24</a> <span>Jeff Braine</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>On Sun, 23 Jun 2002, Steve Brown wrote:
+
+<span class="qt">&gt; After a 2 month break spent acquiring and dumping more tapes, the latest</span>
+<span class="qt">&gt; update has been completed. As well as nearly 200 new ZX Spectrum tape dumps,</span>
+<span class="qt">&gt; the site is now multi-platform.</span>
+
+Woohoo!
+
+<span class="qt">&gt; With the help of Andy Barker, Martijn van der Heide and Kev Thacker, the</span>
+<span class="qt">&gt; .tzx vault now also hosts tape and disk dumps for the Amstrad, C64 and Vic</span>
+<span class="qt">&gt; 20 computers.</span>
+
+Good stuff! Is there a version of PlayTZX that will dump C64 and Amstrad
+games back out to tape? Cos I have both machines and very little in the
+way of software.
+
+<span class="qt">&gt; There are lots more dumps  to be added in the coming  months.</span>
+
+:)
+
+Ah McCain, you&#x27;ve done it again.
+
+
+-- 
+Jeff
+
+
+
+
+</pre></div><div class="post" id="p140369"><div class="ph"><a class="d" href="#p140369">2002-06-24 06:02:16</a> <span>tommy pereira</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>
+&quot;Steve Orr&quot; &lt;…@…&gt; wrote in message &gt; &gt;
+<span class="qt">&gt; Burn the bastards. It&#x27;s their loss.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Steve</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+yea, i like th c64 it woudl be a shame, but if they dont give a damn, they
+can be so thankful later on that a group of spectrum people are responsible
+for the definitive collection of primo c64 dumps in the future.
+
+
+
+
+
+</pre></div><div class="post" id="p140370"><div class="ph"><a class="d" href="#p140370">2002-06-24 06:06:55</a> <span>tommy pereira</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>ha yea, i was being a little sarcastic :)
+
+oh lots of people there love speccy, there might be a minority who go &#x27;blah&quot;
+but you got that in this scene too.
+
+i never took part of those fights, i always liked all old computers, just
+that the speccy is the one i had so it was what i became familiar wit hthe
+most, have nice memories from playing games and fiddling with basic. the
+only time id get into those shouting matches would be when they put my
+computer down, then id talk crap, and i usually wouldnt mean it because
+suddenly id be putting down the computer they owned even though i also liked
+it, but i just couldnt stay quiet.
+
+but get this... i goto the forums there and talk just as much about spectrum
+as the c64, i get bad vibes from certain people, like they wanna tell me its
+a c64 forum so id better shut up, and one day when i replied to a topic
+named something like &#x27;how does spectrum compare to c64&quot;, with something like
+, &quot;well, to your disappointment im sure, youll find now that the spectrum is
+now the most powerful and best sounding 8-bit machine for music, so you can
+blame the Russians ;),  with their GS card. go get Unreal Spectrum and
+Zynaps and eat your heart out&quot;
+
+THE THREAD JUST DIED  :-D they love their SID so much they went into
+mega-denial-shock-post-traumatic-hell-syndrome.
+
+i made a similar reply in another thread about the new breakthroughs in
+spectrum graphics too, multicolor etc, and it went ignored.
+
+ohh well ....
+
+
+&quot;Steve Orr&quot; &lt;…@…&gt; wrote in message
+news:CKsR8.2058$…@…...
+<span class="qt">&gt; I might get shouted down for this, BUT a lot of C64 owners don&#x27;t hate</span>
+Speccy
+<span class="qt">&gt; owners at all. They never did. With myself and my friends from school,</span>
+there
+<span class="qt">&gt; was a lot of banter both ways but we always agreed that playing games on</span>
+<span class="qt">&gt; either format was fun, and there were plenty of games for each that you</span>
+<span class="qt">&gt; couldn&#x27;t get on the other. All the C64 peeps from the newsgroups are just</span>
+<span class="qt">&gt; carrying on that banter in a slightly older way :) Do you really think</span>
+<span class="qt">&gt; anyone is going to burn a 20-year old computer, no matter how much they</span>
+hate
+<span class="qt">&gt; it? I certainly wouldn&#x27;t, it&#x27;d be too much like deliberately setting fire</span>
+to
+<span class="qt">&gt; a Van Gogh original or something.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Steve</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;tommy pereira&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:CArR8.25257$…@…...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; &quot;david&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; &gt; news:af4ibf$9v4$…@…...</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; &quot;tommy pereira&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; &gt; &gt; news:dYfR8.20814$…@…...</span>
+<span class="qt">&gt; &gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; &gt; by the way, ive made a new post at lemon64 announcing this so that</span>
+<span class="qt">&gt; &gt; &gt; hopefully</span>
+<span class="qt">&gt; &gt; &gt; &gt; the guys over there will contribute to the vault.</span>
+<span class="qt">&gt; &gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; Perhaps some of them have Spectrum tapes they can contribute as well</span>
+:)
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; You never know!</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;  some of them there do actually, surprisingly its not very anti spectrum</span>
+<span class="qt">&gt; &gt; over there, most arent.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; ive found that many there have spectrums and have tapes to go along with</span>
+<span class="qt">&gt; &gt; them!!!! how about that????</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+
+
+
+</pre></div><div class="post" id="p140371"><div class="ph"><a class="d" href="#p140371">2002-06-24 06:09:50</a> <span>Martin</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre><span class="qt">&gt; .tzx vault now also hosts tape and disk dumps for the Amstrad, C64 and Vic</span>
+<span class="qt">&gt; 20 computers.</span>
+
+You should probably have a chat with tim denning, with regards to vic stuff.
+He has a whole heap of .TAP images for the VIC-20, probably the biggest
+resource on the net for VIC .TAP files at the moment, it would be great to
+see them in the vault.
+
+I have about 50 or so Vic Tapes (most of which are available from tims site,
+some currently are not), for which I have corresponding .TAP images for, and
+would be more than happy to provide them.
+
+Cheers
+
+Martin
+
+
+
+
+
+
+</pre></div><div class="post" id="p140372"><div class="ph"><a class="d" href="#p140372">2002-06-24 06:29:06</a> <span>Martin</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre><span class="qt">&gt; You should probably have a chat with tim denning, with regards to vic</span>
+stuff.
+<span class="qt">&gt; He has a whole heap of .TAP images for the VIC-20, probably the biggest</span>
+<span class="qt">&gt; resource on the net for VIC .TAP files at the moment, it would be great to</span>
+<span class="qt">&gt; see them in the vault.</span>
+
+After all of that, I forgot to provide a link to his page, the last known
+one I have is (and this is pretty recent):
+
+<a href="http://arnold.c64.org/~vic20/" rel="noreferrer">http://arnold.c64.org/~vic20/</a>
+
+but it doesn&#x27;t seem to be working at the moment.
+
+Cheers
+
+Martin
+
+
+
+
+
+
+</pre></div><div class="post" id="p140373"><div class="ph"><a class="d" href="#p140373">2002-06-24 06:51:28</a> <span>Steve Brown</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>Well, from what I&#x27;ve read, the update has been well received from the C64
+guys, so I&#x27;m over the moon considering the time I put into the update ;)
+
+Steve
+
+&quot;Steve Orr&quot; &lt;…@…&gt; wrote in message
+news:CKsR8.2058$…@…...
+<span class="qt">&gt; I might get shouted down for this, BUT a lot of C64 owners don&#x27;t hate</span>
+Speccy
+<span class="qt">&gt; owners at all. They never did. With myself and my friends from school,</span>
+there
+<span class="qt">&gt; was a lot of banter both ways but we always agreed that playing games on</span>
+<span class="qt">&gt; either format was fun, and there were plenty of games for each that you</span>
+<span class="qt">&gt; couldn&#x27;t get on the other. All the C64 peeps from the newsgroups are just</span>
+<span class="qt">&gt; carrying on that banter in a slightly older way :) Do you really think</span>
+<span class="qt">&gt; anyone is going to burn a 20-year old computer, no matter how much they</span>
+hate
+<span class="qt">&gt; it? I certainly wouldn&#x27;t, it&#x27;d be too much like deliberately setting fire</span>
+to
+<span class="qt">&gt; a Van Gogh original or something.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Steve</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;tommy pereira&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:CArR8.25257$…@…...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; &quot;david&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; &gt; news:af4ibf$9v4$…@…...</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; &quot;tommy pereira&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; &gt; &gt; news:dYfR8.20814$…@…...</span>
+<span class="qt">&gt; &gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; &gt; by the way, ive made a new post at lemon64 announcing this so that</span>
+<span class="qt">&gt; &gt; &gt; hopefully</span>
+<span class="qt">&gt; &gt; &gt; &gt; the guys over there will contribute to the vault.</span>
+<span class="qt">&gt; &gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; Perhaps some of them have Spectrum tapes they can contribute as well</span>
+:)
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; You never know!</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;  some of them there do actually, surprisingly its not very anti spectrum</span>
+<span class="qt">&gt; &gt; over there, most arent.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; ive found that many there have spectrums and have tapes to go along with</span>
+<span class="qt">&gt; &gt; them!!!! how about that????</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+
+
+
+</pre></div><div class="post" id="p140374"><div class="ph"><a class="d" href="#p140374">2002-06-24 06:58:23</a> <span>Steve Brown</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre><span class="qt">&gt; yea, i like th c64 it woudl be a shame, but if they dont give a damn, they</span>
+<span class="qt">&gt; can be so thankful later on that a group of spectrum people are</span>
+responsible
+<span class="qt">&gt; for the definitive collection of primo c64 dumps in the future.</span>
+That&#x27;s a bit harsh I reckon! :)
+
+Although some sites are only interested in preserving cracked relreases
+which I&#x27;ve no problem with, there are a handful of sites which have been
+dumping tapes using the .tap format for a couple of years now!
+
+Anyway, I&#x27;m just gonna plod on as I did with the Spectrum dumps and see what
+happens.
+
+Steve
+
+
+
+
+
+</pre></div><div class="post" id="p140375"><div class="ph"><a class="d" href="#p140375">2002-06-24 06:58:24</a> <span>Steve Brown</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre><span class="qt">&gt; Good stuff! Is there a version of PlayTZX that will dump C64 and Amstrad</span>
+<span class="qt">&gt; games back out to tape? Cos I have both machines and very little in the</span>
+<span class="qt">&gt; way of software.</span>
+There is a utlity called playtap or something which can be downloaded from
+the utils page on the C64 screen. Because the .tap files contain some noise,
+the .tap files may not dump back to tape unless they are cleaned first and a
+cleaner is in development at the mo.
+
+Hopefully, if more C64 decoders for the .tzx format can be developed or a
+new digital .tap format is developed then the cleaner won&#x27;t be
+needed.......Anyway, that&#x27;s for the C64 guys to sort out, as long as the
+data is preserved in the .tap files, anything is possible ;)
+
+Steve
+
+
+
+
+
+</pre></div><div class="post" id="p140376"><div class="ph"><a class="d" href="#p140376">2002-06-24 07:01:07</a> <span>Steve Brown</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre><span class="qt">&gt; You should probably have a chat with tim denning, with regards to vic</span>
+stuff.
+<span class="qt">&gt; He has a whole heap of .TAP images for the VIC-20, probably the biggest</span>
+<span class="qt">&gt; resource on the net for VIC .TAP files at the moment, it would be great to</span>
+<span class="qt">&gt; see them in the vault.</span>
+I have and I&#x27;ve found out I&#x27;ve 8 tapes which have yet to be dumped, but I
+haven&#x27;t had time to send them to him!! If you read this Tim, I&#x27;ll pull my
+finger out and send them on :P
+
+<span class="qt">&gt; I have about 50 or so Vic Tapes (most of which are available from tims</span>
+site,
+<span class="qt">&gt; some currently are not), for which I have corresponding .TAP images for,</span>
+and
+<span class="qt">&gt; would be more than happy to provide them.</span>
+That would be great! I&#x27;m  hoping that Tim will let me host his .tap files,
+but using long filenames since all his files are in the 8.3 MSDOS naming
+convention.
+
+Cheers,
+
+Steve
+
+
+
+
+
+
+</pre></div><div class="post" id="p140377"><div class="ph"><a class="d" href="#p140377">2002-06-24 07:13:35</a> <span>tommy pereira</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>
+&quot;Martin&quot; &lt;…@…&gt; wrote in message
+news:1024900146.266672@envoy...
+<span class="qt">&gt; &gt; You should probably have a chat with tim denning, with regards to vic</span>
+<span class="qt">&gt; stuff.</span>
+<span class="qt">&gt; &gt; He has a whole heap of .TAP images for the VIC-20, probably the biggest</span>
+<span class="qt">&gt; &gt; resource on the net for VIC .TAP files at the moment, it would be great</span>
+to
+<span class="qt">&gt; &gt; see them in the vault.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; After all of that, I forgot to provide a link to his page, the last known</span>
+<span class="qt">&gt; one I have is (and this is pretty recent):</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; <a href="http://arnold.c64.org/~vic20/" rel="noreferrer">http://arnold.c64.org/~vic20/</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; but it doesn&#x27;t seem to be working at the moment.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Cheers</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Martin</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+if youd like to try some games you can goto the ftp though...
+<a href="ftp://arnold.c64.org/pub/" rel="noreferrer">ftp://arnold.c64.org/pub/</a>
+
+im not sure if the vic20 games are there but you can look around
+
+
+
+
+
+
+</pre></div><div class="post" id="p140391"><div class="ph"><a class="d" href="#p140391">2002-06-24 10:07:14</a> <span>Martin</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre><span class="qt">&gt; &gt; I have about 50 or so Vic Tapes (most of which are available from tims</span>
+site,
+<span class="qt">&gt; &gt; some currently are not), for which I have corresponding .TAP images for,</span>
+<span class="qt">&gt; &gt; and would be more than happy to provide them.</span>
+
+<span class="qt">&gt; That would be great! I&#x27;m  hoping that Tim will let me host his .tap files,</span>
+<span class="qt">&gt; but using long filenames since all his files are in the 8.3 MSDOS naming</span>
+<span class="qt">&gt; convention.</span>
+
+Steve, ok I have 54 Vic .tap files that I converted from tapes I own.
+Even though some were allready on tims site, I still atempted to convert my
+original tape to .tap, as this was my way of testing that the tape actually
+worked (rather than loading it on one of my vics). I probably have another 5
+or so, still unconverted (but thats another matter).
+
+Anyway, what is the best way for me to get them to you ? FTP to somewhere,
+email them ?
+I just rar&#x27;d them (with the best compression) to get an idea of size, and it
+comes to just under 7 meg.
+I have a cable connection, so am happy enough to upload/email that file to
+anywhere you like.
+
+That should get the your collection kicked off anyway. Also happy to sit
+down and jot down developer / publisher and copyright dates where available.
+
+Cheers for now.
+
+Martin (in Sydney Australia .....)
+
+
+
+
+
+</pre></div><div class="post" id="p140441"><div class="ph"><a class="d" href="#p140441">2002-06-24 14:15:10</a> <span>Andrew Barker</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>Steve Brown wrote:
+
+<span class="qt">&gt; Well, from what I&#x27;ve read, the update has been well received from the C64</span>
+<span class="qt">&gt; guys, so I&#x27;m over the moon considering the time I put into the update ;)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Steve</span>
+
+Now all we need them to do is embrace the TZX format and maybe help improve the
+decoders
+for it :-)
+
+I&#x27;ll get that damn CD done soon, I promise :-)
+
+Maybe they&#x27;ll be another update before you know it.
+
+BTW folks, if you are going to do your C64 tapes, then get the CS64 LTP Tape
+Adaptor that
+Steve and myself got.  Also use MTAP and not TAPLoad etc, they make v0 RAW-TAPs
+which is much like a TAP compared to a TZX on the Speccy front.  You need
+something that
+makes v1 TAPs.
+
+Let the fun begin !
+
+Regards
+
+Andy Barker (ZX STP Maintainer - <a href="http://www.worldofspectrum.org/stp/" rel="noreferrer">http://www.worldofspectrum.org/stp/</a>)
+
+
+
+
+
+</pre></div><div class="post" id="p140442"><div class="ph"><a class="d" href="#p140442">2002-06-24 14:21:30</a> <span>Andrew Barker</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre><span class="qt">&gt; yea, i like th c64 it woudl be a shame, but if they dont give a damn, they</span>
+<span class="qt">&gt; can be so thankful later on that a group of spectrum people are responsible</span>
+<span class="qt">&gt; for the definitive collection of primo c64 dumps in the future.</span>
+
+Hehe, it&#x27;s quite ironic really :-).  I&#x27;ve never owned a C64 and my cousin and I
+used to
+exchange profanities about each others computers.
+Now I&#x27;m spending hours TAPing all his C64 tapes.
+
+I think we &#x27;Speccy freaks&#x27; are more atuned to preservation with Amstrad now
+comming in second
+place.  The C64s want TAP files containing all their distortions and all.  I
+once got flamed
+for even suggesting the TZX format to them :-).
+
+Hopefully this gesture of preservation on The Vault might lead to an increased
+amount
+of preservation Tools comming our way.
+
+Hmm, why doesn&#x27;t that disk image work for me, ah it&#x27;s an amstard disk ;-).
+Why doesn&#x27;t that tape work... doh, a C64 tape.... I can see consufion comming
+my way :-)
+
+Regards
+
+Andy Barker (ZX STP Maintainer ?, Yes that what I am :-)  -
+<a href="http://www.worldofspectrum.org/stp/" rel="noreferrer">http://www.worldofspectrum.org/stp/</a>)
+
+
+
+
+</pre></div><div class="post" id="p140443"><div class="ph"><a class="d" href="#p140443">2002-06-24 14:34:00</a> <span>Andrew Barker</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>Hi Jeff,
+
+<span class="qt">&gt; Good stuff! Is there a version of PlayTZX that will dump C64 and Amstrad</span>
+<span class="qt">&gt; games back out to tape? Cos I have both machines and very little in the</span>
+<span class="qt">&gt; way of software.</span>
+
+You can download Tomaz&#x27;s 64Utils05.zip from CIA/Lemon and other C64 sites.
+There&#x27;s a util in there called 64TAPVOC which has the option to replay a TAP file
+to a VOC or the SB output.  In addition PlayTZX will play C64 TZXs anyway.
+
+I think there&#x27;s a util called pTAP which will save TAPs back to the C64
+Datacassette
+in a similar way to making the TAP (with mTAP) in the first place.  Never really
+been
+interested yet, I&#x27;m just busy preserving them.
+
+However, hold fire on using the 64Utils05, because they only handle v0 TAPs at
+present.
+We need to use v1 TAPs otherwise the pause info will be wrong.
+No offence Tomaz :-)
+
+Oh Amstrad tapes can probably be saves straight back onto tape as you do for the
+Spectrum.
+
+At the end of the day, all the dumps are as good or better than the originals and
+can be dumped
+back to tape with very a good signal strength.  Apart from C64 tapes, they might
+work, but maybe
+not.  C64 TAPs are bascially like the TZX DRB block or a CSW file.  I think CSW it
+probably
+better ?  When the 64Utils are fixed for V1 TAPs it might be highly acceptable to
+then use a
+standard cassette deck and CSW to get a CSW/WAV sample for which you can make a
+TZX.
+It might also be possible to combine the sources of all the 3 major formats and
+make a MakeTZX
+type engine to make a TZX/CDT/64T? on the fly.  Someone probably need to make a
+W32 interface
+for this.  Maybe someone may like to refine STL (Spectrum Tape Loader) I dunno ?
+
+Regards
+
+Andy Barker
+
+
+
+
+
+</pre></div><div class="post" id="p140445"><div class="ph"><a class="d" href="#p140445">2002-06-24 14:45:34</a> <span>Andrew Barker</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>Hi folks,
+
+Martin wrote:
+
+<span class="qt">&gt; &gt; &gt; I have about 50 or so Vic Tapes (most of which are available from tims</span>
+<span class="qt">&gt; site,</span>
+<span class="qt">&gt; &gt; &gt; some currently are not), for which I have corresponding .TAP images for,</span>
+<span class="qt">&gt; &gt; &gt; and would be more than happy to provide them.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; That would be great! I&#x27;m  hoping that Tim will let me host his .tap files,</span>
+<span class="qt">&gt; &gt; but using long filenames since all his files are in the 8.3 MSDOS naming</span>
+<span class="qt">&gt; &gt; convention.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Steve, ok I have 54 Vic .tap files that I converted from tapes I own.</span>
+<span class="qt">&gt; Even though some were allready on tims site, I still atempted to convert my</span>
+<span class="qt">&gt; original tape to .tap, as this was my way of testing that the tape actually</span>
+<span class="qt">&gt; worked (rather than loading it on one of my vics). I probably have another 5</span>
+<span class="qt">&gt; or so, still unconverted (but thats another matter).</span>
+
+Out of interest how did you convert these.  Did you use mTAP and the CS64
+adaptor ?
+Or something else like TAPLoad ?  The reason I ask is because we should really
+have them
+in v1 TAP format.  If they aren&#x27;t then they need redumping :-(
+A v0 TAP is like a Speccy TAP where the pauses are rounded to the nearest ms or
+something.  So they all need to be v1 TAPs.
+
+<span class="qt">&gt; Anyway, what is the best way for me to get them to you ? FTP to somewhere,</span>
+<span class="qt">&gt; email them ?</span>
+<span class="qt">&gt; I just rar&#x27;d them (with the best compression) to get an idea of size, and it</span>
+<span class="qt">&gt; comes to just under 7 meg.</span>
+<span class="qt">&gt; I have a cable connection, so am happy enough to upload/email that file to</span>
+<span class="qt">&gt; anywhere you like.</span>
+
+Would you be able to e-mail me one or two so I can verify which version of the
+TAP
+format they are ?
+
+Regards
+
+Andy Barker.
+
+
+
+
+</pre></div><div class="post" id="p140450"><div class="ph"><a class="d" href="#p140450">2002-06-24 15:22:14</a> <span>Mike Wynne</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>
+&quot;Steve Brown&quot; &lt;…@…&gt; wrote in message
+news:af408u$6ei$…@…...
+<span class="qt">&gt; With the help of Andy Barker, Martijn van der Heide and Kev Thacker, the</span>
+<span class="qt">&gt; .tzx vault now also hosts tape and disk dumps for the Amstrad, C64 and Vic</span>
+<span class="qt">&gt; 20 computers.</span>
+
+Hmmm.
+
+Will you be accepting tape images for the +4/C16 too?
+
+MikeW
+
+
+
+
+
+
+</pre></div><div class="post" id="p140474"><div class="ph"><a class="d" href="#p140474">2002-06-24 18:17:36</a> <span>Nick Humphries</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>On Mon, 24 Jun 2002 00:22:04 +0100, &quot;Steve Orr&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Do you really think</span>
+<span class="qt">&gt;anyone is going to burn a 20-year old computer, no matter how much they hate</span>
+<span class="qt">&gt;it? </span>
+
+Oh yes...
+
+	<a href="http://www.specchums.org" rel="noreferrer">http://www.specchums.org</a> (or something - been a while since I last
+visited)
+
+-- 
+------------------------------------------------------------------------
+<span class="qt">| Nick Humphries                                    …@… |</span>
+<span class="qt">| The Your Sinclair Rock&#x27;n&#x27;Roll Years:        <a href="http://www.ysrnry.co.uk/" rel="noreferrer">http://www.ysrnry.co.uk/</a> |</span>
+<span class="qt">| The Tipshop:                           <a href="http://www.the-tipshop.co.uk/" rel="noreferrer">http://www.the-tipshop.co.uk/</a> |</span>
+------------------------------------------------------------------------
+        On the plus side, it&#x27;s only 184 days until Christmas...
+
+
+
+</pre></div><div class="post" id="p140480"><div class="ph"><a class="d" href="#p140480">2002-06-24 18:25:18</a> <span>Nick Humphries</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>On Mon, 24 Jun 2002 19:17:36 +0100, Nick Humphries &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;On Mon, 24 Jun 2002 00:22:04 +0100, &quot;Steve Orr&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;Do you really think</span>
+<span class="qt">&gt;&gt;anyone is going to burn a 20-year old computer, no matter how much they hate</span>
+<span class="qt">&gt;&gt;it? </span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Oh yes...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;	<a href="http://www.specchums.org" rel="noreferrer">http://www.specchums.org</a> (or something - been a while since I last</span>
+<span class="qt">&gt;visited)</span>
+
+Aha: <a href="http://www.specchums.org/commode64/index.htm" rel="noreferrer">http://www.specchums.org/commode64/index.htm</a>
+
+-- 
+------------------------------------------------------------------------
+<span class="qt">| Nick Humphries                                    …@… |</span>
+<span class="qt">| The Your Sinclair Rock&#x27;n&#x27;Roll Years:        <a href="http://www.ysrnry.co.uk/" rel="noreferrer">http://www.ysrnry.co.uk/</a> |</span>
+<span class="qt">| The Tipshop:                           <a href="http://www.the-tipshop.co.uk/" rel="noreferrer">http://www.the-tipshop.co.uk/</a> |</span>
+------------------------------------------------------------------------
+           Never mind, it&#x27;s only 184 days until Christmas...
+
+
+
+</pre></div><div class="post" id="p140506"><div class="ph"><a class="d" href="#p140506">2002-06-24 22:05:06</a> <span>Steve Brown</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>Yep, mtap also allows +4 and C16 tapes to be dumped, but since I don&#x27;t own
+any tapes or have any dumps yet I didn&#x27;t add those computer platforms.
+
+As soon as I get some submissions, I&#x27;ll make the necessary changes.
+
+Steve
+
+&quot;Mike Wynne&quot; &lt;…@…&gt; wrote in message
+news:af7df8$blb50$…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;Steve Brown&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:af408u$6ei$…@…...</span>
+<span class="qt">&gt; &gt; With the help of Andy Barker, Martijn van der Heide and Kev Thacker, the</span>
+<span class="qt">&gt; &gt; .tzx vault now also hosts tape and disk dumps for the Amstrad, C64 and</span>
+Vic
+<span class="qt">&gt; &gt; 20 computers.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Hmmm.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Will you be accepting tape images for the +4/C16 too?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; MikeW</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+
+
+
+</pre></div><div class="post" id="p140508"><div class="ph"><a class="d" href="#p140508">2002-06-24 22:06:14</a> <span>Steve Brown</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>Hi Martin,
+
+As Andy says, we&#x27;ll need to get the tap files checked out for their version
+number and if everything checks out you can just email them.
+
+Cheers,
+
+Steve
+
+&quot;Martin&quot; &lt;…@…&gt; wrote in message
+news:mbCR8.351555$…@…...
+<span class="qt">&gt; &gt; &gt; I have about 50 or so Vic Tapes (most of which are available from tims</span>
+<span class="qt">&gt; site,</span>
+<span class="qt">&gt; &gt; &gt; some currently are not), for which I have corresponding .TAP images</span>
+for,
+<span class="qt">&gt; &gt; &gt; and would be more than happy to provide them.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; That would be great! I&#x27;m  hoping that Tim will let me host his .tap</span>
+files,
+<span class="qt">&gt; &gt; but using long filenames since all his files are in the 8.3 MSDOS naming</span>
+<span class="qt">&gt; &gt; convention.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Steve, ok I have 54 Vic .tap files that I converted from tapes I own.</span>
+<span class="qt">&gt; Even though some were allready on tims site, I still atempted to convert</span>
+my
+<span class="qt">&gt; original tape to .tap, as this was my way of testing that the tape</span>
+actually
+<span class="qt">&gt; worked (rather than loading it on one of my vics). I probably have another</span>
+5
+<span class="qt">&gt; or so, still unconverted (but thats another matter).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Anyway, what is the best way for me to get them to you ? FTP to somewhere,</span>
+<span class="qt">&gt; email them ?</span>
+<span class="qt">&gt; I just rar&#x27;d them (with the best compression) to get an idea of size, and</span>
+it
+<span class="qt">&gt; comes to just under 7 meg.</span>
+<span class="qt">&gt; I have a cable connection, so am happy enough to upload/email that file to</span>
+<span class="qt">&gt; anywhere you like.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; That should get the your collection kicked off anyway. Also happy to sit</span>
+<span class="qt">&gt; down and jot down developer / publisher and copyright dates where</span>
+available.
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Cheers for now.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Martin (in Sydney Australia .....)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+
+
+
+</pre></div><div class="post" id="p140542"><div class="ph"><a class="d" href="#p140542">2002-06-25 05:44:29</a> <span>Steve Orr</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>Hokay, point taken. So long as you all had fun :)
+
+Steve
+
+
+&quot;Nick Humphries&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; On Mon, 24 Jun 2002 19:17:36 +0100, Nick Humphries</span>
+&lt;…@…&gt;
+<span class="qt">&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;On Mon, 24 Jun 2002 00:22:04 +0100, &quot;Steve Orr&quot; &lt;…@…&gt;</span>
+wrote:
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;&gt;Do you really think</span>
+<span class="qt">&gt; &gt;&gt;anyone is going to burn a 20-year old computer, no matter how much they</span>
+hate
+<span class="qt">&gt; &gt;&gt;it?</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Oh yes...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; <a href="http://www.specchums.org" rel="noreferrer">http://www.specchums.org</a> (or something - been a while since I last</span>
+<span class="qt">&gt; &gt;visited)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Aha: <a href="http://www.specchums.org/commode64/index.htm" rel="noreferrer">http://www.specchums.org/commode64/index.htm</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; ------------------------------------------------------------------------</span>
+<span class="qt">&gt; | Nick Humphries                                    …@… |</span>
+<span class="qt">&gt; | The Your Sinclair Rock&#x27;n&#x27;Roll Years:        <a href="http://www.ysrnry.co.uk/" rel="noreferrer">http://www.ysrnry.co.uk/</a> |</span>
+<span class="qt">&gt; | The Tipshop:                           <a href="http://www.the-tipshop.co.uk/" rel="noreferrer">http://www.the-tipshop.co.uk/</a> |</span>
+<span class="qt">&gt; ------------------------------------------------------------------------</span>
+<span class="qt">&gt;            Never mind, it&#x27;s only 184 days until Christmas...</span>
+
+
+
+
+
+</pre></div><div class="post" id="p140561"><div class="ph"><a class="d" href="#p140561">2002-06-25 09:55:11</a> <span>Mike Wynne</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>
+&quot;Steve Brown&quot; &lt;…@…&gt; wrote in message
+news:af852i$rv2$…@…...
+<span class="qt">&gt; &gt; Will you be accepting tape images for the +4/C16 too?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Yep, mtap also allows +4 and C16 tapes to be dumped, but since I don&#x27;t own</span>
+<span class="qt">&gt; any tapes or have any dumps yet I didn&#x27;t add those computer platforms.</span>
+<span class="qt">&gt; As soon as I get some submissions, I&#x27;ll make the necessary changes.</span>
+
+Aha... I have about 100 C16/+4 tapes at home - I&#x27;ll see what I can manage
+when I get home tonight.
+
+MikeW
+
+
+
+
+
+
+</pre></div><div class="post" id="p140569"><div class="ph"><a class="d" href="#p140569">2002-06-25 10:46:06</a> <span>Andrew Barker</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>Martin, has sent me two of his examples, and they check out as version 1 TAPs.
+This means they are perfect for the Vault :-)
+
+Regards
+
+Andy Barker
+
+Steve Brown wrote:
+
+<span class="qt">&gt; Hi Martin,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; As Andy says, we&#x27;ll need to get the tap files checked out for their version</span>
+<span class="qt">&gt; number and if everything checks out you can just email them.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Cheers,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Steve</span>
+
+
+
+
+</pre></div><div class="post" id="p140600"><div class="ph"><a class="d" href="#p140600">2002-06-25 19:01:26</a> <span>tommy pereira</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>that is terrible! what a waste and a shame. i had never seen a green c64
+before. taht really sucks.
+
+
+
+&quot;Nick Humphries&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; On Mon, 24 Jun 2002 19:17:36 +0100, Nick Humphries</span>
+&lt;…@…&gt;
+<span class="qt">&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;On Mon, 24 Jun 2002 00:22:04 +0100, &quot;Steve Orr&quot; &lt;…@…&gt;</span>
+wrote:
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;&gt;Do you really think</span>
+<span class="qt">&gt; &gt;&gt;anyone is going to burn a 20-year old computer, no matter how much they</span>
+hate
+<span class="qt">&gt; &gt;&gt;it?</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Oh yes...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; <a href="http://www.specchums.org" rel="noreferrer">http://www.specchums.org</a> (or something - been a while since I last</span>
+<span class="qt">&gt; &gt;visited)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Aha: <a href="http://www.specchums.org/commode64/index.htm" rel="noreferrer">http://www.specchums.org/commode64/index.htm</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; ------------------------------------------------------------------------</span>
+<span class="qt">&gt; | Nick Humphries                                    …@… |</span>
+<span class="qt">&gt; | The Your Sinclair Rock&#x27;n&#x27;Roll Years:        <a href="http://www.ysrnry.co.uk/" rel="noreferrer">http://www.ysrnry.co.uk/</a> |</span>
+<span class="qt">&gt; | The Tipshop:                           <a href="http://www.the-tipshop.co.uk/" rel="noreferrer">http://www.the-tipshop.co.uk/</a> |</span>
+<span class="qt">&gt; ------------------------------------------------------------------------</span>
+<span class="qt">&gt;            Never mind, it&#x27;s only 184 days until Christmas...</span>
+<span class="qt">&gt;</span>
+
+
+
+
+
+</pre></div><div class="post" id="p140608"><div class="ph"><a class="d" href="#p140608">2002-06-25 21:03:13</a> <span>Chris Young</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>On Tue, 25 Jun 2002 19:01:26 GMT, tommy pereira ate a Rolo, and turned into...
+tommy pereira-Man!  A super-hero with the power to write complete crap
+to comp.sys.sinclair, such as this gem:
+
+<span class="qt">&gt; that is terrible! what a waste and a shame. i had never seen a green c64</span>
+<span class="qt">&gt; before. taht really sucks.</span>
+
+FWIW* it was already dead.  Oh, and the green is mould.
+
+Chris
+
+* Christ.  That&#x27;s about the third time I&#x27;ve used that in less than
+that amount of days.
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p140696"><div class="ph"><a class="d" href="#p140696">2002-06-26 23:23:02</a> <span>Peter THOMA$</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>On Tue, 25 Jun 2002 19:01:26 GMT, &quot;tommy pereira&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;that is terrible! what a waste and a shame.</span>
+
+Yeah, I know.
+
+Luckily tho, they burnt it!
+
+-- 
+pete {at} horseshoe-inn . co . uk
+[New here? See <a href="http://faq.sinclairspectrum.com" rel="noreferrer">http://faq.sinclairspectrum.com</a> ]
+
+&quot;Well, upgrade to an older version of Windows.&quot; - Tomaz Cedilnik
+
+
+
+</pre></div><div class="post" id="p140812"><div class="ph"><a class="d" href="#p140812">2002-06-28 10:58:37</a> <span>tommy pereira</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>
+&quot;mal franks&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; tommy pereira said...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; that is terrible! what a waste and a shame. i had never seen a green c64</span>
+<span class="qt">&gt; &gt; before. taht really sucks.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Don&#x27;t be sad, it was a zombie C64, fire was the only way to release it</span>
+<span class="qt">&gt; from its torment and hunger for the brains of ZX Spectrums. It was a</span>
+<span class="qt">&gt; mercy killing.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; mal</span>
+<span class="qt">&gt;</span>
+
+nah, actually, youre supposed to shoot the suckers in the head, but i guess
+a fire could do too, luckily for them they didnt get bit!
+
+
+
+
+
+</pre></div><div class="post" id="p140893"><div class="ph"><a class="d" href="#p140893">2002-06-28 21:55:59</a> <span>Llama-Wax Len</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>
+&quot;tommy pereira&quot; &lt;…@…&gt; wrote in message
+news:mxrR8.25238$…@…...
+<span class="qt">&gt; i guess it makes them feel dirty too cause i posted about it at lemon and</span>
+no
+<span class="qt">&gt; one but one person gave a crap,  about 65 views and 1 reply, . ah sod them</span>
+<span class="qt">&gt; then, aside from the 1 reply if they thinks its so bad that a spectrums</span>
+<span class="qt">&gt; preservation page is also holding c64 games like its some kind of</span>
+blasphemy
+<span class="qt">&gt; then let them have their shit tape files and a bunch of crappy dodgy disk</span>
+<span class="qt">&gt; images and let them finally fall into oblivion.</span>
+
+Well blimey, er, yes.
+
+But going back to my original point... is there a C64 equivalent of the
+MIA/STP list? As I mentioned, I&#x27;ve got a few C64 games lying in a box on my
+bedroom floor and they&#x27;re not going to be used for anything but fuel when I
+finally get round to tidying the place up so in a fit of generosity I&#x27;d just
+like to see if any of them are of any use.
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+DISCLAIMER: By replying to this message, you hereby acknowledge
+that the ZX Spectrum game &quot;Robocop&quot; was too difficult.
+
+
+
+
+
+</pre></div><div class="post" id="p140932"><div class="ph"><a class="d" href="#p140932">2002-06-29 00:47:45</a> <span>tommy pereira</span> <span>Re: .tzx vault updated 22/06/2002</span></div><pre>
+&quot;Llama-Wax Len&quot; &lt;…@…&gt; wrote in message
+news:afinin$t93$…@…...
+<span class="qt">&gt;</span>
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt; But going back to my original point... is there a C64 equivalent of the</span>
+<span class="qt">&gt; MIA/STP list? As I mentioned, I&#x27;ve got a few C64 games lying in a box on</span>
+my
+<span class="qt">&gt; bedroom floor and they&#x27;re not going to be used for anything but fuel when</span>
+I
+<span class="qt">&gt; finally get round to tidying the place up so in a fit of generosity I&#x27;d</span>
+just
+<span class="qt">&gt; like to see if any of them are of any use.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Len</span>
+
+
+ive never seen one, but you might want to see if theyre listed here:
+
+<a href="http://arnold.c64.org/index/a.htm" rel="noreferrer">http://arnold.c64.org/index/a.htm</a>
+
+or here:
+
+<a href="http://www.lemon64.com/" rel="noreferrer">http://www.lemon64.com/</a>
+
+if theyre not listed then theyre probably not available.
+
+what games have you got? if theres anyof interest to me i can take them off
+your hands, or buy them from you at a reasonable price+shipping. ill dump
+them if there are any missing.
+
+otherwise maybe you could just donate them to the tzx vault, if they arent
+there, that would be better than throwing them away.
+
+
+
+
+
+</pre></div></main></body></html>

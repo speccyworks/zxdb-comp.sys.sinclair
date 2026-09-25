@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANNOUNCE: Manic Miner comp.sys.sinclair website · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANNOUNCE: Manic Miner comp.sys.sinclair website</h1><p class="facts">12 posts, 2001-08-23 – 2001-08-27</p><div class="post" id="p112725"><div class="ph"><a class="d" href="#p112725">2001-08-23 16:29:08</a> <span>N Fishwick Fishyfish</span>  <a class="badge" href="https://spectrumcomputing.co.uk/entry/14526">ZXDB: Manic Miner: comp.sys.sinclair</a></div><pre>Work on the game may be taking eons, but there&#x27;s now a cheap looking
+website with a few screenshots for your perusal...
+
+<a href="http://www.btinternet.com/~fishyfish/games/manic/" rel="noreferrer">http://www.btinternet.com/~fishyfish/games/manic/</a>
+
+Hopefully it will be finished before we&#x27;re all dead.
+
+Fishy.
+
+
+
+</pre></div><div class="post" id="p112738"><div class="ph"><a class="d" href="#p112738">2001-08-23 17:48:23</a> <span>Lee Prince</span> <span>Re: ANNOUNCE: Manic Miner comp.sys.sinclair website</span></div><pre>Well, I was in this pub (The comp.sys.sinclair&#x27;s Arms, if you must know) on 
+23 Aug 2001, minding my own business, drinking my beer, when suddenly, 
+Fishyfish) ran in and started ranting and raving...
+
+<span class="qt">&gt; Work on the game may be taking eons, but there&#x27;s now a cheap looking</span>
+<span class="qt">&gt; website with a few screenshots for your perusal...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; <a href="http://www.btinternet.com/~fishyfish/games/manic/" rel="noreferrer">http://www.btinternet.com/~fishyfish/games/manic/</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Hopefully it will be finished before we&#x27;re all dead.</span>
+
+Excellent. Have you got a &quot;Lesbia&#x27;s Lair&quot;?
+
+Lee
+-- 
+Reply to: …@… (remove [w])
+[f]F&#x27;NAR! [w]*wibble* [o]OO-ER! [c]I&#x27;ll get my coat. [r]Ra. [s]Or something.
+(Bandwidth-saving[r] .sig for my most used phrases)
+
+
+
+</pre></div><div class="post" id="p112748"><div class="ph"><a class="d" href="#p112748">2001-08-23 18:42:20</a> <span>N Fishwick Fishyfish</span> <span>Re: ANNOUNCE: Manic Miner comp.sys.sinclair website</span></div><pre>On 23 Aug 2001 17:48:23 GMT, …@… (Lee Prince) wrote:
+
+<span class="qt">&gt;Well, I was in this pub (The comp.sys.sinclair&#x27;s Arms, if you must know) on </span>
+<span class="qt">&gt;23 Aug 2001, minding my own business, drinking my beer, when suddenly, </span>
+<span class="qt">&gt;Fishyfish) ran in and started ranting and raving...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Work on the game may be taking eons, but there&#x27;s now a cheap looking</span>
+<span class="qt">&gt;&gt; website with a few screenshots for your perusal...</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; <a href="http://www.btinternet.com/~fishyfish/games/manic/" rel="noreferrer">http://www.btinternet.com/~fishyfish/games/manic/</a></span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Hopefully it will be finished before we&#x27;re all dead.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Excellent. Have you got a &quot;Lesbia&#x27;s Lair&quot;?</span>
+<span class="qt">&gt;</span>
+Nope, but I could have.
+
+I&#x27;ll stick it in the melting pot.
+
+Fishy.
+
+
+
+
+</pre></div><div class="post" id="p112758"><div class="ph"><a class="d" href="#p112758">2001-08-23 19:40:18</a> <span>Scribbler</span> <span>Re: ANNOUNCE: Manic Miner comp.sys.sinclair website</span></div><pre>With a slice of toast in one hand and a nice cup of tea in the other,
+…@… (N Fishwick (Fishyfish)) still managed to post
+the following to comp.sys.sinclair:- 
+
+<span class="qt">&gt;I&#x27;ll stick it in the melting pot.</span>
+
+That&#x27;s what she said last night. Oh, wait. She&#x27;s my sister... oh, arse. She 
+said that too. Erm.
+
+-- 
+ICQ: 16528499 (when I can be bothered to switch it on)
+
+
+
+
+</pre></div><div class="post" id="p112807"><div class="ph"><a class="d" href="#p112807">2001-08-24 10:30:44</a> <span>Adam D. Moss</span> <span>Re: ANNOUNCE: Manic Miner comp.sys.sinclair website</span></div><pre>&quot;N Fishwick (Fishyfish)&quot; wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Work on the game may be taking eons, but there&#x27;s now a cheap looking</span>
+<span class="qt">&gt; website with a few screenshots for your perusal...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; <a href="http://www.btinternet.com/~fishyfish/games/manic/" rel="noreferrer">http://www.btinternet.com/~fishyfish/games/manic/</a></span>
+
+Wow!
+
+You really did it!
+
+
+
+</pre></div><div class="post" id="p112851"><div class="ph"><a class="d" href="#p112851">2001-08-24 17:12:33</a> <span>N Fishwick Fishyfish</span> <span>Re: ANNOUNCE: Manic Miner comp.sys.sinclair website</span></div><pre>On Fri, 24 Aug 2001 10:30:44 +0000, &quot;Adam D. Moss&quot; &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;&quot;N Fishwick (Fishyfish)&quot; wrote:</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Work on the game may be taking eons, but there&#x27;s now a cheap looking</span>
+<span class="qt">&gt;&gt; website with a few screenshots for your perusal...</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; <a href="http://www.btinternet.com/~fishyfish/games/manic/" rel="noreferrer">http://www.btinternet.com/~fishyfish/games/manic/</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Wow!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;You really did it!</span>
+
+Well it&#x27;s kinda getting there. Full congraturations should be
+forwarded upon it&#x27;s (eventual) completion.
+
+I might stick some more screenshots up when I get the chance - unless
+people think that it&#x27;ll spoil the game or something.
+
+Fishy
+
+
+
+</pre></div><div class="post" id="p113063"><div class="ph"><a class="d" href="#p113063">2001-08-26 08:29:24</a> <span>Dunny</span> <span>Re: ANNOUNCE: Manic Miner comp.sys.sinclair website</span></div><pre>
+Llama-Wax Len &lt;…@…&gt; wrote in message
+news:9mb869$b88$…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;Adam D. Moss&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt; &gt; Wow!</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; You really did it!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; God damn you!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; God damn you all to hell!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &lt;pounds fists into ground&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Only sound effects are waves lapping on a beach as we are treated to a</span>
+<span class="qt">&gt; lingering shot of a half-buried +2 &quot;Living Daylights&quot; Action Pack.</span>
+<span class="qt">&gt;</span>
+
+Len, sometimes you can be just a bit *too* obscure.
+
+D.
+
+BTW, Have you seen the new remake yet?
+
+
+
+
+
+</pre></div><div class="post" id="p113112"><div class="ph"><a class="d" href="#p113112">2001-08-26 16:14:13</a> <span>Llama-Wax Len</span> <span>Re: ANNOUNCE: Manic Miner comp.sys.sinclair website</span></div><pre>
+&quot;N Fishwick (Fishyfish)&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Work on the game may be taking eons, but there&#x27;s now a cheap looking</span>
+<span class="qt">&gt; website with a few screenshots for your perusal...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; <a href="http://www.btinternet.com/~fishyfish/games/manic/" rel="noreferrer">http://www.btinternet.com/~fishyfish/games/manic/</a></span>
+
+Excellent stuff!
+
+I hope that the Robocop room is exceptionally difficult too.
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+DISCLAIMER: By replying to this message, you hereby acknowledge
+that the ZX Spectrum game &quot;Robocop&quot; was too difficult.
+
+
+
+
+
+</pre></div><div class="post" id="p113114"><div class="ph"><a class="d" href="#p113114">2001-08-26 16:16:30</a> <span>Llama-Wax Len</span> <span>Re: ANNOUNCE: Manic Miner comp.sys.sinclair website</span></div><pre>
+&quot;Adam D. Moss&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Wow!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; You really did it!</span>
+
+God damn you!
+
+God damn you all to hell!
+
+&lt;pounds fists into ground&gt;
+
+Only sound effects are waves lapping on a beach as we are treated to a
+lingering shot of a half-buried +2 &quot;Living Daylights&quot; Action Pack.
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+DISCLAIMER: By replying to this message, you hereby acknowledge
+that the ZX Spectrum game &quot;Robocop&quot; was too difficult.
+
+
+
+
+
+</pre></div><div class="post" id="p113146"><div class="ph"><a class="d" href="#p113146">2001-08-26 21:55:12</a> <span>Dave</span> <span>Re: ANNOUNCE: Manic Miner comp.sys.sinclair website</span></div><pre>
+&quot;Llama-Wax Len&quot; &lt;…@…&gt; wrote in message
+news:9mb868$b88$…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;N Fishwick (Fishyfish)&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt; &gt; Work on the game may be taking eons, but there&#x27;s now a cheap looking</span>
+<span class="qt">&gt; &gt; website with a few screenshots for your perusal...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; <a href="http://www.btinternet.com/~fishyfish/games/manic/" rel="noreferrer">http://www.btinternet.com/~fishyfish/games/manic/</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Excellent stuff!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I hope that the Robocop room is exceptionally difficult too.</span>
+<span class="qt">&gt;</span>
+
+Don&#x27;t you mean easy? Like the original?
+
+
+
+
+
+
+</pre></div><div class="post" id="p113156"><div class="ph"><a class="d" href="#p113156">2001-08-26 22:43:04</a> <span>Llama-Wax Len</span> <span>Re: ANNOUNCE: Manic Miner comp.sys.sinclair website</span></div><pre>
+&quot;Dunny&quot; &lt;…@…&gt; wrote in message
+news:9Tai7.11698$…@…...
+<span class="qt">&gt; Len, sometimes you can be just a bit *too* obscure.</span>
+
+Why thank you. I take that as a complement. I&#x27;m not sure why.
+
+<span class="qt">&gt; BTW, Have you seen the new remake yet?</span>
+
+Yes, and to save the residents of CSS from a barrage of wildly off-topic
+posts, I&#x27;ll perhaps spout off about it next time I&#x27;m in #speccy or
+something.
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+DISCLAIMER: By replying to this message, you hereby acknowledge
+that the ZX Spectrum game &quot;Robocop&quot; was too difficult.
+
+
+
+
+
+</pre></div><div class="post" id="p113185"><div class="ph"><a class="d" href="#p113185">2001-08-27 10:48:50</a> <span>N Fishwick Fishyfish</span> <span>Re: ANNOUNCE: Manic Miner comp.sys.sinclair website</span></div><pre>On Sun, 26 Aug 2001 17:14:13 +0100, &quot;Llama-Wax Len&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&quot;N Fishwick (Fishyfish)&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt;news:…@…...</span>
+<span class="qt">&gt;&gt; Work on the game may be taking eons, but there&#x27;s now a cheap looking</span>
+<span class="qt">&gt;&gt; website with a few screenshots for your perusal...</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; <a href="http://www.btinternet.com/~fishyfish/games/manic/" rel="noreferrer">http://www.btinternet.com/~fishyfish/games/manic/</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Excellent stuff!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I hope that the Robocop room is exceptionally difficult too.</span>
+<span class="qt">&gt;</span>
+Yes, it&#x27;s rock hard.[1]
+
+Fishy
+
+[1] well...compared with some of the rooms that is.
+
+--
+Spectrum Games Maps at - <a href="http://www.btinternet.com/~fishyfish/" rel="noreferrer">http://www.btinternet.com/~fishyfish/</a>
+This posting was supervised by the Interplanetary Humane Society...
+Body count was high and casualties are heavy.
+Email me using …@… (remove the NOSPAMTHANKS)
+
+
+
+</pre></div></main></body></html>

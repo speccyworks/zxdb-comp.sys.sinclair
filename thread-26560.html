@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANN: SE Basic version 0.80a Public Beta · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANN: SE Basic version 0.80a Public Beta</h1><p class="facts">5 posts, 2002-11-10 – 2002-11-13</p><div class="post" id="p149914"><div class="ph"><a class="d" href="#p149914">2002-11-10 17:35:52</a> <span>Andrew Owen</span> </div><pre>ï¿½Hola!
+
+Sorry, but the rest is in English. :-(
+
+First, there has been a massive update to the Sinclair Basic site. This is
+where you will find all of the files you need to run it on your machine,
+real or emulated.
+
+The site is at <a href="http://www.worldofspectrum.org/sinclairbasic/" rel="noreferrer">http://www.worldofspectrum.org/sinclairbasic/</a>
+
+
+Site changes:
+
+Revised the History section.
+Added a Unix based interpretter to the Versions section.
+The SE Basic page has the latest versions for download.
+The License is downloadable/viewable on-line.
+The Source code is downloadable/viewable on-line.
+Patches are provided to allow SE Basic to work with virtually any Spectrum.
+Software only versions of SE Basic are provided for virtually any Spectrum.
+Three SE Basic software titles to download including the SE Basic Compiler.
+
+
+SE Basic version 0.80a summary:
+
+Proper Open Source release.
+Easier installation process.
+Now runs on 16K, 48K and clones, 128K and clones, +2, +2A, +3, SAM Coupe.
+Can be used in RAM instead of ROM on real machines.
+Patches available so any version of the 128 editor will work properly.
+Works with the Interface 1 and ZXATASP/ResiDOS.
+There&#x27;s a new font, a new tokenizer and a simplified keyboard layout.
+The cursors go up and down in an edit line.
+The reset is faster (works on 16K machines too!).
+Line numbers up to 16383 are allowed.
+Almost all of the bugs in the original ROM are fixed.
+There&#x27;s a faster square root routine.
+The screen$ command can now hanle UDGs.
+There are macros available on the keyboard via EXTEND-SYMB-6 to 0.
+(Don&#x27;t try and use macros with a 128 editor paged in - it will crash!)
+
+There are many more minor features but too many to list.
+
+Please report any bugs via email. Since the user base is still small I can
+also answer any questions on how to use or install SE Basic. 
+
+P.S. How many people are actually using SE Basic? Is it worth setting up a
+user group? And is anyone interested in translating the Sinclair Basic
+site into Spanish?
+
+Cheers!
+
+-- 
+SE Basic and ZX Spectrum SE homepage:
+
+<a href="http://www.worldofspectrum.org/sinclairbasic/" rel="noreferrer">http://www.worldofspectrum.org/sinclairbasic/</a>
+
+
+
+</pre></div><div class="post" id="p149920"><div class="ph"><a class="d" href="#p149920">2002-11-10 18:54:58</a> <span>Dave the Lurker</span> <span>Re: ANN: SE Basic version 0.80a Public Beta</span></div><pre>In article &lt;…@…
+addr.btopenworld.com&gt;, …@… says...
+[snip SE basic announce]
+
+<span class="qt">&gt; Please report any bugs via email. Since the user base is still small I can</span>
+<span class="qt">&gt; also answer any questions on how to use or install SE Basic. </span>
+
+I&#x27;m currently using the last public beta on two real machines (48k and +
+3(e)).  I&#x27;ll also probably start to use it exclusively in emulation.  
+I&#x27;ll be trying out this beta when I get a chance.
+
+<span class="qt">&gt; P.S. How many people are actually using SE Basic? Is it worth setting up a</span>
+<span class="qt">&gt; user group? And is anyone interested in translating the Sinclair Basic</span>
+<span class="qt">&gt; site into Spanish?</span>
+
+Are you thinking about hosting the project on sourceforge at anytime?  
+If so the user forums on there would probably be a good place to host 
+any kind of use group.
+
+cheers
+Dave
+
+
+
+</pre></div><div class="post" id="p149921"><div class="ph"><a class="d" href="#p149921">2002-11-10 19:04:43</a> <span>Andrew Owen</span> <span>Re: ANN: SE Basic version 0.80a Public Beta</span></div><pre>In article &lt;…@…&gt;, Dave the Lurker
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; I&#x27;m currently using the last public beta on two real machines (48k and +</span>
+<span class="qt">&gt; 3(e)).  I&#x27;ll also probably start to use it exclusively in emulation.  </span>
+<span class="qt">&gt; I&#x27;ll be trying out this beta when I get a chance.</span>
+
+This version includes IPS patch files to make the +3e ROMs behave properly
+with SE Basic. You&#x27;ll need to apply the +3 v4.0 64K patch file to a 64K
++3e ROM image, then split it in two and burn it to EPROM. The 48K will use
+the normal 0.80a ROM without modification. 
+
+<span class="qt">&gt; Are you thinking about hosting the project on sourceforge at anytime?  </span>
+<span class="qt">&gt; If so the user forums on there would probably be a good place to host </span>
+<span class="qt">&gt; any kind of user group.</span>
+
+I have been planning to host the SE Basic specific parts of the site on
+sourceforge for a while now. Unfortunately the OSI has failed to reply to
+my emails requesting help agreeing a suitable license. As it stands, the
+only license available on Source Forge which complies with the OSD and
+includes the various clauses necessary by Amstrad is the Apple Open Source
+License, which is very restrictive. However, if they don&#x27;t write back I&#x27;ll
+have no choice but to use it if I want Source Forge to host the project.
+
+-- 
+SE Basic and ZX Spectrum SE homepage:
+
+<a href="http://www.worldofspectrum.org/sinclairbasic/" rel="noreferrer">http://www.worldofspectrum.org/sinclairbasic/</a>
+
+
+
+</pre></div><div class="post" id="p150050"><div class="ph"><a class="d" href="#p150050">2002-11-13 00:32:03</a> <span>Geoff Wearmouth</span> <span>Re: ANN: SE Basic version 0.80a Public Beta</span></div><pre>In article &lt;…@…
+addr.btopenworld.com&gt;, Andrew Owen &lt;…@…&gt; writes
+
+<span class="qt">&gt;SE Basic version 0.80a summary:</span>
+
+<span class="qt">&gt;Works with the Interface 1 and ZXATASP/ResiDOS.</span>
+
+Although SE Basic can open a network channel and PRINT or 
+SAVE to it, it won&#x27;t be able to CLOSE the channel as you&#x27;ve 
+removed CLOSE_2.
+
+Interface 1 depends on an instruction fetch on Main address 
+$1708 to page itself in. The OPEN # command is invoked by 
+RST 08 but not the CLOSE command which as we know crashes
+with already closed channels.
+
+After Interface 1 has closed the channel then it returns to 
+Main ROM at   X16EB - the LD BC,$0000 instruction after the
+call to CLOSE_2 and this has been displaced by three bytes.
+
+128K Basic calls the 48K ROM routine to use Interface 1.
+
+Bank switching is alchemy and Sinclair Research and 
+Amstrad never managed to get it right with any of their Spectrum
+incarnations.  The Amstrad CPC range was OK and designed as such.
+
+The Sea Change ROM is strictly a single bank Operating system 
+and to disable Interface 1, I disabled RST 08 and isolated address
+$1708.
+ 
+This is a list of Main ROM addresses that are required to be stable for
+Interface 1. The Disciple and Opus interfaces will have similar lists as
+will 128K BASIC.
+
+DEFW    L0010           ; main PRINT_A
+DEFW    L0018           ; main GET_CHAR
+DEFW    L0020           ; main NEXT_CHAR
+DEFW    L0030           ; main BC_SPACES
+DEFW    X007B           ; x    TEMP_PTR3
+DEFW    L02BF           ; main KEYBOARD
+DEFW    X08CE           ; x    ME_CTRLX
+DEFW    L0C10           ; main PO_TOKENS
+DEFW    L0D4D           ; main TEMPS 
+DEFW    L0D6B           ; main CLS 
+DEFW    L0D6E           ; main CLS_LOWER
+DEFW    L0ECD           ; main COPY_BUFF
+DEFW    X0F85           ; x    ADD_CHRX
+DEFW    L107F           ; Comp ED_ERROR
+DEFW    X1349           ; x    comma space
+DEFW    L15E6           ; main INPUT_AD
+DEFW    L15FE           ; Comp call_sub
+DEFW    L1601           ; main CHAN_OPEN
+DEFW    L1655           ; main MAKE_ROOM
+DEFW    L16B0           ; main SET_MIN 
+DEFW    L16BF           ; main SET_WORK
+DEFW    X16EB           ; x    CLOSEX
+DEFW    $1708           ; MAIN &quot;INC HL&quot;
+DEFW    L1727           ; main STR_DATA1
+DEFW    L19E5           ; main RECLAIM_1
+DEFW    L19E8           ; main RECLAIM_2
+DEFW    L19FB           ; main E_LINE_NO 
+DEFW    L1B7D           ; Push STMT_R_1 
+DEFW    L1BF4           ; Push STMT_NEXT
+DEFW    L1C82           ; main EXPT_1NUM
+DEFW    L1C8C           ; main EXPT_EXP
+DEFW    L1CE6           ; main USE_ZERO
+DEFW    L1E94           ; main FIND_INT1
+DEFW    L1E99           ; main FIND_INT2
+DEFW    L1F05           ; main TEST_ROOM
+DEFW    L28B2           ; main LOOK_VARS
+DEFW    L2BF1           ; main STK_FETCH
+DEFW    L2C8D           ; main ALPHA
+DEFW    L2D28           ; main STACK_A
+DEFW    L2DE3           ; main PRINT_FP
+
+-- 
+Geoff Wearmouth
+The ZX ROM Files <a href="http://www.wearmouth.demon.co.uk" rel="noreferrer">http://www.wearmouth.demon.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p150051"><div class="ph"><a class="d" href="#p150051">2002-11-13 00:51:53</a> <span>Andrew Owen</span> <span>Re: ANN: SE Basic version 0.80a Public Beta</span></div><pre>In article &lt;…@…&gt;, Geoff Wearmouth
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Although SE Basic can open a network channel and PRINT or </span>
+<span class="qt">&gt; SAVE to it, it won&#x27;t be able to CLOSE the channel as you&#x27;ve </span>
+<span class="qt">&gt; removed CLOSE_2.</span>
+
+That&#x27;s ok. I&#x27;m revising the channels and streams code anyway so I&#x27;ll take
+this into account when I get around to it.
+ 
+<span class="qt">&gt; Interface 1 depends on an instruction fetch on Main address </span>
+<span class="qt">&gt; $1708 to page itself in. The OPEN # command is invoked by </span>
+<span class="qt">&gt; RST 08 but not the CLOSE command which as we know crashes</span>
+<span class="qt">&gt; with already closed channels.</span>
+
+Right, so what you&#x27;re saying is I need to have my close routine go via
+$1708 in order to let the Interface 1 control the channels. Shouldn&#x27;t be
+too hard.
+
+<span class="qt">&gt; After Interface 1 has closed the channel then it returns to </span>
+<span class="qt">&gt; Main ROM at   X16EB - the LD BC,$0000 instruction after the</span>
+<span class="qt">&gt; call to CLOSE_2 and this has been displaced by three bytes.</span>
+
+I need to put a call to a new CLOSE_2 routine in there anyway, which will
+put the bytes back in the right place.
+ 
+<span class="qt">&gt; 128K Basic calls the 48K ROM routine to use Interface 1.</span>
+
+128K Basic is a complete nightmare. The latest version (0.83c) breaks LIST
+and LLIST support and although I&#x27;ve tried tinkering with it I can&#x27;t figure
+out why.
+
+<span class="qt">&gt; Bank switching is alchemy and Sinclair Research and </span>
+<span class="qt">&gt; Amstrad never managed to get it right with any of their Spectrum</span>
+<span class="qt">&gt; incarnations.  The Amstrad CPC range was OK and designed as such.</span>
+
+One reason I plan on ditching the 128 Editor. But I need to get extensible
+channels and streams going first so 128 users can load AY and RAMdisk
+drivers.
+ 
+<span class="qt">&gt; The Sea Change ROM is strictly a single bank Operating system </span>
+<span class="qt">&gt; and to disable Interface 1, I disabled RST 08 and isolated address</span>
+<span class="qt">&gt; $1708.</span>
+
+So you put a byte at $1708 that is never called. Well, I can stand to lose
+IF1 compatibility if I have to, but I&#x27;ll try and get support back in the
+next version. However, SE Basic is a &#x27;beta&#x27; release after all!
+ 
+<span class="qt">&gt; This is a list of Main ROM addresses that are required to be stable for</span>
+<span class="qt">&gt; Interface 1. The Disciple and Opus interfaces will have similar lists as</span>
+<span class="qt">&gt; will 128K BASIC.</span>
+
+I am not supporting 128K Basic if I can avoid it. I plan on replacing the
+Editor ROM with one that auto installs the AY, RAMdisk, RS232 and MIDI
+drivers on SE Basic before handing over control. I can probably ignore the
+Opus, but the +D was pretty popular so I&#x27;d better make sure that works.
+
+Anyway, there&#x27;s a new developer release on the site with a few
+improvements that  I uploaded before I got this message. I don&#x27;t really
+have time to do any more work on it right now so it will stay as it is for
+the forseeable future.
+
+Here&#x27;s the skinny on SE Basic 0.83c:
+
+
+Issues:
+
+This version breaks LIST and LLIST support in the 128 Editor. A patch
+will eventually be made available but until then you should continue to use
+version 0.80a.
+
+This version also breaks SCREEN$ (n,n) support in the SE Basic Compiler.
+This will be resolved by changing the ROM rather than patching the editor,
+as soon as I work out what&#x27;s happening in the compiler runtime. If this
+causes you problems you should continue to use version 0.80a.
+
+(This version doesn&#x27;t fully support IF1)
+
+
+Editor changes:
+
+* Almost all the bugs are fixed.
+
+* The machine resets much faster.
+
+* 128-style copyright message.
+
+* New 6x8 font for use in 32, 42, 64 and 85 column modes.
+
+* The FREE MEMORY routine is relocated. Call it with:
+  PRINT 65536 - USR 95.
+
+* The NMI button calls a default Break routine or you can assign your own
+  routine by poking the address into NMIADD.
+
+* Keywords are now ANSI compatible.
+
+* Simplified the keyboard. All the symbols are now available via symbol-
+  shift and the normal key for that symbol. The copyright character is on
+  the &#x27;I&#x27; key which does not normally have a symbol.
+
+* Added a tokenizer and removed &#x27;K&#x27; mode. All keywords must be typed in
+  full but macros are available for the most common ones. Commands and
+  functions can be entered in upper, lower, or mixed case.
+
+* Hid EXTEND mode. Normally has no function but can still be used to get
+  in-line control codes and macros.
+
+* Added macros to certain number keys with EXTEND+SYMBOL SHIFT:
+  6 - RUN [ENTER]
+  7 - SAVE &quot;&quot; [&lt;-]
+  9 - LOAD &quot;&quot; [ENTER]
+  0 - CLS 56 [ENTER]
+
+* Replaced the letter cursors with block colour cursors as follows:
+  &#x27;L&#x27; - Blue
+  &#x27;C&#x27; - Yellow
+  &#x27;G&#x27; - Green
+  &#x27;?&#x27; - Red
+
+* Changed the error cursor to behave like the 128. If you enter a line with
+  incorrect syntax, the machine beeps, the cursor goes red and jumps to
+  where it thinks the error is.
+
+* Extended the valid line range to 1-16383.
+
+* Cursors can move up and down as well as left and right in an edit line.
+
+* Since the &#x27;STOP&#x27; token is removed from the keyboard, pressing cursor down
+  during an INPUT A or INPUT A$ command will produce the token. It will
+  still Break into the program as normal during an INPUT LINE A$ command.
+
+* Changed the error messages and the way they are output. Whereas before
+  you might have got the error:
+
+  R Tape loading error, 10:1
+
+  Now you would get:
+
+  Loading error 10:1
+
+* Prevented the keys V-Z from producing tokens in &#x27;G&#x27; mode.
+
+* Inverted the cursor so it shows up in 512x192 mode on Timex machines.
+
+* Enhanced some of the commands and functions:
+
+  CLS     - Now takes parameters. Works as normal without a parameter
+            (defaults to CLS 0) but sets border and attributes with a value
+            from 1 to 255. Produces &#x27;Out of range&#x27; error with higher
+            values.
+
+  CONT    - Replaces CONTINUE. Works as normal.
+
+  COPY    - Now a file command. Takes any syntax. Produces &#x27;Bad device&#x27;
+            error unless additional hardware connected.
+
+  DEL     - Replaces ERASE. Now takes any syntax. Produces &#x27;Bad device&#x27; 
+            error unless additional hardware connected.
+
+  DIR     - Replaces CAT. Now takes any syntax. Produces &#x27;Bad device&#x27; error
+            unless additional hardware connected.
+
+  FORMAT  - Now takes any syntax. Produces &#x27;Bad device&#x27; error unless
+            additional hardware connected.
+
+  GOTO    - Replaces GO TO. Works as normal.
+
+  GOSUB   - Replaces GO SUB. Works as normal.
+
+  LIST    - LIST only lists the line you name rather than the whole program
+            starting at that line. The full syntax of LIST is:
+
+
+            LIST [x][,[y]]
+
+
+            where x is the starting line number (default 0) and y is the
+            ending line number (default 16383). Produces &#x27;Out of range&#x27;
+            error with line numbers greater than 16383.
+
+  LLIST   - Equivalent of the new LIST command only sent to stream #3. 
+
+  MOVE    - Now takes any syntax. Produces &#x27;Bad device&#x27; error unless 
+            additional hardware connected.
+
+  NEW     - Now takes parameters. Works as normal without a parameter
+            (defaults to NEW 0). NEW 1 is the equivalent of PRINT USR 0.
+            NEW n is the equivalent of CLEAR n: NEW. Produces &#x27;Bad RAMTOP&#x27;
+            error with values outside the range of CLEAR.
+
+  SCREEN$ - Can now detect UDGs as well as normal ASCII characters. It
+            cannot detect predefined graphics as there is no bitmap to
+            compare them against.
+
+-- 
+SE Basic and ZX Spectrum SE homepage:
+
+<a href="http://www.worldofspectrum.org/sinclairbasic/" rel="noreferrer">http://www.worldofspectrum.org/sinclairbasic/</a>
+
+
+
+</pre></div></main></body></html>

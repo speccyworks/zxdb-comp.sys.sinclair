@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANNOUNCE: VGA-Box for SPECTRUM · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANNOUNCE: VGA-Box for SPECTRUM</h1><p class="facts">16 posts, 2002-12-12 – 2002-12-26</p><div class="post" id="p151630"><div class="ph"><a class="d" href="#p151630">2002-12-12 10:40:27</a> <span>Sintech</span> </div><pre>Finally its done:
+
+We are proud to announce a VGA-Box for the Spectrum. This box should be
+connected to the VIDEO-Out of the Spectrum (RGB-Port of 128k/+2, or take the
+signal from the modulator on the other machines, e.g. 48k or +2A/+3) and to
+your nomal PC-VGA-Monitor.
+
+We know that these devices are already on the market for years, but there
+was none with a clear Spectrum picture and for a reasonable price. The price
+of our box is 49,00 Euro, about 30 UKP, which is the cheapest around. The
+box got switches for BRIGHT, COLOUR, CONTRAST and is therefore perfect for
+using with the Spectrum.
+At the moment it comes with a Power Supply and German plug, so you need an
+Adapter (get it from Maplin or any other electronic store) for using it in
+Britain (no problems in Spain, France, Italy, Netherlands, Czech
+Republic...everywhere where you got round connectors to the mains). If there
+is a big demand, we can of course also get Power supplies for UK-Plugs as
+well.
+
+Postage is:
+UK, Italy: 10 Euro = 7 UKP
+France, Netherlands, Belgie: 6 Euro
+Germany: 4 Euro
+Spain, Finnland: 17 Euro
+
+Just write now in, if you are interested to order this item, so we know the
+quantity. At the moment we have only 1 ready and thatï¿½s mine. We need to
+know how many more we need to please write us.
+
+Thomas
+--
+www.sintech-shop.de
+Your computer shop for
+Retro- and modern day computers and consoles
+
+
+
+
+
+</pre></div><div class="post" id="p151643"><div class="ph"><a class="d" href="#p151643">2002-12-12 15:45:13</a> <span>LCD</span> <span>Re: ANNOUNCE: VGA-Box for SPECTRUM</span></div><pre>I already use that VGA box with my Spectrum 128 and a 15&quot; TFT monitor, and it is
+great
+for coding, because TFT monitors are absolutly flicker free. I should also test
+it one time
+with the 17&quot; TFT monitor too.
+Great idea to take orders for that device because it is sometime hard to find
+(Like in Austria,
+nearly impossible!).
+
+
+
+
+</pre></div><div class="post" id="p151644"><div class="ph"><a class="d" href="#p151644">2002-12-12 16:06:04</a> <span>Dave the Lurker</span> <span>Re: ANNOUNCE: VGA-Box for SPECTRUM</span></div><pre>Sintech wrote:
+
+
+&lt;speccy to VGA device&gt;
+
+<span class="qt">&gt; Postage is:</span>
+<span class="qt">&gt; UK, Italy: 10 Euro = 7 UKP</span>
+<span class="qt">&gt; France, Netherlands, Belgie: 6 Euro</span>
+<span class="qt">&gt; Germany: 4 Euro</span>
+<span class="qt">&gt; Spain, Finnland: 17 Euro</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Just write now in, if you are interested to order this item, so we know</span>
+<span class="qt">&gt; the quantity. At the moment we have only 1 ready and thatï¿½s mine. We need</span>
+<span class="qt">&gt; to know how many more we need to please write us.</span>
+
+
+Consider me interested.  Any idea when you will have a reasonable number of 
+these for sale?
+
+cheers
+Dave
+
+
+
+</pre></div><div class="post" id="p151653"><div class="ph"><a class="d" href="#p151653">2002-12-12 20:11:15</a> <span>Sintech</span> <span>Re: ANNOUNCE: VGA-Box for SPECTRUM</span></div><pre>I already have 4 on them on stock...but one was already sold today and one
+is for me. That keeps 2 in stock.
+
+Regards
+
+Thomas
+
+
+--
+www.sintech-shop.de
+Your computer shop for
+Retro- and modern day computers and consoles
+&quot;Dave the Lurker&quot; &lt;…@…&gt; schrieb im Newsbeitrag
+news:1958447.4pgR33bB6g@laptop...
+<span class="qt">&gt; Sintech wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &lt;speccy to VGA device&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Postage is:</span>
+<span class="qt">&gt; &gt; UK, Italy: 10 Euro = 7 UKP</span>
+<span class="qt">&gt; &gt; France, Netherlands, Belgie: 6 Euro</span>
+<span class="qt">&gt; &gt; Germany: 4 Euro</span>
+<span class="qt">&gt; &gt; Spain, Finnland: 17 Euro</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Just write now in, if you are interested to order this item, so we know</span>
+<span class="qt">&gt; &gt; the quantity. At the moment we have only 1 ready and thatï¿½s mine. We</span>
+need
+<span class="qt">&gt; &gt; to know how many more we need to please write us.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Consider me interested.  Any idea when you will have a reasonable number</span>
+of
+<span class="qt">&gt; these for sale?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; cheers</span>
+<span class="qt">&gt; Dave</span>
+
+
+
+
+
+</pre></div><div class="post" id="p151655"><div class="ph"><a class="d" href="#p151655">2002-12-12 21:06:00</a> <span>scoobysnacks</span> <span>Re: ANNOUNCE: VGA-Box for SPECTRUM</span></div><pre>
+&quot;Sintech&quot; &lt;…@…&gt; wrote in message
+news:atar29$ajq$…@…...
+<span class="qt">&gt; I already have 4 on them on stock...but one was already sold today and one</span>
+<span class="qt">&gt; is for me. That keeps 2 in stock.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Regards</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Thomas</span>
+<span class="qt">&gt;</span>
+
+You can put me down for one as well..sounds good !
+
+++scoobysnacks
+
+
+
+
+
+</pre></div><div class="post" id="p151658"><div class="ph"><a class="d" href="#p151658">2002-12-12 22:46:37</a> <span>Sintech</span> <span>Re: ANNOUNCE: VGA-Box for SPECTRUM</span></div><pre>Is this an official order? Ok, I currently have 1 only left, but I can
+reserve this for you. Price is 49 Euro + 10 Euro postage = 59,00 Euro or 38
+UKP.
+
+We have a lot of other interesting articles offered there and you might want
+to add something and save postage.
+
+<a href="http://www.sintech-shop.de" rel="noreferrer">http://www.sintech-shop.de</a>
+
+If you donï¿½t want to add something, you should send us the money. Thatï¿½s 38
+UKP or 59 EURO. When paying with PAYPAL please add 5% for PAYPAL costs to
+the total. Please have also a look at the extra costs when paying with
+cheque.
+
+You can choose to pay by:
+- International Postal order
+- Send the money  hidden inside a registrated letter. This is the
+cheapest way and we recommend it as a safe and fast way, as long as you do
+registrate the letter.
+- Bank transfer: Our account: 3744727 at Bank: Landesbank
+Baden-Wuerttemberg, Stuttgart. Please note that you have to pay with all
+costs on your side. The costs are about 13,00 Euro, which is very expensive
+but also very safe.
+- Send a cheque. Cheques which are not in EURO and not drawn to a German
+bank
+you should add 8,00 Euro bankcharges.
+- As a new option, we know accept PAYPAL. Please find more informations
+under by using this link: <a href="https://www.paypal.com/auction/pal=KHRQAQZY8BN3G" rel="noreferrer">https://www.paypal.com/auction/pal=KHRQAQZY8BN3G</a>
+
+Please inform us what you want to do.
+
+Regards
+
+Thomas Eberle
+
+SINTECH-Shop
+Gastï¿½ckerstr. 23
+D-70794 Filderstadt
+Germany
+
+
+--
+www.sintech-shop.de
+Your computer shop for
+Retro- and modern day computers and consoles
+&quot;scoobysnacks&quot; &lt;…@…&gt; schrieb im
+Newsbeitrag news:qV6K9.767$h43.102541@stones...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;Sintech&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:atar29$ajq$…@…...</span>
+<span class="qt">&gt; &gt; I already have 4 on them on stock...but one was already sold today and</span>
+one
+<span class="qt">&gt; &gt; is for me. That keeps 2 in stock.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Regards</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Thomas</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; You can put me down for one as well..sounds good !</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; ++scoobysnacks</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+
+
+
+</pre></div><div class="post" id="p151747"><div class="ph"><a class="d" href="#p151747">2002-12-15 20:13:54</a> <span>Bethany Carlton</span> <span>Re: ANNOUNCE: VGA-Box for SPECTRUM</span></div><pre>&quot;Sintech&quot; &lt;…@…&gt; wrote in message
+news:at9pk2$pe0$…@…...
+<span class="qt">&gt; Finally its done:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; We are proud to announce a VGA-Box for the Spectrum. This box should be</span>
+<span class="qt">&gt; connected to the VIDEO-Out of the Spectrum (RGB-Port of 128k/+2, or take</span>
+the
+<span class="qt">&gt; signal from the modulator on the other machines, e.g. 48k or +2A/+3) and</span>
+to
+<span class="qt">&gt; your nomal PC-VGA-Monitor.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; At the moment it comes with a Power Supply and German plug, so you need an</span>
+<span class="qt">&gt; Adapter (get it from Maplin or any other electronic store) for using it in</span>
+<span class="qt">&gt; Britain (no problems in Spain, France, Italy, Netherlands, Czech</span>
+<span class="qt">&gt; Republic...everywhere where you got round connectors to the mains). If</span>
+there
+<span class="qt">&gt; is a big demand, we can of course also get Power supplies for UK-Plugs as</span>
+<span class="qt">&gt; well.</span>
+
+Thomas,
+
+Does the power supply switch to 110v automatically, or can a &#x27;universal&#x27;
+power
+supply be used instead of the standard one? If a universal supply can be
+used,
+is this item available for sale without the standard one?
+
+Bethany
+
+
+
+
+
+</pre></div><div class="post" id="p151782"><div class="ph"><a class="d" href="#p151782">2002-12-16 21:17:11</a> <span>Sintech</span> <span>Re: ANNOUNCE: VGA-Box for SPECTRUM</span></div><pre>&quot;Bethany Carlton&quot; &lt;…@…&gt; schrieb im Newsbeitrag
+news:atinq5$14afft$…@…...
+<span class="qt">&gt; &quot;Sintech&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:at9pk2$pe0$…@…...</span>
+<span class="qt">&gt; &gt; Finally its done:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; We are proud to announce a VGA-Box for the Spectrum. This box should be</span>
+<span class="qt">&gt; &gt; connected to the VIDEO-Out of the Spectrum (RGB-Port of 128k/+2, or take</span>
+<span class="qt">&gt; the</span>
+<span class="qt">&gt; &gt; signal from the modulator on the other machines, e.g. 48k or +2A/+3) and</span>
+<span class="qt">&gt; to</span>
+<span class="qt">&gt; &gt; your nomal PC-VGA-Monitor.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; At the moment it comes with a Power Supply and German plug, so you need</span>
+an
+<span class="qt">&gt; &gt; Adapter (get it from Maplin or any other electronic store) for using it</span>
+in
+<span class="qt">&gt; &gt; Britain (no problems in Spain, France, Italy, Netherlands, Czech</span>
+<span class="qt">&gt; &gt; Republic...everywhere where you got round connectors to the mains). If</span>
+<span class="qt">&gt; there</span>
+<span class="qt">&gt; &gt; is a big demand, we can of course also get Power supplies for UK-Plugs</span>
+as
+<span class="qt">&gt; &gt; well.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Thomas,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Does the power supply switch to 110v automatically, or can a &#x27;universal&#x27;</span>
+<span class="qt">&gt; power</span>
+<span class="qt">&gt; supply be used instead of the standard one? If a universal supply can be</span>
+<span class="qt">&gt; used,</span>
+<span class="qt">&gt; is this item available for sale without the standard one?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Bethany</span>
+<span class="qt">&gt;</span>
+
+Dear Bethany,
+
+you can get this unit with a 110 V power supply. It will just take longer as
+we have only the 220V on stock and the 110V will be made separately.
+
+Regards
+
+Thomas
+
+
+
+
+
+
+</pre></div><div class="post" id="p151888"><div class="ph"><a class="d" href="#p151888">2002-12-18 20:51:31</a> <span>Piranha</span> <span>Re: ANNOUNCE: VGA-Box for SPECTRUM</span></div><pre>Does it works for the old ZX Spectrum 1982 ?
+
+Sintech &lt;…@…&gt; a ï¿½crit dans le message :
+at9pk2$pe0$…@…...
+<span class="qt">&gt; Finally its done:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; We are proud to announce a VGA-Box for the Spectrum. This box should be</span>
+<span class="qt">&gt; connected to the VIDEO-Out of the Spectrum (RGB-Port of 128k/+2, or take</span>
+the
+<span class="qt">&gt; signal from the modulator on the other machines, e.g. 48k or +2A/+3) and</span>
+to
+<span class="qt">&gt; your nomal PC-VGA-Monitor.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; We know that these devices are already on the market for years, but there</span>
+<span class="qt">&gt; was none with a clear Spectrum picture and for a reasonable price. The</span>
+price
+<span class="qt">&gt; of our box is 49,00 Euro, about 30 UKP, which is the cheapest around. The</span>
+<span class="qt">&gt; box got switches for BRIGHT, COLOUR, CONTRAST and is therefore perfect for</span>
+<span class="qt">&gt; using with the Spectrum.</span>
+<span class="qt">&gt; At the moment it comes with a Power Supply and German plug, so you need an</span>
+<span class="qt">&gt; Adapter (get it from Maplin or any other electronic store) for using it in</span>
+<span class="qt">&gt; Britain (no problems in Spain, France, Italy, Netherlands, Czech</span>
+<span class="qt">&gt; Republic...everywhere where you got round connectors to the mains). If</span>
+there
+<span class="qt">&gt; is a big demand, we can of course also get Power supplies for UK-Plugs as</span>
+<span class="qt">&gt; well.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Postage is:</span>
+<span class="qt">&gt; UK, Italy: 10 Euro = 7 UKP</span>
+<span class="qt">&gt; France, Netherlands, Belgie: 6 Euro</span>
+<span class="qt">&gt; Germany: 4 Euro</span>
+<span class="qt">&gt; Spain, Finnland: 17 Euro</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Just write now in, if you are interested to order this item, so we know</span>
+the
+<span class="qt">&gt; quantity. At the moment we have only 1 ready and thatï¿½s mine. We need to</span>
+<span class="qt">&gt; know how many more we need to please write us.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Thomas</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; www.sintech-shop.de</span>
+<span class="qt">&gt; Your computer shop for</span>
+<span class="qt">&gt; Retro- and modern day computers and consoles</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+
+
+
+</pre></div><div class="post" id="p151895"><div class="ph"><a class="d" href="#p151895">2002-12-18 22:22:14</a> <span>Andrew Owen</span> <span>Re: ANNOUNCE: VGA-Box for SPECTRUM</span></div><pre>In article &lt;3e00e001$…@…&gt;, &quot;Piranha&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Does it works for the old ZX Spectrum 1982 ?</span>
+
+<span class="qt">&gt; &gt; We are proud to announce a VGA-Box for the Spectrum. This box should be</span>
+<span class="qt">&gt; &gt; connected to the VIDEO-Out of the Spectrum (RGB-Port of 128k/+2, or take</span>
+<span class="qt">&gt; &gt; the</span>
+<span class="qt">&gt; &gt; signal from the modulator on the other machines, e.g. 48k or +2A/+3) and</span>
+<span class="qt">&gt; &gt; to your nomal PC-VGA-Monitor.</span>
+
+What part of &quot;take the signal from the modulator on the other machines,
+e.g. 48k&quot; don&#x27;t you understand?
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p151914"><div class="ph"><a class="d" href="#p151914">2002-12-19 02:44:31</a> <span>Robert J Baker</span> <span>Re: ANNOUNCE: VGA-Box for SPECTRUM</span></div><pre>LCD &lt;…@…&gt; wrote in message news:&lt;…@…&gt;...
+
+<span class="qt">&gt; (Like in Austria,</span>
+<span class="qt">&gt; nearly impossible!).</span>
+
+In Austria, wouldn&#x27;t it be Fucking impossible?:
+
+<a href="http://rivet.50megs.com/cssfolk.html#austriantown" rel="noreferrer">http://rivet.50megs.com/cssfolk.html#austriantown</a>
+
+:-)
+
+-- 
+To reply by e-mail, replace &quot;korax1214&quot; with &quot;robert.bak&quot;
+
+
+
+</pre></div><div class="post" id="p151963"><div class="ph"><a class="d" href="#p151963">2002-12-20 10:40:26</a> <span>Sintech</span> <span>Re: ANNOUNCE: VGA-Box for SPECTRUM</span></div><pre>-- &quot;Piranha&quot; &lt;…@…&gt; schrieb im Newsbeitrag
+news:3e00e001$…@…...
+<span class="qt">&gt; Does it works for the old ZX Spectrum 1982 ?</span>
+<span class="qt">&gt;</span>
+It is working with the Spectrum 48k as well, but you have to create an own
+cable which takes the signals from the modulator. There are plenty of plans
+how to do it published in the internet or magazines, so this shouldnï¿½t be a
+problem.
+
+Regards
+
+Thomas
+
+
+
+
+
+
+</pre></div><div class="post" id="p151964"><div class="ph"><a class="d" href="#p151964">2002-12-20 10:43:52</a> <span>Sintech</span> <span>Re: ANNOUNCE: VGA-Box for SPECTRUM</span></div><pre>&quot;Andrew Owen&quot; &lt;…@…&gt; schrieb im Newsbeitrag
+news:…@…...
+<span class="qt">&gt; In article &lt;3e00e001$…@…&gt;, &quot;Piranha&quot;</span>
+<span class="qt">&gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Does it works for the old ZX Spectrum 1982 ?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; We are proud to announce a VGA-Box for the Spectrum. This box should</span>
+be
+<span class="qt">&gt; &gt; &gt; connected to the VIDEO-Out of the Spectrum (RGB-Port of 128k/+2, or</span>
+take
+<span class="qt">&gt; &gt; &gt; the</span>
+<span class="qt">&gt; &gt; &gt; signal from the modulator on the other machines, e.g. 48k or +2A/+3)</span>
+and
+<span class="qt">&gt; &gt; &gt; to your nomal PC-VGA-Monitor.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; What part of &quot;take the signal from the modulator on the other machines,</span>
+<span class="qt">&gt; e.g. 48k&quot; don&#x27;t you understand?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; -Andrew</span>
+
+Calm down, Andrew... if you run a business like I do you will get questions
+like this day by day. For example I am selling a &quot;PSX to PC USB
+Converter&quot;...I think the title says everything, but I wrote also in the
+description what this device is doing. I got a lot of questions about this
+item : &quot;...can I connect my PSX-Joypad to the USB-Port of my PC using this
+device???&quot;. What I wanted to answer was: &quot;NOOO, because you are too stupid.
+You should plug in this connector to your ass and put the other side to the
+mains...&quot;. But of course I did not and explain this customer again what this
+device is doing... PC Users are much more stupid than Spec-Chums, arenï¿½t
+they.
+
+Regards
+
+Thomas
+
+
+
+
+
+
+</pre></div><div class="post" id="p151969"><div class="ph"><a class="d" href="#p151969">2002-12-20 11:57:23</a> <span>Andrew Owen</span> <span>Re: ANNOUNCE: VGA-Box for SPECTRUM</span></div><pre>In article &lt;atusqf$h3p$…@…&gt;, &quot;Sintech&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; &gt; What part of &quot;take the signal from the modulator on the other machines,</span>
+<span class="qt">&gt; &gt; e.g. 48k&quot; don&#x27;t you understand?</span>
+
+<span class="qt">&gt; Calm down, Andrew...</span>
+
+I wasn&#x27;t having a go (much) but the question was &quot;does it work on a 48&quot;
+and your initial post couldn&#x27;t have been any clearer as to the fact that
+it does work on a 48 so while it probably was a little snidey of me I was
+also prepared to explain how you hook up a lead from the modulator.
+
+<span class="qt">&gt; if you run a business like I do you will get questions</span>
+<span class="qt">&gt; like this day by day. For example I am selling a &quot;PSX to PC USB</span>
+<span class="qt">&gt; Converter&quot;...I think the title says everything, but I wrote also in the</span>
+<span class="qt">&gt; description what this device is doing. I got a lot of questions about this</span>
+<span class="qt">&gt; item : &quot;...can I connect my PSX-Joypad to the USB-Port of my PC using this</span>
+<span class="qt">&gt; device???&quot;. What I wanted to answer was: &quot;NOOO, because you are too stupid.</span>
+<span class="qt">&gt; You should plug in this connector to your ass and put the other side to the</span>
+<span class="qt">&gt; mains...&quot;. But of course I did not and explain this customer again what this</span>
+<span class="qt">&gt; device is doing... PC Users are much more stupid than Spec-Chums, arenï¿½t</span>
+<span class="qt">&gt; they.</span>
+
+I guess I&#x27;m never going to be any good as a retailer. If only you could
+choose not to have stupid customers. I wonder if there&#x27;s some equivalent
+of the line I use on stupid bosses: &quot;Fuckyou very much.&quot; Say it quick
+enough and they don&#x27;t notice (or if they do you can deny it) but you get a
+small sliver of satisfaction from the possibility that subconciously they
+know what you&#x27;ve just said.
+
+-Andrew
+
+
+
+</pre></div><div class="post" id="p152121"><div class="ph"><a class="d" href="#p152121">2002-12-23 02:27:18</a> <span>neuro</span> <span>Re: ANNOUNCE: VGA-Box for SPECTRUM</span></div><pre>Sintech wrote in message news:atb45i$fji$…@…:
+<span class="qt">&gt; [snip]</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; If you donï¿½t want to add something, you should send us the money.</span>
+<span class="qt">&gt; Thatï¿½s 38 UKP or 59 EURO. When paying with PAYPAL please add 5% for</span>
+<span class="qt">&gt; PAYPAL costs to the total. Please have also a look at the extra costs</span>
+<span class="qt">&gt; when paying with cheque.</span>
+
+
+Hmmm, section IV.5 of the PayPal User Agreement may or may not apply here
+...
+
+
+--
+_ __/|   ___  ___ __ _________    irc-&gt; irc.astrolink.org #speccy 16384
+\`O_o&#x27;  / _ \/ -_) // / __/ _ \   faq-&gt; <a href="http://retro.zensoft.net/faq/css/" rel="noreferrer">http://retro.zensoft.net/faq/css/</a>
+=(_ _)=/_//_/\__/\_,_/_/  \___/ woscd-&gt; <a href="http://neuro.me.uk/woscd/" rel="noreferrer">http://neuro.me.uk/woscd/</a>
+   U - Ack! Phttpt! Thhbbt!     @ well.com :: William Anderson
+
+
+
+
+
+</pre></div><div class="post" id="p152211"><div class="ph"><a class="d" href="#p152211">2002-12-26 00:19:35</a> <span>Sintech</span> <span>Re: ANNOUNCE: VGA-Box for SPECTRUM</span></div><pre>&quot;neuro&quot; &lt;…@…&gt; schrieb im Newsbeitrag
+news:…@…...
+<span class="qt">&gt; Sintech wrote in message news:atb45i$fji$…@…:</span>
+<span class="qt">&gt; &gt; [snip]</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; If you donï¿½t want to add something, you should send us the money.</span>
+<span class="qt">&gt; &gt; Thatï¿½s 38 UKP or 59 EURO. When paying with PAYPAL please add 5% for</span>
+<span class="qt">&gt; &gt; PAYPAL costs to the total. Please have also a look at the extra costs</span>
+<span class="qt">&gt; &gt; when paying with cheque.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Hmmm, section IV.5 of the PayPal User Agreement may or may not apply here</span>
+<span class="qt">&gt; ...</span>
+<span class="qt">&gt;</span>
+It may not....PAYPAL is still the cheapest option, if you pay with cheque
+then you have to add 5 UKP clearing costs.
+But if you prefer, you get the special price of 61,95 Euro for the whole lot
+and donï¿½t have to add the 5%...at the end it is the same...I know...
+
+Regards
+
+Thomas
+
+
+
+
+
+
+</pre></div></main></body></html>

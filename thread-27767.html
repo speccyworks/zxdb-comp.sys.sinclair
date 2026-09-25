@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANNOUNCE: Manic Miner: Ma jolie · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANNOUNCE: Manic Miner: Ma jolie</h1><p class="facts">7 posts, 2003-05-14 – 2003-05-19</p><div class="post" id="p161559"><div class="ph"><a class="d" href="#p161559">2003-05-14 12:05:11</a> <span>Andrew Broad</span>  <a class="badge" href="https://spectrumcomputing.co.uk/entry/14578">ZXDB: Ma jolie</a></div><pre>[…@… is just for spam now - see my website for my
+current email-address.]
+
+My new Manic Miner game, Ma jolie, is now completely released and
+available for downloading from the Manic Miner and Jet Set Willy
+Yahoo! Group (since my website has closed and is no longer being
+updated). You first have to join the Group, and then download
+&quot;Ma_jolie.zip&quot; from the Files section.
+
+Ma jolie is my last game, as my Spectrum +2 died a month ago (not
+strictly true - what actually happened was that the motor on the
+datacorder burned out, leaving me with no way of loading and saving).
+&#x27;:-(
+
+--
+Andrew Broad
+<a href="http://www.cs.man.ac.uk/~broada/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/download/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/download/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/download/ma_jolie.html" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/download/ma_jolie.html</a>
+
+<a href="http://groups.yahoo.com/group/manicminerandjetsetwilly/" rel="noreferrer">http://groups.yahoo.com/group/manicminerandjetsetwilly/</a>
+
+
+
+</pre></div><div class="post" id="p161584"><div class="ph"><a class="d" href="#p161584">2003-05-14 20:03:27</a> <span>Niall Wallace</span> <span>Re: ANNOUNCE: Manic Miner: Ma jolie</span></div><pre>Load and save
+
+Um isn&#x27;t there a 3.5 stereo jack on the back that you got a funny cable for
+
+One of the connectors for input, one for output and the other the ground
+(obviously)
+
+should be possible to make a cable for that and plug in a tape recorder.
+
+Niall
+
+&quot;Andrew Broad&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; […@… is just for spam now - see my website for my</span>
+<span class="qt">&gt; current email-address.]</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; My new Manic Miner game, Ma jolie, is now completely released and</span>
+<span class="qt">&gt; available for downloading from the Manic Miner and Jet Set Willy</span>
+<span class="qt">&gt; Yahoo! Group (since my website has closed and is no longer being</span>
+<span class="qt">&gt; updated). You first have to join the Group, and then download</span>
+<span class="qt">&gt; &quot;Ma_jolie.zip&quot; from the Files section.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Ma jolie is my last game, as my Spectrum +2 died a month ago (not</span>
+<span class="qt">&gt; strictly true - what actually happened was that the motor on the</span>
+<span class="qt">&gt; datacorder burned out, leaving me with no way of loading and saving).</span>
+<span class="qt">&gt; &#x27;:-(</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; Andrew Broad</span>
+<span class="qt">&gt; <a href="http://www.cs.man.ac.uk/~broada/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/</a></span>
+<span class="qt">&gt; <a href="http://www.cs.man.ac.uk/~broada/spectrum/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/</a></span>
+<span class="qt">&gt; <a href="http://www.cs.man.ac.uk/~broada/spectrum/download/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/download/</a></span>
+<span class="qt">&gt; <a href="http://www.cs.man.ac.uk/~broada/spectrum/download/ma_jolie.html" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/download/ma_jolie.html</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; <a href="http://groups.yahoo.com/group/manicminerandjetsetwilly/" rel="noreferrer">http://groups.yahoo.com/group/manicminerandjetsetwilly/</a></span>
+
+
+
+
+
+</pre></div><div class="post" id="p161626"><div class="ph"><a class="d" href="#p161626">2003-05-15 15:29:01</a> <span>LCD</span> <span>Re: ANNOUNCE: Manic Miner: Ma jolie</span></div><pre>
+
+Andrew Broad wrote:
+
+<span class="qt">&gt; […@… is just for spam now - see my website for my</span>
+<span class="qt">&gt; current email-address.]</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; My new Manic Miner game, Ma jolie, is now completely released and</span>
+<span class="qt">&gt; available for downloading from the Manic Miner and Jet Set Willy</span>
+<span class="qt">&gt; Yahoo! Group (since my website has closed and is no longer being</span>
+<span class="qt">&gt; updated). You first have to join the Group, and then download</span>
+<span class="qt">&gt; &quot;Ma_jolie.zip&quot; from the Files section.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Ma jolie is my last game, as my Spectrum +2 died a month ago (not</span>
+<span class="qt">&gt; strictly true - what actually happened was that the motor on the</span>
+<span class="qt">&gt; datacorder burned out, leaving me with no way of loading and saving).</span>
+<span class="qt">&gt; &#x27;:-(</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; Andrew Broad</span>
+<span class="qt">&gt; <a href="http://www.cs.man.ac.uk/~broada/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/</a></span>
+<span class="qt">&gt; <a href="http://www.cs.man.ac.uk/~broada/spectrum/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/</a></span>
+<span class="qt">&gt; <a href="http://www.cs.man.ac.uk/~broada/spectrum/download/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/download/</a></span>
+<span class="qt">&gt; <a href="http://www.cs.man.ac.uk/~broada/spectrum/download/ma_jolie.html" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/download/ma_jolie.html</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; <a href="http://groups.yahoo.com/group/manicminerandjetsetwilly/" rel="noreferrer">http://groups.yahoo.com/group/manicminerandjetsetwilly/</a></span>
+
+1) Why not use Discs or emulators for saving?
+2) The download is on a yahoo group, anyone who register is
+elected to recieve: spaaaaaaaaaaaaaammmmmm!!!!! Why not offer
+the files on a normal homepage?
+
+
+
+
+</pre></div><div class="post" id="p161628"><div class="ph"><a class="d" href="#p161628">2003-05-15 15:58:08</a> <span>paul s</span> <span>Re: ANNOUNCE: Manic Miner: Ma jolie</span></div><pre>LCD wrote:
+
+<span class="qt">&gt; 2) The download is on a yahoo group, anyone who register is</span>
+<span class="qt">&gt; elected to recieve: spaaaaaaaaaaaaaammmmmm!!!!! Why not offer</span>
+<span class="qt">&gt; the files on a normal homepage?</span>
+
+Don&#x27;t matter, just setup a throwaway Hotmail addy. That&#x27;s all I use for
+Yahoo Groups.
+
+-- 
+Paul S
+Mandrake Linux 9.1
+IceWM
+
+
+
+</pre></div><div class="post" id="p161702"><div class="ph"><a class="d" href="#p161702">2003-05-16 21:46:11</a> <span>Andrew Broad</span> <span>Re: Ma jolie / Which PC is best for emulation?</span></div><pre>[…@… is just for spam now - please see my website for
+my new email-address.]
+
+LCD wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt; 1) Why not use Discs or emulators for saving?</span>
+
+I don&#x27;t have a disk-drive for my Spectrum (after all, it&#x27;s not a +3).
+The only way to transfer data between my real Spectrum and
+emulator-format was by typing it in!
+
+So emulators are my only option now. The best emulator that runs on my
+Mac is MacSpectacle 1.8.2, which is no substitute for a real Spectrum.
+
+I guess I&#x27;ll have to get a new computer of my own so that I can use a
+decent emulator such as RealSpectrum. Any suggestions as to which
+computer? My main priorities are:
+1. Spectrum-emulation;
+2. Internet-surfing;
+3. Preferably no Micro$oft, but not at the expense of 1 and 2.
+
+
+<span class="qt">&gt; 2) The download is on a yahoo group, anyone who register is</span>
+<span class="qt">&gt; elected to recieve: spaaaaaaaaaaaaaammmmmm!!!!!</span>
+
+The Manic Miner and Jet Set Willy Yahoo! Group allows you to hide your
+email-address so that it is not possible for spammers to get it.
+
+When you join a Yahoo! Group, you can elect to receive the messages by
+email (individually or as a daily digest), no messages, or just
+special notices. You can always change your options by visiting the
+Group, signing in and clicking &quot;Edit My Membership&quot;.
+
+
+<span class="qt">&gt; Why not offer the files on a normal homepage?</span>
+
+Because my website closed on 1st April when I left university, and is
+no longer being updated. I plan to come back with a new website in the
+future.
+
+--
+Andrew Broad
+<a href="http://www.cs.man.ac.uk/~broada/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/</a>
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/willy/" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/willy/</a>
+
+<a href="http://groups.yahoo.com/group/manicminerandjetsetwilly/" rel="noreferrer">http://groups.yahoo.com/group/manicminerandjetsetwilly/</a>
+
+
+
+</pre></div><div class="post" id="p161704"><div class="ph"><a class="d" href="#p161704">2003-05-16 22:33:16</a> <span>Fred</span> <span>Re: Ma jolie / Which PC is best for emulation?</span></div><pre>Andrew Broad wrote:
+<span class="qt">&gt; So emulators are my only option now. The best emulator that runs on my</span>
+<span class="qt">&gt; Mac is MacSpectacle 1.8.2, which is no substitute for a real Spectrum.</span>
+
+If you can run OS X I am sure that OS X FUSE is worth a look[1]
+
+Fred
+
+[1] plug tax is in the mail
+
+
+
+
+</pre></div><div class="post" id="p161830"><div class="ph"><a class="d" href="#p161830">2003-05-19 10:31:47</a> <span>JamesW</span> <span>Re: Ma jolie / Which PC is best for emulation?</span></div><pre>In article &lt;…@…&gt;, 
+…@… says...
+<span class="qt">&gt; So emulators are my only option now. The best emulator that runs on my</span>
+<span class="qt">&gt; Mac is MacSpectacle 1.8.2, which is no substitute for a real Spectrum.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I guess I&#x27;ll have to get a new computer of my own so that I can use a</span>
+<span class="qt">&gt; decent emulator such as RealSpectrum. Any suggestions as to which</span>
+<span class="qt">&gt; computer? My main priorities are:</span>
+<span class="qt">&gt; 1. Spectrum-emulation;</span>
+<span class="qt">&gt; 2. Internet-surfing;</span>
+<span class="qt">&gt; 3. Preferably no Micro$oft, but not at the expense of 1 and 2.</span>
+<span class="qt">&gt; </span>
+
+Taking 3. into account your options are:
+
+A
+1. MacFUSE
+2. Mozilla + derivatives, Safari
+3. OS X capable Mac
+
+or
+
+B
+1. FUSE
+2. Mozilla + derivatives
+3. Linux 
+
+
+
+
+</pre></div></main></body></html>

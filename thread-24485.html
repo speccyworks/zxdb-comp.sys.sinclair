@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANN: SE Basic public beta 2 (v0.70T) · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANN: SE Basic public beta 2 (v0.70T)</h1><p class="facts">6 posts, 2002-02-11 – 2002-02-12</p><div class="post" id="p130736"><div class="ph"><a class="d" href="#p130736">2002-02-11 18:49:48</a> <span>Andrew Owen</span> </div><pre>This release is now available as an IPS file. The file, and a suitable
+utility for your machine, can be downloaded at
+<a href="http://www.worldofspectrum.org/sinclairbasic/" rel="noreferrer">http://www.worldofspectrum.org/sinclairbasic/</a>
+
+There will be no further developments for at least six months because I
+just don&#x27;t have the time to work on it. However, this version has been in
+testing for about a month now and there are only about five programs known
+to break with it (which is probably their fault and not mine).
+
+Sorry about the restrictive licence but if you look at what happened with
+the first public beta I&#x27;m sure you&#x27;ll understand why it&#x27;s there. The final
+release will be covered by a more liberal licence, providing people don&#x27;t
+pester me for the next release.
+
+Here&#x27;s the documentation:
+
+Sinclair Extended Basic (SE Basic*) Copyright 1996-2002 Andrew Owen.
+All rights reserved. *SE Basic is a trademark of Andrew Owen.
+
+Build 0.70T. Public Beta 2. Released 11/02/2002.
+
+Archive contents: basic.ips, editor.ips, readme.txt
+
+
+End user licence:
+
+The user is granted the right to use these patch files to modify legally
+obtained ROMs for personal use only. This archive and the files in it are
+copyright Andrew Owen and may not be distributed further without prior
+written agreement of the author. The ROMs created by these patch files may
+not be distributed. Breach of this licence will result in the cancellation
+of this project - you have been warned. Source code is available on
+request.
+
+
+Features:
+
+Fixed every known bug.
+
+-65536, CHR$ 8, CHR$ 9, CLEAR-PRB, CLOSE #4, COLOUR COMMANDS, DEC-TO-FP,
+DOUBLE STORE, EDIT, GOSUB, GOTO, LEADING SPACE, LIST, MAIN-4 (two bugs),
+MOD-DIV, NMI, PLOT, PO-FETCH, PR-CC, RESTORE, ROM OVERWRITE, ROM SCROLL,
+RUN, STACK, WAIT KEY
+
+Overhauled the editor.
+
+Replaced the keyword entry system with a tokeniser - there is no K mode.
+All commands must be typed in full. Moved all the symbols to SYMBOL+letter
+key combinations. Moved the copyright symbol to SYMBOL+I, and included
+command words on SYMBOL+ Q (LOAD), W (RUN) and E (STOP). Removed EXTEND
+mode for everything except control-codes. GRAPHICS mode produces no
+characters for V-Z. Cursors will move up and down in an edit line. Line
+numbers from 1-16383 are now valid. Renamed some commands - CAT becomes
+DIR, CONTINUE becomes CONT, GO TO becomes GOTO, and GO SUB becomes GOSUB.
+Replaced the error messages with a shorter set to free up some space in
+the ROM.
+
+A new typeface.
+
+Replaced the original font with a monospaced version of Geneva designed to
+for equal clarity in 8x8 character and 6x8 character displays. Added
+experimental 42 column mode. This mode is not yet fully integrated with SE
+Basic. The mode is initialised with RANDOMIZE USR 15204. Syntax is PRINT
+#4;AT 0,0;&quot;Hello world!&quot;. This will change, do not rely on any programs
+you write using this mode to work on future releases.
+
+Miscellaneous changes.
+
+Removed redundant ZX81 and channels code. Added a 16K hardware test. Small
+enhancements to tape handling, keyboard speed, RASP, cursor. A faster
+reset routine. A longer copyright message.
+
+
+To do:
+
+Overhaul channels and streams to handle all I/O.
+Add support for text/graphics windows.
+Add support for 8-bit character sets. 
+Faster CIRCLE routine with colour code.
+Built-in support for 42 column text.
+Text/graphics support for 512x192 mode on Timex and Pentagon.
+Default NMI routine allowing LOAD/SAVE snapshots and POKE memory.
+
+
+Compatiblity problems:
+
+SE Basic can be used in place of 128 Basic with a modified version of the
+original 128 editor. A patch is included. Please report any compatibility
+problems to …@….
+
+-- 
+I&#x27;m leaving CSS again soon. I will be away from
+my machine for about six months from the end of
+February. You can still email if you want, just
+don&#x27;t expect a quick response.
+
+
+
+</pre></div><div class="post" id="p130818"><div class="ph"><a class="d" href="#p130818">2002-02-12 05:22:20</a> <span>Fredrick Meunier</span> <span>Re: ANN: SE Basic public beta 2 (v0.70T)</span></div><pre>Hi Andrew,
+Thanks for the work on SE Basic! It looks great so far from my sampling 
+of the first beta.
+
+Andrew Owen wrote:
+<span class="qt">&gt; This release is now available as an IPS file. The file, and a suitable</span>
+<span class="qt">&gt; utility for your machine, can be downloaded at</span>
+<span class="qt">&gt; <a href="http://www.worldofspectrum.org/sinclairbasic/" rel="noreferrer">http://www.worldofspectrum.org/sinclairbasic/</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; There will be no further developments for at least six months because I</span>
+<span class="qt">&gt; just don&#x27;t have the time to work on it. However, this version has been in</span>
+<span class="qt">&gt; testing for about a month now and there are only about five programs known</span>
+<span class="qt">&gt; to break with it (which is probably their fault and not mine).</span>
+Could you publish some checksums for the rom files? I have tried to 
+patch with both the unix ips program, and the windows nt one and have 
+had no luck. The windows version of the 48k rom gives me a colourful 
+pattern, and the unix one almost works till I run and select y to 
+scroll? the following program:
+10 PRINT &quot;Hello World!&quot;
+20 GOTO 10
+
+When I get:
+H NEXT CODE
+
+Bad colour 10:1
+
+Is my program seeing one of Len&#x27;s shirts?
+
+Fred
+
+
+
+
+</pre></div><div class="post" id="p130819"><div class="ph"><a class="d" href="#p130819">2002-02-12 05:30:27</a> <span>Fredrick Meunier</span> <span>Re: ANN: SE Basic public beta 2 (v0.70T)</span></div><pre>Hi Andrew,
+Thanks for the work on SE Basic! It looks great so far from my sampling 
+of the first beta.
+
+Andrew Owen wrote:
+<span class="qt"> &gt; This release is now available as an IPS file. The file, and a suitable</span>
+<span class="qt"> &gt; utility for your machine, can be downloaded at</span>
+<span class="qt"> &gt; <a href="http://www.worldofspectrum.org/sinclairbasic/" rel="noreferrer">http://www.worldofspectrum.org/sinclairbasic/</a></span>
+<span class="qt"> &gt;</span>
+<span class="qt"> &gt; There will be no further developments for at least six months because I</span>
+<span class="qt"> &gt; just don&#x27;t have the time to work on it. However, this version has been in</span>
+<span class="qt"> &gt; testing for about a month now and there are only about five programs </span>
+known
+<span class="qt"> &gt; to break with it (which is probably their fault and not mine).</span>
+
+Could you publish some checksums for the rom files? I have tried to 
+patch with both the unix ips program, and the windows nt one and have 
+had no luck. The windows version of the 48k rom gives me a colourful 
+pattern, and the unix one almost works till I run and select y to 
+scroll? the following program:
+10 PRINT &quot;Hello World!&quot;
+20 GOTO 10
+
+When I get:
+H NEXT CODE
+
+Bad colour 10:1
+
+Is my program seeing one of Lister&#x27;s shirts?
+
+Fred
+
+
+
+
+</pre></div><div class="post" id="p130839"><div class="ph"><a class="d" href="#p130839">2002-02-12 12:35:12</a> <span>Andrew Owen</span> <span>Re: ANN: SE Basic public beta 2 (v0.70T)</span></div><pre>In article &lt;…@…&gt;, Fredrick Meunier
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Hi Andrew,</span>
+<span class="qt">&gt; Thanks for the work on SE Basic! It looks great so far from my sampling </span>
+<span class="qt">&gt; of the first beta.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Andrew Owen wrote:</span>
+<span class="qt">&gt;  &gt; This release is now available as an IPS file. The file, and a suitable</span>
+<span class="qt">&gt;  &gt; utility for your machine, can be downloaded at</span>
+<span class="qt">&gt;  &gt; <a href="http://www.worldofspectrum.org/sinclairbasic/" rel="noreferrer">http://www.worldofspectrum.org/sinclairbasic/</a></span>
+<span class="qt">&gt;  &gt;</span>
+<span class="qt">&gt;  &gt; There will be no further developments for at least six months because I</span>
+<span class="qt">&gt;  &gt; just don&#x27;t have the time to work on it. However, this version has been in</span>
+<span class="qt">&gt;  &gt; testing for about a month now and there are only about five programs </span>
+<span class="qt">&gt; known</span>
+<span class="qt">&gt;  &gt; to break with it (which is probably their fault and not mine).</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Could you publish some checksums for the rom files? I have tried to </span>
+<span class="qt">&gt; patch with both the unix ips program, and the windows nt one and have </span>
+<span class="qt">&gt; had no luck. The windows version of the 48k rom gives me a colourful </span>
+<span class="qt">&gt; pattern, and the unix one almost works till I run and select y to </span>
+<span class="qt">&gt; scroll? the following program:</span>
+<span class="qt">&gt; 10 PRINT &quot;Hello World!&quot;</span>
+<span class="qt">&gt; 20 GOTO 10</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; When I get:</span>
+<span class="qt">&gt; H NEXT CODE</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Bad colour 10:1</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Is my program seeing one of Lister&#x27;s shirts?</span>
+
+No, you&#x27;ve just discovered a bug. If you&#x27;re getting a colourful pattern
+you probably applied the editor patch by mistake but the basic ROM
+*should* generate the error you describe, in the sense that, my version
+does as well. I haven&#x27;t a clue why it&#x27;s doing it and I don&#x27;t have time to
+fix it right now, but I will put it in the bug file to be fixed in the
+next release. Please keep using the ROM and see if you can find any other
+bugs. The bug is not present in the previous public beta so it shouldn&#x27;t
+be too hard to track down eventually. My guess is there&#x27;s a problem with
+the scroll counter.
+
+-- 
+I&#x27;m leaving CSS again soon. I will be away from
+my machine for about six months from the end of
+February. You can still email if you want, just
+don&#x27;t expect a quick response.
+
+
+
+</pre></div><div class="post" id="p130855"><div class="ph"><a class="d" href="#p130855">2002-02-12 15:25:18</a> <span>Steve Anderson</span> <span>Re: SE Basic public beta 2 (v0.70T)</span></div><pre>
+&quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+
+<span class="qt">&gt; This release is now available as an IPS file. The file, and a suitable</span>
+<span class="qt">&gt; utility for your machine, can be downloaded at</span>
+<span class="qt">&gt; <a href="http://www.worldofspectrum.org/sinclairbasic/" rel="noreferrer">http://www.worldofspectrum.org/sinclairbasic/</a></span>
+
+Like Fredrick here, I&#x27;ve had no joy patching ROMs under Windows whatsoever.
+I&#x27;ve used the Dextrose IPS patcher for Windows and tried to patch the images
+that come with vbSpec (zx128_0.rom, zx128_1.rom which I seem to remember are
+the editor and the 48k Basic ROMs, more or less) and the best I managed was
+to do something to the 128k editor that gave the error message &quot;2: ?? 0:0&quot;
+(or something like that!)
+
+What on earth am I doing wrong? I&#x27;ve tried different applying the patches to
+the wrong ROM images (wrong in as much as I can recall) - no joy - and IPS
+files have no error checking as the ability to do this has proven!
+
+Any chance of getting a working copy to me, one way or another? I fancy
+having a go at getting this in a proper Speccy you see...
+
+Steve
+
+
+
+
+
+</pre></div><div class="post" id="p130857"><div class="ph"><a class="d" href="#p130857">2002-02-12 16:31:18</a> <span>Andrew Owen</span> <span>Re: SE Basic public beta 2 (v0.70T)</span></div><pre>In article &lt;a4bc4u$rko$…@…&gt;, &quot;Steve Anderson&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; &quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; This release is now available as an IPS file. The file, and a suitable</span>
+<span class="qt">&gt; &gt; utility for your machine, can be downloaded at</span>
+<span class="qt">&gt; &gt; <a href="http://www.worldofspectrum.org/sinclairbasic/" rel="noreferrer">http://www.worldofspectrum.org/sinclairbasic/</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Like Fredrick here, I&#x27;ve had no joy patching ROMs under Windows whatsoever.</span>
+<span class="qt">&gt; I&#x27;ve used the Dextrose IPS patcher for Windows and tried to patch the images</span>
+<span class="qt">&gt; that come with vbSpec (zx128_0.rom, zx128_1.rom which I seem to remember are</span>
+<span class="qt">&gt; the editor and the 48k Basic ROMs, more or less) and the best I managed was</span>
+<span class="qt">&gt; to do something to the 128k editor that gave the error message &quot;2: ?? 0:0&quot;</span>
+<span class="qt">&gt; (or something like that!)</span>
+
+There are two IPS files in the archive. The editor patch should be applied
+to zx128_0.rom. The basic patch must be applied to the original Spectrum
+ROM. The 128 BASIC is radically different and so it is no wonder this
+didn&#x27;t work. Once you have the patched basic ROM you can rename it to
+zx128_1.rom and use it in a 128 emulator. All the patch to the editor ROM
+does is allow it to use SE Basic in place of 128 Basic. 
+
+<span class="qt">&gt; What on earth am I doing wrong?</span>
+
+See above. Further more, vbSpec is one of the three emulators on which
+most of the testing was done so I know it should work.
+
+<span class="qt">&gt; I&#x27;ve tried different applying the patches to the wrong ROM images (wrong in as</span>
+<span class="qt">&gt; much as I can recall) - no joy - and IPS files have no error checking as the</span>
+<span class="qt">&gt; ability to do this has proven!</span>
+
+An IPS file is just a list of addresses and lengths with appropriate data.
+Now I&#x27;ve got MacOS X I could use the unix patch command, but that wouldn&#x27;t
+help you. In the final edition I&#x27;ll be distributing the source so you can
+compile the ROM yourself.
+
+<span class="qt">&gt; Any chance of getting a working copy to me, one way or another? I fancy</span>
+<span class="qt">&gt; having a go at getting this in a proper Speccy you see...</span>
+
+I can email it to you, but I&#x27;ve checked the archive and the file is not
+corrupted so that probably wouldn&#x27;t help. If after following the above
+procedure you still have no joy, email me and I&#x27;ll send you the source,
+which will compile under TASM on MS-DOS/Unix, or ZASM on MacOS 9.
+
+-- 
+I&#x27;m leaving CSS again soon. I will be away from
+my machine for about six months from the end of
+February. You can still email if you want, just
+don&#x27;t expect a quick response.
+
+
+
+</pre></div></main></body></html>

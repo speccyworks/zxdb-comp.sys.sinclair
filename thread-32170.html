@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANN: SP1 for Z88DK (aka splib3, Sprite Pack v3.0) · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANN: SP1 for Z88DK (aka splib3, Sprite Pack v3.0)</h1><p class="facts">4 posts, 2006-04-27 – 2006-05-01</p><div class="post" id="p202082"><div class="ph"><a class="d" href="#p202082">2006-04-27 08:55:51</a> <span>…@…</span> </div><pre>
+Just poking my head in to announce SP1 for z88dk.  SP1 is the next
+version of splib, a flicker free sprite engine written in asm that can
+be called from C, asm or a mixture of the two.  The underlying display
+algorithm has remained approximately the same as the last version of
+the library (splib2) but a lot of interesting things have been added
+too.
+
+This time I will be attempting to port SP1 to several platforms,
+including MSX1, Amstrad CPC and ti-calculators.  This means that games
+written with SP1 should be (relatively) easily ported across machines.
+
+You can get SP1 and other new additions to z88dk by grabbing the latest
+cvs repository for z88dk.  I have started a thread on WOS
+&lt;<a href="http://www.worldofspectrum.org/forums/showthread.php?t=11729&gt;" rel="noreferrer">http://www.worldofspectrum.org/forums/showthread.php?t=11729&gt;</a> that
+describes how to do this for Windows owners and will put there some
+test programs in the next week or two to help me debug the library and
+help you understand how it works :)
+
+Previous versions of splib have been bug-free, but I do not have that
+confidence this time around.  SP1 was written over several months this
+time and I changed my mind twice how things would work.  The result has
+been code complying with three different ways of doing things and long,
+painful debugging sessions over the last few weeks.  I hope all the
+hidden bugs will be discovered in the near-term with the help of the
+test programs being put together to find them.
+
+
+
+
+</pre></div><div class="post" id="p202111"><div class="ph"><a class="d" href="#p202111">2006-04-27 16:36:49</a> <span>Chris Cowley</span> <span>Re: ANN: SP1 for Z88DK (aka splib3, Sprite Pack v3.0)</span></div><pre>On 27 Apr 2006 01:55:51 -0700, …@… wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Just poking my head in to announce SP1 for z88dk.  SP1 is the next</span>
+<span class="qt">&gt;version of splib, a flicker free sprite engine written in asm that can</span>
+<span class="qt">&gt;be called from C, asm or a mixture of the two.  The underlying display</span>
+<span class="qt">&gt;algorithm has remained approximately the same as the last version of</span>
+<span class="qt">&gt;the library (splib2) but a lot of interesting things have been added</span>
+<span class="qt">&gt;too.</span>
+
+Yay! Yay! And thrice Yay!
+
+Almost perfect timing, too, as I will be finishing a project at the end
+of next week and should have some time on my hands to play with this.
+
+<span class="qt">&gt;Previous versions of splib have been bug-free, but I do not have that</span>
+<span class="qt">&gt;confidence this time around.  SP1 was written over several months this</span>
+<span class="qt">&gt;time and I changed my mind twice how things would work.  The result has</span>
+<span class="qt">&gt;been code complying with three different ways of doing things and long,</span>
+<span class="qt">&gt;painful debugging sessions over the last few weeks.  I hope all the</span>
+<span class="qt">&gt;hidden bugs will be discovered in the near-term with the help of the</span>
+<span class="qt">&gt;test programs being put together to find them.</span>
+
+I&#x27;ll let you know if I spot anything...
+
+
+
+</pre></div><div class="post" id="p202154"><div class="ph"><a class="d" href="#p202154">2006-04-28 22:57:36</a> <span>…@…</span> <span>Re: ANN: SP1 for Z88DK (aka splib3, Sprite Pack v3.0)</span></div><pre>
+Chris Cowley wrote:
+<span class="qt">&gt; Yay! Yay! And thrice Yay!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Almost perfect timing, too, as I will be finishing a project at the end</span>
+<span class="qt">&gt; of next week and should have some time on my hands to play with this.</span>
+
+It turns out that anonymous cvs services are broken at sf so
+I&#x27;ve made a snapshot of my z88dk tree that holds the latest
+commits.  Full details in the WOS thread along with a brief
+explanation of how the library works.  I&#x27;m just about to get
+around to the tutorial programs :-D.
+
+
+
+
+</pre></div><div class="post" id="p202163"><div class="ph"><a class="d" href="#p202163">2006-05-01 03:38:35</a> <span>Chris Cowley</span> <span>Re: ANN: SP1 for Z88DK (aka splib3, Sprite Pack v3.0)</span></div><pre>On 28 Apr 2006 15:57:36 -0700, …@… wrote:
+
+<span class="qt">&gt;It turns out that anonymous cvs services are broken at sf so</span>
+<span class="qt">&gt;I&#x27;ve made a snapshot of my z88dk tree that holds the latest</span>
+<span class="qt">&gt;commits.  Full details in the WOS thread along with a brief</span>
+<span class="qt">&gt;explanation of how the library works.  I&#x27;m just about to get</span>
+<span class="qt">&gt;around to the tutorial programs :-D.</span>
+
+Many thanks for doing this. I just tried having a look at the WoS forums
+and I&#x27;m getting:
+
+&quot;There seems to have been a problem with the World of Spectrum Forums
+ database. Please try again by clicking the Refresh button in your web
+ browser.&quot; 
+
+etc.
+
+I&#x27;m not sure what all that&#x27;s about but no doubt either SF&#x27;s CVS or WoS
+will be back up again fairly soon, at which point I&#x27;ll grab a copy of
+the latest z88dk and have a play.
+
+Cheers,
+-- 
+Chris Cowley
+
+
+
+</pre></div></main></body></html>

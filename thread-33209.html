@@ -1,0 +1,1954 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What do you mean it&#x27;s void if I break these silly silver stickers over my IO port? · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</h1><p class="facts">77 posts, 2007-06-11 – 2007-06-16</p><div class="post" id="p211819"><div class="ph"><a class="d" href="#p211819">2007-06-11 21:12:48</a> <span>news.blueyonder.co.uk</span> </div><pre>Hi all!
+
+Just wandered into this place having found out about it on the CSSCGC 
+site(s). Thought I&#x27;d like to catch up with some other Sinclair / Spectrum / 
+ZX fanatics*. I cut my programming teeth on a Spectrum+, and since then it&#x27;s 
+all been down hill. Pants. (oo-er!)
+
+Anyhow - I&#x27;ll probably go lurk a bit, unless anyone replies to this!
+
+Cheers,
+
+Gav.  (aka dr.sputnik)
+
+
+*I mean fans - honest. 
+
+
+
+
+</pre></div><div class="post" id="p211820"><div class="ph"><a class="d" href="#p211820">2007-06-11 21:23:12</a> <span>…@…</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>news.blueyonder.co.uk &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; Hi all!</span>
+
+<span class="qt">&gt; Just wandered into this place having found out about it on the CSSCGC </span>
+<span class="qt">&gt; site(s). Thought I&#x27;d like to catch up with some other Sinclair / Spectrum / </span>
+<span class="qt">&gt; ZX fanatics*. I cut my programming teeth on a Spectrum+, and since then it&#x27;s </span>
+<span class="qt">&gt; all been down hill. Pants. (oo-er!)</span>
+
+<span class="qt">&gt; Anyhow - I&#x27;ll probably go lurk a bit, unless anyone replies to this!</span>
+
+Well, you seem to be in on some of the in-jokes...
+Obviously a your spectrum/your sinclair fan 
+
+Might I recommend the CSS folklore faq so you&#x27;re up on all the
+personalities, injokes and general culture stuff of the group.
+:)
+
+Anyway, welcome to the madhouse, don&#x27;t worry, we&#x27;re all completely hatstand.
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   | &quot;I&#x27;m alive!!! I can touch! I can taste!         |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|  I can SMELL!!!  KRYTEN!!! Unpack Rachel and    |</span>
+<span class="qt">|            in            |  get out the puncture repair kit!&quot;              |</span>
+<span class="qt">|     Computer Science     |     Arnold Judas Rimmer- Red Dwarf              |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p211821"><div class="ph"><a class="d" href="#p211821">2007-06-11 21:29:36</a> <span>…@…</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>…@… did eloquently scribble:
+<span class="qt">&gt; news.blueyonder.co.uk &lt;…@…&gt; did eloquently scribble:</span>
+<span class="qt">&gt;&gt; Hi all!</span>
+
+<span class="qt">&gt;&gt; Just wandered into this place having found out about it on the CSSCGC </span>
+<span class="qt">&gt;&gt; site(s). Thought I&#x27;d like to catch up with some other Sinclair / Spectrum / </span>
+<span class="qt">&gt;&gt; ZX fanatics*. I cut my programming teeth on a Spectrum+, and since then it&#x27;s </span>
+<span class="qt">&gt;&gt; all been down hill. Pants. (oo-er!)</span>
+
+<span class="qt">&gt;&gt; Anyhow - I&#x27;ll probably go lurk a bit, unless anyone replies to this!</span>
+
+<span class="qt">&gt; Well, you seem to be in on some of the in-jokes...</span>
+<span class="qt">&gt; Obviously a your spectrum/your sinclair fan </span>
+            ^^^^^^  
+            you&#x27;re a
+grrrr
+well,you get the idea
+-- 
+<span class="qt">|                          |What to do if you find yourself stuck in a crack|</span>
+<span class="qt">|  …@…    |in the ground beneath a giant boulder, which you|</span>
+<span class="qt">|                          |can&#x27;t move, with no hope of rescue.             |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|Consider how lucky you are that life has been   |</span>
+<span class="qt">|           in             |good to you so far...                           |</span>
+<span class="qt">|    Computer Science      |   -The BOOK, Hitch-hiker&#x27;s guide to the galaxy.|</span>
+
+
+
+</pre></div><div class="post" id="p211823"><div class="ph"><a class="d" href="#p211823">2007-06-11 21:38:54</a> <span>fuzzix</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>…@… wrote:
+<span class="qt">&gt; …@… did eloquently scribble:</span>
+<span class="qt">&gt;&gt; Well, you seem to be in on some of the in-jokes...</span>
+<span class="qt">&gt;&gt; Obviously a your spectrum/your sinclair fan </span>
+<span class="qt">&gt;            ^^^^^^  </span>
+<span class="qt">&gt;             you&#x27;re a</span>
+<span class="qt">&gt; grrrr</span>
+<span class="qt">&gt; well,you get the idea</span>
+
+Eh? The original sentence seems fine to me. The you&#x27;re was assumed.
+
+
+
+</pre></div><div class="post" id="p211824"><div class="ph"><a class="d" href="#p211824">2007-06-11 21:40:28</a> <span>…@…</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>fuzzix &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; …@… wrote:</span>
+<span class="qt">&gt;&gt; …@… did eloquently scribble:</span>
+<span class="qt">&gt;&gt;&gt; Well, you seem to be in on some of the in-jokes...</span>
+<span class="qt">&gt;&gt;&gt; Obviously a your spectrum/your sinclair fan </span>
+<span class="qt">&gt;&gt;            ^^^^^^  </span>
+<span class="qt">&gt;&gt;             you&#x27;re a</span>
+<span class="qt">&gt;&gt; grrrr</span>
+<span class="qt">&gt;&gt; well,you get the idea</span>
+
+<span class="qt">&gt; Eh? The original sentence seems fine to me. The you&#x27;re was assumed.</span>
+
+Indeed, when I read it back I was obviously going into spellpedant mode and
+thought I&#x27;d tripped myself up by watching telly whilst typing. 
+:)
+
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)| &quot;The day Microsoft makes something that doesn&#x27;t |</span>
+<span class="qt">|            in            |  suck is probably the day they start making     |</span>
+<span class="qt">|     Computer science     |  vacuum cleaners&quot; - Ernst Jan Plugge            |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p211827"><div class="ph"><a class="d" href="#p211827">2007-06-11 22:07:29</a> <span>news.blueyonder.co.uk</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Bonus! This is the first news group I&#x27;ve subscribed to that has:
+
+a) Responded to me (without offensive language)
+b) Responded to me (without offensive language)
+c) Not stolen my shed.
+d) OK, you get the idea, I&#x27;ll stop that now.
+
+I was an avid reader of Your Sinclair, though I also read many other 
+magazines. For some reason, those that were legal and still about computing 
+(apart from CrAsH) seem to have slipped my mind.
+
+Soo...dare I ask, what is new in the Sinclair world? (Apart from that 
+bike/car/radio/other radio situation!)
+
+Meep!
+
+&lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; fuzzix &lt;…@…&gt; did eloquently scribble:</span>
+<span class="qt">&gt;&gt; …@… wrote:</span>
+<span class="qt">&gt;&gt;&gt; …@… did eloquently scribble:</span>
+<span class="qt">&gt;&gt;&gt;&gt; Well, you seem to be in on some of the in-jokes...</span>
+<span class="qt">&gt;&gt;&gt;&gt; Obviously a your spectrum/your sinclair fan</span>
+<span class="qt">&gt;&gt;&gt;            ^^^^^^</span>
+<span class="qt">&gt;&gt;&gt;             you&#x27;re a</span>
+<span class="qt">&gt;&gt;&gt; grrrr</span>
+<span class="qt">&gt;&gt;&gt; well,you get the idea</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Eh? The original sentence seems fine to me. The you&#x27;re was assumed.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Indeed, when I read it back I was obviously going into spellpedant mode </span>
+<span class="qt">&gt; and</span>
+<span class="qt">&gt; thought I&#x27;d tripped myself up by watching telly whilst typing.</span>
+<span class="qt">&gt; :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; -- </span>
+<span class="qt">&gt; ______________________________________________________________________________</span>
+<span class="qt">&gt; |   …@…   | </span>
+<span class="qt">&gt; |</span>
+<span class="qt">&gt; |Andrew Halliwell BSc(hons)| &quot;The day Microsoft makes something that </span>
+<span class="qt">&gt; doesn&#x27;t |</span>
+<span class="qt">&gt; |            in            |  suck is probably the day they start making </span>
+<span class="qt">&gt; |</span>
+<span class="qt">&gt; |     Computer science     |  vacuum cleaners&quot; - Ernst Jan Plugge </span>
+<span class="qt">&gt; |</span>
+<span class="qt">&gt; ------------------------------------------------------------------------------</span>
+
+
+
+</pre></div><div class="post" id="p211828"><div class="ph"><a class="d" href="#p211828">2007-06-11 22:11:25</a> <span>…@…</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>news.blueyonder.co.uk &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; Soo...dare I ask, what is new in the Sinclair world? (Apart from that </span>
+<span class="qt">&gt; bike/car/radio/other radio situation!)</span>
+
+errr...
+Emulation of the old sinclair world?
+:)
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   | &quot;I&#x27;m alive!!! I can touch! I can taste!         |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|  I can SMELL!!!  KRYTEN!!! Unpack Rachel and    |</span>
+<span class="qt">|            in            |  get out the puncture repair kit!&quot;              |</span>
+<span class="qt">|     Computer Science     |     Arnold Judas Rimmer- Red Dwarf              |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p211829"><div class="ph"><a class="d" href="#p211829">2007-06-11 22:18:35</a> <span>news.blueyonder.co.uk</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Ah - fair enough. So no new Spectrum++&#x27;s on the horizon then (get it? 
+Horizon? - sorry...I&#x27;ll get my coat...)
+
+
+&lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; news.blueyonder.co.uk &lt;…@…&gt; did eloquently scribble:</span>
+<span class="qt">&gt;&gt; Soo...dare I ask, what is new in the Sinclair world? (Apart from that</span>
+<span class="qt">&gt;&gt; bike/car/radio/other radio situation!)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; errr...</span>
+<span class="qt">&gt; Emulation of the old sinclair world?</span>
+<span class="qt">&gt; :)</span>
+<span class="qt">&gt; -- </span>
+<span class="qt">&gt; ______________________________________________________________________________</span>
+<span class="qt">&gt; |   …@…   | &quot;I&#x27;m alive!!! I can touch! I can taste! </span>
+<span class="qt">&gt; |</span>
+<span class="qt">&gt; |Andrew Halliwell BSc(hons)|  I can SMELL!!!  KRYTEN!!! Unpack Rachel and </span>
+<span class="qt">&gt; |</span>
+<span class="qt">&gt; |            in            |  get out the puncture repair kit!&quot; </span>
+<span class="qt">&gt; |</span>
+<span class="qt">&gt; |     Computer Science     |     Arnold Judas Rimmer- Red Dwarf </span>
+<span class="qt">&gt; |</span>
+<span class="qt">&gt; ------------------------------------------------------------------------------</span>
+
+
+
+</pre></div><div class="post" id="p211830"><div class="ph"><a class="d" href="#p211830">2007-06-11 22:28:55</a> <span>…@…</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>news.blueyonder.co.uk &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; Ah - fair enough. So no new Spectrum++&#x27;s on the horizon then (get it? </span>
+<span class="qt">&gt; Horizon? - sorry...I&#x27;ll get my coat...)</span>
+
+You&#x27;ll need to see Llama wax len about that.
+He&#x27;s our resident coat salesman.
+
+There have been a few speccy related doohickies and stuff over the years,
+spectrum SE, speccybob (spectrum completely redesigned to work with discrete
+logic), etc.
+
+You can find most of the stuff with google.
+
+one hint.... configure your news reader.... to exclude the signature (that
+bit below here) in your replies.
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   | &quot;Are you pondering what I&#x27;m pondering Pinky?&quot;   |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|                                                 |</span>
+<span class="qt">|            in            | &quot;I think so brain, but this time, you control   |</span>
+<span class="qt">|     Computer Science     |  the Encounter suit, and I&#x27;ll do the voice...&quot;  |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p211832"><div class="ph"><a class="d" href="#p211832">2007-06-12 01:37:52</a> <span>Nathan Cross</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>
+On 11-Jun-2007, …@… wrote:
+
+<span class="qt">&gt; one hint.... configure your news reader.... to exclude the signature (that</span>
+<span class="qt">&gt; bit below here) in your replies.</span>
+
+&#x27;Configure&#x27;? That&#x27;s even possible? I&#x27;ve always just used cut&#x27;n&#x27;... er, well,
+just cut.
+
+Nathan
+-- 
+YS3 - It&#x27;s not that bad, really.
+<a href="http://www.ys3.org/" rel="noreferrer">http://www.ys3.org/</a>
+
+
+
+</pre></div><div class="post" id="p211837"><div class="ph"><a class="d" href="#p211837">2007-06-12 07:39:29</a> <span>Chris Young</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>On Tue, 12 Jun 2007 01:37:52 GMT da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Nathan Cross:
+
+<span class="qt">&gt; &gt; one hint.... configure your news reader.... to exclude the signature (that</span>
+<span class="qt">&gt; &gt; bit below here) in your replies.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &#x27;Configure&#x27;? That&#x27;s even possible? I&#x27;ve always just used cut&#x27;n&#x27;... er, well,</span>
+<span class="qt">&gt; just cut.</span>
+
+Same here.
+
+Another hint: configure your newsreader so your name or an alias
+appears, rather than the name of the news server you are posting from
+(unless you really are news.blueyonder.co.uk, but that would be
+spooky)
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p211838"><div class="ph"><a class="d" href="#p211838">2007-06-12 08:04:30</a> <span>Matt Rudge</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>news.blueyonder.co.uk wibbled:
+
+<span class="qt">&gt; Ah - fair enough. So no new Spectrum++&#x27;s on the horizon then (get it?</span>
+<span class="qt">&gt; Horizon? - sorry...I&#x27;ll get my coat...)</span>
+<span class="qt">&gt; </span>
+
+Welcome to Hotel comp.sys.sinclair....
+
+There are maybe no new Spectrum++&#x27;s, but this is a project I&#x27;ve been
+following with interest:
+
+<a href="http://www.nfluid.com/specDesign/indexPage.shtml" rel="noreferrer">http://www.nfluid.com/specDesign/indexPage.shtml</a>
+
+The speccy scene is far from dead[1]
+
+[1] or even resting.... beautiful plumage, though
+
+-- 
+Matt
+www.mattrudge.net
+
+
+
+</pre></div><div class="post" id="p211839"><div class="ph"><a class="d" href="#p211839">2007-06-12 08:12:52</a> <span>…@…</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Nathan Cross &lt;…@…&gt; did eloquently scribble:
+
+<span class="qt">&gt; On 11-Jun-2007, …@… wrote:</span>
+
+<span class="qt">&gt;&gt; one hint.... configure your news reader.... to exclude the signature (that</span>
+<span class="qt">&gt;&gt; bit below here) in your replies.</span>
+
+<span class="qt">&gt; &#x27;Configure&#x27;? That&#x27;s even possible? I&#x27;ve always just used cut&#x27;n&#x27;... er, well,</span>
+<span class="qt">&gt; just cut.</span>
+
+It is on mine. I hit reply, signature is not included.
+(that *is* why the sig seperator &quot;-- &quot; is there after all.)
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   | &quot;Are you pondering what I&#x27;m pondering Pinky?&quot;   |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|                                                 |</span>
+<span class="qt">|            in            | &quot;I think so brain, but this time, you control   |</span>
+<span class="qt">|     Computer Science     |  the Encounter suit, and I&#x27;ll do the voice...&quot;  |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p211840"><div class="ph"><a class="d" href="#p211840">2007-06-12 08:24:13</a> <span>Matt Rudge</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>…@… wibbled:
+
+<span class="qt">&gt; Nathan Cross &lt;…@…&gt; did eloquently scribble:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; On 11-Jun-2007, …@… wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;&gt; one hint.... configure your news reader.... to exclude the</span>
+<span class="qt">&gt; signature (that &gt;&gt; bit below here) in your replies.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; &#x27;Configure&#x27;? That&#x27;s even possible? I&#x27;ve always just used cut&#x27;n&#x27;...</span>
+<span class="qt">&gt; &gt; er, well, just cut.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; It is on mine. I hit reply, signature is not included.</span>
+<span class="qt">&gt; (that is why the sig seperator &quot;-- &quot; is there after all.)</span>
+
+I know mine isn&#x27;t the world&#x27;s most advanced newsreader (it was the
+first one that I found that was free and didn&#x27;t have any nasty
+spyware).... but it cuts the signature automatically as well.  In fact,
+after trawling through all the options and settings, it doesn&#x27;t seem
+possible to configure it otherwise.  Although why you&#x27;d want to is a
+bit of a mystery.
+
+-- 
+Matt
+www.mattrudge.net
+
+
+
+</pre></div><div class="post" id="p211841"><div class="ph"><a class="d" href="#p211841">2007-06-12 08:40:42</a> <span>…@…</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Matt Rudge &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; I know mine isn&#x27;t the world&#x27;s most advanced newsreader (it was the</span>
+<span class="qt">&gt; first one that I found that was free and didn&#x27;t have any nasty</span>
+<span class="qt">&gt; spyware).... but it cuts the signature automatically as well.  In fact,</span>
+<span class="qt">&gt; after trawling through all the options and settings, it doesn&#x27;t seem</span>
+<span class="qt">&gt; possible to configure it otherwise.  Although why you&#x27;d want to is a</span>
+<span class="qt">&gt; bit of a mystery.</span>
+
+Well, there is the odd occasion where a thread&#x27;s sprung up about the content
+of someone&#x27;s sig.
+:)
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)| &quot;The day Microsoft makes something that doesn&#x27;t |</span>
+<span class="qt">|            in            |  suck is probably the day they start making     |</span>
+<span class="qt">|     Computer science     |  vacuum cleaners&quot; - Ernst Jan Plugge            |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p211842"><div class="ph"><a class="d" href="#p211842">2007-06-12 08:46:14</a> <span>Matt Rudge</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>…@… wibbled:
+
+<span class="qt">&gt; Matt Rudge &lt;…@…&gt; did eloquently scribble:</span>
+<span class="qt">&gt; &gt; I know mine isn&#x27;t the world&#x27;s most advanced newsreader (it was the</span>
+<span class="qt">&gt; &gt; first one that I found that was free and didn&#x27;t have any nasty</span>
+<span class="qt">&gt; &gt; spyware).... but it cuts the signature automatically as well.  In</span>
+<span class="qt">&gt; &gt; fact, after trawling through all the options and settings, it</span>
+<span class="qt">&gt; &gt; doesn&#x27;t seem possible to configure it otherwise.  Although why</span>
+<span class="qt">&gt; &gt; you&#x27;d want to is a bit of a mystery.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Well, there is the odd occasion where a thread&#x27;s sprung up about the</span>
+<span class="qt">&gt; content of someone&#x27;s sig.</span>
+<span class="qt">&gt; :)</span>
+
+Aye... true.  You&#x27;re speaking from experience, iirc
+
+:)
+
+-- 
+Matt
+www.mattrudge.net
+
+
+
+</pre></div><div class="post" id="p211843"><div class="ph"><a class="d" href="#p211843">2007-06-12 08:59:58</a> <span>…@…</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Matt Rudge &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; …@… wibbled:</span>
+
+<span class="qt">&gt;&gt; Matt Rudge &lt;…@…&gt; did eloquently scribble:</span>
+<span class="qt">&gt;&gt; &gt; I know mine isn&#x27;t the world&#x27;s most advanced newsreader (it was the</span>
+<span class="qt">&gt;&gt; &gt; first one that I found that was free and didn&#x27;t have any nasty</span>
+<span class="qt">&gt;&gt; &gt; spyware).... but it cuts the signature automatically as well.  In</span>
+<span class="qt">&gt;&gt; &gt; fact, after trawling through all the options and settings, it</span>
+<span class="qt">&gt;&gt; &gt; doesn&#x27;t seem possible to configure it otherwise.  Although why</span>
+<span class="qt">&gt;&gt; &gt; you&#x27;d want to is a bit of a mystery.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Well, there is the odd occasion where a thread&#x27;s sprung up about the</span>
+<span class="qt">&gt;&gt; content of someone&#x27;s sig.</span>
+<span class="qt">&gt;&gt; :)</span>
+
+<span class="qt">&gt; Aye... true.  You&#x27;re speaking from experience, iirc</span>
+
+hoooo yus.
+(if you&#x27;re talking about certain trolls in another newsgroup and my degree..
+one of them&#x27;s still at it)
+:)
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)| &quot;The day Microsoft makes something that doesn&#x27;t |</span>
+<span class="qt">|            in            |  suck is probably the day they start making     |</span>
+<span class="qt">|     Computer science     |  vacuum cleaners&quot; - Ernst Jan Plugge            |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p211844"><div class="ph"><a class="d" href="#p211844">2007-06-12 09:16:38</a> <span>Ian Rawlings</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>On 2007-06-12, …@… &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; hoooo yus.</span>
+<span class="qt">&gt; (if you&#x27;re talking about certain trolls in another newsgroup and my degree..</span>
+<span class="qt">&gt; one of them&#x27;s still at it)</span>
+<span class="qt">&gt;:)</span>
+
+I did wonder why you bother putting that in there...
+
+But in addition to that kind of thing, some muppets get so screwed up
+that they put the text of their article after the sig separator, I&#x27;ve
+seen that more times than should be permitted in modern society.
+
+-- 
+Blast off and strike the evil Bydo empire!
+
+
+
+</pre></div><div class="post" id="p211845"><div class="ph"><a class="d" href="#p211845">2007-06-12 09:28:11</a> <span>AndyC</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>&quot;news.blueyonder.co.uk&quot; &lt;…@…&gt; wrote in message 
+news:BIjbi.37002$…@…...
+<span class="qt">&gt; Bonus! This is the first news group I&#x27;ve subscribed to that has:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; a) Responded to me (without offensive language)</span>
+<span class="qt">&gt; b) Responded to me (without offensive language)</span>
+<span class="qt">&gt; c) Not stolen my shed.</span>
+<span class="qt">&gt; d) OK, you get the idea, I&#x27;ll stop that now.</span>
+
+Well tough luck you mother ******, *** *****,**** ****, son of a ****,**** 
+*************[1], I&#x27;ve got your shed and you&#x27;re not getting it back.
+
+P.S. Welcome
+
+AndyC
+[1] This is not censorship [2]
+[2] But this is[3]
+[3] Mmmm, recursive vampire Willow[3] 
+
+
+
+
+
+</pre></div><div class="post" id="p211848"><div class="ph"><a class="d" href="#p211848">2007-06-12 10:40:20</a> <span>…@…</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Ian Rawlings &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; On 2007-06-12, …@… &lt;…@…&gt; wrote:</span>
+
+<span class="qt">&gt;&gt; hoooo yus.</span>
+<span class="qt">&gt;&gt; (if you&#x27;re talking about certain trolls in another newsgroup and my degree..</span>
+<span class="qt">&gt;&gt; one of them&#x27;s still at it)</span>
+<span class="qt">&gt;&gt;:)</span>
+
+<span class="qt">&gt; I did wonder why you bother putting that in there...</span>
+
+I was proud of it, so why not?
+There&#x27;s no reason to remove it now. Even less reason when trolls try to use
+it as ammo against me. (I tend to dig my heals in)
+:)
+
+<span class="qt">&gt; But in addition to that kind of thing, some muppets get so screwed up</span>
+<span class="qt">&gt; that they put the text of their article after the sig separator, I&#x27;ve</span>
+<span class="qt">&gt; seen that more times than should be permitted in modern society.</span>
+
+Aye, I&#x27;ve seen that too. They get told to put their comments at the end
+rather than top post and take things too... literally.
+:)
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   | &quot;I&#x27;m alive!!! I can touch! I can taste!         |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|  I can SMELL!!!  KRYTEN!!! Unpack Rachel and    |</span>
+<span class="qt">|            in            |  get out the puncture repair kit!&quot;              |</span>
+<span class="qt">|     Computer Science     |     Arnold Judas Rimmer- Red Dwarf              |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p211849"><div class="ph"><a class="d" href="#p211849">2007-06-12 14:40:06</a> <span>Ian Rawlings</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>On 2007-06-12, …@… &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; I was proud of it, so why not?</span>
+
+Outside of your initial job interview it&#x27;s not really of any
+relevance, I don&#x27;t even remember what I got at uni any more, not even
+sure if it&#x27;s still on my CV!
+
+<span class="qt">&gt; There&#x27;s no reason to remove it now. Even less reason when trolls try to use</span>
+<span class="qt">&gt; it as ammo against me. (I tend to dig my heals in)</span>
+<span class="qt">&gt;:)</span>
+
+HEELS you uneducated oaf! :-P
+
+<span class="qt">&gt; Aye, I&#x27;ve seen that too. They get told to put their comments at the end</span>
+<span class="qt">&gt; rather than top post and take things too... literally.</span>
+<span class="qt">&gt;:)</span>
+
+If only they&#x27;d put their comments so far on the end it goes onto the
+plastic leader tape they use to thread this stuff onto the tape
+reels..
+
+-- 
+Blast off and strike the evil Bydo empire!
+
+
+
+</pre></div><div class="post" id="p211850"><div class="ph"><a class="d" href="#p211850">2007-06-12 14:50:11</a> <span>…@…</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Ian Rawlings &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; On 2007-06-12, …@… &lt;…@…&gt; wrote:</span>
+
+<span class="qt">&gt;&gt; I was proud of it, so why not?</span>
+
+<span class="qt">&gt; Outside of your initial job interview it&#x27;s not really of any</span>
+<span class="qt">&gt; relevance, I don&#x27;t even remember what I got at uni any more, not even</span>
+<span class="qt">&gt; sure if it&#x27;s still on my CV!</span>
+
+<span class="qt">&gt;&gt; There&#x27;s no reason to remove it now. Even less reason when trolls try to use</span>
+<span class="qt">&gt;&gt; it as ammo against me. (I tend to dig my heals in)</span>
+<span class="qt">&gt;&gt;:)</span>
+
+<span class="qt">&gt; HEELS you uneducated oaf! :-P</span>
+
+My degree isn&#x27;t in English.
+:-p
+
+<span class="qt">&gt;&gt; Aye, I&#x27;ve seen that too. They get told to put their comments at the end</span>
+<span class="qt">&gt;&gt; rather than top post and take things too... literally.</span>
+<span class="qt">&gt;&gt;:)</span>
+
+<span class="qt">&gt; If only they&#x27;d put their comments so far on the end it goes onto the</span>
+<span class="qt">&gt; plastic leader tape they use to thread this stuff onto the tape</span>
+<span class="qt">&gt; reels..</span>
+
+Indeed.
+-- 
+-----------------------------------------------------------------------------
+<span class="qt">|   …@…   |   Windows95 (noun): 32 bit extensions and a    |</span>
+<span class="qt">|                          | graphical shell for a 16 bit patch to an 8 bit |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)| operating system originally  coded for a 4 bit |</span>
+<span class="qt">|            in            |microprocessor, written by a 2 bit company, that|</span>
+<span class="qt">|     Computer Science     |        can&#x27;t stand 1 bit of competition.       |</span>
+-----------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p211851"><div class="ph"><a class="d" href="#p211851">2007-06-12 17:04:43</a> <span>news.blueyonder.co.uk</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Yeah - think I got name thing ironed out now - why it defaulted to that I 
+don&#x27;t know. I did toy with the idea of changing my name by deedpole to 
+&quot;news.blueyonder.co.uk&quot; but on balance decided it&#x27;d be easier to have a go 
+at the account settings instead.
+
+As you can tell, I&#x27;m a newsgroup expert! Oh wait - no, that&#x27;s not it. &quot;I&#x27;m 
+NOT a newsgroup expert&quot; - yeah, that&#x27;s it!
+
+
+&quot;Chris Young&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; On Tue, 12 Jun 2007 01:37:52 GMT da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt; to MC Nathan Cross:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; &gt; one hint.... configure your news reader.... to exclude the signature </span>
+<span class="qt">&gt;&gt; &gt; (that</span>
+<span class="qt">&gt;&gt; &gt; bit below here) in your replies.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; &#x27;Configure&#x27;? That&#x27;s even possible? I&#x27;ve always just used cut&#x27;n&#x27;... er, </span>
+<span class="qt">&gt;&gt; well,</span>
+<span class="qt">&gt;&gt; just cut.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Same here.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Another hint: configure your newsreader so your name or an alias</span>
+<span class="qt">&gt; appears, rather than the name of the news server you are posting from</span>
+<span class="qt">&gt; (unless you really are news.blueyonder.co.uk, but that would be</span>
+<span class="qt">&gt; spooky)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Chris</span>
+
+
+
+
+</pre></div><div class="post" id="p211852"><div class="ph"><a class="d" href="#p211852">2007-06-12 17:24:35</a> <span>news.blueyonder.co.uk</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>It&#x27;s probably just stunned!
+
+Interesting site - though a bit further into electronics than I am. Good 
+reading though - especially the video related sections.
+
+&quot;Matt Rudge&quot; &lt;…@…&gt; wrote in message news:f4lk2c$jm$…@…...
+<span class="qt">&gt; news.blueyonder.co.uk wibbled:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Ah - fair enough. So no new Spectrum++&#x27;s on the horizon then (get it?</span>
+<span class="qt">&gt;&gt; Horizon? - sorry...I&#x27;ll get my coat...)</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Welcome to Hotel comp.sys.sinclair....</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; There are maybe no new Spectrum++&#x27;s, but this is a project I&#x27;ve been</span>
+<span class="qt">&gt; following with interest:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; <a href="http://www.nfluid.com/specDesign/indexPage.shtml" rel="noreferrer">http://www.nfluid.com/specDesign/indexPage.shtml</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The speccy scene is far from dead[1]</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; [1] or even resting.... beautiful plumage, though</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; -- </span>
+<span class="qt">&gt; Matt</span>
+<span class="qt">&gt; www.mattrudge.net </span>
+
+
+
+
+</pre></div><div class="post" id="p211853"><div class="ph"><a class="d" href="#p211853">2007-06-12 17:26:30</a> <span>news.blueyonder.co.uk</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>So it&#x27;s my second day here and already I&#x27;m subject to HatStand people, Monty 
+Python, Spectrum stuff and now Buffy the Vampire Slayer. These are all 
+things I can relate to. Nice place!
+
+&quot;AndyC&quot; &lt;…@…&gt; wrote in message 
+news:f4lovb$7ee$…@…...
+<span class="qt">&gt; &quot;news.blueyonder.co.uk&quot; &lt;…@…&gt; wrote in message </span>
+<span class="qt">&gt; news:BIjbi.37002$…@…...</span>
+<span class="qt">&gt;&gt; Bonus! This is the first news group I&#x27;ve subscribed to that has:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; a) Responded to me (without offensive language)</span>
+<span class="qt">&gt;&gt; b) Responded to me (without offensive language)</span>
+<span class="qt">&gt;&gt; c) Not stolen my shed.</span>
+<span class="qt">&gt;&gt; d) OK, you get the idea, I&#x27;ll stop that now.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Well tough luck you mother ******, *** *****,**** ****, son of a ****,**** </span>
+<span class="qt">&gt; *************[1], I&#x27;ve got your shed and you&#x27;re not getting it back.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; P.S. Welcome</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; AndyC</span>
+<span class="qt">&gt; [1] This is not censorship [2]</span>
+<span class="qt">&gt; [2] But this is[3]</span>
+<span class="qt">&gt; [3] Mmmm, recursive vampire Willow[3]</span>
+<span class="qt">&gt; </span>
+
+
+
+
+</pre></div><div class="post" id="p211854"><div class="ph"><a class="d" href="#p211854">2007-06-12 17:31:55</a> <span>…@…</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>news.blueyonder.co.uk &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; Yeah - think I got name thing ironed out now - why it defaulted to that I </span>
+<span class="qt">&gt; don&#x27;t know. I did toy with the idea of changing my name by deedpole to </span>
+<span class="qt">&gt; &quot;news.blueyonder.co.uk&quot; but on balance decided it&#x27;d be easier to have a go </span>
+<span class="qt">&gt; at the account settings instead.</span>
+
+<span class="qt">&gt; As you can tell, I&#x27;m a newsgroup expert! Oh wait - no, that&#x27;s not it. &quot;I&#x27;m </span>
+<span class="qt">&gt; NOT a newsgroup expert&quot; - yeah, that&#x27;s it!</span>
+
+Next lesson...
+Don&#x27;t top post.
+:)
+
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)| &quot;ARSE! GERLS!! DRINK! DRINK! DRINK!!!&quot;          |</span>
+<span class="qt">|            in            | &quot;THAT WOULD BE AN ECUMENICAL MATTER!...FECK!!!! |</span>
+<span class="qt">|     Computer Science     | - Father Jack in &quot;Father Ted&quot;                   |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p211855"><div class="ph"><a class="d" href="#p211855">2007-06-12 17:35:00</a> <span>Ian Rawlings</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>On 2007-06-12, news.blueyonder.co.uk &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; So it&#x27;s my second day here and already I&#x27;m subject to HatStand people, Monty </span>
+<span class="qt">&gt; Python, Spectrum stuff and now Buffy the Vampire Slayer. These are all </span>
+<span class="qt">&gt; things I can relate to. Nice place!</span>
+
+You&#x27;d like WoS better...
+
+Run away!!
+
+-- 
+Blast off and strike the evil Bydo empire!
+
+
+
+</pre></div><div class="post" id="p211859"><div class="ph"><a class="d" href="#p211859">2007-06-12 17:48:34</a> <span>Gavin Callard</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>
+&quot;Ian Rawlings&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; On 2007-06-12, news.blueyonder.co.uk &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; So it&#x27;s my second day here and already I&#x27;m subject to HatStand people, </span>
+<span class="qt">&gt;&gt; Monty</span>
+<span class="qt">&gt;&gt; Python, Spectrum stuff and now Buffy the Vampire Slayer. These are all</span>
+<span class="qt">&gt;&gt; things I can relate to. Nice place!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; You&#x27;d like WoS better...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Run away!!</span>
+<span class="qt">&gt;</span>
+
+OK, so what&#x27;s it like there then? 
+
+
+
+
+</pre></div><div class="post" id="p211862"><div class="ph"><a class="d" href="#p211862">2007-06-12 17:55:12</a> <span>…@…</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Ian Rawlings &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; On 2007-06-12, news.blueyonder.co.uk &lt;…@…&gt; wrote:</span>
+
+<span class="qt">&gt;&gt; So it&#x27;s my second day here and already I&#x27;m subject to HatStand people, Monty </span>
+<span class="qt">&gt;&gt; Python, Spectrum stuff and now Buffy the Vampire Slayer. These are all </span>
+<span class="qt">&gt;&gt; things I can relate to. Nice place!</span>
+
+<span class="qt">&gt; You&#x27;d like WoS better...</span>
+
+<span class="qt">&gt; Run away!!</span>
+
+Don&#x27;t encourage them, you git. :)
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   | &quot;I&#x27;m alive!!! I can touch! I can taste!         |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|  I can SMELL!!!  KRYTEN!!! Unpack Rachel and    |</span>
+<span class="qt">|            in            |  get out the puncture repair kit!&quot;              |</span>
+<span class="qt">|     Computer Science     |     Arnold Judas Rimmer- Red Dwarf              |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p211863"><div class="ph"><a class="d" href="#p211863">2007-06-12 17:58:09</a> <span>guesser</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Gavin Callard wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &quot;Ian Rawlings&quot; &lt;…@…&gt; wrote in message </span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt;&gt; On 2007-06-12, news.blueyonder.co.uk &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; So it&#x27;s my second day here and already I&#x27;m subject to HatStand </span>
+<span class="qt">&gt;&gt;&gt; people, Monty</span>
+<span class="qt">&gt;&gt;&gt; Python, Spectrum stuff and now Buffy the Vampire Slayer. These are all</span>
+<span class="qt">&gt;&gt;&gt; things I can relate to. Nice place!</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; You&#x27;d like WoS better...</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Run away!!</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; OK, so what&#x27;s it like there then?</span>
+
+exactly the same as here, except it&#x27;s moderated and there&#x27;s more people :p
+
+
+
+</pre></div><div class="post" id="p211865"><div class="ph"><a class="d" href="#p211865">2007-06-12 18:03:19</a> <span>Robert Baker</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>On Mon, 11 Jun 2007 21:12:48 GMT, &quot;news.blueyonder.co.uk&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Anyhow - I&#x27;ll probably go lurk a bit, unless anyone replies to this!</span>
+
+You won&#x27;t get anyone replying to such a blatantly off-topic message as
+yours -- I mean to say, it isn&#x27;t about kid&#x27;s TV *or* crisp flavours!
+:-)
+
+
+
+</pre></div><div class="post" id="p211866"><div class="ph"><a class="d" href="#p211866">2007-06-12 18:31:02</a> <span>Gavin Callard</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>&quot;guesser&quot; &lt;…@…&gt; wrote in message 
+news:f4mmrj$o66$…@…...
+<span class="qt">&gt; Gavin Callard wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; &quot;Ian Rawlings&quot; &lt;…@…&gt; wrote in message </span>
+<span class="qt">&gt;&gt; news:…@…...</span>
+<span class="qt">&gt;&gt;&gt; On 2007-06-12, news.blueyonder.co.uk &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;&gt; So it&#x27;s my second day here and already I&#x27;m subject to HatStand people, </span>
+<span class="qt">&gt;&gt;&gt;&gt; Monty</span>
+<span class="qt">&gt;&gt;&gt;&gt; Python, Spectrum stuff and now Buffy the Vampire Slayer. These are all</span>
+<span class="qt">&gt;&gt;&gt;&gt; things I can relate to. Nice place!</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; You&#x27;d like WoS better...</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; Run away!!</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; OK, so what&#x27;s it like there then?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; exactly the same as here, except it&#x27;s moderated and there&#x27;s more people :p</span>
+
+I&#x27;ve always thought in the past, that the bigger an online newsgroup (well, 
+forum really, since I&#x27;ve not really used news groups much) gets worse the 
+more populated it gets.
+
+Having said that, I&#x27;ve also thought those trees.
+
+
+
+
+
+</pre></div><div class="post" id="p211867"><div class="ph"><a class="d" href="#p211867">2007-06-12 18:31:36</a> <span>Gavin Callard</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>
+&quot;Robert Baker&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; On Mon, 11 Jun 2007 21:12:48 GMT, &quot;news.blueyonder.co.uk&quot;</span>
+<span class="qt">&gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;Anyhow - I&#x27;ll probably go lurk a bit, unless anyone replies to this!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; You won&#x27;t get anyone replying to such a blatantly off-topic message as</span>
+<span class="qt">&gt; yours -- I mean to say, it isn&#x27;t about kid&#x27;s TV *or* crisp flavours!</span>
+<span class="qt">&gt; :-)</span>
+
+
+Don&#x27;t encourage me! :) 
+
+
+
+
+</pre></div><div class="post" id="p211868"><div class="ph"><a class="d" href="#p211868">2007-06-12 18:32:25</a> <span>Ian Rawlings</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>On 2007-06-12, Gavin Callard &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; OK, so what&#x27;s it like there then? </span>
+
+Dancing girls, smileys, Kylie Minogue, posts about stuff other than
+how great WoS is, and some more dancing girls.  All this and a slower
+interface too!  It&#x27;s great!
+
+I&#x27;ve never been there.
+
+-- 
+Blast off and strike the evil Bydo empire!
+
+
+
+</pre></div><div class="post" id="p211870"><div class="ph"><a class="d" href="#p211870">2007-06-12 18:33:47</a> <span>Ian Rawlings</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>On 2007-06-12, …@… &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Don&#x27;t encourage them, you git. :)</span>
+
+Hey I&#x27;m just trying to bring WoS and CSS closer together!
+
+Usenet is pants!  We want webby stuff with graphics and smiley faces
+an&#x27; all that sort of thing!  Ban usenet, it&#x27;s for paedophiles!
+
+-- 
+Blast off and strike the evil Bydo empire!
+
+
+
+</pre></div><div class="post" id="p211871"><div class="ph"><a class="d" href="#p211871">2007-06-12 18:36:46</a> <span>Ian Rawlings</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>On 2007-06-12, Gavin Callard &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Having said that, I&#x27;ve also thought those trees.</span>
+
+You are Daniel Mandic and I claim my free packet of rolos.
+
+-- 
+Blast off and strike the evil Bydo empire!
+
+
+
+</pre></div><div class="post" id="p211872"><div class="ph"><a class="d" href="#p211872">2007-06-12 18:48:24</a> <span>…@…</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Ian Rawlings &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; On 2007-06-12, …@… &lt;…@…&gt; wrote:</span>
+
+<span class="qt">&gt;&gt; Don&#x27;t encourage them, you git. :)</span>
+
+<span class="qt">&gt; Hey I&#x27;m just trying to bring WoS and CSS closer together!</span>
+
+<span class="qt">&gt; Usenet is pants!  We want webby stuff with graphics and smiley faces</span>
+<span class="qt">&gt; an&#x27; all that sort of thing!  Ban usenet, it&#x27;s for paedophiles!</span>
+
+Ooo, you rotter, you cad. 
+You absolute bounder.
+:)
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   | &quot;I&#x27;m alive!!! I can touch! I can taste!         |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|  I can SMELL!!!  KRYTEN!!! Unpack Rachel and    |</span>
+<span class="qt">|            in            |  get out the puncture repair kit!&quot;              |</span>
+<span class="qt">|     Computer Science     |     Arnold Judas Rimmer- Red Dwarf              |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p211873"><div class="ph"><a class="d" href="#p211873">2007-06-12 18:48:24</a> <span>…@…</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Gavin Callard &lt;…@…&gt; did eloquently scribble:
+
+<span class="qt">&gt; &quot;Robert Baker&quot; &lt;…@…&gt; wrote in message </span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt;&gt; On Mon, 11 Jun 2007 21:12:48 GMT, &quot;news.blueyonder.co.uk&quot;</span>
+<span class="qt">&gt;&gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;Anyhow - I&#x27;ll probably go lurk a bit, unless anyone replies to this!</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; You won&#x27;t get anyone replying to such a blatantly off-topic message as</span>
+<span class="qt">&gt;&gt; yours -- I mean to say, it isn&#x27;t about kid&#x27;s TV *or* crisp flavours!</span>
+<span class="qt">&gt;&gt; :-)</span>
+
+<span class="qt">&gt; Don&#x27;t encourage me! :) </span>
+
+Why ever not? Kid&#x27;s tv and crisps... CSS does stand for Crisps, Snacks and
+Sweeties... doesn&#x27;t it?
+-- 
+-----------------------------------------------------------------------------
+<span class="qt">|   …@…   |   Windows95 (noun): 32 bit extensions and a    |</span>
+<span class="qt">|                          | graphical shell for a 16 bit patch to an 8 bit |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)| operating system originally  coded for a 4 bit |</span>
+<span class="qt">|            in            |microprocessor, written by a 2 bit company, that|</span>
+<span class="qt">|     Computer Science     |        can&#x27;t stand 1 bit of competition.       |</span>
+-----------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p211874"><div class="ph"><a class="d" href="#p211874">2007-06-12 18:48:24</a> <span>…@…</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Ian Rawlings &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; On 2007-06-12, Gavin Callard &lt;…@…&gt; wrote:</span>
+
+<span class="qt">&gt;&gt; OK, so what&#x27;s it like there then? </span>
+
+<span class="qt">&gt; Dancing girls, smileys, Kylie Minogue, posts about stuff other than</span>
+<span class="qt">&gt; how great WoS is, and some more dancing girls.  All this and a slower</span>
+<span class="qt">&gt; interface too!  It&#x27;s great!</span>
+
+<span class="qt">&gt; I&#x27;ve never been there.</span>
+
+What you didn&#x27;t mention is...
+The dancing girls are the rollie pollies.
+And Bella Emberg. 
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   | &quot;Are you pondering what I&#x27;m pondering Pinky?&quot;   |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|                                                 |</span>
+<span class="qt">|            in            | &quot;I think so brain, but this time, you control   |</span>
+<span class="qt">|     Computer Science     |  the Encounter suit, and I&#x27;ll do the voice...&quot;  |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p211876"><div class="ph"><a class="d" href="#p211876">2007-06-12 19:21:13</a> <span>Ian Rawlings</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>On 2007-06-12, …@… &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; What you didn&#x27;t mention is...</span>
+<span class="qt">&gt; The dancing girls are the rollie pollies.</span>
+<span class="qt">&gt; And Bella Emberg. </span>
+
+Maggie Thatcher nude!
+
+That should wash all naughty thoughts of Bella Emberg out of your
+mind.
+
+-- 
+Blast off and strike the evil Bydo empire!
+
+
+
+</pre></div><div class="post" id="p211879"><div class="ph"><a class="d" href="#p211879">2007-06-12 19:40:05</a> <span>Gavin Callard</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>
+&quot;Ian Rawlings&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; On 2007-06-12, Gavin Callard &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Having said that, I&#x27;ve also thought those trees.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; You are Daniel Mandic and I claim my free packet of rolos.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; -- </span>
+<span class="qt">&gt; Blast off and strike the evil Bydo empire!</span>
+
+
+Um - I&#x27;m not, and I don&#x27;t have any Rolo&#x27;s.
+
+Who is Daniel Mandic? 
+
+
+
+
+</pre></div><div class="post" id="p211880"><div class="ph"><a class="d" href="#p211880">2007-06-12 19:41:11</a> <span>Gavin Callard</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>
+&quot;Ian Rawlings&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; On 2007-06-12, …@… &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; What you didn&#x27;t mention is...</span>
+<span class="qt">&gt;&gt; The dancing girls are the rollie pollies.</span>
+<span class="qt">&gt;&gt; And Bella Emberg.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Maggie Thatcher nude!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; That should wash all naughty thoughts of Bella Emberg out of your</span>
+<span class="qt">&gt; mind.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; -- </span>
+<span class="qt">&gt; Blast off and strike the evil Bydo empire!</span>
+
+
+Or in a leotard.
+
+Oh - did I just think that? Arrgh - demons out! Must wash brain... 
+
+
+
+
+</pre></div><div class="post" id="p211881"><div class="ph"><a class="d" href="#p211881">2007-06-12 19:42:48</a> <span>Gavin Callard</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>
+&lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; Gavin Callard &lt;…@…&gt; did eloquently scribble:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; &quot;Robert Baker&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt;&gt; news:…@…...</span>
+<span class="qt">&gt;&gt;&gt; On Mon, 11 Jun 2007 21:12:48 GMT, &quot;news.blueyonder.co.uk&quot;</span>
+<span class="qt">&gt;&gt;&gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;&gt;Anyhow - I&#x27;ll probably go lurk a bit, unless anyone replies to this!</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; You won&#x27;t get anyone replying to such a blatantly off-topic message as</span>
+<span class="qt">&gt;&gt;&gt; yours -- I mean to say, it isn&#x27;t about kid&#x27;s TV *or* crisp flavours!</span>
+<span class="qt">&gt;&gt;&gt; :-)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Don&#x27;t encourage me! :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Why ever not? Kid&#x27;s tv and crisps... CSS does stand for Crisps, Snacks and</span>
+<span class="qt">&gt; Sweeties... doesn&#x27;t it?</span>
+
+Ah - I thought it stood for Curry Sounds Splendid. Oh well. 
+
+
+
+
+</pre></div><div class="post" id="p211882"><div class="ph"><a class="d" href="#p211882">2007-06-12 19:43:06</a> <span>guesser</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Gavin Callard wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &quot;Ian Rawlings&quot; &lt;…@…&gt; wrote in message </span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt;&gt; On 2007-06-12, Gavin Callard &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; Having said that, I&#x27;ve also thought those trees.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; You are Daniel Mandic and I claim my free packet of rolos.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; -- </span>
+<span class="qt">&gt;&gt; Blast off and strike the evil Bydo empire!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Um - I&#x27;m not, and I don&#x27;t have any Rolo&#x27;s.</span>
+Have you read the CSS folklore FAQ yet?...
+<a href="http://www.sinclairfaq.com/cssfolklore/index.html" rel="noreferrer">http://www.sinclairfaq.com/cssfolklore/index.html</a>
+
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Who is Daniel Mandic?</span>
+You&#x27;ll find out...
+
+in fact download as many old messages as you can, I&#x27;m sure you&#x27;ll find 
+one or two :)
+
+
+
+</pre></div><div class="post" id="p211885"><div class="ph"><a class="d" href="#p211885">2007-06-12 19:48:04</a> <span>Gavin Callard</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>
+&quot;guesser&quot; &lt;…@…&gt; wrote in message 
+news:f4mt0c$csc$…@…...
+<span class="qt">&gt; Gavin Callard wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; &quot;Ian Rawlings&quot; &lt;…@…&gt; wrote in message </span>
+<span class="qt">&gt;&gt; news:…@…...</span>
+<span class="qt">&gt;&gt;&gt; On 2007-06-12, Gavin Callard &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;&gt; Having said that, I&#x27;ve also thought those trees.</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; You are Daniel Mandic and I claim my free packet of rolos.</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; -- </span>
+<span class="qt">&gt;&gt;&gt; Blast off and strike the evil Bydo empire!</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Um - I&#x27;m not, and I don&#x27;t have any Rolo&#x27;s.</span>
+<span class="qt">&gt; Have you read the CSS folklore FAQ yet?...</span>
+<span class="qt">&gt; <a href="http://www.sinclairfaq.com/cssfolklore/index.html" rel="noreferrer">http://www.sinclairfaq.com/cssfolklore/index.html</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Who is Daniel Mandic?</span>
+<span class="qt">&gt; You&#x27;ll find out...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; in fact download as many old messages as you can, I&#x27;m sure you&#x27;ll find one </span>
+<span class="qt">&gt; or two :)</span>
+
+
+I seem to recall a Rolo fixation from the YS days, but other than that, no - 
+but I&#x27;m going to read the FAQ in a moment. 
+
+
+
+
+</pre></div><div class="post" id="p211886"><div class="ph"><a class="d" href="#p211886">2007-06-12 19:52:37</a> <span>…@…</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Ian Rawlings &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; On 2007-06-12, …@… &lt;…@…&gt; wrote:</span>
+
+<span class="qt">&gt;&gt; What you didn&#x27;t mention is...</span>
+<span class="qt">&gt;&gt; The dancing girls are the rollie pollies.</span>
+<span class="qt">&gt;&gt; And Bella Emberg. </span>
+
+<span class="qt">&gt; Maggie Thatcher nude!</span>
+
+<span class="qt">&gt; That should wash all naughty thoughts of Bella Emberg out of your</span>
+<span class="qt">&gt; mind.</span>
+
+Len&#x27;s the one who had the hots for Bella.
+:)
+-- 
+<span class="qt">|                          |What to do if you find yourself stuck in a crack|</span>
+<span class="qt">|  …@…    |in the ground beneath a giant boulder, which you|</span>
+<span class="qt">|                          |can&#x27;t move, with no hope of rescue.             |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|Consider how lucky you are that life has been   |</span>
+<span class="qt">|           in             |good to you so far...                           |</span>
+<span class="qt">|    Computer Science      |   -The BOOK, Hitch-hiker&#x27;s guide to the galaxy.|</span>
+
+
+</pre></div><div class="post" id="p211888"><div class="ph"><a class="d" href="#p211888">2007-06-12 20:00:09</a> <span>…@…</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Gavin Callard &lt;…@…&gt; did eloquently scribble:
+
+<span class="qt">&gt; &quot;Ian Rawlings&quot; &lt;…@…&gt; wrote in message </span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt;&gt; On 2007-06-12, Gavin Callard &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; Having said that, I&#x27;ve also thought those trees.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; You are Daniel Mandic and I claim my free packet of rolos.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; -- </span>
+<span class="qt">&gt;&gt; Blast off and strike the evil Bydo empire!</span>
+
+<span class="qt">&gt; Um - I&#x27;m not, and I don&#x27;t have any Rolo&#x27;s.</span>
+
+Better get some in then, you&#x27;ll need them to pay the plug tax [1]
+
+<span class="qt">&gt; Who is Daniel Mandic? </span>
+
+Oh, you&#x27;ll find out.
+
+
+[1] 75p and a packet of rolos. Starglider tried to increase it to 85p and a
+packet of rolos due to inflation but the rest of us rebelled, deposing him
+as king of plugs and returning it to the previous rate.
+
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   | &quot;I&#x27;m alive!!! I can touch! I can taste!         |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|  I can SMELL!!!  KRYTEN!!! Unpack Rachel and    |</span>
+<span class="qt">|            in            |  get out the puncture repair kit!&quot;              |</span>
+<span class="qt">|     Computer Science     |     Arnold Judas Rimmer- Red Dwarf              |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p211893"><div class="ph"><a class="d" href="#p211893">2007-06-12 20:48:39</a> <span>Gavin Callard</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>
+&lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; Gavin Callard &lt;…@…&gt; did eloquently scribble:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; &quot;Ian Rawlings&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt;&gt; news:…@…...</span>
+<span class="qt">&gt;&gt;&gt; On 2007-06-12, Gavin Callard &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;&gt; Having said that, I&#x27;ve also thought those trees.</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; You are Daniel Mandic and I claim my free packet of rolos.</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; -- </span>
+<span class="qt">&gt;&gt;&gt; Blast off and strike the evil Bydo empire!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Um - I&#x27;m not, and I don&#x27;t have any Rolo&#x27;s.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Better get some in then, you&#x27;ll need them to pay the plug tax [1]</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Who is Daniel Mandic?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Oh, you&#x27;ll find out.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; [1] 75p and a packet of rolos. Starglider tried to increase it to 85p and </span>
+<span class="qt">&gt; a</span>
+<span class="qt">&gt; packet of rolos due to inflation but the rest of us rebelled, deposing him</span>
+<span class="qt">&gt; as king of plugs and returning it to the previous rate.</span>
+<span class="qt">&gt;</span>
+
+
+Going by the FAQ (which I&#x27;ve just read and forgotten) I don&#x27;t think I&#x27;m 
+subject to Plug Tax (yet) or something. As for that D. Epidemic fellow - 
+none the wiser. 
+
+
+
+
+</pre></div><div class="post" id="p211894"><div class="ph"><a class="d" href="#p211894">2007-06-12 20:57:34</a> <span>Ian Rawlings</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>On 2007-06-12, Gavin Callard &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; As for that D. Epidemic fellow - none the wiser.</span>
+
+Neither are we to be honest, a puzzle indeed..  I expect he&#x27;ll turn up
+at some point, and all will be fog and confusion.
+
+-- 
+Blast off and strike the evil Bydo empire!
+
+
+
+</pre></div><div class="post" id="p211895"><div class="ph"><a class="d" href="#p211895">2007-06-12 20:58:01</a> <span>…@…</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Gavin Callard &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; Going by the FAQ (which I&#x27;ve just read and forgotten) I don&#x27;t think I&#x27;m </span>
+<span class="qt">&gt; subject to Plug Tax (yet) or something. As for that D. Epidemic fellow - </span>
+<span class="qt">&gt; none the wiser. </span>
+
+Mandick?
+Nah, he&#x27;s not in the folklore faq, he&#x27;s too new.
+Just watch the newsgroup, you&#x27;ll see his wibble soon enough.
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)| &quot;The day Microsoft makes something that doesn&#x27;t |</span>
+<span class="qt">|            in            |  suck is probably the day they start making     |</span>
+<span class="qt">|     Computer science     |  vacuum cleaners&quot; - Ernst Jan Plugge            |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p211896"><div class="ph"><a class="d" href="#p211896">2007-06-12 21:14:36</a> <span>Matt Rudge</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>…@… wibbled:
+
+<span class="qt">&gt; Ian Rawlings &lt;…@…&gt; did eloquently scribble:</span>
+<span class="qt">&gt; &gt; On 2007-06-12, …@… &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;&gt; What you didn&#x27;t mention is...</span>
+<span class="qt">&gt; &gt;&gt; The dancing girls are the rollie pollies.</span>
+<span class="qt">&gt; &gt;&gt; And Bella Emberg. </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; Maggie Thatcher nude!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; That should wash all naughty thoughts of Bella Emberg out of your</span>
+<span class="qt">&gt; &gt; mind.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Len&#x27;s the one who had the hots for Bella.</span>
+<span class="qt">&gt; :)</span>
+
+True.... although the Folklore FAQ doesn&#x27;t exactly leave you squeaky
+clean either, good sir:
+
+<a href="http://www.sinclairfaq.com/cssfolklore/index.html#bella" rel="noreferrer">http://www.sinclairfaq.com/cssfolklore/index.html#bella</a>
+
+:)
+
+-- 
+Matt
+www.mattrudge.net
+
+
+
+</pre></div><div class="post" id="p211897"><div class="ph"><a class="d" href="#p211897">2007-06-12 21:16:58</a> <span>Matt Rudge</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Ian Rawlings wibbled:
+
+<span class="qt">&gt; On 2007-06-12, …@… &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; Don&#x27;t encourage them, you git. :)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Hey I&#x27;m just trying to bring WoS and CSS closer together!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Usenet is pants!  We want webby stuff with graphics and smiley faces</span>
+<span class="qt">&gt; an&#x27; all that sort of thing!  Ban usenet, it&#x27;s for paedophiles!</span>
+
+Couldn&#x27;t agree more - all this &quot;properly threaded messages&quot; nonsense
+and off-line reading malarkey.
+
+Down with this sort of thing!
+
+-- 
+Matt
+www.mattrudge.net
+
+
+
+</pre></div><div class="post" id="p211898"><div class="ph"><a class="d" href="#p211898">2007-06-12 21:23:07</a> <span>Matt Rudge</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>news.blueyonder.co.uk wibbled:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; <a href="http://www.nfluid.com/specDesign/indexPage.shtml" rel="noreferrer">http://www.nfluid.com/specDesign/indexPage.shtml</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Interesting site - though a bit further into electronics than I am.</span>
+<span class="qt">&gt; Good reading though - especially the video related sections.</span>
+<span class="qt">&gt; </span>
+
+Yes, between following that site, reading c.s.s. and trying to source
+bits and pieces to build a SpeccyBob, I&#x27;ve decided I don&#x27;t have time to
+work any more.
+
+-- 
+Matt
+www.mattrudge.net
+
+
+
+</pre></div><div class="post" id="p211899"><div class="ph"><a class="d" href="#p211899">2007-06-12 21:25:52</a> <span>Gavin Callard</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>
+&quot;Matt Rudge&quot; &lt;…@…&gt; wrote in message news:f4n2rr$hb$…@…...
+<span class="qt">&gt; news.blueyonder.co.uk wibbled:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; &gt; <a href="http://www.nfluid.com/specDesign/indexPage.shtml" rel="noreferrer">http://www.nfluid.com/specDesign/indexPage.shtml</a></span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Interesting site - though a bit further into electronics than I am.</span>
+<span class="qt">&gt;&gt; Good reading though - especially the video related sections.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Yes, between following that site, reading c.s.s. and trying to source</span>
+<span class="qt">&gt; bits and pieces to build a SpeccyBob, I&#x27;ve decided I don&#x27;t have time to</span>
+<span class="qt">&gt; work any more.</span>
+<span class="qt">&gt;</span>
+
+How&#x27;s that working out for you? I&#x27;ve been considering the whole &quot;not 
+working&quot; thing, but not convinced that the pay deal is all it&#x27;s cracked up 
+to be. Any pointers? 
+
+
+
+
+</pre></div><div class="post" id="p211900"><div class="ph"><a class="d" href="#p211900">2007-06-12 21:31:33</a> <span>…@…</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Matt Rudge &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; Ian Rawlings wibbled:</span>
+
+<span class="qt">&gt;&gt; On 2007-06-12, …@… &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; &gt; Don&#x27;t encourage them, you git. :)</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Hey I&#x27;m just trying to bring WoS and CSS closer together!</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Usenet is pants!  We want webby stuff with graphics and smiley faces</span>
+<span class="qt">&gt;&gt; an&#x27; all that sort of thing!  Ban usenet, it&#x27;s for paedophiles!</span>
+
+<span class="qt">&gt; Couldn&#x27;t agree more - all this &quot;properly threaded messages&quot; nonsense</span>
+<span class="qt">&gt; and off-line reading malarkey.</span>
+
+<span class="qt">&gt; Down with this sort of thing!</span>
+
+Careful now!
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)| &quot;ARSE! GERLS!! DRINK! DRINK! DRINK!!!&quot;          |</span>
+<span class="qt">|            in            | &quot;THAT WOULD BE AN ECUMENICAL MATTER!...FECK!!!! |</span>
+<span class="qt">|     Computer Science     | - Father Jack in &quot;Father Ted&quot;                   |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p211901"><div class="ph"><a class="d" href="#p211901">2007-06-12 21:31:33</a> <span>…@…</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Matt Rudge &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; …@… wibbled:</span>
+
+<span class="qt">&gt;&gt; Ian Rawlings &lt;…@…&gt; did eloquently scribble:</span>
+<span class="qt">&gt;&gt; &gt; On 2007-06-12, …@… &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; &gt;&gt; What you didn&#x27;t mention is...</span>
+<span class="qt">&gt;&gt; &gt;&gt; The dancing girls are the rollie pollies.</span>
+<span class="qt">&gt;&gt; &gt;&gt; And Bella Emberg. </span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; &gt; Maggie Thatcher nude!</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; &gt; That should wash all naughty thoughts of Bella Emberg out of your</span>
+<span class="qt">&gt;&gt; &gt; mind.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Len&#x27;s the one who had the hots for Bella.</span>
+<span class="qt">&gt;&gt; :)</span>
+
+<span class="qt">&gt; True.... although the Folklore FAQ doesn&#x27;t exactly leave you squeaky</span>
+<span class="qt">&gt; clean either, good sir:</span>
+
+<span class="qt">&gt; <a href="http://www.sinclairfaq.com/cssfolklore/index.html#bella" rel="noreferrer">http://www.sinclairfaq.com/cssfolklore/index.html#bella</a></span>
+
+Heheh, still got that somewhere...
+Think it got left somewhere were it got all faded and washed out though,
+window sill probably.
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   | &quot;Are you pondering what I&#x27;m pondering Pinky?&quot;   |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)|                                                 |</span>
+<span class="qt">|            in            | &quot;I think so brain, but this time, you control   |</span>
+<span class="qt">|     Computer Science     |  the Encounter suit, and I&#x27;ll do the voice...&quot;  |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p211903"><div class="ph"><a class="d" href="#p211903">2007-06-12 22:34:35</a> <span>Peter Thomas</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>On Tue, 12 Jun 2007 19:33:47 +0100, Ian Rawlings
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;&gt; Don&#x27;t encourage them, you git. :)</span>
+<span class="qt">&gt;Hey I&#x27;m just trying to bring WoS and CSS closer together!</span>
+
+But my employer might give a toss, and I&#x27;ll have to munge my e-mail
+address, and this place only has 5 regulars, and... it&#x27;s all just a
+scam to keep the ailing WoS forums alive, isn&#x27;t it? ;-)
+
+<span class="qt">&gt;Usenet is pants!  We want webby stuff with graphics and smiley faces</span>
+<span class="qt">&gt;an&#x27; all that sort of thing!</span>
+
+You&#x27;re the one with felt-tip marks on your monitor then.
+
+<span class="qt">&gt;Ban usenet, it&#x27;s for paedophiles!</span>
+
+I&#x27;m not one of them, I only make love to twenty nine year olds. Lrf,
+nyy gjragl bs gurz.
+
+-- 
+pete [at]  ï¿½ Writer
+horseshoe  ï¿½ Video-editor
+[hyphen]   ï¿½ Designer/programmer 
+inn [dot]  ï¿½ 
+co [dot] ukï¿½ <a href="http://www.tiswasonline.com" rel="noreferrer">http://www.tiswasonline.com</a>
+
+
+
+</pre></div><div class="post" id="p211905"><div class="ph"><a class="d" href="#p211905">2007-06-13 07:54:34</a> <span>Matt Rudge</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Gavin Callard wibbled:
+
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &quot;Matt Rudge&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:f4n2rr$hb$…@…...</span>
+<span class="qt">&gt; &gt; news.blueyonder.co.uk wibbled:</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; &gt; </span>
+<span class="qt">&gt; &gt;&gt;&gt; <a href="http://www.nfluid.com/specDesign/indexPage.shtml" rel="noreferrer">http://www.nfluid.com/specDesign/indexPage.shtml</a></span>
+<span class="qt">&gt; &gt; &gt; </span>
+<span class="qt">&gt; &gt; &gt; Interesting site - though a bit further into electronics than I</span>
+<span class="qt">&gt; &gt; &gt; am.  Good reading though - especially the video related sections.</span>
+<span class="qt">&gt; &gt; &gt; </span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Yes, between following that site, reading c.s.s. and trying to</span>
+<span class="qt">&gt; &gt; source bits and pieces to build a SpeccyBob, I&#x27;ve decided I don&#x27;t</span>
+<span class="qt">&gt; &gt; have time to work any more.</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; How&#x27;s that working out for you? I&#x27;ve been considering the whole &quot;not</span>
+<span class="qt">&gt; working&quot; thing, but not convinced that the pay deal is all it&#x27;s</span>
+<span class="qt">&gt; cracked up to be. Any pointers?</span>
+
+Yes, the pay&#x27;s not fantastic.  The hours are good though[1].  I&#x27;m still
+on the hunt for an eccentric millionaire, who wants to sponsor a
+thirty-something Spectrum fanatic, for some bizarre reason.... or
+something.
+
+[1] although, come to think of it, the minutes are pretty lousy (with
+apologies to Douglas Adams)
+
+-- 
+Matt
+www.mattrudge.net
+
+
+
+</pre></div><div class="post" id="p211906"><div class="ph"><a class="d" href="#p211906">2007-06-13 07:55:24</a> <span>Chris Young</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>On Tue, 12 Jun 2007 20:58:01 GMT da kidz on comp.sys.sinclair were rappin&#x27;
+to MC :
+
+<span class="qt">&gt; Nah, he&#x27;s not in the folklore faq, he&#x27;s too new.</span>
+
+Is anyone updating the NAF FAQ and/or the proper FAQ?
+
+I have some website URLs in both that no longer work.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p211907"><div class="ph"><a class="d" href="#p211907">2007-06-13 07:59:58</a> <span>Chris Young</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>On Tue, 12 Jun 2007 21:31:33 GMT da kidz on comp.sys.sinclair were rappin&#x27;
+to MC :
+
+<span class="qt">&gt; &gt; Down with this sort of thing!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Careful now!</span>
+<span class="qt">&gt; -- </span>
+<span class="qt">&gt; ______________________________________________________________________________</span>
+<span class="qt">&gt; |   …@…   |                                                 |</span>
+<span class="qt">&gt; |Andrew Halliwell BSc(hons)| &quot;ARSE! GERLS!! DRINK! DRINK! DRINK!!!&quot;          |</span>
+<span class="qt">&gt; |            in            | &quot;THAT WOULD BE AN ECUMENICAL MATTER!...FECK!!!! |</span>
+<span class="qt">&gt; |     Computer Science     | - Father Jack in &quot;Father Ted&quot;                   |</span>
+<span class="qt">&gt; ------------------------------------------------------------------------------</span>
+
+Hmm, I think Duncan&#x27;s spooky random sig generator has somehow
+migrated.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p211908"><div class="ph"><a class="d" href="#p211908">2007-06-13 08:01:31</a> <span>Chris Young</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>On Tue, 12 Jun 2007 19:42:48 GMT da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Gavin Callard:
+
+<span class="qt">&gt; &gt; Why ever not? Kid&#x27;s tv and crisps... CSS does stand for Crisps, Snacks and</span>
+<span class="qt">&gt; &gt; Sweeties... doesn&#x27;t it?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Ah - I thought it stood for Curry Sounds Splendid. Oh well. </span>
+
+I thought it was Cascading Style Sheets.  I&#x27;ve been here nine[1] years
+trying to find out about web development and wondered why there was
+never any discussion about it.
+
+Erm, so what&#x27;s a &quot;Speccy&quot;?  I understood this to be the geeky web
+developers who wear glasses?
+
+Nine[1] years of my life, wasted!
+
+Chris
+[1] ish
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p211910"><div class="ph"><a class="d" href="#p211910">2007-06-13 08:26:18</a> <span>Matt Rudge</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Chris Young wibbled:
+
+<span class="qt">&gt; On Tue, 12 Jun 2007 19:42:48 GMT da kidz on comp.sys.sinclair were</span>
+<span class="qt">&gt; rappin&#x27; to MC Gavin Callard:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; &gt; Why ever not? Kid&#x27;s tv and crisps... CSS does stand for Crisps,</span>
+<span class="qt">&gt; &gt; &gt; Snacks and Sweeties... doesn&#x27;t it?</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Ah - I thought it stood for Curry Sounds Splendid. Oh well. </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I thought it was Cascading Style Sheets.  I&#x27;ve been here nine[1] years</span>
+<span class="qt">&gt; trying to find out about web development and wondered why there was</span>
+<span class="qt">&gt; never any discussion about it.</span>
+<span class="qt">&gt; </span>
+
+Oh.... so that explains it!  I thought it was a fan group for the
+Cascade caSSette 50.
+
+50 Fantastic Posts in one Newsgroup [1]
+
+Ok, ok.... igmc
+
+[1] We must be close to that now, surely....
+
+-- 
+Matt
+www.mattrudge.net
+
+
+
+</pre></div><div class="post" id="p211912"><div class="ph"><a class="d" href="#p211912">2007-06-13 08:59:05</a> <span>…@…</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Matt Rudge &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; 50 Fantastic Posts in one Newsgroup [1]</span>
+
+<span class="qt">&gt; Ok, ok.... igmc</span>
+
+<span class="qt">&gt; [1] We must be close to that now, surely....</span>
+
+Now you&#x27;re just being silly...
+And don&#x27;t call me shirley.
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)| &quot;ARSE! GERLS!! DRINK! DRINK! DRINK!!!&quot;          |</span>
+<span class="qt">|            in            | &quot;THAT WOULD BE AN ECUMENICAL MATTER!...FECK!!!! |</span>
+<span class="qt">|     Computer Science     | - Father Jack in &quot;Father Ted&quot;                   |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p211913"><div class="ph"><a class="d" href="#p211913">2007-06-13 09:28:02</a> <span>Matthew Westcott</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Chris Young wrote:
+
+<span class="qt">&gt; On Tue, 12 Jun 2007 19:42:48 GMT da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt; to MC Gavin Callard:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;&gt;Why ever not? Kid&#x27;s tv and crisps... CSS does stand for Crisps, Snacks and</span>
+<span class="qt">&gt;&gt;&gt;Sweeties... doesn&#x27;t it?</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Ah - I thought it stood for Curry Sounds Splendid. Oh well. </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I thought it was Cascading Style Sheets.  I&#x27;ve been here nine[1] years</span>
+<span class="qt">&gt; trying to find out about web development and wondered why there was</span>
+<span class="qt">&gt; never any discussion about it.</span>
+
+Hang on - so you&#x27;re not here to enthuse about the Content Scramble 
+System used on DVDs after all? For some reason none of my friends are 
+fans of badly-designed encryption algorithms that restrict fair use and 
+prompt the wrongful arrest of Norwegian teenagers, and I thought I&#x27;d 
+finally found some kindred spirits in here. *sob*
+
+
+
+</pre></div><div class="post" id="p211914"><div class="ph"><a class="d" href="#p211914">2007-06-13 09:41:43</a> <span>Matt Rudge</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Matthew Westcott wibbled:
+
+<span class="qt">&gt; Chris Young wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; On Tue, 12 Jun 2007 19:42:48 GMT da kidz on comp.sys.sinclair were</span>
+<span class="qt">&gt; &gt; rappin&#x27; to MC Gavin Callard:</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; &gt; &gt; Why ever not? Kid&#x27;s tv and crisps... CSS does stand for Crisps,</span>
+<span class="qt">&gt; &gt; &gt; &gt; Snacks and Sweeties... doesn&#x27;t it?</span>
+<span class="qt">&gt; &gt; &gt; </span>
+<span class="qt">&gt; &gt; &gt; Ah - I thought it stood for Curry Sounds Splendid. Oh well. </span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; I thought it was Cascading Style Sheets.  I&#x27;ve been here nine[1]</span>
+<span class="qt">&gt; &gt; years trying to find out about web development and wondered why</span>
+<span class="qt">&gt; &gt; there was never any discussion about it.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Hang on - so you&#x27;re not here to enthuse about the Content Scramble</span>
+<span class="qt">&gt; System used on DVDs after all? For some reason none of my friends are</span>
+<span class="qt">&gt; fans of badly-designed encryption algorithms that restrict fair use</span>
+<span class="qt">&gt; and prompt the wrongful arrest of Norwegian teenagers, and I thought</span>
+<span class="qt">&gt; I&#x27;d finally found some kindred spirits in here. sob</span>
+
+I lurked for a while to make sure it wasn&#x27;t a group for supporters of
+Closed Source Software.
+
+-- 
+Matt
+www.mattrudge.net
+
+
+
+</pre></div><div class="post" id="p211916"><div class="ph"><a class="d" href="#p211916">2007-06-13 10:07:21</a> <span>…@…</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Matt Rudge &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; Matthew Westcott wibbled:</span>
+
+<span class="qt">&gt;&gt; Chris Young wrote:</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; &gt; On Tue, 12 Jun 2007 19:42:48 GMT da kidz on comp.sys.sinclair were</span>
+<span class="qt">&gt;&gt; &gt; rappin&#x27; to MC Gavin Callard:</span>
+<span class="qt">&gt;&gt; &gt; </span>
+<span class="qt">&gt;&gt; &gt; &gt; &gt; Why ever not? Kid&#x27;s tv and crisps... CSS does stand for Crisps,</span>
+<span class="qt">&gt;&gt; &gt; &gt; &gt; Snacks and Sweeties... doesn&#x27;t it?</span>
+<span class="qt">&gt;&gt; &gt; &gt; </span>
+<span class="qt">&gt;&gt; &gt; &gt; Ah - I thought it stood for Curry Sounds Splendid. Oh well. </span>
+<span class="qt">&gt;&gt; &gt; </span>
+<span class="qt">&gt;&gt; &gt; I thought it was Cascading Style Sheets.  I&#x27;ve been here nine[1]</span>
+<span class="qt">&gt;&gt; &gt; years trying to find out about web development and wondered why</span>
+<span class="qt">&gt;&gt; &gt; there was never any discussion about it.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Hang on - so you&#x27;re not here to enthuse about the Content Scramble</span>
+<span class="qt">&gt;&gt; System used on DVDs after all? For some reason none of my friends are</span>
+<span class="qt">&gt;&gt; fans of badly-designed encryption algorithms that restrict fair use</span>
+<span class="qt">&gt;&gt; and prompt the wrongful arrest of Norwegian teenagers, and I thought</span>
+<span class="qt">&gt;&gt; I&#x27;d finally found some kindred spirits in here. sob</span>
+
+<span class="qt">&gt; I lurked for a while to make sure it wasn&#x27;t a group for supporters of</span>
+<span class="qt">&gt; Closed Source Software.</span>
+
+So... are you trying to say...
+That the only thing we lot have in common... Is that we all thought this
+newsgroups was about something it isn&#x27;t?
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)| &quot;The day Microsoft makes something that doesn&#x27;t |</span>
+<span class="qt">|            in            |  suck is probably the day they start making     |</span>
+<span class="qt">|     Computer science     |  vacuum cleaners&quot; - Ernst Jan Plugge            |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p211943"><div class="ph"><a class="d" href="#p211943">2007-06-13 15:10:16</a> <span>Lister</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>On Tue, 12 Jun 2007 18:48:24 GMT, …@… wrote:
+
+<span class="qt">&gt;Ian Rawlings &lt;…@…&gt; did eloquently scribble:</span>
+<span class="qt">&gt;&gt; On 2007-06-12, …@… &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;&gt; Don&#x27;t encourage them, you git. :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Hey I&#x27;m just trying to bring WoS and CSS closer together!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Usenet is pants!  We want webby stuff with graphics and smiley faces</span>
+<span class="qt">&gt;&gt; an&#x27; all that sort of thing!  Ban usenet, it&#x27;s for paedophiles!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Ooo, you rotter, you cad. </span>
+<span class="qt">&gt;You absolute bounder.</span>
+<span class="qt">&gt;:)</span>
+
+
+ITYM &quot;You scumbag, you maggot, you cheap lousy faggot&quot;.  Or not :)
+
+
+
+</pre></div><div class="post" id="p211947"><div class="ph"><a class="d" href="#p211947">2007-06-13 15:16:16</a> <span>…@…</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Lister &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt;&gt;Ooo, you rotter, you cad. </span>
+<span class="qt">&gt;&gt;You absolute bounder.</span>
+<span class="qt">&gt;&gt;:)</span>
+
+<span class="qt">&gt; ITYM &quot;You scumbag, you maggot, you cheap lousy faggot&quot;.  Or not :)</span>
+
+I wasn&#x27;t singing to a drug addled lover, lister.
+
+-- 
+-----------------------------------------------------------------------------
+<span class="qt">|   …@…   |   Windows95 (noun): 32 bit extensions and a    |</span>
+<span class="qt">|                          | graphical shell for a 16 bit patch to an 8 bit |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)| operating system originally  coded for a 4 bit |</span>
+<span class="qt">|            in            |microprocessor, written by a 2 bit company, that|</span>
+<span class="qt">|     Computer Science     |        can&#x27;t stand 1 bit of competition.       |</span>
+-----------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p211953"><div class="ph"><a class="d" href="#p211953">2007-06-13 15:28:23</a> <span>Ian Rawlings</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>On 2007-06-13, Lister &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; ITYM &quot;You scumbag, you maggot, you cheap lousy faggot&quot;.  Or not :)</span>
+
+Ah yes, the words of a well-known english public schoolboy, Shane
+McGowan ;-)
+
+-- 
+Blast off and strike the evil Bydo empire!
+
+
+
+</pre></div><div class="post" id="p211955"><div class="ph"><a class="d" href="#p211955">2007-06-13 15:30:32</a> <span>Duncan Snowden</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Matt Rudge wrote:
+
+<span class="qt">&gt;&gt;&gt;&gt;&gt; Why ever not? Kid&#x27;s tv and crisps... CSS does stand for Crisps,</span>
+<span class="qt">&gt;&gt;&gt;&gt;&gt; Snacks and Sweeties... doesn&#x27;t it?</span>
+<span class="qt">&gt;&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;&gt; Ah - I thought it stood for Curry Sounds Splendid. Oh well. </span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; I thought it was Cascading Style Sheets.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Hang on - so you&#x27;re not here to enthuse about the Content Scramble</span>
+<span class="qt">&gt;&gt; System used on DVDs after all?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I lurked for a while to make sure it wasn&#x27;t a group for supporters of</span>
+<span class="qt">&gt; Closed Source Software.</span>
+
+I thought it had something to do with this lot:
+
+<a href="http://www.cssltd.co.uk/" rel="noreferrer">http://www.cssltd.co.uk/</a> [1]
+
+Tch. Well, so much for this group, then. Maybe these World of Security
+forums you&#x27;ve all been blabbing on about are better...
+
+[1] Seriously, it seems like every other house round here has a little
+     white box labelled &quot;CSS&quot; on it. A bloke could get paranoid.
+
+-- 
+Duncan Snowden.
+
+
+
+
+</pre></div><div class="post" id="p211957"><div class="ph"><a class="d" href="#p211957">2007-06-13 15:47:28</a> <span>guesser</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Duncan Snowden wrote:
+
+<span class="qt">&gt; [1] Seriously, it seems like every other house round here has a little</span>
+<span class="qt">&gt;     white box labelled &quot;CSS&quot; on it. A bloke could get paranoid.</span>
+
+There&#x27;s no need to be paranoid, we&#x27;re just looking after security...
+everything is as it seems, nothing to worry about. return to your 
+buisness, Nothing to see here at all.
+
+/me re-pans camera and zooms in *whirrrrrrrr*
+
+bwahahahahaha
+
+
+
+</pre></div><div class="post" id="p211958"><div class="ph"><a class="d" href="#p211958">2007-06-13 15:56:29</a> <span>Duncan Snowden</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Ian Rawlings wrote:
+
+<span class="qt">&gt; On 2007-06-13, Lister &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; ITYM &quot;You scumbag, you maggot, you cheap lousy faggot&quot;.  Or not :)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Ah yes, the words of a well-known english public schoolboy, Shane</span>
+<span class="qt">&gt; McGowan ;-)</span>
+
+&quot;Good Lord! Is it? Is it really? I do believe it is! McGowan? How on 
+Earth are you, old chap? Remember me? &#x27;Fatso&#x27; Bullsworth-Smythe. I was 
+your fag at school!&quot;
+
+&quot;Arghmmblllfeckingrrrrgharsechhhwwwblll.&quot;
+
+&quot;Oh yes, great days. Great days. I don&#x27;t suppose you&#x27;ve run into old 
+&#x27;Stinker&#x27; Molesley-Binks, have you? Last I saw of him he was up to his 
+neck in totty at Henley a couple of years back. Who&#x27;d have thought it, 
+old Stinker, eh?&quot;
+
+&quot;Feckingrrblarcghyerarsemmmgrrwwwch.&quot;
+
+&quot;Well, yes, that&#x27;s true. He did, didn&#x27;t he? Ended up being excused 
+Rugger on account of him being, er... &#x27;unable&#x27; to wear shorts, as I 
+recall. Anyway, must dash. Bloody marvellous to run into you again, old 
+chap. Must keep in touch, eh?&quot;
+
+&quot;ARSE! Heheheheheh!&quot;
+
+-- 
+Duncan Snowden.
+
+
+
+</pre></div><div class="post" id="p211973"><div class="ph"><a class="d" href="#p211973">2007-06-13 18:33:49</a> <span>Chris Young</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>On Wed, 13 Jun 2007 09:54:34 +0200 (CEST) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Matt Rudge:
+
+<span class="qt">&gt; &gt; How&#x27;s that working out for you? I&#x27;ve been considering the whole &quot;not</span>
+<span class="qt">&gt; &gt; working&quot; thing, but not convinced that the pay deal is all it&#x27;s</span>
+<span class="qt">&gt; &gt; cracked up to be. Any pointers?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Yes, the pay&#x27;s not fantastic.  The hours are good though[1].</span>
+
+The holiday entitlement is 365.25 days as well, which is much better
+than my current employer.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p211974"><div class="ph"><a class="d" href="#p211974">2007-06-13 18:33:49</a> <span>Chris Young</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>On Wed, 13 Jun 2007 16:47:28 +0100 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC guesser:
+
+<span class="qt">&gt; Duncan Snowden wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; [1] Seriously, it seems like every other house round here has a little</span>
+<span class="qt">&gt; &gt;     white box labelled &quot;CSS&quot; on it. A bloke could get paranoid.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; There&#x27;s no need to be paranoid, we&#x27;re just looking after security...</span>
+<span class="qt">&gt; everything is as it seems, nothing to worry about. return to your </span>
+<span class="qt">&gt; buisness, Nothing to see here at all.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; /me re-pans camera and zooms in *whirrrrrrrr*</span>
+
+Hey, Guesser[1], have you seen what Duncan&#x27;s looking at?  Phwoarr! 
+Erm, I mean, we&#x27;d better send the boys round to &quot;have a word&quot;.
+
+Chris
+[1] or would you rather I pronounced it &quot;guesser&quot;?
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p211977"><div class="ph"><a class="d" href="#p211977">2007-06-13 18:46:23</a> <span>Ian Rawlings</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>On 2007-06-13, Duncan Snowden &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; &quot;Good Lord! Is it? Is it really? I do believe it is! McGowan? How on </span>
+<span class="qt">&gt; Earth are you, old chap? Remember me? &#x27;Fatso&#x27; Bullsworth-Smythe. I was </span>
+<span class="qt">&gt; your fag at school!&quot;</span>
+
+Hehe...  I think it was Westminster he went to, I suppose he had to
+learn to drink and smoke properly so where better!
+
+-- 
+Blast off and strike the evil Bydo empire!
+
+
+
+</pre></div><div class="post" id="p211983"><div class="ph"><a class="d" href="#p211983">2007-06-13 19:18:56</a> <span>Guesser</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>Chris Young wrote:
+
+<span class="qt">&gt; [1] or would you rather I pronounced it &quot;guesser&quot;?</span>
+<span class="qt">&gt; </span>
+
+erm...
+
+corrected that now I hope.
+I spelt it with a lower case G when I signed up to wos, and regretted it 
+later when I realised. Then again, it&#x27;s not really a proper noun anyway, 
+anyone care to guess why that&#x27;s the name I signed up with? (it&#x27;s lame 
+and very obvious)
+
+
+
+</pre></div><div class="post" id="p212120"><div class="ph"><a class="d" href="#p212120">2007-06-16 17:42:53</a> <span>Llama-Wax Len</span> <span>Re: What do you mean it&#x27;s void if I break these silly silver stickers over my IO port?</span></div><pre>&quot;Ian Rawlings&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; That should wash all naughty thoughts of Bella Emberg out of your</span>
+<span class="qt">&gt; mind.</span>
+
+Why in God&#x27;s name would you want to get rid of thoughts like those?
+
+Mmmm, Bella Emberg.
+
+Len
+-- 
+If replying, my address after the @ should
+be replaced with freeserve then .co.uk 
+
+
+
+
+</pre></div></main></body></html>

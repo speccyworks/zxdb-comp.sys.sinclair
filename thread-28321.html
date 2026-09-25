@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tap/Z80 vs TZX · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Tap/Z80 vs TZX</h1><p class="facts">14 posts, 2003-08-24 – 2003-08-27</p><div class="post" id="p167744"><div class="ph"><a class="d" href="#p167744">2003-08-24 10:23:39</a> <span>Shoto</span> </div><pre>Hi there folks...I&#x27;m new to the group and new to speccy emulation!
+
+I am simply wondering what the difference is between the TAP/Z80 formats and
+the TZX format?  What are the advantages or disadvantages of using each
+format?
+
+Thanx in advance!
+
+--
+
+Shoto-san
+
+
+
+
+
+</pre></div><div class="post" id="p167746"><div class="ph"><a class="d" href="#p167746">2003-08-24 10:38:25</a> <span>Paul E Collins</span> <span>Re: Tap/Z80 vs TZX</span></div><pre>&quot;Shoto&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; I am simply wondering what the difference is between</span>
+<span class="qt">&gt; the TAP/Z80 formats and the TZX format? What are</span>
+<span class="qt">&gt; the advantages or disadvantages of using each format?</span>
+
+<a href="http://www.worldofspectrum.org/faq/reference/formats.htm" rel="noreferrer">http://www.worldofspectrum.org/faq/reference/formats.htm</a>
+
+P.
+
+-- 
+www.CL4.org
+
+
+
+
+
+</pre></div><div class="post" id="p167755"><div class="ph"><a class="d" href="#p167755">2003-08-24 11:36:28</a> <span>Mike Wynne</span> <span>Re: Tap/Z80 vs TZX</span></div><pre>
+&quot;Shoto&quot; wrote...
+<span class="qt">&gt; Hi there folks...I&#x27;m new to the group and new to</span>
+<span class="qt">&gt; speccy emulation!</span>
+
+Hi!
+
+<span class="qt">&gt; I am simply wondering what the difference is between</span>
+<span class="qt">&gt; the TAP/Z80 formats and the TZX format?  What are</span>
+<span class="qt">&gt; the advantages or disadvantages of using each</span>
+<span class="qt">&gt; format?</span>
+
+OK, .Z80, .SNA etc are called &quot;snapshots&quot;.  Basically, they&#x27;re a dump
+of the spectrums memory and registers at one moment in time.  To make
+a snapshot, you&#x27;d load up your favourite game, then press the magic
+button on a multiface (or it&#x27;s emulated equivalent).
+
+Later you could load the snapshot back into memory and the spectrum
+would carry on at exactly the same point the snapshot was saved.
+
+This format has it&#x27;s advantages - you can make a snapshot at any point
+in a game (not just the start). So, if you&#x27;re stuck at some point in a
+game, you could make a snapshot just before you get there.  After you
+can keep reloading the snapshot and you&#x27;ll start at that point without
+having to replay all the previous levels etc.
+
+However, it also has disadvantages.  Because the snapshot only
+contains what is in memory at that point in time it, it doesn&#x27;t
+contain all the game information.  If a games was a multi-load, it
+wouldn&#x27;t contain the levels which are still to be played (Because they
+haven&#x27;t been loaded into memory yet). Likewise, it wouldn&#x27;t have
+things like the loading screen etc.
+
+There are certain extensions to these formats to try and overcome
+these problems, but I don&#x27;t think they were every very well used (I
+might be wrong).
+
+.TAP format is really a recording of what the ROM SAVE routine outputs
+to tape when a program is saving.  So, if a game is stored in .TAP
+format, you can load it back into an emulator just like loading it
+from tape.  All the parts of the program will be stored in the file
+and multi-load program should work fine.
+
+The problem with .TAP is that it only supports the standard tape
+format that the ROM uses.  Games that used speed-loaders or any other
+type non-standard loaded can&#x27;t be stored in .TAP format (Without
+hacking the program and converting it to a normal loader that is).
+
+.TZX format is similar to .TAP (From the users perspective), It too
+stores a record of what is stored on a tape. The difference is that it
+supports many different types of loader.  .TZX keeps a record of what
+type of speed-loaded the block uses and how it should be loaded back
+in.
+
+It is also extensible.  If a new program with a different type of
+speed-loader is discovered, a new block type can be defines and
+emulators can then be modified to handle this new type.
+
+I hope this helps - I&#x27;m not an emulator writer myself (I merely enjoy
+them) and I may be off with some of these descriptions but from a
+users perspective, this is how it appears to me.
+
+MikeW
+
+-- 
+
+<a href="http://speccybob.2y.net/" rel="noreferrer">http://speccybob.2y.net/</a> - you know you want to.
+
+
+
+
+
+</pre></div><div class="post" id="p167758"><div class="ph"><a class="d" href="#p167758">2003-08-24 13:26:33</a> <span>…@…</span> <span>Re: Tap/Z80 vs TZX</span></div><pre>Shoto &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; Hi there folks...I&#x27;m new to the group and new to speccy emulation!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I am simply wondering what the difference is between the TAP/Z80 formats and</span>
+<span class="qt">&gt; the TZX format?  What are the advantages or disadvantages of using each</span>
+<span class="qt">&gt; format?</span>
+
+
+Tap: tape format
+TZX: Tape format with knobs on. Able to handle all kinds of custom loaders
+Z80: Snapshot format. Stuck in a game at a certain point? Snap it and
+     continue later.
+sna: snapshot format, falling out of use because Z80 is better. 
+
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)| &quot;The day Microsoft makes something that doesn&#x27;t |</span>
+<span class="qt">|            in            |  suck is probably the day they start making     |</span>
+<span class="qt">|     Computer science     |  vacuum cleaners&quot; - Ernst Jan Plugge            |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p167759"><div class="ph"><a class="d" href="#p167759">2003-08-24 13:43:09</a> <span>Shoto</span> <span>Re: Tap/Z80 vs TZX</span></div><pre>Most helpful...thanx very much :)
+
+--
+Shoto
+
+
+
+
+
+</pre></div><div class="post" id="p167773"><div class="ph"><a class="d" href="#p167773">2003-08-24 19:50:41</a> <span>Jim Grimwood</span> <span>Re: Tap/Z80 vs TZX</span></div><pre>On Sun, 24 Aug 2003 11:23:39 +0100, &quot;Shoto&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;I am simply wondering what the difference is between the TAP/Z80 formats and</span>
+<span class="qt">&gt;the TZX format?  What are the advantages or disadvantages of using each</span>
+<span class="qt">&gt;format?</span>
+
+One disadvantage of the TZX format which I haven&#x27;t seen anyone mention in
+reply is that it takes as long as a Spectrum to load (unless there&#x27;s some
+magical trick to get around this which I&#x27;ve never discovered).
+
+--
+Another Fine Product from:
+Jim Grimwood, Weardale, England (jg27paw4 at domain globalnet.co.uk)
+
+
+
+</pre></div><div class="post" id="p167774"><div class="ph"><a class="d" href="#p167774">2003-08-24 19:58:30</a> <span>Mal Franks</span> <span>Re: Tap/Z80 vs TZX</span></div><pre>On Sun, 24 Aug 2003 19:50:41 GMT Thorin sat down and started singing 
+about gold. Gandalf entered. Gandalf said &quot;Hurry up&quot;. After being 
+threatened with a cloven skull from one well placed blow, Jim Grimwood 
+said:
+<span class="qt">&gt; On Sun, 24 Aug 2003 11:23:39 +0100, &quot;Shoto&quot;</span>
+<span class="qt">&gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;I am simply wondering what the difference is between the TAP/Z80 formats and</span>
+<span class="qt">&gt; &gt;the TZX format?  What are the advantages or disadvantages of using each</span>
+<span class="qt">&gt; &gt;format?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; One disadvantage of the TZX format which I haven&#x27;t seen anyone mention in</span>
+<span class="qt">&gt; reply is that it takes as long as a Spectrum to load (unless there&#x27;s some</span>
+<span class="qt">&gt; magical trick to get around this which I&#x27;ve never discovered).</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; Another Fine Product from:</span>
+<span class="qt">&gt; Jim Grimwood, Weardale, England (jg27paw4 at domain globalnet.co.uk)</span>
+<span class="qt">&gt; </span>
+
+With both Spectaculator and Spin (and others) there are options to speed 
+up the loading to almost instant - however some games are a bit funny 
+about that and refuse to load.
+
+-- 
+mal franks
+www.speccies.org - a comp.sys.sinclair site
+www.guildsofcamelot.org.uk - a daoc guilds forum site
+
+
+
+</pre></div><div class="post" id="p167777"><div class="ph"><a class="d" href="#p167777">2003-08-24 20:51:31</a> <span>Ivan Ruiz Etxabe</span> <span>Re: Tap/Z80 vs TZX</span></div><pre>On Sun, 24 Aug 2003 11:23:39 +0100, &quot;Shoto&quot;
+&lt;…@…&gt; va y suelta:
+
+<span class="qt">&gt;Hi there folks...I&#x27;m new to the group and new to speccy emulation!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I am simply wondering what the difference is between the TAP/Z80 formats and</span>
+<span class="qt">&gt;the TZX format?  What are the advantages or disadvantages of using each</span>
+<span class="qt">&gt;format?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Thanx in advance!</span>
+
+Another important advantage of TZX vs snapshots, which I think it
+hasn&#x27;t been mentioned , is that you can actually use your soundcard in
+order to save a the game on a tape and
+load it on a real Speccy, which is nice.
+
+Ivan
+
+
+
+
+</pre></div><div class="post" id="p167780"><div class="ph"><a class="d" href="#p167780">2003-08-24 22:21:40</a> <span>Philip Kendall</span> <span>Re: Tap/Z80 vs TZX</span></div><pre>In article &lt;…@…&gt;,
+Jim Grimwood &lt;…@…&gt; wrote:
+<span class="qt">&gt;On Sun, 24 Aug 2003 11:23:39 +0100, &quot;Shoto&quot;</span>
+<span class="qt">&gt;&lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;One disadvantage of the TZX format which I haven&#x27;t seen anyone mention in</span>
+<span class="qt">&gt;reply is that it takes as long as a Spectrum to load (unless there&#x27;s some</span>
+<span class="qt">&gt;magical trick to get around this which I&#x27;ve never discovered).</span>
+
+You&#x27;ve missed something. As you haven&#x27;t specified what emulator you&#x27;re
+talking about, it&#x27;s rather hard to tell you what.
+
+More fundamentally, whether it&#x27;s possible to &#x27;flashload&#x27; a game has
+nothing to do with which format you have it stored on disk (or at least,
+should have nothing to do with it. It would obviously be possible for an
+emulator to treat .tzx files containing nothing other than &#x27;ROM loader&#x27;
+blocks as different from .tap files, but this would be a completely
+boneheaded decision :-) )
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p167840"><div class="ph"><a class="d" href="#p167840">2003-08-26 18:19:39</a> <span>Jim Grimwood</span> <span>Re: Tap/Z80 vs TZX</span></div><pre>On 24 Aug 2003 23:21:40 +0100, …@… (Philip Kendall) wrote:
+
+<span class="qt">&gt;In article &lt;…@…&gt;,</span>
+<span class="qt">&gt;Jim Grimwood &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;On Sun, 24 Aug 2003 11:23:39 +0100, &quot;Shoto&quot;</span>
+<span class="qt">&gt;&gt;&lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;One disadvantage of the TZX format which I haven&#x27;t seen anyone mention in</span>
+<span class="qt">&gt;&gt;reply is that it takes as long as a Spectrum to load (unless there&#x27;s some</span>
+<span class="qt">&gt;&gt;magical trick to get around this which I&#x27;ve never discovered).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;You&#x27;ve missed something. As you haven&#x27;t specified what emulator you&#x27;re</span>
+<span class="qt">&gt;talking about, it&#x27;s rather hard to tell you what.</span>
+<span class="qt">&gt;[...]</span>
+
+I defy you to find an option in Z80/WinZ80 or X128 to allow TZX files to
+be loaded instantly. You may have a free large bag of Raspberry Ruffles if
+you can.
+
+There may well be numerous other newer emulators which can do this, but
+whenever I try out a new one I find that either I don&#x27;t like the interface
+and/or it doesn&#x27;t have something which Z80 does have (even if it may have
+features which Z80 doesn&#x27;t) so I end up sticking with Z80. Also, although
+I do have a modern computer, I do most of my Spectrum &amp; ZX81 emulator work
+on an old 486 PC, which rather restricts my options.
+
+--
+Another Fine Product from:
+Jim Grimwood, Weardale, England (jg27paw4 at domain globalnet.co.uk)
+
+
+
+</pre></div><div class="post" id="p167900"><div class="ph"><a class="d" href="#p167900">2003-08-27 18:06:05</a> <span>Gerard Sweeney</span> <span>Re: Tap/Z80 vs TZX</span></div><pre>Having conquered the race of ants with a SmartSavers bag of sugar,
+Jim Grimwood wrote:
+
+<span class="qt">&gt; I defy you to find an option in Z80/WinZ80 or X128 to allow TZX files to</span>
+<span class="qt">&gt; be loaded instantly. You may have a free large bag of Raspberry Ruffles if</span>
+<span class="qt">&gt; you can.</span>
+
+Erm, you can define the loading speed in X128, so TZXs load in a lot
+faster than normal. I realise this isn&#x27;t instant, so can I have a small
+bag of Raspberry Ruffles seeing as I half answered your question?
+
+Toodle-pip!
+Gerard
+
+-- 
+Gerard Sweeney
+Hackers Anonymous/Team Amiga
+<a href="http://fly.to/ha3" rel="noreferrer">http://fly.to/ha3</a> and <a href="http://www.the-tipshop.co.uk" rel="noreferrer">http://www.the-tipshop.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p167903"><div class="ph"><a class="d" href="#p167903">2003-08-27 18:36:10</a> <span>Jaime Tejedor G���mez, aka Metalbrain</span> <span>Re: Tap/Z80 vs TZX</span></div><pre><span class="qt">&gt;&gt; I defy you to find an option in Z80/WinZ80 or X128 to allow TZX files to</span>
+<span class="qt">&gt;&gt; be loaded instantly. You may have a free large bag of Raspberry Ruffles if</span>
+<span class="qt">&gt;&gt; you can.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Erm, you can define the loading speed in X128, so TZXs load in a lot</span>
+<span class="qt">&gt;faster than normal. I realise this isn&#x27;t instant, so can I have a small</span>
+<span class="qt">&gt;bag of Raspberry Ruffles seeing as I half answered your question?</span>
+
+ And there&#x27;s also the TZX Edge thingie, that accelerates the load a lot, but
+isn&#x27;t totally compatible with all schemes.
+
+METALBRAIN
+(C) 1977 Tejedor &amp; Gï¿½mez Research Ltd.
+
+
+
+</pre></div><div class="post" id="p167904"><div class="ph"><a class="d" href="#p167904">2003-08-27 18:53:32</a> <span>Philip Kendall</span> <span>Re: Tap/Z80 vs TZX</span></div><pre>In article &lt;…@…&gt;,
+Jaime Tejedor Gï¿½mez, aka Metalbrain &lt;…@…&gt; wrote:
+<span class="qt">&gt;&gt;&gt; I defy you to find an option in Z80/WinZ80 or X128 to allow TZX files to</span>
+<span class="qt">&gt;&gt;&gt; be loaded instantly. You may have a free large bag of Raspberry Ruffles if</span>
+<span class="qt">&gt;&gt;&gt; you can.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Erm, you can define the loading speed in X128, so TZXs load in a lot</span>
+<span class="qt">&gt;&gt;faster than normal. I realise this isn&#x27;t instant, so can I have a small</span>
+<span class="qt">&gt;&gt;bag of Raspberry Ruffles seeing as I half answered your question?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; And there&#x27;s also the TZX Edge thingie, that accelerates the load a lot, but</span>
+<span class="qt">&gt;isn&#x27;t totally compatible with all schemes.</span>
+
+True, but it does work for ROM loaders, which is all .tap supports (and
+what we were comparing .tzx files upthread).
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p167906"><div class="ph"><a class="d" href="#p167906">2003-08-27 19:13:43</a> <span>Jim Grimwood</span> <span>Re: Tap/Z80 vs TZX</span></div><pre>On Wed, 27 Aug 2003 19:06:05 +0100, Gerard Sweeney &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Having conquered the race of ants with a SmartSavers bag of sugar,</span>
+<span class="qt">&gt;Jim Grimwood wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; I defy you to find an option in Z80/WinZ80 or X128 to allow TZX files to</span>
+<span class="qt">&gt;&gt; be loaded instantly. You may have a free large bag of Raspberry Ruffles if</span>
+<span class="qt">&gt;&gt; you can.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Erm, you can define the loading speed in X128, so TZXs load in a lot</span>
+<span class="qt">&gt;faster than normal. I realise this isn&#x27;t instant, so can I have a small</span>
+<span class="qt">&gt;bag of Raspberry Ruffles seeing as I half answered your question?</span>
+
+Hmmm, that option isn&#x27;t available in the version I&#x27;ve been using (v0.8). I
+downloaded v0.94 a year ago and never installed it, so I dug that out and
+it does indeed have such an option. The odd thing is, that version loads
+TZXs quite quickly on my new PC even with the loadind speed set at 100%
+(it took about 30 seconds to load Firebird&#x27;s 3D Pool - was that really
+written by Orlando M Pilchard?).
+
+So, I guess as you&#x27;re the first to answer (and even though your name
+doesn&#x27;t appear to be Philip Kendall, so technically you weren&#x27;t actually
+the challenged party), you&#x27;re deserving of some favour. If you&#x27;re still at
+the address you were at in January then a bag of delicious Raspberry
+Ruffles will be wending it&#x27;s way to you there in due course.
+
+--
+Another Fine Product from:
+Jim Grimwood, Weardale, England (jg27paw4 at domain globalnet.co.uk)
+
+
+
+</pre></div></main></body></html>

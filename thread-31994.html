@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANN: ZeXcel now running SE Basic! · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANN: ZeXcel now running SE Basic!</h1><p class="facts">2 posts, 2006-02-23 – 2006-02-27</p><div class="post" id="p200782"><div class="ph"><a class="d" href="#p200782">2006-02-23 22:51:16</a> <span>Da Smog</span> </div><pre>Hiyas,
+I managed to patch Ergon&#x27;s ZeXcel Spectrum Emulator &lt;url:  
+<a href="http://www.geocities.com/SiliconValley/Park/6533/zxemulators.htm&gt;" rel="noreferrer">http://www.geocities.com/SiliconValley/Park/6533/zxemulators.htm&gt;</a> for the  
+QL to use Andrew&#x27;s SE Basic. I will be posting the result shortly (it is  
+not on Ergon&#x27;s website yet) after I came up with a viable patch to do that  
+on the QL side. I also tried the ZX Spectrum BBC ROM, SDOS 64+ and Gosh  
+Wonderful and all work admirably :-)
+
+Mind you that you will need SMSQ/e v.3 + to run ZeXcel in glorious colour  
+:-) (65K colours no less!)
+
+Cheers,
+
+
+Phoebus
+
+-- 
+Χρησιμοποιώ το επαναστατικό πρόγραμμα αλληλογραφίας της Opera:  
+<a href="http://www.opera.com/mail/" rel="noreferrer">http://www.opera.com/mail/</a>
+
+
+
+</pre></div><div class="post" id="p200838"><div class="ph"><a class="d" href="#p200838">2006-02-27 16:03:23</a> <span>Da Smog</span> <span>Re: ANN: ZeXcel now running SE Basic!</span></div><pre>Την Thu, 23 Feb 2006 17:51:16 -0500,ο(η) Da Smog &lt;…@…&gt;  
+έγραψε:
+
+Here&#x27;s the patch if anyone would want it :-)
+
+Requires Toolkit 2 and Turbo Toolkit plus the ROMs. The emulator breaks SE  
+Basic&#x27;s keyword entry (so single key entry is needed) but all other bugs  
+are fixed. Gosh Wonderful works well.... Wonderfully ohhh Gosh! :-P
+
+Also the Pentagon ROM can work fine (without TR-DOS support)
+
+Cheers,
+
+
+Phoebus
+
+Note that apart from minor error checking there&#x27;s virtually no check on  
+the filenames (if they exist etc) so take care to actually type the names  
+properly. ZeXcel v. 0.33 is required
+
+----Begin BASIC program-------
+
+10 REMark *******************************
+20 REMark *  Patch ZeXcel v.0.01alpha   *
+30 REMark *   by Phoebus R. Dokos 2006  *
+40 REMark *  Requires Turbo Toolkit /TK2   *
+50 REMark *******************************
+60 :
+70 WTV 50,50
+80 CSIZE 1,0
+90 ROM48K=16384 : REMark Offset of the second 48K ROM
+100 rom48k128=32768: REMark Offset of the 48K ROM for 128 mode
+110 romIF1=65535: REMark Offset of the second copy of IF1 ROM
+120 CLS
+130 PRINT &quot;ZeXcel Patch&quot;
+140 PRINT &quot;What do you want to patch?&quot;
+150 PRINT &quot;Replace 48K Mode ROM (1)&quot;
+160 PRINT &quot;Replace 128K Mode&#x27;s full ROM (2)&quot;
+170 PRINT &quot;Replace 128K Mode&#x27;s 48K ROM only (3)&quot;
+180 PRINT &quot;Replace All Modes&#x27;  48K ROMs (4)&quot;
+190 INPUT &quot;Enter your option (1-4), 0 exits &quot;; option
+200 SELect ON option
+210  = 1
+220    PATCH48
+230 = 2
+240    PATCH128
+250 = 3
+260    PATCH12848
+270 = 4
+280    PATCH48all
+290 = 0
+300    PRINT &quot;Goodbye!&quot;: STOP
+310 = REMAINDER
+320    PRINT &quot;INCORRECT OPTION&quot;
+330    GO TO 120
+340 END SELect
+350 DEFine PROCedure LOADZ
+380 INPUT &quot;Please input the path/filename of ZeXcel executable or enter  
+for default (win1_zexcel_zexcel_obj) &quot;; zexcel$
+390 IF zexcel$=&quot;&quot; THEN zexcel$=&quot;win1_zexcel_zexcel_obj&quot;
+400 filelen = FLEN(\zexcel$)
+410  startpos = ALLOCATION (filelen)
+420   header = ALLOCATION(64)
+430   REMark save header in memory
+440     OPEN #5,zexcel$
+450       GetHEAD 5,header
+460     CLOSE #5
+470   REMark ACTUALLY load the ZeXcel executable
+480 LBYTES zexcel$, startpos
+490 REMark First occurence of the 48K Rom in memory
+500   rommemory = startpos+236534
+510   REMark Now move the patched IF1 ROM (1st occurence) to a safe place
+520     if1patched = ALLOCATION (8192)
+530      PRINT &quot;Now moving ZeXcel IF1 patched ROM...&quot;
+540   REMark done, now continue
+550 END DEFine
+560 DEFine PROCedure PATCH48
+570 LOADZ
+580 INPUT &quot;enter the 48K ROM&#x27;s filename &quot;;romname$
+590 patchrom=ALLOCATION (16384)
+600 LBYTES romname$, patchrom
+610 REMark actually patching
+620 PRINT &quot;Patching 48K ROM... please wait!&quot;
+630 PRINT &quot;Patching 1st instance...&quot;:MOVE_MEMORY patchrom TO rommemory,  
+16384
+640 PRINT &quot;Patching 2nd instance...&quot;:MOVE_MEMORY patchrom TO  
+rommemory+ROM48K, 16384
+650 PRINT &quot;Reapplying IF 1 ROM...&quot;:MOVE_MEMORY if1patched TO  
+rommemory+ROM48K, 8192
+660 PRINT &quot;Done!&quot;
+670 REMark now clean up allocated memory for ROMs
+680 DEALLOCATE patchrom
+690 DEALLOCATE if1patched
+700 savezex
+710 END DEFine
+720 DEFine PROCedure PATCH128
+730 LOADZ
+740 INPUT &quot;enter the 128K ROM&#x27;s filename &quot;;romname$
+750 romlen=FLEN(\romname$): REMark this is to ensure that for +3 ROMS  
+(64K) only the 128K part will be copied and not the +3DOS part
+760 patchrom=ALLOCATION (romlen)
+770 LBYTES romname$, patchrom
+780 REMark actually patching
+790 PRINT &quot;Patching 128K ROM... please wait!&quot;
+800 REMark The Editor part is second in the complete dump while the 128K  
+part first
+810 MOVE_MEMORY patchrom TO rommemory+rom48k128+16384, 16384
+820 MOVE_MEMORY patchrom+16384 TO rommemory+rom48k128, 16384
+830 PRINT &quot;Done!&quot;
+840 REMark Now Clean up patchrom memory
+850 DEALLOCATE patchrom
+860 DEALLOCATE if1patched
+870 savezex
+880 END DEFine
+890 DEFine PROCedure PATCH12848
+900 LOADZ
+910 INPUT &quot;enter the 48K ROM&#x27;s filename &quot;;romname$
+920 patchrom=ALLOCATION (16384)
+930 LBYTES romname$, patchrom
+940 REMark actually patching
+950 PRINT &quot;Patching 128K ROM... please wait!&quot;
+960 MOVE_MEMORY patchrom TO rommemory+rom48k128, 16384
+970 PRINT &quot;Done!&quot;
+980 DEALLOCATE patchrom
+990 DEALLOCATE if1patched
+1000 savezex
+1010 END DEFine
+1020 DEFine PROCedure PATCH48all
+1030 LOADZ
+1040 INPUT &quot;enter the 48K ROM&#x27;s filename &quot;;romname$
+1050 patchrom=ALLOCATION (1638)
+1060 LBYTES romname$, patchrom
+1070 REMark actually patching
+1080 PRINT &quot;Patching All 48K ROMs... please wait!&quot;
+1090 PRINT &quot;Patching 1st instance...&quot;: MOVE_MEMORY patchrom TO rommemory,  
+16384
+1100 PRINT &quot;Patching 2nd instance...&quot;:MOVE_MEMORY patchrom TO  
+rommemory+ROM48K, 16384
+1110 PRINT &quot;Reapplying IF 1 ROM...&quot;:MOVE_MEMORY if1patched TO  
+rommemory+ROM48K, 8192
+1120 PRINT &quot;Patching 128K&#x27;s SPECTRUM mode...&quot;:MOVE_MEMORY patchrom TO  
+rommemory+rom48k128, 16384
+1130 REMark Now Clean up patchrom memory
+1140 DEALLOCATE patchrom
+1150 DEALLOCATE if1patched
+1160 savezex
+1170 END DEFine
+1180 DEFine PROCedure savezex
+1190 INPUT &quot;Please enter new filename for ZeXcel or press ENTER for the  
+default (win1_ZeXcel_New_obj) &quot;;newfile$
+1200 IF newfile$=&quot;&quot; THEN newfile$=&quot;win1_ZeXcel_New_obj&quot;
+1210 SBYTES newfile$,startpos, filelen
+1220 OPEN #5, newfile$
+1230 SetHEAD 5,header
+1240 CLOSE #5
+1250 DEALLOCATE header
+1260 DEALLOCATE startpos
+1270 END DEFine
+
+-- 
+Χρησιμοποιώ το επαναστατικό πρόγραμμα αλληλογραφίας της Opera:  
+<a href="http://www.opera.com/mail/" rel="noreferrer">http://www.opera.com/mail/</a>
+
+
+
+</pre></div></main></body></html>

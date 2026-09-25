@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forsooth! Spooky goings on in Gloucester · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Forsooth! Spooky goings on in Gloucester</h1><p class="facts">5 posts, 1994-03-14 – 1994-03-18</p><div class="post" id="p1626"><div class="ph"><a class="d" href="#p1626">1994-03-14 12:34:15</a> <span>…@…</span> </div><pre>Okay, here we go...
+
+recently I sent my DRiVER disc back to Revelation -- namely because it&#x27;s 
+bugged to hell.
+
+FLAME ON ==-*
+
+Here&#x27;s a problem: why don&#x27;t they beta-test their software? It&#x27;d take all of 
+15 minutes (because that&#x27;s how long it took me to find 4 major crippling 
+bugs in it). Yet Carol Brooksbank did a glowing review in Format... how 
+could she? Did she actually USE the program? Jeez.... I dunno... the way SAM 
+releases are going these days I am seriously thinking of just packing it all 
+in and moving to a sensible computer [1] like the Oric Atmos -- at least you 
+know where you are with them...
+
+FLAME OFF ==-~
+
+I sent it back. They checked the disc (duuuuhhhh... I knew it wasn&#x27;t the 
+disk -- it was the software). I now quote the letter I got:
+
+(I&#x27;ll post the letter I sent them on here tomorrow)
+
+[letter begins]
+
+Revelation Software		PO Box 114, Exeter, Devon, EX4 1YY, England
+    			
+Mr S.Cooke,
+18, Braemer Drive,
+Sale,
+Cheshire,
+M33 4NJ						23rd February 1994.
+
+Dear Mr Cooke,
+
+	Please find enclosed your master disc for DRiVER which you returned 
+for testing. I have had Format Publications (who do our disc duplication) 
+test the disc and verify it against the duplication master copy. From this 
+we have confirmed that there is no fault with the disc.
+
+	Turning now to your rather lengthy comments on the DRiVER system I 
+can now make the following replies:-
+
+	1. The icon corruption bug is known and will be corrected in version 
+1.1 due out April/May. However this does not affect running of the program.
+	2. We have not heard of this problem before and have passed your 
+comments on to the author for him to investigate.
+	3. This problem has been reported by one other user but so far we 
+have been unable to reproduce it - investigations will continue.
+	4. Again this is a problem we have not heard of before but we have 
+asked the author to look into it.
+
+	We are also passing your list of recommendations on to the author 
+although I doubt if many could be implemented because of the limits imposed 
+by space. However, in the meantime DRiVER is still a very useful and usable 
+system that is gaining many devoted fans. A disc of additional applications 
+programs, called DRiVER EXTRAS, will be launched in the next few months and 
+I understand that FORMAT plan some in-depth articles in the near future.
+
+	Details of how to obtain an upgrade will be published in FORMAT and 
+FRED when the new version of DRiVER is announced.
+
+			Yours Sincerely,
+
+			Frank Broughton,
+			For and on behalf of
+			REVELATION SOFTWARE.
+
+[end of letter]
+
+Ignoring the obvious points about stupidity (how is it possible to misread a 
+PRINTED address on a letter? My address is 18 braemAr drive,not braemEr and 
+my postcode is M33 4NJ -- not M22 4NJ), the more fun bits come in now...
+
+First of all I don&#x27;t get FRED or FORMAT (my &quot;lifetime free sub&quot; to FRED 
+disappeared when FRED became a large money-making concern), and I&#x27;ve never 
+bought FORMAT, although I do get to read other peoples copies... So if I don&#x27;
+t get them, how can I see how to get the new version of DRiVER?????
+
+Secondly, &quot;We doubt if many could be implemented because of the limits 
+imposed by space.&quot;
+
+To put it bluntly, this is bull-shit. There&#x27;s a 512k memory map out there 
+waiting to be used, and the DRiVER system code has 32k to play with (base), 
+but there&#x27;s nothing to stop it taking up and extra 16/32/64K if necessary. 
+So that&#x27;s just smoke-screen.
+
+&quot;FORMAT plan some in-depth articles in the near future.&quot;
+
+Oooh, that&#x27;s really nice... I want some little bitty articles, when what I 
+could do with is a PROPER technical manual, given on disc FREEEEEEEE to 
+programmers... If I have to pay, sorry, I won&#x27;t support it. I can&#x27;t afford 
+to buy my programming team a manual at 15 quid a shot, especially if the 
+program it&#x27;s for is slow and bugged.
+
+&quot;Driver is still a very useful and useable system&quot;... to do what, may I ask? 
+The notepad is slow and bugged. There&#x27;s no other software on the disc that 
+can be used (unless you want to play a slidy-puzzle or draw more icons). Of 
+course, we could spend HOURS playing on File-Manager, couldn&#x27;t we???
+
+Here&#x27;s the biggie:
+
+The envelope was not posted from Devon, not from Exeter... where it WAS 
+posted from was GLOUCESTER.
+
+I don&#x27;t know if many people know this, but it seems to be general knowledge 
+in some circles that Revelation Software is owned/run by FORMAT. There is no 
+such software company in Exeter -- it&#x27;s just Big Bad Bob behind it all.
+
+No wonder it never got beta-tested.
+
+Nuff said, rant over, response please.
+
+Simon Cooke
+(Your Sinclair&#x27;s Spec Tec Jr)
+
++------------------INTERNET: …@…+
+<span class="qt">| I&#x27;m a freelance journalist, author, programmer, juggler, magician,  |</span>
+<span class="qt">| general layabout (I study physics at Uni), and hopefully a nice guy |</span>
+<span class="qt">|            Aspirations:    To get to Chicago for summer.            |</span>
+<span class="qt">|            Perspirations:  Lack of money to do so with... :-)       |</span>
++--------------------JANET: …@…+
+
+</pre></div><div class="post" id="p1627"><div class="ph"><a class="d" href="#p1627">1994-03-14 13:59:03</a> <span>…@…</span> <span>Re: Forsooth! Spooky goings on in Gloucester</span></div><pre>In article &lt;…@…&gt; …@… (Mars Bar) writes:
+
+<span class="qt">&gt;Personally I can&#x27;t see the point in DRiVER. No point in a mouse system when</span>
+<span class="qt">&gt;the machine is too slow to run normal software -- it&#x27;ll just slow it down</span>
+<span class="qt">&gt;even more. I&#x27;m not writing stuff for a windowing system that doesn&#x27;t come</span>
+<span class="qt">&gt;with the machine.</span>
+
+*grins* agreed. :) Make it so, warp factor 5 billion, etc etc
+
+<span class="qt">&gt;Oh yeah... over to your comments about Carol Brookbanks... (or whatever</span>
+<span class="qt">&gt;her name is)... anyone like to place bets on whether that&#x27;s a pseud?</span>
+
+<span class="qt">&gt;:-)</span>
+
+<span class="qt">&gt;Funny, she seems to review all the software in Format... remember her `review&#x27;</span>
+<span class="qt">&gt;of MasterDos? Advertising material ahoy!!!</span>
+
+<span class="qt">&gt;Geoff                   (…@… / …@… -- INET)</span>
+
+*grins*
+
+No, really -- she does exist! (David Ledbury pointed her out to me at the 
+last show. Believe me. You could *NOT* miss her. :) )
+Simon Cooke
+(Your Sinclair&#x27;s Spec Tec Jr)
+
++------------------INTERNET: …@…+
+<span class="qt">| I&#x27;m a freelance journalist, author, programmer, juggler, magician,  |</span>
+<span class="qt">| general layabout (I study physics at Uni), and hopefully a nice guy |</span>
+<span class="qt">|            Aspirations:    To get to Chicago for summer.            |</span>
+<span class="qt">|            Perspirations:  Lack of money to do so with... :-)       |</span>
++--------------------JANET: …@…+
+
+</pre></div><div class="post" id="p1630"><div class="ph"><a class="d" href="#p1630">1994-03-14 16:37:33</a> <span>…@…</span> <span>Re: Forsooth! Spooky goings on in Gloucester</span></div><pre>In article &lt;…@…&gt; …@… (Mars Bar) writes:
+<span class="qt">&gt;…@… (Simon Cooke) writes:</span>
+<span class="qt">&gt;&gt; No, really -- she does exist! (David Ledbury pointed her out to me at the </span>
+<span class="qt">&gt;&gt; last show. Believe me. You could *NOT* miss her. :) )</span>
+
+<span class="qt">&gt;I hope that wasn&#x27;t a sexist comment creeping in there, simon... ;-)</span>
+
+Nononononono.... you&#x27;re thinking along the wrong lines. Let&#x27;s put it this 
+way... erm.... I can&#x27;t. I&#x27;m too polite.
+
+<span class="qt">&gt;As to the subject...</span>
+
+<span class="qt">&gt;We all know what sort of person lives in Gloucester... is it 9 or 10 now?</span>
+<span class="qt">&gt;:-)</span>
+
+Geoff, that one went right over my head... probably just as well too :)
+
+Simon Cooke
+(Your Sinclair&#x27;s Spec Tec Jr)
+
++------------------INTERNET: …@…+
+<span class="qt">| I&#x27;m a freelance journalist, author, programmer, juggler, magician,  |</span>
+<span class="qt">| general layabout (I study physics at Uni), and hopefully a nice guy |</span>
+<span class="qt">|            Aspirations:    To get to Chicago for summer.            |</span>
+<span class="qt">|            Perspirations:  Lack of money to do so with... :-)       |</span>
++--------------------JANET: …@…+
+
+</pre></div><div class="post" id="p1659"><div class="ph"><a class="d" href="#p1659">1994-03-17 12:10:12</a> <span>…@…</span> <span>Re: Forsooth! Spooky goings on in Gloucester</span></div><pre>In article  …@… (Captain &#x27;C&#x27;) writes:
+<span class="qt">&gt;Can I just stick up for people with a sense of humour, and say that there is</span>
+<span class="qt">&gt;a funny side to it all.  The neighbours only rung up to complain about a</span>
+<span class="qt">&gt;few flies, and the next thing they know, they find out they&#x27;re living next</span>
+<span class="qt">&gt;to Britain&#x27;s third most-accomplished mass-murderer.</span>
+
+<span class="qt">&gt;Rich</span>
+
+The second, of course, being Big Bad Bob, who&#x27;s killed more computer 
+companies off than....
+
+:)
+
+You see that rather large hole in the foundations leading under the bathroom 
+containing lots of rather nasty decomposing corpses? That&#x27;s YOU that is...
+
+Simon Cooke
+(Your Sinclair&#x27;s Spec Tec Jr)
+
++------------------INTERNET: …@…+
+<span class="qt">| I&#x27;m a freelance journalist, author, programmer, juggler, magician,  |</span>
+<span class="qt">| general layabout (I study physics at Uni), and hopefully a nice guy |</span>
+<span class="qt">|            Aspirations:    To get to Chicago for summer.            |</span>
+<span class="qt">|            Perspirations:  Lack of money to do so with... :-)       |</span>
++--------------------JANET: …@…+
+
+</pre></div><div class="post" id="p1670"><div class="ph"><a class="d" href="#p1670">1994-03-18 11:24:52</a> <span>…@…</span> <span>Re: Forsooth! Spooky goings on in Gloucester</span></div><pre>In article &lt;…@…&gt; …@… (&quot;briang) writes:
+
+<span class="qt">&gt;Well, I am a Brit and I am not sure any more.</span>
+
+<span class="qt">&gt;As I see it the main things to note here are.</span>
+
+<span class="qt">&gt;Format mag is the main paper mag for the Speccy left still going</span>
+
+<span class="qt">&gt;Its Editor is not universally liked. His name is Bob.</span>
+
+<span class="qt">&gt;Carol Works as a reviewer in the mag. She is a good Z80 coder</span>
+
+<span class="qt">&gt;Bob lives in Gloucester, which by a strange coincidence has</span>
+<span class="qt">&gt;recently come into the news as there APPEARS to be a mass</span>
+<span class="qt">&gt;murderer living there.</span>
+
+<span class="qt">&gt;These are the facts, but what the heck it was about in the</span>
+<span class="qt">&gt;first place is lost to my poor brain cell.</span>
+
+<span class="qt">&gt;I think the answer is a fish...</span>
+
+<span class="qt">&gt;Brian</span>
+
+You also missed out:
+
+Bob doesn&#x27;t have a clue when it comes to what programmers do. &quot;STUPID&quot; demo 
+coders beware (boy is he in for a shock when *I* write to him :) )
+
+Revelation Software *appears* to be run by Brenchley Enterprises Ltd, as 
+does West Coast Computers.... watch for him on That&#x27;s Life as they expose 
+his wheeler-dealings...
+
+The DRiVER is unsatisfactory. It wasn&#x27;t beta-tested, is too slow, and has 
+many bugs.
+
+You will have to pay for the upgrade to a *WORKING* version.
+
+Simon Cooke
+(Your Sinclair&#x27;s Spec Tec Jr)
+
++------------------INTERNET: …@…+
+<span class="qt">| I&#x27;m a freelance journalist, author, programmer, juggler, magician,  |</span>
+<span class="qt">| general layabout (I study physics at Uni), and hopefully a nice guy |</span>
+<span class="qt">|            Aspirations:    To get to Chicago for summer.            |</span>
+<span class="qt">|            Perspirations:  Lack of money to do so with... :-)       |</span>
++--------------------JANET: …@…+
+
+</pre></div></main></body></html>

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test (es) · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Test (es)</h1><p class="facts">8 posts, 2007-10-18 – 2007-10-26</p><div class="post" id="p214193"><div class="ph"><a class="d" href="#p214193">2007-10-18 17:36:19</a> <span>George Orwell</span> </div><pre>Hola!
+
+Il mittente di questo messaggio|The sender address of this
+non corrisponde ad un utente   |message is not related to a real
+reale ma all&#x27;indirizzo fittizio|person but to a fake address of an
+di un sistema anonimizzatore   |anonymous system
+Per maggiori informazioni      |For more info
+                  <a href="https://www.mixmaster.it" rel="noreferrer">https://www.mixmaster.it</a>
+
+
+
+
+</pre></div><div class="post" id="p214194"><div class="ph"><a class="d" href="#p214194">2007-10-18 17:58:41</a> <span>Alistair C</span> <span>Re: Test (es)</span></div><pre>George Orwell wrote:
+<span class="qt">&gt; Hola!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Il mittente di questo messaggio|The sender address of this</span>
+<span class="qt">&gt; non corrisponde ad un utente   |message is not related to a real</span>
+<span class="qt">&gt; reale ma all&#x27;indirizzo fittizio|person but to a fake address of an</span>
+<span class="qt">&gt; di un sistema anonimizzatore   |anonymous system</span>
+<span class="qt">&gt; Per maggiori informazioni      |For more info</span>
+<span class="qt">&gt;                   <a href="https://www.mixmaster.it" rel="noreferrer">https://www.mixmaster.it</a></span>
+<span class="qt">&gt; </span>
+All characters and events depicted in c.s.s are fictional and any 
+resemblance to real persons living, dead, is purely and completely 
+coincidental.
+
+-- 
+link my boring website <a href="http://alistairsserver.no-ip.org/" rel="noreferrer">http://alistairsserver.no-ip.org/</a>
+
+
+
+</pre></div><div class="post" id="p214195"><div class="ph"><a class="d" href="#p214195">2007-10-18 18:00:40</a> <span>Alistair C</span> <span>Re: Test (es)</span></div><pre>Alistair C wrote:
+<span class="qt">&gt; some text</span>
+
+that&#x27;s me, Guesser btw...
+my secret identity is exposed.
+what would happen if Clark Kent wore contact lenses!?
+
+-- 
+link my boring website <a href="http://alistairsserver.no-ip.org/" rel="noreferrer">http://alistairsserver.no-ip.org/</a>
+
+
+
+</pre></div><div class="post" id="p214197"><div class="ph"><a class="d" href="#p214197">2007-10-18 18:08:47</a> <span>…@…</span> <span>Re: Test (es)</span></div><pre>Alistair C &lt;…@…&gt; did eloquently scribble:
+<span class="qt">&gt; Alistair C wrote:</span>
+<span class="qt">&gt;&gt; some text</span>
+
+<span class="qt">&gt; that&#x27;s me, Guesser btw...</span>
+<span class="qt">&gt; my secret identity is exposed.</span>
+<span class="qt">&gt; what would happen if Clark Kent wore contact lenses!?</span>
+
+They&#x27;d melt on his eyeballs the first time he used his laser vision?
+-- 
+______________________________________________________________________________
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|Andrew Halliwell BSc(hons)| &quot;The day Microsoft makes something that doesn&#x27;t |</span>
+<span class="qt">|            in            |  suck is probably the day they start making     |</span>
+<span class="qt">|     Computer science     |  vacuum cleaners&quot; - Ernst Jan Plugge            |</span>
+------------------------------------------------------------------------------
+
+
+
+</pre></div><div class="post" id="p214198"><div class="ph"><a class="d" href="#p214198">2007-10-18 20:58:04</a> <span>Daniel Mandic</span> <span>Re: Test (es)</span></div><pre>…@… wrote:
+
+<span class="qt">&gt; They&#x27;d melt on his eyeballs the first time he used his laser vision?</span>
+
+Hi …@…!
+
+
+Supie has probably taken the Crystals from the/his memos, to finish
+some super-contactlenses....
+
+Now he don&#x27;t know what to do. (tsk... computers)
+
+
+
+Kind regards,
+
+Daniel Mandic
+
+
+
+</pre></div><div class="post" id="p214200"><div class="ph"><a class="d" href="#p214200">2007-10-18 23:20:28</a> <span>Duncan Snowden</span> <span>Re: Test (es)</span></div><pre>Alistair C wrote:
+
+<span class="qt">&gt; All characters and events depicted in c.s.s are fictional and any </span>
+<span class="qt">&gt; resemblance to real persons living, dead, is purely and completely </span>
+<span class="qt">&gt; coincidental.</span>
+
+Especially me. I hope. God forbid any of this is *real*...
+
+-- 
+Duncan Snowden.
+
+
+
+</pre></div><div class="post" id="p214242"><div class="ph"><a class="d" href="#p214242">2007-10-26 06:55:03</a> <span>j d</span> <span>Re: Test (es)</span></div><pre>
+&quot;George Orwell&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; Hola!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Il mittente di questo messaggio|The sender address of this</span>
+<span class="qt">&gt; non corrisponde ad un utente   |message is not related to a real</span>
+<span class="qt">&gt; reale ma all&#x27;indirizzo fittizio|person but to a fake address of an</span>
+<span class="qt">&gt; di un sistema anonimizzatore   |anonymous system</span>
+<span class="qt">&gt; Per maggiori informazioni      |For more info</span>
+<span class="qt">&gt;                  <a href="https://www.mixmaster.it" rel="noreferrer">https://www.mixmaster.it</a></span>
+<span class="qt">&gt;</span>
+
+
+fanculio di spaghetti joncioni!
+
+
+
+
+
+</pre></div><div class="post" id="p214243"><div class="ph"><a class="d" href="#p214243">2007-10-26 07:06:45</a> <span>j d</span> <span>Re: Test (es)</span></div><pre>
+&quot;Alistair C&quot; &lt;…@…&gt; wrote in message 
+news:ff86sj$enb$…@…...
+<span class="qt">&gt; George Orwell wrote:</span>
+<span class="qt">&gt;&gt; Hola!</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Il mittente di questo messaggio|The sender address of this</span>
+<span class="qt">&gt;&gt; non corrisponde ad un utente   |message is not related to a real</span>
+<span class="qt">&gt;&gt; reale ma all&#x27;indirizzo fittizio|person but to a fake address of an</span>
+<span class="qt">&gt;&gt; di un sistema anonimizzatore   |anonymous system</span>
+<span class="qt">&gt;&gt; Per maggiori informazioni      |For more info</span>
+<span class="qt">&gt;&gt;                   <a href="https://www.mixmaster.it" rel="noreferrer">https://www.mixmaster.it</a></span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt; All characters and events depicted in c.s.s are fictional and any </span>
+<span class="qt">&gt; resemblance to real persons living, dead, is purely and completely </span>
+<span class="qt">&gt; coincidental.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; -- </span>
+<span class="qt">&gt; link my boring website <a href="http://alistairsserver.no-ip.org/" rel="noreferrer">http://alistairsserver.no-ip.org/</a></span>
+
+what about persons undead?
+
+
+
+
+
+</pre></div></main></body></html>

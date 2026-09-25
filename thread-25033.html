@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPIN and SpecEMU update news · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>SPIN and SpecEMU update news</h1><p class="facts">13 posts, 2002-04-17 – 2002-04-18</p><div class="post" id="p135494"><div class="ph"><a class="d" href="#p135494">2002-04-17 19:07:25</a> <span>Dunny</span> </div><pre>Hello all -
+
+    I *know* I said that I&#x27;d try and get a release of SPIN out last weekend.
+However, there&#x27;s a nasty bug in the core (or the tzx renderer, however
+unlikely) which prevents speedlock games from loading. This is a serious
+setback, so if anyone&#x27;s absolutely desperate, I&#x27;ll try and get an alpha
+release out very soon, in the next couple of days.
+
+    That&#x27;s that out of the way - now for the news...
+
+    Mark Woodmass and I have decided to team up and make SPIN a joint
+development. He&#x27;s had so much input into SPIN already (I didn&#x27;t have the
+faintest clue how a z80 worked until he taught me, and my knowledge of Z80
+and 8086 asm was non-existant) it makes sense that he should be one of the
+official developers now. He&#x27;s responsible for the Z80 core and the tzx
+fastloaders at the moment - I&#x27;m going to be concentrating on the UI and when
+it&#x27;s up to scratch as an everyday common or garden emulator, I&#x27;ll work on
+the BASIC ide that I&#x27;ve wanted to do for so long.
+
+    This leads me nicely to the next part - that Mark is no longer able to
+maintain SpecEMU - the ideas that have come recently to light for his
+emulator would require a large amount of work to implement, and would be
+trivial in SPIN as it stands. This means that SpecEMU is no longer in
+development, and is, as of today, unsupported. Any mail sent to SpecEMU&#x27;s
+author will effectively be replied to with a short &quot;no longer supported&quot;.
+
+    Any mail (for the time being) relating to SPIN can be sent directly to
+me, or to …@… which will be checked regularly when SPIN is
+released.
+
+    God, I hope SPIN is worth it :)
+
+    Thanks for your patience - hopefully this can be a very interesting
+project.
+
+    Paul Dunn.
+
+
+
+
+
+</pre></div><div class="post" id="p135498"><div class="ph"><a class="d" href="#p135498">2002-04-17 22:03:21</a> <span>Ignacio Burgue���o</span> <span>Re: SPIN and SpecEMU update news</span></div><pre>&quot;Dunny&quot; &lt;…@…&gt; wrote in message
+news:a9kgnq$3shck$…@…...
+<span class="qt">&gt; Hello all -</span>
+<span class="qt">&gt;</span>
+[snip]
+<span class="qt">&gt;     Any mail (for the time being) relating to SPIN can be sent directly to</span>
+<span class="qt">&gt; me, or to …@… which will be checked regularly when SPIN is</span>
+<span class="qt">&gt; released.</span>
+<span class="qt">&gt;</span>
+
+Well, good luck to you both. Could you at least put up a web page with
+preview snapshots!? I can&#x27;t wait to take a look at SPIN!
+
+Greetings
+Ignacio
+
+
+
+
+
+</pre></div><div class="post" id="p135499"><div class="ph"><a class="d" href="#p135499">2002-04-17 22:12:33</a> <span>Colin Woodcock</span> <span>Re: SPIN and SpecEMU update news</span></div><pre>
+Ignacio Burgueï¿½o wrote:
+
+<span class="qt">&gt; Well, good luck to you both. Could you at least put up a web page with</span>
+<span class="qt">&gt; preview snapshots!? I can&#x27;t wait to take a look at SPIN!</span>
+
+seconded
+
+
+
+
+
+</pre></div><div class="post" id="p135500"><div class="ph"><a class="d" href="#p135500">2002-04-17 22:56:03</a> <span>Steve Anderson</span> <span>Re: SPIN and SpecEMU update news</span></div><pre>
+Colin Woodcock &lt;…@…&gt; wrote in message
+news:a9ks30$bja$…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Ignacio Burgueï¿½o wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Well, good luck to you both. Could you at least put up a web page with</span>
+<span class="qt">&gt; &gt; preview snapshots!? I can&#x27;t wait to take a look at SPIN!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; seconded</span>
+<span class="qt">&gt;</span>
+
+um, thirded =)
+
+
+
+
+
+</pre></div><div class="post" id="p135503"><div class="ph"><a class="d" href="#p135503">2002-04-17 23:39:12</a> <span>Dunny</span> <span>Re: SPIN and SpecEMU update news</span></div><pre>
+Jeff Braine &lt;…@…&gt; wrote in message
+news:Pine.GSO.4.33.0204181052310.19952-100000@hades...
+On Wed, 17 Apr 2002, Steve Anderson wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Colin Woodcock &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:a9ks30$bja$…@…...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Ignacio Burgueï¿½o wrote:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; Well, good luck to you both. Could you at least put up a web page with</span>
+<span class="qt">&gt; &gt; &gt; preview snapshots!? I can&#x27;t wait to take a look at SPIN!</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; seconded</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; um, thirded =)</span>
+
+Fourtheded. Looking forward to an emulator with a decent development
+environment in the UI.
+
+---------
+
+Patience, Glasshoppaz. I will say that we&#x27;re getting the emulation core up
+and running in a stable manner before we go for the full deal with the
+assembler and Sinclair BASIC IDE... Oh, and if anyone has any tech docs on
+the u765a fdc, I&#x27;d be really interested... My implementation just refuses to
+do anything at all atm. Also, I suppose I&#x27;d best swot up on controlling the
+PC&#x27;s fdc too.
+
+I&#x27;m looking forward to getting it out. I&#x27;ll post some shots of it running on
+my web page..
+
+[goes off, does snaps]
+
+Right, they&#x27;re at
+
+<a href="http://homepage.ntlworld.com/paul.dunn4/SPINshots/" rel="noreferrer">http://homepage.ntlworld.com/paul.dunn4/SPINshots/</a>
+
+and this is a very early beta of the UI - I&#x27;m working on jazzing it up a
+bit, but it&#x27;s not had that much attention lately :)
+
+let me know what you think..
+
+D.
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p135505"><div class="ph"><a class="d" href="#p135505">2002-04-18 00:43:37</a> <span>Dunny</span> <span>Re: SPIN and SpecEMU update news</span></div><pre>
+John Elliott &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; &quot;Dunny&quot; &lt;…@…&gt; writes:</span>
+<span class="qt">&gt; &gt; Oh, and if anyone has any tech docs on</span>
+<span class="qt">&gt; &gt;the u765a fdc, I&#x27;d be really interested... My implementation just refuses</span>
+to
+<span class="qt">&gt; &gt;do anything at all atm. Also, I suppose I&#x27;d best swot up on controlling</span>
+the
+<span class="qt">&gt; &gt;PC&#x27;s fdc too.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;   If you consider C to be documentation, try</span>
+<span class="qt">&gt; &lt;<a href="http://www.seasip.demon.co.uk/Unix/LibDsk/&gt;." rel="noreferrer">http://www.seasip.demon.co.uk/Unix/LibDsk/&gt;.</a> If not, try</span>
+<span class="qt">&gt; &lt;<a href="http://members.fortunecity.com/darkqb/fdd.htm&gt;." rel="noreferrer">http://members.fortunecity.com/darkqb/fdd.htm&gt;.</a> The +3 and PC floppy</span>
+<span class="qt">&gt; controllers both use I8272 commands.</span>
+<span class="qt">&gt;   My current Lib765 only emulates enough of a uPD765a to support CP/M and</span>
+<span class="qt">&gt; (I&#x27;m told) +3DOS; strange copy protection schemes that program the floppy</span>
+<span class="qt">&gt; controller directly may not work.</span>
+
+C as documentation? :)
+
+Yes, I&#x27;ve been getting around to downloading libdsk for a while now... And I
+think I shall. I&#x27;ll be working on the +3 fdc side of things soon (or Woody
+will, he understands it better than I do) so it will probably come in
+useful.
+
+Thanks!
+
+D.
+
+
+
+
+
+
+</pre></div><div class="post" id="p135506"><div class="ph"><a class="d" href="#p135506">2002-04-18 00:54:44</a> <span>Jeff Braine</span> <span>Re: SPIN and SpecEMU update news</span></div><pre>On Wed, 17 Apr 2002, Steve Anderson wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Colin Woodcock &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:a9ks30$bja$…@…...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Ignacio Burgueño wrote:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; Well, good luck to you both. Could you at least put up a web page with</span>
+<span class="qt">&gt; &gt; &gt; preview snapshots!? I can&#x27;t wait to take a look at SPIN!</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; seconded</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; um, thirded =)</span>
+
+Fourtheded. Looking forward to an emulator with a decent development
+environment in the UI.
+
+-- 
+Jeff Braine
+Unix System Engineer
+Griffith University
+
+
+
+
+</pre></div><div class="post" id="p135511"><div class="ph"><a class="d" href="#p135511">2002-04-18 07:56:20</a> <span>David Mills</span> <span>Re: SPIN and SpecEMU update news</span></div><pre>In article &lt;a9lrd1$4bhlq$…@…&gt;, paul.dunn4
+@ntlworld.com says...
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;m looking forward to getting it out. I&#x27;ll post some shots of it running on</span>
+<span class="qt">&gt; my web page..</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; [goes off, does snaps]</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Right, they&#x27;re at</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; <a href="http://homepage.ntlworld.com/paul.dunn4/SPINshots/" rel="noreferrer">http://homepage.ntlworld.com/paul.dunn4/SPINshots/</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; and this is a very early beta of the UI - I&#x27;m working on jazzing it up a</span>
+<span class="qt">&gt; bit, but it&#x27;s not had that much attention lately :)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; let me know what you think..</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; D.</span>
+
+Mmmmm,  It looks nice and pretty!
+
+Can&#x27;t wait to get my hands on the actual proggy now.
+
+cheers
+
+Dave
+
+
+
+</pre></div><div class="post" id="p135514"><div class="ph"><a class="d" href="#p135514">2002-04-18 09:12:04</a> <span>John Elliott</span> <span>Re: SPIN and SpecEMU update news</span></div><pre>&quot;Dunny&quot; &lt;…@…&gt; writes:
+<span class="qt">&gt; Oh, and if anyone has any tech docs on</span>
+<span class="qt">&gt;the u765a fdc, I&#x27;d be really interested... My implementation just refuses to</span>
+<span class="qt">&gt;do anything at all atm. Also, I suppose I&#x27;d best swot up on controlling the</span>
+<span class="qt">&gt;PC&#x27;s fdc too.</span>
+
+  If you consider C to be documentation, try
+&lt;<a href="http://www.seasip.demon.co.uk/Unix/LibDsk/&gt;." rel="noreferrer">http://www.seasip.demon.co.uk/Unix/LibDsk/&gt;.</a> If not, try
+&lt;<a href="http://members.fortunecity.com/darkqb/fdd.htm&gt;." rel="noreferrer">http://members.fortunecity.com/darkqb/fdd.htm&gt;.</a> The +3 and PC floppy 
+controllers both use I8272 commands.
+  My current Lib765 only emulates enough of a uPD765a to support CP/M and
+(I&#x27;m told) +3DOS; strange copy protection schemes that program the floppy
+controller directly may not work.
+
+--
+John Elliott
+
+
+
+
+</pre></div><div class="post" id="p135515"><div class="ph"><a class="d" href="#p135515">2002-04-18 09:18:53</a> <span>Philip Kendall</span> <span>Re: SPIN and SpecEMU update news</span></div><pre>In article &lt;…@…&gt;,
+John Elliott &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;  If you consider C to be documentation, try</span>
+<span class="qt">&gt;&lt;<a href="http://www.seasip.demon.co.uk/Unix/LibDsk/&gt;." rel="noreferrer">http://www.seasip.demon.co.uk/Unix/LibDsk/&gt;.</a> If not, try</span>
+<span class="qt">&gt;&lt;<a href="http://members.fortunecity.com/darkqb/fdd.htm&gt;." rel="noreferrer">http://members.fortunecity.com/darkqb/fdd.htm&gt;.</a> The +3 and PC floppy </span>
+<span class="qt">&gt;controllers both use I8272 commands.</span>
+<span class="qt">&gt;  My current Lib765 only emulates enough of a uPD765a to support CP/M and</span>
+<span class="qt">&gt;(I&#x27;m told) +3DOS;</span>
+
+I can confirm the latter :-)
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p135536"><div class="ph"><a class="d" href="#p135536">2002-04-18 16:36:27</a> <span>Woody</span> <span>Re: SPIN and SpecEMU update news</span></div><pre>On Thu, 18 Apr 2002 01:43:37 +0100, &quot;Dunny&quot; &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;  I&#x27;ll be working on the +3 fdc side of things soon (or Woody</span>
+<span class="qt">&gt;will, he understands it better than I do) so it will probably come in</span>
+<span class="qt">&gt;useful.</span>
+
+I understand it better than you?
+SpecEmu had *partial* +3 FDC emulation.
+
+So now what do you reckon? :-p
+
+
+
+
+</pre></div><div class="post" id="p135547"><div class="ph"><a class="d" href="#p135547">2002-04-18 19:22:39</a> <span>Darren Salt</span> <span>Re: SPIN and SpecEMU update news</span></div><pre>I demand that Philip Kendall may or may not have written...
+
+<span class="qt">&gt; In article &lt;…@…&gt;,</span>
+<span class="qt">&gt; John Elliott &lt;…@…&gt; wrote:</span>
+[snip]
+<span class="qt">&gt;&gt;  My current Lib765 only emulates enough of a uPD765a to support CP/M and</span>
+<span class="qt">&gt;&gt; (I&#x27;m told) +3DOS;</span>
+
+<span class="qt">&gt; I can confirm the latter :-)</span>
+
+&lt;AOL&gt; :-)
+
+-- 
+<span class="qt">| Darren Salt  anti-UCE  | d youmustbejoking,demon,co,uk | nr. Ashington,</span>
+<span class="qt">| Spec+3, Risc PC, A3010 | s zap,tartarus,org            | Northumberland</span>
+<span class="qt">| BBC M128, Linux PC     | @                             | Toon Army</span>
+<span class="qt">|   I don&#x27;t ask for much, just untold riches...</span>
+
+LISP: To call a spade a thpade.
+
+
+
+</pre></div><div class="post" id="p135561"><div class="ph"><a class="d" href="#p135561">2002-04-18 21:12:21</a> <span>John Elliott</span> <span>Re: SPIN and SpecEMU update news</span></div><pre>Darren Salt &lt;…@…&gt; wrote:
+<span class="qt">&gt;I demand that Philip Kendall may or may not have written...</span>
+<span class="qt">&gt;&gt; John Elliott &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;[snip]</span>
+<span class="qt">&gt;&gt;&gt;  My current Lib765 only emulates enough of a uPD765a to support CP/M and</span>
+<span class="qt">&gt;&gt;&gt; (I&#x27;m told) +3DOS;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; I can confirm the latter :-)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&lt;AOL&gt; :-)</span>
+
+  Good. So when I break source and binary compatibility in the next LibDsk,
+I&#x27;ll be able to hear the screams from here.
+
+-- 
+John Elliott
+
+
+
+</pre></div></main></body></html>

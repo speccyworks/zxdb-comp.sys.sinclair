@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Re: Update 7 of the new ZX Tape format · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Re: Update 7 of the new ZX Tape format</h1><p class="facts">8 posts, 1997-03-01 – 1997-03-07</p><div class="post" id="p24449"><div class="ph"><a class="d" href="#p24449">1997-03-01</a> <span>…@…</span> </div><pre>
+Tomaz Kac  wrote:
+
+<span class="qt">&gt;   There were three suggestions for the preferred 3 letter filename extension:</span>
+<span class="qt">&gt; (The number on the right is how many people voted for that extension)</span>
+<span class="qt">&gt; .SPT (SpectrumTape)     3</span>
+<span class="qt">&gt; .TZX (Tape for ZX)      4</span>
+<span class="qt">&gt; .TPE (as TaPE)          1</span>
+<span class="qt">&gt; .TPX (TaPe eXtension)   1</span>
+<span class="qt">&gt; As you can see not many people voted so far :(</span>
+
+I&#x27;ll be boring and vote with the majority for .TZX
+(that&#x27;s if we *have* to restrict ourselves to three letters...bloomin&#x27;
+DOS users... ;)
+
+<span class="qt">&gt;   After these 8 bytes the two bytes with the Major and Minor Revision</span>
+<span class="qt">&gt; number follow. First byte is Major revision number - the program must be</span>
+<span class="qt">&gt; able to handle at least this revision number or later to use the file, the</span>
+                                                  ^^^^^
+Shouldn&#x27;t this be &quot;earlier&quot;?
+
+I suppose the assumption is that only *additions* will be made to the
+format.  However, what if a block type is removed, made obsolete or has
+fields removed/made obsolete?
+
+...or am I just mis-reading or mis-understanding it all?
+
+[..snip..]
+<span class="qt">&gt; ID : 05  -  Hardware Type</span>
+<span class="qt">&gt; -------</span>
+<span class="qt">&gt;           This selects what hardware the programs on this tape use. Please</span>
+<span class="qt">&gt;           include only Machines/Hardware for which you are 100% sure that</span>
+<span class="qt">&gt;           it either runs (or not runs) on that machine/hardware or you</span>
+<span class="qt">&gt;           know it uses (or not uses) the hardware or special features of</span>
+<span class="qt">&gt;           that machine!</span>
+<span class="qt">&gt;           NOTE: If the tape runs only on ZX-81 then there is no need to</span>
+<span class="qt">&gt;           put all the other Machines to DOESN&#x27;T RUN (and vice versa)! I</span>
+<span class="qt">&gt;           think the emulators and utilities can be so smart to detect that</span>
+<span class="qt">&gt;           :)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; 00 1  Number of Machines/Hardware for which Info exists</span>
+<span class="qt">&gt; 01 x  List of Machines/Hardware :</span>
+<span class="qt">&gt;       00 1  ID : 00 - ZX Spectrum 48k, Plus</span>
+<span class="qt">&gt;                  01 - ZX Spectrum 48k ISSUE 1</span>
+
+Are 16k ZX Spectrums relevent or is that just pedantry?
+
+<span class="qt">&gt;                  02 - ZX Spectrum 128k, +2 (Grey case)</span>
+<span class="qt">&gt;                  03 - ZX Spectrum 128k +2A, +3</span>
+<span class="qt">&gt;                  04 - AY Sound Hardware (ZX 128k Compatible) with 48k</span>
+<span class="qt">&gt;                       Spectrum</span>
+<span class="qt">&gt;                  05 - Fuller Box AY Sound Hardware</span>
+<span class="qt">&gt;                  06 - Currah microSpeech</span>
+<span class="qt">&gt;                  07 - SpecDrum</span>
+<span class="qt">&gt;                  08 - Timex Sinclair TC-2048</span>
+<span class="qt">&gt;                  09 - Timex Sinclair TS-2068</span>
+<span class="qt">&gt;                  0A - Pentagon 128</span>
+<span class="qt">&gt;                  0B - Sam Coupe</span>
+<span class="qt">&gt;                  0C - Didaktik M</span>
+<span class="qt">&gt;                  0D - Didaktik Gama</span>
+<span class="qt">&gt;                  0E - ZX-81 with  1k RAM</span>
+<span class="qt">&gt;                  0F - ZX-81 with 16k RAM or more</span>
+<span class="qt">&gt;                  10 - Disciple/Plus-D Interface</span>
+<span class="qt">&gt;                  11 - ZX Interface 1</span>
+<span class="qt">&gt;                  12 - ZX LPrint Interface</span>
+<span class="qt">&gt;                  13 - Didaktik disk drives</span>
+
+Are Multiface/Multiface128k/Multiface+3/MultiPrint relevent?  You could
+load software (e.g. Genie Disassembler) into their shadow RAM so you
+might want to make a tape file of that software.
+There were other, less popular, products in the same vein - some rubbish
+by Datel Electronics, &quot;Interface 3&quot; (NOT made by Sinclair), any others?
+
+What about the interface that came with &quot;Shadow of the Unicorn&quot;?  I
+don&#x27;t know what was in it - was it just a RAM pack (with some sort of
+paging scheme)?
+
+I&#x27;m clutching at straws here, but what about those dinky cartridges that
+plugged into the ZX Interface 2 - no?...oh sorry. 
+
+If any of these are relevent (ha!) then &#x27;Emulation Info&#x27; might also be
+effected.
+
+Oh, and &quot;14 - Tape deck&quot; for &#x27;Deus Ex Machina&#x27; ;)
+
+[..snip..]
+<span class="qt">&gt; ID : 08  -  Snapshot Block</span>
+<span class="qt">&gt; -------</span>
+<span class="qt">&gt;           This, for now, is only to see how you guys think of this format</span>
+<span class="qt">&gt;           to have actual Snapshot in it too. This would enable one to</span>
+<span class="qt">&gt;           snapshot the game at the start and still have all the TAPE</span>
+<span class="qt">&gt;           blocks (for next levels, etc.) in the SAME file. I don&#x27;t know if</span>
+<span class="qt">&gt;           this is a good idea or not, it was suggested and I have to put</span>
+<span class="qt">&gt;           it in to see what you mean.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; 00 1  Snapshot Type : 00 - Z80 Snapshot (Z80 Emulator, Warajevo,...)</span>
+<span class="qt">&gt;                       01 - SNA Snapshot (JPP, Amiga Spectrum Emulator,...)</span>
+<span class="qt">&gt;                       02 - SNP Snapshot (Didaktik disk snapshot)</span>
+<span class="qt">&gt;                       03 - SIT Snapshot (Sinclair 2.0 by Pedro Salaz)</span>
+<span class="qt">&gt;                       04 - SP  Snapshot (Sinclair 0.99 by Pedro Gimeno)</span>
+<span class="qt">&gt; 01 2  Snapshot Length (so it can be easily skipped)</span>
+<span class="qt">&gt; 03 x  Snapshot itself</span>
+
+I have to agree with everyone else (except the proponants), that this
+type of block has no place in a tape file.
+
+Also, am I being dense, or will 128k snapshots be of a length that won&#x27;t
+fit into a 2-byte word..?
+
+[..snip..EOM]
+
+Regards,
+-- 
+Duncan Harvey (not an emulator author, just an interested user),
+The Internet  -  so much communication, so little said.
+
+
+</pre></div><div class="post" id="p24458"><div class="ph"><a class="d" href="#p24458">1997-03-01</a> <span>…@…</span> <span>Update 7 of the new ZX Tape format</span></div><pre>
+
+  Please vote on your preferred Extension for this format or suggest some other!
+( .SPT , .TZX , .TPE , .TPX )
+
+  If you would like to be in the mailing list for this format, i.e. if you would
+like to recieve all future updates of the format in the e-mail (this should
+happen every 4-5 days now ... or even less frequent) then please e-mail me and
+I will add you to the list.
+
+- Fixed the &#x27;Z&#x27; block (you should skip 9 bytes and not 7)
+- Added Default values for &#x27;Emulation Info&#x27; block... Thanx Darren!
+- Added some more Hardware to the HW Info block and changed Issue 2 Spectrum to
+  Issue 1 Spectrum (I might be wrong here... but was Issue 1 the &#x27;special&#x27; one?
+  i.e. all the other issues (2,3,...) had the EAR bit inverted ?)
+- Added a .SNP snapshot ... used with Didaktik disk drives and a .SP and .SIT
+  snapshot
+- Added &#x27;Jump To Block&#x27; block. This is very handy when you have multiple BASIC
+  files (for instance an Original LOADER and a loader with TRAINER menu) and
+  you want it to go straight to the data files when first basic loader is
+  selected... The jump Offset is Relative Signed 16-bit number..
+
+Still looking for the following things:
+  The Timings for the ZX-81 ROM loading routine.
+  Any additional Spectrum clones info and Hardware Add-Ons.
+  Additions to &#x27;Emulation Info&#x27; and &#x27;Archive Info&#x27; blocks.
+
+PLEASE Do not use this format YET, since it is constantly changing !!! All
+additions/corrections are welcome and should be posted to comp.sys.sinclair AND
+directly to me on email: …@… .
+
+
+                         ZX Spectrum Tape file format
+                        ------------------------------
+                                revision 0.0
+                       Still in Development - version 7
+
+  This format lets you preserve all (hopefully) of the tapes with turbo or
+custom loading routines. Even though some of the newest and &#x27;smarter&#x27; emulators
+can find most of the info about the loader from the code itself, this cannot be
+possible if you want to replay the file to the good old real spectrum. And with
+all this information in the file the emulators don&#x27;t have to bother with finding
+out the baud rate and other things.
+
+  There were three suggestions for the preferred 3 letter filename extension:
+(The number on the right is how many people voted for that extension)
+.SPT (SpectrumTape)     3
+.TZX (Tape for ZX)      4
+.TPE (as TaPE)          1
+.TPX (TaPe eXtension)   1
+As you can see not many people voted so far :(
+
+.ZXT is already used for another file type. Please tell me which one is your
+favorite or suggest some other... The one most favorite will be used in the
+final version ;)
+
+  The file is identified with the first 8 bytes being &#x27;ZXTape!&#x27; plus EndOfFile
+byte 26 (1A hex).
+  After these 8 bytes the two bytes with the Major and Minor Revision number
+follow. First byte is Major revision number - the program must be able to handle
+at least this revision number or later to use the file, the Second byte is Minor
+revison number - if the program can handle only formats with lower Minor
+revision number than the one in the file then some information could not be
+interpreted (but that info should not be so important...).
+
+  Then the body follows which is devised from blocks. Each block is identified
+with its ID byte followed by its body. There are currently 11 types of blocks.
+
+So the file structure is :  &#x27;ZXTape!&#x27; 0x1A MajR MinR ID1 Body1 ID2 Body2 ...
+                             0        7    8    9    A   ...
+
+- The Two-Byte values are always stored LSB (Least Significant Byte) First.
+- The bit order in a byte is  : 7 6 5 4 3 2 1 0
+                and in a word : first  byte (LSB) :  7  6  5  4  3  2  1  0
+   (word == short == 2 bytes) : second byte (MSB) : 15 14 13 12 11 10  9  8
+  All unused bits should be Unset - 0 !
+- The timings are given in Z80 clock ticks (T states) unless otherwise stated.
+  1 T state = 1sec/3500000
+- The values in the tables mean : Offset (in HEX bytes), Length (1-byte, 2-word)
+- You might interpret full-period as one pulse (----____ or ____----) and
+  half-period as only one half of the pulse (---- or ____).
+- The values in brackets [] are the fefault values of Spectrum ROM load/save
+  routines - they should be used for all Standard loading blocks.
+  These values are in Decimal format. Please inform me if some are incorrect.
+
+These are the possible blocks :
+
+ID : 00  -  Loading Speed Change for Custom Loading Blocks
+-------     and Change of the Standard Pause
+
+          All custom loading blocks that follow this block use the applied
+          change ! The Standard Pause is applied after ALL Blocks that
+          don&#x27;t have a special Pause Block (ID=01) after them !!! Default
+          value for Standard Pause should be one second.
+
+00 1  Change which Value : 00 - Length of PILOT half-period            [2168]
+                           01 - Length of SYNC First half-period       [735]
+                           02 - Length of SYNC Second half-period      [667]
+                           03 - Length of ZERO bit half-period         [855]
+                           04 - Length of ONE bit half-period          [1710]
+                           05 - Length of BOTH 0 and 1 bit half-period
+                           FF - Standard Pause After Blocks            [10]
+
+                      When 05 is selected the Value holds Zero bit half-period,
+                      the One bit half-period is the Value multiplied by 2.
+
+01 2  Value : for 00-05 in Z80 T-States
+              for FF    First byte contains value in tenth of seconds (1s/10)
+                        Second byte should contain 0 !
+
+ID : 01  -  Pause (with an optional message)
+-------
+          Use this block if the Pause should be different from the Standard one.
+          If the Value is 0   then there should be absolutely NO pause.
+          If the Value is 255 then the Pause should be Indefinite
+          (Waiting for a keypress)
+          If the emulator should display a message while the pause is on then
+          the message length should be greater than 0 ... if 0 then no message.
+
+00 1  Value of the pause in tenth of seconds (1s/10)
+01 1  Length of the message (if 0 then NO message)
+02 x  Message that should be displayed (in ASCII)
+
+ID : 02  -  Text Description
+-------
+          The description can be upto 255 characters long but please keep
+          it down to about 30 so the programs can show it in one line !
+          This is ment to identify parts of the tape, so you know where
+          level 1 starts, where to rewind when you lose all the lives, etc.
+          Please use &#x27;Archive Info&#x27; block for Title, Authors, Publisher,...
+
+00 1  Length of the Text
+01 x  Text in ASCII
+
+ID : 03  -  Custom Loading Data Block
+-------
+          This is the block with actual data. It is very similar to the normal
+          .TAP block but with some additional Info and will use all Loading
+          Speed changes from blocks with ID 01.
+
+00 2  Length of PILOT tone (in PILOT full-periods)     [8064 Header, 3220 Data]
+02 1  General Purpose Flag :
+        Bit 0 : 1 If SYNC tone is present, 0 if NOT    [1]
+03 1  Used bits in LAST Byte (other bits should be 0)  [8]
+      i.e. if this is 6 then the bits (x) used in LAST byte are: xxxxxx00
+04 2  Length of DATA that follows
+06 x  DATA, the bits are saved MSb (Most Significant bit) first
+
+ID : 04  -  Normal Speed Data Block (as in .TAP files)
+-------
+          This block must be replayed with the Standard ROM Values for all
+          Loading Speed variables (values in brackets []). If you know the
+          default values for ZX-81 ROM save/load routine then please email me.
+          This block can be used for the ROM loading routines AND for custom
+          loading routines that use the same timings as ROM ones do.
+
+00 2  Length of DATA that follows
+02 x  DATA, as in .TAP File
+
+ID : 05  -  Hardware Type
+-------
+          This selects what hardware the programs on this tape use.
+          Please include only Machines/Hardware for which you are 100% sure that
+          it either runs (or not runs) on that machine/hardware or you know it
+          uses (or not uses) the hardware or special features of that machine!
+          NOTE: If the tape runs only on ZX-81 then there is no need to put all
+                the other Machines to DOESN&#x27;T RUN (and vice versa)! I think
+                the emulators and utilities can be so smart to detect that :)
+
+
+00 1  Number of Machines/Hardware for which Info exists
+01 x  List of Machines/Hardware :
+      00 1  ID : 00 - ZX Spectrum 48k, Plus
+                 01 - ZX Spectrum 48k ISSUE 1
+                 02 - ZX Spectrum 128k, +2 (Grey case)
+                 03 - ZX Spectrum 128k +2A, +3
+                 04 - AY Sound Hardware (ZX 128k Compatible) with 48k Spectrum
+                 05 - Fuller Box AY Sound Hardware
+                 06 - Currah microSpeech
+                 07 - SpecDrum
+                 08 - Timex Sinclair TC-2048
+                 09 - Timex Sinclair TS-2068
+                 0A - Pentagon 128
+                 0B - Sam Coupe
+                 0C - Didaktik M
+                 0D - Didaktik Gama
+                 0E - ZX-81 with  1k RAM
+                 0F - ZX-81 with 16k RAM or more
+                 10 - Disciple/Plus-D Interface
+                 11 - ZX Interface 1
+                 12 - ZX LPrint Interface
+                 13 - Didaktik disk drives
+      01 1  Value : 00 - The game RUNS on this machine (or with this Hardware),
+                         but it is not sure whether it uses the hardware or
+                         special features of the machine.
+                    01 - The game USES the hardware or special features of the
+                         machine. (like 128k Memory or AY Sound on 128k ZXs)
+                    02 - The game RUNS but it DOESN&#x27;T use the hardware or
+                         special features of the machine.
+                    03 - The game DOESN&#x27;T RUN on this machine
+                         (or with this Hardware)
+      ....  Next Machine/Hardware Info
+
+      Please tell me which other Timex Sinclair models have different hardware
+      than ZX Spectrum 48k, 128k and they will be included!
+      If you know of any more Spectrum clones with hardware other than this or
+      some other add-on hardware then please e-mail me !
+
+ID : 06  -  Emulation Info
+-------
+          This is a special block that would normally be generated only by
+          Emulators. For now it contains info on everything I could find that
+          other formats support. Please inform me of any additions/corrections
+          since this is a very important part for emulators. Those bits that
+          are not used by the emulator that stored the info, should be left at
+          the DEFAULT values, you might want to set some according to Hardware
+          Info block (like 128k Emulation and AY Emulation) !
+
+00 2  Hardware Info
+        Bit  0 : 128k Emulation on                                          [0]
+             1 : AY Emulation on (for 48k programs)                         [1]
+             2 : Interface 1 present                                        [0]
+             3 : SamRam present                                             [0]
+             4 : Multiface 128 present                                      [0]
+02 1  Joystick Selection : 00 - Cursor/Protek/AGF
+                           01 - Kempston                          [01-Kempston]
+                           02 - Sinclair 2 Left  (keys 12345)
+                           03 - Sinclair 1 Right (keys 67890)
+03 2  General Emulation Flags
+        Bit  0 : R-register emulation                                       [1]
+             1 : LDIR emulation                                             [1]
+             2 : Double Interrupt Frequency                                 [0]
+             3 : High Resolution Color emulation with True Interrupt Freq.  [1]
+           4,5 : Video Synchronisation : 1=High, 3=Low, 0,2=Normal          [0]
+             6 : Fast Loading when ROM load routine is used                 [1]
+             7 : Border emulation                                           [1]
+             8 : Screen Refresh mode (1: ON, 0: OFF)                        [1]
+             9 : Start Playing the tape Immediately                         [0]
+                 If this is 0 then the emulator should only load the info
+                 blocks and WAIT when it encounters first DATA block
+            10 : Auto type LOAD&quot;&quot; or press  when in 128k mode [0]
+05 1  Screen Refresh Delay : 1 - 255 (Interrupts between refreshes)         [1]
+      (used when Screen Refresh Mode in General Emul. Flags is ON)
+06 2  Interrupt Frequency  : 0 - 999 Hz                                    [50]
+
+08 8  Reserved for future expansion (Should be 0)
+
+ID : 07  -  Archive Info
+-------
+          Use this block in the beginning of the tape to identify the Title of
+          the game, Author, Publisher, Year of publication, etc. This block is
+          build in a way that future expansions are easily possible. The block
+          consists of Texts. Each text has its Identification Number (which
+          tells us what the text means) and then the ASCII text. To make it
+          possible to skip this block, if needed, the length of the WHOLE block
+          is on the start of it. Note: The information about what hardware the
+          tape uses is in the &#x27;Hardware Type&#x27; block, so no need for it here.
+
+00 2  Length of the block (without this two bytes)
+02 1  Number of Texts
+03 x  Here are all the texts in the format:
+        00 1  Text Identification byte:  00 - Full Title
+                                         01 - Software House / Publisher
+                                         02 - Author(s)
+                                         03 - Year of Publication
+                                         FF - Comment(s)
+        01 1  Length of the Text
+        02 x  Text in ASCII format
+        ....  Next Text
+
+ID : 08  -  Snapshot Block
+-------
+          This, for now, is only to see how you guys think of this format to
+          have actual Snapshot in it too. This would enable one to snapshot the
+          game at the start and still have all the TAPE blocks (for next levels,
+          etc.) in the SAME file. I don&#x27;t know if this is a good idea or not,
+          it was suggested and I have to put it in to see what you mean.
+
+00 1  Snapshot Type : 00 - Z80 Snapshot (Z80 Emulator, Warajevo,...)
+                      01 - SNA Snapshot (JPP, Amiga Spectrum Emulator,...)
+                      02 - SNP Snapshot (Didaktik disk snapshot)
+                      03 - SIT Snapshot (Sinclair 2.0 by Pedro Salaz)
+                      04 - SP  Snapshot (Sinclair 0.99 by Pedro Gimeno)
+01 2  Snapshot Length (so it can be easily skipped)
+03 x  Snapshot itself
+
+ID : 09  -  Custom Info block
+-------
+          This block can be used to save ANY information you want. i.e. if some
+          utility desires to write some stuff into the tape file then this block
+          should be used. it can be upto 65535 bytes long and it can contain
+          ANYTHING ... for instance : If the emulator has some settings that
+          are not described in the &#x27;Emulation Info&#x27; or someone wants to make
+          a block containing POKEs or whatever then they can use this for it.
+          Ofcourse some of these blocks can be standardised in the future ...
+
+00 F  Identification String (in ASCII)
+10 2  Length of the info that follows
+12 x  Custom Info
+
+ID : 0A  -  Jump To Block
+-------
+          This block will enable you to jump from one block to another block in
+          the file. i.e. if you want to skip some blocks or go back some blocks
+          then this is now possible. The value is 2-byte SIGNED RELATIVE offset.
+          Which means if the value is 2 then you jump 2 blocks ahead. If it is
+          -3 you jump 3 blocks back. Simple as possible :)
+
+00 2  Relative Offset : In Binary Complement, MSbit is the sign (FFFF = -1)
+      (this is Offset in BLOCKS, NOT Bytes)
+
+ID : 5A (90 dec, ASCII letter &#x27;Z&#x27;)
+-------
+          This is a block that would be generated if you merged two ZX Tape
+          files together. It is here so you can easily copy the files together
+          and use them. Ofcourse this  means that resulting file would be 8
+          bytes longer than if this block was not used. All you have to
+          do if you encounter this block ID is to skip next 9 bytes. Please, if
+          you can don&#x27;t merge two files together this way, use a utility that
+          will let you do that without having this extra block.
+
+00 9  &#x27;XTape!&#x27; 0x1A MajR MinR  Just skip these 9 bytes and you will end up on
+                               the next ID.
+
+
+Regards,
+  Tomaz
+
+
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div><div class="post" id="p24499"><div class="ph"><a class="d" href="#p24499">1997-03-03</a> <span>…@…</span> </div><pre>
+In article &lt;…@…&gt;, …@… wrote:
+<span class="qt">&gt;ID : 0A  -  Jump To Block</span>
+<span class="qt">&gt;-------</span>
+<span class="qt">&gt;          This block will enable you to jump from one block to another block in</span>
+<span class="qt">&gt;          the file. i.e. if you want to skip some blocks or go back some blocks</span>
+<span class="qt">&gt;          then this is now possible. The value is 2-byte SIGNED RELATIVE offset.</span>
+<span class="qt">&gt;          Which means if the value is 2 then you jump 2 blocks ahead. If it is</span>
+<span class="qt">&gt;          -3 you jump 3 blocks back. Simple as possible :)</span>
+
+Jumping 3 blocks back might be tricky - you either have to rescan the whole
+file while remembering the last 3 blocks you came to, or you have to store
+the positions of the blocks right from the start just in case you find this
+instruction.
+-- 
+---- Ian Collier : …@… : WWW page (including Spectrum section):
+------ <a href="http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html" rel="noreferrer">http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html</a>
+
+New to this group?  Answers to frequently-asked questions can be had from
+<a href="http://www.jetman.demon.co.uk/speccy/faq/index.html" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/faq/index.html</a> .
+Sam Coupï¿½ FAQ: <a href="http://www.mono.org/~unc/Coupe/FAQ.txt" rel="noreferrer">http://www.mono.org/~unc/Coupe/FAQ.txt</a>
+
+
+</pre></div><div class="post" id="p24528"><div class="ph"><a class="d" href="#p24528">1997-03-03</a> <span>…@…</span> </div><pre>
+On Sat, 1 Mar 1997 23:33:04 +0000, …@… (Duncan Harvey)
+wrote:
+
+<span class="qt">&gt;Tomaz Kac  wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;   There were three suggestions for the preferred 3 letter filename extension:</span>
+<span class="qt">&gt;&gt; (The number on the right is how many people voted for that extension)</span>
+<span class="qt">&gt;&gt; .SPT (SpectrumTape)     3</span>
+<span class="qt">&gt;&gt; .TZX (Tape for ZX)      4</span>
+<span class="qt">&gt;&gt; .TPE (as TaPE)          1</span>
+<span class="qt">&gt;&gt; .TPX (TaPe eXtension)   1</span>
+<span class="qt">&gt;&gt; As you can see not many people voted so far :(</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I&#x27;ll be boring and vote with the majority for .TZX</span>
+<span class="qt">&gt;(that&#x27;s if we *have* to restrict ourselves to three letters...bloomin&#x27;</span>
+<span class="qt">&gt;DOS users... ;)</span>
+
+Hehe :) Well, again, the majority ;)))) But then again, if you want you can
+propose an alternative for the systems with long filenames (the proposal was
+.ZXTape by me and I forgot to include it inthere, I will add it back, suggest
+another one that you fancy more ofcourse :) )... 
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;   After these 8 bytes the two bytes with the Major and Minor Revision</span>
+<span class="qt">&gt;&gt; number follow. First byte is Major revision number - the program must be</span>
+<span class="qt">&gt;&gt; able to handle at least this revision number or later to use the file, the</span>
+<span class="qt">&gt;                                                  ^^^^^</span>
+<span class="qt">&gt;Shouldn&#x27;t this be &quot;earlier&quot;?</span>
+
+Hmm, confusing, isnt it ? :) Well, this is how it was ment to be : if the FILE
+has version 3.1 then the Program must be able to Handle ATLEAST Major version 3
+(but it doesnt hurt if it can handle version 4 or 5 or any LATER versions :)
+since if it can handle Maj. revision 6 it must be able to handle Maj. revision 3
+too ) ... :) I am not too good at english and it probably doesn&#x27;t sound as it
+should :( can someone suggest some other , more clearer way ?
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I suppose the assumption is that only *additions* will be made to the</span>
+<span class="qt">&gt;format.  However, what if a block type is removed, made obsolete or has</span>
+<span class="qt">&gt;fields removed/made obsolete?</span>
+
+Well, I don&#x27;t think any blocks will be removed... they could be changed a bit
+and thats why the Major revision is for ... but ofcourse they would have to be
+changed in a way that the &#x27;old&#x27; version could be recognised :) 
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;...or am I just mis-reading or mis-understanding it all?</span>
+
+Probably not... maybe this way it isnt the best way for later
+additions/corections of the individual blocks, but I don&#x27;t think the blocks
+itself would be much changed after we finilise them.. 
+I was thinking of lets say 6 months trial period so we see how the format
+performs (Major revision 0) and then REALLY finalise it ? 
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;[..snip..]</span>
+<span class="qt">&gt;&gt; ID : 05  -  Hardware Type</span>
+
+[HW info snipped]
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Are 16k ZX Spectrums relevent or is that just pedantry?</span>
+
+Yep, ofcourse, added it now :) thanx
+
+<span class="qt">&gt;</span>
+[some more snipped[
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Are Multiface/Multiface128k/Multiface+3/MultiPrint relevent?  You could</span>
+<span class="qt">&gt;load software (e.g. Genie Disassembler) into their shadow RAM so you</span>
+<span class="qt">&gt;might want to make a tape file of that software.</span>
+
+Should I make this like you said it or EACH Multiface separately ?
+
+i.e. like this
+
+17 - Multiface/128k/+3/MultiPrint
+
+or each of them with separate ID ?
+
+<span class="qt">&gt;There were other, less popular, products in the same vein - some rubbish</span>
+<span class="qt">&gt;by Datel Electronics, &quot;Interface 3&quot; (NOT made by Sinclair), any others?</span>
+
+hehe, added rubbish Interface 3 ... I will look in the FAQ and some other
+documents to see what else to include :)
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;What about the interface that came with &quot;Shadow of the Unicorn&quot;?  I</span>
+<span class="qt">&gt;don&#x27;t know what was in it - was it just a RAM pack (with some sort of</span>
+<span class="qt">&gt;paging scheme)?</span>
+
+I think Shadow of the Unicorn paged out normal SPectrum ROM and used its own
+instead :) I am not sure how to implement ROM cartridges in this file yet and if
+I should implement them at all :(
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I&#x27;m clutching at straws here, but what about those dinky cartridges that</span>
+<span class="qt">&gt;plugged into the ZX Interface 2 - no?...oh sorry. </span>
+<span class="qt">&gt;</span>
+
+Hehe, I got a mail from someone about these alrady... but I have NO idea how to
+implement it :)
+
+<span class="qt">&gt;If any of these are relevent (ha!) then &#x27;Emulation Info&#x27; might also be</span>
+<span class="qt">&gt;effected.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Oh, and &quot;14 - Tape deck&quot; for &#x27;Deus Ex Machina&#x27; ;)</span>
+<span class="qt">&gt;</span>
+
+Uhm, I have no idea what you mean :) Can you explain a bit more ?
+
+[snapshot block]
+<span class="qt">&gt;I have to agree with everyone else (except the proponants), that this</span>
+<span class="qt">&gt;type of block has no place in a tape file.</span>
+<span class="qt">&gt;</span>
+
+Yes, same here, but unfortunetly I must include it since now 3 people have
+suggested it :((( bah ... I will just ignore that block in my utilities ;)))
+
+<span class="qt">&gt;Also, am I being dense, or will 128k snapshots be of a length that won&#x27;t</span>
+<span class="qt">&gt;fit into a 2-byte word..?</span>
+
+Yes :) I mean, No you aren&#x27;t dense :)... it was my mistake to only make it 2
+bytes, it is 4 bytes now :) MANY people commented on this :) hehe... thanx
+
+Regards,
+  Tomaz
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div><div class="post" id="p24578"><div class="ph"><a class="d" href="#p24578">1997-03-04</a> <span>…@…</span> </div><pre>
+HI!
+
+I have got this suggestion to implement ROM images in the file format. Basically
+it would be for ANY roms (i.e. Game roms - Interface 2, Shadow of the Unicorn,
+ANY other roms) but unfortunetly the original poster didn&#x27;t know too much about
+it (well he knew more than I do , but not enough to implement it) so I wonder if
+anyone here knows more about it and how should it be handled/implemented (if it
+should be implemented at all) ? the suggestion was like this :
+
+00 1  ROM Type (Have NO idea what should be in here :) )
+01 2  ROM Start Address
+03 2  ROM Length
+05 x  Data
+
+  Thanks for any comments on this ...
+
+Tomaz
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div><div class="post" id="p24581"><div class="ph"><a class="d" href="#p24581">1997-03-04</a> <span>…@…</span> </div><pre>
+On 3 Mar 1997 17:59:28 GMT, …@… (Ian Collier) wrote:
+
+<span class="qt">&gt;In article &lt;…@…&gt;, …@… wrote:</span>
+<span class="qt">&gt;&gt;ID : 0A  -  Jump To Block</span>
+<span class="qt">&gt;&gt;-------</span>
+<span class="qt">&gt;&gt;          This block will enable you to jump from one block to another block in</span>
+<span class="qt">&gt;&gt;          the file. i.e. if you want to skip some blocks or go back some blocks</span>
+<span class="qt">&gt;&gt;          then this is now possible. The value is 2-byte SIGNED RELATIVE offset.</span>
+<span class="qt">&gt;&gt;          Which means if the value is 2 then you jump 2 blocks ahead. If it is</span>
+<span class="qt">&gt;&gt;          -3 you jump 3 blocks back. Simple as possible :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Jumping 3 blocks back might be tricky - you either have to rescan the whole</span>
+<span class="qt">&gt;file while remembering the last 3 blocks you came to, or you have to store</span>
+<span class="qt">&gt;the positions of the blocks right from the start just in case you find this</span>
+<span class="qt">&gt;instruction.</span>
+
+Well, I suggest you keep an array (or linked list) with the pointers to
+different blocks (AND for the Custom Loading Data blocks you should have ALL
+timings stored for each block somewhere... since otherwise you would have to
+rescan the file from beginning to figure out which timings it uses...) this way
+it is very simple to move through the file... (I am using it this way in my
+HypraLoader ...) and remember you need this information just incase you are
+browsing the tape too ... :)
+
+Regards,
+  Tomaz
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div><div class="post" id="p24626"><div class="ph"><a class="d" href="#p24626">1997-03-06</a> <span>…@…</span> </div><pre>
+What about the mouse interfaces, lightpen, lightgun (oops.. no light* thing
+will be emulated by the emulators me thinks.. :-)
+
+Do we need to specify them?  Kempston, AMX, errr.??
+
+Im no expert but I am a bit of a Z80 coder.
+
+John Garner / aka Datasoft of United Minds.
+--
+<span class="qt">|--- University of Kent at Canterbury sandwich year CompSci student ----|</span>
+<span class="qt">|  Spectrum PD/usergroups <a href="http://www.nvg.unit.no/spectrum/jmg7" rel="noreferrer">http://www.nvg.unit.no/spectrum/jmg7</a>		|</span>
+<span class="qt">|Home=The Orchard, Moor Rd, Langham, Colchester, Essex. CO4 5NR. ENGLAND|</span>
+<span class="qt">|Working at DRA Farnborough, Hants._____________________________________|</span>
+
+
+</pre></div><div class="post" id="p24668"><div class="ph"><a class="d" href="#p24668">1997-03-07</a> <span>…@…</span> </div><pre>
+On Thu, 06 Mar 97 13:25:18 GMT, …@… (J.M.Garner) wrote:
+
+<span class="qt">&gt;What about the mouse interfaces, lightpen, lightgun (oops.. no light* thing</span>
+<span class="qt">&gt;will be emulated by the emulators me thinks.. :-)</span>
+
+They are in (revision 8... comming soon ;) ) ... I wonder what are the full
+names (i.e. which light gun is the Sinclair one ?) 
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Do we need to specify them?  Kempston, AMX, errr.??</span>
+
+Already in also ... is AMX and AMS Mouse the same ?
+
+Tomaz
+**************************************************
+Tomaz Kac, University of Maribor, Computer Science
+E-Mail:    …@…
+
+
+</pre></div></main></body></html>

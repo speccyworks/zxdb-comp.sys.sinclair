@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ann: Serial adaptor for the interface 1-bis · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Ann: Serial adaptor for the interface 1-bis</h1><p class="facts">8 posts, 2010-07-24 – 2010-08-07</p><div class="post" id="p222595"><div class="ph"><a class="d" href="#p222595">2010-07-24 07:20:44</a> <span>Dan</span> </div><pre>Hi,
+
+My hobby projects page at <a href="http://zxhobby.leadhoster.com/" rel="noreferrer">http://zxhobby.leadhoster.com/</a> was updated
+with a new device:
+a microcontroller-based adaptor that plugs into the parallel port of
+the Interface 1-Bis and incorporates a standard serial 115.2 kbit/s
+RS232 port, a full-speed USB port and a standard-speed I2C bus port.
+The microcontroller (PIC18F4550) firmware includes a USB stack written
+from scratch, implementing the CDC ACM subclass.
+
+Dan
+
+
+
+
+</pre></div><div class="post" id="p222596"><div class="ph"><a class="d" href="#p222596">2010-07-24 07:29:33</a> <span>Brian Gaff</span> <span>Re: Serial adaptor for the interface 1-bis</span></div><pre>What is an Interface 1 -bis?
+Brian
+
+-- 
+Brian Gaff....Note, this account does not accept Bcc: email.
+ graphics are great, but the blind can&#x27;t hear them
+Email: …@…
+______________________________________________________________________________________________________________
+
+
+&quot;Dan&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; Hi,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; My hobby projects page at <a href="http://zxhobby.leadhoster.com/" rel="noreferrer">http://zxhobby.leadhoster.com/</a> was updated</span>
+<span class="qt">&gt; with a new device:</span>
+<span class="qt">&gt; a microcontroller-based adaptor that plugs into the parallel port of</span>
+<span class="qt">&gt; the Interface 1-Bis and incorporates a standard serial 115.2 kbit/s</span>
+<span class="qt">&gt; RS232 port, a full-speed USB port and a standard-speed I2C bus port.</span>
+<span class="qt">&gt; The microcontroller (PIC18F4550) firmware includes a USB stack written</span>
+<span class="qt">&gt; from scratch, implementing the CDC ACM subclass.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Dan</span>
+<span class="qt">&gt; </span>
+
+
+
+
+
+</pre></div><div class="post" id="p222599"><div class="ph"><a class="d" href="#p222599">2010-07-24 14:51:56</a> <span>Ivan Shmakov</span> <span>Re: Ann: Serial adaptor for the interface 1-bis</span></div><pre><span class="qt">&gt;&gt;&gt;&gt;&gt; Dan  &lt;…@…&gt; writes:</span>
+
+<span class="qt"> &gt; Hi, My hobby projects page at <a href="http://zxhobby.leadhoster.com/" rel="noreferrer">http://zxhobby.leadhoster.com/</a> was</span>
+<span class="qt"> &gt; updated with a new device: a microcontroller-based adaptor that plugs</span>
+<span class="qt"> &gt; into the parallel port of the Interface 1-Bis and incorporates a</span>
+<span class="qt"> &gt; standard serial 115.2 kbit/s RS232 port, a full-speed USB port and a</span>
+<span class="qt"> &gt; standard-speed I2C bus port.  The microcontroller (PIC18F4550)</span>
+<span class="qt"> &gt; firmware includes a USB stack written from scratch, implementing the</span>
+<span class="qt"> &gt; CDC ACM subclass.</span>
+
+	Which immediately makes me wonder:
+
+	О©╫ why not an AVR MCU? it would have allowed for an already
+	  existing software-only USB stack (V-USB [1]) to be used;
+
+	О©╫ OTOH, V-USB documentation claims that its CDC ACM
+	  implementation is quite flaky; is it that the PIC MCU chosen
+	  is, in some way, better than a typical AVR one, so that it
+	  allows for CDC ACM to be implemented properly?
+
+[1] <a href="http://www.obdev.at/products/avrusb/" rel="noreferrer">http://www.obdev.at/products/avrusb/</a>
+
+-- 
+FSF associate member #7257
+
+
+
+</pre></div><div class="post" id="p222603"><div class="ph"><a class="d" href="#p222603">2010-07-26 09:29:02</a> <span>Dan</span> <span>Re: Ann: Serial adaptor for the interface 1-bis</span></div><pre>Dear Mr. Shmakov,
+
+Thank you so much for taking interest in my posting.
+
+Regarding your first question, I chose the PIC18F4550 because:
+1. It comes in a DIP package.  This is absolutely necessary, as I do
+ONLY wired prototypes.
+2. It has exactly the required capabilities, not less and not more
+either.
+3. At 12 MIPS, it is just fast enough.
+4. And last but not least, I happen to own a Microchip programming
+device.
+Factors not taken into consideration:
+1. Price, because it is irrelevant for hobby project.
+2. Availability of ready-made firmware. Firmware provided by
+manufacturers has merely a marketing function: to convince the
+customers that their chip is working, but is otherwise not suited for
+real-life applications, or else it wouldn’t be free. As for other open-
+source USB stacks floating around on the internet, they are written
+mostly in C, mainly by total beginners and have at best an amusement
+value.  By the way, I wouldn’t be caught dead programming a
+microcontroller in C.
+
+As for the second question, I didn’t quite understand your reference
+to <a href="http://www.obdev.at/products/vusb/index.html." rel="noreferrer">http://www.obdev.at/products/vusb/index.html.</a>
+All what is shown there is an, admittedly otherwise amazing, bit-bang
+simulation of a USB port. Now, this may be a retro-computing group,
+but I wonder if anybody would be THAT old-fashioned as to refuse using
+a microcontroller with hardware USB support.
+I aimed anyway at something different: one of the possibly shorter,
+faster and more robust stacks around, which is perfectly feasible,
+because hobbyists have an advantage over professional programmers:
+they don’t need to insure their livelihood, and that of their
+families, with maintenance, customer support, bug fixes and service
+packs till they retire, so they can AFFORD to write proper code, that
+works first-time.
+
+Best regards,
+
+Dan
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;         Which immediately makes me wonder:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;         • why not an AVR MCU? it would have allowed for an already</span>
+<span class="qt">&gt;           existing software-only USB stack (V-USB [1]) to be used;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;         • OTOH, V-USB documentation claims that its CDC ACM</span>
+<span class="qt">&gt;           implementation is quite flaky; is it that the PIC MCU chosen</span>
+<span class="qt">&gt;           is, in some way, better than a typical AVR one, so that it</span>
+<span class="qt">&gt;           allows for CDC ACM to be implemented properly?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; [1]<a href="http://www.obdev.at/products/avrusb/" rel="noreferrer">http://www.obdev.at/products/avrusb/</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; FSF associate member #7257</span>
+
+
+
+
+</pre></div><div class="post" id="p222620"><div class="ph"><a class="d" href="#p222620">2010-07-27 06:02:10</a> <span>Ivan Shmakov</span> <span>Re: Ann: Serial adaptor for the interface 1-bis</span></div><pre><span class="qt">&gt;&gt;&gt;&gt;&gt; Dan  &lt;…@…&gt; writes:</span>
+
+<span class="qt"> &gt; Dear Mr. Shmakov,</span>
+<span class="qt"> &gt; Thank you so much for taking interest in my posting.</span>
+
+	You&#x27;re welcome.
+
+[…]
+
+<span class="qt"> &gt;&gt; • why not an AVR MCU? it would have allowed for an already</span>
+<span class="qt"> &gt;&gt; existing software-only USB stack (V-USB [1]) to be used;</span>
+
+<span class="qt"> &gt; Regarding your first question, I chose the PIC18F4550 because:</span>
+
+<span class="qt"> &gt; 1. It comes in a DIP package.  This is absolutely necessary, as I do</span>
+<span class="qt"> &gt; ONLY wired prototypes.</span>
+
+	Typically, AVR MCU come in both the DIP and SMD packages.
+
+<span class="qt"> &gt; 2. It has exactly the required capabilities, not less and not more</span>
+<span class="qt"> &gt; either.</span>
+
+	Could you please detail on that?  (IOW, RAM and Flash
+	requirements, what else?)
+
+	Of course, the availability of a hardware USB implementation is
+	quite a feature that may warrant using this particular MCU.
+	(I&#x27;m not familiar with Microchip MCU&#x27;s, so I&#x27;ve assumed a
+	wholly-software implementation from your description.)  Still,
+	I&#x27;d like to comment on the following points.
+
+<span class="qt"> &gt; 3. At 12 MIPS, it is just fast enough.</span>
+
+	10 … 20 MIPS is quite typical for AVR.
+
+<span class="qt"> &gt; 4. And last but not least, I happen to own a Microchip programming</span>
+<span class="qt"> &gt; device.</span>
+
+	A simplistic programmer for AVR may take either a few resistors
+	(the one for the parallel port [1]) or a MAX232 and a zener
+	diode (for the serial).  I&#x27;ve used both and there weren&#x27;t any
+	issue worth of speaking of (excluding that the one for the
+	parallel port for some reason may not work with modern hardware
+	anymore.)
+
+[1] <a href="http://www.bsdhome.com/avrdude/" rel="noreferrer">http://www.bsdhome.com/avrdude/</a>
+
+[…]
+
+<span class="qt"> &gt; As for other open- source USB stacks floating around on the internet,</span>
+<span class="qt"> &gt; they are written mostly in C, mainly by total beginners and have at</span>
+<span class="qt"> &gt; best an amusement value.  By the way, I wouldn’t be caught dead</span>
+<span class="qt"> &gt; programming a microcontroller in C.</span>
+
+<span class="qt"> &gt; As for the second question, I didn’t quite understand your reference</span>
+<span class="qt"> &gt; to <a href="http://www.obdev.at/products/vusb/index.html." rel="noreferrer">http://www.obdev.at/products/vusb/index.html.</a></span>
+
+	BTW, V-USB appears to have been written mostly in assembler.
+
+<span class="qt"> &gt; All what is shown there is an, admittedly otherwise amazing, bit-bang</span>
+<span class="qt"> &gt; simulation of a USB port. Now, this may be a retro-computing group,</span>
+<span class="qt"> &gt; but I wonder if anybody would be THAT old-fashioned as to refuse</span>
+<span class="qt"> &gt; using a microcontroller with hardware USB support.</span>
+
+	At the moment I was interested, the problems were the
+	availability and the price.
+
+	From the developer&#x27;s point of view, the library offers a decent
+	interface and is quite easy to use.  Sure, it takes some extra
+	CPU cycles, but, well, “CPU cycles are cheap”, and for the
+	devices I was experimenting with, it wasn&#x27;t an issue.
+
+<span class="qt"> &gt; I aimed anyway at something different: one of the possibly shorter,</span>
+<span class="qt"> &gt; faster and more robust stacks around, which is perfectly feasible,</span>
+<span class="qt"> &gt; because hobbyists have an advantage over professional programmers:</span>
+<span class="qt"> &gt; they don’t need to insure their livelihood, and that of their</span>
+<span class="qt"> &gt; families, with maintenance, customer support, bug fixes and service</span>
+<span class="qt"> &gt; packs till they retire, so they can AFFORD to write proper code, that</span>
+<span class="qt"> &gt; works first-time.</span>
+
+	Given that such a proper USB stack code is by now available, I
+	could only hope that it, at some moment, will turn into a nice
+	and well-documented library for the other PIC hobbyists to use.
+
+-- 
+FSF associate member #7257
+
+
+
+</pre></div><div class="post" id="p222624"><div class="ph"><a class="d" href="#p222624">2010-07-27 10:31:58</a> <span>Guesser</span> <span>Re: Ann: Serial adaptor for the interface 1-bis</span></div><pre>On 27/07/2010 07:02, Ivan Shmakov wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt; 	A simplistic programmer for AVR may take either a few resistors</span>
+<span class="qt">&gt; 	(the one for the parallel port [1]) or a MAX232 and a zener</span>
+<span class="qt">&gt; 	diode (for the serial).  I&#x27;ve used both and there weren&#x27;t any</span>
+<span class="qt">&gt; 	issue worth of speaking of (excluding that the one for the</span>
+<span class="qt">&gt; 	parallel port for some reason may not work with modern hardware</span>
+<span class="qt">&gt; 	anymore.)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; [1] <a href="http://www.bsdhome.com/avrdude/" rel="noreferrer">http://www.bsdhome.com/avrdude/</a></span>
+
+you don&#x27;t even need the rs232 level converter chip, I use the serial 
+port to program mine, using just 4 resistors and one npn transistor out 
+of the bits box :)
+
+
+
+</pre></div><div class="post" id="p222633"><div class="ph"><a class="d" href="#p222633">2010-07-28 02:42:57</a> <span>zxbruno</span> <span>Re: Ann: Serial adaptor for the interface 1-bis</span></div><pre>On Jul 24, 12:20 am, Dan &lt;…@…&gt; wrote:
+<span class="qt">&gt; Hi,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; My hobby projects page at<a href="http://zxhobby.leadhoster.com/was" rel="noreferrer">http://zxhobby.leadhoster.com/was</a> updated</span>
+<span class="qt">&gt; with a new device:</span>
+<span class="qt">&gt; a microcontroller-based adaptor that plugs into the parallel port of</span>
+<span class="qt">&gt; the Interface 1-Bis and incorporates a standard serial 115.2 kbit/s</span>
+<span class="qt">&gt; RS232 port, a full-speed USB port and a standard-speed I2C bus port.</span>
+<span class="qt">&gt; The microcontroller (PIC18F4550) firmware includes a USB stack written</span>
+<span class="qt">&gt; from scratch, implementing the CDC ACM subclass.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Dan</span>
+
+Well, here&#x27;s my 2 cents (I&#x27;m not a hardware guru nor a programmer,
+just an end user):
+
+First, keep up the good work. Any hobby requires a lot of time to
+bring things &quot;to life&quot;, so congrats.
+
+It looks interesting, but the fact that it needs a &quot;different&quot;
+Interface 1 turns it into a curiosity for people like me, who are
+enthusiastic about these things but can&#x27;t build them. If you&#x27;re doing
+this just as a hobby that&#x27;s perfectly fine, but if you would like your
+projects to have a user base they would need to 1-appeal to users, 2-
+be for sale, 3-have great support from you or from documentation
+(online or offline or both).
+
+I&#x27;ve always been a hardware enthusiast. When I think of serial
+communication I immediately think of Paul Farrow&#x27;s work and utilities
+to use an original IF1 or the serial port on the original 128K or
+later models to send/receive data between a Spectrum and a PC. There
+are also adapters and leads that convert the non-standard Sinclair
+serial ports to standard 9-pin ones. When I think of USB the ZX Matrix
+comes to mind. I haven&#x27;t bought it yet, but it&#x27;s fully supported,
+documented and uses software that is also used on other IDE
+interfaces.
+And we now have the Spectranet (still under development, but fully
+documented and full of possibilities) and the SIF (also full of
+possibilities, but not a lot of English support or documentation for
+now).
+
+Again, keep up the good work. I hope my constructive criticism won&#x27;t
+be seen negatively.
+
+
+
+</pre></div><div class="post" id="p222702"><div class="ph"><a class="d" href="#p222702">2010-08-07 01:34:47</a> <span>jgharston</span> <span>Re: Ann: Serial adaptor for the interface 1-bis</span></div><pre>Dan wrote:
+<span class="qt">&gt; a microcontroller-based adaptor that plugs into the parallel port of</span>
+<span class="qt">&gt; the Interface 1-Bis and incorporates a standard serial 115.2 kbit/s</span>
+
+Shame the centronics port&#x27;s not on &amp;FB, otherwise it could have been
+drop-in replacement for any other code that replaced the ZX Printer
+on &amp;FB with a Centronics printer.
+
+(eg <a href="http://mdfs.net/Software/Spectrum/Harston" rel="noreferrer">http://mdfs.net/Software/Spectrum/Harston</a>)
+JGH
+
+
+
+</pre></div></main></body></html>

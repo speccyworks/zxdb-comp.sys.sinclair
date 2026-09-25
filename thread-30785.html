@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Screen$ saver question · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Screen$ saver question</h1><p class="facts">11 posts, 2005-02-23 – 2005-02-25</p><div class="post" id="p190095"><div class="ph"><a class="d" href="#p190095">2005-02-23 11:44:07</a> <span>Bohus Kral</span> </div><pre>I am posting thru Google.
+
+Can you explain me how does work the routine that produces border
+stripes ? I mean the starting stripes cyan and red. Their movement is
+not smooth but it is jerky as if the sound is played on real tape. I
+cannot imagine how can be such effect programmed.
+
+This is meant for Paul Dunn.
+
+B
+
+
+
+</pre></div><div class="post" id="p190097"><div class="ph"><a class="d" href="#p190097">2005-02-23 12:27:24</a> <span>cyborg</span> <span>Re: Screen$ saver question</span></div><pre>
+Bohus Kral wrote:
+<span class="qt">&gt; I am posting thru Google.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Can you explain me how does work the routine that produces border</span>
+<span class="qt">&gt; stripes ? I mean the starting stripes cyan and red. Their movement is</span>
+<span class="qt">&gt; not smooth but it is jerky as if the sound is played on real tape. I</span>
+<span class="qt">&gt; cannot imagine how can be such effect programmed.</span>
+
+Well I&#x27;m not Dunny but I&#x27;d imagine that when Spin emulates tape
+playback in real mode it just shoves the appropriate bits into port FE
+according to how the data information on the tape would be represented
+as sound.
+
+
+
+
+</pre></div><div class="post" id="p190098"><div class="ph"><a class="d" href="#p190098">2005-02-23 12:41:28</a> <span>Dunny</span> <span>Re: Screen$ saver question</span></div><pre>
+&quot;Bohus Kral&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt;I am posting thru Google.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Can you explain me how does work the routine that produces border</span>
+<span class="qt">&gt; stripes ? I mean the starting stripes cyan and red. Their movement is</span>
+<span class="qt">&gt; not smooth but it is jerky as if the sound is played on real tape. I</span>
+<span class="qt">&gt; cannot imagine how can be such effect programmed.</span>
+
+It&#x27;s simple. The cyan/red bars are a certain height. At the start of each 
+frame of animation, you draw those bars starting at a lower height 
+(increment the position) than the last frame. When you reach the height of 
+the bars from the top, you move back to the start. This way, you get the 
+bars scrolling smoothly down the screen.
+
+Whilst doing this, at each frame you add a small random amount to the speed 
+that the bars move, or the number of pixels that they move per frame. This 
+only has to be small - 0.5 pixels up to about 2.5 pixels IIRC. This gives 
+the &quot;old tape&quot; look.
+
+I&#x27;d send you the source but I no longer have it.
+
+I was pleasantly surprised to find that the screensaver still works fine 
+here under Windows XP, and still looks a lot better than the competition 
+that was around at the time. Has anyone else written any new speccy 
+screensavers recently?
+
+D.
+
+
+
+
+
+</pre></div><div class="post" id="p190099"><div class="ph"><a class="d" href="#p190099">2005-02-23 12:45:28</a> <span>Dunny</span> <span>Re: Screen$ saver question</span></div><pre>&quot;cyborg&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Bohus Kral wrote:</span>
+<span class="qt">&gt;&gt; I am posting thru Google.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Can you explain me how does work the routine that produces border</span>
+<span class="qt">&gt;&gt; stripes ? I mean the starting stripes cyan and red. Their movement is</span>
+<span class="qt">&gt;&gt; not smooth but it is jerky as if the sound is played on real tape. I</span>
+<span class="qt">&gt;&gt; cannot imagine how can be such effect programmed.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Well I&#x27;m not Dunny but I&#x27;d imagine that when Spin emulates tape</span>
+<span class="qt">&gt; playback in real mode it just shoves the appropriate bits into port FE</span>
+<span class="qt">&gt; according to how the data information on the tape would be represented</span>
+<span class="qt">&gt; as sound.</span>
+
+SPIN does that, yes, but Screen$ doesn&#x27;t - When I&#x27;d started writing Screen$, 
+I had never looked at my own emulator (SPIN and BASin were far into the 
+future) and so I programmed Screen$ to build the tape images and sounds from 
+the .scr file, by watching RealSpectrum closely and using a hex editor on 
+WAV files made by it. I had no idea how to understand z80 assembly at the 
+time, so couldn&#x27;t figure out how the ROM loader worked, so it was all &quot;try 
+and see&quot; - the main breakthrough came when I found that there was a yellow 
+*and* a blue bar per tape edge, not one.
+
+At that point people started &quot;hearing&quot; the loading sound in their heads, 
+even before I had implemented the sound, and I knew I had the visuals right 
+:)
+
+To my mind, Screen$&#x27;s pilot tones are too short - but again I had no idea 
+what a TState was when I wrote it, so the TZX file format was useless to me.
+
+I&#x27;m sure that Phil suggested I read the FAQ at one point, but it was all 
+senseless garbage at the time :)
+
+D.
+
+
+
+
+
+</pre></div><div class="post" id="p190106"><div class="ph"><a class="d" href="#p190106">2005-02-23 16:40:21</a> <span>Bohus Kral</span> <span>Re: Screen$ saver question</span></div><pre>
+<span class="qt">&gt; Whilst doing this, at each frame you add a small random amount to the</span>
+speed
+<span class="qt">&gt; that the bars move, or the number of pixels that they move per frame. This</span>
+<span class="qt">&gt; only has to be small - 0.5 pixels up to about 2.5 pixels IIRC. This gives</span>
+<span class="qt">&gt; the &quot;old tape&quot; look.</span>
+
+This means that the tape effect is made only graphically ? I suspect that
+the screen files are not a kind of TZX format so the sound is clean and
+smooth as if it is saving from real Spectrum, or also the sound is
+randomized ?
+
+B
+
+Already posting thru outlook express.
+
+
+
+
+
+</pre></div><div class="post" id="p190108"><div class="ph"><a class="d" href="#p190108">2005-02-23 16:59:55</a> <span>Dunny</span> <span>Re: Screen$ saver question</span></div><pre>
+&quot;Bohus Kral&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Whilst doing this, at each frame you add a small random amount to the</span>
+<span class="qt">&gt; speed</span>
+<span class="qt">&gt;&gt; that the bars move, or the number of pixels that they move per frame. </span>
+<span class="qt">&gt;&gt; This</span>
+<span class="qt">&gt;&gt; only has to be small - 0.5 pixels up to about 2.5 pixels IIRC. This gives</span>
+<span class="qt">&gt;&gt; the &quot;old tape&quot; look.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; This means that the tape effect is made only graphically ? I suspect that</span>
+<span class="qt">&gt; the screen files are not a kind of TZX format so the sound is clean and</span>
+<span class="qt">&gt; smooth as if it is saving from real Spectrum, or also the sound is</span>
+<span class="qt">&gt; randomized ?</span>
+
+The tape effect is made graphically, yes. The screen files are stored as 
+.scr files - a straight dump of the memory from address 16384, for 6912 
+bytes. Nothing like a TZX :)
+
+I use the data, along with a knowledge of the ROM&#x27;s timings to build the 
+sound on the fly. There is *some* randomising of the output, but only to 
+slightly &quot;fuzz&quot; it.
+
+Again, I&#x27;d have to check my source, as Screen$ is a tad old now. 
+Unfortunately I don&#x27;t have the source anymore :(
+
+Maybe when I get round to doing Screen$ II, I&#x27;ll add more tape-aging effects 
+in.
+
+D.
+
+
+
+
+
+</pre></div><div class="post" id="p190127"><div class="ph"><a class="d" href="#p190127">2005-02-24 10:59:01</a> <span>Bohus Kral</span> <span>Re: Screen$ saver question</span></div><pre>And how you make the height of yellow and blue stripes ? It isn&#x27;t made by
+changing border color in some frequency ? It is somehow artificially made ?
+Because in 640x480 I have 85Hz.
+
+B
+
+
+
+
+
+</pre></div><div class="post" id="p190131"><div class="ph"><a class="d" href="#p190131">2005-02-24 15:07:27</a> <span>Dunny</span> <span>Re: Screen$ saver question</span></div><pre>
+&quot;Bohus Kral&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; And how you make the height of yellow and blue stripes ? It isn&#x27;t made by</span>
+<span class="qt">&gt; changing border color in some frequency ? It is somehow artificially made </span>
+<span class="qt">&gt; ?</span>
+<span class="qt">&gt; Because in 640x480 I have 85Hz.</span>
+
+If you read the TZX spec, you&#x27;ll see that the pulses used (or edge lengths) 
+are of varying TStates lengths. You then work out how much of the border the 
+speccy can display in that period of time. It works out to be between 3-4 
+and 8-10 scanlines (from memory, very roughly). So you just switch the 
+colour you&#x27;re using after that period of time.
+
+D.
+
+
+
+
+
+</pre></div><div class="post" id="p190135"><div class="ph"><a class="d" href="#p190135">2005-02-24 15:37:44</a> <span>Bohus Kral</span> <span>Re: Screen$ saver question</span></div><pre>
+<span class="qt">&gt; If you read the TZX spec, you&#x27;ll see that the pulses used (or edge</span>
+lengths)
+<span class="qt">&gt; are of varying TStates lengths. You then work out how much of the border</span>
+the
+<span class="qt">&gt; speccy can display in that period of time. It works out to be between 3-4</span>
+<span class="qt">&gt; and 8-10 scanlines (from memory, very roughly). So you just switch the</span>
+<span class="qt">&gt; colour you&#x27;re using after that period of time.</span>
+
+And how do you calculate that period of time ?
+
+B
+
+
+
+
+
+</pre></div><div class="post" id="p190136"><div class="ph"><a class="d" href="#p190136">2005-02-24 17:23:05</a> <span>Lemmiwinks, The Gerbil King</span> <span>Re: Screen$ saver question</span></div><pre>On Thu, 24 Feb 2005 16:37:44 +0100, &quot;Bohus Kral&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; If you read the TZX spec, you&#x27;ll see that the pulses used (or edge</span>
+<span class="qt">&gt;lengths)</span>
+<span class="qt">&gt;&gt; are of varying TStates lengths. You then work out how much of the border</span>
+<span class="qt">&gt;the</span>
+<span class="qt">&gt;&gt; speccy can display in that period of time. It works out to be between 3-4</span>
+<span class="qt">&gt;&gt; and 8-10 scanlines (from memory, very roughly). So you just switch the</span>
+<span class="qt">&gt;&gt; colour you&#x27;re using after that period of time.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;And how do you calculate that period of time ?</span>
+
+You read the TZX spec, like Dunny said, which tells you exactly how long
+in T-states. (224 T-states = the time it takes to draw one screen line,
+69888 T-states = the time it takes to draw one full frame on a 48K
+speccy). &#x27;Tis all in the FAQ.
+
+
+
+</pre></div><div class="post" id="p190156"><div class="ph"><a class="d" href="#p190156">2005-02-25 01:49:11</a> <span>Philip Kendall</span> <span>Re: Screen$ saver question</span></div><pre>In article &lt;…@…&gt;,
+Lemmiwinks, The Gerbil King &lt;…@…&gt; wrote:
+<span class="qt">&gt;On Thu, 24 Feb 2005 16:37:44 +0100, &quot;Bohus Kral&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; If you read the TZX spec, you&#x27;ll see that the pulses used (or edge</span>
+<span class="qt">&gt;&gt;&gt;lengths) are of varying TStates lengths. </span>
+
+[ ... ]
+
+<span class="qt">&gt;&gt;And how do you calculate that period of time ?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;You read the TZX spec, like Dunny said, which tells you exactly how long</span>
+<span class="qt">&gt;in T-states.</span>
+
+Or more directly, read the (Logan and O&#x27;Hara) ROM disassembly. The TZX
+spec has the number of pilot pulses wrong because the author a) didn&#x27;t
+check his fenceposts correctly and b) just copied the wrong number down
+without bothering to check it at all :-(
+
+Cheers,
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div></main></body></html>

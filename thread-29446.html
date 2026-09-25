@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANNOUNCE: Party Willy (Part 2, PW128) · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANNOUNCE: Party Willy (Part 2, PW128)</h1><p class="facts">1 posts, 2004-04-23 – 2004-04-23</p><div class="post" id="p176766"><div class="ph"><a class="d" href="#p176766">2004-04-23 07:38:12</a> <span>Andrew Broad</span>  <a class="badge" href="https://spectrumcomputing.co.uk/entry/16716">ZXDB: Party Willy</a></div><pre>(…@… is for spammers only now - my current
+email-address is on my website)
+
+
+Today I release Part 2 of my new Jet Set Willy game, Party Willy - so
+called because it&#x27;s in several parts, most notably two 48K JSW parts,
+which I have just combined to produce a single JSW128 game.
+
+Party Willy is released as a box-set consisting of the following:
+
+* Party Willy itself: the brand new game from Broadsoft, featuring
+reinterpretations of the original Jet Set Willy rooms (and a few from
+other sources), revamped versions of 27 old rooms that I wrote in
+1993, and many brand new rooms. I feel I have captured much of the
+atmosphere of the original JSW, whilst maintaining the Broadsoft
+standards of technical innovation. It is long overdue to return to the
+art and craft of quirky features, that&#x27;s what this game is about.
+School&#x27;s in session.
+
+* The old Jet Set Willy: Manic Miner conversion which I wrote in 1993:
+the 20 MM caverns, plus 27 rooms of my own, which have been revamped
+and included in Party Willy itself.
+
+* The new Jet Set Willy: Manic Miner: a semi-automatic conversion of
+MM to JSW, now with just the 20 MM caverns plus &quot;Master Bedroom&quot;, but
+with guardians, proper items, and other gubbins.
+
+* Manic Miner: Jet Set Willy: a three-volume hand-conversion of JSW to
+MM which I wrote between 1993 and 1996, and of which I have since
+edited other aspects (most notably the Room 19 pictures).
+
+* reniM cinaM: a laterally-inverted version of MM, generated by a
+program called MirrorMM which will be released in the future as part
+of Version 1.3 of my SPECSAISIE toolkit. I&#x27;ve even worked out how to
+edit the title-screen tune, the switch-behaviour in the Kong-Beast
+rooms, and mirror the solar beam!
+
+* ylliW teS teJ: a laterally-inverted version of JSW, generated by a
+program called MirrorJSW which will be released in the future as part
+of Version 1.3 of my SPECSAISIE toolkit.
+
+Party Willy is available today for downloading from my website. The
+changes since the 12th April release are:
+* PART2.TAP added;
+* PW128.TAP added;
+* ROOMS_PART2.TXT added;
+* TECHNICA.TXT added;
+* README.TXT edited and updated;
+* very minor modifications to ROOMS_PART1.TXT and MIRRORJSW.TAP (the
+games themselves are completely unchanged).
+
+--
+Dr. Andrew Broad
+<a href="http://www.geocities.com/andrewbroad/" rel="noreferrer">http://www.geocities.com/andrewbroad/</a>
+<a href="http://www.geocities.com/andrewbroad/spectrum/" rel="noreferrer">http://www.geocities.com/andrewbroad/spectrum/</a>
+<a href="http://www.geocities.com/andrewbroad/spectrum/willy/" rel="noreferrer">http://www.geocities.com/andrewbroad/spectrum/willy/</a>
+<a href="http://www.geocities.com/andrewbroad/spectrum/download/" rel="noreferrer">http://www.geocities.com/andrewbroad/spectrum/download/</a>
+
+<a href="http://groups.yahoo.com/group/manicminerandjetsetwilly/" rel="noreferrer">http://groups.yahoo.com/group/manicminerandjetsetwilly/</a>
+
+
+
+</pre></div></main></body></html>

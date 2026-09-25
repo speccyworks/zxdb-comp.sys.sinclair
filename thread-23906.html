@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The old days part 2. · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>The old days part 2.</h1><p class="facts">3 posts, 2001-12-04 – 2001-12-04</p><div class="post" id="p123710"><div class="ph"><a class="d" href="#p123710">2001-12-04 19:52:16</a> <span>Brian Gaff</span> </div><pre>The Gnome at Home BB.
+
+Who recalls it? I had some pages on there and some telesoftware too. I also
+remember the viewdata pictures, which were converted from grabbed bits of
+Speccy screens by a very clever bit of software by Pat Reilly, known as
+Patman. He also had a BB for a while which ran Micron software on a bank of
+Microdrives and 2 Speccy machines networked via IF 1, it had an auto answer
+modified VTX 5000, and used 1200 baud half duplex which the Modem 1000 for
+the Beeb and the VTX could access. Worked fine till it got a faulty file on
+the drive...
+
+Talking of Half Duplex, we used to upload the Speccy stuff with the above
+mode straight to Prestel&#x27;s gateways at Croydon. Kind of nice to see a lil ol
+Speccy telling a mainframe what to do.
+
+It was not interactive, it was called bulk software, and was written by Mike
+Sun.
+
+By the way, does anyone have a copy of Dr Spectrum? A Lisa type artificial
+intel. proggy that Patman used to run on his BB to help us run up the phone
+bill.
+
+Brian
+
+
+--
+Brian Gaff - Sorry, can&#x27;t see pictures, graphics are great, but the blind
+can&#x27;t hear them
+…@…
+
+
+
+
+
+</pre></div><div class="post" id="p123725"><div class="ph"><a class="d" href="#p123725">2001-12-04 22:00:28</a> <span>Dan Antohi</span> <span>&#x27;New&#x27; hardware project: IF1_Bis</span></div><pre>Hi everybody,
+
+IF1-Bis is a project that took up a good part of my spare time for the last
+four or five years. Now that it is practically completed, I couldn&#x27;t resist
+sharing it with other Spectrum hardware enthusiasts (just in case there are
+any left).
+
+It is, in essence, a &#x27;better Interface 1&#x27;, featuring: RAM disk, hard disk
+and parallel printer port, also used to connect to a PC.
+
+The full documentation, including the commented source code, is available
+at: <a href="http://members.freemail.absa.co.za/dan_antohi/" rel="noreferrer">http://members.freemail.absa.co.za/dan_antohi/</a> or
+<a href="http://www.icon.co.za/~dantohi/" rel="noreferrer">http://www.icon.co.za/~dantohi/</a>
+
+Regards,
+Dan
+
+…@…
+
+
+
+
+
+</pre></div><div class="post" id="p123734"><div class="ph"><a class="d" href="#p123734">2001-12-04 22:43:04</a> <span>icabod</span> <span>Re: &#x27;New&#x27; hardware project: IF1_Bis</span></div><pre>: IF1-Bis is a project that took up a good part of my spare time for the last
+[snip]
+checked it out quickly, and it looks rather nice.  i&#x27;ll give it a proper
+check when i get more chance (like when i&#x27;m at work tomorrow ;]).
+
+i&#x27;ve posted something about it on <a href="http://www.raww.org/" rel="noreferrer">http://www.raww.org/</a>  (plug plug!)
+this should keep the unbelievers quiet (see other threads ;]).
+
+
+and in case anyone missed the original post:
+: <a href="http://www.icon.co.za/~dantohi/" rel="noreferrer">http://www.icon.co.za/~dantohi/</a>
+
+
+peace,
+  &#x27;bod
+             _________________________________________
+             \ …@… | …@… /
+              \________ <a href="http://www.raww.org" rel="noreferrer">http://www.raww.org</a> ________/
+
+
+
+</pre></div></main></body></html>

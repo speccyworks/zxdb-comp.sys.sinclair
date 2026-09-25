@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSSCGC 1998 : The rules &amp; judges · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>CSSCGC 1998 : The rules &amp; judges</h1><p class="facts">13 posts, 1998-03-09 – 1998-03-15</p><div class="post" id="p35023"><div class="ph"><a class="d" href="#p35023">1998-03-09</a> <span>…@…</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+Hi everyone,
+
+Seeing as nobody else came forward as a judge there will now be two
+judges namely myself and Alistair Nelson.
+
+I&#x27;ve set up two mailing lists, an archive and a standard mailbox over
+here but more on that in a minute. Firstly, I&#x27;ll just go over the
+rules:
+
+Rules:
+======
+
+ 1. Entries *must* be written by you. (Obvious really - Ed) If it&#x27;s
+discovered that your entry has previously appeared in *any* Computer
+Magazine as a type-in listing (e.g. Sinclair Programs and Sinclair
+User) it will be disallowed.
+
+ 2. At 00:00 UTC on the closing date the mail server will be set to
+bounce all mail to the entries address. (fnar! - Ed)
+
+ 3. The judges decision is final and no correspondance will be entered
+in to.
+
+ 4. In keeping with Fidonet tradition there is no rule 4.
+
+ 5. All entries should be supplied in a format that will run in X128
+as that is the Emulator that we&#x27;ll be using. TZX files are preferred
+as we can also check them on a real Speccy (a +2 in my case, don&#x27;t
+know about Alistair) without too much difficulty, followed by TAP,
+then Z80/SNA. Send me the program on Cassette in a Jiffy Bag if you
+have to and, if all else fails and it&#x27;s in BASIC send me the listing
+by e-mail!
+
+ 6. You may use whatever programming system you want as long as the
+resulting program works as detailed in Paragraph 5. :)
+
+ 7. If you plan on making a TZX file do a crap loading screen as well
+so we can have a laugh. (fnar! - Ed) A sample loader (for anyone who&#x27;s
+forgotten how to do them) is given below.
+
+Sample Loader:
+==============
+
+10 BORDER 0 : PAPER 0 : INK 0 : CLS
+20 LOAD &quot;&quot; SCREEN$
+30 LOAD &quot;&quot;
+
+Instructions:
+=============
+
+If you have any queries about the competition please send e-mail to
+csscgc-admin (at) salterg (dot) demon (dot) co (dot) uk and one of us
+will get back to you asap
+
+When you&#x27;ve finished your entry send it to csscgc-entries (at) salterg
+(dot) demon (dot) co (dot) uk with a subject line along the lines of
+&quot;CSSCGC 1998 : Entry n from Your Name&quot; so that we know who it&#x27;s from
+
+If you want to look at the entries that have been received send a
+message to csscgc-entries-archive (at) salterg (dot) demon (dot) co
+(dot) uk with &quot;INDEX&quot; as the subject
+
+Once we&#x27;ve decided on the winners (top 20) we&#x27;ll post them (*not* the
+binaries - Ed) to the group, zip all of the entries up (after having
+renamed them to TLAs and making them into a TZX and TAP file) and put
+the archive up on my Demon web space.
+
+The closing date for entries is Monday 13 April 1998 and any entries
+received after that date will be disallowed.
+
+Cya,
+
+Barry
+-- 
+Barry Salter                   PGP Key available from Key Servers
+E-mail: …@…, ICQ: 809009
+Page me! wwp.mirabilis.com/809009, …@…
+Key ID: 1024/0xEFDCA76D, Key available at: wwwkeys.pgp.net
+Fingerprint: 1779 6E16 35A5 717E  7FBB C012 2FD2 8066
+-- 
+Es brilig war.  Die schlichte Toven
+	Wirrten und wimmelten in Waben;
+Und aller-mumsige Burggoven
+	Dir mohmen Rath ausgraben.
+		-- Lewis Carrol, &quot;Through the Looking Glass&quot;
+
+
+
+</pre></div><div class="post" id="p35071"><div class="ph"><a class="d" href="#p35071">1998-03-10</a> <span>andrew cadley</span> <span>Re: CSSCGC 1998 : The rules &amp; judges</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+…@… wrote:
+
+<span class="qt">&gt; The closing date for entries is Monday 13 April 1998 and any entries</span>
+<span class="qt">&gt; received after that date will be disallowed.</span>
+
+That is *way* too soon. Especially as, by a remarkable series of
+coincidences and the Easter holidays it only gives me a couple of weeks
+during which I&#x27;m likely to be incredibly busy. :-(
+
+AndyC
+
+
+</pre></div><div class="post" id="p35075"><div class="ph"><a class="d" href="#p35075">1998-03-10</a> <span>…@…</span> <span>Re: CSSCGC 1998 : The rules &amp; judges</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+cOn Tue, 10 Mar 1998 08:19:43 +0000, The Starglider
+ wrote:
+
+<span class="qt">&gt;A fair while ago &lt;…@…&gt;,</span>
+<span class="qt">&gt;…@… said something along the lines of</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;The closing date for entries is Monday 13 April 1998 and any entries</span>
+<span class="qt">&gt;&gt;received after that date will be disallowed.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;By only the 13th April?!? Come on! There wasn&#x27;t enough time last year,</span>
+<span class="qt">&gt;but only a month! A lot of us are very busy!</span>
+
+Okay then. I&#x27;m feeling generous ;) You can have till the 14th instead
+(fnar! - Ed). Seriously though, I&#x27;ll extend it to the 8th of June
+which is (for those of you who haven&#x27;t guessed - Ed) a Monday. ;)
+
+BTW, there&#x27;s no point trying to get anything from the archive atm &#x27;cos
+there haven&#x27;t been any entries. ;) I&#x27;m just going to lock the archive
+out until the closing date now. (fnar! - Ed)
+
+When it reopens send a message to csscgc-entries-archive (at) salterg
+(dot) demon (dot) co (dot) uk with INDEX as the subject (NO QUOTES!).
+
+HTH,
+
+Barry
+-- 
+Barry Salter                   PGP Key available from Key Servers
+E-mail: …@…, ICQ: 809009
+Page me! wwp.mirabilis.com/809009, …@…
+Key ID: 1024/0xEFDCA76D, Key available at: wwwkeys.pgp.net
+Fingerprint: 1779 6E16 35A5 717E  7FBB C012 2FD2 8066
+-- 
+Some people have a way about them that seems to say: &quot;If I have only
+one life to live, let me live it as a jerk.&quot;
+
+
+
+</pre></div><div class="post" id="p35092"><div class="ph"><a class="d" href="#p35092">1998-03-10</a> <span>…@…</span> <span>Re: CSSCGC 1998 : The rules &amp; judges</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+Once upon a time in comp.sys.sinclair, the great sage
+…@… did speak,
+
+
+<span class="qt">&gt;  5. All entries should be supplied in a format that will run in X128</span>
+<span class="qt">&gt; as that is the Emulator that we&#x27;ll be using. TZX files are preferred</span>
+<span class="qt">&gt; as we can also check them on a real Speccy (a +2 in my case, don&#x27;t</span>
+<span class="qt">&gt; know about Alistair) without too much difficulty, followed by TAP,</span>
+<span class="qt">&gt; then Z80/SNA. Send me the program on Cassette in a Jiffy Bag if you</span>
+<span class="qt">&gt; have to and, if all else fails and it&#x27;s in BASIC send me the listing</span>
+<span class="qt">&gt; by e-mail!</span>
+
+
+Unfortunately my emulator (zx32) will only save as .sna or .z80,
+so it&#x27;ll have to be one of them.  Oh well, never mind, I&#x27;ve got a
+couple done already and I&#x27;m working on a top secret project to
+provide a much needed update to one of the oldest Speccy games
+around.  I won&#x27;t give you any more info than that until I&#x27;ve finished
+it.
+-- 
+Derek Jolly  (…@…)  (Remove the &#x27;x&#x27; for e-mail)
+
+- Did you hear about the Buddhist who refused his dentist&#x27;s novocaine
+- during root canal work?  He wanted to transcend dental medication.
+
+
+
+</pre></div><div class="post" id="p35093"><div class="ph"><a class="d" href="#p35093">1998-03-10</a> <span>…@…</span> <span>Re: CSSCGC 1998 : The rules &amp; judges</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+Quoth …@… (Derek Jolly):
+
+<span class="qt">&gt;Unfortunately my emulator (zx32) will only save as .sna or .z80,</span>
+<span class="qt">&gt;so it&#x27;ll have to be one of them.  Oh well, never mind, I&#x27;ve got a</span>
+<span class="qt">&gt;couple done already and I&#x27;m working on a top secret project to</span>
+<span class="qt">&gt;provide a much needed update to one of the oldest Speccy games</span>
+<span class="qt">&gt;around.  I won&#x27;t give you any more info than that until I&#x27;ve finished</span>
+<span class="qt">&gt;it.</span>
+<span class="qt">&gt;-- </span>
+
+i&#x27;m stuck with z80/sna too. shame. ah well, time to wheel out the
+stuff i didn&#x27;t quite finish last time.
+
+
+--
+Tony Blews, tony @ netlrp.uk.com (autoresponder)
+<a href="http://jumper.mcc.ac.uk/~tonyb/" rel="noreferrer">http://jumper.mcc.ac.uk/~tonyb/</a>
+
+
+
+
+</pre></div><div class="post" id="p35094"><div class="ph"><a class="d" href="#p35094">1998-03-10 12:10:32</a> <span>…@…</span> <span>Re: CSSCGC 1998 : The rules &amp; judges</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+In article &lt;…@…&gt;,
+  …@… wrote:
+<span class="qt">&gt; The closing date for entries is Monday 13 April 1998 and any entries</span>
+<span class="qt">&gt; received after that date will be disallowed.</span>
+
+You might want to rethink that! From experience of the first two competitions,
+you need to give people at least two months, preferably three, with plenty of
+reminders. After the first month of the last compilation I think I&#x27;d received
+about 7 games and was almost ready to call it a day through lack of
+interest..... Luckily things picked up after that!
+
+I&#x27;ll be working on at least one entry, though.... :-)
+
+
+
+Blood.
+
+-----== Posted via Deja News, The Leader in Internet Discussion ==-----
+<a href="http://www.dejanews.com/" rel="noreferrer">http://www.dejanews.com/</a>   Now offering spam-free web-based newsreading
+
+
+</pre></div><div class="post" id="p35097"><div class="ph"><a class="d" href="#p35097">1998-03-11</a> <span>graham goring</span> <span>Re: CSSCGC 1998 : The rules &amp; judges</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+Quoth the Raven in article &lt;…@…&gt;,
+…@… writes
+<span class="qt">&gt;Hi everyone,</span>
+
+Oh, for the benefit of Miggy users, are banned from including 128k
+sound via the PLAY command or anything? Inquiring minds want to know!
+
+<span class="qt">&gt;Sample Loader:</span>
+<span class="qt">&gt;==============</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;10 BORDER 0 : PAPER 0 : INK 0 : CLS</span>
+<span class="qt">&gt;20 LOAD &quot;&quot; SCREEN$</span>
+<span class="qt">&gt;30 LOAD &quot;&quot;</span>
+
+Hmm, if any of the entrants need to be told the above then I think we
+can safely rename the compo to the:
+
+comp sys sinclair SERIOUSLY crap games competition 1998.
+
+Graham
+
+-- 
+
+/====================================================¥  +--------------+
+<span class="qt">|              My proverb for this week:             |  |This Space For|</span>
+<span class="qt">|      &quot;The less bits, the less can go wrong...      |  | Hire - Ideal |</span>
+<span class="qt">| Unless you wobble something important at the back&quot; |  |For Weddings &amp;|</span>
+¥==Graham Goring - …@…==/  |  Bahmitzvas  |
+    My Website, coming to a server near you - SOON      +--------------+
+
+
+</pre></div><div class="post" id="p35111"><div class="ph"><a class="d" href="#p35111">1998-03-11</a> <span>…@…</span> <span>Re: CSSCGC 1998 : The rules &amp; judges</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+On Wed, 11 Mar 1998 16:03:45 +0000, Graham Goring
+ wrote:
+
+<span class="qt">&gt;Quoth the Raven in article &lt;…@…&gt;,</span>
+<span class="qt">&gt;…@… writes</span>
+<span class="qt">&gt;&gt;Hi everyone,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Oh, for the benefit of Miggy users, are banned from including 128k</span>
+<span class="qt">&gt;sound via the PLAY command or anything? Inquiring minds want to know!</span>
+
+Get yourself a proper emulator that can handle 128K games. ;) But
+remember that this *is* a crap game compy and any music (even if it&#x27;s
+crap) will result in losing points. BEEPs are a different matter
+entirely. ;)
+
+<span class="qt">&gt;Hmm, if any of the entrants need to be told the above then I think we</span>
+<span class="qt">&gt;can safely rename the compo to the:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;comp sys sinclair SERIOUSLY crap games competition 1998.</span>
+
+I was including it for people who either:
+
+a) Have never written a loader
+b) Have forgotten how to write one ;)
+
+Cya,
+
+Barry
+
+
+</pre></div><div class="post" id="p35124"><div class="ph"><a class="d" href="#p35124">1998-03-11</a> <span>andy kavanagh</span> <span>Re: CSSCGC 1998 : The rules &amp; judges</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+Easter time is Crap Game Writing Time!  
+
+It&#x27;ll all be in BASIC, with NO GRAPHICS!!!! Not even UDGs!!
+
+And its a conversion of an Acorn game I wrote a few years ago, which was
+so crap I managed to convert that to my calculator!
+
+Be afraid, be very etc...
+-- 
+Andy
+-- 
+My computer runs at 3.5MHz and I&#x27;m proud of that.
+…@… * <a href="http://www.uea.ac.uk/~w9643451/index.htm" rel="noreferrer">http://www.uea.ac.uk/~w9643451/index.htm</a>
+                       Most Recent Update - 2nd Feb 1998
+10 PRINT INK 7; PAPER 7;&quot;I CAN&#x27;T SEE!&quot;
+
+
+</pre></div><div class="post" id="p35129"><div class="ph"><a class="d" href="#p35129">1998-03-11</a> <span>vaggelis kapartzianis</span> <span>Re: CSSCGC 1998 : The rules &amp; judges</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+Derek Jolly wrote in message
+&lt;…@…&gt;...
+<span class="qt">&gt;Unfortunately my emulator (zx32) will only save as .sna or .z80,</span>
+
+
+Check again (or upgrade to v1.03 :)
+
+--
+Vaggelis
+
+
+
+
+</pre></div><div class="post" id="p35138"><div class="ph"><a class="d" href="#p35138">1998-03-11</a> <span>…@…</span> <span>Re: CSSCGC 1998 : The rules &amp; judges</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+Once upon a time in comp.sys.sinclair, the great sage
+…@… (Tony Blews) did speak,
+
+<span class="qt">&gt; Quoth …@… (Derek Jolly):</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;Unfortunately my emulator (zx32) will only save as .sna or .z80,</span>
+<span class="qt">&gt;&gt;so it&#x27;ll have to be one of them.  Oh well, never mind, I&#x27;ve got a</span>
+<span class="qt">&gt;&gt;couple done already and I&#x27;m working on a top secret project to</span>
+<span class="qt">&gt;&gt;provide a much needed update to one of the oldest Speccy games</span>
+<span class="qt">&gt;&gt;around.  I won&#x27;t give you any more info than that until I&#x27;ve finished</span>
+<span class="qt">&gt;&gt;it.</span>
+<span class="qt">&gt;&gt;-- </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; i&#x27;m stuck with z80/sna too. shame. ah well, time to wheel out the</span>
+<span class="qt">&gt; stuff i didn&#x27;t quite finish last time.</span>
+
+I&#x27;ve now got Warajevo on my laptop (bloody good emulator, too.
+Check it out, anyone that hasn&#x27;t already), so I&#x27;ll be able to turn
+them into Z80 .tap files. (Warajevo converts quite happily
+between it&#x27;s own .tap format and Z80&#x27;s) so I&#x27;ll shove a couple
+of crap loading screens in.
+-- 
+Derek Jolly  (…@…)  (Remove the &#x27;x&#x27; for e-mail)
+
+- Did you hear about the Buddhist who refused his dentist&#x27;s novocaine
+- during root canal work?  He wanted to transcend dental medication.
+
+
+
+</pre></div><div class="post" id="p35173"><div class="ph"><a class="d" href="#p35173">1998-03-12</a> <span>…@…</span> <span>Re: CSSCGC 1998 : The rules &amp; judges</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+The following message was allegedly written by
+&quot;Vaggelis Kapartzianis&quot;  in
+comp.sys.sinclair, but I don&#x27;t believe it myself.
+I reckon it&#x27;s all a conspiracy.
+
+<span class="qt">&gt; Derek Jolly wrote in message</span>
+<span class="qt">&gt; &lt;…@…&gt;...</span>
+<span class="qt">&gt;&gt;Unfortunately my emulator (zx32) will only save as .sna or .z80,</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Check again (or upgrade to v1.03 :)</span>
+
+Oh right.  I&#x27;ve only got v1.02 which is probably why then.
+-- 
+Derek Jolly  (…@…)  (Remove the &#x27;x&#x27; for e-mail)
+
+- Did you hear about the Buddhist who refused his dentist&#x27;s novocaine
+- during root canal work?  He wanted to transcend dental medication.
+
+
+
+</pre></div><div class="post" id="p35215"><div class="ph"><a class="d" href="#p35215">1998-03-15</a> <span>a. j. moss</span> <span>Re: CSSCGC 1998 : The rules &amp; judges</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2052">CSSCGC Crap Games Contest 1998</a></div><pre>
+Would someone please e-mail me the rules for this year&#x27;s CGC?
+Also, when is the deadline for entries?
+
+
+</pre></div></main></body></html>

@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building TZXs · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Building TZXs</h1><p class="facts">10 posts, 2002-08-24 – 2002-08-25</p><div class="post" id="p144746"><div class="ph"><a class="d" href="#p144746">2002-08-24 18:08:22</a> <span>Dunny</span> </div><pre>Okay,
+    SPIN goes into a more technical mode now, with the inclusion of a TZX
+Editor/Creator. I&#x27;ll be doing this in two stages - the first is the editor,
+which will include basic block management (cut, copy, paste, insert,
+delete[1]) and a block properties editor. (for Andy Barker&#x27;s Archive Info
+block needs).
+
+    The creator will be a two job affair - create from scratch, grabbing
+bytes from binary files, or from speccy RAM and building blocks from that -
+the other part being a WAV/CSW converter. I&#x27;m intending releasing the new
+version (so long as Woody&#x27;s not halfway though anything) when the first half
+is done - CSW/WAV conversion will take a little longer and will need to be
+tested thoroughly.
+
+    So my question: If you were creating a tzx from scratch, what
+functionality would you want in the software to help? I realise that this is
+a pretty open-ended question, but as far as I can see, there&#x27;s not much more
+to do than set up timing info and the data blocks&#x27; contents.
+
+Anyone?
+
+D.
+
+[1] Deleting and inserting. What a pain in the arse. Who uses CALL lists and
+JUMP blocks anyway? Why is the TZX format so bloody stupidly and
+unnecessarily complex? Answers on a postcard... Don&#x27;t mind me, I&#x27;ve just
+been wrestling with making sure that jumps and calls still go where you want
+them to after you&#x27;ve altered the structure. And Why??? No bloody tzxs on the
+vault use these blocks. Can we not just dump them?? And why are CALLs a list
+of block indexes, while Jumps are a signed offset? Gah.
+
+
+
+
+
+
+</pre></div><div class="post" id="p144747"><div class="ph"><a class="d" href="#p144747">2002-08-24 18:14:21</a> <span>Dunny</span> <span>Re: Building TZXs</span></div><pre>
+&quot;Dunny&quot; &lt;…@…&gt; wrote in message
+news:oYP99.1214$…@…...
+<span class="qt">&gt; vault use these blocks. Can we not just dump them?? And why are CALLs a</span>
+list
+<span class="qt">&gt; of block indexes, while Jumps are a signed offset? Gah.</span>
+
+CALLS are in fact a list of relative offsets. Just to make things more fun.
+
+D.
+
+
+
+
+
+
+</pre></div><div class="post" id="p144748"><div class="ph"><a class="d" href="#p144748">2002-08-24 19:20:07</a> <span>Darren Salt</span> <span>Re: Building TZXs</span></div><pre>I demand that Dunny may or may not have written...
+
+[snip]
+<span class="qt">&gt; [1] Deleting and inserting. What a pain in the arse. Who uses CALL lists</span>
+<span class="qt">&gt; and JUMP blocks anyway? Why is the TZX format so bloody stupidly and</span>
+<span class="qt">&gt; unnecessarily complex? Answers on a postcard... Don&#x27;t mind me, I&#x27;ve just</span>
+<span class="qt">&gt; been wrestling with making sure that jumps and calls still go where you</span>
+<span class="qt">&gt; want them to after you&#x27;ve altered the structure.</span>
+
+Convert to absolute then convert back on saving...? You could use a linked
+list for the blocks, and when you delete a block, point any references to
+that block to the next block in the chain. Of course, if the deleted block is
+the last in the chain, then it&#x27;s probably best to convert it into a dummy
+block instead.
+
+-- 
+<span class="qt">| Darren Salt  anti-UCE  | nr. Ashington, | d youmustbejoking,demon,co,uk</span>
+<span class="qt">| Spec+3, Risc PC, A3010 | Northumberland | s zap,tartarus,org</span>
+<span class="qt">| BBC M128, Linux PC     | Toon Army      | @</span>
+<span class="qt">|   Post HTML or binary =&gt; risk being reported to your ISP.</span>
+
+I don&#x27;t know what your opinions are, so don&#x27;t go asking me.
+
+
+
+</pre></div><div class="post" id="p144751"><div class="ph"><a class="d" href="#p144751">2002-08-24 22:10:44</a> <span>Dunny</span> <span>Re: Building TZXs</span></div><pre>
+&quot;Darren Salt&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; I demand that Dunny may or may not have written...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; [snip]</span>
+<span class="qt">&gt; &gt; [1] Deleting and inserting. What a pain in the arse. Who uses CALL lists</span>
+<span class="qt">&gt; &gt; and JUMP blocks anyway? Why is the TZX format so bloody stupidly and</span>
+<span class="qt">&gt; &gt; unnecessarily complex? Answers on a postcard... Don&#x27;t mind me, I&#x27;ve just</span>
+<span class="qt">&gt; &gt; been wrestling with making sure that jumps and calls still go where you</span>
+<span class="qt">&gt; &gt; want them to after you&#x27;ve altered the structure.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Convert to absolute then convert back on saving...? You could use a linked</span>
+<span class="qt">&gt; list for the blocks, and when you delete a block, point any references to</span>
+<span class="qt">&gt; that block to the next block in the chain. Of course, if the deleted block</span>
+is
+<span class="qt">&gt; the last in the chain, then it&#x27;s probably best to convert it into a dummy</span>
+<span class="qt">&gt; block instead.</span>
+
+After altering the structure, I whip through the list and check to see if
+any jumps or calls reference blocks &gt;= to the change point, and update
+accordingly, but seeing as *no* *TZX* *in* *existence* uses these blocks,
+I&#x27;m just bloody wasting my time. [/rant]
+
+D.
+
+
+
+
+
+
+</pre></div><div class="post" id="p144752"><div class="ph"><a class="d" href="#p144752">2002-08-24 23:48:09</a> <span>Ant</span> <span>Re: Building TZXs</span></div><pre><span class="qt">&gt; After altering the structure, I whip through the list and check to see if</span>
+<span class="qt">&gt; any jumps or calls reference blocks &gt;= to the change point, and update</span>
+<span class="qt">&gt; accordingly, but seeing as *no* *TZX* *in* *existence* uses these blocks,</span>
+<span class="qt">&gt; I&#x27;m just bloody wasting my time. [/rant]</span>
+
+It&#x27;s future-proofing, isn&#x27;t it?  So when all those new Speccy games get
+released that load in odd ways, there&#x27;ll be a format to support them.
+
+Oh, hang on.  What year is it again?
+
+
+
+
+
+</pre></div><div class="post" id="p144753"><div class="ph"><a class="d" href="#p144753">2002-08-25 01:01:30</a> <span>Darren Salt</span> <span>Re: Building TZXs</span></div><pre>I demand that Ant may or may not have written...
+
+<span class="qt">&gt;&gt; After altering the structure, I whip through the list and check to see if</span>
+<span class="qt">&gt;&gt; any jumps or calls reference blocks &gt;= to the change point, and update</span>
+<span class="qt">&gt;&gt; accordingly, but seeing as *no* *TZX* *in* *existence* uses these blocks,</span>
+<span class="qt">&gt;&gt; I&#x27;m just bloody wasting my time. [/rant]</span>
+
+<span class="qt">&gt; It&#x27;s future-proofing, isn&#x27;t it?  So when all those new Speccy games get</span>
+<span class="qt">&gt; released that load in odd ways, there&#x27;ll be a format to support them.</span>
+
+What the jump block was intended for is for certain types of multiload game.
+Pick a level, any level...
+
+As for the call sequence block: do we have any examples of games or other
+programs where at least one (not necessarily small) data block is duplicated?
+Alternatively, selecting some level on which to start may well determine
+which path is taken through a game: a select block which picks one of a group
+of call blocks has potential use here.
+
+Memory says that Impossamole is such a game.
+
+-- 
+<span class="qt">| Darren Salt  anti-UCE  | nr. Ashington, | d youmustbejoking,demon,co,uk</span>
+<span class="qt">| Spec+3, Risc PC, A3010 | Northumberland | s zap,tartarus,org</span>
+<span class="qt">| BBC M128, Linux PC     | Toon Army      | @</span>
+<span class="qt">|   When replying: &quot;news&quot;-&gt;&quot;ds&quot;, &quot;cu&quot;-&gt;&quot;co.uk&quot;, and validate</span>
+
+People are always available for work in the past tense.
+
+
+
+</pre></div><div class="post" id="p144758"><div class="ph"><a class="d" href="#p144758">2002-08-25 11:28:48</a> <span>Chris Young</span> <span>Re: Building TZXs</span></div><pre>On Sun, 25 Aug 2002 00:48:09 +0100, Ant ate a Rolo, and turned into...
+Ant-Man!  A super-hero with the power to write complete crap
+to comp.sys.sinclair, such as this gem:
+
+<span class="qt">&gt; It&#x27;s future-proofing, isn&#x27;t it?  So when all those new Speccy games get</span>
+<span class="qt">&gt; released that load in odd ways, there&#x27;ll be a format to support them.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Oh, hang on.  What year is it again?</span>
+
+1984.
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p144760"><div class="ph"><a class="d" href="#p144760">2002-08-25 14:50:53</a> <span>Martijn van der Heide</span> <span>Re: Building TZXs</span></div><pre>Hiya,
+
+Not to be taken as a plug (since I&#x27;m fresh out of Rolos ;-), but you might
+want to take a look at the source code of TAPER
+(<a href="http://www.worldofspectrum.org/taper.html" rel="noreferrer">http://www.worldofspectrum.org/taper.html</a>).
+
+Cheers,
+
+Martijn.
+--
+Martijn van der Heide
+Owner of the official world archive for the Sinclair ZX Spectrum
+The World of Spectrum, <a href="http://www.worldofspectrum.org/" rel="noreferrer">http://www.worldofspectrum.org/</a>
+
+
+
+
+
+</pre></div><div class="post" id="p144761"><div class="ph"><a class="d" href="#p144761">2002-08-25 15:17:53</a> <span>Dunny</span> <span>Re: Building TZXs</span></div><pre>
+&quot;Martijn van der Heide&quot; &lt;…@…&gt; wrote in
+message news:3d68ec6b$0$55953$…@…...
+<span class="qt">&gt; Hiya,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Not to be taken as a plug (since I&#x27;m fresh out of Rolos ;-), but you might</span>
+<span class="qt">&gt; want to take a look at the source code of TAPER</span>
+<span class="qt">&gt; (<a href="http://www.worldofspectrum.org/taper.html" rel="noreferrer">http://www.worldofspectrum.org/taper.html</a>).</span>
+<span class="qt">&gt;</span>
+
+Actually, that will be a help, as my main goal is to build a win32
+&quot;taper&quot;-like system where you can edit and generally chop about tzx tapes :)
+
+I&#x27;ll get looking at it!
+
+D.
+
+
+
+
+
+
+</pre></div><div class="post" id="p144768"><div class="ph"><a class="d" href="#p144768">2002-08-25 19:17:39</a> <span>Frans</span> <span>Re: Building TZXs</span></div><pre>Dunny wrote:
+<span class="qt">&gt; &quot;Martijn van der Heide&quot; &lt;…@…&gt; wrote in</span>
+<span class="qt">&gt; message news:3d68ec6b$0$55953$…@…...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;Hiya,</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Not to be taken as a plug (since I&#x27;m fresh out of Rolos ;-), but you might</span>
+<span class="qt">&gt;&gt;want to take a look at the source code of TAPER</span>
+<span class="qt">&gt;&gt;(<a href="http://www.worldofspectrum.org/taper.html" rel="noreferrer">http://www.worldofspectrum.org/taper.html</a>).</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Actually, that will be a help, as my main goal is to build a win32</span>
+<span class="qt">&gt; &quot;taper&quot;-like system where you can edit and generally chop about tzx tapes :)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;ll get looking at it!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; D.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+Yes! Finally we may get our hands on a modern version of Taper.
+I&#x27;m all for it. Good luck!
+
+Frans
+
+
+
+
+</pre></div></main></body></html>

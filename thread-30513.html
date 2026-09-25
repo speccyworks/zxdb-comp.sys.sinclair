@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3D Monster Maze and ZonX-81 - and emulators? · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>3D Monster Maze and ZonX-81 - and emulators?</h1><p class="facts">11 posts, 2004-12-01 – 2004-12-03</p><div class="post" id="p188065"><div class="ph"><a class="d" href="#p188065">2004-12-01 12:29:25</a> <span>Spirantho</span> </div><pre>Hi everybody...
+
+While procrastinating the other day I wondered about doing something
+nice and perverse. Then I thought about doing something silly with a
+ZX81, and finally an idea came to me...
+
+The only thing 3D Monster Maze is really missing, I feel, is sound, so
+I was wondering if anyone has hacked the 3DMM code to support sound
+boxes like the ZonX-81 (an AY-3-8912 for those who aren&#x27;t aware - very
+funky but makes the poor &#x27;81 get a little hot under the collar).
+
+If not, is the source available or is it time to dig out the
+disassembler? I figure a 32K ZX81 would have plenty of space for adding
+footsteps sounds (getting louder as Rex approaches), and maybe even
+using a different channel for wizzy noises as you get closer to the
+portal. Maybe even a soundtrack for the title screen, and a heartbeat
+noise as you wander around the maze (we do have 3 channels + 1 noise
+channel to play with).
+
+Of course this would all be made a load easier if we have an emulator
+which supports the ZonX! Does one exist? Is there a ZX81 emulator
+author out there who can provide this? Or am I just insane to think
+about it?
+
+Answers on a postcard please...
+
+--
+Ian Gledhill
+{first name}…@…    (change {first name} to Ian!)
+
+
+
+
+</pre></div><div class="post" id="p188069"><div class="ph"><a class="d" href="#p188069">2004-12-01 16:41:12</a> <span>Brian Gaff</span> <span>Re: 3D Monster Maze and ZonX-81 - and emulators?</span></div><pre>
+&quot;Spirantho&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; Hi everybody...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; While procrastinating the other day I wondered about doing something</span>
+<span class="qt">&gt; nice and perverse. Then I thought about doing something silly with a</span>
+<span class="qt">&gt; ZX81, and finally an idea came to me...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The only thing 3D Monster Maze is really missing, I feel, is sound, so</span>
+<span class="qt">&gt; I was wondering if anyone has hacked the 3DMM code to support sound</span>
+<span class="qt">&gt; boxes like the ZonX-81 (an AY-3-8912 for those who aren&#x27;t aware - very</span>
+<span class="qt">&gt; funky but makes the poor &#x27;81 get a little hot under the collar).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; If not, is the source available or is it time to dig out the</span>
+<span class="qt">&gt; disassembler? I figure a 32K ZX81 would have plenty of space for adding</span>
+<span class="qt">&gt; footsteps sounds (getting louder as Rex approaches), and maybe even</span>
+<span class="qt">&gt; using a different channel for wizzy noises as you get closer to the</span>
+<span class="qt">&gt; portal. Maybe even a soundtrack for the title screen, and a heartbeat</span>
+<span class="qt">&gt; noise as you wander around the maze (we do have 3 channels + 1 noise</span>
+<span class="qt">&gt; channel to play with).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Of course this would all be made a load easier if we have an emulator</span>
+<span class="qt">&gt; which supports the ZonX! Does one exist? Is there a ZX81 emulator</span>
+<span class="qt">&gt; author out there who can provide this? Or am I just insane to think</span>
+<span class="qt">&gt; about it?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Answers on a postcard please...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; Ian Gledhill</span>
+<span class="qt">&gt; {first name}…@…    (change {first name} to Ian!)</span>
+<span class="qt">&gt;</span>
+
+What how could this be done? I thought due to the dodgy addressing there 
+could only be 16k on the 81? I know there were bigger ram packs, but they 
+were paged if I recall.
+
+Brian
+
+-- 
+
+Brian Gaff....Note, this account does not accept Bcc: email.
+ graphics are great, but the blind can&#x27;t hear them
+Email: …@…
+______________________________________________________________________________________________________________
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p188071"><div class="ph"><a class="d" href="#p188071">2004-12-01 17:48:21</a> <span>Russell Marks</span> <span>Re: 3D Monster Maze and ZonX-81 - and emulators?</span></div><pre>&quot;Spirantho&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Of course this would all be made a load easier if we have an emulator</span>
+<span class="qt">&gt; which supports the ZonX! Does one exist? Is there a ZX81 emulator</span>
+<span class="qt">&gt; author out there who can provide this? Or am I just insane to think</span>
+<span class="qt">&gt; about it?</span>
+
+z81 supports it, but it only runs on Linux/Unix (the Amiga port is of
+an old version without sound support). It might be easier for you to
+hack my speccy 128 port of 3DMM, and use the 128&#x27;s AY instead.
+
+-Rus.
+
+
+
+</pre></div><div class="post" id="p188074"><div class="ph"><a class="d" href="#p188074">2004-12-01 18:24:46</a> <span>Mike Wynne</span> <span>Re: 3D Monster Maze and ZonX-81 - and emulators?</span></div><pre>Brian.
+
+Although the Sinclair 16k RAM Pack wasn&#x27;t completely decoded and had 
+shadows across memory space, other manufacturers didn&#x27;t suffer this 
+problem.  The ZX81 is capable of directly addressing 56k of RAM 
+without resorting to any form of paging.
+
+MikeW
+
+Brian Gaff wrote:
+<span class="qt">&gt; What how could this be done? I thought due to the dodgy addressing</span>
+<span class="qt">&gt; there could only be 16k on the 81? I know there were bigger ram</span>
+<span class="qt">&gt; packs, but they were paged if I recall.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Brian</span>
+
+
+
+
+
+
+</pre></div><div class="post" id="p188075"><div class="ph"><a class="d" href="#p188075">2004-12-01 18:26:29</a> <span>Mike Wynne</span> <span>Re: 3D Monster Maze and ZonX-81 - and emulators?</span></div><pre>Spirantho wrote:
+<span class="qt">&gt; Of course this would all be made a load easier if we have an</span>
+<span class="qt">&gt; emulator which supports the ZonX! Does one exist? Is there a</span>
+<span class="qt">&gt; ZX81 emulator author out there who can provide this? Or am I</span>
+<span class="qt">&gt; just insane to think about it?</span>
+
+By coincidence, the next release of EightyOne (Hopefully within a week 
+or so) will have AY support.
+
+MikeW
+
+
+
+
+
+</pre></div><div class="post" id="p188079"><div class="ph"><a class="d" href="#p188079">2004-12-01 18:46:14</a> <span>Stanley</span> <span>Re: 3D Monster Maze and ZonX-81 - and emulators?</span></div><pre>&quot;Spirantho&quot; &lt;…@…&gt; wrote in message news:&lt;…@…&gt;...
+[snip]
+<span class="qt">&gt; The only thing 3D Monster Maze is really missing, I feel, is sound, so</span>
+So download this Russell Marks&#x27;s conversion of 3D MM for ZX Spectrum
+128:
+<a href="http://emul8.xlabs.sk/topgames/zx81conversions/index.html" rel="noreferrer">http://emul8.xlabs.sk/topgames/zx81conversions/index.html</a>
+
+Use some of Speccy 128 emulator, hack the code and add AY sound. I
+think it&#x27;s the most easy way how to do this you asked for.
+
+Send me the AY version back then please. I&#x27;m big 3D MM fan and steps
+or any sound would be great of course.
+
+stanley
+
+
+
+</pre></div><div class="post" id="p188084"><div class="ph"><a class="d" href="#p188084">2004-12-01 21:16:54</a> <span>Andrew Owen</span> <span>Re: 3D Monster Maze and ZonX-81 - and emulators?</span></div><pre>&quot;Spirantho&quot; &lt;…@…&gt; wrote in message news:&lt;…@…&gt;...
+
+<span class="qt">&gt; Of course this would all be made a load easier if we have an emulator</span>
+<span class="qt">&gt; which supports the ZonX! Does one exist? Is there a ZX81 emulator</span>
+<span class="qt">&gt; author out there who can provide this? Or am I just insane to think</span>
+<span class="qt">&gt; about it?</span>
+
+Paul Farrow has written a ZX81 emulator for the Spectrum 128. Since
+the Spectrum 128 has an AY chip I guess you could add sound support
+that way. It&#x27;s available from his website www.fruitcake.plus.com in
+the Interface II section.
+
+
+
+</pre></div><div class="post" id="p188120"><div class="ph"><a class="d" href="#p188120">2004-12-02 09:48:46</a> <span>Spirantho</span> <span>Re: 3D Monster Maze and ZonX-81 - and emulators?</span></div><pre>How did you port it? From source or just rewrite the display routines?
+Any sign of a disassembly? :)  An already disassembled version would
+sure make life easier...
+
+It was EightyOne that made me try 3DMM again, so if I can use that I
+probably shall...!
+
+Thanks for all replies!
+
+Ian
+
+
+
+
+</pre></div><div class="post" id="p188145"><div class="ph"><a class="d" href="#p188145">2004-12-03 01:24:09</a> <span>Russell Marks</span> <span>Re: 3D Monster Maze and ZonX-81 - and emulators?</span></div><pre>&quot;Spirantho&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; How did you port it? From source or just rewrite the display routines?</span>
+<span class="qt">&gt; Any sign of a disassembly? :)  An already disassembled version would</span>
+<span class="qt">&gt; sure make life easier...</span>
+
+I rewrote the Basic in Z80 and patched the rest as needed. No
+disassembly, but I think most/all of what you want to do could be done
+from the &quot;Basic&quot; bit. It comes with source for the bits I did.
+
+<span class="qt">&gt; It was EightyOne that made me try 3DMM again, so if I can use that I</span>
+<span class="qt">&gt; probably shall...!</span>
+
+Personally I would consider taking the speccy-based approach even with
+AY support being added to EightyOne (sorry Mike :-)) - it still means
+that only two ZX81 emulators could run it properly, and even they
+would probably have to have the emulator&#x27;s Zon X support enabled by
+the user first (true of z81 at least). And as far as running it on a
+real machine goes, it&#x27;s got to be the speccy.
+
+-Rus.
+
+
+
+</pre></div><div class="post" id="p188154"><div class="ph"><a class="d" href="#p188154">2004-12-03 11:58:42</a> <span>&quot;Peter de Vroomen&quot; &lt;peterv[at][spamblock]jaytown[dot]com&gt;</span> <span>Re: 3D Monster Maze and ZonX-81 - and emulators?</span></div><pre><span class="qt">&gt; Although the Sinclair 16k RAM Pack wasn&#x27;t completely decoded and had</span>
+<span class="qt">&gt; shadows across memory space, other manufacturers didn&#x27;t suffer this</span>
+<span class="qt">&gt; problem.  The ZX81 is capable of directly addressing 56k of RAM</span>
+<span class="qt">&gt; without resorting to any form of paging.</span>
+
+Yep. I use a Lambda 32K memory expansion on my ZX81. Works perfectly as far
+as I can tell.
+
+PeterV
+
+
+
+
+
+</pre></div><div class="post" id="p188157"><div class="ph"><a class="d" href="#p188157">2004-12-03 14:42:09</a> <span>Ian Gledhill</span> <span>Re: 3D Monster Maze and ZonX-81 - and emulators?</span></div><pre>On Fri, 03 Dec 2004 01:24:09 GMT, Russell Marks 
+&lt;russell.marks@spam^H^H^H^Hntlworld.com&gt; wrote:
+
+<span class="qt">&gt; &quot;Spirantho&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I rewrote the Basic in Z80 and patched the rest as needed. No</span>
+<span class="qt">&gt; disassembly, but I think most/all of what you want to do could be done</span>
+<span class="qt">&gt; from the &quot;Basic&quot; bit. It comes with source for the bits I did.</span>
+
+Probably I&#x27;d use Z80 though... the ZonX has to be called from machine 
+code. Might come in handy though....
+
+<span class="qt">&gt;&gt; It was EightyOne that made me try 3DMM again, so if I can use that I</span>
+<span class="qt">&gt;&gt; probably shall...!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Personally I would consider taking the speccy-based approach even with</span>
+<span class="qt">&gt; AY support being added to EightyOne (sorry Mike :-)) - it still means</span>
+<span class="qt">&gt; that only two ZX81 emulators could run it properly, and even they</span>
+<span class="qt">&gt; would probably have to have the emulator&#x27;s Zon X support enabled by</span>
+<span class="qt">&gt; the user first (true of z81 at least). And as far as running it on a</span>
+<span class="qt">&gt; real machine goes, it&#x27;s got to be the speccy.</span>
+
+True, but if no-one uses the ZonX then no emulators will use it.
+Anyway, I want it to run on the real hardware first and foremost. I have a 
+32K ZX81 with a ZonX and it doesn&#x27;t use it, and that bugs me. :)
+
+
+
+</pre></div></main></body></html>

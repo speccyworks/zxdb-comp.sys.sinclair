@@ -1,0 +1,967 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where Time Stood Still bug · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Where Time Stood Still bug</h1><p class="facts">34 posts, 2004-09-04 – 2004-09-09</p><div class="post" id="p184177"><div class="ph"><a class="d" href="#p184177">2004-09-04 09:31:22</a> <span>Daren</span> </div><pre>When you go up the slope past the temple, near where the armadillo roams,
+the game freezes as you get to about half way up the slope. Has anyone else
+noticed this?  You can&#x27;t even activate the menu window - nothing.
+
+Daren
+
+
+
+
+
+</pre></div><div class="post" id="p184200"><div class="ph"><a class="d" href="#p184200">2004-09-04 20:06:37</a> <span>Robert J Baker</span> <span>Re: Where Time Stood Still bug</span></div><pre>&quot;Daren&quot; &lt;…@…&gt; wrote in message news:&lt;41398b6a$0$20249$…@…&gt;...
+<span class="qt">&gt; When you go up the slope past the temple, near where the armadillo roams,</span>
+<span class="qt">&gt; the game freezes as you get to about half way up the slope. Has anyone else</span>
+<span class="qt">&gt; noticed this?  You can&#x27;t even activate the menu window - nothing.</span>
+
+So &quot;Impossible Mission&quot; isn&#x27;t the only game whose title is sometimes
+too literal... :-)
+
+
+
+</pre></div><div class="post" id="p184214"><div class="ph"><a class="d" href="#p184214">2004-09-04 23:59:11</a> <span>Jim</span> <span>Re: Where Time Stood Still bug</span></div><pre>In article &lt;…@…&gt;, 
+…@… (Robert J Baker) wrote:
+
+<span class="qt">&gt; &quot;Daren&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:&lt;41398b6a$0$20249$…@…&gt;...</span>
+<span class="qt">&gt;&gt; When you go up the slope past the temple, near where the armadillo roams,</span>
+<span class="qt">&gt;&gt; the game freezes as you get to about half way up the slope. Has anyone else</span>
+<span class="qt">&gt;&gt; noticed this?  You can&#x27;t even activate the menu window - nothing.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; So &quot;Impossible Mission&quot; isn&#x27;t the only game whose title is sometimes</span>
+<span class="qt">&gt; too literal... :-)</span>
+
+I had this happen to me playing WTSS at the same point, right near the end
+(grrr). I tried repeatedly going back to earlier saved snapshots and tried
+to do things differently but the same thing always happened. I presumed it
+was my old emulator playing tricks and not dealing with 128K mode properly.
+But could it be that one of the WTSS files at WoS is dodgy...?
+
+I found a WoS tap file of Trap Door to be corrupted too, thought that was my
+emulator being bad, but then found another file of the game elsewhere on the
+web that worked OK. Someone else has just reported the same corruption I
+experienced using the same WoS file but a different emulator to me - was
+that you, Daren? I&#x27;ve forgotten where I read this.
+
+The only way to check if it&#x27;s just a dodgy file or if every copy of the game
+ever made does the same thing would be to find another copy of WTSS from a
+different source, such as a real Speccy original tape, and play it through
+to the same point in the game and see what happens.
+I&#x27;m sure people have reported completing WTSS many times over the years so
+I&#x27;d be surprised if this &quot;slope freeze&quot; is a consistent bug that resides in
+every copy of the game.
+
+The ending of WTSS at Speccy Spoilers is a hack job, by the way. But the
+ending for Frankie Goes To Hollywood isn&#x27;t...  ;)
+
+Jim
+www.speccyspoilers.co.uk
+
+
+
+</pre></div><div class="post" id="p184241"><div class="ph"><a class="d" href="#p184241">2004-09-05 20:02:18</a> <span>Jim Grimwood</span> <span>Re: Where Time Stood Still bug</span></div><pre>On Sat, 4 Sep 2004 10:31:22 +0100, &quot;Daren&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;When you go up the slope past the temple, near where the armadillo roams,</span>
+<span class="qt">&gt;the game freezes as you get to about half way up the slope. Has anyone else</span>
+<span class="qt">&gt;noticed this?  You can&#x27;t even activate the menu window - nothing.</span>
+
+I&#x27;ve been playing the game from my original tape, to see if it&#x27;s possible
+to complete, but I can&#x27;t get through the swamp without losing most members
+of the party. Any advice on how to do this - apart from avoiding the
+tentacles and not standing still? The main problem is that party members
+get detached from the leader, and then eventually wander into tentacles as
+they&#x27;re bumbling around somewhere off-screen.
+
+--
+Another Fine Product from:
+Jim Grimwood, Weardale, England
+<a href="http://www.users.globalnet.co.uk/~jg27paw4/" rel="noreferrer">http://www.users.globalnet.co.uk/~jg27paw4/</a>
+
+
+
+</pre></div><div class="post" id="p184246"><div class="ph"><a class="d" href="#p184246">2004-09-05 20:48:54</a> <span>Dunny</span> <span>Re: Where Time Stood Still bug</span></div><pre>In news:…@…,
+Jim Grimwood &lt;…@…&gt; typed:
+<span class="qt">&gt; On Sat, 4 Sep 2004 10:31:22 +0100, &quot;Daren&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; When you go up the slope past the temple, near where the armadillo</span>
+<span class="qt">&gt;&gt; roams, the game freezes as you get to about half way up the slope.</span>
+<span class="qt">&gt;&gt; Has anyone else noticed this?  You can&#x27;t even activate the menu</span>
+<span class="qt">&gt;&gt; window - nothing.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;ve been playing the game from my original tape, to see if it&#x27;s</span>
+<span class="qt">&gt; possible to complete, but I can&#x27;t get through the swamp without</span>
+<span class="qt">&gt; losing most members of the party. Any advice on how to do this -</span>
+<span class="qt">&gt; apart from avoiding the tentacles and not standing still? The main</span>
+<span class="qt">&gt; problem is that party members get detached from the leader, and then</span>
+<span class="qt">&gt; eventually wander into tentacles as they&#x27;re bumbling around somewhere</span>
+<span class="qt">&gt; off-screen.</span>
+
+You need to press insert just before the danger spot, then you can &quot;rollback&quot;...
+
+ah.
+
+You said original tape... IGMC.
+
+D.
+
+
+
+
+
+
+</pre></div><div class="post" id="p184248"><div class="ph"><a class="d" href="#p184248">2004-09-05 21:23:48</a> <span>AndyC</span> <span>Re: Where Time Stood Still bug</span></div><pre>
+&quot;Jim Grimwood&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+
+<span class="qt">&gt; I&#x27;ve been playing the game from my original tape, to see if it&#x27;s possible</span>
+<span class="qt">&gt; to complete, but I can&#x27;t get through the swamp without losing most members</span>
+<span class="qt">&gt; of the party. Any advice on how to do this - apart from avoiding the</span>
+<span class="qt">&gt; tentacles and not standing still? The main problem is that party members</span>
+<span class="qt">&gt; get detached from the leader, and then eventually wander into tentacles as</span>
+<span class="qt">&gt; they&#x27;re bumbling around somewhere off-screen.</span>
+
+WTSS is definately completable. You just let all the others die at the swamp 
+bit as you don&#x27;t need them to survive to win. I did once get all four across 
+the swamp though, so it should be doable with all four members surviving.
+
+AndyC 
+
+
+
+
+
+</pre></div><div class="post" id="p184250"><div class="ph"><a class="d" href="#p184250">2004-09-05 21:42:18</a> <span>Jim</span> <span>Re: Where Time Stood Still bug</span></div><pre><span class="qt">&gt; In news:…@…,</span>
+<span class="qt">&gt; Jim Grimwood &lt;…@…&gt; typed:</span>
+<span class="qt">&gt;&gt; On Sat, 4 Sep 2004 10:31:22 +0100, &quot;Daren&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; When you go up the slope past the temple, near where the armadillo</span>
+<span class="qt">&gt;&gt;&gt; roams, the game freezes as you get to about half way up the slope.</span>
+<span class="qt">&gt;&gt;&gt; Has anyone else noticed this?  You can&#x27;t even activate the menu</span>
+<span class="qt">&gt;&gt;&gt; window - nothing.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; I&#x27;ve been playing the game from my original tape, to see if it&#x27;s</span>
+<span class="qt">&gt;&gt; possible to complete, but I can&#x27;t get through the swamp without</span>
+<span class="qt">&gt;&gt; losing most members of the party. Any advice on how to do this -</span>
+<span class="qt">&gt;&gt; apart from avoiding the tentacles and not standing still? The main</span>
+<span class="qt">&gt;&gt; problem is that party members get detached from the leader, and then</span>
+<span class="qt">&gt;&gt; eventually wander into tentacles as they&#x27;re bumbling around somewhere</span>
+<span class="qt">&gt;&gt; off-screen.</span>
+
+Getting all four people across the swamp is without doubt one of the most
+frustrating and painstaking exercises I have ever had to attempt (as far as
+Speccy games go) - and that was using an emulator, taking hundreds of
+snapshots (literally) in the process, trying every combination of techniques
+I could muster.
+
+This is why when I eventually somehow managed it (can&#x27;t really explain how),
+I was so annoyed to come across this annoying bug later on. I went right
+back to the start of the game and tried it again, this time just
+concentrating on getting one person across - but the &quot;slope freeze&quot; bug was
+still there... :(
+
+
+
+</pre></div><div class="post" id="p184258"><div class="ph"><a class="d" href="#p184258">2004-09-06 05:15:54</a> <span>Jim</span> <span>Re: Where Time Stood Still bug</span></div><pre>In article &lt;…@…&gt;, &quot;AndyC&quot; &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt; &quot;Jim Grimwood&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; I&#x27;ve been playing the game from my original tape, to see if it&#x27;s possible</span>
+<span class="qt">&gt;&gt; to complete, but I can&#x27;t get through the swamp without losing most members</span>
+<span class="qt">&gt;&gt; of the party. Any advice on how to do this - apart from avoiding the</span>
+<span class="qt">&gt;&gt; tentacles and not standing still? The main problem is that party members</span>
+<span class="qt">&gt;&gt; get detached from the leader, and then eventually wander into tentacles as</span>
+<span class="qt">&gt;&gt; they&#x27;re bumbling around somewhere off-screen.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; WTSS is definately completable. You just let all the others die at the swamp</span>
+<span class="qt">&gt; bit as you don&#x27;t need them to survive to win. I did once get all four across</span>
+<span class="qt">&gt; the swamp though, so it should be doable with all four members surviving.</span>
+
+One trick that sometimes works to get more than one person over the swamp is
+to try and abandon the other three beforehand then peg it over to the other
+side leaving them behind and continue to run along a bit further away still.
+Sometimes one or more of the others will follow you across the swamp, but
+offscreen and somehow avoiding the paths so they don&#x27;t get killed. :)
+
+I would&#x27;ve certainly managed to get all four back safely eventually if that
+file I used wasn&#x27;t bugged, as I did get them all over the swamp and indeed
+right up to that slope near the end where the bug happened.
+
+However, I&#x27;ve just played from the start using the file I received for
+Speccy Spoilers (which is hacked with infinite this and that) and found the
+bug wasn&#x27;t present in this so I managed to get a couple of the characters to
+the end safely. Thus I can&#x27;t blame my emulator (and if the same thing
+happens to Daren on another emulator, then that confirms to me that the file
+we both used from WoS was corrupted - presumably because of the source
+tape?).
+
+Also, you can&#x27;t claim to have properly completed this game if you only get
+one home - that&#x27;s relatively easy. Unless you get all four into the cave at
+the end at the same time, you won&#x27;t get a 100% success rating. It&#x27;s much
+like saying you can complete the Great Escape without the compass and
+papers!
+
+Why not try the ending at Speccy Spoilers and see? Compare the rating you
+get when all four finish with the rating you get when one or more of them is
+dead...
+
+
+
+</pre></div><div class="post" id="p184262"><div class="ph"><a class="d" href="#p184262">2004-09-06 09:30:22</a> <span>Stanley</span> <span>Re: Where Time Stood Still bug</span></div><pre><span class="qt">&gt; </span>
+<span class="qt">&gt; WTSS is definately completable. You just let all the others die at the swamp </span>
+[snip]
+
+I agree - it&#x27;s completable -  just see my screenshots here [1]:
+<a href="http://emul8.xlabs.sk/topgames/128k/index.html" rel="noreferrer">http://emul8.xlabs.sk/topgames/128k/index.html</a>
+
+TZX is taken from WOS and I did it with one person only, but I crossed
+the swamp with complete companion. I lost them when I crossed the
+river in fights with animals. I never experienced freeze or reset of
+the game anyway. The winner message is a bit boring though.
+
+[1] just on the bottom of the page
+
+
+
+</pre></div><div class="post" id="p184284"><div class="ph"><a class="d" href="#p184284">2004-09-06 19:13:15</a> <span>Jim Grimwood</span> <span>Re: Where Time Stood Still bug</span></div><pre>On Sun, 05 Sep 2004 20:02:18 GMT, …@… (Jim Grimwood)
+wrote:
+
+<span class="qt">&gt;[...]</span>
+<span class="qt">&gt;I&#x27;ve been playing the game from my original tape, to see if it&#x27;s possible</span>
+<span class="qt">&gt;to complete, but I can&#x27;t get through the swamp without losing most members</span>
+<span class="qt">&gt;of the party. Any advice on how to do this - apart from avoiding the</span>
+<span class="qt">&gt;tentacles and not standing still? The main problem is that party members</span>
+<span class="qt">&gt;get detached from the leader, and then eventually wander into tentacles as</span>
+<span class="qt">&gt;they&#x27;re bumbling around somewhere off-screen.</span>
+
+Well, after much cursing and using the map and solution from Sinclair User
+I finally managed to get all four characters to the end of WTSS - although
+I still only scored 81% - so I can confirm that it can be completed when
+playing the game from the original tape. The ending&#x27;s not very definitive,
+as even when the final message window comes up the characters are still
+bumbling around in the cave, moaning about being hungry and whatnot, and
+closing the window just goes back to the start of the game.
+
+I didn&#x27;t use the dynamite to blow up the rocks blocking the path near the
+end, as I found that I could just walk around them, so maybe that&#x27;s partly
+why I didn&#x27;t get a higher score. Also, it said in SU to swim down the far
+side of the river to avoid the cannibals, but doing that the other
+characters wouldn&#x27;t follow, so that&#x27;s no good. I just ran around the other
+side of the village to avoid them.
+
+No chance of my doing a new TZX, as none of the TZX conversion programs
+will work on my computer - they just give a whole load of errors and
+produce a garbage file or give no errors and still produce a garbage file.
+The tape loads OK in my emulator, so I could do a Z80 snapshot, but I
+don&#x27;t think Martijn&#x27;s interested in those any longer, as I sent a Z80 of
+Learning with Leeper to WoS some months ago and it never got put on - it&#x27;s
+still marked MIA.
+
+--
+Another Fine Product from:
+Jim Grimwood, Weardale, England
+<a href="http://www.users.globalnet.co.uk/~jg27paw4/" rel="noreferrer">http://www.users.globalnet.co.uk/~jg27paw4/</a>
+
+
+
+</pre></div><div class="post" id="p184289"><div class="ph"><a class="d" href="#p184289">2004-09-06 20:24:23</a> <span>Philip Kendall</span> <span>Re: Where Time Stood Still bug</span></div><pre>In article &lt;…@…&gt;,
+Jim Grimwood &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;The tape loads OK in my emulator, so I could do a Z80 snapshot, but I</span>
+<span class="qt">&gt;don&#x27;t think Martijn&#x27;s interested in those any longer, as I sent a Z80 of</span>
+<span class="qt">&gt;Learning with Leeper to WoS some months ago and it never got put on - it&#x27;s</span>
+<span class="qt">&gt;still marked MIA.</span>
+
+The situation is that WoS is still interested in snapshots, .tap files,
+any version at all of something which is MIA. Unfortunately, there&#x27;s a
+_large_ backlog of files waiting to be processed, so it won&#x27;t appear in
+the archive any time soon, but keep sending them in.
+
+Cheers,
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p184292"><div class="ph"><a class="d" href="#p184292">2004-09-06 20:35:55</a> <span>Kendy</span> <span>Re: Where Time Stood Still bug</span></div><pre>Jim Grimwood wrote:
+
+<span class="qt">&gt; No chance of my doing a new TZX, as none of the TZX conversion programs</span>
+<span class="qt">&gt; will work on my computer - they just give a whole load of errors and</span>
+<span class="qt">&gt; produce a garbage file or give no errors and still produce a garbage file.</span>
+<span class="qt">&gt; The tape loads OK in my emulator, so I could do a Z80 snapshot, but I</span>
+<span class="qt">&gt; don&#x27;t think Martijn&#x27;s interested in those any longer, as I sent a Z80 of</span>
+<span class="qt">&gt; Learning with Leeper to WoS some months ago and it never got put on - it&#x27;s</span>
+<span class="qt">&gt; still marked MIA.</span>
+
+But a Z80 generated from an uncorrupted TZX would allow Daren to make an 
+RZX of playing WTSS all the way through.
+
+Rob.
+
+
+
+</pre></div><div class="post" id="p184293"><div class="ph"><a class="d" href="#p184293">2004-09-06 20:54:40</a> <span>Daren</span> <span>Re: Where Time Stood Still bug</span></div><pre>
+<span class="qt">&gt; However, I&#x27;ve just played from the start using the file I received for</span>
+<span class="qt">&gt; Speccy Spoilers (which is hacked with infinite this and that) and found</span>
+the
+<span class="qt">&gt; bug wasn&#x27;t present in this so I managed to get a couple of the characters</span>
+to
+<span class="qt">&gt; the end safely. Thus I can&#x27;t blame my emulator (and if the same thing</span>
+<span class="qt">&gt; happens to Daren on another emulator, then that confirms to me that the</span>
+file
+<span class="qt">&gt; we both used from WoS was corrupted - presumably because of the source</span>
+<span class="qt">&gt; tape?).</span>
+
+Right, I&#x27;ve just tried it again, and the slope freeze bug is still there.
+However, if you speed the emulator up, after a while, the game continues and
+you can move around again.
+
+However, the graphics are messed up and you can&#x27;t see much, just the main
+characters and enemies.
+
+I&#x27;ve recorded an RZX of my progress, up to where the graphics go ape.
+
+Even with rollback, and several attempts, I couldn&#x27;t get all 4 accross the
+swamp. I&#x27;m sorry, but the fat guy bought it.
+
+The rzx is here if anyone wants a look:
+<a href="http://www.rzxarchive.co.uk/wtss_bug.rzx" rel="noreferrer">http://www.rzxarchive.co.uk/wtss_bug.rzx</a>
+
+What I might try is to get the snap from speccy spoilers, and poke the infy
+time/energy values back to normal. Then try re-recording another RZX with
+this.
+
+Daren
+
+
+
+
+
+
+</pre></div><div class="post" id="p184300"><div class="ph"><a class="d" href="#p184300">2004-09-06 22:36:01</a> <span>Chris Cowley</span> <span>Re: Where Time Stood Still bug</span></div><pre>On Mon, 06 Sep 2004 19:13:15 GMT, …@… (Jim Grimwood)
+wrote:
+
+<span class="qt">&gt;No chance of my doing a new TZX, as none of the TZX conversion programs</span>
+<span class="qt">&gt;will work on my computer - they just give a whole load of errors and</span>
+<span class="qt">&gt;produce a garbage file or give no errors and still produce a garbage file.</span>
+
+Can you sample the tape as a WAV or AIFF and post it to abcs? Then
+someone else might be able to turn it into a working TZX.
+
+Just a thought...
+-- 
+Chris Cowley
+
+
+
+</pre></div><div class="post" id="p184301"><div class="ph"><a class="d" href="#p184301">2004-09-06 22:38:59</a> <span>Jim Grimwood</span> <span>Snapshots (was: Re: Where Time Stood Still bug)</span></div><pre>On 6 Sep 2004 21:24:23 +0100, …@… (Philip Kendall) wrote:
+
+<span class="qt">&gt;[...]</span>
+<span class="qt">&gt;The situation is that WoS is still interested in snapshots, .tap files,</span>
+<span class="qt">&gt;any version at all of something which is MIA. Unfortunately, there&#x27;s a</span>
+<span class="qt">&gt;_large_ backlog of files waiting to be processed, so it won&#x27;t appear in</span>
+<span class="qt">&gt;the archive any time soon, but keep sending them in.</span>
+
+The instructions and colour code sheet which I sent at the same time were
+put up quite quickly, which is why I thought that the Z80 snapshot wasn&#x27;t
+wanted.
+
+I&#x27;ve been concerned for a while about problems people have reported with
+various games running from TZX files, as it seems that it&#x27;s quite possible
+for a TZX file to be created which seems (ie. loads) OK but is bad
+somewhere inside; these will never be discovered unless someone is
+diligent/daft enough to play through the games in their entirety.
+
+Perhaps the TZX format is too clever (ie. complicated) for its own good
+sometimes? Perhaps for every program which can be encompassed in a single
+load a Z80 snapshot taken directly from the original tape would be a more
+reliable format to keep?
+
+--
+Another Fine Product from:
+Jim Grimwood, Weardale, England
+<a href="http://www.users.globalnet.co.uk/~jg27paw4/" rel="noreferrer">http://www.users.globalnet.co.uk/~jg27paw4/</a>
+
+
+
+</pre></div><div class="post" id="p184302"><div class="ph"><a class="d" href="#p184302">2004-09-06 22:39:00</a> <span>Jim Grimwood</span> <span>Re: Where Time Stood Still bug</span></div><pre>On Mon, 06 Sep 2004 20:35:55 GMT, Kendy &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;[...]</span>
+<span class="qt">&gt;But a Z80 generated from an uncorrupted TZX would allow Daren to make an </span>
+<span class="qt">&gt;RZX of playing WTSS all the way through.</span>
+
+But how would you know the TZX was uncorrupted without playing the game
+all the way through? Is there any software method for verifying a TZX
+against the original tape?
+
+I can supply a Z80 snapshot of WTSS taken from my original tape (saved at
+the control selection screen at the start) if someone wants it, which I
+know will play all the way through with all four characters (although
+that&#x27;s probably not possible without a lot of swearing).
+
+--
+Another Fine Product from:
+Jim Grimwood, Weardale, England
+<a href="http://www.users.globalnet.co.uk/~jg27paw4/" rel="noreferrer">http://www.users.globalnet.co.uk/~jg27paw4/</a>
+
+
+
+</pre></div><div class="post" id="p184303"><div class="ph"><a class="d" href="#p184303">2004-09-06 22:46:09</a> <span>Philip Kendall</span> <span>Re: Snapshots (was: Re: Where Time Stood Still bug)</span></div><pre>In article &lt;…@…&gt;,
+Jim Grimwood &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Perhaps the TZX format is too clever (ie. complicated) for its own good</span>
+<span class="qt">&gt;sometimes?</span>
+
+Yes, but this isn&#x27;t a symptom of it.
+
+<span class="qt">&gt;Perhaps for every program which can be encompassed in a single</span>
+<span class="qt">&gt;load a Z80 snapshot taken directly from the original tape would be a more</span>
+<span class="qt">&gt;reliable format to keep?</span>
+
+I see no reason to believe that would actually be more reliable. If the
+data&#x27;s corrupted, it will be corrupted whether it&#x27;s stored in a snapshot
+or a tzx file.
+
+Largely, this is an issue you&#x27;ll need to take up with the TZX Vault team
+and their verification process (or lack of) before they release a
+&#x27;perfect&#x27; TZX file.
+
+Cheers,
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p184307"><div class="ph"><a class="d" href="#p184307">2004-09-07 00:42:11</a> <span>Dunny</span> <span>Re: Snapshots (was: Re: Where Time Stood Still bug)</span></div><pre>In news:…@…,
+Jim Grimwood &lt;…@…&gt; typed:
+
+<span class="qt">&gt; Perhaps the TZX format is too clever (ie. complicated) for its own</span>
+<span class="qt">&gt; good sometimes? Perhaps for every program which can be encompassed in</span>
+<span class="qt">&gt; a single load a Z80 snapshot taken directly from the original tape</span>
+<span class="qt">&gt; would be a more reliable format to keep?</span>
+
+The TZX format, before it reached it&#x27;s current state, started off too complex
+for it&#x27;s own good - agreed. However, up until the availability of cheap disk
+space and the CSW2 format, it was the best we had. CSW2 isn&#x27;t ideal either, but
+I&#x27;ll come to that.
+
+Z80/SNA etc can&#x27;t store loaders. It&#x27;s as simple as that. It may be more ideal in
+this case, for the sake of the game, but you&#x27;ll not find Gauntlet in snap
+format - not if you want to play any more than 8 levels per snap. Also, you can
+play the [WTSS] game, and that&#x27;s great. But you&#x27;ll not see it load, not hear the
+sounds of the loader with a nostalgic tear in your eye. You&#x27;ll not see the nifty
+artwork as the loading screen comes up. And TAP is no good for the majority of
+commercial games out there, due to the timing restrictions.
+
+As for CSW/CSW2... It&#x27;s great. It&#x27;s small - about 3 - 4 times the size of a TZX,
+but still small for what you get. But it&#x27;s a nightmare from an emulator author&#x27;s
+point of view. In a TZX we (the authors) have access to not the *sound* of a
+tape, but the BYTES that make up the data coming in. If we want the sound, we
+can extrapolate a wave from that data. If we want to ease the pain of 8 minute
+loaders, whilst still maintaining the colours of the loader borders, and the
+Screen$ artwork, we can - by loading very fast because we can make intelligent
+guesses about what&#x27;s coming in and where to put it. We can stream the bits in at
+a much faster rate too, by short-cutting some code like the INC/DEC B loop in
+many loaders. We can even flashload a lot of them (but that&#x27;s where the benefits
+end, imo - may as well snap those). With CSW/CSW2 we have access to the sounds
+that are coming in. Are they bytes? are they pilot tones? synch pulses? The
+emulation doesn&#x27;t care, it&#x27;ll load them. But we can&#x27;t do much acceleration
+beyond basic loader traps looking for square wave edges. We can&#x27;t analyse the
+bytes in the file to rip stuff out... Not easily. It&#x27;s just a WAV file
+compressed really.
+
+Myself, I&#x27;d defend the TZX format. It only gets as complex as you allow it to.
+And there&#x27;s no point in saying that this z80 is ok, that tzx is not - I know for
+a fact that the z80 used by jim at speccy spoilers came from the WTSS tzx on the
+vault. What good is any image of a game, tzx or no, if the source was bad in the
+first place?
+
+You could load the original tape and still get the ramp bug.
+
+I&#x27;d not criticise the TZX Vault team - they &quot;do a bloody rotten job very well
+indeed&quot; to paraphrase a famous comedian/author. It&#x27;s the best we have, and they
+can only work with the sources they have. Prior to the STP/SDP team&#x27;s efforts,
+snaps and z80s and hacked TAP files was all we had, and I for one think that
+their quality control is pretty good, but more important is their willingness to
+re-try tapes that the public find wanting. These guys aren&#x27;t TOSEC, out to get
+all they can - they&#x27;re out to get the best that they can.
+
+D.
+
+
+
+
+
+
+</pre></div><div class="post" id="p184317"><div class="ph"><a class="d" href="#p184317">2004-09-07 08:08:53</a> <span>Gerard Sweeney</span> <span>Re: Snapshots (was: Re: Where Time Stood Still bug)</span></div><pre>Donning his TZX T-shirt, Dunny wrote:
+
+<span class="qt">&gt; Prior to the STP/SDP team&#x27;s efforts</span>
+
+I whole-heartedly agree with Dunny&#x27;s comments.
+
+I don&#x27;t think anything has been said specifically here, but in case
+there are those out there willing to chuck any criticism at this
+EXTREMELY hard-working bunch of individuals, I recommend they attempt
+to gain some insight into what&#x27;s involved (I&#x27;m speaking as someone on
+the WOS maintenance list, and have only seen a fraction of the workload
+involved there).
+
+I can&#x27;t personally speak for the talented chaps involved, but I reckon
+I&#x27;d not be wrong in saying that The STP/SDP/MIA efforts can only
+succeed if more people get involved - TZXing alone takes time, let
+alone sourcing new tapes on EBay (and the like) and uploading/indexing
+the work so far.
+
+Mistakes will be made. If you find a faulty/suspect TZX, then let them
+know. If, however, you have the original tape at home, then get it
+TZX&#x27;d and sent in!
+
+Just my 2p worth - take it for however you wish.
+
+Toodle-pip!
+Gerard
+
+-- 
+
+Gerard Sweeney
+Hackers Anonymous/Team Amiga
+<a href="http://fly.to/ha3" rel="noreferrer">http://fly.to/ha3</a> and <a href="http://www.the-tipshop.co.uk" rel="noreferrer">http://www.the-tipshop.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p184320"><div class="ph"><a class="d" href="#p184320">2004-09-07 09:52:20</a> <span>Jim Grimwood</span> <span>Re: Snapshots (was: Re: Where Time Stood Still bug)</span></div><pre>On 7 Sep 2004 08:08:53 GMT, &quot;Gerard Sweeney&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;[...]</span>
+<span class="qt">&gt;Mistakes will be made. If you find a faulty/suspect TZX, then let them</span>
+<span class="qt">&gt;know. If, however, you have the original tape at home, then get it</span>
+<span class="qt">&gt;TZX&#x27;d and sent in!</span>
+
+Well, I would, but as I&#x27;ve moaned about before, I&#x27;ve spent many fruitless
+hours trying to get various versions of various tape reading / TZX
+conversion programs to work, with little success. I managed to create a
+good TZX of the Manchester Utd. game some years ago, but that took me half
+a day (I can&#x27;t remember which program I used, but it wasn&#x27;t MakeTZX); and
+six months ago I managed to create a good TZX of The Code with MakeTZX on
+my first attempt, a feat never emulated before or since. That&#x27;s the sum
+total of my successes in six years. Everything else I&#x27;ve tried has been a
+miserable failure.
+
+Although tapes which load &amp; run OK on my Spectrum will also load &amp; run OK
+with my emulator on my computer, loading tapes via any other program apart
+from the emulator just won&#x27;t work. One problem is that programs like
+MakeTZX have so many obscure technical settings which I don&#x27;t understand -
+even after reading the documentation - that I&#x27;ve got little chance of
+solving any problems which might arise. With the emulator I just turn on
+the tape, type LOAD &quot;&quot;, click on the Load button, and it usually works.
+
+Some time ago someone did make some suggestions as to possible
+explanations for this paradoxical situation, but ... errm ... I can&#x27;t
+remember what they said now. I thought that I&#x27;d discovered the solution
+when The Code worked first time, but then I tried Learning with Leeper and
+I was back to the miserable failure scenario, which is why I sent a
+snapshot of that one.
+
+--
+Another Fine Product from:
+Jim Grimwood, Weardale, England
+<a href="http://www.users.globalnet.co.uk/~jg27paw4/" rel="noreferrer">http://www.users.globalnet.co.uk/~jg27paw4/</a>
+
+
+
+</pre></div><div class="post" id="p184321"><div class="ph"><a class="d" href="#p184321">2004-09-07 09:52:21</a> <span>Jim Grimwood</span> <span>Re: Snapshots (was: Re: Where Time Stood Still bug)</span></div><pre>On 6 Sep 2004 23:46:09 +0100, …@… (Philip Kendall) wrote:
+
+<span class="qt">&gt;In article &lt;…@…&gt;,</span>
+<span class="qt">&gt;Jim Grimwood &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;[...]</span>
+<span class="qt">&gt;&gt;Perhaps for every program which can be encompassed in a single</span>
+<span class="qt">&gt;&gt;load a Z80 snapshot taken directly from the original tape would be a more</span>
+<span class="qt">&gt;&gt;reliable format to keep?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I see no reason to believe that would actually be more reliable. If the</span>
+<span class="qt">&gt;data&#x27;s corrupted, it will be corrupted whether it&#x27;s stored in a snapshot</span>
+<span class="qt">&gt;or a tzx file.</span>
+
+All published versions of a tape would not be equally reliable, and I
+fortunately had a good tape of WTSS when I created the snapshot, but what
+I was wondering was would MakeTZX allow an apparently good copy of a
+faulty tape to be created, whereas loading that tape directly into an
+emulator to create a snapshot would give a load error? Could a bad tape
+still load successfully on a Spectrum or an emulator, and thus lead to the
+possibility of a bad TZX from that tape, or is it possible for a bad tape
+to produce an apparently successful load by one method but not by another?
+Unfortunately, as we all know from 20 years experience, the same tape can
+produce different results on different days with exactly the same hardware
+&amp; software, so there must be other mystical factors involved which can
+lead to good tapes failing and bad tapes succeeding, I suppose.
+
+--
+Another Fine Product from:
+Jim Grimwood, Weardale, England
+<a href="http://www.users.globalnet.co.uk/~jg27paw4/" rel="noreferrer">http://www.users.globalnet.co.uk/~jg27paw4/</a>
+
+
+
+</pre></div><div class="post" id="p184322"><div class="ph"><a class="d" href="#p184322">2004-09-07 10:36:50</a> <span>Dunny</span> <span>Re: Snapshots (was: Re: Where Time Stood Still bug)</span></div><pre>In news:…@…,
+Jim Grimwood &lt;…@…&gt; typed:
+
+<span class="qt">&gt; All published versions of a tape would not be equally reliable, and I</span>
+<span class="qt">&gt; fortunately had a good tape of WTSS when I created the snapshot, but</span>
+<span class="qt">&gt; what I was wondering was would MakeTZX allow an apparently good copy</span>
+<span class="qt">&gt; of a faulty tape to be created, whereas loading that tape directly</span>
+<span class="qt">&gt; into an emulator to create a snapshot would give a load error? Could</span>
+<span class="qt">&gt; a bad tape still load successfully on a Spectrum or an emulator, and</span>
+<span class="qt">&gt; thus lead to the possibility of a bad TZX from that tape, or is it</span>
+<span class="qt">&gt; possible for a bad tape to produce an apparently successful load by</span>
+<span class="qt">&gt; one method but not by another? Unfortunately, as we all know from 20</span>
+<span class="qt">&gt; years experience, the same tape can produce different results on</span>
+<span class="qt">&gt; different days with exactly the same hardware &amp; software, so there</span>
+<span class="qt">&gt; must be other mystical factors involved which can lead to good tapes</span>
+<span class="qt">&gt; failing and bad tapes succeeding, I suppose.</span>
+
+Given the amount of checking that goes on, especially in speedlock routines, I&#x27;d
+find it very hard to believe that the loader would still function if MakeTZX had
+corrupted even 1 of the edges that was coming in. Although not foolproof, and
+there will be times where a certain number of bits are corrupt but the same
+result is made from the error check (be it an XOR, CRC or whatever) these are so
+remote as to be not worth considering, imo. Don&#x27;t forget that MakeTZX doesn&#x27;t
+actually load the program, it just listens to it and creates a TZX from what it
+hears. There *is* some sort of routine which will identify an individual loader,
+(which I think is a bloody stupid and severely limiting way to go about it, but
+there you go) but this shouldn&#x27;t produce any errors.
+
+Tbh, I can&#x27;t see that there will be any difference between a tzx and an original
+tape, *when looked at from the POV of the speccy&#x27;s EAR port*.
+
+D.
+
+
+
+
+
+
+</pre></div><div class="post" id="p184325"><div class="ph"><a class="d" href="#p184325">2004-09-07 10:48:34</a> <span>ktb</span> <span>Re: Where Time Stood Still bug</span></div><pre>Daft question that may be pointless :-)
+
+Could it be a rom-based problem? If a &quot;Sinclair 128&quot; rom set is used
+in the emulator, or an Amstrad +2/+2A/+3 rom is used - I remember there
+were incompatibilities in games etc that would turn up because Amstrad
+decided to stick bits of code here, there and everywhere?
+
+NM - or has this already been said; or would it make little or no
+      difference anyway?
+
+
+
+</pre></div><div class="post" id="p184328"><div class="ph"><a class="d" href="#p184328">2004-09-07 11:28:14</a> <span>Matthew Wilson</span> <span>Re: Where Time Stood Still bug</span></div><pre>…@… (Jim Grimwood) wrote in message news:&lt;…@…&gt;...
+ 
+<span class="qt">&gt; No chance of my doing a new TZX, as none of the TZX conversion programs</span>
+<span class="qt">&gt; will work on my computer - they just give a whole load of errors and</span>
+<span class="qt">&gt; produce a garbage file or give no errors and still produce a garbage file.</span>
+<span class="qt">&gt; The tape loads OK in my emulator, so I could do a Z80 snapshot, but I</span>
+<span class="qt">&gt; don&#x27;t think Martijn&#x27;s interested in those any longer, as I sent a Z80 of</span>
+<span class="qt">&gt; Learning with Leeper to WoS some months ago and it never got put on - it&#x27;s</span>
+<span class="qt">&gt; still marked MIA.</span>
+
+I have a tape of WTSS somewhere, I think, so I could try making a TZX.
+
+Matthew
+
+
+
+</pre></div><div class="post" id="p184333"><div class="ph"><a class="d" href="#p184333">2004-09-07 12:10:53</a> <span>Paul E Collins</span> <span>Re: Where Time Stood Still bug</span></div><pre>&quot;Daren&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; When you go up the slope past the temple, near</span>
+<span class="qt">&gt; where the armadillo roams, the game freezes</span>
+
+That&#x27;s where time stood still.
+
+P.
+
+
+
+
+
+</pre></div><div class="post" id="p184344"><div class="ph"><a class="d" href="#p184344">2004-09-07 16:49:44</a> <span>Darren Salt</span> <span>Re: Snapshots (was: Re: Where Time Stood Still bug)</span></div><pre>I demand that Dunny may or may not have written...
+
+[snip]
+<span class="qt">&gt; Z80/SNA etc can&#x27;t store loaders. It&#x27;s as simple as that. It may be more</span>
+<span class="qt">&gt; ideal in this case, for the sake of the game, but you&#x27;ll not find Gauntlet</span>
+<span class="qt">&gt; in snap format</span>
+
+Z80+SLT is definitely doable...
+
+[snip]
+-- 
+<span class="qt">| Darren Salt | d youmustbejoking,demon,co,uk | nr. Ashington,</span>
+<span class="qt">| RISC OS,    | s zap,tartarus,org            | Northumberland</span>
+<span class="qt">| Linux       | @                             | Toon Army</span>
+<span class="qt">|   Has Ian Collier caught up yet?</span>
+
+It is impossible to make anything foolproof because fools are so ingenious.
+
+
+
+</pre></div><div class="post" id="p184345"><div class="ph"><a class="d" href="#p184345">2004-09-07 17:01:22</a> <span>Chris Young</span> <span>Re: Snapshots (was: Re: Where Time Stood Still bug)</span></div><pre>On Tue, 7 Sep 2004 11:36:50 +0100 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Dunny:
+
+<span class="qt">&gt; Given the amount of checking that goes on, especially in speedlock routines, I&#x27;d</span>
+<span class="qt">&gt; find it very hard to believe that the loader would still function if MakeTZX had</span>
+<span class="qt">&gt; corrupted even 1 of the edges that was coming in. Although not foolproof, and</span>
+<span class="qt">&gt; there will be times where a certain number of bits are corrupt but the same</span>
+<span class="qt">&gt; result is made from the error check (be it an XOR, CRC or whatever) these are so</span>
+<span class="qt">&gt; remote as to be not worth considering, imo.</span>
+
+That&#x27;s what I thought.  Maybe there were two (or more) versions of
+WTSS published?  Early ones with the bug in them, and later ones with
+it fixed?  It&#x27;s certainly a possibility.
+
+A byte comparison of a known good TZX and the faulty one might prove
+useful in determining whether this is the case.
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p184349"><div class="ph"><a class="d" href="#p184349">2004-09-07 17:49:35</a> <span>Dunny</span> <span>Re: Snapshots (was: Re: Where Time Stood Still bug)</span></div><pre>In news:…@…,
+Darren Salt &lt;…@…&gt; typed:
+<span class="qt">&gt; I demand that Dunny may or may not have written...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; [snip]</span>
+<span class="qt">&gt;&gt; Z80/SNA etc can&#x27;t store loaders. It&#x27;s as simple as that. It may be</span>
+<span class="qt">&gt;&gt; more ideal in this case, for the sake of the game, but you&#x27;ll not</span>
+<span class="qt">&gt;&gt; find Gauntlet in snap format</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Z80+SLT is definitely doable...</span>
+
+Yeah, we could then add it to that huge archive of other SLT games...
+
+D.
+
+
+
+
+
+
+</pre></div><div class="post" id="p184359"><div class="ph"><a class="d" href="#p184359">2004-09-07 19:43:36</a> <span>Jim Grimwood</span> <span>Re: Where Time Stood Still bug</span></div><pre>On Tue, 07 Sep 2004 11:48:34 +0100, ktb &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Could it be a rom-based problem? If a &quot;Sinclair 128&quot; rom set is used</span>
+<span class="qt">&gt;in the emulator, or an Amstrad +2/+2A/+3 rom is used - I remember there</span>
+<span class="qt">&gt;were incompatibilities in games etc that would turn up because Amstrad</span>
+<span class="qt">&gt;decided to stick bits of code here, there and everywhere?</span>
+
+I sent Daren two snapshots: one saved at the starting control setup menu,
+and one saved with all four characters right near the end, after the place
+where the two boulders (almost) block the path. He could try walking back
+down to the temple and then back up again, to see if it hangs up again, as
+that should prove whether it&#x27;s the ROM version or the program version
+which was at fault.
+
+There was a disk-based version of WTSS, which would have differences, so
+maybe there was a +2A tape version as well? Playing a +2A version on a
+128+/+2 or vice versa would be likely fail at some point, I think.
+According to Crash (April 1989) there was also a (presumably multi-load)
+48K version, but I don&#x27;t believe that ever saw the light of day.
+
+By the way, the tricks I found to get everyone across the swamp were: to
+walk backwards and forwards to allow the other three to catch up if they
+wandered off the wrong way; and to walk around in circles whenever there
+was a tentacle lurking ahead, waiting for it to go away. Even so, I could
+never have done it without using an emulator and saving many times, as
+either the other characters kept blocking each other and sinking, or
+they&#x27;d wander into tentacles despite my efforts to stop them, or I&#x27;d
+accidentally walk off the path. As the game has no save option I don&#x27;t
+believe that anyone could have managed to complete the game with all four
+characters, playing from tape or disk back in 1988. The solutions printed
+in SU and YS all expect casualties along the way.
+
+By the other way, most of the objects in the game are not needed to
+complete it. Apart from food &amp; water, the only essential items are those
+to prevent people getting killed: the rope to save Clive at the bridge,
+and Gloria&#x27;s make-up case to give to the chief to get the ham to distract
+the hand. Maybe it&#x27;s necessary to find and/or find uses for all the other
+stuff (like the knife on one of the mountain paths and the globe in the
+temple) to get a 100% score, as I only got 81% with all four characters.
+
+--
+Another Fine Product from:
+Jim Grimwood, Weardale, England
+<a href="http://www.users.globalnet.co.uk/~jg27paw4/" rel="noreferrer">http://www.users.globalnet.co.uk/~jg27paw4/</a>
+
+
+
+</pre></div><div class="post" id="p184380"><div class="ph"><a class="d" href="#p184380">2004-09-08 11:07:57</a> <span>ktb</span> <span>Re: Where Time Stood Still bug</span></div><pre>Jim Grimwood wrote:
+[rom info snipped]
+<span class="qt">&gt; There was a disk-based version of WTSS, which would have differences, so</span>
+<span class="qt">&gt; maybe there was a +2A tape version as well? Playing a +2A version on a</span>
+<span class="qt">&gt; 128+/+2 or vice versa would be likely fail at some point, I think.</span>
+<span class="qt">&gt; According to Crash (April 1989) there was also a (presumably multi-load)</span>
+<span class="qt">&gt; 48K version, but I don&#x27;t believe that ever saw the light of day.</span>
+
+That would make sense, and I think I remember them talking about a 48K 
+version... but like many things, it turned out to be &quot;vapourware&quot; :-)
+
+I have to say that some of the things that people have described 
+happening, I do remember happening in my version of WTSS occasionally - 
+although it would be inconsistent - sometimes something would set the 
+&#x27;bug&#x27; off, and sometimes it wouldn&#x27;t.
+
+This may be a case of new technological advances compounding the 
+problem. If it is a &quot;bug&quot; of the game that occasionally these errors 
+happen, when you load it up, because you&#x27;re playing from repeated 
+snapshots, if the bug is due to happen &quot;at that time&quot; it will happen... 
+that is to say, if the bug always occurs the first time after you load 
+the game, but on the 2nd or 3rd goes it cures itself [or turns to 
+something worse] then, playing it on a Spectrum may avoid the problems, 
+you get so far through, die, start again... with snapshots, you just 
+continue on with the same game and the bug never goes... and you get all 
+the way to the end and you&#x27;re stuffed.
+
+[swamp tricks snipped]
+
+I know what you mean - I think, at the time, the magazines advised 
+&quot;loosing the other characters and then guiding them over one at a time&quot;
+
+[snip]
+<span class="qt">&gt; accidentally walk off the path. As the game has no save option I don&#x27;t</span>
+<span class="qt">&gt; believe that anyone could have managed to complete the game with all four</span>
+<span class="qt">&gt; characters, playing from tape or disk back in 1988. </span>
+
+although, text-adventures aside, it would be unusual to find any game 
+that would allow you to save progress, so this would be &quot;the norm&quot; - In 
+today&#x27;s world, with games like Final Fantasy promising something like 
+100 hours of playing... saved games are a must, but, when the game would 
+probably be able to be solved in 2-4 hours...
+
+[snips, but agrees with the comments about the objects]
+
+NM - on a related, but different aside, I had similar problems with 
+&quot;Questprobe Hulk&quot; - and came to the conclusion that there were multiple 
+releases and some were buggy [QPH has a version number - I forget which 
+ones worked now]
+
+
+
+</pre></div><div class="post" id="p184412"><div class="ph"><a class="d" href="#p184412">2004-09-08 17:47:34</a> <span>Robert J Baker</span> <span>Re: Where Time Stood Still bug</span></div><pre>&quot;Paul E Collins&quot; &lt;…@…&gt; wrote in message news:&lt;chk8gd$8t0$…@…&gt;...
+<span class="qt">&gt; &quot;Daren&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; When you go up the slope past the temple, near</span>
+<span class="qt">&gt; &gt; where the armadillo roams, the game freezes</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; That&#x27;s where time stood still.</span>
+
+You&#x27;re three days late with that gag. :p See my post to this thread on
+September 4...
+
+
+
+</pre></div><div class="post" id="p184419"><div class="ph"><a class="d" href="#p184419">2004-09-08 18:54:24</a> <span>Paul E Collins</span> <span>Re: Where Time Stood Still bug</span></div><pre>&quot;Robert J Baker&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; &gt; That&#x27;s where time stood still.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; You&#x27;re three days late with that gag. :p See my post</span>
+<span class="qt">&gt; to this thread on September 4...</span>
+
+Yeah, I saw that and cancelled my message, but it didn&#x27;t work.
+
+P.
+
+
+
+
+
+</pre></div><div class="post" id="p184424"><div class="ph"><a class="d" href="#p184424">2004-09-08 20:55:37</a> <span>Daren</span> <span>Re: Where Time Stood Still bug</span></div><pre><span class="qt">&gt; I sent Daren two snapshots: one saved at the starting control setup menu,</span>
+<span class="qt">&gt; and one saved with all four characters right near the end, after the place</span>
+<span class="qt">&gt; where the two boulders (almost) block the path. He could try walking back</span>
+<span class="qt">&gt; down to the temple and then back up again, to see if it hangs up again, as</span>
+<span class="qt">&gt; that should prove whether it&#x27;s the ROM version or the program version</span>
+<span class="qt">&gt; which was at fault.</span>
+
+Excellent! That worked Jim. Grab the WTSS RZX walkthrough from
+www.rzxarchive.co.uk or ABCS.
+
+Daren
+
+
+
+
+
+</pre></div><div class="post" id="p184484"><div class="ph"><a class="d" href="#p184484">2004-09-09 19:03:14</a> <span>Robert J Baker</span> <span>Re: Where Time Stood Still bug</span></div><pre>&quot;Paul E Collins&quot; &lt;…@…&gt; wrote in message news:&lt;chnkh0$imo$…@…&gt;...
+
+<span class="qt">&gt; Yeah, I saw that and cancelled my message, but it didn&#x27;t work.</span>
+
+I&#x27;ve heard somewhere (perhaps on NANAE or NANAU?) that most
+news-servers nowadays don&#x27;t accept cancels, due to too many scumbags
+forging them (I had two of my posts forge-cancelled last year, so I
+empathise)...
+
+
+
+</pre></div></main></body></html>

@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coat Getting Simulator Final Release....for now... · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Coat Getting Simulator Final Release....for now...</h1><p class="facts">10 posts, 2001-02-10 – 2001-02-13</p><div class="post" id="p88252"><div class="ph"><a class="d" href="#p88252">2001-02-10 12:39:08</a> <span>Tayles</span> </div><pre>Those of you still playing about with the stinky old Beta of Coat Sim,
+can pick up the definitive version from the link below.
+
+<a href="http://www.redrival.com/spectrum/coatsim.z80" rel="noreferrer">http://www.redrival.com/spectrum/coatsim.z80</a>
+
+Features include:
+Covert hatstand operations!
+Air Tanks!
+An incremental scoring system!
+Rocket boots!
+A keyboard interface control system!
+Colours!
+Crap UDGs!
+
+Play it and see why there&#x27;s so little fuss being made over this.
+
+Russ.
+
+
+Sent via Deja.com
+<a href="http://www.deja.com/" rel="noreferrer">http://www.deja.com/</a>
+
+
+
+</pre></div><div class="post" id="p88256"><div class="ph"><a class="d" href="#p88256">2001-02-10 12:51:50</a> <span>la haine</span> <span>Re: Coat Getting Simulator Final Release....for now...</span></div><pre>On 10 Feb 2001, Tayles (…@…) wrote this message &lt;963cpc
+$ugg$…@…&gt;:
+
+<span class="qt">&gt;Those of you still playing about with the stinky old Beta of Coat Sim,</span>
+<span class="qt">&gt;can pick up the definitive version from the link below.</span>
+
+<span class="qt">&gt;Play it and see why there&#x27;s so little fuss being made over this.</span>
+
+You know...it&#x27;s strangely compelling...
+
+-- 
+I have six locks on my door all in a row. When I go out, I lock every other
+one. I figure no matter how long somebody stands there picking the locks,
+they are always locking three. - Elayne Boosler
+
+
+
+</pre></div><div class="post" id="p88260"><div class="ph"><a class="d" href="#p88260">2001-02-10 13:28:17</a> <span>Tayles</span> <span>Re: Coat Getting Simulator Final Release....for now...</span></div><pre>In article &lt;963dh6$ph0$…@…&gt;,
+  …@… (la haine) wrote:
+<span class="qt">&gt; On 10 Feb 2001, Tayles (…@…) wrote this message</span>
+&lt;963cpc
+<span class="qt">&gt; $ugg$…@…&gt;:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;Those of you still playing about with the stinky old Beta of Coat</span>
+Sim,
+<span class="qt">&gt; &gt;can pick up the definitive version from the link below.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;Play it and see why there&#x27;s so little fuss being made over this.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; You know...it&#x27;s strangely compelling...</span>
+<span class="qt">&gt;</span>
+
+That&#x27;s a quote for the inlay!
+
+Russ
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; I have six locks on my door all in a row. When I go out, I lock every</span>
+other
+<span class="qt">&gt; one. I figure no matter how long somebody stands there picking the</span>
+locks,
+<span class="qt">&gt; they are always locking three. - Elayne Boosler</span>
+<span class="qt">&gt;</span>
+
+--
+<a href="http://www.redrival.com/spectrum/home.html" rel="noreferrer">http://www.redrival.com/spectrum/home.html</a>
+The Spectrum Golden Years 1982-1986
+
+
+Sent via Deja.com
+<a href="http://www.deja.com/" rel="noreferrer">http://www.deja.com/</a>
+
+
+
+</pre></div><div class="post" id="p88285"><div class="ph"><a class="d" href="#p88285">2001-02-10 18:38:35</a> <span>Llama-Wax Len</span> <span>Re: Coat Getting Simulator Final Release....for now...</span></div><pre>
+Tayles wrote in message &lt;963cpc$ugg$…@…&gt;...
+<span class="qt">&gt;Those of you still playing about with the stinky old Beta of Coat Sim,</span>
+<span class="qt">&gt;can pick up the definitive version from the link below.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;<a href="http://www.redrival.com/spectrum/coatsim.z80" rel="noreferrer">http://www.redrival.com/spectrum/coatsim.z80</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Features include:</span>
+<span class="qt">&gt;Covert hatstand operations!</span>
+<span class="qt">&gt;Air Tanks!</span>
+<span class="qt">&gt;An incremental scoring system!</span>
+<span class="qt">&gt;Rocket boots!</span>
+<span class="qt">&gt;A keyboard interface control system!</span>
+<span class="qt">&gt;Colours!</span>
+<span class="qt">&gt;Crap UDGs!</span>
+
+
+Bloody hell. Extra features? It was too blimmin&#x27; hard to begin with. I might
+not bother dowloading this version &#x27;cos frankly it scares me.
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+LEGAL DISCLAIMER: By replying to this message, you hereby
+acknowledge that the ZX Spectrum game &quot;Robocop&quot; was too hard.
+
+
+
+
+
+</pre></div><div class="post" id="p88456"><div class="ph"><a class="d" href="#p88456">2001-02-11 21:29:26</a> <span>Mirko</span> <span>Re: Coat Getting Simulator Final Release....for now...</span></div><pre>
+&quot;Tayles&quot; &lt;…@…&gt; schrieb im Newsbeitrag
+news:963cpc$ugg$…@…...
+<span class="qt">| Those of you still playing about with the stinky old Beta of Coat Sim,</span>
+<span class="qt">| can pick up the definitive version from the link below.</span>
+<span class="qt">|</span>
+<span class="qt">| <a href="http://www.redrival.com/spectrum/coatsim.z80" rel="noreferrer">http://www.redrival.com/spectrum/coatsim.z80</a></span>
+<span class="qt">|</span>
+<span class="qt">| Features include:</span>
+<span class="qt">| Covert hatstand operations!</span>
+<span class="qt">| Air Tanks!</span>
+<span class="qt">| An incremental scoring system!</span>
+<span class="qt">| Rocket boots!</span>
+<span class="qt">| A keyboard interface control system!</span>
+<span class="qt">| Colours!</span>
+<span class="qt">| Crap UDGs!</span>
+<span class="qt">|</span>
+<span class="qt">| Play it and see why there&#x27;s so little fuss being made over this.</span>
+<span class="qt">|</span>
+<span class="qt">| Russ.</span>
+<span class="qt">|</span>
+<span class="qt">|</span>
+<span class="qt">| Sent via Deja.com</span>
+<span class="qt">| <a href="http://www.deja.com/" rel="noreferrer">http://www.deja.com/</a></span>
+
+
+Hi !
+
+There is one nasty thing in your otherwise now fantastic and perfect coat
+getting simulator - could you perhaps check the &quot;y&quot; key for doing the same
+as &quot;z&quot; - i use a german keyboard layout, so &quot;y&quot; and &quot;z&quot; are swapped and its
+hard to use &quot;z&quot; for going down-left. One relase more or less would not be so
+spectacular after all :))
+
+bye, Mirko
+
+
+
+
+-----------------------------------------
+- MY Z80 is much better then my english -
+-----------------------------------------
+------ <a href="http://zxspectrum.ubuxe.de" rel="noreferrer">http://zxspectrum.ubuxe.de</a> -------
+-----------------------------------------
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p88464"><div class="ph"><a class="d" href="#p88464">2001-02-11 22:26:49</a> <span>Tayles</span> <span>Re: Coat Getting Simulator Final Release....for now...</span></div><pre>In article &lt;96705t$197$00$…@…&gt;,
+  &quot;Mirko&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Hi !</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; There is one nasty thing in your otherwise now fantastic and perfect</span>
+coat
+<span class="qt">&gt; getting simulator - could you perhaps check the &quot;y&quot; key for doing the</span>
+same
+<span class="qt">&gt; as &quot;z&quot; - i use a german keyboard layout, so &quot;y&quot; and &quot;z&quot; are swapped</span>
+and its
+<span class="qt">&gt; hard to use &quot;z&quot; for going down-left. One relase more or less would</span>
+not be so
+<span class="qt">&gt; spectacular after all :))</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; bye, Mirko</span>
+<span class="qt">&gt;</span>
+
+As you asked nicely, I&#x27;ve done it. It&#x27;s at the usual address:
+<a href="http://www.redrival.com/spectrum/coatsim.z80" rel="noreferrer">http://www.redrival.com/spectrum/coatsim.z80</a>
+
+Russ
+
+
+Sent via Deja.com
+<a href="http://www.deja.com/" rel="noreferrer">http://www.deja.com/</a>
+
+
+
+</pre></div><div class="post" id="p88541"><div class="ph"><a class="d" href="#p88541">2001-02-12 11:45:11</a> <span>Mirko</span> <span>Re: Coat Getting Simulator Final Release....for now...</span></div><pre><span class="qt">| &gt; Hi !</span>
+<span class="qt">| &gt;</span>
+<span class="qt">| &gt; There is one nasty thing in your otherwise now fantastic and perfect</span>
+<span class="qt">| coat</span>
+<span class="qt">| &gt; getting simulator - could you perhaps check the &quot;y&quot; key for doing the</span>
+<span class="qt">| same</span>
+<span class="qt">| &gt; as &quot;z&quot; - i use a german keyboard layout, so &quot;y&quot; and &quot;z&quot; are swapped</span>
+<span class="qt">| and its</span>
+<span class="qt">| &gt; hard to use &quot;z&quot; for going down-left. One relase more or less would</span>
+<span class="qt">| not be so</span>
+<span class="qt">| &gt; spectacular after all :))</span>
+<span class="qt">| &gt;</span>
+<span class="qt">| &gt; bye, Mirko</span>
+
+<span class="qt">| As you asked nicely, I&#x27;ve done it. It&#x27;s at the usual address:</span>
+<span class="qt">| <a href="http://www.redrival.com/spectrum/coatsim.z80" rel="noreferrer">http://www.redrival.com/spectrum/coatsim.z80</a></span>
+
+<span class="qt">| Russ</span>
+
+
+THANKS A LOT !
+I will never forget that a whole project was redeveloped only 4me ;-]
+
+Mirko.
+
+
+
+
+-----------------------------------------
+- MY Z80 is much better then my english -
+-----------------------------------------
+------ <a href="http://zxspectrum.ubuxe.de" rel="noreferrer">http://zxspectrum.ubuxe.de</a> -------
+-----------------------------------------
+
+
+
+
+
+</pre></div><div class="post" id="p88641"><div class="ph"><a class="d" href="#p88641">2001-02-12 21:21:50</a> <span>Chr$ Young</span> <span>Re: Coat Getting Simulator Final Release....for now...</span></div><pre>On Mon, 12 Feb 2001 12:45:11 +0100, Mirko (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; THANKS A LOT !</span>
+<span class="qt">&gt; I will never forget that a whole project was redeveloped only 4me ;-]</span>
+
+Although in reality, it only involved adding &#x27;OR INKEY$=&quot;y&quot;&#x27; to one
+line of code.
+
+Chris
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p88754"><div class="ph"><a class="d" href="#p88754">2001-02-13 13:21:34</a> <span>Mirko</span> <span>Re: Coat Getting Simulator Final Release....for now...</span></div><pre>----- Original Message -----
+From: &quot;Chr$ Young&quot; &lt;…@…&gt;
+Newsgroups: comp.sys.sinclair
+Sent: Monday, February 12, 2001 10:21 PM
+Subject: Re: Coat Getting Simulator Final Release....for now...
+On Mon, 12 Feb 2001 12:45:11 +0100, Mirko (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+<span class="qt">&gt; THANKS A LOT !</span>
+<span class="qt">&gt; I will never forget that a whole project was redeveloped only 4me ;-]</span>
+Although in reality, it only involved adding &#x27;OR INKEY$=&quot;y&quot;&#x27; to one
+line of code.
+Chris
+--
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+
+yep, but dont make you smaller then you are - not to forget the ucase
+variant: &#x27;OR INKEY$=&quot;Y&quot;&#x27;
+
+
+btw  ...do you really believe i didn`t knew that :))
+
+Greets, Mirko
+
+
+
+
+-----------------------------------------
+- MY Z80 is much better then my english -
+-----------------------------------------
+------ <a href="http://zxspectrum.ubuxe.de" rel="noreferrer">http://zxspectrum.ubuxe.de</a> -------
+-----------------------------------------
+
+
+
+
+
+</pre></div><div class="post" id="p88837"><div class="ph"><a class="d" href="#p88837">2001-02-13 21:10:12</a> <span>Chr$ Young</span> <span>Re: Coat Getting Simulator Final Release....for now...</span></div><pre>On Tue, 13 Feb 2001 14:21:34 +0100, Mirko (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+<span class="qt">&gt; &gt; THANKS A LOT !</span>
+<span class="qt">&gt; &gt; I will never forget that a whole project was redeveloped only 4me ;-]</span>
+<span class="qt">&gt; Although in reality, it only involved adding &#x27;OR INKEY$=&quot;y&quot;&#x27; to one</span>
+<span class="qt">&gt; line of code.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; btw  ...do you really believe i didn`t knew that :))</span>
+
+Of course I thought you&#x27;d know that already.  I just mentioned it for
+comic effect (although it wasn&#x27;t actually very funny)
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div></main></body></html>

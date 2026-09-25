@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The CSSCGC 2021 - 25th Edition Extravaganza! · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>The CSSCGC 2021 - 25th Edition Extravaganza!</h1><p class="facts">78 posts, 2020-12-26 – 2023-02-22</p><div class="post" id="p228886"><div class="ph"><a class="d" href="#p228886">2020-12-26 21:16:31</a> <span>TMD2003</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Hails to all the people of CSS, which I&#x27;ve never been part of before. But there&#x27;s a reason I&#x27;ve signed up here - it&#x27;s because, after a few words behind the scenes with John Connolly, he&#x27;s given me the go-ahead to kick off the 2021 competition.
+
+Given that it&#x27;s now in its 25th edition *and* is celebrating its 25th anniversary - the anomaly due to the absence of a competition in 2019 - I&#x27;m pushing the boat right out for this one. Because it&#x27;s comp.sys.SINCLAIR rather than &quot;comp.sys.spectrum&quot;, I will accept entries for any machine with Sinclair DNA running though it (not that computers have DNA, but you know what I mean). So apart from all varieties of Spectrum, I want entries for the ZX81, ZX80, and particularly the QL - something I recommend if you&#x27;ve never tried to program one before. I&#x27;ll take the Russian clones, or those from elsewhere in Eastern Europe or Brazil, I&#x27;ll take the Timex models, the SAM Coupé, the Jupiter Ace, the Z88, and the &quot;son of Spectrum&quot; machines - the Next, the ZX-UNO, and the ZX-Evolution. As long as I have a way to emulate a machine I don&#x27;t have, and some clear loading instructions where it isn&#x27;t obvious (such as on the Jupiter Ace), I will consider it good to go.
+
+I&#x27;m looking for &quot;maximum effort, minimum attainment&quot; for best results - see it as if I&#x27;m the editor of Sinclair Programs in 1983. Would I publish this Crap Game as a type-in listing in my magazine? If the answer is yes, that&#x27;s a good start. Then throw all sorts of embellishments at it that it doesn&#x27;t deserve - a loading screen or two, excessive documentation, a redefined character set (if such a thing is possible on the machine in question), a tape inlay card... anything to boost your &quot;effort&quot; score without affecting &quot;attainment&quot;. I&#x27;m looking for the widest gap between the two!
+
+Here&#x27;s the official website:
+<a href="https://www.rickdangerous.co.uk/csscgc2021/index.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/index.html</a>
+
+The competition opens at the stroke of midnight on 1st January, and closes at 23:58 on 30th November - UK times, obviously. I&#x27;ll call back here regularly to update on the competition&#x27;s progress. I&#x27;m hoping to smash as many records as possible with this one, so don&#x27;t let me down!
+
+In the meantime, John&#x27;s got the last few reviews of 2020 to publish, and you can all get scribbling on the emulators of your choice...
+
+</pre></div><div class="post" id="p228888"><div class="ph"><a class="d" href="#p228888">2021-01-01 00:03:30</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Hello, me, it&#x27;s nice talking to myself! (As I think I will be here, all year.) Anyway... Jools Holland declares this competition OPEN, so get your entries in!
+
+</pre></div><div class="post" id="p228889"><div class="ph"><a class="d" href="#p228889">2021-01-01 21:43:38</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Crikey o&#x27;blimey, Eddie! Barely has the competition opened, than I get an entry from Alexandre Colella, from Brazil, and also from SC. It&#x27;s called P.P.S. - Pixel Perfect Shot:
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review001.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review001.html</a>
+
+</pre></div><div class="post" id="p228892"><div class="ph"><a class="d" href="#p228892">2021-01-06 16:58:05</a> <span>Matt Rudge</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>On 26/12/2020 21:16, TMD2003 wrote:
+<span class="qt">&gt; Hails to all the people of CSS, which I&#x27;ve never been part of before. But there&#x27;s a reason I&#x27;ve signed up here - it&#x27;s because, after a few words behind the scenes with John Connolly, he&#x27;s given me the go-ahead to kick off the 2021 competition.</span>
+<span class="qt">&gt; </span>
+
+Welcome. There are a few of us still here to rearrange the cobwebs.
+
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The competition opens at the stroke of midnight on 1st January, and closes at 23:58 on 30th November - UK times, obviously. I&#x27;ll call back here regularly to update on the competition&#x27;s progress. I&#x27;m hoping to smash as many records as possible with this one, so don&#x27;t let me down!</span>
+<span class="qt">&gt; </span>
+
+Ooh...a CSSCGC that finishes *before* the end of the year?? This I have 
+to see!
+
+
+</pre></div><div class="post" id="p228893"><div class="ph"><a class="d" href="#p228893">2021-01-06 19:44:17</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>On Wednesday, 6 January 2021 at 16:58:07 UTC, Matt Rudge wrote:
+<span class="qt">&gt; Ooh...a CSSCGC that finishes *before* the end of the year?? This I have to see!</span>
+
+Correct. I run a tight ship, free of leaks and bilge rats. I might consider extending the deadline if I have 90-95 entries, in the hope of breaking a century. How Digital Prawn managed to get 130 in 2008 I will never know, though.
+
+Now, as a former host who is presumably a true connoisseur of crap, how about sending me something? And not necessarily something on a Spectrum, either. Several other machines are vying for attention this year.
+
+</pre></div><div class="post" id="p228894"><div class="ph"><a class="d" href="#p228894">2021-01-07 09:06:09</a> <span>Matt Rudge</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>On 06/01/2021 19:44, TMD2003 wrote:
+<span class="qt">&gt; On Wednesday, 6 January 2021 at 16:58:07 UTC, Matt Rudge wrote:</span>
+<span class="qt">&gt;&gt; Ooh...a CSSCGC that finishes *before* the end of the year?? This I have to see!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Correct. I run a tight ship, free of leaks and bilge rats. I might consider extending the deadline if I have 90-95 entries, in the hope of breaking a century. How Digital Prawn managed to get 130 in 2008 I will never know, though.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Now, as a former host who is presumably a true connoisseur of crap, </span>
+
+Well...I have been known to dabble (q.v. every game I ever wrote for the 
+Spectrum)
+
+how about sending me something? And not necessarily something on a 
+Spectrum, either. Several other machines are vying for attention this year.
+<span class="qt">&gt; </span>
+
+I have a sparkly new Next on the way, and would love to do something in 
+NextBASIC when it arrives. In the meantime, I do have a few ideas for 
+games on other machines :)
+
+</pre></div><div class="post" id="p228898"><div class="ph"><a class="d" href="#p228898">2021-01-13 23:09:13</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>On Thursday, January 7, 2021 at 9:06:11 AM UTC, Matt Rudge wrote:
+<span class="qt">&gt; I have a sparkly new Next on the way, and would love to do something in </span>
+<span class="qt">&gt; NextBASIC when it arrives. In the meantime, I do have a few ideas for </span>
+<span class="qt">&gt; games on other machines :)</span>
+
+Time for some inspiration, then, because I&#x27;ve received the second entry.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review002.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review002.html</a>
+
+&quot;Mr. Don&#x27;t!&quot; by Dave Hughes of WOOT! Taper Magazine fame (and other projects) has gone back to CGC programming with a coin-op conversion. Now, what might it be a clone of?
+
+</pre></div><div class="post" id="p228903"><div class="ph"><a class="d" href="#p228903">2021-01-20 00:03:34</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>And entry number three is in. Congraturation, I sucsess! The Challenges were worth devising, as Paul &quot;Equinox&quot; Collins has entered the Red YouTube Challenge (by intention) and the Magenta &quot;weird commands and functions&quot; Challenge (by default, looking at the BASIC source code). The YouTuber in question is &quot;the lovely Heather Feather&quot; and the game around her channel is called &quot;ASMR Eye Examination&quot;:
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review003.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review003.html</a>
+
+Do try not to get too distracted.
+
+</pre></div><div class="post" id="p228906"><div class="ph"><a class="d" href="#p228906">2021-01-30 23:05:13</a> <span>Jón Þórsteinn Petúrsson</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Entry number four comes only a few hours after I had a bit of a moan on SC and WOS about a week with no entries. Steve McCrea, or Kweepa to not his bank manager, has sent &quot;Cretans&quot;, a maze game that could have graced the pages of Sinclair Programs in late 1982:
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review004.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review004.html</a>
+
+I will take this opportunity to remind CSS viewers of the Challenges - particularly the recycling-based Green Challenge, because I think this game is ripe for de-conversion to the ZX81, just as long as you can find a way round the use of the POINT function...
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/challenges.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/challenges.html</a>
+
+</pre></div><div class="post" id="p228907"><div class="ph"><a class="d" href="#p228907">2021-01-30 23:09:47</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>I had a bit of a moan on SC and WOS about not getting any entries for a week. And then, within a few hours... boom! I was inundated with literally *a message*. It came from CSSCGC veteran Steve McCrea, a.k.a. Kweepa, who wanted to send me a maze game called &quot;Cretans&quot; that would have graced the pages of Sinclair Programs in 1982.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review004.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review004.html</a> 
+
+This game is so graphically minimalist that, despite its use of the POINT function for collision detection, I think it could be de-converted for the ZX81. I remind you all, that&#x27;s what the Green Challenge is all about!
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/challenges.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/challenges.html</a>
+
+</pre></div><div class="post" id="p228910"><div class="ph"><a class="d" href="#p228910">2021-02-05 18:51:29</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Well... that was an eventful week, in which I&#x27;ve been so distracted with a medical scare that I forgot to update the original source of the Crap Games Competition! So I&#x27;ll take up the slack now.
+
+On 31st January, Hedge1970 from the Spectrum Computing forum put himself in pole position to host next year&#x27;s contest. What do you get if you cross James May with Pete Waterman? In one way, you get me. And in another way, you get a fanatical dedication to model railways. That&#x27;s what you can experience with Hedge&#x27;s &quot;Mono-Rail Simulator&quot;:
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review005.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review005.html</a>
+
+And on 3rd February, John Connolly paid me back for all the games I sent him last year, some of which were for weird and wonderful machines. Taking on the White Challenge to program on a machine h&#x27;d never tried before, he learned a bit of FORTH and wrote his entry on the JUPITER ACE! It looks like a ZX80 with a Spectrum keyboard, it speaks a weird language, and John&#x27;s effort was similar to learning just enough French to ask each other the way to the beach in annoyingly loud voices. A dreadful pun on a Biblical verse gives us the very simplistic &quot;Genesis 1:28&quot;. But I&#x27;ll say it again: it&#x27;s on a JUPITER ACE!
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review006.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review006.html</a>
+
+
+</pre></div><div class="post" id="p228912"><div class="ph"><a class="d" href="#p228912">2021-02-07 16:24:54</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Jamie Bradbury tackled the Z88 for last year&#x27;s competition, so I&#x27;m hoping that he&#x27;s going to repeat that feat with some non-Spectrum machinery this year as well (I suggest the QL or the SAM Coupé, or preferably both). But for now he&#x27;s brought us a 48K Spectrum game. It&#x27;s called &quot;Battle From Below&quot;; it&#x27;s a two-player game, so I&#x27;ve had a bit of trouble trying to play it with one hand for each player and this is reflected in the review. But it&#x27;s also a &quot;charity single&quot; of sorts, dedicated as it is to a friend in need, even if he is more interested in the Bread Bin from &#x27;Murica that has lots of colours, all of them dull.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review007.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review007.html</a>
+
+</pre></div><div class="post" id="p228915"><div class="ph"><a class="d" href="#p228915">2021-02-15 23:44:59</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Gah! What&#x27;s all this Bitcoin spam doing blocking up the bathplug?
+
+Anyway, more news: another hurdle has been crossed: the first author with multiple entries. Jamie Bradbury has submitted &quot;Blind Snake Moan&quot;. No, I don&#x27;t know what the &quot;Moan&quot; is all about either, but the &quot;Snake&quot; is obvious, and the &quot;Blind&quot; is best explained as &quot;I can see the snake, but what am I trying to hit?&quot;
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review008.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review008.html</a>
+
+</pre></div><div class="post" id="p228917"><div class="ph"><a class="d" href="#p228917">2021-02-19 21:03:35</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Get lost, Italian spammers! I&#x27;d prefer to hear from Alessandro Grussu or Gabriele Amore or similar from the land of pasta and Ferraris, because they know what they&#x27;re talking about.
+
+Meanwhile, what&#x27;s this? I did say this was comp.sys.SINCLAIR and not comp.sys.spectrum - and to that end the QL has joined the party, courtesy of Dilwyn Jones, one of the foremost authorities on Sir Clive&#x27;s odd business machine with two microdrives. &quot;Don&#x27;t Shoot the QL&quot; says Dilwyn - though you can shoot everything else, especially the Golden Macs!
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review009.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review009.html</a>
+
+</pre></div><div class="post" id="p228918"><div class="ph"><a class="d" href="#p228918">2021-02-21 20:57:11</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>We have a Crap Game Grudge Match on our hands! In the green, yellow and blue corner, it&#x27;s Alexandre Colella, representing Brazil, who sent &quot;Pixel Perfect Shot&quot; on the opening day of the competition. And now, the challenger in the sky blue and white corner, representing Argentina, is Darío Ruellan. Let&#x27;s get rrrrrrrrrrrrrrrrrrreadyyyyyyyyyyyyyyyyyyyyyyyyyy to rrrrumbllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllle, as the wrestling commentators in &#x27;Murica would shout, at great length... it&#x27;s time to unleash... er... &quot;Shower Simulator&quot;! In which you... have a shower.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review010.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review010.html</a>
+
+</pre></div><div class="post" id="p228919"><div class="ph"><a class="d" href="#p228919">2021-02-25 00:04:15</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>First, I&#x27;ve updated the package for Shower Simulator, so that there&#x27;s a version that runs on 48K models. Neither will work on a 128K Spectrum, though, unless you want SPECTRUM and PLAY all over the screen.
+
+As for today, if your meagre pocket money never stretched to a copy of 3D Deathchase in 1983, Rob Edwards has the answer, that would have been a fine addition to the type-in listings on the day... and only 38 years late! It&#x27;s &quot;2D Deathchase&quot;, which aims to capture as much of Micromega&#x27;s original as possible in 4K of BASIC and a whiff of machine code.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review011.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review011.html</a>
+
+</pre></div><div class="post" id="p228920"><div class="ph"><a class="d" href="#p228920">2021-02-26 21:13:33</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Sound the trumpets - because here&#x27;s a first for the CSSCGC in 25 years: multiple QL entries!
+
+72-year-old Steve Poole might also be the oldest entrant to the competition ever, though that&#x27;s not something I can check easily. Anyway, that means he was 35 when the QL was first launched, and remembers those days so well he wants to take us right back to what the QL Forum call &quot;The Wild West&quot;. His game is entirely based in text mode, though with four or eight colour graphics (only three at a time are ever used at most, mind!) and it&#x27;s called... &quot;Invaders&quot; - no more than that.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review012.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review012.html</a>
+
+If anyone ever sees this message, I get the impression that comp.sys.SINCLAIR was always a misnomer - but because it wasn&#x27;t comp.sys.spectrum, I&#x27;ve taken the name of this group at face value. And it&#x27;s paying off.
+
+The ZX81&#x27;s 40th birthday is in a week. Will I get a ZX81 entry in time?
+
+</pre></div><div class="post" id="p228921"><div class="ph"><a class="d" href="#p228921">2021-02-28 01:17:07</a> <span>Duncan Snowden</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>On Fri, 26 Feb 2021 13:13:33 -0800 (PST)
+TMD2003 &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; If anyone ever sees this message, I get the impression that</span>
+<span class="qt">&gt; comp.sys.SINCLAIR was always a misnomer - but because it wasn&#x27;t</span>
+<span class="qt">&gt; comp.sys.spectrum, I&#x27;ve taken the name of this group at face value.</span>
+<span class="qt">&gt; And it&#x27;s paying off.</span>
+
+I&#x27;d say, back in the glory days[1], it was 93% Spectrum, 1% ZX81, 1% QL,
+and 5% crisps.
+
+<span class="qt">&gt; The ZX81&#x27;s 40th birthday is in a week. Will I get a ZX81 entry in</span>
+<span class="qt">&gt; time?</span>
+
+The suspense is killing me.
+
+[1] [Counts on fingers] Tw... twenty years ago? Hang on... that can&#x27;t
+be right. [Sounds of hastily-scribbled calculation] Yep, twenty years.
+Crikey. I&#x27;ll be late for my tea.
+
+-- 
+Duncan Snowden.
+0 OK, 0:1
+
+
+
+</pre></div><div class="post" id="p228922"><div class="ph"><a class="d" href="#p228922">2021-02-28 15:29:58</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre><span class="qt">&gt; I&#x27;d say, back in the glory days[1], it was 93% Spectrum, 1% ZX81, 1% QL, </span>
+<span class="qt">&gt; and 5% crisps.</span>
+I haven&#x27;t had a packet of crisps since July. Not so coincidentally, that&#x27;s the last time I did any grocery shopping in person, as opposed to having to rely on the internet.
+
+<span class="qt">&gt; &gt; The ZX81&#x27;s 40th birthday is in a week. Will I get a ZX81 entry in </span>
+<span class="qt">&gt; &gt; time?</span>
+<span class="qt">&gt; The suspense is killing me. </span>
+I do hope that is an admission that there&#x27;s one on the way. Is it?
+
+Anyway... Kerl, who was busy on the Crap Game front in November and December - and swiped the Most Crap Game award at the last minute - is now launching an assault on my competition, in which the prize value has been increased. Featuring our favourite amorphous blue blob from the early days and gameplay so frustrating that those of you who still have any hair will tear it all out, Kerl brings you: &quot;Horace and the Vikings&quot;.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review013.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review013.html</a>
+
+</pre></div><div class="post" id="p228929"><div class="ph"><a class="d" href="#p228929">2021-03-05 23:35:42</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>GAH! Aren&#x27;t there any mods to deal with the Spam? Never mind corned beef sandwiches for mowing prowess, I&#x27;ll get some bread and barbecue sauce and I&#x27;ll bloody eat it myself.
+
+Anyway: for a few more minutes at least, it&#x27;s the ZX81&#x27;s 40th birthday! And nobody had sent mine any presents in the form of Crap Games. It was getting all emo and threatening to slit its capacitors and spill electrolyte all over my clean carpet. Disaster has been averted at the last minute - at least, with enough last minutes left that I could play it and post the review before midnight - in the form of Mark Kinsey&#x27;s &quot;Don&#x27;t Panic&quot; which is themed around exactly what you think it is (and it&#x27;s not Dad&#x27;s Army).
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review014.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review014.html</a>
+
+</pre></div><div class="post" id="p228930"><div class="ph"><a class="d" href="#p228930">2021-03-05 23:43:11</a> <span>Guesser</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>On 2021-03-05 23:35, TMD2003 wrote:
+<span class="qt">&gt; Aren&#x27;t there any mods</span>
+No. And don&#x27;t complain to google about it either or they&#x27;ll break their 
+archive of the group again.
+
+</pre></div><div class="post" id="p228933"><div class="ph"><a class="d" href="#p228933">2021-03-06 11:16:50</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Eish!
+
+I know I said in the Official Rules that &quot;politically contentious&quot; games might not get a favourable review, but if anyone wants to write anything where groups such as CSS are saved from the Evil Empire in some way (even if it&#x27;s just a basic shoot-&#x27;em-up) I might be inclined to give it extra points.
+
+Once CSSCGC Towers has moved (in under a month) I will be looking into a ProtonMail account. Because I realise the irony in grumbling about the Evil Empire from one of their addresses...
+
+</pre></div><div class="post" id="p228934"><div class="ph"><a class="d" href="#p228934">2021-03-06 20:43:56</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>A day later, and several dollars shorter, Jamie Bradbury is going for quantity over (intentionally meagre) quality, with his third entry: &quot;ZX Chuntey Inspector&quot;, which might have been amusing were it not for the fact that it is terminally broken. Approach this one with caution!
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review015.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review015.html</a>
+
+And if anyone is actually reading here, remind yourselves of how the scoring system works, and you&#x27;ll soon see why the first entry that has scored 1/10 for attainment *isn&#x27;t* the leader for Most Crap Game Of The Year:
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/scoring.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/scoring.html</a>
+
+</pre></div><div class="post" id="p228935"><div class="ph"><a class="d" href="#p228935">2021-03-13 21:34:04</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>As the contents of CSSCGC Towers is boxed and shunted into ever more compact spaces, the crapstravaganza continues unabated. Paul E. Collins has returned for a second stab at this year&#x27;s competition, with a game in which stabbing is not recommended. &quot;Balloonatix&quot; by name, the last three syllables of that name is what it may create, especially to those with coordination-compromising neurological maladies.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review016.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review016.html</a>
+
+</pre></div><div class="post" id="p228939"><div class="ph"><a class="d" href="#p228939">2021-04-04 20:07:43</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>CSSCGC Towers is now fully relocated to the marshlands of Cambridgeshire, and in celebration, there are TWO new ZX81 entries!
+
+The first one of these, &quot;MotoRace81&quot; by Colin Williams, was originally sent to me on 5th March, i.e. on the ZX81&#x27;s actual birthday. Google&#x27;s mail server took the message, swept it under the carpet into the folder marked &quot;Spam&quot;, and it was 25 days before I saw it. Fortunately, I found it just in time. It&#x27;s about 2.4K of machine code, so it should keep your reflexes entertained.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review017.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review017.html</a>
+
+The second one, submitted a day and a half ago (and which I forgot to post here instantly, yet again), is &quot;Camel Racing&quot; by Salvador Camacho. Apparently it&#x27;s based on a Spanish fairground attraction, though seeing as I only visit Spain every 20 years on average, I can&#x27;t say I&#x27;ve seen it myself. It&#x27;s about 7.6K of BASIC, so it runs at a more leisurely pace.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review018.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review018.html</a>
+
+</pre></div><div class="post" id="p228955"><div class="ph"><a class="d" href="#p228955">2021-04-20 18:34:09</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>After two further weeks away and three more days of Google hiding entries from me...
+
+Rejoice! The drought has been broken. After I had a bit of a gripe about the lack of entries recently, a couple of Americans who&#x27;d finally completed a game they started writing on a TS1000 in *1983* said I could include it in the CSSCGC, the same day as they&#x27;d published it in a thread on Sinclair ZX World. (One said &quot;put this in your competition!&quot;, the other sent it to me at the required email address, thus confirming that they really did mean it.)
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review019.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review019.html</a>
+
+&quot;Zonkey Kong&quot; is a clone of... some game involving a big ape and a short Italian plumber, for the 16K ZX81 (and, as you might expect, also the 16K TS1000). It is, most likely, the least crap of all the ZX81 entries in CSSCGC history, going all the way back to the first one in 2004. And the review was long enough (over 1,300 words) that I had to cut it down before publishing it, that&#x27;s how much I had to say... even though there can&#x27;t be anyone who doesn&#x27;t know what the game involves!
+
+I did not in any way fiddle the score so that two occasional visitors to the Sinclair multi-forum-verse end up having to run next year&#x27;s competition. Hedge1970&#x27;s Mono-Rail Simulator is still leading on that front, because as far as I can tell, his game is bug-free and Zonkey Kong... isn&#x27;t (hopefully you don&#x27;t find out one of them the hard way if loading it on a real ZX81, which I intend to do at some stage).
+
+
+</pre></div><div class="post" id="p228957"><div class="ph"><a class="d" href="#p228957">2021-04-30 15:53:32</a> <span>OldbieOne</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Excited to try this on a ZX81 :)
+
+--
+OldbieOne
+
+The One Who Tells It Like It Is (TM)
+Brought to you by RetroPC w/Windows v4.0.950B
+
+
+
+</pre></div><div class="post" id="p228958"><div class="ph"><a class="d" href="#p228958">2021-04-30 19:37:05</a> <span>Jón Þórsteinn Petúrsson</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>On Friday, April 30, 2021 at 4:53:09 PM UTC+1, OldbieOne wrote:
+<span class="qt">&gt; Excited to try this on a ZX81 :) </span>
+
+The authors are going to make some corrections to it, though the original release will be the CSSCGC version for all time. And as I&#x27;ve had another blank week with no entries, why not change that? Or if anyone else is still reading, why not do the same...
+
+</pre></div><div class="post" id="p228959"><div class="ph"><a class="d" href="#p228959">2021-04-30 19:37:56</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>On Friday, April 30, 2021 at 4:53:09 PM UTC+1, OldbieOne wrote:
+<span class="qt">&gt; Excited to try this on a ZX81 :)</span>
+
+The authors are going to make some corrections to it, though the original release will be the CSSCGC version for all time. And as I&#x27;ve had another blank week with no entries, why not change that? Or if anyone else is still reading, why not do the same...
+
+</pre></div><div class="post" id="p228965"><div class="ph"><a class="d" href="#p228965">2021-05-04 21:22:31</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Hooray! Finally, there&#x27;s another entry, and we&#x27;re up to 20 now. One more and I equal the number of entries in Paul E. Collins&#x27; 2002 competition. I was hoping to have passed that milestone by the end of March, mind...
+
+Anyway, Daniel &quot;McFly&quot; Aguilar&#x27;s &quot;Magiapotagia&quot; is not a game as such, more a demonstration of a Spectrum performing MAGIC! that would astound the people of 40-something years ago. It would have been just fine for the type-in listing pages of (insert magazine here, probably Popular Computing Weekly), so that&#x27;s fine by me!
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review020.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review020.html</a>
+
+</pre></div><div class="post" id="p228969"><div class="ph"><a class="d" href="#p228969">2021-05-11 19:05:25</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Big News!
+
+We have our first entry in the Green Challenge for porting... or should that be *recycling* games, CSSCGC or otherwise, to new systems. Tobias Fröschle has taken Einar Saukas&#x27; 10-line ZX81 text micro-adventure from 2016 - which was in itself a conversion of a Spectrum original co-authored with Digital Prawn in 2007 - and converted it for the QL! It&#x27;s definitely derived from the ZX81 version, and it fits into one line of SuperBASIC.
+
+Presenting, technically not for the first time, &quot;Minimal Caves&quot;:
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review021.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review021.html</a>
+
+Do you know what this means? Well, do you?
+
+There are now more QL entries in this year&#x27;s competition than there were in its entire previous history! All the way from 1996 to 2020, there were only ever two QL entries, and one of them was mine, right at the end of last year.
+
+</pre></div><div class="post" id="p228974"><div class="ph"><a class="d" href="#p228974">2021-05-23 21:09:35</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Here&#x27;s a game you&#x27;ve all seen before! Not only was its original version submitted to the CSSCGC ten years ago, but it was picked up by some bloke from Vietnam, tweaked a bit, renamed &quot;Flappy Bird&quot; and the next thing you know, it was a major sensation.
+
+And now, better late than never, and in glorious ROM-graphics-o-vision, Salvador Camacho brings us the ZX81 version of &quot;Zhunder Vlade&quot;:
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review022.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review022.html</a>
+
+This is a Green Challenge entry exactly as I worded it on the Challenges page - an existing Spectrum CSSCGC entry down-converted for the ZX81. Other such combinations (even up-conversions from ZX81 to Spectrum, Spectrum to QL, Spectrum to SAM Coupé, Spectrum to Next, ZX80 to ZX-Uno...) are just as acceptable. I can almost see St. Greta&#x27;s face contorting itself from her usual sour, joyless expression into something resembling smugness.
+
+</pre></div><div class="post" id="p228980"><div class="ph"><a class="d" href="#p228980">2021-06-04 19:56:37</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>I was going to say &quot;to my utter dismay, I&#x27;ve had a barren week again&quot;. But Google have been up to their old tricks again, hiding CSSCGC entries in my Spam folder! Hence the one entry I&#x27;ve had this week is five days old but I&#x27;ve only just seen it today. It comes from former host Lee Prince, who&#x27;s promised that there&#x27;s more to come!
+
+What do you get if you cross Head Over Heels with Viz and include none of the gameplay from either of those games?
+
+NSFW-ish and not for professional offence-takes (you know who I mean): <a href="https://www.rickdangerous.co.uk/csscgc2021/review023.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review023.html</a>
+
+Look out for something for a completely different machine very soon! That&#x27;s all I&#x27;ll say for now...
+
+</pre></div><div class="post" id="p228983"><div class="ph"><a class="d" href="#p228983">2021-06-05 22:59:19</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Stop the press! This one is a deviation from the norm.
+
+Do you have a Cambridge Computer Z88? Do you want to play Boggle on it? Do you have a friend to play with? If you own and use a Z88... you probably don&#x27;t have any friends. But isn&#x27;t it good to know that, theoretically at least, it is possible? Jamie Bradbury&#x27;s &quot;Z88 Boggle&quot; proves it.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review024.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review024.html</a>
+
+</pre></div><div class="post" id="p228984"><div class="ph"><a class="d" href="#p228984">2021-06-06 18:29:31</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Stop the press again! Big news from CSSCGC Towers: the ZX80 makes its debut in this year&#x27;s competition! And not before time, either.
+
+I&#x27;m strangely fond of Noughts and Crosses games, as that&#x27;s what I did the first time I ever tried to program a ZX80. After consultation with the tragically-now-late Jim Langmead, he accepted it for the 2004 CSSCGC and it became the first ever entry for the ZX80 (with a suitably scathing review on top of that). Salvador Camacho is now repeating what I did 17 years ago, only this time, it&#x27;s in MACHINE CODE! (Well... it&#x27;s written in C, and compiled with Z88DK, but it works.) It doesn&#x27;t meet the Blue Challenge, mind, because it requires more than 1K. But look what an expanded ZX80 can do, with MACHINE CODE!
+
+Presenting... &quot;Tic Tac Toe Hell&quot;. Why that title? Try it and you&#x27;ll see...
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review025.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review025.html</a>
+
+</pre></div><div class="post" id="p228987"><div class="ph"><a class="d" href="#p228987">2021-06-13 22:49:29</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Who was a dingus? I was a dingus. All that publicity I did for the latest competition entry, and I forgot the one place where it all started...
+
+Are you missing much, though? In one way, yes, in another way, no. This is the first 128K Spectrum &quot;game&quot; for this year - actually, that&#x27;s in the loosest sense of the word - and it&#x27;s also the first entry to the Cyan Challenge. On the other hand, it&#x27;s also flogging the deadest of dead horses that actually isn&#x27;t dead and flatly refuses to die. Look up two posts above, and see the raw excitement of a Z88 entry for this year, how I managed to get it going on OZvm, struggled a lot with ZEsarUX (a common problem, that), and as the Spectrum Computing thread was treated to helpful posts from César about how it&#x27;s done...
+
+Lee Prince wrote &quot;Advanced Adding A TXT File To An EPROM Card For A Z88 Emulator Simulator&quot; to celebrate. In a way.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review026.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review026.html</a>
+
+</pre></div><div class="post" id="p228988"><div class="ph"><a class="d" href="#p228988">2021-06-17 17:44:19</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>I&#x27;m actually surprised that Andy &quot;Uglifruit&quot; Jenkinson&#x27;s five entries to last year&#x27;s competition were his first ever attempts (as far as I can find, anyway). On that note, here&#x27;s number six - as ever, a cut above the standard CSSCGC fayre, which I will openly encourage. Make your Crap Games as polished and professional-looking as possible while still coming under the official header of &quot;Crap&quot; and you&#x27;ll go far in my book - although not towards the £1.88 and three packets of Rolos that are currently in Lee Prince&#x27;s grasp.
+
+Take a good look at &quot;Rubik Code&quot; and ask yourself: haven&#x27;t we seen something like this before? All will be revealed in the review.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review027.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review027.html</a>
+
+</pre></div><div class="post" id="p228990"><div class="ph"><a class="d" href="#p228990">2021-06-19 21:57:45</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Back in t&#x27;old days when Jeremy Beadle was still alive and was making the little-remembered Beadle&#x27;s Hot Shots which was a sort-of-proto-YouTube TV show, former British Touring Car Championship driver Eugene O&#x27;Brien sent in a video of him playing this unhinged nutter called &quot;HARD AS NAILS!&quot;, a catchphrase which he would howl to camera as loud as his Peugeot 405 from the 1993 BTCC season with a gigantic hole in its exhaust.
+
+Change that final S to a Z and what do we have... our latest CSSCGC entry! Dave Sloan&#x27;s &quot;Hard as Nailz&quot; is... well, what do you think it is?
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review028.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review028.html</a>
+
+</pre></div><div class="post" id="p228991"><div class="ph"><a class="d" href="#p228991">2021-06-24 11:04:16</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Gonzalo Medina says this &quot;programming&quot; lark is a bit new to him. Is he telling the truth? Judge for yourselves, possibly with the help of a Spanish dictionary, with &quot;Las Aventuras de Eustaquio I&quot;. I&#x27;ve provided a Google-translated version of the &quot;historia&quot; for those who no hablo Español, while Gonzalo&#x27;s own instructions are in Spanish and the Spanish equivalent of Zero Winglish.
+
+Somebody set up us the game:
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review029.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review029.html</a>
+
+</pre></div><div class="post" id="p228992"><div class="ph"><a class="d" href="#p228992">2021-06-25 10:45:49</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Number 30 for the year - so I&#x27;m now tied for entries with the 2016 competition - is a second entry from Andy Jenkinson, the bizarrely-titled &quot;Cliff Richard Loves Rihanna... FACT!&quot;
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review030.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review030.html</a>
+
+Written mostly in BASIC but enhanced by 5.7K of machine code, it&#x27;s a sort-of-dating-sim based on some childhood playground game that showed which boys and girls secretly loved each other and which had cooties (or does that only happen in &#x27;MURICA?) It features a proportionally-spaced font that Andy put to good use in Sir Clive&#x27;s Ink Lair last year, an AY soundtrack that technically doesn&#x27;t need a 128K Spectrum (but will require a Melodik AY Soundbox), and has the potential to throw a sack of spanners in the works of more friendships and relationships than (anti-)social media ever could. YOU HAVE BEEN WARNED!
+
+</pre></div><div class="post" id="p228995"><div class="ph"><a class="d" href="#p228995">2021-06-30 17:50:03</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>And now for some action from the world of Sir Clive&#x27;s strangely *long* business machine with those even stranger miniature 8-track cartridges.
+
+It&#x27;s Steve Poole&#x27;s second QL entry for the year - when did you ever hear of two QL entries in one year by the same author - or even two QL entries by the same author in the entire history of the competition? You&#x27;ve heard of it now. It was developed - if that&#x27;s the right word - from what Steve describes as a &quot;screensaver&quot;, in as much as the QL ever needs those, and it&#x27;s called, merely... &quot;Thor Game&quot;. Play it with QPC2 in 8-bit colour mode for best results.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review031.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review031.html</a>
+
+</pre></div><div class="post" id="p229002"><div class="ph"><a class="d" href="#p229002">2021-07-11 10:17:27</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Crikey! I seem to have omitted to post an entry here. This should have been posted on 7th July...
+
+Salvador Camacho&#x27;s been busy again with Z88DK and a machine that can&#x27;t handle sound, colour or UDGs. Unfortunately for my huge push to get ZX80 entries into the competition, it isn&#x27;t for the ZX80. But fortunately for the equally huge push to get a double-digit number of entries for the ZX81... you know the rest.
+
+&quot;Snail Maze&quot; is a demake of the game that was built into the Sega Master System until some kid(d) called Alex kicked it out again, and it takes up almost all of the expanded ZX81&#x27;s memory. Imagine how long that&#x27;ll take to load on real hardware. Good job we have emulators, isn&#x27;t it?
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review032.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review032.html</a>
+
+
+(There, I think I got away with that...)
+
+</pre></div><div class="post" id="p229003"><div class="ph"><a class="d" href="#p229003">2021-07-11 10:18:53</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>(And now for today&#x27;s thrilling action!)
+
+What do you get if you take a dice game invented by GURPS creator Steve Jackson (the American Steve Jackson, not the British Steve Jackson who founded Games Workshop and the Fighting Fantasy gamebooks) and attempt to make a Spectrum game out of it?
+
+If the programmer is Andy Jenkinson, you get a Crap Game that really isn&#x27;t crap at all, and ticks more of the boxes I&#x27;ve specifically asked for than any previous entry to this year&#x27;s competition. You want an AY soundtrack, you want a custom 8x8 font [i]and[/i] one that&#x27;s scalable and actually drawn on the screen, you want a loading screen with an extra background story, you want weird and unloved BASIC commands made useful, and - on top of that - you want a game that has some kind of AI, and not only works without any bugs that I can find, but is actually amusing for a while?
+
+Well, I do - and that&#x27;s what &quot;Zombie Dice&quot; is.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review033.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review033.html</a>
+
+What we have here is this year&#x27;s leading contender for Least Crap Game - and with it, a new potential host for the 2022 CSSCGC.
+
+</pre></div><div class="post" id="p229011"><div class="ph"><a class="d" href="#p229011">2021-07-21 19:40:02</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>The spams are getting worse here. Now they&#x27;re not just in Italian.
+
+Anyway, to non-spam business (no beans, sausage or egg either, but plenty of noodles, beansprouts and soy sauce).
+
+Salvador Camacho has been busy again, writing in C, running it through Z88DK and producing a ZX81 machine code game that resembles a type-in from 1983 but which runs faster than anything ever found in the pages of Sinclair Programs. This one appears not to be a clone of an existing game. It&#x27;s called &quot;Wall of China&quot; - and no, it&#x27;s not Breakout by a different name.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review034.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review034.html</a>
+
+It&#x27;s a great day for my tenure of the CSSCGC: I&#x27;ve equalled the record for the number of ZX81 entries in a year, which was set in 2004 during the late Jim Langmead&#x27;s hosting of the competition - it was the first year ZX81 entries were ever seen, and one of the contributions was my utterly magnificent Advanced Horseshoe Magnet Simulator. I&#x27;ve heard from Salvador that he&#x27;s got another game in the works, so unless that&#x27;s for the ZX80 (which I suppose it could be), the record will be broken some time in August.
+
+</pre></div><div class="post" id="p229012"><div class="ph"><a class="d" href="#p229012">2021-07-22 06:27:05</a> <span>Volker Bartheld</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>On Wed, 21 Jul 2021 12:40:02 -0700 (PDT), TMD2003 wrote:
+<span class="qt">&gt; The spams are getting worse here. Now they&#x27;re not just in Italian.</span>
+
+I had good success with these Filters (40tude Dialog - RegExes for Forte
+Agent and Thunderbird might be similar):
+
+# Crosspost to more than 2 groups
+!delete Xpost %&gt;2 
+
+# Filter all-caps subjects (4 and more capitals in a row)
+!delete Subject {(?-i)^[^a-z]{4,}$}
+
+# Mailinator
+!delete,ignore From {&lt;[\w\.]+@mailinator\.com&gt;$}
+
+# Invalid From address
+!delete From {&lt;\w+@domain\.invalid&gt;$}
+
+# aioe.org
+!delete Message-ID: {^&lt;[\w\$]+@[\w\.]*aioe\.org&gt;}
+!delete Header {^(X-Complaints-To:\s+abuse@aioe\.org)}
+
+# dizum.com
+!delete Message-ID: {^&lt;[\w\$]+@[\w\.]*dizum\.com&gt;}
+
+# mixmin.com
+!delete Message-ID: {^&lt;[\w\$]+@news\.mixmin\.net&gt;}
+
+# solani.org
+!delete Message-ID: {^&lt;[\w\$]+@solani\.org&gt;}
+
+# news.netfront.net
+!delete Header {^(X-Complaints-To:\s+news@netfront\.net)}
+!delete Header {^(X-Trace:\s+\w+\.netfront\.net)}
+!delete Header {\s+mail-complaints-to=\&quot;…@…\&quot;}
+!delete Header {^Organization:\s+Netfront\s+.*$}
+
+HTH.
+
+Volker
+
+</pre></div><div class="post" id="p229015"><div class="ph"><a class="d" href="#p229015">2021-08-06 12:11:45</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>For the record, I don&#x27;t get emailed all the spams, I just see them here clogging up the list of thread titles.
+
+Since my last update there has been a single entry, and I&#x27;m only now getting round to posting it because the game is so very basic that it took several evenings to find the right words review it. But I&#x27;ve done so, and I present Steve Poole&#x27;s third effort for the year, another barest-of-bare-bones game that I see as being the equivalent of a ZX81-style game on the QL, in that everything is kept completely standard (including all the window sizes and positions) with the specific intention of making the code as easy as possible to examine, vary, and improve. Just be aware that you&#x27;ll need to be on QPC2 for this one rather than QemuLator or anything really old, as it uses SMSQ/E-only features.
+
+It&#x27;s called &quot;Adrien&#x27;s Bubble Burster&quot; - Adrien is Steve&#x27;s grandson, and though I don&#x27;t know how old he is, the implication is &quot;not very&quot; (probably one digit). Adrien understood how the code worked and was playing around with the commands and values after about *half an hour* of Grand-père d&#x27;Angleterre explaining it, and if he can do it, [i]anyone can[/i].
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review035.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review035.html</a>
+
+</pre></div><div class="post" id="p229016"><div class="ph"><a class="d" href="#p229016">2021-08-07 12:43:20</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Who likes text adventures? Gareth Pitchford likes text adventures, and sent one last year. Volker Bartheld sent a really big one to the CSSCGC before that (in 2018). So now, Rob Edwards contributes to the pile... with an &quot;adventure&quot; through the grimy streets of a sink estate, in search of a win on the &quot;Lottery&quot; - or, more specifically, a scratchcard.
+
+The sink estate on which it is set is full of criminals, gangsters and the kind of pond slime that makes the nastier characters found in Viz (or its cruder clones) look like the local vicar. Some of them are as old as ten. A particularly unwelcome invasion is by a gang from South America, called the &quot;Goolus&quot;, one of which is now wanted by the local (utterly ineffective) police for attacking Rick Dangerous, who was a star of a couple of games 30 years ago but is now old, grey and no longer the action hero he once was (not that it would stop George Lucas trying to make another film about him).
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review036.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review036.html</a>
+
+</pre></div><div class="post" id="p229017"><div class="ph"><a class="d" href="#p229017">2021-08-16 17:38:50</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>A day after the above update (when I was posting my weekly updates to the forums), an entry was left on Sinclair ZX World rather than being emailed to me, so I didn&#x27;t see it for a week. But it was for the ZX80! I was excited.
+
+It is, I am annoyed to say, a trainwreck. The .Z81 snapshot didn&#x27;t work at all, but with a bit of time this morning to investigate, I managed to scrape together a working snapshot by splicing the text from the broken one into a new 2K ZX80 snapshot and saving the result as an .O file. I need not have bothered; it&#x27;s little more than a few INPUT statements that have almost no effect on what the ZX80 prints before it runs out of screen half way through the listing. And that&#x27;s nowhere near all the problems.
+
+If anyone&#x27;s interested, it&#x27;s called &quot;Sausage&quot;. Not officially, it doesn&#x27;t have a title, but I deleted the message to its author asking for a title before it had even been viewed.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review037.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review037.html</a>
+
+</pre></div><div class="post" id="p229018"><div class="ph"><a class="d" href="#p229018">2021-08-20 20:17:09</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Good news! I&#x27;ve had a fourth game from Andy Jenkinson, which is - yet again - the polar opposite of the Crap Scale from the abomination I was forced to remind you about just above. &quot;Codenames&quot; is a card-based board game you may have come across; Andy was playing it with his friends over Zoom during the terrible house arrest period of April-May 2020, and this 48K Spectrum simulation is the (very long overdue) result. I&#x27;ve never played the card game so it took a bit of working out - the on-screen instructions are far clearer than the Wikipedia article on the original. The game doesn&#x27;t decide on your codewords for you and it doesn&#x27;t keep track of who is playing at that point - that&#x27;s for the humans to do, while the Spectrum acts as the game board. Think of it like the huge rotating-disc display from Family Fortunes that Bob Monkhouse, Max Bygraves and Les Dennis stood in front of and said &quot;Our survey said...&quot; followed by generic TV quiz show noises.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review038.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review038.html</a>
+
+</pre></div><div class="post" id="p229020"><div class="ph"><a class="d" href="#p229020">2021-08-26 00:59:12</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>What did I do to deserve this?
+
+My old pal &quot;Crayon21&quot; from SZXW has been haphazardly mashing the membrane keyboard of the ZX81, and has come out with... &quot;Godzilla&quot;. Yes, I&#x27;ve examined the listing. Yes, it really is almost as broken as the previous effort. Can&#x27;t get the staff these days.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review039.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review039.html</a>
+
+</pre></div><div class="post" id="p229021"><div class="ph"><a class="d" href="#p229021">2021-08-31 23:27:01</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Yesterday saw the 40th entry for this year&#x27;s competition - and as it&#x27;s for the Z88, that means there are more Z88 entries this year than ever before (as only 2008 and 2020 ever saw one). If it was ever considered bad form to submit two versions of the same game to the CSSCGC in the same year, I&#x27;ll let that go when it&#x27;s done on an obscure machine.
+
+Jamie Bradbury saw his own &quot;Z88 Boggle&quot; from earlier in the year, and he saw that it was good - but not quite good enough. He&#x27;s been learning C, and has completely rewritten the game in C and run it through Z88DK to produce the improved version: &quot;Zoggle&quot;. Though it&#x27;s still little more than an electronic version of the grid of 16 dice - it doesn&#x27;t actually play the game - it does at least look better now, as much as it can on the Z88&#x27;s tiny screen.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review040.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review040.html</a>
+
+There&#x27;s even a video of it running on a real Z88:
+
+<a href="https://www.youtube.com/watch?v=_1W5QdL43KE" rel="noreferrer">https://www.youtube.com/watch?v=_1W5QdL43KE</a>
+
+</pre></div><div class="post" id="p229032"><div class="ph"><a class="d" href="#p229032">2021-09-28 21:45:41</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Before anyone asks: no, I haven&#x27;t forgotten that this place exists, nor have I been slacking off from my CSSCGC duties. EVERYONE ELSE, THOUGH, HAS.
+
+I don&#x27;t know what I said or did to deserve a FOUR-WEEK DROUGHT of CSSCGC entries, but finally it&#x27;s been broken... with a game I&#x27;d first seen a preview of in early July. However, this couldn&#x27;t have come at a more appropriate time: after the utter drubbing the European Ryder Cup team took at Whistling Straits, why not relive their misery with a Crap Golf Game?
+
+Jamie Bradbury is the man responsible for &quot;Herman Tissies 1D Golf&quot;, named after a German amateur who turned up to the 1950 Open at Royal Troon and took 15 shots to clear the notorious par 3 Postage Stamp. The only thing wrong with the name is that, technically, it should be 2D Golf... but I&#x27;ll let that lie.
+
+Do try not to cry as much as Rory McIlroy did. One of the holes in particular will have that effect.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review041.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review041.html</a>
+
+</pre></div><div class="post" id="p229033"><div class="ph"><a class="d" href="#p229033">2021-09-30 18:30:53</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Crap Games... they&#x27;re like buses. You wait four weeks with nothing on the horizon, and then three turn up at once. You&#x27;ve seen one, now... these two both arrived in my mailbox at gone 11 pm last night.
+
+At 23:08, Phil Hite sent &quot;Dirty Harry Simulator San Francisco&quot;. It&#x27;ll take longer to read the title than it does to see everything in the &quot;game&quot;...
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review042.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review042.html</a>
+
+And at 23:59 - even closer to midnight than Iron Maiden warned us about - Paul E. Collins sent &quot;Mines of Magrathea&quot; - possibly intending it to be entry #42, and definitely intending it to be a SAM Coupé game before dreadful gremlins intervened. I&#x27;m still trying to convince Paul to bash this into better shape and make the SAM version, because if I get this close to a SAM game without actually getting one, I&#x27;ll be more annoyed than Arkanoid.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review043.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review043.html</a>
+
+</pre></div><div class="post" id="p229035"><div class="ph"><a class="d" href="#p229035">2021-10-08 19:40:26</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>I was very, very carried away the other night - i.e. 3rd October - when I should have been posting about the CSSCGC&#x27;s latest game. And it may not be Christmas, but this is a cracker.
+
+Let me tell you about &quot;Ricky Gervais&#x27; Simon&quot;. It is, as you may twig, a &quot;Simon&quot; game. You all know what that means. But instead of fixed-pitch beeps, it uses a digitised PCM sample of Ricky Gervais&#x27; raucous laugh, which I have linked in the review.
+
+Did I mention that this game fits into 1K? ONE measly kilobyte - game code, sound sample and all?
+
+Did I mention that this game was written ON A ZX80?
+
+Did I mention that it is not 1st April, this is not a joke, and it really exists and can be played on any ZX80 emulator which has some way of emulating the output from the MIC socket (such as EightyOne)?
+
+A round of applause and many, may corned beef sandwiches to John Connolly, I would say.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review044.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review044.html</a>
+
+</pre></div><div class="post" id="p229037"><div class="ph"><a class="d" href="#p229037">2021-10-18 21:18:22</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Once again it&#x27;s been an annoyingly long time since the last entry, but as if to compensate, I had two in one day! I&#x27;ve reviewed both at the same time.
+
+For those of you limited to the 16K Spectrum (I mean the very idea!) who want to get a piece of the action at the World Twenty20 that&#x27;s happening in the UAE and Oman right now (where it&#x27;s a lot hotter than in the windy, rainy Marshlands), Steve McCrea (a.k.a. Kweepa) has borrowed &quot;Old Bones&quot; from the BBC Micro&#x27;s version of Cassette 50 and converted it. Given that the Beeb cost more than twice as much as a 48K Spectrum and it&#x27;s the computer the posh kids had when I was at school, is it better than the Cassette 50 that we know and wish we didn&#x27;t? The game is 1.6K of BASIC. Judge for yourselves.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review045.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review045.html</a>
+
+Meanwhile, October means Halloween - or at least it does for the people on the other side of the Atlantic in the United States of Sleepy Joe - and &quot;Titanius Angelsmith&quot;, who may or may not be a member here, has sent a game that&#x27;s at least appropriate for the occasion: &quot;Catch the Frankonstins&quot;. Indulge yourselves in a bit of Boriel BASIC!
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review046.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review046.html</a>
+
+</pre></div><div class="post" id="p229040"><div class="ph"><a class="d" href="#p229040">2021-11-01 18:20:36</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Well, this has been a bumpy landing back into the realm of reviewing. 
+
+My old nemesis ,&quot;Crayon21&quot;, left a .TZX file parked on Sinclair ZX World, which I&#x27;d assumed to be for the ZX81. It turned out to be for the 16K Spectrum. Is &quot;Guess the Cherub&quot; any less of a catastrophically broken mess than its two predecessors? Read the review and decide for yourselves. The answer should be obvious.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review047.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review047.html</a>
+
+And then I had a message from Dave Hughes asking if it was OK to send a scene demo. It&#x27;s been fine before, so I didn&#x27;t see any reason to reject it. I suspect that &quot;Twinkle Twinkle&quot; is a thinly-disguised reminder that I owe Dave some music for the upcoming WOOT!...
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review048.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review048.html</a>
+
+I&#x27;ve managed to crowbar in references to Tim Minchin, Les Dawson, Eric Morecambe and James May between the two reviews. Read them and find out how I did it.
+
+</pre></div><div class="post" id="p229041"><div class="ph"><a class="d" href="#p229041">2021-11-09 23:44:55</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Salvador Camacho&#x27;s sixth contribution for this year - and fifth for the ZX81 - is &quot;Fall Palo T&quot;, a Green Challenge demake - if you can call it that - of Dr BEEP&#x27;s &quot;Nohzdyve&quot; for the 1K ZX81 with hi-res (which is in turn a demake of a Spectrum game from an episode of Black Mirror). Yes, you heard me correctly: a 16K ZX81 game is a demake of a 1K ZX81 game! Work *that* one out!
+
+url=<a href="https://www.rickdangerous.co.uk/csscgc2021/review049.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review049.html</a>
+
+</pre></div><div class="post" id="p229042"><div class="ph"><a class="d" href="#p229042">2021-11-13 18:15:16</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Apologies for forgetting to post the last two CSSCGC entries here - although it&#x27;s not that anybody noticed. And, further in my defence, two has now become three - all of them for the 16K ZX81, and all of them from the meagre programming ability of &quot;Crayon21&quot; from Sinclair ZX World, who knows what ZX81 keywords and functions *do*, but has no concept of how to put them together into a coherent program, so there are unused variables here, unclosed loops there, and an inevitable &quot;Out of screen&quot; error that could occur anywhere. If anyone ever finds this message, reply below with your favourite colour of wax crayon.
+
+&quot;Wilderness Part 1&quot; - <a href="https://www.rickdangerous.co.uk/csscgc2021/review050.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review050.html</a>
+&quot;Minefield&quot; - <a href="https://www.rickdangerous.co.uk/csscgc2021/review051.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review051.html</a>
+&quot;Adventure&quot; - <a href="https://www.rickdangerous.co.uk/csscgc2021/review052.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review052.html</a>
+
+I would say &quot;don&#x27;t waste your time&quot;, but hear this first: 50 entries for this year&#x27;s competition means that I will be releasing an EXTRA BRUCIE BONUS GAME at the end of the competition. If anyone sees this message, reply with &quot;Nice to see you, to see you, nice!&quot; or &quot;Good game, good game!&quot; or &quot;Didn&#x27;t they do well!&quot;, or - for those over 70 - &quot;I&#x27;m in charge!&quot;
+
+</pre></div><div class="post" id="p229045"><div class="ph"><a class="d" href="#p229045">2021-11-15 18:07:20</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>No comments about crayons or Bruce Forsyth? Thought not.
+
+Let&#x27;s get this show back on the road. For all my moaning when there haven&#x27;t been too many entries and this is reflected on the main website page, right now the four pieces of news - one of which is awful - span only six days. The newest entry comes from &quot;+3code&quot;, who I was sure had entered the CSSCGC before, but either hasn&#x27;t, or the evidence is well hidden.
+
+In &quot;Fishing Simulator&quot;... you go fishing.
+
+A point to note - my constant badgering that I&#x27;d like something on a disc format has paid off. +3code writes for the +3, although the  game runs perfectly fine on a 16K Spectrum if transferred to tape.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review053.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review053.html</a>
+
+</pre></div><div class="post" id="p229047"><div class="ph"><a class="d" href="#p229047">2021-11-16 12:04:25</a> <span>Russell Marks</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>TMD2003 &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Apologies for forgetting to post the last two CSSCGC entries here -</span>
+<span class="qt">&gt; although it&#x27;s not that anybody noticed.</span>
+
+<span class="qt">&gt; If anyone ever finds this message, reply below with your favourite</span>
+<span class="qt">&gt; colour of wax crayon.</span>
+
+<span class="qt">&gt; No comments about crayons or Bruce Forsyth? Thought not.</span>
+
+I like that you acknowledge the CSS in CSSCGC by posting here, but it
+was always likely to be a thankless task with few if any responses.
+
+-Rus.
+
+</pre></div><div class="post" id="p229048"><div class="ph"><a class="d" href="#p229048">2021-11-16 12:10:15</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>On Tuesday, 16 November 2021 at 12:04:27 UTC, Russell Marks wrote:
+<span class="qt">&gt; I like that you acknowledge the CSS in CSSCGC by posting here, but it </span>
+<span class="qt">&gt; was always likely to be a thankless task with few if any responses. </span>
+
+...I knew that all along, but it&#x27;s got to be done. Thing is, posting here *has* done something for this year&#x27;s competition... you&#x27;ll see what it is when it&#x27;s time to unleash the Awards.
+
+</pre></div><div class="post" id="p229049"><div class="ph"><a class="d" href="#p229049">2021-11-16 21:49:15</a> <span>Pierre Scotney</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>On Tue, 16 Nov 2021 12:04:25 GMT
+Russell Marks &lt;zgedneil@spam^H^H^H^Hgmail.com&gt; wrote:
+
+<span class="qt">&gt; TMD2003 &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; Apologies for forgetting to post the last two CSSCGC entries here -</span>
+<span class="qt">&gt; &gt; although it&#x27;s not that anybody noticed.  </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; If anyone ever finds this message, reply below with your favourite</span>
+<span class="qt">&gt; &gt; colour of wax crayon.  </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; No comments about crayons or Bruce Forsyth? Thought not.  </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I like that you acknowledge the CSS in CSSCGC by posting here, but it</span>
+<span class="qt">&gt; was always likely to be a thankless task with few if any responses.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; -Rus.</span>
+
+We are still here, well some of us, from the days of yore.
+Thank you for keeping the spirit alive :)
+Cheer
+Pierre
+
+
+</pre></div><div class="post" id="p229052"><div class="ph"><a class="d" href="#p229052">2021-11-19 20:38:28</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>One last game before the weekend!
+
+Salvador Camacho has been busy again on the ZX81, but this time, converting a Spectrum type-in game from a Spanish magazine. Z88DK was not involved at all. In this game, you are the &quot;Escarabajo&quot; - that&#x27;s a beetle for those who don&#x27;t know Spanish - and you must avoid being esplattered by the esquares.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review054.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review054.html</a>
+
+At this point, I should recognise that I&#x27;m up to *13* ZX81 entries. One more and I&#x27;ll have doubled the previous record - so thanks to everyone who&#x27;s submitted them. Back in April, I would never have believed that this would happen. It&#x27;s good to see the extra appreciation of the ZX81 in its 40th birthday year.
+
+</pre></div><div class="post" id="p229053"><div class="ph"><a class="d" href="#p229053">2021-12-01 22:38:15</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>What dividends there have been for aficionados of the ZX81. I wanted to break the record for the number of entries this year. Never mind that, I&#x27;ve *doubled it*. That&#x27;s right, the first submission after the initial deadline - and I remind you all there will be no extensions beyond 17th December - is the fourteenth for the ZX81.
+
+Salvador Camacho is bowing out for the year. &quot;Highway Robbery 2021&quot;, a 16K ZX81 C-then-Z88DK port of a 1984 1K type-in (figure [i]that[/i] out!), is his last entry. Next year&#x27;s host - brush up on your ZX81 skills if you haven&#x27;t already, because I know he still has more in the pipeline.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review055.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review055.html</a>
+
+</pre></div><div class="post" id="p229055"><div class="ph"><a class="d" href="#p229055">2021-12-03 19:01:08</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Dave Hughes has taken a break from editing this year&#x27;s WOOT! to throw together a game involving a frog and a fish, and no dogs, which he nevertheless titled &quot;Dogspawn&quot;. I suspect it&#x27;s compiled BASIC and would have fit into the 16K Spectrum that way, but if I&#x27;m right, the compiler&#x27;s shoved the code to a point where it&#x27;ll only work on 48K machines.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review056.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review056.html</a>
+
+I have *three* more entries that have come flooding in today, after Dogspawn reached me at 9:36 am. I&#x27;ll get to these over the weekend.
+
+</pre></div><div class="post" id="p229056"><div class="ph"><a class="d" href="#p229056">2021-12-05 10:34:40</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>And now, the culmination of Friday&#x27;s and Saturday morning&#x27;s effort: THREE new entries!
+
+First of all, &quot;Firelord&quot; has returned after a decade away from the CSSCGC. However, his previous efforts between 2008 and 2011 were mostly PRINT and INPUT-fests with colour splashed haphazardly all over the place. In previous years, that might have been enough to win the competition outright. But when I&#x27;m in charge - with the mantra &quot;minimum attainment, maximum effort&quot; to get the Mucho Generoso Prize (even if that &quot;effort&quot; means meeting challenges, putting in loading screens and unnecessary frippery while avoiding demerits) - that isn&#x27;t going to cut the mustard! Read the reviews of the very timely &quot;Find Santa&quot; (#57) and the very un-timely &quot;Find Easter Bunny&quot; (#58) and see how I could write a total of 1,535 words about two non-games that say nothing and go nowhere.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review057.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review057.html</a>
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review058.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review058.html</a>
+
+Far more deserving of your attention is Titanius Angelsmith, who&#x27;s stopped catching Frankonstins (see #46) and has turned his hand to re-writing Seven/Eleven, a BASIC dice game originally written by Tim Hartnell - who knew a thing or two about programming - in 1983. How can I justify this game being in the White Challenge, when Catch The Frankonstins was evidence that Titanius already knows how to program a Spectrum? It&#x27;s because this was a &quot;taking on a new language&quot; challenge, and I considered that worth of the White Stripe of Pioneership. The game has been re-written in LOGO, usually associated with turtle graphics and not much else - but as has been proven here, there&#x27;s more to it. Even the way the game loads from within the Spectrum&#x27;s LOGO environment (Titanius used this one - it might - should? - work with others) is in a way I&#x27;ve never seen before.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review059.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review059.html</a>
+
+</pre></div><div class="post" id="p229057"><div class="ph"><a class="d" href="#p229057">2021-12-08 19:55:48</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Well, Mr Firelord, at least you&#x27;ve done something right - I wanted the competition to get to 60 entries, and now it&#x27;s happened. I will no longer push my luck and say &quot;let&#x27;s get to 70&quot;; in turn, don&#x27;t push yours.
+
+I shouldn&#x27;t have to mention what you have to do in &quot;Find The Book&quot;. it&#x27;s too obvious. At least the actual book is interesting.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review060.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review060.html</a>
+
+Now if you&#x27;ll excuse me, I&#x27;ve got a Bullseye Bonus Game to continue debugging. It&#x27;s on its [i]sixteenth[/i] revision now, and still bugs are turning up which will be ruthlessly pounded into electronic cochineal. If you&#x27;re going to disturb me from this job at this stage with new entries, make them worth my while.
+
+</pre></div><div class="post" id="p229058"><div class="ph"><a class="d" href="#p229058">2021-12-10 17:30:09</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Five entries this week, and the latest one was today. Andy Jenkinson&#x27;s fifth of the year and (presumably) final entry until, likely as not, 2023 - for reasons which are already obvious to him, and everyone else who&#x27;s been monitoring this thread.
+
+It goes by the bizarre name &quot;A very basic CHR$mas NOT IF e.t.&quot;, and in it, some old men deliver some wildly expensive gifts to a small baby somewhere in the Middle East, but being as old as they are and probably losing their marbles, they&#x27;ve forgotten to bring the gifts and you have to sort that out. It&#x27;s presented in a mixture of text and colourful Chunk-o-Vision, and requires only one control key!
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review061.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review061.html</a>
+
+</pre></div><div class="post" id="p229059"><div class="ph"><a class="d" href="#p229059">2021-12-10 21:47:59</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Apologies to Andy Jenkinson that &quot;A Very Basic CHR$mas&quot; only spent a couple of hours on the front page. Crayon forgot to attach this... *thing* to the relevant page on Sinclair ZX World and when I came back, there it was waiting for me.
+
+On the subject of &quot;Lunacy&quot;, and it&#x27;s aptly-named. 
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review062.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review062.html</a>
+
+Allow me to quote myself:
+&quot;To anyone else, absolutely anyone else, it would be obvious that the seven listings that Crayon&#x27;s now contributed to the total were the same level of pre-alpha code as Big Rigs, just on a much more primitive computer. Some ideas on a sketchpad, or on a stained beer mat, or the back of a fag packet, but definitely not the finished article.&quot;
+
+Crayon just doesn&#x27;t seem to have any concept of &quot;pre-alpha&quot; and &quot;release candidate&quot;, let alone that there&#x27;s any difference between them. Until his first entry in August, I had no idea that was even possible.
+
+</pre></div><div class="post" id="p229060"><div class="ph"><a class="d" href="#p229060">2021-12-11 19:14:36</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>What&#x27;s that you&#x27;ve got for me, Mr Firelord?
+
+I thought &quot;Avoid Santa&quot; was going to be another lame clone of &quot;Find Santa&quot; with a few things changed here and there, but to my pleasant surprise, it&#x27;s a completely new listing (for various parameters of &quot;new&quot; - read the review, you&#x27;ll see what I mean...) with a similar &quot;it sort-of-looks like magic to the uninitiated&quot; effect that &quot;Magiapotagia&quot; had earlier in the year. So I took great delight in taking it to bits to see how it worked, and there&#x27;s an explanation in the review for those who can&#x27;t follow the program code, or can&#x27;t be bothered.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review063.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review063.html</a>
+
+</pre></div><div class="post" id="p229061"><div class="ph"><a class="d" href="#p229061">2021-12-13 10:40:17</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>I know nobody looks at this place any more, and I&#x27;m posting all this because it&#x27;s always been a comp.sys.sinclair competition. However, there has been DRAMA and now I&#x27;m going to have to retrospectively renumber about 40% of the competition. I&#x27;ll be down from 63 to 56 entries, though this does not put the Bullseye Bonus game in jeopardy.
+
+When the website has been rehashed, I&#x27;ll post new links here. This is the only place where evidence of the perpetrator will remain, because email-based newsgroups can&#x27;t be edited.
+
+</pre></div><div class="post" id="p229062"><div class="ph"><a class="d" href="#p229062">2021-12-13 14:52:20</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>As promised, the website has been fixed and here&#x27;s the new list of links.
+
+#37: Codenames - <a href="https://www.rickdangerous.co.uk/csscgc2021/review037.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review037.html</a>
+#38: Zoggle - <a href="https://www.rickdangerous.co.uk/csscgc2021/review038.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review038.html</a>
+#39: Herman Tissies 1D Golf - <a href="https://www.rickdangerous.co.uk/csscgc2021/review039.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review039.html</a>
+#40: Dirty Harry Simulator San Francisco - <a href="https://www.rickdangerous.co.uk/csscgc2021/review040.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review040.html</a>
+#41: Mines of Magrathea - <a href="https://www.rickdangerous.co.uk/csscgc2021/review041.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review041.html</a>
+#42: Ricky Gervais&#x27; Simon - <a href="https://www.rickdangerous.co.uk/csscgc2021/review042.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review042.html</a>
+#43: Old Bones - <a href="https://www.rickdangerous.co.uk/csscgc2021/review043.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review043.html</a>
+#44: Catch the Frankonstins - <a href="https://www.rickdangerous.co.uk/csscgc2021/review044.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review044.html</a>
+#45: Twinkle Twinkle - <a href="https://www.rickdangerous.co.uk/csscgc2021/review045.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review045.html</a>
+#46: Fall Palo T - <a href="https://www.rickdangerous.co.uk/csscgc2021/review046.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review046.html</a>
+#47: Fishing Simulator - <a href="https://www.rickdangerous.co.uk/csscgc2021/review047.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review047.html</a>
+#48: Escarabajo - <a href="https://www.rickdangerous.co.uk/csscgc2021/review048.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review048.html</a>
+#49: Highway Robbery 2021 - <a href="https://www.rickdangerous.co.uk/csscgc2021/review049.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review049.html</a>
+#50: Dogspawn - <a href="https://www.rickdangerous.co.uk/csscgc2021/review050.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review050.html</a>
+#51: Find Santa - <a href="https://www.rickdangerous.co.uk/csscgc2021/review051.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review051.html</a>
+#52: Find Easter Bunny - <a href="https://www.rickdangerous.co.uk/csscgc2021/review052.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review052.html</a>
+#53: Seven/Eleven - <a href="https://www.rickdangerous.co.uk/csscgc2021/review053.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review053.html</a>
+#54: Find The Book - <a href="https://www.rickdangerous.co.uk/csscgc2021/review054.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review054.html</a>
+#55: A very basic CHR$mas NOT IF e.t. - <a href="https://www.rickdangerous.co.uk/csscgc2021/review055.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review055.html</a>
+#56: Avoid Santa - <a href="https://www.rickdangerous.co.uk/csscgc2021/review056.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review056.html</a>
+
+
+</pre></div><div class="post" id="p229063"><div class="ph"><a class="d" href="#p229063">2021-12-14 20:48:11</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Let&#x27;s get this show back on the road after a brief foray down Disaster Drive within sight of the finish line. Luny, from WOS (mainly), was promising me a game a while back. There were problems sending it. Finally, I got my hands on &quot;Psycho 3&quot;, and...
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review057.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review057.html</a>
+
+...judge for yourselves.
+
+</pre></div><div class="post" id="p229065"><div class="ph"><a class="d" href="#p229065">2021-12-17 00:20:35</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>It appears I&#x27;ve been a twonk, at this late stage, and clean forgot to add the final game to this list. And then, about an hour and a half ago, it wasn&#x27;t the final game any more. Both are courtesy of Enrique Pimpinela Santos, a.k.a. &quot;+3code&quot; and both are for the +3.
+
+
+I&#x27;m officially crediting &quot;Dragon Tale&quot; as a playable demo, because Enrique admitted up front that it was unfinished and had been kicking around doing nothing for ages. Amazingly, given how it looks, it&#x27;s made mostly in BASIC (about 22K of it) with machine code embellishments. It gives an impression of what a Dragon Ball Z game would look like on the Spectrum - the tile-based game mechanics seem tailor-made for it, to keep away the dreaded colour clash.
+
+No hablo español, so I didn&#x27;t get very far - there was something about going northeast and then to a castle, where I was told to go away. I&#x27;ve looked in the listing and found other lines I&#x27;d have no hope of understanding without a lengthy session on Google Translate (or other such services if they were available from outside Big Tech), so I don&#x27;t think I&#x27;ve seen everything by any means, but it would need far more of my attention than I can give at this late, late stage in the competition.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review058.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review058.html</a>
+
+
+AND THEN...
+
+Enrique took his &quot;Fishing Simulator&quot; from earlier in the year, cleaned up some of the Polandball English, retitled it &quot;Advanced Fishing Simulator&quot; and resubmitted it, which usually grinds my gears, but this time I&#x27;ll let it go, because... *ULAplus*! Unless I am as very much mistaken as Murray Walker had a habit of being, that&#x27;s the first ever entry with this extra-colour enhancement. It doesn&#x27;t look like much to start with, but pull the right prey out of the sea...
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review059.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review059.html</a>
+
+I&#x27;m also mildly annoyed because I thought I&#x27;d be the first to make a ULAplus Crap Game. Technically, I am the first to *make* it, because I&#x27;ve had it finished since June, but I can&#x27;t enter my own competition.
+
+</pre></div><div class="post" id="p229066"><div class="ph"><a class="d" href="#p229066">2021-12-18 00:16:27</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>AND THAT&#x27;S A WRAP! We&#x27;re closed!
+
+However, I did get up to 62 entries before the final closing time. I am busy writing the final-final-final reviews, and I&#x27;ll post those when they&#x27;re all done.
+
+</pre></div><div class="post" id="p229067"><div class="ph"><a class="d" href="#p229067">2021-12-18 18:18:27</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>The final reviews of the year are now available!
+
+First... it&#x27;s Firelord again. Despite being the pantomime villain of the year (as opposed to the actual villain who has to remain nameless), he couldn&#x27;t stand to see this competition end on 59 entries, and sent in a 60th. I was obviously cynical about what &quot;Avoid Trees&quot; would be, but I was sort-of-pleasantly surprised. It&#x27;s a very basic skiing game - with &quot;quirks&quot; rather than terminal problems - adapted from a 140-character BASIC program thread on WOS five years ago that Giannis just dug up. It serves a purpose, and that purpose is to ensure I didn&#x27;t get stuck on 59 entries.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review060.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review060.html</a>
+
+Salvador Camacho has been a trooper this year, and - at the risk of repeating myself - couldn&#x27;t stand to see this competition end on 59 entries, and sent in a 60th. But because Giannis got there first, Salvador&#x27;s entry was #61. I&#x27;d usually say it was lazy to retool a previous entry, but this serves a purpose, and that purpose is to ensure I didn&#x27;t get stuck on 59 entries... even though I already wasn&#x27;t. Presenting &quot;Rudolph Practices&quot; - if you&#x27;ve been paying attention to the rest of the competition you&#x27;ll recognise this one.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review061.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review061.html</a>
+
+And finally... Andy Jenkinson&#x27;s last chance to get an entry in until 2023 was a &quot;nano-game&quot;, &quot;High/Low Continue&quot;, crammed into a single line of BASIC, with the sole purpose of demonstrating that CONTINUE actually has a purpose in a BASIC listing. The &quot;game&quot; itself... threw up so many coincidences that Agrajag spontaneously reincarnated so that he could scream &quot;COINCIDENCE?&quot; in my face before once again being killed by Arthur Dent.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review062.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review062.html</a>
+
+That&#x27;s your lot. As the Blue Programmer says, the final total was 62 entries, over 8 different systems. If things had really gone my way, I might have 69 entries - or even more. I came close to having entries for the SAM Coupé and Lambda 8300 (both of which I intend to tackle in 2022), and had it not been for the world&#x27;s seemingly unstoppable decline into madness that has caused component supply shortages, I might have had my Next, other Next Issue 2 future-owners might have had theirs, and I might have had an entry for that wonderful machine.
+
+I&#x27;d already written the Awards pages - there are four of them, now - when these last entries came in, so I&#x27;m going to have to adjust the ranking tables that took bloody *ages* to translate to HTML. There are a few bits and pieces to clean up on them, as well.
+
+These will be revealed tomorrow, alongside the Bullseye Bonus Game and its lesser siblings.
+
+</pre></div><div class="post" id="p229068"><div class="ph"><a class="d" href="#p229068">2021-12-19 15:52:17</a> <span>TMD2003</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>First of all, with the competition over, I&#x27;ve made the Awards pages:
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/awards.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/awards.html</a>
+
+A huge round of rapturous applause and a quick rev of the Patio Sprintette to Lee Prince, who won Most Crap Game Of The Year with &quot;Advanced Adding a TXT File to an EPROM Card for a Z88 Emulator Simulator&quot;!
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review026.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review026.html</a>
+
+And the keys of CSSCGC Towers for 2022 are handed to Andy Jenkinson, for the Least Crap Game Of The Year, the superbly playable and tuneful (if you like the Cranberries) &quot;Zombie Dice&quot;.
+<a href="https://www.rickdangerous.co.uk/csscgc2021/review033.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/review033.html</a>
+
+There are other pages with commendations for those who deserved it, buckets of beans flung at those who committed misdemeanours, and some statistics, including the full final standings, and the reveal of what the six games were that I&#x27;ve had in the website&#x27;s title graphics all year.
+
+Meanwhile... there are also BONUS GAMES! And these have been given special double-length accounts into the processes behind their programming, rather than a formal review.
+
+The Minor Bonus is three remakes of Daniel Aguilar&#x27;s &quot;Magiapotagia&quot; from early May. I thought that if this program had been made on the primitive micros of 1977, when nobody outside a computer lab knew what a computer was, it would have been treated as if it was actual magic. But could any of the Apple II (with Integer BASIC), the Commodore PET 2001 or TRS-80 Model I (with Level I BASIC) handle the algorithm used to shuffle the cards? The short answer is &quot;yes&quot;, and it works on all three, even if some were easier than others. I call the package &quot;Magiapotagia 1977&quot;.
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/reviewbonus2.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/reviewbonus2.html</a>
+
+The MAJOR BONUS, the one that&#x27;s the result of this competition breaking through 50 entries, is a heavily revised, improved and thoroughly debugged version of &quot;The Ring Of The Inka&quot;, now known as the &quot;Sir Clive Edition&quot; after Our Revered Creator. Volker Bartheld, one of the authors (and who still looks at these pages! Guten Abend, if you&#x27;re there...), asked to do this midway through the year, but probably didn&#x27;t bank on us both spending about a month testing, debugging, optimising for memory, and adding new features...
+
+The original version of the game, which was an official entrant for the 2018 CSSCGC, couldn&#x27;t be completed as there were vital objects missing, and times where it would stop with errors. All these have been eliminated. The game can be completed - I should know - but you&#x27;ll now have to deal with a kleptomaniac Shaman, some undead guards that are very good at their job, a decreasing stamina level that will require finding some excellent survival food, a magic effect on the Ring itself... and to make it look nice, there&#x27;s a custom character set courtesy of Damien Guard&#x27;s ZX Origins.
+
+This is now a superb text adventure, and the only thing that qualifies it as a Crap Game in any way is that the parser is slow. It also now works on 128K models, which it didn&#x27;t before, and in addition to the microdrive version, there&#x27;s a (128K-only) tape, and three different discs (+3, +D, Beta).
+
+Happy adventuring!
+
+<a href="https://www.rickdangerous.co.uk/csscgc2021/reviewbonus1.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/reviewbonus1.html</a>
+
+</pre></div><div class="post" id="p229122"><div class="ph"><a class="d" href="#p229122">2023-02-22 20:13:54</a> <span>Rich Pelley</span> <span>Re: The CSSCGC 2021 - 25th Edition Extravaganza!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2074">CSSCGC Crap Games Contest 2021</a></div><pre>Hi there! It&#x27;s Rich Pelley here. Of Crap Games Corner &quot;fame&quot;.
+
+Can you help me with a thing I&#x27;m writing please? About Crap Games!
+
+Thank you!
+
+Rich
+
+<a href="http://www.guardian.co.uk/profile/rich-pelley" rel="noreferrer">http://www.guardian.co.uk/profile/rich-pelley</a>
+
+
+
+On Saturday, December 26, 2020 at 9:16:33 PM UTC, TMD2003 wrote:
+<span class="qt">&gt; Hails to all the people of CSS, which I&#x27;ve never been part of before. But there&#x27;s a reason I&#x27;ve signed up here - it&#x27;s because, after a few words behind the scenes with John Connolly, he&#x27;s given me the go-ahead to kick off the 2021 competition. </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Given that it&#x27;s now in its 25th edition *and* is celebrating its 25th anniversary - the anomaly due to the absence of a competition in 2019 - I&#x27;m pushing the boat right out for this one. Because it&#x27;s comp.sys.SINCLAIR rather than &quot;comp.sys.spectrum&quot;, I will accept entries for any machine with Sinclair DNA running though it (not that computers have DNA, but you know what I mean). So apart from all varieties of Spectrum, I want entries for the ZX81, ZX80, and particularly the QL - something I recommend if you&#x27;ve never tried to program one before. I&#x27;ll take the Russian clones, or those from elsewhere in Eastern Europe or Brazil, I&#x27;ll take the Timex models, the SAM Coupé, the Jupiter Ace, the Z88, and the &quot;son of Spectrum&quot; machines - the Next, the ZX-UNO, and the ZX-Evolution. As long as I have a way to emulate a machine I don&#x27;t have, and some clear loading instructions where it isn&#x27;t obvious (such as on the Jupiter Ace), I will consider it good to go. </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;m looking for &quot;maximum effort, minimum attainment&quot; for best results - see it as if I&#x27;m the editor of Sinclair Programs in 1983. Would I publish this Crap Game as a type-in listing in my magazine? If the answer is yes, that&#x27;s a good start. Then throw all sorts of embellishments at it that it doesn&#x27;t deserve - a loading screen or two, excessive documentation, a redefined character set (if such a thing is possible on the machine in question), a tape inlay card... anything to boost your &quot;effort&quot; score without affecting &quot;attainment&quot;. I&#x27;m looking for the widest gap between the two! </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Here&#x27;s the official website: </span>
+<span class="qt">&gt; <a href="https://www.rickdangerous.co.uk/csscgc2021/index.html" rel="noreferrer">https://www.rickdangerous.co.uk/csscgc2021/index.html</a> </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The competition opens at the stroke of midnight on 1st January, and closes at 23:58 on 30th November - UK times, obviously. I&#x27;ll call back here regularly to update on the competition&#x27;s progress. I&#x27;m hoping to smash as many records as possible with this one, so don&#x27;t let me down! </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; In the meantime, John&#x27;s got the last few reviews of 2020 to publish, and you can all get scribbling on the emulators of your choice...</span>
+
+</pre></div></main></body></html>

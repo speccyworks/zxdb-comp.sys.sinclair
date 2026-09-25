@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSSCGC 2020 · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>CSSCGC 2020</h1><p class="facts">41 posts, 2019-12-28 – 2021-01-29</p><div class="post" id="p228776"><div class="ph"><a class="d" href="#p228776">2019-12-28 10:55:17</a> <span>PROSM_Software</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>The return of the famous, the one and only...
+
+<a href="https://www.connosoft.com/csscgc2020/" rel="noreferrer">https://www.connosoft.com/csscgc2020/</a>
+
+More details and an official announcement to follow...
+
+- John Connolly, PROSM Software
+
+</pre></div><div class="post" id="p228777"><div class="ph"><a class="d" href="#p228777">2019-12-28 23:35:29</a> <span>PROSM_Software</span> <span>Re: CSSCGC 2020</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>Well, the web-pages are fully uploaded and done and dusted. Have a look over at connosoft.com to see the full HTML/CSS glory! (clear your cache if you&#x27;ve already viewed the page, so that you get the updated stylesheets. Press Ctrl+F5 to do a full reload.)
+
+I will be considering submissions submitted from the 1st of January 2020 onwards. Get crackin&#x27;!  ;)
+
+</pre></div><div class="post" id="p228779"><div class="ph"><a class="d" href="#p228779">2020-01-01 11:14:32</a> <span>PROSM_Software</span> <span>Re: CSSCGC 2020</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>The submissions for the 2020 comp.sys.sinclair Crap Games Competition are now open! You have until the 24th of December to submit your game. Head over to connosoft.com to check out the rules.
+
+Good luck! :)
+
+- John Connolly, PROSM Software
+
+</pre></div><div class="post" id="p228781"><div class="ph"><a class="d" href="#p228781">2020-01-04 22:28:48</a> <span>PROSM_Software</span> <span>Re: CSSCGC 2020</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>Well, we have the first game of the competition: &quot;Escape the Room&quot; by Stephen Smith! You can see the full review here:
+
+<a href="https://connosoft.com/csscgc2020/reviews/001.html" rel="noreferrer">https://connosoft.com/csscgc2020/reviews/001.html</a>
+
+Also, we have a Twitter account! Why not give us a follow? @csscgc ;)
+
+</pre></div><div class="post" id="p228782"><div class="ph"><a class="d" href="#p228782">2020-01-05 19:51:54</a> <span>PROSM_Software</span> <span>Re: CSSCGC 2020</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>We have the second entry, by Dario Ruellan, titled Aliengun. This entry is unique in that it was created in 1985 and was recently recovered!
+
+<a href="https://connosoft.com/csscgc2020/reviews/002.html" rel="noreferrer">https://connosoft.com/csscgc2020/reviews/002.html</a>
+
+</pre></div><div class="post" id="p228786"><div class="ph"><a class="d" href="#p228786">2020-01-20 22:47:33</a> <span>PROSM_Software</span> <span>Two new games!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>Well, we have two new games! &quot;Another Fruit Machine Simulator&quot; by Juan F. Ramirez, and &quot;Explosion&quot; by Luny.
+
+Head over to connosoft.com to see the reviews.
+
+</pre></div><div class="post" id="p228790"><div class="ph"><a class="d" href="#p228790">2020-01-29 20:08:57</a> <span>PROSM_Software</span> <span>Re: CSSCGC 2020</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>To celebrate the 40th anniversary of the ZX80, I&#x27;ve posted a new challenge on the competition website.
+
+If you&#x27;d like to participate, you have until the 26th of February (28 days to deliver your game, in true Sinclair fashion). Good luck!
+
+</pre></div><div class="post" id="p228792"><div class="ph"><a class="d" href="#p228792">2020-02-09 20:26:19</a> <span>PROSM_Software</span> <span>Re: CSSCGC 2020</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>A new entry from BloodBaz: Crapic Attack! Try to guess which game it&#x27;s ripping off ;)
+
+Review and download available from connosoft.com
+
+</pre></div><div class="post" id="p228793"><div class="ph"><a class="d" href="#p228793">2020-02-13 18:11:24</a> <span>Glazebrook West</span> <span>Re: CSSCGC 2020</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>PROSM_Software &lt;…@…&gt; Wrote in message:r
+<span class="qt">&gt; A new entry from BloodBaz: Crapic Attack! Try to guess which game it&#x27;s ripping off ;)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Review and download available from connosoft.com</span>
+<span class="qt">&gt; </span>
+
+Connosoft, LOL.
+
+-- 
+
+</pre></div><div class="post" id="p228794"><div class="ph"><a class="d" href="#p228794">2020-02-16 20:07:37</a> <span>PROSM_Software</span> <span>Re: CSSCGC 2020</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>On Thursday, February 13, 2020 at 6:11:27 PM UTC, Glazebrook West wrote:
+<span class="qt">&gt; [...]</span>
+<span class="qt">&gt; Connosoft, LOL.</span>
+
+Well, I saw an opportunity ;)
+
+Also, we have a new entry, and this time it&#x27;s not a game! RWAC has sent us Advanced Art Simulator, so get out your easels and head over to the website for the review!
+
+</pre></div><div class="post" id="p228796"><div class="ph"><a class="d" href="#p228796">2020-03-12 09:59:37</a> <span>…@…</span> <span>Re: CSSCGC 2020</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>Hi All,
+
+I believe I may be the person responsible for the absence of a 2019 CSSCGC.
+
+Piss poor communications and comprehension on my part I am afraid. I am really sorry.
+
+I was declared the loser (winner?) of 2018 with my entry, the LCD game+watch simulator, Go Race!
+
+I can not repair the hole in the CSSCGC continuum, but I can do one small thing. I can donate my prize to be the prize in this years contest. The box has been opened but it is all there and in good nick. I have updated the firmware and will bung in a USB stick with some extra games and gubbins. 
+
+Sincerely, Simon.
+
+
+</pre></div><div class="post" id="p228797"><div class="ph"><a class="d" href="#p228797">2020-03-12 19:55:06</a> <span>PROSM_Software</span> <span>Re: CSSCGC 2020</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>Hi Simon,
+
+Never mind about 2019, the winner/loser rule has been flipped a few times in the competition&#x27;s history so it&#x27;s understandable that some confusion resulted.
+
+The offer of your prize is very generous! Certainly an upgrade from the usual packet of Rolos ;)
+
+Please do send me an email (using the address on the compo website) so we can discuss this further.
+
+Kind regards,
+John
+
+</pre></div><div class="post" id="p228798"><div class="ph"><a class="d" href="#p228798">2020-03-13 09:05:38</a> <span>Volker Bartheld</span> <span>Re: CSSCGC 2020</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>On Thu, 12 Mar 2020 12:55:06 -0700 (PDT), PROSM_Software wrote:
+<span class="qt">&gt; Never mind about 2019, the winner/loser rule has been flipped a few times</span>
+<span class="qt">&gt; in the competition&#x27;s history so it&#x27;s understandable that some confusion</span>
+<span class="qt">&gt; resulted.</span>
+
+What about hosting 2019&#x27;s entries somewhere else? <a href="https://cgc.source.run/" rel="noreferrer">https://cgc.source.run/</a>
+is down *), other installations are all over the Web...:
+
+<a href="https://lofi-gaming.org.uk/speccy/csscgc/" rel="noreferrer">https://lofi-gaming.org.uk/speccy/csscgc/</a>
+<a href="http://icculus.org/~aspirin/csscgc2001/" rel="noreferrer">http://icculus.org/~aspirin/csscgc2001/</a>
+<a href="https://www.worldofspectrum.org/speccyspoilers/cgc2004/index.html" rel="noreferrer">https://www.worldofspectrum.org/speccyspoilers/cgc2004/index.html</a>
+<a href="https://lofi-gaming.org.uk/speccy/csscgc/csscgc-2005/" rel="noreferrer">https://lofi-gaming.org.uk/speccy/csscgc/csscgc-2005/</a>
+<a href="http://www.mattrudge.net/cgc2006/" rel="noreferrer">http://www.mattrudge.net/cgc2006/</a>
+<a href="https://zxnet.co.uk/spectrum/cgc/" rel="noreferrer">https://zxnet.co.uk/spectrum/cgc/</a>
+<a href="https://csscgc2010.zxlife.net/" rel="noreferrer">https://csscgc2010.zxlife.net/</a>
+<a href="http://www.mojontwins.com/csscgc2011/" rel="noreferrer">http://www.mojontwins.com/csscgc2011/</a>
+<a href="http://csscgc2015.lofi-gaming.org.uk/blog/tag/prosm/" rel="noreferrer">http://csscgc2015.lofi-gaming.org.uk/blog/tag/prosm/</a>
+
+Volker
+
+*) One of my contributions is available at
+<a href="https://spectrumcomputing.co.uk/index.php?cat=96&id=34706" rel="noreferrer">https://spectrumcomputing.co.uk/index.php?cat=96&amp;id=34706</a> - unfortunately
+with a broken Microdrive image that lacks an image hence throws a &quot;File
+not found&quot; error.
+
+<a href="https://spectrumcomputing.co.uk/index.php?cat=999&group_id=2072" rel="noreferrer">https://spectrumcomputing.co.uk/index.php?cat=999&amp;group_id=2072</a> might be a
+working mirror of  <a href="https://cgc.source.run," rel="noreferrer">https://cgc.source.run,</a> but not complete (misses at
+least &quot;Fortress&quot; and &quot;Thermal Ski&quot;).
+
+</pre></div><div class="post" id="p228799"><div class="ph"><a class="d" href="#p228799">2020-03-28 11:02:37</a> <span>PROSM_Software</span> <span>Re: CSSCGC 2020</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>A new crap game from Juan F. Ramírez: The Hangman!
+
+Review and download available at: <a href="https://www.connosoft.com/csscgc2020/reviews/008.html" rel="noreferrer">https://www.connosoft.com/csscgc2020/reviews/008.html</a>
+
+</pre></div><div class="post" id="p228801"><div class="ph"><a class="d" href="#p228801">2020-04-03 21:15:56</a> <span>PROSM_Software</span> <span>Re: CSSCGC 2020</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>Another entry, and this time it&#x27;s a port of a more modern game. It&#x27;s Internetless by Manu128k!
+
+Review and download available from: <a href="https://www.connosoft.com/csscgc2020/reviews/009.html" rel="noreferrer">https://www.connosoft.com/csscgc2020/reviews/009.html</a>
+
+</pre></div><div class="post" id="p228802"><div class="ph"><a class="d" href="#p228802">2020-04-08 10:29:01</a> <span>PROSM_Software</span> <span>Re: CSSCGC 2020</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>Our latest entry is &quot;Social Distancing&quot;, a topical puzzle game by Chris Young!
+
+Review and download at: <a href="https://www.connosoft.com/csscgc2020/reviews/010.html" rel="noreferrer">https://www.connosoft.com/csscgc2020/reviews/010.html</a>
+
+</pre></div><div class="post" id="p228808"><div class="ph"><a class="d" href="#p228808">2020-04-23 21:03:37</a> <span>PROSM_Software</span> <span>Re: CSSCGC 2020</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>A new entry, this time from Gareth Pitchford, called Mirror Mirror! I think he might have entered the wrong competition, as this game certainly isn&#x27;t crap!
+
+Review and download available from connosoft.com
+
+</pre></div><div class="post" id="p228809"><div class="ph"><a class="d" href="#p228809">2020-04-25 14:08:46</a> <span>PROSM_Software</span> <span>New CSSCGC 2020 entry!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>Jim Waterman&#x27;s new YUGE game, Corona Capers, has been reviewed and is now available for download from connosoft.com
+
+</pre></div><div class="post" id="p228821"><div class="ph"><a class="d" href="#p228821">2020-05-12 13:52:04</a> <span>PROSM_Software</span> <span>New CSSCGC 2020 entry!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>We&#x27;ve reviewed another entry, and this time it&#x27;s from CSSCGC veteran, Paul Collins (AKA Equinox Tetrachloride), who sends us &quot;Playing A Casino Game With A Spinning Counter&quot; (or alternatively, PACGWASC).
+
+See the review at <a href="https://www.connosoft.com/csscgc2020/reviews/015.html" rel="noreferrer">https://www.connosoft.com/csscgc2020/reviews/015.html</a>
+
+</pre></div><div class="post" id="p228827"><div class="ph"><a class="d" href="#p228827">2020-07-04 12:35:44</a> <span>PROSM_Software</span> <span>New CSSCGC entry!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>What is it with this competition and gambling? Dog Track Simulator from Tomas P. is now up for your approval!
+
+Review and download at: <a href="https://www.connosoft.com/csscgc2020/reviews/018.html" rel="noreferrer">https://www.connosoft.com/csscgc2020/reviews/018.html</a>
+
+</pre></div><div class="post" id="p228831"><div class="ph"><a class="d" href="#p228831">2020-07-05 13:40:01</a> <span>PROSM_Software</span> <span>New CSSCGC entry!</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>Juan F. Ramírez strikes again! This time, he&#x27;s resurrected an old conversion of Mastermind!
+
+Review and download at: <a href="https://connosoft.com/csscgc2020/reviews/019.html" rel="noreferrer">https://connosoft.com/csscgc2020/reviews/019.html</a>
+
+</pre></div><div class="post" id="p228832"><div class="ph"><a class="d" href="#p228832">2020-07-05 13:41:29</a> <span>PROSM_Software</span> <span>New CSSCGC entry: Master Mind</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>Juan F. Ramírez strikes again! This time, he&#x27;s resurrected an old conversion of Mastermind!
+
+Review and download at: <a href="https://connosoft.com/csscgc2020/reviews/019.html" rel="noreferrer">https://connosoft.com/csscgc2020/reviews/019.html</a>
+
+</pre></div><div class="post" id="p228833"><div class="ph"><a class="d" href="#p228833">2020-07-06 17:09:12</a> <span>PROSM_Software</span> <span>New CSSCGC entry: Ronaprise USS 19-2020</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>The reviews keep rolling in! This time, we have a Cambridge Z88 game by Jamie Bradbury, entitled Ronaprise USS 19-2020!
+
+Review and download at: <a href="https://connosoft.com/csscgc2020/reviews/020.html" rel="noreferrer">https://connosoft.com/csscgc2020/reviews/020.html</a>
+
+</pre></div><div class="post" id="p228837"><div class="ph"><a class="d" href="#p228837">2020-07-24 19:01:14</a> <span>PROSM_Software</span> <span>New CSSCGC entry: Sarah&#x27;s Garden</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>Andy Jenkinson has sent us a new game for the CSSCGC - Sarah&#x27;s Garden.
+
+Review and download at: <a href="https://connosoft.com/csscgc2020/reviews/021.html" rel="noreferrer">https://connosoft.com/csscgc2020/reviews/021.html</a>
+
+</pre></div><div class="post" id="p228845"><div class="ph"><a class="d" href="#p228845">2020-08-26 12:18:50</a> <span>PROSM_Software</span> <span>Re: CSSCGC 2020</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>A new review has been posted on the compo website, this time for Blind Sweeper by Andy Jenkinson.
+
+Click here to view: <a href="https://www.connosoft.com/csscgc2020/reviews/022.html" rel="noreferrer">https://www.connosoft.com/csscgc2020/reviews/022.html</a>
+
+</pre></div><div class="post" id="p228852"><div class="ph"><a class="d" href="#p228852">2020-08-31 14:51:21</a> <span>PROSM_Software</span> <span>Re: CSSCGC 2020</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>Presenting &quot;Advanced Greta Thunberg Simulator&quot; by Matt Rudge!
+
+Review and download at: <a href="https://www.connosoft.com/csscgc2020/reviews/023.html" rel="noreferrer">https://www.connosoft.com/csscgc2020/reviews/023.html</a>
+
+</pre></div><div class="post" id="p228853"><div class="ph"><a class="d" href="#p228853">2020-09-01 17:28:54</a> <span>Matt Rudge</span> <span>Re: CSSCGC 2020</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>On 31/08/2020 15:51, PROSM_Software wrote:
+<span class="qt">&gt; Presenting &quot;Advanced Greta Thunberg Simulator&quot; by Matt Rudge!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Review and download at: <a href="https://www.connosoft.com/csscgc2020/reviews/023.html" rel="noreferrer">https://www.connosoft.com/csscgc2020/reviews/023.html</a></span>
+<span class="qt">&gt; </span>
+Thank you for the review. In my defense...I have no defense.
+
+</pre></div><div class="post" id="p228857"><div class="ph"><a class="d" href="#p228857">2020-10-06 21:21:51</a> <span>PROSM_Software</span> <span>Re: CSSCGC 2020</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>Matt Rudge sends us another game, this time for the Sinclair Birthday challenge, called &quot;Sir Clive&#x27;s C5 Adventure&quot;.
+
+Review and download at <a href="https://connosoft.com/csscgc2020/reviews/025.html" rel="noreferrer">https://connosoft.com/csscgc2020/reviews/025.html</a>
+
+P.S. I am making an effort to catch up on the backlog and right the wrongs of my crap time management. Expect to see more reviews coming soon (famous last words!)
+
+</pre></div><div class="post" id="p228860"><div class="ph"><a class="d" href="#p228860">2020-10-13 13:59:45</a> <span>PROSM_Software</span> <span>Re: CSSCGC 2020</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>Andy Jenkinson sends us another game, called &quot;Sir Clive&#x27;s Ink Lair&quot;, made for the Sinclair Birthday challenge.
+
+Review and download at <a href="https://www.connosoft.com/csscgc2020/reviews/026.html" rel="noreferrer">https://www.connosoft.com/csscgc2020/reviews/026.html</a>
+
+</pre></div><div class="post" id="p228861"><div class="ph"><a class="d" href="#p228861">2020-10-14 14:21:00</a> <span>Matt Rudge</span> <span>Re: CSSCGC 2020</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>On 06/10/2020 22:21, PROSM_Software wrote:
+<span class="qt">&gt; Matt Rudge sends us another game, this time for the Sinclair Birthday challenge, called &quot;Sir Clive&#x27;s C5 Adventure&quot;.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Review and download at <a href="https://connosoft.com/csscgc2020/reviews/025.html" rel="noreferrer">https://connosoft.com/csscgc2020/reviews/025.html</a></span>
+<span class="qt">&gt; </span>
+
+Thank you! You probably didn&#x27;t find the special Easter egg in the game 
+because I didn&#x27;t include one.
+
+<span class="qt">&gt; P.S. I am making an effort to catch up on the backlog and right the wrongs of my crap time management. Expect to see more reviews coming soon (famous last words!)</span>
+<span class="qt">&gt; </span>
+
+Don&#x27;t worry - it&#x27;s part of the lore of the CSSCGC that it always 
+finishes &quot;later&quot;.
+
+</pre></div><div class="post" id="p228862"><div class="ph"><a class="d" href="#p228862">2020-10-22 21:43:03</a> <span>PROSM_Software</span> <span>New CSSCGC entry: Guitar Weirdo</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>Daz Peet sends us his musical simulation game, Guitar Weirdo!
+
+Review and download at <a href="https://connosoft.com/csscgc2020/reviews/027.html" rel="noreferrer">https://connosoft.com/csscgc2020/reviews/027.html</a>
+
+</pre></div><div class="post" id="p228864"><div class="ph"><a class="d" href="#p228864">2020-11-01 21:19:11</a> <span>PROSM_Software</span> <span>New CSSCGC entry: CASIO Digit Invaders</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>Andy Jenkinson has sent us a port from the CASIO MG-880: CASIO Digit Invaders!
+
+Review and download at: <a href="https://connosoft.com/csscgc2020/reviews/028.html" rel="noreferrer">https://connosoft.com/csscgc2020/reviews/028.html</a>
+
+</pre></div><div class="post" id="p228871"><div class="ph"><a class="d" href="#p228871">2020-11-22 22:44:05</a> <span>PROSM_Software</span> <span>New CSSCGC entry: The Adventures of Mr P.N.</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>We have a new entry which is the last of the July batch. It&#x27;s &quot;The Adventures of Mr P.N.&quot;, by AsteroideZX!
+
+Review and download here (slightly NSFW): <a href="https://www.connosoft.com/csscgc2020/reviews/029.html" rel="noreferrer">https://www.connosoft.com/csscgc2020/reviews/029.html</a>
+
+</pre></div><div class="post" id="p228872"><div class="ph"><a class="d" href="#p228872">2020-11-24 23:42:30</a> <span>PROSM_Software</span> <span>New CSSCGC entry: Uranus Penetrator</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>p13z sends us a half-decent BASIC game with some innuendo wedged in, called Uranus Pentrator.
+
+Review and download at: <a href="https://www.connosoft.com/csscgc2020/reviews/031.html" rel="noreferrer">https://www.connosoft.com/csscgc2020/reviews/031.html</a>
+
+</pre></div><div class="post" id="p228882"><div class="ph"><a class="d" href="#p228882">2020-12-20 23:47:13</a> <span>PROSM_Software</span> <span>New CSSCGC entry: This Game Will Pit Man Against Machine</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>Andy Jenkinson lets us test our typing wits against the computer in his latest entry, This Game Will Pit Man Against Machine!
+
+Review and download at: <a href="https://connosoft.com/csscgc2020/reviews/035.html" rel="noreferrer">https://connosoft.com/csscgc2020/reviews/035.html</a>
+
+</pre></div><div class="post" id="p228883"><div class="ph"><a class="d" href="#p228883">2020-12-24 15:29:53</a> <span>PROSM_Software</span> <span>New CSSCGC entry: Jigsaw</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>Jim Waterman sends us another BBC children&#x27;s show adaptation: Jigsaw!
+
+Review and download at: <a href="https://connosoft.com/csscgc2020/reviews/036.html" rel="noreferrer">https://connosoft.com/csscgc2020/reviews/036.html</a>
+
+</pre></div><div class="post" id="p228884"><div class="ph"><a class="d" href="#p228884">2020-12-24 15:30:21</a> <span>PROSM_Software</span> <span>New CSSCGC entry: Masky</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>We&#x27;ve a new contender in the competition named Kerl, and here&#x27;s his first entry, entitled Masky!
+
+Review and download at: <a href="https://connosoft.com/csscgc2020/reviews/037.html" rel="noreferrer">https://connosoft.com/csscgc2020/reviews/037.html</a>
+
+</pre></div><div class="post" id="p228885"><div class="ph"><a class="d" href="#p228885">2020-12-25 21:49:18</a> <span>PROSM_Software</span> <span>New CSSCGC entry: Illuminati</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>Why not spend those last few hours of Christmas Day with Jim Waterman, as he battles the lizard-people in his new ZX81 game, &quot;Illuminati&quot;!
+
+Review and download at: <a href="https://connosoft.com/csscgc2020/reviews/038.html" rel="noreferrer">https://connosoft.com/csscgc2020/reviews/038.html</a>
+
+</pre></div><div class="post" id="p228887"><div class="ph"><a class="d" href="#p228887">2020-12-26 23:29:52</a> <span>PROSM_Software</span> <span>New CSSCGC entry: Big Clive&#x27;s Supergayrainbow Exploding USB Power Supply Game</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>And another Jim Waterman game, this time for the QL. It&#x27;s called Big Clive&#x27;s Supergayrainbow Exploding USB Power Supply Game
+
+Review and download at: <a href="https://connosoft.com/csscgc2020/reviews/039.html" rel="noreferrer">https://connosoft.com/csscgc2020/reviews/039.html</a>
+
+</pre></div><div class="post" id="p228902"><div class="ph"><a class="d" href="#p228902">2021-01-18 00:28:27</a> <span>PROSM_Software</span> <span>Two more CSSCGC 2020 entries: Octopus Mating Simulator; Resistance is Futile</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a></div><pre>Time for me to get rid of the 2020 crap games backlog...
+
+Have a look over on connosoft.com at Kerl&#x27;s new &quot;Octopus Mating Simulator&quot;, and marvel at Jim Waterman&#x27;s SAM Coupé title, &quot;Resistance is Futile&quot;!
+
+</pre></div><div class="post" id="p228904"><div class="ph"><a class="d" href="#p228904">2021-01-29 12:46:00</a> <span>PROSM_Software</span> <span>Final reviews and results for CSSCGC 2020</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2073">CSSCGC Crap Games Contest 2020</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/37637">ZXDB: V - The Team Trial</a> <a class="badge" href="https://spectrumcomputing.co.uk/entry/37636">ZXDB: Mental Rally</a></div><pre>It&#x27;s all finished now; you can read the final two reviews and the results on the competition website. No prizes for guessing who lost  ;)
+
+Mental Rally (by Kerl): <a href="https://connosoft.com/csscgc2020/reviews/042.html" rel="noreferrer">https://connosoft.com/csscgc2020/reviews/042.html</a>
+V - The Team Trial (by Kerl): <a href="https://connosoft.com/csscgc2020/reviews/043.html" rel="noreferrer">https://connosoft.com/csscgc2020/reviews/043.html</a>
+
+Results: <a href="https://connosoft.com/csscgc2020/results.html" rel="noreferrer">https://connosoft.com/csscgc2020/results.html</a>
+
+
+Thank you once again to everyone for your support during this unusual year, it has been very much appreciated. Let&#x27;s hope 2021 holds a brighter future! 
+
+Now, if you&#x27;ll excuse me, I&#x27;ve got an idea for a crap game to send to Jim...    :)
+
+</pre></div></main></body></html>

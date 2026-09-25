@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANN: SE Basic Beta 2 · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANN: SE Basic Beta 2</h1><p class="facts">30 posts, 2010-02-13 – 2010-02-18</p><div class="post" id="p221600"><div class="ph"><a class="d" href="#p221600">2010-02-13 16:04:01</a> <span>OwenBot</span>  <a class="badge" href="https://spectrumcomputing.co.uk/entry/27510">ZXDB: OpenSE BASIC</a></div><pre><a href="http://bit.ly/d64mo3" rel="noreferrer">http://bit.ly/d64mo3</a>
+
+It&#x27;s more or less finished. It includes ULAplus and AY support. It
+finally has the ON ERR commands. Comments and questions here or by
+email.
+
+
+
+</pre></div><div class="post" id="p221601"><div class="ph"><a class="d" href="#p221601">2010-02-13 17:32:49</a> <span>DanSolo</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>On Feb 13, 4:04 pm, OwenBot &lt;…@…&gt; wrote:
+<span class="qt">&gt; <a href="http://bit.ly/d64mo3" rel="noreferrer">http://bit.ly/d64mo3</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; It&#x27;s more or less finished. It includes ULAplus and AY support. It</span>
+<span class="qt">&gt; finally has the ON ERR commands. Comments and questions here or by</span>
+<span class="qt">&gt; email.</span>
+
+Link don&#x27;t work right...
+
+
+
+</pre></div><div class="post" id="p221602"><div class="ph"><a class="d" href="#p221602">2010-02-13 18:38:42</a> <span>OwenBot</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>On Feb 13, 5:32 pm, DanSolo &lt;…@…&gt; wrote:
+<span class="qt">&gt; On Feb 13, 4:04 pm, OwenBot &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;<a href="http://bit.ly/d64mo3" rel="noreferrer">http://bit.ly/d64mo3</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; It&#x27;s more or less finished. It includes ULAplus and AY support. It</span>
+<span class="qt">&gt; &gt; finally has the ON ERR commands. Comments and questions here or by</span>
+<span class="qt">&gt; &gt; email.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Link don&#x27;t work right...</span>
+
+Works for me. Try entering it directly in your browser instead of
+clicking it.
+
+
+
+</pre></div><div class="post" id="p221604"><div class="ph"><a class="d" href="#p221604">2010-02-13 19:59:06</a> <span>DanSolo</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>On Feb 13, 6:38 pm, OwenBot &lt;…@…&gt; wrote:
+<span class="qt">&gt; Works for me. Try entering it directly in your browser instead of</span>
+<span class="qt">&gt; clicking it.</span>
+
+Works through a proxy server but gives me a different (wrong) web
+address when I click or paste it into my own browser.
+Weirdola.
+
+
+
+</pre></div><div class="post" id="p221608"><div class="ph"><a class="d" href="#p221608">2010-02-14 18:47:09</a> <span>BloodBaz</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>Hi Andrew,
+Does the ROM include the IM1 vector fix?
+(I assume so but the txt file only says &quot;fixed all known bugs&quot; or
+similar).
+
+
+
+</pre></div><div class="post" id="p221609"><div class="ph"><a class="d" href="#p221609">2010-02-14 19:08:38</a> <span>OwenBot</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>On Feb 14, 6:47 pm, BloodBaz &lt;…@…&gt; wrote:
+<span class="qt">&gt; Hi Andrew,</span>
+<span class="qt">&gt; Does the ROM include the IM1 vector fix?</span>
+<span class="qt">&gt; (I assume so but the txt file only says &quot;fixed all known bugs&quot; or</span>
+<span class="qt">&gt; similar).</span>
+
+IM1 doesn&#x27;t use vectors, so I&#x27;m not sure what you mean. There is an
+issue in some ROMs that the IM2 vectors are not preserved. That&#x27;s also
+the case with this one for now, but I&#x27;ll be putting them back once it
+goes to a release candidate version. I&#x27;ve spotted two minor bugs so
+far, but after more than 100 downloads I haven&#x27;t had any reports of
+any major issues.
+
+I&#x27;m working on more detailed documentation at the moment as I think
+some of the new stuff could use a bit more in the way of explanation
+and examples.
+
+
+
+</pre></div><div class="post" id="p221610"><div class="ph"><a class="d" href="#p221610">2010-02-14 22:20:08</a> <span>Chupo</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>In article &lt;e9768c09-50a9-4a33-8833-
+…@…&gt;, OwenBot 
+&lt;…@…&gt; says...
+<span class="qt">&gt; &gt; Does the ROM include the IM1 vector fix?</span>
+<span class="qt">&gt; &gt; (I assume so but the txt file only says &quot;fixed all known bugs&quot; or</span>
+<span class="qt">&gt; &gt; similar).</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; IM1 doesn&#x27;t use vectors, so I&#x27;m not sure what you mean.</span>
+<span class="qt">&gt; </span>
+
+I believe BloodBaz thinks about the bug in Spectrum&#x27;s ROM so IM 1 mode 
+causes reset because of the jump when vector IS zero instead when it is 
+NOT zero.
+-- 
+Chupo
+
+
+
+</pre></div><div class="post" id="p221611"><div class="ph"><a class="d" href="#p221611">2010-02-14 23:31:55</a> <span>OwenBot</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>On Feb 14, 10:20 pm, Chupo &lt;…@…&gt; wrote:
+<span class="qt">&gt; In article &lt;e9768c09-50a9-4a33-8833-</span>
+<span class="qt">&gt; …@…&gt;, OwenBot</span>
+<span class="qt">&gt; &lt;…@…&gt; says...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; Does the ROM include the IM1 vector fix?</span>
+<span class="qt">&gt; &gt; &gt; (I assume so but the txt file only says &quot;fixed all known bugs&quot; or</span>
+<span class="qt">&gt; &gt; &gt; similar).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; IM1 doesn&#x27;t use vectors, so I&#x27;m not sure what you mean.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I believe BloodBaz thinks about the bug in Spectrum&#x27;s ROM so IM 1 mode</span>
+<span class="qt">&gt; causes reset because of the jump when vector IS zero instead when it is</span>
+<span class="qt">&gt; NOT zero.</span>
+
+Oh, the NMI, right! The original warm restart is reinstated. Press the
+NMI button and the ROM will try very hard to drop you back into BASIC
+with interrupts enabled, unless NMIADD was set to zero.
+
+
+
+</pre></div><div class="post" id="p221612"><div class="ph"><a class="d" href="#p221612">2010-02-15 09:18:46</a> <span>BloodBaz</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>On Feb 14, 10:20 pm, Chupo &lt;…@…&gt; wrote:
+<span class="qt">&gt; In article &lt;e9768c09-50a9-4a33-8833-</span>
+<span class="qt">&gt; …@…&gt;, OwenBot</span>
+<span class="qt">&gt; &lt;…@…&gt; says...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; &gt; Does the ROM include the IM1 vector fix?</span>
+<span class="qt">&gt; &gt; &gt; (I assume so but the txt file only says &quot;fixed all known bugs&quot; or</span>
+<span class="qt">&gt; &gt; &gt; similar).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; IM1 doesn&#x27;t use vectors, so I&#x27;m not sure what you mean.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I believe BloodBaz thinks about the bug in Spectrum&#x27;s ROM so IM 1 mode</span>
+<span class="qt">&gt; causes reset because of the jump when vector IS zero instead when it is</span>
+<span class="qt">&gt; NOT zero.</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; Chupo</span>
+
+Yes, that&#x27;s what I mean.
+So can you assign your own non-zero NMIADD value to handle an NMI?
+(Sorry, I was mistaking my maskable and non-maskable interrupts mixed
+up)
+
+Cheers.
+
+
+
+</pre></div><div class="post" id="p221613"><div class="ph"><a class="d" href="#p221613">2010-02-15 11:31:38</a> <span>OwenBot</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>On Feb 15, 9:18 am, BloodBaz &lt;…@…&gt; wrote:
+
+[NMI]
+
+<span class="qt">&gt; So can you assign your own non-zero NMIADD value to handle an NMI?</span>
+<span class="qt">&gt; (Sorry, I was mistaking my maskable and non-maskable interrupts mixed</span>
+<span class="qt">&gt; up)</span>
+
+Yes, you can. If you don&#x27;t assign one the warm restart is assigned by
+default. If all you want to do is be able to break into a program at a
+given point then this should be all you need. Setting NMIADD to zero
+prevents NMI interrupts.
+
+
+
+</pre></div><div class="post" id="p221614"><div class="ph"><a class="d" href="#p221614">2010-02-15 16:04:48</a> <span>Chupo</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>In article &lt;565a36a7-6492-486c-9610-2c844324b384
+@d27g2000yqn.googlegroups.com&gt;, OwenBot &lt;…@…&gt; says...
+<span class="qt">&gt; &gt; I believe BloodBaz thinks about the bug in Spectrum&#x27;s ROM so IM 1 mode</span>
+<span class="qt">&gt; &gt; causes reset because of the jump when vector IS zero instead when it is</span>
+<span class="qt">&gt; &gt; NOT zero.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Oh, the NMI, right!</span>
+<span class="qt">&gt; </span>
+
+Sorry, my mistake :-[ NMI, of course, not IM 1 :-))
+
+		ORG	#0066
+		PUSH	AF
+		PUSH	HL
+		LD	HL,(#5CB0)
+		LD	A,H
+		OR	L
+		JR	NZ,go_back	;should be JR Z
+		JP	(HL)
+go_back	POP HL
+		POP AF
+		RETN
+-- 
+Chupo
+
+
+
+</pre></div><div class="post" id="p221615"><div class="ph"><a class="d" href="#p221615">2010-02-15 16:45:42</a> <span>OwenBot</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>On Feb 15, 4:04 pm, Chupo &lt;…@…&gt; wrote:
+<span class="qt">&gt; In article &lt;565a36a7-6492-486c-9610-2c844324b384</span>
+
+<span class="qt">&gt; Sorry, my mistake :-[ NMI, of course, not IM 1 :-))</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;                 ORG     #0066</span>
+<span class="qt">&gt;                 PUSH    AF</span>
+<span class="qt">&gt;                 PUSH    HL</span>
+<span class="qt">&gt;                 LD      HL,(#5CB0)</span>
+<span class="qt">&gt;                 LD      A,H</span>
+<span class="qt">&gt;                 OR      L</span>
+<span class="qt">&gt;                 JR      NZ,go_back      ;should be JR Z</span>
+<span class="qt">&gt;                 JP      (HL)</span>
+<span class="qt">&gt; go_back POP HL</span>
+<span class="qt">&gt;                 POP AF</span>
+<span class="qt">&gt;                 RETN</span>
+
+It&#x27;s better than that. Not only does it fix the routine, it provides
+the original NMI handler that was supposed to be present in the
+original ROM.
+
+In other news I&#x27;ve managed to shorten the error messages saving a
+total of 26 bytes. However, unlike in previous versions the content of
+the messages has not changed, I have simply enabled TOKENs to be used
+in error messages. I now have 98 contiguous bytes to play with and I
+am open to feature requests. There&#x27;s probably just enough room to add
+one or two extra features.
+
+
+
+</pre></div><div class="post" id="p221617"><div class="ph"><a class="d" href="#p221617">2010-02-15 18:32:42</a> <span>Chupo</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>In article &lt;b91a47a1-a51d-4543-85ef-81e2fcf48ec8
+@z11g2000yqz.googlegroups.com&gt;, OwenBot &lt;…@…&gt; says...
+<span class="qt">&gt; It&#x27;s better than that. Not only does it fix the routine, it provides</span>
+<span class="qt">&gt; the original NMI handler that was supposed to be present in the</span>
+<span class="qt">&gt; original ROM.</span>
+<span class="qt">&gt; </span>
+
+Sounds nice. I still have to try your SE Basic, I&#x27;ve only read the 
+sebasic.txt for the moment. Maybe just a small observation - there is 
+no note about issue [5] related to Timex models.
+
+Does it mean there aren&#x27;t any issues with TC2048?
+
+<a href="http://img705.imageshack.us/img705/2975/sebasicshw.png" rel="noreferrer">http://img705.imageshack.us/img705/2975/sebasicshw.png</a>
+
+<span class="qt">&gt; In other news I&#x27;ve managed to shorten the error messages saving a</span>
+<span class="qt">&gt; total of 26 bytes. However, unlike in previous versions the content of</span>
+<span class="qt">&gt; the messages has not changed, I have simply enabled TOKENs to be used</span>
+<span class="qt">&gt; in error messages. I now have 98 contiguous bytes to play with</span>
+
+Awesome idea!! Congratulations!
+
+<span class="qt">&gt; and I</span>
+<span class="qt">&gt; am open to feature requests. There&#x27;s probably just enough room to add</span>
+<span class="qt">&gt; one or two extra features.</span>
+<span class="qt">&gt; </span>
+
+A superfast CIRCLE routine or FILL command would be nice. However, I am 
+not sure if 98 bytes would suffice for either.
+
+I remember a bit wierd and very fast FILL routine from one of the 
+Spectrum&#x27;s alternative basic interpreters - maybe it was Beta basic, I 
+am not sure. The process of filling was very unusual (during the 
+filling of circles there was some kind of propeller or radiation hazard 
+intermediate shape) and it wasn&#x27;t continuous but was very fast compared 
+to some other algorithms I&#x27;ve seen.
+-- 
+Chupo
+
+
+
+</pre></div><div class="post" id="p221618"><div class="ph"><a class="d" href="#p221618">2010-02-15 19:04:49</a> <span>OwenBot</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>On Feb 15, 6:32 pm, Chupo &lt;…@…&gt; wrote:
+<span class="qt">&gt; Maybe just a small observation - there is</span>
+<span class="qt">&gt; no note about issue [5] related to Timex models.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Does it mean there aren&#x27;t any issues with TC2048?</span>
+
+Yeah, that [5] should be a [4]. There are no issues with the TC2048
+and SE Basic will set the standard video mode when you do a cold
+restart.
+
+<span class="qt">&gt; A superfast CIRCLE routine or FILL command would be nice.</span>
+<span class="qt">&gt; However, I am not sure if 98 bytes would suffice for either.</span>
+
+It wouldn&#x27;t. CIRCLE is already faster than on the original ROM because
+SE Basic uses the longer, but faster Newton Raphson square root
+method.
+
+The fastest fill is probably one published by Alvin Albrecht. There&#x27;s
+no room to add another keyword, but I suppose I could overload an
+existing one. However, I doubt the routine will fit.
+
+
+
+</pre></div><div class="post" id="p221620"><div class="ph"><a class="d" href="#p221620">2010-02-15 21:56:54</a> <span>BloodBaz</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>On 15 Feb, 19:04, OwenBot &lt;…@…&gt; wrote:
+<span class="qt">&gt; On Feb 15, 6:32 pm, Chupo &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Maybe just a small observation - there is</span>
+<span class="qt">&gt; &gt; no note about issue [5] related to Timex models.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Does it mean there aren&#x27;t any issues with TC2048?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Yeah, that [5] should be a [4]. There are no issues with the TC2048</span>
+<span class="qt">&gt; and SE Basic will set the standard video mode when you do a cold</span>
+<span class="qt">&gt; restart.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; A superfast CIRCLE routine or FILL command would be nice.</span>
+<span class="qt">&gt; &gt; However, I am not sure if 98 bytes would suffice for either.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; It wouldn&#x27;t. CIRCLE is already faster than on the original ROM because</span>
+<span class="qt">&gt; SE Basic uses the longer, but faster Newton Raphson square root</span>
+<span class="qt">&gt; method.</span>
+
+Ha! I have already tried the CIRCLE op and am inpressed by its faster
+speed.
+I think we can live without it being any faster than it is in SE
+BASIC.
+
+<span class="qt">&gt; The fastest fill is probably one published by Alvin Albrecht. There&#x27;s</span>
+<span class="qt">&gt; no room to add another keyword, but I suppose I could overload an</span>
+<span class="qt">&gt; existing one. However, I doubt the routine will fit.</span>
+
+The problem with the fill routines is also the amount of stack space
+(or some kind of buffer) in order to manage new search points.  There
+are routines to do this already.
+
+Love the EDIT command.  Why didn&#x27;t Uncle Clive think of that!
+
+98 bytes.  Hummm...
+I think implementation of MOD, HEX (convert an int to a hex string) or
+some bitwise operations would be great but only MOD would really
+qualify for a true BASIC function (the others are a bit technical for
+BASIC).
+Still 98 bytes might be pushing it.
+
+
+
+
+</pre></div><div class="post" id="p221621"><div class="ph"><a class="d" href="#p221621">2010-02-15 22:40:23</a> <span>Matthew Westcott</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>BloodBaz wrote:
+<span class="qt">&gt; 98 bytes.  Hummm...</span>
+<span class="qt">&gt; I think implementation of MOD, HEX (convert an int to a hex string) or</span>
+<span class="qt">&gt; some bitwise operations would be great but only MOD would really</span>
+<span class="qt">&gt; qualify for a true BASIC function (the others are a bit technical for</span>
+<span class="qt">&gt; BASIC).</span>
+<span class="qt">&gt; Still 98 bytes might be pushing it.</span>
+
+I&#x27;d be interested to see the MOD operation implemented too. As I 
+mentioned recently on Some Thread Or Other on WOS, the maths for it is 
+already in the ROM as an RST 28 call - it&#x27;s used internally by RND - so 
+it just needs to be supported by the parser. And we have the % symbol in 
+the character set crying out to be used for something...
+
+Although having said that, it is debatable how much use it would get in 
+practice, being a non-standard extension that&#x27;s not available in any 
+other ROM.
+
+
+
+</pre></div><div class="post" id="p221622"><div class="ph"><a class="d" href="#p221622">2010-02-15 23:54:00</a> <span>OwenBot</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>On Feb 15, 10:40 pm, Matthew Westcott &lt;…@…&gt; wrote:
+<span class="qt">&gt; BloodBaz wrote:</span>
+<span class="qt">&gt; &gt; 98 bytes.  Hummm...</span>
+<span class="qt">&gt; &gt; I think implementation of MOD, HEX (convert an int to a hex string) or</span>
+<span class="qt">&gt; &gt; some bitwise operations would be great but only MOD would really</span>
+<span class="qt">&gt; &gt; qualify for a true BASIC function (the others are a bit technical for</span>
+<span class="qt">&gt; &gt; BASIC).</span>
+<span class="qt">&gt; &gt; Still 98 bytes might be pushing it.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;d be interested to see the MOD operation implemented too. As I</span>
+<span class="qt">&gt; mentioned recently on Some Thread Or Other on WOS, the maths for it is</span>
+<span class="qt">&gt; already in the ROM as an RST 28 call - it&#x27;s used internally by RND - so</span>
+<span class="qt">&gt; it just needs to be supported by the parser. And we have the % symbol in</span>
+<span class="qt">&gt; the character set crying out to be used for something...</span>
+
+There are two spare calculator literals, and it&#x27;s possible I might be
+able to save a few more bytes in the arithmetic. However, MOD is
+trivial to write as a DEF FN. It&#x27;s even included in the orange book.
+
+When it&#x27;s done I&#x27;ll send you an annotated copy of the source
+highlighting my original code, which I&#x27;d be happy to see co-published
+under the GPL in Open82. I think the shortening of the error table is
+worth doing, if only to make it easier to add support for non-English
+languages.
+
+
+
+</pre></div><div class="post" id="p221623"><div class="ph"><a class="d" href="#p221623">2010-02-16 00:41:01</a> <span>Chupo</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>In article &lt;5610981f-2e94-415a-8a56-3c9cb1d88e98
+@q29g2000yqn.googlegroups.com&gt;, BloodBaz &lt;…@…&gt; 
+says...
+<span class="qt">&gt; Ha! I have already tried the CIRCLE op and am inpressed by its faster</span>
+<span class="qt">&gt; speed.</span>
+
+OK, it&#x27;s faster but I meant *super*fast circle :-) I somewhere have an 
+old circle routine (from a magazine) that can draw about 30 circles per 
+second (in average). I don&#x27;t remember the timing for the biggest circle 
+that fits on the screen (r = 87?) but the routine was so fast that 
+circles could easily been animated (from Basic) as here in Elite:
+
+<a href="http://www.youtube.com/watch?v=JBk9hQQJDrQ#t=1m39s" rel="noreferrer">http://www.youtube.com/watch?v=JBk9hQQJDrQ#t=1m39s</a>
+
+There weren&#x27;t any floating point calculations, (y+1)^2 was calculated 
+as y*y (last value remembered) + 2*y + 1. So there was only one 
+rotation (multiplication by 2) and one INC to calculate another square 
+root. Each calculated coordinate pair was used to plot eight circle 
+pixels so calculations were made only for 1/8 of the arc. y coord was 
+always incremented by 1 and there was a clever routine to decide if 
+decrease the x coordinate or not.
+
+There was also a superfast plot so the results of the two routines 
+combined were really unbelievable.
+
+<span class="qt">&gt; I think we can live without it being any faster than it is in SE</span>
+<span class="qt">&gt; BASIC.</span>
+<span class="qt">&gt; </span>
+
+I can also live without EDIT - typing LIST n, [n], SHIFT+1 is good 
+enough for me but EDIT is better :-)
+-- 
+Chupo
+
+
+
+</pre></div><div class="post" id="p221624"><div class="ph"><a class="d" href="#p221624">2010-02-16 09:23:58</a> <span>OwenBot</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>Smaller integer circles look horrible though. Where as floating point
+ones look like circles. No further confirmed bugs in the code so
+hopefully RC1 will be along shortly.
+
+
+
+</pre></div><div class="post" id="p221628"><div class="ph"><a class="d" href="#p221628">2010-02-16 12:09:16</a> <span>Chupo</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>In article &lt;42016d19-8ae1-4369-966e-28b060855fc3
+@x22g2000yqx.googlegroups.com&gt;, OwenBot &lt;…@…&gt; says...
+<span class="qt">&gt; Smaller integer circles look horrible though. Where as floating point</span>
+<span class="qt">&gt; ones look like circles.</span>
+<span class="qt">&gt; </span>
+
+The superfast circles I was talking about look just as good as floating 
+point ones but *calculations* to reproduce floating point preciseness 
+are very simple and integer.
+
+The algorithm is based on the fact that when the y coord is increased, 
+there is only a decision if to decrease the x coordinate or not (the 
+coords are calculated for only first 45 degrees). So, starting from 
+(r,0) very next coordinate is going to be either (r,1) or (r-1,1) etc..
+
+Everytime we have (x,y) coordinates of a circle pixel, the very next 
+pair is (x,y+1) or (x-1,y+1). Algorithm checks (in a very cleaver&amp;fast 
+way) which coordinate pair better fits in the
+
+x*x + y*y = r*r
+
+So the circles are *perfect* and very fast (&#x27;instantaneous&#x27;).
+-- 
+Chupo
+
+
+
+</pre></div><div class="post" id="p221629"><div class="ph"><a class="d" href="#p221629">2010-02-16 15:11:31</a> <span>jgharston</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>OwenBot wrote:
+<span class="qt">&gt; in error messages. I now have 98 contiguous bytes to play with and I</span>
+<span class="qt">&gt; am open to feature requests. There&#x27;s probably just enough room to add</span>
+<span class="qt">&gt; one or two extra features.</span>
+
+hexnum=STR$~num and num=&amp;hexnum are very simple to implement,
+see <a href="http://mdfs.net/Spectrum/Harston," rel="noreferrer">http://mdfs.net/Spectrum/Harston,</a> anybody is welcome to use
+any code therein.
+
+&amp;hex is about 45 bytes, STR$~ is about 45 bytes, with a bit of glue
+code providing a generalised interface to input/output code. Dropping
+making it easily callable as a general routine from external code
+would make it a bit smaller.
+
+--
+JGH
+
+
+
+</pre></div><div class="post" id="p221634"><div class="ph"><a class="d" href="#p221634">2010-02-16 18:37:09</a> <span>OwenBot</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>On Feb 16, 3:11 pm, jgharston &lt;…@…&gt; wrote:
+<span class="qt">&gt; OwenBot wrote:</span>
+<span class="qt">&gt; &gt; in error messages. I now have 98 contiguous bytes to play with and I</span>
+<span class="qt">&gt; &gt; am open to feature requests. There&#x27;s probably just enough room to add</span>
+<span class="qt">&gt; &gt; one or two extra features.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; hexnum=STR$~num and num=&amp;hexnum are very simple to implement,</span>
+<span class="qt">&gt; see<a href="http://mdfs.net/Spectrum/Harston," rel="noreferrer">http://mdfs.net/Spectrum/Harston,</a> anybody is welcome to use</span>
+<span class="qt">&gt; any code therein.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &amp;hex is about 45 bytes, STR$~ is about 45 bytes, with a bit of glue</span>
+<span class="qt">&gt; code providing a generalised interface to input/output code. Dropping</span>
+<span class="qt">&gt; making it easily callable as a general routine from external code</span>
+<span class="qt">&gt; would make it a bit smaller.</span>
+
+Thanks! I may well do that. I already lifted your keyswitch code
+(shift in C mode produces lower case). And 4 years ago you helped me
+get the RENUM command interfacing properly with the standard command
+handler. I found the real reason I didn&#x27;t release that version --
+there was a bug in it, which is still in the current beta. However,
+I&#x27;ve found it and nailed it in the release candidate. With over 100
+downloads and no bug reports either people are downloading it and then
+not really doing anything with it (most likely) or there are no major
+bugs left in the new code.
+
+Cheers!
+
+
+
+</pre></div><div class="post" id="p221635"><div class="ph"><a class="d" href="#p221635">2010-02-16 18:39:04</a> <span>OwenBot</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>On Feb 16, 12:09 pm, Chupo &lt;…@…&gt; wrote:
+<span class="qt">&gt; In article &lt;42016d19-8ae1-4369-966e-28b060855fc3</span>
+<span class="qt">&gt; @x22g2000yqx.googlegroups.com&gt;, OwenBot &lt;…@…&gt; says...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Smaller integer circles look horrible though. Where as floating point</span>
+<span class="qt">&gt; &gt; ones look like circles.</span>
+
+<span class="qt">&gt; the circles are *perfect* and very fast (&#x27;instantaneous&#x27;).</span>
+
+Then the next question is, how big is the code. The existing FP circle
+code is relatively short (and partially shared with the DRAW a,b,c
+code). One of the problems with replacing it is keeping the other PLOT
+based commands functioning as expected.
+
+
+
+</pre></div><div class="post" id="p221637"><div class="ph"><a class="d" href="#p221637">2010-02-16 20:43:51</a> <span>Chris Young</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>On Tue, 16 Feb 2010 10:37:09 -0800 (PST) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC OwenBot:
+
+<span class="qt">&gt; With over 100</span>
+<span class="qt">&gt; downloads and no bug reports either people are downloading it and then</span>
+<span class="qt">&gt; not really doing anything with it (most likely)</span>
+
+I haven&#x27;t had chance to even select it in an emulator and check it
+still boots yet :(
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p221640"><div class="ph"><a class="d" href="#p221640">2010-02-16 21:27:37</a> <span>OwenBot</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>On Feb 16, 8:43 pm, &quot;Chris Young&quot; &lt;…@…&gt;
+wrote:
+<span class="qt">&gt; On Tue, 16 Feb 2010 10:37:09 -0800 (PST) da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt; to MC OwenBot:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; With over 100</span>
+<span class="qt">&gt; &gt; downloads and no bug reports either people are downloading it and then</span>
+<span class="qt">&gt; &gt; not really doing anything with it (most likely)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I haven&#x27;t had chance to even select it in an emulator and check it</span>
+<span class="qt">&gt; still boots yet :(</span>
+
+Most of the code is not changed since the last version you tested, and
+you were pretty thorough in your testing. I&#x27;m afraid I&#x27;m not likely to
+have enough spare bytes to support Roller Coaster, but we&#x27;ll see. :)
+
+
+
+</pre></div><div class="post" id="p221641"><div class="ph"><a class="d" href="#p221641">2010-02-17 08:20:33</a> <span>OwenBot</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>Didn&#x27;t get a chance to have an in-depth look at the code last night.
+I&#x27;ve modified the tokenizer so it is possible to use keywords as
+variable names again (by switching off conversion to upper case in &#x27;C&#x27;
+mode). Hopefully I&#x27;ll get a chance tonight. Does &amp; support variable
+length, in the same way BIN does? It would be nice to be able to
+return something valid for &amp;n, &amp;nn, &amp;nnn, and &amp;nnnn.
+
+
+
+</pre></div><div class="post" id="p221643"><div class="ph"><a class="d" href="#p221643">2010-02-17 10:43:12</a> <span>Chupo</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>In article &lt;89ba17cd-8a44-43da-b189-9b76ecad6da5
+@m37g2000yqf.googlegroups.com&gt;, OwenBot &lt;…@…&gt; says...
+<span class="qt">&gt; Then the next question is, how big is the code. The existing FP circle</span>
+<span class="qt">&gt; code is relatively short (and partially shared with the DRAW a,b,c</span>
+<span class="qt">&gt; code). One of the problems with replacing it is keeping the other PLOT</span>
+<span class="qt">&gt; based commands functioning as expected.</span>
+<span class="qt">&gt; </span>
+
+I&#x27;ll post the code as soon as I locate the magazine. I have the code on 
+a tape too (the code from magazine plus one or two routines modified by 
+me) but there are a lot of tapes to search through and I am not sure if 
+they still work.
+
+These are some of the magazines I&#x27;ll have to check:
+
+How to draw a circle
+<a href="http://pc.sux.org/RAH/Covers/RA8703-00.jpg" rel="noreferrer">http://pc.sux.org/RAH/Covers/RA8703-00.jpg</a>
+
+Turbo graphics on Spectrum
+<a href="http://pc.sux.org/RAH/Covers/RA8710-00.jpg" rel="noreferrer">http://pc.sux.org/RAH/Covers/RA8710-00.jpg</a>
+
+FILL for circles
+<a href="http://pc.sux.org/RAH/Covers/RA8711-00.jpg" rel="noreferrer">http://pc.sux.org/RAH/Covers/RA8711-00.jpg</a>
+
+The fastest ellipse in YU
+<a href="http://pc.sux.org/RAH/Covers/RA8803-00.jpg" rel="noreferrer">http://pc.sux.org/RAH/Covers/RA8803-00.jpg</a>
+
+Superfast circle (Amstrad)
+<a href="http://pc.sux.org/RAH/Covers/RA8707-00.jpg" rel="noreferrer">http://pc.sux.org/RAH/Covers/RA8707-00.jpg</a>
+This is not related to Spectrum but is interesting
+
+LINE algorithm
+<a href="http://pc.sux.org/RAH/Covers/RA8911-00.jpg" rel="noreferrer">http://pc.sux.org/RAH/Covers/RA8911-00.jpg</a>
+
+And you might be interested in &#x27;adding new instructions&#x27; and Screen 
+Editor code (similar to Commodore&#x27;s :-) ) for ZX Spectrum. Screen 
+editor code was very large hex listing spread through a few magazines 
+but I saw it somewhere as snapshot.
+
+Adding new instructions (Spectrum)
+<a href="http://pc.sux.org/RAH/Covers/RA8502-00.jpg" rel="noreferrer">http://pc.sux.org/RAH/Covers/RA8502-00.jpg</a>
+
+Screen editor
+<a href="http://pc.sux.org/RAH/Covers/RA8510-00.jpg" rel="noreferrer">http://pc.sux.org/RAH/Covers/RA8510-00.jpg</a>
+
+Here are the covers or the mentioned magazine:
+
+<a href="http://pc.sux.org/indexRA.html" rel="noreferrer">http://pc.sux.org/indexRA.html</a>
+
+I have them all but not at the same location, I&#x27;ll post the code(s) as 
+soon as I find it/them.
+
+This were also very good magazines with lots of assembler listings:
+
+<a href="http://pc.sux.org/indexSK.html" rel="noreferrer">http://pc.sux.org/indexSK.html</a>
+
+<a href="http://pc.sux.org/indexMMSlo.html" rel="noreferrer">http://pc.sux.org/indexMMSlo.html</a>
+
+Regards,
+-- 
+Chupo
+
+
+
+</pre></div><div class="post" id="p221644"><div class="ph"><a class="d" href="#p221644">2010-02-17 17:02:31</a> <span>jgharston</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>On 17 Feb, 08:20, OwenBot &lt;…@…&gt; wrote:
+<span class="qt">&gt; mode). Hopefully I&#x27;ll get a chance tonight. Does &amp; support variable</span>
+<span class="qt">&gt; length, in the same way BIN does? It would be nice to be able to</span>
+<span class="qt">&gt; return something valid for &amp;n, &amp;nn, &amp;nnn, and &amp;nnnn.</span>
+
+Yes, &amp; is a prefix to say &#x27;start reading as hex until nonhex digit&#x27;
+in the same way that BIN is says &#x27;start reading as binary until
+nonbinary digit&#x27;. The code in the Harston ROM doesn&#x27;t check for
+overflow, so &amp;12345 evaluates as &amp;2345, but that was ok enough for
+me to be able to do things like SAVE &quot;scrn&quot;,CODE &amp;8000,&amp;1B00,&amp;4000.
+
+It works by diverting the line scanning code at &amp;2684 and
+instead of CALLing to check for a numeric, it CALLs to
+check for a hex or numeric. The new subroutine checks for
+a &#x27;&amp;&#x27;, if not present, continues to the old decimal code,
+if present, steps through following characters doing
+acc*16+next until it encounters a non-hex character, and
+then returns in the same way as returning from scanning
+a decimal number.
+
+STR$~ works by co-opting the unusable calculator function
+&amp;3C (unusable as it expects a parameter in the A register).
+New calculator op &amp;3C replaces top-of-stack with hex string.
+Evaluation of STR$ at &amp;2707 checks for a following ~ character
+and uses calculator op &amp;2E for STR$ and &amp;3C for STR$~.
+
+JGH
+
+
+
+</pre></div><div class="post" id="p221646"><div class="ph"><a class="d" href="#p221646">2010-02-18 02:31:46</a> <span>OwenBot</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>Clawed back another few bytes. Found a few savings in the ON ERR code.
+Put the IM2 vectors back in. At most I have 157 bytes available now.
+The two longest contiguous blocks are 27 bytes and 89 bytes. Plan to
+add HEX and DEC$ later today and see what that leaves me with.
+
+
+
+</pre></div><div class="post" id="p221648"><div class="ph"><a class="d" href="#p221648">2010-02-18 11:08:34</a> <span>OwenBot</span> <span>Re: ANN: SE Basic Beta 2</span></div><pre>On Feb 18, 2:31 am, OwenBot &lt;…@…&gt; wrote:
+<span class="qt">&gt; Clawed back another few bytes. Found a few savings in the ON ERR code.</span>
+<span class="qt">&gt; Put the IM2 vectors back in. At most I have 157 bytes available now.</span>
+<span class="qt">&gt; The two longest contiguous blocks are 27 bytes and 89 bytes. Plan to</span>
+<span class="qt">&gt; add HEX and DEC$ later today and see what that leaves me with.</span>
+
+I went with the old hex code from SE Basic 0.93e, because it had error
+checking in it. It was slightly longer at 59 bytes, but I managed to
+distribute it throughout the non-contiguous space in the ROM. I just
+have the 89 contiguous bytes left now and the odd group of 4 or 5
+spare bytes here and there.
+
+
+
+</pre></div></main></body></html>

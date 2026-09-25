@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[ANN] CSSCGC2003 - an extension · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>[ANN] CSSCGC2003 - an extension</h1><p class="facts">11 posts, 2003-12-24 – 2004-01-07</p><div class="post" id="p172846"><div class="ph"><a class="d" href="#p172846">2003-12-24 10:36:31</a> <span>Dave the Lurker</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>Crapfans.
+
+Due to my server (8bitorbust.info) being a bit flaky of late, I&#x27;ve 
+decided to extend the the length of time the compo is open for.  I&#x27;ll 
+now close it on the last day of January 2004.
+
+This should allow any late entries to come in, as well as allow people 
+to get a chance to play them before voting starts.
+
+<a href="http://8bitorbust.info/cgc/" rel="noreferrer">http://8bitorbust.info/cgc/</a>
+
+cheers,
+Dave
+
+
+
+
+</pre></div><div class="post" id="p173163"><div class="ph"><a class="d" href="#p173163">2004-01-02 17:51:31</a> <span>Chris Young</span> <span>Re: [ANN] CSSCGC2003 - an extension</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>On Wed, 24 Dec 2003 10:36:31 -0000 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Dave the Lurker:
+
+<span class="qt">&gt; Due to my server (8bitorbust.info) being a bit flaky of late, I&#x27;ve </span>
+<span class="qt">&gt; decided to extend the the length of time the compo is open for.  I&#x27;ll </span>
+<span class="qt">&gt; now close it on the last day of January 2004.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; This should allow any late entries to come in</span>
+
+If anybody is still stuck for ideas, here are three more from my crap
+ideas factory:
+
+Stag Night:  Text adventure game where you wake up on the morning of your
+wedding, naked and handcuffed to a lamp-post.  You must find get changed
+and get to the church before the bride, obviously avoiding getting
+arrested by any policemen.
+
+Incomphrensivo: A puzzle game with such an imcomphrensive object,
+controls and scoring system it is unplayable to anybody who is not a
+member of MENSA.
+
+Gran Theft Auto: Walk around the shopping mall knocking over old ladies
+and stealing their shopping cart scooter thingies.
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.tk" rel="noreferrer">http://www.yoursinclair.tk</a> --------------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p173222"><div class="ph"><a class="d" href="#p173222">2004-01-03 22:11:44</a> <span>Stanley</span> <span>Re: [ANN] CSSCGC2003 - an extension</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>Dave the Lurker &lt;…@…&gt; wrote in message news:&lt;…@…&gt;...
+<span class="qt">&gt; Crapfans.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Due to my server (8bitorbust.info) being a bit flaky of late, I&#x27;ve </span>
+<span class="qt">&gt; decided to extend the the length of time the compo is open for.  I&#x27;ll </span>
+<span class="qt">&gt; now close it on the last day of January 2004.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; This should allow any late entries to come in, as well as allow people </span>
+<span class="qt">&gt; to get a chance to play them before voting starts.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; <a href="http://8bitorbust.info/cgc/" rel="noreferrer">http://8bitorbust.info/cgc/</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; cheers,</span>
+<span class="qt">&gt; Dave</span>
+
+Huh, I&#x27;m desperately waiting for my late Dec entry to be published
+online for comments. Or should I produce something more crappy til end
+of Jan?
+
+stanley
+
+
+
+</pre></div><div class="post" id="p173228"><div class="ph"><a class="d" href="#p173228">2004-01-03 23:28:29</a> <span>Dave the Lurker</span> <span>Re: [ANN] CSSCGC2003 - an extension</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>In article &lt;…@…&gt;, stano2000
+@yahoo.com says...
+
+<span class="qt">&gt; Huh, I&#x27;m desperately waiting for my late Dec entry to be published</span>
+<span class="qt">&gt; online for comments. Or should I produce something more crappy til end</span>
+<span class="qt">&gt; of Jan?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; stanley</span>
+<span class="qt">&gt; </span>
+
+Hi,
+
+I updated the site yesterday with all the games I had to that point.  
+Could you send your entry again?
+
+Sorry about that.
+
+cheers,
+Dave
+
+
+
+</pre></div><div class="post" id="p173242"><div class="ph"><a class="d" href="#p173242">2004-01-04 12:59:39</a> <span>Paul E Collins</span> <span>Re: [ANN] CSSCGC2003 - an extension</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>&quot;Dave the Lurker&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; I updated the site yesterday with all the</span>
+<span class="qt">&gt; games I had to that point.</span>
+
+But the other pages don&#x27;t include a link for December.
+
+I sent you an entry called Amnesia the other day (seriously!). Didn&#x27;t get
+that either?
+
+P.
+
+-- 
+www.CL4.org
+
+
+
+
+
+</pre></div><div class="post" id="p173252"><div class="ph"><a class="d" href="#p173252">2004-01-04 15:08:04</a> <span>Dave the Lurker</span> <span>Re: [ANN] CSSCGC2003 - an extension</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>In article &lt;bt92nr$rl8$…@…&gt;, 
+…@… says...
+<span class="qt">&gt; &quot;Dave the Lurker&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; I updated the site yesterday with all the</span>
+<span class="qt">&gt; &gt; games I had to that point.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; But the other pages don&#x27;t include a link for December.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I sent you an entry called Amnesia the other day (seriously!). Didn&#x27;t get</span>
+<span class="qt">&gt; that either?</span>
+
+Sorry about that.  Just managed to find your game and Stanley&#x27;s buried 
+in a pile of spam in my inbox.
+
+Both are now reviewed and on the site.  I&#x27;d updated my local copy 
+earlier but forgotten to upload it to the public site. D&#x27;oh!
+
+cheers,
+Dave
+
+
+
+</pre></div><div class="post" id="p173255"><div class="ph"><a class="d" href="#p173255">2004-01-04 16:37:18</a> <span>Anders Carlsson</span> <span>Re: [ANN] CSSCGC2003 - an extension</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>Dave the Lurker &lt;…@…&gt; writes:
+
+<span class="qt">&gt; Both are now reviewed and on the site.  I&#x27;d updated my local copy </span>
+<span class="qt">&gt; earlier but forgotten to upload it to the public site. D&#x27;oh!</span>
+
+It seems &quot;RCSSCGC2003 Entry&quot; by Niall Wallace is not available for
+download, and has been replaced with another copy of Robbyie? :)
+
+
+-- 
+Anders Carlsson
+
+Ye wonder, she&#x27;s thirteen beyond an invisible carefully preserved leather 
+mouse. Sunday dungeons promising horseback cause loud guessed scissors. 
+
+
+
+</pre></div><div class="post" id="p173259"><div class="ph"><a class="d" href="#p173259">2004-01-04 18:31:25</a> <span>Dave the Lurker</span> <span>Re: [ANN] CSSCGC2003 - an extension</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>In article &lt;…@…&gt;, …@… 
+says...
+<span class="qt">&gt; Dave the Lurker &lt;…@…&gt; writes:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; Both are now reviewed and on the site.  I&#x27;d updated my local copy </span>
+<span class="qt">&gt; &gt; earlier but forgotten to upload it to the public site. D&#x27;oh!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; It seems &quot;RCSSCGC2003 Entry&quot; by Niall Wallace is not available for</span>
+<span class="qt">&gt; download, and has been replaced with another copy of Robbyie? :)</span>
+
+Fixed.
+
+cheers,
+Dave
+
+
+
+</pre></div><div class="post" id="p173269"><div class="ph"><a class="d" href="#p173269">2004-01-05 10:33:32</a> <span>David Jamie Mann</span> <span>Re: [ANN] CSSCGC2003 - an extension</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>In article &lt;…@…&gt;, &quot;Chris Young&quot; &lt;…@…&gt; wrote:
+<span class="qt">&gt;On Wed, 24 Dec 2003 10:36:31 -0000 da kidz on comp.sys.sinclair were rappin&#x27;</span>
+<span class="qt">&gt;to MC Dave the Lurker:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Due to my server (8bitorbust.info) being a bit flaky of late, I&#x27;ve </span>
+<span class="qt">&gt;&gt; decided to extend the the length of time the compo is open for.  I&#x27;ll </span>
+<span class="qt">&gt;&gt; now close it on the last day of January 2004.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; This should allow any late entries to come in</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;If anybody is still stuck for ideas, here are three more from my crap</span>
+<span class="qt">&gt;ideas factory:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Stag Night:  Text adventure game where you wake up on the morning of your</span>
+<span class="qt">&gt;wedding, naked and handcuffed to a lamp-post.  You must find get changed</span>
+<span class="qt">&gt;and get to the church before the bride, obviously avoiding getting</span>
+<span class="qt">&gt;arrested by any policemen.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Incomphrensivo: A puzzle game with such an imcomphrensive object,</span>
+<span class="qt">&gt;controls and scoring system it is unplayable to anybody who is not a</span>
+<span class="qt">&gt;member of MENSA.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Gran Theft Auto: Walk around the shopping mall knocking over old ladies</span>
+<span class="qt">&gt;and stealing their shopping cart scooter thingies.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Chris</span>
+<span class="qt">&gt;</span>
+
+I did have a thought while watching Challenge TV:  Takeshi Commentary 
+Simulator.
+
+You&#x27;d have to describe some bizarre situation in the most banal and annoying 
+way possible, with bonus points for lying through your teeth - e.g. &quot;ooo, that 
+ball must have done some damage to his love-spuds&quot;, when it actually skimmed 
+past his big toe.
+
+Seriously considering a petition to get Craig Charles off Takeshi&#x27;s Castle - 
+it&#x27;d be so much more fun if I didn&#x27;t have to wince everytime he opens his 
+gob.
+
+        juice... xmas hungover
+
+
+
+</pre></div><div class="post" id="p173295"><div class="ph"><a class="d" href="#p173295">2004-01-05 19:32:31</a> <span>Gerard Sweeney</span> <span>Re: [ANN] CSSCGC2003 - an extension</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>Making up some cupasoups, David Jamie Mann wrote:
+
+<span class="qt">&gt; You&#x27;d have to describe some bizarre situation in the most banal and annoying </span>
+<span class="qt">&gt; way possible, with bonus points for lying through your teeth - e.g. &quot;ooo, that </span>
+<span class="qt">&gt; ball must have done some damage to his love-spuds&quot;, when it actually skimmed </span>
+<span class="qt">&gt; past his big toe.</span>
+
+I&#x27;ve watched TC quite a lot, and haven&#x27;t seen this happen. As far as I
+can make out, anytime Love Spuds are mentioned, they&#x27;ve usually been
+whacked, crunched, or generally put through pain (much to my amusement).
+
+<span class="qt">&gt; Seriously considering a petition to get Craig Charles off Takeshi&#x27;s Castle - </span>
+
+FWIW (not much. Ed), I think he&#x27;s actually pretty good on it. And I&#x27;m
+not just saying that because I like Red Dwarf - CC&#x27;s standup routines
+had me reaching for blunt instruments of pain.
+
+Toodle-pip!
+Gerard
+-- 
+Gerard Sweeney
+Hackers Anonymous/Team Amiga
+<a href="http://fly.to/ha3" rel="noreferrer">http://fly.to/ha3</a> and <a href="http://www.the-tipshop.co.uk" rel="noreferrer">http://www.the-tipshop.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p173364"><div class="ph"><a class="d" href="#p173364">2004-01-07 09:35:02</a> <span>Mal Franks</span> <span>Re: [ANN] CSSCGC2003 - an extension</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2057">CSSCGC Crap Games Contest 2003</a></div><pre>In article &lt;…@…&gt;, …@… 
+says...
+<span class="qt">&gt; In article &lt;bt92nr$rl8$…@…&gt;, </span>
+<span class="qt">&gt; …@… says...</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; I sent you an entry called Amnesia the other day (seriously!). Didn&#x27;t get</span>
+<span class="qt">&gt; &gt; that either?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Sorry about that.  Just managed to find your game and Stanley&#x27;s buried </span>
+<span class="qt">&gt; in a pile of spam in my inbox.</span>
+<span class="qt">&gt; </span>
+
+/me thwaps dave around a bit for not saying &quot;I can&#x27;t remember&quot;
+
+
+
+</pre></div></main></body></html>

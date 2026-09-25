@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Z80 and TZX files · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Z80 and TZX files</h1><p class="facts">23 posts, 1998-04-24 – 1998-05-01</p><div class="post" id="p36328"><div class="ph"><a class="d" href="#p36328">1998-04-24</a> <span>daren pearcy</span> </div><pre>
+When will the new version of Z80 be released that can read TZX files?
+
+In the meantime, is there any way to convert TZX files to TAP or any other
+format?
+
+Cheers
+
+
+
+
+
+</pre></div><div class="post" id="p36342"><div class="ph"><a class="d" href="#p36342">1998-04-25</a> <span>…@…</span> <span>Re: Z80 and TZX files</span></div><pre>
+On Sat, 25 Apr 98 06:39:56 GMT, …@… (Brian Gaff)
+wrote:
+
+<span class="qt">&gt;If the DOS version is finished before the Windows version,</span>
+<span class="qt">&gt;should we off it seperately or wait for the Winmdows version and</span>
+<span class="qt">&gt;supply both?</span>
+
+Seperately.
+-- 
+  //// Damien Burke (add k to end of address if replying)
+ //// Spectrum pages: <a href="http://www.jetman.demon.co.uk/speccy/" rel="noreferrer">http://www.jetman.demon.co.uk/speccy/</a>
+//// New to this group? Read this: <a href="http://www.kendalls.demon.co.uk/cssfaq/" rel="noreferrer">http://www.kendalls.demon.co.uk/cssfaq/</a>
+
+
+</pre></div><div class="post" id="p36344"><div class="ph"><a class="d" href="#p36344">1998-04-25</a> <span>|bugs |bunny</span> <span>Re: Z80 and TZX files</span></div><pre>
+<span class="qt">&gt;.... (The exception here is</span>
+<span class="qt">&gt;Warajevo, which does a very good job of loading turbo-loaders from</span>
+<span class="qt">&gt;either standard or it&#x27;s own .tap files).</span>
+
+Warajevo uses a TAP format slightly diferent from the standard TAP that most
+emulators use... try converting a TZX file into a TAP file and load the
+generated TAP into Z80 or X128, for example. Actually, the Warajevo&#x27;s TAP
+format is somewhat similar to the TZX format, as it contains loading speed
+informations and other things...
+It&#x27;s really hard to convert a TZX file into the standard TAP file, I just
+succeeded with about 5% of my TZX archive.
+
+[]&#x27;s
+
+<span class="qt">|Pernalong@</span>
+_.--._.--._.--._.--._.--._.--._.--._.--._
+…@…
+UIN: 5198917
+
+
+
+
+</pre></div><div class="post" id="p36348"><div class="ph"><a class="d" href="#p36348">1998-04-25</a> <span>…@…</span> <span>Re: Z80 and TZX files</span></div><pre>
+In &lt;…@…&gt; …@… (Brian Gaff) writes:
+
+<span class="qt">&gt;Question...</span>
+
+<span class="qt">&gt;If the DOS version is finished before the Windows version,</span>
+<span class="qt">&gt;should we off it seperately or wait for the Winmdows version and</span>
+<span class="qt">&gt;supply both?</span>
+
+<span class="qt">&gt;Brian</span>
+
+Why is Gerton making a windows version ? I think it is a waste of time because the
+dos-version works nicely under windows95 running in dos-mode.
+
+/Martin
+
+
+
+
+</pre></div><div class="post" id="p36350"><div class="ph"><a class="d" href="#p36350">1998-04-25</a> <span>…@…</span> <span>Re: Z80 and TZX files</span></div><pre>
+In article &lt;…@…&gt;
+           …@… &quot;Daren Pearcy&quot; writes:
+
+<span class="qt">&gt; </span>
+<span class="qt">&gt; When will the new version of Z80 be released that can read TZX files?</span>
+<span class="qt">&gt;</span>
+We;; due to pressure of work, Gerton has no idea.
+
+ 
+<span class="qt">&gt; In the meantime, is there any way to convert TZX files to TAP or any other</span>
+<span class="qt">&gt; format?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Cheers</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+
+Dunno..
+
+Question...
+
+If the DOS version is finished before the Windows version,
+should we off it seperately or wait for the Winmdows version and
+supply both?
+
+Brian
+
+-- 
+…@…
+Brian Gaff AKA B G Services - Still supporting Z80
+                              The Spectrum Emulator
+
+
+
+</pre></div><div class="post" id="p36362"><div class="ph"><a class="d" href="#p36362">1998-04-26</a> <span>…@…</span> <span>Re: Z80 and TZX files</span></div><pre>
+On Sun, 26 Apr 1998 09:50:01 -0400, Martijn van der Heide
+ wrote:
+
+<span class="qt">&gt;If the new DOS version of Z80 fixes this problem, I&#x27;d release it as soon</span>
+<span class="qt">&gt;as possible.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;So, as an answer to the original question:</span>
+<span class="qt">&gt;I would like it best if the 2 programs were published seperately.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;And one question in return:</span>
+<span class="qt">&gt;Can you tell us anything about registering? If you want to register both</span>
+<span class="qt">&gt;programs, will you get discount (yes, typically Dutch :-) ?</span>
+
+No why, I thought that was typical Scottish :-)
+
+
+Michael Bruhn
+
+********************************************************
+Petersborg 23, 6200 Aabenraa, Denmark
+E-Mail: …@…             
+                                      
+FRANKIE SAY SPECCY FOREVER          
+********************************************************
+
+
+
+</pre></div><div class="post" id="p36367"><div class="ph"><a class="d" href="#p36367">1998-04-26</a> <span>martijn van der heide</span> <span>Re: Z80 and TZX files</span></div><pre>
+Martin Moller Pedersen wrote:
+
+<span class="qt">&gt; &gt;Question...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;If the DOS version is finished before the Windows version,</span>
+<span class="qt">&gt; &gt;should we off it seperately or wait for the Winmdows version and</span>
+<span class="qt">&gt; &gt;supply both?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;Brian</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Why is Gerton making a windows version ? I think it is a waste of time because the</span>
+<span class="qt">&gt; dos-version works nicely under windows95 running in dos-mode.</span>
+
+I don&#x27;t agree with this.... Z80 is exceptionally agressive towards
+Win95. If memory is only a bit too low, it crashes the entire DOS-box.
+No matter whether you choose the -xt option, it will crash.
+This is particularly problematic within SGD (as hundreds of people told
+me in the last couple of months :-)
+
+If the new DOS version of Z80 fixes this problem, I&#x27;d release it as soon
+as possible.
+
+So, as an answer to the original question:
+I would like it best if the 2 programs were published seperately.
+
+And one question in return:
+Can you tell us anything about registering? If you want to register both
+programs, will you get discount (yes, typically Dutch :-) ?
+
+Cheers,
+
+Martijn.
+
+
+</pre></div><div class="post" id="p36369"><div class="ph"><a class="d" href="#p36369">1998-04-26</a> <span>martijn van der heide</span> <span>Re: Z80 and TZX files</span></div><pre>
+Michael Bruhn wrote:
+<span class="qt">&gt; &gt;Can you tell us anything about registering? If you want to register</span>
+<span class="qt">&gt; &gt;both programs, will you get discount (yes, typically Dutch :-) ?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; No why, I thought that was typical Scottish :-)</span>
+
+Ever heard of the phrase &#x27;go Dutch&#x27;? It means that everyone pays for
+itself when going out...... I never heard of such phrases about the
+Scottisch people. Could be an interesting learning experience :-)
+
+Cheers,
+
+Martijn.
+
+
+</pre></div><div class="post" id="p36370"><div class="ph"><a class="d" href="#p36370">1998-04-26</a> <span>…@…</span> <span>Re: Z80 and TZX files</span></div><pre>
+On Sun, 26 Apr 1998 12:51:04 -0400, Martijn van der Heide
+ wrote:
+
+<span class="qt">&gt;Michael Bruhn wrote:</span>
+<span class="qt">&gt;&gt; &gt;Can you tell us anything about registering? If you want to register</span>
+<span class="qt">&gt;&gt; &gt;both programs, will you get discount (yes, typically Dutch :-) ?</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; No why, I thought that was typical Scottish :-)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Ever heard of the phrase &#x27;go Dutch&#x27;? It means that everyone pays for</span>
+<span class="qt">&gt;itself when going out...... I never heard of such phrases about the</span>
+<span class="qt">&gt;Scottisch people. Could be an interesting learning experience :-)</span>
+
+No never heard that phrase before. Here in Denmark the Scottish is 
+know for keeping the wallet closed. No offense, you Scotsman :-)
+
+
+
+Michael Bruhn
+
+********************************************************
+Petersborg 23, 6200 Aabenraa, Denmark
+E-Mail: …@…             
+                                      
+FRANKIE SAY SPECCY FOREVER          
+********************************************************
+
+
+
+</pre></div><div class="post" id="p36378"><div class="ph"><a class="d" href="#p36378">1998-04-26</a> <span>…@…</span> <span>Re: Z80 and TZX files</span></div><pre>
+In  Graham Goring  writes:
+
+<span class="qt">&gt;Quoth the Raven in article &lt;6ht1q9$a71$…@…&gt;, Martin Moller</span>
+<span class="qt">&gt;Pedersen  writes</span>
+<span class="qt">&gt;&gt;Why is Gerton making a windows version ? I think it is a waste of time because </span>
+<span class="qt">&gt;&gt;the</span>
+<span class="qt">&gt;&gt;dos-version works nicely under windows95 running in dos-mode.</span>
+
+<span class="qt">&gt;Except it only had 2 colours (plus black and white) when I ran the</span>
+<span class="qt">&gt;demo version all those many moons ago under W95.</span>
+
+<span class="qt">&gt;Graham</span>
+
+I wrote running in dos-mode under windows95. I mean when you shutdown and restart in dos-mode.
+
+/martin
+
+
+</pre></div><div class="post" id="p36379"><div class="ph"><a class="d" href="#p36379">1998-04-26</a> <span>…@…</span> <span>Re: Z80 and TZX files</span></div><pre>
+In  Graham Goring  writes:
+
+<span class="qt">&gt;&gt;I wrote running in dos-mode under windows95. I mean when you shutdown and </span>
+<span class="qt">&gt;&gt;restart in dos-mode.</span>
+
+<span class="qt">&gt;Oh. Whoops. But that&#x27;s a pain in the arse to do whenever you wanna&#x27; play</span>
+<span class="qt">&gt;a game. Better to have a version that runs full-screen and in colour and</span>
+<span class="qt">&gt;is just a click away on the Desktop. I&#x27;d hardly call that a waste of</span>
+<span class="qt">&gt;time.</span>
+
+<span class="qt">&gt;Graham</span>
+
+No maybe not a waste of time but I hope that the windows-version doesn&#x27;t delay
+the release of the dos-version.
+
+/Martin
+
+
+</pre></div><div class="post" id="p36396"><div class="ph"><a class="d" href="#p36396">1998-04-27</a> <span>…@…</span> <span>Re: Z80 and TZX files</span></div><pre>
+On Sat, 25 Apr 1998 01:21:20 -0300, &quot;|Bugs |Bunny&quot; 
+wrote:
+
+<span class="qt">&gt;&gt;.... (The exception here is</span>
+<span class="qt">&gt;&gt;Warajevo, which does a very good job of loading turbo-loaders from</span>
+<span class="qt">&gt;&gt;either standard or it&#x27;s own .tap files).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Warajevo uses a TAP format slightly diferent from the standard TAP that most</span>
+<span class="qt">&gt;emulators use... try converting a TZX file into a TAP file and load the</span>
+<span class="qt">&gt;generated TAP into Z80 or X128, for example. Actually, the Warajevo&#x27;s TAP</span>
+<span class="qt">&gt;format is somewhat similar to the TZX format, as it contains loading speed</span>
+<span class="qt">&gt;informations and other things...</span>
+
+It actually doesn&#x27;t contains any such info... it only has standard speed blocks
+(as in TAP files, but Warajevo can autodect the loader (speed, etc.) used in
+most of the loaders) and the direct sample support (as a VOC file (8 times
+smaller actually) or the direct recording block in TZX) ... so you cannot do a
+direct WarajevoTAP-&gt;TZX conversion as you would expect (with the turbo loading
+blocks, etc. properly converted), for this you would need to do
+WarajevoTAP-&gt;VOC-&gt;TZX.
+
+<span class="qt">&gt;It&#x27;s really hard to convert a TZX file into the standard TAP file, I just</span>
+<span class="qt">&gt;succeeded with about 5% of my TZX archive.</span>
+
+Thats the reason why TZX files exist ... since TAP cannot hold all the extra
+info TZX can...
+
+Tomaz Kac                                             |\      _,,,---,,_
+^~&#x27;~^~&#x27;~^  University of Maribor , Computer Science   /,`.-&#x27;`&#x27;    -.  ;-;;,
+ E-Mail: …@… , Phone: ++602/20-546   |,4-  ) )-,_. ,\ (  `&#x27;::.
+ZX-Tape Homepage:  lizika.jump.org/~tomcat/ZXTape  &#x27;----&#x27;&#x27;(_/--&#x27;  `-&#x27;\_)   TC
+
+
+</pre></div><div class="post" id="p36408"><div class="ph"><a class="d" href="#p36408">1998-04-27</a> <span>…@…</span> <span>Re: Z80 and TZX files</span></div><pre>
+On Sun, 26 Apr 1998 01:02:54 +0100, Graham Goring 
+wrote:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Except it only had 2 colours (plus black and white) when I ran the</span>
+<span class="qt">&gt;demo version all those many moons ago under W95.</span>
+
+Not when you run it full screen...
+
+Rob.
+
+
+
+</pre></div><div class="post" id="p36429"><div class="ph"><a class="d" href="#p36429">1998-04-27</a> <span>…@…</span> <span>Re: Z80 and TZX files</span></div><pre>
+In article &lt;…@…&gt;
+           …@… &quot;Michael Bruhn&quot; writes:
+
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;And one question in return:</span>
+<span class="qt">&gt; &gt;Can you tell us anything about registering? If you want to register both</span>
+<span class="qt">&gt; &gt;programs, will you get discount (yes, typically Dutch :-) ?</span>
+<span class="qt">&gt; </span>
+
+I would hope so but this is tather academic at the moment don&#x27;t
+you think?
+
+Incidentally, the SGB prob... Its the first we have heard of ut
+here, but then interaction between several buts of software is
+impossible to predict... escpesxually when Windows is involved!!
+
+Briam
+
+-- 
+…@…
+Brian Gaff AKA B G Services - Still supporting Z80
+                              The Spectrum Emulator
+
+
+
+</pre></div><div class="post" id="p36430"><div class="ph"><a class="d" href="#p36430">1998-04-27</a> <span>…@…</span> <span>Re: Z80 and TZX files</span></div><pre>
+In article 
+           …@… &quot;Graham Goring&quot; writes:
+
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Oh. Whoops. But that&#x27;s a pain in the arse to do whenever you wanna&#x27; play</span>
+<span class="qt">&gt; a game. Better to have a version that runs full-screen and in colour and</span>
+<span class="qt">&gt; is just a click away on the Desktop. I&#x27;d hardly call that a waste of</span>
+<span class="qt">&gt; time.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Graham</span>
+
+Blimey... Surely if you hate the way Windows makes DOS far worse
+and harder to use than it used to be, you should be complaining
+about that, not the DOS software?
+
+Brian
+
+
+-- 
+…@…
+Brian Gaff AKA B G Services - Still supporting Z80
+                              The Spectrum Emulator
+
+
+
+</pre></div><div class="post" id="p36464"><div class="ph"><a class="d" href="#p36464">1998-04-28</a> <span>the starglider</span> <span>Re: Z80 and TZX files</span></div><pre>
+A fair while ago , Graham
+Goring  said something along the lines of
+<span class="qt">&gt;Quoth the Raven in article ,</span>
+<span class="qt">&gt;Philip Kendall  writes</span>
+<span class="qt">&gt;&gt;Stuart Brady  writes:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;[z80 under Win95]</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; The DOS version (the one I&#x27;ve got) needs EMS! Argh - no - help!</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Why don&#x27;t you just load EMM386 then??</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Ah, probably the same reason that *I* can&#x27;t run Frontier in DOS, is that</span>
+<span class="qt">&gt;under version B of W95, even with EMM386 loaded it ignores the loadhigh</span>
+<span class="qt">&gt;command and shoves all the drivers in base memory, clogging it up.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;What a bugger.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Graham</span>
+<span class="qt">&gt;</span>
+There is a program somewhere that enables you to install DOS 6.22 into
+Win95 Ver. B with screwing it up. Get that sorted, and Frontier can be
+yours again!
+
+I can&#x27;t bloody remember the name of the program though! I found out from
+Dejanews. maybe you should look there.
+-- 
+             **************The Starglider****************  CHANGE d.c.u PART OF
+             *  E-Mail:…@…  *      ADDRESS TO: 
+             * Web site:<a href="http://www.thespian.demon.co.uk" rel="noreferrer">http://www.thespian.demon.co.uk</a> *      demon.co.uk
+             *   NVG …@…   *       TO REPLY.
+             *           ICQ Number:1773852             *     _WW_
+             * WWPAGER:<a href="http://wwp.mirabilis.com/1773852" rel="noreferrer">http://wwp.mirabilis.com/1773852</a> *    /_  _¥
+             ********************************************   | O  O |
+___________________________________________________________oOO_¥/_OOo___________
+
+
+
+</pre></div><div class="post" id="p36481"><div class="ph"><a class="d" href="#p36481">1998-04-29</a> <span>martijn van der heide</span> <span>Re: Z80 and TZX files</span></div><pre>
+The Starglider wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; A fair while ago &lt;…@…&gt;, Brian Gaff</span>
+<span class="qt">&gt;  said something along the lines of</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;How about a multiboot system?</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Brian</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; Ordinarily, the later releases of Windows didn&#x27;t allow you to do dual</span>
+<span class="qt">&gt; boot systems. The program I speak of changes key files so you can. If</span>
+<span class="qt">&gt; only I can remember the bloody name!</span>
+
+Sure, simply use Linux&#x27;s LILO.
+Works like a treat. I have both Linux, Win95 and DOS at home.
+No screw-up ever!
+
+Cheers,
+
+Martijn.
+
+
+</pre></div><div class="post" id="p36483"><div class="ph"><a class="d" href="#p36483">1998-04-29</a> <span>…@…</span> <span>Re: Z80 and TZX files</span></div><pre>
+<span class="qt">&gt;There is a program somewhere that enables you to install DOS 6.22 into</span>
+<span class="qt">&gt;Win95 Ver. B with screwing it up. Get that sorted, and Frontier can be</span>
+<span class="qt">&gt;yours again!</span>
+
+Why would you install it if it screws up Win95 ? ... Oh, it was a typo ? ...
+nevermind :)
+
+Tomaz Kac                                             |\      _,,,---,,_
+^~&#x27;~^~&#x27;~^  University of Maribor , Computer Science   /,`.-&#x27;`&#x27;    -.  ;-;;,
+ E-Mail: …@… , Phone: ++602/20-546   |,4-  ) )-,_. ,\ (  `&#x27;::.
+ZX-Tape Homepage:  lizika.jump.org/~tomcat/ZXTape  &#x27;----&#x27;&#x27;(_/--&#x27;  `-&#x27;\_)   TC
+
+
+</pre></div><div class="post" id="p36484"><div class="ph"><a class="d" href="#p36484">1998-04-29</a> <span>…@…</span> <span>Re: Z80 and TZX files</span></div><pre>
+On Tue, 28 Apr 1998 03:00:45 +0100, Graham Goring 
+wrote:
+
+
+<span class="qt">&gt;Yes, when I ran it full screen...</span>
+
+Well I will have to resort to the old cliche...&quot;works fine on my Win95
+system&quot;..
+
+Rob.
+
+
+
+</pre></div><div class="post" id="p36494"><div class="ph"><a class="d" href="#p36494">1998-04-29</a> <span>…@…</span> <span>Re: Z80 and TZX files</span></div><pre>
+
+How about a multiboot system?
+
+Brian
+
+-- 
+…@…
+Brian Gaff AKA B G Services - Still supporting Z80
+                              The Spectrum Emulator
+
+
+
+</pre></div><div class="post" id="p36514"><div class="ph"><a class="d" href="#p36514">1998-04-30</a> <span>darren salt</span> <span>Re: Z80 and TZX files</span></div><pre>
+In message &lt;…@…&gt;
+  …@… (Brian Gaff) wrote:
+
+[snip]
+<span class="qt">&gt; but then interaction between several [bits] of software is impossible to</span>
+<span class="qt">&gt; predict... [especially] when Windows is involved!!</span>
+
+Easy to predict: crash. Reinstall OS. Working system (if you can call Windows
+&#x27;working&#x27;). Reinstall essential software. Crash. Reinstall OS...
+
+;-&gt;
+
+-- 
+<span class="qt">| Darren Salt     anti-UCE | Spec+3, A3010, | Toon Army     | 01268 515441</span>
+<span class="qt">| arcsalt@spuddy,mew,co,uk | Acorn Risc PC, | Season ticket | free mail, news</span>
+<span class="qt">| darren,salt@unn,ac,uk    | BBC Master     | nr Ashington, Northumberland</span>
+<span class="qt">|   Z80Em and 6502Em Support Packs. AY sound support.</span>
+
+Jul qvq lbh obgure gb qrpbqr guvf?
+
+
+</pre></div><div class="post" id="p36534"><div class="ph"><a class="d" href="#p36534">1998-05-01</a> <span>gerard sweeney</span> <span>Re: Z80 and TZX files</span></div><pre>
+Darren Salt said
+
+<span class="qt">&gt; Easy to predict: crash. Reinstall OS. Working system (if you can call</span>
+Windows
+<span class="qt">&gt; &#x27;working&#x27;). Reinstall essential software. Crash. Reinstall OS...</span>
+
+Blimey.. You been sneaking a look at my home PC or something Darren? Eh?
+Oh, this happens to lots of people, does it? Er, and this company has made
+squillions from this product eh? Blimey.
+
+Gerard
+-- 
+Gerard Sweeney - Hackers Anonymous/Team Amiga
+Visit The Hackers Anonymous Speccy Playground for Hack Attack 3
+where you&#x27;re always likely to get a good POKE (fnar!).
+Or look for speccy games using the NVG catalogue. All at:
+<a href="http://www.geocities.com/SiliconValley/Lakes/4871" rel="noreferrer">http://www.geocities.com/SiliconValley/Lakes/4871</a>
+
+
+</pre></div><div class="post" id="p36539"><div class="ph"><a class="d" href="#p36539">1998-05-01</a> <span>…@…</span> <span>Re: Z80 and TZX files</span></div><pre>
+In article &lt;…@…&gt;, Darren Salt  wrote:
+<span class="qt">&gt;Easy to predict: crash. Reinstall OS. Working system (if you can call Windows</span>
+<span class="qt">&gt;&#x27;working&#x27;). Reinstall essential software. Crash. Reinstall OS...</span>
+
+<span class="qt">&gt;;-&gt;</span>
+
+No smiley needed.  This *has happened* on my machine (and I don&#x27;t even use
+Win95 that much since Linux is much better).
+-- 
+---- Ian Collier : …@… : WWW page (including Spectrum section):
+------ <a href="http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html" rel="noreferrer">http://www.comlab.ox.ac.uk/oucl/users/ian.collier/imc.html</a>
+
+New to this group?  Answers to frequently-asked questions can be had from
+<a href="http://www.kendalls.demon.co.uk/cssfaq/index.html" rel="noreferrer">http://www.kendalls.demon.co.uk/cssfaq/index.html</a> .
+Sam Coupï¿½ FAQ: <a href="http://www.mono.org/~unc/Coupe/FAQ.txt" rel="noreferrer">http://www.mono.org/~unc/Coupe/FAQ.txt</a>
+
+
+</pre></div></main></body></html>

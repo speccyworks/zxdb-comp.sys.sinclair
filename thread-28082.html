@@ -1,0 +1,997 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[ANN] zxUSB · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>[ANN] zxUSB</h1><p class="facts">19 posts, 2003-07-09 – 2003-07-30</p><div class="post" id="p164664"><div class="ph"><a class="d" href="#p164664">2003-07-09 21:20:33</a> <span>Dave the Lurker</span> </div><pre>Just a quick post to announce that version 1.1 of the zxUSB addon is now 
+up on the web.
+
+Q. What is zxUSB?
+
+A. zxUSB is an attempt to get a working USB controller on to the humble 
+speccy.  It is based on the NatSemi USBN9603 USB controller IC.
+
+
+Q. What software exists?
+
+A. None at present.  If you are seriously interested in writing a driver 
+for a piece of hardware, then contact me and I&#x27;ll try to make a 
+development board available to you.
+
+
+Q. Where can I find it then?
+
+A. Glad you asked that.  Take a look at:
+
+<a href="http://8bitorbust.info/sinclair/spectrum/hardware/zxUSB/RELEASE1.0/" rel="noreferrer">http://8bitorbust.info/sinclair/spectrum/hardware/zxUSB/RELEASE1.0/</a>
+
+
+Questions / comments / really silly mistakes to point out ?
+
+cheers,
+Dave
+
+
+
+</pre></div><div class="post" id="p164722"><div class="ph"><a class="d" href="#p164722">2003-07-10 18:06:33</a> <span>LCD</span> <span>Re: [ANN] zxUSB</span></div><pre>
+
+Dave the Lurker wrote:
+
+<span class="qt">&gt; Just a quick post to announce that version 1.1 of the zxUSB addon is now</span>
+<span class="qt">&gt; up on the web.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Q. What is zxUSB?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; A. zxUSB is an attempt to get a working USB controller on to the humble</span>
+<span class="qt">&gt; speccy.  It is based on the NatSemi USBN9603 USB controller IC.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Q. What software exists?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; A. None at present.  If you are seriously interested in writing a driver</span>
+<span class="qt">&gt; for a piece of hardware, then contact me and I&#x27;ll try to make a</span>
+<span class="qt">&gt; development board available to you.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Q. Where can I find it then?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; A. Glad you asked that.  Take a look at:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; <a href="http://8bitorbust.info/sinclair/spectrum/hardware/zxUSB/RELEASE1.0/" rel="noreferrer">http://8bitorbust.info/sinclair/spectrum/hardware/zxUSB/RELEASE1.0/</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Questions / comments / really silly mistakes to point out ?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; cheers,</span>
+<span class="qt">&gt; Dave</span>
+
+Cool, even Win95 or MS-DOS are not working with USB devices, but
+a Spectrum can do it... Looks like the sales of memory sticks will go up in
+the
+next time. ;)
+
+
+
+
+</pre></div><div class="post" id="p165363"><div class="ph"><a class="d" href="#p165363">2003-07-16 23:24:14</a> <span>Alvin</span> <span>Re: [ANN] zxUSB</span></div><pre>Dave the Lurker &lt;…@…&gt; wrote in message news:&lt;…@…&gt;...
+<span class="qt">&gt; Just a quick post to announce that version 1.1 of the zxUSB addon is now </span>
+<span class="qt">&gt; up on the web.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Q. What is zxUSB?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; A. zxUSB is an attempt to get a working USB controller on to the humble </span>
+<span class="qt">&gt; speccy.  It is based on the NatSemi USBN9603 USB controller IC.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Q. What software exists?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; A. None at present.  If you are seriously interested in writing a driver </span>
+<span class="qt">&gt; for a piece of hardware, then contact me and I&#x27;ll try to make a </span>
+<span class="qt">&gt; development board available to you.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Q. Where can I find it then?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; A. Glad you asked that.  Take a look at:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; <a href="http://8bitorbust.info/sinclair/spectrum/hardware/zxUSB/RELEASE1.0/" rel="noreferrer">http://8bitorbust.info/sinclair/spectrum/hardware/zxUSB/RELEASE1.0/</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Questions / comments / really silly mistakes to point out ?</span>
+
+Looks good Dave.  I&#x27;d prefer it to be an IM2 peripheral, unless you
+have some compelling reason to keep it on NMI.  A free way to get IM2
+capability is to add on a Z80 CTC chip and use one of the counters as
+an interrupt trigger for the USB chip.  That way you&#x27;ll also get 3
+timers with the job, which on many occasions I have thought &#x27;it would
+be useful to have a ctc right about now&#x27;.
+
+With an NMI interrupt, you&#x27;ll need to replace the ROMs in most
+Spectrums to get it to work right.
+
+Alvin
+
+
+
+</pre></div><div class="post" id="p165694"><div class="ph"><a class="d" href="#p165694">2003-07-19 15:30:28</a> <span>Dave the Lurker</span> <span>Re: [ANN] zxUSB</span></div><pre>In article &lt;…@…&gt;, A936
+@hotmail.com says...
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Looks good Dave.  I&#x27;d prefer it to be an IM2 peripheral, unless you</span>
+<span class="qt">&gt; have some compelling reason to keep it on NMI.  A free way to get IM2</span>
+<span class="qt">&gt; capability is to add on a Z80 CTC chip and use one of the counters as</span>
+<span class="qt">&gt; an interrupt trigger for the USB chip.  That way you&#x27;ll also get 3</span>
+<span class="qt">&gt; timers with the job, which on many occasions I have thought &#x27;it would</span>
+<span class="qt">&gt; be useful to have a ctc right about now&#x27;.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; With an NMI interrupt, you&#x27;ll need to replace the ROMs in most</span>
+<span class="qt">&gt; Spectrums to get it to work right.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Alvin</span>
+
+Thanks for the interest Alvin.  I have designed the system to use NMI as 
+this was the only free hardware interrupts on the speccy.  I always 
+thought IM2 was a software thing.  If there is a way to use an external 
+interrupt from the USB hardwaree and have an ISR handle this then I&#x27;d be 
+happy to add this to the design (and also another design or two I have 
+in the works).
+
+You don&#x27;t have to run the device with the NMI enabled.  The status of 
+the interrupt is decided when you initialise the USB chip.  The default 
+status is &#x27;off&#x27;
+
+I&#x27;d prefer not to use the z80 CTC device, I have a few of these but they 
+seem to be pretty hard to get hold of new.  Everything in my current 
+design is easily available and the total cost is about ï¿½20, probably 
+cheaper if you have a reasonable junk box.
+
+If you can explain how I can use an external interrupt generated on the 
+/INT line on the speccy expansion connector I&#x27;d be very grateful.
+
+cheers,
+Dave
+
+
+
+</pre></div><div class="post" id="p165760"><div class="ph"><a class="d" href="#p165760">2003-07-20 20:15:29</a> <span>Alvin</span> <span>Re: [ANN] zxUSB</span></div><pre>Dave the Lurker wrote:
+
+<span class="qt">&gt; You don&#x27;t have to run the device with the NMI enabled.  The status of</span>
+<span class="qt">&gt; the interrupt is decided when you initialise the USB chip.  The default</span>
+<span class="qt">&gt; status is &#x27;off&#x27;</span>
+
+It would be miles better to run it as an interrupting device, of
+course.  Rather than attaching to /NMI you can attach to /INT through
+an open collector driver.  If you have the USB pulse this line until
+/M1 and /IORQ both go low, the device should work properly.  It&#x27;s not
+IM2, but it would be possible to write an interrupt service routine in
+IM2 for an unmodified Spectrum.  The best solution is to do the IM2
+thing; an IM2 device will also work in IM1 and IM0 modes as long as
+the peripheral ID is programmable.
+ 
+<span class="qt">&gt; I&#x27;d prefer not to use the z80 CTC device, I have a few of these but they</span>
+<span class="qt">&gt; seem to be pretty hard to get hold of new.  Everything in my current</span>
+<span class="qt">&gt; design is easily available and the total cost is about ï¿½20, probably</span>
+<span class="qt">&gt; cheaper if you have a reasonable junk box.</span>
+
+Okay, but you may change your mind when you see what&#x27;s involved in IM2
+:)  The CTC (or a PLD implementation of one) would be a useful
+addition.  Perhaps this can happen in an amalgamation of your projects
+into a single super project sometime down the road?
+ 
+<span class="qt">&gt; If you can explain how I can use an external interrupt generated on the</span>
+<span class="qt">&gt; /INT line on the speccy expansion connector I&#x27;d be very grateful.</span>
+
+The /INT line is open collector so you can have as many interrupting
+peripherals as you want share the line.
+
+I&#x27;m currently writing some documentation on IM2 so I&#x27;ll just copy a
+snippet that explains how IM2 works from the software point of view:
+
+&quot;
+IM2 is the most powerful interrupt mode and is activated by executing
+the &#x27;IM 2&#x27; instruction. This is a vectored interrupt mode: when the
+Z80 acknowledges the interrupt, the interrupting peripheral is
+expected to supply an 8-bit identifier.  The contents of the &#x27;I&#x27;
+register and the 8-bit identifier are concatenated (with &#x27;I&#x27; being the
+most significant 8-bits) to form a 16-bit address that contains the
+address of the interrupt service routine to jump to.  Effectively,
+I*256 points at a 256 byte table that contains interrupt service
+routine addresses.  The peripheral supplies the index into the table
+to find the right interrupt service routine.  By
+convention, the interrupting peripheral&#x27;s identifier is even to make
+things work smoothly.  This ensures that table entries do not collide.
+ Eg: A peripheral with ID 0 uses addresses I*256+0 and I*256+1 to
+store its interrupt service routine address.  Peripheral ID 2 uses
+addresses I*256+2 and I*256+3 to store its ISR address.  A peripheral
+with ID 1 would have table
+addresses that conflict with both.
+
+That said, the Spectrum&#x27;s sole interrupter (the ULA) was not designed
+for working in IM2.  It does not supply an identifier when the Z80
+expects one.  However, since nothing controls the data bus at the
+appropriate time, passive resistors pull the data bus value to a
+predictable value: 255.  The Z80 will therefore see a peripheral ID of
+255 whenever the ULA interrupts.  This is
+an odd value that will cause an ISR fetch from table addresses
+I*256+255 and I*256+256.  For the Spectrum, therefore, we&#x27;ll need a
+257 byte interrupt vector table.  Everything is not gold in Spectrum
+land, however.  Certain common Spectrum peripherals (Kempston joystick
+for one) were improperly designed and could spew random data on the
+data bus when the Z80 is looking for a peripheral ID.  Therefore, with
+a Kempston joystick attached, the ULA&#x27;s peripheral id could become a
+random bit pattern.  A similar problem is faced by the TS2068 which
+does not have pull-ups on all its data bus lines.  The TS2068&#x27;s SCLD
+peripheral ID, like the ULA ID, could therefore be a random bit
+pattern.  The solution used by many is to use a 257 byte table
+containing the same byte value repeated 257 times.  Then the ISR
+address looked up will have the same value no matter what the
+peripheral ID is.  With Sprite Pack, a good value to store is 0xf1 in
+all 257 bytes of the im2 vector table.  The interrupt service routine
+called will always be at 0xf1f1 no matter what the peripheral ID is. 
+This kind of defeats the purpose of vectored interrupts as it is no
+longer known which peripheral caused an interrupt.  Effectively, we&#x27;re
+left with an IM1 mode that jumps to a user-definable address rather
+than the fixed 0x0038 address.  This is how most Spectrum programmers
+use IM2.
+
+All is not lost however.  The Spectrum can reap the full power of IM2
+by simply not attaching offending peripherals.  The AMX mouse is an
+example of an interrupting peripheral that functions in IM2.  The
+TS2068 can fully use IM2 if attached IM2 peripherals pull up all the
+data bus lines.
+&quot;
+
+I&#x27;ve since had a look at the Kempston joystick schematic and it
+doesn&#x27;t look like it actually does interfere with correct IM2
+operation.  It may have gotten a bad rap.
+
+
+From the hardware point of view, IM2 peripherals are prioritized using
+a daisy chain of signals IEO (interrupt enable out, active high) and
+IEI (interrupt enable in, active high).  The highest priority
+peripheral has its IEI attached to +5V.  Its IEO is attached to the
+next peripheral&#x27;s IEI.  That peripheral&#x27;s IEO is attached to the
+next&#x27;s IEI, etc.  A peripheral knows that it has high enough priority
+to interrupt if its own IEI is high.  If it wanted to interrupt it
+would then disable its IEO to disable all lower priority interrupters.
+
+The main business is transacted when the cpu performs an interrupt
+acknowledge cycle.  To allow the daisy chain time to settle, the
+acknowledge cycle begins with /M1 going low.  While /M1 is low, IM2
+peripherals are not allowed to change their interrupt request status. 
+After a few cycles of /M1 being low, /IORQ goes low.  At this point
+the highest priority interrupt requester (IEI = 1 and an interrupt is
+desired) places its 8-bit ID on the data bus.  When /M1 and /IORQ
+return inactive, this IM2 peripheral releases the /INT line so that
+other higher priority peripherals can activate it.  The IM2 peripheral
+keeps its IEO low so that lower interrupt priority peripherals cannot
+interrupt while this IM2 peripheral&#x27;s ISR runs.
+
+Following the successful read of the peripheral&#x27;s ID, the Z80 looks up
+the ISR address and calls it.  The ISR address ends with the execution
+of a RETI instruction.  An IM2 peripheral that has had its interrupt
+acknowledged must look for this.  If its IEI is high (so that no other
+higher priority interrupt&#x27;s ISR is running) and a RETI is executed,
+the IM2 peripheral knows its interrupt service routine has completed
+execution and it resets its interrupt circuitry.
+
+IM2 peripherals can also function correctly in IM1 mode.  In IM2 mode
+the ULA can be, conceptually, the lowest priority interrupter without
+any special accommodation.
+
+There you go; not exactly trivial and you&#x27;ll probably want a PLD to
+implement the logic.  I wrote some Verilog a few years ago and
+designed a circuit years before that to handle IM2 peripherals.  I&#x27;ll
+see if I can locate it for you.
+
+
+I am a little bit reluctant to offer help on the software side as I
+don&#x27;t really have a lot of time to devote to Spectrum projects, and I
+do have my own to worry about too.  However this USB project deserves
+some attention, so I would like to sign on as sporadic contributor if
+that&#x27;s acceptable.
+
+Alvin
+
+
+
+</pre></div><div class="post" id="p165845"><div class="ph"><a class="d" href="#p165845">2003-07-21 20:32:49</a> <span>Dave the Lurker</span> <span>Re: [ANN] zxUSB</span></div><pre>In article &lt;…@…&gt;, A936
+@hotmail.com says...
+<span class="qt">&gt; Dave the Lurker wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; You don&#x27;t have to run the device with the NMI enabled.  The status of</span>
+<span class="qt">&gt; &gt; the interrupt is decided when you initialise the USB chip.  The default</span>
+<span class="qt">&gt; &gt; status is &#x27;off&#x27;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; It would be miles better to run it as an interrupting device, of</span>
+<span class="qt">&gt; course.  Rather than attaching to /NMI you can attach to /INT through</span>
+<span class="qt">&gt; an open collector driver.  If you have the USB pulse this line until</span>
+<span class="qt">&gt; /M1 and /IORQ both go low, the device should work properly.  It&#x27;s not</span>
+<span class="qt">&gt; IM2, but it would be possible to write an interrupt service routine in</span>
+<span class="qt">&gt; IM2 for an unmodified Spectrum.  The best solution is to do the IM2</span>
+<span class="qt">&gt; thing; an IM2 device will also work in IM1 and IM0 modes as long as</span>
+<span class="qt">&gt; the peripheral ID is programmable.</span>
+
+Ok, it sounds like IM2 is the way to go then.
+
+
+<span class="qt">&gt; &gt; I&#x27;d prefer not to use the z80 CTC device, I have a few of these but they</span>
+<span class="qt">&gt; &gt; seem to be pretty hard to get hold of new.  Everything in my current</span>
+<span class="qt">&gt; &gt; design is easily available and the total cost is about ï¿½20, probably</span>
+<span class="qt">&gt; &gt; cheaper if you have a reasonable junk box.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Okay, but you may change your mind when you see what&#x27;s involved in IM2</span>
+<span class="qt">&gt; :)  The CTC (or a PLD implementation of one) would be a useful</span>
+<span class="qt">&gt; addition.  Perhaps this can happen in an amalgamation of your projects</span>
+<span class="qt">&gt; into a single super project sometime down the road?</span>
+
+I&#x27;ll take another look at the CTC datasheet and see what I can fit in 
+some of the
+ small PLDs I have here.  There are a couple of projects that I&#x27;m 
+working on that
+would benefit from decent interupt handling.  It would probably be worth 
+using a 
+PLD in this case.
+
+
+<span class="qt">&gt; &gt; If you can explain how I can use an external interrupt generated on the</span>
+<span class="qt">&gt; &gt; /INT line on the speccy expansion connector I&#x27;d be very grateful.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The /INT line is open collector so you can have as many interrupting</span>
+<span class="qt">&gt; peripherals as you want share the line.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;m currently writing some documentation on IM2 so I&#x27;ll just copy a</span>
+<span class="qt">&gt; snippet that explains how IM2 works from the software point of view:</span>
+<span class="qt">&gt; </span>
+
+[SNIP IM2 Explanation to save space]
+
+Thanks for that.  That did help explain what is going on.  I had a very 
+basic idea of the software, now I know much better.
+
+
+<span class="qt">&gt; From the hardware point of view, IM2 peripherals are prioritized using</span>
+<span class="qt">&gt; a daisy chain of signals IEO (interrupt enable out, active high) and</span>
+<span class="qt">&gt; IEI (interrupt enable in, active high).  The highest priority</span>
+<span class="qt">&gt; peripheral has its IEI attached to +5V.  Its IEO is attached to the</span>
+<span class="qt">&gt; next peripheral&#x27;s IEI.  That peripheral&#x27;s IEO is attached to the</span>
+<span class="qt">&gt; next&#x27;s IEI, etc.  A peripheral knows that it has high enough priority</span>
+<span class="qt">&gt; to interrupt if its own IEI is high.  If it wanted to interrupt it</span>
+<span class="qt">&gt; would then disable its IEO to disable all lower priority interrupters.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The main business is transacted when the cpu performs an interrupt</span>
+<span class="qt">&gt; acknowledge cycle.  To allow the daisy chain time to settle, the</span>
+<span class="qt">&gt; acknowledge cycle begins with /M1 going low.  While /M1 is low, IM2</span>
+<span class="qt">&gt; peripherals are not allowed to change their interrupt request status. </span>
+<span class="qt">&gt; After a few cycles of /M1 being low, /IORQ goes low.  At this point</span>
+<span class="qt">&gt; the highest priority interrupt requester (IEI = 1 and an interrupt is</span>
+<span class="qt">&gt; desired) places its 8-bit ID on the data bus.  When /M1 and /IORQ</span>
+<span class="qt">&gt; return inactive, this IM2 peripheral releases the /INT line so that</span>
+<span class="qt">&gt; other higher priority peripherals can activate it.  The IM2 peripheral</span>
+<span class="qt">&gt; keeps its IEO low so that lower interrupt priority peripherals cannot</span>
+<span class="qt">&gt; interrupt while this IM2 peripheral&#x27;s ISR runs.</span>
+
+Ok I think I&#x27;m with you on this part.  Does this timing diagram look 
+about correct?  The actual number of clock cycles are guesses, but I 
+think 
+all the signals should occur in the correct order.
+
+   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   
+_| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_  Clock
+
+____      ___________________________________________________  /INT
+<span class="qt">    |____|</span>
+    
+_______________                                   ___________  /M1
+<span class="qt">               |_________________________________|</span>
+               
+________________________                         ____________  /IORQ
+<span class="qt">                        |_______________________|</span>
+                         
+
+----&lt;data&gt;----&lt;data&gt;-----------&lt;VALID DATA&gt;------------------  D0- D7
+
+_____________________________________________________________  IEI
+
+-------------------------------------------------------------
+
+
+__                                                ___________  IEO
+<span class="qt">  |______________________________________________|</span>
+    
+
+
+
+<span class="qt">&gt; </span>
+<span class="qt">&gt; There you go; not exactly trivial and you&#x27;ll probably want a PLD to</span>
+<span class="qt">&gt; implement the logic.  I wrote some Verilog a few years ago and</span>
+<span class="qt">&gt; designed a circuit years before that to handle IM2 peripherals.  I&#x27;ll</span>
+<span class="qt">&gt; see if I can locate it for you.</span>
+
+If you can locate the code I&#x27;d appreciate it.  It has been a few years 
+since I did any VHDL / Verilog, but I&#x27;m sure I can still read it.  I&#x27;ll
+of course acknowledge you in any further revisions of the hardware.
+
+<span class="qt">&gt; I am a little bit reluctant to offer help on the software side as I</span>
+<span class="qt">&gt; don&#x27;t really have a lot of time to devote to Spectrum projects, and I</span>
+<span class="qt">&gt; do have my own to worry about too.  However this USB project deserves</span>
+<span class="qt">&gt; some attention, so I would like to sign on as sporadic contributor if</span>
+<span class="qt">&gt; that&#x27;s acceptable.</span>
+
+Alvin,  I appreciate any help  / assistance I get on this or any other 
+project.  Feel froo to chip in with any help or comments whenever you 
+can.
+
+cheers,
+Dave 
+
+
+
+</pre></div><div class="post" id="p165897"><div class="ph"><a class="d" href="#p165897">2003-07-22 09:07:36</a> <span>Dave the Lurker</span> <span>Re: [ANN] zxUSB</span></div><pre>In article &lt;…@…&gt;, 
+…@… says...
+
+You will need a monospaced font for this ASCII diagram to look anything 
+like correct.
+
+<span class="qt">&gt; Ok I think I&#x27;m with you on this part.  Does this timing diagram look </span>
+<span class="qt">&gt; about correct?  The actual number of clock cycles are guesses, but I </span>
+<span class="qt">&gt; think </span>
+<span class="qt">&gt; all the signals should occur in the correct order.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;    _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   </span>
+<span class="qt">&gt; _| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_  Clock</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; ____      ___________________________________________________  /INT</span>
+<span class="qt">&gt;     |____|</span>
+<span class="qt">&gt;     </span>
+<span class="qt">&gt; _______________                                   ___________  /M1</span>
+<span class="qt">&gt;                |_________________________________|</span>
+<span class="qt">&gt;                </span>
+<span class="qt">&gt; ________________________                         ____________  /IORQ</span>
+<span class="qt">&gt;                         |_______________________|</span>
+<span class="qt">&gt;                          </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; ----&lt;data&gt;----&lt;data&gt;-----------&lt;VALID DATA&gt;------------------  D0- D7</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; _____________________________________________________________  IEI</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; -------------------------------------------------------------</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; __                                                ___________  IEO</span>
+<span class="qt">&gt;   |______________________________________________|</span>
+<span class="qt">&gt;     </span>
+<span class="qt">&gt; </span>
+
+cheers,
+Dave 
+
+
+
+</pre></div><div class="post" id="p165942"><div class="ph"><a class="d" href="#p165942">2003-07-22 18:12:29</a> <span>Alvin</span> <span>Re: [ANN] zxUSB</span></div><pre>Dave the Lurker &lt;…@…&gt; wrote in message news:&lt;…@…&gt;...
+
+<span class="qt">&gt; You will need a monospaced font for this ASCII diagram to look anything </span>
+<span class="qt">&gt; like correct.</span>
+
+Is there any other way to read news :)?
+
+<span class="qt"> &gt; &gt; Ok I think I&#x27;m with you on this part.  Does this timing diagram</span>
+look
+<span class="qt">&gt; &gt; about correct?  The actual number of clock cycles are guesses, but I </span>
+<span class="qt">&gt; &gt; think </span>
+<span class="qt">&gt; &gt; all the signals should occur in the correct order.</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt;   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   </span>
+<span class="qt">&gt; &gt; _| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_  Clock</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; ____      ___________________________________________________  /INT</span>
+<span class="qt">&gt; &gt;     |____|</span>
+
+Correction:
+<span class="qt">&gt; &gt; ____                                              ____________  /INT</span>
+<span class="qt">&gt; &gt;     |____________________________________________|</span>
+
+The /NMI interrupt line is edge sensitive but the maskable interrupt
+line /INT is level sensitive.  A peripheral that wants to interrupt
+(and has IEI high) should hold /INT low until it is acknowledged. 
+Once acknowledged (sometime when /M1 and /IORQ are both low), its /INT
+should be deasserted.
+
+<span class="qt">&gt; &gt;     </span>
+<span class="qt">&gt; &gt; _______________                                   ___________  /M1</span>
+<span class="qt">&gt; &gt;                |_________________________________|</span>
+<span class="qt">&gt; &gt;                </span>
+<span class="qt">&gt; &gt; ________________________                         ____________  /IORQ</span>
+<span class="qt">&gt; &gt;                         |_______________________|</span>
+<span class="qt">&gt; &gt;                          </span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; ----&lt;data&gt;----&lt;data&gt;-----------&lt;VALID DATA&gt;------------------  D0- D7</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; _____________________________________________________________  IEI</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; -------------------------------------------------------------</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; __                                                ___________  IEO</span>
+<span class="qt">&gt; &gt;   |______________________________________________|</span>
+
+Correction:
+<span class="qt">&gt; &gt; __                                                             IEO</span>
+<span class="qt">&gt; &gt;   |____________________________________________________________</span>
+
+When the periperal&#x27;s interrupt service routine has been acknowledged,
+its ISR begins execution.  The peripheral keeps its IEO low to prevent
+lower priority interrupters from interrupting the execution of its
+ISR.  This IEO stays low until the peripheral sees a &quot;RETI&quot;
+instruction executed with its IEI high, indicating its ISR has
+completed execution (if its IEI were not high, the &quot;RETI&quot; would belong
+to a higher priority peripheral&#x27;s ISR).  Conveniently, instruction
+fetch cycles are distinguished from ordinary memory read cycles by the
+assertion of the M1 signal, which also serves the purpose of settling
+and freezing the state of the IEI/IEO daisy chain.
+
+It sounds like you don&#x27;t have a good set of Z80 bus cycle timing
+diagrams.  I&#x27;ve got a Z80 data book somewhere around here -- I&#x27;ll scan
+the relevant sections and make it available on my website later
+tonight (morning your time).
+
+Alvin
+
+
+
+</pre></div><div class="post" id="p165949"><div class="ph"><a class="d" href="#p165949">2003-07-22 18:58:00</a> <span>Leon Howell</span> <span>Re: [ANN] zxUSB</span></div><pre><span class="qt">&gt; Just a quick post to announce that version 1.1 of the zxUSB addon is now </span>
+<span class="qt">&gt; up on the web.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Q. What is zxUSB?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; A. zxUSB is an attempt to get a working USB controller on to the humble </span>
+<span class="qt">&gt; speccy.  It is based on the NatSemi USBN9603 USB controller IC.</span>
+
+Cool! 
+ 
+<span class="qt">&gt; Q. What software exists?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; A. None at present.  If you are seriously interested in writing a driver </span>
+<span class="qt">&gt; for a piece of hardware, then contact me and I&#x27;ll try to make a </span>
+<span class="qt">&gt; development board available to you.</span>
+
+Someday, I&#x27;ll actualy learn assembly language, so I can start
+volunterring for stuff like this. Untill then...:(
+ 
+<span class="qt">&gt; Q. Where can I find it then?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; A. Glad you asked that.  Take a look at:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; <a href="http://8bitorbust.info/sinclair/spectrum/hardware/zxUSB/RELEASE1.0/" rel="noreferrer">http://8bitorbust.info/sinclair/spectrum/hardware/zxUSB/RELEASE1.0/</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Questions / comments / really silly mistakes to point out ?</span>
+
+They are working on USB for the TI 99/4a and Atari. You might try
+exchanging ideas with them, at least when you get to the USB side of
+the software.
+
+When can I order a board, and how much?
+
+
+
+</pre></div><div class="post" id="p165966"><div class="ph"><a class="d" href="#p165966">2003-07-22 20:34:07</a> <span>Dave the Lurker</span> <span>Re: [ANN] zxUSB</span></div><pre>In article &lt;…@…&gt;, puritan_
+…@… says...
+<span class="qt">&gt; &gt; Just a quick post to announce that version 1.1 of the zxUSB addon is now </span>
+<span class="qt">&gt; &gt; up on the web.</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Q. What is zxUSB?</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; A. zxUSB is an attempt to get a working USB controller on to the humble </span>
+<span class="qt">&gt; &gt; speccy.  It is based on the NatSemi USBN9603 USB controller IC.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Cool! </span>
+
+Thanks for the interest in the project.
+
+<span class="qt">&gt; &gt; Q. What software exists?</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; A. None at present.  If you are seriously interested in writing a driver </span>
+<span class="qt">&gt; &gt; for a piece of hardware, then contact me and I&#x27;ll try to make a </span>
+<span class="qt">&gt; &gt; development board available to you.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Someday, I&#x27;ll actualy learn assembly language, so I can start</span>
+<span class="qt">&gt; volunterring for stuff like this. Untill then...:(</span>
+
+No worries on the software, hopefully it&#x27;ll come together in time.
+
+<span class="qt">&gt;  </span>
+<span class="qt">&gt; &gt; Q. Where can I find it then?</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; A. Glad you asked that.  Take a look at:</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; <a href="http://8bitorbust.info/sinclair/spectrum/hardware/zxUSB/RELEASE1.0/" rel="noreferrer">http://8bitorbust.info/sinclair/spectrum/hardware/zxUSB/RELEASE1.0/</a></span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Questions / comments / really silly mistakes to point out ?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; They are working on USB for the TI 99/4a and Atari. You might try</span>
+<span class="qt">&gt; exchanging ideas with them, at least when you get to the USB side of</span>
+<span class="qt">&gt; the software.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; When can I order a board, and how much?</span>
+
+At present 4 boards based on the 1.1 design have been ordered.  These 
+will be assembled and debugged, then will probably be converted to work 
+via a different interupt mode (see the rest of this thread if you want 
+the technical details).
+
+Once there is a stable design and some software then maybe someone will 
+make a commericial release.
+
+cheers,
+Dave
+
+
+
+</pre></div><div class="post" id="p165971"><div class="ph"><a class="d" href="#p165971">2003-07-22 20:47:10</a> <span>Dave the Lurker</span> <span>Re: [ANN] zxUSB</span></div><pre>In article &lt;…@…&gt;, A936
+@hotmail.com says...
+
+<span class="qt">&gt;  &gt; &gt; Ok I think I&#x27;m with you on this part.  Does this timing diagram</span>
+<span class="qt">&gt; look</span>
+<span class="qt">&gt; &gt; &gt; about correct?  The actual number of clock cycles are guesses, but I </span>
+<span class="qt">&gt; &gt; &gt; think </span>
+<span class="qt">&gt; &gt; &gt; all the signals should occur in the correct order.</span>
+<span class="qt">&gt; &gt; &gt; </span>
+<span class="qt">&gt; &gt; &gt;   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   </span>
+<span class="qt">&gt; &gt; &gt; _| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_  Clock</span>
+<span class="qt">&gt; &gt; &gt; </span>
+<span class="qt">&gt; &gt; &gt; ____      ___________________________________________________  /INT</span>
+<span class="qt">&gt; &gt; &gt;     |____|</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Correction:</span>
+<span class="qt">&gt; &gt; &gt; ____                                              ____________  /INT</span>
+<span class="qt">&gt; &gt; &gt;     |____________________________________________|</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The /NMI interrupt line is edge sensitive but the maskable interrupt</span>
+<span class="qt">&gt; line /INT is level sensitive.  A peripheral that wants to interrupt</span>
+<span class="qt">&gt; (and has IEI high) should hold /INT low until it is acknowledged. </span>
+<span class="qt">&gt; Once acknowledged (sometime when /M1 and /IORQ are both low), its /INT</span>
+<span class="qt">&gt; should be deasserted.</span>
+
+Hmm, I&#x27;ve just found a copy of the Z80 datasheet on z80.info.  In that 
+the /INT line is pulled low for only a short time as in my diagram [page 
+27 @ <a href="http://www.z80.info/zip/z80.pdf" rel="noreferrer">http://www.z80.info/zip/z80.pdf</a>].  I would have assumed that only a 
+short pulse was required to trigger the interrupt request cycle.  Any 
+further light you or anyone else can shed on this would be useful.
+
+
+<span class="qt">&gt; &gt; &gt;     </span>
+<span class="qt">&gt; &gt; &gt; _______________                                   ___________  /M1</span>
+<span class="qt">&gt; &gt; &gt;                |_________________________________|</span>
+<span class="qt">&gt; &gt; &gt;                </span>
+<span class="qt">&gt; &gt; &gt; ________________________                         ____________  /IORQ</span>
+<span class="qt">&gt; &gt; &gt;                         |_______________________|</span>
+<span class="qt">&gt; &gt; &gt;                          </span>
+<span class="qt">&gt; &gt; &gt; </span>
+<span class="qt">&gt; &gt; &gt; ----&lt;data&gt;----&lt;data&gt;-----------&lt;VALID DATA&gt;------------------  D0- D7</span>
+<span class="qt">&gt; &gt; &gt; </span>
+<span class="qt">&gt; &gt; &gt; _____________________________________________________________  IEI</span>
+<span class="qt">&gt; &gt; &gt; </span>
+<span class="qt">&gt; &gt; &gt; -------------------------------------------------------------</span>
+<span class="qt">&gt; &gt; &gt; </span>
+<span class="qt">&gt; &gt; &gt; </span>
+<span class="qt">&gt; &gt; &gt; __                                                ___________  IEO</span>
+<span class="qt">&gt; &gt; &gt;   |______________________________________________|</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Correction:</span>
+<span class="qt">&gt; &gt; &gt; __                                                             IEO</span>
+<span class="qt">&gt; &gt; &gt;   |____________________________________________________________</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; When the periperal&#x27;s interrupt service routine has been acknowledged,</span>
+<span class="qt">&gt; its ISR begins execution.  The peripheral keeps its IEO low to prevent</span>
+<span class="qt">&gt; lower priority interrupters from interrupting the execution of its</span>
+<span class="qt">&gt; ISR.  This IEO stays low until the peripheral sees a &quot;RETI&quot;</span>
+<span class="qt">&gt; instruction executed with its IEI high, indicating its ISR has</span>
+<span class="qt">&gt; completed execution (if its IEI were not high, the &quot;RETI&quot; would belong</span>
+<span class="qt">&gt; to a higher priority peripheral&#x27;s ISR).  Conveniently, instruction</span>
+<span class="qt">&gt; fetch cycles are distinguished from ordinary memory read cycles by the</span>
+<span class="qt">&gt; assertion of the M1 signal, which also serves the purpose of settling</span>
+<span class="qt">&gt; and freezing the state of the IEI/IEO daisy chain.</span>
+
+Ahh yes.  I forgot that that line has to stay active until the ISR has 
+finished.  We don&#x27;t want interupts interupting interupts...  Madness 
+lies that way.
+
+<span class="qt">&gt; It sounds like you don&#x27;t have a good set of Z80 bus cycle timing</span>
+<span class="qt">&gt; diagrams.  I&#x27;ve got a Z80 data book somewhere around here -- I&#x27;ll scan</span>
+<span class="qt">&gt; the relevant sections and make it available on my website later</span>
+<span class="qt">&gt; tonight (morning your time).</span>
+
+Thanks Alvin.  It will be interesting to see where (if) the info you 
+have differes from the data sheet on z80.info.  Once I have had a chance 
+to look at all the documentation I&#x27;ll dry and get a V1.2 of the design 
+out, using IM2 techniques.
+
+cheers,
+Dave
+
+
+
+</pre></div><div class="post" id="p165979"><div class="ph"><a class="d" href="#p165979">2003-07-22 21:39:01</a> <span>Mike Wynne</span> <span>Re: [ANN] zxUSB</span></div><pre>
+&quot;Alvin&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; The /NMI interrupt line is edge sensitive but the maskable interrupt</span>
+<span class="qt">&gt; line /INT is level sensitive.  A peripheral that wants to interrupt</span>
+<span class="qt">&gt; (and has IEI high) should hold /INT low until it is acknowledged.</span>
+<span class="qt">&gt; Once acknowledged (sometime when /M1 and /IORQ are both low), its</span>
+/INT
+<span class="qt">&gt; should be deasserted.</span>
+
+Incidently, this is one of the incompatibilities between SpeccyBob and
+a real Speccy.  Whereas a real Speccy asserts /INT for a definite
+amount of time (32 T states I think - check the FAQ) regardless (This
+is why it&#x27;s possible to get a double trigger of the interupt), Bob
+only asserts /INT until /M1 and /IORQ go low.  Check out the CPU board
+for U5b and U6.
+
+MikeW
+
+
+
+
+
+</pre></div><div class="post" id="p166013"><div class="ph"><a class="d" href="#p166013">2003-07-23 07:19:38</a> <span>Alvin</span> <span>Re: [ANN] zxUSB</span></div><pre>Dave the Lurker &lt;…@…&gt; wrote in message news:&lt;…@…&gt;...
+
+I scanned the sections on bus timing and interrupts and posted it at:
+<a href="http://justme895.tripod.com/zqa/Z80TimingAndInts.pdf" rel="noreferrer">http://justme895.tripod.com/zqa/Z80TimingAndInts.pdf</a>
+
+This comes from Mostek&#x27;s Z80 Data Book, (c) 1978.
+
+<span class="qt">&gt; &gt; &gt; &gt; ____      ___________________________________________________  /INT</span>
+<span class="qt">&gt; &gt; &gt; &gt;     |____|</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Correction:</span>
+<span class="qt">&gt; &gt; &gt; &gt; ____                                              ____________  /INT</span>
+<span class="qt">&gt; &gt; &gt; &gt;     |____________________________________________|</span>
+
+<span class="qt">&gt; &gt; line /INT is level sensitive.  A peripheral that wants to interrupt</span>
+<span class="qt">&gt; &gt; (and has IEI high) should hold /INT low until it is acknowledged. </span>
+<span class="qt">&gt; &gt; Once acknowledged (sometime when /M1 and /IORQ are both low), its /INT</span>
+<span class="qt">&gt; &gt; should be deasserted.</span>
+ 
+<span class="qt">&gt; Hmm, I&#x27;ve just found a copy of the Z80 datasheet on z80.info.  In that </span>
+<span class="qt">&gt; the /INT line is pulled low for only a short time as in my diagram [page </span>
+<span class="qt">&gt; 27 @ <a href="http://www.z80.info/zip/z80.pdf" rel="noreferrer">http://www.z80.info/zip/z80.pdf</a>].  I would have assumed that only a </span>
+<span class="qt">&gt; short pulse was required to trigger the interrupt request cycle.  Any </span>
+<span class="qt">&gt; further light you or anyone else can shed on this would be useful.</span>
+
+Yeah, that&#x27;s not actually correct.  In the version I&#x27;ve scanned, the
+state of /INT is marked with dashes to indicate don&#x27;t care except on
+the rising edge of the last T state in the last machine cycle of an
+instruction.  This just means the cpu is paying attention to /INT at
+this time -- if the peripheral doesn&#x27;t have /INT low at this moment,
+tough luck in having the cpu notice your interrupt.
+
+On /NMI you can just pulse the line because it&#x27;s edge triggered (the
+z80 has an internal flip-flop that will take note of the edge, and the
+state of this flip-flop is what is sampled by the cpu).
+
+Since the maximum Z80 instruction is 24 cycles or so long, you could
+hold /INT low for about 48 cycles and then you could be pretty sure
+that the cpu will notice the interrupt.  However, as Mike pointed out,
+if the associated ISR is really short, this single long pulse on /INT
+could cause a double interrupt.
+
+Worse, though, is that this method ignores the possibility that:
+1.  The user could have disabled interrupts for a short time for a
+timing critical piece of code.  During this time the /INT pulse could
+have come and gone, being ignored by the cpu, when in fact the
+intention is to delay acknowledgement of the interrupt.
+2.  There could be another bus master in the system (a DMA controller)
+that has control of the buses when the interrupt occurs (the bus
+master should ignore interrupts and the cpu should acknowledge them
+when it regains control of the system).
+
+If you check out page 64, step 2 of the pdf I scanned, you&#x27;ll also see
+the instructions for deasserting /INT during the acknowledge cycle.
+
+<span class="qt">&gt; Thanks Alvin.  It will be interesting to see where (if) the info you </span>
+<span class="qt">&gt; have differes from the data sheet on z80.info.  Once I have had a chance </span>
+<span class="qt">&gt; to look at all the documentation I&#x27;ll dry and get a V1.2 of the design </span>
+<span class="qt">&gt; out, using IM2 techniques.</span>
+
+It will be nice to see!
+
+Alvin
+
+
+
+</pre></div><div class="post" id="p166303"><div class="ph"><a class="d" href="#p166303">2003-07-28 08:25:19</a> <span>Alvin</span> <span>Re: [ANN] zxUSB</span></div><pre>Dave the Lurker &lt;…@…&gt; wrote in message news:&lt;…@…&gt;...
+
+<span class="qt">&gt; If you can explain how I can use an external interrupt generated on the </span>
+<span class="qt">&gt; /INT line on the speccy expansion connector I&#x27;d be very grateful.</span>
+
+I&#x27;ve put a schematic of some IM 2 circuitry on the web:
+<a href="http://justme895.tripod.com/zqa/im2.pdf" rel="noreferrer">http://justme895.tripod.com/zqa/im2.pdf</a>
+
+This is not the version I did several years ago -- I got fed up with
+looking for it and just sat down and redid it.  I *believe* this is
+correct.  If anyone can improve it, spot a bug or whatever I&#x27;d like to
+hear about it.  I stuck with plain D FFs as they&#x27;re most suitable for
+most targets.  Some of the logic is a little ad hoc and I&#x27;m sure can
+be improved.
+
+The circuit takes care of everything involved in IM 2 except placing
+the vector on the data bus -- I forgot about that.  I&#x27;ll have to add
+that later.  You can use the signal out of the 3-input AND gate headed
+toward the &quot;ACKED&quot; flip flop as an enable for placing the vector on
+the data bus (through a &#x27;541 equivalent perhaps).  The vector should
+be programmable.
+
+Alvin
+
+
+
+</pre></div><div class="post" id="p166329"><div class="ph"><a class="d" href="#p166329">2003-07-28 17:47:20</a> <span>Alvin</span> <span>Re: [ANN] zxUSB</span></div><pre>…@… (Alvin) wrote in message news:&lt;…@…&gt;...
+
+<span class="qt">&gt; I&#x27;ve put a schematic of some IM 2 circuitry on the web:</span>
+<span class="qt">&gt; <a href="http://justme895.tripod.com/zqa/im2.pdf" rel="noreferrer">http://justme895.tripod.com/zqa/im2.pdf</a></span>
+
+Reposted to include placement of the im2 vector on the data bus (now
+three pages instead of two).
+
+<span class="qt">&gt; most targets.  Some of the logic is a little ad hoc and I&#x27;m sure can</span>
+<span class="qt">&gt; be improved.</span>
+
+What I meant to say was most of the logic is a lot ad hoc :)
+
+Alvin
+
+
+
+</pre></div><div class="post" id="p166342"><div class="ph"><a class="d" href="#p166342">2003-07-28 20:00:30</a> <span>Dave the Lurker</span> <span>Re: [ANN] zxUSB</span></div><pre>In article &lt;…@…&gt;, A936
+@hotmail.com says...
+<span class="qt">&gt; …@… (Alvin) wrote in message news:&lt;…@…&gt;...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; I&#x27;ve put a schematic of some IM 2 circuitry on the web:</span>
+<span class="qt">&gt; &gt; <a href="http://justme895.tripod.com/zqa/im2.pdf" rel="noreferrer">http://justme895.tripod.com/zqa/im2.pdf</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Reposted to include placement of the im2 vector on the data bus (now</span>
+<span class="qt">&gt; three pages instead of two).</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; most targets.  Some of the logic is a little ad hoc and I&#x27;m sure can</span>
+<span class="qt">&gt; &gt; be improved.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; What I meant to say was most of the logic is a lot ad hoc :)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Alvin</span>
+
+Alvin,
+
+Thanks for the designs, I didn&#x27;t really get a change to look at the 
+project at the weekend.  From what I can see the IM2 circuitry is quite 
+complex.
+
+What I&#x27;ll probably end up doing is creating a VHDL description of the 
+system and working out a reasonable CPLD / FPGA to handle all the logic 
+work.  A possible device I found with a just a quick search (cheap, not 
+surface mount) is shown here:
+
+<a href="http://www.altera.com/literature/ds/dsf10k.pdf" rel="noreferrer">http://www.altera.com/literature/ds/dsf10k.pdf</a>
+
+Specifically the EPF10K10 part looks pretty good for the job, plenty of 
+gates, 6k of RAM and ~50 IO pins.
+
+This is probably overkill for just the USB project, but would be useful 
+for a combined system of USB, IDE, NIC, etc. It should be able to handle 
+several interrupting sources, will be much neater and probably cheaper 
+then a board full of 74 series logic and diodes.
+
+Anyway I&#x27;ve got the initial PCBs back now and I&#x27;m just about to build 
+and debug one.
+
+cheers,
+Dave
+
+
+
+</pre></div><div class="post" id="p166350"><div class="ph"><a class="d" href="#p166350">2003-07-28 21:56:22</a> <span>Woody</span> <span>Re: [ANN] zxUSB</span></div><pre>On Mon, 28 Jul 2003 21:00:30 +0100, Dave the Lurker &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;Thanks for the designs, I didn&#x27;t really get a change to look at the </span>
+<span class="qt">&gt;project at the weekend.  From what I can see the IM2 circuitry is quite </span>
+<span class="qt">&gt;complex.</span>
+
+Not nearly as complex as it&#x27;s going to be getting this to run well on
+a +3 system!
+
+
+
+
+</pre></div><div class="post" id="p166396"><div class="ph"><a class="d" href="#p166396">2003-07-30 12:45:45</a> <span>Dave the Lurker</span> <span>Re: [ANN] zxUSB</span></div><pre>In article &lt;…@…&gt;, 
+…@… says...
+<span class="qt">&gt; On Mon, 28 Jul 2003 21:00:30 +0100, Dave the Lurker &lt;…@…&gt;</span>
+<span class="qt">&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;Thanks for the designs, I didn&#x27;t really get a change to look at the </span>
+<span class="qt">&gt; &gt;project at the weekend.  From what I can see the IM2 circuitry is quite </span>
+<span class="qt">&gt; &gt;complex.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Not nearly as complex as it&#x27;s going to be getting this to run well on</span>
+<span class="qt">&gt; a +3 system!</span>
+
+Any good ideas on how to fix this then Woody ?
+
+cheers,
+Dave
+
+
+
+</pre></div><div class="post" id="p166420"><div class="ph"><a class="d" href="#p166420">2003-07-30 19:44:05</a> <span>Woody</span> <span>Re: [ANN] zxUSB</span></div><pre>On Wed, 30 Jul 2003 13:45:45 +0100, Dave the Lurker &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;In article &lt;…@…&gt;, </span>
+<span class="qt">&gt;…@… says...</span>
+<span class="qt">&gt;&gt; On Mon, 28 Jul 2003 21:00:30 +0100, Dave the Lurker &lt;…@…&gt;</span>
+<span class="qt">&gt;&gt; wrote:</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; &gt;Thanks for the designs, I didn&#x27;t really get a change to look at the </span>
+<span class="qt">&gt;&gt; &gt;project at the weekend.  From what I can see the IM2 circuitry is quite </span>
+<span class="qt">&gt;&gt; &gt;complex.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Not nearly as complex as it&#x27;s going to be getting this to run well on</span>
+<span class="qt">&gt;&gt; a +3 system!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Any good ideas on how to fix this then Woody ?</span>
+
+Actually the biggest problem appears to be for all 128K machines. If
+an interrupt is going to happen at any time then the vector table and
+service routines need to below 49152 in memory. That&#x27;s quite a chunk
+of memory available to BASIC down the drain!
+
+How are games going to react to all these extra interrupts?
+Gonna be fun! (unless you switch it off or unplug it)
+
+
+
+
+</pre></div></main></body></html>

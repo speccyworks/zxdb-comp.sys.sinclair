@@ -1,0 +1,1940 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!! · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</h1><p class="facts">87 posts, 2002-09-04 – 2002-09-13</p><div class="post" id="p145345"><div class="ph"><a class="d" href="#p145345">2002-09-04 19:06:46</a> <span>N Fishwick FishyFish</span>  <a class="badge" href="https://spectrumcomputing.co.uk/entry/14526">ZXDB: Manic Miner: comp.sys.sinclair</a></div><pre>&lt;drum roll&gt;
+
+After 18 months of hard work (yeah, right) my Manic Miner rejig is
+ready to be revealed to the world for everyone to marvel in it&#x27;s
+splendour.
+
+Downloads are available at: <a href="http://www.fishyfish.net/manic/" rel="noreferrer">http://www.fishyfish.net/manic/</a>
+
+I might still tweak it a little based on feedback, and I hope to
+create a standalone 48k TZX version - at the moment it&#x27;s saved as a
+128k snapshot, so you&#x27;ll need ana emulator capable of running it
+(RealSpectrum works fine and I suspect most others will too), but
+essentially it&#x27;s a full working version. I&#x27;ve personally tested all
+the romms and every one is completeable, so don&#x27;t give up!
+
+Anyway, have fun and let me know what you think, especially the
+cheatingbastness of it! 
+
+Especially like to know if someone completes it! A special challenge -
+who&#x27;ll be first?!?!?!
+
+Fishy
+--
+Spectrum Games Maps at - <a href="http://www.btinternet.com/~fishyfish/" rel="noreferrer">http://www.btinternet.com/~fishyfish/</a>
+Email me using …@… (remove the NOSPAMTHANKS)
+
+
+
+</pre></div><div class="post" id="p145348"><div class="ph"><a class="d" href="#p145348">2002-09-04 19:49:07</a> <span>Ivan Ruiz Etxabe</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Wed, 04 Sep 2002 19:06:46 GMT, …@… (N Fishwick
+(FishyFish)) va y suelta:
+
+<span class="qt">&gt;&lt;drum roll&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;After 18 months of hard work (yeah, right) my Manic Miner rejig is</span>
+<span class="qt">&gt;ready to be revealed to the world for everyone to marvel in it&#x27;s</span>
+<span class="qt">&gt;splendour.</span>
+
+First of all, Thank you for your superb work.
+
+That said, I&#x27;d like to say that I&#x27;ve seen EASIER
+first screens :), it&#x27;s bloody hard -- can that monster
+be jumped somehow?
+
+Ivan
+
+
+
+
+
+
+</pre></div><div class="post" id="p145353"><div class="ph"><a class="d" href="#p145353">2002-09-04 20:40:02</a> <span>Victim of a Stagedive</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>Excuse me for being dim, but which emulator do I need to play this?
+
+Peter
+
+
+
+</pre></div><div class="post" id="p145356"><div class="ph"><a class="d" href="#p145356">2002-09-04 21:20:41</a> <span>N Fishwick FishyFish</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On 04 Sep 2002 20:40:02 GMT, …@… (Victim of a
+Stagedive) farted out the following incoherent babble:
+
+<span class="qt">&gt;Excuse me for being dim, but which emulator do I need to play this?</span>
+<span class="qt">&gt;</span>
+I&#x27;ve tried it with RealSpectrum and X128, both of which work ok.
+
+Fishy
+
+--
+Spectrum Games Maps at - <a href="http://www.btinternet.com/~fishyfish/" rel="noreferrer">http://www.btinternet.com/~fishyfish/</a>
+Email me using …@… (remove the NOSPAMTHANKS)
+
+
+
+</pre></div><div class="post" id="p145357"><div class="ph"><a class="d" href="#p145357">2002-09-04 21:25:13</a> <span>Derek Jolly</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>…@… (Ivan Ruiz Etxabe) wrote in 
+news:…@…:
+
+<span class="qt">&gt; That said, I&#x27;d like to say that I&#x27;ve seen EASIER</span>
+<span class="qt">&gt; first screens :), it&#x27;s bloody hard -- can that monster</span>
+<span class="qt">&gt; be jumped somehow?</span>
+<span class="qt">&gt; </span>
+
+No, it can&#x27;t be.  Think of another way.  (It&#x27;s so obvious when you see 
+it).
+
+Just had my first go on it and got to Coats by Titch.  Nice.
+-- 
+Derek Jolly (derek at rivetsoft dot freeserve dot co dot uk)
+comp.sys.sinclair folklore FAQ: <a href="http://rivet.50megs.com/cssfolk.html" rel="noreferrer">http://rivet.50megs.com/cssfolk.html</a>
+
+
+
+</pre></div><div class="post" id="p145358"><div class="ph"><a class="d" href="#p145358">2002-09-04 21:26:24</a> <span>Dunny</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>
+&quot;N Fishwick (FishyFish)&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; On 04 Sep 2002 20:40:02 GMT, …@… (Victim of a</span>
+<span class="qt">&gt; Stagedive) farted out the following incoherent babble:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;Excuse me for being dim, but which emulator do I need to play this?</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; I&#x27;ve tried it with RealSpectrum and X128, both of which work ok.</span>
+
+Ahem.
+
+D.
+
+
+
+
+
+
+</pre></div><div class="post" id="p145359"><div class="ph"><a class="d" href="#p145359">2002-09-04 21:27:20</a> <span>Colin Woodcock</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>&quot;N Fishwick (FishyFish)&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; &lt;drum roll&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; After 18 months of hard work (yeah, right) my Manic Miner rejig is</span>
+<span class="qt">&gt; ready to be revealed to the world for everyone to marvel in it&#x27;s</span>
+<span class="qt">&gt; splendour.</span>
+
+Excellent!
+
+Anyone like to do a review of this for the next ZXF?
+
+Colin
+
+
+
+
+
+</pre></div><div class="post" id="p145360"><div class="ph"><a class="d" href="#p145360">2002-09-04 21:39:42</a> <span>N Fishwick FishyFish</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Wed, 04 Sep 2002 19:49:07 GMT, …@… (Ivan Ruiz
+Etxabe) farted out the following incoherent babble:
+
+<span class="qt">&gt;On Wed, 04 Sep 2002 19:06:46 GMT, …@… (N Fishwick</span>
+<span class="qt">&gt;(FishyFish)) va y suelta:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;&lt;drum roll&gt;</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;After 18 months of hard work (yeah, right) my Manic Miner rejig is</span>
+<span class="qt">&gt;&gt;ready to be revealed to the world for everyone to marvel in it&#x27;s</span>
+<span class="qt">&gt;&gt;splendour.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;First of all, Thank you for your superb work.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;That said, I&#x27;d like to say that I&#x27;ve seen EASIER</span>
+<span class="qt">&gt;first screens :), it&#x27;s bloody hard -- can that monster</span>
+<span class="qt">&gt;be jumped somehow?</span>
+<span class="qt">&gt;</span>
+Watch the patterns and look at the layout. It&#x27;s probably a lot easier
+than you think.
+
+Fishy
+--
+Spectrum Games Maps at - <a href="http://www.btinternet.com/~fishyfish/" rel="noreferrer">http://www.btinternet.com/~fishyfish/</a>
+Email me using …@… (remove the NOSPAMTHANKS)
+
+
+
+</pre></div><div class="post" id="p145362"><div class="ph"><a class="d" href="#p145362">2002-09-04 21:47:00</a> <span>luv-snail</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>N Fishwick (FishyFish) previously ejaculated:
+
+<span class="qt">&gt; On 04 Sep 2002 20:40:02 GMT, …@… (Victim of a</span>
+<span class="qt">&gt; Stagedive) farted out the following incoherent babble:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Excuse me for being dim, but which emulator do I need to play this?</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt; I&#x27;ve tried it with RealSpectrum and X128, both of which work ok.</span>
+
+Works good in SPIN too.
+
+
+
+
+
+</pre></div><div class="post" id="p145364"><div class="ph"><a class="d" href="#p145364">2002-09-04 21:54:25</a> <span>Llama-Wax Len</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>
+&quot;Derek Jolly&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; No, it can&#x27;t be.  Think of another way.  (It&#x27;s so obvious when you see</span>
+<span class="qt">&gt; it).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Just had my first go on it and got to Coats by Titch.  Nice.</span>
+
+Whereas I, ironically enough, have just been killed in the quite spiffing[1]
+Len&#x27;s Robocop Waxing Salon.
+
+Brilliant stuff!
+
+Len
+[1] It really is superb! Look, it&#x27;s got the hat and everything![2]
+[2] See specchums.org for details
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+DISCLAIMER: By replying to this message, you hereby acknowledge
+that the ZX Spectrum game &quot;Robocop&quot; was too difficult.
+
+
+
+
+
+</pre></div><div class="post" id="p145366"><div class="ph"><a class="d" href="#p145366">2002-09-04 21:55:44</a> <span>N Fishwick FishyFish</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Wed, 04 Sep 2002 19:06:46 GMT, …@… (N Fishwick
+(FishyFish)) farted out the following incoherent babble:
+
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Downloads are available at: <a href="http://www.fishyfish.net/manic/" rel="noreferrer">http://www.fishyfish.net/manic/</a></span>
+<span class="qt">&gt;</span>
+In case anyone has problems downloading from this URL [1], you can
+also try;
+
+<a href="http://www.btinternet.com/~fishyfish/games/manic/" rel="noreferrer">http://www.btinternet.com/~fishyfish/games/manic/</a>
+
+Fishy
+
+[1] I&#x27;m having problems accessing it for some reason.
+--
+Spectrum Games Maps at - <a href="http://www.btinternet.com/~fishyfish/" rel="noreferrer">http://www.btinternet.com/~fishyfish/</a>
+Email me using …@… (remove the NOSPAMTHANKS)
+
+
+
+</pre></div><div class="post" id="p145367"><div class="ph"><a class="d" href="#p145367">2002-09-04 21:56:11</a> <span>Derek Jolly</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>&quot;Llama-Wax Len&quot; &lt;…@…&gt; wrote in
+news:al5rri$s30$…@…: 
+
+<span class="qt">&gt; Whereas I, ironically enough, have just been killed in the quite</span>
+<span class="qt">&gt; spiffing[1] Len&#x27;s Robocop Waxing Salon.</span>
+
+I&#x27;ve just got there now.  How does it feel to be Eugene?!
+-- 
+Derek Jolly (derek at rivetsoft dot freeserve dot co dot uk)
+comp.sys.sinclair folklore FAQ: <a href="http://rivet.50megs.com/cssfolk.html" rel="noreferrer">http://rivet.50megs.com/cssfolk.html</a>
+
+
+
+</pre></div><div class="post" id="p145372"><div class="ph"><a class="d" href="#p145372">2002-09-04 22:15:51</a> <span>N Fishwick FishyFish</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Wed, 4 Sep 2002 22:54:25 +0100, &quot;Llama-Wax Len&quot;
+&lt;…@…&gt; farted out the following
+incoherent babble:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Whereas I, ironically enough, have just been killed in the quite spiffing[1]</span>
+<span class="qt">&gt;Len&#x27;s Robocop Waxing Salon.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Brilliant stuff!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Len</span>
+<span class="qt">&gt;[1] It really is superb! Look, it&#x27;s got the hat and everything![2]</span>
+<span class="qt">&gt;[2] See specchums.org for details</span>
+<span class="qt">&gt;--</span>
+
+I thought you might like that little graphical flourish!
+
+I&#x27;m especially proud of my Robocops too.
+
+Fishy
+
+
+--
+Spectrum Games Maps at - <a href="http://www.btinternet.com/~fishyfish/" rel="noreferrer">http://www.btinternet.com/~fishyfish/</a>
+Email me using …@… (remove the NOSPAMTHANKS)
+
+
+
+</pre></div><div class="post" id="p145374"><div class="ph"><a class="d" href="#p145374">2002-09-04 22:19:53</a> <span>gordon</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Wed, 4 Sep 2002 22:47:00 +0100, &quot;luv-snail&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;N Fishwick (FishyFish) previously ejaculated:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; On 04 Sep 2002 20:40:02 GMT, …@… (Victim of a</span>
+<span class="qt">&gt;&gt; Stagedive) farted out the following incoherent babble:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; Excuse me for being dim, but which emulator do I need to play this?</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt; I&#x27;ve tried it with RealSpectrum and X128, both of which work ok.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Works good in SPIN too.</span>
+
+Works fine in ZX32 as well.
+-- 
+gordon &quot;It&#x27;s not the winning, it&#x27;s the arsing around along the way.&quot;
+
+
+
+</pre></div><div class="post" id="p145378"><div class="ph"><a class="d" href="#p145378">2002-09-05 00:14:52</a> <span>Nomenluni</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>Got to Robocop Waxing on first go - which isn&#x27;t too bad for a first go.
+
+I have to say it plays really well - I guess most people have played some of
+the other homegrown MM&#x27;s - but this one is up there with the cream.
+
+Nice one Mr Fishy.
+
+Nomenluni
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p145381"><div class="ph"><a class="d" href="#p145381">2002-09-05 07:23:04</a> <span>Lee Prince</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>10 PRINT &quot;Victim of a Stagedive woz &#x27;ere 04 Sep 2002&quot;
+20 GO TO 10
+
+<span class="qt">&gt; Excuse me for being dim, but which emulator do I need to play this?</span>
+
+<a href="http://www.worldofspectrum.org/emulators.html" rel="noreferrer">http://www.worldofspectrum.org/emulators.html</a>
+
+Assuming you&#x27;re using Windows, the best ones (IMHO) are zx32, SPIN and 
+Klive, although many people still swear by RealSpectrum.
+
+-- 
+I&#x27;ll get my coat.
+
+
+
+</pre></div><div class="post" id="p145382"><div class="ph"><a class="d" href="#p145382">2002-09-05 07:29:08</a> <span>Lee Prince</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>10 PRINT &quot;FishyFish) woz &#x27;ere 04 Sep 2002&quot;
+20 GO TO 10
+
+<span class="qt">&gt; After 18 months of hard work (yeah, right) my Manic Miner rejig is</span>
+<span class="qt">&gt; ready to be revealed to the world for everyone to marvel in it&#x27;s</span>
+<span class="qt">&gt; splendour.</span>
+
+Excellent. Well, it would be if I could get anywhere. It took me three 
+attempts just to work out the first screen, and then I got stuck in 
+Scribbler&#x27;s fridge. Bah.
+
+<span class="qt">&gt; Especially like to know if someone completes it! A special challenge -</span>
+<span class="qt">&gt; who&#x27;ll be first?!?!?!</span>
+
+I suspect I&#x27;ll win a prize for being last, judging by my performance so 
+far...
+
+-- 
+I&#x27;ll get my coat.
+
+
+
+</pre></div><div class="post" id="p145388"><div class="ph"><a class="d" href="#p145388">2002-09-05 09:50:04</a> <span>Chris Cowley</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On 04 Sep 2002 20:40:02 GMT, …@… (Victim of a
+Stagedive) wrote:
+
+<span class="qt">&gt;Excuse me for being dim, but which emulator do I need to play this?</span>
+
+Any Sinclair Spectrum emulator will do the job. If there&#x27;s an emulator
+out there that isn&#x27;t capable of running the Manic Miner game engine
+properly, then the author should have lots of painful and embarassing
+things done to him/her.
+-- 
+Chris Cowley
+
+
+
+</pre></div><div class="post" id="p145390"><div class="ph"><a class="d" href="#p145390">2002-09-05 10:55:08</a> <span>N Fishwick FishyFish</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Wed, 4 Sep 2002 22:26:24 +0100, &quot;Dunny&quot; &lt;…@…&gt;
+farted out the following incoherent babble:
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&quot;N Fishwick (FishyFish)&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt;news:…@…...</span>
+<span class="qt">&gt;&gt; On 04 Sep 2002 20:40:02 GMT, …@… (Victim of a</span>
+<span class="qt">&gt;&gt; Stagedive) farted out the following incoherent babble:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; &gt;Excuse me for being dim, but which emulator do I need to play this?</span>
+<span class="qt">&gt;&gt; &gt;</span>
+<span class="qt">&gt;&gt; I&#x27;ve tried it with RealSpectrum and X128, both of which work ok.</span>
+<span class="qt">&gt;</span>
+Oh...and SPIN of course. A prince among emulators, indeed if not the
+king!
+
+75p and a packet of etc. etc...
+
+Fishy
+
+--
+Spectrum Games Maps at - <a href="http://www.btinternet.com/~fishyfish/" rel="noreferrer">http://www.btinternet.com/~fishyfish/</a>
+Email me using …@… (remove the NOSPAMTHANKS)
+
+
+
+</pre></div><div class="post" id="p145391"><div class="ph"><a class="d" href="#p145391">2002-09-05 10:56:04</a> <span>N Fishwick FishyFish</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Thu, 05 Sep 2002 10:50:04 +0100, Chris Cowley &lt;…@…&gt;
+farted out the following incoherent babble:
+
+<span class="qt">&gt;On 04 Sep 2002 20:40:02 GMT, …@… (Victim of a</span>
+<span class="qt">&gt;Stagedive) wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;Excuse me for being dim, but which emulator do I need to play this?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Any Sinclair Spectrum emulator will do the job. If there&#x27;s an emulator</span>
+<span class="qt">&gt;out there that isn&#x27;t capable of running the Manic Miner game engine</span>
+<span class="qt">&gt;properly, then the author should have lots of painful and embarassing</span>
+<span class="qt">&gt;things done to him/her.</span>
+
+Some of the older emulators won&#x27;t run 128k files though, so it is
+possible to find one that won&#x27;t run it I suppose.
+
+Fishy
+
+--
+Spectrum Games Maps at - <a href="http://www.btinternet.com/~fishyfish/" rel="noreferrer">http://www.btinternet.com/~fishyfish/</a>
+Email me using …@… (remove the NOSPAMTHANKS)
+
+
+
+</pre></div><div class="post" id="p145392"><div class="ph"><a class="d" href="#p145392">2002-09-05 11:47:32</a> <span>Scribbler</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>…@… (N Fishwick (FishyFish)) wrote in
+news:…@…: 
+
+<span class="qt">&gt; &lt;drum roll&gt;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; After 18 months of hard work (yeah, right) my Manic Miner rejig is</span>
+<span class="qt">&gt; ready to be revealed to the world for everyone to marvel in it&#x27;s</span>
+<span class="qt">&gt; splendour.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Downloads are available at: <a href="http://www.fishyfish.net/manic/" rel="noreferrer">http://www.fishyfish.net/manic/</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I might still tweak it a little based on feedback, and I hope to</span>
+<span class="qt">&gt; create a standalone 48k TZX version - at the moment it&#x27;s saved as a</span>
+<span class="qt">&gt; 128k snapshot, so you&#x27;ll need ana emulator capable of running it</span>
+<span class="qt">&gt; (RealSpectrum works fine and I suspect most others will too), but</span>
+<span class="qt">&gt; essentially it&#x27;s a full working version. I&#x27;ve personally tested all</span>
+<span class="qt">&gt; the romms and every one is completeable, so don&#x27;t give up!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Anyway, have fun and let me know what you think, especially the</span>
+<span class="qt">&gt; cheatingbastness of it! </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Especially like to know if someone completes it! A special challenge -</span>
+<span class="qt">&gt; who&#x27;ll be first?!?!?!</span>
+
+Well, I&#x27;ll submit the first high score.... 2,446... :)
+
+-- 
+New, shiny, and better than the last one... probably
+<a href="http://www.mercuryvapour.co.uk" rel="noreferrer">http://www.mercuryvapour.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p145393"><div class="ph"><a class="d" href="#p145393">2002-09-05 11:49:23</a> <span>Scribbler</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>…@… (N Fishwick (FishyFish)) wrote in
+news:…@…: 
+
+<span class="qt">&gt; On Wed, 04 Sep 2002 19:49:07 GMT, …@… (Ivan Ruiz</span>
+<span class="qt">&gt; Etxabe) farted out the following incoherent babble:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;On Wed, 04 Sep 2002 19:06:46 GMT, …@… (N Fishwick</span>
+<span class="qt">&gt;&gt;(FishyFish)) va y suelta:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;&lt;drum roll&gt;</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;After 18 months of hard work (yeah, right) my Manic Miner rejig is</span>
+<span class="qt">&gt;&gt;&gt;ready to be revealed to the world for everyone to marvel in it&#x27;s</span>
+<span class="qt">&gt;&gt;&gt;splendour.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;First of all, Thank you for your superb work.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;That said, I&#x27;d like to say that I&#x27;ve seen EASIER</span>
+<span class="qt">&gt;&gt;first screens :), it&#x27;s bloody hard -- can that monster</span>
+<span class="qt">&gt;&gt;be jumped somehow?</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt; Watch the patterns and look at the layout. It&#x27;s probably a lot easier</span>
+<span class="qt">&gt; than you think.</span>
+
+That first screen had me stumped.... &quot;how do I jump over those green things 
+to get that k.....ahhhhhHHHHHHH! I know, I&#x27;ll get that one FIRST!!!&quot; :)
+
+-- 
+New, shiny, and better than the last one... probably
+<a href="http://www.mercuryvapour.co.uk" rel="noreferrer">http://www.mercuryvapour.co.uk</a>
+
+
+
+</pre></div><div class="post" id="p145394"><div class="ph"><a class="d" href="#p145394">2002-09-05 12:56:04</a> <span>Chris Cowley</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Thu, 05 Sep 2002 10:56:04 GMT, …@… (N Fishwick
+(FishyFish)) wrote:
+
+<span class="qt">&gt;On Thu, 05 Sep 2002 10:50:04 +0100, Chris Cowley &lt;…@…&gt;</span>
+<span class="qt">&gt;farted out the following incoherent babble:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;Any Sinclair Spectrum emulator will do the job. If there&#x27;s an emulator</span>
+<span class="qt">&gt;&gt;out there that isn&#x27;t capable of running the Manic Miner game engine</span>
+<span class="qt">&gt;&gt;properly, then the author should have lots of painful and embarassing</span>
+<span class="qt">&gt;&gt;things done to him/her.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Some of the older emulators won&#x27;t run 128k files though, so it is</span>
+<span class="qt">&gt;possible to find one that won&#x27;t run it I suppose.</span>
+
+I must admit that I didn&#x27;t realise it was a 128K snap (even though you
+mentioned it in your original post - d&#x27;oh). Why is that? Do you have an
+editor in one of the RAM banks or something?
+-- 
+Chris Cowley
+
+
+
+</pre></div><div class="post" id="p145395"><div class="ph"><a class="d" href="#p145395">2002-09-05 13:06:50</a> <span>Fraser Ross</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>
+&quot;N Fishwick (FishyFish)&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; On Wed, 4 Sep 2002 22:26:24 +0100, &quot;Dunny&quot; &lt;…@…&gt;</span>
+<span class="qt">&gt; farted out the following incoherent babble:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;&quot;N Fishwick (FishyFish)&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; &gt;news:…@…...</span>
+<span class="qt">&gt; &gt;&gt; On 04 Sep 2002 20:40:02 GMT, …@… (Victim of a</span>
+<span class="qt">&gt; &gt;&gt; Stagedive) farted out the following incoherent babble:</span>
+<span class="qt">&gt; &gt;&gt;</span>
+<span class="qt">&gt; &gt;&gt; &gt;Excuse me for being dim, but which emulator do I need to play this?</span>
+<span class="qt">&gt; &gt;&gt; &gt;</span>
+<span class="qt">&gt; &gt;&gt; I&#x27;ve tried it with RealSpectrum and X128, both of which work ok.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; Oh...and SPIN of course. A prince among emulators, indeed if not the</span>
+<span class="qt">&gt; king!</span>
+Bits of the screen is corrupt with Spin.  Klive works but its bad for
+crashing W2000 particularly if I&#x27;ve a dial-up-connection on.
+
+Fraser.
+
+
+
+
+
+</pre></div><div class="post" id="p145396"><div class="ph"><a class="d" href="#p145396">2002-09-05 14:01:15</a> <span>Chris Cowley</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Thu, 5 Sep 2002 14:06:50 +0100, &quot;Fraser Ross&quot;
+&lt;fraserATmembers.v21.co.uk&gt; wrote:
+
+<span class="qt">&gt;Bits of the screen is corrupt with Spin.  Klive works but its bad for</span>
+<span class="qt">&gt;crashing W2000 particularly if I&#x27;ve a dial-up-connection on.</span>
+
+Which bits of the screen are corrupt in SPIN? It looks okay to me with
+the latest 0.2c release:-
+
+   <a href="http://freestuff.grok.co.uk/spin/maniccss.png" rel="noreferrer">http://freestuff.grok.co.uk/spin/maniccss.png</a>
+
+Chris.
+-- 
+Chris Cowley
+
+
+
+</pre></div><div class="post" id="p145397"><div class="ph"><a class="d" href="#p145397">2002-09-05 14:24:12</a> <span>Dunny</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>
+&quot;Chris Cowley&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; On Thu, 5 Sep 2002 14:06:50 +0100, &quot;Fraser Ross&quot;</span>
+<span class="qt">&gt; &lt;fraserATmembers.v21.co.uk&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;Bits of the screen is corrupt with Spin.  Klive works but its bad for</span>
+<span class="qt">&gt; &gt;crashing W2000 particularly if I&#x27;ve a dial-up-connection on.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Which bits of the screen are corrupt in SPIN? It looks okay to me with</span>
+<span class="qt">&gt; the latest 0.2c release:-</span>
+
+Agreed - I&#x27;ve not had any problems running a simple Manic Miner snapshot
+before - in fact, it was one of the first games that SPIN ever ran! I can
+also vouch for the fact that it runs well in Win2k, as Woody has been
+developing parts of SPIN in Win2k since he started.
+
+Any chance of a screenshot, Fraser? &quot;bits of the screen are corrupt&quot; isn&#x27;t
+really a very helpful bug report.
+
+D.
+
+
+
+
+
+
+</pre></div><div class="post" id="p145398"><div class="ph"><a class="d" href="#p145398">2002-09-05 14:33:22</a> <span>Dunny</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>I&#x27;ve already replied to you via Chris&#x27;s reply, but I just had a thought:
+
+If you&#x27;re still running large fonts, then it&#x27;s possible that the Window size
+is smaller than it should be, and as such the display is skipping lines and
+columns. There is a fix for this, but it involves you choosing a smaller
+system font size.
+
+Other than that, I expect you&#x27;ve probably got some major configuration
+problems (especially if something as innocuous(sp?) as Klive crashes your
+dialup.
+
+D.
+
+
+
+
+
+
+</pre></div><div class="post" id="p145399"><div class="ph"><a class="d" href="#p145399">2002-09-05 14:49:07</a> <span>N Fishwick FishyFish</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Thu, 05 Sep 2002 11:47:32 GMT, Scribbler
+&lt;…@…&gt; farted out the following incoherent
+babble:
+
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Well, I&#x27;ll submit the first high score.... 2,446... :)</span>
+<span class="qt">&gt;</span>
+What level did you reach?
+
+I might start recording high scores on the website. Email them to me
+including your name, high score and level reached. I&#x27;ll apply Speccy
+Tour rules so that your high score is that reached either when all
+your lives have gone, or you&#x27;ve completed screen 20 (whichever comes
+first).
+
+Mark any emails to me as &quot;Manic Miner CSS Scores&quot;
+
+Fishy
+--
+Spectrum Games Maps at - <a href="http://www.btinternet.com/~fishyfish/" rel="noreferrer">http://www.btinternet.com/~fishyfish/</a>
+Email me using …@… (remove the NOSPAMTHANKS)
+
+
+
+</pre></div><div class="post" id="p145400"><div class="ph"><a class="d" href="#p145400">2002-09-05 14:53:27</a> <span>N Fishwick FishyFish</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Thu, 05 Sep 2002 13:56:04 +0100, Chris Cowley &lt;…@…&gt;
+farted out the following incoherent babble:
+
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I must admit that I didn&#x27;t realise it was a 128K snap (even though you</span>
+<span class="qt">&gt;mentioned it in your original post - d&#x27;oh). Why is that? Do you have an</span>
+<span class="qt">&gt;editor in one of the RAM banks or something?</span>
+
+Yep. I&#x27;m trying to extract the pure Manic Miner file from the editor
+(which should be doable according to the instructions), but I&#x27;ll be a
+monkey&#x27;s uncle if I can get it to work properly.
+
+For anyone who&#x27;s interested the editor I used was the one created by
+Andrew Broad :
+<a href="http://www.cs.man.ac.uk/~broada/spectrum/download/mmse.zip" rel="noreferrer">http://www.cs.man.ac.uk/~broada/spectrum/download/mmse.zip</a>
+
+Fishy
+
+--
+Spectrum Games Maps at - <a href="http://www.btinternet.com/~fishyfish/" rel="noreferrer">http://www.btinternet.com/~fishyfish/</a>
+Email me using …@… (remove the NOSPAMTHANKS)
+
+
+
+</pre></div><div class="post" id="p145404"><div class="ph"><a class="d" href="#p145404">2002-09-05 15:43:17</a> <span>Fraser Ross</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>It looks like I had the a version.  The corruption was in the area below the
+main screen although the lives miners were ok.  Klive crashes the computer
+when I haven&#x27;t a dial-up-connection.  Its also got a keyboard bug I found
+while playing Chuckie Egg.
+
+Fraser.
+
+
+
+
+
+</pre></div><div class="post" id="p145408"><div class="ph"><a class="d" href="#p145408">2002-09-05 16:55:49</a> <span>Derek Jolly</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>Lee Prince &lt;…@…&gt; wrote in 
+news:…@…:
+
+<span class="qt">&gt; Assuming you&#x27;re using Windows, the best ones (IMHO) are zx32, SPIN and </span>
+<span class="qt">&gt; Klive, although many people still swear by RealSpectrum.</span>
+
+Whereas I just swear at it.  That should change with the Windows version
+though, as I&#x27;ll be able to get sound then.
+-- 
+Derek Jolly (derek at rivetsoft dot freeserve dot co dot uk)
+comp.sys.sinclair folklore FAQ: <a href="http://rivet.50megs.com/cssfolk.html" rel="noreferrer">http://rivet.50megs.com/cssfolk.html</a>
+
+
+
+</pre></div><div class="post" id="p145410"><div class="ph"><a class="d" href="#p145410">2002-09-05 17:36:47</a> <span>Chris Young</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Thu, 05 Sep 2002 10:56:04 GMT, N Fishwick FishyFish ate a Rolo, and turned into...
+N Fishwick FishyFish-Man!  A super-hero with the power to write complete crap
+to comp.sys.sinclair, such as this gem:
+
+<span class="qt">&gt; Some of the older emulators won&#x27;t run 128k files though, so it is</span>
+<span class="qt">&gt; possible to find one that won&#x27;t run it I suppose.</span>
+
+128K .SNAs aren&#x27;t supported well at all.  ASp doesn&#x27;t like it, SpeccyDE
+doesn&#x27;t read any .SNAs (as far as I can tell), and crashes horribly if
+you force it to load the MMCSS one (bug report for Ian if he&#x27;s reading),
+CBSpeccy just switches my monitor off since I reinstalled everything and
+therefore I can&#x27;t try that.  I don&#x27;t have any other 128K emulators to
+try, and can&#x27;t be bothered to download one when the file should have been
+a much better supported 128K .Z80 snapshot in the first place!
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p145411"><div class="ph"><a class="d" href="#p145411">2002-09-05 17:41:11</a> <span>luv-snail</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>Dunny previously ejaculated:
+
+<span class="qt">&gt; Any chance of a screenshot, Fraser? &quot;bits of the screen are corrupt&quot; isn&#x27;t</span>
+<span class="qt">&gt; really a very helpful bug report.</span>
+
+i&#x27;ve got one...
+
+when i load the Manic Miner CSS snap, then go into Video Settings and untick
+the &quot;Automatically Adjust Framerate&quot; box, this happens:
+
+<a href="http://www.heterosapiens.com/~dale/spinprobs.png" rel="noreferrer">http://www.heterosapiens.com/~dale/spinprobs.png</a>
+
+yes.
+
+
+
+
+
+</pre></div><div class="post" id="p145414"><div class="ph"><a class="d" href="#p145414">2002-09-05 17:56:47</a> <span>luv-snail</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>Scribbler previously ejaculated:
+
+<span class="qt">&gt; …@… (N Fishwick (FishyFish)) wrote in</span>
+<span class="qt">&gt; news:…@…:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; &lt;drum roll&gt;</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; After 18 months of hard work (yeah, right) my Manic Miner rejig is</span>
+<span class="qt">&gt;&gt; ready to be revealed to the world for everyone to marvel in it&#x27;s</span>
+<span class="qt">&gt;&gt; splendour.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Downloads are available at: <a href="http://www.fishyfish.net/manic/" rel="noreferrer">http://www.fishyfish.net/manic/</a></span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; I might still tweak it a little based on feedback, and I hope to</span>
+<span class="qt">&gt;&gt; create a standalone 48k TZX version - at the moment it&#x27;s saved as a</span>
+<span class="qt">&gt;&gt; 128k snapshot, so you&#x27;ll need ana emulator capable of running it</span>
+<span class="qt">&gt;&gt; (RealSpectrum works fine and I suspect most others will too), but</span>
+<span class="qt">&gt;&gt; essentially it&#x27;s a full working version. I&#x27;ve personally tested all</span>
+<span class="qt">&gt;&gt; the romms and every one is completeable, so don&#x27;t give up!</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Anyway, have fun and let me know what you think, especially the</span>
+<span class="qt">&gt;&gt; cheatingbastness of it!</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Especially like to know if someone completes it! A special challenge -</span>
+<span class="qt">&gt;&gt; who&#x27;ll be first?!?!?!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Well, I&#x27;ll submit the first high score.... 2,446... :)</span>
+
+i got 3859 so ner :P
+
+The Chuntey Generator is what got me.
+
+
+
+
+
+</pre></div><div class="post" id="p145417"><div class="ph"><a class="d" href="#p145417">2002-09-05 18:13:57</a> <span>N Fishwick FishyFish</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On 5 Sep 2002 18:36:47 +0100, &quot;Chris Young&quot; &lt;…@…&gt;
+farted out the following incoherent babble:
+
+<span class="qt">&gt;On Thu, 05 Sep 2002 10:56:04 GMT, N Fishwick FishyFish ate a Rolo, and turned into...</span>
+<span class="qt">&gt;N Fishwick FishyFish-Man!  A super-hero with the power to write complete crap</span>
+<span class="qt">&gt;to comp.sys.sinclair, such as this gem:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Some of the older emulators won&#x27;t run 128k files though, so it is</span>
+<span class="qt">&gt;&gt; possible to find one that won&#x27;t run it I suppose.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;128K .SNAs aren&#x27;t supported well at all.  ASp doesn&#x27;t like it, SpeccyDE</span>
+<span class="qt">&gt;doesn&#x27;t read any .SNAs (as far as I can tell), and crashes horribly if</span>
+<span class="qt">&gt;you force it to load the MMCSS one (bug report for Ian if he&#x27;s reading),</span>
+<span class="qt">&gt;CBSpeccy just switches my monitor off since I reinstalled everything and</span>
+<span class="qt">&gt;therefore I can&#x27;t try that.  I don&#x27;t have any other 128K emulators to</span>
+<span class="qt">&gt;try, and can&#x27;t be bothered to download one when the file should have been</span>
+<span class="qt">&gt;a much better supported 128K .Z80 snapshot in the first place!</span>
+<span class="qt">&gt;</span>
+I shall endeavour to add a Z80 version to the site. The oversight is
+purely down to my ignorance of file formats, and definitely not in any
+way to exclude anyone - I&#x27;ve spent a long time working on this and
+want as many people as possible to have a go.
+
+I&#x27;ll try and get one there shortly...
+
+Fishy
+
+--
+Spectrum Games Maps at - <a href="http://www.btinternet.com/~fishyfish/" rel="noreferrer">http://www.btinternet.com/~fishyfish/</a>
+Email me using …@… (remove the NOSPAMTHANKS)
+
+
+
+</pre></div><div class="post" id="p145418"><div class="ph"><a class="d" href="#p145418">2002-09-05 18:16:06</a> <span>Fraser Ross</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>I often get the main screen of an emulator stuck in the top left corner and
+the rest of the window is as normal but overwritten.  This happens with
+Spectaculator and Klive.  It might be a display driver problem but I don&#x27;t
+see this with any other software.  Klive does this when the window is moved
+over the right edge of the screen.  Klive sometimes has erratic speed before
+crashing the computer.
+
+Fraser.
+
+
+
+
+
+</pre></div><div class="post" id="p145419"><div class="ph"><a class="d" href="#p145419">2002-09-05 18:22:48</a> <span>Llama-Wax Len</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>
+&quot;N Fishwick (FishyFish)&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I thought you might like that little graphical flourish!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;m especially proud of my Robocops too.</span>
+
+Yes, they are nice, but not as hard as the original though.[1]
+
+Len
+[1] Actually, that&#x27;s a bit of a lie, because I still can&#x27;t get any further
+than this screen. It&#x27;s not that I don&#x27;t know what I&#x27;m doing, I just keep
+messing up all my jumps. Bah.
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+DISCLAIMER: By replying to this message, you hereby acknowledge
+that the ZX Spectrum game &quot;Robocop&quot; was too difficult.
+
+
+
+
+
+</pre></div><div class="post" id="p145421"><div class="ph"><a class="d" href="#p145421">2002-09-05 18:24:31</a> <span>Llama-Wax Len</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>
+&quot;Lee Prince&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Excellent. Well, it would be if I could get anywhere. It took me three</span>
+<span class="qt">&gt; attempts just to work out the first screen, and then I got stuck in</span>
+<span class="qt">&gt; Scribbler&#x27;s fridge. Bah.</span>
+
+Yes, I agree that it was a very difficult screen to start with. Not that
+it&#x27;s very difficult once you&#x27;ve seen how it&#x27;s done but this screen (and a
+few others) do seem to have a habit of completely shafting you if you choose
+to go the wrong way, leaving you no choice but to die. In that respect I
+think it&#x27;s even harder than the original. F&#x27;nar.
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+DISCLAIMER: By replying to this message, you hereby acknowledge
+that the ZX Spectrum game &quot;Robocop&quot; was too difficult.
+
+
+
+
+
+</pre></div><div class="post" id="p145422"><div class="ph"><a class="d" href="#p145422">2002-09-05 18:25:33</a> <span>Llama-Wax Len</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>
+&quot;luv-snail&quot; &lt;…@…&gt; wrote in message
+news:al85p6$1ndo43$…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; i got 3859 so ner :P</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The Chuntey Generator is what got me.</span>
+
+6420! Yay! I am the master[1]!
+
+I wish I&#x27;d used an AIR file now.
+
+Len
+[1] Or at least the master up until Len&#x27;s Robocop Waxing Salon.
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+DISCLAIMER: By replying to this message, you hereby acknowledge
+that the ZX Spectrum game &quot;Robocop&quot; was too difficult.
+
+
+
+
+
+</pre></div><div class="post" id="p145423"><div class="ph"><a class="d" href="#p145423">2002-09-05 18:30:00</a> <span>N Fishwick FishyFish</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On 5 Sep 2002 18:36:47 +0100, &quot;Chris Young&quot; &lt;…@…&gt;
+farted out the following incoherent babble:
+
+<span class="qt">&gt;On Thu, 05 Sep 2002 10:56:04 GMT, N Fishwick FishyFish ate a Rolo, and turned into...</span>
+<span class="qt">&gt;N Fishwick FishyFish-Man!  A super-hero with the power to write complete crap</span>
+<span class="qt">&gt;to comp.sys.sinclair, such as this gem:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Some of the older emulators won&#x27;t run 128k files though, so it is</span>
+<span class="qt">&gt;&gt; possible to find one that won&#x27;t run it I suppose.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;128K .SNAs aren&#x27;t supported well at all.  ASp doesn&#x27;t like it, SpeccyDE</span>
+<span class="qt">&gt;doesn&#x27;t read any .SNAs (as far as I can tell), and crashes horribly if</span>
+<span class="qt">&gt;you force it to load the MMCSS one (bug report for Ian if he&#x27;s reading),</span>
+<span class="qt">&gt;CBSpeccy just switches my monitor off since I reinstalled everything and</span>
+<span class="qt">&gt;therefore I can&#x27;t try that.  I don&#x27;t have any other 128K emulators to</span>
+<span class="qt">&gt;try, and can&#x27;t be bothered to download one when the file should have been</span>
+<span class="qt">&gt;a much better supported 128K .Z80 snapshot in the first place!</span>
+<span class="qt">&gt;</span>
+I&#x27;ve made a Z80 version now which can be downloaded at either of the
+URL&#x27;s. Let me know if there are problems.
+
+<a href="http://www.fishyfish.net/manic/" rel="noreferrer">http://www.fishyfish.net/manic/</a>
+<a href="http://www.btinternet.com/~fishyfish/games/manic/" rel="noreferrer">http://www.btinternet.com/~fishyfish/games/manic/</a>
+
+Fishy
+--
+Spectrum Games Maps at - <a href="http://www.btinternet.com/~fishyfish/" rel="noreferrer">http://www.btinternet.com/~fishyfish/</a>
+Email me using …@… (remove the NOSPAMTHANKS)
+
+
+
+</pre></div><div class="post" id="p145426"><div class="ph"><a class="d" href="#p145426">2002-09-05 19:34:52</a> <span>Fraser Ross</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>I&#x27;ve found Spin can crash after a while.
+
+Look, wow, rare is fairly hard.  Maybe it made similar and as hard as The
+Forgotten Abbey.
+
+Fraser.
+
+
+
+
+
+</pre></div><div class="post" id="p145427"><div class="ph"><a class="d" href="#p145427">2002-09-05 19:45:14</a> <span>N Fishwick FishyFish</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Thu, 5 Sep 2002 20:34:52 +0100, &quot;Fraser Ross&quot;
+&lt;fraserATmembers.v21.co.uk&gt; farted out the following incoherent
+babble:
+
+<span class="qt">&gt;I&#x27;ve found Spin can crash after a while.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Look, wow, rare is fairly hard.  Maybe it made similar and as hard as The</span>
+<span class="qt">&gt;Forgotten Abbey.</span>
+<span class="qt">&gt;</span>
+Oddly enough, that was the inspiration. At least as far as the baddies
+movement patterns were concerned.
+
+Fishy
+--
+Spectrum Games Maps at - <a href="http://www.btinternet.com/~fishyfish/" rel="noreferrer">http://www.btinternet.com/~fishyfish/</a>
+Email me using …@… (remove the NOSPAMTHANKS)
+
+
+
+</pre></div><div class="post" id="p145429"><div class="ph"><a class="d" href="#p145429">2002-09-05 19:50:32</a> <span>Fraser Ross</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>Maybe it could made similar and as hard as The Forgotten Abbey.  Thats what
+I meant to say.  That little red floor could fall faster to be harder.  I&#x27;d
+make the cyan flame area harder.
+
+Fraser.
+
+
+
+
+
+
+</pre></div><div class="post" id="p145433"><div class="ph"><a class="d" href="#p145433">2002-09-05 20:00:52</a> <span>N Fishwick FishyFish</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Thu, 5 Sep 2002 20:50:32 +0100, &quot;Fraser Ross&quot;
+&lt;fraserATmembers.v21.co.uk&gt; farted out the following incoherent
+babble:
+
+<span class="qt">&gt;Maybe it could made similar and as hard as The Forgotten Abbey.  Thats what</span>
+<span class="qt">&gt;I meant to say.  That little red floor could fall faster to be harder.  I&#x27;d</span>
+<span class="qt">&gt;make the cyan flame area harder.</span>
+<span class="qt">&gt;</span>
+You should&#x27;ve seen it before I made it easier! You had to have
+cracjkerjack timing and it was all in the reflexes. [1]
+
+Fishy
+
+[1] Sorry, Jack Burton appeared for a moment there.
+--
+Spectrum Games Maps at - <a href="http://www.btinternet.com/~fishyfish/" rel="noreferrer">http://www.btinternet.com/~fishyfish/</a>
+Email me using …@… (remove the NOSPAMTHANKS)
+
+
+
+</pre></div><div class="post" id="p145435"><div class="ph"><a class="d" href="#p145435">2002-09-05 20:04:11</a> <span>N Fishwick FishyFish</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>There&#x27;s now a High Score Hall of Fame section on the website.
+
+Len is currently leading. There&#x27;s a challenge for you all!
+
+&quot;What&#x27;re the scores on the board Miss Ford?&quot; I hear you all ask.
+Welll...and I hasten to add tha I&#x27;m not the lovely Miss Ford...
+
+Llama Wax Len: 6420
+(Len&#x27;s Robocop Waxing salon)
+
+Luv-Snail: 3859
+(The Chuntey Generator)
+
+Scribbler: 2446
+(Unknown)
+
+
+Fishy
+--
+Spectrum Games Maps at - <a href="http://www.btinternet.com/~fishyfish/" rel="noreferrer">http://www.btinternet.com/~fishyfish/</a>
+Email me using …@… (remove the NOSPAMTHANKS)
+
+
+
+</pre></div><div class="post" id="p145436"><div class="ph"><a class="d" href="#p145436">2002-09-05 20:17:41</a> <span>Lister</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>A long time ago (Thu, 05 Sep 2002 20:04:11 GMT, probably), in a pub
+far, far away, …@… (N Fishwick (FishyFish))
+slammed a pint glass on the table and said :
+
+<span class="qt">&gt;There&#x27;s now a High Score Hall of Fame section on the website.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Len is currently leading. There&#x27;s a challenge for you all!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&quot;What&#x27;re the scores on the board Miss Ford?&quot; I hear you all ask.</span>
+<span class="qt">&gt;Welll...and I hasten to add tha I&#x27;m not the lovely Miss Ford...</span>
+<span class="qt">&gt;</span>
+
+Nah, you&#x27;re more Betty Ford :P
+
+
+
+
+-- 
+www.friendsreunited.co.uk             |use this as
+Listing free, registration ï¿½5/year    |your signature
+Now with international editions       |and post it 
+so you&#x27;ve no excuse not to visit      |wherever you go
+
+
+
+</pre></div><div class="post" id="p145438"><div class="ph"><a class="d" href="#p145438">2002-09-05 20:57:12</a> <span>Woody</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Thu, 5 Sep 2002 20:34:52 +0100, &quot;Fraser Ross&quot;
+&lt;fraserATmembers.v21.co.uk&gt; wrote:
+
+<span class="qt">&gt;I&#x27;ve found Spin can crash after a while.</span>
+
+As can Windows!
+
+
+
+
+</pre></div><div class="post" id="p145440"><div class="ph"><a class="d" href="#p145440">2002-09-05 21:06:00</a> <span>Woody</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Thu, 5 Sep 2002 18:41:11 +0100, &quot;luv-snail&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Dunny previously ejaculated:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Any chance of a screenshot, Fraser? &quot;bits of the screen are corrupt&quot; isn&#x27;t</span>
+<span class="qt">&gt;&gt; really a very helpful bug report.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;i&#x27;ve got one...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;when i load the Manic Miner CSS snap, then go into Video Settings and untick</span>
+<span class="qt">&gt;the &quot;Automatically Adjust Framerate&quot; box, this happens:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;<a href="http://www.heterosapiens.com/~dale/spinprobs.png" rel="noreferrer">http://www.heterosapiens.com/~dale/spinprobs.png</a></span>
+
+Not here it doesn&#x27;t and I&#x27;ve tried it countless times!
+I think that&#x27;s because it&#x27;s already been fixed though :-)
+
+The next release should be quite soon now.
+
+
+
+
+</pre></div><div class="post" id="p145442"><div class="ph"><a class="d" href="#p145442">2002-09-05 21:27:55</a> <span>luv-snail</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>Llama-Wax Len previously ejaculated:
+
+<span class="qt">&gt; &quot;luv-snail&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:al85p6$1ndo43$…@…...</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; i got 3859 so ner :P</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; The Chuntey Generator is what got me.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; 6420! Yay! I am the master[1]!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I wish I&#x27;d used an AIR file now.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Len</span>
+<span class="qt">&gt; [1] Or at least the master up until Len&#x27;s Robocop Waxing Salon.</span>
+<span class="qt">&gt;</span>
+
+I still can&#x27;t get past that Chuntey Generator. It&#x27;s a bit of a bast :)
+
+
+
+
+
+</pre></div><div class="post" id="p145443"><div class="ph"><a class="d" href="#p145443">2002-09-05 22:25:14</a> <span>N Fishwick FishyFish</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Thu, 05 Sep 2002 20:04:11 GMT, …@… (N Fishwick
+(FishyFish)) farted out the following incoherent babble:
+
+<span class="qt">&gt;There&#x27;s now a High Score Hall of Fame section on the website.</span>
+<span class="qt">&gt;</span>
+And to make it fair, no saving the game after each level. Only playing
+straight through until you die or complete it counts.[1]
+
+Fishy
+
+[1] Not that I can really tell if you have, or will attempt to check
+or anything.
+--
+Spectrum Games Maps at - <a href="http://www.btinternet.com/~fishyfish/" rel="noreferrer">http://www.btinternet.com/~fishyfish/</a>
+Email me using …@… (remove the NOSPAMTHANKS)
+
+
+
+</pre></div><div class="post" id="p145444"><div class="ph"><a class="d" href="#p145444">2002-09-06 00:09:14</a> <span>Derek Jolly</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>&quot;luv-snail&quot; &lt;…@…&gt; wrote in 
+news:al8i7q$1osto8$…@…:
+
+<span class="qt">&gt; I still can&#x27;t get past that Chuntey Generator. It&#x27;s a bit of a bast :)</span>
+<span class="qt">&gt; </span>
+
+Another &quot;D&#x27;oh!&quot; moment that one.
+-- 
+Derek Jolly (derek at rivetsoft dot freeserve dot co dot uk)
+comp.sys.sinclair folklore FAQ: <a href="http://rivet.50megs.com/cssfolk.html" rel="noreferrer">http://rivet.50megs.com/cssfolk.html</a>
+
+
+
+</pre></div><div class="post" id="p145446"><div class="ph"><a class="d" href="#p145446">2002-09-06 00:17:45</a> <span>Nomenluni</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>My new high score is 9008 on the Lethal Chutney Deficiency.
+I thank yew, I thank yew.
+Nomenluni
+
+
+
+
+
+
+</pre></div><div class="post" id="p145447"><div class="ph"><a class="d" href="#p145447">2002-09-06 00:21:59</a> <span>Derek Jolly</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>…@… (N Fishwick (FishyFish)) wrote in 
+news:…@…:
+
+<span class="qt">&gt; There&#x27;s now a High Score Hall of Fame section on the website.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Len is currently leading. There&#x27;s a challenge for you all!</span>
+
+Right.  Let&#x27;s see how I do after being on the piss all evening.
+
+One shot.  No restarting.
+
+Score: 6562
+Room: Len&#x27;s Robocop Waxing Salon
+-- 
+Derek Jolly (derek at rivetsoft dot freeserve dot co dot uk)
+comp.sys.sinclair folklore FAQ: <a href="http://rivet.50megs.com/cssfolk.html" rel="noreferrer">http://rivet.50megs.com/cssfolk.html</a>
+
+
+
+</pre></div><div class="post" id="p145449"><div class="ph"><a class="d" href="#p145449">2002-09-06 00:27:22</a> <span>Derek Jolly</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>&quot;Nomenluni&quot; &lt;…@…&gt; wrote in 
+news:al8se3$ap1$…@…:
+
+<span class="qt">&gt; My new high score is 9008 on the Lethal Chutney Deficiency.</span>
+<span class="qt">&gt; I thank yew, I thank yew.</span>
+<span class="qt">&gt; Nomenluni</span>
+
+Bast!  Wait &#x27;til I&#x27;ve sobered up tomorrow.  Then you&#x27;ll be for it.
+Oh yes sirree!
+-- 
+Derek Jolly (derek at rivetsoft dot freeserve dot co dot uk)
+comp.sys.sinclair folklore FAQ: <a href="http://rivet.50megs.com/cssfolk.html" rel="noreferrer">http://rivet.50megs.com/cssfolk.html</a>
+
+
+
+</pre></div><div class="post" id="p145450"><div class="ph"><a class="d" href="#p145450">2002-09-06 00:57:28</a> <span>Matthew Clemson</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>
+&quot;Nomenluni&quot; &lt;…@…&gt; wrote in message
+news:al8se3$ap1$…@…...
+<span class="qt">&gt; My new high score is 9008 on the Lethal Chutney Deficiency.</span>
+<span class="qt">&gt; I thank yew, I thank yew.</span>
+
+Damn. I was getting dead proud of 8193 on Willy Wan%?@[NO CARRIER]
+
+(Oh, and &#x27;lo. I&#x27;m back, an&#x27; warming up for the tour. Although I&#x27;ll probably
+be as chatty as ever...)
+
+-Matt
+
+
+
+
+
+</pre></div><div class="post" id="p145451"><div class="ph"><a class="d" href="#p145451">2002-09-06 01:28:52</a> <span>Matthew Clemson</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>
+&quot;Matthew Clemson&quot; &lt;…@…&gt; wrote in message
+news:al91fe$mob$…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;Nomenluni&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:al8se3$ap1$…@…...</span>
+
+<span class="qt">&gt; &gt; My new high score is 9008 on the Lethal Chutney Deficiency.</span>
+
+<span class="qt">&gt; Damn. I was getting dead proud of 8193 on Willy Wan%?@[NO CARRIER]</span>
+
+10353 on Lethal Chuntey Deficiency. I can sleep in peace.
+
+-Matt
+
+
+
+
+
+</pre></div><div class="post" id="p145455"><div class="ph"><a class="d" href="#p145455">2002-09-06 08:32:57</a> <span>Lee Prince</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>10 PRINT &quot;Derek Jolly woz &#x27;ere 06 Sep 2002&quot;
+20 GO TO 10
+
+<span class="qt">&gt; Right.  Let&#x27;s see how I do after being on the piss all evening.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; One shot.  No restarting.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Score: 6562</span>
+<span class="qt">&gt; Room: Len&#x27;s Robocop Waxing Salon</span>
+
+I got almost exactly the same results just now, although I did complete 
+the game using repeated snapshot-saving (cheatingbast that I am). Wait 
+until you get to the Lister&#x27;s shirt screen...
+
+-- 
+I&#x27;ll get my coat.
+
+
+
+</pre></div><div class="post" id="p145456"><div class="ph"><a class="d" href="#p145456">2002-09-06 08:40:37</a> <span>Philip Kendall</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>In article &lt;…@…&gt;,
+Chris Young &lt;…@…&gt; wrote:
+<span class="qt">&gt;N Fishwick FishyFish-Man!  A super-hero with the power to write complete crap</span>
+<span class="qt">&gt;to comp.sys.sinclair, such as this gem:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Some of the older emulators won&#x27;t run 128k files though, so it is</span>
+<span class="qt">&gt;&gt; possible to find one that won&#x27;t run it I suppose.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;128K .SNAs aren&#x27;t supported well at all.  ASp doesn&#x27;t like it, SpeccyDE</span>
+<span class="qt">&gt;doesn&#x27;t read any .SNAs (as far as I can tell), and crashes horribly if</span>
+<span class="qt">&gt;you force it to load the MMCSS one (bug report for Ian if he&#x27;s reading),</span>
+<span class="qt">&gt;CBSpeccy just switches my monitor off since I reinstalled everything and</span>
+<span class="qt">&gt;therefore I can&#x27;t try that.</span>
+
+&lt;plug&gt;
+SnapConv: <a href="http://www.srcf.ucam.org/~pak21/spectrum/snapconv.html" rel="noreferrer">http://www.srcf.ucam.org/~pak21/spectrum/snapconv.html</a>
+&lt;/plug&gt;
+
+There&#x27;s even a moderately illegal (due to the lack of source code) Amiga
+version at <a href="http://www.lagernet.clara.co.uk/speccy.html" rel="noreferrer">http://www.lagernet.clara.co.uk/speccy.html</a>
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p145457"><div class="ph"><a class="d" href="#p145457">2002-09-06 08:50:49</a> <span>Jeff Braine</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>
+On Wed, 4 Sep 2002, N Fishwick (FishyFish) wrote:
+
+<span class="qt">&gt; Anyway, have fun and let me know what you think, especially the</span>
+<span class="qt">&gt; cheatingbastness of it!</span>
+
+
+What can I say mate? Great stuff :)
+
+<span class="qt">&gt; Especially like to know if someone completes it! A special challenge -</span>
+<span class="qt">&gt; who&#x27;ll be first?!?!?!</span>
+
+
+I just got killed in Scribbler&#x27;s fridge on my second go... I don&#x27;t think
+it&#x27;ll be me somehow.
+
+
+-- 
+Jeff
+
+
+
+
+
+</pre></div><div class="post" id="p145458"><div class="ph"><a class="d" href="#p145458">2002-09-06 08:51:49</a> <span>Jeff Braine</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>
+On Wed, 4 Sep 2002, Dunny wrote:
+
+<span class="qt">&gt; &gt; I&#x27;ve tried it with RealSpectrum and X128, both of which work ok.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Ahem.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; D.</span>
+
+Works fine in SPIN under XP.
+
+-- 
+Jeff
+
+
+
+
+</pre></div><div class="post" id="p145470"><div class="ph"><a class="d" href="#p145470">2002-09-06 17:43:02</a> <span>Chris Young</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Thu, 05 Sep 2002 18:30:00 GMT, N Fishwick FishyFish ate a Rolo, and turned into...
+N Fishwick FishyFish-Man!  A super-hero with the power to write complete crap
+to comp.sys.sinclair, such as this gem:
+
+<span class="qt">&gt; I&#x27;ve made a Z80 version now which can be downloaded at either of the</span>
+<span class="qt">&gt; URL&#x27;s. Let me know if there are problems.</span>
+
+Works a treat, ta!  (I know what I&#x27;ll be doing all weekend now...)
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p145471"><div class="ph"><a class="d" href="#p145471">2002-09-06 17:47:02</a> <span>luv-snail</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>Woody previously ejaculated:
+
+<span class="qt">&gt; On Thu, 5 Sep 2002 18:41:11 +0100, &quot;luv-snail&quot;</span>
+<span class="qt">&gt; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Dunny previously ejaculated:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; Any chance of a screenshot, Fraser? &quot;bits of the screen are corrupt&quot;</span>
+<span class="qt">&gt;&gt;&gt; isn&#x27;t really a very helpful bug report.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; i&#x27;ve got one...</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; when i load the Manic Miner CSS snap, then go into Video Settings and</span>
+<span class="qt">&gt;&gt; untick the &quot;Automatically Adjust Framerate&quot; box, this happens:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; <a href="http://www.heterosapiens.com/~dale/spinprobs.png" rel="noreferrer">http://www.heterosapiens.com/~dale/spinprobs.png</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Not here it doesn&#x27;t and I&#x27;ve tried it countless times!</span>
+<span class="qt">&gt; I think that&#x27;s because it&#x27;s already been fixed though :-)</span>
+
+yes, it&#x27;s already been fixed :)
+
+
+
+
+
+</pre></div><div class="post" id="p145472"><div class="ph"><a class="d" href="#p145472">2002-09-06 17:48:42</a> <span>luv-snail</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>Derek Jolly previously ejaculated:
+
+<span class="qt">&gt; &quot;luv-snail&quot; &lt;…@…&gt; wrote in</span>
+<span class="qt">&gt; news:al8i7q$1osto8$…@…:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; I still can&#x27;t get past that Chuntey Generator. It&#x27;s a bit of a bast :)</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Another &quot;D&#x27;oh!&quot; moment that one.</span>
+
+Yup :)
+
+Stuck on the waxing salon now... I&#x27;ll get there :)
+
+
+
+
+
+</pre></div><div class="post" id="p145473"><div class="ph"><a class="d" href="#p145473">2002-09-06 17:57:40</a> <span>Chris Young</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Thu, 05 Sep 2002 20:04:11 GMT, N Fishwick FishyFish ate a Rolo, and turned into...
+N Fishwick FishyFish-Man!  A super-hero with the power to write complete crap
+to comp.sys.sinclair, such as this gem:
+
+<span class="qt">&gt; There&#x27;s now a High Score Hall of Fame section on the website.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Len is currently leading. There&#x27;s a challenge for you all!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &quot;What&#x27;re the scores on the board Miss Ford?&quot; I hear you all ask.</span>
+<span class="qt">&gt; Welll...and I hasten to add tha I&#x27;m not the lovely Miss Ford...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Llama Wax Len: 6420</span>
+<span class="qt">&gt; (Len&#x27;s Robocop Waxing salon)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Luv-Snail: 3859</span>
+<span class="qt">&gt; (The Chuntey Generator)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Scribbler: 2446</span>
+<span class="qt">&gt; (Unknown)</span>
+
+3453 in Titch&#x27;s Coats.  More practice needed methinks... (but then I have
+only been playing for five minutes)
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p145476"><div class="ph"><a class="d" href="#p145476">2002-09-06 18:04:12</a> <span>Woody</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Thu, 05 Sep 2002 22:25:14 GMT, …@… (N Fishwick
+(FishyFish)) wrote:
+
+<span class="qt">&gt;On Thu, 05 Sep 2002 20:04:11 GMT, …@… (N Fishwick</span>
+<span class="qt">&gt;(FishyFish)) farted out the following incoherent babble:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;There&#x27;s now a High Score Hall of Fame section on the website.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;And to make it fair, no saving the game after each level.</span>
+
+Hehe, I&#x27;ve got a snap saved at the start of every new level I&#x27;ve
+reached so far. I&#x27;m currently on the FOD level.
+
+Note that I haven&#x27;t been submitting highscores here though! :-)
+
+
+
+
+</pre></div><div class="post" id="p145480"><div class="ph"><a class="d" href="#p145480">2002-09-06 18:49:53</a> <span>N Fishwick FishyFish</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Wed, 04 Sep 2002 19:06:46 GMT, …@… (N Fishwick
+(FishyFish)) farted out the following incoherent babble:
+
+Hah! I myself am now top of the scoreboard [1].
+
+Who&#x27;ll be the first to embarrass me by usurping me from my lofty
+perch?
+
+Name 			Level 				Score 
+=====================================================
+Fishy 			*** L@@K, W@W, R@RE! *** 	15987 
+Matthew Clemson 	Lethal Chuntey Deficiency 	10353 
+Nomenluni 		Lethal Chuntey Deficiency 	9008 
+Derek Jolly  		Len&#x27;s Robocop Waxing Salon 	6562 
+Llama Wax 		Len Len&#x27;s Robocop Waxing salon 6420 
+Luv-Snail 		The Chuntey Generator 		3859 
+Scribbler 		Unknown 			2446 
+
+
+Fishy
+
+[1] Although, to be honest you&#x27;d expect better, me being the designer
+and all...
+--
+Spectrum Games Maps at - <a href="http://www.btinternet.com/~fishyfish/" rel="noreferrer">http://www.btinternet.com/~fishyfish/</a>
+Email me using …@… (remove the NOSPAMTHANKS)
+
+
+
+</pre></div><div class="post" id="p145481"><div class="ph"><a class="d" href="#p145481">2002-09-06 19:04:56</a> <span>Nick Humphries</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>Impressive work - currently up to NO CARRIER, but slowly working through the
+levels using the patented save-after-every-level-with-no-lives-lost method.
+
+-- 
+------------------------------------------------------------------------
+<span class="qt">| Nick Humphries                                    …@… |</span>
+<span class="qt">| The Your Sinclair Rock&#x27;n&#x27;Roll Years:        <a href="http://www.ysrnry.co.uk/" rel="noreferrer">http://www.ysrnry.co.uk/</a> |</span>
+<span class="qt">| The Tipshop:                           <a href="http://www.the-tipshop.co.uk/" rel="noreferrer">http://www.the-tipshop.co.uk/</a> |</span>
+------------------------------------------------------------------------
+     If you think THAT&#x27;s bad, it&#x27;s only 110 days until Christmas...
+
+
+
+</pre></div><div class="post" id="p145484"><div class="ph"><a class="d" href="#p145484">2002-09-06 21:02:14</a> <span>Chris Young</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On 6 Sep 2002 18:57:40 +0100, Chris Young (of ï¿½SPOOL &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; 3453 in Titch&#x27;s Coats.  More practice needed methinks... (but then I have</span>
+<span class="qt">&gt; only been playing for five minutes)</span>
+
+3574 now, still on that damn coats one.
+
+Chris
+
+-- 
+Unsatisfactory Software - because it is
+<a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>
+ICQ:28784166
+
+
+
+</pre></div><div class="post" id="p145492"><div class="ph"><a class="d" href="#p145492">2002-09-07 00:49:51</a> <span>Nomenluni</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>Bugger.....14882  Troll Invasion. Bugger.
+Nomenluni
+
+
+&quot;N Fishwick (FishyFish)&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; On Wed, 04 Sep 2002 19:06:46 GMT, …@… (N Fishwick</span>
+<span class="qt">&gt; (FishyFish)) farted out the following incoherent babble:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Hah! I myself am now top of the scoreboard [1].</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Who&#x27;ll be the first to embarrass me by usurping me from my lofty</span>
+<span class="qt">&gt; perch?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Name Level Score</span>
+<span class="qt">&gt; =====================================================</span>
+<span class="qt">&gt; Fishy *** L@@K, W@W, R@RE! *** 15987</span>
+<span class="qt">&gt; Matthew Clemson Lethal Chuntey Deficiency 10353</span>
+<span class="qt">&gt; Nomenluni Lethal Chuntey Deficiency 9008</span>
+<span class="qt">&gt; Derek Jolly  Len&#x27;s Robocop Waxing Salon 6562</span>
+<span class="qt">&gt; Llama Wax Len Len&#x27;s Robocop Waxing salon 6420</span>
+<span class="qt">&gt; Luv-Snail The Chuntey Generator 3859</span>
+<span class="qt">&gt; Scribbler Unknown 2446</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Fishy</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; [1] Although, to be honest you&#x27;d expect better, me being the designer</span>
+<span class="qt">&gt; and all...</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; Spectrum Games Maps at - <a href="http://www.btinternet.com/~fishyfish/" rel="noreferrer">http://www.btinternet.com/~fishyfish/</a></span>
+<span class="qt">&gt; Email me using …@… (remove the</span>
+NOSPAMTHANKS)
+
+
+
+
+
+</pre></div><div class="post" id="p145494"><div class="ph"><a class="d" href="#p145494">2002-09-07 01:32:56</a> <span>Duncan Snowden</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>Program: N Fishwick (FishyFish
+
+Bytes: Thursday
+
+<span class="qt">&gt; I shall endeavour to add a Z80 version to the site.</span>
+
+Hurrah! CBSpeccy does, in fact, load it, but it&#x27;s a bit quiet, due to the
+lack of beeper emulation.
+
+It&#x27;s quite difficult without sound. That&#x27;s my excuse, and I&#x27;m sticking to
+it.
+
+-- 
+Duncan Snowden. 
+
+0 OK, 940:2 
+
+
+
+</pre></div><div class="post" id="p145498"><div class="ph"><a class="d" href="#p145498">2002-09-07 01:49:48</a> <span>Nomenluni</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>Hurrah!
+
+25123 on *** L@@K, W@W, R@RE! ***
+
+There was a trick to bumping the score up though. Just kill the Kong-like
+Willow at the top of Mmmmmm Willow, get the objects and kill yourself.
+Repeat until it clocks for your extra life at 20000 and go to the next level
+with your last life intact.  Not right and proper but still the high score!
+
+Nomenluni
+
+
+&quot;N Fishwick (FishyFish)&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; On Wed, 04 Sep 2002 19:06:46 GMT, …@… (N Fishwick</span>
+<span class="qt">&gt; (FishyFish)) farted out the following incoherent babble:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Hah! I myself am now top of the scoreboard [1].</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Who&#x27;ll be the first to embarrass me by usurping me from my lofty</span>
+<span class="qt">&gt; perch?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Name Level Score</span>
+<span class="qt">&gt; =====================================================</span>
+<span class="qt">&gt; Fishy *** L@@K, W@W, R@RE! *** 15987</span>
+<span class="qt">&gt; Matthew Clemson Lethal Chuntey Deficiency 10353</span>
+<span class="qt">&gt; Nomenluni Lethal Chuntey Deficiency 9008</span>
+<span class="qt">&gt; Derek Jolly  Len&#x27;s Robocop Waxing Salon 6562</span>
+<span class="qt">&gt; Llama Wax Len Len&#x27;s Robocop Waxing salon 6420</span>
+<span class="qt">&gt; Luv-Snail The Chuntey Generator 3859</span>
+<span class="qt">&gt; Scribbler Unknown 2446</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Fishy</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; [1] Although, to be honest you&#x27;d expect better, me being the designer</span>
+<span class="qt">&gt; and all...</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; Spectrum Games Maps at - <a href="http://www.btinternet.com/~fishyfish/" rel="noreferrer">http://www.btinternet.com/~fishyfish/</a></span>
+<span class="qt">&gt; Email me using …@… (remove the</span>
+NOSPAMTHANKS)
+
+
+
+
+
+</pre></div><div class="post" id="p145503"><div class="ph"><a class="d" href="#p145503">2002-09-07 09:41:41</a> <span>N Fishwick FishyFish</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Sat, 7 Sep 2002 02:49:48 +0100, &quot;Nomenluni&quot;
+&lt;…@…&gt; farted out the following incoherent babble:
+
+<span class="qt">&gt;Hurrah!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;25123 on *** L@@K, W@W, R@RE! ***</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;There was a trick to bumping the score up though. Just kill the Kong-like</span>
+<span class="qt">&gt;Willow at the top of Mmmmmm Willow, get the objects and kill yourself.</span>
+<span class="qt">&gt;Repeat until it clocks for your extra life at 20000 and go to the next level</span>
+<span class="qt">&gt;with your last life intact.  Not right and proper but still the high score!</span>
+<span class="qt">&gt;</span>
+That&#x27;s fair enough and a perfectly valid method. You&#x27;re top of the
+tree m&#x27;boy!
+
+Fishy
+--
+Spectrum Games Maps at - <a href="http://www.btinternet.com/~fishyfish/" rel="noreferrer">http://www.btinternet.com/~fishyfish/</a>
+Manic Miner:c.s.s. - <a href="http://www.fishyfish.net/manic/" rel="noreferrer">http://www.fishyfish.net/manic/</a>
+Email me using …@… (remove the NOSPAMTHANKS)
+
+
+
+</pre></div><div class="post" id="p145504"><div class="ph"><a class="d" href="#p145504">2002-09-07 09:55:22</a> <span>Woody</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Sat, 07 Sep 2002 09:41:41 GMT, …@… (N Fishwick
+(FishyFish)) wrote:
+
+<span class="qt">&gt;On Sat, 7 Sep 2002 02:49:48 +0100, &quot;Nomenluni&quot;</span>
+<span class="qt">&gt;&lt;…@…&gt; farted out the following incoherent babble:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;Hurrah!</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;25123 on *** L@@K, W@W, R@RE! ***</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;There was a trick to bumping the score up though. Just kill the Kong-like</span>
+<span class="qt">&gt;&gt;Willow at the top of Mmmmmm Willow, get the objects and kill yourself.</span>
+<span class="qt">&gt;&gt;Repeat until it clocks for your extra life at 20000 and go to the next level</span>
+<span class="qt">&gt;&gt;with your last life intact.  Not right and proper but still the high score!</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;That&#x27;s fair enough and a perfectly valid method. You&#x27;re top of the</span>
+<span class="qt">&gt;tree m&#x27;boy!</span>
+
+Nah, I&#x27;ve beaten that score by a long shot. Of course the POKEs used
+earn me immediate disqualification!
+
+
+
+
+</pre></div><div class="post" id="p145508"><div class="ph"><a class="d" href="#p145508">2002-09-07 10:29:33</a> <span>Chris Young</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On 07 Sep 2002 01:32:56, Duncan Snowden ate a Rolo, and turned into...
+Duncan Snowden-Man!  A super-hero with the power to write complete crap
+to comp.sys.sinclair, such as this gem:
+
+<span class="qt">&gt; &gt; I shall endeavour to add a Z80 version to the site.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Hurrah! CBSpeccy does, in fact, load it, but it&#x27;s a bit quiet, due to the</span>
+<span class="qt">&gt; lack of beeper emulation.</span>
+
+CBSpeccy just switches my monitor off :-(  It never used to, mind you my
+icon dragging used to be smoother as well.  I did something strange to
+this machine when I reinstalled it, but I&#x27;m not entirely sure what as as
+far as[1] I am aware all the same nasty hacks and patches are installed
+as they were before.  Tch, eh?  Erm, why don&#x27;t you use ASp - that loads
+the Z80 perfectly (albeit runs slightly slower)
+
+Chris
+
+[1] y Too Many &quot;as&quot;s 17:2
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p145529"><div class="ph"><a class="d" href="#p145529">2002-09-07 18:56:22</a> <span>luv-snail</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>Lee Prince previously ejaculated:
+
+<span class="qt">&gt; 10 PRINT &quot;Derek Jolly woz &#x27;ere 06 Sep 2002&quot;</span>
+<span class="qt">&gt; 20 GO TO 10</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Right.  Let&#x27;s see how I do after being on the piss all evening.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; One shot.  No restarting.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Score: 6562</span>
+<span class="qt">&gt;&gt; Room: Len&#x27;s Robocop Waxing Salon</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I got almost exactly the same results just now, although I did complete</span>
+<span class="qt">&gt; the game using repeated snapshot-saving (cheatingbast that I am).</span>
+
+Muhh.. I didn&#x27;t think of cheating like that, speccy traditionalist that i
+am.
+
+even with cheatingbastness i haven&#x27;t got past Lethal Chuntey Deficiency yet,
+but I&#x27;m shit at Manic Miner.
+
+
+
+
+
+</pre></div><div class="post" id="p145601"><div class="ph"><a class="d" href="#p145601">2002-09-08 17:01:24</a> <span>Nomenluni</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre><span class="qt">&gt;</span>
+<span class="qt">&gt; That&#x27;s fair enough and a perfectly valid method. You&#x27;re top of the</span>
+<span class="qt">&gt; tree m&#x27;boy!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Fishy</span>
+<span class="qt">&gt; --</span>
+
+I had a go without the slightly dodgy point accumulator on Mmmmmm Willow -
+although not quite as high a score as previous still not bad.  Vampire
+Willow - 24264 pts
+Nomenluni
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p145616"><div class="ph"><a class="d" href="#p145616">2002-09-08 21:31:23</a> <span>Llama-Wax Len</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>
+&quot;N Fishwick (FishyFish)&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; And to make it fair, no saving the game after each level. Only playing</span>
+<span class="qt">&gt; straight through until you die or complete it counts.</span>
+
+Well I am honest enough to admit that I eventually gave up trying to beat my
+high score or complete it in &quot;normal&quot; play and reverted to the method above
+as I just wanted to see what the other screens were like.
+
+I have now completed it and I can safely say that without saving it
+frequently, there is no way in hell I would ever come even close to
+completing it.
+
+Great game though! I particularly liked (a) &quot;my&quot; screen - the hat and
+everything, (b) level 18 and (c) the way that the Listy&#x27;s shirt screen
+really hurt your eyes - just like the real thing!
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+DISCLAIMER: By replying to this message, you hereby acknowledge
+that the ZX Spectrum game &quot;Robocop&quot; was too difficult.
+
+
+
+
+
+</pre></div><div class="post" id="p145617"><div class="ph"><a class="d" href="#p145617">2002-09-08 21:32:09</a> <span>Llama-Wax Len</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>
+&quot;N Fishwick (FishyFish)&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; [1] Although, to be honest you&#x27;d expect better, me being the designer</span>
+<span class="qt">&gt; and all...</span>
+
+Nothing wrong with that - I still can&#x27;t complete my CSSCGC2000 entry, and
+believe me I still try occasionally.
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+DISCLAIMER: By replying to this message, you hereby acknowledge
+that the ZX Spectrum game &quot;Robocop&quot; was too difficult.
+
+
+
+
+
+</pre></div><div class="post" id="p145626"><div class="ph"><a class="d" href="#p145626">2002-09-08 22:59:30</a> <span>Chris Young</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Sun, 8 Sep 2002 22:31:23 +0100, Llama-Wax Len ate a Rolo, and turned into...
+Llama-Wax Len-Man!  A super-hero with the power to write complete crap
+to comp.sys.sinclair, such as this gem:
+
+<span class="qt">&gt; Great game though! I particularly liked (a) &quot;my&quot; screen - the hat and</span>
+<span class="qt">&gt; everything, (b) level 18 and (c) the way that the Listy&#x27;s shirt screen</span>
+<span class="qt">&gt; really hurt your eyes - just like the real thing!</span>
+
+What&#x27;s so special about level 18?
+
+(sorry, somebody had to say it, so I figured it may as well be me)
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p145713"><div class="ph"><a class="d" href="#p145713">2002-09-10 01:09:53</a> <span>Duncan Snowden</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>Chris Young. Saturday. comp.sys.sinclair. Tch, eh?
+
+<span class="qt">&gt; On 07 Sep 2002 01:32:56, Duncan Snowden ate a Rolo, and turned into...</span>
+<span class="qt">&gt; Duncan Snowden-Man!  A super-hero with the power to write complete crap</span>
+<span class="qt">&gt; to comp.sys.sinclair, such as this gem:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;&gt; I shall endeavour to add a Z80 version to the site.</span>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Hurrah! CBSpeccy does, in fact, load it, but it&#x27;s a bit quiet, due to</span>
+<span class="qt">&gt;&gt; the lack of beeper emulation.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; CBSpeccy just switches my monitor off :-( It never used to, mind you my</span>
+<span class="qt">&gt; icon dragging used to be smoother as well. I did something strange to</span>
+<span class="qt">&gt; this machine when I reinstalled it, but I&#x27;m not entirely sure what as</span>
+<span class="qt">&gt; as far as[1] I am aware all the same nasty hacks and patches are</span>
+<span class="qt">&gt; installed as they were before. Tch, eh? Erm, why don&#x27;t you use ASp -</span>
+<span class="qt">&gt; that loads the Z80 perfectly (albeit runs slightly slower)</span>
+
+Well, I am. I meant that CBSpeccy loads the SNA.
+
+<span class="qt">&gt; [1] y Too Many &quot;as&quot;s 17:2</span>
+ 
+-- 
+Duncan Snowden. 
+
+6 Number too big, 1060:2 
+
+
+
+</pre></div><div class="post" id="p145717"><div class="ph"><a class="d" href="#p145717">2002-09-10 08:52:24</a> <span>Mike Wynne</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>
+&quot;N Fishwick (FishyFish)&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; &lt;drum roll&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; After 18 months of hard work (yeah, right) my Manic Miner rejig is</span>
+<span class="qt">&gt; ready to be revealed to the world for everyone to marvel in it&#x27;s</span>
+<span class="qt">&gt; splendour.</span>
+
+Can I proclaim myself the crappest game player of all now?
+
+I&#x27;v been playing with it for nearly a week now and I still can&#x27;t get off the
+first screen.
+
+MikeW
+
+
+
+
+
+
+</pre></div><div class="post" id="p145719"><div class="ph"><a class="d" href="#p145719">2002-09-10 09:19:37</a> <span>Andy Cadley</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>
+
+On Tue, 10 Sep 2002, Mike Wynne wrote:
+
+<span class="qt">&gt; I&#x27;v been playing with it for nearly a week now and I still can&#x27;t get off</span>
+
+Well stop it, you&#x27;ll go blind!
+
+Mmmmm creative editing...&lt;/homer&gt;
+
+AndyC
+
+
+
+
+</pre></div><div class="post" id="p145756"><div class="ph"><a class="d" href="#p145756">2002-09-10 22:01:11</a> <span>Paul French</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Fri, 06 Sep 2002 18:49:53 GMT, …@… (N Fishwick
+(FishyFish)) wrote:
+
+<span class="qt">&gt;On Wed, 04 Sep 2002 19:06:46 GMT, …@… (N Fishwick</span>
+<span class="qt">&gt;(FishyFish)) farted out the following incoherent babble:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Hah! I myself am now top of the scoreboard [1].</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Who&#x27;ll be the first to embarrass me by usurping me from my lofty</span>
+<span class="qt">&gt;perch?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Name 			Level 				Score </span>
+<span class="qt">&gt;=====================================================</span>
+<span class="qt">&gt;Fishy 			*** L@@K, W@W, R@RE! *** 	15987 </span>
+<span class="qt">&gt;Matthew Clemson 	Lethal Chuntey Deficiency 	10353 </span>
+<span class="qt">&gt;Nomenluni 		Lethal Chuntey Deficiency 	9008 </span>
+<span class="qt">&gt;Derek Jolly  		Len&#x27;s Robocop Waxing Salon 	6562 </span>
+<span class="qt">&gt;Llama Wax 		Len Len&#x27;s Robocop Waxing salon 6420 </span>
+<span class="qt">&gt;Luv-Snail 		The Chuntey Generator 		3859 </span>
+<span class="qt">&gt;Scribbler 		Unknown 			2446 </span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Fishy</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;[1] Although, to be honest you&#x27;d expect better, me being the designer</span>
+<span class="qt">&gt;and all...</span>
+
+What&#x27;s the web page for this again? I can&#x27;t remamber were I downloaded
+it from.
+
+Thanks.
+
+-- 
+Paul French
+             …@…
+
+
+
+</pre></div><div class="post" id="p145761"><div class="ph"><a class="d" href="#p145761">2002-09-11 07:09:42</a> <span>Lee Prince</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>10 PRINT &quot;Paul French woz &#x27;ere 10 Sep 2002&quot;
+20 GO TO 10
+ 
+<span class="qt">&gt; What&#x27;s the web page for this again? I can&#x27;t remamber were I downloaded</span>
+<span class="qt">&gt; it from.</span>
+
+<a href="http://www.fishyfish.net/manic/" rel="noreferrer">http://www.fishyfish.net/manic/</a>
+
+-- 
+Lee Prince &lt;mailto:leee.prince[at]virgin.net&gt;
+
+
+
+</pre></div><div class="post" id="p145776"><div class="ph"><a class="d" href="#p145776">2002-09-11 22:00:41</a> <span>Paul French</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On 11 Sep 2002 07:09:42 GMT, Lee Prince &lt;…@…&gt; wrote:
+
+<span class="qt">&gt;10 PRINT &quot;Paul French woz &#x27;ere 10 Sep 2002&quot;</span>
+<span class="qt">&gt;20 GO TO 10</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; What&#x27;s the web page for this again? I can&#x27;t remamber were I downloaded</span>
+<span class="qt">&gt;&gt; it from.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;<a href="http://www.fishyfish.net/manic/" rel="noreferrer">http://www.fishyfish.net/manic/</a></span>
+
+Thanks Lee.
+
+-- 
+Paul French
+             …@…
+
+
+
+</pre></div><div class="post" id="p145849"><div class="ph"><a class="d" href="#p145849">2002-09-13 18:52:02</a> <span>Llama-Wax Len</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>
+&quot;Mike Wynne&quot; &lt;…@…&gt; wrote in message
+news:alkbra$1qsbg1$…@…...
+<span class="qt">&gt; Can I proclaim myself the crappest game player of all now?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;v been playing with it for nearly a week now and I still can&#x27;t get off</span>
+the
+<span class="qt">&gt; first screen.</span>
+
+Woo-hoo! It&#x27;s official! I&#x27;m better than Mike Wynne at something [vaguely]
+Spectrum related! Rolos are on me!
+
+(Having now completed it using the save method, I am now trying to see how
+far I can get honestly, while RZXing myself with the latest Spin - but I
+keep arsing it up on the Len level, ironically enough)
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+DISCLAIMER: By replying to this message, you hereby acknowledge
+that the ZX Spectrum game &quot;Robocop&quot; was too difficult.
+
+
+
+
+
+</pre></div><div class="post" id="p145871"><div class="ph"><a class="d" href="#p145871">2002-09-13 21:39:12</a> <span>Peter THOMA$</span> <span>Re: ANNOUNCE: Manic Miner: comp.sys.sinclair - It&#x27;s ready!!!!!</span></div><pre>On Fri, 13 Sep 2002 19:52:02 +0100, &quot;Llama-Wax Len&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;I keep arsing it up on the Len level, ironically enough)</span>
+
+DISCLAIMER: By replying to this message, you hereby acknowledge
+that the ZX Spectrum game &quot;Manic Miner : CSS&quot; had a level entitled
+&quot;Len&#x27;s Robocop Llama Waxing Salon&quot; which was too difficult.
+
+-- 
+pete {at} horseshoe-inn . co . uk
+[New here? See <a href="http://faq.sinclairspectrum.com" rel="noreferrer">http://faq.sinclairspectrum.com</a> ]
+
+&quot;First screen? I can&#x27;t even complete the main menu without a cheat mode.&quot;
+ - Llama-Wax Len
+
+
+
+</pre></div></main></body></html>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Z80 tape interface and the Oric · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Z80 tape interface and the Oric</h1><p class="facts">3 posts, 1999-08-30 – 1999-09-02</p><div class="post" id="p53570"><div class="ph"><a class="d" href="#p53570">1999-08-30 19:26:39</a> <span>jim groom</span> </div><pre>Hi all, 
+
+The following is the text of a message I have posted in comp.sys.oric,
+but as it has some relevance to this group (and people here are more
+likely to be aware of what I am blabbering about) I thought I&#x27;d post it
+here too. So, if anyone can help with the below, please get in touch,
+
+&quot;I was wondering about the possibility of using the tape interface which
+is for use with the Sinclair Spectrum emulator &#x27;Z80&#x27; by Gerton Lunter.
+This device plugs into your PC Parallel Port at one end and you plug
+your cassette recorder leads into the other (connected to your trusty
+tape player of course). You can then load your Spectrum tape into your
+emulator as if you had a real Speccy with a tape recorder. You can also
+record the tape image and save that too. Recording out to tape is also
+allowed (&amp; works well). If anyone is interested, a diagram of this
+device is supplied with the Z80 program (shareware or registered
+version). If possible, it would be nice if someone could find out some
+way of using this interface to get programs into &amp; out of Euphoric onto
+real cassette tape. Can it be done? Is anyone out there willing and able
+to make this happen? I believe this interface may also be usable with a
+Dragon emulator, so how about the emulator community standardising on
+this device as the standard bridge between the 8 bit emulators and tape
+recorders? 
+I would welcome everyones thoughts on this matter.&quot;
+
+Regards,
+
+Jim
+-- 
+ ________________________________________________________________
+<span class="qt">|                                                                |</span>
+<span class="qt">|email: …@…                                   |</span>
+<span class="qt">|                                                                |</span>
+<span class="qt">|Website for fans of the Oric computer and the Sega Master System|</span>
+<span class="qt">|game Miracle Warriors at:                                       |</span>
+<span class="qt">|                                                                |</span>
+<span class="qt">|<a href="http://freespace.virgin.net/james.groom/homepage.htm" rel="noreferrer">http://freespace.virgin.net/james.groom/homepage.htm</a>            |</span>
+<span class="qt">|________________________________________________________________|</span>
+
+
+</pre></div><div class="post" id="p53707"><div class="ph"><a class="d" href="#p53707">1999-09-01 15:35:37</a> <span>…@…</span> <span>Re: Z80 tape interface and the Oric</span></div><pre>If an infinite number of monkeys were allowed to peck away at Sinclair
+Spectrums, they would eventually reproduce the following, which was
+posted on Mon, 30 Aug 1999 20:27:01 +0100 by Jim Groom
+:
+
+<span class="qt">&gt;&quot;I was wondering about the possibility of using the tape interface which</span>
+<span class="qt">&gt;is for use with the Sinclair Spectrum emulator &#x27;Z80&#x27; by Gerton Lunter.</span>
+<span class="qt">&gt;[...]     If possible, it would be nice if someone could find out some</span>
+<span class="qt">&gt;way of using this interface to get programs into &amp; out of Euphoric onto</span>
+<span class="qt">&gt;real cassette tape. Can it be done? Is anyone out there willing and able</span>
+<span class="qt">&gt;to make this happen? I believe this interface may also be usable with a</span>
+<span class="qt">&gt;Dragon emulator, so how about the emulator community standardising on</span>
+<span class="qt">&gt;this device as the standard bridge between the 8 bit emulators and tape</span>
+<span class="qt">&gt;recorders? </span>
+<span class="qt">&gt;I would welcome everyones thoughts on this matter.&quot;</span>
+
+Sounds like an excellent idea.  Now if only we could line up ourselves
+an alternative supplier for the built version, now that Brian Gaff has
+had to give up...
+
+BTW:  &quot;Euphoric&quot;?  Is there also an Oric emulator called &quot;Historic&quot;?
+If not, there&#x27;s an idea for the name of the next one...  And how about
+&quot;Atmospheric&quot;?
+
+-- 
+--------------------------------------------------
+Regards, Robert the Eboreg
+New?  Read the FAQ:  <a href="http://www.kendalls.demon.co.uk/cssfaq/" rel="noreferrer">http://www.kendalls.demon.co.uk/cssfaq/</a>
+Got a binary file to post?  Go to alt.binaries.emulators.misc
+
+
+</pre></div><div class="post" id="p53738"><div class="ph"><a class="d" href="#p53738">1999-09-02</a> <span>chris young</span> <span>Re: Z80 tape interface and the Oric</span></div><pre>On Mon, 30 Aug 1999 20:27:01 +0100, Jim Groom (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; &quot;I was wondering about the possibility of using the tape interface which</span>
+<span class="qt">&gt; is for use with the Sinclair Spectrum emulator &#x27;Z80&#x27; by Gerton Lunter.</span>
+<span class="qt">&gt; This device plugs into your PC Parallel Port at one end and you plug</span>
+<span class="qt">&gt; your cassette recorder leads into the other (connected to your trusty</span>
+<span class="qt">&gt; tape player of course). You can then load your Spectrum tape into your</span>
+<span class="qt">&gt; emulator as if you had a real Speccy with a tape recorder. You can also</span>
+<span class="qt">&gt; record the tape image and save that too. Recording out to tape is also</span>
+<span class="qt">&gt; allowed (&amp; works well). If anyone is interested, a diagram of this</span>
+<span class="qt">&gt; device is supplied with the Z80 program (shareware or registered</span>
+<span class="qt">&gt; version). If possible, it would be nice if someone could find out some</span>
+<span class="qt">&gt; way of using this interface to get programs into &amp; out of Euphoric onto</span>
+<span class="qt">&gt; real cassette tape. Can it be done? Is anyone out there willing and able</span>
+<span class="qt">&gt; to make this happen?</span>
+
+How about hassling Tomaz (Hi Tomaz!) to add Oric tape support to
+the TZX format (if it isn&#x27;t already in there), and then use Taper or
+equivalent to create a digital image of tape.  The emulator would need
+to be updated, of course.
+
+Chris
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
+<span class="qt">| <a href="http://www.bigfoot.com/~ysac" rel="noreferrer">http://www.bigfoot.com/~ysac</a>              |</span>
++------------------------------ICQ:28784166-+
+
+
+</pre></div></main></body></html>

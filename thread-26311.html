@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANN: Spanish 128K Editor ROM translated. · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ANN: Spanish 128K Editor ROM translated.</h1><p class="facts">20 posts, 2002-10-02 – 2002-10-05</p><div class="post" id="p147443"><div class="ph"><a class="d" href="#p147443">2002-10-02 18:03:54</a> <span>Andrew Owen</span> </div><pre>ï¿½Hola!
+
+Muchas gracias a cada uno en es.comp.sistemas.sinclair para su ayuda.
+
+Apuntes:
+
+En la mayor parte de respetos el espaï¿½ol 128 Redactor funciona justo como
+el 128 Redactor britï¿½nico.
+
+Hay un nï¿½mero de diferencias:
+
+1) no hay ningunos menï¿½s.
+
+La calculadora trabaja de la lï¿½nea de mando (cuando el cursor es
+directamente encima de la barra de informaciï¿½n en el fondo de la
+pantalla). Usted hasta puede hacer cï¿½lculos que corren en este modo. No
+hay ningï¿½n autocargador o probador de cinta aunque. La renumeraciï¿½n es
+posible con un nuevo mando(orden).
+
+2) la barra mira diferente.
+
+La barra de informaciï¿½n le dice si usted tiene la MAYUSCULA, GRAF. &amp;
+EXTENDIDO el modo seleccionado.
+
+3) diferencias de Redactor.
+
+Usted no puede entrar en ï¿½rdenes en el caso inferior (a diferencia de
+sobre la versiï¿½n britï¿½nica), pero usted puede entrar en cï¿½digos de control
+como en 48 Bï¿½sico y ellos se resaltarï¿½n con los pares de estilizado &#x27; la G
+para mostrar la presencia de cï¿½digos de control. Un error de sintaxis serï¿½
+destacado por un poco de bicho UDG. Algunos bichos en la versiï¿½n britï¿½nica
+no son el presente(regalo) en esta versiï¿½n. La llave de REVISIï¿½N cambia de
+la pantalla principal a la lï¿½nea de mando, mï¿½s bien que invocar menï¿½s.
+
+4) Nuevas ï¿½rdenes.
+
+El redactor espaï¿½ol tiene algunas nuevas ï¿½rdenes (que debe ser entrado de
+la lï¿½nea de mando, no la pantalla principal).
+
+BORRAR n1, n2 - Quitan lï¿½neas de n1 a n2 del listado.
+
+NUMERO [n1], [n2] - Vuelven a numerar el listado que comienza en la lï¿½nea
+n1 en los incrementos de n2. Los valores de falta para n1 y n2 son ambos
+10.
+
+EDITAR - Interruptor a la pantalla principal (como apretamiento de la
+llave de EDITAR).
+
+EDITAR n - Corrige un nï¿½mero de lï¿½nea dado.
+
+EDITAR n$ - Se llama al editor de textos para corregir una variable de
+cuerda dada.
+
+ANCHO [n1], [n2] - no tengo ni idea para quï¿½ esto es. ï¿½RS232 quizï¿½s?
+
+5) editor de textos Empotrado.
+
+La REVISIï¿½N de mando(orden) a$ abrirï¿½ al editor de textos para cambiar el
+contenido de a$. La pantalla serï¿½ limpiada y el contenido (si alguno) de
+a$ mostrado con una barra de informaciï¿½n ampliada en el fondo de la
+pantalla como esto: [Lï¿½NEA: 1 COL.: 1 E/P] [MODO: INSERCION] Si usted
+selecciona el GRAF. &amp; EXTENDIDO el modo ellos se resaltarï¿½n bajo la Lï¿½NEA:
+como siempre. La Lï¿½NEA Y CNEL son la posiciï¿½n de cursor. &#x27;E/P&#x27; selecciona
+si una palabra que usted escribe a mï¿½quina en el borde de la pantalla se
+abrigue alrededor o no. Usted puede conectarlo [EXTENDIDO]-Q. Los tres
+modos de entrada son &#x27;INSERCION&#x27; (la falta), &#x27; el S/A &#x27;, &#x27;SUSTITUCION&#x27;. El
+primero colocarï¿½ el texto en la posiciï¿½n de cursor, el segundo intenta
+proporcionar un margen de mano izquierda (por el ï¿½xito que varï¿½a), y
+sustituir le permite escribir a mï¿½quina sobre lo que usted ya ha escrito a
+mï¿½quina. Como con el redactor de lenguaje BASIC, el editor de textos usa
+las funciones de teclado numï¿½rico suplementarias y estos son en el mismo
+lugar que sobre la versiï¿½n britï¿½nica. Salida el redactor por presionando
+[EDITAR] llave.
+
+
+***
+
+
+Many thanks to everyone at es.comp.sistemas.sinclair for their help.
+
+Notes:
+
+In most respects the Spanish 128 Editor functions just like the British
+128 Editor.
+There are a number of differences:
+
+1) There are no menus.
+
+The calculator works from the command line (when the cursor is directly
+above the info bar at the bottom of the screen). You can even do running
+calculations in this mode. There is no auto-loader or tape-tester though.
+Renumbering is possible with a new command.
+
+
+2) The bar looks different.
+
+The info bar tells you if you have CAPS LOCK, GRAPH or EXTEND mode selected.
+
+
+3) Editor differences.
+
+You cannot enter commands in lower case (unlike on the British version),
+but you can enter control codes as in 48 Basic and they will show up with
+pairs of stylized &#x27;G&#x27;s to show the presence of control codes. A syntax
+error will be highlighted by a little bug UDG. Some of the bugs in the
+British version are not present in this version. The EDIT key switches
+from the main screen to the command line, rather than invoking menus.
+
+
+4) New commands.
+
+The Spanish editor has some new commands (which must be entered from the
+command line, not the main screen).
+
+DELETE n1,n2 - Remove lines from n1 to n2 from the listing.
+
+RENUM [n1],[n2] - Renumber the listing starting at line n1 in increments
+of n2. Default values for n1 and n2 are both 10.
+
+EDIT - Switch to the main screen (like pressing the EDIT key).
+
+EDIT n - Edit a given line number.
+
+EDIT n$ - Call the text editor to edit a given string variable.
+
+WIDTH [n1],[n2] - I have no idea what this is for. RS232 perhaps?
+
+
+5) Built-in text editor.
+
+The command EDIT a$ will open the text editor to change the contents of
+a$. The screen will be cleared and the contents (if any) of a$ displayed
+with an extended info bar at the bottom of the screen like this:
+
+[LINE:    1  COL.:   1  WRAP ON  ]
+[             MODE: INSERT       ]
+
+If you select GRAPH or EXTEND mode they will show up under LINE: as usual.
+LINE and COL are the cursor position. &#x27;WRAP&#x27; selects if a word you are
+typing at the edge of the screen should wrap around or not. You can turn
+it on and off with [EXTEND]-Q. The three input modes are &#x27;INSERT&#x27;
+(default), &#x27;AUTO MARGIN&#x27;, and &#x27;REPLACE&#x27;. The first will place text at the
+cursor position, the second attempts to provide a left hand margin (with
+varying success), and replace allows you to type over what you have
+already typed. As with the BASIC editor, the text editor uses the extra
+keypad functions and these are in the same place as on the British
+version. Exit the editor by pressing the [EDIT] key.
+
+-Andrew Owen, 01/10/02
+
+-- 
+I&#x27;m really here. You&#x27;re not imagining it.
+
+
+
+</pre></div><div class="post" id="p147451"><div class="ph"><a class="d" href="#p147451">2002-10-02 20:31:51</a> <span>Dave the Lurker</span> <span>Re: ANN: Spanish 128K Editor ROM translated.</span></div><pre>In article &lt;…@…
+addr.btopenworld.com&gt;, …@… says...
+
+[snip Spanish editor announcement]
+
+Can the translated version be downloaded anywhere?
+
+Apologies if I missed a URL in that post, but I couldn&#x27;t see one.
+
+cheers
+Dave
+
+
+
+</pre></div><div class="post" id="p147453"><div class="ph"><a class="d" href="#p147453">2002-10-02 20:43:18</a> <span>Lee Prince</span> <span>Re: ANN: Spanish 128K Editor ROM translated.</span></div><pre>10 PRINT &quot;Dave the Lurker woz &#x27;ere 02 Oct 2002&quot;
+20 GO TO 10
+
+<span class="qt">&gt; In article &lt;…@…</span>
+<span class="qt">&gt; addr.btopenworld.com&gt;, …@… says...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; [snip Spanish editor announcement]</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Can the translated version be downloaded anywhere?</span>
+
+No need, it&#x27;s directly after the Spanish version.
+
+-- 
+Lee Prince &lt;mailto:leee.prince[at]virgin.net&gt;
+
+
+
+</pre></div><div class="post" id="p147455"><div class="ph"><a class="d" href="#p147455">2002-10-02 20:53:00</a> <span>Dave the Lurker</span> <span>Re: ANN: Spanish 128K Editor ROM translated.</span></div><pre>In article &lt;…@…&gt;, 
+…@… says...
+<span class="qt">&gt; 10 PRINT &quot;Dave the Lurker woz &#x27;ere 02 Oct 2002&quot;</span>
+<span class="qt">&gt; 20 GO TO 10</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; In article &lt;…@…</span>
+<span class="qt">&gt; &gt; addr.btopenworld.com&gt;, …@… says...</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; [snip Spanish editor announcement]</span>
+<span class="qt">&gt; &gt; </span>
+<span class="qt">&gt; &gt; Can the translated version be downloaded anywhere?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; No need, it&#x27;s directly after the Spanish version.</span>
+I meant the translated ROM, just incase that was not clear :)
+
+In other news, prepare to marvel at the crapness that is topshelf 
+challenge ported back to the speccy from the Dreamcast VMU.
+
+Porn in a text only window at 8x8 character resolution has to be seen to 
+be believed!
+
+cheers
+Dave
+
+
+
+</pre></div><div class="post" id="p147456"><div class="ph"><a class="d" href="#p147456">2002-10-02 20:56:08</a> <span>Ivan Ruiz Etxabe</span> <span>Re: ANN: Spanish 128K Editor ROM translated.</span></div><pre>
+<span class="qt">&gt;&gt; </span>
+<span class="qt">&gt;&gt; Can the translated version be downloaded anywhere?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;No need, it&#x27;s directly after the Spanish version.</span>
+
+so what :)
+
+Ivan
+
+
+
+
+</pre></div><div class="post" id="p147457"><div class="ph"><a class="d" href="#p147457">2002-10-02 21:07:45</a> <span>Lee Prince</span> <span>Re: ANN: Spanish 128K Editor ROM translated.</span></div><pre>10 PRINT &quot;Ivan Ruiz Etxabe woz &#x27;ere 02 Oct 2002&quot;
+20 GO TO 10
+
+<span class="qt">&gt;&gt;&gt; Can the translated version be downloaded anywhere?</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;No need, it&#x27;s directly after the Spanish version.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; so what :)</span>
+
+Gah. I thought Dave was on about the translation of the post, not the ROM. 
+I&#x27;ll get my coat.
+
+-- 
+Lee Prince &lt;mailto:leee.prince[at]virgin.net&gt;
+
+
+
+</pre></div><div class="post" id="p147465"><div class="ph"><a class="d" href="#p147465">2002-10-02 23:35:06</a> <span>Chris Young</span> <span>FAO: Andrew Owen (or &quot;Move along, nothing to see here&quot;) [previously known as Re: ANN: Spanish 128K Editor ROM translated.]</span></div><pre>On Wed, 02 Oct 2002 19:03:54 +0100, Andrew Owen ate a Rolo, and turned into...
+Andrew Owen-Man!  A super-hero with the power to write complete crap
+to comp.sys.sinclair, such as this gem:
+
+<span class="qt">&gt; -Andrew Owen, 01/10/02</span>
+
+Did you get the email I just sent you about SE BASIC?  The first attempt
+resulted in this error message:
+
+    host mxs.mail.ru [194.67.57.100]: 550-[195.92.193.211] - Access
+prohibited by administrator
+    550 rejected: administrative prohibition
+
+I tried again and it seems to have gone but I wanted to check you got it.
+
+Thanks
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p147469"><div class="ph"><a class="d" href="#p147469">2002-10-03 03:18:13</a> <span>Andrew Owen</span> <span>Re: FAO: Andrew Owen (or &quot;Move along, nothing to see here&quot;) [previously known as Re: ANN: Spanish 128K Editor ROM translated.]</span></div><pre>In article &lt;…@…&gt;, &quot;Chris Young&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; On Wed, 02 Oct 2002 19:03:54 +0100, Andrew Owen ate a Rolo, and turned into...</span>
+<span class="qt">&gt; Andrew Owen-Man!  A super-hero with the power to write complete crap</span>
+<span class="qt">&gt; to comp.sys.sinclair, such as this gem:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; -Andrew Owen, 01/10/02</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Did you get the email I just sent you about SE BASIC?  The first attempt</span>
+<span class="qt">&gt; resulted in this error message:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;     host mxs.mail.ru [194.67.57.100]: 550-[195.92.193.211] - Access</span>
+<span class="qt">&gt; prohibited by administrator</span>
+<span class="qt">&gt;     550 rejected: administrative prohibition</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I tried again and it seems to have gone but I wanted to check you got it.</span>
+
+Got it. Cheers. Went out to see a live band and then on to a club this
+evening, hence this late reply.
+
+-- 
+I&#x27;m really here. You&#x27;re not imagining it.
+
+
+
+</pre></div><div class="post" id="p147470"><div class="ph"><a class="d" href="#p147470">2002-10-03 03:32:42</a> <span>Andrew Owen</span> <span>Re: ANN: Spanish 128K Editor ROM translated.</span></div><pre>Dave the Lurker &lt;…@…&gt; wrote in message news:&lt;…@…&gt;...
+<span class="qt">&gt; In article &lt;…@…</span>
+<span class="qt">&gt; addr.btopenworld.com&gt;, …@… says...</span>
+
+[ ï¿½tijeretee el anuncio de redactor espaï¿½ol]
+
+<span class="qt">&gt; puede la versiï¿½n traducida ser trasvasada en todas partes?</span>
+
+El No que lo he expedido a Philip Kendall para la inclusiï¿½n en su
+pï¿½gina de memorias sï¿½lo de lectura de Espectro, pero ello estï¿½ abajo a
+ï¿½l en cuanto a cuando/si esto consigue uploaded (y por favor no
+molï¿½stelo - ï¿½l estï¿½ muy ocupado).
+
+<span class="qt">&gt; las Apologï¿½as si omitiera un URL en aquel poste, pero yo no podï¿½an ver el que.</span>
+
+Ningï¿½n URL. Si alguien mï¿½s gustara hacerlo reventar sobre una pï¿½gina
+web yo serï¿½a feliz enviarlos por correo electrï¿½nico una copia.
+
+***
+
+[snip Spanish editor announcement]
+
+<span class="qt">&gt; Can the translated version be downloaded anywhere?</span>
+
+No. I&#x27;ve forwarded it to Philip Kendall for inclusion on his Spectrum
+ROMs page but it&#x27;s down to him as to when/if it gets uploaded (and
+please don&#x27;t hassle him - he&#x27;s very busy).
+
+<span class="qt">&gt; Apologies if I missed a URL in that post, but I couldn&#x27;t see one.</span>
+
+No URL. If someone else would like to pop it on a web page I&#x27;d be
+happy to email them a copy.
+
+
+
+</pre></div><div class="post" id="p147474"><div class="ph"><a class="d" href="#p147474">2002-10-03 09:18:16</a> <span>Philip Kendall</span> <span>Re: ANN: Spanish 128K Editor ROM translated.</span></div><pre>In article &lt;…@…&gt;,
+Andrew Owen &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Can the translated version be downloaded anywhere?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;No. I&#x27;ve forwarded it to Philip Kendall for inclusion on his Spectrum</span>
+<span class="qt">&gt;ROMs page but it&#x27;s down to him as to when/if it gets uploaded</span>
+
+Now up.
+
+<a href="http://www.srcf.ucam.org/~pak21/spectrum/roms.html" rel="noreferrer">http://www.srcf.ucam.org/~pak21/spectrum/roms.html</a>
+
+with the incredibly convoluted name of &#x27;128-spanish-0-english.rom&#x27;, but
+at least that puts it next to the Spanish language version in the
+listing.
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p147478"><div class="ph"><a class="d" href="#p147478">2002-10-03 11:37:55</a> <span>Andrew Owen</span> <span>Re: ANN: Spanish 128K Editor ROM translated.</span></div><pre>In article &lt;anh20o$1ss$…@…&gt;, …@…
+(Philip Kendall) wrote:
+
+<span class="qt">&gt; In article &lt;…@…&gt;,</span>
+<span class="qt">&gt; Andrew Owen &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;&gt; Can the translated version be downloaded anywhere?</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;No. I&#x27;ve forwarded it to Philip Kendall for inclusion on his Spectrum</span>
+<span class="qt">&gt; &gt;ROMs page but it&#x27;s down to him as to when/if it gets uploaded</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Now up.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; <a href="http://www.srcf.ucam.org/~pak21/spectrum/roms.html" rel="noreferrer">http://www.srcf.ucam.org/~pak21/spectrum/roms.html</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; with the incredibly convoluted name of &#x27;128-spanish-0-english.rom&#x27;, but</span>
+<span class="qt">&gt; at least that puts it next to the Spanish language version in the</span>
+<span class="qt">&gt; listing.</span>
+
+Cheers!
+
+-- 
+I&#x27;m really here. You&#x27;re not imagining it.
+
+
+
+</pre></div><div class="post" id="p147522"><div class="ph"><a class="d" href="#p147522">2002-10-03 23:16:49</a> <span>Colin Woodcock</span> <span>Re: ANN: Spanish 128K Editor ROM translated.</span></div><pre>&quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message
+news:…@…..
+.
+<span class="qt">&gt; In article &lt;anh20o$1ss$…@…&gt;, …@…</span>
+<span class="qt">&gt; (Philip Kendall) wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; In article &lt;…@…&gt;,</span>
+<span class="qt">&gt; &gt; Andrew Owen &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt;&gt; Can the translated version be downloaded anywhere?</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt;No. I&#x27;ve forwarded it to Philip Kendall for inclusion on his Spectrum</span>
+<span class="qt">&gt; &gt; &gt;ROMs page but it&#x27;s down to him as to when/if it gets uploaded</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Now up.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; <a href="http://www.srcf.ucam.org/~pak21/spectrum/roms.html" rel="noreferrer">http://www.srcf.ucam.org/~pak21/spectrum/roms.html</a></span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; with the incredibly convoluted name of &#x27;128-spanish-0-english.rom&#x27;, but</span>
+<span class="qt">&gt; &gt; at least that puts it next to the Spanish language version in the</span>
+<span class="qt">&gt; &gt; listing.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Cheers!</span>
+
+
+How can I load this into an emulator - this being ROM 0 - or perhaps the
+question I should be asking is how do I combine this with ROM 1 to make a
+ROM that - say - SPIN or es.pectrum can read?
+
+Colin
+
+-------
+
+ZXF: Spectrum computing today
+
+Download the PDF magazine for free at www.zxformat.cjb.net
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p147525"><div class="ph"><a class="d" href="#p147525">2002-10-03 23:32:43</a> <span>Philip Kendall</span> <span>Re: ANN: Spanish 128K Editor ROM translated.</span></div><pre>In article &lt;anij6j$3kc$…@…&gt;,
+Colin Woodcock &lt;…@…&gt; wrote:
+
+[ 128-spanish-0-english.rom ]
+<span class="qt">&gt;</span>
+<span class="qt">&gt;How can I load this into an emulator - this being ROM 0 - or perhaps the</span>
+<span class="qt">&gt;question I should be asking is how do I combine this with ROM 1 to make a</span>
+<span class="qt">&gt;ROM that - say - SPIN or es.pectrum can read?</span>
+
+(random guess)
+
+Have you tried just concatenating them?
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p147526"><div class="ph"><a class="d" href="#p147526">2002-10-03 23:52:13</a> <span>Colin Woodcock</span> <span>Re: ANN: Spanish 128K Editor ROM translated.</span></div><pre>&quot;Philip Kendall&quot; &lt;…@…&gt; wrote in message
+news:anik2r$nbr$…@…...
+<span class="qt">&gt; In article &lt;anij6j$3kc$…@…&gt;,</span>
+<span class="qt">&gt; Colin Woodcock &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; [ 128-spanish-0-english.rom ]</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;How can I load this into an emulator - this being ROM 0 - or perhaps the</span>
+<span class="qt">&gt; &gt;question I should be asking is how do I combine this with ROM 1 to make a</span>
+<span class="qt">&gt; &gt;ROM that - say - SPIN or es.pectrum can read?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; (random guess)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Have you tried just concatenating them?</span>
+
+Of course!  I&#x27;ll concatenate them!  That&#x27;s what I&#x27;ll do!
+
+Erm...
+
+How do I do that?
+
+Colin
+
+
+
+-------
+
+ZXF: Spectrum computing today
+
+Download the PDF magazine for free at www.zxformat.cjb.net
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p147554"><div class="ph"><a class="d" href="#p147554">2002-10-04 10:24:39</a> <span>Andrew Owen</span> <span>Re: ANN: Spanish 128K Editor ROM translated.</span></div><pre>In article &lt;anij6j$3kc$…@…&gt;, &quot;Colin Woodcock&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt; &quot;Andrew Owen&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:…@…..</span>
+<span class="qt">&gt; .</span>
+<span class="qt">&gt; &gt; In article &lt;anh20o$1ss$…@…&gt;, …@…</span>
+<span class="qt">&gt; &gt; (Philip Kendall) wrote:</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; In article &lt;…@…&gt;,</span>
+<span class="qt">&gt; &gt; &gt; Andrew Owen &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; &gt;&gt; Can the translated version be downloaded anywhere?</span>
+<span class="qt">&gt; &gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; &gt;No. I&#x27;ve forwarded it to Philip Kendall for inclusion on his Spectrum</span>
+<span class="qt">&gt; &gt; &gt; &gt;ROMs page but it&#x27;s down to him as to when/if it gets uploaded</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; Now up.</span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; <a href="http://www.srcf.ucam.org/~pak21/spectrum/roms.html" rel="noreferrer">http://www.srcf.ucam.org/~pak21/spectrum/roms.html</a></span>
+<span class="qt">&gt; &gt; &gt;</span>
+<span class="qt">&gt; &gt; &gt; with the incredibly convoluted name of &#x27;128-spanish-0-english.rom&#x27;, but</span>
+<span class="qt">&gt; &gt; &gt; at least that puts it next to the Spanish language version in the</span>
+<span class="qt">&gt; &gt; &gt; listing.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Cheers!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; How can I load this into an emulator - this being ROM 0 - or perhaps the</span>
+<span class="qt">&gt; question I should be asking is how do I combine this with ROM 1 to make a</span>
+<span class="qt">&gt; ROM that - say - SPIN or es.pectrum can read?</span>
+
+Emulators split broadly into two camps. Those that have separate files for
+each ROM and those that combine the ROMs for a given machine into one
+file. (There are also those with all the ROMs for every machine in one
+file and those that have the file embedded in the application). Philip&#x27;s
+site has the individual ROMs. SPIN obviously needs the combined file. So
+to answer your question you need to stick ROM 0 and ROM 1 together in that
+order. As Philip said you could concatenate them (which means doing that).
+I think from DOS: COPY soure0.rom target.rom, followed by TYPE source1.rom
+<span class="qt">&gt;&gt; target.rom. will do the trick. However it&#x27;s been a while since I&#x27;ve</span>
+used DOS. The alternative is to load both ROM&#x27;s into the emulated
+Spectrum&#x27;s RAM area and save them out as one big chunk. I don&#x27;t know if
+SPIN lets you do this but other emulators do. just CLEAR 30000 and then
+load ROM 0 in at 32768 and ROM 1 at 49152. Each ROM is 16K in length so
+the combined file is 32K. I hope that helps a bit.
+
+-- 
+I&#x27;m really here. You&#x27;re not imagining it.
+
+
+
+</pre></div><div class="post" id="p147557"><div class="ph"><a class="d" href="#p147557">2002-10-04 10:51:14</a> <span>Philip Kendall</span> <span>Re: ANN: Spanish 128K Editor ROM translated.</span></div><pre>In article &lt;…@…&gt;,
+Andrew Owen &lt;…@…&gt; wrote:
+<span class="qt">&gt;you could concatenate them [...] I think from DOS: COPY soure0.rom</span>
+<span class="qt">&gt;target.rom, followed by TYPE source1.rom &gt;&gt; target.rom. will do the</span>
+<span class="qt">&gt;trick. However it&#x27;s been a while since I&#x27;ve used DOS.</span>
+
+Ditto on the length of time since I&#x27;ve used DOS, but I think TYPE
+considers the file to be a text file and will hence screw up royally if
+there happens to be a ^Z in there anywhere. I *think* you want
+
+copy /b source0.rom + source1.rom target.rom
+
+but I can&#x27;t quite remember. And the whitespace may be significant.
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p147572"><div class="ph"><a class="d" href="#p147572">2002-10-04 16:17:40</a> <span>Frans</span> <span>Re: ANN: Spanish 128K Editor ROM translated.</span></div><pre>You could ofcourse use the excellent WINHEX program to add the two roms 
+together.
+
+Frans
+
+Philip Kendall wrote:
+<span class="qt">&gt; In article &lt;…@…&gt;,</span>
+<span class="qt">&gt; Andrew Owen &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;you could concatenate them [...] I think from DOS: COPY soure0.rom</span>
+<span class="qt">&gt;&gt;target.rom, followed by TYPE source1.rom &gt;&gt; target.rom. will do the</span>
+<span class="qt">&gt;&gt;trick. However it&#x27;s been a while since I&#x27;ve used DOS.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Ditto on the length of time since I&#x27;ve used DOS, but I think TYPE</span>
+<span class="qt">&gt; considers the file to be a text file and will hence screw up royally if</span>
+<span class="qt">&gt; there happens to be a ^Z in there anywhere. I *think* you want</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; copy /b source0.rom + source1.rom target.rom</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; but I can&#x27;t quite remember. And the whitespace may be significant.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Phil</span>
+<span class="qt">&gt; </span>
+
+
+
+
+</pre></div><div class="post" id="p147590"><div class="ph"><a class="d" href="#p147590">2002-10-04 18:54:52</a> <span>Robert J Baker</span> <span>Re: ANN: Spanish 128K Editor ROM translated.</span></div><pre>…@… (Philip Kendall) wrote in message news:&lt;anjrr2$ek7$…@…&gt;...
+<span class="qt">&gt; In article &lt;…@…&gt;,</span>
+<span class="qt">&gt; Andrew Owen &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt;you could concatenate them [...] I think from DOS: COPY soure0.rom</span>
+<span class="qt">&gt; &gt;target.rom, followed by TYPE source1.rom &gt;&gt; target.rom. will do the</span>
+<span class="qt">&gt; &gt;trick. However it&#x27;s been a while since I&#x27;ve used DOS.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Ditto on the length of time since I&#x27;ve used DOS, but I think TYPE</span>
+<span class="qt">&gt; considers the file to be a text file and will hence screw up royally if</span>
+<span class="qt">&gt; there happens to be a ^Z in there anywhere. I *think* you want</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; copy /b source0.rom + source1.rom target.rom</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; but I can&#x27;t quite remember. And the whitespace may be significant.</span>
+
+One way to painlessly join binary files is to use a file
+splitter/combiner; they are nearly all freeware (so any shareware one
+probably isn&#x27;t worth bothering with) and there&#x27;s one on (ahem) my
+site[1] &lt;<a href="http://korax1214.freeyellow.com/software/split.zip&gt;" rel="noreferrer">http://korax1214.freeyellow.com/software/split.zip&gt;</a> (&lt;40K),
+although knowing my programming talents[2], there are probably better
+ones available (try searching on &lt;www.download.com&gt;).
+
+[1] To whom do I pay the plug tax[3], again?
+
+[2] Which are better than Lister&#x27;s dress[4] sense.  But probably not
+by much.
+
+[3] It *is* still 75p and a packet of Rolos, I take it?
+
+[4] No, I&#x27;m not suggesting that Lister head over to sst.  And if he
+does, *please* let&#x27;s have no more crossposts from there[5].
+
+[5] NQAS=Not Quite Appalling Shirt?[6] ;-)
+
+[6] [That&#x27;s enough footnotes -- Ed]
+
+[7] There is no footnote 7.  You are seeing things.[7]
+
+
+
+</pre></div><div class="post" id="p147608"><div class="ph"><a class="d" href="#p147608">2002-10-04 21:28:26</a> <span>Colin Woodcock</span> <span>Re: ANN: Spanish 128K Editor ROM translated.</span></div><pre>&quot;Robert J Baker&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; One way to painlessly join binary files is to use a file</span>
+<span class="qt">&gt; splitter/combiner; they are nearly all freeware (so any shareware one</span>
+<span class="qt">&gt; probably isn&#x27;t worth bothering with) and there&#x27;s one on (ahem) my</span>
+<span class="qt">&gt; site[1] &lt;<a href="http://korax1214.freeyellow.com/software/split.zip&gt;" rel="noreferrer">http://korax1214.freeyellow.com/software/split.zip&gt;</a> (&lt;40K),</span>
+<span class="qt">&gt; although knowing my ...</span>
+
+&lt;various self-depreciatory comments&gt;
+
+
+Yeap - that did the trick!  Cheers Robert!
+
+Now that I&#x27;ve done this - does anybody else want the file?
+
+Colin
+
+-------
+
+ZXF: Spectrum computing today
+
+Download the PDF magazine for free at www.zxformat.cjb.net
+
+
+
+
+
+
+</pre></div><div class="post" id="p147650"><div class="ph"><a class="d" href="#p147650">2002-10-05 00:45:48</a> <span>Duncan Snowden</span> <span>Re: ANN: Spanish 128K Editor ROM translated.</span></div><pre>Program: Colin Woodcock
+
+Bytes: Friday
+
+<span class="qt">&gt; Of course!  I&#x27;ll concatenate them!  That&#x27;s what I&#x27;ll do!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Erm...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; How do I do that?</span>
+
+Something to do with swindling felines out of their life savings, I
+think.
+
+-- 
+Duncan Snowden. 
+
+M RAMTOP no good, 1200:3 
+
+
+
+</pre></div></main></body></html>

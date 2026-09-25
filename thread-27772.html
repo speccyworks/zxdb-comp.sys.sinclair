@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TZX file format: programming question · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>TZX file format: programming question</h1><p class="facts">13 posts, 2003-05-15 – 2003-05-16</p><div class="post" id="p161629"><div class="ph"><a class="d" href="#p161629">2003-05-15 16:08:32</a> <span>Stephane Schmitz</span> </div><pre>Hi all!
+
+Can someone help me to add support for the TZX file format in my GP32
+handheld 48k/128k speccy emulator ?
+Here are some questions :
+
+- Do I have to patch the IN opcode and if yes, which address in the rom ?
+- Do I have to sync reading of the tzx content or make something particular
+to avoir any reading problem ?
+
+All my TZX code will be based on Arnold, a cpc emulator which supports the
+tzx file format. It seems like it is rather easy to use the tzx functions :
+InsertTape(), GetBit (t-states number), ... About the latest function, what
+is the correct number of t-states I have to pass ?
+
+Thanks for your help,
+
+Stephane Schmitz
+
+www.speccyal.be
+
+
+
+
+
+</pre></div><div class="post" id="p161633"><div class="ph"><a class="d" href="#p161633">2003-05-15 16:46:20</a> <span>Philip Kendall</span> <span>Re: TZX file format: programming question</span></div><pre>In article &lt;4YOwa.761950$…@…&gt;,
+Stephane Schmitz &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Can someone help me to add support for the TZX file format in my GP32</span>
+<span class="qt">&gt;handheld 48k/128k speccy emulator ?</span>
+<span class="qt">&gt;Here are some questions :</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;- Do I have to patch the IN opcode and if yes, which address in the rom ?</span>
+<span class="qt">&gt;- Do I have to sync reading of the tzx content or make something particular</span>
+<span class="qt">&gt;to avoir any reading problem ?</span>
+
+The actual mechanics of reading tape images (whether they be TZX, TAP or
+anything else) is fundamentally pretty trivial[1]: all you have to do is
+flip bit 6 as returned by the ULA every time an edge occurs on the tape.
+No patching of opcodes required :-)
+
+[1] ignoring flash-loading or equivalents.
+
+Practically, this involves a lot of boring code to deal with all the
+different block types...
+
+<span class="qt">&gt;All my TZX code will be based on Arnold, a cpc emulator which supports the</span>
+<span class="qt">&gt;tzx file format. It seems like it is rather easy to use the tzx functions :</span>
+<span class="qt">&gt;InsertTape(), GetBit (t-states number), ... About the latest function, what</span>
+<span class="qt">&gt;is the correct number of t-states I have to pass ?</span>
+
+At this point, I&#x27;m going to plug libspectrum again:
+
+<a href="http://www.srcf.ucam.org/~pak21/spectrum/libspectrum.html" rel="noreferrer">http://www.srcf.ucam.org/~pak21/spectrum/libspectrum.html</a>
+
+which looks like it does much the same thing, but also supports normal
+.tap files, Warajevo .tap files (in the CVS version), writing of TZX
+files and (more importantly) has some documentation as well.
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p161643"><div class="ph"><a class="d" href="#p161643">2003-05-15 20:22:31</a> <span>…@…</span> <span>Re: TZX file format: programming question</span></div><pre>On Thu, 15 May 2003 16:08:32 GMT, &quot;Stephane Schmitz&quot;
+&lt;…@…&gt; wrote:
+
+
+<span class="qt">&gt;Stephane Schmitz</span>
+
+So you are the infamous tyrell.
+
+Keep up the good work, it is appreciated.
+
+Rob.
+
+
+
+
+</pre></div><div class="post" id="p161657"><div class="ph"><a class="d" href="#p161657">2003-05-16 01:04:31</a> <span>Jim</span> <span>Re: TZX file format: programming question</span></div><pre>On Thu, 15 May 2003 16:08:32 GMT, &quot;Stephane Schmitz&quot;
+&lt;…@…&gt; wrote:
+
+<span class="qt">&gt;Hi all!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Can someone help me to add support for the TZX file format in my GP32</span>
+<span class="qt">&gt;handheld 48k/128k speccy emulator ?</span>
+<span class="qt">&gt;Here are some questions :</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;- Do I have to patch the IN opcode and if yes, which address in the rom ?</span>
+<span class="qt">&gt;- Do I have to sync reading of the tzx content or make something particular</span>
+<span class="qt">&gt;to avoir any reading problem ?</span>
+
+The TZX format tells you how many t-states that bit 6 is high and low
+for.  You have to count t-states while you process instructions and
+pass these amounts on to your TZX decoder.  After so many t-states
+occur, you toggle bit 6.
+When you handle the &#x27;in&#x27; and &#x27;out&#x27; instructions you have to emulate
+the ULA registers, which allow you to control not only the tape port,
+but the ram/rom banks on the 128k machines etc.
+
+It&#x27;s a pretty tough format, but once you get the hang of it and you&#x27;ve
+done the &#x27;normal&#x27; style blocks, the speedlock blocks are easy.  I also
+think it&#x27;s pretty hard to instantly load a TZX, except by running the
+emulation faster.  But I guess this is by design.
+
+Jim
+
+
+
+</pre></div><div class="post" id="p161661"><div class="ph"><a class="d" href="#p161661">2003-05-16 08:54:24</a> <span>Stephane Schmitz</span> <span>Re: TZX file format: programming question</span></div><pre>Thanks for all your anwsers ...
+However, evrything&#x27;s not very clear to me.
+
+
+<span class="qt">&gt; The actual mechanics of reading tape images (whether they be TZX, TAP or</span>
+<span class="qt">&gt; anything else) is fundamentally pretty trivial[1]: all you have to do is</span>
+<span class="qt">&gt; flip bit 6 as returned by the ULA every time an edge occurs on the tape.</span>
+<span class="qt">&gt; No patching of opcodes required :-)</span>
+
+But let&#x27;s take Spectaculator for example : if I load a tzx file and type
+LOAD&quot;&quot; in basic, the tzx file
+will be loaded. At this point, there must be some opcode patching mechanism
+to redirect the IN opcode
+to the tzx reading functions (it&#x27;s what I&#x27;m currently doing with the TAP
+file format) or am I wrong ?
+
+
+<span class="qt">&gt; Practically, this involves a lot of boring code to deal with all the</span>
+<span class="qt">&gt; different block types...</span>
+
+Yes, so boring I&#x27;m going to use someone else&#x27;s functions :)
+
+<span class="qt">&gt; which looks like it does much the same thing, but also supports normal</span>
+<span class="qt">&gt; .tap files, Warajevo .tap files (in the CVS version), writing of TZX</span>
+<span class="qt">&gt; files and (more importantly) has some documentation as well.</span>
+
+Do you have an example of how to use it ? because really, it does not seem
+clear to me how it is really working. I can throw an eye in Fuse but will be
+easier
+if you can make some kind of simple &#x27;pseudo code&#x27;.
+
+Thanks in advance!
+
+Steph
+
+www.speccyal.be
+
+
+
+
+
+</pre></div><div class="post" id="p161662"><div class="ph"><a class="d" href="#p161662">2003-05-16 08:55:54</a> <span>Fraser Ross</span> <span>Re: TZX file format: programming question</span></div><pre><span class="qt">&gt; The TZX format tells you how many t-states that bit 6 is high and low</span>
+<span class="qt">&gt; for.  You have to count t-states while you process instructions and</span>
+<span class="qt">&gt; pass these amounts on to your TZX decoder.  After so many t-states</span>
+<span class="qt">&gt; occur, you toggle bit 6.</span>
+The format has measurements of a time unit which is 3500000ths of a second.
+This is not equivalent to T-states on the 128Ks.
+
+Fraser.
+
+
+
+
+
+
+</pre></div><div class="post" id="p161664"><div class="ph"><a class="d" href="#p161664">2003-05-16 09:32:21</a> <span>Jonathan Needle</span> <span>Re: TZX file format: programming question</span></div><pre>
+&quot;Stephane Schmitz&quot; &lt;…@…&gt; wrote in message
+news:4H1xa.805135$…@…...
+<span class="qt">&gt; Thanks for all your anwsers ...</span>
+<span class="qt">&gt; But let&#x27;s take Spectaculator for example : if I load a tzx file and type</span>
+<span class="qt">&gt; LOAD&quot;&quot; in basic, the tzx file</span>
+<span class="qt">&gt; will be loaded. At this point, there must be some opcode patching</span>
+mechanism
+<span class="qt">&gt; to redirect the IN opcode</span>
+<span class="qt">&gt; to the tzx reading functions (it&#x27;s what I&#x27;m currently doing with the TAP</span>
+<span class="qt">&gt; file format) or am I wrong ?</span>
+
+You don&#x27;t need to implement Spectaculator&#x27;s &quot;autoplay&quot; feature to load from
+tzxs as long as there&#x27;s a way to start playback manually.
+
+I don&#x27;t use traps anymore in the ROM for this as it broke some obscure
+loaders. The best method (my current one) is to examine the machine code
+around PC when a program in continuously INning from the same address.
+
+All &quot;looking for an edge&quot; loops in all loaders are nearly exactly the same
+(think DI needed a specific check). Don&#x27;t do this on every IN though, it&#x27;d
+be far too slow. Just check once/frame.
+
+Here&#x27;s Spectaculator&#x27;s routine that checks whether a loader is present at
+address wAddr. You should be able to get the gist of what it does.
+
+There are a couple more special cases I need to add as Spectaculator does
+auto stop when it shouldn&#x27;t on a couple of obscure loaders.
+
+Hope it helps :)
+
+
+
+
+// Neat routine to check whether a tape loading routine is present
+// at address wAddr.
+BOOL
+CTZXPlayer::IsLoaderPresent( WORD wAddr )
+{
+  WORD wInsPtr;
+  BYTE chMem;
+  BOOL fStop = TRUE;  // Stop unless we find a reason not to
+  m_fCheckAutoStartStop = FALSE;
+
+  // First do an test for a generic loader. This accounts for 99% of
+  // all cases.
+  for( wInsPtr = wAddr; wInsPtr &lt; wAddr+3; wInsPtr++ )
+  {
+    chMem = m_lpZXDeviceContainer-&gt;MemoryRead( wInsPtr );
+    if( chMem != XOR_C )
+      continue;
+
+    // We&#x27;ve found an XOR C near the IN A,(#FE). AND #20
+    // or AND #40 must follow
+    chMem = m_lpZXDeviceContainer-&gt;MemoryRead( ++wInsPtr );
+    if( chMem != AND_n )
+      break;
+
+    chMem = m_lpZXDeviceContainer-&gt;MemoryRead( ++wInsPtr );
+    if( chMem != 0x20 &amp;&amp; chMem != 0x40 )
+      break;
+
+    // Finally, we look for a JR Z to determine we are infact
+    // in a loader.
+    chMem = m_lpZXDeviceContainer-&gt;MemoryRead( ++wInsPtr );
+
+    // Search Loader quirk
+    if( chMem == RET_C )
+      chMem =  m_lpZXDeviceContainer-&gt;MemoryRead( wInsPtr + 2 );
+
+    if( chMem != JR_Z &amp;&amp; chMem != JP_Z )
+      break;
+
+    fStop = FALSE;
+    break;
+  }
+
+
+  // SPECIAL CASE: Sprite Novaload uses an unusual loader so we must check
+for
+  // this separately.
+  if( fStop )
+  {
+    chMem = m_lpZXDeviceContainer-&gt;MemoryRead( wAddr - 3 );
+    if( chMem == INC_L )
+    {
+      chMem = m_lpZXDeviceContainer-&gt;MemoryRead( wAddr );
+      if( chMem == AND_H )
+      {
+        chMem = m_lpZXDeviceContainer-&gt;MemoryRead( wAddr+1 );
+        if( chMem == JP_Z || chMem == JP_NZ )
+        {
+          fStop = FALSE;
+          TRACE0(&quot;NOTE: Special case: Sprite Novaload detected. Not stopping
+tape\n&quot;);
+        }
+      }
+    }
+  }
+
+
+  // SPECIAL CASE: Digital Integration has a weird bit when loading the
+headers
+  // that is not covered by the normal check. All we can do is check for an
+  // AND #40 followed by a LD (HL),A or a OR n
+  if( fStop )
+  {
+    chMem = m_lpZXDeviceContainer-&gt;MemoryRead( wAddr );
+    if( chMem == AND_n )
+    {
+      chMem = m_lpZXDeviceContainer-&gt;MemoryRead( wAddr+1 );
+      if( chMem == 0x40 )
+      {
+        chMem = m_lpZXDeviceContainer-&gt;MemoryRead( wAddr+2 );
+        if( chMem == LD_xHL_A || chMem == OR_n )
+        {
+          fStop = FALSE;
+          TRACE0(&quot;NOTE: Special case: DI header detected. Not stopping
+tape\n&quot;);
+        }
+      }
+    }
+  }
+
+  return !fStop;
+}
+
+
+Cheers,
+
+Jon
+--
+  Jonathan Needle
+  Spectaculator Creator
+  <a href="http://www.spectaculator.com/" rel="noreferrer">http://www.spectaculator.com/</a>
+
+
+
+
+
+</pre></div><div class="post" id="p161669"><div class="ph"><a class="d" href="#p161669">2003-05-16 11:26:41</a> <span>Stephane Schmitz</span> <span>Re: TZX file format: programming question</span></div><pre>Thanks for your code snippet Jonathan,
+
+Now ... may I ask you to explain me how you actually load the bits from the
+tzx tape ?
+Let&#x27;s suppose I have found a loader when doing the&#x27;IN&#x27; opcode. Now, I need
+to read the tzx data regularly (each time I&#x27;m doing an IN) and set some FE
+port bit (bit 6 ?) to simulate a cassette tape. Am I right/wrong ? If so,
+what it the t-states value I have to pass to the tzx loading function, and
+how do I find its value ?
+
+Thanks a lot for your help !
+
+Stephane
+
+&quot;Jonathan Needle&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;Stephane Schmitz&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:4H1xa.805135$…@…...</span>
+<span class="qt">&gt; &gt; Thanks for all your anwsers ...</span>
+<span class="qt">&gt; &gt; But let&#x27;s take Spectaculator for example : if I load a tzx file and type</span>
+<span class="qt">&gt; &gt; LOAD&quot;&quot; in basic, the tzx file</span>
+<span class="qt">&gt; &gt; will be loaded. At this point, there must be some opcode patching</span>
+<span class="qt">&gt; mechanism</span>
+<span class="qt">&gt; &gt; to redirect the IN opcode</span>
+<span class="qt">&gt; &gt; to the tzx reading functions (it&#x27;s what I&#x27;m currently doing with the TAP</span>
+<span class="qt">&gt; &gt; file format) or am I wrong ?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; You don&#x27;t need to implement Spectaculator&#x27;s &quot;autoplay&quot; feature to load</span>
+from
+<span class="qt">&gt; tzxs as long as there&#x27;s a way to start playback manually.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I don&#x27;t use traps anymore in the ROM for this as it broke some obscure</span>
+<span class="qt">&gt; loaders. The best method (my current one) is to examine the machine code</span>
+<span class="qt">&gt; around PC when a program in continuously INning from the same address.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; All &quot;looking for an edge&quot; loops in all loaders are nearly exactly the same</span>
+<span class="qt">&gt; (think DI needed a specific check). Don&#x27;t do this on every IN though, it&#x27;d</span>
+<span class="qt">&gt; be far too slow. Just check once/frame.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Here&#x27;s Spectaculator&#x27;s routine that checks whether a loader is present at</span>
+<span class="qt">&gt; address wAddr. You should be able to get the gist of what it does.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; There are a couple more special cases I need to add as Spectaculator does</span>
+<span class="qt">&gt; auto stop when it shouldn&#x27;t on a couple of obscure loaders.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Hope it helps :)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; // Neat routine to check whether a tape loading routine is present</span>
+<span class="qt">&gt; // at address wAddr.</span>
+<span class="qt">&gt; BOOL</span>
+<span class="qt">&gt; CTZXPlayer::IsLoaderPresent( WORD wAddr )</span>
+<span class="qt">&gt; {</span>
+<span class="qt">&gt;   WORD wInsPtr;</span>
+<span class="qt">&gt;   BYTE chMem;</span>
+<span class="qt">&gt;   BOOL fStop = TRUE;  // Stop unless we find a reason not to</span>
+<span class="qt">&gt;   m_fCheckAutoStartStop = FALSE;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;   // First do an test for a generic loader. This accounts for 99% of</span>
+<span class="qt">&gt;   // all cases.</span>
+<span class="qt">&gt;   for( wInsPtr = wAddr; wInsPtr &lt; wAddr+3; wInsPtr++ )</span>
+<span class="qt">&gt;   {</span>
+<span class="qt">&gt;     chMem = m_lpZXDeviceContainer-&gt;MemoryRead( wInsPtr );</span>
+<span class="qt">&gt;     if( chMem != XOR_C )</span>
+<span class="qt">&gt;       continue;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;     // We&#x27;ve found an XOR C near the IN A,(#FE). AND #20</span>
+<span class="qt">&gt;     // or AND #40 must follow</span>
+<span class="qt">&gt;     chMem = m_lpZXDeviceContainer-&gt;MemoryRead( ++wInsPtr );</span>
+<span class="qt">&gt;     if( chMem != AND_n )</span>
+<span class="qt">&gt;       break;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;     chMem = m_lpZXDeviceContainer-&gt;MemoryRead( ++wInsPtr );</span>
+<span class="qt">&gt;     if( chMem != 0x20 &amp;&amp; chMem != 0x40 )</span>
+<span class="qt">&gt;       break;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;     // Finally, we look for a JR Z to determine we are infact</span>
+<span class="qt">&gt;     // in a loader.</span>
+<span class="qt">&gt;     chMem = m_lpZXDeviceContainer-&gt;MemoryRead( ++wInsPtr );</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;     // Search Loader quirk</span>
+<span class="qt">&gt;     if( chMem == RET_C )</span>
+<span class="qt">&gt;       chMem =  m_lpZXDeviceContainer-&gt;MemoryRead( wInsPtr + 2 );</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;     if( chMem != JR_Z &amp;&amp; chMem != JP_Z )</span>
+<span class="qt">&gt;       break;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;     fStop = FALSE;</span>
+<span class="qt">&gt;     break;</span>
+<span class="qt">&gt;   }</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;   // SPECIAL CASE: Sprite Novaload uses an unusual loader so we must check</span>
+<span class="qt">&gt; for</span>
+<span class="qt">&gt;   // this separately.</span>
+<span class="qt">&gt;   if( fStop )</span>
+<span class="qt">&gt;   {</span>
+<span class="qt">&gt;     chMem = m_lpZXDeviceContainer-&gt;MemoryRead( wAddr - 3 );</span>
+<span class="qt">&gt;     if( chMem == INC_L )</span>
+<span class="qt">&gt;     {</span>
+<span class="qt">&gt;       chMem = m_lpZXDeviceContainer-&gt;MemoryRead( wAddr );</span>
+<span class="qt">&gt;       if( chMem == AND_H )</span>
+<span class="qt">&gt;       {</span>
+<span class="qt">&gt;         chMem = m_lpZXDeviceContainer-&gt;MemoryRead( wAddr+1 );</span>
+<span class="qt">&gt;         if( chMem == JP_Z || chMem == JP_NZ )</span>
+<span class="qt">&gt;         {</span>
+<span class="qt">&gt;           fStop = FALSE;</span>
+<span class="qt">&gt;           TRACE0(&quot;NOTE: Special case: Sprite Novaload detected. Not</span>
+stopping
+<span class="qt">&gt; tape\n&quot;);</span>
+<span class="qt">&gt;         }</span>
+<span class="qt">&gt;       }</span>
+<span class="qt">&gt;     }</span>
+<span class="qt">&gt;   }</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;   // SPECIAL CASE: Digital Integration has a weird bit when loading the</span>
+<span class="qt">&gt; headers</span>
+<span class="qt">&gt;   // that is not covered by the normal check. All we can do is check for</span>
+an
+<span class="qt">&gt;   // AND #40 followed by a LD (HL),A or a OR n</span>
+<span class="qt">&gt;   if( fStop )</span>
+<span class="qt">&gt;   {</span>
+<span class="qt">&gt;     chMem = m_lpZXDeviceContainer-&gt;MemoryRead( wAddr );</span>
+<span class="qt">&gt;     if( chMem == AND_n )</span>
+<span class="qt">&gt;     {</span>
+<span class="qt">&gt;       chMem = m_lpZXDeviceContainer-&gt;MemoryRead( wAddr+1 );</span>
+<span class="qt">&gt;       if( chMem == 0x40 )</span>
+<span class="qt">&gt;       {</span>
+<span class="qt">&gt;         chMem = m_lpZXDeviceContainer-&gt;MemoryRead( wAddr+2 );</span>
+<span class="qt">&gt;         if( chMem == LD_xHL_A || chMem == OR_n )</span>
+<span class="qt">&gt;         {</span>
+<span class="qt">&gt;           fStop = FALSE;</span>
+<span class="qt">&gt;           TRACE0(&quot;NOTE: Special case: DI header detected. Not stopping</span>
+<span class="qt">&gt; tape\n&quot;);</span>
+<span class="qt">&gt;         }</span>
+<span class="qt">&gt;       }</span>
+<span class="qt">&gt;     }</span>
+<span class="qt">&gt;   }</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;   return !fStop;</span>
+<span class="qt">&gt; }</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Cheers,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Jon</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt;   Jonathan Needle</span>
+<span class="qt">&gt;   Spectaculator Creator</span>
+<span class="qt">&gt;   <a href="http://www.spectaculator.com/" rel="noreferrer">http://www.spectaculator.com/</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+
+
+
+
+
+</pre></div><div class="post" id="p161670"><div class="ph"><a class="d" href="#p161670">2003-05-16 12:57:07</a> <span>Philip Kendall</span> <span>Re: TZX file format: programming question</span></div><pre>In article &lt;RV3xa.811073$…@…&gt;,
+Stephane Schmitz &lt;…@…&gt; wrote:
+<span class="qt">&gt;Let&#x27;s suppose I have found a loader when doing the&#x27;IN&#x27; opcode. Now, I need</span>
+<span class="qt">&gt;to read the tzx data regularly (each time I&#x27;m doing an IN) and set some FE</span>
+<span class="qt">&gt;port bit (bit 6 ?) to simulate a cassette tape. Am I right/wrong ?</span>
+
+Basically right: you have to invert bit 6 every time an edge occurs from
+the tape.
+
+<span class="qt">&gt;If so, what it the t-states value I have to pass to the tzx loading function,</span>
+
+Which function? If you&#x27;re still talking about something from Arnold, I
+suspect you&#x27;d have more luck asking its author rather than us...
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p161674"><div class="ph"><a class="d" href="#p161674">2003-05-16 13:23:14</a> <span>Jonathan Needle</span> <span>Re: TZX file format: programming question</span></div><pre>
+&quot;Stephane Schmitz&quot; &lt;…@…&gt; wrote in message
+news:RV3xa.811073$…@…...
+<span class="qt">&gt; Thanks for your code snippet Jonathan,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Now ... may I ask you to explain me how you actually load the bits from</span>
+the
+<span class="qt">&gt; tzx tape ?</span>
+<span class="qt">&gt; Let&#x27;s suppose I have found a loader when doing the&#x27;IN&#x27; opcode. Now, I need</span>
+<span class="qt">&gt; to read the tzx data regularly (each time I&#x27;m doing an IN) and set some FE</span>
+<span class="qt">&gt; port bit (bit 6 ?) to simulate a cassette tape. Am I right/wrong ? If so,</span>
+<span class="qt">&gt; what it the t-states value I have to pass to the tzx loading function, and</span>
+<span class="qt">&gt; how do I find its value ?</span>
+
+Like Phil said, you need to ask Kevin Thacker (Arnold&#x27;s author) how to use
+that function.
+
+Any TZX renderer just counts the number of t-states between successive INs
+(based on the block type and parameters) to know whether to flip bit 6 of
+Port #FE for the current IN.
+
+Cheers,
+
+Jon.
+
+--
+--
+  Jonathan Needle
+  Spectaculator Creator
+  <a href="http://www.spectaculator.com/" rel="noreferrer">http://www.spectaculator.com/</a>
+
+
+
+
+
+</pre></div><div class="post" id="p161675"><div class="ph"><a class="d" href="#p161675">2003-05-16 13:26:06</a> <span>Jonathan Needle</span> <span>Re: TZX file format: programming question</span></div><pre>
+&quot;Fraser Ross&quot; &lt;fraserATmembers.v21.co.uk&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; &gt; The TZX format tells you how many t-states that bit 6 is high and low</span>
+<span class="qt">&gt; &gt; for.  You have to count t-states while you process instructions and</span>
+<span class="qt">&gt; &gt; pass these amounts on to your TZX decoder.  After so many t-states</span>
+<span class="qt">&gt; &gt; occur, you toggle bit 6.</span>
+<span class="qt">&gt; The format has measurements of a time unit which is 3500000ths of a</span>
+second.
+<span class="qt">&gt; This is not equivalent to T-states on the 128Ks.</span>
+
+Yep, but you can assume it is :)
+
+
+
+
+
+</pre></div><div class="post" id="p161677"><div class="ph"><a class="d" href="#p161677">2003-05-16 13:41:33</a> <span>Jonathan Needle</span> <span>Re: TZX file format: programming question</span></div><pre>
+&quot;Jonathan Needle&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;Stephane Schmitz&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:RV3xa.811073$…@…...</span>
+
+<span class="qt">&gt; Any TZX renderer just counts the number of t-states between successive INs</span>
+<span class="qt">&gt; (based on the block type and parameters) to know whether to flip bit 6 of</span>
+<span class="qt">&gt; Port #FE for the current IN.</span>
+
+Oh yeah, remember to replay it bit twice - very important :)
+
+
+
+
+
+</pre></div><div class="post" id="p161678"><div class="ph"><a class="d" href="#p161678">2003-05-16 13:42:23</a> <span>Jonathan Needle</span> <span>Re: TZX file format: programming question</span></div><pre>
+&quot;Jonathan Needle&quot; &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;Jonathan Needle&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; &quot;Stephane Schmitz&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; &gt; news:RV3xa.811073$…@…...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Any TZX renderer just counts the number of t-states between successive</span>
+INs
+<span class="qt">&gt; &gt; (based on the block type and parameters) to know whether to flip bit 6</span>
+of
+<span class="qt">&gt; &gt; Port #FE for the current IN.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Oh yeah, remember to replay it bit twice - very important :)</span>
+
+or rather *each* bit. Back to typing school for me...
+
+
+
+
+
+</pre></div></main></body></html>

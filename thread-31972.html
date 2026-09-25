@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested? · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</h1><p class="facts">31 posts, 2006-02-16 – 2006-04-10</p><div class="post" id="p200635"><div class="ph"><a class="d" href="#p200635">2006-02-16 01:22:18</a> <span>Matthias Melcher</span> </div><pre>
+Hi there,
+
+I have written a little messy weekend project that takes the ZX80 ROM 
+and converts it into &quot;C&quot; code. The resulting code can be compiled with 
+any &quot;C&quot; compiler and runs natively on whatever target platform.
+
+Before I go through the hassle of uploading this somewhere in the web, I 
+was curios if there is any interest for a project like this at all. 
+Please let me know.
+
+  Matt
+
+----
+
+The smallest ZX80 ever:
+
+One goal is the smallest fully functioning ZX80 ever. The results of 
+this experiment were surprisingly good, so I am considering recompiling 
+a ZX80 into a PIC or AVR Microcontroller. These things are really tiny 
+and really fast. So if I can have RAM and ROM on one chip and let the 
+CPU do the video out, I could fit the whole machine including crystal 
+and battery into the case of a Chinch connector. Just plug that into the 
+AV of your TV and there&#x27;s your ZX81.
+
+
+The translator:
+
+Please note that this is neither an emulator nor a JIT compiler. 
+Instead, Z80 code is translated into a meta code which in turn is 
+translated into another assembler or language, in this case &quot;C&quot;. The 
+advantages are truly native code and plenty of time to have the 
+de/recompiler optimize for any platform. The disadvantage is of course 
+that non-precompiled code segments will not work, i.e. loading a binary 
+program without running it through the translation process will crash.
+
+This is only a feasability test for a larger project, so the code is 
+messy. Also, the resulting code is barely readable ;-). Still, 
+recompiling the resulting C code with VisualC6 resulted in machine code 
+12 times as large as the original ROM. Pretty good I&#x27;d say.
+
+Just for giggles, here&#x27;s some of the resulting (unoptimized) code (and 
+yes, I know that some flags are handled wrong ;-) :
+
+
+   //    ; ----------------------------
+   //    ; THE &#x27;INITIALIZATION&#x27; ROUTINE
+   //    ; ----------------------------
+   //    ; A holds $3F, HL holds $7FFF.
+   //
+   //    ;; RAM-FILL
+   //    L0261:  LD      (HL),$01        ; fill location with 1 (null).
+L0261:
+   set_mem8(reg.hl, 0x01);
+   //            DEC     HL              ; decrement address.
+   reg.hl--;
+   //            CP      H               ; compare address high byte to $3F.
+   { uint8 t = reg.h;
+     reg.sf = (((sint8)t) &gt; ((sint8)reg.a));
+     reg.zf = (t == reg.a);
+     reg.hf = ((t-reg.a &amp; 0x10) != (t &amp; 0x10));
+     reg.pf = ((reg.a-t &amp; 0x80)==0x80);
+     reg.nf = 1;
+     reg.cf = (t &gt; reg.a); }
+   //            JR      NZ,L0261        ; back, while higher, to RAM-FILL.
+   if (!reg.zf) goto L0261;
+   //
+   //    ;; RAM-READ
+   //    L0267:  INC     HL              ; address the next higher location.
+L0267:
+   reg.hl++;
+   //            DEC     (HL)            ; decrement to zero.
+   { uint8 t = get_mem8(reg.hl);
+     reg.pf = (t == 0x80);
+     t--;
+     reg.sf = ((t &amp; 0x80) == 0x80);
+     reg.zf = (t == 0);
+     reg.hf = ((t &amp; 0x1f) == 0x0f);
+     reg.nf = 1;
+     set_mem8(reg.hl, t); }
+   //            JR      Z,L0267         ; back, if successful to RAM-READ.
+   if (reg.zf) goto L0267;
+
+
+
+</pre></div><div class="post" id="p200636"><div class="ph"><a class="d" href="#p200636">2006-02-16 02:58:06</a> <span>…@…</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>
+Matthias Melcher wrote:
+
+<span class="qt">&gt; One goal is the smallest fully functioning ZX80 ever. The results of</span>
+<span class="qt">&gt; this experiment were surprisingly good, so I am considering recompiling</span>
+
+I am working on more or less this project, only I&#x27;m using an ARM micro
+and targeting the ZX81. The target size is 2.5&quot; x 3.5&quot; (playing card).
+The top side holds a membrane keypad, circuitry is on the back. I&#x27;m
+working on a quote from a local vendor on the keypad printing.
+
+Nine Tiles has given me permission to use the ZX81 ROM to build a
+limited number of these devices to be given to colleagues.
+
+
+
+
+</pre></div><div class="post" id="p200639"><div class="ph"><a class="d" href="#p200639">2006-02-16 07:44:41</a> <span>Matthias Melcher</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>…@… wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I am working on more or less this project, only I&#x27;m using an ARM micro</span>
+<span class="qt">&gt; and targeting the ZX81. The target size is 2.5&quot; x 3.5&quot; (playing card).</span>
+<span class="qt">&gt; The top side holds a membrane keypad, circuitry is on the back. I&#x27;m</span>
+<span class="qt">&gt; working on a quote from a local vendor on the keypad printing.</span>
+
+Nice! Are you the same person who planned to build the PDP-1 on a credit 
+card?
+
+Is there anything about your project on the web somewhere?
+
+
+
+</pre></div><div class="post" id="p200640"><div class="ph"><a class="d" href="#p200640">2006-02-16 07:45:14</a> <span>Matthias Melcher</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>…@… wrote:
+<span class="qt">&gt; I am working on more or less this project, only I&#x27;m using an ARM micro</span>
+<span class="qt">&gt; and targeting the ZX81. </span>
+
+Oh, and of course: how do *you* get from Z80 to ARM code?
+
+
+
+</pre></div><div class="post" id="p200641"><div class="ph"><a class="d" href="#p200641">2006-02-16 09:35:37</a> <span>…@…</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>Matthias Melcher wrote:
+<span class="qt">&gt; …@… wrote:</span>
+<span class="qt">&gt; &gt; I am working on more or less this project, only I&#x27;m using an ARM micro</span>
+<span class="qt">&gt; &gt; and targeting the ZX81.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Oh, and of course: how do *you* get from Z80 to ARM code?</span>
+
+Easy.
+
+R3-R9 = a,b,c,d,e,l,h
+r10=PC, r11=SP, r12=base of Z80 memory
+
+//    ; ----------------------------
+   //    ; THE &#x27;INITIALIZATION&#x27; ROUTINE
+   //    ; ----------------------------
+   //    ; A holds $3F, HL holds $7FFF.
+   //
+   //    ;; RAM-FILL
+   //    L0261:  LD      (HL),$01        ; fill location with 1 (null).
+
+L0261:
+orr r0,r8,r9 lsl #8
+mov [r12,r0],#1
+   //            DEC     HL              ; decrement address.
+subs r0,r0,#1
+and r8,r0,#&amp;ff
+mov r9,r0,lsr #8
+   //            CP      H               ; compare address high byte to
+$3F.
+cmp r3,r9
+   //            JR      NZ,L0261        ; back, while higher, to
+RAM-FILL.
+bne L0261
+   //
+   //    ;; RAM-READ
+   //    L0267:  INC     HL              ; address the next higher
+location.
+L0267:
+orr r0,r8,r9 lsl #8
+adds r0,r0,#1
+and r8,r0,#&amp;ff
+mov r9,r0,lsr #8
+   //            DEC     (HL)            ; decrement to zero.
+ldrb r1,[r12,r0]
+subs r1
+strb r1,[r12,r0]
+   //            JR      Z,L0267         ; back, if successful to
+RAM-READ. 
+beq L0267
+
+-- 
+JGH
+
+
+
+
+</pre></div><div class="post" id="p200642"><div class="ph"><a class="d" href="#p200642">2006-02-16 09:54:39</a> <span>Matthias Melcher</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>…@… wrote:
+<span class="qt">&gt; Matthias Melcher wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;…@… wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;I am working on more or less this project, only I&#x27;m using an ARM micro</span>
+<span class="qt">&gt;&gt;&gt;and targeting the ZX81.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Oh, and of course: how do *you* get from Z80 to ARM code?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Easy.</span>
+
+Is that hand coded or an automated translation process? Just curious.
+
+
+
+</pre></div><div class="post" id="p200643"><div class="ph"><a class="d" href="#p200643">2006-02-16 10:16:55</a> <span>Matthew Westcott</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>Matthias Melcher wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Hi there,</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I have written a little messy weekend project that takes the ZX80 ROM </span>
+<span class="qt">&gt; and converts it into &quot;C&quot; code. The resulting code can be compiled with </span>
+<span class="qt">&gt; any &quot;C&quot; compiler and runs natively on whatever target platform.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Before I go through the hassle of uploading this somewhere in the web, I </span>
+<span class="qt">&gt; was curios if there is any interest for a project like this at all. </span>
+<span class="qt">&gt; Please let me know.</span>
+
+Ooh, definitely. Something I&#x27;ve been wishing for (and very 
+intermittently working on) for ages is some portable code for reading 
+Speccy soundtracker files. It would be wonderful to be able to squirt 
+the original Z80 player through the converter and get portable C out, 
+instead of having to hand-disassemble it. (The eventual plan would be to 
+have it running on an iPod under Linux. Mmm, AYpod.)
+
+
+
+</pre></div><div class="post" id="p200644"><div class="ph"><a class="d" href="#p200644">2006-02-16 11:34:56</a> <span>…@…</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>Matthias Melcher wrote:
+<span class="qt">&gt; …@… wrote:</span>
+<span class="qt">&gt; &gt; Matthias Melcher wrote:</span>
+<span class="qt">&gt; &gt;&gt;Oh, and of course: how do *you* get from Z80 to ARM code?</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Easy.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Is that hand coded or an automated translation process? Just curious.</span>
+
+Both. It&#x27;s the code my Z80Tube emulator for RISC OS uses.
+I hand crafted the code, and then wrote a program to generate
+the code varients for each opcode.
+
+FOR A%=&amp;40 TO &amp;7F:IFA%&lt;&gt;&amp;76:PROCop(&quot;mov&quot;,FNr8(A% AND 7),FNr8(A%DIV8))
+PROCop(&quot;mov&quot;,pc,link)
+NEXT
+
+sort of thing
+
+-- 
+JGH
+
+
+
+
+</pre></div><div class="post" id="p200645"><div class="ph"><a class="d" href="#p200645">2006-02-16 14:37:31</a> <span>…@…</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>
+Matthias Melcher wrote:
+
+<span class="qt">&gt; &gt; I am working on more or less this project, only I&#x27;m using an ARM micro</span>
+<span class="qt">&gt; &gt; and targeting the ZX81. The target size is 2.5&quot; x 3.5&quot; (playing card).</span>
+<span class="qt">&gt; &gt; The top side holds a membrane keypad, circuitry is on the back. I&#x27;m</span>
+<span class="qt">&gt; &gt; working on a quote from a local vendor on the keypad printing.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Nice! Are you the same person who planned to build the PDP-1 on a credit</span>
+<span class="qt">&gt; card?</span>
+
+Yes, the two projects are related and share a lot of circuitry. The
+ZX81 version is designed to support color and sound because I wanted to
+do a VIC-20 and maybe a ZX Spectrum on basically the same hardware
+platform.
+
+The reason the ZX81 flavor is on a playing card format rather than
+business card is because of the keyboard. There are problems making a
+membrane keyboard really tiny. The smaller the hole in the separator,
+the more stress there is on the top layer as it is pressed through the
+hole.
+
+<span class="qt">&gt; Is there anything about your project on the web somewhere?</span>
+
+My web sites are way out of date compared with what I&#x27;m working on...
+I&#x27;m too busy to keep them on the cutting edge.
+
+Note that I am not translating the ROM code into native ARM code. I am
+running a realtime emulation.
+
+
+
+
+</pre></div><div class="post" id="p200646"><div class="ph"><a class="d" href="#p200646">2006-02-16 15:00:33</a> <span>Matthias Melcher</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>…@… wrote:
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;Nice! Are you the same person who planned to build the PDP-1 on a credit</span>
+<span class="qt">&gt;&gt;card?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Yes, the two projects are related and share a lot of circuitry. The</span>
+<span class="qt">&gt; ZX81 version is designed to support color and sound because I wanted to</span>
+<span class="qt">&gt; do a VIC-20 and maybe a ZX Spectrum on basically the same hardware</span>
+<span class="qt">&gt; platform.</span>
+
+I am glad to hear that Amstrad did allow you to give out those cards 
+after all. That is one cool project!
+
+
+
+</pre></div><div class="post" id="p200647"><div class="ph"><a class="d" href="#p200647">2006-02-16 15:06:44</a> <span>…@…</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>
+Matthias Melcher wrote:
+
+<span class="qt">&gt; &gt; ZX81 version is designed to support color and sound because I wanted to</span>
+<span class="qt">&gt; &gt; do a VIC-20 and maybe a ZX Spectrum on basically the same hardware</span>
+<span class="qt">&gt; &gt; platform.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I am glad to hear that Amstrad did allow you to give out those cards</span>
+<span class="qt">&gt; after all. That is one cool project!</span>
+
+I said &quot;wanted&quot; there, not &quot;want&quot;... the VIC and Spectrum emulation
+possibilities are shelved. Amstrad is not involved in the process; they
+can&#x27;t and won&#x27;t license the Spectrum firmware for any use. Ditto with
+&quot;Commodore&quot; and the VIC-20 firmware.
+
+Amstrad doesn&#x27;t own the ZX80 or ZX81 ROMs.
+
+
+
+
+</pre></div><div class="post" id="p200648"><div class="ph"><a class="d" href="#p200648">2006-02-16 15:12:36</a> <span>Matthias Melcher</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>…@… wrote:
+<span class="qt">&gt; Matthias Melcher wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;&gt;ZX81 version is designed to support color and sound because I wanted to</span>
+<span class="qt">&gt;&gt;&gt;do a VIC-20 and maybe a ZX Spectrum on basically the same hardware</span>
+<span class="qt">&gt;&gt;&gt;platform.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;I am glad to hear that Amstrad did allow you to give out those cards</span>
+<span class="qt">&gt;&gt;after all. That is one cool project!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I said &quot;wanted&quot; there, not &quot;want&quot;... the VIC and Spectrum emulation</span>
+<span class="qt">&gt; possibilities are shelved. Amstrad is not involved in the process; they</span>
+<span class="qt">&gt; can&#x27;t and won&#x27;t license the Spectrum firmware for any use. Ditto with</span>
+<span class="qt">&gt; &quot;Commodore&quot; and the VIC-20 firmware.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Amstrad doesn&#x27;t own the ZX80 or ZX81 ROMs.</span>
+
+Oops, my bad for not reading too well. Sorry.
+
+
+
+</pre></div><div class="post" id="p200649"><div class="ph"><a class="d" href="#p200649">2006-02-16 15:13:18</a> <span>…@…</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>…@… wrote:
+<span class="qt">&gt; Note that I am not translating the ROM code into native ARM code. I am</span>
+<span class="qt">&gt; running a realtime emulation.</span>
+
+A byte-code interpreter? You can have the ARM Z80 emulation core from
+Z80Tube if you want.
+
+-- 
+JGH
+
+
+
+
+</pre></div><div class="post" id="p200746"><div class="ph"><a class="d" href="#p200746">2006-02-21 11:53:48</a> <span>Andrew Owen</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>C&#x27;mon, do the Speccy one. Just use the BBC Basic ROM instead of the
+Speccy ROM (but allow the Speccy ROM to be loaded from flash media for
+emulation purposes and don&#x27;t include the ROM). I mentioned this already
+didn&#x27;t I? I&#x27;m still interested in a production version of the Spectrum
+SE (which can now emulate the ZX80, ZX81, Jupiter Ace, and Timex 2068).
+The only requirement to get JGH&#x27;s port of BBC Basic to work with a
+Speccy clone is some code to interface to the mass storage (if it&#x27;s
+located in a shadow ROM at the same area as the original ROM&#x27;s tape
+routines then the BBC ROM may not even need a rewrite). Owing to the
+whiz-bang nature of the Spectrum SE you get as much room for your BASIC
+program as you do on a 64K BBC machine. Although support isn&#x27;t there
+yet, the BBC Basic can be expanded to include support for the SE&#x27;s
+additional screen modes and AY chip (just designate C as the noise
+channel and use the existing SOUND and ENVELOPE commands should work).
+
+
+
+
+</pre></div><div class="post" id="p200756"><div class="ph"><a class="d" href="#p200756">2006-02-21 21:06:37</a> <span>…@…</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>Andrew Owen wrote:
+<span class="qt">&gt; The only requirement to get JGH&#x27;s port of BBC Basic to work with a</span>
+<span class="qt">&gt; Speccy clone is some code to interface to the mass storage (if it&#x27;s</span>
+[...]
+<span class="qt">&gt; yet, the BBC Basic can be expanded to include support for the SE&#x27;s</span>
+<span class="qt">&gt; additional screen modes and AY chip (just designate C as the noise</span>
+<span class="qt">&gt; channel and use the existing SOUND and ENVELOPE commands should work).</span>
+
+I just need to find another twenty hours in each day after the thirty
+I&#x27;m already using...
+
+-- 
+JGH
+
+
+
+
+</pre></div><div class="post" id="p200759"><div class="ph"><a class="d" href="#p200759">2006-02-21 23:00:19</a> <span>Matthias Melcher</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>…@… wrote:
+<span class="qt">&gt; Matthias Melcher wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;…@… wrote:</span>
+
+<span class="qt">&gt;&gt;Is that hand coded or an automated translation process? Just curious.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Both. It&#x27;s the code my Z80Tube emulator for RISC OS uses.</span>
+<span class="qt">&gt; I hand crafted the code, and then wrote a program to generate</span>
+<span class="qt">&gt; the code varients for each opcode.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; FOR A%=&amp;40 TO &amp;7F:IFA%&lt;&gt;&amp;76:PROCop(&quot;mov&quot;,FNr8(A% AND 7),FNr8(A%DIV8))</span>
+<span class="qt">&gt; PROCop(&quot;mov&quot;,pc,link)</span>
+<span class="qt">&gt; NEXT</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; sort of thing</span>
+<span class="qt">&gt; </span>
+
+Thanks for all the nice feedback in the group. I made all sources 
+available at:
+
+<a href="http://sourceforge.net/projects/undo-redo" rel="noreferrer">http://sourceforge.net/projects/undo-redo</a>
+
+The Home Page links to a still very fresh Wiki page. The source is in 
+the svn system and there is even a screen shot ;-) . I will try to put 
+an executable up tomorrow.
+
+Matthias
+
+
+
+</pre></div><div class="post" id="p200764"><div class="ph"><a class="d" href="#p200764">2006-02-22 12:34:09</a> <span>Matthew Westcott</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>Andrew Owen wrote:
+
+[building a hardware Speccy emulator without breaking Amstrad&#x27;s 
+copyright stipulations]
+
+<span class="qt">&gt; C&#x27;mon, do the Speccy one. Just use the BBC Basic ROM instead of the</span>
+<span class="qt">&gt; Speccy ROM (but allow the Speccy ROM to be loaded from flash media for</span>
+<span class="qt">&gt; emulation purposes and don&#x27;t include the ROM).</span>
+
+As a testing-the-water sort of question: Would people consider it useful 
+/ interesting to have a GPL-licenced ROM image that&#x27;s a rough functional 
+equivalent of the Spectrum ROM, but contains no Amstrad-copyright code? 
+As well as being potentially useful for hardware projects such as this, 
+it would also probably make the Debian people more willing to include 
+Fuse in their main package list.
+
+The initial aim would be to have it emulating enough common entry points 
+to run most M/C games, and understanding enough of Basic to handle 
+simple loader routines. We wouldn&#x27;t need to implement a Basic editor / 
+tokeniser unless we really wanted to. More advanced chunks of the Basic 
+interpreter (trigonometric functions, DEF FN...) would depend on how 
+ambitious I was feeling.
+
+Obviously we could never reach 100% compatibility, but then people who 
+need that could easily download the original ROM.
+
+Incidentally, unlike many of my pet projects, this is one that I&#x27;ve 
+actually started.
+
+
+
+</pre></div><div class="post" id="p200765"><div class="ph"><a class="d" href="#p200765">2006-02-22 15:05:04</a> <span>…@…</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>
+Matthew Westcott wrote:
+
+<span class="qt">&gt; As a testing-the-water sort of question: Would people consider it useful</span>
+<span class="qt">&gt; / interesting to have a GPL-licenced ROM image that&#x27;s a rough functional</span>
+<span class="qt">&gt; equivalent of the Spectrum ROM, but contains no Amstrad-copyright code?</span>
+
+Well, I could care less about Debian&#x27;s weirdnesses (the rants I&#x27;ve read
+on this topic...!) but I am interested in the ROM project, obviously!
+
+Since I don&#x27;t follow c.s.s religiously, would you consider setting up a
+mailing list on this subject? (or I could set one up at larwe.com).
+
+
+
+
+</pre></div><div class="post" id="p201042"><div class="ph"><a class="d" href="#p201042">2006-03-06 17:20:18</a> <span>Philip Kendall</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>In article &lt;…@…&gt;,
+Matthew Westcott  &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt;As a testing-the-water sort of question: Would people consider it useful </span>
+<span class="qt">&gt;/ interesting to have a GPL-licenced ROM image that&#x27;s a rough functional </span>
+<span class="qt">&gt;equivalent of the Spectrum ROM, but contains no Amstrad-copyright code? </span>
+
+Yes.
+
+<span class="qt">&gt;As well as being potentially useful for hardware projects such as this, </span>
+<span class="qt">&gt;it would also probably make the Debian people more willing to include </span>
+<span class="qt">&gt;Fuse in their main package list.</span>
+
+I believe a free ROM would be sufficient to allow Spectrum emulators
+into main. Although I&#x27;m thoroughly confused about all this given the
+recent Debian discussion on ndiswrapper...
+
+Cheers,
+
+Phil
+
+-- 
+  Philip Kendall &lt;…@…&gt;
+  <a href="http://www.srcf.ucam.org/~pak21/" rel="noreferrer">http://www.srcf.ucam.org/~pak21/</a>
+
+
+
+</pre></div><div class="post" id="p201044"><div class="ph"><a class="d" href="#p201044">2006-03-06 23:39:21</a> <span>Paul F. Johnson</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>Philip Kendall wrote:
+
+<span class="qt">&gt; In article &lt;…@…&gt;,</span>
+<span class="qt">&gt; Matthew Westcott  &lt;…@…&gt; wrote:</span>
+
+<span class="qt">&gt;&gt;As well as being potentially useful for hardware projects such as this,</span>
+<span class="qt">&gt;&gt;it would also probably make the Debian people more willing to include</span>
+<span class="qt">&gt;&gt;Fuse in their main package list.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I believe a free ROM would be sufficient to allow Spectrum emulators</span>
+<span class="qt">&gt; into main. </span>
+
+Yep. I&#x27;m still waiting for Fuse to be allowed into Fedora Extras (though
+lib765, libdsk and the other lib are all in there as is z88dk!). 
+
+<span class="qt">&gt; Although I&#x27;m thoroughly confused about all this given the </span>
+<span class="qt">&gt; recent Debian discussion on ndiswrapper...</span>
+
+Eh? Debian even thinking about ndiswrapper? The mind boggles!!!
+
+TTFN
+
+Paul
+
+
+
+</pre></div><div class="post" id="p201050"><div class="ph"><a class="d" href="#p201050">2006-03-07 12:13:57</a> <span>Mauricio</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>Hi Matthias, 
+
+I&#x27;m interested...
+
+
+
+
+</pre></div><div class="post" id="p201054"><div class="ph"><a class="d" href="#p201054">2006-03-07 20:27:56</a> <span>Matthias Melcher</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>Mauricio wrote:
+<span class="qt">&gt; Hi Matthias, </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;m interested...</span>
+<span class="qt">&gt; </span>
+
+You can download the current source from:
+
+www.sf.net/projects/undo-redo
+
+Add the ROM and the program will generate somewhat optimized &quot;C&quot; code 
+for the ROM. It works ;-).
+
+BTW, one of the things I did was to catch all places where the ZX80 
+writes to the screen. Since there are only very few, I imagine it would 
+be simple to replace them with calls to a VT100 terminal. Then recompile 
+for an instant ZX80 in a terminal window in under 8k.
+
+Matthias
+
+
+
+</pre></div><div class="post" id="p201066"><div class="ph"><a class="d" href="#p201066">2006-03-08 01:05:22</a> <span>Da Smog</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>οΏ½οΏ½οΏ½ Tue, 07 Mar 2006 15:27:56 -0500,o(h) Matthias Melcher  
+&lt;…@…&gt; οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½:
+
+<span class="qt">&gt; Mauricio wrote:</span>
+<span class="qt">&gt;&gt; Hi Matthias,  I&#x27;m interested...</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; You can download the current source from:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; www.sf.net/projects/undo-redo</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Add the ROM and the program will generate somewhat optimized &quot;C&quot; code  </span>
+<span class="qt">&gt; for the ROM. It works ;-).</span>
+
+Does that include source code? I would be interested in adapting it for  
+68000 code (Sinclair related again albeit the QL)
+
+Phoebus
+
+
+
+</pre></div><div class="post" id="p201216"><div class="ph"><a class="d" href="#p201216">2006-03-16 12:01:15</a> <span>Matthias Melcher</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>Da Smog wrote:
+<span class="qt">&gt; οΏ½οΏ½οΏ½ Tue, 07 Mar 2006 15:27:56 -0500,o(h) Matthias Melcher  </span>
+<span class="qt">&gt; &lt;…@…&gt; οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Mauricio wrote:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; Hi Matthias,  I&#x27;m interested...</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; You can download the current source from:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; www.sf.net/projects/undo-redo</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Add the ROM and the program will generate somewhat optimized &quot;C&quot; code  </span>
+<span class="qt">&gt;&gt; for the ROM. It works ;-).</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Does that include source code? I would be interested in adapting it for  </span>
+<span class="qt">&gt; 68000 code (Sinclair related again albeit the QL)</span>
+
+Not entirely sure which source code you refer to: the full source code 
+of my project is available on Sourceforge. Inside you will find a text 
+file that explains that you need to download the ROM file from the web. 
+Also, you can download the documented assembler listing which will then 
+be included into the final &quot;C&quot; source code at the correct places.
+
+I like the QL idea. Tell me if you will go ahead... .
+
+Matthias.
+
+
+
+</pre></div><div class="post" id="p201306"><div class="ph"><a class="d" href="#p201306">2006-03-20 06:01:39</a> <span>Da Smog</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>οΏ½οΏ½οΏ½ Thu, 16 Mar 2006 07:01:15 -0500,o(h) Matthias Melcher  
+&lt;…@…&gt; οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½:
+
+<span class="qt">&gt; Da Smog wrote:</span>
+<span class="qt">&gt;&gt; οΏ½οΏ½οΏ½ Tue, 07 Mar 2006 15:27:56 -0500,o(h) Matthias Melcher   </span>
+<span class="qt">&gt;&gt; &lt;…@…&gt; οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; Mauricio wrote:</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;&gt; Hi Matthias,  I&#x27;m interested...</span>
+<span class="qt">&gt;&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; You can download the current source from:</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; www.sf.net/projects/undo-redo</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; Add the ROM and the program will generate somewhat optimized &quot;C&quot; code   </span>
+<span class="qt">&gt;&gt;&gt; for the ROM. It works ;-).</span>
+<span class="qt">&gt;&gt;   Does that include source code? I would be interested in adapting it  </span>
+<span class="qt">&gt;&gt; for  68000 code (Sinclair related again albeit the QL)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Not entirely sure which source code you refer to: the full source code  </span>
+<span class="qt">&gt; of my project is available on Sourceforge.</span>
+
+I thought that was only a binary... maybe it was late when I looked up the  
+page :-( I will download it now to have a look-see :-)
+
+<span class="qt">&gt; Inside you will find a text file that explains that you need to download  </span>
+<span class="qt">&gt; the ROM file from the web. Also, you can download the documented  </span>
+<span class="qt">&gt; assembler listing which will then be included into the final &quot;C&quot; source  </span>
+<span class="qt">&gt; code at the correct places.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I like the QL idea. Tell me if you will go ahead... .</span>
+
+I will but after July 1st. I am moving back to Greece from the US and I am  
+up to my eyeballs at the mo. as I&#x27;ve taken up quite a few projects,  
+&lt;plug&gt;the SE Basic manual notwithstanding (which is very close to  
+finishing up btw - available in printed form as well ;-) &lt;/plug&gt;
+
+To expand on the QL idea.. I&#x27;ve been working on a modification of the  
+GPL&#x27;d QDOS compatible operating system named Minerva (available in source  
+form from <a href="http://bergbland" rel="noreferrer">http://bergbland</a> DOT info ) which is aptly renamed freeQDOS. The  
+thing with QDOS (and its variants) is that many of its ideas were so  
+advanced then they are still relevant now. Your decompiler-recompiler  
+could potentially lead to a QL operating system for the PeeCee -or to a  
+more humble goal- give a good way to run S*Basic/Minerva Basic software  
+(by far the *BEST* Basic ever!) on PeeCees etc. My estimation is that a  
+QDOS-style OS for the PeeCee even written in completely unoptimised C  
+would blow the socks off any *Nix/Windows etc offering on the PC today.  
+And that&#x27;s no joke if you consider that even with a completely non  
+fragmented memory (to whatever extent that is possible) a QL with a mere  
+16 Megs of memory and a 68020 cpu, can still load more applications and  
+multitask between them with very little impact on its response than your  
+average XP based PC with hundreds of megabytes of memory. Simple test. Try  
+how many copies of Notepad you can load before your PC screeches to a halt  
+;-)
+
+Cheers,
+
+
+Phoebus
+
+If you want more info drop me a line at phoebus AT dokos DASH gr DOT net
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Matthias.</span>
+
+
+
+-- 
+οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½ οΏ½οΏ½ οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½ οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½ οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½ οΏ½οΏ½οΏ½ Opera:  
+<a href="http://www.opera.com/mail/" rel="noreferrer">http://www.opera.com/mail/</a>
+
+
+
+</pre></div><div class="post" id="p201307"><div class="ph"><a class="d" href="#p201307">2006-03-20 07:53:22</a> <span>Matthias Melcher</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>Da Smog wrote:
+<span class="qt">&gt; I will but after July 1st. I am moving back to Greece from the US </span>
+
+Oh, yet another one moving back. I did the same thing a year ago like 
+most of my European friends... .
+
+<span class="qt">&gt; To expand on the QL idea.. </span>
+
+That does sound very cool. I don&#x27;t know enough about QDOS though. I am 
+however looking for a nice OpenSource Basic that I can compile onto a 
+microcontroller - but I&#x27;ll probably en up implementing that myself anyways.
+
+As for multitasking performance on XP, well, I am not a fan for this and 
+many other reasons. But I try to stay platform independent with all my 
+projects, so I co-wrote &lt;now_my_plug&gt; FLTK &lt;/now_my_plug&gt; which gives 
+you a fast and tiny cross platfrom UI.
+
+Keep me posted how it works out. Not sure if the rest of the group is 
+interested though. My EMail address above is correct (I know, I must be 
+nuts)
+
+Matthias
+
+
+
+</pre></div><div class="post" id="p201311"><div class="ph"><a class="d" href="#p201311">2006-03-20 15:06:27</a> <span>Daniel Mandic</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>Da Smog wrote:
+
+<span class="qt">&gt; test. Try  how many copies of Notepad you can load before your PC</span>
+<span class="qt">&gt; screeches to a halt  ;-)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Cheers,</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Phoebus</span>
+<span class="qt">&gt; </span>
+
+
+You must be ?joking.
+
+
+
+Best Regards,
+
+Daniel Mandic
+
+
+
+</pre></div><div class="post" id="p201316"><div class="ph"><a class="d" href="#p201316">2006-03-20 16:17:40</a> <span>Da Smog</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>οΏ½οΏ½οΏ½ Mon, 20 Mar 2006 10:06:27 -0500,o(h) Daniel Mandic  
+&lt;…@…&gt; οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½:
+
+<span class="qt">&gt; Da Smog wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; test. Try  how many copies of Notepad you can load before your PC</span>
+<span class="qt">&gt;&gt; screeches to a halt  ;-)</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Cheers,</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Phoebus</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; You must be ?joking.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+No I am not.  Notepad is a fairly simple application and under normal  
+conditions (empty document) it occupies 8 megs or less. In a 1 Gbyte  
+system that is comparable to the 64 odd Kbytes of say QD on the QL (loaded  
+with a large document - QD is an editor far more capable than notepad) -  
+on a QL with say 4 Megs or more...
+
+Phoebus
+
+
+
+</pre></div><div class="post" id="p201324"><div class="ph"><a class="d" href="#p201324">2006-03-20 18:24:18</a> <span>Mike Wynne</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>
+&quot;Da Smog&quot; wrote...
+<span class="qt">&gt; Simple test. Try  how many copies of Notepad you can load before your PC </span>
+<span class="qt">&gt; screeches to a halt</span>
+
+I just tried this, but at no point did it ever &quot;screech to a halt&quot;.  After 
+192 Notepad windows had been opened it wouldn&#x27;t let me open any more but the 
+system was still responsive and working fine.  This leads me to believe 
+there&#x27;s a limit somewhere else in the system (maybe XP only allows 192 open 
+windows at any time) that get exhausted before memory.
+
+This test was not done on a super new PC - in fact a more &quot;humble&quot; AthlonXP 
+1500 laptop with 256Mb RAM.
+
+MikeW
+
+
+
+
+
+</pre></div><div class="post" id="p201720"><div class="ph"><a class="d" href="#p201720">2006-04-10 13:47:26</a> <span>Matthew Westcott</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>Matthew Westcott wrote:
+<span class="qt">&gt; As a testing-the-water sort of question: Would people consider it useful </span>
+<span class="qt">&gt; / interesting to have a GPL-licenced ROM image that&#x27;s a rough functional </span>
+<span class="qt">&gt; equivalent of the Spectrum ROM, but contains no Amstrad-copyright code? </span>
+<span class="qt">&gt; As well as being potentially useful for hardware projects such as this, </span>
+<span class="qt">&gt; it would also probably make the Debian people more willing to include </span>
+<span class="qt">&gt; Fuse in their main package list.</span>
+
+I&#x27;ve finally got round to putting a release package together:
+<a href="http://matt.west.co.tt/spectrum/openzxrom/" rel="noreferrer">http://matt.west.co.tt/spectrum/openzxrom/</a>
+
+
+
+</pre></div><div class="post" id="p201723"><div class="ph"><a class="d" href="#p201723">2006-04-10 19:10:13</a> <span>Matthias Melcher</span> <span>Re: ZX80 to &quot;C&quot; decompiler-recompiler - anyone interested?</span></div><pre>Matthew Westcott wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I&#x27;ve finally got round to putting a release package together:</span>
+<span class="qt">&gt; <a href="http://matt.west.co.tt/spectrum/openzxrom/" rel="noreferrer">http://matt.west.co.tt/spectrum/openzxrom/</a></span>
+
+Cool! And since it runs Manic Miner, it is almost good enough for me ;-)
+
+
+Matthias
+
+-- 
+<a href="http://www.robowerk.com/" rel="noreferrer">http://www.robowerk.com/</a>
+
+
+
+</pre></div></main></body></html>

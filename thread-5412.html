@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Announcing the comp.sys.sinclair crap compilation! · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Announcing the comp.sys.sinclair crap compilation!</h1><p class="facts">9 posts, 1996-01-26 – 1996-02-05</p><div class="post" id="p15115"><div class="ph"><a class="d" href="#p15115">1996-01-26</a> <span>…@…</span> </div><pre>
+
+
+
+
+
+Hi all,
+
+After my last posting I got to thinking......
+If you remember, I said :
+
+:Scoop of the bunch (and not originally on my list of obscure games) is 
+:Cascade&#x27;s Cassette 50! Yes, the biggest compilation tape of all time is now
+:available as a single .TAP thanks to Andy (who I got it from). And every single
+:game on there is utter, utter crap! You really have to see it to believe it!
+:You wouldn&#x27;t think that people could use such awful concepts, terrible graphics
+:and grating BEEP 10,10s so many times, and then inflict them upon others!                   
+:               
+:If you think you can do worse than these games (which make Advanced Lawn Mower  
+:Simulator look complex and enthralling), send them to me! I&#x27;ll make a follow up 
+:&#x27;comp-sys-sinclair cassette 50&#x27; and sell it for nothing! ;)                     
+
+This was originally intended as a joke, but I&#x27;ve had a few replies from people
+saying they thought it was a good idea. So.......
+
+Formally announcing the &#x27;comp.sys.sinclair crap compilation&#x27;.
+I&#x27;d like everyone on here to write a crap game in Speccy BASIC and send it to
+me. I will then collect them all together into one gigantic fun-filled file and
+put them somewhere where everyone can have a laugh at &#x27;em. The main point of
+this exercise? To prove that we could knock up a better compilation that
+Cassette 50 when we were TRYING to make the games crap! :)
+
+I&#x27;ve got a few crappy BASIC games that I&#x27;ve written over the last year or so
+(usually whilst waiting for games to load into the sound sampler!), so I&#x27;ve
+already got a start. Come on, let&#x27;s all be creative for a change and leave that
+2000th game of Manic Miner until later! :)
+
+I&#x27;ll be very interested to see what I receive...! ;-)
+
+Waiting for your replies..........!
+
+
+Blood.
+
+===============================================================
+<span class="qt">| The Infamous BLOOD! (…@…)      |</span>
+<span class="qt">| A Sinclair Spectrum user since 1982 and still going strong! |</span>
+<span class="qt">| Who needs Interactive Movies when Chaos only takes up 48k?! |</span>
+===============================================================
+
+
+</pre></div><div class="post" id="p15155"><div class="ph"><a class="d" href="#p15155">1996-01-27</a> <span>…@…</span> <span>Re: Announcing the comp.sys.sinclair crap compilation!</span></div><pre>…@… wrote:
+<span class="qt">&gt;Formally announcing the &#x27;comp.sys.sinclair crap compilation&#x27;.</span>
+<span class="qt">&gt;I&#x27;d like everyone on here to write a crap game in Speccy BASIC and send it to</span>
+<span class="qt">&gt;me. I will then collect them all together into one gigantic fun-filled file and</span>
+<span class="qt">&gt;put them somewhere where everyone can have a laugh at &#x27;em.</span>
+
+I remember a SU competition for crappy games in one of the latest
+issues. They even published a series of guidelines to make a game
+really bad - they were really useful. There were sample screenshots,
+also.
+
+ 
+
+
+
+</pre></div><div class="post" id="p15201"><div class="ph"><a class="d" href="#p15201">1996-01-28</a> <span>barry plewa</span> <span>Re: Announcing the comp.sys.sinclair crap compilation!</span></div><pre>In article: &lt;4ede2t$…@…&gt;  …@… (Paolo &quot;Nusco&quot; 
+Perrotta) writes:
+
+<span class="qt">&gt; …@… wrote:</span>
+<span class="qt">&gt; &gt;Formally announcing the &#x27;comp.sys.sinclair crap compilation&#x27;.</span>
+<span class="qt">&gt; &gt;I&#x27;d like everyone on here to write a crap game in Speccy BASIC and send it to</span>
+<span class="qt">&gt; &gt;me. I will then collect them all together into one gigantic fun-filled file and</span>
+<span class="qt">&gt; &gt;put them somewhere where everyone can have a laugh at &#x27;em.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I remember a SU competition for crappy games in one of the latest</span>
+<span class="qt">&gt; issues. They even published a series of guidelines to make a game</span>
+<span class="qt">&gt; really bad - they were really useful. There were sample screenshots,</span>
+<span class="qt">&gt; also.</span>
+
+I used to love reading the &quot;Crap games corner&quot; in YS. There was some real classics such as the 
+Lawnmower simulator series of games!!
+-- 
+*****************************************
+*              BARRY PLEWA              *  
+* E-Mail : …@…  *
+*                                       *
+*                EMULATE!               *
+*     The Spectrum Emulator Magazine    *
+*            Issue 3 Out Now            *
+*****************************************
+
+
+
+</pre></div><div class="post" id="p15221"><div class="ph"><a class="d" href="#p15221">1996-01-29</a> <span>stephen smith</span> <span>Re: Announcing the comp.sys.sinclair crap compilation!</span></div><pre><span class="qt">&gt; I remember a SU competition for crappy games in one of the latest</span>
+<span class="qt">&gt; issues. They even published a series of guidelines to make a game</span>
+<span class="qt">&gt; really bad - they were really useful. There were sample screenshots,</span>
+<span class="qt">&gt; also.</span>
+
+They were going to publish the winner on a future Megatape, but AFAIK they 
+never got round to it.  Still, the sample screenshots were great!
+
+-- 
+Stephen Smith
+Computersmiths Training
+(…@…)                Nothing REALLY matters.
+
+       * <a href="http://www.hermetica.com/technologia/sinclair" rel="noreferrer">http://www.hermetica.com/technologia/sinclair</a> *
+
+
+
+</pre></div><div class="post" id="p15229"><div class="ph"><a class="d" href="#p15229">1996-01-29</a> <span>matt</span> <span>Re: Announcing the comp.sys.sinclair crap compilation!</span></div><pre>Paolo &quot;Nusco&quot; Perrotta (…@…) wrote:
+: …@… wrote:
+: &gt;Formally announcing the &#x27;comp.sys.sinclair crap compilation&#x27;.
+: &gt;I&#x27;d like everyone on here to write a crap game in Speccy BASIC and send it to
+: &gt;me. I will then collect them all together into one gigantic fun-filled file and
+: &gt;put them somewhere where everyone can have a laugh at &#x27;em.
+
+: I remember a SU competition for crappy games in one of the latest
+: issues. They even published a series of guidelines to make a game
+: really bad - they were really useful. There were sample screenshots,
+: also.
+
+UDG graphics and it had to beep Sauls death march (dur,dur,dur-dur, etc) 
+when the game finished. Also having a description like &quot;Awesome 3D 
+graphics&quot; helped.
+
+Is the competion seriously on then? Where do we post to?
+
+--
+---Matthew Smith,College of St. Hild and St. Bede,Durham University,England---
+
+
+</pre></div><div class="post" id="p15265"><div class="ph"><a class="d" href="#p15265">1996-01-30</a> <span>…@…</span> <span>Re: Announcing the comp.sys.sinclair crap compilation!</span></div><pre>Barry Plewa  wrote:
+
+<span class="qt">&gt;I used to love reading the &quot;Crap games corner&quot; in YS. There was some real classics such as the </span>
+<span class="qt">&gt;Lawnmower simulator series of games!!</span>
+
+ISTR that there was a crap compilation called &#x27; Don&#x27;t Buy This &#x27;...
+
+Anybody remember anything about it?
+
+Mike Dolan
+
+
+
+</pre></div><div class="post" id="p15304"><div class="ph"><a class="d" href="#p15304">1996-02-01</a> <span>barry plewa</span> <span>Re: Announcing the comp.sys.sinclair crap compilation!</span></div><pre>In article: &lt;…@…&gt;  …@… (Mike Dolan) writes:
+
+<span class="qt">&gt; Barry Plewa  wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt;I used to love reading the &quot;Crap games corner&quot; in YS. There was some real classics such as the </span>
+<span class="qt">&gt; &gt;Lawnmower simulator series of games!!</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; ISTR that there was a crap compilation called &#x27; Don&#x27;t Buy This &#x27;...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Anybody remember anything about it?</span>
+
+I&#x27;ve got a TAP file of it if you&#x27;re really feeling masochistic?!?
+-- 
+*****************************************
+*              BARRY PLEWA              *  
+* E-Mail : …@…  *
+*                                       *
+*                EMULATE!               *
+*     The Spectrum Emulator Magazine    *
+*            Issue 3 Out Now            *
+*****************************************
+
+
+
+</pre></div><div class="post" id="p15330"><div class="ph"><a class="d" href="#p15330">1996-02-02</a> <span>steve lake</span> <span>Re: Announcing the comp.sys.sinclair crap compilation!</span></div><pre>Stephen Smith  wrote:
+<span class="qt">&gt;They were going to publish the winner on a future Megatape, but AFAIK they </span>
+<span class="qt">&gt;never got round to it.  Still, the sample screenshots were great!</span>
+<span class="qt">&gt;</span>
+
+Ah yes, the crap game corner in Your Sinclair.... what a wonderful page that was!
+
+With all the various versions of Advanced Lawnmower Simulator that people made
+and sent it and things like that... I vagely remember one called Potato Olympics 
+too... very strange..
+
+Does anyone know if they ever got Castle of the Quizzard Wizard (or whatever) to 
+work..? they kept printing the screenshot of the loading screen with captions like 
+&quot;tried again, it still wouldn&#x27;t load though.. still, nice picture&quot; 
+
+Actually if anyone&#x27;s got any of the &quot;crap games&quot; on tape, why not bung &#x27;em 
+on FTP ? Or any home-grown stuff too.. Or any programs that someone typed in from a 
+book or mag ? Stuff like that. 
+
+Cheers
+
+
+-- 
+      …@…+
+<span class="qt">      |      Steve &quot;The Mad Hippo&quot; Lake           | </span>
+<span class="qt">      |   <a href="http://www.brunel.ac.uk:8080/~hcsrsml" rel="noreferrer">http://www.brunel.ac.uk:8080/~hcsrsml</a>   |</span>
+      …@…
+
+
+
+
+</pre></div><div class="post" id="p15416"><div class="ph"><a class="d" href="#p15416">1996-02-05</a> <span>barry plewa</span> <span>Re: Announcing the comp.sys.sinclair crap compilation!</span></div><pre>In article: &lt;4esjm9$…@…&gt;  Steve Lake  writes:
+
+<span class="qt">&gt; With all the various versions of Advanced Lawnmower Simulator that people made</span>
+<span class="qt">&gt; and sent it and things like that... I vagely remember one called Potato Olympics </span>
+<span class="qt">&gt; too... very strange..</span>
+
+That was a very funny review! I remember that the screenshot showed one of the potatoes saying 
+&quot;Tosh!&quot; (for some reason) and the caption under the screen read &quot;Looks like Mr Potatoe&#x27;s got this 
+game pretty sussed!&quot;
+
+-- 
+*****************************************
+*              BARRY PLEWA              *  
+* E-Mail : …@…  *
+*                                       *
+*                EMULATE!               *
+*     The Spectrum Emulator Magazine    *
+*            Issue 3 Out Now            *
+*****************************************
+
+
+
+</pre></div></main></body></html>

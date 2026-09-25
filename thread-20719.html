@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Advanced Coat Getting Simulator · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Advanced Coat Getting Simulator</h1><p class="facts">25 posts, 2001-02-02 – 2001-02-11</p><div class="post" id="p87086"><div class="ph"><a class="d" href="#p87086">2001-02-02 21:42:11</a> <span>Tayles</span> </div><pre>In response to a comment about a need for such a game, I knocked this
+little beauty in my lunchtime. It also seems like prime Speccy Crap
+Games material to me.
+
+I&#x27;ve uploaded it to: <a href="http://www.redrival.com/spectrum/coatsim.zip" rel="noreferrer">http://www.redrival.com/spectrum/coatsim.zip</a>
+
+Russ
+--
+<a href="http://www.redrival.com/spectrum/home.html" rel="noreferrer">http://www.redrival.com/spectrum/home.html</a>
+The Spectrum Golden Years 1982-1986
+
+
+Sent via Deja.com
+<a href="http://www.deja.com/" rel="noreferrer">http://www.deja.com/</a>
+
+
+
+</pre></div><div class="post" id="p87230"><div class="ph"><a class="d" href="#p87230">2001-02-03 18:30:13</a> <span>Llama-Wax Len</span> <span>Re: Advanced Coat Getting Simulator</span></div><pre>
+Tayles wrote in message &lt;95f9jg$nlv$…@…&gt;...
+<span class="qt">&gt;In response to a comment about a need for such a game, I knocked this</span>
+<span class="qt">&gt;little beauty in my lunchtime. It also seems like prime Speccy Crap</span>
+<span class="qt">&gt;Games material to me.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I&#x27;ve uploaded it to: <a href="http://www.redrival.com/spectrum/coatsim.zip" rel="noreferrer">http://www.redrival.com/spectrum/coatsim.zip</a></span>
+
+
+I can&#x27;t get it - &quot;missing file&quot; kind of error.[1]
+
+Len
+[1] And I still read that as re-drival.
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+LEGAL DISCLAIMER: By replying to this message, you hereby
+acknowledge that the ZX Spectrum game &quot;Robocop&quot; was too hard.
+
+
+
+
+
+</pre></div><div class="post" id="p87292"><div class="ph"><a class="d" href="#p87292">2001-02-04 12:07:12</a> <span>Chris Young</span> <span>Re: Advanced Coat Getting Simulator</span></div><pre>On Sat, 3 Feb 2001 18:30:13 -0000, Llama-Wax Len (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Tayles wrote in message &lt;95f9jg$nlv$…@…&gt;...</span>
+<span class="qt">&gt; &gt;In response to a comment about a need for such a game, I knocked this</span>
+<span class="qt">&gt; &gt;little beauty in my lunchtime. It also seems like prime Speccy Crap</span>
+<span class="qt">&gt; &gt;Games material to me.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;I&#x27;ve uploaded it to: <a href="http://www.redrival.com/spectrum/coatsim.zip" rel="noreferrer">http://www.redrival.com/spectrum/coatsim.zip</a></span>
+
+(sorry, replying here because I didn&#x27;t get the original message)
+
+This should be sent to Graham Goring, if you can find him.  And if you
+*do* find him, make sure you tie him to a chair in front of a Speccy
+and don&#x27;t let him free until he finishes marking last year&#x27;s CSSCGC.
+
+<span class="qt">&gt; [1] And I still read that as re-drival.</span>
+
+Yes, so do I.
+
+Chris
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p87386"><div class="ph"><a class="d" href="#p87386">2001-02-05 11:55:14</a> <span>Tayles</span> <span>Professional Coat Getting Simulator</span></div><pre>Errr...sorry about that. Made a cock up, but it&#x27;s sorted now. You can
+find the game at <a href="http://www.redrival.com/spectrum/coatsim.z80" rel="noreferrer">http://www.redrival.com/spectrum/coatsim.z80</a>
+
+Let me know what you think. Having not programmed a line of BASIC in
+about ten years it was kind of fun and enlightening to remember that
+ever line of BASIC slows the program down another notch. Marvellous.
+
+Russ
+--
+<a href="http://www.redrival.com/spectrum/home.html" rel="noreferrer">http://www.redrival.com/spectrum/home.html</a>
+The Spectrum Golden Years 1982-1986
+
+
+Sent via Deja.com
+<a href="http://www.deja.com/" rel="noreferrer">http://www.deja.com/</a>
+
+
+
+</pre></div><div class="post" id="p87391"><div class="ph"><a class="d" href="#p87391">2001-02-05 12:33:29</a> <span>Mirko</span> <span>Re: Professional Coat Getting Simulator</span></div><pre>&quot;Tayles&quot; &lt;…@…&gt; schrieb im Newsbeitrag
+news:95m4b1$ibu$…@…...
+<span class="qt">| Errr...sorry about that. Made a cock up, but it&#x27;s sorted now. You can</span>
+<span class="qt">| find the game at <a href="http://www.redrival.com/spectrum/coatsim.z80" rel="noreferrer">http://www.redrival.com/spectrum/coatsim.z80</a></span>
+<span class="qt">| Let me know what you think. Having not programmed a line of BASIC in</span>
+<span class="qt">| about ten years it was kind of fun and enlightening to remember that</span>
+<span class="qt">| ever line of BASIC slows the program down another notch. Marvellous.</span>
+<span class="qt">| Russ</span>
+<span class="qt">| --</span>
+<span class="qt">| <a href="http://www.redrival.com/spectrum/home.html" rel="noreferrer">http://www.redrival.com/spectrum/home.html</a></span>
+<span class="qt">| The Spectrum Golden Years 1982-1986</span>
+
+I got 5 coats now ! I played it longer then i ever played Quake or such
+stuff ;-) That prooves - it&#x27;s good. Greets, Mirko
+
+
+
+
+
+
+-----------------------------------------
+- MY Z80 is much better then my english -
+-----------------------------------------
+------ <a href="http://zxspectrum.ubuxe.de" rel="noreferrer">http://zxspectrum.ubuxe.de</a> -------
+-----------------------------------------
+
+
+
+
+
+</pre></div><div class="post" id="p87426"><div class="ph"><a class="d" href="#p87426">2001-02-05 15:33:23</a> <span>Tayles</span> <span>Re: Professional Coat Getting Simulator</span></div><pre>In article &lt;95m6h3$cef$04$…@…&gt;,
+  &quot;Mirko&quot; &lt;…@…&gt; wrote:
+<span class="qt">&gt; &quot;Tayles&quot; &lt;…@…&gt; schrieb im Newsbeitrag</span>
+<span class="qt">&gt; news:95m4b1$ibu$…@…...</span>
+<span class="qt">&gt; | Errr...sorry about that. Made a cock up, but it&#x27;s sorted now. You</span>
+can
+<span class="qt">&gt; | find the game at <a href="http://www.redrival.com/spectrum/coatsim.z80" rel="noreferrer">http://www.redrival.com/spectrum/coatsim.z80</a></span>
+<span class="qt">&gt; | Let me know what you think. Having not programmed a line of BASIC in</span>
+<span class="qt">&gt; | about ten years it was kind of fun and enlightening to remember that</span>
+<span class="qt">&gt; | ever line of BASIC slows the program down another notch. Marvellous.</span>
+<span class="qt">&gt; | Russ</span>
+
+
+
+<span class="qt">&gt; I got 5 coats now ! I played it longer then i ever played Quake or</span>
+such
+<span class="qt">&gt; stuff ;-) That prooves - it&#x27;s good. Greets, Mirko</span>
+
+Glad to hear it! I just added some extra features like killer umbrellas
+and an extra coat stand, so check out the new version. It&#x27;s at the same
+address.
+
+Russ.
+--
+<a href="http://www.redrival.com/spectrum/home.html" rel="noreferrer">http://www.redrival.com/spectrum/home.html</a>
+The Spectrum Golden Years 1982-1986
+
+
+Sent via Deja.com
+<a href="http://www.deja.com/" rel="noreferrer">http://www.deja.com/</a>
+
+
+
+</pre></div><div class="post" id="p87431"><div class="ph"><a class="d" href="#p87431">2001-02-05 16:07:07</a> <span>Lister</span> <span>Re: Professional Coat Getting Simulator</span></div><pre>A long time ago (Mon, 05 Feb 2001 15:33:23 GMT, really), in a pub far,
+far away, Tayles &lt;…@…&gt; slammed a pint glass on the
+table and said :
+
+<span class="qt">&gt;In article &lt;95m6h3$cef$04$…@…&gt;,</span>
+<span class="qt">&gt;  &quot;Mirko&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; &quot;Tayles&quot; &lt;…@…&gt; schrieb im Newsbeitrag</span>
+<span class="qt">&gt;&gt; news:95m4b1$ibu$…@…...</span>
+<span class="qt">&gt;&gt; | Errr...sorry about that. Made a cock up, but it&#x27;s sorted now. You</span>
+<span class="qt">&gt;can</span>
+<span class="qt">&gt;&gt; | find the game at <a href="http://www.redrival.com/spectrum/coatsim.z80" rel="noreferrer">http://www.redrival.com/spectrum/coatsim.z80</a></span>
+<span class="qt">&gt;&gt; | Let me know what you think. Having not programmed a line of BASIC in</span>
+<span class="qt">&gt;&gt; | about ten years it was kind of fun and enlightening to remember that</span>
+<span class="qt">&gt;&gt; | ever line of BASIC slows the program down another notch. Marvellous.</span>
+<span class="qt">&gt;&gt; | Russ</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; I got 5 coats now ! I played it longer then i ever played Quake or</span>
+<span class="qt">&gt;such</span>
+<span class="qt">&gt;&gt; stuff ;-) That prooves - it&#x27;s good. Greets, Mirko</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Glad to hear it! I just added some extra features like killer umbrellas</span>
+<span class="qt">&gt;and an extra coat stand, so check out the new version. It&#x27;s at the same</span>
+<span class="qt">&gt;address.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Russ.</span>
+
+I got 88 points, despite not having a clue what was going on:)
+
+
+
+
+-- 
+quanti canicule ille in finestere?
+
+
+
+</pre></div><div class="post" id="p87440"><div class="ph"><a class="d" href="#p87440">2001-02-05 17:25:55</a> <span>Matthew Clemson</span> <span>Re: Professional Coat Getting Simulator</span></div><pre><span class="qt">&gt; Glad to hear it! I just added some extra features like killer</span>
+<span class="qt">&gt; umbrellas and an extra coat stand, so check out the new version.</span>
+<span class="qt">&gt; It&#x27;s at the same address.</span>
+
+Not sure I like the inclusion of air; that gives an upper cap on the
+points at 120, I think:
+
+50 points for movements
+20 points for defeated coatstands
+50 points coat-getting bonus
+
+Having said that, of course, more levels would rectify this :-)
+
+As an aside, how about a bonus for unused jumps?
+
+-- 
+---------|---------|---------|---------|---------|---------|---------|
+-Matt
+
+
+
+
+
+</pre></div><div class="post" id="p87447"><div class="ph"><a class="d" href="#p87447">2001-02-05 17:47:11</a> <span>Hob</span> <span>Re: Professional Coat Getting Simulator</span></div><pre>Many eons ago,  in the dim, dark and distant past, Tayles once waffled on about:
+
+<span class="qt">&gt; Errr...sorry about that. Made a cock up, but it&#x27;s sorted now. You can</span>
+<span class="qt">&gt; find the game at <a href="http://www.redrival.com/spectrum/coatsim.z80" rel="noreferrer">http://www.redrival.com/spectrum/coatsim.z80</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Let me know what you think. Having not programmed a line of BASIC in</span>
+<span class="qt">&gt; about ten years it was kind of fun and enlightening to remember that</span>
+<span class="qt">&gt; ever line of BASIC slows the program down another notch. Marvellous.</span>
+
+Excellent stuff!
+
+-- 
+Hob.
+
+Replace a with er. 
+Visit the amazingly dull site! <a href="http://www.thehobbitsburrow.org.uk" rel="noreferrer">http://www.thehobbitsburrow.org.uk</a> 
+Use the apostrophe correctly! <a href="http://www.angryflower.com/bobsqu.gif" rel="noreferrer">http://www.angryflower.com/bobsqu.gif</a>
+
+
+
+</pre></div><div class="post" id="p87725"><div class="ph"><a class="d" href="#p87725">2001-02-07 23:37:49</a> <span>Llama-Wax Len</span> <span>Re: Professional Coat Getting Simulator</span></div><pre>
+Tayles wrote in message &lt;95m4b1$ibu$…@…&gt;...
+<span class="qt">&gt;Errr...sorry about that. Made a cock up, but it&#x27;s sorted now. You can</span>
+<span class="qt">&gt;find the game at <a href="http://www.redrival.com/spectrum/coatsim.z80" rel="noreferrer">http://www.redrival.com/spectrum/coatsim.z80</a></span>
+
+
+You know, if you&#x27;d only released this a few weeks earlier it would probably
+have made it into my hardest games thread. Then so would Technician Ted,
+probably. And it would have been expanded to a more sensible Top 40.
+
+I&#x27;ve made it past one level.
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+LEGAL DISCLAIMER: By replying to this message, you hereby
+acknowledge that the ZX Spectrum game &quot;Robocop&quot; was too hard.
+
+
+
+
+
+</pre></div><div class="post" id="p87753"><div class="ph"><a class="d" href="#p87753">2001-02-08 01:20:12</a> <span>Matthew Clemson</span> <span>Re: Professional Coat Getting Simulator</span></div><pre><span class="qt">&gt; You know, if you&#x27;d only released this a few weeks earlier it would</span>
+<span class="qt">&gt; probably have made it into my hardest games thread. Then so would</span>
+<span class="qt">&gt; Technician Ted, probably. And it would have been expanded to a</span>
+<span class="qt">&gt; more sensible Top 40.</span>
+
+<span class="qt">&gt; I&#x27;ve made it past one level.</span>
+
+On *that* note, can I start the petition to have this included in the
+Speccy Tour 2001? Devilishly evil, simple at heart, horribly
+addictive - and completely inappropriate for the tour, but who cares
+about *that*?
+
+:-)
+
+[And this is not just abject self-preservation since I can get past
+*two* levels. Oh, no. Really, no. Honest. Would I lie to you?]
+
+-- 
+---------|---------|---------|---------|---------|---------|---------|
+-Matt
+
+
+
+
+
+</pre></div><div class="post" id="p87903"><div class="ph"><a class="d" href="#p87903">2001-02-08 20:30:38</a> <span>Llama-Wax Len</span> <span>Re: Professional Coat Getting Simulator</span></div><pre>
+Matthew Clemson wrote in message &lt;95ssio$q3m$…@…&gt;...
+<span class="qt">&gt;On *that* note, can I start the petition to have this included in the</span>
+<span class="qt">&gt;Speccy Tour 2001? Devilishly evil, simple at heart, horribly</span>
+<span class="qt">&gt;addictive - and completely inappropriate for the tour, but who cares</span>
+<span class="qt">&gt;about *that*?</span>
+
+
+Not *completely* inappropriate - I&#x27;m crap at it, which means it has
+something in common with every other game in the Speccy Tour 2000.[1]
+
+Len
+[1] And, indeed, Spectrum history.
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+LEGAL DISCLAIMER: By replying to this message, you hereby
+acknowledge that the ZX Spectrum game &quot;Robocop&quot; was too hard.
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p87968"><div class="ph"><a class="d" href="#p87968">2001-02-09 02:20:08</a> <span>Biggo</span> <span>Re: Professional Coat Getting Simulator</span></div><pre>Matthew Clemson wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; You know, if you&#x27;d only released this a few weeks earlier it would</span>
+<span class="qt">&gt; &gt; probably have made it into my hardest games thread. Then so would</span>
+<span class="qt">&gt; &gt; Technician Ted, probably. And it would have been expanded to a</span>
+<span class="qt">&gt; &gt; more sensible Top 40.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; I&#x27;ve made it past one level.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; On *that* note, can I start the petition to have this included in the</span>
+<span class="qt">&gt; Speccy Tour 2001? Devilishly evil, simple at heart, horribly</span>
+<span class="qt">&gt; addictive - and completely inappropriate for the tour, but who cares</span>
+<span class="qt">&gt; about *that*?</span>
+
+BTW, Tayles: congratulations! I actually *bought*
+games that weren&#x27;t worth a tenth of yours. And it
+made me remember why I insisted on keeping the
+speccy instead of getting a C64. Great games versus
+great sound/graphics/boredom :-)
+
+<span class="qt">&gt; [And this is not just abject self-preservation since I can get past</span>
+<span class="qt">&gt; *two* levels. Oh, no. Really, no. Honest. Would I lie to you?]</span>
+
+Am I really the only one who can reach level 8? Wow.
+
+-- 
+    Biggo. &lt;mailto:…@…&gt; 
+(Remove the hyphen! Spambusters at work!)
+listen to aaria (two and a Mac): <a href="http://www.mp3.com/aaria" rel="noreferrer">http://www.mp3.com/aaria</a>
+
+*** If Bill Gates had a penny
+   for every time Windows crashed...
+              ...oh wait, he does. ***
+
+
+
+
+</pre></div><div class="post" id="p88051"><div class="ph"><a class="d" href="#p88051">2001-02-09 12:41:33</a> <span>Adam D. Moss</span> <span>Re: Advanced Coat Getting Simulator</span></div><pre>Chris Young wrote:
+<span class="qt">&gt; This should be sent to Graham Goring, if you can find him.  And if you</span>
+<span class="qt">&gt; *do* find him, make sure you tie him to a chair in front of a Speccy</span>
+<span class="qt">&gt; and don&#x27;t let him free until he finishes marking last year&#x27;s CSSCGC.</span>
+
+Isn&#x27;t there (supposed to be) a whole panel of judges,
+not just Graham?
+
+
+
+</pre></div><div class="post" id="p88093"><div class="ph"><a class="d" href="#p88093">2001-02-09 15:20:01</a> <span>Tayles</span> <span>Re: Professional Coat Getting Simulator</span></div><pre>In article &lt;…@…&gt;,
+  …@… wrote:
+<span class="qt">&gt; Matthew Clemson wrote:</span>
+
+<span class="qt">&gt; BTW, Tayles: congratulations! I actually *bought*</span>
+<span class="qt">&gt; games that weren&#x27;t worth a tenth of yours. And it</span>
+<span class="qt">&gt; made me remember why I insisted on keeping the</span>
+<span class="qt">&gt; speccy instead of getting a C64. Great games versus</span>
+<span class="qt">&gt; great sound/graphics/boredom :-)</span>
+
+Why thanks! It only took one lunchtime to write and a couple more to
+tinker with, so I&#x27;m flattered.
+
+Am I really the only one who can reach level 8? Wow.
+
+Actually I got to level nine and was two moves away from my coat when
+one of the buggers appeared beside me and it was game over. Bah!
+
+Russ
+--
+<a href="http://www.redrival.com/spectrum/home.html" rel="noreferrer">http://www.redrival.com/spectrum/home.html</a>
+The Spectrum Golden Years 1982-1986
+
+
+Sent via Deja.com
+<a href="http://www.deja.com/" rel="noreferrer">http://www.deja.com/</a>
+
+
+
+</pre></div><div class="post" id="p88100"><div class="ph"><a class="d" href="#p88100">2001-02-09 15:44:22</a> <span>Adam D. Moss</span> <span>Re: Professional Coat Getting Simulator</span></div><pre>Llama-Wax Len wrote:
+<span class="qt">&gt; I&#x27;ve made it past one level.</span>
+
+I haven&#x27;t.  :/
+
+
+
+</pre></div><div class="post" id="p88106"><div class="ph"><a class="d" href="#p88106">2001-02-09 16:02:07</a> <span>Hob</span> <span>Re: Professional Coat Getting Simulator</span></div><pre>Many eons ago,  in the dim, dark and distant past, Tayles once waffled on about:
+
+<span class="qt">&gt; Am I really the only one who can reach level 8? Wow.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Actually I got to level nine and was two moves away from my coat when</span>
+<span class="qt">&gt; one of the buggers appeared beside me and it was game over. Bah!</span>
+
+Shows how good I am at it, I didn&#x27;t know there *were* multiple levels. 
+
+-- 
+Hob.
+
+Replace a with er. 
+Visit the amazingly dull site! <a href="http://www.thehobbitsburrow.org.uk" rel="noreferrer">http://www.thehobbitsburrow.org.uk</a> 
+Use the apostrophe correctly! <a href="http://www.angryflower.com/bobsqu.gif" rel="noreferrer">http://www.angryflower.com/bobsqu.gif</a>
+
+
+
+</pre></div><div class="post" id="p88117"><div class="ph"><a class="d" href="#p88117">2001-02-09 16:36:06</a> <span>Tayles</span> <span>Re: Professional Coat Getting Simulator</span></div><pre>
+
+<span class="qt">&gt; Shows how good I am at it, I didn&#x27;t know there *were* multiple</span>
+levels.
+<span class="qt">&gt;</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; Hob.</span>
+
+
+You might have the old version. In true PC games fashion, the original
+release is bugged to hell and a patched version appears a few days
+later!
+
+It&#x27;s at <a href="http://www.redrival.com/spectrum/coatsim.html" rel="noreferrer">http://www.redrival.com/spectrum/coatsim.html</a>
+
+Russ
+--
+<a href="http://www.redrival.com/spectrum/home.html" rel="noreferrer">http://www.redrival.com/spectrum/home.html</a>
+The Spectrum Golden Years 1982-1986
+
+
+Sent via Deja.com
+<a href="http://www.deja.com/" rel="noreferrer">http://www.deja.com/</a>
+
+
+
+</pre></div><div class="post" id="p88171"><div class="ph"><a class="d" href="#p88171">2001-02-09 20:32:28</a> <span>Matthew Clemson</span> <span>Re: Professional Coat Getting Simulator</span></div><pre><span class="qt">&gt; &gt; BTW, Tayles: congratulations! I actually *bought*</span>
+<span class="qt">&gt; &gt; games that weren&#x27;t worth a tenth of yours. And it</span>
+
+No I didn&#x27;t! Much as I&#x27;d love to be responsible for thanking you,
+Biggo should get t&#x27;credit..
+
+But, uh, thanks anyway
+
+<span class="qt">&gt; Am I really the only one who can reach level 8? Wow.</span>
+
+<span class="qt">&gt; Actually I got to level nine and was two moves away from my coat</span>
+<span class="qt">&gt; when one of the buggers appeared beside me and it was game over.</span>
+<span class="qt">&gt; Bah!</span>
+
+Got to level 9 just, but 20 units of air combined with my jumps not
+being particularly helpful... &lt;sigh&gt;
+
+Ah, well. Next game... &lt;fires it up again&gt;
+
+I need to prove to myself that there *is* a level ten. Yes.
+
+--#
+---------|---------|---------|---------|---------|---------|---------|
+-Matt
+
+
+
+
+
+</pre></div><div class="post" id="p88197"><div class="ph"><a class="d" href="#p88197">2001-02-10 00:35:10</a> <span>Biggo</span> <span>Re: Professional Coat Getting Simulator</span></div><pre>&quot;Adam D. Moss&quot; wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Llama-Wax Len wrote:</span>
+<span class="qt">&gt; &gt; I&#x27;ve made it past one level.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I haven&#x27;t.  :/</span>
+
+Need some help from us pros?
+
+S    P    O    I    L    E    R
+_______________________________
+<span class="qt">               |</span>
+<span class="qt">               |</span>
+<span class="qt">               |</span>
+               V
+<span class="qt">               |</span>
+<span class="qt">               |</span>
+<span class="qt">               |</span>
+               V
+<span class="qt">               |</span>
+<span class="qt">               |</span>
+<span class="qt">               |</span>
+               V
+<span class="qt">               |</span>
+<span class="qt">               |</span>
+<span class="qt">               |</span>
+               V
+<span class="qt">               |</span>
+<span class="qt">               |</span>
+<span class="qt">               |</span>
+               V
+
+Tip: move up and down on the first line to make the
+hangers come close to you, then jump. If you&#x27;re lucky,
+you&#x27;ll find yourself in the middle of the screen, and
+the hangers will never catch you! Reach for the coat
+*BUT...* don&#x27;t take it yet. Step up, down forth, back
+until you&#x27;re low on AIR or a hanger has come close, then
+perform a professional coat getting (that is, get the coat).
+Of course, with so little AIR in the higher levels, you&#x27;ll
+have to be fecking lucky and just go straight to the jacket,
+erm, coat, I mean coat.
+
+BTW, Tayles: it would be nice if the remaining AIR was
+treated as a bonus. After all, the quicker you are, the
+better. This should get you some points or give you extra
+AIR on the next level. God I *love* }ThIs{ &quot;%game%ï¿½ !
+
+-- 
+    Biggo. &lt;mailto:…@…&gt; 
+(Remove the hyphen! Spambusters at work!)
+listen to aaria (two and a Mac): <a href="http://www.mp3.com/aaria" rel="noreferrer">http://www.mp3.com/aaria</a>
+
+*** Half the people you know are below average. ***
+
+
+
+
+
+</pre></div><div class="post" id="p88216"><div class="ph"><a class="d" href="#p88216">2001-02-10 02:53:38</a> <span>Matthew Clemson</span> <span>Re: Professional Coat Getting Simulator</span></div><pre><span class="qt">&gt; BTW, Tayles: it would be nice if the remaining AIR was</span>
+<span class="qt">&gt; treated as a bonus. After all, the quicker you are, the</span>
+<span class="qt">&gt; better. This should get you some points or give you extra</span>
+<span class="qt">&gt; AIR on the next level.</span>
+
+Well, I always tend to hover around the coat until the last minute;
+since you get one point per move, and lose one air unit per move, that
+tactic ends up treating the air as a bonus. And there&#x27;s a wonderful
+warm fuzzy feeling inside that comes from getting the maximum of 180
+on level 1.
+
+Having said that, I like the extra air idea. Later levels get to the
+point where you have to be lucky with the jumps to have a chance of
+success with the meagre amound of O^2 you get. Perhaps not an
+air-bonus for the coat... perhaps an airtank object or summat?
+
+Hmmm. I&#x27;m half-tempted to code one in myself. One nice thing about
+BASIC games - they&#x27;re open-source by definition - well, unless you do
+any of that devious line 0 trickery :-)
+
+<span class="qt">&gt; God I *love* }ThIs{ &quot;%game%&quot; !</span>
+
+Keep your *polemics* to yourself.
+
+-- 
+---------|---------|---------|---------|---------|---------|---------|
+-Matt
+
+
+
+
+
+</pre></div><div class="post" id="p88240"><div class="ph"><a class="d" href="#p88240">2001-02-10 10:39:32</a> <span>Llama-Wax Len</span> <span>Re: Professional Coat Getting Simulator</span></div><pre>
+Tayles wrote in message &lt;9611qk$17p$…@…&gt;...
+<span class="qt">&gt;Am I really the only one who can reach level 8? Wow.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Actually I got to level nine and was two moves away from my coat when</span>
+<span class="qt">&gt;one of the buggers appeared beside me and it was game over. Bah!</span>
+
+
+I&#x27;d just like to say that I&#x27;m still crap at it despite numerous games and on
+a similar note would challenge anyone to complete my crap game, which I&#x27;ve
+just reposted to ABCS, as I can&#x27;t. Twenty levels in all, and the only way
+I&#x27;ve found to complete it is by waiting &#x27;til you&#x27;re about to complete a
+level, break into the program, type &quot;LET level=20&quot; then CONTINUE. It then
+thinks you&#x27;re about to complete the last level.
+
+A wonderful prize guaranteed to the first person who completes it![1]
+
+And especially for Chris Young, it&#x27;s a TZX file.
+
+Len
+[1] Prize will only be issued on proof that you did it without cheating.
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+LEGAL DISCLAIMER: By replying to this message, you hereby
+acknowledge that the ZX Spectrum game &quot;Robocop&quot; was too hard.
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p88250"><div class="ph"><a class="d" href="#p88250">2001-02-10 12:32:27</a> <span>Tayles</span> <span>Re: Professional Coat Getting Simulator</span></div><pre>In article &lt;962api$8e1$…@…&gt;,
+  &quot;Matthew Clemson&quot; &lt;…@…&gt; wrote:
+<span class="qt">&gt; &gt; BTW, Tayles: it would be nice if the remaining AIR was</span>
+<span class="qt">&gt; &gt; treated as a bonus. After all, the quicker you are, the</span>
+<span class="qt">&gt; &gt; better. This should get you some points or give you extra</span>
+<span class="qt">&gt; &gt; AIR on the next level.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Well, I always tend to hover around the coat until the last minute;</span>
+<span class="qt">&gt; since you get one point per move, and lose one air unit per move, that</span>
+<span class="qt">&gt; tactic ends up treating the air as a bonus. And there&#x27;s a wonderful</span>
+<span class="qt">&gt; warm fuzzy feeling inside that comes from getting the maximum of 180</span>
+<span class="qt">&gt; on level 1.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Having said that, I like the extra air idea. Later levels get to the</span>
+<span class="qt">&gt; point where you have to be lucky with the jumps to have a chance of</span>
+<span class="qt">&gt; success with the meagre amound of O^2 you get. Perhaps not an</span>
+<span class="qt">&gt; air-bonus for the coat... perhaps an airtank object or summat?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Hmmm. I&#x27;m half-tempted to code one in myself. One nice thing about</span>
+<span class="qt">&gt; BASIC games - they&#x27;re open-source by definition - well, unless you do</span>
+<span class="qt">&gt; any of that devious line 0 trickery :-)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; God I *love* }ThIs{ &quot;%game%&quot; !</span>
+<span class="qt">&gt;</span>
+
+Right, I&#x27;ve taken on board your ideas and tinkered with the game. Now
+there is an air tank on each level, normally somewhere in the centre of
+the screen to make it riskier to go for. At the end of each level
+there&#x27;s a points bonus for the air you have left too. To take the edge
+off all these good points, the higher the level the smaller the
+distance your jumps will take you. This way you won&#x27;t be able to stock
+up on air and lure the hatstands into a corner, then just jump next to
+your coat. Hehehe!
+
+It will make you use your jumps to reach items such as the rocket boots
+or the air.
+
+Let me know what you think!
+
+As ever it&#x27;s at <a href="http://www.redrival.com/spectrum/coatsim.z80" rel="noreferrer">http://www.redrival.com/spectrum/coatsim.z80</a>
+
+Russ
+--
+<a href="http://www.redrival.com/spectrum/home.html" rel="noreferrer">http://www.redrival.com/spectrum/home.html</a>
+The Spectrum Golden Years 1982-1986
+
+
+Sent via Deja.com
+<a href="http://www.deja.com/" rel="noreferrer">http://www.deja.com/</a>
+
+
+
+</pre></div><div class="post" id="p88251"><div class="ph"><a class="d" href="#p88251">2001-02-10 12:34:49</a> <span>Tayles</span> <span>Re: Professional Coat Getting Simulator</span></div><pre>In article &lt;96373v$tcp$…@…&gt;,
+  &quot;Llama-Wax Len&quot; &lt;…@…&gt; wrote:
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Tayles wrote in message &lt;9611qk$17p$…@…&gt;...</span>
+<span class="qt">&gt; &gt;Am I really the only one who can reach level 8? Wow.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;Actually I got to level nine and was two moves away from my coat when</span>
+<span class="qt">&gt; &gt;one of the buggers appeared beside me and it was game over. Bah!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;d just like to say that I&#x27;m still crap at it despite numerous games</span>
+and on
+<span class="qt">&gt; a similar note would challenge anyone to complete my crap game, which</span>
+I&#x27;ve
+<span class="qt">&gt; just reposted to ABCS, as I can&#x27;t. Twenty levels in all, and the only</span>
+way
+<span class="qt">&gt; I&#x27;ve found to complete it is by waiting &#x27;til you&#x27;re about to complete</span>
+a
+<span class="qt">&gt; level, break into the program, type &quot;LET level=20&quot; then CONTINUE. It</span>
+then
+<span class="qt">&gt; thinks you&#x27;re about to complete the last level.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; A wonderful prize guaranteed to the first person who completes it![1]</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; And especially for Chris Young, it&#x27;s a TZX file.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Len</span>
+
+
+Mr Maxwell, you filthy cheat. Try the latest version, with its
+superduper added features like an airtank to pick up.
+
+Russ
+--
+<a href="http://www.redrival.com/spectrum/home.html" rel="noreferrer">http://www.redrival.com/spectrum/home.html</a>
+The Spectrum Golden Years 1982-1986
+
+
+Sent via Deja.com
+<a href="http://www.deja.com/" rel="noreferrer">http://www.deja.com/</a>
+
+
+
+</pre></div><div class="post" id="p88329"><div class="ph"><a class="d" href="#p88329">2001-02-11 00:28:08</a> <span>Chris Young</span> <span>Re: Advanced Coat Getting Simulator</span></div><pre>On Fri, 09 Feb 2001 12:41:33 +0000, Adam D. Moss (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; Chris Young wrote:</span>
+<span class="qt">&gt; &gt; This should be sent to Graham Goring, if you can find him.  And if you</span>
+<span class="qt">&gt; &gt; *do* find him, make sure you tie him to a chair in front of a Speccy</span>
+<span class="qt">&gt; &gt; and don&#x27;t let him free until he finishes marking last year&#x27;s CSSCGC.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Isn&#x27;t there (supposed to be) a whole panel of judges,</span>
+<span class="qt">&gt; not just Graham?</span>
+
+There really is two people there.. or maybe I&#x27;m seeing double.
+
+Chris
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div></main></body></html>

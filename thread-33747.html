@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZX81 Chopper Drop released · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>ZX81 Chopper Drop released</h1><p class="facts">9 posts, 2008-01-06 – 2008-01-19</p><div class="post" id="p215248"><div class="ph"><a class="d" href="#p215248">2008-01-06 13:43:44</a> <span>Nama</span>  <a class="badge" href="https://spectrumcomputing.co.uk/entry/32008">ZXDB: Chopper Drop 3000</a></div><pre>Hi everyone,
+It&#x27;s been a long time coming, but it&#x27;s finished.
+
+Introducing a brand new game for the 16k ZX81, and the first ZX81 game
+release for 2008.
+
+CHOPPER DROP 3000
+
+The game was co-written by myself and Andre***. I did most of the
+original coding, graphics, and animation. Andre*** streamlined much of
+the code and allowed the game to be very playable on a stock 16k ZX81.
+However, if you have an emulator that can emulate the ZX81 at a faster
+speed, I highly recommend that you give the game a go accelerated. You
+won&#x27;t be disappointed.
+
+The Game: You are the pilot of the RODO 3000, a highly advanced
+military helicopter. Your mission is to destroy all the attacking
+tanks. You are also being attacked from a high flying UFT which drops
+bombs from above.
+
+There are both English and French versions in .p format available from
+here:
+
+<a href="http://tinyurl.com/2fpasj" rel="noreferrer">http://tinyurl.com/2fpasj</a>
+
+or here:
+
+<a href="http://homepage.mac.com/WebObjects/FileSharing.woa/wa/default?user=lord_philip&fpath=Maplin%20Projects&templatefn=FileSharing6.html" rel="noreferrer">http://homepage.mac.com/WebObjects/FileSharing.woa/wa/default?user=lord_philip&amp;fpath=Maplin%20Projects&amp;templatefn=FileSharing6.html</a>
+
+Finally, I wanted to thank Andre*** for all his time and effort. It
+was fun working with him on this project and I certainly learnt a lot.
+
+Please download and enjoy.
+
+Philip
+
+
+
+</pre></div><div class="post" id="p215250"><div class="ph"><a class="d" href="#p215250">2008-01-06 20:56:31</a> <span>Lister</span> <span>Re: ZX81 Chopper Drop released</span></div><pre>On Sun, 6 Jan 2008 05:43:44 -0800 (PST), Nama &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;Hi everyone,</span>
+<span class="qt">&gt;It&#x27;s been a long time coming, but it&#x27;s finished.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Introducing a brand new game for the 16k ZX81, and the first ZX81 game</span>
+<span class="qt">&gt;release for 2008.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;CHOPPER DROP 3000</span>
+
+
+Ooer!
+
+
+
+</pre></div><div class="post" id="p215264"><div class="ph"><a class="d" href="#p215264">2008-01-07 11:50:11</a> <span>david lightman</span> <span>Re: ZX81 Chopper Drop released</span></div><pre>hi philip, hi andre***!
+
+i really enjoing this game. good work. i donï¿½t understand (at the 
+moment) most of the code by andre*** , but learning is a lifework ;-) .
+
+greeting
+jens
+
+
+
+</pre></div><div class="post" id="p215269"><div class="ph"><a class="d" href="#p215269">2008-01-08 03:17:01</a> <span>Nama</span> <span>Re: ZX81 Chopper Drop released</span></div><pre>On Jan 7, 8:50 pm, david lightman &lt;…@…&gt; wrote:
+<span class="qt">&gt; hi philip, hi andre***!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; i really enjoing this game. good work. i don´t understand (at the</span>
+<span class="qt">&gt; moment) most of the code by andre*** , but learning is a lifework ;-) .</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; greeting</span>
+<span class="qt">&gt; jens</span>
+
+I&#x27;m really glad you enjoyed it.
+I believe it is better that 95% of all games for the ZX81. If it had
+been released 25 years ago, I&#x27;d have made my fortune ;-)
+
+P
+
+
+
+</pre></div><div class="post" id="p215283"><div class="ph"><a class="d" href="#p215283">2008-01-09 16:28:21</a> <span>GzavSnap</span> <span>Re: ZX81 Chopper Drop released</span></div><pre><span class="qt">&gt; hi philip, hi andre***!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; i really enjoing this game. good work. i donï¿½t understand (at the</span>
+<span class="qt">&gt; moment) most of the code by andre*** , but learning is a lifework ;-) .</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; greeting</span>
+<span class="qt">&gt; jens</span>
+
+<span class="qt">&gt;&gt; I&#x27;m really glad you enjoyed it.</span>
+<span class="qt">&gt;&gt; I believe it is better that 95% of all games for the ZX81. If it had</span>
+<span class="qt">&gt;&gt; been released 25 years ago, I&#x27;d have made my fortune ;-)</span>
+<span class="qt">&gt;&gt;P</span>
+
+... And Andrï¿½*** the main publisher.
+Good Job Philip and Andrï¿½.
+
+Your software will be available on Andrï¿½&#x27;s web site... as soon as.
+Xav.
+
+
+
+
+
+
+</pre></div><div class="post" id="p215329"><div class="ph"><a class="d" href="#p215329">2008-01-12 05:08:06</a> <span>Nama</span> <span>Re: ZX81 Chopper Drop released</span></div><pre>On Jan 10, 1:28 am, &quot;GzavSnap&quot; &lt;…@…&gt; wrote:
+<span class="qt">&gt; &gt; hi philip, hi andre***!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; i really enjoing this game. good work. i don´t understand (at the</span>
+<span class="qt">&gt; &gt; moment) most of the code by andre*** , but learning is a lifework ;-) .</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; greeting</span>
+<span class="qt">&gt; &gt; jens</span>
+<span class="qt">&gt; &gt;&gt; I&#x27;m really glad you enjoyed it.</span>
+<span class="qt">&gt; &gt;&gt; I believe it is better that 95% of all games for the ZX81. If it had</span>
+<span class="qt">&gt; &gt;&gt; been released 25 years ago, I&#x27;d have made my fortune ;-)</span>
+<span class="qt">&gt; &gt;&gt;P</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; ... And André*** the main publisher.</span>
+<span class="qt">&gt; Good Job Philip and André.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Your software will be available on André&#x27;s web site... as soon as.</span>
+<span class="qt">&gt; Xav.</span>
+
+I&#x27;w was assuming with all Andre&#x27;s great games he would have made his
+fortune long before I had ;-)
+
+P
+
+
+</pre></div><div class="post" id="p215383"><div class="ph"><a class="d" href="#p215383">2008-01-15 15:36:02</a> <span>Nama</span> <span>Re: ZX81 Chopper Drop released</span></div><pre>On Jan 10, 1:28 am, &quot;GzavSnap&quot; &lt;…@…&gt; wrote:
+<span class="qt">&gt; &gt; hi philip, hi andre***!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; i really enjoing this game. good work. i don´t understand (at the</span>
+<span class="qt">&gt; &gt; moment) most of the code by andre*** , but learning is a lifework ;-) .</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; greeting</span>
+<span class="qt">&gt; &gt; jens</span>
+<span class="qt">&gt; &gt;&gt; I&#x27;m really glad you enjoyed it.</span>
+<span class="qt">&gt; &gt;&gt; I believe it is better that 95% of all games for the ZX81. If it had</span>
+<span class="qt">&gt; &gt;&gt; been released 25 years ago, I&#x27;d have made my fortune ;-)</span>
+<span class="qt">&gt; &gt;&gt;P</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; ... And André*** the main publisher.</span>
+<span class="qt">&gt; Good Job Philip and André.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Your software will be available on André&#x27;s web site... as soon as.</span>
+<span class="qt">&gt; Xav.</span>
+
+I was assuming with all Andre&#x27;s great games he would have made his
+fortune long before I had ;-)
+P
+
+
+
+</pre></div><div class="post" id="p215432"><div class="ph"><a class="d" href="#p215432">2008-01-19 09:21:36</a> <span>siggi</span> <span>Re: ZX81 Chopper Drop released</span></div><pre>Hi Philip and Andre***
+
+you really made a nice game for the good old Zeddy. And because I like
+to play Zeddy games on a Zeddy (not a windoofs pc with an emulator), I
+had no chance tho increase the speed of the game (even Wilf&#x27;s &quot;nearly
+no wait&quot;-circuit does not help). There is so much action in that game,
+that even Andre could not speed it up enough to have really action on
+a real Zeddy.
+
+So I took MCODER II and are now trying to compile that program.
+I had to change some instructions, that were too complicated for
+MCODER to understand (-&gt; but Andre*** understands them ;-). And since
+that compiler uses integer-arithmetic, I had to change some
+calculations and to throw out the delay-functions &quot;SIN&quot; and
+&quot;COS&quot; (replaced them by the integer-SQR).
+Now the program compiles, but due to memory size the basic source and
+the compiler use the 16K Basic ram, while the compiled code currently
+runs above 32K.
+And now the speed is like of those old ARCADE games ;-) and I probably
+have to add some delay loops :-)
+
+Hopefully I get the compiled program (without source) to run in the
+normal Basic 16K ram.
+Work is going on ....
+
+Siggi
+
+siggi
+( aatt )
+zx81
+( ddoott )
+de
+
+
+
+
+</pre></div><div class="post" id="p215433"><div class="ph"><a class="d" href="#p215433">2008-01-19 13:25:01</a> <span>Nama</span> <span>Re: ZX81 Chopper Drop released</span></div><pre>On Jan 19, 6:21 pm, siggi &lt;…@…&gt; wrote:
+<span class="qt">&gt; Hi Philip and Andre***</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; you really made a nice game for the good old Zeddy. And because I like</span>
+<span class="qt">&gt; to play Zeddy games on a Zeddy (not a windoofs pc with an emulator), I</span>
+<span class="qt">&gt; had no chance tho increase the speed of the game (even Wilf&#x27;s &quot;nearly</span>
+<span class="qt">&gt; no wait&quot;-circuit does not help). There is so much action in that game,</span>
+<span class="qt">&gt; that even Andre could not speed it up enough to have really action on</span>
+<span class="qt">&gt; a real Zeddy.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; So I took MCODER II and are now trying to compile that program.</span>
+<span class="qt">&gt; I had to change some instructions, that were too complicated for</span>
+<span class="qt">&gt; MCODER to understand (-&gt; but Andre*** understands them ;-). And since</span>
+<span class="qt">&gt; that compiler uses integer-arithmetic, I had to change some</span>
+<span class="qt">&gt; calculations and to throw out the delay-functions &quot;SIN&quot; and</span>
+<span class="qt">&gt; &quot;COS&quot; (replaced them by the integer-SQR).</span>
+<span class="qt">&gt; Now the program compiles, but due to memory size the basic source and</span>
+<span class="qt">&gt; the compiler use the 16K Basic ram, while the compiled code currently</span>
+<span class="qt">&gt; runs above 32K.</span>
+<span class="qt">&gt; And now the speed is like of those old ARCADE games ;-) and I probably</span>
+<span class="qt">&gt; have to add some delay loops :-)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Hopefully I get the compiled program (without source) to run in the</span>
+<span class="qt">&gt; normal Basic 16K ram.</span>
+<span class="qt">&gt; Work is going on ....</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Siggi</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; siggi</span>
+<span class="qt">&gt; ( aatt )</span>
+<span class="qt">&gt; zx81</span>
+<span class="qt">&gt; ( ddoott )</span>
+<span class="qt">&gt; de</span>
+
+Wow!!!
+That&#x27;s amazing! I&#x27;d be extremely excited to see this working. My
+original intent was to use Mcoder II to compile the game, but I could
+not get it to work, and couldn&#x27;t figure out why.
+
+I&#x27;m sending you a private email incase there is anything I can do to
+help.
+
+Philip
+
+
+
+</pre></div></main></body></html>

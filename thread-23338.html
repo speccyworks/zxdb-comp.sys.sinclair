@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Re: TOSEC Spectrum Dats - Constructive Input is always a good thing · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Re: TOSEC Spectrum Dats - Constructive Input is always a good thing</h1><p class="facts">17 posts, 2001-10-03 – 2001-10-12</p><div class="post" id="p117446"><div class="ph"><a class="d" href="#p117446">2001-10-03 06:42:43</a> <span>Dunny</span> </div><pre>
+Vax &lt;…@…&gt; wrote in message
+news:9pn504$36$…@…...
+<span class="qt">&gt; Hi, Im one of guys working on the spectrum Tosec dats. Now I dont know if</span>
+u
+<span class="qt">&gt; lot collect them or not, but I could very much use any help with</span>
+<span class="qt">&gt; corrections. So if u know something is wrong plz tell me (bound to be a</span>
+few
+<span class="qt">&gt; (thousand).</span>
+<span class="qt">&gt; Either ways If you do use the dats I hope you enjoy the new releases, due</span>
+<span class="qt">&gt; out today or tommorrow.</span>
+
+Pretty much all of us watch for the TOSEC postings - we generally pick them
+up in Alt.Binaries.Emulators.Misc. Are there any other ng&#x27;s you post them
+to?
+
+Aside, the process of checking them all (some 2 1/2 thousand or so at the
+last count) is a big undertaking, but if I see any mistakes, I&#x27;ll let you
+know.
+
+Where are you posting the updates? How about in Alt.Binaries.Comp.Sinclair?
+That&#x27;s our sister bin group, btw.
+
+D.
+
+
+
+
+
+
+</pre></div><div class="post" id="p117712"><div class="ph"><a class="d" href="#p117712">2001-10-05 10:05:24</a> <span>Dunny</span> </div><pre>
+Andrew Barker &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Yes, I&#x27;ve downloaded a couple.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; However, I don&#x27;t use them to make up a directory of TAP, Z80s and TZX</span>
+becuase
+<span class="qt">&gt; the naming</span>
+<span class="qt">&gt; conventions is way to long.  If you try burning them to a CD in Joliet</span>
+format
+<span class="qt">&gt; you get whinged at</span>
+<span class="qt">&gt; and I dont fancy the Romero format with 256 Uppercase chars ;-(</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Also, I cannot read the files without truncation on other systems such as</span>
+Mac
+<span class="qt">&gt; or Amiga (unless I use a hack ;-) )</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; E.g. Geeet big lang filename which only works on linux or pc (1998)</span>
+(elite)
+<span class="qt">&gt; (-xxx).tzx</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I found the Z80 dat useful to rename, cos they tend to remain static, the</span>
+TAP
+<span class="qt">&gt; dat isl also be useful.</span>
+<span class="qt">&gt; However when it&#x27;s TZX that concerned I find that many enties are out of</span>
+date.
+<span class="qt">&gt; This is becuase we keep modifying</span>
+<span class="qt">&gt; the Archive Info block and other blocks to make the TZXs better (or more</span>
+<span class="qt">&gt; informative).</span>
+<span class="qt">&gt; What would be a good idea is to somehow make a RomCenter compatible DAT</span>
+from
+<span class="qt">&gt; the .TZX Vault</span>
+<span class="qt">&gt; databases ;-).</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I downloaded the TZXs from ABCS and found many of them were beautified</span>
+with
+<span class="qt">&gt; 1000ms pauses instead of</span>
+<span class="qt">&gt; authentic ones, many were cracks and not a patch on those available from</span>
+the
+<span class="qt">&gt; .TZX Vault ;-)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I appreciate your time and effort and don&#x27;t mean to sound like I</span>
+dissaprove.
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Regards</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Andy Barker (ZX MIS Maintainer - <a href="http://www.sunderland.ac.uk/~as0aba/" rel="noreferrer">http://www.sunderland.ac.uk/~as0aba/</a>)</span>
+<span class="qt">&gt;</span>
+
+You&#x27;re right - the TOSEC ones are only viable for collecting those &quot;Denied&quot;
+games that you can&#x27;t get on the TZX Vault - the best bit being that those
+guys don&#x27;t give a shit about permission, and so post whatever they like,
+which is great for those of us who will never otherwise get to play those
+old games again. I&#x27;m looking forward to the next TOSEC update solely for
+that reason, as are a few others in here, I suspect.
+
+And it doesn&#x27;t take long to rename them and slip them into the denied
+folder - and of course, when distribution is finally granted, I can update
+them with good ones... (A small thing - TOSEC post denied games, the
+publishers won&#x27;t grant permission, we try and try to restrict their
+movements around the net, but they still get posted regularly to ABEM... so
+the publishers probably will never grant permission. Oh well).
+
+As for the games that haven&#x27;t made it onto the TZX Vault yet, it&#x27;s just a
+matter of time before they do, so again, no point in getting the TOSEC tzxs
+which aren&#x27;t on the TZX Vault.
+
+D.
+
+
+
+
+
+
+</pre></div><div class="post" id="p117839"><div class="ph"><a class="d" href="#p117839">2001-10-06 14:37:56</a> <span>Vax</span> <span>TOSEC Spectrum Dats - Constructive Input is always a good thing</span></div><pre>Hi, Im one of guys working on the spectrum Tosec dats. Now I dont know if u 
+lot collect them or not, but I could very much use any help with 
+corrections. So if u know something is wrong plz tell me (bound to be a few 
+(thousand).
+Either ways If you do use the dats I hope you enjoy the new releases, due 
+out today or tommorrow.
+
+Vax
+
+
+
+</pre></div><div class="post" id="p117849"><div class="ph"><a class="d" href="#p117849">2001-10-06 15:51:04</a> <span>Vax</span> </div><pre>Hmm well the posting is not generally down to me, but i imagine the full 
+set should be posted on alt.binaries.emulators.misc.
+
+Oh one other thing, if peeps want to help with corrections plz dont 
+reference WOS, as i already have based most of the files on it. Oh and the 
+z80 dat,which is the one in working on at the mo is about 6000 z80;s.
+
+It has been some time since Ive lurked on here, so u got yourselves a 
+binaries group a? Ta
+
+Vax
+
+
+
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Pretty much all of us watch for the TOSEC postings - we generally pick</span>
+<span class="qt">&gt; them up in Alt.Binaries.Emulators.Misc. Are there any other ng&#x27;s you</span>
+<span class="qt">&gt; post them to?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Aside, the process of checking them all (some 2 1/2 thousand or so at</span>
+<span class="qt">&gt; the last count) is a big undertaking, but if I see any mistakes, I&#x27;ll</span>
+<span class="qt">&gt; let you know.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Where are you posting the updates? How about in</span>
+<span class="qt">&gt; Alt.Binaries.Comp.Sinclair? That&#x27;s our sister bin group, btw.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; D.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+
+
+
+
+</pre></div><div class="post" id="p117928"><div class="ph"><a class="d" href="#p117928">2001-10-06 23:44:21</a> <span>Vax</span> </div><pre>Hmm Ive just been having a proper look at the release dat for the spectrum 
+z80. So i better specify the actual information I could use.
+
+What language is an unknown?
+
+Is something named completely wrong?
+
+What Year?
+
+What Company?
+
+Plz dont email about the pagination and general poor listing at the moment, 
+Im sorting it as I speak, and it will be sorted for the next release. (Not 
+this one, the next one).
+
+
+
+</pre></div><div class="post" id="p118309"><div class="ph"><a class="d" href="#p118309">2001-10-08 20:41:25</a> <span>Derek Glen</span> </div><pre>
+&quot;Vax&quot; &lt;…@…&gt; wrote in message
+news:9po50l$lpb$…@…...
+<span class="qt">&gt; Hmm Ive just been having a proper look at the release dat for the spectrum</span>
+<span class="qt">&gt; z80. So i better specify the actual information I could use.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; What language is an unknown?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Is something named completely wrong?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; What Year?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; What Company?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Plz dont email about the pagination and general poor listing at the</span>
+moment,
+<span class="qt">&gt; Im sorting it as I speak, and it will be sorted for the next release. (Not</span>
+<span class="qt">&gt; this one, the next one).</span>
+
+Congraturation!  You sucsess!
+
+degsy. :o)
+
+
+
+
+
+</pre></div><div class="post" id="p118460"><div class="ph"><a class="d" href="#p118460">2001-10-09 13:46:05</a> <span>Andrew Barker</span> </div><pre>Yes, I&#x27;ve downloaded a couple.
+
+However, I don&#x27;t use them to make up a directory of TAP, Z80s and TZX becuase
+the naming
+conventions is way to long.  If you try burning them to a CD in Joliet format
+you get whinged at
+and I dont fancy the Romero format with 256 Uppercase chars ;-(
+
+Also, I cannot read the files without truncation on other systems such as Mac
+or Amiga (unless I use a hack ;-) )
+
+E.g. Geeet big lang filename which only works on linux or pc (1998) (elite)
+(-xxx).tzx
+
+I found the Z80 dat useful to rename, cos they tend to remain static, the TAP
+dat isl also be useful.
+However when it&#x27;s TZX that concerned I find that many enties are out of date.
+This is becuase we keep modifying
+the Archive Info block and other blocks to make the TZXs better (or more
+informative).
+What would be a good idea is to somehow make a RomCenter compatible DAT from
+the .TZX Vault
+databases ;-).
+
+I downloaded the TZXs from ABCS and found many of them were beautified with
+1000ms pauses instead of
+authentic ones, many were cracks and not a patch on those available from the
+.TZX Vault ;-)
+
+I appreciate your time and effort and don&#x27;t mean to sound like I dissaprove.
+
+Regards
+
+Andy Barker (ZX MIS Maintainer - <a href="http://www.sunderland.ac.uk/~as0aba/" rel="noreferrer">http://www.sunderland.ac.uk/~as0aba/</a>)
+
+Vax wrote:
+
+<span class="qt">&gt; Hi, Im one of guys working on the spectrum Tosec dats. Now I dont know if u</span>
+<span class="qt">&gt; lot collect them or not, but I could very much use any help with</span>
+<span class="qt">&gt; corrections. So if u know something is wrong plz tell me (bound to be a few</span>
+<span class="qt">&gt; (thousand).</span>
+<span class="qt">&gt; Either ways If you do use the dats I hope you enjoy the new releases, due</span>
+<span class="qt">&gt; out today or tommorrow.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Vax</span>
+
+
+
+
+</pre></div><div class="post" id="p118495"><div class="ph"><a class="d" href="#p118495">2001-10-09 17:25:43</a> <span>Vax</span> </div><pre>&quot;Dunny&quot; &lt;…@…&gt; wrote in
+news:9pv38n$knqm2$…@…: 
+
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Andrew Barker &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt;&gt; Yes, I&#x27;ve downloaded a couple.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; However, I don&#x27;t use them to make up a directory of TAP, Z80s and TZX</span>
+<span class="qt">&gt;&gt; becuase the naming</span>
+<span class="qt">&gt;&gt; conventions is way to long.  If you try burning them to a CD in Joliet</span>
+<span class="qt">&gt;&gt; format you get whinged at</span>
+<span class="qt">&gt;&gt; and I dont fancy the Romero format with 256 Uppercase chars ;-(</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Also, I cannot read the files without truncation on other systems such</span>
+<span class="qt">&gt;&gt; as Mac or Amiga (unless I use a hack ;-) )</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; E.g. Geeet big lang filename which only works on linux or pc (1998)</span>
+<span class="qt">&gt;&gt; (elite) (-xxx).tzx</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; I found the Z80 dat useful to rename, cos they tend to remain static,</span>
+<span class="qt">&gt;&gt; the TAP dat isl also be useful.</span>
+<span class="qt">&gt;&gt; However when it&#x27;s TZX that concerned I find that many enties are out</span>
+<span class="qt">&gt;&gt; of date. This is becuase we keep modifying</span>
+<span class="qt">&gt;&gt; the Archive Info block and other blocks to make the TZXs better (or</span>
+<span class="qt">&gt;&gt; more informative). What would be a good idea is to somehow make a</span>
+<span class="qt">&gt;&gt; RomCenter compatible DAT from the .TZX Vault</span>
+<span class="qt">&gt;&gt; databases ;-).</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; I downloaded the TZXs from ABCS and found many of them were beautified</span>
+<span class="qt">&gt;&gt; with 1000ms pauses instead of</span>
+<span class="qt">&gt;&gt; authentic ones, many were cracks and not a patch on those available</span>
+<span class="qt">&gt;&gt; from the .TZX Vault ;-)</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; I appreciate your time and effort and don&#x27;t mean to sound like I</span>
+<span class="qt">&gt;&gt; dissaprove. </span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Regards</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Andy Barker (ZX MIS Maintainer - <a href="http://www.sunderland.ac.uk/~as0aba/" rel="noreferrer">http://www.sunderland.ac.uk/~as0aba/</a>)</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; You&#x27;re right - the TOSEC ones are only viable for collecting those</span>
+<span class="qt">&gt; &quot;Denied&quot; games that you can&#x27;t get on the TZX Vault - the best bit being</span>
+<span class="qt">&gt; that those guys don&#x27;t give a shit about permission, and so post</span>
+<span class="qt">&gt; whatever they like, which is great for those of us who will never</span>
+<span class="qt">&gt; otherwise get to play those old games again. I&#x27;m looking forward to the</span>
+<span class="qt">&gt; next TOSEC update solely for that reason, as are a few others in here,</span>
+<span class="qt">&gt; I suspect. </span>
+
+Fair points I suppose, I find the cd burning aspect annoying myself, 
+however the idea here is to add as much information to a snapshot as 
+feasibly possible. Also Im sure you have noticed the duplicates? Well while 
+the tzx is somewhat underveloped at the moment the idea is that it 
+eventually coveres EVERY file in existence (yeah right). Every file should 
+have a unique checksum, so properly renamed the collection should cover 
+every file around.
+Besides I dare say in the future other computer formats will be upgraded to 
+cover longer filenames.
+
+We can hope anyway.
+
+Vax
+
+
+
+</pre></div><div class="post" id="p118597"><div class="ph"><a class="d" href="#p118597">2001-10-10 06:18:13</a> <span>romcenter</span> </div><pre>Hi
+I&#x27;m not an expert in sinclair dump, but here some questions :
+
+Does a same game exists with several file extension ?
+
+Can we calculate a unique signature which we can use to identify a
+game independently of its extension ? (Note that I use &#x27;signature&#x27;,
+and not &#x27;crc&#x27;.)
+
+Thanks.
+--
+Eric - RomCenter developper
+www.romcenter.com
+www.romcenter/com/forum
+…@…
+
+
+
+</pre></div><div class="post" id="p118606"><div class="ph"><a class="d" href="#p118606">2001-10-10 08:29:27</a> <span>Dunny</span> </div><pre>
+romcenter &lt;…@…&gt; wrote in message
+news:…@…...
+<span class="qt">&gt; Hi</span>
+<span class="qt">&gt; I&#x27;m not an expert in sinclair dump, but here some questions :</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Does a same game exists with several file extension ?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Can we calculate a unique signature which we can use to identify a</span>
+<span class="qt">&gt; game independently of its extension ? (Note that I use &#x27;signature&#x27;,</span>
+<span class="qt">&gt; and not &#x27;crc&#x27;.)</span>
+<span class="qt">&gt;</span>
+
+Unfortunately, before the TZX format came along, we had several formats for
+games. .SNA, .Z80, .TAP, .ZXS to name but a few. TZX is the format of
+choice - it stores a dump of the original tape that the game came from,
+including all multiload levels and loading routines (speeclock, bleepload
+etc) which the other formats couldn&#x27;t handle (with the exception of .TAP,
+which is an obselete version of TZX). Of the others, I would recommend .Z80,
+but even then these are just a dump of the Spectrum&#x27;s memory, and are
+usually inaccurate and missing some data necessary to run the game. It is to
+be hoped that the TZX Vault&#x27;s efforts will continue in procuring perfect
+copies of the original tapes, because these will become the de-facto source
+for spectrum games in the near future. As I have said elsewhere, TOSEC
+should really only be used for obtaining games which are &quot;Distribution
+Denied&quot; because any others are either
+
+a) Available as guaranteed exact copies in the TZX Vault - something which
+the TOSEC TZXs are not, and are for the most part &quot;faked&quot; or &quot;cracked&quot;
+(laughable for a machine which had virtually no copy protection).
+
+b) If they aren&#x27;t available at the TZX Vault yet, then they probably will be
+soon, and will be better copies than the TOSEC ones, due to that guarantee
+of quality.
+
+Until a game comes along as a perfect TZX, most people download the World Of
+Spectrum&#x27;s Z80 or SNA version. These versions are themselves replaced with
+TZX when they become available though.
+
+As for generating a signature, you&#x27;d be lucky to do that with the Z80 and
+SNA files, as they were dumps of the games after the game had loaded, and so
+their contents vary greatly as to the time they were snapped - they aren&#x27;t
+ROMS whose content never changes.
+
+Hope that helps,
+    D.
+
+PS - Check out the group&#x27;s FAQ for more info, and the pages on
+www.WorldOfSpectrum.Org which carry far more information that I can relay
+here.
+
+
+
+
+
+
+</pre></div><div class="post" id="p118613"><div class="ph"><a class="d" href="#p118613">2001-10-10 10:35:18</a> <span>Andrew Barker</span> </div><pre><span class="qt">&gt; [SNIP]</span>
+
+<span class="qt">&gt; Fair points I suppose, I find the cd burning aspect annoying myself,</span>
+<span class="qt">&gt; however the idea here is to add as much information to a snapshot as</span>
+<span class="qt">&gt; feasibly possible. Also Im sure you have noticed the duplicates? Well while</span>
+<span class="qt">&gt; the tzx is somewhat underveloped at the moment the idea is that it</span>
+<span class="qt">&gt; eventually coveres EVERY file in existence (yeah right). Every file should</span>
+<span class="qt">&gt; have a unique checksum, so properly renamed the collection should cover</span>
+<span class="qt">&gt; every file around.</span>
+<span class="qt">&gt; Besides I dare say in the future other computer formats will be upgraded to</span>
+<span class="qt">&gt; cover longer filenames.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; We can hope anyway.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Vax</span>
+
+I suppose with regards to snapshots you can&#x27;t store information in the file.
+However where TZX is concerned, you can use various blocks and fill the TZX
+with all the information you&#x27;d ever need, and can call the file anything you
+like, becuase
+all the info is in there if you need to check.
+This is assuming people use the blocks provided ;-)
+TZX is somewhat underdeveloped, are you kidding ?  What&#x27;s missing from it ?
+<a href="http://www.worldofspectrum.org/TZXformat.html" rel="noreferrer">http://www.worldofspectrum.org/TZXformat.html</a>
+You can do much more than you ever wanted to, but it&#x27;s in there ;-)
+
+Checksums are useful from a rom centre type dat collection point of view,
+but we are still updating tzxing quite often, improving the pause lengths and
+timing info.
+Redecoding them with the correct schemes, adding archive info, hardare,
+message, text description
+and pause blocks; even instructions, pokes and screen files in some instances.
+
+I still think a TZX vault type DAT for RomCentre would be a good idea.
+
+Anyway, do you have any tapes that have not yet been TZXed ?
+
+Regards
+
+Andy Barker (ZX MIS Maintainer - <a href="http://www.sunderland.ac.uk/~as0aba/" rel="noreferrer">http://www.sunderland.ac.uk/~as0aba/</a>)
+
+
+
+
+</pre></div><div class="post" id="p118616"><div class="ph"><a class="d" href="#p118616">2001-10-10 10:46:29</a> <span>Andrew Barker</span> </div><pre>Hi,
+
+romcenter wrote:
+
+<span class="qt">&gt; Hi</span>
+<span class="qt">&gt; I&#x27;m not an expert in sinclair dump, but here some questions :</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Does a same game exists with several file extension ?</span>
+
+Do you mean for example a title that exists as Z80, TAP and TZX ?
+Well yes, however they are different becuase a Z80 is a snapshot (ROM
+State Save).
+A TAP is a standard (limited?) tape file that was out before TZX, it
+only
+stored standard loaders (ROM Loaders, LD_Bytes).
+TZX can store almost all Spectrum loaders, and can also store other
+8-bit
+tape formats, like C64, Amstrad and could be expanded to store more with
+
+some development.
+
+I&#x27;m not sure if this is what you meant ?
+
+<span class="qt">&gt; Can we calculate a unique signature which we can use to identify a</span>
+<span class="qt">&gt; game independently of its extension ? (Note that I use &#x27;signature&#x27;,</span>
+<span class="qt">&gt; and not &#x27;crc&#x27;.)</span>
+
+Interesting, I suppose another id block could be added which contains a
+signature, or checksum?
+which differentiates the file and can be easier to distinguish as per
+ROM files ?
+
+<span class="qt">&gt; Thanks.</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; Eric - RomCenter developper</span>
+<span class="qt">&gt; www.romcenter.com</span>
+<span class="qt">&gt; www.romcenter/com/forum</span>
+<span class="qt">&gt; …@…</span>
+
+Regards
+
+Andy Barker (ZX MIS Maintainer - <a href="http://www.sunderland.ac.uk/~as0aba/" rel="noreferrer">http://www.sunderland.ac.uk/~as0aba/</a>)
+
+
+
+
+</pre></div><div class="post" id="p118643"><div class="ph"><a class="d" href="#p118643">2001-10-10 12:42:29</a> <span>Andrew Barker</span> </div><pre><span class="qt">&gt; [SNIP]</span>
+
+<span class="qt">&gt; a) Available as guaranteed exact copies in the TZX Vault - something which</span>
+<span class="qt">&gt; the TOSEC TZXs are not, and are for the most part &quot;faked&quot; or &quot;cracked&quot;</span>
+<span class="qt">&gt; (laughable for a machine which had virtually no copy protection).</span>
+
+Yep, I noticed that I had to pour a whole load of TZXs into a faked/cracked dir
+cos many people still insist on using the damn beautify option.  It should be
+banned ;-)
+Cracked TZXs are of some interest, especially those which originated
+from the likes of Czech Republic, Slovenia, Slovakia, Croatia etc..
+
+Yes, our aim (can I say &#x27;our&#x27; Steve ;-) ) is to make the TZXs as authentic as
+possible.
+You will always be safe in the knowledge that TZX Vault downloads are of the
+most perfect
+versions of a TZX you&#x27;ll fine (and DSKs comming soon ;-) )
+
+<span class="qt">&gt; b) If they aren&#x27;t available at the TZX Vault yet, then they probably will be</span>
+<span class="qt">&gt; soon, and will be better copies than the TOSEC ones, due to that guarantee</span>
+<span class="qt">&gt; of quality.</span>
+
+Definately !!, so get your TZXing gear out and sample those tapes !!!
+
+<span class="qt">&gt; Until a game comes along as a perfect TZX, most people download the World Of</span>
+<span class="qt">&gt; Spectrum&#x27;s Z80 or SNA version. These versions are themselves replaced with</span>
+<span class="qt">&gt; TZX when they become available though.</span>
+
+This is true and fine.  Z80s have their place, although the on-line emulators
+are
+beginning to use TAP files as well.  TZX would be too much of an overhead (CPU
+wise)
+to run.  In effect Z80 is getting slowly relegated to a method of saving your
+position
+in a game where no save option exists.
+TZX is the future for tape preservation !!
+
+<span class="qt">&gt; As for generating a signature, you&#x27;d be lucky to do that with the Z80 and</span>
+<span class="qt">&gt; SNA files, as they were dumps of the games after the game had loaded, and so</span>
+<span class="qt">&gt; their contents vary greatly as to the time they were snapped - they aren&#x27;t</span>
+<span class="qt">&gt; ROMS whose content never changes.</span>
+
+Hmm, not sure how this would help, but I still think a Romcentre DAT of the .TZX
+Vault
+could be useful for people to maintain their archives with .TZX Vault and maybe
+even WOS.
+
+<span class="qt">&gt; Hope that helps,</span>
+<span class="qt">&gt;     D.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; PS - Check out the group&#x27;s FAQ for more info, and the pages on</span>
+<span class="qt">&gt; www.WorldOfSpectrum.Org which carry far more information that I can relay</span>
+<span class="qt">&gt; here.</span>
+
+Regards
+
+Andy Barker (ZX MIS Maintainer - <a href="http://www.sunderland.ac.uk/~as0aba/" rel="noreferrer">http://www.sunderland.ac.uk/~as0aba/</a>)
+
+
+
+
+</pre></div><div class="post" id="p118676"><div class="ph"><a class="d" href="#p118676">2001-10-10 17:27:48</a> <span>Vax</span> </div><pre>Hmm well just off the top of my head chaps. But the tosec convention DOES 
+have a field for a &quot;PERFECT&quot; conversion. So presuming I can identify a tzx 
+as perfect then I will certainly add that field to the game. K?
+
+
+
+
+</pre></div><div class="post" id="p118678"><div class="ph"><a class="d" href="#p118678">2001-10-10 17:30:50</a> <span>Vax</span> </div><pre>…@… (romcenter) wrote in 
+news:…@…:
+
+Hmm well i suppose you could identify a piece of code that appears in all 
+versions of that particular name, but Im not sure how feasibly that would 
+be really.
+
+<span class="qt">&gt; Hi</span>
+<span class="qt">&gt; I&#x27;m not an expert in sinclair dump, but here some questions :</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Does a same game exists with several file extension ?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Can we calculate a unique signature which we can use to identify a</span>
+<span class="qt">&gt; game independently of its extension ? (Note that I use &#x27;signature&#x27;,</span>
+<span class="qt">&gt; and not &#x27;crc&#x27;.)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Thanks.</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; Eric - RomCenter developper</span>
+<span class="qt">&gt; www.romcenter.com</span>
+<span class="qt">&gt; www.romcenter/com/forum</span>
+<span class="qt">&gt; …@…</span>
+
+
+
+
+</pre></div><div class="post" id="p118849"><div class="ph"><a class="d" href="#p118849">2001-10-12 07:09:34</a> <span>romcenter</span> </div><pre>So, we must concentrate now our effort on tzx files if I understand
+well, but a simple crc check is not enough on these files. Change one
+caps in the title for example, and you have a new crc. Imagine how
+much crc of the same game we will have...
+
+Can someone with developping skill be able to build a signature from a
+tzx file without using header info, just main program data ?
+
+If yes, contact me. Thanks. (…@…)
+
+--
+Eric
+www.romcenter.com
+…@…
+
+
+
+</pre></div><div class="post" id="p118908"><div class="ph"><a class="d" href="#p118908">2001-10-12 18:31:59</a> <span>Vax</span> </div><pre>…@… (romcenter) wrote in 
+news:…@…:
+
+Quite true, this is why i was considering a seperate dat for the tzx vault, 
+which could be updated to reflect the current state of the archive.
+However, apparently there are bandwidth worries to take into consideration.
+
+Vax
+
+
+<span class="qt">&gt; So, we must concentrate now our effort on tzx files if I understand</span>
+<span class="qt">&gt; well, but a simple crc check is not enough on these files. Change one</span>
+<span class="qt">&gt; caps in the title for example, and you have a new crc. Imagine how</span>
+<span class="qt">&gt; much crc of the same game we will have...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Can someone with developping skill be able to build a signature from a</span>
+<span class="qt">&gt; tzx file without using header info, just main program data ?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; If yes, contact me. Thanks. (…@…)</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; Eric</span>
+<span class="qt">&gt; www.romcenter.com</span>
+<span class="qt">&gt; …@…</span>
+<span class="qt">&gt; </span>
+
+
+
+
+</pre></div></main></body></html>

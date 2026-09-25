@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raiders of the lost, er, my collection actually · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Raiders of the lost, er, my collection actually</h1><p class="facts">14 posts, 2001-03-25 – 2001-03-30</p><div class="post" id="p95824"><div class="ph"><a class="d" href="#p95824">2001-03-25 23:10:56</a> <span>Llama-Wax Len</span> </div><pre>Okay, I may not be too successful on the old MIS/MIA front, but I did come
+across one or two interesting finds today in my Speccy collection. I had
+dragged it out the loft to see if I still had my copy of Ollie Octopus&#x27;
+Sketchpad (I didn&#x27;t).
+
+Anyway, I came across a program I used to love, called &quot;Infoload&quot;. I think
+it was a probably a Program Pitstop type-in from YS. It allows you to peek
+into a program as it loads (sort of) and find the (very) occasional hidden
+messages.
+
+Basically, you load this program and when it prompts you, you load a game
+tape (the game won&#x27;t actually load properly though, so don&#x27;t expect to be
+able to play it when it stops reading data). As the data is read, it appears
+on the screen, kind of. Actually, what appears is usually gibberish but
+sometimes (very occasionally) reveals something else that might be hidden in
+the code.
+
+Chances of you finding hidden cheat modes or infinite lives pokes or
+anything are quite slim - but it can be fun. Given that I was never that
+technical, couldn&#x27;t hack or program in machine code or anything, I had loads
+of fun trying to examine my favourite games. The drawback is that some games
+with different loaders will not work.
+
+It may well be available on the web somewhere, I don&#x27;t know, but I&#x27;ve put
+together a TZX of it anyway. I have also included a game in the TZX file
+(Bomberman I think) just to give you an example, and posted it in ABCS. It
+doesn&#x27;t give you much in the way of hidden messages, but it shows you how
+the program works. When the screen becomes full with data, press a key and
+it will start the next screenful. I was going to include Super Robin Hood,
+as it does have a hidden message, but then remembered that I&#x27;d effectively
+be distributing a game for which distribution permission has been denied. If
+any of you have Super Robin Hood, real tape or a TAP/TZX, I suggest you try
+it.
+
+I think I remember how it all works so if there are any questions, just ask.
+You have no idea about the wave of nostalgia that swept over me when I found
+this tape. Not only that, but I may also have found &quot;International Skodas&quot;,
+my first ever Crap Game![1] See old threads in CSS for details!
+
+I also discovered the old &quot;Dataquest&quot; program (the database prog that came
+with that Quest magazine or whatever it was called), so let me know if you
+want a Speccy program that details top wine producers, fish producers, time
+zones, average heights, jungle areas, national dishes, etc.
+
+Len
+[1] Although since I was about 10/11 years old, it obviously wasn&#x27;t meant to
+be crap.[2]
+[2] The really sad thing is that one look at my CSSCGC2K entry shows I
+haven&#x27;t improved with age.
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+LEGAL DISCLAIMER: By replying to this message, you hereby
+acknowledge that the ZX Spectrum game &quot;Robocop&quot; was too hard.
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p95900"><div class="ph"><a class="d" href="#p95900">2001-03-26 19:52:09</a> <span>Chris Young</span> <span>Re: Raiders of the lost, er, my collection actually</span></div><pre>On Mon, 26 Mar 2001 00:10:56 +0100, Llama-Wax Len (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; I think I remember how it all works so if there are any questions, just ask.</span>
+<span class="qt">&gt; You have no idea about the wave of nostalgia that swept over me when I found</span>
+<span class="qt">&gt; this tape. Not only that, but I may also have found &quot;International Skodas&quot;,</span>
+<span class="qt">&gt; my first ever Crap Game![1] See old threads in CSS for details!</span>
+
+UPLOAD! UPLOAD! UPLOAD!
+
+Chris
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p95907"><div class="ph"><a class="d" href="#p95907">2001-03-26 22:03:53</a> <span>Llama-Wax Len</span> <span>Re: Raiders of the lost, er, my collection actually</span></div><pre>
+Chris Young wrote in message
+&lt;…@…&gt;...
+<span class="qt">&gt;On Mon, 26 Mar 2001 00:10:56 +0100, Llama-Wax Len (of comp.sys.sinclair</span>
+&quot;fame&quot;)
+<span class="qt">&gt;wibbled on for an age:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; I think I remember how it all works so if there are any questions, just</span>
+ask.
+<span class="qt">&gt;&gt; You have no idea about the wave of nostalgia that swept over me when I</span>
+found
+<span class="qt">&gt;&gt; this tape. Not only that, but I may also have found &quot;International</span>
+Skodas&quot;,
+<span class="qt">&gt;&gt; my first ever Crap Game![1] See old threads in CSS for details!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;UPLOAD! UPLOAD! UPLOAD!</span>
+
+
+I will do, if the tapes are still okay. I came across a couple of games
+today that I thought may have been possibly MIS/MIA (but probably not), only
+to discover that no amount of jiggery pokery can seem to rescue them from
+old-tape-hell.
+
+Ladies and gentlemen, I give you a prime example of the importance of the
+MIS/MIA projects.
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+LEGAL DISCLAIMER: By replying to this message, you hereby
+acknowledge that the ZX Spectrum game &quot;Robocop&quot; was too hard.
+
+
+
+
+
+</pre></div><div class="post" id="p95918"><div class="ph"><a class="d" href="#p95918">2001-03-27 01:53:04</a> <span>Duncan Snowden</span> <span>Re: Raiders of the lost, er, my collection actually</span></div><pre>On Monday, Llama-Wax Len wrote:
+
+<span class="qt">&gt; Not only that, but I may also have found &quot;International Skodas&quot;, my</span>
+<span class="qt">&gt; first ever Crap Game![1] See old threads in CSS for details!</span>
+
+Hurrah! I think my first ever Crap Game is probably lost forever.
+Fortunately for those wishing to experience the full horror,
+Professional Coat Getting Simulator is scarily similar. Except my game
+didn&#x27;t have coats and hatstands. That would be too much of a
+coincidence. It was on the ZX81, so it was probably little inverse quote
+marks or something. In black and white. With no sound. So you can see
+just how crap it must have been.
+
+In fact, it was so crap it didn&#x27;t even have a name. How about having a
+&quot;Name Dunc&#x27;s Crap ZX81 Game from 1982 or Thereabouts That We&#x27;re Never
+Actually Likely to See&quot; competition, Spec-chums? Wouldn&#x27;t that be fun?
+(Er... -Ed.)
+
+-- 
+Duncan Snowden. 
+
+c CODE error, 670:3 
+
+
+
+</pre></div><div class="post" id="p95957"><div class="ph"><a class="d" href="#p95957">2001-03-27 20:07:43</a> <span>Chris Young</span> <span>Re: Raiders of the lost, er, my collection actually</span></div><pre>On 27 Mar 2001 01:53:04, Duncan Snowden (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; In fact, it was so crap it didn&#x27;t even have a name. How about having a</span>
+<span class="qt">&gt; &quot;Name Dunc&#x27;s Crap ZX81 Game from 1982 or Thereabouts That We&#x27;re Never</span>
+<span class="qt">&gt; Actually Likely to See&quot; competition, Spec-chums? Wouldn&#x27;t that be fun?</span>
+<span class="qt">&gt; (Er... -Ed.)</span>
+
+My suggestion is:
+
+&quot;Monochrome Mutants&quot;
+
+Chris
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p95967"><div class="ph"><a class="d" href="#p95967">2001-03-27 20:51:33</a> <span>Llama-Wax Len</span> <span>Re: Raiders of the lost, er, my collection actually</span></div><pre>
+Duncan Snowden wrote in message ...
+<span class="qt">&gt;On Monday, Llama-Wax Len wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Not only that, but I may also have found &quot;International Skodas&quot;, my</span>
+<span class="qt">&gt;&gt; first ever Crap Game![1] See old threads in CSS for details!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Hurrah! I think my first ever Crap Game is probably lost forever.</span>
+
+Well, I found that on both copies the basic loader seems to be pretty
+unrecoverable. (Anybody know of any tricks to try? I&#x27;ve managed to improve
+some by copying onto a newer tape, but is there anything the software can
+do? I use Taper, and I&#x27;ve no idea what half the technical details (pulse
+etc.) actually are.)
+
+However, the loading screen and game are totally intact. It was
+unbelievable, seeing it again after all this time (I estimate it to have
+been written round about 1988). Just some of the many features:
+
+- 128k only sound!
+- Elements of the plot that once seemed topical! (Kylie &amp; Jason, switching
+to unleaded petrol)
+- Several spelling errors! (mostly of &quot;skoda&quot; but one of &quot;diabolical&quot;)
+- Jokes that must have seemed funny when I was in primary school!
+- Quickest and easiest game to complete... ever!
+- Virtually no playability!
+- One scene even has a graphic!
+- The promise that my next game was to be &quot;Attack of the Killer Barbie
+Dolls&quot;! (Close... in fact, my next game was &quot;Revenge of the Killer Barbie
+Dolls&quot;, and it was never completed)
+- A plug for &quot;M&amp;S Software&quot; - my main rival in the crap software scene,
+seeing as the &quot;S&quot; stood for &quot;Steven&quot;, my brother.[1]
+- A badly directed GO TO statement, so that whenever you start a new game it
+warns you to stop the tape!
+
+Ah, the memories.
+
+<span class="qt">&gt;In fact, it was so crap it didn&#x27;t even have a name. How about having a</span>
+<span class="qt">&gt;&quot;Name Dunc&#x27;s Crap ZX81 Game from 1982 or Thereabouts That We&#x27;re Never</span>
+<span class="qt">&gt;Actually Likely to See&quot; competition, Spec-chums? Wouldn&#x27;t that be fun?</span>
+
+
+I vote for &quot;Attack of the Killer Barbie Dolls&quot;.
+
+Len
+[1] Talking of which, I may also have found my brother&#x27;s &quot;Tour&quot; program - a
+virtual tour (virtual reality? Bah, this is all done with plots and draws)
+of the islands to the west of Scotland. Oban - Craignure, Craignure -
+Tobermory, Tobermory - Coll, etc., all from the view of a ferry window.
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+LEGAL DISCLAIMER: By replying to this message, you hereby
+acknowledge that the ZX Spectrum game &quot;Robocop&quot; was too hard.
+
+
+
+
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p96028"><div class="ph"><a class="d" href="#p96028">2001-03-28 20:10:55</a> <span>Chris Young</span> <span>Re: Raiders of the lost, er, my collection actually</span></div><pre>On Tue, 27 Mar 2001 21:51:33 +0100, Llama-Wax Len (of comp.sys.sinclair &quot;fame&quot;)
+wibbled on for an age:
+
+<span class="qt">&gt; Well, I found that on both copies the basic loader seems to be pretty</span>
+<span class="qt">&gt; unrecoverable. (Anybody know of any tricks to try? I&#x27;ve managed to improve</span>
+<span class="qt">&gt; some by copying onto a newer tape, but is there anything the software can</span>
+<span class="qt">&gt; do? I use Taper, and I&#x27;ve no idea what half the technical details (pulse</span>
+<span class="qt">&gt; etc.) actually are.)</span>
+
+You&#x27;re sampling it first, and then loading it into Taper, aren&#x27;t you? 
+Check the waveform is a nice square wave, filling the display as much
+as possible, and running through 0.  You might be able to do some
+sound processing on the sample, such as &quot;normalise&quot; (move the wave
+vertically so it is centred through 0) or noise reduction (not sure
+how well that will work/help)
+
+Chris
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">| <a href="http://www.unsatisfactory.freeserve.co.uk" rel="noreferrer">http://www.unsatisfactory.freeserve.co.uk</a> |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++-- <a href="http://www.ysac.cjb.net/" rel="noreferrer">http://www.ysac.cjb.net/</a> --ICQ:28784166-+
+
+
+
+</pre></div><div class="post" id="p96040"><div class="ph"><a class="d" href="#p96040">2001-03-28 22:40:53</a> <span>Llama-Wax Len</span> <span>Re: Raiders of the lost, er, my collection actually</span></div><pre>
+Chris Young wrote in message
+&lt;…@…&gt;...
+<span class="qt">&gt;You&#x27;re sampling it first, and then loading it into Taper, aren&#x27;t you?</span>
+
+Yes.
+
+<span class="qt">&gt;Check the waveform is a nice square wave, filling the display as much</span>
+<span class="qt">&gt;as possible, and running through 0.  You might be able to do some</span>
+<span class="qt">&gt;sound processing on the sample, such as &quot;normalise&quot; (move the wave</span>
+<span class="qt">&gt;vertically so it is centred through 0) or noise reduction (not sure</span>
+<span class="qt">&gt;how well that will work/help)</span>
+
+
+Believe it or not, I managed to tinker with it to such a degree that I
+rescued a copy of &quot;Sky Fight&quot; from one of my tapes... except it isn&#x27;t
+complete! When the game finishes and asks if you want another game, &quot;y&quot;
+starts a new one while &quot;n&quot; displays the message &quot;START THE TAPE&quot; and then
+waits for some data - except my (copied) tape doesn&#x27;t have anything else on
+it! ARGH!
+
+&quot;Sky Fight&quot; is one of the best 2-player games ever, but I can&#x27;t seem to find
+it anywhere - does anyone know if it was by any chance released under
+another name? I&#x27;m bloody annoyed now.
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+LEGAL DISCLAIMER: By replying to this message, you hereby
+acknowledge that the ZX Spectrum game &quot;Robocop&quot; was too hard.
+
+
+
+
+
+</pre></div><div class="post" id="p96045"><div class="ph"><a class="d" href="#p96045">2001-03-28 23:45:05</a> <span>Duncan Snowden</span> <span>Re: Raiders of the lost, er, my collection actually</span></div><pre>On Tuesday, Llama-Wax Len wrote:
+
+<span class="qt">&gt; Duncan Snowden wrote in message ...</span>
+<span class="qt">&gt;&gt; I think my first ever Crap Game is probably lost forever.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Well, I found that on both copies the basic loader seems to be pretty</span>
+<span class="qt">&gt; unrecoverable.</span>
+
+Actually, I probably taped over it by mistake.
+
+<span class="qt">&gt;&gt; In fact, it was so crap it didn&#x27;t even have a name. How about having a</span>
+<span class="qt">&gt;&gt; &quot;Name Dunc&#x27;s Crap ZX81 Game from 1982 or Thereabouts That We&#x27;re Never</span>
+<span class="qt">&gt;&gt; Actually Likely to See&quot; competition, Spec-chums? Wouldn&#x27;t that be fun?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I vote for &quot;Attack of the Killer Barbie Dolls&quot;.</span>
+
+Ooh, I like that...
+
+-- 
+Duncan Snowden. 
+
+B Integer out of range, 1390:3 
+
+
+
+</pre></div><div class="post" id="p96046"><div class="ph"><a class="d" href="#p96046">2001-03-28 23:45:08</a> <span>Duncan Snowden</span> <span>Re: Raiders of the lost, er, my collection actually</span></div><pre>On Tuesday, Llama-Wax Len wrote:
+
+<span class="qt">&gt; Duncan Snowden wrote in message ...</span>
+<span class="qt">&gt;&gt; I think my first ever Crap Game is probably lost forever.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Well, I found that on both copies the basic loader seems to be pretty</span>
+<span class="qt">&gt; unrecoverable.</span>
+
+Actually, I probably taped over it by mistake.
+
+<span class="qt">&gt;&gt; In fact, it was so crap it didn&#x27;t even have a name. How about having a</span>
+<span class="qt">&gt;&gt; &quot;Name Dunc&#x27;s Crap ZX81 Game from 1982 or Thereabouts That We&#x27;re Never</span>
+<span class="qt">&gt;&gt; Actually Likely to See&quot; competition, Spec-chums? Wouldn&#x27;t that be fun?</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I vote for &quot;Attack of the Killer Barbie Dolls&quot;.</span>
+
+Ooh, I like that...
+
+-- 
+Duncan Snowden. 
+
+B Integer out of range, 1390:3 
+
+
+
+</pre></div><div class="post" id="p96070"><div class="ph"><a class="d" href="#p96070">2001-03-29 09:35:00</a> <span>HajoSpuunup</span> <span>Re: Raiders of the lost, er, my collection actually</span></div><pre>blah blah blah Chris Young...
+
+<span class="qt">&gt;&gt; In fact, it was so crap it didn&#x27;t even have a name. How about having a</span>
+<span class="qt">&gt;&gt; &quot;Name Dunc&#x27;s Crap ZX81 Game from 1982 or Thereabouts That We&#x27;re Never</span>
+<span class="qt">&gt;&gt; Actually Likely to See&quot; competition, Spec-chums? Wouldn&#x27;t that be fun?</span>
+<span class="qt">&gt;&gt; (Er... -Ed.)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;My suggestion is:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&quot;Monochrome Mutants&quot;</span>
+<span class="qt">&gt;</span>
+
+How about &quot;Sunrise over Avalon&quot;? I like poncey titles that have no relation 
+to the game.
+
+hajo
+-----------------------------------------
+<a href="http://visitweb.com/MrAdsa" rel="noreferrer">http://visitweb.com/MrAdsa</a>
+
+
+
+</pre></div><div class="post" id="p96085"><div class="ph"><a class="d" href="#p96085">2001-03-29 12:08:44</a> <span>Joe Mackay</span> <span>Re: Raiders of the lost, er, my collection actually</span></div><pre>Llama-Wax Len &lt;…@…&gt; wrote:
+
+: Believe it or not, I managed to tinker with it to such a degree that I
+: rescued a copy of &quot;Sky Fight&quot; from one of my tapes... except it isn&#x27;t
+: complete! When the game finishes and asks if you want another game, &quot;y&quot;
+: starts a new one while &quot;n&quot; displays the message &quot;START THE TAPE&quot; and then
+: waits for some data - except my (copied) tape doesn&#x27;t have anything else on
+: it! ARGH!
+
+: &quot;Sky Fight&quot; is one of the best 2-player games ever, but I can&#x27;t seem to find
+: it anywhere - does anyone know if it was by any chance released under
+: another name? I&#x27;m bloody annoyed now.
+
+Sky Fight! Yes, that&#x27;s excellent.
+It was released on the 16/48 tape magazine, issue 12. Don&#x27;t worry, the
+game&#x27;s complete - it&#x27;s just trying to load in the rest of the mag.
+
+I think all the issues are online. No. 12 is the only one I actually have
+the original tape of, and it&#x27;s particularly good. Well worth a look.
+
+-- 
+Joe Mackay - Department of Computer Science, QMW
+E-mail     - …@…
+(mobile)   - …@…
+
+
+
+</pre></div><div class="post" id="p96211"><div class="ph"><a class="d" href="#p96211">2001-03-30 18:47:41</a> <span>Llama-Wax Len</span> <span>Re: Raiders of the lost, er, my collection actually</span></div><pre>
+Duncan Snowden wrote in message ...
+<span class="qt">&gt;On Tuesday, Llama-Wax Len wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; I vote for &quot;Attack of the Killer Barbie Dolls&quot;.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;Ooh, I like that...</span>
+
+
+It might even inspire me to finish programming the sequel, although I
+suspect &quot;Revenge of the Killer Barbie Dolls&quot; has long been wiped from the
+old Boots C15 that it was saved on.
+
+Oh well, at least I rescued International Skodas.
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+LEGAL DISCLAIMER: By replying to this message, you hereby
+acknowledge that the ZX Spectrum game &quot;Robocop&quot; was too hard.
+
+
+
+
+
+</pre></div><div class="post" id="p96212"><div class="ph"><a class="d" href="#p96212">2001-03-30 18:48:19</a> <span>Llama-Wax Len</span> <span>Re: Raiders of the lost, er, my collection actually</span></div><pre>
+Joe Mackay wrote in message &lt;99v8kc$5ks$…@…&gt;...
+<span class="qt">&gt;Sky Fight! Yes, that&#x27;s excellent.</span>
+<span class="qt">&gt;It was released on the 16/48 tape magazine, issue 12. Don&#x27;t worry, the</span>
+<span class="qt">&gt;game&#x27;s complete - it&#x27;s just trying to load in the rest of the mag.</span>
+
+That&#x27;s me learned my lesson - software piracy, eh? Tsk.
+
+Len
+--
+Remove SPAMOFF to reply
+&quot;Oh, the nobility of the almost human porpoise!&quot;
+LEGAL DISCLAIMER: By replying to this message, you hereby
+acknowledge that the ZX Spectrum game &quot;Robocop&quot; was too hard.
+
+
+
+
+
+</pre></div></main></body></html>

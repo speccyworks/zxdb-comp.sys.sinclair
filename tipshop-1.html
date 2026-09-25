@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tipshop games checked against ZXDB · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Tipshop games checked against ZXDB</h1><details class="about"><summary>About this list</summary><p class="note">The Tipshop (<a href="https://www.the-tipshop.co.uk/" rel="noreferrer">https://www.the-tipshop.co.uk/</a>) posted its monthly updates to comp.sys.sinclair from 2003 to 2021. Each update credits who sent in POKEs, maps, solutions and tips for which games. The index reads those credits and links each game to ZXDB. Until 25 Sep 2026, 421 credits (341 different titles) named a game the index could not find in ZXDB. This list says what they were. The same verdicts as data: <code>tipshop-titles.tsv</code>. ZXDB copy: <code>~/projects/zx-spectrum/zxdb/zxdb.sqlite</code> of 18 Sep 2026.</p><p><b>In short:</b> nearly all of them were the index&#x27;s own reading errors or spelling differences, not games missing from ZXDB. <b>12 games are really missing.</b> (Two titles the checks could not settle are left out; they are in <code>tipshop-titles.tsv</code>.)</p><p class="note">How the number of unmatched titles fell, step by step:</p><table class="items"><thead><tr><th>Step</th><th>Titles left unmatched</th></tr></thead><tbody><tr><td>Before (the first version of the rules)</td><td>341</td></tr><tr><td>Reading fixes: accented titles now match (&quot;Rychle Sipy&quot; is <i>Rychlé šípy</i>; before, the accented letters were dropped), &quot;H.Q.&quot; = &quot;HQ&quot;, &quot;&#x27;n&#x27;&quot; = &quot;and&quot;; sentence text no longer kept with a title (&quot;Atic Atac. He also provided&quot;); names in brackets no longer read as titles; lists after &quot;POKEs for:&quot;, &quot;maps are for:&quot; or &quot;a couple of POKEs -&quot; now read</td><td>181</td></tr><tr><td>ZXDB&#x27;s links to the Tipshop&#x27;s own pages, whose names are the Tipshop&#x27;s spellings (&quot;Docker Don&quot; is <i>Docker Dan</i>, &quot;Double Bobble&quot; is <i>Double Bubble</i>, &quot;Arkanods&quot; is <i>Arcanoid</i>)</td><td>164</td></tr><tr><td>Titles cut at a comma or &quot;and&quot; joined again when together they are one ZXDB title (&quot;Eric, the Floaters&quot;, &quot;Yes, Prime Minister&quot;, &quot;Gunpowder, Treason and Plot&quot;)</td><td>122</td></tr><tr><td>Checked by hand: in ZXDB under another name (&quot;Craft Cruiser&quot; is <i>Space Ranger</i>, &quot;Spark&quot; is <i>Car</i>, &quot;Moscas&quot; is <i>Halaga</i>, &quot;Squad Quick Reaction&quot; is <i>O.B.R.: Rapid Reaction Unit</i>, &quot;The Vinny Puh&quot; is Winnie-the-Pooh), or not a game (a website, &quot;HURRAH&quot;, a contributor&#x27;s name)</td><td><b>14: 12 not in ZXDB, 2 unsure</b></td></tr></tbody></table><p class="note">The reading fixes also found credits the first version missed, such as whole lists after &quot;POKEs for:&quot; and Viktor Drozd&#x27;s 2003 list, which was credited to Tom Quested. The index now links 6,416 of its 6,432 credits (99.8%) to ZXDB.</p></details><p class="filter"><input class="rowfilter" placeholder="Filter the rows on this page"> <span class="small rowcount"></span></p><p class="tabs"><a href="tipshop-all.html">All</a> · <b>Not in ZXDB (12)</b></p><p class="note">Each was searched in ZXDB titles, alternative titles, download file names, notes and ZXDB&#x27;s Tipshop page names, with spelling variants.</p><table class="items"><thead><tr><th>Game</th><th>Tipshop credit</th><th>Date</th><th>What is known</th><th>Post</th></tr></thead><tbody><tr><td>Air Fire</td><td>POKEs by Viktor Drozd</td><td>2003-11-07</td><td>in his A–C list of mostly obscure, probably ex-USSR games</td><td><a href="thread-28731.html">thread</a></td></tr><tr><td>C.P.U. Destroyer</td><td>POKEs by Viktor Drozd</td><td>2003-11-07</td><td>same list; ZXDB has only unrelated games called <i>Destroyer</i></td><td><a href="thread-28731.html">thread</a></td></tr><tr><td>Lozio Tom</td><td>POKEs by Archie Robins</td><td>2009-10-31</td><td>in a batch with Armageddon, Electro, Galaxy Attack and Lunar Rescue</td><td><a href="thread-34586.html">thread</a></td></tr><tr><td>Jet Pac Advanced</td><td>POKEs by Andy Ryals</td><td>2014-11-29</td><td>among 2014 new games; perhaps a Jetpac hack or remake</td><td><a href="thread-35648.html">thread</a></td></tr><tr><td>PC Quest</td><td>POKEs by Andy Ryals</td><td>2014-11-29</td><td>among 2014 new games</td><td><a href="thread-35648.html">thread</a></td></tr><tr><td>Androide Xmas 2014 Remix</td><td>POKEs by Andy Ryals</td><td>2015-02-26</td><td>Christmas remix by Juan Carlos Montalbán (PixelSoftware); ZXDB has only <i>Androide</i> (<a href="https://spectrumcomputing.co.uk/entry/30082">30082</a>)</td><td><a href="thread-35678.html">thread</a></td></tr><tr><td>Bluber 2014 Xmas Remix</td><td>POKEs by Andy Ryals</td><td>2015-02-26</td><td>Christmas remix by the same author; ZXDB has only <i>Bluber – The Last Odisey</i> (<a href="https://spectrumcomputing.co.uk/entry/30164">30164</a>)</td><td><a href="thread-35678.html">thread</a></td></tr><tr><td>Little Big Tony</td><td>POKEs, no name given</td><td>2015-06-06</td><td>in the June 2015 list of games with new POKEs</td><td><a href="thread-35744.html">thread</a></td></tr><tr><td>Shrine of Death</td><td>map by John Metcalf</td><td>2017-09-29</td><td>listed with Famous Five, Lightmare and Lord of the Rings; ZXDB&#x27;s <i>Shrine of Evil</i> (<a href="https://spectrumcomputing.co.uk/entry/45390">45390</a>) is a different game</td><td><a href="thread-36046.html">thread</a></td></tr><tr><td>The Ottifans</td><td>POKEs, cheats and tips by Eugene Lisovy</td><td>2018-11-03</td><td>probably a game about <i>The Ottifants</i></td><td><a href="thread-36142.html">thread</a></td></tr><tr><td>Qfed Trip</td><td>POKEs by Graham &quot;Turbo&quot; Mason</td><td>2020-04-14</td><td>listed with 2019 games (Yanga, Yazzie, Mantra Kill, Drift!)</td><td><a href="thread-36205.html">thread</a></td></tr><tr><td>Robos</td><td>POKEs by Graham &quot;Turbo&quot; Mason</td><td>2020-04-14</td><td>same list; ZXDB&#x27;s <i>Robo-stalker</i> and <i>RoboBro</i> are other games</td><td><a href="thread-36205.html">thread</a></td></tr></tbody></table><details class="about"><summary>How this was checked</summary><table class="items list"><tbody><tr><td>The rules in <code>tipshop.py</code> and <code>linking.py</code> were fixed first (see the index README, &quot;Tipshop credits&quot;), which left 187 unmatched titles.</td></tr><tr><td>Three helper agents took about 62 titles each, with the sentence from the update. They searched ZXDB read-only, including ZXDB&#x27;s links to the Tipshop&#x27;s own pages (<code>webrefs</code>, website 9), whose page names are the Tipshop&#x27;s spellings.</td></tr><tr><td>Their 187 verdicts were validated: every title present, and every cited entry exists.</td></tr><tr><td>Claude checked a sample of 25 &quot;under another name&quot; verdicts, and searched again for every &quot;not in ZXDB&quot; and &quot;unsure&quot; title, joining words and ignoring punctuation. Nothing was found.</td></tr><tr><td>Claude settled 9 titles that appeared after the rule changes.</td></tr></tbody></table><p class="note">The verdicts are judgements, keyed by Message-ID and title as written in <code>tipshop-titles.tsv</code>. <code>tipshop.py</code> reads that file on every build, but only for titles its rules cannot match.</p></details><p class="note">From tipshop-vs-zxdb.md (25 Sep 2026).</p></main><script>
+(function () {
+  function fold(s) { return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); }
+  var box = document.querySelector('.rowfilter'), count = document.querySelector('.rowcount');
+  if (!box) return;
+  var rows = Array.prototype.slice.call(document.querySelectorAll('main > table tbody tr'));
+  rows.forEach(function (r) { r.dataset.text = fold(r.textContent); });
+  box.addEventListener('input', function () {
+    var words = fold(box.value).split(/\s+/).filter(Boolean), shown = 0;
+    rows.forEach(function (r) {
+      var ok = words.every(function (w) { return r.dataset.text.indexOf(w) >= 0; });
+      r.style.display = ok ? '' : 'none'; shown += ok;
+    });
+    document.querySelectorAll('main > table').forEach(function (t) {
+      var any = Array.prototype.some.call(t.querySelectorAll('tbody tr'), function (r) { return r.style.display !== 'none'; });
+      t.style.display = any ? '' : 'none';
+    });
+    count.textContent = words.length ? shown + ' of ' + rows.length + ' rows' : '';
+  });
+})();
+</script></body></html>

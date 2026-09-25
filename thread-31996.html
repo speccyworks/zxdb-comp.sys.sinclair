@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brilliant new Spectrum game released - Ultimate Manic Miner · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Brilliant new Spectrum game released - Ultimate Manic Miner</h1><p class="facts">27 posts, 2006-02-24 – 2006-03-14</p><div class="post" id="p200796"><div class="ph"><a class="d" href="#p200796">2006-02-24 13:28:44</a> <span>ewgf</span>  <a class="badge" href="https://spectrumcomputing.co.uk/entry/17073">ZXDB: Ultimate Manic Miner</a></div><pre>I don&#x27;t know if it&#x27;s been anounced here, but I can&#x27;t find it,
+so...
+
+
+Drums roll, trumpets blare, choirs sing out etc...
+
+
+Ultimate Manic Miner, an amazing new JSW/MM rewrite
+for the Spectrum 128K, has been released. I&#x27;ve uploaded
+it to
+
+alt.binaries.comp.sinclair
+
+so go and get it now - even if you don&#x27;t like Jetset Willy
+or Manic Miner (weirdo!), give this a go, it really is fantastic! 
+
+
+
+
+
+</pre></div><div class="post" id="p200797"><div class="ph"><a class="d" href="#p200797">2006-02-24 13:47:00</a> <span>Dunny</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>ewgf wrote:
+
+<span class="qt">&gt; Drums roll, trumpets blare, choirs sing out etc...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Ultimate Manic Miner, an amazing new JSW/MM rewrite</span>
+<span class="qt">&gt; for the Spectrum 128K, has been released. I&#x27;ve uploaded</span>
+<span class="qt">&gt; it to</span>
+
+Hmm. This really doesn&#x27;t feel like a worthy successor. There&#x27;s far better 
+adaptations around.
+
+There&#x27;s some real issues with chronic attribute clash which you didn&#x27;t get 
+in MM or JSW to anything like this extent. At one part early on, Willy being 
+white really looks bad against a yellow background. And there&#x27;s far too much 
+over-done garish colour schemes in each room.
+
+The stairs in the penguin security centre - bounce, bounce, bounce all the 
+way to the bottom? Hardly smooth. Huge black areas that you can&#x27;t walk 
+through - like the sprite that&#x27;s supposed to be stopping you finished about 
+6 pixels away, but you&#x27;re stopped at the attribute boundary.
+
+No clear indications of which element type a block is - you don&#x27;t know if 
+you can climb it or not until you get there... Went through a &quot;cut scene&quot; 
+where Willy collected some sort of telephone. It said &quot;Press Space&quot; - so I 
+press space, and you can hear willy jump to hit some hidden object. Very 
+poor.
+
+About four screens of the lift - where you&#x27;re hemmed in and can only hit the 
+lift switch again. No animation when the lift moves - just fade out and in 
+at the next room. Nothing to do in those screens but go &quot;ho hum&quot; and wait 
+for either someone else to hit the switch or for you to do it yourself.
+
+Gameplay is quite bad, graphics are dreadful especially after the rather 
+much better MM graphics, or Eugene LOTB which was stunning.
+
+In case you couldn&#x27;t tell, I didn&#x27;t enjoy this at all - and there&#x27;s far 
+better on Andrew Broad&#x27;s site which are well worth playing. YMMV, but I&#x27;ve 
+deleted it.
+
+D.
+
+
+
+
+
+</pre></div><div class="post" id="p200798"><div class="ph"><a class="d" href="#p200798">2006-02-24 13:56:46</a> <span>Daren</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>
+Dunny wrote:
+<span class="qt">&gt; ewgf wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Drums roll, trumpets blare, choirs sing out etc...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Ultimate Manic Miner, an amazing new JSW/MM rewrite</span>
+<span class="qt">&gt; &gt; for the Spectrum 128K, has been released. I&#x27;ve uploaded</span>
+<span class="qt">&gt; &gt; it to</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Hmm. This really doesn&#x27;t feel like a worthy successor. There&#x27;s far better</span>
+<span class="qt">&gt; adaptations around.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; There&#x27;s some real issues with chronic attribute clash which you didn&#x27;t get</span>
+<span class="qt">&gt; in MM or JSW to anything like this extent. At one part early on, Willy being</span>
+<span class="qt">&gt; white really looks bad against a yellow background. And there&#x27;s far too much</span>
+<span class="qt">&gt; over-done garish colour schemes in each room.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; The stairs in the penguin security centre - bounce, bounce, bounce all the</span>
+<span class="qt">&gt; way to the bottom? Hardly smooth. Huge black areas that you can&#x27;t walk</span>
+<span class="qt">&gt; through - like the sprite that&#x27;s supposed to be stopping you finished about</span>
+<span class="qt">&gt; 6 pixels away, but you&#x27;re stopped at the attribute boundary.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; No clear indications of which element type a block is - you don&#x27;t know if</span>
+<span class="qt">&gt; you can climb it or not until you get there... Went through a &quot;cut scene&quot;</span>
+<span class="qt">&gt; where Willy collected some sort of telephone. It said &quot;Press Space&quot; - so I</span>
+<span class="qt">&gt; press space, and you can hear willy jump to hit some hidden object. Very</span>
+<span class="qt">&gt; poor.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; About four screens of the lift - where you&#x27;re hemmed in and can only hit the</span>
+<span class="qt">&gt; lift switch again. No animation when the lift moves - just fade out and in</span>
+<span class="qt">&gt; at the next room. Nothing to do in those screens but go &quot;ho hum&quot; and wait</span>
+<span class="qt">&gt; for either someone else to hit the switch or for you to do it yourself.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Gameplay is quite bad, graphics are dreadful especially after the rather</span>
+<span class="qt">&gt; much better MM graphics, or Eugene LOTB which was stunning.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; In case you couldn&#x27;t tell, I didn&#x27;t enjoy this at all - and there&#x27;s far</span>
+<span class="qt">&gt; better on Andrew Broad&#x27;s site which are well worth playing. YMMV, but I&#x27;ve</span>
+<span class="qt">&gt; deleted it.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; D.</span>
+
+But aaprt from that it&#x27;s ok?
+
+Daren
+
+
+
+
+</pre></div><div class="post" id="p200799"><div class="ph"><a class="d" href="#p200799">2006-02-24 14:06:16</a> <span>Dunny</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>Daren wrote:
+<span class="qt">&gt; Dunny wrote:</span>
+
+<span class="qt">&gt;&gt; In case you couldn&#x27;t tell, I didn&#x27;t enjoy this at all - and there&#x27;s</span>
+<span class="qt">&gt;&gt; far better on Andrew Broad&#x27;s site which are well worth playing.</span>
+<span class="qt">&gt;&gt; YMMV, but I&#x27;ve deleted it.</span>
+
+<span class="qt">&gt; But aaprt from that it&#x27;s ok?</span>
+
+Yeah, no problems. It just looks like the guy&#x27;s gone all-out trying to get a 
+MM/JSW style game to do stuff that it wasn&#x27;t intended to do, and made a 
+right mess of it in the process. You can certainly *play* it. But as there&#x27;s 
+very little that can actually kill you, it&#x27;s no real fun.
+
+D.
+
+
+
+
+
+</pre></div><div class="post" id="p200801"><div class="ph"><a class="d" href="#p200801">2006-02-24 14:23:17</a> <span>ewgf</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>
+
+<span class="qt">&gt; Hmm. This really doesn&#x27;t feel like a worthy successor. There&#x27;s far better </span>
+<span class="qt">&gt; adaptations around....</span>
+
+Blimey! I thought it was great. Admittedly it&#x27;s hardly standard JSW/MM
+gameplay (for that try ZX Heroes, Willy&#x27;s Afterlife etc), but I think the 
+author did
+a fantastic job of moving the engine in a different direction from the 
+&quot;collect
+everything that flashes&quot; style, towards the exploration and adventure (and 
+thankfully
+without the &quot;collect the fuse and take it to the broken machine to fix it&quot; 
+style of
+puzzles in other arcade adventures, that quickly became so tedious).
+
+Each to his own, I suppose, but I really can&#x27;t see how you can say &quot;Gameplay
+is quite bad, graphics are dreadful&quot; and so on. Admittedly I&#x27;ve yet to 
+finish the
+game, and it isn&#x27;t perfect (although it is running on a Speccy (or 
+emulator), which
+limits the artist considerably), but I think it&#x27;s the best new Spectrum game 
+I&#x27;ve seen
+in years. And judging by the opinions of others that I&#x27;ve read (all of which 
+have been
+similar to mine), this game seems very well received.
+
+Anyway, give it time, and more people will air their views and opinions.
+Then we can judge by the consensus. I really doubt that many people will 
+dislike the
+game, though.
+
+
+
+
+
+</pre></div><div class="post" id="p200803"><div class="ph"><a class="d" href="#p200803">2006-02-24 18:58:30</a> <span>W Marsh</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>On Fri, 24 Feb 2006 14:23:17 -0000, &quot;ewgf&quot; &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;Admittedly it&#x27;s hardly standard JSW/MM</span>
+<span class="qt">&gt;gameplay (for that try ZX Heroes, Willy&#x27;s Afterlife etc), but I think the </span>
+<span class="qt">&gt;author did</span>
+<span class="qt">&gt;a fantastic job of moving the engine in a different direction from the </span>
+
+Puppet accounts only work if you remember to change your name first!
+
+
+
+</pre></div><div class="post" id="p200804"><div class="ph"><a class="d" href="#p200804">2006-02-24 19:56:34</a> <span>WM</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>&quot;ewgf&quot; &lt;…@…&gt; wrote in message 
+news:dtn1ll$d4j$…@…...
+<span class="qt">&gt;I don&#x27;t know if it&#x27;s been anounced here, but I can&#x27;t find it,</span>
+<span class="qt">&gt; so...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Drums roll, trumpets blare, choirs sing out etc...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Ultimate Manic Miner, an amazing new JSW/MM rewrite</span>
+<span class="qt">&gt; for the Spectrum 128K, has been released. I&#x27;ve uploaded</span>
+<span class="qt">&gt; it to</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; alt.binaries.comp.sinclair</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; so go and get it now - even if you don&#x27;t like Jetset Willy</span>
+<span class="qt">&gt; or Manic Miner (weirdo!), give this a go, it really is fantastic!</span>
+
+I must be really crap, &#x27;cos I can&#x27;t get off the second screen...
+
+
+
+
+
+</pre></div><div class="post" id="p200805"><div class="ph"><a class="d" href="#p200805">2006-02-24 21:06:21</a> <span>Colin Woodcock</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>
+&quot;ewgf&quot; &lt;…@…&gt; wrote in message 
+news:dtn4rv$762$…@…...
+
+<span class="qt">&gt; Anyway, give it time, and more people will air their views and opinions.</span>
+<span class="qt">&gt; Then we can judge by the consensus. I really doubt that many people will </span>
+<span class="qt">&gt; dislike the</span>
+<span class="qt">&gt; game, though.</span>
+
+
+I think it&#x27;s great!
+
+Colin
+
+
+
+
+
+
+</pre></div><div class="post" id="p200807"><div class="ph"><a class="d" href="#p200807">2006-02-24 23:18:07</a> <span>Matthew Westcott</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>WM wrote:
+<span class="qt">&gt; &quot;ewgf&quot; &lt;…@…&gt; wrote in message </span>
+<span class="qt">&gt; news:dtn1ll$d4j$…@…...</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt;Ultimate Manic Miner, an amazing new JSW/MM rewrite</span>
+<span class="qt">&gt;&gt;for the Spectrum 128K, has been released. I&#x27;ve uploaded</span>
+<span class="qt">&gt;&gt;it to</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;alt.binaries.comp.sinclair</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; I must be really crap, &#x27;cos I can&#x27;t get off the second screen...</span>
+
+I&#x27;m so crap I haven&#x27;t even downloaded it yet.
+Any chance of someone putting it somewhere more universally accessible?
+
+
+
+
+</pre></div><div class="post" id="p200808"><div class="ph"><a class="d" href="#p200808">2006-02-24 23:26:14</a> <span>Dunny</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>Matthew Westcott wrote:
+<span class="qt">&gt; WM wrote:</span>
+<span class="qt">&gt;&gt; &quot;ewgf&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt;&gt; news:dtn1ll$d4j$…@…...</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; Ultimate Manic Miner, an amazing new JSW/MM rewrite</span>
+<span class="qt">&gt;&gt;&gt; for the Spectrum 128K, has been released. I&#x27;ve uploaded</span>
+<span class="qt">&gt;&gt;&gt; it to</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; alt.binaries.comp.sinclair</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; I must be really crap, &#x27;cos I can&#x27;t get off the second screen...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;m so crap I haven&#x27;t even downloaded it yet.</span>
+<span class="qt">&gt; Any chance of someone putting it somewhere more universally</span>
+<span class="qt">&gt; accessible?</span>
+
+<a href="http://homepage.ntlworld.com/paul.dunn4/UltimateManicMiner.zip" rel="noreferrer">http://homepage.ntlworld.com/paul.dunn4/UltimateManicMiner.zip</a>
+
+D.
+
+
+
+
+
+</pre></div><div class="post" id="p200809"><div class="ph"><a class="d" href="#p200809">2006-02-25 02:16:06</a> <span>ewgf</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>What&#x27;s a puppet account? I didn&#x27;t write the game, then post here praising 
+it,
+if that&#x27;s what you mean - I had nothing to do with the game&#x27;s existence (not
+even beta testing it), though I wish I had, he&#x27;s done a great job on it.
+
+
+&quot;W Marsh&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; On Fri, 24 Feb 2006 14:23:17 -0000, &quot;ewgf&quot; &lt;…@…&gt;</span>
+<span class="qt">&gt; wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt;Admittedly it&#x27;s hardly standard JSW/MM</span>
+<span class="qt">&gt;&gt;gameplay (for that try ZX Heroes, Willy&#x27;s Afterlife etc), but I think the</span>
+<span class="qt">&gt;&gt;author did</span>
+<span class="qt">&gt;&gt;a fantastic job of moving the engine in a different direction from the</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Puppet accounts only work if you remember to change your name first! </span>
+
+
+
+
+
+</pre></div><div class="post" id="p200810"><div class="ph"><a class="d" href="#p200810">2006-02-25 02:16:43</a> <span>Andrew Broad</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>…@… is for spammers
+Others: see <a href="http://geocities.com/andrewbroad/email.html" rel="noreferrer">http://geocities.com/andrewbroad/email.html</a>
+
+
+The general consensus in the MM/JSW community is that Igor Makovsky&#x27;s
+Ultimate Manic Miner is indeed brilliant. Admittedly I myself have only
+had a quick, casual go so far, but it was enough to see that the game
+deserves full marks for novelty, amazing graphics, and a unique
+atmosphere.
+
+It seems to be an excellent showcase of what can be achieved with John
+Elliott&#x27;s enhanced JSW64 game-engine, with the extra cell-classes,
+cell-types, and guardian-types.
+
+It&#x27;s also nice to see some quirky features. So far I&#x27;ve had to jump
+through an Innocent-Looking Block (i.e. an Earth-cell at head-height
+that dumps you through the platform below), jump through some overhead
+Earth-cells, and hide from an arrow by standing in a non-Air cell.
+
+I had just got past &quot;THE COLD ROOM&quot; [27] before I had to quit the game
+because I ran out of time in the real world (like I said, it was only a
+casual go).
+
+One downside of UMM is the uncertainty. Because there are so many
+cell-classes, it&#x27;s hard to know what to expect in terms of
+cell-behaviour, whether something is a guardian or not, whether it is
+stand-onable or not.
+
+The other downside of UMM is the lack of items, most of which seem to
+be hidden inside portals, or to be extra-life items (not necessary to
+fulfill the ending-condition if the sole aim is to escape?). So I guess
+I&#x27;ll miss the joy of being able to tick off rooms as I clear them of
+items.
+
+But UMM is certainly something special in the development of the MM/JSW
+field, and in graphical terms it will be a very hard act to follow.
+Anyone who has written a MM/JSW game will appreciate the amazing
+achievement of Igor Makovsky.
+
+--
+Dr. Andrew Broad
+<a href="http://geocities.com/andrewbroad/" rel="noreferrer">http://geocities.com/andrewbroad/</a>
+<a href="http://geocities.com/andrewbroad/spectrum/" rel="noreferrer">http://geocities.com/andrewbroad/spectrum/</a>
+<a href="http://geocities.com/andrewbroad/spectrum/willy/" rel="noreferrer">http://geocities.com/andrewbroad/spectrum/willy/</a>
+
+<a href="http://groups.yahoo.com/group/manicminerandjetsetwilly/" rel="noreferrer">http://groups.yahoo.com/group/manicminerandjetsetwilly/</a>
+
+
+
+
+</pre></div><div class="post" id="p200811"><div class="ph"><a class="d" href="#p200811">2006-02-25 03:21:42</a> <span>Da Smog</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>Την Fri, 24 Feb 2006 21:16:06 -0500,ο(η) ewgf &lt;…@…&gt;  
+έγραψε:
+
+<span class="qt">&gt; What&#x27;s a puppet account? I didn&#x27;t write the game, then post here praising</span>
+<span class="qt">&gt; it,</span>
+<span class="qt">&gt; if that&#x27;s what you mean - I had nothing to do with the game&#x27;s existence  </span>
+<span class="qt">&gt; (not</span>
+<span class="qt">&gt; even beta testing it), though I wish I had, he&#x27;s done a great job on it.</span>
+<span class="qt">&gt;</span>
+
+Hmmm still cannot get it. My news server killed it. Any place a nice guy  
+(that&#x27;s me :-) ) can download it?
+
+Phoebus
+-- 
+Χρησιμοποιώ το επαναστατικό πρόγραμμα αλληλογραφίας της Opera:  
+<a href="http://www.opera.com/mail/" rel="noreferrer">http://www.opera.com/mail/</a>
+
+
+
+</pre></div><div class="post" id="p200812"><div class="ph"><a class="d" href="#p200812">2006-02-25 03:36:10</a> <span>Da Smog</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>Την Fri, 24 Feb 2006 22:21:42 -0500,ο(η) Da Smog &lt;…@…&gt;  
+έγραψε:
+
+<span class="qt">&gt; Την Fri, 24 Feb 2006 21:16:06 -0500,ο(η) ewgf  </span>
+<span class="qt">&gt; &lt;…@…&gt; έγραψε:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; What&#x27;s a puppet account? I didn&#x27;t write the game, then post here  </span>
+<span class="qt">&gt;&gt; praising</span>
+<span class="qt">&gt;&gt; it,</span>
+<span class="qt">&gt;&gt; if that&#x27;s what you mean - I had nothing to do with the game&#x27;s existence  </span>
+<span class="qt">&gt;&gt; (not</span>
+<span class="qt">&gt;&gt; even beta testing it), though I wish I had, he&#x27;s done a great job on it.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Hmmm still cannot get it. My news server killed it. Any place a nice guy  </span>
+<span class="qt">&gt; (that&#x27;s me :-) ) can download it?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Phoebus</span>
+
+Never mind, I found it :-) It&#x27;s a bit slow though. Of course when you can  
+adjust the emulation speed....
+Unfortunately I do not have an 128K (I hope someone will eventually sell  
+me one :-P) so I cannot try it on a real speccy :-(
+
+I&#x27;ve converted it using ZM/hT to a real QL executable. Anyone want it?
+
+Phoebus
+
+-- 
+Χρησιμοποιώ το επαναστατικό πρόγραμμα αλληλογραφίας της Opera:  
+<a href="http://www.opera.com/mail/" rel="noreferrer">http://www.opera.com/mail/</a>
+
+
+
+</pre></div><div class="post" id="p200813"><div class="ph"><a class="d" href="#p200813">2006-02-25 09:02:03</a> <span>Lister</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>On Fri, 24 Feb 2006 23:26:14 GMT, &quot;Dunny&quot; &lt;…@…&gt;
+wrote:
+
+<span class="qt">&gt;Matthew Westcott wrote:</span>
+<span class="qt">&gt;&gt; WM wrote:</span>
+<span class="qt">&gt;&gt;&gt; &quot;ewgf&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt;&gt;&gt; news:dtn1ll$d4j$…@…...</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;&gt; Ultimate Manic Miner, an amazing new JSW/MM rewrite</span>
+<span class="qt">&gt;&gt;&gt;&gt; for the Spectrum 128K, has been released. I&#x27;ve uploaded</span>
+<span class="qt">&gt;&gt;&gt;&gt; it to</span>
+<span class="qt">&gt;&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;&gt; alt.binaries.comp.sinclair</span>
+<span class="qt">&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt; I must be really crap, &#x27;cos I can&#x27;t get off the second screen...</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; I&#x27;m so crap I haven&#x27;t even downloaded it yet.</span>
+<span class="qt">&gt;&gt; Any chance of someone putting it somewhere more universally</span>
+<span class="qt">&gt;&gt; accessible?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;<a href="http://homepage.ntlworld.com/paul.dunn4/UltimateManicMiner.zip" rel="noreferrer">http://homepage.ntlworld.com/paul.dunn4/UltimateManicMiner.zip</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;D.</span>
+<span class="qt">&gt;</span>
+
+
+Now, where did I put that emulator?
+
+
+
+</pre></div><div class="post" id="p200814"><div class="ph"><a class="d" href="#p200814">2006-02-25 10:20:25</a> <span>Chupo</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>In article &lt;dtoekp$60q$…@…&gt;, ewgf 
+&lt;…@…&gt; says...
+<span class="qt">&gt; </span>
+<span class="qt">&gt; What&#x27;s a puppet account? I didn&#x27;t write the game, then post here praising </span>
+<span class="qt">&gt; it,</span>
+<span class="qt">&gt; if that&#x27;s what you mean</span>
+
+Hmm, I got the same feeling. For you have said: &quot;...I&#x27;ve yet to finish 
+the game...&quot;!?
+
+<span class="qt">&gt; - I had nothing to do with the game&#x27;s existence (not</span>
+<span class="qt">&gt; even beta testing it), though I wish I had, he&#x27;s done a great job on it.</span>
+<span class="qt">&gt; </span>
+
+Since I cannot access alt.binaries.comp.sinclair through my provider&#x27;s 
+account, is there any URL to download the game? Or could you please 
+mail it to me?
+
+Thank you,
+-- 
+Chupo
+
+
+
+</pre></div><div class="post" id="p200815"><div class="ph"><a class="d" href="#p200815">2006-02-25 10:20:45</a> <span>Daz</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>Lister wrote:
+<span class="qt">&gt; On Fri, 24 Feb 2006 23:26:14 GMT, &quot;Dunny&quot; &lt;…@…&gt;</span>
+<span class="qt">&gt; wrote:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt;&gt; Matthew Westcott wrote:</span>
+<span class="qt">&gt;&gt;&gt; WM wrote:</span>
+<span class="qt">&gt;&gt;&gt;&gt; &quot;ewgf&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt;&gt;&gt;&gt; news:dtn1ll$d4j$…@…...</span>
+<span class="qt">&gt;&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;&gt;&gt; Ultimate Manic Miner, an amazing new JSW/MM rewrite</span>
+<span class="qt">&gt;&gt;&gt;&gt;&gt; for the Spectrum 128K, has been released. I&#x27;ve uploaded</span>
+<span class="qt">&gt;&gt;&gt;&gt;&gt; it to</span>
+<span class="qt">&gt;&gt;&gt;&gt;&gt;</span>
+<span class="qt">&gt;&gt;&gt;&gt;&gt; alt.binaries.comp.sinclair</span>
+<span class="qt">&gt;&gt;&gt;&gt; I must be really crap, &#x27;cos I can&#x27;t get off the second screen...</span>
+<span class="qt">&gt;&gt;&gt; I&#x27;m so crap I haven&#x27;t even downloaded it yet.</span>
+<span class="qt">&gt;&gt;&gt; Any chance of someone putting it somewhere more universally</span>
+<span class="qt">&gt;&gt;&gt; accessible?</span>
+<span class="qt">&gt;&gt; <a href="http://homepage.ntlworld.com/paul.dunn4/UltimateManicMiner.zip" rel="noreferrer">http://homepage.ntlworld.com/paul.dunn4/UltimateManicMiner.zip</a></span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; D.</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Now, where did I put that emulator?</span>
+
+I can&#x27;t say that I found this game enjoyable at all. It was annoying, it 
+had attribute clash all over the place, the screens had no clear 
+objectives. I would have to give this a 4/10. Only saving grace was the 
+excellent music, but that doesn&#x27;t make a game great. And I have played 
+many other versions of JSW, that were far better implemented than this 
+effort. Don&#x27;t give up though, just a bit more investigation into 
+programming will ensure positive results I&#x27;m sure.
+
+4/10
+
+Daz.
+
+
+
+</pre></div><div class="post" id="p200816"><div class="ph"><a class="d" href="#p200816">2006-02-25 10:29:29</a> <span>Chupo</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>In article &lt;…@…&gt;, Chupo 
+&lt;…@…&gt; says...
+<span class="qt">&gt; Since I cannot access alt.binaries.comp.sinclair through my provider&#x27;s </span>
+<span class="qt">&gt; account, is there any URL to download the game? Or could you please </span>
+<span class="qt">&gt; mail it to me?</span>
+<span class="qt">&gt; </span>
+
+Oups, I&#x27;ve only just seen Paul Dunn&#x27;s download link...
+-- 
+Chupo
+
+
+
+</pre></div><div class="post" id="p200817"><div class="ph"><a class="d" href="#p200817">2006-02-25 10:48:37</a> <span>Dunny</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>Andrew Broad wrote:
+
+<span class="qt">&gt; The general consensus in the MM/JSW community is that Igor Makovsky&#x27;s</span>
+<span class="qt">&gt; Ultimate Manic Miner is indeed brilliant.</span>
+
+I&#x27;d draw the line there. &quot;Brilliant&quot; is reserved for people like Einstein, 
+games like Choas. This game is &quot;different&quot;, definitely not &quot;Brilliant&quot;.
+
+<span class="qt">&gt; Admittedly I myself have</span>
+<span class="qt">&gt; only had a quick, casual go so far, but it was enough to see that the</span>
+<span class="qt">&gt; game deserves full marks for novelty, amazing graphics, and a unique</span>
+<span class="qt">&gt; atmosphere.</span>
+
+It amazes me that you can say that. The graphics are bloody awful - There&#x27;s 
+far too much that the artist wanted to put into each screen that he 
+completely forgot that the best way to achieve real class in a JSW/MM game 
+is to be minimalistic. The more empty space there is, the less clash. You 
+don&#x27;t *need* stairs with bannisters (that ruin the main sprite&#x27;s fluidity of 
+movement). You certainly don&#x27;t need white sprites on a yellow background. 
+Nor do you need white blocks of paper appearing when the main sprite walks 
+down the moonlit stairs.
+
+<span class="qt">&gt; It seems to be an excellent showcase of what can be achieved with John</span>
+<span class="qt">&gt; Elliott&#x27;s enhanced JSW64 game-engine, with the extra cell-classes,</span>
+<span class="qt">&gt; cell-types, and guardian-types.</span>
+
+And room types? The main starting sequence - just rooms, for no particular 
+purpose other than to display text? And ones that you can&#x27;t skip either. I 
+believe I&#x27;ve already ranted about the block types that don&#x27;t give any 
+indication as to their purpose.
+
+<span class="qt">&gt; One downside of UMM is the uncertainty. Because there are so many</span>
+<span class="qt">&gt; cell-classes, it&#x27;s hard to know what to expect in terms of</span>
+<span class="qt">&gt; cell-behaviour, whether something is a guardian or not, whether it is</span>
+<span class="qt">&gt; stand-onable or not.</span>
+
+And of course, if you can stand on it, you&#x27;re usually standing on thin air - 
+the skipping rope, anyone? Poor design. Try jumping under the first &quot;lift&quot; 
+sign.
+
+<span class="qt">&gt; The other downside of UMM is the lack of items, most of which seem to</span>
+<span class="qt">&gt; be hidden inside portals,</span>
+
+Yes. Whenever a condition needs to be met, which results in a change of the 
+map, we get the &quot;zoom&quot; of the portal and an obvious teleport to the same 
+room with slightly different layout - witness the change from day (ugh) to 
+night, and many more.
+
+<span class="qt">&gt; But UMM is certainly something special in the development of the</span>
+<span class="qt">&gt; MM/JSW field, and in graphical terms it will be a very hard act to</span>
+<span class="qt">&gt; follow. Anyone who has written a MM/JSW game will appreciate the</span>
+<span class="qt">&gt; amazing achievement of Igor Makovsky.</span>
+
+Graphically, it&#x27;s been superceded by many other games in your own archive. I 
+can appreciate that you&#x27;re a fan of MM/JSW (as am I - there&#x27;s been some 
+fantastic work done with the engine), but you can take fanboy-ism too far. 
+Not every new release is &quot;fantastic&quot;. This is just abysmal. The guy has 
+really tried to break through the barriers thrown up by the engine and just 
+not succeeded at all in anything other than an insult to the original games.
+
+If can code, he&#x27;d have been better put writing his own engine, and getting 
+someone else to design the rooms and draw the graphics.
+
+D.
+
+
+
+
+
+
+
+</pre></div><div class="post" id="p200818"><div class="ph"><a class="d" href="#p200818">2006-02-25 11:02:25</a> <span>Ventzislav Tzvetkov</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>I played the game for some minutes and I can say that for a Spectrum
+game it&#x27;s far above the average quality standarts. The graphics are
+colorful, detailed and well put, although most of the time they clash
+with the main character sprite, but that&#x27;s unavoidable on the Spectrum.
+The music is ok, but short and after some time of playing it&#x27;s gets
+annoying to the player. The gameplay is acceptable for this type of game
+and the puzzles are good. I give it 8/10.
+
+P.S. Turn off JIT for ASp if you use AOS 4 update 4 else it wouldn&#x27;t
+work.
+-- 
+<a href="http://drhirudo.pdroms.de" rel="noreferrer">http://drhirudo.pdroms.de</a>
+
+
+
+
+</pre></div><div class="post" id="p200819"><div class="ph"><a class="d" href="#p200819">2006-02-25 16:03:10</a> <span>Matthew Westcott</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>Andrew Broad wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; The general consensus in the MM/JSW community is that Igor Makovsky&#x27;s</span>
+<span class="qt">&gt; Ultimate Manic Miner is indeed brilliant. Admittedly I myself have only</span>
+<span class="qt">&gt; had a quick, casual go so far, but it was enough to see that the game</span>
+<span class="qt">&gt; deserves full marks for novelty, amazing graphics, and a unique</span>
+<span class="qt">&gt; atmosphere.</span>
+
+I&#x27;ve had a quick play now (cheers for the link, Dunny) and I have to say 
+I find some of the criticisms here rather harsh. I&#x27;m surprised that 
+people here, of all places, are so intolerant of attribute clash...
+
+I&#x27;m especially impressed with how he&#x27;s taken an essentially linear game 
+and gone so far to give it at least the illusion of non-linearity 
+(although admittedly John Elliott&#x27;s engine hacks can probably take a lot 
+of the credit for that). The idea of building &#x27;cut-scenes&#x27; out of actual 
+MM levels was a really nice touch - sure, the sound of collecting items 
+and the brief flash where you could see Willy entering a portal gave 
+away how it was done, but in my opinion that just added to the appeal. 
+Sort of like being able to see the strings in Thunderbirds, I guess...
+
+At risk of gushing on about a topic I know very little about, I would 
+venture that what Igor Makovsky has actually done is created the first 
+ever example of machinima &lt;<a href="http://en.wikipedia.org/wiki/Machinima&gt;" rel="noreferrer">http://en.wikipedia.org/wiki/Machinima&gt;</a> on 
+the Spectrum, using the MM engine as his medium in place of the FPS 
+engines that machinima creators would normally use.
+
+However - and I think this is the key to why the hardcore JSW/MM fans 
+are raving about it while others are being left cold - behind all the 
+neat stuff, it&#x27;s a bit lacking as a game. I&#x27;m currently stuck on Attack 
+Of The Mutant Telephones, which I guess is the first real puzzle of the 
+game. I&#x27;ve killed myself several times jumping at random bits of screen 
+thinking &quot;well, maybe that&#x27;s a cunningly disguised portal, or at least 
+platform I can land on&quot;. The only possible exit seems to be on the 
+bottom left of the screen, boxed in behind a blue platform. I know just 
+enough about MM/JSW to suspect that this might be...
+
+<span class="qt">&gt; an Innocent-Looking Block (i.e. an Earth-cell at head-height</span>
+<span class="qt">&gt; that dumps you through the platform below)</span>
+
+...and if so, I&#x27;m giving up on the game right now. This sort of thing 
+makes me want to grab everyone in the MM/JSW community by the neck and 
+bang their heads together screaming &quot;IT&#x27;S NOT A FEATURE, IT&#x27;S A FUCKING 
+BUG!!!&quot;
+
+Honestly, the reason Manic Miner is such an enduringly brilliant game is 
+that you can pick it up instantly - the game mechanics are intuitive. It 
+may just be a bundle of pixels, but those pixels translate into real 
+world metaphors - jumping over deadly spikes, riding on conveyor belts, 
+collecting treasure. There is no real world metaphor for an 
+Innocent-Looking Block, so if you build puzzles based on them, you&#x27;re 
+breaking a fundamental rule of game design.
+
+(And before anyone points out that there&#x27;s no such thing as an 
+amoebatron in the real world either - the difference is that you don&#x27;t 
+need to know what an amoebatron is to understand that it&#x27;s something 
+nasty to be avoided.)
+
+<span class="qt">&gt; But UMM is certainly something special in the development of the MM/JSW</span>
+<span class="qt">&gt; field, and in graphical terms it will be a very hard act to follow.</span>
+<span class="qt">&gt; Anyone who has written a MM/JSW game will appreciate the amazing</span>
+<span class="qt">&gt; achievement of Igor Makovsky.</span>
+
+I can&#x27;t argue with that, and even though I&#x27;m by no means a MM/JSW guru I 
+can appreciate the clever stuff he&#x27;s done with the engine. But when it 
+comes to expecting me, the player, to exploit the quirks of the game 
+engine myself - that&#x27;s where it all falls down.
+
+
+
+</pre></div><div class="post" id="p200846"><div class="ph"><a class="d" href="#p200846">2006-02-28 12:24:02</a> <span>Daniel Mandic</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>Daz wrote:
+
+<span class="qt">&gt; I can&#x27;t say that I found this game enjoyable at all. It was annoying,</span>
+<span class="qt">&gt; it had attribute clash all over the place, the screens had no clear</span>
+<span class="qt">&gt; objectives. I would have to give this a 4/10. Only saving grace was</span>
+<span class="qt">&gt; the excellent music, but that doesn&#x27;t make a game great. And I have</span>
+<span class="qt">&gt; played many other versions of JSW, that were far better implemented</span>
+<span class="qt">&gt; than this effort. Don&#x27;t give up though, just a bit more investigation</span>
+<span class="qt">&gt; into programming will ensure positive results I&#x27;m sure.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; 4/10</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Daz.</span>
+
+
+
+Four of Ten. Hmmm, that makes Five. That&#x27;s Okey!
+
+
+
+
+Best Regards,
+
+Daniel Mandic
+
+
+
+</pre></div><div class="post" id="p200847"><div class="ph"><a class="d" href="#p200847">2006-02-28 13:41:02</a> <span>Matt Rudge</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>Matthew Westcott wrote:
+
+&lt;lots of really intelligent stuff that I wish I&#x27;d written&gt;
+
+I have to say after trying to play this game, I&#x27;m in complete agreement
+with what Matt said in his previous post.  I can tolerate the attribute
+clash - although it does seem to be worse in this than most other games
+I remember, but the thing that really annoys me is the total
+non-intuitiveness of each screen.  I seem to almost randomly lose lives
+on each screen and there&#x27;s no clear indication as to what each object /
+part of the scenery is supposed to do.
+
+I have the disassembly of the MM/JSW engine from (I believe, correct me
+if I&#x27;m wrong) Andrew&#x27;s site, and I&#x27;ve tinkered around with it on many
+occasions, so I don&#x27;t doubt the technical merits of what Igor has
+achieved by pushing its limits far beyond what anyone would have
+dreamed; however the finished product is, I&#x27;m afraid, sorely lacking in
+gameplay, it&#x27;s often difficult to know what&#x27;s going on, and it&#x27;s not
+really what I&#x27;d call the &quot;Ultimate Manic Miner&quot;.  As a result, it
+scores: 6/10 from me.
+
+--
+Matt
+
+
+
+
+</pre></div><div class="post" id="p200850"><div class="ph"><a class="d" href="#p200850">2006-02-28 15:21:03</a> <span>Jaime Tejedor G���mez, aka Metalbrain</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre> Hi
+
+<span class="qt">&gt;&gt; The general consensus in the MM/JSW community is that Igor Makovsky&#x27;s</span>
+<span class="qt">&gt;&gt; Ultimate Manic Miner is indeed brilliant. Admittedly I myself have only</span>
+<span class="qt">&gt;&gt; had a quick, casual go so far, but it was enough to see that the game</span>
+<span class="qt">&gt;&gt; deserves full marks for novelty, amazing graphics, and a unique</span>
+<span class="qt">&gt;&gt; atmosphere.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;I&#x27;ve had a quick play now (cheers for the link, Dunny) and I have to say </span>
+<span class="qt">&gt;I find some of the criticisms here rather harsh. I&#x27;m surprised that </span>
+<span class="qt">&gt;people here, of all places, are so intolerant of attribute clash...</span>
+
+ I tend to ignore most attribute clash out there, but there are really
+poor design choices out there, such as making the stairs out of red
+paper and black ink in Living Quarters, so an invisible lower part of
+Willy erases them while the rest of his visible part is moving. Also,
+collitions with background objects/people are very badly solved. I&#x27;m
+fine without masks, but come on, do at least an OR and don&#x27;t erase
+the guy you&#x27;re passing on just because one of your bits has entered
+his character. That happens an awful lot.
+
+<span class="qt">&gt;[...] I&#x27;m currently stuck on Attack </span>
+<span class="qt">&gt;Of The Mutant Telephones, which I guess is the first real puzzle of the </span>
+<span class="qt">&gt;game. I&#x27;ve killed myself several times jumping at random bits of screen </span>
+<span class="qt">&gt;thinking &quot;well, maybe that&#x27;s a cunningly disguised portal, or at least </span>
+<span class="qt">&gt;platform I can land on&quot;. The only possible exit seems to be on the </span>
+<span class="qt">&gt;bottom left of the screen, boxed in behind a blue platform. I know just </span>
+<span class="qt">&gt;enough about MM/JSW to suspect that this might be...</span>
+
+ I also got stuck there the first time I played. Since there&#x27;s another path if
+you go to work instead of getting drunk, I&#x27;m considering it&#x27;s just a mortal
+trap...
+
+METALBRAIN
+(C) 1977 Tejedor &amp; Gï¿½mez Research Ltd.
+
+
+
+</pre></div><div class="post" id="p200871"><div class="ph"><a class="d" href="#p200871">2006-03-01 08:11:50</a> <span>Daren</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>
+ewgf wrote:
+<span class="qt">&gt; I don&#x27;t know if it&#x27;s been anounced here, but I can&#x27;t find it,</span>
+<span class="qt">&gt; so...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Drums roll, trumpets blare, choirs sing out etc...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Ultimate Manic Miner, an amazing new JSW/MM rewrite</span>
+<span class="qt">&gt; for the Spectrum 128K, has been released. I&#x27;ve uploaded</span>
+<span class="qt">&gt; it to</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; alt.binaries.comp.sinclair</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; so go and get it now - even if you don&#x27;t like Jetset Willy</span>
+<span class="qt">&gt; or Manic Miner (weirdo!), give this a go, it really is fantastic!</span>
+
+
+A walkthrough recording of this game has been submitted to
+<a href="http://www.rzxarchive.co.uk/" rel="noreferrer">http://www.rzxarchive.co.uk/</a>
+
+Daren
+
+
+
+
+</pre></div><div class="post" id="p200987"><div class="ph"><a class="d" href="#p200987">2006-03-04 00:40:21</a> <span>Eder</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>
+Daren wrote:
+<span class="qt">&gt; ewgf wrote:</span>
+<span class="qt">&gt; &gt; I don&#x27;t know if it&#x27;s been anounced here, but I can&#x27;t find it,</span>
+<span class="qt">&gt; &gt; so...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Drums roll, trumpets blare, choirs sing out etc...</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; Ultimate Manic Miner, an amazing new JSW/MM rewrite</span>
+<span class="qt">&gt; &gt; for the Spectrum 128K, has been released. I&#x27;ve uploaded</span>
+<span class="qt">&gt; &gt; it to</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; alt.binaries.comp.sinclair</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; so go and get it now - even if you don&#x27;t like Jetset Willy</span>
+<span class="qt">&gt; &gt; or Manic Miner (weirdo!), give this a go, it really is fantastic!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; A walkthrough recording of this game has been submitted to</span>
+<span class="qt">&gt; <a href="http://www.rzxarchive.co.uk/" rel="noreferrer">http://www.rzxarchive.co.uk/</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Daren</span>
+
+
+Whether this game is good or bad, one thing&#x27;s for sure - it&#x27;s nowhere
+near as good as what Dunny could do. He&#x27;s a genius.
+
+
+
+
+</pre></div><div class="post" id="p201187"><div class="ph"><a class="d" href="#p201187">2006-03-14 18:51:24</a> <span>Daniel Mandic</span> <span>Re: Brilliant new Spectrum game released - Ultimate Manic Miner</span></div><pre>Daren wrote:
+
+<span class="qt">&gt; </span>
+<span class="qt">&gt; A walkthrough recording of this game has been submitted to</span>
+<span class="qt">&gt; <a href="http://www.rzxarchive.co.uk/" rel="noreferrer">http://www.rzxarchive.co.uk/</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Daren</span>
+
+
+
+Really great. 
+
+Not a game for scoring it.... I (would) give 9 of 10, as it is partly
+copied.
+
+Much of (imported :-)) English humour. Timings are very nice.
+Graphics!, background and so, are sometimes new to me and also nice.
+
+
+
+Thanks for the RZX.
+
+
+
+
+Best Regards,
+
+Daniel Mandic
+
+
+
+</pre></div></main></body></html>

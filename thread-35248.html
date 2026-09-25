@@ -1,0 +1,1212 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Official CSSCGC 2012 Thread · comp.sys.sinclair × ZXDB</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --card:#ffffff;
+  --link:#1a5fb4; --accent:#b8411a; --weak:#8a6d00; --weakbg:#fff4cc; --quote:#7a7a80; --hl:#fff8d6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#161618; --fg:#e8e6e1; --muted:#9a9aa0; --line:#33333a;
+  --card:#1f1f23; --link:#7fb2ff; --accent:#ff8a5c; --weak:#e8c55a; --weakbg:#3a3014; --quote:#8d8d95; --hl:#2d2a1a; } }
+* { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
+a { color:var(--link); text-decoration:none } a:hover { text-decoration:underline }
+header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:1 }
+header .home { font-weight:600; color:var(--fg); margin-right:auto }
+header > a:not(.home) { margin-left:4px }
+main ul, main ol { padding-left:1.3em } main li { margin:.25em 0 }
+code { font:12px ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:3px; padding:0 3px }
+header form { display:flex; gap:4px } header input { width:16em; max-width:50vw }
+input, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--fg) } button { cursor:pointer }
+main { max-width:1100px; margin:0 auto; padding:16px }
+h1 { font-size:1.6em; margin:.3em 0 .2em } h2 { font-size:1.15em; margin:1.6em 0 .4em;
+  padding-bottom:4px; border-bottom:1px solid var(--line) } h2 .n { color:var(--muted); font-weight:normal }
+.facts { color:var(--muted) } .facts b { color:var(--fg); font-weight:normal }
+.note { color:var(--muted); font-size:.92em }
+table { border-collapse:collapse; width:100%; margin:.3em 0 } td, th { text-align:left; vertical-align:top;
+  padding:4px 8px 4px 0; border-bottom:1px solid var(--line) } th { font-size:.85em; color:var(--muted); font-weight:600 }
+td.d { white-space:nowrap; color:var(--muted); font-variant-numeric:tabular-nums; width:6.5em }
+td.n { text-align:right; font-variant-numeric:tabular-nums; width:4em }
+.small { font-size:.88em; color:var(--muted) }
+.badge { display:inline-block; font-size:.78em; padding:0 6px; border-radius:8px; border:1px solid var(--line);
+  color:var(--muted); white-space:nowrap } .badge.weak { color:var(--weak); background:var(--weakbg); border-color:transparent }
+.finding { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  padding:8px 12px; margin:6px 0; border-radius:4px } .finding .what { font-weight:600 }
+summary { cursor:pointer; margin:4px 0 }
+.cols { columns:3 16em; column-gap:24px } .cols div { break-inside:avoid; padding:1px 0 }
+.post { background:var(--card); border:1px solid var(--line); border-radius:6px; margin:12px 0; padding:0 ; scroll-margin-top:70px }
+.post:target { background:var(--hl); border-color:var(--accent) }
+.post .ph { padding:6px 12px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 12px }
+.post .ph .d { color:var(--muted); font-variant-numeric:tabular-nums }
+.post pre { margin:0; padding:10px 12px; white-space:pre-wrap; overflow-wrap:anywhere;
+  font:13px/1.45 ui-monospace, Menlo, monospace } .post pre .qt { color:var(--quote) }
+.post.spam { opacity:.55 }
+.filter { margin:.6em 0 } .tabs { line-height:1.9 }
+details.about { margin:.4em 0 1em } details.about summary { color:var(--link) }
+table.items td { padding-right:14px } table.list td { padding-left:0 } table.items tr.sub td { padding-left:1.6em; color:var(--muted) } .pager { margin:1em 0 } .pager a { margin-right:12px }
+@media (max-width:600px) { header input { width:10em } td.d { width:auto } }
+</style></head>
+<body><header><a class="home" href="index.html">comp.sys.sinclair × ZXDB · review</a>
+<a href="announcements-all.html">Announcements</a> <a href="versions-1.html">Versions</a>
+<a href="csscgc-1.html">CSSCGC</a> <a href="names-1.html">Names</a> <a href="tipshop-1.html">Tipshop</a>
+<a href="tzx-all.html">TZX</a></header><main><h1>Official CSSCGC 2012 Thread</h1><p class="facts">53 posts, 2012-01-22 – 2013-01-29</p><div class="post" id="p224326"><div class="ph"><a class="d" href="#p224326">2012-01-22 22:13:35</a> <span>arda</span>  <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>Dear crap game designers, fellow newsgroup people,
+
+This year, the task of hosting the compo given to me by Nathan and the
+judge. So I&#x27;m announcing the official opening of Crap Game Competition
+2012. I hope we can all have fun together, as in older compos.
+
+I&#x27;ve created a site to host the games and reviews. I coded it today
+from scratch, and I&#x27;m sure it&#x27;s buggy (I didn&#x27;t test it enough),
+please do not hack it :) I&#x27;ll keep adding features if I find enough
+time. The official website is <a href="http://cgc.zx.gen.tr" rel="noreferrer">http://cgc.zx.gen.tr</a>
+
+You can submit and publish your game automatically on website, or if
+you are lazy, you can e-mail it to me directly. Submission email
+address is …@… (please allow me some time to process the
+entry).
+
+This year is zx spectrum&#x27;s 30th year. Because of this, I added a sub-
+compo named &quot;30 Year Award&quot;. For this compo, deadline is 23.April.
+2012. It&#x27;s not a different compo than cgc, think as it&#x27;s a half-way
+award. Ofcourse all entries are also eligible for main compo, even if
+they won &quot;30 year award&quot;.
+
+This year I&#x27;m using a kind of voting system, users asked to pick their
+favourites in 4 different subject: A poop, a heart, a brain and a
+sqij. Even though you don&#x27;t make a game, please visit the site and
+pick your winners. You can change your favourites until compo deadline
+(which is 01.01.2013, 00:01).
+
+As you know, I&#x27;m not a regular here, but I&#x27;m subscribed to this group
+for more than 2 years, reading it silently. Still, If you need a very
+fast answer you better use the cgc2012 thread on wos forums. I&#x27;m
+already nervous posting my first newsgroup message since 8 years.
+
+Thank you for reading, and have fun designing your game!
+
+Arda (ref)
+
+
+
+</pre></div><div class="post" id="p224327"><div class="ph"><a class="d" href="#p224327">2012-01-22 22:31:34</a> <span>Chris Young</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>On Sun, 22 Jan 2012 14:13:35 -0800 (PST) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC arda:
+
+<span class="qt">&gt; Dear crap game designers, fellow newsgroup people,</span>
+
+I&#x27;ve updated the Crap Game finder website.  With your website, not
+with the last three years&#x27; worth of missing titles.  I still need to
+catch up with playing those (I realise it will probably only take an
+afternoon, given that most only need about 30 seconds, adding them to
+the site is a significantly longer task though)
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p224328"><div class="ph"><a class="d" href="#p224328">2012-01-23 04:25:10</a> <span>Brian Gaff</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>The thing is, though I can no longer play games, the real  fun time was when 
+thee Spectrum was still mainstream, and yet some game writers thought they 
+were producing good software, but it was in fact crap in some way.
+ So what was the worst non intentionally crap game in the 80s and early 90s?
+
+I&#x27;m not talking about bugs, though a bug that stopped one completing a game 
+would qualify I think.
+
+
+Brian
+
+-- 
+Brian Gaff....Note, this account does not accept Bcc: email.
+ graphics are great, but the blind can&#x27;t hear them
+Email: …@…
+______________________________________________________________________________________________________________
+
+
+&quot;Chris Young&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; On Sun, 22 Jan 2012 14:13:35 -0800 (PST) da kidz on comp.sys.sinclair were </span>
+<span class="qt">&gt; rappin&#x27;</span>
+<span class="qt">&gt; to MC arda:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; Dear crap game designers, fellow newsgroup people,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;ve updated the Crap Game finder website.  With your website, not</span>
+<span class="qt">&gt; with the last three years&#x27; worth of missing titles.  I still need to</span>
+<span class="qt">&gt; catch up with playing those (I realise it will probably only take an</span>
+<span class="qt">&gt; afternoon, given that most only need about 30 seconds, adding them to</span>
+<span class="qt">&gt; the site is a significantly longer task though)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Chris</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; -- </span>
+<span class="qt">&gt; +-------------------------------------------+</span>
+<span class="qt">&gt; | Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">&gt; |  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">&gt; | Your Sinclair: A Celebration              |</span>
+<span class="qt">&gt; +- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; DISCLAIMER: I may be making all this stuff up again. </span>
+
+
+
+
+
+</pre></div><div class="post" id="p224329"><div class="ph"><a class="d" href="#p224329">2012-01-23 12:06:48</a> <span>arda</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>On Jan 23, 6:25 am, &quot;Brian Gaff&quot; &lt;…@…&gt; wrote:
+<span class="qt">&gt; The thing is, though I can no longer play games</span>
+ &quot; I can no longer play games&quot; as in  &quot;I want to, but I can&#x27;t because
+I don&#x27;t have time?&quot; or &quot;I don&#x27;t like to play at all&quot;?
+If you don&#x27;t want to, crap games are not for playing. it&#x27;s a big
+accomplishment if you can keep playing any of them. If you don&#x27;t have
+time, playing a crap game only takes 10 secons from your time.
+
+<span class="qt">&gt;some game writers thought they</span>
+<span class="qt">&gt; were producing good software, but it was in fact crap in some way.</span>
+yes, this sums it up. Hence the aim of the compo.
+
+<span class="qt">&gt; &gt; catch up with playing those (I realise it will probably only take an</span>
+<span class="qt">&gt; &gt; afternoon, given that most only need about 30 seconds, adding them to</span>
+<span class="qt">&gt; &gt; the site is a significantly longer task though)</span>
+If you need a special format for parsing cgc2012 entries, I can try to
+prepare it for you, after compo deadline.
+
+
+
+<span class="qt">&gt; ______________________________________________________________________________________________________________</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &quot;Chris Young&quot; &lt;…@…&gt; wrote in message</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; news:…@…...</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; On Sun, 22 Jan 2012 14:13:35 -0800 (PST) da kidz on comp.sys.sinclair were</span>
+<span class="qt">&gt; &gt; rappin&#x27;</span>
+<span class="qt">&gt; &gt; to MC arda:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt;&gt; Dear crap game designers, fellow newsgroup people,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; I&#x27;ve updated the Crap Game finder website.  With your website, not</span>
+<span class="qt">&gt; &gt; with the last three years&#x27; worth of missing titles.  I still need to</span>
+<span class="qt">&gt; &gt; catch up with playing those (I realise it will probably only take an</span>
+<span class="qt">&gt; &gt; afternoon, given that most only need about 30 seconds, adding them to</span>
+<span class="qt">&gt; &gt; the site is a significantly longer task though)</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; Chris</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; --</span>
+<span class="qt">&gt; &gt; +-------------------------------------------+</span>
+<span class="qt">&gt; &gt; | Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">&gt; &gt; |  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a> |</span>
+<span class="qt">&gt; &gt; | Your Sinclair: A Celebration              |</span>
+<span class="qt">&gt; &gt; +-<a href="http://www.yoursinclair.co.uk-----------+" rel="noreferrer">http://www.yoursinclair.co.uk-----------+</a></span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; DISCLAIMER: I may be making all this stuff up again.</span>
+
+
+
+
+</pre></div><div class="post" id="p224330"><div class="ph"><a class="d" href="#p224330">2012-01-23 14:37:10</a> <span>Chris Young</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>On Mon, 23 Jan 2012 04:06:48 -0800 (PST) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC arda:
+
+<span class="qt">&gt; On Jan 23, 6:25ï¿½am, &quot;Brian Gaff&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt; The thing is, though I can no longer play games</span>
+<span class="qt">&gt;  &quot; I can no longer play games&quot; as in  &quot;I want to, but I can&#x27;t because</span>
+<span class="qt">&gt; I don&#x27;t have time?&quot; or &quot;I don&#x27;t like to play at all&quot;?</span>
+
+Brian is blind.
+
+<span class="qt">&gt; &gt; &gt; catch up with playing those (I realise it will probably only take an</span>
+<span class="qt">&gt; &gt; &gt; afternoon, given that most only need about 30 seconds, adding them to</span>
+<span class="qt">&gt; &gt; &gt; the site is a significantly longer task though)</span>
+<span class="qt">&gt; If you need a special format for parsing cgc2012 entries, I can try to</span>
+<span class="qt">&gt; prepare it for you, after compo deadline.</span>
+
+It&#x27;s a flat text file CSV style. If you look at
+<a href="http://www.yoursinclair.co.uk/csscgc/csscgc.txt.gz" rel="noreferrer">http://www.yoursinclair.co.uk/csscgc/csscgc.txt.gz</a> the format should
+be pretty obvious.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p224331"><div class="ph"><a class="d" href="#p224331">2012-01-23 15:19:17</a> <span>Guesser</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>On 23/01/2012 14:37, Chris Young wrote:
+<span class="qt">&gt; It&#x27;s a flat text file CSV style. If you look at</span>
+<span class="qt">&gt; <a href="http://www.yoursinclair.co.uk/csscgc/csscgc.txt.gz" rel="noreferrer">http://www.yoursinclair.co.uk/csscgc/csscgc.txt.gz</a> the format should</span>
+<span class="qt">&gt; be pretty obvious.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Chris</span>
+<span class="qt">&gt;</span>
+
+Did I ever get around to sending you the 2009 database?
+It&#x27;s XML but not at all dissimilar to that format you&#x27;d just have to 
+strip out all the tags :)
+
+Guesser.
+
+
+
+</pre></div><div class="post" id="p224332"><div class="ph"><a class="d" href="#p224332">2012-01-23 15:52:31</a> <span>Chris Young</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>On Mon, 23 Jan 2012 15:19:17 +0000 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Guesser:
+
+<span class="qt">&gt; On 23/01/2012 14:37, Chris Young wrote:</span>
+<span class="qt">&gt; &gt; It&#x27;s a flat text file CSV style. If you look at</span>
+<span class="qt">&gt; &gt; <a href="http://www.yoursinclair.co.uk/csscgc/csscgc.txt.gz" rel="noreferrer">http://www.yoursinclair.co.uk/csscgc/csscgc.txt.gz</a> the format should</span>
+<span class="qt">&gt; &gt; be pretty obvious.</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; Did I ever get around to sending you the 2009 database?</span>
+<span class="qt">&gt; It&#x27;s XML but not at all dissimilar to that format you&#x27;d just have to </span>
+<span class="qt">&gt; strip out all the tags :)</span>
+
+No, or at least I never received it or did anything with it.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p224333"><div class="ph"><a class="d" href="#p224333">2012-01-23 21:51:43</a> <span>Matthew Westcott</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>On 23/01/2012 04:25, Brian Gaff wrote:
+<span class="qt">&gt; The thing is, though I can no longer play games, the real  fun time was when</span>
+<span class="qt">&gt; thee Spectrum was still mainstream, and yet some game writers thought they</span>
+<span class="qt">&gt; were producing good software, but it was in fact crap in some way.</span>
+<span class="qt">&gt;   So what was the worst non intentionally crap game in the 80s and early 90s?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; I&#x27;m not talking about bugs, though a bug that stopped one completing a game</span>
+<span class="qt">&gt; would qualify I think.</span>
+
+&quot;Sqij!&quot; by The Power House seems to be more or less uncontested for that 
+title. It manages to be crap on so many different levels that it&#x27;s 
+actually quite profound:
+
+* The graphics are hideously bad. To be fair, this is possibly justified 
+by the storyline, where you play a mutant bird in a post-apocalyptic 
+setting, and maybe mutant birds are meant to look like they&#x27;ve been cut 
+out of polystyrene with a butter knife, and their enemies are supposed 
+to look like cubist pigs.
+
+* The loader enables caps lock, but the game doesn&#x27;t respond to 
+capitalised keypresses, so you can&#x27;t control your character at all 
+unless you break into the program (it&#x27;s in Basic, natch) and turn caps 
+lock off again.
+
+* Even then, it&#x27;s pretty much impossible to control because your 
+character tends to reverse direction at random.
+
+* But your score continuously increases anyway.
+
+* When it does move in vaguely the right direction, it moves at about 
+three pixels a second, because your sprite is so freaking huge and the 
+game is written in Basic.
+
+* And leaves a trail of stray pixels behind.
+
+* The enemies are implemented not as regular sprites, but portions of 
+the screen that scroll up and down, which means that if you stick your 
+head in their path, your head starts scrolling up and down with them.
+
+* Wait... scrolling, in Basic? Oh yes, it&#x27;s actually using Ocean&#x27;s Laser 
+Basic add-on. But it doesn&#x27;t use the Laser Basic compiler like you&#x27;re 
+supposed to, so the game actually includes a pirate copy of the Laser 
+Basic runtime.
+
+* If you manage to get out of the first room without dying (and being 
+greeted by the friendly message &quot;WHAT A PLONKER.YOU&#x27;VE JUST GOT YOURSELF 
+KILLED&quot;), and then go back in again, it loses track of the enemy 
+positions, which means they start wrapping around the top and bottom of 
+the screen, and the collision detection happens in the wrong place.
+
+* The Power House went on to demonstrate even more disdain for their 
+customers by re-releasing it, in the same broken state, as part of a 
+compilation.
+
+
+
+</pre></div><div class="post" id="p224334"><div class="ph"><a class="d" href="#p224334">2012-01-23 22:22:15</a> <span>Guesser</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>So you&#x27;re saying Angry Birds is a rip off of sqij!?
+
+On 23/01/2012 21:51, Matthew Westcott wrote:
+<span class="qt">&gt; * The graphics are hideously bad. To be fair, this is possibly justified</span>
+<span class="qt">&gt; by the storyline, where you play a mutant bird in a post-apocalyptic</span>
+<span class="qt">&gt; setting, and maybe mutant birds are meant to look like they&#x27;ve been cut</span>
+<span class="qt">&gt; out of polystyrene with a butter knife, and their enemies are supposed</span>
+<span class="qt">&gt; to look like cubist pigs.</span>
+
+
+
+</pre></div><div class="post" id="p224335"><div class="ph"><a class="d" href="#p224335">2012-01-24 03:40:44</a> <span>…@…</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>The csscgc 2010 games are also available in xml format here:
+<a href="http://csscgc2010.zxlife.net/Games.xml" rel="noreferrer">http://csscgc2010.zxlife.net/Games.xml</a>
+Binaries are located by prepending &#x27;<a href="http://csscgc2010.zxlife.net/Games/&#x27;" rel="noreferrer">http://csscgc2010.zxlife.net/Games/&#x27;</a> to the front of the &lt;file file=&#x27;...&#x27;&gt; elements.  
+
+
+
+</pre></div><div class="post" id="p224337"><div class="ph"><a class="d" href="#p224337">2012-01-24 18:57:46</a> <span>Chris Young</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>On Mon, 23 Jan 2012 19:40:44 -0800 (PST) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC :
+
+<span class="qt">&gt; The csscgc 2010 games are also available in xml format here:</span>
+<span class="qt">&gt; <a href="http://csscgc2010.zxlife.net/Games.xml" rel="noreferrer">http://csscgc2010.zxlife.net/Games.xml</a></span>
+<span class="qt">&gt; Binaries are located by prepending &#x27;<a href="http://csscgc2010.zxlife.net/Games/&#x27;" rel="noreferrer">http://csscgc2010.zxlife.net/Games/&#x27;</a> to the front of the &lt;file file=&#x27;...&#x27;&gt; elements.  </span>
+
+Thanks.  I need to knock up a couple of conversions thingies when I
+get a minute.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p224338"><div class="ph"><a class="d" href="#p224338">2012-01-24 19:33:52</a> <span>Chris Young</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>On Mon, 23 Jan 2012 21:51:43 +0000 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Matthew Westcott:
+
+<span class="qt">&gt; On 23/01/2012 04:25, Brian Gaff wrote:</span>
+<span class="qt">&gt; &gt; The thing is, though I can no longer play games, the real  fun time was when</span>
+<span class="qt">&gt; &gt; thee Spectrum was still mainstream, and yet some game writers thought they</span>
+<span class="qt">&gt; &gt; were producing good software, but it was in fact crap in some way.</span>
+<span class="qt">&gt; &gt;   So what was the worst non intentionally crap game in the 80s and early 90s?</span>
+<span class="qt">&gt; &gt;</span>
+<span class="qt">&gt; &gt; I&#x27;m not talking about bugs, though a bug that stopped one completing a game</span>
+<span class="qt">&gt; &gt; would qualify I think.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &quot;Sqij!&quot; by The Power House seems to be more or less uncontested for that </span>
+<span class="qt">&gt; title. It manages to be crap on so many different levels that it&#x27;s </span>
+<span class="qt">&gt; actually quite profound:</span>
+
+Sqij is definitely the winner (or loser, depending on how you look at
+it).  Back when I hosted the CGC in 2007 (blimey, was it that long
+ago?) I took at look at the bottom five rated games on WOS.  At the
+time, the list was:
+
+5. Butterfly
+4. Voyage Into The Unknown
+3. Boat Run
+2. Sqij
+1. Uchi Mata
+
+(for anybody who missed this the first time round, see
+<a href="http://www.unsatisfactorysoftware.co.uk/?pg=procrap" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk/?pg=procrap</a> - I&#x27;ve also copied
+my reviews onto WOS, so you can now find them there too)
+
+Despite being &quot;only&quot; at number 2, Sqij was clearly the worst one
+there.  However, the one I most enjoyed was Voyage Into The Unknown. 
+As my mini review stated, Novotron 8 - an actual CSSCGC entry - is
+pretty much exactly the same game (but better!).  It&#x27;s certainly worth
+a look.
+
+I just checked out the current list, and Voyage has slipped to #10,
+with Sqij down to #5.  I&#x27;m not sure what the others in the top 5 are,
+except Boat Run (&quot;It&#x27;s a bit like the Project X bonus game that did
+the rounds on the Amiga, except it is much slower, blockier, jerkier
+and the entire game has a maximum score of just 111.&quot;):
+
+1. Laser Lord
+2. Cage Match
+3. Thermo-Nuclear War
+4. Boat Run
+5. SQIJ!
+
+The top (bottom) three all look awful, but are they really worse than
+Sqij and Boat Run?!
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p224339"><div class="ph"><a class="d" href="#p224339">2012-01-25 14:20:02</a> <span>arda</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>On Jan 23, 11:51 pm, Matthew Westcott &lt;…@…&gt; wrote:
+<span class="qt">&gt; On 23/01/2012 04:25, Brian Gaff wrote:</span>
+
+<span class="qt">&gt; &quot;Sqij!&quot; by The Power House seems to be more or less uncontested for that</span>
+<span class="qt">&gt; title. It manages to be crap on so many different levels that it&#x27;s</span>
+<span class="qt">&gt; actually quite profound:</span>
+
+I like digital prawn&#x27;s spectrum20 review, especially this part, which
+is extremely true:
+
+&quot;If you look at the code, you&#x27;ll likely be amazed at the depth of
+abuse of the BASIC programming language. It&#x27;s just totally insane.
+I&#x27;ve never seen anything like it. Hundreds of lines manually setting
+scores of meaningless numbered variables. &quot;GO TO abuse&quot; is rampant in
+the extreme.&quot;
+
+
+<span class="qt">&gt;</span>
+<span class="qt">&gt; * The Power House went on to demonstrate even more disdain for their</span>
+<span class="qt">&gt; customers by re-releasing it, in the same broken state, as part of a</span>
+<span class="qt">&gt; compilation.</span>
+
+Wow, I didn&#x27;t know that, it&#x27;s strange, they didn&#x27;t even tried to play
+it I guess, or it was so famous for being crap, people want to buy it
+out of curiousity :) (or they just want to bloat the game count on
+compilation)
+
+
+In my opinion, it could be the ultimate crap game, but there is a big
+problem, the game is not playable. There is a delicate line between a
+crap game and a poop, sqij falls a little bit into the shitty side.
+
+
+
+</pre></div><div class="post" id="p224343"><div class="ph"><a class="d" href="#p224343">2012-01-28 14:51:06</a> <span>Duncan Snowden</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>On 24 Jan 2012 19:33:52 +0000
+&quot;Chris Young&quot; &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Sqij is definitely the winner (or loser, depending on how you look at</span>
+<span class="qt">&gt; it).  Back when I hosted the CGC in 2007 (blimey, was it that long</span>
+<span class="qt">&gt; ago?)</span>
+
+2007 isn&#x27;t all that long agHOLY CARP, IT&#x27;S *FIVE YEARS*! What&#x27;s
+happening to my life?
+
+Ahem.
+
+Yes. Sqij. Il crapo di tutti crapo.
+
+-- 
+Duncan Snowden.
+
+ 
+
+
+
+</pre></div><div class="post" id="p224346"><div class="ph"><a class="d" href="#p224346">2012-01-29 10:51:18</a> <span>Daniel Mandic</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>arda wrote:
+
+<span class="qt">&gt; I don&#x27;t have time?&quot; or &quot;I don&#x27;t like to play at all&quot;?</span>
+<span class="qt">&gt; If you don&#x27;t want to, crap games are not for playing. it&#x27;s a big</span>
+<span class="qt">&gt; accomplishment if you can keep playing any of them. If you don&#x27;t have</span>
+<span class="qt">&gt; time, playing a crap game only takes 10 secons from your time.</span>
+
+I need approx. 15min for a cgcgame, maybe down to 5min. 10sec isn&#x27;t
+enough for the first loading parts before the data loading part :).
+Some of the cgcgames may take more than 15min...
+
+That all you can do with either an old PC (100MHz), or AMIGA and ST/TT,
+or a new energy-saving iAtom micro-ATX and similars, and a real Speccy
+(for MC-data contributions by e.g. Mathew Wescott) for audible
+data-loading by the soundcard, for cgcgames not running on emulators.
+
+
+-- 
+Daniel Mandic
+
+
+
+</pre></div><div class="post" id="p224347"><div class="ph"><a class="d" href="#p224347">2012-01-29 11:05:45</a> <span>Daniel Mandic</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>Duncan Snowden wrote:
+
+<span class="qt">&gt; 2007 isn&#x27;t all that long agHOLY CARP, IT&#x27;S *FIVE YEARS*! What&#x27;s</span>
+<span class="qt">&gt; happening to my life?</span>
+
+2002 upon 2003 (here) is still in my memories. I miss Geoff Wearmouths
+one-sider coffee-break news postings.
+
+
+-- 
+Daniel Mandic
+
+
+
+
+</pre></div><div class="post" id="p224358"><div class="ph"><a class="d" href="#p224358">2012-02-04 21:08:22</a> <span>Lee Osborne</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>Has anyone ever played Spectrum Safari? That ranks quite highly in the
+world of crapness. I got it for like fifty pence or something at a car
+boot sale in my first flush of Speccy owning youth, and was amazed at
+how bad it is (especially the Kicking Sheep). Now I&#x27;ve just acquired a
++2 for the first time in years, I think I&#x27;ll have to load that one up
+again, and laugh at how awesomely bad it was.
+
+Lee
+
+
+
+
+</pre></div><div class="post" id="p224368"><div class="ph"><a class="d" href="#p224368">2012-02-07 13:25:47</a> <span>…@…</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>And verily, didst Brian Gaff &lt;…@…&gt; hastily babble thusly:
+<span class="qt">&gt; The thing is, though I can no longer play games, the real  fun time was when </span>
+<span class="qt">&gt; thee Spectrum was still mainstream, and yet some game writers thought they </span>
+<span class="qt">&gt; were producing good software, but it was in fact crap in some way.</span>
+<span class="qt">&gt; So what was the worst non intentionally crap game in the 80s and early 90s?</span>
+
+I&#x27;d have to say schizoids by imagine.
+
+-- 
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|   Andrew Halliwell BSc   | &quot;The day Microsoft makes something that doesn&#x27;t |</span>
+<span class="qt">|            in            |  suck is probably the day they start making     |</span>
+<span class="qt">|     Computer science     |  vacuum cleaners&quot; - Ernst Jan Plugge            |</span>
+
+
+
+</pre></div><div class="post" id="p224369"><div class="ph"><a class="d" href="#p224369">2012-02-08 02:54:30</a> <span>…@…</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>And verily, didst arda &lt;…@…&gt; hastily babble thusly:
+<span class="qt">&gt;&gt; * The Power House went on to demonstrate even more disdain for their</span>
+<span class="qt">&gt;&gt; customers by re-releasing it, in the same broken state, as part of a</span>
+<span class="qt">&gt;&gt; compilation.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Wow, I didn&#x27;t know that, it&#x27;s strange, they didn&#x27;t even tried to play</span>
+<span class="qt">&gt; it I guess, or it was so famous for being crap, people want to buy it</span>
+<span class="qt">&gt; out of curiousity :) (or they just want to bloat the game count on</span>
+<span class="qt">&gt; compilation)</span>
+
+Oh, the power house were infamous back in the day.
+I don&#x27;t think they produced a single NON crap game.
+
+&lt;esther&gt;
+Unless of course, you, know different...
+&lt;/esther&gt;
+
+-- 
+<span class="qt">|   …@…   | &quot;I&#x27;m alive!!! I can touch! I can taste!         |</span>
+<span class="qt">|   Andrew Halliwell BSc   |  I can SMELL!!!  KRYTEN!!! Unpack Rachel and    |</span>
+<span class="qt">|            in            |  get out the puncture repair kit!&quot;              |</span>
+<span class="qt">|     Computer Science     |     Arnold Judas Rimmer- Red Dwarf              |</span>
+
+
+
+</pre></div><div class="post" id="p224370"><div class="ph"><a class="d" href="#p224370">2012-02-08 02:57:06</a> <span>…@…</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>And verily, didst arda &lt;…@…&gt; hastily babble thusly:
+<span class="qt">&gt; On Jan 23, 6:25ï¿œam, &quot;Brian Gaff&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt;&gt; The thing is, though I can no longer play games</span>
+<span class="qt">&gt; &quot; I can no longer play games&quot; as in  &quot;I want to, but I can&#x27;t because</span>
+<span class="qt">&gt; I don&#x27;t have time?&quot; or &quot;I don&#x27;t like to play at all&quot;?</span>
+
+No, as in, &quot;I can&#x27;t see anymore so the only game I could play would be
+spike&#x27;s &quot;super advanced metal detector simulator delux gold edition&quot; from
+the CGC a few years ago... and even that&#x27;d need a few tweeks...&quot;
+
+
+(yes, I know I&#x27;m probably repeating what others have already said, but I&#x27;ve
+I read and reply as I see fit so I&#x27;ll see them next)
+-- 
+<span class="qt">|   …@…,uk   | &quot;Are you pondering what I&#x27;m pondering Pinky?&quot;   |</span>
+<span class="qt">|   Andrew Halliwell BSc   |                                                 |</span>
+<span class="qt">|            in            | &quot;I think so brain, but this time, you control   |</span>
+<span class="qt">|     Computer Science     |  the Encounter suit, and I&#x27;ll do the voice...&quot;  |</span>
+
+
+
+</pre></div><div class="post" id="p224373"><div class="ph"><a class="d" href="#p224373">2012-02-08 20:32:42</a> <span>arda</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>oh, ok.
+
+Maybe we should seek ways to add accessibility options into Basin.
+
+Also, currah speech supporting games will get more bonus this year!
+
+
+On Feb 8, 4:57 am, …@… wrote:
+<span class="qt">&gt; And verily, didst arda &lt;…@…&gt; hastily babble thusly:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; &gt; On Jan 23, 6:25 am, &quot;Brian Gaff&quot; &lt;…@…&gt; wrote:</span>
+<span class="qt">&gt; &gt;&gt; The thing is, though I can no longer play games</span>
+<span class="qt">&gt; &gt; &quot; I can no longer play games&quot; as in  &quot;I want to, but I can&#x27;t because</span>
+<span class="qt">&gt; &gt; I don&#x27;t have time?&quot; or &quot;I don&#x27;t like to play at all&quot;?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; No, as in, &quot;I can&#x27;t see anymore so the only game I could play would be</span>
+<span class="qt">&gt; spike&#x27;s &quot;super advanced metal detector simulator delux gold edition&quot; from</span>
+<span class="qt">&gt; the CGC a few years ago... and even that&#x27;d need a few tweeks...&quot;</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; (yes, I know I&#x27;m probably repeating what others have already said, but I&#x27;ve</span>
+<span class="qt">&gt; I read and reply as I see fit so I&#x27;ll see them next)</span>
+<span class="qt">&gt; --</span>
+<span class="qt">&gt; |   …@…,uk   | &quot;Are you pondering what I&#x27;m pondering Pinky?&quot;   |</span>
+<span class="qt">&gt; |   Andrew Halliwell BSc   |                                                 |</span>
+<span class="qt">&gt; |            in            | &quot;I think so brain, but this time, you control   |</span>
+<span class="qt">&gt; |     Computer Science     |  the Encounter suit, and I&#x27;ll do the voice...&quot;  |</span>
+
+
+
+
+</pre></div><div class="post" id="p224374"><div class="ph"><a class="d" href="#p224374">2012-02-09 11:52:51</a> <span>Daniel Mandic</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>Lee Osborne wrote:
+
+<span class="qt">&gt; Has anyone ever played Spectrum Safari? That ranks quite highly in the</span>
+<span class="qt">&gt; world of crapness. I got it for like fifty pence or something at a car</span>
+<span class="qt">&gt; boot sale in my first flush of Speccy owning youth, and was amazed at</span>
+<span class="qt">&gt; how bad it is (especially the Kicking Sheep). Now I&#x27;ve just acquired a</span>
+<span class="qt">&gt; +2 for the first time in years, I think I&#x27;ll have to load that one up</span>
+<span class="qt">&gt; again, and laugh at how awesomely bad it was.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Lee</span>
+
+What a wonderful adventure game. Thanks for that!
+
+
+-- 
+Daniel Mandic 
+
+
+
+</pre></div><div class="post" id="p224399"><div class="ph"><a class="d" href="#p224399">2012-02-22 03:34:11</a> <span>arda</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>After a whole silent month, another entry has arrived thanks to AY
+Chip:
+
+Conway&#x27;s Soldiers is added to the cgc2012 web site.
+<a href="http://cgc.zx.gen.tr/index.php?game=0221093511" rel="noreferrer">http://cgc.zx.gen.tr/index.php?game=0221093511</a>
+
+it has 5th row to try and play indefinitely, so start working now!
+
+
+
+</pre></div><div class="post" id="p224418"><div class="ph"><a class="d" href="#p224418">2012-03-02 10:23:22</a> <span>arda</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>Nitrofurano posted &quot;Looking for a csscgc2012 theme&quot;, a result of techy-
+nerdy-coding, wonderful, all you geeks should see it.
+
+<a href="http://cgc.zx.gen.tr/index.php?game=0301180529" rel="noreferrer">http://cgc.zx.gen.tr/index.php?game=0301180529</a>
+
+
+
+
+</pre></div><div class="post" id="p224420"><div class="ph"><a class="d" href="#p224420">2012-03-03 10:48:32</a> <span>Daniel Mandic</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>arda wrote:
+
+<span class="qt">&gt; After a whole silent month, another entry has arrived thanks to AY</span>
+<span class="qt">&gt; Chip:</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Conway&#x27;s Soldiers is added to the cgc2012 web site.</span>
+<span class="qt">&gt; <a href="http://cgc.zx.gen.tr/index.php?game=0221093511" rel="noreferrer">http://cgc.zx.gen.tr/index.php?game=0221093511</a></span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; it has 5th row to try and play indefinitely, so start working now!</span>
+
+Nice Game!
+
+Hmm, I don&#x27;t think that an undo-function was designated in the first
+place (basic rules 1961).
+
+
+-- 
+Daniel Mandic
+
+
+
+</pre></div><div class="post" id="p224421"><div class="ph"><a class="d" href="#p224421">2012-03-03 11:55:14</a> <span>ec429</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>On 03/03/12 10:48, Daniel Mandic wrote:
+<span class="qt">&gt; arda wrote:</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt;&gt; After a whole silent month, another entry has arrived thanks to AY</span>
+<span class="qt">&gt;&gt; Chip:</span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; Conway&#x27;s Soldiers is added to the cgc2012 web site.</span>
+<span class="qt">&gt;&gt; <a href="http://cgc.zx.gen.tr/index.php?game=0221093511" rel="noreferrer">http://cgc.zx.gen.tr/index.php?game=0221093511</a></span>
+<span class="qt">&gt;&gt;</span>
+<span class="qt">&gt;&gt; it has 5th row to try and play indefinitely, so start working now!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Nice Game!</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Hmm, I don&#x27;t think that an undo-function was designated in the first</span>
+<span class="qt">&gt; place (basic rules 1961).</span>
+That&#x27;s alright - it doesn&#x27;t work properly anyway!  It&#x27;s actually 
+possible to (mis)use the undo function to get to positions that couldn&#x27;t 
+be reached by forward moves only.
+-E
+-- 
+&#x27;sane&#x27;, adj.: see &#x27;unimaginative&#x27;
+   on the web - <a href="http://jttlov.no-ip.org" rel="noreferrer">http://jttlov.no-ip.org</a>
+
+
+
+</pre></div><div class="post" id="p224430"><div class="ph"><a class="d" href="#p224430">2012-03-07 00:44:09</a> <span>arda</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre><a href="http://cgc.zx.gen.tr/index.php?game=0307021143" rel="noreferrer">http://cgc.zx.gen.tr/index.php?game=0307021143</a>
+
+madmekon posted EVP (electronic voide phonemenon).
+
+That game&#x27;s genre is science-horror-crap. Well it got me a little scared, when I start hearing those... Nevermind. 
+
+
+
+</pre></div><div class="post" id="p224436"><div class="ph"><a class="d" href="#p224436">2012-03-15 09:01:57</a> <span>arda</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>Equinox submitted a card game called &quot;Ninety Nine&quot;.
+<a href="http://cgc.zx.gen.tr/index.php?game=0314000405" rel="noreferrer">http://cgc.zx.gen.tr/index.php?game=0314000405</a>
+
+
+This increased total game count to 5!
+Keep them coming!
+
+
+
+</pre></div><div class="post" id="p224527"><div class="ph"><a class="d" href="#p224527">2012-04-11 07:01:30</a> <span>arda</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>Hello again, 
+Angus Gulliver sent &quot;Titanic Simulator&quot; a highly accurate seafaring simulator as we expect.
+
+<a href="http://cgc.zx.gen.tr/index.php?do=games" rel="noreferrer">http://cgc.zx.gen.tr/index.php?do=games</a>  
+
+And a reminder, we got 6 games so far!
+
+
+
+</pre></div><div class="post" id="p225000"><div class="ph"><a class="d" href="#p225000">2012-06-20 20:56:53</a> <span>arda</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>Another fine entry has arrived!
+
+Good King Wenceslas Simulator 2012 by Spud.
+
+<a href="http://cgc.zx.gen.tr/index.php?game=0620164412" rel="noreferrer">http://cgc.zx.gen.tr/index.php?game=0620164412</a>
+
+I will try to crap-review it after my phd related depression is over.
+
+Count is 7 now.
+
+A reminder, I will announce april 23 &quot;30 years award&quot; soon. Yes we already have a 30 year&#x27;s winner, and he will get the thing, yes, I mean a secret loot. it&#x27;s not a prize, but maybe it is!?
+
+
+
+</pre></div><div class="post" id="p225024"><div class="ph"><a class="d" href="#p225024">2012-06-24 15:43:11</a> <span>arda</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>&quot;Crop Jump&quot; has just been added to our big list of crap games. Well, it&#x27;s our 8th entry, but we are growing fast. 
+
+
+Anyway, thanks to Rebelstar without a cause, we got something to play today. Head to the download page now:
+
+<a href="http://cgc.zx.gen.tr/index.php?game=0623220742" rel="noreferrer">http://cgc.zx.gen.tr/index.php?game=0623220742</a>
+
+
+
+
+</pre></div><div class="post" id="p225033"><div class="ph"><a class="d" href="#p225033">2012-06-26 22:48:53</a> <span>arda</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>9th game has just arrived:
+
+it&#x27;s not particularly new idea, but it&#x27;s still a game :D
+
+y u no play it now?
+<a href="http://cgc.zx.gen.tr/index.php?game=0626235041" rel="noreferrer">http://cgc.zx.gen.tr/index.php?game=0626235041</a>
+
+
+
+</pre></div><div class="post" id="p225044"><div class="ph"><a class="d" href="#p225044">2012-06-28 19:59:07</a> <span>arda</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>I don&#x27;t know if anybody reads this mails, 
+but for people who can, 
+
+we got 10 entry now, and still more to come:
+
+Apenao&#x27;s &quot;Steroids Sports Diving: Splash&quot; is a little-bit fun game, which is not a good thing for a crap game. 
+
+play now or die:
+<a href="http://cgc.zx.gen.tr/index.php?game=0628182038" rel="noreferrer">http://cgc.zx.gen.tr/index.php?game=0628182038</a>
+
+
+
+</pre></div><div class="post" id="p225055"><div class="ph"><a class="d" href="#p225055">2012-06-29 17:26:14</a> <span>Chris Young</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>On Thu, 28 Jun 2012 12:59:07 -0700 (PDT) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC arda:
+
+<span class="qt">&gt; I don&#x27;t know if anybody reads this mails, </span>
+
+I am.
+
+<span class="qt">&gt; we got 10 entry now, and still more to come:</span>
+
+Has anybody entered a London 2012 game yet?  That&#x27;s surely prime
+topical CSSCGC material.
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p225065"><div class="ph"><a class="d" href="#p225065">2012-07-02 08:55:26</a> <span>Andrew Owen</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>On 29/06/2012 18:26, Chris Young wrote:
+<span class="qt">&gt; Has anybody entered a London 2012 game yet?  That&#x27;s surely prime</span>
+<span class="qt">&gt; topical CSSCGC material.</span>
+
+Advanced Distract Public From Economic Meltdown Simulator?
+
+
+
+
+</pre></div><div class="post" id="p225068"><div class="ph"><a class="d" href="#p225068">2012-07-02 16:33:04</a> <span>Chris Young</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>On Mon, 02 Jul 2012 09:55:26 +0100 da kidz on comp.sys.sinclair were rappin&#x27;
+to MC Andrew Owen:
+
+<span class="qt">&gt; On 29/06/2012 18:26, Chris Young wrote:</span>
+<span class="qt">&gt; &gt; Has anybody entered a London 2012 game yet?  That&#x27;s surely prime</span>
+<span class="qt">&gt; &gt; topical CSSCGC material.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Advanced Distract Public From Economic Meltdown Simulator?</span>
+
+Advanced Britain Fail To Win Anything Simulator?
+
+That could incorporate Eurovision, the Euros, Wimbledon and the
+Olympics.
+
+It would be a four multi-loader with each of these events (think Daley
+Thompson, Matchday 2 and Matchpoint[1] meets Sing Star - although
+it&#x27;ll be more like Daley Thompson, Cantona Football, Pong and some
+horrendous BEEP-a-long). Maybe we could call it Advanced 2012
+Simulator and incorporate an End Of The World section too.
+
+Actually it&#x27;s quite a good idea.  Shame I can&#x27;t be bothered to write
+it.
+
+Chris
+[1] That was the Spectrum tennis game, wasn&#x27;t it?
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p225073"><div class="ph"><a class="d" href="#p225073">2012-07-03 09:21:57</a> <span>Andrew Owen</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>On 02/07/2012 17:33, Chris Young wrote:
+<span class="qt">&gt; Advanced Britain Fail To Win Anything Simulator?</span>
+
+I think you&#x27;re being a little pessimistic. Britain had its best ever 
+medal haul at Beijing in 2008. However, the opening ceremony is bound to 
+be crap in a funky-skillo kind of way.
+
+
+
+</pre></div><div class="post" id="p225094"><div class="ph"><a class="d" href="#p225094">2012-07-11 05:41:12</a> <span>arda</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>we got three more games, one of them is again olympic themed :)
+
+Snailympics 2012 by spud 
+<a href="http://cgc.zx.gen.tr/index.php?game=0706195021" rel="noreferrer">http://cgc.zx.gen.tr/index.php?game=0706195021</a>
+
+PODEWRRR! by na_th_an 
+<a href="http://cgc.zx.gen.tr/index.php?game=0710143527" rel="noreferrer">http://cgc.zx.gen.tr/index.php?game=0710143527</a>
+
+and rescuow by carlsson
+<a href="http://cgc.zx.gen.tr/index.php?game=0711021107" rel="noreferrer">http://cgc.zx.gen.tr/index.php?game=0711021107</a>
+
+interesting to see the games being sent this year are not made with basic (generally). I wonder will this &#x27;improvement&#x27; change the face of cgc. For example, nathan&#x27;s entry is very playable, so I&#x27;m not sure it&#x27;s crap enough. Nevertheless, it&#x27;s kind of crap. Rescuow is absolutely crap, really fit for this compo, like every other basic game. Ofcourse, slow execution should not a &quot;crapness&quot; factor, but the design itself. Snailympics is inbetween. 
+
+Anyway, we got a total of 13 games now.
+
+
+
+</pre></div><div class="post" id="p225138"><div class="ph"><a class="d" href="#p225138">2012-08-19 15:09:11</a> <span>arda</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>I really lost track of new games, so I&#x27;m listing last 4 games submitted recently:
+
+
+first Nathan&#x27;s controversial entry &quot;Shit on Sonny&#x27;s Mouth (you know she likes it)&quot;:
+<a href="http://cgc.zx.gen.tr/index.php?game=0711120516" rel="noreferrer">http://cgc.zx.gen.tr/index.php?game=0711120516</a>
+
+and then totally &quot;unoficial&quot; as it says in the disclaimer, Usain Bolt&#x27;s Olymic Dash by &quot;Unsatisfactory&quot; Chris:
+<a href="http://cgc.zx.gen.tr/index.php?game=0805225612" rel="noreferrer">http://cgc.zx.gen.tr/index.php?game=0805225612</a>
+
+Next, we got Weakly Tribson&#x27;s Triathon by Angus Gulliver:
+<a href="http://cgc.zx.gen.tr/index.php?game=0812011609" rel="noreferrer">http://cgc.zx.gen.tr/index.php?game=0812011609</a>
+
+And ofcourse, you cannot run from another spectrum simulator, ZX Spectrum 48K Simulator 2012 by spud:
+<a href="http://cgc.zx.gen.tr/index.php?game=0813202721" rel="noreferrer">http://cgc.zx.gen.tr/index.php?game=0813202721</a>
+
+
+Finally! WE GOT A WINNER!
+
+30th year&#x27;s first winner is announced!
+
+Remember, this sub-award was only for entries submitted before april 23. I&#x27;m sure every css member will be using his wallpaper to remind that you got to code more crap games!
+
+<a href="http://cgc.zx.gen.tr/index.php?do=results" rel="noreferrer">http://cgc.zx.gen.tr/index.php?do=results</a>
+
+Have a nice Sunday! Don&#x27;t forget to design and make more Crap games! I need more!
+
+
+
+</pre></div><div class="post" id="p225388"><div class="ph"><a class="d" href="#p225388">2012-12-02 19:49:49</a> <span>arda</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>Hello fellow css members,
+
+As we are getting closer to the ending of the compo, it&#x27;s time to announce the winning prize of this year.
+
+This year&#x27;s winner will get one of the 8bit from the home computer era, 
+
+a Commodore64 or a Cpc464 or a a Zx Spectrum 48k, all in working condition.
+
+Winner will pick which one of them to take.
+
+Also, as we are about to close the compo, can you please register and vote?
+
+
+
+
+
+</pre></div><div class="post" id="p225389"><div class="ph"><a class="d" href="#p225389">2012-12-02 21:51:13</a> <span>Brian Gaff</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>There is a 6128 sitting here, I wonder if it works?
+
+Brian
+
+-- 
+Brian Gaff....Note, this account does not accept Bcc: email.
+ graphics are great, but the blind can&#x27;t hear them
+Email: …@…
+______________________________________________________________________________________________________________
+
+
+&quot;arda&quot; &lt;…@…&gt; wrote in message 
+news:…@…...
+<span class="qt">&gt; Hello fellow css members,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; As we are getting closer to the ending of the compo, it&#x27;s time to announce </span>
+<span class="qt">&gt; the winning prize of this year.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; This year&#x27;s winner will get one of the 8bit from the home computer era,</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; a Commodore64 or a Cpc464 or a a Zx Spectrum 48k, all in working </span>
+<span class="qt">&gt; condition.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Winner will pick which one of them to take.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; Also, as we are about to close the compo, can you please register and </span>
+<span class="qt">&gt; vote?</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; </span>
+
+
+
+
+
+</pre></div><div class="post" id="p225390"><div class="ph"><a class="d" href="#p225390">2012-12-03 04:44:58</a> <span>…@…</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>And verily, didst arda &lt;…@…&gt; hastily babble thusly:
+<span class="qt">&gt; Hello fellow css members,</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; As we are getting closer to the ending of the compo, it&#x27;s time to announce the winning prize of this year.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; This year&#x27;s winner will get one of the 8bit from the home computer era, </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; a Commodore64 or a Cpc464 or a a Zx Spectrum 48k, all in working condition.</span>
+
+The commode presumably is for the best written most playable (AKA, utter
+failure at being crap) game presumably... if ever there was a booby prize,
+the commode would be it.
+:)
+ 
+<span class="qt">&gt; Winner will pick which one of them to take.</span>
+
+Ahhh, shame. Booby prize is better.
+
+
+
+-- 
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|   Andrew Halliwell BSc   | &quot;The day Microsoft makes something that doesn&#x27;t |</span>
+<span class="qt">|            in            |  suck is probably the day they start making     |</span>
+<span class="qt">|     Computer science     |  vacuum cleaners&quot; - Ernst Jan Plugge            |</span>
+
+
+
+</pre></div><div class="post" id="p225490"><div class="ph"><a class="d" href="#p225490">2012-12-29 23:36:20</a> <span>arda</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>On Monday, December 3, 2012 6:44:58 AM UTC+2, …@… wrote:
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; &gt; Winner will pick which one of them to take.</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; Ahhh, shame. Booby prize is better.</span>
+<span class="qt">&gt; </span>
+
+Aah, that is a good idea actually but it&#x27;s too late this time :D
+
+anyway, as we getting closer to the end of the csscgc2012, I decided to post an update.
+
+We got 25 games so far, with &quot;Å I ÅA Ä E Ö&quot; and &quot;Spacky Slots&quot; being latest two games.
+
+Spacky Slots has a (kind of) development blog, here: <a href="http://liardgames.weebly.com/" rel="noreferrer">http://liardgames.weebly.com/</a>
+
+<a href="http://cgc.zx.gen.tr/index.php?game=1226025116" rel="noreferrer">http://cgc.zx.gen.tr/index.php?game=1226025116</a>
+<a href="http://cgc.zx.gen.tr/index.php?game=1229174045" rel="noreferrer">http://cgc.zx.gen.tr/index.php?game=1229174045</a>
+
+One little note, you still got time and chance to win (or lose?)! You can even try and design games now! A typical crap game only takes 4-6 hours (Or minutes)
+to complete!
+
+
+
+</pre></div><div class="post" id="p225496"><div class="ph"><a class="d" href="#p225496">2013-01-01 00:27:56</a> <span>arda</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>Dear css,
+
+I&#x27;m here to inform you about the deadline extension of 10 more days!
+
+As you know, this year csscgc hit the bottom with only 25 entries. So if you got any idea or half baked code laying around somewhere, you got 10 more days to save the csscgc2012.
+
+New deadline is Jan 11, 2013 23:55! 
+
+Also, I want to thank you every participant to the day, for sparing enough time to write a game and share it over crap game compo.
+
+25 or 125 entry, I still feel it was a joy hosting the compo, I hope I will do this again in the future.
+
+Anyway, now I need to return back to party.
+
+Happy new year to you all!
+
+see you later css!
+
+
+
+</pre></div><div class="post" id="p225523"><div class="ph"><a class="d" href="#p225523">2013-01-11 23:08:45</a> <span>arda</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>On Monday, January 23, 2012 12:13:35 AM UTC+2, arda wrote:
+<span class="qt">&gt; Dear crap game designers, fellow newsgroup people,</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; </span>
+
+Wow! we are almost done, only minutes remaining, and I am asking everyone to vote if it&#x27;s possible. Voting will be open until Jan 18. After that I&#x27;ll announce the winners.
+
+<a href="http://cgc.zx.gen.tr/index.php?do=login" rel="noreferrer">http://cgc.zx.gen.tr/index.php?do=login</a>
+
+If you didn&#x27;t register for an account yet, use this link,
+<a href="http://cgc.zx.gen.tr/index.php?do=register" rel="noreferrer">http://cgc.zx.gen.tr/index.php?do=register</a>
+(it&#x27;s no different than a direct login, but it creates a new user and login immediately. So, no tricky steps.) 
+
+
+
+</pre></div><div class="post" id="p225548"><div class="ph"><a class="d" href="#p225548">2013-01-19 20:47:53</a> <span>arda</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>Hello, I am announcing csscgc 2012&#x27;s official results
+(for a detailed info about scoring and score table, please consider downloading the csscgc2012 package from wos archive and read the note file.)
+
+
+The winner of Comp.Sys.Sinclair Crap Game Competition 2012 is:
+Mathman By R-Tape.
+R-Tape will get a 8bit computer of his choice.
+
+And the Loser is:
+Ninety Nine By Equinox.
+Equinox will be the next host of csscgc 2013 (one again after 10 years). If he refuses to be the host, R-Tape will host the compo. If both of them refuses to host the cgc2013, Pgyuri and AyChip will be in the line. After them, it will be voluntary.
+
+
+All in all, people may feel that they are misjudged, and I am truly sorry for that. As compo itself, please consider this judge is also crap. I thank you everyone for participating crap game competition 2012, and keeping this tradition alive.
+
+
+
+</pre></div><div class="post" id="p225550"><div class="ph"><a class="d" href="#p225550">2013-01-19 22:22:44</a> <span>Chris Young</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>On Sat, 19 Jan 2013 12:47:53 -0800 (PST) da kidz on comp.sys.sinclair were rappin&#x27;
+to MC arda:
+
+<span class="qt">&gt; (for a detailed info about scoring and score table, please consider</span>
+<span class="qt">&gt; downloading the csscgc2012 package from wos archive and read the</span>
+<span class="qt">&gt; note file.)</span>
+
+It&#x27;s not there yet.  The CSSCGC 2011 archive is missing too - do you
+mind uploading that at the same time?
+
+Chris
+
+
+-- 
++-------------------------------------------+
+<span class="qt">| Unsatisfactory Software - &quot;because it is&quot; |</span>
+<span class="qt">|  <a href="http://www.unsatisfactorysoftware.co.uk" rel="noreferrer">http://www.unsatisfactorysoftware.co.uk</a>  |</span>
+<span class="qt">| Your Sinclair: A Celebration              |</span>
++- <a href="http://www.yoursinclair.co.uk" rel="noreferrer">http://www.yoursinclair.co.uk</a> -----------+
+
+DISCLAIMER: I may be making all this stuff up again.
+
+
+
+</pre></div><div class="post" id="p225552"><div class="ph"><a class="d" href="#p225552">2013-01-20 10:25:31</a> <span>Andrew Owen</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>On 19/01/2013 20:47, arda wrote:
+<span class="qt">&gt; All in all, people may feel that they are misjudged, and I am truly</span>
+<span class="qt"> &gt; sorry for that. As compo itself, please consider this judge is also</span>
+<span class="qt"> &gt; crap. I thank you everyone for participating crap game competition</span>
+<span class="qt"> &gt; 2012, and keeping this tradition alive.</span>
+
+It&#x27;s sort of poetic in a way that the winner is someone with terrible 
+judgement.
+
+
+
+</pre></div><div class="post" id="p225555"><div class="ph"><a class="d" href="#p225555">2013-01-23 11:09:46</a> <span>R-Tape</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>On Saturday, January 19, 2013 8:47:53 PM UTC, arda wrote:
+<span class="qt">&gt; Hello, I am announcing csscgc 2012&#x27;s official results (for a detailed info about scoring and score table, please consider downloading the csscgc2012 package from wos archive and read the note file.) The winner of Comp.Sys.Sinclair Crap Game Competition 2012 is: Mathman By R-Tape. R-Tape will get a 8bit computer of his choice. And the Loser is: Ninety Nine By Equinox. Equinox will be the next host of csscgc 2013 (one again after 10 years). If he refuses to be the host, R-Tape will host the compo. If both of them refuses to host the cgc2013, Pgyuri and AyChip will be in the line. After them, it will be voluntary. All in all, people may feel that they are misjudged, and I am truly sorry for that. As compo itself, please consider this judge is also crap. I thank you everyone for participating crap game competition 2012, and keeping this tradition alive.</span>
+
+Just wanted to say thanks to Arda for being an excellent host and staying sane despite an onslaught of crap software.
+
+The honour of being the 2013 host has fallen to me.  I&#x27;m in the process of setting up a suitably rubbish website, so please be patient and an announcement will follow in a few days.
+
+In the meantime please get coding crappateers!
+
+
+
+</pre></div><div class="post" id="p225556"><div class="ph"><a class="d" href="#p225556">2013-01-23 15:36:53</a> <span>…@…</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>And verily, didst R-Tape &lt;…@…&gt; hastily babble thusly:
+<span class="qt">&gt; The honour of being the 2013 host has fallen to me.  I&#x27;m in the process of setting up a suitably rubbish website, so please be patient and an announcement will follow in a few days.</span>
+
+So equinox turned it down then? Thought he&#x27;d &quot;won&quot; the honour this year.
+
+-- 
+<span class="qt">|   …@…   |                                                 |</span>
+<span class="qt">|   Andrew Halliwell BSc   | &quot;ARSE! GERLS!! DRINK! DRINK! DRINK!!!&quot;          |</span>
+<span class="qt">|            in            | &quot;THAT WOULD BE AN ECUMENICAL MATTER!...FECK!!!! |</span>
+<span class="qt">|     Computer Science     | - Father Jack in &quot;Father Ted&quot;                   |</span>
+
+
+
+</pre></div><div class="post" id="p225557"><div class="ph"><a class="d" href="#p225557">2013-01-23 17:01:21</a> <span>Duncan Snowden</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>On Wed, 23 Jan 2013 03:09:46 -0800 (PST)
+R-Tape &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; Just wanted to say thanks to Arda for being an excellent host and</span>
+<span class="qt">&gt; staying sane despite an onslaught of crap software.</span>
+
+&quot;Despite&quot;? That&#x27;s the charm, Shirley?
+
+Anyway, I concur. Good job, Arda, and good luck R-Tape. I epxect I&#x27;ll
+continue my 15-year[1] tradition of being *really* crap and failing to
+enter, but you never know...
+
+[1] What? Really?[2]
+
+[2] Well, no. Not quite. Probably. But it&#x27;s uncomfortably close.
+
+-- 
+Duncan Snowden.
+
+
+
+</pre></div><div class="post" id="p225558"><div class="ph"><a class="d" href="#p225558">2013-01-23 23:27:27</a> <span>R-Tape</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre><span class="qt">&gt; So equinox turned it down then? Thought he&#x27;d &quot;won&quot; the honour this year.</span>
+
+Hi, yep Mr equinox turned it down as he&#x27;d already had the pleasure.  I&#x27;m a bit suprised to have ended up hosting it but it should be fun.
+
+<span class="qt">&gt; Anyway, I concur. Good job, Arda, and good luck R-Tape. I epxect I&#x27;ll</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; continue my 15-year[1] tradition of being *really* crap and failing to</span>
+<span class="qt">&gt; </span>
+<span class="qt">&gt; enter, but you never know...</span>
+
+Cheers Duncan, 15 years eh, well I hope you find time to create something truly crappy this year!
+
+
+
+</pre></div><div class="post" id="p225612"><div class="ph"><a class="d" href="#p225612">2013-01-29 23:32:03</a> <span>Paul E Collins</span> <span>Re: Official CSSCGC 2012 Thread</span> <a class="badge" href="https://spectrumcomputing.co.uk/list?group_id=2066">CSSCGC Crap Games Contest 2012</a></div><pre>On Wed, 23 Jan 2013 15:36:53 -0000, &lt;…@…&gt; wrote:
+
+<span class="qt">&gt; And verily, didst R-Tape &lt;…@…&gt; hastily  </span>
+<span class="qt">&gt; babble thusly:</span>
+<span class="qt">&gt;&gt; The honour of being the 2013 host has fallen to me.  I&#x27;m in the process  </span>
+<span class="qt">&gt;&gt; of setting up a suitably rubbish website, so please be patient and an  </span>
+<span class="qt">&gt;&gt; announcement will follow in a few days.</span>
+<span class="qt">&gt;</span>
+<span class="qt">&gt; So equinox turned it down then? Thought he&#x27;d &quot;won&quot; the honour this year.</span>
+
+Yes. Although the CGC has been going for ages now, Crapmas comes but once  
+a year, and I thought I&#x27;d better give someone else a go. And it means I  
+can enter! (I&#x27;ve got a few fragments of a really amusing game I was  
+thinking of entering last year, but I didn&#x27;t get around to making it.)
+
+If I win/lose again then I will probably do it though. So beware.
+
+Eq.
+
+
+
+</pre></div></main></body></html>
