@@ -7,8 +7,8 @@ that shows it.
 
 **View it online:** https://speccyworks.github.io/zxdb-comp.sys.sinclair/ (or open `docs/index.html` from a copy of this repository; `docs/` holds the pages).
 
-**Data:** [`docs/css-links.sqlite`](docs/css-links.sqlite) (3 MB) links posts of the whole group to ZXDB entries, labels and contest tags, without
-post texts or e-mail addresses; [`docs/css-links-README.md`](docs/css-links-README.md) describes it.
+**Data:** [`css-links.sqlite`](css-links.sqlite) (3 MB) links posts of the whole group to ZXDB entries, labels and contest tags, without
+post texts or e-mail addresses; [`css-links-README.md`](css-links-README.md) describes it.
 
 Only the threads these pages cite are included; spam is left out, and e-mail addresses are shown as …@….
 
