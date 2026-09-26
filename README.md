@@ -11,3 +11,6 @@ that shows it.
 post texts or e-mail addresses; `css-links-README.md` describes it.
 
 Only the threads these pages cite are included; spam is left out, and e-mail addresses are shown as …@….
+
+**The archive:** `archive.md` describes the archive of the group these pages were made from: posts per year, sources,
+what is missing, and the Usenet formats and standards.
