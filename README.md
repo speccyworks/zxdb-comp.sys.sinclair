@@ -5,12 +5,12 @@ Computing: releases ZXDB lacks, release days and versions, CSSCGC contest entrie
 handles, games in the Tipshop's updates, and the history of the TZX tape format. Each item links to the post
 that shows it.
 
-**View it online:** https://speccyworks.github.io/zxdb-comp.sys.sinclair/ (or open `index.html` from a copy of this repository).
+**View it online:** https://speccyworks.github.io/zxdb-comp.sys.sinclair/ (or open `docs/index.html` from a copy of this repository; `docs/` holds the pages).
 
-**Data:** `css-links.sqlite` (3 MB) links posts of the whole group to ZXDB entries, labels and contest tags, without
-post texts or e-mail addresses; `css-links-README.md` describes it.
+**Data:** [`docs/css-links.sqlite`](docs/css-links.sqlite) (3 MB) links posts of the whole group to ZXDB entries, labels and contest tags, without
+post texts or e-mail addresses; [`docs/css-links-README.md`](docs/css-links-README.md) describes it.
 
 Only the threads these pages cite are included; spam is left out, and e-mail addresses are shown as …@….
 
-**The archive:** `archive.md` describes the archive of the group these pages were made from: posts per year, sources,
+**The archive:** [`archive.md`](archive.md) describes the archive of the group these pages were made from: posts per year, sources,
 what is missing, and the Usenet formats and standards.
